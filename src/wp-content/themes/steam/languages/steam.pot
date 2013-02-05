@@ -1,0 +1,453 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Steam\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-04 18:26+0100\n"
+"PO-Revision-Date: 2011-10-04 18:26+0100\n"
+"Last-Translator: Francesc Bassas i Bullich\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;_c\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:5
+msgid "Error 404 - Not Found"
+msgstr ""
+
+#: ../archive.php:9
+msgid "Archive for the"
+msgstr ""
+
+#: ../archive.php:9
+msgid "Category"
+msgstr ""
+
+#: ../archive.php:12
+#: ../archive.php:15
+#: ../archive.php:18
+msgid "Archive for"
+msgstr ""
+
+#: ../archive.php:21
+msgid "Search Results"
+msgstr ""
+
+#: ../archive.php:24
+msgid "Author Archive"
+msgstr ""
+
+#: ../archive.php:27
+msgid "Blog Archives"
+msgstr ""
+
+#: ../archive.php:33
+#: ../archive.php:56
+#: ../index.php:27
+#: ../search.php:10
+#: ../search.php:35
+msgid "&laquo; Previous Entries"
+msgstr ""
+
+#: ../archive.php:34
+#: ../archive.php:57
+#: ../index.php:28
+#: ../search.php:11
+#: ../search.php:36
+msgid "Next Entries &raquo;"
+msgstr ""
+
+#: ../archive.php:39
+#: ../index.php:10
+#: ../search.php:18
+msgid "Permanent Link to"
+msgstr ""
+
+#: ../archive.php:43
+#: ../single.php:16
+msgid "Read the rest of this entry &raquo;"
+msgstr ""
+
+#: ../archive.php:46
+#: ../index.php:17
+#: ../search.php:25
+msgid "Posted in"
+msgstr ""
+
+#: ../archive.php:46
+#: ../index.php:17
+#: ../search.php:25
+msgid "Edit"
+msgstr ""
+
+#: ../archive.php:46
+msgid "No Comments &#187;"
+msgstr ""
+
+#: ../archive.php:46
+msgid "1 Comment &#187;"
+msgstr ""
+
+#: ../archive.php:46
+msgid "% Comments &#187;"
+msgstr ""
+
+#: ../archive.php:62
+#: ../index.php:33
+#: ../search.php:41
+msgid "Not Found"
+msgstr ""
+
+#: ../archives.php:13
+msgid "Archives by Month:"
+msgstr ""
+
+#: ../archives.php:18
+msgid "Archives by Subject:"
+msgstr ""
+
+#: ../comments-popup.php:9
+#, php-format
+msgid "Comments on %s"
+msgstr ""
+
+#: ../comments-popup.php:22
+msgid "Comments"
+msgstr ""
+
+#: ../comments-popup.php:24
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on this post."
+msgstr ""
+
+#: ../comments-popup.php:27
+msgid "The <acronym title=\"Uniform Resource Identifier\">URI</acronym> to TrackBack this entry is:"
+msgstr ""
+
+#: ../comments-popup.php:46
+msgid "Comment"
+msgstr ""
+
+#: ../comments-popup.php:46
+msgid "Trackback"
+msgstr ""
+
+#: ../comments-popup.php:46
+msgid "Pingback"
+msgstr ""
+
+#: ../comments-popup.php:46
+msgid "by"
+msgstr ""
+
+#: ../comments-popup.php:52
+msgid "No comments yet."
+msgstr ""
+
+#: ../comments-popup.php:56
+msgid "Leave a comment"
+msgstr ""
+
+#: ../comments-popup.php:57
+msgid "Line and paragraph breaks automatic, e-mail address never displayed, <acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed:"
+msgstr ""
+
+#: ../comments-popup.php:62
+#: ../comments.php:81
+msgid "Name"
+msgstr ""
+
+#: ../comments-popup.php:69
+msgid "E-mail"
+msgstr ""
+
+#: ../comments-popup.php:74
+msgid "<acronym title=\"Uniform Resource Identifier\">URI</acronym>"
+msgstr ""
+
+#: ../comments-popup.php:78
+msgid "Your Comment"
+msgstr ""
+
+#: ../comments-popup.php:84
+msgid "Say It!"
+msgstr ""
+
+#: ../comments-popup.php:89
+msgid "Sorry, the comment form is closed at this time."
+msgstr ""
+
+#: ../comments-popup.php:94
+msgid "Close this window."
+msgstr ""
+
+#: ../comments-popup.php:102
+#, php-format
+msgid "<cite>Powered by <a href=\"http://wordpress.org\" title=\"%s\"><strong>Wordpress</strong></a></cite>"
+msgstr ""
+
+#: ../comments-popup.php:102
+#: ../sidebar.php:66
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr ""
+
+#: ../comments.php:3
+msgid "Please do not load this page directly. Thanks!"
+msgstr ""
+
+#: ../comments.php:9
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: ../comments.php:23
+msgid "No Responses"
+msgstr ""
+
+#: ../comments.php:23
+msgid "One Response"
+msgstr ""
+
+#: ../comments.php:23
+msgid "% Responses"
+msgstr ""
+
+#: ../comments.php:23
+msgid "to"
+msgstr ""
+
+#: ../comments.php:30
+msgid "Says"
+msgstr ""
+
+#: ../comments.php:32
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../comments.php:66
+msgid "Leave a Reply"
+msgstr ""
+
+#: ../comments.php:69
+msgid "You must be"
+msgstr ""
+
+#: ../comments.php:69
+msgid "logged in"
+msgstr ""
+
+#: ../comments.php:69
+msgid "to post a comment."
+msgstr ""
+
+#: ../comments.php:76
+msgid "Logged in as"
+msgstr ""
+
+#: ../comments.php:76
+msgid "Log out of this account"
+msgstr ""
+
+#: ../comments.php:76
+msgid "Logout"
+msgstr ""
+
+#: ../comments.php:81
+#: ../comments.php:84
+msgid "(required)"
+msgstr ""
+
+#: ../comments.php:84
+msgid "Mail (will not be published)"
+msgstr ""
+
+#: ../comments.php:87
+msgid "Website"
+msgstr ""
+
+#: ../comments.php:91
+msgid "You can use these tags:"
+msgstr ""
+
+#: ../comments.php:95
+msgid "Submit Comment"
+msgstr ""
+
+#: ../footer.php:7
+#, php-format
+msgid "Powered by <a href='http://wordpress.org' title='%s'><strong>WordPress</strong></a>"
+msgstr ""
+
+#: ../index.php:17
+#: ../search.php:25
+msgid "No Comments"
+msgstr ""
+
+#: ../index.php:17
+#: ../search.php:25
+msgid "1 Comment"
+msgstr ""
+
+#: ../index.php:17
+#: ../search.php:25
+msgid "% Comments"
+msgstr ""
+
+#: ../index.php:34
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr ""
+
+#: ../links.php:11
+msgid "Links:"
+msgstr ""
+
+#: ../page.php:9
+msgid "Read the rest of this page &raquo;"
+msgstr ""
+
+#: ../page.php:11
+#: ../sidebar.php:44
+msgid "Pages"
+msgstr ""
+
+#: ../page.php:16
+#: ../single.php:47
+msgid "Edit this entry."
+msgstr ""
+
+#: ../searchform.php:3
+msgid "Search"
+msgstr ""
+
+#: ../sidebar.php:7
+msgid "Themes"
+msgstr ""
+
+#: ../sidebar.php:24
+msgid "You are currently browsing the archives for the"
+msgstr ""
+
+#: ../sidebar.php:24
+msgid "category."
+msgstr ""
+
+#: ../sidebar.php:27
+#: ../sidebar.php:30
+#: ../sidebar.php:33
+#: ../sidebar.php:39
+msgid "You are currently browsing the"
+msgstr ""
+
+#: ../sidebar.php:27
+msgid "weblog archives for the day"
+msgstr ""
+
+#: ../sidebar.php:30
+#: ../sidebar.php:36
+msgid "weblog archives for"
+msgstr ""
+
+#: ../sidebar.php:33
+msgid "weblog archives for the year"
+msgstr ""
+
+#: ../sidebar.php:36
+msgid "You have searched the"
+msgstr ""
+
+#: ../sidebar.php:36
+msgid "If you are unable to find anything in these search results, you can try one of these links."
+msgstr ""
+
+#: ../sidebar.php:39
+msgid "weblog archives."
+msgstr ""
+
+#: ../sidebar.php:46
+msgid "Archives"
+msgstr ""
+
+#: ../sidebar.php:52
+msgid "Categories"
+msgstr ""
+
+#: ../sidebar.php:61
+msgid "Meta"
+msgstr ""
+
+#: ../sidebar.php:65
+msgid "This page validates as XHTML 1.0 Transitional"
+msgstr ""
+
+#: ../sidebar.php:65
+msgid "Valid <abbr title=\"eXtensible HyperText Markup Language\">XHTML</abbr>"
+msgstr ""
+
+#: ../single.php:13
+msgid "Permanent Link:"
+msgstr ""
+
+#: ../single.php:18
+msgid "Pages:"
+msgstr ""
+
+#: ../single.php:22
+msgid "This entry was posted"
+msgstr ""
+
+#: ../single.php:27
+msgid "on"
+msgstr ""
+
+#: ../single.php:28
+msgid "and is filed under"
+msgstr ""
+
+#: ../single.php:29
+msgid "You can follow any responses to this entry through the"
+msgstr ""
+
+#: ../single.php:29
+msgid "feed"
+msgstr ""
+
+#: ../single.php:33
+msgid "You can"
+msgstr ""
+
+#: ../single.php:33
+msgid "leave a response"
+msgstr ""
+
+#: ../single.php:33
+msgid "or"
+msgstr ""
+
+#: ../single.php:33
+msgid "trackback"
+msgstr ""
+
+#: ../single.php:33
+#: ../single.php:37
+msgid "from your own site."
+msgstr ""
+
+#: ../single.php:37
+msgid "Responses are currently closed, but you can"
+msgstr ""
+
+#: ../single.php:41
+msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+msgstr ""
+
+#: ../single.php:45
+msgid "Both comments and pings are currently closed."
+msgstr ""
+
+#: ../single.php:59
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+

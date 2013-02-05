@@ -1,0 +1,184 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gentle Calm\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-03 16:30+0100\n"
+"PO-Revision-Date: 2011-10-03 16:36+0100\n"
+"Last-Translator: Francesc Bassas i Bullich\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;_c\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Catalan\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: comments.php:3
+msgid "Please do not load this page directly. Thanks!"
+msgstr "Si us plau no carregueu aquesta pàgina directament. Gràcies!"
+
+#: comments.php:7
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Aquest article està protegit per contrasenya. Inseriu la contrasenya per veure els comentaris."
+
+#: comments.php:19
+msgid "No Responses"
+msgstr "Cap resposta"
+
+#: comments.php:19
+msgid "One Response"
+msgstr "Una resposta"
+
+#: comments.php:19
+msgid "% Responses"
+msgstr "% Respostes"
+
+#: comments.php:19
+msgid "to"
+msgstr "a"
+
+#: comments.php:28
+msgid "Your comment is awaiting moderation."
+msgstr "El vostre comentari està en espera de moderació."
+
+#: comments.php:53
+msgid "No comments yet. Be the first."
+msgstr "No hi ha comentaris encara. Sigueu el primer."
+
+#: comments.php:57
+msgid "Comments are closed."
+msgstr "Els comentaris estan tancats."
+
+#: comments.php:63
+msgid "Leave a reply"
+msgstr "Deixeu una resposta"
+
+#: comments.php:66
+msgid "You must be"
+msgstr "Heu"
+
+#: comments.php:66
+msgid "logged in"
+msgstr "d'identificar-vos"
+
+#: comments.php:66
+msgid "to post a comment."
+msgstr "per publicar un comentari."
+
+#: comments.php:73
+msgid "Logged in as"
+msgstr "Esteu identificat com a"
+
+#: comments.php:74
+msgid "Log out of this account"
+msgstr "Surt d'aquest compte"
+
+#: comments.php:75
+msgid "Logout"
+msgstr "Surt"
+
+#: comments.php:81
+msgid "name"
+msgstr "nom"
+
+#: comments.php:81
+#: comments.php:85
+msgid "(required)"
+msgstr "(necessari)"
+
+#: comments.php:85
+msgid "email"
+msgstr "correu electrònic"
+
+#: comments.php:85
+msgid "will not be shown"
+msgstr "no serà publicat"
+
+#: comments.php:89
+msgid "website"
+msgstr "lloc web"
+
+#: comments.php:97
+msgid "Submit Comment"
+msgstr "Envia el comentari"
+
+#: footer.php:7
+msgid "was designed by"
+msgstr "va ser dissenyat per"
+
+#: footer.php:8
+#, php-format
+msgid "Powered by <a href='http://wordpress.org' title='%s'><strong>WordPress</strong></a>"
+msgstr "Funciona amb <a href='http://wordpress.org' title='%s'><strong>WordPress</strong></a>"
+
+#: index.php:9
+msgid "(more...)"
+msgstr "(més...)"
+
+#: index.php:12
+msgid "Filed by"
+msgstr "Creat per"
+
+#: index.php:12
+msgid "at"
+msgstr "a les"
+
+#: index.php:12
+msgid "under"
+msgstr "arxivat com a"
+
+#: index.php:15
+msgid "No Comments"
+msgstr "No hi ha comentaris"
+
+#: index.php:15
+msgid "1 Comment"
+msgstr "1 comentari"
+
+#: index.php:15
+msgid "% Comments"
+msgstr "% comentaris"
+
+#: index.php:27
+msgid "Sorry, no posts matched your criteria."
+msgstr "No s'han trobat articles que responguin al vostre criteri."
+
+#: index.php:30
+msgid "&laquo; Previous Page"
+msgstr "&laquo; Pàgina prèvia"
+
+#: index.php:30
+msgid "Next Page &raquo;"
+msgstr "Pàgina següent &raquo;"
+
+#: sidebar.php:6
+msgid "Links"
+msgstr "Enllaços"
+
+#: sidebar.php:9
+msgid "Syndicate this site using RSS"
+msgstr "Sindica aquest bloc fent servir RSS"
+
+#: sidebar.php:9
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr "<abbr title=\"en anglès, Really Simple Syndication\">RSS</abbr>"
+
+#: sidebar.php:11
+msgid "Archives"
+msgstr "Arxius"
+
+#: sidebar.php:16
+msgid "Categories"
+msgstr "Categories"
+
+#: sidebar.php:21
+msgid "Pages"
+msgstr "Pàgines"
+
+#: sidebar.php:27
+msgid "Themes"
+msgstr "Aparences"
+

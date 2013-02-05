@@ -1,0 +1,257 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Colors Idea\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-04 11:53+0100\n"
+"PO-Revision-Date: 2011-10-04 11:53+0100\n"
+"Last-Translator: Francesc Bassas i Bullich\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;_c\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../comments-popup.php:9
+msgid "Comments on"
+msgstr ""
+
+#: ../comments-popup.php:22
+msgid "Comments"
+msgstr ""
+
+#: ../comments-popup.php:24
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on this post."
+msgstr ""
+
+#: ../comments-popup.php:27
+msgid "The <abbr title=\"Universal Resource Locator\">URL</abbr> to TrackBack this entry is: "
+msgstr ""
+
+#: ../comments-popup.php:45
+msgid "Comment"
+msgstr ""
+
+#: ../comments-popup.php:45
+msgid "Trackback"
+msgstr ""
+
+#: ../comments-popup.php:45
+msgid "Pingback"
+msgstr ""
+
+#: ../comments-popup.php:45
+msgid "by"
+msgstr ""
+
+#: ../comments-popup.php:51
+msgid "No comments yet."
+msgstr ""
+
+#: ../comments-popup.php:55
+#: ../comments.php:70
+msgid "Leave a comment"
+msgstr ""
+
+#: ../comments-popup.php:56
+msgid "Line and paragraph breaks automatic, e-mail address never displayed, <acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed:"
+msgstr ""
+
+#: ../comments-popup.php:61
+#: ../comments.php:73
+msgid "Name"
+msgstr ""
+
+#: ../comments-popup.php:68
+msgid "E-mail"
+msgstr ""
+
+#: ../comments-popup.php:73
+msgid "<abbr title=\"Universal Resource Locator\">URL</abbr>"
+msgstr ""
+
+#: ../comments-popup.php:77
+msgid "Your Comment"
+msgstr ""
+
+#: ../comments-popup.php:88
+msgid "Sorry, the comment form is closed at this time."
+msgstr ""
+
+#: ../comments-popup.php:93
+msgid "Close this window."
+msgstr ""
+
+#: ../comments-popup.php:101
+msgid "Powered by"
+msgstr ""
+
+#: ../comments.php:3
+msgid "Please do not load this page directly. Thanks!"
+msgstr ""
+
+#: ../comments.php:9
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: ../comments.php:22
+msgid "No Responses"
+msgstr ""
+
+#: ../comments.php:22
+msgid "One Response"
+msgstr ""
+
+#: ../comments.php:22
+msgid "% Responses"
+msgstr ""
+
+#: ../comments.php:32
+msgid ":"
+msgstr ""
+
+#: ../comments.php:35
+msgid "Date:"
+msgstr ""
+
+#: ../comments.php:38
+msgid " @ "
+msgstr ""
+
+#: ../comments.php:40
+#: ../index.php:11
+#: ../single.php:12
+msgid "Edit"
+msgstr ""
+
+#: ../comments.php:62
+msgid "Comments are closed."
+msgstr ""
+
+#: ../comments.php:77
+msgid "Mail"
+msgstr ""
+
+#: ../comments.php:77
+msgid "will not be published"
+msgstr ""
+
+#: ../comments.php:80
+msgid "Website"
+msgstr ""
+
+#: ../comments.php:85
+msgid "Submit Comment"
+msgstr ""
+
+#: ../comments.php:86
+msgid "You can use these tags:"
+msgstr ""
+
+#: ../comments.php:89
+msgid "Please note:"
+msgstr ""
+
+#: ../comments.php:89
+msgid "Comment moderation is enabled and may delay your comment. There is no need to resubmit your comment."
+msgstr ""
+
+#: ../footer.php:8
+msgid "Design by"
+msgstr ""
+
+#: ../footer.php:8
+msgid "and"
+msgstr ""
+
+#: ../functions.php:19
+#: ../functions.php:32
+msgid "Pages"
+msgstr ""
+
+#: ../functions.php:40
+msgid "Search Posts"
+msgstr ""
+
+#: ../functions.php:50
+#: ../functions.php:64
+msgid "Search"
+msgstr ""
+
+#: ../functions.php:82
+msgid " Links With Style"
+msgstr ""
+
+#: ../header.php:30
+msgid "Home"
+msgstr ""
+
+#: ../index.php:10
+msgid "No Comments"
+msgstr ""
+
+#: ../index.php:10
+msgid "1 Comment"
+msgstr ""
+
+#: ../index.php:10
+msgid "% Comments"
+msgstr ""
+
+#: ../index.php:12
+#: ../page.php:10
+msgid "Read the rest of this entry &raquo;"
+msgstr ""
+
+#: ../index.php:16
+#: ../page.php:15
+#: ../single.php:17
+msgid "&laquo; Previous Entries"
+msgstr ""
+
+#: ../index.php:17
+#: ../page.php:15
+#: ../single.php:17
+msgid "Next Entries &raquo;"
+msgstr ""
+
+#: ../index.php:19
+#: ../page.php:17
+#: ../single.php:19
+msgid "Not Found"
+msgstr ""
+
+#: ../index.php:20
+#: ../page.php:18
+#: ../single.php:20
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr ""
+
+#: ../searchform.php:2
+msgid "search"
+msgstr ""
+
+#: ../sidebar.php:9
+msgid "Categories"
+msgstr ""
+
+#: ../sidebar.php:16
+msgid "Calendar"
+msgstr ""
+
+#: ../sidebar.php:21
+msgid "Recent Posts"
+msgstr ""
+
+#: ../sidebar.php:28
+msgid "Blogroll"
+msgstr ""
+
+#: ../single.php:13
+msgid "Read the rest..."
+msgstr ""
+

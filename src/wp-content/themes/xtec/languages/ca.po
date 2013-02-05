@@ -1,0 +1,358 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-05 14:20+0100\n"
+"PO-Revision-Date: 2011-10-05 14:21+0100\n"
+"Last-Translator: Francesc Bassas i Bullich\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;_c\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Catalan\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:10
+msgid "Error 404"
+msgstr "Error 404"
+
+#: ../404.php:11
+#: ../index.php:79
+msgid "Sorry, but you are looking for something that is not here"
+msgstr "Esteu cercant alguna cosua que no està aquí."
+
+#: ../comments.php:3
+msgid "Please do not load this page directly. Thanks!"
+msgstr "No carregueu aquesta pàgina directament."
+
+#: ../comments.php:9
+msgid "This post is password protected. Enter the password to view comments"
+msgstr "Aquest article està protegit per contrasenya. Inseriu la contrasenya per veure els comentaris."
+
+#: ../comments.php:24
+#: ../comments.php:25
+msgid "No responses"
+msgstr "Cap resposta"
+
+#: ../comments.php:25
+msgid "One response"
+msgstr "Una resposta"
+
+#: ../comments.php:25
+msgid "% responses"
+msgstr "% respostes"
+
+#: ../comments.php:25
+msgid "to"
+msgstr "a"
+
+#: ../comments.php:65
+msgid "edit"
+msgstr "edita"
+
+#: ../comments.php:67
+msgid "Your comment is awaiting moderation"
+msgstr "El vostre comentari està en espera de moderació"
+
+#: ../comments.php:93
+msgid "Leave a comment"
+msgstr "Deixa un comentari"
+
+#: ../comments.php:96
+msgid "You must be"
+msgstr "Heu"
+
+#: ../comments.php:96
+msgid "logged in"
+msgstr "d'identificar-vos"
+
+#: ../comments.php:96
+msgid "to post a comment"
+msgstr "per publicar un comentari."
+
+#: ../comments.php:103
+#, php-format
+msgid "Logged in as %s."
+msgstr "Identificat com a %s."
+
+#: ../comments.php:103
+msgid "Log out of this account"
+msgstr "Surt d'aquest compte"
+
+#: ../comments.php:103
+msgid "Log out &raquo;"
+msgstr "Surt &raquo;"
+
+#: ../comments.php:109
+msgid "Name"
+msgstr "Nom"
+
+#: ../comments.php:109
+#: ../comments.php:113
+msgid "(required)"
+msgstr "(necessari)"
+
+#: ../comments.php:113
+msgid "Mail"
+msgstr "Correu electrònic"
+
+#: ../comments.php:113
+msgid "(will not be published)"
+msgstr "(no serà publicat)"
+
+#: ../comments.php:117
+msgid "Website"
+msgstr "Lloc web"
+
+#: ../comments.php:122
+msgid "You can use these tags"
+msgstr "Podeu utilitzar aquestes etiquetes"
+
+#: ../comments.php:128
+msgid "Submit comment"
+msgstr "Envia el comentari"
+
+#: ../footer.php:10
+#, php-format
+msgid "Powered by <a href='http://wordpress.org' title='%s'><strong>WordPress</strong></a>"
+msgstr "Funciona amb <a href='http://wordpress.org' title='%s'><strong>WordPress</strong></a>"
+
+#: ../footer.php:10
+msgid "and"
+msgstr "i"
+
+#: ../footer.php:10
+msgid "was designed by"
+msgstr "va ser dissenyat per"
+
+#: ../functions.php:13
+msgid "Links for Freshy"
+msgstr "Enllaços pel Freshy"
+
+#: ../functions.php:18
+msgid "Links"
+msgstr "Enllaços"
+
+#: ../functions.php:58
+#: ../functions.php:69
+#: ../sidebar.php:8
+msgid "Navigation"
+msgstr "Navegació"
+
+#: ../functions.php:80
+#: ../functions.php:93
+#: ../functions.php:115
+msgid "Pages"
+msgstr "Pàgines"
+
+#: ../functions.php:84
+#: ../functions.php:97
+msgid "Blog"
+msgstr "Bloc"
+
+#: ../functions.php:366
+msgid "XTEC Theme Options"
+msgstr "Opcions del XTEC"
+
+#: ../functions.php:426
+msgid "XTEC options updated."
+msgstr "S'han actualitzat les opcions del XTEC."
+
+#: ../functions.php:432
+msgid "XTEC Options"
+msgstr "Opcions del XTEC"
+
+#: ../functions.php:440
+msgid "Theme switcher"
+msgstr "Intercanviador de temes"
+
+#: ../functions.php:445
+msgid "Enter the label of the Homepage menu link"
+msgstr "Insereix l'etiqueta de l'enllaç Inici del menú"
+
+#: ../functions.php:447
+msgid "info : modifying these labels should break internationalisation"
+msgstr "info: modificant aquestes etiquetes es trencarà la internazionalització"
+
+#: ../functions.php:458
+msgid "Enter the label of the Blog menu link"
+msgstr "Insereix l'etiqueta de l'enllaç Bloc del menú"
+
+#: ../functions.php:460
+msgid "info : this is specially for YammYamm"
+msgstr "info : això és especial pel YammYamm"
+
+#: ../functions.php:471
+msgid "Enter the label of the last menu link"
+msgstr "Insereix l'etiqueta del darrer enllaç del menú"
+
+#: ../functions.php:479
+msgid "Title color, ex: #006699"
+msgstr "Color del títol, ex: #006699"
+
+#: ../functions.php:487
+msgid "Subtitle color, ex: #3af567"
+msgstr "Color del subtítol, ex #3af567"
+
+#: ../functions.php:495
+msgid "Absolute url of your own css style"
+msgstr "URL absoluta del vostre full d'estils css"
+
+#: ../functions.php:496
+msgid "Click"
+msgstr "Clica"
+
+#: ../functions.php:496
+msgid "Download css default"
+msgstr "Descarrega el css per defecte"
+
+#: ../functions.php:504
+msgid "Absolute url of your own image"
+msgstr "URL absoluta de la vostra imatge"
+
+#: ../functions.php:520
+msgid "Background vertical position"
+msgstr "Posició vertical de fons"
+
+#: ../functions.php:526
+msgid "Top"
+msgstr "A dalt"
+
+#: ../functions.php:529
+msgid "Middle"
+msgstr "Al mig"
+
+#: ../functions.php:532
+msgid "Bottom"
+msgstr "A baix"
+
+#: ../functions.php:540
+msgid "Background horitzontal position"
+msgstr "Posició horitzontal de fons"
+
+#: ../functions.php:546
+msgid "Left"
+msgstr "Esquerra"
+
+#: ../functions.php:549
+msgid "Center"
+msgstr "Centrat"
+
+#: ../functions.php:552
+msgid "Right"
+msgstr "Dreta"
+
+#: ../functions.php:567
+msgid "Update Options &raquo;"
+msgstr "Actualitza les opcions &raquo;"
+
+#: ../functions.php:574
+msgid "Preview (updated when options are saved)"
+msgstr "Previsualitza (s'actualitza quan es desen les opcions)"
+
+#: ../index.php:17
+#: ../index.php:46
+#: ../single.php:19
+msgid "Read"
+msgstr "Llegeix"
+
+#: ../index.php:20
+#: ../index.php:49
+#: ../single.php:24
+msgid "Read the rest of this entry &raquo;"
+msgstr "Llegeix la resta d'aquesta entrada &raquo;"
+
+#: ../index.php:25
+#: ../single.php:37
+msgid "Actions"
+msgstr "Accions"
+
+#: ../index.php:27
+#: ../index.php:52
+#: ../single.php:46
+msgid "Edit"
+msgstr "Edita"
+
+#: ../index.php:54
+msgid "No Comments &#187;"
+msgstr "Sense comentaris &#187;"
+
+#: ../index.php:54
+msgid "1 Comment &#187;"
+msgstr "1 comentari &#187;"
+
+#: ../index.php:54
+msgid "% Comments &#187;"
+msgstr "% comentaris &#187;"
+
+#: ../index.php:71
+msgid "&laquo; Previous Entries"
+msgstr "&laquo; Entrades anteriors"
+
+#: ../index.php:72
+msgid "Next Entries &raquo;"
+msgstr "Entrades següents &raquo;"
+
+#: ../index.php:78
+msgid "Not found"
+msgstr "No s'ha trobat"
+
+#: ../index.php:94
+#: ../index.php:118
+msgid "Last works"
+msgstr "Últims treballs"
+
+#: ../index.php:103
+#: ../index.php:127
+msgid "Last news"
+msgstr "Últimes notícies"
+
+#: ../links.php:11
+msgid "Links:"
+msgstr "Enllaços:"
+
+#: ../searchform.php:3
+#: ../sidebar.php:18
+msgid "Search"
+msgstr "Cerca"
+
+#: ../single.php:40
+msgid "Comments rss"
+msgstr "Comentaris rss"
+
+#: ../single.php:43
+msgid "Trackback"
+msgstr "Retroenllaç"
+
+#: ../single.php:50
+msgid "Informations"
+msgstr "Informacions"
+
+#: ../single.php:52
+msgid "Author"
+msgstr "Autor"
+
+#: ../single.php:53
+msgid "Date"
+msgstr "Data"
+
+#: ../single.php:55
+msgid "Last modified"
+msgstr "Última modificació"
+
+#: ../single.php:57
+msgid "Categories"
+msgstr "Categories"
+
+#: ../single.php:70
+msgid "Not Found"
+msgstr "No s'ha trobat"
+
+#: ../single.php:71
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr "Esteu buscant alguna cosa que no està aquí."
+

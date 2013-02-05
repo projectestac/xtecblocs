@@ -1,0 +1,314 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Quadruple Blue\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-04 13:16+0100\n"
+"PO-Revision-Date: 2011-10-04 13:16+0100\n"
+"Last-Translator: Francesc Bassas i Bullich\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;_c\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:7
+#: ../archive.php:46
+#: ../index.php:46
+#: ../page.php:33
+#: ../search.php:46
+#: ../single.php:36
+msgid "Not Found"
+msgstr ""
+
+#: ../404.php:9
+#: ../archive.php:48
+#: ../index.php:48
+#: ../page.php:35
+#: ../search.php:48
+#: ../single.php:38
+msgid "Sorry, but you are looking for something that isn&#39;t here."
+msgstr ""
+
+#: ../archive.php:21
+#: ../index.php:21
+#: ../search.php:21
+#: ../single.php:9
+msgid "Posted on"
+msgstr ""
+
+#: ../archive.php:21
+#: ../comments-popup.php:43
+#: ../index.php:21
+#: ../search.php:21
+#: ../single.php:9
+msgid "by"
+msgstr ""
+
+#: ../archive.php:27
+#: ../index.php:27
+#: ../search.php:27
+msgid "No Comments"
+msgstr ""
+
+#: ../archive.php:27
+#: ../index.php:27
+#: ../search.php:27
+msgid "1 Comment"
+msgstr ""
+
+#: ../archive.php:27
+#: ../index.php:27
+#: ../search.php:27
+msgid "% Comments"
+msgstr ""
+
+#: ../archive.php:28
+#: ../index.php:28
+#: ../search.php:28
+#: ../single.php:16
+msgid "Filed under&#58;"
+msgstr ""
+
+#: ../archive.php:28
+#: ../index.php:28
+#: ../page.php:14
+#: ../search.php:28
+#: ../single.php:16
+msgid "Edit"
+msgstr ""
+
+#: ../browse.php:2
+msgid "&laquo; Previous Entries"
+msgstr ""
+
+#: ../browse.php:3
+msgid "Next Entries &raquo;"
+msgstr ""
+
+#: ../comments-popup.php:21
+msgid "Comments"
+msgstr ""
+
+#: ../comments-popup.php:23
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on this post."
+msgstr ""
+
+#: ../comments-popup.php:26
+msgid "TrackBack <acronym title=\"Uniform Resource Identifier\">URI</acronym>"
+msgstr ""
+
+#: ../comments-popup.php:43
+msgid "Comment"
+msgstr ""
+
+#: ../comments-popup.php:43
+msgid "Trackback"
+msgstr ""
+
+#: ../comments-popup.php:43
+msgid "Pingback"
+msgstr ""
+
+#: ../comments-popup.php:50
+msgid "No comments yet."
+msgstr ""
+
+#: ../comments-popup.php:54
+msgid "Leave a comment"
+msgstr ""
+
+#: ../comments-popup.php:55
+msgid "Line and paragraph breaks automatic, e-mail address never displayed, <acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed:"
+msgstr ""
+
+#: ../comments-popup.php:60
+#: ../comments.php:78
+msgid "Name"
+msgstr ""
+
+#: ../comments-popup.php:67
+msgid "E-mail"
+msgstr ""
+
+#: ../comments-popup.php:76
+msgid "Your Comment"
+msgstr ""
+
+#: ../comments-popup.php:82
+msgid "Say It!"
+msgstr ""
+
+#: ../comments-popup.php:87
+msgid "Sorry, the comment form is closed at this time."
+msgstr ""
+
+#: ../comments.php:2
+msgid "Please do not load this page directly. Thanks!"
+msgstr ""
+
+#: ../comments.php:7
+msgid "Password Protected"
+msgstr ""
+
+#: ../comments.php:8
+msgid "Enter the password to view comments."
+msgstr ""
+
+#: ../comments.php:23
+msgid "No Responses"
+msgstr ""
+
+#: ../comments.php:23
+msgid "One Response"
+msgstr ""
+
+#: ../comments.php:23
+msgid "% Responses"
+msgstr ""
+
+#: ../comments.php:23
+msgid "to"
+msgstr ""
+
+#: ../comments.php:31
+msgid "on"
+msgstr ""
+
+#: ../comments.php:31
+msgid "at"
+msgstr ""
+
+#: ../comments.php:31
+msgid "Said&#58;"
+msgstr ""
+
+#: ../comments.php:31
+msgid "Edit Comment"
+msgstr ""
+
+#: ../comments.php:33
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../comments.php:55
+msgid "Comments are closed."
+msgstr ""
+
+#: ../comments.php:63
+msgid "Leave a Reply"
+msgstr ""
+
+#: ../comments.php:66
+msgid "You must be"
+msgstr ""
+
+#: ../comments.php:66
+msgid "logged in"
+msgstr ""
+
+#: ../comments.php:66
+msgid "to post a comment."
+msgstr ""
+
+#: ../comments.php:73
+msgid "Logged in as"
+msgstr ""
+
+#: ../comments.php:73
+msgid "Log out of this account"
+msgstr ""
+
+#: ../comments.php:73
+msgid "Logout"
+msgstr ""
+
+#: ../comments.php:78
+#: ../comments.php:81
+msgid "(required)"
+msgstr ""
+
+#: ../comments.php:81
+msgid "Mail (will not be published)"
+msgstr ""
+
+#: ../comments.php:84
+msgid "Website"
+msgstr ""
+
+#: ../comments.php:88
+msgid "You can use these tags&#58;"
+msgstr ""
+
+#: ../comments.php:92
+msgid "Submit Comment"
+msgstr ""
+
+#: ../footer.php:12
+#, php-format
+msgid "Powered by <a href='http://wordpress.org' title='%s'><strong>WordPress</strong></a>"
+msgstr ""
+
+#: ../footer.php:12
+msgid "and"
+msgstr ""
+
+#: ../header.php:26
+msgid "home page"
+msgstr ""
+
+#: ../index.php:24
+msgid "Read more..."
+msgstr ""
+
+#: ../page.php:12
+#: ../sidebar.php:6
+#: ../single.php:13
+msgid "Pages"
+msgstr ""
+
+#: ../right_sidebar.php:8
+#: ../searchform.php:3
+msgid "Search"
+msgstr ""
+
+#: ../right_sidebar.php:14
+msgid "Categories"
+msgstr ""
+
+#: ../right_sidebar.php:30
+msgid "Calendar"
+msgstr ""
+
+#: ../right_sidebar.php:36
+msgid "Archives"
+msgstr ""
+
+#: ../sidebar.php:11
+msgid "Meta"
+msgstr ""
+
+#: ../sidebar.php:15
+msgid "Syndicate this site using RSS"
+msgstr ""
+
+#: ../sidebar.php:15
+msgid "Entries <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr ""
+
+#: ../sidebar.php:16
+msgid "Syndicate comments using RSS"
+msgstr ""
+
+#: ../sidebar.php:16
+msgid "Comments <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr ""
+
+#: ../sidebar.php:17
+msgid "Valid"
+msgstr ""
+

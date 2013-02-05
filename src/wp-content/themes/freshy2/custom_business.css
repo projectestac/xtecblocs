@@ -1,0 +1,132 @@
+
+body {
+	/*:Background image*/
+	background-image:url(images/background/fat_lines.gif);
+}
+
+#header_image {
+	/*:Header height*/
+	padding-top:200px;
+	/*:Header image*/
+	background-image:url(images/headers/740210_63353419.jpg);
+	/*:Header image alignment*/
+	background-position:center;
+}
+
+.sidebar_left #frame {
+	/*:Sidebar left width*/
+	padding-left:200px;
+}
+
+.sidebar_right #frame {
+	/*:Sidebar right width*/
+	padding-right:250px;
+}
+
+#sidebar_left.sidebar {
+	/*:Sidebar left width*/
+	width:200px;
+	/*:Sidebar left width*/
+	right:200px;
+}
+
+#sidebar.sidebar {
+	/*:Sidebar right width*/
+	width:250px;
+}
+
+* html #sidebar_left {
+	/*:Sidebar right width*/
+	left:250px;
+}
+
+#page, #header, #footer {
+	/*:Page width*/
+	width:97%;
+}
+
+*::-moz-selection, *::-selection {
+	/*:Navigation color*/
+	background-color:#0061a8;
+}
+
+#quicklinks #addicted_results ul li a:hover {
+	/*:Navigation color*/
+	background-color:#0061a8;
+}
+
+a {
+	/*:Navigation color*/
+	color:#0061a8;
+}
+
+.sidebar h2 {
+	/*:Navigation color*/
+	border-left-color:#0061a8;
+	/*:Navigation color*/
+	color:#0061a8;
+}
+
+.sidebar h2 a {
+	/*:Navigation color*/
+	color:#0061a8;
+}
+
+#calendar #today {
+	/*:Navigation color*/
+	background-color:#0061a8;
+}
+
+#menu ul li li a:hover, #menu ul li li.current_page_item a {
+	/*:Navigation color*/
+	color:#0061a8;
+}
+
+#menu ul li li.current_page_item a:hover {
+	/*:Navigation color*/
+	color:#0061a8;
+}
+
+#menu ul li.current_page_ancestor:hover a, #menu ul li.current_page_ancestor a, #menu ul li.current_page_parent a, #menu ul li.current_page_item a {
+	/*:Navigation color*/
+	background-color:#0061a8;
+}
+
+.sidebar li.current_page_item a, .sidebar li.current-cat a, #frame .sidebar li a:hover {
+	/*:Navigation color*/
+	background-color:#0061a8;
+}
+
+.sidebar li a:hover {
+	/*:Navigation color*/
+	background-color:#0061a8;
+}
+
+code {
+	/*:Content color*/
+	background-color:#4f4d48;
+	/*:Content color*/
+	border-color:#4f4d48;
+}
+
+.bypostauthor div {
+	/*:Content color*/
+	background-color:#4f4d48;
+	/*:Content color*/
+	border-color:#4f4d48;
+}
+
+.bypostauthor cite {
+	/*:Content color*/
+	color:#4f4d48;
+}
+
+h2, h2 a, h3, h3 a, .post blockquote, .post blockquote a, .author, .author a, .date, .comment.comment_author .author, .comment.comment_author .author a, .comment.comment_author .date, .comment.comment_author h4 {
+	/*:Content color*/
+	color:#4f4d48;
+}
+
+.post blockquote {
+	/*:Content color*/
+	border-left-color:#4f4d48;
+}

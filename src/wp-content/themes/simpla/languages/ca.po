@@ -1,0 +1,176 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Simpla\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-04 13:39+0100\n"
+"PO-Revision-Date: 2011-10-04 13:40+0100\n"
+"Last-Translator: Francesc Bassas i Bullich\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;_c\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Catalan\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../comments.php:3
+msgid "Please do not load this page directly. Thanks!"
+msgstr "No carregueu aquesta pàgina directament."
+
+#: ../comments.php:9
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Aquest article està protegit per contrasenya. Inseriu la contrasenya per veure els comentaris."
+
+#: ../comments.php:23
+msgid "No Responses"
+msgstr "Cap resposta"
+
+#: ../comments.php:23
+msgid "One Response"
+msgstr "Una resposta"
+
+#: ../comments.php:23
+msgid "% Responses"
+msgstr "% respostes"
+
+#: ../comments.php:23
+msgid "to"
+msgstr "a"
+
+#: ../comments.php:30
+msgid "Says:"
+msgstr "Diu:"
+
+#: ../comments.php:32
+msgid "Your comment is awaiting moderation."
+msgstr "El vostre comentari està en espera de moderació."
+
+#: ../comments.php:58
+msgid "Comments are closed."
+msgstr "Els comentaris estan tancats."
+
+#: ../comments.php:66
+msgid "Leave a Reply"
+msgstr "Deixa una resposta"
+
+#: ../comments.php:69
+msgid "You must be"
+msgstr "Heu"
+
+#: ../comments.php:69
+msgid "logged in"
+msgstr "d'identificar-vos"
+
+#: ../comments.php:69
+msgid "to post a comment."
+msgstr "per publicar un comentari."
+
+#: ../comments.php:76
+msgid "Logged in as"
+msgstr "Identificat com a"
+
+#: ../comments.php:76
+msgid "Log out of this account"
+msgstr "Surt d'aquest compte"
+
+#: ../comments.php:76
+msgid "Logout"
+msgstr "Surt"
+
+#: ../comments.php:81
+msgid "Name"
+msgstr "Nom"
+
+#: ../comments.php:81
+#: ../comments.php:84
+msgid "required"
+msgstr "necessari"
+
+#: ../comments.php:84
+msgid "Mail (will not be published)"
+msgstr "Correu electrònic (no serà publicat)"
+
+#: ../comments.php:87
+msgid "Website"
+msgstr "Lloc web"
+
+#: ../comments.php:91
+msgid "You can use these tags:"
+msgstr "Podeu utilitzar aquestes etiquetes"
+
+#: ../comments.php:95
+msgid "Submit Comment"
+msgstr "Envia el comentari"
+
+#: ../footer.php:7
+#, php-format
+msgid "Powered by <a href='http://wordpress.org' title='%s'><strong>WordPress</strong></a>"
+msgstr "Funciona amb <a href='http://wordpress.org' title='%s'><strong>WordPress</strong></a>"
+
+#: ../footer.php:7
+msgid "was designed by"
+msgstr "va ser dissenyat per"
+
+#: ../index.php:9
+msgid "Permanent Link to"
+msgstr "Enllaç permanent a"
+
+#: ../index.php:13
+msgid "Read the rest of this entry &raquo;"
+msgstr "Llegeix la resta d'aquest article &raquo;"
+
+#: ../index.php:18
+msgid "Posted by"
+msgstr "Publicat per"
+
+#: ../index.php:19
+msgid "Filed in"
+msgstr "Publicat a"
+
+#: ../index.php:19
+msgid "Edit"
+msgstr "Edita"
+
+#: ../index.php:21
+msgid "No Comments"
+msgstr "No hi ha comentaris"
+
+#: ../index.php:21
+msgid "1 Comment"
+msgstr "1 comentari"
+
+#: ../index.php:21
+msgid "% Comments"
+msgstr "% comentaris"
+
+#: ../index.php:30
+msgid "&laquo; Previous Entries"
+msgstr "&laquo; Entrada anteriors"
+
+#: ../index.php:31
+msgid "Next Entries &raquo;"
+msgstr "Entrada següents &raquo;"
+
+#: ../index.php:36
+msgid "Not Found"
+msgstr "No s'ha trobat"
+
+#: ../index.php:37
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr "Esteu buscant alguna cosa que no està aquí."
+
+#: ../sidebar.php:5
+msgid "Pages"
+msgstr "Pàgines"
+
+#: ../sidebar.php:7
+msgid "Home"
+msgstr "Inici"
+
+#: ../sidebar.php:10
+msgid "Categories"
+msgstr "Categories"
+

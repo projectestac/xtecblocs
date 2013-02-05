@@ -1,0 +1,1 @@
+<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/"><input size="12" type="text" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" autocomplete="off"/><input class="btn" type="submit" id="searchsubmit" value="<?php _e('Search','freshy-2'); ?>" /></form>

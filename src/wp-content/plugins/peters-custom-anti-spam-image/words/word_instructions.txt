@@ -1,0 +1,1 @@
+Make sure this folder is writable.  When you activate the plugin, it should automatically create a file in this folder that contains the list of possible anti-spam words.

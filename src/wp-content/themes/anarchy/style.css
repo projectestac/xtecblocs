@@ -1,0 +1,345 @@
+/*
+Theme Name: anarchy
+Theme URI: http://www.sourcelibre.com/
+Description: Join the underground.
+Author: Alexandre Quessy
+Author URI: http://www.sourcelibre.com/
+License: GPL http://www.gnu.org/licenses/gpl.txt
+Version: 1.1
+
+This theme has been created for http://www.histoireuqam.org/ thinking about the current many 
+demonstrations from students all over Quebec, Canada. Please share it. 
+It is based on Simple-Clean by Rohit Kumar. 
+*/
+body {
+	background:#000;
+	border:none;
+	color:#fff;
+	font-family:11pt monospace;
+	margin:0;
+	padding:0;
+}
+
+a {
+	color:#f30;
+	text-decoration:none;
+	border-bottom:1px solid #333;
+}
+
+a img {
+	border:1px solid #f30;
+	border-bottom:0;
+}
+
+a:visited {
+	color:#f30;
+}
+
+a:hover {
+	color:#f30;
+	border-bottom:1px solid #f30;
+}
+
+acronym, abbr {
+	border-bottom:1px dashed #f30;
+	margin-bottom:0;
+}
+
+acronym, abbr, span.caps {
+	cursor:help;
+	font-size:normal;
+}
+
+blockquote {
+	border-left:5px solid #fff;
+	margin-left:1.5em;
+	padding-left:5px;
+}
+
+p, li {
+	font:11pt monospace;
+}
+
+h2.the-date {
+  /* this is the border between posts */
+	border-top:3px dashed #300;
+	font:10pt monospace;
+	color:#999;
+	font-weight:normal;
+	margin:2em 0 0 0;
+	padding-bottom:2px;
+	text-align:right;
+} /*  see #menu h2 */
+
+cite {
+	font-size:normal;
+	font-style:normal;
+}
+
+#content {
+	padding-left:5px;
+	float:none;
+	width:default;
+	margin-left:190px;
+	padding-right:25px;
+}
+
+#rap {
+	border:none;
+	width:default;
+}
+
+#header {
+	font:32pt monospace;
+	margin:0;
+	padding:15px 10px 15px 60px;
+	height:40px; /* see #menu for height */
+	text-align:center;
+}
+
+#header a {
+	color:#ccc;
+	text-decoration:none;
+	border-bottom:0;
+}
+#header a:hover {
+  border-bottom:1px solid #666;
+}
+
+.feedback {
+	color:#ccc;
+	text-align:right;
+	clear:both;
+	font:11pt monospace;
+}
+
+.feedback a {
+  color:#666;
+  font-size:10pt;
+}
+.feedback a:hover {
+  color:#f30; /* same color as its border-bottom */
+}
+.storytitle {
+	margin:0;
+  font:14pt monospace;
+  font-weight:bold;
+}
+
+.storytitle a, .storytitle a:visited {
+  text-decoration:none;
+  font:14pt monospace;
+  font-weight:bold;
+}
+
+div.storycontent, div.feedback, div.storycontent p {
+  font:11pt monospace;
+}
+#commentform #name, #commentform #email, #commentform #url {
+	border:1px solid #999;
+	padding:.2em;
+}
+
+#commentform textarea {
+	width:100%;
+        height:50%;
+	font:11pt monospace;
+}
+
+#commentlist li ul {
+	border-left:1px solid #999;
+	font-size:110%;
+	list-style-type:none;
+}
+
+ol#comments li p {
+	font-size:100%;
+}
+
+h3 {
+	font-family:14pt monospace;
+	color:#f00;
+	margin-top:0;
+}
+
+h3#comments {
+        font:11pt monospace;
+        font-weight:bold;
+}
+h3#respond {
+        font:11pt monospace;
+        font-weight:bold;
+}
+
+.meta {
+	font-size:11pt monospace;
+}
+
+.meta li, ul.post-meta li {
+	display:inline;
+}
+
+.meta ul {
+	display:inline;
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+.meta, .meta a {
+	color:#f30;
+	font-weight:normal;
+	letter-spacing:0;
+	font:10pt monospace
+}
+
+#menu {
+	padding:0;
+	position:absolute;
+	top:40px; /* see #header for height; */
+	left:10px;
+	width:150px;
+	z-index:1;
+	padding:0 0 15px 0;
+}
+
+#menu h2 {
+  border:0;
+  color:#f30;
+  font-weight:bold;
+  text-align:left;
+}
+
+#menu ul {
+	color:#f30;
+	font-weight:bold;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+#menu ul ul {
+	font-variant:normal;
+	font-weight:normal;
+	line-height:100%;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	text-align:left;
+}
+
+#menu ul ul li {
+	font:11pt monospace;
+	letter-spacing:0;
+	margin:2px 0 5px 0;
+	padding:0;
+	color:#fff;
+	text-align:left;
+}
+
+#menu ul ul li a {
+  display:block;
+	color:#fff;
+	height:auto;
+	width:100%;
+	border:0;
+	padding:0 5px 0 5px ;
+	background-color:#900;
+}
+#menu ul ul li a:hover {
+  background-color:#c00;
+}
+#menu ul ul ul.children {
+	font-size:11pt;
+}
+
+#menu form {
+	margin:0;
+}
+
+#menu input#s {
+	width:80%;
+	border:1px solid #ccc;
+	color:#000;
+}
+
+#wp-calendar {
+	border:none;
+	empty-cells:show;
+	font-size:9pt;
+	margin:0;
+	width:90%;
+}
+
+#wp-calendar #next a {
+	padding-right:10px;
+	text-align:right;
+}
+
+#wp-calendar #prev a {
+	padding-left:10px;
+	text-align:left;
+}
+
+#wp-calendar a {
+	display:block;
+	text-decoration:none;
+}
+
+#wp-calendar caption {
+	color:#ccc;
+	font-size:11pt;
+	font-weight:bold;
+	text-align:center;
+}
+
+#wp-calendar td {
+	color:#ccc;
+	font:9pt monospace;
+	letter-spacing:normal;
+	padding:2px 0;
+	text-align:left;
+}
+
+#wp-calendar #today {
+	border:1px solid #333;
+	color:#fff;
+}
+
+#wp-calendar th {
+	font-style:normal;
+	text-transform:capitalize;
+}
+#wp-calendar a {
+  border-bottom:0;
+}
+
+.credit {
+	color:#999;
+	margin:0;
+	margin-top:2em;
+	text-align:center;
+	clear:both;
+	padding:3px 0px;
+	width:default;
+}
+
+.credit a:link, .credit a:hover {
+	color:#f30;
+	font:11pt monospace;
+}
+
+.alignleft {
+	float: left;
+	text-align: left;
+	padding-bottom: 10px;
+}
+
+.alignright {
+	float: right;
+	text-align: right;
+	padding-bottom: 10px;
+}
+.nav {
+	margin-top: 50px;
+}

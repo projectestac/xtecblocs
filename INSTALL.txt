@@ -1,0 +1,89 @@
+XTECBlocs
+==========================================
+
+Requisits
+-------------------------------------------------------------
+
+	- Apache + PHP + MySQL
+
+	- Mòduls d'Apache: mod_rewrite
+
+	- Extensions de PHP:
+	
+	  * soap (Extensió XTEC Mail)
+	  
+	  * gd (Extensió Peter Custom Anti Spam)
+	
+	- Visibilitat al port 8080 del domini aplitic.xtec.cat (Extensió XTEC Mail)
+	
+	- Connectivitat per SSL pel port 443 (Extensió Blogger Importer i Google Analyticator)
+
+
+Procés d'instal·lació
+----------------------------------------------------------------------
+
+	A - Instal·lació
+	---------------------------------------------------------
+	
+		1. Canviar el nom del fitxer '$HOME/html/wp-content/db.php' (per exemple per '$HOME/wp-content/db_.php').
+	
+		2. Instalar el WordPress seguint les instruccions d'instalació que apareixen a l'accedir a l'arrel web de l'aplicació.
+	
+		3. Afegir al fitxer '$HOME/html/wp-config.php' la següent línia
+	
+	    	define('WP_ALLOW_MULTISITE', true);
+	    
+	   	   abans de la línia
+	    
+	        /* That's all, stop editing! Happy blogging. */
+	
+		4. Habilitar la xarxa (multisite) des de l'administració del WordPress al menú 'Eines'.
+	
+		5. Copiar el fitxer '$HOME/html/htacces.dist' al fitxer '$HOME/html/.htacces' i modificar el paràmetre
+	
+	    	- RewriteBase.
+	
+		6. Copiar el fitxer '$HOME/html/wp_config.dist.php' al fitxer '$HOME/html/wp-config.php' i modificar els paràmetres
+	
+	    	- DB_NAME amb el nom de la base de dades global
+	   
+		    - DB_USER amb l'usuari amb accés a les bases de dades
+		   
+		    - DB_PASSWORD amb la contrasenya de l'usuari amb accés a la base de dades
+		   
+		    - DB_HOST amb el domini del servidor de la base de dades
+		    
+		    - DB_CHARSET amb la codificació de caràcters de la base de dades
+		   
+		    - $base amb el path de la instal·lació
+		   
+		    - DOMAIN_CURRENT_SITE amb el domini del servidor de la instal·lació
+		   
+		    - PATH_CURRENT_SITE amb el path de la instal·lació
+		   
+		    - les claus úniques d'autentificació
+		   
+		    - DB_PREFIX amb el prefix de les bases de dades
+		   
+		    - DB_NUMS amb el número de bases de dades adicionals a més a més de la global (com a mínim ha de ser 1)
+	    
+		7. Descomentar les següents línies del fitxer '$HOME/html/wp-config.php'
+	
+	    	define( 'MULTISITE', true );
+	    	define( 'SUBDOMAIN_INSTALL', false );
+	    
+		8. Restaurar el nom del fitxer '$HOME/html/wp-content/db.php'.
+	
+		9. Copiar el fitxer '$HOME/html/wp-content/advanced-cache.dist.php' a '$HOME/wp-content/advanced-cache.php'.
+		
+		10. Copiar el fitxer '$HOME/html/wp-content/wp-cache-config.dist.php' a '$HOME/wp-content/wp-cache-config.php'.
+
+
+	B - Assignació de permisos d'escriptura
+	---------------------------------------------------------
+
+		Els següents directoris del servidor i els seus fitxers i subdirectoris han de tenir permisos d'escriptura pel servidor.
+	
+		* '$HOME/blogs.dir/'				-	directori de fitxers dels usuaris
+		* '$HOME/cache/'					-	directori del WP Super Cache
+		* '$HOME/weekblog_images.dir/'		-   directori de les imatges dels blocs de la setmana

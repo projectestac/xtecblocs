@@ -1,0 +1,17 @@
+#header { background: #44484F url('images/black/head.jpg') bottom center no-repeat; }
+a { color: #000; font-weight: bold; }
+h2 a, h3 a { color: #518dad; }
+a:hover, h2 a:hover, h3 a:hover, h2 a:visited { color: #518dad; }
+#sidebar li { list-style-image: url(images/black/star.gif); }
+.cal { background: #5D5D5D url(images/black/cal_bg.jpg) repeat-x; }
+
+.calborder { 
+  background: #C7C7C7;
+  border: 1px solid #383838;
+}
+
+
+
+body { color: #666; }
+#sidebar a { font-weight: normal; }
+#wp-calendar a { font-weight: bold; }

@@ -1,0 +1,383 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Freshy 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-03 16:08+0100\n"
+"PO-Revision-Date: 2011-10-03 16:08+0100\n"
+"Last-Translator: Francesc Bassas i Bullich\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;_c\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:6
+#: index.php:61
+#: search.php:29
+msgid "Not found"
+msgstr ""
+
+#: 404.php:7
+#: index.php:62
+#: search.php:30
+msgid "Sorry, but you are looking for something that is not here"
+msgstr ""
+
+#: archives.php:11
+msgid "Archives by month"
+msgstr ""
+
+#: archives.php:16
+msgid "Archives by category"
+msgstr ""
+
+#: comments.php:21
+msgid "No Responses"
+msgstr ""
+
+#: comments.php:21
+msgid "One Response"
+msgstr ""
+
+#: comments.php:21
+msgid "% Responses"
+msgstr ""
+
+#: comments.php:53
+msgid "Leave a Reply"
+msgstr ""
+
+#: comments.php:53
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comments.php:67
+msgid "Logged in as"
+msgstr ""
+
+#: comments.php:67
+msgid "Log out of this account"
+msgstr ""
+
+#: comments.php:67
+msgid "Log out &raquo;"
+msgstr ""
+
+#: comments.php:72
+msgid "Name"
+msgstr ""
+
+#: comments.php:75
+msgid "Mail (will not be published)"
+msgstr ""
+
+#: comments.php:78
+msgid "Website"
+msgstr ""
+
+#: comments.php:86
+msgid "Submit Comment"
+msgstr ""
+
+#: functions.php:61
+msgid "Title:"
+msgstr ""
+
+#: functions.php:68
+msgid "Links"
+msgstr ""
+
+#: functions.php:116
+msgid "Navigation"
+msgstr ""
+
+#: functions.php:145
+#: functions.php:158
+#: index.php:28
+msgid "Categories"
+msgstr ""
+
+#: functions.php:154
+msgid "Pages"
+msgstr ""
+
+#: functions.php:298
+msgid "Freshy options updated."
+msgstr ""
+
+#: functions.php:302
+msgid "Freshy Options"
+msgstr ""
+
+#: functions.php:311
+msgid "Choose a custom style :"
+msgstr ""
+
+#: functions.php:323
+msgid "Default style"
+msgstr ""
+
+#: functions.php:336
+msgid "Layout :"
+msgstr ""
+
+#: functions.php:339
+msgid "Display left sidebar"
+msgstr ""
+
+#: functions.php:349
+msgid "Display right sidebar"
+msgstr ""
+
+#: functions.php:359
+msgid "Hide left sidebar on these posts"
+msgstr ""
+
+#: functions.php:363
+#: functions.php:372
+msgid "Enter posts ids separated by commas"
+msgstr ""
+
+#: functions.php:368
+msgid "Hide right sidebar on these posts"
+msgstr ""
+
+#: functions.php:377
+msgid "Navigation menu behaviour"
+msgstr ""
+
+#: functions.php:382
+msgid "Auto : Display subpages on pages and blog categories in blog"
+msgstr ""
+
+#: functions.php:386
+msgid "Normal : Always display categories and pages"
+msgstr ""
+
+#: functions.php:391
+msgid "Navigation menu rss"
+msgstr ""
+
+#: functions.php:396
+msgid "Display rss icon with categories"
+msgstr ""
+
+#: functions.php:400
+msgid "Do not display rss icon with categories"
+msgstr ""
+
+#: functions.php:403
+msgid "Date options :"
+msgstr ""
+
+#: functions.php:404
+msgid "You can change date formatting in"
+msgstr ""
+
+#: functions.php:408
+msgid "Show date on posts"
+msgstr ""
+
+#: functions.php:418
+msgid "Show time on posts"
+msgstr ""
+
+#: functions.php:426
+msgid "Other options :"
+msgstr ""
+
+#: functions.php:429
+msgid "Show author on posts"
+msgstr ""
+
+#: functions.php:439
+msgid "Show search in header"
+msgstr ""
+
+#: functions.php:449
+msgid "Show RSS icon in header"
+msgstr ""
+
+#: functions.php:457
+msgid "Menu :"
+msgstr ""
+
+#: functions.php:460
+msgid "Enter the label of the Homepage menu link"
+msgstr ""
+
+#: functions.php:464
+msgid "Modifying these labels should break internationalisation"
+msgstr ""
+
+#: functions.php:469
+msgid "Enter the label of the last menu link"
+msgstr ""
+
+#: functions.php:477
+msgid "The last menu link should be..."
+msgstr ""
+
+#: functions.php:482
+msgid "A contact button to this email"
+msgstr ""
+
+#: functions.php:489
+msgid "A custom link with this url"
+msgstr ""
+
+#: functions.php:496
+msgid "Nothing"
+msgstr ""
+
+#: functions.php:499
+msgid "Custom menus :"
+msgstr ""
+
+#: functions.php:507
+#: functions.php:528
+msgid "Delete"
+msgstr ""
+
+#: functions.php:513
+msgid "New custom menu entry"
+msgstr ""
+
+#: functions.php:516
+#: functions.php:537
+msgid "label"
+msgstr ""
+
+#: functions.php:517
+#: functions.php:538
+msgid "url"
+msgstr ""
+
+#: functions.php:520
+msgid "Custom quicklinks :"
+msgstr ""
+
+#: functions.php:534
+msgid "New custom quicklink entry"
+msgstr ""
+
+#: functions.php:543
+msgid "Update Options &raquo;"
+msgstr ""
+
+#: functions.php:588
+msgid "It seems that the directory"
+msgstr ""
+
+#: functions.php:588
+msgid "does not exist"
+msgstr ""
+
+#: index.php:11
+#: search.php:14
+msgid "Read"
+msgstr ""
+
+#: index.php:22
+#: page.php:13
+msgid "Read the rest of this entry &raquo;"
+msgstr ""
+
+#: index.php:27
+msgid "Comments"
+msgstr ""
+
+#: index.php:27
+msgid "No Comments &#187;"
+msgstr ""
+
+#: index.php:27
+msgid "1 Comment &#187;"
+msgstr ""
+
+#: index.php:27
+msgid "% Comments &#187;"
+msgstr ""
+
+#: index.php:36
+#: page.php:26
+msgid "Spread the word"
+msgstr ""
+
+#: index.php:39
+#: my_footer.php:3
+#: page.php:29
+msgid "Comments rss"
+msgstr ""
+
+#: index.php:42
+#: page.php:32
+msgid "Trackback"
+msgstr ""
+
+#: index.php:45
+#: page.php:35
+msgid "Edit"
+msgstr ""
+
+#: index.php:55
+#: search.php:23
+msgid "&laquo; Previous Entries"
+msgstr ""
+
+#: index.php:56
+#: search.php:24
+msgid "Next Entries &raquo;"
+msgstr ""
+
+#: my_footer.php:2
+msgid "rss"
+msgstr ""
+
+#: my_footer.php:4
+msgid "valid xhtml 1.1"
+msgstr ""
+
+#: my_footer.php:5
+msgid "design by jide"
+msgstr ""
+
+#: my_footer.php:6
+msgid "powered by"
+msgstr ""
+
+#: my_footer.php:7
+msgid "get firefox"
+msgstr ""
+
+#: page.php:46
+msgid "Not Found"
+msgstr ""
+
+#: page.php:47
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr ""
+
+#: search.php:7
+msgid "Search results"
+msgstr ""
+
+#: search.php:16
+msgid "j m Y"
+msgstr ""
+
+#: searchform.php:1
+#: sidebar.php:12
+msgid "Search"
+msgstr ""
+
+#: sidebar_left.php:5
+msgid "Archives"
+msgstr ""
+

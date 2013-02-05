@@ -1,0 +1,132 @@
+
+body {
+	/*:Background image*/
+	background-image:url(images/background/fat_lines_light.gif);
+}
+
+#header_image {
+	/*:Header height*/
+	padding-top:200px;
+	/*:Header image*/
+	background-image:url(images/headers/499153_79030836.jpg);
+	/*:Header image alignment*/
+	background-position:center;
+}
+
+.sidebar_left #frame {
+	/*:Sidebar left width*/
+	padding-left:200px;
+}
+
+.sidebar_right #frame {
+	/*:Sidebar right width*/
+	padding-right:250px;
+}
+
+#sidebar_left.sidebar {
+	/*:Sidebar left width*/
+	width:200px;
+	/*:Sidebar left width*/
+	right:200px;
+}
+
+#sidebar.sidebar {
+	/*:Sidebar right width*/
+	width:250px;
+}
+
+* html #sidebar_left {
+	/*:Sidebar right width*/
+	left:250px;
+}
+
+#page, #header, #footer {
+	/*:Page width*/
+	width:800px;
+}
+
+*::-moz-selection, *::-selection {
+	/*:Navigation color*/
+	background-color:#ff6600;
+}
+
+#quicklinks #addicted_results ul li a:hover {
+	/*:Navigation color*/
+	background-color:#ff6600;
+}
+
+a {
+	/*:Navigation color*/
+	color:#ff6600;
+}
+
+.sidebar h2 {
+	/*:Navigation color*/
+	border-left-color:#ff6600;
+	/*:Navigation color*/
+	color:#ff6600;
+}
+
+.sidebar h2 a {
+	/*:Navigation color*/
+	color:#ff6600;
+}
+
+#calendar #today {
+	/*:Navigation color*/
+	background-color:#ff6600;
+}
+
+#menu ul li li a:hover, #menu ul li li.current_page_item a {
+	/*:Navigation color*/
+	color:#ff6600;
+}
+
+#menu ul li li.current_page_item a:hover {
+	/*:Navigation color*/
+	color:#ff6600;
+}
+
+#menu ul li.current_page_ancestor:hover a, #menu ul li.current_page_ancestor a, #menu ul li.current_page_parent a, #menu ul li.current_page_item a {
+	/*:Navigation color*/
+	background-color:#ff6600;
+}
+
+.sidebar li.current_page_item a, .sidebar li.current-cat a, #frame .sidebar li a:hover {
+	/*:Navigation color*/
+	background-color:#ff6600;
+}
+
+.sidebar li a:hover {
+	/*:Navigation color*/
+	background-color:#ff6600;
+}
+
+code {
+	/*:Content color*/
+	background-color:#4d9301;
+	/*:Content color*/
+	border-color:#4d9301;
+}
+
+.bypostauthor div {
+	/*:Content color*/
+	background-color:#4d9301;
+	/*:Content color*/
+	border-color:#4d9301;
+}
+
+.bypostauthor cite {
+	/*:Content color*/
+	color:#4d9301;
+}
+
+h2, h2 a, h3, h3 a, .post blockquote, .post blockquote a, .author, .author a, .date, .com--ment.com--ment_author .author, .com--ment.com--ment_author .author a, .com--ment.com--ment_author .date, .com--ment.com--ment_author h4 {
+	/*:Content color*/
+	color:#4d9301;
+}
+
+.post blockquote {
+	/*:Content color*/
+	border-left-color:#4d9301;
+}

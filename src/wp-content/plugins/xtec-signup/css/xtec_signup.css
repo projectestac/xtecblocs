@@ -1,0 +1,43 @@
+div.login {
+	margin: 0;
+	padding-top: 1em;
+	padding-left: 2em;
+	padding-right: 1em;
+}
+	
+div.login h3  {
+	margin: 0;
+	padding: 0;
+	border-bottom:1px solid #D5D5D5;
+	color:#1C4387;
+	font-size: 1.5em;
+}
+
+div.login ol li {
+	list-style: none;
+}
+
+body {
+    background: #fff;
+    color: #3e3e3e; 
+    font-size: medium;
+    font-family: Arial,Helvetica,sans-serif;
+}
+        
+#expander {
+    background: white;
+}
+
+.loginForm {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1em;
+    background-color: #EFF6FC;
+    border-top: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+    padding: 0 1.5em 0 1.5em;
+}
+
+.username {
+    color: #FF6000;
+}

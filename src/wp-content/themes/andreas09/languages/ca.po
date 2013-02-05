@@ -1,0 +1,566 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP-Andreas09\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2011-10-03 10:03+0100\n"
+"Last-Translator: Francesc Bassas i Bullich\n"
+"Language-Team: Ainslie Johnson <webmaster@webgazette.co.uk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED KINGDOM\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 2-col-archives.php:14
+#: archives.php:15
+msgid "Archives by Month:"
+msgstr "Arxius per mes:"
+
+#: 2-col-archives.php:18
+#: archives.php:19
+msgid "Archives by Category:"
+msgstr "Arxius per categoria:"
+
+#: 2-col-archives.php:24
+#: 2-col-links.php:22
+#: 2-col-page.php:27
+#: archives.php:25
+#: attachment.php:51
+#: links.php:26
+#: page.php:20
+#: single.php:42
+msgid "Edit this entry."
+msgstr "Edita aquesta entrada"
+
+#: 2-col-page.php:18
+#: page.php:11
+msgid "Read the rest of this page &raquo;"
+msgstr "Llegeix la resta d'aquesta pàgina &raquo;"
+
+#: 2-col-page.php:21
+#: attachment.php:22
+#: page.php:14
+msgid "Pages"
+msgstr "Pàgines"
+
+#: 404.php:7
+msgid "Error 404 - Not Found"
+msgstr "Error 404 - No s'ha trobat"
+
+#: alt-right-sidebar.php:8
+#: sidebar.php:10
+msgid "Categories"
+msgstr "Categories"
+
+#: alt-right-sidebar.php:14
+#: sidebar.php:16
+msgid "Archives"
+msgstr "Arxius"
+
+#: alt-right-sidebar.php:20
+#: functions.php:23
+#: sidebar.php:22
+msgid "Subscribe"
+msgstr "Subscripció"
+
+#: alt-right-sidebar.php:22
+#: functions.php:25
+#: sidebar.php:24
+msgid "Entries (RSS)"
+msgstr "Entrades (RSS)"
+
+#: alt-right-sidebar.php:23
+#: functions.php:26
+#: sidebar.php:25
+msgid "Comments (RSS)"
+msgstr "Comentaris (RSS)"
+
+#: alt-right-sidebar.php:27
+#: functions.php:37
+#: functions.php:47
+#: sidebar.php:29
+msgid "Meta"
+msgstr "Meta"
+
+#: archive.php:9
+msgid "Archive for the"
+msgstr "Arxiu pel"
+
+#: archive.php:9
+msgid "Category"
+msgstr "Categoria"
+
+#: archive.php:12
+#: archive.php:14
+#: archive.php:16
+msgid "Archive for"
+msgstr "Arxiu de"
+
+#: archive.php:18
+#: search.php:8
+#: search.php:35
+msgid "Search Results"
+msgstr "Resultats de cerca"
+
+#: archive.php:20
+msgid "Author Archive"
+msgstr "Arxiu d'autor"
+
+#: archive.php:22
+msgid "Blog Archives"
+msgstr "Arxius del bloc"
+
+#: archive.php:26
+#: archive.php:46
+#: index.php:21
+#: search.php:11
+#: search.php:29
+msgid "&laquo; Previous Entries"
+msgstr "&laquo; Entrades anteriors"
+
+#: archive.php:27
+#: archive.php:47
+#: index.php:22
+#: search.php:12
+#: search.php:30
+msgid "Next Entries &raquo;"
+msgstr "Entrades següents &raquo;"
+
+#: archive.php:32
+#: index.php:10
+#: search.php:19
+#: single.php:12
+msgid "Permanent Link to"
+msgstr "Enllaç permanent a"
+
+#: archive.php:34
+#: index.php:11
+#: single.php:14
+msgid "Posted by"
+msgstr "Publicat per"
+
+#: archive.php:34
+#: index.php:11
+#: single.php:14
+msgid "on"
+msgstr "el"
+
+#: archive.php:34
+msgid "jS F Y"
+msgstr "j \\d\\e\\/\\d\\' F \\d\\e Y"
+
+#: archive.php:37
+#: attachment.php:20
+#: index.php:13
+#: single.php:17
+msgid "Read the rest of this entry &raquo;"
+msgstr "Llegeix la resta d'aquest article &raquo;"
+
+#: archive.php:40
+#: index.php:16
+#: search.php:23
+msgid "Posted in"
+msgstr "Publicat a"
+
+#: archive.php:40
+#: index.php:16
+#: search.php:23
+msgid "Edit"
+msgstr "Edita"
+
+#: archive.php:40
+#: index.php:16
+#: search.php:23
+msgid "No Comments &#187;"
+msgstr "Sense comentaris"
+
+#: archive.php:40
+#: index.php:16
+#: search.php:23
+msgid "1 Comment &#187;"
+msgstr "1 comentari &#187;"
+
+#: archive.php:40
+#: index.php:16
+#: search.php:23
+msgid "% Comments &#187;"
+msgstr "% comentaris &#187;"
+
+#: archive.php:52
+#: index.php:27
+#: search.php:36
+msgid "Not Found"
+msgstr "No s'ha trobat"
+
+#: archive.php:53
+#: index.php:28
+#: search.php:37
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr "Esteu buscant alguna cosa que no està aquí."
+
+#: archive.php:54
+#: index.php:29
+msgid "Perhaps you would like to try a search or select from one of the links on the menu."
+msgstr "Potser voldríeu provar una cerca o seleccionar un dels enllaços del menú."
+
+#: attachment.php:16
+msgid "Permanent Link:"
+msgstr "Enllaç permanent:"
+
+#: attachment.php:26
+#: single.php:22
+msgid "This entry was posted on"
+msgstr "Aquest article es va publicar el"
+
+#: attachment.php:31
+#: search.php:20
+#: single.php:22
+msgid "l, F jS, Y"
+msgstr "l, j \\d\\e\\/\\d\\' F \\d\\e Y"
+
+#: attachment.php:31
+#: comments.php:36
+#: single.php:22
+msgid "at"
+msgstr "a les"
+
+#: attachment.php:32
+#: single.php:23
+msgid "and is filed under"
+msgstr "i s'ha arxivat com a"
+
+#: attachment.php:33
+#: single.php:24
+msgid "You can follow any responses to this entry through the"
+msgstr "Podeu seguir qualsevol resposta a aquest article a través de"
+
+#: attachment.php:33
+#: single.php:24
+msgid "feed"
+msgstr "canal"
+
+#: attachment.php:37
+#: single.php:28
+msgid "You can"
+msgstr "Podeu"
+
+#: attachment.php:37
+#: single.php:28
+msgid "leave a response"
+msgstr "deixar una respota"
+
+#: attachment.php:37
+#: single.php:28
+msgid "or"
+msgstr "o"
+
+#: attachment.php:37
+#: attachment.php:41
+#: single.php:28
+#: single.php:32
+msgid "trackback"
+msgstr "afegir un retroenllaç"
+
+#: attachment.php:37
+#: attachment.php:41
+#: single.php:28
+#: single.php:32
+msgid "from your own site"
+msgstr "des del vostre lloc web"
+
+#: attachment.php:41
+#: single.php:32
+msgid "Responses are currently closed, but you can"
+msgstr "Les respostes estan deshabilitades, però podeu"
+
+#: attachment.php:45
+#: single.php:36
+msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+msgstr "Podeu anar al final i deixar una resposta. Fer pings no està permès."
+
+#: attachment.php:49
+#: single.php:40
+msgid "Both comments and pings are currently closed."
+msgstr "Ambdós, comentaris i pings estan tancats."
+
+#: attachment.php:61
+msgid "Sorry, no attachments matched your criteria."
+msgstr "No s'han trobat adjunts que responguin al vostre criteri."
+
+#: comments.php:9
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Aquest article està protegit per contrasenya. Inseriu la contrasenya per veure els comentaris."
+
+#: comments.php:23
+msgid "No Responses"
+msgstr "Cap resposta"
+
+#: comments.php:23
+msgid "One Response"
+msgstr "Una resposta"
+
+#: comments.php:23
+msgid "% Responses"
+msgstr "% Respostes"
+
+#: comments.php:23
+msgid "to"
+msgstr "a"
+
+#: comments.php:30
+msgid "Says"
+msgstr "Diu"
+
+#: comments.php:32
+msgid "Your comment is awaiting moderation."
+msgstr "El vostre comentari està en espera de moderació."
+
+#: comments.php:36
+#: index.php:11
+#: single.php:14
+msgid "F jS, Y"
+msgstr "j \\d\\e\\/\\d\\' F \\d\\e Y"
+
+#: comments.php:58
+msgid "Comments are closed."
+msgstr "Els comentaris estan tancats."
+
+#: comments.php:66
+msgid "Leave a Reply"
+msgstr "Deixa una resposta"
+
+#: comments.php:69
+msgid "You must be"
+msgstr "Heu"
+
+#: comments.php:69
+msgid "logged in"
+msgstr "d'identificar-vos"
+
+#: comments.php:69
+msgid "to post a comment."
+msgstr "per publicar un comentari."
+
+#: comments.php:76
+msgid "Logged in as"
+msgstr "Identificat com"
+
+#: comments.php:76
+msgid "Logout &raquo;"
+msgstr "Surt &raquo;"
+
+#: comments.php:81
+msgid "Name"
+msgstr "Nom"
+
+#: comments.php:81
+#: comments.php:84
+msgid "(required)"
+msgstr "(necessari)"
+
+#: comments.php:84
+msgid "Mail (will not be published)"
+msgstr "Correu electrònic (no serà publicat)"
+
+#: comments.php:87
+msgid "Website"
+msgstr "Lloc web"
+
+#: comments.php:91
+msgid "You can use these tags"
+msgstr "Podeu utilitzar aquestes etiquetes"
+
+#: comments.php:95
+msgid "Submit Comment"
+msgstr "Envia el comentari"
+
+#: footer.php:7
+msgid "is powered by"
+msgstr "ha estat creat per"
+
+#: footer.php:8
+msgid "Design by"
+msgstr "Dissenyat per"
+
+#: footer.php:9
+msgid "Ported by"
+msgstr "Portat per"
+
+#: footer.php:10
+msgid "<!-- | xyz translation by <a href=\"your url\">your name</a> -->"
+msgstr "<!-- | xyz traducció per <a href=\"la vostra url\">el vostre nom</a> -->"
+
+#: functions.php:18
+#: searchform.php:3
+msgid "Search"
+msgstr "Cerca"
+
+#: functions.php:32
+msgid "RSS Subscribe"
+msgstr "Subscripció RSS"
+
+#: functions.php:52
+#: functions.php:60
+#: right-sidebar.php:8
+msgid "Recent Posts"
+msgstr "Articles recents"
+
+#: functions.php:82
+msgid "Colour Options"
+msgstr "Opcions de color"
+
+#: functions.php:86
+msgid "Settings saved."
+msgstr "Opcions desades."
+
+#: functions.php:87
+msgid "Settings reset."
+msgstr "Restaurar les opcions."
+
+#: functions.php:93
+msgid "was designed by"
+msgstr "va ser dissenyat per"
+
+#: functions.php:93
+msgid "and Ported to WordPress by"
+msgstr "i portat al WordPress per"
+
+#: functions.php:95
+msgid "Available Image Colours:"
+msgstr "Colors d'imatges disponibles:"
+
+#: functions.php:117
+#: functions.php:138
+msgid "Original Blue"
+msgstr "Blau original"
+
+#: functions.php:118
+#: functions.php:139
+msgid "Original Green"
+msgstr "Verd original"
+
+#: functions.php:119
+msgid "Original  Red"
+msgstr "Vermell original"
+
+#: functions.php:120
+#: functions.php:141
+msgid "Original Orange"
+msgstr "Taronja original"
+
+#: functions.php:121
+#: functions.php:142
+msgid "Original Purple"
+msgstr "Porpra original "
+
+#: functions.php:122
+#: functions.php:143
+msgid "Original Black"
+msgstr "Negre original"
+
+#: functions.php:123
+msgid "Blue - Curtesy of"
+msgstr "Blau - Per cortesia de"
+
+#: functions.php:124
+#: functions.php:145
+msgid "Pretty Pink"
+msgstr "Ben rosa"
+
+#: functions.php:125
+#: functions.php:146
+msgid "Striped Blue"
+msgstr "Blau a ratlles"
+
+#: functions.php:126
+#: functions.php:147
+msgid "Striped Green"
+msgstr "Verd a ratlles"
+
+#: functions.php:127
+#: functions.php:148
+msgid "Striped Red"
+msgstr "Vermell a ratlles"
+
+#: functions.php:128
+#: functions.php:149
+msgid "Striped Orange"
+msgstr "Taronja a ratlles"
+
+#: functions.php:129
+#: functions.php:150
+msgid "Striped Purple"
+msgstr "Porpre a ratlles"
+
+#: functions.php:130
+#: functions.php:151
+msgid "Striped Black"
+msgstr "Negre a ratlles"
+
+#: functions.php:132
+msgid "Image Colour Settings"
+msgstr "Opcions de colors d'imatges"
+
+#: functions.php:134
+msgid "Select colour from list:"
+msgstr "Selecciona un color de la llista:"
+
+#: functions.php:140
+msgid "Original Red"
+msgstr "Vermell original"
+
+#: functions.php:144
+msgid "Isecore Blue"
+msgstr "Blau isecore"
+
+#: functions.php:157
+msgid "Save Settings"
+msgstr "Desa les opcions"
+
+#: functions.php:160
+msgid "With credit to"
+msgstr "Amb la col·laboració de"
+
+#: functions.php:160
+msgid "I could not have implemented the <strong>Current Theme Options</strong> without his excellent example in the"
+msgstr "No hagués tingut implementada aquesta <strong>Configuració de l'aparença</strong> sense el seu excelent exemple a"
+
+#: header.php:47
+msgid "Blog Archive"
+msgstr "Arxiu del bloc"
+
+#: header.php:82
+msgid "Home"
+msgstr "Inici"
+
+#: search.php:20
+msgid "Posted on"
+msgstr "Publicat a"
+
+#: search.php:22
+msgid "Read the rest of this post..."
+msgstr "Llegeix la resta d'aquest article..."
+
+#: search.php:38
+msgid "Perhaps you would like to try another search or select from one of the links on the menu."
+msgstr "Potser voldríeu provar una altra cerca o seleccionar un dels enllaços del menú."
+
+#: searchform.php:2
+msgid "Enter search text"
+msgstr "Inseriu el text de cerca"
+
+#: searchform.php:3
+msgid "Submit for search results"
+msgstr "Tramet els resultats de cerca"
+
+#: single.php:20
+msgid "Pages:"
+msgstr "Pàgines"
+
+#: single.php:53
+msgid "Sorry, no posts matched your criteria."
+msgstr "No s'han trobat articles que responguin al vostre criteri."
+

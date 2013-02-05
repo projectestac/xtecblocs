@@ -1,0 +1,2301 @@
+# Translation of Multisite in Catalan
+# This file is distributed under the same license as the Multisite package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2011-06-01 12:20+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Multisite en català\n"
+"POT-Creation-Date: \n"
+"Last-Translator: Francesc Bassas i Bullich\n"
+"Language-Team: \n"
+"X-Poedit-Language: Catalan\n"
+
+#: wp-includes/ms-functions.php:324
+msgid "Error: problem creating site entry."
+msgstr "Error: s'ha produït un problema en crear l'entrada del bloc."
+
+#: wp-includes/ms-functions.php:527
+msgid "Only lowercase letters (a-z) and numbers are allowed."
+msgstr "Solament estan permeses lletres en minúscula de la 'a' a la 'z' i números."
+
+#: wp-includes/ms-functions.php:534
+msgid "Please enter a username"
+msgstr "Entreu un nom d'usuari"
+
+#: wp-includes/ms-functions.php:542
+msgid "That username is not allowed"
+msgstr "Aquest nom d'usuari no està permès"
+
+#: wp-includes/ms-functions.php:545
+msgid "You cannot use that email address to signup. We are having problems with them blocking some of our email. Please use another email provider."
+msgstr "No podeu utilitzar aquest correu electrònic per registrar-vos. Estem tenint problemes amb ell perquè bloca alguns dels nostres correus electrònics. Utilitzeu altre proveïdor de correu."
+
+#: wp-includes/ms-functions.php:548
+msgid "Username must be at least 4 characters"
+msgstr "El nom d'usuari ha de tenir 4 caràcters almenys"
+
+#: wp-activate.php:92
+msgid "Your account is now activated. <a href=\"%1$s\">Login</a> or go back to the <a href=\"%2$s\">homepage</a>."
+msgstr "El vostre compte s'ha activat. <a href=\"%1$s\">Entreu</a> o torneu enrere a la <a href=\"%2$s\">pàgina inicial</a>."
+
+#: wp-activate.php:68
+msgid "Your site at <a href=\"%1$s\">%2$s</a> is active. You may now log in to your site using your chosen username of &#8220;%3$s&#8221;.  Please check your email inbox at %4$s for your password and login instructions.  If you do not receive an email, please check your junk or spam folder.  If you still do not receive an email within an hour, you can <a href=\"%5$s\">reset your password</a>."
+msgstr "El bloc <a href=\"%1$s\">%2$s</a> s'ha activat. Podeu entrar al web fent servir el nom d'usuari \"%3$s\".  Reviseu a la safata d'entrada del vostre compte de correu a %4$s la contrasenya i les instruccions per identificar-vos.  Si no rebeu un correu electrònic, reviseu la paperera o la carpeta de correu brossa. Si així i tot no rebeu un correu electrònic en una hora, podeu <a href=\"%5$s\">reiniciar la contrasenya</a>."
+
+#: wp-includes/ms-functions.php:587
+msgid "That username is currently reserved but may be available in a couple of days."
+msgstr "Aquest nom d'usuari està actualment reservat però pot estar disponible en un parell de dies."
+
+#: wp-includes/ms-functions.php:571
+msgid "Sorry, that username already exists!"
+msgstr "Aquest nom d'usuari ja existeix!"
+
+#: wp-includes/ms-functions.php:600
+msgid "That email address has already been used. Please check your inbox for an activation email. It will become available in a couple of days if you do nothing."
+msgstr "Ja s'ha usat aquest adreça electrònica. Si us plau, comproveu si us ha arribat un correu electrònic d'activació a la safata d'entrada. Estarà disponible en un parell de dies si no feu res."
+
+#: wp-includes/ms-functions.php:590
+msgid "username and email used"
+msgstr "nom d'usuari i adreça de correu usades"
+
+#: wp-includes/ms-functions.php:214
+#: wp-includes/ms-functions.php:276
+msgid "That user does not exist."
+msgstr "Aquest usuari no existeix."
+
+#: wp-includes/ms-functions.php:660
+msgid "Site name must be at least 4 characters"
+msgstr "El nom del bloc ha de tenir almenys 4 caràcters"
+
+#: wp-includes/ms-functions.php:566
+msgid "Sorry, that email address is not allowed!"
+msgstr "Aquesta adreça de correu electrònic no està permesa!"
+
+#: wp-activate.php:90
+msgid "Your account is now activated. <a href=\"%1$s\">View your site</a> or <a href=\"%2$s\">Login</a>"
+msgstr "El vostre compte s'ha activat ara. <a href=\"%1$s\">Visiteu el vostre web</a> o <a href=\"%2$s\">inicieu la sessió</a>"
+
+#: wp-activate.php:85
+#: wp-signup.php:129
+msgid "Username:"
+msgstr "Nom d'usuari:"
+
+#: wp-activate.php:73
+msgid "An error occurred during the activation"
+msgstr "S'ha produït un error durant l'activació."
+
+#: wp-includes/ms-functions.php:575
+msgid "Sorry, that email address is already used!"
+msgstr "Aquesta adreça de correu electrònic ja l'estan utilitzant!"
+
+#: wp-includes/ms-functions.php:317
+msgid "Error: Site URL already taken."
+msgstr "Error: la URL del bloc ja està sent utilitzada."
+
+#: wp-includes/ms-functions.php:649
+msgid "Please enter a site name"
+msgstr "Entreu un nom de bloc"
+
+#: wp-includes/ms-functions.php:560
+msgid "Please enter a correct email address"
+msgstr "Introduïu una adreça electrònica correcta"
+
+#: wp-includes/ms-functions.php:557
+msgid "Sorry, usernames must have letters too!"
+msgstr "Els nom d'usuaris han de tenir lletres també!"
+
+#: wp-includes/ms-functions.php:551
+msgid "Sorry, usernames may not contain the character &#8220;_&#8221;!"
+msgstr "Els noms d'usuari no poden contenir el caràcter &#8220;_&#8221;!"
+
+#: wp-includes/ms-functions.php:657
+msgid "That name is not allowed"
+msgstr "Aquest nom no està permès"
+
+#: wp-includes/ms-functions.php:654
+msgid "Only lowercase letters and numbers allowed"
+msgstr "Solament estan permesos lletres i números"
+
+#: wp-activate.php:66
+msgid "Your account has been activated. You may now <a href=\"%1$s\">log in</a> to the site using your chosen username of &#8220;%2$s&#8221;.  Please check your email inbox at %3$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href=\"%4$s\">reset your password</a>."
+msgstr "El vostre compte ha estat activat. Ara podeu <a href=\"%1$s\">iniciar la sessió</a> fent servir el nom d'usuari &#8220;%2$s&#8221; que heu triat. Comproveu la safata d'entrada del compte de correu %3$s per a aconseguir la contrasenya i les instruccions per entrar. Si no rebeu aquest correu electrònic, comproveu la paperera o la carpeta de brossa. Si tot i així, encara no rebeu un correu electrònic en un hora, podeu <a href=\"%4$s\">reinicialitzar la vostra contrasenya</a>."
+
+#: wp-activate.php:62
+#: wp-activate.php:82
+msgid "Your account is now active!"
+msgstr "El vostre compte és actiu ara!"
+
+#: wp-activate.php:46
+msgid "Activation Key:"
+msgstr "Codi d'activació:"
+
+#: wp-activate.php:43
+msgid "Activation Key Required"
+msgstr "Cal un codi d'activació"
+
+#: wp-includes/ms-functions.php:663
+msgid "Sorry, site names may not contain the character &#8220;_&#8221;!"
+msgstr "Els noms dels blocs no poden contenir el caràcter &#8220;_&#8221;!"
+
+#: wp-includes/ms-functions.php:667
+msgid "Sorry, you may not use that site name."
+msgstr "Ho sentim, no podeu fer servir aquest nom de bloc."
+
+#: wp-includes/ms-functions.php:673
+msgid "Sorry, site names must have letters too!"
+msgstr "Els noms de bloc han de tenir lletres també!"
+
+#: wp-includes/ms-functions.php:680
+msgid "Please enter a site title"
+msgstr "Entreu el títol del bloc"
+
+#: wp-includes/ms-functions.php:691
+msgid "Sorry, that site already exists!"
+msgstr "Ho sentim, aquest bloc ja existeix!"
+
+#: wp-includes/ms-functions.php:695
+msgid "Sorry, that site is reserved!"
+msgstr "Ho sentim, aquest bloc està reservat!"
+
+#: wp-includes/ms-functions.php:706
+msgid "That site is currently reserved but may be available in a couple days."
+msgstr "Aquest bloc està actualment reservat però pot estar disponible en un parell de dies."
+
+#: wp-includes/ms-functions.php:829
+msgid ""
+"To activate your blog, please click the following link:\n"
+"\n"
+"%s\n"
+"\n"
+"After you activate, you will receive *another email* with your login.\n"
+"\n"
+"After you activate, you can visit your site here:\n"
+"\n"
+"%s"
+msgstr ""
+"Per activar el bloc, feu clic en el següent enllaç:\n"
+"\n"
+"%s\n"
+"\n"
+"Una vegada l'activeu, rebreu *altre correu electrònic* amb les dades d'entrada.\n"
+"\n"
+"Una vegada l'activeu, podeu visitar el vostre bloc aquí:\n"
+"\n"
+"%s"
+
+#: wp-includes/ms-functions.php:839
+#: wp-includes/ms-functions.php:891
+msgid "[%1$s] Activate %2$s"
+msgstr "[%1$s] Activa %2$s"
+
+#: wp-includes/ms-functions.php:882
+msgid ""
+"To activate your user, please click the following link:\n"
+"\n"
+"%s\n"
+"\n"
+"After you activate, you will receive *another email* with your login.\n"
+"\n"
+msgstr ""
+"Per a activar el vostre usuari, feu clic en el següent enllaç:\n"
+"\n"
+"%s\n"
+"\n"
+"Després de l'activació, rebreu *altre correu electrònic* amb les vostres dades d'entrada.\n"
+"\n"
+
+#: wp-includes/ms-functions.php:927
+msgid "Invalid activation key."
+msgstr "Codi d'activació no vàlid."
+
+#: wp-includes/ms-functions.php:931
+msgid "The user is already active."
+msgstr "L'usuari ja està actiu."
+
+#: wp-includes/ms-functions.php:933
+msgid "The site is already active."
+msgstr "El bloc ja és actiu."
+
+#: wp-includes/ms-functions.php:949
+msgid "Could not create user"
+msgstr "No s'ha pogut crear l'usuari"
+
+#: wp-includes/ms-functions.php:957
+msgid "That username is already activated."
+msgstr "Aquest nom d'usuari ja està actiu."
+
+#: wp-includes/ms-functions.php:1058
+msgid "Site already exists."
+msgstr "El bloc ja existeix."
+
+#: wp-includes/ms-functions.php:1064
+msgid "Could not create site."
+msgstr "No s'ha pogut crear el bloc."
+
+#: wp-includes/ms-functions.php:1117
+msgid ""
+"New Site: %1s\n"
+"URL: %2s\n"
+"Remote IP: %3s\n"
+"\n"
+"Disable these notifications: %4s"
+msgstr ""
+"Nou bloc: %1s\n"
+"URL: %2s\n"
+"IP remota: %3s\n"
+"\n"
+"Desactiva aquestes notificacions: %4s"
+
+#: wp-includes/ms-functions.php:1124
+msgid "New Site Registration: %s"
+msgstr "Registre de nou bloc: %s"
+
+#: wp-includes/ms-functions.php:1151
+msgid ""
+"New User: %1s\n"
+"Remote IP: %2s\n"
+"\n"
+"Disable these notifications: %3s"
+msgstr ""
+"Nou usuari: %1s\n"
+"IP remota: %2s\n"
+"\n"
+"Desactiva aquestes notificacions: %3s"
+
+#: wp-includes/ms-functions.php:1157
+msgid "New User Registration: %s"
+msgstr "Registre d'un nou usuari: %s"
+
+#: wp-includes/ms-functions.php:1230
+msgid "<h1>Already Installed</h1><p>You appear to have already installed WordPress. To reinstall please clear your old database tables first.</p>"
+msgstr "<h1>Ja instal·lat</h1><p> Sembla que el WordPress ja està instal·lat. Si voleu tornar-lo a instal·lar, elimineu les taules de la base de dades primer.</p>"
+
+#: wp-includes/ms-functions.php:1345
+msgid "New %1$s Site: %2$s"
+msgstr "Nou bloc %1$s: %2$s"
+
+#: wp-includes/ms-functions.php:1393
+msgid "New %1$s User: %2$s"
+msgstr "Nou %1$s usuari: %2$s"
+
+#: wp-includes/ms-functions.php:1574
+msgid "Sorry, you have used your space allocation. Please delete some files to upload more files."
+msgstr "Heu consumit l'espai que teníeu assignat. Esborreu alguns fitxers per a penjar-ne més."
+
+#: wp-includes/ms-functions.php:1753
+msgid "This file is too big. Files must be less than %d KB in size."
+msgstr "El fitxer és massa gran. Els fitxers han de ser de menys de %d Kb de grandària."
+
+#: wp-includes/ms-functions.php:1784
+msgid "Please try again!"
+msgstr "Torneu-ho a provar altra vegada!"
+
+#: wp-includes/ms-functions.php:1829
+msgid "An error occurred adding you to this site. Back to the <a href=\"%s\">homepage</a>."
+msgstr "S'ha produït un error afegint-vos a aquest bloc. Torneu a la <a href=\"%s\">pàgina d'inici</a>."
+
+#: wp-includes/ms-functions.php:1831
+msgid "You have been added to this site. Please visit the <a href=\"%s\">homepage</a> or <a href=\"%s\">login</a> using your username and password."
+msgstr "Heu estat afegits a aquest bloc. Visiteu la <a href=\"%s\">pàgina inicial</a> o <a href=\"%s\">entreu</a> fent servir l'usuari i contrasenya."
+
+#: wp-includes/ms-functions.php:1831
+msgid "Success"
+msgstr "Èxit"
+
+#: wp-includes/ms-functions.php:1991
+msgid ""
+"Dear User,\n"
+"\n"
+"Your new account is set up.\n"
+"\n"
+"You can log in with the following information:\n"
+"Username: USERNAME\n"
+"Password: PASSWORD\n"
+"LOGINLINK\n"
+"\n"
+"Thanks!\n"
+"\n"
+"--The Team @ SITE_NAME"
+msgstr ""
+"Blocaire,\n"
+"\n"
+"El vostre compre està configurat.\n"
+"\n"
+"Podeu iniciar una sessió amb la següent informació:\n"
+"Usuari: USERNAME\n"
+"Contrasenya: PASSWORD\n"
+"LOGINLINK\n"
+"\n"
+"Gràcies!\n"
+"\n"
+"--L'equip @ SITE_NAME"
+
+#: wp-includes/ms-load.php:87
+msgid "This user has elected to delete their account and the content is no longer available."
+msgstr "Aquest usuari ha triat suprimir el seu compte i el contingut no està ja disponible."
+
+#: wp-includes/ms-load.php:94
+msgid "This site has not been activated yet. If you are having problems activating your site, please contact <a href=\"mailto:%1$s\">%1$s</a>."
+msgstr "Aquest bloc no s'ha activat encara. Si esteu tenint problemes per activar el vostre web, contacteu amb <a href=\"mailto:%1$s\">%1$s</a>."
+
+#: wp-includes/ms-load.php:101
+msgid "This site has been archived or suspended."
+msgstr "Aquest bloc ha estat arxivat o suspès."
+
+#: wp-includes/ms-default-constants.php:113
+msgid "The constant <code>VHOST</code> <strong>is deprecated</strong>. Use the boolean constant <code>SUBDOMAIN_INSTALL</code> in wp-config.php to enable a subdomain configuration. Use is_subdomain_install() to check whether a subdomain configuration is enabled."
+msgstr "La constant <code>VHOST</code> <strong>està defasada</strong>. Feu servir la constan booleana <code>SUBDOMAIN_INSTALL</code> al fitxer wp-config.php per activar la configuració de subdominis. Utilitzeu is_subdomain_install() per comprovar si la configuració del subdomini està activada."
+
+#: wp-includes/ms-default-constants.php:115
+msgid "<strong>Conflicting values for the constants VHOST and SUBDOMAIN_INSTALL.</strong> The value of SUBDOMAIN_INSTALL will be assumed to be your subdomain configuration setting."
+msgstr "<strong>Valors en conflicte per a les constants VHOST and SUBDOMAIN_INSTALL.</strong> El valor de SUBDOMAIN_INSTALL s'assumirà que és el del paràmetre de configuració del subdomini."
+
+#: wp-admin/my-sites.php:13
+#: wp-admin/ms-delete-site.php:13
+#: wp-admin/network/user-new.php:14
+#: wp-admin/network/index.php:17
+#: wp-admin/network/themes.php:14
+#: wp-admin/network/plugin-editor.php:14
+#: wp-admin/network/plugin-install.php:17
+#: wp-admin/network/site-users.php:14
+#: wp-admin/network/theme-editor.php:14
+#: wp-admin/network/setup.php:14
+#: wp-admin/network/site-settings.php:14
+#: wp-admin/network/site-new.php:14
+#: wp-admin/network/edit.php:14
+#: wp-admin/network/theme-install.php:17
+#: wp-admin/network/users.php:14
+#: wp-admin/network/upgrade.php:14
+#: wp-admin/network/update-core.php:14
+#: wp-admin/network/sites.php:14
+#: wp-admin/network/settings.php:14
+#: wp-admin/network/user-edit.php:14
+#: wp-admin/network/site-info.php:14
+#: wp-admin/network/plugins.php:14
+#: wp-admin/network/profile.php:14
+#: wp-admin/network/update.php:17
+#: wp-admin/network/site-themes.php:14
+#: wp-admin/network/admin.php:16
+msgid "Multisite support is not enabled."
+msgstr "El suport multiweb no està habilitat"
+
+#: wp-admin/my-sites.php:16
+msgid "You do not have sufficient permissions to view this page."
+msgstr "No teniu els permisos necessaris per a visualitzar aquesta pàgina."
+
+#: wp-admin/my-sites.php:23
+msgid "You must be a member of at least one site to use this page."
+msgstr "Heu de ser un membre d'almenys un bloc per a usar aquesta pàgina."
+
+#: wp-admin/my-sites.php:34
+msgid "The primary site you chose does not exist."
+msgstr "El bloc principal que heu triat, no existeix."
+
+#: wp-admin/my-sites.php:42
+msgid "This screen shows an individual user all of their sites in this network, and also allows that user to set a primary site. He or she can use the links under each site to visit either the frontend or the dashboard for that site."
+msgstr "Aquesta pantalla li mostra a un usuari individual tots els seus blocs en aquesta xarxa, i també permet a aquest usuari establir un bloc principal. Ell o ella pot usar els enllaços a sota de cada bloc ja sigui per visitar la pantalla principal o per visitar el tauler d'aquest bloc."
+
+#: wp-admin/my-sites.php:43
+msgid "Up until WordPress version 3.0, what is now called a Multi-site Network had to be installed separately as WordPress MU (multi-user)."
+msgstr "Fins a la versió 3.0 del WordPress, el que ara s'anomena Xarxa de Blocs s'havia d'instal·lar per separat com a WordPress MU (multi-usuari)."
+
+#: wp-admin/my-sites.php:45
+msgid "<a href=\"http://codex.wordpress.org/Dashboard_My_Sites_SubPanel\" target=\"_blank\">Documentation on My Sites</a>"
+msgstr "<a href=\"http://codex.wordpress.org/Dashboard_My_Sites_SubPanel\" target=\"_blank\">Documentació sobre els meus blocs</a> (en anglès)"
+
+#: wp-admin/my-sites.php:68
+msgid "Global Settings"
+msgstr "Paràmetres globals"
+
+#: wp-admin/my-sites.php:95
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:266
+msgid "Visit"
+msgstr "Visita"
+
+#: wp-admin/network.php:27
+msgid "The Network creation panel is not for WordPress MU networks."
+msgstr "El panell de creació de la xarxa no és per a xarxes del WordPress MU."
+
+#: wp-admin/network.php:96
+msgid "You must define the <code>WP_ALLOW_MULTISITE</code> constant as true in your wp-config.php file to allow creation of a Network."
+msgstr "Heu de definir la constant <code>WP_ALLOW_MULTISITE</code> com a vertadera en el fitxer wp-config.php per a permetre la creació d'una xarxa."
+
+#: wp-admin/network.php:99
+#: wp-admin/network/menu.php:45
+msgid "Network Setup"
+msgstr "Configuració de la xarxa"
+
+#: wp-admin/network.php:102
+msgid "Create a Network of WordPress Sites"
+msgstr "Creeu una xarxa de blocs del WordPress"
+
+#: wp-admin/network.php:107
+msgid "This screen allows you to configure a network as having subdomains (<code>site1.example.com</code>) or subdirectories (<code>example.com/site1</code>). Subdomains require wildcard subdomains to be enabled in Apache and DNS records, if your host allows it."
+msgstr "Aquesta pantalla us permet configurar una xarxa per a tenir subdominis (<code>bloc1.exemple.com</code>) o subdirectoris (<code>exemple.com/bloc1</code>). Els subdominis necessiten l'activació de patrons de subdominis en l'Apache i en els registres DNS, si el vostre servidor ho permet."
+
+#: wp-admin/network.php:108
+msgid "Choose subdomains or subdirectories; this can only be switched afterwards by reconfiguring your install. Fill out the network details, and click install. If this does not work, you may have to add a wildcard DNS record (for subdomains) or change to another setting in Permalinks (for subdirectories)."
+msgstr "Trieu subdominis o subdirectoris; això solament pot canviar-se després reconfigurant la instal·lació. Empleneu els detalls de la xarxa, i feu clic en Instal·la. Si això no funciona, podeu afegir un registre DNS patró (per als subdominis) o canviar altra configuració als enllaços permanents (per als subdirectoris)."
+
+#: wp-admin/network.php:109
+msgid "The next screen for Network will give you individually-generated lines of code to add to your wp-config.php and .htaccess files. Make sure the settings of your FTP client make files starting with a dot visible, so that you can find .htaccess; you may have to create this file if it really is not there. Make backup copies of those two files."
+msgstr "La següent pantalla de la xarxa us donarà les línies de codi a afegir als fitxers wp-config.php i .htaccess. Assegureu-vos que la configuració del vostre client FTP fa visibles els fitxers que comencen amb un punt, per a què pugueu trobar el fitxer .htaccess; potser haureu de crear aquest fitxer si realment no existeix. Feu còpies de seguretat d'aquestos dos fitxers."
+
+#: wp-admin/network.php:110
+msgid "Add a <code>blogs.dir</code> directory under <code>/wp-content</code> and add the designated lines of code to wp-config.php (just before <code>/*...stop editing...*/</code>) and <code>.htaccess</code> (replacing the existing WordPress rules)."
+msgstr "Afegiu el directori <code>blogs.dir</code> dins de la carpeta <code>/wp-content</code> i afegiu les línies de codi designades al fitxer wp-config.php (tot just abans de la línia <code>/*...deixeu d'editar...*/</code>) i <code>.htaccess</code> (reemplaçant les regles del WordPress existents)."
+
+#: wp-admin/network.php:111
+msgid "The choice of subdirectory sites is disabled if this setup is more than a month old because of permalink problems with &#8220;/blog/&#8221; from the main site. This disabling will be addressed soon in a future version."
+msgstr "L'elecció de blocs de subdirectoris està desactivada si aquesta instal·lació és més d'un més antiga a causa de problemes amb els enllaços permanents amb &#8220;/bloc/&#8221; del bloc principal. Aquesta desactivació s'abordarà aviat en una versió futura."
+
+#: wp-admin/network.php:113
+msgid "<a href=\"http://codex.wordpress.org/Create_A_Network\" target=\"_blank\">Documentation on Creating a Network</a>"
+msgstr "<a href=\"http://codex.wordpress.org/Create_A_Network\" target=\"_blank\">Documentació sobre la creació de la xarxa</a> (en anglès)"
+
+#: wp-admin/network.php:114
+msgid "<a href=\"http://codex.wordpress.org/Tools_Network_SubPanel\" target=\"_blank\">Documentation on the Network Screen</a>"
+msgstr "<a href=\"http://codex.wordpress.org/Tools_Network_SubPanel\" target=\"_blank\">Documentació sobre la pantalla de la xarxa</a> (en anglès)"
+
+#: wp-admin/network.php:137
+#: wp-admin/network.php:144
+#: wp-admin/network.php:161
+msgid "Error:"
+msgstr "Error:"
+
+#: wp-admin/network.php:137
+msgid "Your <strong>WordPress address</strong> must match your <strong>Site address</strong> before creating a Network. See <a href=\"%s\">General Settings</a>."
+msgstr "L'adreça del vostre WordPress ha de coincidir amb <strong>l'adreça del vostre bloc</strong> abans de crear la xarxa. Mireu <a href=\"%s\">els paràmetres generals</a>."
+
+#: wp-admin/network.php:144
+msgid "The constant DO_NOT_UPGRADE_GLOBAL_TABLES cannot be defined when creating a network."
+msgstr "La constant DO_NOT_UPGRADE_GLOBAL_TABLES no es pot definir a l'hora de crear una xarxa."
+
+#: wp-admin/network.php:152
+#: wp-admin/network.php:330
+#: wp-admin/network.php:355
+msgid "Warning:"
+msgstr "Avís:"
+
+#: wp-admin/network.php:152
+msgid "Please <a href=\"%s\">deactivate your plugins</a> before enabling the Network feature."
+msgstr "Si us plau <a href=\"%s\">desactiveu les extensions</a> abans d'activar la funció de xarxa."
+
+#: wp-admin/network.php:152
+msgid "Once the network is created, you may reactivate your plugins."
+msgstr "Un cop creada la xarxa, podeu de reactivar les vostres extensions."
+
+#: wp-admin/network.php:161
+msgid "You cannot install a network of sites with your server address."
+msgstr "No podeu instal·ñar una xarxa de webs amb l'adreça del vostre servidor."
+
+#: wp-admin/network.php:162
+msgid "You cannot use port numbers such as <code>%s</code>."
+msgstr "No podeu fer servir els números de port com ara els <code>%s</code>."
+
+#: wp-admin/network.php:163
+msgid "Return to Dashboard"
+msgstr "Toneu al Tauler"
+
+#: wp-admin/network.php:175
+msgid "ERROR: The network could not be created."
+msgstr "ERROR: La xarxa no es pot crear."
+
+#: wp-admin/network.php:183
+#: wp-admin/network.php:203
+#: wp-admin/network.php:251
+#: wp-admin/network.php:261
+msgid "Warning!"
+msgstr "Avís!"
+
+#: wp-admin/network.php:183
+#: wp-admin/network.php:355
+msgid "Networks may not be fully compatible with custom wp-content directories."
+msgstr "Les xarxes poden no ser del tot compatibles amb directoris personalitzats del wp-content."
+
+#: wp-admin/network.php:185
+msgctxt "Default network name"
+msgid "%s Sites"
+msgstr "%s Blocs"
+
+#: wp-admin/network.php:188
+msgid "Welcome to the Network installation process!"
+msgstr "Benvingut i benvinguda al procés d'instal·lació de la xarxa!"
+
+#: wp-admin/network.php:189
+msgid "Fill in the information below and you&#8217;ll be on your way to creating a network of WordPress sites. We will create configuration files in the next step."
+msgstr "Empleneu la informació d'aquí sota i així estareu apunt per a crear una xarxa de blocs gestionats pel WordPress. Crearem els fitxers de configuració en el proper pas."
+
+#: wp-admin/network.php:201
+msgid "Note:"
+msgstr "Nota:"
+
+#: wp-admin/network.php:201
+msgid "Please make sure the Apache <code>mod_rewrite</code> module is installed as it will be used at the end of this installation."
+msgstr "Assegureu-vos que el mòdul <code>mod_rewrite</code> de l'Apache està instal·lat ja que es farà servir al final de la instal·lació."
+
+#: wp-admin/network.php:203
+msgid "It looks like the Apache <code>mod_rewrite</code> module is not installed."
+msgstr "Sembla que el mòdul <code>mod_rewrite</code> de l'Apache no està instal·lat."
+
+#: wp-admin/network.php:205
+msgid "If <code>mod_rewrite</code> is disabled, ask your administrator to enable that module, or look at the <a href=\"http://httpd.apache.org/docs/mod/mod_rewrite.html\">Apache documentation</a> or <a href=\"http://www.google.com/search?q=apache+mod_rewrite\">elsewhere</a> for help setting it up."
+msgstr "Si està desactivat el <code>mod_rewrite</code>, demaneu a l'administrador que activi aquest mòdul, o mireu la <a href=\"http://httpd.apache.org/docs/mod/mod_rewrite.html\">documentació de l'Apache</a> o <a href=\"http://www.google.com/search?q=apache+mod_rewrite\">en qualsevol altre bloc</a> que us ajudi a configurar-ho."
+
+#: wp-admin/network.php:209
+msgid "Addresses of Sites in your Network"
+msgstr "Adreces dels webs a la vostra xarxa"
+
+#: wp-admin/network.php:210
+msgid "Please choose whether you would like sites in your WordPress network to use sub-domains or sub-directories. <strong>You cannot change this later.</strong>"
+msgstr "Si us plau, trieu si us agradaria que els blocs web a la vostra xarxa del WordPress fessin servir subdominis o subdirectoris. <strong>No podreu canviar això més tard.</strong>"
+
+#: wp-admin/network.php:211
+msgid "You will need a wildcard DNS record if you are going to use the virtual host (sub-domain) functionality."
+msgstr "Necessiteu un registre DNS si aneu a fer servir la funcionalitat d'amfitrió virtual (subdominis)."
+
+#: wp-admin/network.php:215
+msgid "Sub-domains"
+msgstr "Subdominis"
+
+#: wp-admin/network.php:216
+msgctxt "subdomain examples"
+msgid "like <code>site1.%1$s</code> and <code>site2.%1$s</code>"
+msgstr "com ara <code>bloc1.%1$s</code> i <code>bloc2.%1$s</code>"
+
+#: wp-admin/network.php:219
+msgid "Sub-directories"
+msgstr "Subdirectoris"
+
+#: wp-admin/network.php:220
+msgctxt "subdirectory examples"
+msgid "like <code>%1$s/site1</code> and <code>%1$s/site2</code>"
+msgstr "com ara <code>%1$s/bloc1</code> i <code>%1$s/bloc2</code>"
+
+#: wp-admin/network.php:230
+#: wp-admin/network.php:234
+#: wp-admin/network.php:274
+msgid "Server Address"
+msgstr "Adreça del servidor"
+
+#: wp-admin/network.php:231
+msgid "We recommend you change your siteurl to <code>%1$s</code> before enabling the network feature. It will still be possible to visit your site using the <code>www</code> prefix with an address like <code>%2$s</code> but any links will not have the <code>www</code> prefix."
+msgstr "Recomanem canviar la URL del bloc a <code>%1$s</code> abans d'activar la funció de xarxa. També serà possible visitar el vostre bloc fent servir el prefixe <code>www</code> amb una adreça com ara <code>%2$s</code> però cap dels enllaços tindrà el prefixe <code>www</code>."
+
+#: wp-admin/network.php:236
+#: wp-admin/network.php:276
+msgid "The internet address of your network will be <code>%s</code>."
+msgstr "La adreça d'Internet de la vostra xarxa serà <code>%s</code>."
+
+#: wp-admin/network.php:242
+msgid "Network Details"
+msgstr "Detalls de la xarxa"
+
+#: wp-admin/network.php:246
+#: wp-admin/network.php:256
+msgid "Sub-directory Install"
+msgstr "Instal·lació del subdirectori"
+
+#: wp-admin/network.php:248
+msgid "Because you are using <code>localhost</code>, the sites in your WordPress network must use sub-directories. Consider using <code>localhost.localdomain</code> if you wish to use sub-domains."
+msgstr "Ja que feu servir el <code>localhost</code>, els blocs de la vostra xarxa del WordPress han d'utilitzar subdirectoris. Considereu fer servir <code>localhost.localdomain</code> si voleu utilitzar subdominis."
+
+#: wp-admin/network.php:251
+#: wp-admin/network.php:261
+#: wp-admin/network.php:268
+msgid "The main site in a sub-directory install will need to use a modified permalink structure, potentially breaking existing links."
+msgstr "El bloc principal instal·lat en un subdirectori necessitarà fer servir una estructura d'enllaços permanents, que potencialment trencarà els enllaços existents."
+
+#: wp-admin/network.php:258
+msgid "Because your install is in a directory, the sites in your WordPress network must use sub-directories."
+msgstr "Com la instal·lació és en un directori, els blocs en la vostra xarxa WordPress han d'usar subdirectoris."
+
+#: wp-admin/network.php:266
+msgid "Sub-domain Install"
+msgstr "Instal·la subdomini"
+
+#: wp-admin/network.php:267
+msgid "Because your install is not new, the sites in your WordPress network must use sub-domains."
+msgstr "Com que la instal·lació no és nova, els blocs de la xarxa WordPress han de fer servir subdominis."
+
+#: wp-admin/network.php:281
+msgid "Network Title"
+msgstr "Títol de la xarxa"
+
+#: wp-admin/network.php:284
+msgid "What would you like to call your network?"
+msgstr "Com us agradaria dir-li a la vostra xarxa?"
+
+#: wp-admin/network.php:288
+msgid "Admin E-mail Address"
+msgstr "Adreça electrònica de l'administrador"
+
+#: wp-admin/network.php:291
+msgid "Your email address."
+msgstr "La vostra adreça _electrònica."
+
+#: wp-admin/network.php:325
+msgid "The original configuration steps are shown here for reference."
+msgstr "Els passos de configuració original es mostren aquí per a referència."
+
+#: wp-admin/network.php:330
+msgid "An existing WordPress network was detected."
+msgstr "S'ha detectat una xarxa del WordPress existent."
+
+#: wp-admin/network.php:331
+msgid "Please complete the configuration steps. To create a new network, you will need to empty or remove the network database tables."
+msgstr "Si us plau, completeu els passos de configuració. Per a crear una xarxa, necessitareu buidar o eliminar les taules de la base de dades de la xarxa."
+
+#: wp-admin/network.php:338
+msgid "Enabling the Network"
+msgstr "S'està activant la xarxa"
+
+#: wp-admin/network.php:339
+msgid "Complete the following steps to enable the features for creating a network of sites."
+msgstr "Completeu els passos següents per a activar les funcions per crear una xarxa de blocs."
+
+#: wp-admin/network.php:342
+#: wp-admin/network.php:344
+msgid "<strong>Caution:</strong> We recommend you back up your existing <code>wp-config.php</code> and <code>%s</code> files."
+msgstr "<strong>Precaució:</strong> Recomanem fer una còpia de seguretat del fitxer <code>wp-config.php</code> existent i dels fitxers <code>%s</code>."
+
+#: wp-admin/network.php:346
+msgid "<strong>Caution:</strong> We recommend you back up your existing <code>wp-config.php</code> file."
+msgstr "<strong>Atenció:</strong> Vos recomanem que feu una còpia de seguretat del fitxer <code>wp-config.php</code> actual."
+
+#: wp-admin/network.php:353
+msgid "Create a <code>blogs.dir</code> directory at <code>%s/blogs.dir</code>. This directory is used to store uploaded media for your additional sites and must be writeable by the web server."
+msgstr "Creeu un directori <code>blogs.dir</code> en <code>%s/blogs.dir</code>. Aquest directori s'utilitza per a emmagatzemar els mèdia penjats dels blocs addicionals i ha de tenir permisos d'escriptura pel servidor web."
+
+#: wp-admin/network.php:357
+msgid "Add the following to your <code>wp-config.php</code> file in <code>%s</code> <strong>above</strong> the line reading <code>/* That&#8217;s all, stop editing! Happy blogging. */</code>:"
+msgstr "Afegiu el següent al fitxer <code>wp-config.php</code> en <code>%s</code> tot just <strong>damunt</strong> de la línia <code>/* Això és tot, prou d'editar - que bloguis de gust*/</code>:"
+
+#: wp-admin/network.php:388
+msgid "This unique authentication key is also missing from your <code>wp-config.php</code> file."
+msgid_plural "These unique authentication keys are also missing from your <code>wp-config.php</code> file."
+msgstr[0] "Aquesta clau d'autenticació única també falta al fitxer <code>wp-config.php</code>."
+msgstr[1] "Aquestes claus d'autenticació úniques també falten al fitxer <code>wp-config.php</code>."
+
+#: wp-admin/network.php:388
+msgid "To make your installation more secure, you should also add:"
+msgstr "Per fer la vostra instal·lació més segura, hauríeu d'afegir també:"
+
+#: wp-admin/network.php:473
+msgid "Add the following to your <code>web.config</code> file in <code>%s</code>, replacing other WordPress rules:"
+msgstr "Afegeix el següent al fitxer <code>web.config</code>, ubicat a <code>%s</code>, substituint altres regles del WordPress: "
+
+#: wp-admin/network.php:502
+msgid "Add the following to your <code>.htaccess</code> file in <code>%s</code>, replacing other WordPress rules:"
+msgstr "Afegiu el següent al fitxer <code>.htaccess</code> a <code>%s</code>, reemplaçant altres regles del WordPress:"
+
+#: wp-admin/network.php:510
+msgid "Once you complete these steps, your network is enabled and configured. You will have to log in again."
+msgstr "Una vegada completeu aquests passos, la vostra xarxa estarà activa i configurada. Haureu d'iniciar sessió altra vegada."
+
+#: wp-admin/ms-delete-site.php:17
+msgid "You do not have sufficient permissions to delete this site."
+msgstr "No teniu els permisos suficients per a esborrar aquest bloc."
+
+#: wp-admin/ms-delete-site.php:22
+msgid "Thank you for using %s, your site has been deleted. Happy trails to you until we meet again."
+msgstr "Gràcies per fer servir %s, el web ha estat esborrat. Bon camí per a tu fins que ens trobem de nou."
+
+#: wp-admin/ms-delete-site.php:24
+msgid "I'm sorry, the link you clicked is stale. Please select another option."
+msgstr "Ho sentim, l'enllaç que heu clicat és antiquat. Seleccioneu altra opció."
+
+#: wp-admin/ms-delete-site.php:42
+msgid ""
+"Dear User,\n"
+"You recently clicked the 'Delete Site' link on your site and filled in a\n"
+"form on that page.\n"
+"If you really want to delete your site, click the link below. You will not\n"
+"be asked to confirm again so only click this link if you are absolutely certain:\n"
+"###URL_DELETE###\n"
+"\n"
+"If you delete your site, please consider opening a new site here\n"
+"some time in the future! (But remember your current site and username\n"
+"are gone forever.)\n"
+"\n"
+"Thanks for using the site,\n"
+"Webmaster\n"
+"###SITE_NAME###"
+msgstr ""
+"Blocaire,\n"
+"Fa poc heu clicat l'enllaç 'Esborra el bloc' de la vostra pàgina web i heu emplenat un\n"
+"formulari en aquesta pàgina.\n"
+"Si realment voleu esborrar el vostre web, cliqueu en l'enllaç d'aquí sota. No\n"
+"us preguntarem que confirmeu de nou així que feu clic solament si esteu completament segurs:\n"
+"###URL_DELETE###\n"
+"\n"
+"Si esborreu el web, condireu la possibilitat de crear una nova pàgina web aquí\n"
+"en algun moment en el futur! (Però recordeu que el vostre web actual i el nom d'usuari\n"
+"ja no seran mai més.)\n"
+"\n"
+"Gràcies per fer servir el bloc,\n"
+"l'administrador del web\n"
+"###SITE_NAME###"
+
+#: wp-admin/ms-delete-site.php:60
+msgid "Delete My Site"
+msgstr "Suprimeix el meu bloc"
+
+#: wp-admin/ms-delete-site.php:63
+msgid "Thank you. Please check your email for a link to confirm your action. Your site will not be deleted until this link is clicked. "
+msgstr "Gràcies. Comproveu si hi ha al vostre correu electrònic un enllaç per confirmar l'acció. El vostre web no s'esborrarà fins que feu clic en aquest enllaç."
+
+#: wp-admin/ms-delete-site.php:67
+msgid "If you do not want to use your %s site any more, you can delete it using the form below. When you click <strong>Delete My Site Permanently</strong> you will be sent an email with a link in it. Click on this link to delete your site."
+msgstr "Si no voleu fer servir la vostra pàgina %s més, podeu esborrar-la amb el formulari d'aquí sota. Quan feu clic en <strong>Esborra el meu web permanentment</strong> s'us enviarà un correu electrònic amb un enllaç. Cliqueu en aquest enllaç per esborrar la vostra pàgina web."
+
+#: wp-admin/ms-delete-site.php:68
+msgid "Remember, once deleted your site cannot be restored."
+msgstr "Recordeu que una vegada esborrat, el vostre bloc no es pot restaurat."
+
+#: wp-admin/ms-delete-site.php:72
+msgid "I'm sure I want to permanently disable my site, and I am aware I can never get it back or use %s again."
+msgstr "Segur que vull desactivar de manera permanent la meva pàgina web, i en sóc conscient que mai no podré tornar o usar %s altra vegada."
+
+#: wp-admin/ms-delete-site.php:73
+msgid "Delete My Site Permanently"
+msgstr "Suprimeix definitivament el meu bloc"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:120
+msgid "No sites found."
+msgstr "No s'ha trobat cap bloc web."
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:127
+msgctxt "site"
+msgid "Mark as Spam"
+msgstr "Marca com a brossa"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:128
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:258
+msgctxt "site"
+msgid "Not Spam"
+msgstr "No és brossa"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:143
+#: wp-admin/network/site-new.php:120
+#: wp-admin/network/site-new.php:122
+#: wp-admin/network/site-info.php:116
+msgid "Domain"
+msgstr "Domini"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:147
+#: wp-admin/network/site-info.php:139
+msgid "Last Updated"
+msgstr "Darrera actualització"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:148
+#: wp-admin/network/site-info.php:135
+msgctxt "site"
+msgid "Registered"
+msgstr "Registrat"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:172
+#: wp-admin/network/site-info.php:145
+msgid "Archived"
+msgstr "Arxivats"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:173
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:260
+#: wp-admin/network/site-info.php:146
+msgctxt "site"
+msgid "Spam"
+msgstr "Brossa"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:174
+#: wp-admin/network/site-info.php:147
+msgid "Deleted"
+msgstr "Suprimit"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:175
+#: wp-admin/network/site-info.php:149
+msgid "Mature"
+msgstr "Madur"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:232
+msgctxt "%1$s: site name. %2$s: site tagline."
+msgid "%1$s &#8211; <em>%2$s</em>"
+msgstr "%1$s &#8211; <em>%2$s</em>"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:248
+msgid "You are about to activate the site %s"
+msgstr "Esteu a punt d'activar el bloc %s"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:250
+msgid "You are about to deactivate the site %s"
+msgstr "Esteu a punt de desactivar el bloc %s"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:253
+msgid "You are about to unarchive the site %s."
+msgstr "Esteu a punt de treure de l'arxiu el bloc %s."
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:253
+msgid "Unarchive"
+msgstr "Treu de l'arxiu"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:255
+msgid "You are about to archive the site %s."
+msgstr "Esteu a punt d'arxivar el bloc %s."
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:255
+msgctxt "verb; site"
+msgid "Archive"
+msgstr "Arxiva"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:258
+msgid "You are about to unspam the site %s."
+msgstr "Esteu a punt de treure de la brossa el bloc %s."
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:260
+msgid "You are about to mark the site %s as spam."
+msgstr "Esteu a punt de marcar com a brossa el bloc %s."
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:263
+msgid "You are about to delete the site %s."
+msgstr "Esteu a punt d'esborrar el bloc %s."
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:281
+msgid "Never"
+msgstr "Mai"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:302
+msgid "Only showing first 5 users."
+msgstr "Solament es mostren els primers 5 usuaris."
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:302
+msgid "More"
+msgstr "Més"
+
+#: wp-admin/includes/ms-deprecated.php:30
+msgid "Sorry, you must delete files before you can upload any more."
+msgstr "Disculpeu, heu d'esborrar fitxers abans de penjar qualsevol més."
+
+#: wp-admin/includes/ms.php:33
+msgid "Not enough space to upload. %1$s KB needed."
+msgstr "No hi ha prou espai per carregar. Es necessiten %1$s Kb."
+
+#: wp-admin/includes/ms.php:35
+msgid "This file is too big. Files must be less than %1$s KB in size."
+msgstr "Aquest fitxer és massa gran. Els fitxers no poden superar els %1$s Kb de grandària."
+
+#: wp-admin/includes/ms.php:37
+msgid "You have used your space quota. Please delete files before uploading."
+msgstr "Heu omplert la vostra quota d'espai. Elimineu fitxers abans de carregar-ne de nous."
+
+#: wp-admin/includes/ms.php:40
+msgid "Back"
+msgstr "Enrere"
+
+#: wp-admin/includes/ms.php:221
+msgid ""
+"Dear user,\n"
+"\n"
+"You recently requested to have the administration email address on\n"
+"your site changed.\n"
+"If this is correct, please click on the following link to change it:\n"
+"###ADMIN_URL###\n"
+"\n"
+"You can safely ignore and delete this email if you do not want to\n"
+"take this action.\n"
+"\n"
+"This email has been sent to ###EMAIL###\n"
+"\n"
+"Regards,\n"
+"All at ###SITENAME###\n"
+"###SITEURL### "
+msgstr ""
+"Blocaire,\n"
+"\n"
+"Recentment heu sol·licitat canviar l'adreça de correu electrònic de l'administrador del vostre bloc.\n"
+"Si això és correcte, feu clic en el següent enllaç per canviar-la:\n"
+"###ADMIN_URL###\n"
+"\n"
+"Podeu ignorar o eliminar de manera segura aquesta adreça de correu electrònic si no voleu dur a terme aquest canvi.\n"
+"\n"
+"Aquest email s'ha enviat a ###EMAIL###\n"
+"\n"
+"\n"
+"Salutacions,\n"
+"de part de ###SITENAME###\n"
+"###SITEURL### "
+
+#: wp-admin/includes/ms.php:242
+msgid "[%s] New Admin Email Address"
+msgstr "[%s] Nova adreça de correu electrònic d'administració"
+
+#: wp-admin/includes/ms.php:258
+msgid "<strong>ERROR</strong>: The e-mail address isn't correct."
+msgstr "<strong>ERROR</strong>: L'adreça de correu electrònic no és correcta."
+
+#: wp-admin/includes/ms.php:263
+msgid "<strong>ERROR</strong>: The e-mail address is already used."
+msgstr "<strong>ERROR</strong>: L'adreça de correu electrònic ja està utilitzada."
+
+#: wp-admin/includes/ms.php:275
+msgid ""
+"Dear user,\n"
+"\n"
+"You recently requested to have the email address on your account changed.\n"
+"If this is correct, please click on the following link to change it:\n"
+"###ADMIN_URL###\n"
+"\n"
+"You can safely ignore and delete this email if you do not want to\n"
+"take this action.\n"
+"\n"
+"This email has been sent to ###EMAIL###\n"
+"\n"
+"Regards,\n"
+"All at ###SITENAME###\n"
+"###SITEURL###"
+msgstr ""
+"Blocaire,\n"
+"\n"
+"Recentment heu sol·licitat canviar l'adreça de correu electrònic\n"
+"de l'administrador del vostre bloc.\n"
+"Si això és correcte, feu clic en el següent enllaç per canviar-la:\n"
+" \n"
+"###ADMIN_URL###\n"
+" \n"
+"\n"
+" \n"
+"Podeu ignorar o eliminar de manera segura aquesta adreça de\n"
+" \n"
+"correu electrònic si no voleu dur a terme aquest canvi.\n"
+" \n"
+"\n"
+"Aquest email s'ha enviat a ###EMAIL###\n"
+"\n"
+"\n"
+"Salutacions,\n"
+"de part de ###SITENAME###\n"
+"###SITEURL### "
+
+#: wp-admin/includes/ms.php:295
+msgid "[%s] New Email Address"
+msgstr "[%s] Nova adreça de correu electrònic"
+
+#: wp-admin/includes/ms.php:303
+msgid "Your email address has not been updated yet. Please check your inbox at %s for a confirmation email."
+msgstr "L'adreça de correu electrònic no s'ha actualitzat encara. Comproveu si a la vostra safata d'entrada del compte %s hi ha un correu de confirmació."
+
+#: wp-admin/includes/ms.php:413
+msgid "GB"
+msgstr "Gb"
+
+#: wp-admin/includes/ms.php:416
+msgid "MB"
+msgstr "Mb"
+
+#: wp-admin/includes/ms.php:419
+msgid "Used: %1s%% of %2s"
+msgstr "Usat: %1s%% de %2s"
+
+#: wp-admin/includes/ms.php:431
+msgid "Site Upload Space Quota "
+msgstr "Quota d'espai del bloc per a càrregues"
+
+#: wp-admin/includes/ms.php:432
+msgid "MB (Leave blank for network default)"
+msgstr "Mb (deixeu en blanc per aplicar el valor per defecte de la xarxa)"
+
+#: wp-admin/includes/ms.php:505
+msgid "You don&#8217;t have permission to view this site. Please contact the system administrator."
+msgstr "No teniu permís per veure aquest bloc. Contacteu amb l'administrador del sistema."
+
+#: wp-admin/includes/ms.php:537
+msgid "American English"
+msgstr "Anglès americà"
+
+#: wp-admin/includes/ms.php:541
+msgid "British English"
+msgstr "Anglès britànic"
+
+#: wp-admin/includes/ms.php:551
+msgid "English"
+msgstr "Anglès"
+
+#: wp-admin/includes/ms.php:571
+msgid "Warning! WordPress encrypts user cookies, but you must add the following lines to <strong>wp-config.php</strong> for it to be more secure."
+msgstr "Atenció! El WordPress encripta les galetes de l'usuari, però hauríeu d'afegir les següents línies al fitxer <strong>wp-config.php</strong> per fer-lo més segur."
+
+#: wp-admin/includes/ms.php:572
+msgid "Before the line <code>/* That's all, stop editing! Happy blogging. */</code> please add this code:"
+msgstr "Abans de la línia <code>/* Això és tot, prou d'editar - que bloguis de gust! */</code> afegiu aquest codi:"
+
+#: wp-admin/includes/ms.php:585
+msgid "Thank you for Updating! Please visit the <a href=\"%s\">Update Network</a> page to update all your sites."
+msgstr "Gràcies per actualitzar! Visiteu la pàgina <a href=\"%s\">Actualitza la xarxa</a> per actualitzar tots els blocs."
+
+#: wp-admin/includes/ms.php:618
+msgid "Primary Site"
+msgstr "Bloc principal"
+
+#: wp-admin/includes/ms.php:665
+msgid "The <code>%1$s</code> file is deprecated. Please remove it and update your server rewrite rules to use <code>%2$s</code> instead."
+msgstr "El fitxer <code>%1$s</code> està obsolet. Elimineu-lo i actualitzeu les regles rewrite del servidor per a fer servir <code>%2$s</code> en el seu bloc."
+
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:170
+msgid "No themes found."
+msgstr "No s'ha trobat cap aparença."
+
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:172
+msgid "You do not appear to have any themes available at this time."
+msgstr "Ara mateix sembla que no teniu cap aparença disponible."
+
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:180
+msgid "Theme"
+msgstr "Aparença"
+
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:201
+msgctxt "themes"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] "Tots <span class=\"count\">(%s)</span>"
+msgstr[1] "Tots <span class=\"count\">(%s)</span>"
+
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:204
+msgid "Enabled <span class=\"count\">(%s)</span>"
+msgid_plural "Enabled <span class=\"count\">(%s)</span>"
+msgstr[0] "Activat <span class=\"count\">(%s)</span>"
+msgstr[1] "Activats <span class=\"count\">(%s)</span>"
+
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:207
+msgid "Disabled <span class=\"count\">(%s)</span>"
+msgid_plural "Disabled <span class=\"count\">(%s)</span>"
+msgstr[0] "Disactivat <span class=\"count\">(%s)</span>"
+msgstr[1] "Disactivats <span class=\"count\">(%s)</span>"
+
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:236
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:283
+msgid "Enable"
+msgstr "Habilita"
+
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:236
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:283
+msgid "Network Enable"
+msgstr "Xarxa activada"
+
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:238
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:285
+msgid "Disable"
+msgstr "Desactiva"
+
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:238
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:285
+msgid "Network Disable"
+msgstr "Xarxa desactivada"
+
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:283
+msgid "Enable this theme"
+msgstr "Activa aquest aparença"
+
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:285
+msgid "Disable this theme"
+msgstr "Desactiva aquesta aparença"
+
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:288
+msgid "Open this theme in the Theme Editor"
+msgstr "Obre aquesta aparença en l'editor d'aparences"
+
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:291
+msgid "Delete this theme"
+msgstr "Suprimeix aquesta aparença"
+
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:337
+msgid "Visit theme homepage"
+msgstr "Visita la pàgina web de l'aparença"
+
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:337
+msgid "Visit Theme Site"
+msgstr "Visita el lloc web de l'aparença"
+
+#: wp-admin/includes/class-wp-ms-users-list-table.php:75
+msgctxt "user"
+msgid "Mark as Spam"
+msgstr "Marca com a brossa"
+
+#: wp-admin/includes/class-wp-ms-users-list-table.php:76
+msgctxt "user"
+msgid "Not Spam"
+msgstr "No és brossa"
+
+#: wp-admin/includes/class-wp-ms-users-list-table.php:82
+msgid "No users found."
+msgstr "No s'ha trobat cap usuari."
+
+#: wp-admin/includes/class-wp-ms-users-list-table.php:97
+msgid "Super Admin <span class=\"count\">(%s)</span>"
+msgid_plural "Super Admins <span class=\"count\">(%s)</span>"
+msgstr[0] "Super administrador <span class=\"count\">(%s)</span>"
+msgstr[1] "Super administradors <span class=\"count\">(%s)</span>"
+
+#: wp-admin/includes/class-wp-ms-users-list-table.php:117
+msgctxt "user"
+msgid "Registered"
+msgstr "Registrat"
+
+#: wp-admin/network/user-new.php:17
+msgid "You do not have sufficient permissions to add users to this network."
+msgstr "No teniu suficients permisos per a afegir usuaris a aquesta xarxa."
+
+#: wp-admin/network/user-new.php:21
+msgid "Add User will set up a new user account on the network and send them an email with their username and password."
+msgstr "Afegeix un usuari configurarà el compte d'un usuari nou a la xarxa i li enviarà un correu electrònic amb el seu nom d'usuari i contrasenya."
+
+#: wp-admin/network/user-new.php:22
+msgid "Users who are signed up to the network without a site are added as subscribers to the main or primary dashboard site, giving them profile pages to manage their accounts. These users will only see Dashboard and My Sites in the main navigation until a site is created for them."
+msgstr "Els usuaris que són registrats a la xarxa sense cap bloc, s'afegeixen com a subscriptors al tauler del bloc principal, i se'ls dóna les pàgines del seu perfil perquè puguin gestionar els seus comptes. Aquests usuaris solament veuran el Tauler i Els meus blocs fins que es creï un bloc per a ells."
+
+#: wp-admin/network/user-new.php:24
+#: wp-admin/network/users.php:41
+msgid "<a href=\"http://codex.wordpress.org/Network_Admin_Users_Screen\" target=\"_blank\">Documentation on Network Users</a>"
+msgstr "<a href=\"http://codex.wordpress.org/Network_Admin_Users_Screen\" target=\"_blank\">Documentació sobre els usuaris a la xarxa</a> (en anglès)"
+
+#: wp-admin/network/user-new.php:25
+#: wp-admin/network/index.php:32
+#: wp-admin/network/site-users.php:32
+#: wp-admin/network/site-settings.php:27
+#: wp-admin/network/site-new.php:24
+#: wp-admin/network/users.php:42
+#: wp-admin/network/sites.php:40
+#: wp-admin/network/site-info.php:27
+#: wp-admin/network/site-themes.php:32
+msgid "<a href=\"http://wordpress.org/support/forum/multisite/\" target=\"_blank\">Support Forums</a>"
+msgstr "<a href=\"http://wordpress.org/support/forum/multisite/\" target=\"_blank\">Fòrums de suport</a> (en anglès)"
+
+#: wp-admin/network/user-new.php:31
+#: wp-admin/network/index.php:20
+#: wp-admin/network/site-users.php:42
+#: wp-admin/network/site-settings.php:37
+#: wp-admin/network/site-new.php:31
+#: wp-admin/network/edit.php:102
+#: wp-admin/network/edit.php:175
+#: wp-admin/network/edit.php:192
+#: wp-admin/network/edit.php:236
+#: wp-admin/network/edit.php:246
+#: wp-admin/network/edit.php:256
+#: wp-admin/network/edit.php:267
+#: wp-admin/network/edit.php:278
+#: wp-admin/network/edit.php:288
+#: wp-admin/network/edit.php:298
+#: wp-admin/network/edit.php:308
+#: wp-admin/network/edit.php:355
+#: wp-admin/network/edit.php:376
+#: wp-admin/network/edit.php:391
+#: wp-admin/network/edit.php:442
+#: wp-admin/network/users.php:17
+#: wp-admin/network/upgrade.php:33
+#: wp-admin/network/sites.php:17
+#: wp-admin/network/settings.php:17
+#: wp-admin/network/site-info.php:37
+#: wp-admin/network/site-themes.php:55
+msgid "You do not have permission to access this page."
+msgstr " No teniu permís per accedir a aquesta pàgina."
+
+#: wp-admin/network/user-new.php:34
+msgid "Cannot create an empty user."
+msgstr "No podeu crear un usuari buit."
+
+#: wp-admin/network/user-new.php:37
+msgid "Missing username and email."
+msgstr "Falta el nom d'usuari i correu electrònic."
+
+#: wp-admin/network/user-new.php:39
+msgid "Missing username."
+msgstr "Falta el nom d'usuari"
+
+#: wp-admin/network/user-new.php:41
+msgid "Missing email."
+msgstr "Falta el correu electrònic."
+
+#: wp-admin/network/user-new.php:47
+#: wp-admin/network/site-users.php:214
+msgid "Duplicated username or email address."
+msgstr "Nom d'usuari o adreça de correu electrònic duplicat."
+
+#: wp-admin/network/user-new.php:85
+#: wp-admin/network/site-users.php:299
+msgid "Username and password will be mailed to the above email address."
+msgstr "El nom d'usuari i contrasenya s'enviarà per correu electrònic a les adreces de correu electrònic d'aquí sobre."
+
+#: wp-admin/network/user-new.php:89
+#: wp-admin/network/site-users.php:267
+msgid "Add User"
+msgstr "Afegeix"
+
+#: wp-admin/network/index.php:26
+msgid "Until WordPress 3.0, running multiple sites required using WordPress MU instead of regular WordPress. In version 3.0, these applications have merged. If you are a former MU user, you should be aware of the following changes:"
+msgstr "Fins al WordPress 3.0, per tenir múltiples blocs calia fer servir WordPress MU en lloc de la versió normal del WordPress. A la versió 3.0 aquestes aplicacions s'han fusionat. Si sou un usuari del WordPress MU, hauríeu de tenir en compte els canvis següents:"
+
+#: wp-admin/network/index.php:27
+msgid "Site Admin is now Super Admin (we highly encourage you to get yourself a cape!)."
+msgstr "L'administrador del lloc és ara un super administrador (us animem a que us feu amb una capa!)"
+
+#: wp-admin/network/index.php:28
+msgid "Blogs are now called Sites; Site is now called Network."
+msgstr "Els blocs es diuen ara Blocs; la web es diu ara Xarxa."
+
+#: wp-admin/network/index.php:29
+msgid "This screen provides the network administrator with links to the screens for Sites and Users to either create a new site or user, or to search existing users and sites, as well as Dashboard widgets. Those screens are also accessible through the left-hand navigation in the Network Admin section."
+msgstr "Aquesta pantalla proporciona a l'administrador de la xarxa enllaços que duen a les pantalles dels blocs i usuaris, per a crear un bloc o usuari nou, per a cercar usuaris o blocs, així com widgets del tauler. A aquestes pantalles es pot accedir també mitjançant el menú de l'esquerra en la secció d'administració de la xarxa."
+
+#: wp-admin/network/index.php:31
+msgid "<a href=\"http://codex.wordpress.org/Network_Admin\" target=\"_blank\">Documentation on the Network Admin</a>"
+msgstr "<a href=\"http://codex.wordpress.org/Network_Admin\" target=\"_blank\">Documentació sobre l'administració de la xarxa</a> (en anglès)"
+
+#: wp-admin/network/themes.php:22
+msgid "You do not have sufficient permissions to manage network themes."
+msgstr "No teniu permisos suficients per a administrar les aparences d'aquesta xarxa"
+
+#: wp-admin/network/themes.php:81
+msgid "You do not have sufficient permissions to delete themes for this site."
+msgstr "No teniu permisos suficients per a suprimir les aparences d'aquest bloc."
+
+#: wp-admin/network/themes.php:125
+msgid "Delete Theme"
+msgid_plural "Delete Themes"
+msgstr[0] "Suprimeix l'aparença"
+msgstr[1] "Suprimeix les aparences"
+
+#: wp-admin/network/themes.php:127
+msgid "This theme may be active on other sites in the network."
+msgid_plural "These themes may be active on other sites in the network."
+msgstr[0] "Aquesta aparença pot activar-se a altres blocs de la xarxa."
+msgstr[1] "Aquestes aparences poden activar-se a altres blocs de la xarxa."
+
+#: wp-admin/network/themes.php:128
+msgid "You are about to remove the following theme:"
+msgid_plural "You are about to remove the following themes:"
+msgstr[0] "Esteu apunt de suprimir la següent aparença:"
+msgstr[1] "Esteu apunt de suprimir les següents aparences:"
+
+#: wp-admin/network/themes.php:133
+msgid "Are you sure you wish to delete these themes?"
+msgstr "Esteu segur que voleu suprimir aquestes aparences?"
+
+#: wp-admin/network/themes.php:142
+msgid "Yes, Delete this theme"
+msgid_plural "Yes, Delete these themes"
+msgstr[0] "Sí, suprimeix aquesta aparença"
+msgstr[1] "Sí, suprimeix aquestes aparences"
+
+#: wp-admin/network/themes.php:145
+msgid "No, Return me to the theme list"
+msgstr "No, torneu-me al llistat d'aparences"
+
+#: wp-admin/network/themes.php:182
+#: wp-admin/network/site-themes.php:125
+msgctxt "themes per page (screen options)"
+msgid "Themes"
+msgstr "Aparences"
+
+#: wp-admin/network/themes.php:185
+msgid "This screen enables and disables the inclusion of themes available to choose in the Appearance menu for each site. It does not activate or deactivate which theme a site is currently using."
+msgstr "Aquesta pantalla habilita i deshabilita la inclusió d'aparences disponibles per triar al menú d'Aparença de cada bloc. No activa o desactiva quina aparença fa servir cada bloc."
+
+#: wp-admin/network/themes.php:186
+msgid "If the network admin disables a theme that is in use, it can still remain selected on that site. If another theme is chosen, the disabled theme will not appear in the site&#8217;s Appearance > Themes screen."
+msgstr "Si l'administrador de la xarxa deshabilita una aparença que està en ús, roman encara seleccionat en aquest bloc. Si es tria altre aparença, l'aparença deshabilitat no apareixerà en la pantalla Aparença > Aparences."
+
+#: wp-admin/network/themes.php:187
+msgid "Themes can be enabled on a site by site basis by the network admin on the Edit Site screen you go to via the Edit action link on the Sites screen. Only network admins are able to install or edit themes."
+msgstr "Les aparences es poden activar per a un bloc per l'administrador de la xarxa en la pantalla Edita el bloc, on aneu si feu clic a l'enllaç d'acció de la pantalla Blocs. Solament els administradors de la xarxa poden instal·lar o editar les aparences."
+
+#: wp-admin/network/themes.php:189
+msgid "<a href=\"http://codex.wordpress.org/Network_Admin_Themes_Screen\" target=\"_blank\">Documentation on Network Themes</a>"
+msgstr "<a href=\"http://codex.wordpress.org/Network_Admin_Themes_Screen\" target=\"_blank\">Documentació sobre les aparences de la xarxa</a> (en anglès)"
+
+#: wp-admin/network/themes.php:202
+#: wp-admin/network/menu.php:30
+msgctxt "theme"
+msgid "Add New"
+msgstr "Afegeix"
+
+#: wp-admin/network/themes.php:210
+#: wp-admin/network/site-themes.php:153
+msgid "Theme enabled."
+msgid_plural "%s themes enabled."
+msgstr[0] "Aparença activada."
+msgstr[1] "%s aparences activades."
+
+#: wp-admin/network/themes.php:213
+#: wp-admin/network/site-themes.php:156
+msgid "Theme disabled."
+msgid_plural "%s themes disabled."
+msgstr[0] "Aparença desactivada."
+msgstr[1] "%s aparences desactivades."
+
+#: wp-admin/network/themes.php:216
+msgctxt "network"
+msgid "Theme deleted."
+msgid_plural "%s themes deleted."
+msgstr[0] "S'ha esborrat l'aparença."
+msgstr[1] "S'han esborrat %s aparences."
+
+#: wp-admin/network/themes.php:218
+#: wp-admin/network/site-themes.php:158
+msgid "No theme selected."
+msgstr "No s'ha seleccionat cap aparença."
+
+#: wp-admin/network/themes.php:220
+msgid "You cannot delete a theme while it is active on the main site."
+msgstr "No podeu suprimir una aparença mentre està activa al bloc principal."
+
+#: wp-admin/network/themes.php:226
+#: wp-admin/network/site-themes.php:164
+msgid "Search Installed Themes"
+msgstr "Cerca aparences instal·lades"
+
+#: wp-admin/network/site-users.php:17
+#: wp-admin/network/site-settings.php:17
+#: wp-admin/network/site-info.php:17
+msgid "You do not have sufficient permissions to edit this site."
+msgstr "No teniu permisos suficients per a editar aquest bloc."
+
+#: wp-admin/network/site-users.php:25
+#: wp-admin/network/site-settings.php:20
+#: wp-admin/network/site-info.php:20
+#: wp-admin/network/site-themes.php:25
+msgid "The menu is for editing information specific to individual sites, particularly if the admin area of a site is unavailable."
+msgstr "El menú és per editar informació específica de blocs webs individuals, especialment si l'àrea d'administració d'un bloc no és disponible."
+
+#: wp-admin/network/site-users.php:26
+#: wp-admin/network/site-settings.php:21
+#: wp-admin/network/site-info.php:21
+#: wp-admin/network/site-themes.php:26
+msgid "<strong>Info</strong> - The domain and path are rarely edited as this can cause the site to not work properly. The Registered date and Last Updated date are displayed. Network admins can mark a site as archived, spam, deleted and mature, to remove from public listings or disable."
+msgstr "<strong>Informació</strong> - El domini i el camí poques vegades s'editen ja que poden fer que el bloc no funcioni correctament. Es mostren la data de registre i la data de la darrera actualització. Els administradors de la xarxa poden marcar un bloc com arxivat, brossa, suprimit o caducat, per a suprimir-lo dels llistats públics o desactivar-lo."
+
+#: wp-admin/network/site-users.php:27
+#: wp-admin/network/site-settings.php:22
+#: wp-admin/network/site-info.php:22
+#: wp-admin/network/site-themes.php:27
+msgid "<strong>Users</strong> - This displays the users associated with this site. You can also change their role, reset their password, or remove them from the site. Removing the user from the site does not remove the user from the network."
+msgstr "<strong>Usuaris</strong> - Aquesta pantalla mostra els usuaris associats a aquest bloc. Podeu també canviar els seus rols, reiniciar les seves contrasenyes, o suprimir-los d'aquest bloc. Suprimir l'usuari del bloc no el suprimeix de la xarxa."
+
+#: wp-admin/network/site-users.php:28
+#: wp-admin/network/site-settings.php:23
+#: wp-admin/network/site-info.php:23
+#: wp-admin/network/site-themes.php:28
+msgid "<strong>Themes</strong> - This area shows themes that are not already enabled across the network. Enabling a theme in this menu makes it accessible to this site. It does not activate the theme, but allows it to show in the site&#8217;s Appearance menu. To enable a theme for the entire network, see the <a href=\"%s\">Network Themes</a> screen."
+msgstr "<strong>Aparences</strong> - Aquesta àrea mostra les aparences que no estan encara actives a la xarxa. En activar una aparença en aquest menú es farà accessible per a aquest bloc. Això no activa l'aparença, però permet mostrar-lo en el menú Aparença del bloc. Per a activar l'aparença per a tota la xarxa, mireu la pantalla <a href=\"%s\">aparences de la xarxa</a>."
+
+#: wp-admin/network/site-users.php:29
+#: wp-admin/network/site-settings.php:24
+#: wp-admin/network/site-info.php:24
+#: wp-admin/network/site-themes.php:29
+msgid "<strong>Settings</strong> - This page shows a list of all settings associated with this site. Some are created by WordPress and others are created by plugins you activate. Note that some fields are grayed out and say Serialized Data. You cannot modify these values due to the way the setting is stored in the database."
+msgstr "<strong>Opcions</strong> - Aquesta pàgina mostra un llistat de totes les opcions d'aquest bloc. Algunes els crea el WordPress i altres són creades per les extensions que activeu. Fixeu-vos que alguns camps estan en gris i mostren dades en sèrie. No podeu modificar aquest valors per la forma en què està emmagatzemada la dada a la base de dades."
+
+#: wp-admin/network/site-users.php:31
+#: wp-admin/network/site-settings.php:26
+#: wp-admin/network/site-new.php:23
+#: wp-admin/network/sites.php:39
+#: wp-admin/network/site-info.php:26
+#: wp-admin/network/site-themes.php:31
+msgid "<a href=\"http://codex.wordpress.org/Network_Admin_Sites_Screens\" target=\"_blank\">Documentation on Site Management</a>"
+msgstr "<a href=\"http://codex.wordpress.org/Network_Admin_Sites_Screens\" target=\"_blank\">Documentació sobre l'administració del bloc</a> (en anglès)"
+
+#: wp-admin/network/site-users.php:38
+#: wp-admin/network/site-settings.php:33
+#: wp-admin/network/site-info.php:33
+#: wp-admin/network/site-themes.php:49
+msgid "Invalid site ID."
+msgstr "Identificador del bloc incorrecte."
+
+#: wp-admin/network/site-users.php:160
+#: wp-admin/network/site-settings.php:71
+#: wp-admin/network/site-info.php:81
+#: wp-admin/network/site-themes.php:127
+msgid "Edit Site: %s"
+msgstr "Edita el bloc: %s"
+
+#: wp-admin/network/site-users.php:172
+#: wp-admin/network/site-settings.php:85
+#: wp-admin/network/site-info.php:95
+#: wp-admin/network/site-themes.php:139
+msgid "Info"
+msgstr "Informació"
+
+#: wp-admin/network/site-users.php:190
+msgid "User is already a member of this site."
+msgstr "L'usuari ja és una membre d'aquest bloc."
+
+#: wp-admin/network/site-users.php:193
+msgid "Enter the username of an existing user."
+msgstr "Introduïu el nom d'un usuari existent."
+
+#: wp-admin/network/site-users.php:199
+msgid "Select a user to change role."
+msgstr "Seleccioneu un usuari per a canviar-li el rol."
+
+#: wp-admin/network/site-users.php:205
+msgid "Select a user to remove."
+msgstr "Seleccioneu un usuari a suprimir."
+
+#: wp-admin/network/site-users.php:208
+msgid "User created."
+msgstr "S'ha creat l'usuari."
+
+#: wp-admin/network/site-users.php:211
+msgid "Enter the username and email."
+msgstr "Introduïu el nom d'usuari i correu electrònic."
+
+#: wp-admin/network/site-users.php:237
+msgid "Add User to This Site"
+msgstr "Afegeix un usuari a aquest bloc"
+
+#: wp-admin/network/site-users.php:239
+msgid "You may add from existing network users, or set up a new user to add to this site."
+msgstr "Podeu afegir usuaris d'una xarxa existent, o crear un nou usuari i afegir-lo a aquest bloc."
+
+#: wp-admin/network/site-users.php:241
+msgid "You may add from existing network users to this site."
+msgstr "Podeu afegir un usuari d'una xarxa existent a aquest bloc."
+
+#: wp-admin/network/site-settings.php:68
+msgid "Site options updated."
+msgstr "Actualitzades les opcions del bloc."
+
+#: wp-admin/network/site-new.php:17
+msgid "You do not have sufficient permissions to add sites to this network."
+msgstr "No teniu permisos suficients per a afegir blocs a aquesta xarxa."
+
+#: wp-admin/network/site-new.php:20
+msgid "This screen is for Super Admins to add new sites to the network. This is not affected by the registration settings."
+msgstr "Aquesta pantalla és per a què el super administrador afegeixi blocs nous a la xarxa. Això no es veu afectat per la configuració del registre."
+
+#: wp-admin/network/site-new.php:21
+msgid "If the admin email for the new site does not exist in the database, a new user will also be created."
+msgstr "Si l'adreça de correu electrònic de l'administrador no existeix a la base de dades, també es crearà un nou usuari."
+
+#: wp-admin/network/site-new.php:34
+msgid "Can&#8217;t create an empty site."
+msgstr "No es pot crear un bloc buit."
+
+#: wp-admin/network/site-new.php:44
+msgid "The following words are reserved for use by WordPress functions and cannot be used as blog names: <code>%s</code>"
+msgstr "Les següents paraules estan reservades per a l'ús de les funcions del WordPress i no poden usar-se com a noms de bloc: <code>%s</code>"
+
+#: wp-admin/network/site-new.php:51
+msgid "Missing or invalid site address."
+msgstr "Falta l'adreça del bloc o no és vàlida."
+
+#: wp-admin/network/site-new.php:53
+msgid "Missing email address."
+msgstr "L'adreça de correu electrònic falta."
+
+#: wp-admin/network/site-new.php:55
+msgid "Invalid email address."
+msgstr "L'adreça de correu electrònic no és vàlida."
+
+#: wp-admin/network/site-new.php:71
+msgid "There was an error creating the user."
+msgstr "Ha hagut un error en crear l'usuari."
+
+#: wp-admin/network/site-new.php:82
+msgid ""
+"New site created by %1s\n"
+"\n"
+"Address: http://%2s\n"
+"Name: %3s"
+msgstr ""
+"nou bloc creat per %1s\n"
+"\n"
+"Adreça: http://%2s\n"
+"Nom: %3s"
+
+#: wp-admin/network/site-new.php:83
+msgid "[%s] New Site Created"
+msgstr "[%s] Nou bloc creat"
+
+#: wp-admin/network/site-new.php:95
+msgid "Site added."
+msgstr "S'ha afegit el bloc."
+
+#: wp-admin/network/site-new.php:98
+#: wp-admin/network/site-new.php:107
+msgid "Add New Site"
+msgstr "Afegeix un bloc nou"
+
+#: wp-admin/network/site-new.php:117
+msgid "Site Address"
+msgstr "Adreça del bloc"
+
+#: wp-admin/network/site-new.php:124
+msgid "Only the characters a-z and 0-9 recommended."
+msgstr "Es recomanen solament els caràcters de la a a la z i del 0 al 9."
+
+#: wp-admin/network/site-new.php:133
+msgid "Admin Email"
+msgstr "Correu electrònic de l'administrador"
+
+#: wp-admin/network/site-new.php:137
+msgid "A new user will be created if the above email address is not in the database."
+msgstr "Un nou usuari es crearà si l'adreça de correu electrònic d'aquí dalt no està a la base de dades."
+
+#: wp-admin/network/site-new.php:137
+msgid "The username and password will be mailed to this email address."
+msgstr "El nom d'usuari i contrasenya s'enviaran a aquesta adreça de correu electrònic."
+
+#: wp-admin/network/site-new.php:140
+msgid "Add Site"
+msgstr "Afegeix un bloc"
+
+#: wp-admin/network/edit.php:29
+msgid "Transfer or delete posts and links before deleting users."
+msgstr "Transferiu o elimineu articles i enllaços abans d'eliminar els usuaris."
+
+#: wp-admin/network/edit.php:42
+msgid "Warning! User %s cannot be deleted."
+msgstr "Atenció! L'usuari %s no pot ser eliminat."
+
+#: wp-admin/network/edit.php:45
+msgid "Warning! User cannot be deleted. The user %s is a network admnistrator."
+msgstr "Atenció! No es pot eliminar aquest usuari. L'usuari %s és un administrador de la xarxa."
+
+#: wp-admin/network/edit.php:52
+msgid "What should be done with posts and links owned by <em>%s</em>?"
+msgstr "Què s'ha de fer amb els articles i enllaços de <em>%s</em>?"
+
+#: wp-admin/network/edit.php:70
+msgid "Site: %s"
+msgstr "Bloc: %s"
+
+#: wp-admin/network/edit.php:105
+msgid "You probably need to go back to the <a href=\"%s\">options page</a>."
+msgstr "Probablement necessiteu tornar enrere a <a href=\"%s\">la pàgina d'opcions</a>."
+
+#: wp-admin/network/edit.php:204
+msgid "You are not allowed to delete the site."
+msgstr "No teniu permès suprimir aquest bloc."
+
+#: wp-admin/network/edit.php:222
+#: wp-admin/network/edit.php:323
+msgid "You are not allowed to change the current site."
+msgstr "No teniu autorització per a canviar el bloc actual."
+
+#: wp-admin/network/edit.php:328
+msgid "WordPress &rsaquo; Confirm your action"
+msgstr "WordPress &rsaquo; Confirmeu l'acció"
+
+#: wp-admin/network/edit.php:344
+msgid "Confirm"
+msgstr "Confirma"
+
+#: wp-admin/network/edit.php:405
+msgid "Warning! User cannot be modified. The user %s is a network administrator."
+msgstr "Atenció! No es pot modificar aquest usuari. L'usuari %s és un administrador de la xarxa."
+
+#: wp-admin/network/users.php:34
+msgid "This table shows all users across the network and the sites to which they are assigned."
+msgstr "Aquesta taula mostra tots els usuaris de la xarxa i a quins blocs estan assignats."
+
+#: wp-admin/network/users.php:35
+msgid "Hover over any user on the list to make the edit links appear. The Edit link on the left will take you to his or her Edit User profile page; the Edit link on the right by any site name goes to an Edit Site screen for that site."
+msgstr "En passar el cursor per sobre de qualsevol usuari en la llista fa que apareguin els enllaços d'edició. L'enllaç Edita a l'esquerra us portarà a la pàgina d'edició del perfil de l'usuari; l'enllaç Edita a la dreta al costat de qualsevol nom de bloc us portarà a la pantalla d'edició del bloc."
+
+#: wp-admin/network/users.php:36
+msgid "You can also go to the user&#8217;s profile page by clicking on the individual username."
+msgstr "També podeu anar a la pàgina del perfil de l'usuari si feu clic al nom d'un usuari en concret."
+
+#: wp-admin/network/users.php:37
+msgid "You can sort the table by clicking on any of the bold headings and switch between list and excerpt views by using the icons in the upper right."
+msgstr "Podeu ordenar la taula fent clic a qualsevol capçalera en negreta i canviar entre la vista de llista i extracte fent servir les icones de dalt a la dreta."
+
+#: wp-admin/network/users.php:38
+msgid "The bulk action will permanently delete selected users, or mark/unmark those selected as spam. Spam users will have posts removed and will be unable to sign up again with the same email addresses."
+msgstr "Les accions en massa eliminaran permanentment els usuaris seleccionats, o marcaran/desmarcaran els seleccionats com a brossa. Als usuaris brossa se'ls eliminaran els articles i no podran registrar-se altra vegada amb el mateix correu electrònic."
+
+#: wp-admin/network/users.php:39
+msgid "You can make an existing user an additional super admin by going to the Edit User profile page and checking the box to grant that privilege."
+msgstr "Podeu convertir un usuari existent en super administrador anant a la pàgina d'edició del perfil de l'usuari i marcar la casella que garanteix aquest privilegi."
+
+#: wp-admin/network/users.php:53
+msgid "User deleted."
+msgstr "L'usuari s'ha suprimit."
+
+#: wp-admin/network/users.php:56
+msgid "Users marked as spam."
+msgstr "Usuaris marcats com a brossa."
+
+#: wp-admin/network/users.php:59
+msgid "Users removed from spam."
+msgstr "Usuaris eliminats de la brossa."
+
+#: wp-admin/network/users.php:62
+msgid "Users deleted."
+msgstr "Els usuaris s'han suprimit."
+
+#: wp-admin/network/upgrade.php:18
+#: wp-admin/network/upgrade.php:37
+#: wp-admin/network/upgrade.php:79
+#: wp-admin/network/menu.php:65
+msgid "Update Network"
+msgstr "Actualitza la xarxa"
+
+#: wp-admin/network/upgrade.php:22
+msgid "Only use this screen once you have updated to a new version of WordPress through Dashboard > Updates. Clicking the Update Network button will step through each site in the network, five at a time, and make sure any database updates are applied."
+msgstr "Useu solament aquesta pantalla una vegada heu actualitzat a una versió nova del WordPress anant a Taules > Actualizacions. En fer clic al botó Actualitza la xarxa, s'aniran actualitzant cada bloc en la xarxa, de cinc en cinc, i us assegurareu que s'apliquen totes les actualitzacions de la base de dades."
+
+#: wp-admin/network/upgrade.php:23
+msgid "If a version update to core has not happened, clicking this button won&#8217;t affect anything."
+msgstr "Si una actualització de versió en el nucli no es produeix, en fer clic a aquest botó no afectarà a res."
+
+#: wp-admin/network/upgrade.php:24
+msgid "If this process fails for any reason, users logging in to their sites will force the same update."
+msgstr "Si aquest procés falla per qualsevol raó, els usuaris que inicien la sessió en els seus blocs se'ls obligarà a fer la mateixa actualització."
+
+#: wp-admin/network/upgrade.php:26
+msgid "<a href=\"http://codex.wordpress.org/Network_Admin_Updates_Screen\" target=\"_blank\">Documentation on Update Network</a>"
+msgstr "<a href=\"http://codex.wordpress.org/Network_Admin_Updates_Screen\" target=\"_blank\">Documentació sobre l'actualització de la xarxa</a> (en anglès)"
+
+#: wp-admin/network/upgrade.php:52
+msgid "All done!"
+msgstr "Això és tot!"
+
+#: wp-admin/network/upgrade.php:61
+msgid "Warning! Problem updating %1$s. Your server may not be able to connect to sites running on it. Error message: <em>%2$s</em>"
+msgstr "Atenció! S'ha produït un problema actualitzant %1$s. El servidor potser no pot connectar amb els blocs que s'executen en ell. Missatge d'error: <em>%2$s</em>"
+
+#: wp-admin/network/upgrade.php:66
+msgid "If your browser doesn&#8217;t start loading the next page automatically, click this link:"
+msgstr "Si el navegador no carrega la següent pàgina automàticament feu clic en aquest enllaç:"
+
+#: wp-admin/network/upgrade.php:66
+msgid "Next Sites"
+msgstr "Següents blocs"
+
+#: wp-admin/network/upgrade.php:78
+msgid "You can update all the sites on your network through this page. It works by calling the update script of each site automatically. Hit the link below to update."
+msgstr "Podeu actualitzar tots els blocs webs de la vostra xarxa mitjançant aquesta pàgina. Ho farà executant l'script en cada web automàticament. Feu clic en l'enllaç d'aquí sota per a actualitzar."
+
+#: wp-admin/network/sites.php:25
+msgctxt "sites per page (screen options)"
+msgid "Sites"
+msgstr "Blocs"
+
+#: wp-admin/network/sites.php:28
+msgid "Add New takes you to the Add New Site screen. You can search for a site by Name, ID number, or IP address. Screen Options allows you to choose how many sites to display on one page."
+msgstr "Afegeix us durà a la pantalla per a afegir un bloc nou. Podeu cercar un bloc per nom, per número identificador, o per adreça IP. Les opcions de la pantalla us permeten triar quants blocs voleu mostrar per pàgina."
+
+#: wp-admin/network/sites.php:29
+msgid "This is the main table of all sites on this network. Switch between list and excerpt views by using the icons above the right side of the table."
+msgstr "Aquesta és la taula principal de tots els blocs d'aquesta xarxa. Canvieu entre les vistes de llista o extracte en fer servir les icones que hi ha dalt a la dreta de la taula."
+
+#: wp-admin/network/sites.php:30
+msgid "Hovering over each site reveals seven options (three for the primary site):"
+msgstr "En passar el cursor per sobre de cada bloc es mostren set opcions (tres si és el bloc principal):"
+
+#: wp-admin/network/sites.php:31
+msgid "An Edit link to a separate Edit Site screen."
+msgstr "Un enllaç Edita que us durà a una pantalla apart per a editar el bloc."
+
+#: wp-admin/network/sites.php:32
+msgid "Dashboard leads to the Dashboard for that site."
+msgstr "El Taules us duu al Tauler d'aquest bloc."
+
+#: wp-admin/network/sites.php:33
+msgid "Deactivate, Archive, and Spam which lead to confirmation screens. These actions can be reversed later."
+msgstr "Desactiva, Arxiva, i Brossa els quals vos duen a pantalles de confirmació. Aquestes accions es poden desfer més tard."
+
+#: wp-admin/network/sites.php:34
+msgid "Delete which is a permanent action after the confirmation screens."
+msgstr "Suprimeix que és una acció permanent després de les pantalles de confirmació."
+
+#: wp-admin/network/sites.php:35
+msgid "Visit to go to the frontend site live."
+msgstr "Visiteu per anar directe al bloc."
+
+#: wp-admin/network/sites.php:36
+msgid "The site ID is used internally, and is not shown on the front end of the site or to users/viewers."
+msgstr "L'identificador del bloc es fa servir internament i no es mostra a la part visible del bloc ni als usuaris i visitants."
+
+#: wp-admin/network/sites.php:37
+msgid "Clicking on bold settings can re-sort this table. The upper right icons switch between list and excerpt views."
+msgstr "En fer clic a la configuració en negreta es reordena aquesta taula. Les icones de dalt a la dreta permeten canviar entre la vista de llista i extracte."
+
+#: wp-admin/network/sites.php:49
+msgid "Sites removed from spam."
+msgstr "Blocs suprimits de la brossa."
+
+#: wp-admin/network/sites.php:52
+msgid "Sites marked as spam."
+msgstr "Blocs marcats com a brossa."
+
+#: wp-admin/network/sites.php:55
+msgid "Sites deleted."
+msgstr "Blocs suprimits."
+
+#: wp-admin/network/sites.php:58
+msgid "Site deleted."
+msgstr "S'ha suprimit el bloc."
+
+#: wp-admin/network/sites.php:61
+msgid "You do not have permission to delete that site."
+msgstr "No teniu permisos per suprimir aquest bloc."
+
+#: wp-admin/network/sites.php:64
+msgid "Site archived."
+msgstr "S'ha arxivat el bloc."
+
+#: wp-admin/network/sites.php:67
+msgid "Site unarchived."
+msgstr "Bloc no arxivat."
+
+#: wp-admin/network/sites.php:70
+msgid "Site activated."
+msgstr "Bloc activat."
+
+#: wp-admin/network/sites.php:73
+msgid "Site deactivated."
+msgstr "Bloc desactivat."
+
+#: wp-admin/network/sites.php:76
+msgid "Site removed from spam."
+msgstr "Bloc eliminat de la brossa."
+
+#: wp-admin/network/sites.php:79
+msgid "Site marked as spam."
+msgstr "Bloc marcat com a brossa."
+
+#: wp-admin/network/sites.php:105
+#: wp-admin/network/menu.php:18
+msgctxt "site"
+msgid "Add New"
+msgstr "Afegeix"
+
+#: wp-admin/network/settings.php:23
+msgid "This screen sets and changes options for the network as a whole. The first site is the main site in the network and network options are pulled from that original site&#8217;s options."
+msgstr "Aquesta pantalla estableix i canvia les opcions per a la xarxa en conjunt. El primer bloc és el principal bloc en la xarxa i les opcions de la xarxa s'extrauen de les opcions d'aquest bloc original."
+
+#: wp-admin/network/settings.php:24
+msgid "Operational settings has fields for the network&#8217;s name and admin email."
+msgstr "La configuració operacional té camps per al nom de la xarxa i el correu electrònic de l'administrador."
+
+#: wp-admin/network/settings.php:25
+msgid "Dashboard Site is an option to give a site to users who do not have a site on the system. Their default role is Subscriber, but that default can be changed. The Admin Notice Feed can provide a notice on all dashboards of the latest post via RSS or Atom, or provide no such notice if left blank."
+msgstr "El Tauler és una opció per donar un bloc als usuaris que no tenen un bloc al sistema. El rol per defecte és Subscriptor, però això es pot canviar. El canal de notícies de l'administració pot avisar a tots els taulers dels darrers articles via RSS o Atom o no avisar si es deixa en blanc."
+
+#: wp-admin/network/settings.php:26
+msgid "Registration settings can disable/enable public signups. If you let others sign up for a site, install spam plugins. Spaces, not commas, should separate names banned as sites for this network."
+msgstr "La configuració del registre pot desactivar/activar el registre públic. Si deixeu a altres registrar-se en un bloc, instal·leu extensions contra la brossa. Espais, no comes, es recomanable que separin els noms prohibits com a blocs en aquesta xarxa."
+
+#: wp-admin/network/settings.php:27
+msgid "New site settings are defaults applied when a new site is created in the network. These include welcome email for when a new site or user account is registered, and what&#8127;s put in the first post, page, comment, comment author, and comment URL."
+msgstr "Quan es crea un bloc nou a la xarxa, se li aplica la configuració per defecte. Això inclou el correu electrònic de benvinguda per quan es registra un nou usuari i què hi ha a el primer article, la primera pàgina i el contingut, autor i adreça del primer comentari."
+
+#: wp-admin/network/settings.php:28
+msgid "Upload settings control the size of the uploaded files and the amount of available upload space for each site. You can change the default value for specific sites when you edit a particular site. Allowed file types are also listed (space separated only)."
+msgstr "Les Opcions de càrrega controlen la mida dels fitxers a carregar i la quantitat d'espai disponible per a cada bloc. Podeu canviar el valor predeterminat per a blocs específics quan editeu un bloc en particular. Els tipus de fitxers permesos estan també llistats (separats per espais solament)."
+
+#: wp-admin/network/settings.php:29
+msgid "Checkboxes for media upload buttons set which are shown in the visual editor. If unchecked, a generic upload button is still visible; other media types can still be uploaded if on the allowed file types list."
+msgstr "Les caselles de verificació dels botons de càrrega dels mèdia defineixen quins botons es mostren a l'editor visual. Si no estan marcades, es mostrarà encara un botó de càrrega genèric. Els altres tipus de suports encara es poden penjar si estan permesos a la llista de tipus de fitxer permesos."
+
+#: wp-admin/network/settings.php:30
+msgid "Menu setting enables/disables the plugin menus from appearing for non super admins, so that only super admins, not site admins, have access to activate plugins."
+msgstr "La configuració del menú activa/desactiva que apareguin els menús de les extensions per a usuaris que no són super administradors, per a què solament els super administradors, no els administradors de blocs, puguin activar les extensions."
+
+#: wp-admin/network/settings.php:32
+msgid "<a href=\"http://codex.wordpress.org/Network_Admin_Settings_Screen\" target=\"_blank\">Documentation on Network Settings</a>"
+msgstr "<a href=\"http://codex.wordpress.org/Network_Admin_Settings_Screen\" target=\"_blank\">Documentació sobre les opcions de la xarxa</a> (en anglès)"
+
+#: wp-admin/network/settings.php:50
+msgid "Operational Settings"
+msgstr "Paràmetres d'operació"
+
+#: wp-admin/network/settings.php:53
+msgid "Network Name"
+msgstr "Nom de la xarxa"
+
+#: wp-admin/network/settings.php:57
+msgid "What you would like to call this website."
+msgstr "Com t'agradaria dir-li a aquesta pàgina web."
+
+#: wp-admin/network/settings.php:62
+msgid "Network Admin Email"
+msgstr "Adreça de correu electrònic de l'administrador de la xarxa"
+
+#: wp-admin/network/settings.php:66
+msgid "Registration and support emails will come from this address. An address such as <code>support@%s</code> is recommended."
+msgstr "El registre i correus electrònics de suport vindran d'aquest adreça. Es recomana una adreça com ara <code>support@%s</code>."
+
+#: wp-admin/network/settings.php:70
+msgid "Registration Settings"
+msgstr "Paràmetres de registre"
+
+#: wp-admin/network/settings.php:73
+msgid "Allow new registrations"
+msgstr "Permet nous registres"
+
+#: wp-admin/network/settings.php:80
+msgid "Registration is disabled."
+msgstr "El registre està desactivat."
+
+#: wp-admin/network/settings.php:81
+msgid "User accounts may be registered."
+msgstr "Els comptes d'usuari han de registrar-se."
+
+#: wp-admin/network/settings.php:82
+msgid "Logged in users may register new sites."
+msgstr "Els usuaris identificats poden registrar nous blocs."
+
+#: wp-admin/network/settings.php:83
+msgid "Both sites and user accounts can be registered."
+msgstr "Ambdós pàgines web i comptes d'usuari es poden registrar."
+
+#: wp-admin/network/settings.php:85
+msgid "If registration is disabled, please set <code>NOBLOGREDIRECT</code> in <code>wp-config.php</code> to a URL you will redirect visitors to if they visit a non-existent site."
+msgstr "Si el registre està desactivat, definiu la variable <code>NOBLOGREDIRECT</code> en el fitxer <code>wp-config.php</code> a una url on vulgueu redirigir els visitants quan vagin a una pàgina inexistent."
+
+#: wp-admin/network/settings.php:91
+msgid "Registration notification"
+msgstr "Notificació de registre"
+
+#: wp-admin/network/settings.php:97
+msgid "Send the network admin an email notification every time someone registers a site or user account."
+msgstr "Envieu a l'administrador de la xarxa un correu electrònic de notificació cada vegada que algun usuari es registra o registra un bloc."
+
+#: wp-admin/network/settings.php:102
+msgid "Add New Users"
+msgstr "Afegeix nous usuaris"
+
+#: wp-admin/network/settings.php:104
+msgid "Allow site administrators to add new users to their site via the \"Users &rarr; Add New\" page."
+msgstr "Permet als administradors del bloc afegir usuaris nous als seus blocs web anant a la pàgina \"Usuaris &rarr; Afegeix\"."
+
+#: wp-admin/network/settings.php:109
+msgid "Banned Names"
+msgstr "Noms prohibits"
+
+#: wp-admin/network/settings.php:113
+msgid "Users are not allowed to register these sites. Separate names by spaces."
+msgstr "Els usuaris no tenen permisos per a registrar aquestes pàgines web. Separeu els noms per espais."
+
+#: wp-admin/network/settings.php:118
+msgid "Limited Email Registrations"
+msgstr "Registre de correu electrònic limitat"
+
+#: wp-admin/network/settings.php:125
+msgid "If you want to limit site registrations to certain domains. One domain per line."
+msgstr "Si voleu limitar el registre de blocs a certs dominis. Entreu un domini per línia."
+
+#: wp-admin/network/settings.php:130
+msgid "Banned Email Domains"
+msgstr "Dominis de correu electrònic prohibits"
+
+#: wp-admin/network/settings.php:135
+msgid "If you want to ban domains from site registrations. One domain per line."
+msgstr "Si voleu prohibir dominis des del registre de blocs. Entreu un domini per línia."
+
+#: wp-admin/network/settings.php:140
+msgid "New Site Settings"
+msgstr "Paràmetres del nou bloc"
+
+#: wp-admin/network/settings.php:144
+msgid "Welcome Email"
+msgstr "Correu electrònic de benvinguda"
+
+#: wp-admin/network/settings.php:149
+msgid "The welcome email sent to new site owners."
+msgstr "El correu electrònic de benvinguda enviat als propietaris del nou bloc."
+
+#: wp-admin/network/settings.php:153
+msgid "Welcome User Email"
+msgstr "Correu electrònic de benvinguda de l'usuari"
+
+#: wp-admin/network/settings.php:158
+msgid "The welcome email sent to new users."
+msgstr "El correu electrònic de benvinguda enviat als nous usuaris."
+
+#: wp-admin/network/settings.php:167
+msgid "The first post on a new site."
+msgstr "La primera entrada en un nou bloc"
+
+#: wp-admin/network/settings.php:171
+msgid "First Page"
+msgstr "Primera pàgina"
+
+#: wp-admin/network/settings.php:176
+msgid "The first page on a new site."
+msgstr "La primera pàgina en una nova pàgina web"
+
+#: wp-admin/network/settings.php:180
+msgid "First Comment"
+msgstr "Primer comentari"
+
+#: wp-admin/network/settings.php:185
+msgid "The first comment on a new site."
+msgstr "El primer comentari en un bloc nou."
+
+#: wp-admin/network/settings.php:189
+msgid "First Comment Author"
+msgstr "Autor del primer comentari"
+
+#: wp-admin/network/settings.php:193
+msgid "The author of the first comment on a new site."
+msgstr "L'autor del primer comentari en un bloc nou."
+
+#: wp-admin/network/settings.php:197
+msgid "First Comment URL"
+msgstr "URL del primer comentari"
+
+#: wp-admin/network/settings.php:201
+msgid "The URL for the first comment on a new site."
+msgstr "La URL del primer comentari en un bloc nou."
+
+#: wp-admin/network/settings.php:205
+msgid "Upload Settings"
+msgstr "Paràmetres de càrrega"
+
+#: wp-admin/network/settings.php:208
+msgid "Media upload buttons"
+msgstr "Botons per penjar els mèdia"
+
+#: wp-admin/network/settings.php:211
+msgid "Videos"
+msgstr "Vídeos"
+
+#: wp-admin/network/settings.php:212
+msgid "Music"
+msgstr "Música"
+
+#: wp-admin/network/settings.php:213
+msgid "The media upload buttons to display on the &#8220;Write Post&#8221; page. Make sure you update the allowed upload file types below as well."
+msgstr "Els botons de pujada dels mèdia a mostrar en la pàgina \"Escriu article\". Assegureu-vos que actualitzeu també els tipus de fitxer a penjar aquí sota."
+
+#: wp-admin/network/settings.php:217
+msgid "Site upload space"
+msgstr "Espai de càrrega del bloc"
+
+#: wp-admin/network/settings.php:219
+msgid "Limit total size of files uploaded to %s MB"
+msgstr "Limita la grandària total de fitxers penjats a %s MB"
+
+#: wp-admin/network/settings.php:224
+msgid "Upload file types"
+msgstr "Tipus de fitxer a penjar"
+
+#: wp-admin/network/settings.php:229
+msgid "Max upload file size"
+msgstr "Màxima grandària del fitxer a penjar"
+
+#: wp-admin/network/settings.php:230
+msgctxt "File size in kilobytes"
+msgid "%s KB"
+msgstr "%s KB"
+
+#: wp-admin/network/settings.php:239
+msgid "Language Settings"
+msgstr "Paràmetres de l'idoma"
+
+#: wp-admin/network/settings.php:242
+msgid "Default Language"
+msgstr "Idioma predeterminat"
+
+#: wp-admin/network/settings.php:254
+msgid "Menu Settings"
+msgstr "Paràmetres del menú"
+
+#: wp-admin/network/settings.php:257
+msgid "Enable administration menus"
+msgstr "Permet els menús d'administració"
+
+#: wp-admin/network/site-info.php:78
+msgid "Site info updated."
+msgstr "Informació del bloc actualitzada."
+
+#: wp-admin/network/site-info.php:131
+msgid "Update <code>siteurl</code> and <code>home</code> as well."
+msgstr "Actualitza <code>la pàgina web</code> i <code>la pàgina principal</code> també."
+
+#: wp-admin/network/menu.php:28
+msgid "Themes %s"
+msgstr "Aparences %s"
+
+#: wp-admin/network/menu.php:38
+msgctxt "plugin editor"
+msgid "Add New"
+msgstr "Afegeix"
+
+#: wp-admin/network/menu.php:64
+msgid "Updates"
+msgstr "Actualitzacions"
+
+#: wp-admin/network/site-themes.php:22
+msgid "You do not have sufficient permissions to manage themes for this site."
+msgstr "No teniu permisos suficients per administrar les aparences d'aquest bloc."
+
+#: wp-admin/network/site-themes.php:161
+msgid "Network enabled themes are not shown on this screen."
+msgstr "Les aparences activades a la xarxa no es mostren en aquesta pantalla."
+
+#: wp-signup.php:69
+msgid "Site Name:"
+msgstr "Nom del bloc:"
+
+#: wp-signup.php:71
+msgid "Site Domain:"
+msgstr "Domini del bloc:"
+
+#: wp-signup.php:84
+msgid "sitename"
+msgstr "nom del bloc"
+
+#: wp-signup.php:86
+msgid "domain"
+msgstr "domini"
+
+#: wp-signup.php:87
+msgid "Your address will be %s."
+msgstr "L'adreça serà %s."
+
+#: wp-signup.php:87
+msgid "Must be at least 4 characters, letters and numbers only. It cannot be changed, so choose carefully!"
+msgstr "Ha de ser d'almenys 4 caràcters, lletres i números solament. No es pot canviar, així que trieu-la amb cura!"
+
+#: wp-signup.php:92
+msgid "Site Title:"
+msgstr "Títol del bloc:"
+
+#: wp-signup.php:101
+msgid "Privacy:"
+msgstr "Privadesa:"
+
+#: wp-signup.php:102
+msgid "Allow my site to appear in search engines like Google, Technorati, and in public listings around this network."
+msgstr "Permet que el meu bloc aparegui en cercadors com ara Google i Technorati, i en les llistes públiques al voltant d'aquesta xarxa."
+
+#: wp-signup.php:134
+msgid "(Must be at least 4 characters, letters and numbers only.)"
+msgstr "(Ha de tenir almenys 4 caràcters, lletres i números solament.)"
+
+#: wp-signup.php:137
+msgid "Email&nbsp;Address:"
+msgstr "Adreça&nbsp;electrònica:"
+
+#: wp-signup.php:141
+msgid "We send your registration email to this address. (Double-check your email address before continuing.)"
+msgstr "Us enviem el correu electrònic de registre a aquesta adreça. (Comproveu dues vegades l'adreça de correu abans de continuar.)"
+
+#: wp-signup.php:167
+msgid "Get <em>another</em> %s site in seconds"
+msgstr "Obté <em>altre</em> bloc %s en segons"
+
+#: wp-signup.php:170
+msgid "There was a problem, please correct the form below and try again."
+msgstr "Ha hagut un problema, corregiu el formulari d'aquí sota i proveu de nou."
+
+#: wp-signup.php:173
+msgid "Welcome back, %s. By filling out the form below, you can <strong>add another site to your account</strong>. There is no limit to the number of sites you can have, so create to your heart&#8217;s content, but write responsibly!"
+msgstr "Benvingut de nou, %s. En emplenar el formulari d'aquí sota, podeu <strong>afegir un altre bloc al vostre compte</strong>. No hi ha límit al nombre de blocs web que podeu tenir, així que creeu el que senti el vostre cor, però escriviu amb responsabilitat."
+
+#: wp-signup.php:179
+msgid "Sites you are already a member of:"
+msgstr "Blocs dels quals ja sou membres:"
+
+#: wp-signup.php:188
+msgid "If you&#8217;re not going to use a great site domain, leave it for a new user. Now have at it!"
+msgstr "Si no aneu a fer servir el domini d'un gran bloc, deseu-lo per a un altre usuari nou. Ara en tenim!"
+
+#: wp-signup.php:193
+msgid "Create Site"
+msgstr "Crea un bloc"
+
+#: wp-signup.php:223
+msgid "The site %s is yours."
+msgstr "El bloc %s és vostre."
+
+#: wp-signup.php:225
+msgid "<a href=\"http://%1$s\">http://%2$s</a> is your new site.  <a href=\"%3$s\">Log in</a> as &#8220;%4$s&#8221; using your existing password."
+msgstr "<a href=\"http://%1$s\">http://%2$s</a> és el vostre bloc nou.  <a href=\"%3$s\">Entreu</a> com a &#8220;%4$s&#8221; fent servir la vostra contrasenya."
+
+#: wp-signup.php:252
+msgid "Get your own %s account in seconds"
+msgstr "Obteniu el vostre compte %s en segons"
+
+#: wp-signup.php:265
+msgid "Gimme a site!"
+msgstr "Dóna'm un bloc!"
+
+#: wp-signup.php:268
+msgid "Just a username, please."
+msgstr "Solament un nom d'usuari, si us plau."
+
+#: wp-signup.php:272
+msgid "Next"
+msgstr "Següent"
+
+#: wp-signup.php:299
+msgid "%s is your new username"
+msgstr "El nou nom d'usuari és %s"
+
+#: wp-signup.php:300
+msgid "But, before you can start using your new username, <strong>you must activate it</strong>."
+msgstr "Però, abans de començar a fer servir el vostre nom d'usuari, <strong>haureu d'activar-lo</strong>."
+
+#: wp-signup.php:301
+msgid "Check your inbox at <strong>%1$s</strong> and click the link given."
+msgstr "Comproveu la safata d'entrada a <strong>%1$s</strong> i cliqueu en l'enllaç."
+
+#: wp-signup.php:302
+msgid "If you do not activate your username within two days, you will have to sign up again."
+msgstr "Si no activeu el vostre nom d'usuari en dos dies, haureu de registrar-vos altra vegada."
+
+#: wp-signup.php:328
+msgid "Signup"
+msgstr "Registre"
+
+#: wp-signup.php:362
+msgid "Congratulations! Your new site, %s, is almost ready."
+msgstr "Felicitacions! El vostre nou bloc, %s, ja quasi està llest."
+
+#: wp-signup.php:364
+msgid "But, before you can start using your site, <strong>you must activate it</strong>."
+msgstr "Però, abans de començar a fer servir el vostre web, <strong>heu d'activar-lo</strong>."
+
+#: wp-signup.php:365
+msgid "Check your inbox at <strong>%s</strong> and click the link given."
+msgstr "Comproveu la safata d'entrada a <strong>%1$s</strong> i cliqueu en l'enllaç que hi trobareu."
+
+#: wp-signup.php:366
+msgid "If you do not activate your site within two days, you will have to sign up again."
+msgstr "Si no activeu el vostre bloc en dos dies, haureu de registrar-vos altra vegada."
+
+#: wp-signup.php:367
+msgid "Still waiting for your email?"
+msgstr "Encara esteu esperant el correu electrònic?"
+
+#: wp-signup.php:369
+msgid "If you haven&#8217;t received your email yet, there are a number of things you can do:"
+msgstr "Si no heu rebut encara el correu electrònic, hi ha un nombre de coses que podeu fer:"
+
+#: wp-signup.php:371
+msgid "Wait a little longer. Sometimes delivery of email can be delayed by processes outside of our control."
+msgstr "Espereu una mica més. A vegades l'enviament de correu es demora per processos fora del nostre control."
+
+#: wp-signup.php:372
+msgid "Check the junk or spam folder of your email client. Sometime emails wind up there by mistake."
+msgstr "Reviseu la paperera o la carpeta de correu brossa al vostre client de correu. A vegades els correus electrònics acaben allà per error."
+
+#: wp-signup.php:373
+msgid "Have you entered your email correctly?  You have entered %s, if it&#8217;s incorrect, you will not receive your email."
+msgstr "Heu introduït la vostra adreça de correu electrònic correctament? Heu entrat %s, si és incorrecta, no rebreu el correu electrònic."
+
+#: wp-signup.php:388
+msgctxt "Multisite active signup type"
+msgid "all"
+msgstr "tots"
+
+#: wp-signup.php:389
+msgctxt "Multisite active signup type"
+msgid "none"
+msgstr "cap"
+
+#: wp-signup.php:390
+msgctxt "Multisite active signup type"
+msgid "blog"
+msgstr "bloc"
+
+#: wp-signup.php:391
+msgctxt "Multisite active signup type"
+msgid "user"
+msgstr "usuari"
+
+#: wp-signup.php:394
+msgid "Greetings Site Administrator! You are currently allowing &#8220;%s&#8221; registrations. To change or disable registration go to your <a href=\"%s\">Options page</a>."
+msgstr "Felicitats administrador del bloc! Actualment esteu permetent &#8220;%s&#8221; registres. Per a canviar o desactivar el registre, aneu a la <a href=\"%s\">pàgina d'opcions</a>."
+
+#: wp-signup.php:400
+msgid "Registration has been disabled."
+msgstr "El registre s'ha desactivat."
+
+#: wp-signup.php:407
+msgid "You must first <a href=\"%s\">log in</a>, and then you can create a new site."
+msgstr "Primer, heu d'<a href=\"%s\">iniciar la sessió</a>, i després podeu crear un nou bloc."
+
+#: wp-signup.php:415
+msgid "User registration has been disabled."
+msgstr "El registre d'usuaris s'ha desactivat."
+
+#: wp-signup.php:421
+msgid "Site registration has been disabled."
+msgstr "El registre de blocs s'ha desactivat."
+
+#: wp-signup.php:435
+msgid "Sorry, new registrations are not allowed at this time."
+msgstr "Ho sentim, no estan permesos els nous registres en aquest moment."
+
+#: wp-signup.php:437
+msgid "You are logged in already. No need to register again!"
+msgstr "Ja esteu identificats. No necessiteu registrar-vos de nou!"
+
+#: wp-signup.php:443
+msgid "<p><em>The site you were looking for, <strong>%s</strong> does not exist, but you can create it now!</em></p>"
+msgstr "<p><em>El bloc que esteu cercant, <strong>%s</strong> no existeix, però podeu crear-lo ara!</em></p>"
+
+#: wp-signup.php:445
+msgid "<p><em>The site you were looking for, <strong>%s</strong>, does not exist.</em></p>"
+msgstr "<p><em>El bloc que esteu cercant, <strong>%s</strong>, no existeix.</em></p>"
+
+#: wp-includes/ms-load.php:211
+msgid "That site does not exist. Please try <a href=\"%s\">%s</a>."
+msgstr "Aquest bloc no existeix. Intenteu-ho amb <a href=\"%s\">%s</a>."
+
+#: wp-includes/ms-load.php:213
+msgid "No site defined on this host. If you are the owner of this site, please check <a href=\"http://codex.wordpress.org/Debugging_a_WordPress_Network\">Debugging a WordPress Network</a> for help."
+msgstr "No s'ha definit cap bloc en aquest amfitrió. Si sou propietari d'aquest bloc, feu un cop d'ull a <a href=\"http://codex.wordpress.org/Debugging_a_WordPress_Network\">Depurant una xarxa Wordpress</a> (en anglès) per si trobeu ajuda."
+
+#: wp-includes/ms-load.php:227
+msgid "Error establishing database connection"
+msgstr "Error establint la connexió amb la base de dades"
+
+#: wp-includes/ms-load.php:231
+msgid "If your site does not display, please contact the owner of this network."
+msgstr "Si el bloc no es mostra, contacteu amb el propietari de la xarxa."
+
+#: wp-includes/ms-load.php:232
+msgid "If you are the owner of this network please check that MySQL is running properly and all tables are error free."
+msgstr "Si sou el propietari d'aquesta xarxa, comproveu que MySQL s'està executant correctament i totes les taules estan lliures d'error."
+
+#: wp-includes/ms-load.php:234
+msgid "<strong>Database tables are missing.</strong> This means that MySQL is not running, WordPress was not installed properly, or someone deleted <code>%s</code>. You really should look at your database now."
+msgstr "<strong>Les taules de la base de dades no existeixen.</strong> Això vol dir que el MySQL no s'està executant, que el WordPress no està instal·lat correctament, o que algú ha esborrat <code>%s</code>. De debò que ara <em>hauríeu</em> de pegar-li un cop d'ull a la base de dades."
+
+#: wp-includes/ms-load.php:236
+msgid "<strong>Could not find site <code>%1$s</code>.</strong> Searched for table <code>%2$s</code> in database <code>%3$s</code>. Is that right?"
+msgstr "<strong>No es pot trobar el bloc <code>%1$s</code>.</strong> Resultats de la cerca per a la taula <em>%2$s</em> en la base de dades <code>%3$s</code>. És correcte?"
+
+#: wp-includes/ms-load.php:238
+msgid "Read the <a target=\"_blank\" href=\"http://codex.wordpress.org/Debugging_a_WordPress_Network\">bug report</a> page. Some of the guidelines there may help you figure out what went wrong."
+msgstr "Llegiu la pàgina <a target=\"_blank\" href=\"http://codex.wordpress.org/Debugging_a_WordPress_Network\">d'informe d'errades</a> (en anglès). Algunes de les guies que hi ha allà us poden ajudar a esbrinar que va anar malament."
+
+#: wp-includes/ms-load.php:239
+msgid "If you&#8217;re still stuck with this message, then check that your database contains the following tables:"
+msgstr "Si encara esteu encallats amb aquest missatge, reviseu que la base de dades conté les següents taules:"
+
+#: wp-includes/ms-settings.php:15
+msgid "Configuration error in <code>wp-config.php</code>. <code>$base</code> is set to <code>BASE</code> when it should be like <code>/</code> or <code>/blogs/</code>."
+msgstr "Error de configuració en <code>wp-config.php</code>. <code>$base</code> està definit com a <code>BASE</code> quan hauria de ser <code>/</code> o <code>/blogs/</code>."
+
+#: wp-includes/ms-settings.php:38
+msgid "Multisite only works without the port number in the URL."
+msgstr "Multi lloc solament funciona sense el número de port en la URL."
+
+#: wp-includes/ms-settings.php:123
+msgid "Database tables are missing."
+msgstr "Les taules de la base de dades falten."
+
+#: wp-includes/ms-settings.php:124
+msgid "No site by that name on this system."
+msgstr "No hi ha cap bloc amb aquest nom al sistema."
+

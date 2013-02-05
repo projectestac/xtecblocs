@@ -1,0 +1,203 @@
+.important {
+	background:#ffcdc5;
+	border:1px solid #cd2d12;
+	padding:5px;
+	margin:.5em 0 .5em 0;
+	color:#8c1400;
+}
+
+.important a {
+	color:#8c1400;
+}
+
+.note {
+	background:#d5f69b;
+}
+
+.note, .download {
+	border:1px solid #75ad14;
+	padding:5px;
+	margin:.5em 0 .5em 0;
+	color:#446c00;
+}
+
+.note a, .download a {
+	color:#446c00 !important;
+}
+
+.download a {
+	font-weight:bold;
+}
+
+.download {
+	background:#d5f69b url(images/download.png) no-repeat top left;
+	padding-left:46px;
+	min-height:35px;
+}
+
+* html .download {
+	background-image:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='<?php print $path; ?>images/download.png', sizingMethod='scale');
+}
+
+address {
+	padding:5px;
+	margin:1em 0 1em 0;
+	background:#f3f3f3;
+	border:1px solid #c6c6c6;
+}
+
+body,
+body.mceContentBody {
+	padding:0 1em 0 1em;
+	margin:0;
+	background:white;
+	font-family:Arial, Verdana, Lucida, serif, sans;
+	line-height: 1.7em;
+	font-size: 76%;
+	color:#232323;
+}
+
+a {
+	color:#14568a !important;
+}
+
+a img {
+	border:0px none;
+}
+
+ul {
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
+ul ul {
+	margin:0 0 0 1.5em;
+}
+
+ul li {
+	padding:0;
+	margin:0;
+	background:transparent url(images/bullet.png) no-repeat 0 1px;
+	padding-left:20px;
+}
+
+ul li li {
+	list-style-type:square;
+	list-style-position:inside;
+	padding-left:0;
+	background-image:none;
+}
+
+ul li li li {
+	list-style-type:disc;
+}
+
+blockquote {
+	border-left:3px solid #14568a;
+	color:#14568a;
+	padding:0 0 0 1em;
+	margin:0;
+	font-family: Georgia, Times New Roman, sans;
+	font-style:italic;
+	font-size:1.1em;
+}
+
+blockquote a {
+	color:#14568a;
+}
+
+blockquote blockquote {
+	font-size:1em;
+}
+
+code {
+	background:#14568a url(images/code_bg.png) no-repeat top left;
+	display:block;
+	line-height:26px !important;
+	padding-left:44px;
+	font-size:14px;
+	border:1px solid #14568a;
+	margin:1em 0 1em 0;
+	font-family: "Courier New", Courier, monospace;
+	letter-spacing:0;
+	clear:both;
+	overflow:auto;
+	text-align:left;
+	color:white;
+	white-space:nowrap;
+}
+
+* html code {
+	background-image:none;
+	zoom:1;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='wp-content/themes/freshy2/images/code_bg.png', sizingMethod='crop');
+}
+
+
+
+/* This file contains the CSS data for the editable area(iframe) of TinyMCE */
+html {
+	background-color: #fff;
+}
+
+.aligncenter,
+dl.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption-dd {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+img.wpGallery {
+	border: 1px dotted #cc0000;
+	background: #ffffcc url("plugins/wpgallery/img/gallery.png") no-repeat scroll center center;
+	width: 99%;
+	height: 250px;
+}
+
+body.mceForceColors {
+	background:#fff;
+	color:#000;
+}
+
+.mceItemTable, .mceItemTable td, .mceItemTable th, .mceItemTable caption, .mceItemVisualAid {
+	border: 1px dashed #BBB;
+}
+
+.mceIEcenter {
+	text-align: center;
+}

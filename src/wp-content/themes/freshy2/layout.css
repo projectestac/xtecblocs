@@ -1,0 +1,148 @@
+﻿#frame {
+	padding-left:20px;
+	padding-right:20px;
+	clear:both;
+}
+
+* html #frame {
+	zoom:1;
+	position: relative;
+	display:inline;
+	height:1%;
+}
+
+#content, .sidebar {
+	position: relative;
+	float: left;
+	overflow:hidden;
+}
+
+* html #frame .sidebar {
+	position: relative;
+	display:inline;
+	height:1%;
+}
+
+* html #frame * {
+	position: relative;
+}
+
+#content {
+	padding: .5em 0 .5em 0;
+	width: 100%;
+	float: left;
+}
+
+#sidebar_left.sidebar div {
+	margin-right:20px;
+	padding-right:10px;
+}
+
+#sidebar.sidebar div {
+	margin-left:20px;
+	padding-left:10px;
+}
+
+.sidebar div {
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.sidebar div div, #sidebar.sidebar div div, #sidebar_left.sidebar div div {
+	padding:0;
+	margin:0;
+}
+
+#sidebar_left.sidebar {
+	margin-left: -100%;
+}
+
+#sidebar.sidebar {
+	margin-right: -100%;
+}
+
+.sidebar_left #frame {
+	padding-left:200px;
+}
+
+.sidebar_right #frame {
+	padding-right:250px;
+}
+
+#sidebar_left.sidebar {
+	width:200px;
+	right:200px;
+}
+
+#sidebar.sidebar {
+	width:250px;
+}
+
+* html #sidebar_left {
+	left:250px;
+}
+
+#footer {
+	clear: both;
+}
+
+#frame {
+	overflow: hidden;
+}
+
+#page, #header, #footer {
+	width:800px;
+	margin:0 auto 0 auto;
+}
+/*
+#header, #header .container, #header_image, #menu {
+	position:relative;
+	z-index:80;
+}*/
+
+html>body #page .container {
+	padding:0 10px 0 10px;
+	background:transparent url(images/shadow_left.png) top left repeat-y;
+}
+
+html>body #header {
+	background:transparent url(images/header_shadow_right.png) top right repeat-y;
+}
+
+html>body #header .container,
+html>body #footer .container {
+	padding:10px 0 0 10px;
+	margin-right:10px;
+	background:transparent url(images/header_shadow.png) top left repeat-y;
+}
+
+html>body #footer {
+	background:transparent url(images/footer_shadow_right.png) bottom right repeat-y;
+}
+
+#footer {
+
+}
+
+html>body #footer .container {
+	padding:0 0 10px 10px;
+	background:transparent url(images/footer_shadow.png) bottom left repeat-y;
+}
+
+#footer_content {
+	padding:10px;
+	text-align:center;
+	line-height:1em;
+	position: relative;
+}
+
+#footer_content * {
+	padding:0;
+	margin:0;
+}
+
+html>body #page {
+	background:transparent url(images/shadow_right.png) top right repeat-y;
+}
+
+

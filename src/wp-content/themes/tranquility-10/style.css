@@ -1,0 +1,217 @@
+/*
+Theme Name: Tranquility
+Theme URI: http://www.roytanck.com
+Description: Minimalist two-column theme with a small Flash animation. Uses SWFObject embed by Geoff Stearns to degrade gracefully on non-flash systems. Version 1.1 adds widget support, 1.2 restores WP 2.0.x support.
+Version: 1.2
+Author: Roy Tanck
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: arial, helvetica, sans-serif;
+	font-size: 12px;
+	color: #ccc;
+	background-color: #222;
+	text-align: center;
+	padding:0;
+	border-top: 20px solid #111;
+}
+
+a { color: #ac6; text-decoration: none; }
+a img { border: none; }
+a:visited { color: #999; }
+a:hover { color: #793; text-decoration: underline; }
+
+#rap {
+	width: 840px;
+	margin: 0 auto;
+	padding: 0 0 40px 0;
+	text-align: left;
+}
+
+/* header styles */
+
+#header{
+	margin-bottom: 40px;
+	padding-top: 30px;
+}
+
+#header #flash{
+	float: left;
+	margin: 0 6px 0 0;
+}
+
+#header h1{
+	margin-top: 16px;
+}
+
+#header h1 a {
+	font-size: 40px;
+	letter-spacing: -0.05em;
+	color: #ac6;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+#header h2 {
+	font-size: 15px;
+	font-weight: normal;
+	color: #999;
+}
+
+/* sidebar styles */
+
+#menu {
+	float: right;
+	width: 220px;
+	padding-bottom: 40px;
+	list-style-type: none;
+}
+
+#menu ul {
+	list-style-type: none;
+	margin-bottom: 20px;
+}
+
+#menu ul {
+	padding-left: 15px;
+	color: #666;
+}
+
+#menu ul li {
+	list-style-type: disc;
+}
+
+#menu ul ul {
+	margin-bottom: 5px;
+}
+
+h2 {
+	font-size: 12px;
+	color: #fff;
+	margin-bottom: 6px;
+}
+
+#menu ul h2{
+	font-size: 12px;
+	font-weight: normal;
+	color: #fff;
+	margin-bottom: 3px;
+}
+
+#menu #search {
+	margin-bottom: 20px;
+}
+
+/* content styles */
+
+#content {
+	margin: 0 260px 0 15px;
+}
+
+.post {
+	margin-bottom: 40px;
+	line-height: 150%;
+}
+
+.storytitle {
+	margin-bottom: 2px;
+}
+
+.storytitle a {
+	font-size: 20px;
+	letter-spacing: -0.05em;
+	color: #fff;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.meta, .meta a {
+	font-size: 9px;
+	color: #999;
+	margin-bottom: 10px;
+}
+
+.storycontent{
+	margin-bottom: 10px;
+}
+
+.storycontent img {
+	border: 10px solid #111;
+	margin: 10px 0;
+}
+
+.storycontent img.wp-smiley { border: none; margin: 0; }
+
+.storycontent ul, .storycontent ol {
+	padding-left: 20px;
+	margin-bottom: 20px;
+}
+
+blockquote, code {
+	display: block;
+	padding: 6px 10px;
+	border: 1px solid #333;
+	background-color: #111;
+	margin-bottom: 10px;
+}
+
+/* comment styles */
+
+#commentlist {
+	list-style-type: none;
+	margin-bottom: 20px;
+	width: 560px;
+	overflow:hidden;
+}
+
+#commentlist li {
+	padding: 6px 10px;
+	border: 1px solid #666;
+	margin-bottom: 10px;
+	overflow:hidden;
+}
+
+#commentlist cite {
+	font-size: 10px;
+	color: #999;
+}
+
+input, textarea {
+	border: 1px solid #999;
+	background-color: #222;
+	color: #ccc;
+	margin-bottom: 5px;
+	padding: 1px 3px;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 12px;
+}
+
+textarea {
+	width: 540px;
+	padding: 6px 10px;
+}
+
+p {
+	margin-bottom: 10px;
+}
+
+/* footer styles */
+
+.credit {
+	background-color: #111;
+	padding-top: 10px;
+	font-size: 9px;
+	clear:both;
+}
+
+.credit p {
+	width: 810px;
+	text-align: left;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}

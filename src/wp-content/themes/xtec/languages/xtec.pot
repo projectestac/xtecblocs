@@ -1,0 +1,358 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-05 14:20+0100\n"
+"PO-Revision-Date: 2011-10-05 14:20+0100\n"
+"Last-Translator: Francesc Bassas i Bullich\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;_c\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:10
+msgid "Error 404"
+msgstr ""
+
+#: ../404.php:11
+#: ../index.php:79
+msgid "Sorry, but you are looking for something that is not here"
+msgstr ""
+
+#: ../comments.php:3
+msgid "Please do not load this page directly. Thanks!"
+msgstr ""
+
+#: ../comments.php:9
+msgid "This post is password protected. Enter the password to view comments"
+msgstr ""
+
+#: ../comments.php:24
+#: ../comments.php:25
+msgid "No responses"
+msgstr ""
+
+#: ../comments.php:25
+msgid "One response"
+msgstr ""
+
+#: ../comments.php:25
+msgid "% responses"
+msgstr ""
+
+#: ../comments.php:25
+msgid "to"
+msgstr ""
+
+#: ../comments.php:65
+msgid "edit"
+msgstr ""
+
+#: ../comments.php:67
+msgid "Your comment is awaiting moderation"
+msgstr ""
+
+#: ../comments.php:93
+msgid "Leave a comment"
+msgstr ""
+
+#: ../comments.php:96
+msgid "You must be"
+msgstr ""
+
+#: ../comments.php:96
+msgid "logged in"
+msgstr ""
+
+#: ../comments.php:96
+msgid "to post a comment"
+msgstr ""
+
+#: ../comments.php:103
+#, php-format
+msgid "Logged in as %s."
+msgstr ""
+
+#: ../comments.php:103
+msgid "Log out of this account"
+msgstr ""
+
+#: ../comments.php:103
+msgid "Log out &raquo;"
+msgstr ""
+
+#: ../comments.php:109
+msgid "Name"
+msgstr ""
+
+#: ../comments.php:109
+#: ../comments.php:113
+msgid "(required)"
+msgstr ""
+
+#: ../comments.php:113
+msgid "Mail"
+msgstr ""
+
+#: ../comments.php:113
+msgid "(will not be published)"
+msgstr ""
+
+#: ../comments.php:117
+msgid "Website"
+msgstr ""
+
+#: ../comments.php:122
+msgid "You can use these tags"
+msgstr ""
+
+#: ../comments.php:128
+msgid "Submit comment"
+msgstr ""
+
+#: ../footer.php:10
+#, php-format
+msgid "Powered by <a href='http://wordpress.org' title='%s'><strong>WordPress</strong></a>"
+msgstr ""
+
+#: ../footer.php:10
+msgid "and"
+msgstr ""
+
+#: ../footer.php:10
+msgid "was designed by"
+msgstr ""
+
+#: ../functions.php:13
+msgid "Links for Freshy"
+msgstr ""
+
+#: ../functions.php:18
+msgid "Links"
+msgstr ""
+
+#: ../functions.php:58
+#: ../functions.php:69
+#: ../sidebar.php:8
+msgid "Navigation"
+msgstr ""
+
+#: ../functions.php:80
+#: ../functions.php:93
+#: ../functions.php:115
+msgid "Pages"
+msgstr ""
+
+#: ../functions.php:84
+#: ../functions.php:97
+msgid "Blog"
+msgstr ""
+
+#: ../functions.php:366
+msgid "XTEC Theme Options"
+msgstr ""
+
+#: ../functions.php:426
+msgid "XTEC options updated."
+msgstr ""
+
+#: ../functions.php:432
+msgid "XTEC Options"
+msgstr ""
+
+#: ../functions.php:440
+msgid "Theme switcher"
+msgstr ""
+
+#: ../functions.php:445
+msgid "Enter the label of the Homepage menu link"
+msgstr ""
+
+#: ../functions.php:447
+msgid "info : modifying these labels should break internationalisation"
+msgstr ""
+
+#: ../functions.php:458
+msgid "Enter the label of the Blog menu link"
+msgstr ""
+
+#: ../functions.php:460
+msgid "info : this is specially for YammYamm"
+msgstr ""
+
+#: ../functions.php:471
+msgid "Enter the label of the last menu link"
+msgstr ""
+
+#: ../functions.php:479
+msgid "Title color, ex: #006699"
+msgstr ""
+
+#: ../functions.php:487
+msgid "Subtitle color, ex: #3af567"
+msgstr ""
+
+#: ../functions.php:495
+msgid "Absolute url of your own css style"
+msgstr ""
+
+#: ../functions.php:496
+msgid "Click"
+msgstr ""
+
+#: ../functions.php:496
+msgid "Download css default"
+msgstr ""
+
+#: ../functions.php:504
+msgid "Absolute url of your own image"
+msgstr ""
+
+#: ../functions.php:520
+msgid "Background vertical position"
+msgstr ""
+
+#: ../functions.php:526
+msgid "Top"
+msgstr ""
+
+#: ../functions.php:529
+msgid "Middle"
+msgstr ""
+
+#: ../functions.php:532
+msgid "Bottom"
+msgstr ""
+
+#: ../functions.php:540
+msgid "Background horitzontal position"
+msgstr ""
+
+#: ../functions.php:546
+msgid "Left"
+msgstr ""
+
+#: ../functions.php:549
+msgid "Center"
+msgstr ""
+
+#: ../functions.php:552
+msgid "Right"
+msgstr ""
+
+#: ../functions.php:567
+msgid "Update Options &raquo;"
+msgstr ""
+
+#: ../functions.php:574
+msgid "Preview (updated when options are saved)"
+msgstr ""
+
+#: ../index.php:17
+#: ../index.php:46
+#: ../single.php:19
+msgid "Read"
+msgstr ""
+
+#: ../index.php:20
+#: ../index.php:49
+#: ../single.php:24
+msgid "Read the rest of this entry &raquo;"
+msgstr ""
+
+#: ../index.php:25
+#: ../single.php:37
+msgid "Actions"
+msgstr ""
+
+#: ../index.php:27
+#: ../index.php:52
+#: ../single.php:46
+msgid "Edit"
+msgstr ""
+
+#: ../index.php:54
+msgid "No Comments &#187;"
+msgstr ""
+
+#: ../index.php:54
+msgid "1 Comment &#187;"
+msgstr ""
+
+#: ../index.php:54
+msgid "% Comments &#187;"
+msgstr ""
+
+#: ../index.php:71
+msgid "&laquo; Previous Entries"
+msgstr ""
+
+#: ../index.php:72
+msgid "Next Entries &raquo;"
+msgstr ""
+
+#: ../index.php:78
+msgid "Not found"
+msgstr ""
+
+#: ../index.php:94
+#: ../index.php:118
+msgid "Last works"
+msgstr ""
+
+#: ../index.php:103
+#: ../index.php:127
+msgid "Last news"
+msgstr ""
+
+#: ../links.php:11
+msgid "Links:"
+msgstr ""
+
+#: ../searchform.php:3
+#: ../sidebar.php:18
+msgid "Search"
+msgstr ""
+
+#: ../single.php:40
+msgid "Comments rss"
+msgstr ""
+
+#: ../single.php:43
+msgid "Trackback"
+msgstr ""
+
+#: ../single.php:50
+msgid "Informations"
+msgstr ""
+
+#: ../single.php:52
+msgid "Author"
+msgstr ""
+
+#: ../single.php:53
+msgid "Date"
+msgstr ""
+
+#: ../single.php:55
+msgid "Last modified"
+msgstr ""
+
+#: ../single.php:57
+msgid "Categories"
+msgstr ""
+
+#: ../single.php:70
+msgid "Not Found"
+msgstr ""
+
+#: ../single.php:71
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr ""
+

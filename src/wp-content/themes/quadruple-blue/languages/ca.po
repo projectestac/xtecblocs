@@ -1,0 +1,358 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Quadruple Blue\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-04 13:16+0100\n"
+"PO-Revision-Date: 2011-10-04 13:21+0100\n"
+"Last-Translator: Francesc Bassas i Bullich\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;_c\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Catalan\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:7
+#: ../archive.php:46
+#: ../index.php:46
+#: ../page.php:33
+#: ../search.php:46
+#: ../single.php:36
+msgid "Not Found"
+msgstr "No s'ha trobat"
+
+#: ../404.php:9
+#: ../archive.php:48
+#: ../index.php:48
+#: ../page.php:35
+#: ../search.php:48
+#: ../single.php:38
+msgid "Sorry, but you are looking for something that isn&#39;t here."
+msgstr "Esteu cercant alguna cosa que no està aquí."
+
+#: ../archive.php:21
+#: ../index.php:21
+#: ../search.php:21
+#: ../single.php:9
+msgid "Posted on"
+msgstr "Publicat a"
+
+#: ../archive.php:21
+#: ../comments-popup.php:43
+#: ../index.php:21
+#: ../search.php:21
+#: ../single.php:9
+msgid "by"
+msgstr "per"
+
+#: ../archive.php:27
+#: ../index.php:27
+#: ../search.php:27
+msgid "No Comments"
+msgstr "No hi ha comentaris"
+
+#: ../archive.php:27
+#: ../index.php:27
+#: ../search.php:27
+msgid "1 Comment"
+msgstr "1 comentari"
+
+#: ../archive.php:27
+#: ../index.php:27
+#: ../search.php:27
+msgid "% Comments"
+msgstr "% comentaris"
+
+#: ../archive.php:28
+#: ../index.php:28
+#: ../search.php:28
+#: ../single.php:16
+msgid "Filed under&#58;"
+msgstr "Arxivat com a&#58;"
+
+#: ../archive.php:28
+#: ../index.php:28
+#: ../page.php:14
+#: ../search.php:28
+#: ../single.php:16
+msgid "Edit"
+msgstr "Edita"
+
+#: ../browse.php:2
+msgid "&laquo; Previous Entries"
+msgstr "&laquo; Entrades anteriors"
+
+#: ../browse.php:3
+msgid "Next Entries &raquo;"
+msgstr "Entrades següents &raquo;"
+
+#: ../comments-popup.php:21
+msgid "Comments"
+msgstr "Comentaris"
+
+#: ../comments-popup.php:23
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on this post."
+msgstr "Canal <abbr title=\"Really Simple Syndication\">RSS</abbr> pels comentaris a aquest article."
+
+#: ../comments-popup.php:26
+msgid "TrackBack <acronym title=\"Uniform Resource Identifier\">URI</acronym>"
+msgstr "Retroenllaç <abbr title=\"en anglès, Uniform Resource Identifier\">URI</abbr>"
+
+#: ../comments-popup.php:43
+msgid "Comment"
+msgstr "Comentari"
+
+#: ../comments-popup.php:43
+msgid "Trackback"
+msgstr "Retroenllaç"
+
+#: ../comments-popup.php:43
+msgid "Pingback"
+msgstr "Retroping"
+
+#: ../comments-popup.php:50
+msgid "No comments yet."
+msgstr "Encara no hi ha comentaris."
+
+#: ../comments-popup.php:54
+msgid "Leave a comment"
+msgstr "Deixa un comentari"
+
+#: ../comments-popup.php:55
+msgid "Line and paragraph breaks automatic, e-mail address never displayed, <acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed:"
+msgstr "El salt de línia i paràgraf són automàtics, l'adreça de correu electrònic no es mostrarà mai, l'<acronym title=\"en anglès, Hypertext Markup Language\">HTML</acronym> és permès:"
+
+#: ../comments-popup.php:60
+#: ../comments.php:78
+msgid "Name"
+msgstr "Nom"
+
+#: ../comments-popup.php:67
+msgid "E-mail"
+msgstr "Correu electrònic"
+
+#: ../comments-popup.php:76
+msgid "Your Comment"
+msgstr "El vostre comentari"
+
+#: ../comments-popup.php:82
+msgid "Say It!"
+msgstr "Digues-ho!"
+
+#: ../comments-popup.php:87
+msgid "Sorry, the comment form is closed at this time."
+msgstr "El formulari de comentaris està tancat ara mateix."
+
+#: ../comments.php:2
+msgid "Please do not load this page directly. Thanks!"
+msgstr "No carregueu aquesta pàgina directament."
+
+#: ../comments.php:7
+msgid "Password Protected"
+msgstr "Protecció amb contrasenya"
+
+#: ../comments.php:8
+msgid "Enter the password to view comments."
+msgstr "Escriviu la vostra contrasenya per a veure els comentaris."
+
+#: ../comments.php:23
+msgid "No Responses"
+msgstr "Cap resposta"
+
+#: ../comments.php:23
+msgid "One Response"
+msgstr "Una resposta"
+
+#: ../comments.php:23
+msgid "% Responses"
+msgstr "% Respostes"
+
+#: ../comments.php:23
+msgid "to"
+msgstr "a"
+
+#: ../comments.php:31
+msgid "on"
+msgstr "el"
+
+#: ../comments.php:31
+msgid "at"
+msgstr "a les"
+
+#: ../comments.php:31
+msgid "Said&#58;"
+msgstr "Va dir&#58;"
+
+#: ../comments.php:31
+msgid "Edit Comment"
+msgstr "Edita el comentari"
+
+#: ../comments.php:33
+msgid "Your comment is awaiting moderation."
+msgstr "El vostre comentari està en espera de moderació."
+
+#: ../comments.php:55
+msgid "Comments are closed."
+msgstr "Els comentaris estan tancats."
+
+#: ../comments.php:63
+msgid "Leave a Reply"
+msgstr "Deixa una resposta"
+
+#: ../comments.php:66
+msgid "You must be"
+msgstr "Heu"
+
+#: ../comments.php:66
+msgid "logged in"
+msgstr "d'identificar-vos"
+
+#: ../comments.php:66
+msgid "to post a comment."
+msgstr "per publicar un comentari."
+
+#: ../comments.php:73
+msgid "Logged in as"
+msgstr "Identificat com a"
+
+#: ../comments.php:73
+msgid "Log out of this account"
+msgstr "Surt d'aquest compte"
+
+#: ../comments.php:73
+msgid "Logout"
+msgstr "Surt"
+
+#: ../comments.php:78
+#: ../comments.php:81
+msgid "(required)"
+msgstr "(necessari)"
+
+#: ../comments.php:81
+msgid "Mail (will not be published)"
+msgstr "Correu electrònic (no serà publicat)"
+
+#: ../comments.php:84
+msgid "Website"
+msgstr "Lloc web"
+
+#: ../comments.php:88
+msgid "You can use these tags&#58;"
+msgstr "Podeu fer servir aquestes etiquetes&#58;"
+
+#: ../comments.php:92
+msgid "Submit Comment"
+msgstr "Envia el comentari"
+
+#: ../footer.php:12
+#, php-format
+msgid "Powered by <a href='http://wordpress.org' title='%s'><strong>WordPress</strong></a>"
+msgstr "Funciona amb <a href='http://wordpress.org' title='%s'><strong>WordPress</strong></a>"
+
+#: ../footer.php:12
+msgid "and"
+msgstr "i"
+
+#: ../header.php:26
+msgid "home page"
+msgstr "inici"
+
+#: ../index.php:24
+msgid "Read more..."
+msgstr "Llegeix més &raquo;"
+
+#: ../page.php:12
+#: ../sidebar.php:6
+#: ../single.php:13
+msgid "Pages"
+msgstr "Pàgines"
+
+#: ../right_sidebar.php:8
+#: ../searchform.php:3
+msgid "Search"
+msgstr "Cerca"
+
+#: ../right_sidebar.php:14
+msgid "Categories"
+msgstr "Categories"
+
+#: ../right_sidebar.php:30
+msgid "Calendar"
+msgstr "Calendari"
+
+#: ../right_sidebar.php:36
+msgid "Archives"
+msgstr "Arxius"
+
+#: ../sidebar.php:11
+msgid "Meta"
+msgstr "Meta"
+
+#: ../sidebar.php:15
+msgid "Syndicate this site using RSS"
+msgstr "Sindica aquest bloc fent servir RSS"
+
+#: ../sidebar.php:15
+msgid "Entries <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr "Entrades <abbr title=\"en anglès, Really Simple Syndication\">RSS</abbr>"
+
+#: ../sidebar.php:16
+msgid "Syndicate comments using RSS"
+msgstr "Sindica els comentaris utilitzant RSS"
+
+#: ../sidebar.php:16
+msgid "Comments <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr "<abbr title=\"en anglès, Really Simple Syndication\">RSS</abbr> dels comentaris"
+
+#: ../sidebar.php:17
+msgid "Valid"
+msgstr "Vàlid"
+
+#~ msgid "Says:"
+#~ msgstr "Diu:"
+
+#~ msgid "required, never displayed"
+#~ msgstr "necessari, no serà mostrat"
+
+#~ msgid "was designed by"
+#~ msgstr "va ser dissenyat per"
+
+#~ msgid "Home"
+#~ msgstr "Inici"
+
+#~ msgid "Permanent Link to"
+#~ msgstr "Enllaç permanent a"
+
+#~ msgid "Read the rest of this entry &raquo;"
+#~ msgstr "Llegeix la resta d'aquest article &raquo;"
+
+#~ msgid "Themes"
+#~ msgstr "Aparences"
+
+#~ msgid "The latest comments to all posts in RSS"
+#~ msgstr "Últims comentaris a tots els articles en RSS"
+
+#~ msgid "This page validates as XHTML 1.0 Transitional"
+#~ msgstr "Aquesta pàgina valida XHTML 1.0 Transitional"
+
+#~ msgid ""
+#~ "Valid <abbr title=\"eXtensible HyperText Markup Language\">XHTML</abbr>"
+#~ msgstr ""
+#~ "<abbr title=\"en anglès, eXtensible HyperText Markup Language\">XHTML</"
+#~ "abbr> vàlid"
+
+#~ msgid "Read the rest of this entry"
+#~ msgstr "Llegeix la resta d'aquesta entrada"
+
+#~ msgid "Blogroll"
+#~ msgstr "Blogroll"
+
+#~ msgid "Recent Posts"
+#~ msgstr "Articles recents"
+
+#~ msgid "Post"
+#~ msgstr "Article"

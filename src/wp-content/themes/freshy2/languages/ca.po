@@ -1,0 +1,383 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Freshy 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-03 16:08+0100\n"
+"PO-Revision-Date: 2011-10-03 16:22+0100\n"
+"Last-Translator: Francesc Bassas i Bullich\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;_c\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Catalan\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:6
+#: index.php:61
+#: search.php:29
+msgid "Not found"
+msgstr "No s'ha trobat"
+
+#: 404.php:7
+#: index.php:62
+#: search.php:30
+msgid "Sorry, but you are looking for something that is not here"
+msgstr "Esteu cercant alguna cosa que no està aquí."
+
+#: archives.php:11
+msgid "Archives by month"
+msgstr "Arxius per mes"
+
+#: archives.php:16
+msgid "Archives by category"
+msgstr "Arxius per categoria"
+
+#: comments.php:21
+msgid "No Responses"
+msgstr "Cap resposta"
+
+#: comments.php:21
+msgid "One Response"
+msgstr "Una resposta"
+
+#: comments.php:21
+msgid "% Responses"
+msgstr "% Respostes"
+
+#: comments.php:53
+msgid "Leave a Reply"
+msgstr "Deixa una resposta"
+
+#: comments.php:53
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Respon a %s"
+
+#: comments.php:67
+msgid "Logged in as"
+msgstr "Identificat com a"
+
+#: comments.php:67
+msgid "Log out of this account"
+msgstr "Surt d'aquest compte"
+
+#: comments.php:67
+msgid "Log out &raquo;"
+msgstr "Surt &raquo;"
+
+#: comments.php:72
+msgid "Name"
+msgstr "Nom"
+
+#: comments.php:75
+msgid "Mail (will not be published)"
+msgstr "Correu electrònic (no serà publicat)"
+
+#: comments.php:78
+msgid "Website"
+msgstr "Lloc web"
+
+#: comments.php:86
+msgid "Submit Comment"
+msgstr "Envia el comentari"
+
+#: functions.php:61
+msgid "Title:"
+msgstr "Títol:"
+
+#: functions.php:68
+msgid "Links"
+msgstr "Enllaços"
+
+#: functions.php:116
+msgid "Navigation"
+msgstr "Navegació"
+
+#: functions.php:145
+#: functions.php:158
+#: index.php:28
+msgid "Categories"
+msgstr "Categories"
+
+#: functions.php:154
+msgid "Pages"
+msgstr "Pàgines"
+
+#: functions.php:298
+msgid "Freshy options updated."
+msgstr "S'han actualitzat les opcions del freshy."
+
+#: functions.php:302
+msgid "Freshy Options"
+msgstr "Opcions del Freshy"
+
+#: functions.php:311
+msgid "Choose a custom style :"
+msgstr "Escull un estil personalitzat:"
+
+#: functions.php:323
+msgid "Default style"
+msgstr "Estil per defecte"
+
+#: functions.php:336
+msgid "Layout :"
+msgstr "Plantilla :"
+
+#: functions.php:339
+msgid "Display left sidebar"
+msgstr "Mostra la barra lateral esquerra"
+
+#: functions.php:349
+msgid "Display right sidebar"
+msgstr "Mostra la barra lateral dreta"
+
+#: functions.php:359
+msgid "Hide left sidebar on these posts"
+msgstr "Oculta la barra lateral esquerra en aquests articles"
+
+#: functions.php:363
+#: functions.php:372
+msgid "Enter posts ids separated by commas"
+msgstr "Inseriu els ids dels articles separats per comes"
+
+#: functions.php:368
+msgid "Hide right sidebar on these posts"
+msgstr "Oculta la barra lateral dreta en aquests articles"
+
+#: functions.php:377
+msgid "Navigation menu behaviour"
+msgstr "Comportament del menú de navegació"
+
+#: functions.php:382
+msgid "Auto : Display subpages on pages and blog categories in blog"
+msgstr "Auto: Mostra les subpàgines a les pàgines i a les categories de bloc al bloc"
+
+#: functions.php:386
+msgid "Normal : Always display categories and pages"
+msgstr "Normal: Sempre mostra les categories i les pàgines"
+
+#: functions.php:391
+msgid "Navigation menu rss"
+msgstr "Menu RSS de navegació"
+
+#: functions.php:396
+msgid "Display rss icon with categories"
+msgstr "Mostra la icona rss amb les categories"
+
+#: functions.php:400
+msgid "Do not display rss icon with categories"
+msgstr "No mostris la icona rss amb les categories"
+
+#: functions.php:403
+msgid "Date options :"
+msgstr "Opcions de data :"
+
+#: functions.php:404
+msgid "You can change date formatting in"
+msgstr "Podeu canviar el format de la data a"
+
+#: functions.php:408
+msgid "Show date on posts"
+msgstr "Mostra la data als articles:"
+
+#: functions.php:418
+msgid "Show time on posts"
+msgstr "Mostra l'hora als articles"
+
+#: functions.php:426
+msgid "Other options :"
+msgstr "Altres opcions :"
+
+#: functions.php:429
+msgid "Show author on posts"
+msgstr "Mostra els autors en els articles"
+
+#: functions.php:439
+msgid "Show search in header"
+msgstr "Mostra la cerca a la capçalera"
+
+#: functions.php:449
+msgid "Show RSS icon in header"
+msgstr "Mostra la icona RSS a la capçalera"
+
+#: functions.php:457
+msgid "Menu :"
+msgstr "Menú :"
+
+#: functions.php:460
+msgid "Enter the label of the Homepage menu link"
+msgstr "Insereix l'etiqueta de l'enllaç Inici del menú"
+
+#: functions.php:464
+msgid "Modifying these labels should break internationalisation"
+msgstr "Si modifiqueu aquestes etiquetes es trencarà la internazionalització"
+
+#: functions.php:469
+msgid "Enter the label of the last menu link"
+msgstr "Insereix l'etiqueta del darrer enllaç del menú"
+
+#: functions.php:477
+msgid "The last menu link should be..."
+msgstr "El darrer enllaç del menú ha de ser..."
+
+#: functions.php:482
+msgid "A contact button to this email"
+msgstr "Un botó de contacte a aquest correu electrònic"
+
+#: functions.php:489
+msgid "A custom link with this url"
+msgstr "Un enllaç personalitzat amb aquesta URL"
+
+#: functions.php:496
+msgid "Nothing"
+msgstr "Res"
+
+#: functions.php:499
+msgid "Custom menus :"
+msgstr "Menús personalitzats :"
+
+#: functions.php:507
+#: functions.php:528
+msgid "Delete"
+msgstr "Suprimeix"
+
+#: functions.php:513
+msgid "New custom menu entry"
+msgstr "Nova entrada de menú personalitzada"
+
+#: functions.php:516
+#: functions.php:537
+msgid "label"
+msgstr "etiqueta"
+
+#: functions.php:517
+#: functions.php:538
+msgid "url"
+msgstr "url"
+
+#: functions.php:520
+msgid "Custom quicklinks :"
+msgstr "Enllaços ràpids personalitzats :"
+
+#: functions.php:534
+msgid "New custom quicklink entry"
+msgstr "Nou enllaç ràpid personalitzat"
+
+#: functions.php:543
+msgid "Update Options &raquo;"
+msgstr "Actualitza les opcions &raquo;"
+
+#: functions.php:588
+msgid "It seems that the directory"
+msgstr "Sembla que el directori"
+
+#: functions.php:588
+msgid "does not exist"
+msgstr "no existeix"
+
+#: index.php:11
+#: search.php:14
+msgid "Read"
+msgstr "Llegeix"
+
+#: index.php:22
+#: page.php:13
+msgid "Read the rest of this entry &raquo;"
+msgstr "Llegeix la resta d'aquesta entrada &raquo;"
+
+#: index.php:27
+msgid "Comments"
+msgstr "Comentaris"
+
+#: index.php:27
+msgid "No Comments &#187;"
+msgstr "Sense comentaris &#187;"
+
+#: index.php:27
+msgid "1 Comment &#187;"
+msgstr "1 comentari &#187;"
+
+#: index.php:27
+msgid "% Comments &#187;"
+msgstr "% comentaris &#187;"
+
+#: index.php:36
+#: page.php:26
+msgid "Spread the word"
+msgstr "Corre la veu"
+
+#: index.php:39
+#: my_footer.php:3
+#: page.php:29
+msgid "Comments rss"
+msgstr "Comentaris rss"
+
+#: index.php:42
+#: page.php:32
+msgid "Trackback"
+msgstr "Retroenllaç"
+
+#: index.php:45
+#: page.php:35
+msgid "Edit"
+msgstr "Edita"
+
+#: index.php:55
+#: search.php:23
+msgid "&laquo; Previous Entries"
+msgstr "&laquo; Entrades anteriors"
+
+#: index.php:56
+#: search.php:24
+msgid "Next Entries &raquo;"
+msgstr "Entrades següents &raquo;"
+
+#: my_footer.php:2
+msgid "rss"
+msgstr "rss"
+
+#: my_footer.php:4
+msgid "valid xhtml 1.1"
+msgstr "vàlid XHTML 1.1"
+
+#: my_footer.php:5
+msgid "design by jide"
+msgstr "dissenyat per jide"
+
+#: my_footer.php:6
+msgid "powered by"
+msgstr "ha estat creat per"
+
+#: my_footer.php:7
+msgid "get firefox"
+msgstr "aconsegueix el firefox"
+
+#: page.php:46
+msgid "Not Found"
+msgstr "No s'ha trobat"
+
+#: page.php:47
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr "Esteu buscant alguna cosa que no està aquí."
+
+#: search.php:7
+msgid "Search results"
+msgstr "Resultats de cerca"
+
+#: search.php:16
+msgid "j m Y"
+msgstr "j m Y"
+
+#: searchform.php:1
+#: sidebar.php:12
+msgid "Search"
+msgstr "Cerca"
+
+#: sidebar_left.php:5
+msgid "Archives"
+msgstr "Arxius"
+

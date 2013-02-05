@@ -1,0 +1,354 @@
+v.11.11.09
+Errors solucionats:
+- La icona d'afegir com a preferit en el bloc de Darreres entrades als blocs del portal d'XTECBlocs es mostrava de manera incorrecta.
+
+
+v.11.11.07
+Errors solucinats:
+- Es carregaven estils erronis a la pàgina de registre.
+- S'utilitzava una variable global com a no global.
+
+
+v11.10.20
+Canvis:
+- S'ha eliminat l'extensió XTEC Weekblog i s'ha afegit l'extensió XTEC WeekBlog 2 que millora la fiabilitat, usabilitat i funcionalitat de la gestió dels blocs de la setmana.
+- S'ha adaptat l'aparença XTECBlocs Default per suportar la nova extensió XTEC WeekBlog 2.
+- S'ha adaptat l'aparença XTECBlocs Default Hipòlit per suportar la nova extensió XTEC WeekBlog 2.
+- S'ha canviat l'URL de l'espai de cursos i proves que ha canviat de servidor d'hipòlit a hipòlit 2.
+- S'ha reduït el temps de caducitat de les paraules de l'extensió Peter's Custom Anti Spam d'un dia a mig dia.
+
+Errors solucionats:
+- La icona RSS de les aparences XTECBlocs Default i XTECBlocs Default Hipòlit no es visualitzava correctament en alguns navegadors.
+
+
+v11.10.05
+Canvis:
+- S'ha actualitzat l'aparença Default de la versió 1.6 a la versió 1.7.2.
+- S'ha afegit la versió 2.3.0 de l'extensió AddThis amb suport per la internacionalització i amb la traducció al català.
+
+Errors solucionats:
+- La recuperació de l'últim id inserit a la taula cas_count de l'extensió Peter's Custom Anti-Spam retornava sempre zero i feia que l'extensió no funcionés correctament i que la taula creixés indefinidament.
+
+Noves funcionalitats:
+- S'han afegit unes regles necessàries al fitxer .htaccess per a garantir el correcte funcionament del Cacti (eina de monitorització de xarxa).
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Andreas09.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Almost Spring.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Anarchy.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Big Blue.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Classic.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Default.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Digg 3.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Flex.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Freshy.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Freshy 2.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Gentle Calm.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Glossy Blue.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Light.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Mandigo.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Colors Idea.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença News Portal.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Quadruple Blue.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Simpla.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Stardust.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Steam.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença Tranquility.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença White as Milk.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença XTEC.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença XTEC 1.1.
+- S'ha afegit support per la internacionalització i la traducció en català a l'aparença XTEC Encurs.
+
+
+v11.09.16
+Errors solucionats:
+- S'ha corregit una cadena de traducció de l'extensió XTEC Users que havia quedat desfasada.
+
+
+v11.08.30
+Canvis:
+- S'ha afegit un nou estil a l'aparença XTEC 898 En Curs.
+- S'ha afegit l'extensió Blogger Importer que permet importar blocs de Blogger.
+- S'ha afegit l'extensió WordPress Importer que permet importar blocs de WordPress.
+
+Errors solucionats:
+- Les pàgines d'opcions de les aparences havien deixat de ser accessibles des de l'actualització a la versió 3.1.2 de WordPress. 
+
+
+v11.07.27
+Errors solucionats:
+- L'aparença Many Colors Idea no visualitzava la capçalera en les pàgines i els articles.
+
+
+v11.06.15
+Canvis:
+- S'ha actualitzat la versió de WordPress MU 2.7 a la versió 3.1.2 del WordPress.
+- S'han adaptat algunes consultes SQL a base de dades que podien utilitzar funcions de l'API de Wordpress.
+- S'ha actualitzat la configuració de l'HyperDB.
+- S'han fet alguns canvis sobre la traducció al català del WordPress que mantenen algunes traduccions característiques d'XTECBlocs.
+- S'han separat del tema home les funcions que obtenien informació de la base de dades i s'han incorporat en les seves respectives extensions.
+- S'han eliminat alguns fitxers dels temes home i home_hipolit que no s'utilitzaven mai.
+- S'han adaptat totes les extensions perquè siguin compatibles amb la nova versió del WordPress que distingeix l'administració de la superadministració.
+- S'han adaptat tots els temes perquè siguin compatibles amb la nova versió del WordPress que incorpora la barra d'administració.
+- S'ha eliminat el tema Thematic. No es feia servir i ocasionava problemes amb els altres temes.
+- Extensions oficials:
+	- S'ha actualitzat l'extensió Creative Commons Configurator de la versió 1.0 a la versió 1.2.
+	- S'ha actualitzat l'extensió Google Analyticator de la versió 4.3.1 a la versió 6.1.3.
+    - S'ha traduït al català l'extensió Google Analyticator.
+	- S'ha actualitzat l'extensió Peter's Custom Anti-Spam de la versió 2.8.2 a la versió 3.1.4.
+	- S'ha adaptat l'extensió Peter's Custom Antispam per la configuració multilloc.
+	- S'ha actualitzat l'extensió Simpler iPaper de la versió 1.3 a la versió 1.3.1.
+	- S'ha canviat la versió 2.0 de l'extensió Simple Tracback Validation per la versió 0.7 de l'extensió Simple Trackback Validation with Topsy Blocker.
+	- S'ha adaptat l'extensió Simple Trackback Validation with Topsy Blocker per la configuració multilloc.
+	- S'ha canviat la versió 0.2.1 de l'extensió SlideShare MU per la versió 1.7.2 de l'extensió SlideShare.
+	- S'han fet alguns canvis sobre la traducció al català de l'extensió SlideShare que mantenen algunes traduccions característiques d'XTECBlocs.
+	- S'ha eliminat el widget del tauler de l'extensió Slideshare.
+	- S'ha actualitzat l'extensió WP Super Cache de la versió 0.8.9.1 a la versió 0.9.9.9.
+	- S'ha afegit la versió 6.3.0 de l'extensió Viper's Video Quicktags.
+    - S'ha traduït al català l'extensió Viper's Video Quicktags.
+	- S'ha eliminat la versió 2.5 Beta 1 de l'extensió Anarchy Media Player.
+	- S'ha eliminat la versió 0.8.6 de l'extensió WP Mail SMTP.
+	- S'ha eliminat la versió 1.0 de l'extensió WPMU Theme Stats.
+	- S'ha eliminat la versió 0.3 de l'extensió BubbleShare.
+	- S'ha eliminat la versió 0.1 de l'extensió TanTanNoodles Simple Spam Filter.
+- Extensions d'XTECBlocs:
+    - S'ha creat l'extensió XTEC Allowed Tags a partir de l'extensió Allowed Tags.
+    - S'ha creat l'extensió XTEC API a partir de les parts corresponents del codi font d'XTECBlocs.
+    - S'ha creat l'extensió XTEC Descriptors a partir de les parts corresponents del codi font d'XTECBlocs i de l'extensió Descriptors.
+    - S'ha creat l'extensió XTEC Favorites a partir de les parts corresponents del codi font d'XTECBlocs.
+    - S'ha creat l'extensió XTEC Lastest Posts a partir de les parts corresponents del codi font d'XTECBlocs.
+    - S'ha creat l'extensió XTEC Link Player.
+    - S'ha creat l'extensió XTEC Real Media.
+    - S'ha creat l'extensió XTEC Search a partir de les parts corresponents del codi font d'XTECBlocs.
+    - S'han optimitzat les consultes relacionades amb la cerca de blocs.
+    - S'ha afegit a l'extensió XTEC Settings la funcionalitat de l'extensió Meta.
+    - S'ha afegit a l'extensió XTEC Settings la modificació de la configuració per defecte de l'extensió Viper's Video Quicktags.
+    - S'han afegit a l'extensió XTEC Settings funcionalitats extretes del codi font d'XTECBlocs.
+    - S'ha creat l'extensió XTEC Weekblog a partir de les parts corresponents del codi font d'XTECBlocs.
+	- S'ha canviat la ubicació del directori de les imatges del bloc de la setmana.
+
+Errors solucionats:
+- El tema Home i Home Hipòlit no portaven a la pàgina principal del lloc quan es clicava al logotip de l'aplicació des d'alguna pàgina que no fos la principal.
+- El widget del tauler de l'extensió Google Analyticator no es tradueix a l'idioma determinat.
+- No es mostrava el botó de YouTube de l'extensió Viper's Video Quicktags.
+- Al modificar les opcions d'un bloc no es desava la informació actualitzada a les taules de cerca degut a un error de sintaxis en la sentència sql que havia d'actualitzar els valors. 
+- Quan es desava un bloc com a favorit no es comprovava que ja existís i s'inseria a la taula de favorits de nou de forma duplicada.
+- Quan s'esborrava un bloc aquest no s'esborrava de la taula de favorits.
+- Quan s'afegia una entrada des de l'editor ràpid del tauler d'administració del bloc no es desava a la taula de les darreres entrades publicades. 
+- Al llistar els blocs des del portal del lloc, quan el propietari del bloc no tenia correu xtec, es mostrava el seu correu electrònic en comptes del seu nom d'usuari.
+- A l'afegir la meta informació a la capçalera html d'un bloc, quan el propietari del bloc no tenia correu xtec, es mostrava el seu correu electrònic en comptes del seu nom d'usuari.
+- La regeneració dels descriptors no funcionava correctament.
+
+Noves funcionalitats:
+- Extensions oficials:
+	- S'ha afegit la versió 3.0 de l'extensió Multisite Plugin Manager.
+
+
+v11.05.06
+Canvis:
+- S'ha eliminat l'aplicació de les Preguntes Més Freqüents i s'ha modificat l'enllaç d'ajuda cap a la nova ajuda d'XTECBlocs.
+
+
+v11.03.21
+Canvis:
+- S'ha canviat el sistema d'enviament de mails del plugin WP Mail SMTP pel plugin XTEC Mail que utilitza el sistema d'enviament de mails per servei web del Departament d'Ensenyament.
+
+
+v11.02.09
+Canvis:
+- S'ha augmentat el temps d'espera de la variable MAGPIE_FETCH_TIME_OUT per a incrementar el temps de resposta quan es solicita algun feed RSS.
+- S'ha tret del plugin XTEC Maintenance alguna informació per mostrar-la des del nou plugin XTEC Info.
+
+Errors solucionats:
+- S'ha corregit un error que no permetia a l'usuari super-administrador crear blocs.
+- S'ha corregit un error en el CSS de les aparences XTEC que no permetia visualitzar les fonts en negreta.
+- S'ha reajustat la disposició del formulari de cerca de les aparences XTEC posant la caixa de text i el botó en la mateixa línia.
+
+Noves funcionalitats:
+- S'ha afegit el plugin XTEC Info que permet a l'usuari super-administrador visualitzar a través d'un menú d'administració informació relativa al lloc: nombre total de blocs, nombre total d'usuaris i el nom del servidor on s'executa l'aplicació.
+
+
+v11.01.10
+Canvis:
+- S'han modificat els logotips institucionals dels temes 'Home' i 'Home (Hipòlit)' i les 'Condicions d'ús' per respondre al canvi de nom del Departament que passa a ser d'Ensenyament en comptes d'Educació.
+
+Errors solucionats:
+- S'ha corregit un error en una consulta del fitxer wp-content/themes/home/xtecfunc.php
+
+
+v11.01.05
+Errors solucionats:
+- S'ha corregit un error en una consulta del fitxer wp-content/themes/home/xtecfunc.php
+ 
+ 
+v10.12.02
+Noves funcionalitats:
+- S'ha afegit la possibilitat d'utilitzar múltiples bases de dades amb l'ajuda del plugin HyperDB v1.0.
+
+
+v10.10.01
+Errors solucionats:
+- S'ha deshabilitat el widget de Google Analytics perquè no funcionava correctament.
+
+Canvis:
+- S'han eliminat les aparences de cinemaencurs i l'aparença gallery.
+- S'ha reanomenat el fitxer .htaccess.dist per htaccess.dist.
+
+
+v10.07.23
+Noves funcionalitats:
+- S'ha afegit l'aparença XTEC En Curs.
+- S'ha creat l'aparença del portal d'XTECBlocs per a Hipòlit.
+
+Errors solucionats:
+- S'ha corregit l'script que només permetia afegir un únic Viquiatles per pàgina.
+- S'ha corregit el codi que no permetia afegir descriptors amb accents.
+- S'ha corregit una URL errònia que generava un error en els logs de l'apache.
+- S'han corregit consultes SQL errònies que generaven errors en els logs de l'apache.
+
+Canvis:
+- S'ha afegit un full d'estils per a què els Viquiatles s'integrin en totes les aparences dels blocs.
+- S'ha afegit la icona d'usuaris a les pàgines de gestió i addició d'usuaris.
+- S'ha eliminat una aparença defectuosa.
+- S'ha canviat la descripció de l'aparença del portal d'XTECBlocs.
+- S'han canviat crides a funcions que havien quedat en desús.
+- S'ha corregit l'etiqueta curta <? per <?php que queda en desús a partir de la versió 5 de PHP.
+- Modificació menor al fitxer .htacces.dist
+- S'han fet correccions menors d'idioma.
+
+
+v10.06.18
+Canvis:
+- Canviades les IP que poden accedir al "web service" (html/ws/.htaccess)
+
+
+v10.06.15
+Noves funcionalitats:
+- S'ha habilitat la possibilitat d'autenticar usuaris des de l'exterior de XTECBlocs.
+Errors solucionats:
+- S'ha afegit la terminació femenina /ària a tots els mots usuari que apareixien al plugin XTEC Users.
+
+
+v10.06.09
+Noves funcionalitats:
+- El plugin WP Mail SMTP controla ara la gestió del correu.
+- S'ha limitat el registre de noms d'usuaris a noms amb lletres de l'a a la zeta, números del 0 al 9, punts, guions i guions baixos.
+- S'ha creat un plugin per integrar els mapes de Viquiatles.
+Errors solucionats:
+- S'ha optimitzat una consulta SQL del plugin XTEC Maintenance.
+
+
+v10.05.28
+Noves funcionalitats:
+- S'ha afegit un nou plugin per a la gestió d'usuaris. XTEC Users permet ara distingir entre dos tipus d'usuaris: els usuaris de la XTEC que continuen validant a través del LDAP i que tenen permisos de creació de blocs i creació d'usuaris i els usuaris creats per usuaris de la XTEC que únicament podran col·laborar en els blocs com a editors, autors, col·laboradors o subscriptors. Els administradors dels blocs (només poden ser usuaris XTEC) poden convidar a altres usuaris a participar en el seu bloc.
+- Els usuaris poden canviar el correu electrònic del seu perfil.
+- No es poden afegir nous usuaris edu365 a XTECBlocs.
+- Només els usuaris de l'LDAP de la XTEC poden ser administradors dels blocs
+- El plugin XTEC LDAP Login permet la validació d'usuaris XTEC i usuaris creats per usuaris XTEC. A la vegada identifica els usuaris XTEC com a tals.
+- S'ha fet més explicatiu el missatge d'error per pèrdua de contrasenya.
+- S'ha simplificat el plugin XTEC Signup integrant-lo en el nou plugin XTEC Users.
+Errors solucionats:
+- S'han eliminat els salts de línea al final d'alguns fitxers php.
+    wp-content/mu-plugins/xtectinymce/xtectinymce.php
+    wp-content/mu-plugins/xtec-ldap-login.php
+    wp-content/mu-plugins/xtec-maintenance.php
+    wp-content/mu-plugins/xtec-settings.php
+    wp-content/mu-plugins/xtec-signup.php
+Canvis:
+- S'ha modificat el fitxer wp-content/mu-plugins/xtec-maintenance/xtec-maintenance.php per impedir que es pugui eliminar el bloc principal accidentalment i per corregir una linia que recuperava malament la url d'un bloc.
+
+
+v10.04.27
+Noves funcionalitats:
+- S'ha convertit la gestió de l'eliminació de blocs en el plugin XTEC Maintenance que inclou noves funcionalitats.
+- El plugin XTEC Settings controla ara que l'usuari no pugui modificar la seva contrassenya ni demanar-ne una de nova en cas d'haver-la perdut.
+- El plugin XTEC Signup controla ara la creació de blocs.
+- El plugin XTEC Ldap Login controla ara el registre i la validació d'usuaris.
+- S'ha habilitat la opció de Gears del Wordpress.
+Errors solucionats:
+- S'ha modificat el fitxer wp-admin/wpmu-xtec-descriptors.php que mostrava un error quan no hi havia descriptors.
+- S'ha modificat el fitxer wp-content/themes/glossyblue-1-2/page.php per permetre els comentaris a les pàgines en l'aparença Glossy Blue.
+- S'ha eliminat el fitxer wp-content/mu-plugins/pluggable.html, era innecessari.
+- S'ha eliminat el fitxer wp-admin/wpmu-xtec-options-admin.php, era innecessari.
+- S'ha eliminat el fitxer themes.html, era innecessari.
+- S'ha eliminat el fitxer manteniment.html, era innecessari.
+- S'ha eliminat el fitxer wp-content/mu-plugins/wp-super-cache/wp-cache.php, era innecessari.
+
+
+v10.03.22
+Afegit de nou el plugin Simpler iPaper 1.3.
+
+
+v10.02.26
+Eliminat el plugin Simpler iPaper 1.3 per mirar de solucionar problemes en el desplegament a producció.
+
+
+v10.02.10
+Modificat el fitxer wp-content/themes/home/sideright.php que contenia alguns errors de sintaxi.
+Modificat el fitxer wp-admin/xtec-weekbloc/xtecfunc.php per millorar la comprensió del formulari.
+Modificat el fitxer wp-content/mu-plugins/smtp-mail.php que redeclarava la classe PHPMailer sense comprovar que ja estigués declarada. Això provocava problemes a l'hora de crear usuaris des de l'administració.
+Afegit el plugin Xtec Login que impedeix fer un canvi de contrasenya mitjançant el formulari de Heu perdut la contrasenya?
+Afegit el plugin Simpler iPaper 1.3 que permet embedir documents allotjats a Scribd.com.
+
+
+v10.01.12
+Descomentada una línia del fitxer /wp-admin/wpmu-xtec-search.php que no havia d'estar comentada.
+Afegit el connector xtecstats, de creació pròpia, per visualitzar estadístiques dels blocs instalats.
+Afegida una nova versió de l'aparença xtec perquè permeti visualitzar les subpàgines en el menú de la capçalera.
+
+
+v9.12.17
+Actualitzat el connector Google Analyticator des de la versió 4.3.1 a la versió 5.3.2 i s'ha corregit una incompatibilitat amb el Wordpress Múltiple.
+Afegit el directori /wp-includes/js/tinymce/plugins/emotions per evitar que sorgeixi el problema de les redireccions internes.
+
+
+v9.11.16
+Modificat el fitxer wp-admin/includes/dashboard.php pel de la versió 2.7.1 per corregir diferents errors d'entre ells la visió dels comentaris pendents per a usuaris no autoritzats.
+Corregida una errada ortogràfica detectada en el correu d'invitació: l'invitació -> la invitació
+
+
+v9.10.26
+Eliminades les restes de l'aparença mandingo.
+Afegida l'aparença Freshy 2.0
+Afegits els fitxers necessaris per a l'activació del connector wordpress super cache
+Afegida una restricció en els widgets RSS que evita que un usuari afegeixi un widget RSS del seu mateix bloc.
+
+
+v9.10.07
+Corregit un error al mostrar un missatge d'error. També s'ha modificat la invitació pels usuaris EDU perquè no sigui necessari la confirmació via correu electrònic (wp-admin/user-new.php)
+Aparença principal Home: eliminat l'enllaç a contacte
+Aparença principal Home: habilitat l'espai de notícies perquè hi puguin aparèixer dues al mateix temps.
+Aparença principal Home: compactat l'espai de darreres entrades a blocs.
+
+
+v9.09.15
+Canviada la propietat disabled del camp correu electrònic a readonly. (wp-admin/user-edit.php)
+Afegida l'aparença xtec898_200910
+Modificat un camp de l'style.css de l'aparença xtec898plus_200910
+
+
+v9.09.01
+Creat un plugin que permet a l'administrador del lloc web convertir la codificació de caràcters de les taules d'un bloc a utf8.
+Petites modificacions en la traducció a català.
+Afegida l'aparença de "Cinema en curs 2009-2010"
+Integrat el contingut del fitxer /limit_creació.php a /wp_signup.php
+Afegit el plugin que permet veure les estadístiques de les aparences.
+Eliminades un parell de restriccions per mostrar el bloc de la setmana post_status = 'publish' AND post_type = 'post' a la funció getWeekBlog() del fitxer /wp-content/themes/home/xtecfunc.php
+
+
+v9.07.09
+Actualitzat el Google Analyticator de la versió 1.54 a la 4.3.1.
+Creat un plugin XTEC TinyMCE que afegeix 2 plugins a l'editor TinyMCE, un d'emoticones i un altre per la creació de taules.
+Afegit un enllaç per eliminar els blocs de l'usuari a la pàgina principal.
+L'administrador pot canviar el correu electrònic dels usuaris i la seva contrasenya.
+Modificat la barra lateral (sidebar.php) de l'aparença d'XTECBlocs que feia que en determinades circumstàncies hi hagués errors en la visualització (per exemple quan s'intentava accedir a un bloc que no existia).
+Petites modificacions en la traducció a català.
+
+
+v9.07.01
+XTECBlocs migra de la versió 1.2.4 de Wordpress Mu a la versió 2.7 de Wordpress Mu.
+La versió 1.2.4 està basada en Wordpress 2.2.2. La nova en Wordpress 2.7.
+Changelog més significatiu des de la versió 2.2.2 a la 2.7:
+
+   * tinyMCE 2.1.1 to 3.1
+   * Gestió d'etiquetes
+   * Taulell basat en widgets
+   * Millores en el panell d'administració

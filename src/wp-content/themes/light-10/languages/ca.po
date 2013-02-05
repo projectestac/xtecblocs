@@ -1,0 +1,348 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Light\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-03 17:37+0100\n"
+"PO-Revision-Date: 2011-10-03 17:53+0100\n"
+"Last-Translator: Francesc Bassas i Bullich\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;_c\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Catalan\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:4
+msgid "Error 404"
+msgstr "Error 404"
+
+#: ../404.php:5
+msgid "The page you requested is no longer here!"
+msgstr "La pàgina que esteu sol·licitant ja no està disponible!"
+
+#: ../404.php:6
+msgid "Visit the"
+msgstr "Visiteu el"
+
+#: ../404.php:6
+msgid "Home Page"
+msgstr "Inici"
+
+#: ../404.php:7
+msgid "In order to improve our service, can you inform us that someone else has an incorrect link to our site?"
+msgstr "Per tal de millorar el nostre servei, ens podeu informar si algú té l'enllaç al nostre lloc incorrecte?"
+
+#: ../404.php:8
+msgid "Report broken link"
+msgstr "Reporteu l'enllaç trencat"
+
+#: ../archive.php:10
+msgid "Archive for the"
+msgstr "Arxius pel"
+
+#: ../archive.php:10
+msgid "Category"
+msgstr "Categoria"
+
+#: ../archive.php:14
+#: ../archive.php:20
+#: ../archive.php:26
+msgid "Archive for"
+msgstr "Arxiu per"
+
+#: ../archive.php:32
+msgid "Author Archive"
+msgstr "Arxiu d'autor"
+
+#: ../archive.php:36
+msgid "Blog Archives"
+msgstr "Arxius de bloc"
+
+#: ../archive.php:44
+#: ../index.php:12
+#: ../single.php:11
+msgid "Posted"
+msgstr "Publicat"
+
+#: ../archive.php:47
+#: ../index.php:16
+#: ../single.php:14
+msgid "Comments (0)"
+msgstr "Comentaris (0)"
+
+#: ../archive.php:47
+#: ../index.php:16
+#: ../single.php:14
+msgid "Comments (1)"
+msgstr "Comentaris (1)"
+
+#: ../archive.php:47
+#: ../index.php:16
+#: ../single.php:14
+msgid "Comments (%)"
+msgstr "Comentaris (%)"
+
+#: ../archive.php:47
+#: ../index.php:17
+#: ../page.php:13
+#: ../single.php:15
+msgid "Edit"
+msgstr "Edita"
+
+#: ../archive.php:50
+#: ../index.php:20
+#: ../page.php:16
+#: ../single.php:19
+msgid "Read more &raquo;"
+msgstr "Llegeix més &raquo;"
+
+#: ../archive.php:60
+#: ../index.php:32
+#: ../page.php:26
+#: ../search.php:17
+#: ../single.php:30
+msgid "Sorry, no posts matched your criteria."
+msgstr "No s'han trobat articles que responguin al vostre criteri."
+
+#: ../archive.php:64
+#: ../index.php:36
+#: ../page.php:30
+#: ../search.php:20
+#: ../single.php:34
+msgid "&laquo; Previous Page"
+msgstr "&laquo; Pàgina Prèvia"
+
+#: ../archive.php:64
+#: ../index.php:36
+#: ../page.php:30
+#: ../search.php:20
+#: ../single.php:34
+msgid "Next Page &raquo;"
+msgstr "Pròxima pàgina &raquo;"
+
+#: ../comments-ajax.php:28
+msgid "Sorry, comments are closed for this item."
+msgstr "Els comentaris estan tancats per aquest element."
+
+#: ../comments-ajax.php:44
+msgid "Sorry, you must be logged in to post a comment."
+msgstr "Heu d'estar identificat per comentar un article."
+
+#: ../comments-ajax.php:51
+msgid "Error: please fill the required fields (name, email)."
+msgstr "Error: si us plau ompliu els camps requerits (nom, correu electrònic)."
+
+#: ../comments-ajax.php:53
+msgid "Error: please enter a valid email address."
+msgstr "Error: si us plau entreu una adreça de correu electrònic vàlida."
+
+#: ../comments-ajax.php:57
+msgid "Error: please type a comment."
+msgstr "Error: si us plau entreu un comentari."
+
+#: ../comments.php:3
+msgid "Please do not load this page directly. Thanks!"
+msgstr "No carregueu aquesta pàgina directament. Gràcies!"
+
+#: ../comments.php:8
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Aquest article està protegit per contrasenya. Inseriu la contrasenya per veure comentaris."
+
+#: ../comments.php:20
+msgid "No Comment"
+msgstr "No hi ha comentaris"
+
+#: ../comments.php:20
+msgid "1 Comment so far"
+msgstr "1 comentari fins ara"
+
+#: ../comments.php:20
+msgid "% Comments so far"
+msgstr "% comentaris fins ara"
+
+#: ../comments.php:28
+msgid "on"
+msgstr "a"
+
+#: ../comments.php:30
+msgid "Edit This"
+msgstr "Edita aquest"
+
+#: ../comments.php:33
+msgid "our comment is awaiting moderation."
+msgstr "el vostre comentari està en espera de moderació."
+
+#: ../comments.php:58
+msgid "No comments yet"
+msgstr "No hi ha comentaris encara"
+
+#: ../comments.php:63
+msgid "Comments are closed."
+msgstr "Els comentaris estan tancats."
+
+#: ../comments.php:66
+msgid "Posting your comment."
+msgstr "S'està publicant el vostre comentari."
+
+#: ../comments.php:69
+msgid "Leave a reply"
+msgstr "Deixa una resposta"
+
+#: ../comments.php:71
+msgid "You must be"
+msgstr "Heu"
+
+#: ../comments.php:71
+msgid "logged in"
+msgstr "d'identificar-vos"
+
+#: ../comments.php:71
+msgid "to post a comment."
+msgstr "per publicar un comentari."
+
+#: ../comments.php:76
+msgid "Logged in as"
+msgstr "Esteu identificat com a"
+
+#: ../comments.php:76
+msgid "Log out of this account"
+msgstr "Surt d'aquest compte"
+
+#: ../comments.php:76
+msgid "Logout"
+msgstr "Surt"
+
+#: ../comments.php:81
+msgid "name"
+msgstr "nom"
+
+#: ../comments.php:82
+#: ../comments.php:92
+msgid "(required)"
+msgstr "(necessari)"
+
+#: ../comments.php:88
+msgid "email"
+msgstr "correu electrònic"
+
+#: ../comments.php:90
+msgid "will not be shown"
+msgstr "no serà mostrat"
+
+#: ../comments.php:98
+msgid "website"
+msgstr "lloc web"
+
+#: ../comments.php:102
+msgid "You can use these tags:"
+msgstr "Podeu utilitzar aquestes etiquetes:"
+
+#: ../comments.php:107
+msgid "Submit Comment"
+msgstr "Envia el comentari"
+
+#: ../footer.php:6
+#, php-format
+msgid "Powered by <a href='http://wordpress.org' title='%s'><strong>WordPress</strong></a>"
+msgstr "Funciona amb <a href='http://wordpress.org' title='%s'><strong>WordPress</strong></a>"
+
+#: ../footer.php:6
+msgid "was designed by"
+msgstr "va ser dissenyat per"
+
+#: ../header.php:54
+msgid "Blog"
+msgstr "Bloc"
+
+#: ../pagefunctions.php:20
+msgid "Pages"
+msgstr "Pàgines"
+
+#: ../search.php:6
+msgid "Search Results"
+msgstr "Resultats de cerca"
+
+#: ../sidebar.php:5
+msgid "Find"
+msgstr "Troba"
+
+#: ../sidebar.php:10
+msgid "Monthly Archives"
+msgstr "Arxius mensuals"
+
+#: ../sidebar.php:14
+msgid "Categories"
+msgstr "Categories"
+
+#: ../sidebar.php:18
+msgid "Stay Updated"
+msgstr "Mantingueu-vos actualitzat"
+
+#: ../sidebar.php:20
+msgid "Syndicate this site using RSS"
+msgstr "Sindiqueu aquest bloc utilitzant RSS"
+
+#: ../sidebar.php:20
+msgid "RSS Articles"
+msgstr "Articles RSS"
+
+#~ msgid "No Responses"
+#~ msgstr "Cap resposta"
+
+#~ msgid "One Response"
+#~ msgstr "Una resposta"
+
+#~ msgid "% Responses"
+#~ msgstr "% Respostes"
+
+#~ msgid "to"
+#~ msgstr "a"
+
+#~ msgid "Says:"
+#~ msgstr "Diu:"
+
+#~ msgid "by"
+#~ msgstr "per"
+
+#~ msgid "Entries RSS"
+#~ msgstr "Entrades (RSS)"
+
+#~ msgid "Permanent Link to"
+#~ msgstr "Enllaç permanent a"
+
+#~ msgid "Read the rest of this entry &raquo;"
+#~ msgstr "Llegeix la resta d'aquest article &raquo;"
+
+#~ msgid "Previous Entries"
+#~ msgstr "&laquo; Entrades anteriors"
+
+#~ msgid "Next Entries"
+#~ msgstr "Entrades següents &raquo;"
+
+#~ msgid "Not Found"
+#~ msgstr "No s'ha trobat"
+
+#~ msgid "Sorry, but you are looking for something that isn't here."
+#~ msgstr "Esteu buscant alguna cosa que no està aquí."
+
+#~ msgid "Read the rest of this page &raquo;"
+#~ msgstr "Llegeix la resta d'aquesta pàgina &raquo;"
+
+#~ msgid "Sorry, nothing found."
+#~ msgstr "No s'han trobat resultats."
+
+#~ msgid "Search"
+#~ msgstr "Cerca"
+
+#~ msgid "Subpages"
+#~ msgstr "Subpàgines"
+
+#~ msgid "Links"
+#~ msgstr "Enllaços"
+
+#~ msgid "Permanent Link"
+#~ msgstr "Enllaç permanent"

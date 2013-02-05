@@ -1,0 +1,25 @@
+/*
+WHITE AS MILK - MOBILE STYLESHEET
+OPTIMIZED FOR BLACKBERRY
+
+AZEEM AZEEZ - AZEEM@AZEEMAZEEZ.COM
+http://www.azeemazeez.com/blogs/white-as-milk/
+*/
+
+
+#content {
+  margin:0px;
+  padding:0px;}
+
+#sidebar {
+  text-align:left;
+  margin:0px;
+  padding:0px;}
+
+#header h1 {
+  font-size:32px !important;
+  padding-top:4px;}
+  
+.navigation,
+#content {
+width:100% !important;}

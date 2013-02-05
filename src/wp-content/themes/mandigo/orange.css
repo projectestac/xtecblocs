@@ -1,0 +1,13 @@
+#header { background: #44484F url('images/orange/head.jpg') bottom center no-repeat; }
+a, h2 a:hover, h3 a:hover, .entry p a:visited { color: #FF9B2A; }
+#sidebar li { list-style-image: url(images/orange/star.gif); }
+#wp-calendar a:hover {
+  text-decoration: underline;
+}
+
+.cal { background: #FFBA2C url(images/orange/cal_bg.jpg) repeat-x; }
+
+.calborder { 
+  background: #FFD7A6;
+  border: 1px solid #C08800;
+}
