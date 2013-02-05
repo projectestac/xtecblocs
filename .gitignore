@@ -1,0 +1,5 @@
+src/.htaccess
+src/wp-config.php
+src/wp-content/advanced-cache.php
+src/wp-content/cache/
+src/wp-content/wp-cache-config.php
