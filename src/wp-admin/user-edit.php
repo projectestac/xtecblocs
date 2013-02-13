@@ -314,7 +314,28 @@ if ( is_multisite() && is_network_admin() && ! IS_PROFILE_PAGE && current_user_c
 <table class="form-table">
 <tr>
 	<th><label for="email"><?php _e('E-mail'); ?> <span class="description"><?php _e('(required)'); ?></span></label></th>
+
+
+<!--XTEC ************ MODIFICAT - Les @ xtec sols les poden modificar el superadminestradors  preg_match("/^.+@xtec\.cat$/", esc_attr($profileuser->user_email))
+2013.02.11 @jmiro227-->
+
+	<?php if ( !current_user_can( 'manage_network_options' ) && ( strlen(esc_attr($profileuser->user_login)) <= 9 ) ) { ?>
+
+	<td><input type="text" name="email" id="email" value="<?php echo esc_attr($profileuser->user_email) ?>" disabled="disabled" class="regular-text" />
+
+	<?php } else { ?>
+
 	<td><input type="text" name="email" id="email" value="<?php echo esc_attr($profileuser->user_email) ?>" class="regular-text" />
+
+	<?php } ?>
+
+<!--************ ORIGINAL
+
+	<td><input type="text" name="email" id="email" value="<?php echo esc_attr($profileuser->user_email) ?>" class="regular-text" />
+	
+************ FI-->
+
+
 	<?php
 	$new_email = get_option( $current_user->ID . '_new_email' );
 	if ( $new_email && $new_email != $current_user->user_email ) : ?>

@@ -259,6 +259,16 @@ function xtec_add_users()
 			// Check if the email address has been used already
 			$errors_step_3 .= "<p>El correu electrònic que heu introduit ja s'està utilitzant.</p>";
 		}
+
+//XTEC ************ AFEGIT - Control de l'us d'@ xtec en funció del tipus d'usuari
+//2011.02.13 @jmiro227
+
+		else if ( !is_valid_email($email,$user_type) ) {			
+			// Check if the email address is valid according user typology
+			$errors_step_3 .= "<p>El correu electrònic que heu introduit no és vàlid.</p>";
+		}
+
+//************ FI
 		
 		if ( empty($errors_step_3) ) {
 			// Create user
@@ -790,6 +800,26 @@ function xtec_is_xtec_user($user_id)
 {
 	return ( 'LDAP_XTEC' == get_user_meta($user_id,'xtec_user_creator',true) );
 }
+
+
+//XTEC ************ AFEGIT - Control de l'us d'@ xtec en funció del tipus d'usuari
+//2011.02.13 @jmiro227
+
+/**
+ * Check if the email address is valid according user typology.
+ * 
+ * @param string $email The user email.
+ * @param string $user_type The user type.
+ * @return bool True if it is a valid email. 
+ */
+function is_valid_email($email,$user_type)
+{
+	if (( $user_type == 'other' ) && preg_match("/^.+@xtec\.cat$/",$email)) return ( false);
+	else if (( $user_type == 'xtec' ) && !(preg_match("/^.+@xtec\.cat$/",$email))) return ( false );
+        else return ( true );
+}
+
+//************ FI
 
 /**
  * Checks if is a valid username.
