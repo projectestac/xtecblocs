@@ -1,3 +1,12 @@
+v.En procés
+
+ENS-1068-0010
+ENS-1068-0043
+
+
+v.12.11.15
+Actualitzar a versió 3.1.4 i actualitzar plugins: multisite-plugin-manager, creative-commons-configurator-1, blogger-importer, wp-super-cache, wordpress-importer
+
 v.11.11.09
 Errors solucionats:
 - La icona d'afegir com a preferit en el bloc de Darreres entrades als blocs del portal d'XTECBlocs es mostrava de manera incorrecta.
