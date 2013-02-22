@@ -105,6 +105,7 @@ function xtec_ldap_login_network_options()
 /**
  * Include CSS stylesheet.
  */
+
 function xtec_ldap_login_css() {	
 	$cssPath = plugin_dir_url(__FILE__) . "xtec-ldap-login-logo.css";
 	echo "<link rel=\"stylesheet\" href=\"" . $cssPath	. "\" type=\"text/css\" />";
@@ -230,7 +231,16 @@ function xtec_ldap_authenticate($user, $username, $password)
 				do_action( 'wp_login_failed', $username );
 				return new WP_Error('incorrect_password', __('<strong>ERROR</strong>: Incorrect password.'));
 			}
-			return new WP_User($userdata->ID);
+
+// XTEC *********** MODIFICAT -> Els usuaris xtec (<=8) que no hagin validat per LDAP no poden entrar (excepte 'admin')
+// 2013.02.22 @jmiro227
+
+			if ( ( strlen($username) > 8 ) || ( $username == 'admin' ) )  {return new WP_User($userdata->ID);}
+                        else {return new WP_Error('incorrect_password', __('<strong>ERROR</strong>: Incorrect password.'));}
+
+// *********** ORIGINAL
+			//return new WP_User($userdata->ID);
+// *********** FI
 		}
 		else { // $ldapbind == true
 			// Check if the password has changed
