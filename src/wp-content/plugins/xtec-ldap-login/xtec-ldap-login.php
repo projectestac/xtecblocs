@@ -232,10 +232,12 @@ function xtec_ldap_authenticate($user, $username, $password)
 				return new WP_Error('incorrect_password', __('<strong>ERROR</strong>: Incorrect password.'));
 			}
 
-// XTEC *********** MODIFICAT -> Els usuaris xtec (<=8) que no hagin validat per LDAP no poden entrar (excepte 'admin')
-// 2013.02.22 @jmiro227
+// XTEC *********** MODIFICAT -> Els usuaris xtec (<=8) que no hagin validat per LDAP no poden entrar (excepte 'admin' i @edu365.cat)
+// 2013.02.26 @jmiro227
 
-			if ( ( strlen($username) > 8 ) || ( $username == 'admin' ) )  {return new WP_User($userdata->ID);}
+                        $user_info = get_userdatabylogin($username);
+
+			if ( ( strlen($username) > 8 ) || ( $username == 'admin' ) || preg_match( "/^.+@edu365\.cat$/", $user_info -> user_email ) )  {return new WP_User($userdata->ID);}
                         else {return new WP_Error('incorrect_password', __('<strong>ERROR</strong>: Incorrect password.'));}
 
 // *********** ORIGINAL
