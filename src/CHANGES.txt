@@ -6,7 +6,7 @@ Changes in progress
 
 
 
-v.13.02.27
+v.13.02.28
 - ENS-1068-0010: Problemes amb les etiquetes i núvols d'etiquetes en els blocs
 - ENS-1068-0012: Usuaris que abans tenien compte xtec encara poden accedir
 - ENS-1068-0043: Prohibir la creació de comptes d'usuari/ària amb més de 8 caràcters i adreça @xtec.cat
