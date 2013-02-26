@@ -1,11 +1,20 @@
+
+Changes in progress
+---------------------------------------------------------------------------------------
+
+
+
+
+
 v.13.02.27
-ENS-1068-0010
-ENS-1068-0012
-ENS-1068-0043
+- ENS-1068-0010: Problemes amb les etiquetes i núvols d'etiquetes en els blocs
+- ENS-1068-0012: Usuaris que abans tenien compte xtec encara poden accedir
+- ENS-1068-0043: Prohibir la creació de comptes d'usuari/ària amb més de 8 caràcters i adreça @xtec.cat
 
 
 v.12.11.15
-Actualitzar a versió 3.1.4 i actualitzar plugins: multisite-plugin-manager, creative-commons-configurator-1, blogger-importer, wp-super-cache, wordpress-importer
+- Actualitzar a versió 3.1.4 i actualitzar plugins: multisite-plugin-manager, creative-commons-configurator-1, blogger-importer, wp-super-cache, wordpress-importer
+
 
 v.11.11.09
 Errors solucionats:
