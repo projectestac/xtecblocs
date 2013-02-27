@@ -1,3 +1,6 @@
+//XTEC ************ FITXER AFEGIT - Per actualitzar les rewrite rules i solucionar el problema dels tags
+//2013.02.27 @jmiro227
+
 <?php
 
 require_once('./wp-load.php');
