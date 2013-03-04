@@ -1,7 +1,7 @@
 <?php
 
 //XTEC ************ FITXER AFEGIT - Per actualitzar els permanent links i solucionar el problema dels tags
-//2013.02.27 @jmiro227
+//2013.03.04 @jmiro227
 
 require_once('./wp-load.php');
 
