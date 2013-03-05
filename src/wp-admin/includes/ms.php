@@ -258,6 +258,15 @@ function send_confirmation_on_profile_email() {
 			$errors->add( 'user_email', __( "<strong>ERROR</strong>: The e-mail address isn't correct." ), array( 'form-field' => 'email' ) );
 			return;
 		}
+//XTEC ************ AFEGIT - No permetetre les @'s xtec.cat en usuaris NO xtec
+//2013.03.05 @jmiro227
+
+                else if (( strlen(esc_attr($current_user->user_login)) > 8 ) && preg_match( "/^.+@xtec\.cat$/", $_POST['email'] )) {
+			$errors->add( 'user_email', __( "<strong>ERROR</strong>: The e-mail address isn't correct." ), array( 'form-field' => 'email' ) );
+			return;
+                }
+
+//************ FI
 
 		if ( $wpdb->get_var( $wpdb->prepare( "SELECT user_email FROM {$wpdb->users} WHERE user_email=%s", $_POST['email'] ) ) ) {
 			$errors->add( 'user_email', __( "<strong>ERROR</strong>: The e-mail address is already used." ), array( 'form-field' => 'email' ) );
