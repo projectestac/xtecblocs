@@ -262,7 +262,7 @@ function send_confirmation_on_profile_email() {
 //2013.03.05 @jmiro227
 
                 else if (( strlen(esc_attr($current_user->user_login)) > 8 ) && preg_match( "/^.+@xtec\.cat$/", $_POST['email'] )) {
-			$errors->add( 'user_email', __( "<strong>ERROR</strong>: Les adreces de correu @xtec.cat no son valides." ), array( 'form-field' => 'email' ) );
+			$errors->add( 'user_email', __( "<strong>ERROR</strong>: Les adreces de correu @xtec.cat no són vàlides." ), array( 'form-field' => 'email' ) );
 			return;
                 }
 
