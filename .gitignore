@@ -1,5 +1,8 @@
 src/.htaccess
 src/wp-config.php
+src/wp-content/blogs.dir/*
+src/wp-content/cache/*
+src/wp-content/weekblog_images.dir/*
 src/wp-content/advanced-cache.php
-src/wp-content/cache/
 src/wp-content/wp-cache-config.php
+.Trash-1000/
