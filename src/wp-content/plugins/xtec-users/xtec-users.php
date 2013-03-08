@@ -255,20 +255,25 @@ function xtec_add_users()
 			// Check if the email address is valid
 			$errors_step_3 .= '<p>El correu electrònic que heu introduit no és vàlid.</p>';
 		}
+
+//XTEC ************ AFEGIT - Control de l'us d'@ xtec en funció del tipus d'usuari
+//2011.02.13 @jmiro227
+
+		else if (( $user_type == 'other' ) && preg_match("/^.+@xtec\.cat$/",$email)) {
+			$errors_step_3 .= '<p>El correu electrònic que heu introduït no és vàlid. Només els usuaris XTEC poden fer servir adreces de correu electrònic @xtec.cat.</p>';
+                }
+
+		else if (( $user_type == 'xtec' ) && !preg_match("/^.+@xtec\.cat$/",$email)) {
+			$errors_step_3 .= '<p>El correu electrònic que heu introduït no és vàlid. Els usuaris XTEC solament poden fer servir adreces de correu electrònic @xtec.cat.</p>';
+		}
+
+//************ FI
+
 		else if ( email_exists($email) ) {			
 			// Check if the email address has been used already
 			$errors_step_3 .= "<p>El correu electrònic que heu introduit ja s'està utilitzant.</p>";
 		}
 
-//XTEC ************ AFEGIT - Control de l'us d'@ xtec en funció del tipus d'usuari
-//2011.02.13 @jmiro227
-
-		else if ( !is_valid_email($email,$user_type) ) {			
-			// Check if the email address is valid according user typology
-			$errors_step_3 .= "<p>El correu electrònic que heu introduit no és vàlid.</p>";
-		}
-
-//************ FI
 		
 		if ( empty($errors_step_3) ) {
 			// Create user
