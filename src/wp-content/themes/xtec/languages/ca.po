@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: XTEC\n"
+"Project-Id-Version: XTEC 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-05 14:20+0100\n"
-"PO-Revision-Date: 2011-10-05 14:21+0100\n"
+"POT-Creation-Date: 2011-10-05 13:54+0100\n"
+"PO-Revision-Date: 2011-10-05 14:03+0100\n"
 "Last-Translator: Francesc Bassas i Bullich\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -129,128 +129,128 @@ msgstr "i"
 msgid "was designed by"
 msgstr "va ser dissenyat per"
 
-#: ../functions.php:13
+#: ../functions.php:14
 msgid "Links for Freshy"
 msgstr "Enllaços pel Freshy"
 
-#: ../functions.php:18
+#: ../functions.php:19
 msgid "Links"
 msgstr "Enllaços"
 
-#: ../functions.php:58
-#: ../functions.php:69
+#: ../functions.php:59
+#: ../functions.php:70
 #: ../sidebar.php:8
 msgid "Navigation"
 msgstr "Navegació"
 
-#: ../functions.php:80
-#: ../functions.php:93
-#: ../functions.php:115
+#: ../functions.php:81
+#: ../functions.php:94
+#: ../functions.php:116
 msgid "Pages"
 msgstr "Pàgines"
 
-#: ../functions.php:84
-#: ../functions.php:97
+#: ../functions.php:85
+#: ../functions.php:98
 msgid "Blog"
 msgstr "Bloc"
 
-#: ../functions.php:366
+#: ../functions.php:367
 msgid "XTEC Theme Options"
 msgstr "Opcions del XTEC"
 
-#: ../functions.php:426
+#: ../functions.php:427
 msgid "XTEC options updated."
 msgstr "S'han actualitzat les opcions del XTEC."
 
-#: ../functions.php:432
+#: ../functions.php:433
 msgid "XTEC Options"
 msgstr "Opcions del XTEC"
 
-#: ../functions.php:440
+#: ../functions.php:441
 msgid "Theme switcher"
 msgstr "Intercanviador de temes"
 
-#: ../functions.php:445
+#: ../functions.php:446
 msgid "Enter the label of the Homepage menu link"
 msgstr "Insereix l'etiqueta de l'enllaç Inici del menú"
 
-#: ../functions.php:447
+#: ../functions.php:448
 msgid "info : modifying these labels should break internationalisation"
 msgstr "info: modificant aquestes etiquetes es trencarà la internazionalització"
 
-#: ../functions.php:458
+#: ../functions.php:459
 msgid "Enter the label of the Blog menu link"
 msgstr "Insereix l'etiqueta de l'enllaç Bloc del menú"
 
-#: ../functions.php:460
+#: ../functions.php:461
 msgid "info : this is specially for YammYamm"
 msgstr "info : això és especial pel YammYamm"
 
-#: ../functions.php:471
+#: ../functions.php:472
 msgid "Enter the label of the last menu link"
 msgstr "Insereix l'etiqueta del darrer enllaç del menú"
 
-#: ../functions.php:479
+#: ../functions.php:480
 msgid "Title color, ex: #006699"
 msgstr "Color del títol, ex: #006699"
 
-#: ../functions.php:487
+#: ../functions.php:488
 msgid "Subtitle color, ex: #3af567"
 msgstr "Color del subtítol, ex #3af567"
 
-#: ../functions.php:495
+#: ../functions.php:496
 msgid "Absolute url of your own css style"
 msgstr "URL absoluta del vostre full d'estils css"
 
-#: ../functions.php:496
+#: ../functions.php:497
 msgid "Click"
 msgstr "Clica"
 
-#: ../functions.php:496
+#: ../functions.php:497
 msgid "Download css default"
 msgstr "Descarrega el css per defecte"
 
-#: ../functions.php:504
+#: ../functions.php:505
 msgid "Absolute url of your own image"
 msgstr "URL absoluta de la vostra imatge"
 
-#: ../functions.php:520
+#: ../functions.php:521
 msgid "Background vertical position"
 msgstr "Posició vertical de fons"
 
-#: ../functions.php:526
+#: ../functions.php:527
 msgid "Top"
 msgstr "A dalt"
 
-#: ../functions.php:529
+#: ../functions.php:530
 msgid "Middle"
 msgstr "Al mig"
 
-#: ../functions.php:532
+#: ../functions.php:533
 msgid "Bottom"
 msgstr "A baix"
 
-#: ../functions.php:540
+#: ../functions.php:541
 msgid "Background horitzontal position"
 msgstr "Posició horitzontal de fons"
 
-#: ../functions.php:546
+#: ../functions.php:547
 msgid "Left"
 msgstr "Esquerra"
 
-#: ../functions.php:549
+#: ../functions.php:550
 msgid "Center"
 msgstr "Centrat"
 
-#: ../functions.php:552
+#: ../functions.php:553
 msgid "Right"
 msgstr "Dreta"
 
-#: ../functions.php:567
+#: ../functions.php:568
 msgid "Update Options &raquo;"
 msgstr "Actualitza les opcions &raquo;"
 
-#: ../functions.php:574
+#: ../functions.php:575
 msgid "Preview (updated when options are saved)"
 msgstr "Previsualitza (s'actualitza quan es desen les opcions)"
 

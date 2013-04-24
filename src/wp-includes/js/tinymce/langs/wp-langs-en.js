@@ -12,8 +12,53 @@ not_set:"-- Not set --",
 clipboard_msg:"Copy/Cut/Paste is not available in Mozilla and Firefox.",
 clipboard_no_support:"Currently not supported by your browser, use keyboard shortcuts instead.",
 popup_blocked:"Sorry, but we have noticed that your popup-blocker has disabled a window that provides application functionality. You will need to disable popup blocking on this site in order to fully utilize this tool.",
-invalid_data:"Error: Invalid values entered, these are marked in red.",
+invalid_data:"ERROR: Invalid values entered, these are marked in red.",
+invalid_data_number:"{#field} must be a number",
+invalid_data_min:"{#field} must be a number greater than {#min}",
+invalid_data_size:"{#field} must be a number or percentage",
 more_colors:"More colors"
+},
+colors:{
+"000000":"Black",
+"993300":"Burnt orange",
+"333300":"Dark olive",
+"003300":"Dark green",
+"003366":"Dark azure",
+"000080":"Navy Blue",
+"333399":"Indigo",
+"333333":"Very dark gray",
+"800000":"Maroon",
+"FF6600":"Orange",
+"808000":"Olive",
+"008000":"Green",
+"008080":"Teal",
+"0000FF":"Blue",
+"666699":"Grayish blue",
+"808080":"Gray",
+"FF0000":"Red",
+"FF9900":"Amber",
+"99CC00":"Yellow green",
+"339966":"Sea green",
+"33CCCC":"Turquoise",
+"3366FF":"Royal blue",
+"800080":"Purple",
+"999999":"Medium gray",
+"FF00FF":"Magenta",
+"FFCC00":"Gold",
+"FFFF00":"Yellow",
+"00FF00":"Lime",
+"00FFFF":"Aqua",
+"00CCFF":"Sky blue",
+"993366":"Brown",
+"C0C0C0":"Silver",
+"FF99CC":"Pink",
+"FFCC99":"Peach",
+"FFFF99":"Light yellow",
+"CCFFCC":"Pale green",
+"CCFFFF":"Pale cyan",
+"99CCFF":"Light sky blue",
+"CC99FF":"Plum",
+"FFFFFF":"White"
 },
 contextmenu:{
 align:"Alignment",
@@ -61,7 +106,7 @@ iespell_desc:"Run spell checking",
 download:"ieSpell not detected. Do you want to install it now?"
 },
 advhr:{
-advhr_desc:"Horizontale rule"
+advhr_desc:"Horizontal rule"
 },
 emotions:{
 emotions_desc:"Emotions"
@@ -90,12 +135,14 @@ desc:"Edit CSS Style"
 paste:{
 paste_text_desc:"Paste as Plain Text",
 paste_word_desc:"Paste from Word",
-selectall_desc:"Select All"
+selectall_desc:"Select All",
+plaintext_mode_sticky:"Paste is now in plain text mode. Click again to toggle back to regular paste mode. After you paste something you will be returned to regular paste mode.",
+plaintext_mode:"Paste is now in plain text mode. Click again to toggle back to regular paste mode."
 },
 paste_dlg:{
-text_title:"Use CTRL+V on your keyboard to paste the text into the window.",
+text_title:"Use CTRL + V on your keyboard to paste the text into the window.",
 text_linebreaks:"Keep linebreaks",
-word_title:"Use CTRL+V on your keyboard to paste the text into the window."
+word_title:"Use CTRL + V on your keyboard to paste the text into the window."
 },
 table:{
 desc:"Inserts a new table",
@@ -123,12 +170,10 @@ autosave:{
 unload_msg:"The changes you made will be lost if you navigate away from this page."
 },
 fullscreen:{
-desc:"Toggle fullscreen mode (Alt+Shift+G)"
+desc:"Toggle fullscreen mode (Alt + Shift + G)"
 },
 media:{
 desc:"Insert / edit embedded media",
-delta_width:"0",
-delta_height:"0",
 edit:"Edit embedded media"
 },
 fullpage:{
@@ -141,7 +186,7 @@ visualchars:{
 desc:"Visual control characters on/off."
 },
 spellchecker:{
-desc:"Toggle spellchecker (Alt+Shift+N)",
+desc:"Toggle spellchecker (Alt + Shift + N)",
 menu:"Spellchecker settings",
 ignore_word:"Ignore word",
 ignore_words:"Ignore all",
@@ -149,11 +194,31 @@ langs:"Languages",
 wait:"Please wait...",
 sug:"Suggestions",
 no_sug:"No suggestions",
-no_mpell:"No misspellings found."
+no_mpell:"No misspellings found.",
+learn_word:"Learn word" 
 },
 pagebreak:{
-desc:"Insert page break."
-}}});
+desc:"Insert Page Break"
+},
+advlist:{
+types:"Types",
+def:"Default",
+lower_alpha:"Lower alpha",
+lower_greek:"Lower greek",
+lower_roman:"Lower roman",
+upper_alpha:"Upper alpha",
+upper_roman:"Upper roman",
+circle:"Circle",
+disc:"Disc",
+square:"Square"
+},
+aria:{
+rich_text_area:"Rich Text Area"
+},
+wordcount:{
+words:"Words: "
+}
+}});
 
 tinyMCE.addI18n("en.advanced",{
 style_select:"Styles",
@@ -175,27 +240,23 @@ code:"Code",
 samp:"Code sample",
 dt:"Definition term ",
 dd:"Definition description",
-bold_desc:"Bold (Ctrl / Alt+Shift + B)",
-italic_desc:"Italic (Ctrl / Alt+Shift + I)",
+bold_desc:"Bold (Ctrl + B)",
+italic_desc:"Italic (Ctrl + I)",
 underline_desc:"Underline",
-striketrough_desc:"Strikethrough (Alt+Shift+D)",
-justifyleft_desc:"Align left (Alt+Shift+L)",
-justifycenter_desc:"Align center (Alt+Shift+C)",
-justifyright_desc:"Align right (Alt+Shift+R)",
-justifyfull_desc:"Align full (Alt+Shift+J)",
-bullist_desc:"Unordered list (Alt+Shift+U)",
-numlist_desc:"Ordered list (Alt+Shift+O)",
+striketrough_desc:"Strikethrough (Alt + Shift + D)",
+justifyleft_desc:"Align Left (Alt + Shift + L)",
+justifycenter_desc:"Align Center (Alt + Shift + C)",
+justifyright_desc:"Align Right (Alt + Shift + R)",
+justifyfull_desc:"Align Full (Alt + Shift + J)",
+bullist_desc:"Unordered list (Alt + Shift + U)",
+numlist_desc:"Ordered list (Alt + Shift + O)",
 outdent_desc:"Outdent",
 indent_desc:"Indent",
-undo_desc:"Undo (Ctrl+Z)",
-redo_desc:"Redo (Ctrl+Y)",
-link_desc:"Insert/edit link (Alt+Shift+A)",
-link_delta_width:"0",
-link_delta_height:"0",
-unlink_desc:"Unlink (Alt+Shift+S)",
-image_desc:"Insert/edit image (Alt+Shift+M)",
-image_delta_width:"0",
-image_delta_height:"0",
+undo_desc:"Undo (Ctrl + Z)",
+redo_desc:"Redo (Ctrl + Y)",
+link_desc:"Insert/edit link (Alt + Shift + A)",
+unlink_desc:"Unlink (Alt + Shift + S)",
+image_desc:"Insert/edit image (Alt + Shift + M)",
 cleanup_desc:"Cleanup messy code",
 code_desc:"Edit HTML Source",
 sub_desc:"Subscript",
@@ -213,14 +274,16 @@ paste_desc:"Paste",
 image_props_desc:"Image properties",
 newdocument_desc:"New document",
 help_desc:"Help",
-blockquote_desc:"Blockquote (Alt+Shift+Q)",
+blockquote_desc:"Blockquote (Alt + Shift + Q)",
 clipboard_msg:"Copy/Cut/Paste is not available in Mozilla and Firefox.",
 path:"Path",
 newdocument:"Are you sure you want to clear all contents?",
 toolbar_focus:"Jump to tool buttons - Alt+Q, Jump to editor - Alt-Z, Jump to element path - Alt-X",
 more_colors:"More colors",
-colorpicker_delta_width:"0",
-colorpicker_delta_height:"0"
+shortcuts_desc:"Accessibility Help",
+help_shortcut:" Press ALT F10 for toolbar. Press ALT 0 for help.",
+rich_text_area:"Rich Text Area",
+toolbar:"Toolbar"
 });
 
 tinyMCE.addI18n("en.advanced_dlg",{
@@ -247,6 +310,7 @@ colorpicker_named_title:"Named colors",
 colorpicker_color:"Color:",
 colorpicker_name:"Name:",
 charmap_title:"Select custom character",
+charmap_usage:"Use left and right arrows to navigate.",
 image_title:"Insert/edit image",
 image_src:"Image URL",
 image_alt:"Image description",
@@ -272,7 +336,9 @@ link_target_blank:"Open link in a new window",
 link_titlefield:"Title",
 link_is_email:"The URL you entered seems to be an email address, do you want to add the required mailto: prefix?",
 link_is_external:"The URL you entered seems to external link, do you want to add the required http:// prefix?",
-link_list:"Link list"
+link_list:"Link list",
+accessibility_help:"Accessibility Help",
+accessibility_usage_title:"General Usage"
 });
 
 tinyMCE.addI18n("en.media_dlg",{
@@ -313,7 +379,7 @@ correction:"No correction",
 enablejavascript:"Enable JavaScript",
 starttime:"Start time",
 endtime:"End time",
-href:"Href",
+href:"href",
 qtsrcchokespeed:"Choke speed",
 target:"Target",
 volume:"Volume",
@@ -334,7 +400,7 @@ playcount:"Play count",
 rate:"Rate",
 uimode:"UI Mode",
 flash_options:"Flash options",
-qt_options:"Quicktime options",
+qt_options:"QuickTime options",
 wmp_options:"Windows media player options",
 rmp_options:"Real media player options",
 shockwave_options:"Shockwave options",
@@ -376,14 +442,20 @@ flv_autostart:"Auto start",
 flv_loop:"Loop",
 flv_showscalemodes:"Show scale modes",
 flv_smoothvideo:"Smooth video",
-flv_jscallback:"JS Callback"
+flv_jscallback:"JS Callback",
+html5_video_options:"HTML5 Video Options",
+altsource1:"Alternative source 1",
+altsource2:"Alternative source 2",
+preload:"Preload",
+poster:"Poster",
+source:"Source"
 });
 
 tinyMCE.addI18n("en.wordpress",{
-wp_adv_desc:"Show/Hide Kitchen Sink (Alt+Shift+Z)",
-wp_more_desc:"Insert More tag (Alt+Shift+T)",
-wp_page_desc:"Insert Page break (Alt+Shift+P)",
-wp_help_desc:"Help (Alt+Shift+H)",
+wp_adv_desc:"Show/Hide Kitchen Sink (Alt + Shift + Z)",
+wp_more_desc:"Insert More Tag (Alt + Shift + T)",
+wp_page_desc:"Insert Page break (Alt + Shift + P)",
+wp_help_desc:"Help (Alt + Shift + H)",
 wp_more_alt:"More...",
 wp_page_alt:"Next page...",
 add_media:"Add Media",
@@ -391,7 +463,8 @@ add_image:"Add an Image",
 add_video:"Add Video",
 add_audio:"Add Audio",
 editgallery:"Edit Gallery",
-delgallery:"Delete Gallery"
+delgallery:"Delete Gallery",
+wp_fullscreen_desc:"Distraction Free Writing mode (Alt + Shift + W)"
 });
 
 tinyMCE.addI18n("en.wpeditimage",{
@@ -427,5 +500,5 @@ s120:"120%",
 s130:"130%",
 img_title:"Title",
 caption:"Caption",
-alt:"Alternate Text"
+alt:"Alternative Text"
 });

@@ -59,12 +59,12 @@
 					
 			<li class="<?php if (yy_is_home()) { ?>current_page_item<?php } else { ?>page_item<?php } ?>">
 				<a class="first_menu" href="<?php echo yy_home_url(); ?>">
-					<?php _e($freshy_options['first_menu_label'],'xtec'); ?>
+					<?php _e($freshy_options['first_menu_label'],'xtec-11'); ?>
 				</a>
 			</li>
 			<li class="<?php if (((is_home()) && !(is_paged())) or (is_archive()) or (is_single()) or (is_paged()) or (is_search())) { ?>current_page_item<?php } else { ?>page_item<?php } ?>">
 				<a href="<?php echo yy_home_url('blog'); ?>">
-					<?php _e($freshy_options['blog_menu_label'],'xtec'); ?>
+					<?php _e($freshy_options['blog_menu_label'],'xtec-11'); ?>
 				</a>
 			</li>
 			
@@ -74,13 +74,13 @@
 			
 			<li class="<?php if (((is_home()) && !(is_paged())) or (is_archive()) or (is_single()) or (is_paged()) or (is_search())) { ?>current_page_item<?php } else { ?>page_item<?php } ?>">
 				<a class="first_menu" href="<?php echo yy_home_url('blog'); ?>">
-					<?php _e($freshy_options['blog_menu_label'],'xtec'); ?>
+					<?php _e($freshy_options['blog_menu_label'],'xtec-11'); ?>
 				</a>
 			</li>
 			<!--
 			<li class="<?php if (yy_is_home('page')) { ?>current_page_item<?php } else { ?>page_item<?php } ?>">
 				<a href="<?php echo yy_home_url('page'); ?>">
-					<?php _e($freshy_options['first_menu_label'],'xtec'); ?>
+					<?php _e($freshy_options['first_menu_label'],'xtec-11'); ?>
 				</a>
 			</li>
 			-->
@@ -101,12 +101,12 @@
 			
 			<li class="<?php if (is_home()) { ?>current_page_item<?php } else { ?>page_item<?php } ?>">
 				<a class="first_menu" href="<?php echo get_settings('home'); ?>">
-					<?php _e($freshy_options['first_menu_label'],'xtec'); ?>
+					<?php _e($freshy_options['first_menu_label'],'xtec-11'); ?>
 				</a>
 			</li>
 					
-			<?php freshy_wp_list_pages('sort_column=menu_order&depth=1&title_li='); ?>
-				
+			<?php //freshy_wp_list_pages('sort_column=menu_order&depth=1&title_li='); ?>
+			<?php wp_list_pages('sort_column=menu_order&title_li=');?>
 	
 
 		</ul>

@@ -9,11 +9,12 @@
  */
 class WP_Media_List_Table extends WP_List_Table {
 
-	function WP_Media_List_Table() {
+	function __construct( $args = array() ) {
 		$this->detached = isset( $_REQUEST['detached'] ) || isset( $_REQUEST['find_detached'] );
 
-		parent::WP_List_Table( array(
-			'plural' => 'media'
+		parent::__construct( array(
+			'plural' => 'media',
+			'screen' => isset( $args['screen'] ) ? $args['screen'] : null,
 		) );
 	}
 
@@ -84,22 +85,20 @@ class WP_Media_List_Table extends WP_List_Table {
 	}
 
 	function extra_tablenav( $which ) {
-		global $post_type;
-		$post_type_obj = get_post_type_object( $post_type );
 ?>
 		<div class="alignleft actions">
 <?php
 		if ( 'top' == $which && !is_singular() && !$this->detached && !$this->is_trash ) {
-			$this->months_dropdown( $post_type );
+			$this->months_dropdown( 'attachment' );
 
 			do_action( 'restrict_manage_posts' );
-			submit_button( __( 'Filter' ), 'secondary', false, false, array( 'id' => 'post-query-submit' ) );
+			submit_button( __( 'Filter' ), 'button', false, false, array( 'id' => 'post-query-submit' ) );
 		}
 
 		if ( $this->detached ) {
 			submit_button( __( 'Scan for lost attachments' ), 'secondary', 'find_detached', false );
 		} elseif ( $this->is_trash && current_user_can( 'edit_others_posts' ) ) {
-			submit_button( __( 'Empty Trash' ), 'button-secondary apply', 'delete_all', false );
+			submit_button( __( 'Empty Trash' ), 'apply', 'delete_all', false );
 		} ?>
 		</div>
 <?php
@@ -133,11 +132,31 @@ class WP_Media_List_Table extends WP_List_Table {
 		/* translators: column name */
 		$posts_columns['title'] = _x( 'File', 'column name' );
 		$posts_columns['author'] = __( 'Author' );
-		//$posts_columns['tags'] = _x( 'Tags', 'column name' );
+
+		$taxonomies = array();
+
+		$taxonomies = get_taxonomies_for_attachments( 'objects' );
+		$taxonomies = wp_filter_object_list( $taxonomies, array( 'show_admin_column' => true ), 'and', 'name' );
+
+		$taxonomies = apply_filters( 'manage_taxonomies_for_attachment_columns', $taxonomies, 'attachment' );
+		$taxonomies = array_filter( $taxonomies, 'taxonomy_exists' );
+
+		foreach ( $taxonomies as $taxonomy ) {
+			if ( 'category' == $taxonomy )
+				$column_key = 'categories';
+			elseif ( 'post_tag' == $taxonomy )
+				$column_key = 'tags';
+			else
+				$column_key = 'taxonomy-' . $taxonomy;
+
+			$posts_columns[ $column_key ] = get_taxonomy( $taxonomy )->labels->name;
+		}
+
 		/* translators: column name */
 		if ( !$this->detached ) {
-			$posts_columns['parent'] = _x( 'Attached to', 'column name' );
-			$posts_columns['comments'] = '<div class="vers"><img alt="Comments" src="' . esc_url( admin_url( 'images/comment-grey-bubble.png' ) ) . '" /></div>';
+			$posts_columns['parent'] = _x( 'Uploaded to', 'column name' );
+			if ( post_type_supports( 'attachment', 'comments' ) )
+				$posts_columns['comments'] = '<span class="vers"><div title="' . esc_attr__( 'Comments' ) . '" class="comment-grey-bubble"></div></span>';
 		}
 		/* translators: column name */
 		$posts_columns['date'] = _x( 'Date', 'column name' );
@@ -163,6 +182,7 @@ class WP_Media_List_Table extends WP_List_Table {
 		$alt = '';
 
 		while ( have_posts() ) : the_post();
+			$user_can_edit = current_user_can( 'edit_post', $post->ID );
 
 			if ( $this->is_trash && $post->post_status != 'trash'
 			||  !$this->is_trash && $post->post_status == 'trash' )
@@ -189,7 +209,12 @@ foreach ( $columns as $column_name => $column_display_name ) {
 
 	case 'cb':
 ?>
-		<th scope="row" class="check-column"><?php if ( current_user_can( 'edit_post', $post->ID ) ) { ?><input type="checkbox" name="media[]" value="<?php the_ID(); ?>" /><?php } ?></th>
+		<th scope="row" class="check-column">
+			<?php if ( $user_can_edit ) { ?>
+				<label class="screen-reader-text" for="cb-select-<?php the_ID(); ?>"><?php echo sprintf( __( 'Select %s' ), $att_title );?></label>
+				<input type="checkbox" name="media[]" id="cb-select-<?php the_ID(); ?>" value="<?php the_ID(); ?>" />
+			<?php } ?>
+		</th>
 <?php
 		break;
 
@@ -198,7 +223,7 @@ foreach ( $columns as $column_name => $column_display_name ) {
 ?>
 		<td <?php echo $attributes ?>><?php
 			if ( $thumb = wp_get_attachment_image( $post->ID, array( 80, 60 ), true ) ) {
-				if ( $this->is_trash ) {
+				if ( $this->is_trash || ! $user_can_edit ) {
 					echo $thumb;
 				} else {
 ?>
@@ -215,7 +240,15 @@ foreach ( $columns as $column_name => $column_display_name ) {
 
 	case 'title':
 ?>
-		<td <?php echo $attributes ?>><strong><?php if ( $this->is_trash ) echo $att_title; else { ?><a href="<?php echo get_edit_post_link( $post->ID, true ); ?>" title="<?php echo esc_attr( sprintf( __( 'Edit &#8220;%s&#8221;' ), $att_title ) ); ?>"><?php echo $att_title; ?></a><?php } ?></strong>
+		<td <?php echo $attributes ?>><strong>
+			<?php if ( $this->is_trash || ! $user_can_edit ) {
+				echo $att_title;
+			} else { ?>
+			<a href="<?php echo get_edit_post_link( $post->ID, true ); ?>"
+				title="<?php echo esc_attr( sprintf( __( 'Edit &#8220;%s&#8221;' ), $att_title ) ); ?>">
+				<?php echo $att_title; ?></a>
+			<?php };
+			_media_states( $post ); ?></strong>
 			<p>
 <?php
 			if ( preg_match( '/^.*?\.(\w+)$/', get_attached_file( $post->ID ), $matches ) )
@@ -237,23 +270,6 @@ foreach ( $columns as $column_name => $column_display_name ) {
 <?php
 		break;
 
-	case 'tags':
-?>
-		<td <?php echo $attributes ?>><?php
-		$tags = get_the_tags();
-		if ( !empty( $tags ) ) {
-			$out = array();
-			foreach ( $tags as $c )
-				$out[] = "<a href='edit.php?tag=$c->slug'> " . esc_html( sanitize_term_field( 'name', $c->name, $c->term_id, 'post_tag', 'display' ) ) . "</a>";
-			echo join( ', ', $out );
-		} else {
-			_e( 'No Tags' );
-		}
-?>
-		</td>
-<?php
-		break;
-
 	case 'desc':
 ?>
 		<td <?php echo $attributes ?>><?php echo has_excerpt() ? $post->post_excerpt : ''; ?></td>
@@ -261,13 +277,12 @@ foreach ( $columns as $column_name => $column_display_name ) {
 		break;
 
 	case 'date':
-		if ( '0000-00-00 00:00:00' == $post->post_date && 'date' == $column_name ) {
-			$t_time = $h_time = __( 'Unpublished' );
+		if ( '0000-00-00 00:00:00' == $post->post_date ) {
+			$h_time = __( 'Unpublished' );
 		} else {
-			$t_time = get_the_time( __( 'Y/m/d g:i:s A' ) );
 			$m_time = $post->post_date;
 			$time = get_post_time( 'G', true, $post, false );
-			if ( ( abs( $t_diff = time() - $time ) ) < 86400 ) {
+			if ( ( abs( $t_diff = time() - $time ) ) < DAY_IN_SECONDS ) {
 				if ( $t_diff < 0 )
 					$h_time = sprintf( __( '%s from now' ), human_time_diff( $time ) );
 				else
@@ -287,15 +302,25 @@ foreach ( $columns as $column_name => $column_display_name ) {
 				$title =_draft_or_post_title( $post->post_parent );
 			}
 ?>
-			<td <?php echo $attributes ?>>
-				<strong><a href="<?php echo get_edit_post_link( $post->post_parent ); ?>"><?php echo $title ?></a></strong>,
+			<td <?php echo $attributes ?>><strong>
+				<?php if( current_user_can( 'edit_post', $post->post_parent ) ) { ?>
+					<a href="<?php echo get_edit_post_link( $post->post_parent ); ?>">
+						<?php echo $title ?></a><?php
+				} else {
+					echo $title;
+				} ?></strong>,
 				<?php echo get_the_time( __( 'Y/m/d' ) ); ?>
 			</td>
 <?php
 		} else {
 ?>
 			<td <?php echo $attributes ?>><?php _e( '(Unattached)' ); ?><br />
-			<a class="hide-if-no-js" onclick="findPosts.open( 'media[]','<?php echo $post->ID ?>' );return false;" href="#the-list"><?php _e( 'Attach' ); ?></a></td>
+			<?php if( $user_can_edit ) {?>
+				<a class="hide-if-no-js"
+					onclick="findPosts.open( 'media[]','<?php echo $post->ID ?>' ); return false;"
+					href="#the-list">
+					<?php _e( 'Attach' ); ?></a>
+			<?php } ?></td>
 <?php
 		}
 		break;
@@ -316,6 +341,38 @@ foreach ( $columns as $column_name => $column_display_name ) {
 		break;
 
 	default:
+		if ( 'categories' == $column_name )
+			$taxonomy = 'category';
+		elseif ( 'tags' == $column_name )
+			$taxonomy = 'post_tag';
+		elseif ( 0 === strpos( $column_name, 'taxonomy-' ) )
+			$taxonomy = substr( $column_name, 9 );
+		else
+			$taxonomy = false;
+
+		if ( $taxonomy ) {
+			$taxonomy_object = get_taxonomy( $taxonomy );
+			echo '<td ' . $attributes . '>';
+			if ( $terms = get_the_terms( $post->ID, $taxonomy ) ) {
+				$out = array();
+				foreach ( $terms as $t ) {
+					$posts_in_term_qv = array();
+					$posts_in_term_qv['taxonomy'] = $taxonomy;
+					$posts_in_term_qv['term'] = $t->slug;
+
+					$out[] = sprintf( '<a href="%s">%s</a>',
+						esc_url( add_query_arg( $posts_in_term_qv, 'upload.php' ) ),
+						esc_html( sanitize_term_field( 'name', $t->name, $t->term_id, $taxonomy, 'display' ) )
+					);
+				}
+				/* translators: used between list items, there is a space after the comma */
+				echo join( __( ', ' ), $out );
+			} else {
+				echo '&#8212;';
+			}
+			echo '</td>';
+			break;
+		}
 ?>
 		<td <?php echo $attributes ?>>
 			<?php do_action( 'manage_media_custom_column', $column_name, $id ); ?>
@@ -337,10 +394,10 @@ foreach ( $columns as $column_name => $column_display_name ) {
 				$actions['edit'] = '<a href="' . get_edit_post_link( $post->ID, true ) . '">' . __( 'Edit' ) . '</a>';
 			if ( current_user_can( 'delete_post', $post->ID ) )
 				if ( EMPTY_TRASH_DAYS && MEDIA_TRASH ) {
-					$actions['trash'] = "<a class='submitdelete' href='" . wp_nonce_url( "post.php?action=trash&amp;post=$post->ID", 'trash-attachment_' . $post->ID ) . "'>" . __( 'Trash' ) . "</a>";
+					$actions['trash'] = "<a class='submitdelete' href='" . wp_nonce_url( "post.php?action=trash&amp;post=$post->ID", 'trash-post_' . $post->ID ) . "'>" . __( 'Trash' ) . "</a>";
 				} else {
 					$delete_ays = !MEDIA_TRASH ? " onclick='return showNotice.warn();'" : '';
-					$actions['delete'] = "<a class='submitdelete'$delete_ays href='" . wp_nonce_url( "post.php?action=delete&amp;post=$post->ID", 'delete-attachment_' . $post->ID ) . "'>" . __( 'Delete Permanently' ) . "</a>";
+					$actions['delete'] = "<a class='submitdelete'$delete_ays href='" . wp_nonce_url( "post.php?action=delete&amp;post=$post->ID", 'delete-post_' . $post->ID ) . "'>" . __( 'Delete Permanently' ) . "</a>";
 				}
 			$actions['view'] = '<a href="' . get_permalink( $post->ID ) . '" title="' . esc_attr( sprintf( __( 'View &#8220;%s&#8221;' ), $att_title ) ) . '" rel="permalink">' . __( 'View' ) . '</a>';
 			if ( current_user_can( 'edit_post', $post->ID ) )
@@ -351,12 +408,12 @@ foreach ( $columns as $column_name => $column_display_name ) {
 				$actions['edit'] = '<a href="' . get_edit_post_link( $post->ID, true ) . '">' . __( 'Edit' ) . '</a>';
 			if ( current_user_can( 'delete_post', $post->ID ) ) {
 				if ( $this->is_trash )
-					$actions['untrash'] = "<a class='submitdelete' href='" . wp_nonce_url( "post.php?action=untrash&amp;post=$post->ID", 'untrash-attachment_' . $post->ID ) . "'>" . __( 'Restore' ) . "</a>";
+					$actions['untrash'] = "<a class='submitdelete' href='" . wp_nonce_url( "post.php?action=untrash&amp;post=$post->ID", 'untrash-post_' . $post->ID ) . "'>" . __( 'Restore' ) . "</a>";
 				elseif ( EMPTY_TRASH_DAYS && MEDIA_TRASH )
-					$actions['trash'] = "<a class='submitdelete' href='" . wp_nonce_url( "post.php?action=trash&amp;post=$post->ID", 'trash-attachment_' . $post->ID ) . "'>" . __( 'Trash' ) . "</a>";
+					$actions['trash'] = "<a class='submitdelete' href='" . wp_nonce_url( "post.php?action=trash&amp;post=$post->ID", 'trash-post_' . $post->ID ) . "'>" . __( 'Trash' ) . "</a>";
 				if ( $this->is_trash || !EMPTY_TRASH_DAYS || !MEDIA_TRASH ) {
 					$delete_ays = ( !$this->is_trash && !MEDIA_TRASH ) ? " onclick='return showNotice.warn();'" : '';
-					$actions['delete'] = "<a class='submitdelete'$delete_ays href='" . wp_nonce_url( "post.php?action=delete&amp;post=$post->ID", 'delete-attachment_' . $post->ID ) . "'>" . __( 'Delete Permanently' ) . "</a>";
+					$actions['delete'] = "<a class='submitdelete'$delete_ays href='" . wp_nonce_url( "post.php?action=delete&amp;post=$post->ID", 'delete-post_' . $post->ID ) . "'>" . __( 'Delete Permanently' ) . "</a>";
 				}
 			}
 			if ( !$this->is_trash ) {
@@ -370,5 +427,3 @@ foreach ( $columns as $column_name => $column_display_name ) {
 		return $actions;
 	}
 }
-
-?>

@@ -1,6 +1,7 @@
 <?php
 	
-load_theme_textdomain('freshy-2', get_template_directory() . '/languages');
+define ('TEMPLATE_DOMAIN','freshy');
+load_theme_textdomain(TEMPLATE_DOMAIN);
 
 if ( function_exists('register_sidebar') ) {
 	
@@ -65,7 +66,7 @@ function freshy_menu_control() {
 
 function freshy_widget_links($args) {
 	global $wpdb;
-	$title = empty($options['title']) ? __('Links','freshy-2') : $options['title'];
+	$title = empty($options['title']) ? __('Links') : $options['title'];
 	?>
 	<h2><?php print $before_widget.$before_title.$title.$after_title; ; ?></h2>
 	<ul>
@@ -113,7 +114,7 @@ function freshy_menu($args_pages='', $args_cats='') {
 	$c = 0;
 	$h = 0;
 	if ($freshy_options['menu_rss'] == 1) $rss = '&feed_image='.get_bloginfo('stylesheet_directory').'/images/icons/feed-icon-10x10.gif';
-	$title = empty($options['title']) ? __('Navigation','freshy-2') : $options['title'];
+	$title = empty($options['title']) ? __('Navigation') : $options['title'];
 	
 	if ($freshy_options['menu_type']=='auto') {
 
@@ -142,7 +143,7 @@ function freshy_menu($args_pages='', $args_cats='') {
 		// bad things happened but dispay something anyway
 		else {
 			?>
-				<h2><?php _e('Categories','freshy-2'); ?></h2>
+				<h2><?php _e('Categories',TEMPLATE_DOMAIN); ?></h2>
 				<ul>
 				<?php wp_list_cats($args_cats.'&hierarchical=$h'.$rss); ?>
 				</ul>
@@ -151,11 +152,11 @@ function freshy_menu($args_pages='', $args_cats='') {
 	}
 	else {
 		?>
-			<h2><?php _e('Pages','freshy-2'); ?></h2>
+			<h2><?php _e('Pages',TEMPLATE_DOMAIN); ?></h2>
 			<ul>
 			<?php wp_list_pages('sort_column=menu_order&title_li='); ?>
 			</ul>
-			<h2><?php _e('Categories','freshy-2'); ?></h2>
+			<h2><?php _e('Categories',TEMPLATE_DOMAIN); ?></h2>
 			<ul>
 			<?php wp_list_cats($args_cats.'&optioncount=$c&hierarchical=$h'.$rss); ?>
 			</ul>
@@ -243,7 +244,7 @@ function freshy_set_options() {
 add_action('admin_menu', 'freshy_add_theme_page');
 
 function freshy_add_theme_page() {
-	add_theme_page('Freshy Options', 'Freshy Options', 'edit_theme_options', basename(__FILE__), 'freshy_theme_page');
+	add_theme_page('Freshy Options', 'Freshy Options', 'edit_themes', basename(__FILE__), 'freshy_theme_page');
 }
 
 function freshy_theme_page() {
@@ -295,11 +296,11 @@ function freshy_theme_page() {
 			update_option('freshy_options', $freshy_updated_options);
 			
 			$freshy_options = get_option('freshy_options');
-			print '<div class="updated"><p>' . __('Freshy options updated.','freshy-2') . '</p></div>';
+			print '<div class="updated"><p>' . __('Freshy options updated.',TEMPLATE_DOMAIN) . '</p></div>';
 		}
 
 		print '<div class="wrap">
-		<h2>'.__('Freshy Options','freshy-2').'</h2>
+		<h2>'.__('Freshy Options',TEMPLATE_DOMAIN).'</h2>
 		
 		<form name="freshy_options_form" method="post">
 		<input type="hidden" name="freshy_options_update" value="update" />
@@ -308,7 +309,7 @@ function freshy_theme_page() {
 		?>
 			<tr>
 				<th scope="row">
-					<label for="theme"><?php _e('Choose a custom style :','freshy-2') ?></label>
+					<label for="theme"><?php _e('Choose a custom style :',TEMPLATE_DOMAIN) ?></label>
 				</th>
 				<td>
 					<select id="theme" name="theme">
@@ -333,10 +334,10 @@ function freshy_theme_page() {
 			</tr>
 		<?php
 			
-		print '<tr valign="top"><td colspan="2"><h3>'.__('Layout :','freshy-2').'</h3></td></tr>
+		print '<tr valign="top"><td colspan="2"><h3>'.__('Layout :',TEMPLATE_DOMAIN).'</h3></td></tr>
 			<tr valign="top">
 				<th scope="row">
-					<label>'.__('Display left sidebar','freshy-2').'</label>
+					<label>'.__('Display left sidebar',TEMPLATE_DOMAIN).'</label>
 				</th>
 				<td>
 					<input type="checkbox" class="form-checkbox" ';
@@ -346,7 +347,7 @@ function freshy_theme_page() {
 			</tr>
 			<tr valign="top">
 				<th scope="row">
-					<label>'.__('Display right sidebar','freshy-2').'</label>
+					<label>'.__('Display right sidebar',TEMPLATE_DOMAIN).'</label>
 				</th>
 				<td>
 					<input type="checkbox" class="form-checkbox" ';
@@ -356,56 +357,56 @@ function freshy_theme_page() {
 			</tr>
 			<tr valign="top">
 				<th scope="row">
-					<label>'.__('Hide left sidebar on these posts','freshy-2').'</label>
+					<label>'.__('Hide left sidebar on these posts',TEMPLATE_DOMAIN).'</label>
 				</th>
 				<td>
 					<input type="text" name="hide_sidebar_left_posts" value="'.$freshy_options['hide_sidebar_left_posts'].'"/>
-					<span class="setting-description">'.__('Enter posts ids separated by commas','freshy-2').'</span>
+					<span class="setting-description">'.__('Enter posts ids separated by commas',TEMPLATE_DOMAIN).'</span>
 				</td>
 			</tr>
 			<tr valign="top">
 				<th scope="row">
-					<label>'.__('Hide right sidebar on these posts','freshy-2').'</label>
+					<label>'.__('Hide right sidebar on these posts',TEMPLATE_DOMAIN).'</label>
 				</th>
 				<td>
 					<input type="text" name="hide_sidebar_posts" value="'.$freshy_options['hide_sidebar_posts'].'"/>
-					<span class="setting-description">'.__('Enter posts ids separated by commas','freshy-2').'</span>
+					<span class="setting-description">'.__('Enter posts ids separated by commas',TEMPLATE_DOMAIN).'</span>
 				</td>
 			</tr>
 			<tr valign="top">
 				<th scope="row">
-					<label>'.__('Navigation menu behaviour','freshy-2').'</label>
+					<label>'.__('Navigation menu behaviour',TEMPLATE_DOMAIN).'</label>
 				</th>
 				<td>					
 					<label for="menu_type_auto"><input name="menu_type" id="menu_type_auto" type="radio" value="auto" ';
 					if ($freshy_options['menu_type'] == 'auto') {print 'checked="checked" ';}
-					print '/> '.__('Auto : Display subpages on pages and blog categories in blog','freshy-2').'</label>
+					print '/> '.__('Auto : Display subpages on pages and blog categories in blog',TEMPLATE_DOMAIN).'</label>
 					<br/>
 					<label for="menu_type_normal"><input name="menu_type" id="menu_type_normal" type="radio" value="normal" ';
 					if ($freshy_options['menu_type'] == 'normal') {print 'checked="checked" ';}
-					print '/> '.__('Normal : Always display categories and pages','freshy-2').'</label>
+					print '/> '.__('Normal : Always display categories and pages',TEMPLATE_DOMAIN).'</label>
 				</td>
 			</tr>
 			<tr valign="top">
 				<th scope="row">
-					<label>'.__('Navigation menu rss','freshy-2').'</label>
+					<label>'.__('Navigation menu rss',TEMPLATE_DOMAIN).'</label>
 				</th>
 				<td>					
 					<label for="menu_rss_true"><input name="menu_rss" id="menu_rss_true" type="radio" value="1" ';
 					if ($freshy_options['menu_rss'] == 1) {print 'checked="checked" ';}
-					print '/> '.__('Display rss icon with categories','freshy-2').'</label>
+					print '/> '.__('Display rss icon with categories',TEMPLATE_DOMAIN).'</label>
 					<br/>
 					<label for="menu_rss_false"><input name="menu_rss" id="menu_rss_false" type="radio" value="0" ';
 					if ($freshy_options['menu_rss'] == 0) {print 'checked="checked" ';}
-					print '/> '.__('Do not display rss icon with categories','freshy-2').'</label>
+					print '/> '.__('Do not display rss icon with categories',TEMPLATE_DOMAIN).'</label>
 				</td>
 			</tr>
-			<tr valign="top"><td colspan="2"><h3>'.__('Date options :','freshy-2').'</h3>
-				<small>'.__('You can change date formatting in','freshy-2').' <a href="options-general.php">Settings &gt; General</a></small>		
+			<tr valign="top"><td colspan="2"><h3>'.__('Date options :',TEMPLATE_DOMAIN).'</h3>
+				<small>'.__('You can change date formatting in',TEMPLATE_DOMAIN).' <a href="options-general.php">Settings &gt; General</a></small>		
 			</td></tr>
 			<tr valign="top">
 				<th scope="row">
-					<label>'.__('Show date on posts','freshy-2').' </label>
+					<label>'.__('Show date on posts',TEMPLATE_DOMAIN).' </label>
 				</th>
 				<td>
 					<input type="checkbox" class="form-checkbox" ';
@@ -415,7 +416,7 @@ function freshy_theme_page() {
 			</tr>
 			<tr valign="top">
 				<th scope="row">
-					<label>'.__('Show time on posts','freshy-2').' </label>
+					<label>'.__('Show time on posts',TEMPLATE_DOMAIN).' </label>
 				</th>
 				<td>
 					<input type="checkbox" class="form-checkbox" ';
@@ -423,10 +424,10 @@ function freshy_theme_page() {
 					print 'value="1" id="edit-time" name="time"/>
 				</td>
 			</tr>
-			<tr valign="top"><td colspan="2"><h3>'.__('Other options :','freshy-2').'</h3></td></tr>
+			<tr valign="top"><td colspan="2"><h3>'.__('Other options :',TEMPLATE_DOMAIN).'</h3></td></tr>
 			<tr valign="top">
 				<th scope="row">
-					<label>'.__('Show author on posts','freshy-2').' </label>
+					<label>'.__('Show author on posts',TEMPLATE_DOMAIN).' </label>
 				</th>
 				<td>
 					<input type="checkbox" class="form-checkbox" ';
@@ -436,7 +437,7 @@ function freshy_theme_page() {
 			</tr>
 			<tr valign="top">
 				<th scope="row">
-					<label>'.__('Show search in header','freshy-2').' </label>
+					<label>'.__('Show search in header',TEMPLATE_DOMAIN).' </label>
 				</th>
 				<td>
 					<input type="checkbox" class="form-checkbox" ';
@@ -446,7 +447,7 @@ function freshy_theme_page() {
 			</tr>
 			<tr valign="top">
 				<th scope="row">
-					<label>'.__('Show RSS icon in header','freshy-2').' </label>
+					<label>'.__('Show RSS icon in header',TEMPLATE_DOMAIN).' </label>
 				</th>
 				<td>
 					<input type="checkbox" class="form-checkbox" ';
@@ -454,19 +455,19 @@ function freshy_theme_page() {
 					print 'value="1" id="edit-header-rss" name="header_rss"/>
 				</td>
 			</tr>
-			<tr valign="top"><td colspan="2"><h3>'.__('Menu :','freshy-2').'</h3></td></tr>
+			<tr valign="top"><td colspan="2"><h3>'.__('Menu :',TEMPLATE_DOMAIN).'</h3></td></tr>
 			<tr valign="top">
 				<th scope="row">
-					<label>'.__('Enter the label of the Homepage menu link','freshy-2').' </label>
+					<label>'.__('Enter the label of the Homepage menu link',TEMPLATE_DOMAIN).' </label>
 				</th>
 				<td>
 					<input name="first_menu_label" type="text" value="'.$freshy_options['first_menu_label'].'"/>
-					<span class="setting-description">'.__('Modifying these labels should break internationalisation','freshy-2').'</span>
+					<span class="setting-description">'.__('Modifying these labels should break internationalisation',TEMPLATE_DOMAIN).'</span>
 				</td>
 			</tr>
 			<tr valign="top">
 				<th scope="row">
-					<label>'.__('Enter the label of the last menu link','freshy-2').' </label>
+					<label>'.__('Enter the label of the last menu link',TEMPLATE_DOMAIN).' </label>
 				</th>
 				<td>
 					<input name="last_menu_label" type="text" value="'.$freshy_options['last_menu_label'].'"/>
@@ -474,29 +475,29 @@ function freshy_theme_page() {
 			</tr>
 			<tr valign="top">
 				<th scope="row">
-					<label>'.__('The last menu link should be...','freshy-2').'</label>
+					<label>'.__('The last menu link should be...',TEMPLATE_DOMAIN).'</label>
 				</th>
 				<td>					
 					<label for="last_menu_type_email"><input name="last_menu_type" id="last_menu_type_email" type="radio" value="email" ';
 					if ($freshy_options['last_menu_type'] == 'email') {print 'checked="checked" ';}
-					print '/> '.__('A contact button to this email','freshy-2').' :</label>
+					print '/> '.__('A contact button to this email',TEMPLATE_DOMAIN).' :</label>
 					<input name="contact_email" type="text" value="'.$freshy_options['contact_email'].'"/>
 
 					<br/>
 					
 					<label for="last_menu_type_link"><input name="last_menu_type" id="last_menu_type_link" type="radio" value="link" ';
 					if ($freshy_options['last_menu_type'] == 'link') {print 'checked="checked" ';}
-					print '/> '.__('A custom link with this url','freshy-2').' :</label>
+					print '/> '.__('A custom link with this url',TEMPLATE_DOMAIN).' :</label>
 					<input name="contact_link" type="text" value="'.$freshy_options['contact_link'].'"/>
 						
 					<br/>
 												
 					<label for="last_menu_type_none"><input name="last_menu_type" id="last_menu_type_none" type="radio" value="" ';
 					if ($freshy_options['last_menu_type'] == '') {print 'checked="checked" ';}
-					print '/> '.__('Nothing','freshy-2').'</label>
+					print '/> '.__('Nothing',TEMPLATE_DOMAIN).'</label>
 				</td>
 			</tr>
-			<tr valign="top"><td colspan="2"><h3>'.__('Custom menus :','freshy-2').'</h3></td></tr>';
+			<tr valign="top"><td colspan="2"><h3>'.__('Custom menus :',TEMPLATE_DOMAIN).'</h3></td></tr>';
 			if (is_array($freshy_options['custom_menus'])) {
 			foreach ($freshy_options['custom_menus'] as $i => $custom_menu) {
 				print '<tr valign="top">
@@ -510,14 +511,14 @@ function freshy_theme_page() {
 			} }
 			print '<tr valign="top">
 				<th scope="row">
-					<label>'.__('New custom menu entry','freshy-2').' </label>
+					<label>'.__('New custom menu entry',TEMPLATE_DOMAIN).' </label>
 				</th>
 				<td>
-					<label>'.__('label','freshy-2').' :</label> <input name="new_custom_menu_label" type="text" value=""/><br/>
-					<label>'.__('url','freshy-2').' :</label> <input name="new_custom_menu_url" type="text" value=""/>
+					<label>'.__('label',TEMPLATE_DOMAIN).' :</label> <input name="new_custom_menu_label" type="text" value=""/><br/>
+					<label>'.__('url',TEMPLATE_DOMAIN).' :</label> <input name="new_custom_menu_url" type="text" value=""/>
 				</td>
 			</tr>
-			<tr valign="top"><td colspan="2"><h3>'.__('Custom quicklinks :','freshy-2').'</h3></td></tr>';
+			<tr valign="top"><td colspan="2"><h3>'.__('Custom quicklinks :',TEMPLATE_DOMAIN).'</h3></td></tr>';
 			if (is_array($freshy_options['custom_quicklinks'])) {
 			foreach ($freshy_options['custom_quicklinks'] as $i => $custom_quicklink) {
 				print '<tr valign="top">
@@ -531,16 +532,16 @@ function freshy_theme_page() {
 			} }
 			print '<tr valign="top">
 				<th scope="row">
-					<label>'.__('New custom quicklink entry','freshy-2').' </label>
+					<label>'.__('New custom quicklink entry',TEMPLATE_DOMAIN).' </label>
 				</th>
 				<td>
-					<label>'.__('label','freshy-2').' :</label> <input name="new_custom_quicklink_label" type="text" value=""/><br/>
-					<label>'.__('url','freshy-2').' :</label> <input name="new_custom_quicklink_url" type="text" value=""/>
+					<label>'.__('label',TEMPLATE_DOMAIN).' :</label> <input name="new_custom_quicklink_label" type="text" value=""/><br/>
+					<label>'.__('url',TEMPLATE_DOMAIN).' :</label> <input name="new_custom_quicklink_url" type="text" value=""/>
 				</td>
 			</tr>
 		</table>
 						
-		<p class="submit"><input type="submit" name="Submit" value="'.__('Update Options &raquo;','freshy-2').'"/></p>
+		<p class="submit"><input type="submit" name="Submit" value="'.__('Update Options &raquo;',TEMPLATE_DOMAIN).'"/></p>
 		</form>
 		</div>
 		';
@@ -585,7 +586,7 @@ function freshy_list_files($dirpath,$filter='',$excludes='')
 		    closedir($dh);
 		}
 	}
-	else $this->message = '<div class="error"><p>'.__('It seems that the directory','customize','freshy-2').' "'.$dirpath.'" '.__('does not exist','customize','freshy-2').'</p></div>';
+	else $this->message = '<div class="error"><p>'.__('It seems that the directory','customize').' "'.$dirpath.'" '.__('does not exist','customize').'</p></div>';
     return $return_array;
 }
 

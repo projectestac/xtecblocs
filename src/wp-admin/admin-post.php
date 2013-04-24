@@ -6,7 +6,7 @@
  * @subpackage Administration
  */
 
-/** We are located in WordPress Administration Panels */
+/** We are located in WordPress Administration Screens */
 define('WP_ADMIN', true);
 
 if ( defined('ABSPATH') )
@@ -29,5 +29,3 @@ if ( !empty($_REQUEST['action']) )
 	$action .= '_' . $_REQUEST['action'];
 
 do_action($action);
-
-?>

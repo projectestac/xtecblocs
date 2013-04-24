@@ -1,6 +1,6 @@
 <?php
 
-load_theme_textdomain('xtec', get_template_directory() . '/languages');
+load_theme_textdomain('xtec-11', get_template_directory() . '/languages');
 
 if ( function_exists('register_sidebar') ) {
     register_sidebar(array(
@@ -10,12 +10,12 @@ if ( function_exists('register_sidebar') ) {
         'after_title' => '</h2>',
     ));
 	unregister_sidebar_widget ('Links'); // ??
-	register_sidebar_widget(__('Links for Freshy','xtec'), 'yy_widget_links');
+	register_sidebar_widget(__('Links for Freshy','xtec-11'), 'yy_widget_links');
 }
 
 function yy_widget_links($args) {
 	global $wpdb;
-	$title = empty($options['title']) ? __('Links','xtec') : $options['title'];
+	$title = empty($options['title']) ? __('Links','xtec-11') : $options['title'];
 	
 	 $link_cats = $wpdb->get_results("SELECT term_id, name FROM $wpdb->terms");
 	 ?>
@@ -55,7 +55,7 @@ function freshy_menu($args_pages='', $args_cats='') {
 
 	        $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE post_parent = '$parent_id'");
 	        ?>
-			<h2><?php _e('Navigation','xtec'); ?></h2>
+			<h2><?php _e('Navigation','xtec-11'); ?></h2>
 			<ul>
 			<?php
 	        wp_list_pages($args_pages.'&child_of='.$parent_id.'&title_li=');
@@ -66,7 +66,7 @@ function freshy_menu($args_pages='', $args_cats='') {
 		// cats & posts menu
 		else if (!is_page() && $notfound!='1' && $args_cats!='none') {
 			?>
-			<h2><?php _e('Navigation','xtec'); ?></h2>
+			<h2><?php _e('Navigation','xtec-11'); ?></h2>
 			<ul>
 			<?php
 	        wp_list_cats($args_cats);
@@ -77,11 +77,11 @@ function freshy_menu($args_pages='', $args_cats='') {
 		// bad things happened but dispay something anyway
 		else {
 			?>
-				<h2><?php _e('Pages','xtec'); ?></h2>
+				<h2><?php _e('Pages','xtec-11'); ?></h2>
 				<ul>
 				<?php wp_list_pages('sort_column=menu_order&title_li='); ?>
 				</ul>
-				<h2><?php _e('Blog','xtec'); ?></h2>
+				<h2><?php _e('Blog','xtec-11'); ?></h2>
 				<ul>
 				<?php wp_list_cats('sort_column=name&optioncount=1&title_li=&hierarchical=1&feed=RSS&feed_image='.get_bloginfo('stylesheet_directory').'/images/icons/feed-icon-10x10.gif'); ?>
 				</ul>
@@ -90,11 +90,11 @@ function freshy_menu($args_pages='', $args_cats='') {
 	}
 	else {
 		?>
-			<h2><?php _e('Pages','xtec'); ?></h2>
+			<h2><?php _e('Pages','xtec-11'); ?></h2>
 			<ul>
 			<?php wp_list_pages('sort_column=menu_order&title_li='); ?>
 			</ul>
-			<h2><?php _e('Blog','xtec'); ?></h2>
+			<h2><?php _e('Blog','xtec-11'); ?></h2>
 			<ul>
 			<?php wp_list_cats('sort_column=name&optioncount=1&title_li=&hierarchical=1&feed=RSS&feed_image='.get_bloginfo('stylesheet_directory').'/images/icons/feed-icon-10x10.gif'); ?>
 			</ul>
@@ -112,7 +112,7 @@ function freshy_wp_list_pages($args = '') {
 	if ( !isset($r['child_of']) )
 		$r['child_of'] = 0;
 	if ( !isset($r['title_li']) )
-		$r['title_li'] = __('Pages','xtec');
+		$r['title_li'] = __('Pages','xtec-11');
 	if ( !isset($r['echo']) )
 		$r['echo'] = 1;
 
@@ -363,7 +363,7 @@ function freshy_admin_head() {
 
 
 function freshy_add_theme_page() {
-	add_theme_page(__('XTEC Theme Options','xtec'), __('XTEC Theme Options','xtec'), 'edit_theme_options', basename(__FILE__), 'freshy_theme_page');
+	add_theme_page(__('XTEC Theme Options','xtec-11'), __('XTEC Theme Options','xtec-11'), 'edit_theme_options', basename(__FILE__), 'freshy_theme_page');
 }
 /*
 function freshy_set_theme($theme,$options) { 
@@ -423,13 +423,13 @@ function freshy_theme_page() {
 				$freshy_updated_options['header_bg_custom']=wp_kses_bad_protocol($freshy_updated_options['header_bg_custom'],array('http','https'));
 				update_option('freshy_options', $freshy_updated_options);
 				$freshy_options = get_option('freshy_options');
-				echo '<div class="updated"><p>' . __('XTEC options updated.','xtec') . '</p></div>';
+				echo '<div class="updated"><p>' . __('XTEC options updated.','xtec-11') . '</p></div>';
 			}
 		}
 		
 		echo '
 		<div class="wrap">
-		<h2>'.__('XTEC Options','xtec').'</h2>
+		<h2>'.__('XTEC Options','xtec-11').'</h2>
 		
 		<form name="freshy_options_form" method="post">
 		<input type="hidden" name="freshy_options_update" value="update" />
@@ -437,14 +437,14 @@ function freshy_theme_page() {
 					
 					
 		<fieldset class="options">
-		<legend>'.__('Theme switcher','xtec').'</legend>
+		<legend>'.__('Theme switcher','xtec-11').'</legend>
 		<table id="freshy_menu_options" width="100%" cellspacing="2" cellpadding="5" class="editform">
 			<col style="width:50%;"/><col/>
 			<tr>
 				<td>
-					<label>'.__('Enter the label of the Homepage menu link','xtec').' </label>
+					<label>'.__('Enter the label of the Homepage menu link','xtec-11').' </label>
 					<br/>
-					<small>'.__('info : modifying these labels should break internationalisation','xtec').'</small>
+					<small>'.__('info : modifying these labels should break internationalisation','xtec-11').'</small>
 				</td>
 				<td>
 					<input name="first_menu_label" type="text" value="'.$freshy_options['first_menu_label'].'"/>
@@ -455,9 +455,9 @@ function freshy_theme_page() {
 				echo '
 				<tr>
 					<td>
-						<label>'.__('Enter the label of the Blog menu link','xtec').' </label>
+						<label>'.__('Enter the label of the Blog menu link','xtec-11').' </label>
 						<br/>
-						<small>'.__('info : this is specially for YammYamm','xtec').'</small>
+						<small>'.__('info : this is specially for YammYamm','xtec-11').'</small>
 					</td>
 					<td>
 						<input name="blog_menu_label" type="text" value="'.$freshy_options['blog_menu_label'].'"/>
@@ -468,7 +468,7 @@ function freshy_theme_page() {
 			echo '
 			<tr>
 				<td>	
-					<label>'.__('Enter the label of the last menu link','xtec').' </label>
+					<label>'.__('Enter the label of the last menu link','xtec-11').' </label>
 				</td>
 				<td>
 					<input name="last_menu_label" type="text" value="'.$freshy_options['last_menu_label'].'"/>
@@ -476,7 +476,7 @@ function freshy_theme_page() {
 			</tr>
 			<tr>
 				<td>
-					<label>'.__('Title color, ex: #006699','xtec').' </label>
+					<label>'.__('Title color, ex: #006699','xtec-11').' </label>
 				</td>
 				<td>
 					<input style="width:100px;" id="color_title_custom" name="color_title_custom" type="text" value="'.$freshy_options['color_title_custom'].'"/>
@@ -484,7 +484,7 @@ function freshy_theme_page() {
 			</tr>
 			<tr>
 				<td>
-					<label>'.__('Subtitle color, ex: #3af567','xtec').' </label>
+					<label>'.__('Subtitle color, ex: #3af567','xtec-11').' </label>
 				</td>
 				<td>
 					<input style="width:100px;" id="color_subtitle_custom" name="color_subtitle_custom" type="text" value="'.$freshy_options['color_subtitle_custom'].'"/>
@@ -492,8 +492,8 @@ function freshy_theme_page() {
 			</tr>
 			<tr>
 				<td>
-					<label>'.__('Absolute url of your own css style','xtec').' </label><br />
-					<small><a href="'. get_bloginfo('stylesheet_directory').'/style-default.css" title="'.__('Click','xtec').'">'.__('Download css default','xtec').'</a></small>
+					<label>'.__('Absolute url of your own css style','xtec-11').' </label><br />
+					<small><a href="'. get_bloginfo('stylesheet_directory').'/style-default.css" title="'.__('Click','xtec-11').'">'.__('Download css default','xtec-11').'</a></small>
 				</td>
 				<td>
 					<input style="width:370px;" id="css_style_custom" name="css_style_custom" type="text" value="'.$freshy_options['css_style_custom'].'"/>
@@ -501,7 +501,7 @@ function freshy_theme_page() {
 			</tr>
 			<tr>
 				<td>
-					<label>'.__('Absolute url of your own image','xtec').' </label>
+					<label>'.__('Absolute url of your own image','xtec-11').' </label>
 				</td>
 				<td>
 					<div style="border:1px solid silver;float:left;margin:2px;width:400px;height:50px;display:block;background:url(';
@@ -517,19 +517,19 @@ function freshy_theme_page() {
 			echo '
 			<tr>
 				<td>
-					<label>'.__('Background vertical position','xtec').' </label>
+					<label>'.__('Background vertical position','xtec-11').' </label>
 				</td>
 				<td>
 					<select id="position_vertical_bg_custom" name="position_vertical_bg_custom" size="3">\n';
 			$RB_var="";
 			if($freshy_options['position_vertical_bg_custom']=="top") { $RB_var='selected="yes"'; }
-			echo '<option value="top" '.$RB_var.' >'.__('Top','xtec').'</option>\n';
+			echo '<option value="top" '.$RB_var.' >'.__('Top','xtec-11').'</option>\n';
 			$RB_var="";
 			if($freshy_options['position_vertical_bg_custom']=="middle") { $RB_var='selected="yes"'; }
-			echo '<option value="middle" '.$RB_var.' >'.__('Middle','xtec').'</option>\n';
+			echo '<option value="middle" '.$RB_var.' >'.__('Middle','xtec-11').'</option>\n';
 			$RB_var="";
 			if($freshy_options['position_vertical_bg_custom']=="bottom") { $RB_var='selected="yes"'; }
-			echo '<option value="bottom" '.$RB_var.' >'.__('Bottom','xtec').'</option>\n';
+			echo '<option value="bottom" '.$RB_var.' >'.__('Bottom','xtec-11').'</option>\n';
 					
 			echo '
 					</select>
@@ -537,19 +537,19 @@ function freshy_theme_page() {
 			</tr>
 						<tr>
 				<td>
-					<label>'.__('Background horitzontal position','xtec').' </label>
+					<label>'.__('Background horitzontal position','xtec-11').' </label>
 				</td>
 				<td>
 					<select id="position_horitzontal_bg_custom" name="position_horitzontal_bg_custom" size="3">\n';
 			$RB_var="";
 			if($freshy_options['position_horitzontal_bg_custom']=="left") { $RB_var='selected="yes"'; }
-			echo '<option value="left" '.$RB_var.' >'.__('Left','xtec').'</option>\n';
+			echo '<option value="left" '.$RB_var.' >'.__('Left','xtec-11').'</option>\n';
 			$RB_var="";
 			if($freshy_options['position_horitzontal_bg_custom']=="center") { $RB_var='selected="yes"'; }
-			echo '<option value="center" '.$RB_var.' >'.__('Center','xtec').'</option>\n';
+			echo '<option value="center" '.$RB_var.' >'.__('Center','xtec-11').'</option>\n';
 			$RB_var="";
 			if($freshy_options['position_horitzontal_bg_custom']=="right") { $RB_var='selected="yes"'; }
-			echo '<option value="right" '.$RB_var.' >'.__('Right','xtec').'</option>\n';
+			echo '<option value="right" '.$RB_var.' >'.__('Right','xtec-11').'</option>\n';
 					
 			echo '
 					</select>
@@ -564,14 +564,14 @@ function freshy_theme_page() {
 		
 		</fieldset>
 					
-		<p class="submit"><input type="submit" name="Submit" value="'.__('Update Options &raquo;','xtec').'"/></p>
+		<p class="submit"><input type="submit" name="Submit" value="'.__('Update Options &raquo;','xtec-11').'"/></p>
 		</form>
 		</div>
 		';
 		
 		echo '
 		<div id="preview" class="wrap">
-		<h2 id="preview-post">'.__('Preview (updated when options are saved)', 'xtec').'</h2>
+		<h2 id="preview-post">'.__('Preview (updated when options are saved)', 'xtec-11').'</h2>
 
 			<iframe src="../?preview=true" width="100%" height="600" ></iframe>
 		</div>

@@ -24,7 +24,7 @@ elseif ( 'link_category' == $taxonomy )
 else
 	do_action('edit_tag_form_pre', $tag);
 
-do_action($taxonomy . '_pre_edit_form', $tag, $taxonomy);  ?>
+do_action($taxonomy . '_pre_edit_form', $tag, $taxonomy); ?>
 
 <div class="wrap">
 <?php screen_icon(); ?>
@@ -52,23 +52,23 @@ do_action($taxonomy . '_pre_edit_form', $tag, $taxonomy);  ?>
 		<tr class="form-field">
 			<th scope="row" valign="top"><label for="parent"><?php _ex('Parent', 'Taxonomy Parent'); ?></label></th>
 			<td>
-				<?php wp_dropdown_categories(array('hide_empty' => 0, 'hide_if_empty' => false, 'name' => 'parent', 'orderby' => 'name', 'taxonomy' => $taxonomy, 'selected' => $tag->parent, 'exclude_tree' => $tag->term_id, 'hierarchical' => true, 'show_option_none' => __('None'))); ?><br />
+				<?php wp_dropdown_categories(array('hide_empty' => 0, 'hide_if_empty' => false, 'name' => 'parent', 'orderby' => 'name', 'taxonomy' => $taxonomy, 'selected' => $tag->parent, 'exclude_tree' => $tag->term_id, 'hierarchical' => true, 'show_option_none' => __('None'))); ?>
 				<?php if ( 'category' == $taxonomy ) : ?>
-				<span class="description"><?php _e('Categories, unlike tags, can have a hierarchy. You might have a Jazz category, and under that have children categories for Bebop and Big Band. Totally optional.'); ?></span>
+				<p class="description"><?php _e('Categories, unlike tags, can have a hierarchy. You might have a Jazz category, and under that have children categories for Bebop and Big Band. Totally optional.'); ?></p>
 				<?php endif; ?>
 			</td>
 		</tr>
 <?php endif; // is_taxonomy_hierarchical() ?>
 		<tr class="form-field">
 			<th scope="row" valign="top"><label for="description"><?php _ex('Description', 'Taxonomy Description'); ?></label></th>
-			<td><textarea name="description" id="description" rows="5" cols="50" style="width: 97%;"><?php echo $tag->description; // textarea_escaped ?></textarea><br />
-			<span class="description"><?php _e('The description is not prominent by default, however some themes may show it.'); ?></span></td>
+			<td><textarea name="description" id="description" rows="5" cols="50" class="large-text"><?php echo $tag->description; // textarea_escaped ?></textarea><br />
+			<span class="description"><?php _e('The description is not prominent by default; however, some themes may show it.'); ?></span></td>
 		</tr>
 		<?php
 		// Back compat hooks
 		if ( 'category' == $taxonomy )
 			do_action('edit_category_form_fields', $tag);
-		if ( 'link_category' == $taxonomy )
+		elseif ( 'link_category' == $taxonomy )
 			do_action('edit_link_category_form_fields', $tag);
 		else
 			do_action('edit_tag_form_fields', $tag);
@@ -80,7 +80,7 @@ do_action($taxonomy . '_pre_edit_form', $tag, $taxonomy);  ?>
 // Back compat hooks
 if ( 'category' == $taxonomy )
 	do_action('edit_category_form', $tag);
-if ( 'link_category' == $taxonomy )
+elseif ( 'link_category' == $taxonomy )
 	do_action('edit_link_category_form', $tag);
 else
 	do_action('edit_tag_form', $tag);
@@ -91,3 +91,6 @@ submit_button( __('Update') );
 ?>
 </form>
 </div>
+<script type="text/javascript">
+try{document.forms.edittag.name.focus();}catch(e){}
+</script>

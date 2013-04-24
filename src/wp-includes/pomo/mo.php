@@ -2,7 +2,7 @@
 /**
  * Class for working with MO files
  *
- * @version $Id: mo.php 406 2010-02-07 11:10:24Z nbachiyski $
+ * @version $Id: mo.php 718 2012-10-31 00:32:02Z nbachiyski $
  * @package pomo
  * @subpackage mo
  */
@@ -30,7 +30,33 @@ class MO extends Gettext_Translations {
 	function export_to_file($filename) {
 		$fh = fopen($filename, 'wb');
 		if ( !$fh ) return false;
-		$entries = array_filter($this->entries, create_function('$e', 'return !empty($e->translations);'));
+		$res = $this->export_to_file_handle( $fh );
+		fclose($fh);
+		return $res;
+	}
+
+	function export() {
+		$tmp_fh = fopen("php://temp", 'r+');
+		if ( !$tmp_fh ) return false;
+		$this->export_to_file_handle( $tmp_fh );
+		rewind( $tmp_fh );
+		return stream_get_contents( $tmp_fh );
+	}
+
+	function is_entry_good_for_export( $entry ) {
+		if ( empty( $entry->translations ) ) {
+			return false;
+		}
+
+		if ( !array_filter( $entry->translations ) ) {
+			return false;
+		}
+
+		return true;
+	}
+
+	function export_to_file_handle($fh) {
+		$entries = array_filter( $this->entries, array( $this, 'is_entry_good_for_export' ) );
 		ksort($entries);
 		$magic = 0x950412de;
 		$revision = 0;
@@ -70,7 +96,7 @@ class MO extends Gettext_Translations {
 
 		fwrite($fh, $originals_table);
 		fwrite($fh, $translations_table);
-		fclose($fh);
+		return true;
 	}
 
 	function export_original($entry) {

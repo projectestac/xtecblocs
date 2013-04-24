@@ -8,7 +8,7 @@
  *
  */
 _deprecated_file( sprintf( __( 'Theme without %1$s' ), basename(__FILE__) ), '3.0', null, sprintf( __('Please include a %1$s template in your theme.'), basename(__FILE__) ) );
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
      <title><?php printf(__('%1$s - Comments on %2$s'), get_option('blogname'), the_title('','',false)); ?></title>
@@ -32,7 +32,7 @@ while( have_posts()) : the_post();
 ?>
 <h2 id="comments"><?php _e('Comments'); ?></h2>
 
-<p><a href="<?php echo get_post_comments_feed_link($post->ID); ?>"><?php _e('<abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.'); ?></a></p>
+<p><a href="<?php echo esc_url( get_post_comments_feed_link($post->ID) ); ?>"><?php _e('<abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.'); ?></a></p>
 
 <?php if ( pings_open() ) { ?>
 <p><?php printf(__('The <abbr title="Universal Resource Locator">URL</abbr> to TrackBack this entry is: <em>%s</em>'), get_trackback_url()); ?></p>
@@ -68,7 +68,7 @@ if ( post_password_required($post) ) {  // and it doesn't match the cookie
 
 <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 <?php if ( $user_ID ) : ?>
-	<p><?php printf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out &raquo;</a>'), get_option('siteurl') . '/wp-admin/profile.php', $user_identity, wp_logout_url(get_permalink())); ?></p>
+	<p><?php printf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out &raquo;</a>'), get_edit_user_link(), $user_identity, wp_logout_url(get_permalink())); ?></p>
 <?php else : ?>
 	<p>
 	  <input type="text" name="author" id="author" class="textarea" value="<?php echo esc_attr($comment_author); ?>" size="28" tabindex="1" />
@@ -95,7 +95,7 @@ if ( post_password_required($post) ) {  // and it doesn't match the cookie
 	<p>
 	  <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
 	  <input type="hidden" name="redirect_to" value="<?php echo esc_attr($_SERVER["REQUEST_URI"]); ?>" />
-	  <input name="submit" type="submit" tabindex="5" value="<?php _e('Say It!' ); ?>" />
+	  <input name="submit" type="submit" tabindex="5" value="<?php esc_attr_e('Say It!' ); ?>" />
 	</p>
 	<?php do_action('comment_form', $post->ID); ?>
 </form>

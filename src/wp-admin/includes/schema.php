@@ -8,24 +8,44 @@
  * @subpackage Administration
  */
 
+// Declare these as global in case schema.php is included from a function.
+global $wpdb, $wp_queries, $charset_collate;
+
 /**
  * The database character collate.
  * @var string
  * @global string
  * @name $charset_collate
  */
-$charset_collate = '';
+$charset_collate = $wpdb->get_charset_collate();
 
-// Declare these as global in case schema.php is included from a function.
-global $wpdb, $wp_queries;
+/**
+ * Retrieve the SQL for creating database tables.
+ *
+ * @since 3.3.0
+ *
+ * @param string $scope Optional. The tables for which to retrieve SQL. Can be all, global, ms_global, or blog tables. Defaults to all.
+ * @param int $blog_id Optional. The blog ID for which to retrieve SQL. Default is the current blog ID.
+ * @return string The SQL needed to create the requested tables.
+ */
+function wp_get_db_schema( $scope = 'all', $blog_id = null ) {
+	global $wpdb;
 
-if ( ! empty($wpdb->charset) )
-	$charset_collate = "DEFAULT CHARACTER SET $wpdb->charset";
-if ( ! empty($wpdb->collate) )
-	$charset_collate .= " COLLATE $wpdb->collate";
+	$charset_collate = '';
 
-/** Create WordPress database tables SQL */
-$wp_queries = "CREATE TABLE $wpdb->terms (
+	if ( ! empty($wpdb->charset) )
+		$charset_collate = "DEFAULT CHARACTER SET $wpdb->charset";
+	if ( ! empty($wpdb->collate) )
+		$charset_collate .= " COLLATE $wpdb->collate";
+
+	if ( $blog_id && $blog_id != $wpdb->blogid )
+		$old_blog_id = $wpdb->set_blog_id( $blog_id );
+
+	// Engage multisite if in the middle of turning it on from network.php.
+	$is_multisite = is_multisite() || ( defined( 'WP_INSTALLING_NETWORK' ) && WP_INSTALLING_NETWORK );
+
+	// Blog specific tables.
+	$blog_tables = "CREATE TABLE $wpdb->terms (
  term_id bigint(20) unsigned NOT NULL auto_increment,
  name varchar(200) NOT NULL default '',
  slug varchar(200) NOT NULL default '',
@@ -78,7 +98,6 @@ CREATE TABLE $wpdb->comments (
   comment_parent bigint(20) unsigned NOT NULL default '0',
   user_id bigint(20) unsigned NOT NULL default '0',
   PRIMARY KEY  (comment_ID),
-  KEY comment_approved (comment_approved),
   KEY comment_post_ID (comment_post_ID),
   KEY comment_approved_date_gmt (comment_approved,comment_date_gmt),
   KEY comment_date_gmt (comment_date_gmt),
@@ -103,7 +122,6 @@ CREATE TABLE $wpdb->links (
 ) $charset_collate;
 CREATE TABLE $wpdb->options (
   option_id bigint(20) unsigned NOT NULL auto_increment,
-  blog_id int(11) NOT NULL default '0',
   option_name varchar(64) NOT NULL default '',
   option_value longtext NOT NULL,
   autoload varchar(20) NOT NULL default 'yes',
@@ -136,7 +154,7 @@ CREATE TABLE $wpdb->posts (
   pinged text NOT NULL,
   post_modified datetime NOT NULL default '0000-00-00 00:00:00',
   post_modified_gmt datetime NOT NULL default '0000-00-00 00:00:00',
-  post_content_filtered text NOT NULL,
+  post_content_filtered longtext NOT NULL,
   post_parent bigint(20) unsigned NOT NULL default '0',
   guid varchar(255) NOT NULL default '',
   menu_order int(11) NOT NULL default '0',
@@ -148,8 +166,10 @@ CREATE TABLE $wpdb->posts (
   KEY type_status_date (post_type,post_status,post_date,ID),
   KEY post_parent (post_parent),
   KEY post_author (post_author)
-) $charset_collate;
-CREATE TABLE $wpdb->users (
+) $charset_collate;\n";
+
+	// Single site users table. The multisite flavor of the users table is handled below.
+	$users_single_table = "CREATE TABLE $wpdb->users (
   ID bigint(20) unsigned NOT NULL auto_increment,
   user_login varchar(60) NOT NULL default '',
   user_pass varchar(64) NOT NULL default '',
@@ -163,8 +183,29 @@ CREATE TABLE $wpdb->users (
   PRIMARY KEY  (ID),
   KEY user_login_key (user_login),
   KEY user_nicename (user_nicename)
-) $charset_collate;
-CREATE TABLE $wpdb->usermeta (
+) $charset_collate;\n";
+
+	// Multisite users table
+	$users_multi_table = "CREATE TABLE $wpdb->users (
+  ID bigint(20) unsigned NOT NULL auto_increment,
+  user_login varchar(60) NOT NULL default '',
+  user_pass varchar(64) NOT NULL default '',
+  user_nicename varchar(50) NOT NULL default '',
+  user_email varchar(100) NOT NULL default '',
+  user_url varchar(100) NOT NULL default '',
+  user_registered datetime NOT NULL default '0000-00-00 00:00:00',
+  user_activation_key varchar(60) NOT NULL default '',
+  user_status int(11) NOT NULL default '0',
+  display_name varchar(250) NOT NULL default '',
+  spam tinyint(2) NOT NULL default '0',
+  deleted tinyint(2) NOT NULL default '0',
+  PRIMARY KEY  (ID),
+  KEY user_login_key (user_login),
+  KEY user_nicename (user_nicename)
+) $charset_collate;\n";
+
+	// usermeta
+	$usermeta_table = "CREATE TABLE $wpdb->usermeta (
   umeta_id bigint(20) unsigned NOT NULL auto_increment,
   user_id bigint(20) unsigned NOT NULL default '0',
   meta_key varchar(255) default NULL,
@@ -172,7 +213,107 @@ CREATE TABLE $wpdb->usermeta (
   PRIMARY KEY  (umeta_id),
   KEY user_id (user_id),
   KEY meta_key (meta_key)
+) $charset_collate;\n";
+
+	// Global tables
+	if ( $is_multisite )
+		$global_tables = $users_multi_table . $usermeta_table;
+	else
+		$global_tables = $users_single_table . $usermeta_table;
+
+	// Multisite global tables.
+	$ms_global_tables = "CREATE TABLE $wpdb->blogs (
+  blog_id bigint(20) NOT NULL auto_increment,
+  site_id bigint(20) NOT NULL default '0',
+  domain varchar(200) NOT NULL default '',
+  path varchar(100) NOT NULL default '',
+  registered datetime NOT NULL default '0000-00-00 00:00:00',
+  last_updated datetime NOT NULL default '0000-00-00 00:00:00',
+  public tinyint(2) NOT NULL default '1',
+  archived enum('0','1') NOT NULL default '0',
+  mature tinyint(2) NOT NULL default '0',
+  spam tinyint(2) NOT NULL default '0',
+  deleted tinyint(2) NOT NULL default '0',
+  lang_id int(11) NOT NULL default '0',
+  PRIMARY KEY  (blog_id),
+  KEY domain (domain(50),path(5)),
+  KEY lang_id (lang_id)
+) $charset_collate;
+CREATE TABLE $wpdb->blog_versions (
+  blog_id bigint(20) NOT NULL default '0',
+  db_version varchar(20) NOT NULL default '',
+  last_updated datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (blog_id),
+  KEY db_version (db_version)
+) $charset_collate;
+CREATE TABLE $wpdb->registration_log (
+  ID bigint(20) NOT NULL auto_increment,
+  email varchar(255) NOT NULL default '',
+  IP varchar(30) NOT NULL default '',
+  blog_id bigint(20) NOT NULL default '0',
+  date_registered datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (ID),
+  KEY IP (IP)
+) $charset_collate;
+CREATE TABLE $wpdb->site (
+  id bigint(20) NOT NULL auto_increment,
+  domain varchar(200) NOT NULL default '',
+  path varchar(100) NOT NULL default '',
+  PRIMARY KEY  (id),
+  KEY domain (domain,path)
+) $charset_collate;
+CREATE TABLE $wpdb->sitemeta (
+  meta_id bigint(20) NOT NULL auto_increment,
+  site_id bigint(20) NOT NULL default '0',
+  meta_key varchar(255) default NULL,
+  meta_value longtext,
+  PRIMARY KEY  (meta_id),
+  KEY meta_key (meta_key),
+  KEY site_id (site_id)
+) $charset_collate;
+CREATE TABLE $wpdb->signups (
+  domain varchar(200) NOT NULL default '',
+  path varchar(100) NOT NULL default '',
+  title longtext NOT NULL,
+  user_login varchar(60) NOT NULL default '',
+  user_email varchar(100) NOT NULL default '',
+  registered datetime NOT NULL default '0000-00-00 00:00:00',
+  activated datetime NOT NULL default '0000-00-00 00:00:00',
+  active tinyint(1) NOT NULL default '0',
+  activation_key varchar(50) NOT NULL default '',
+  meta longtext,
+  KEY activation_key (activation_key),
+  KEY domain (domain)
 ) $charset_collate;";
+
+	switch ( $scope ) {
+		case 'blog' :
+			$queries = $blog_tables;
+			break;
+		case 'global' :
+			$queries = $global_tables;
+			if ( $is_multisite )
+				$queries .= $ms_global_tables;
+			break;
+		case 'ms_global' :
+			$queries = $ms_global_tables;
+			break;
+		default:
+		case 'all' :
+			$queries = $global_tables . $blog_tables;
+			if ( $is_multisite )
+				$queries .= $ms_global_tables;
+			break;
+	}
+
+	if ( isset( $old_blog_id ) )
+		$wpdb->set_blog_id( $old_blog_id );
+
+	return $queries;
+}
+
+// Populate for back compat.
+$wp_queries = wp_get_db_schema( 'all' );
 
 /**
  * Create WordPress options and set the default values.
@@ -182,7 +323,7 @@ CREATE TABLE $wpdb->usermeta (
  * @uses $wp_db_version
  */
 function populate_options() {
-	global $wpdb, $wp_db_version, $current_site;
+	global $wpdb, $wp_db_version, $current_site, $wp_current_db_version;
 
 	$guessurl = wp_guess_url();
 
@@ -195,6 +336,24 @@ function populate_options() {
 		$uploads_use_yearmonth_folders = 1;
 	}
 
+	$template = WP_DEFAULT_THEME;
+	// If default theme is a child theme, we need to get its template
+	$theme = wp_get_theme( $template );
+	if ( ! $theme->errors() )
+		$template = $theme->get_template();
+
+	$timezone_string = '';
+	$gmt_offset = 0;
+	/* translators: default GMT offset or timezone string. Must be either a valid offset (-12 to 14)
+	   or a valid timezone string (America/New_York). See http://us3.php.net/manual/en/timezones.php
+	   for all timezone strings supported by PHP.
+	*/
+	$offset_or_tz = _x( '0', 'default GMT offset or timezone string' );
+	if ( is_numeric( $offset_or_tz ) )
+		$gmt_offset = $offset_or_tz;
+	elseif ( $offset_or_tz && in_array( $offset_or_tz, timezone_identifiers_list() ) )
+			$timezone_string = $offset_or_tz;
+
 	$options = array(
 	'siteurl' => $guessurl,
 	'blogname' => __('My Site'),
@@ -202,7 +361,8 @@ function populate_options() {
 	'blogdescription' => __('Just another WordPress site'),
 	'users_can_register' => 0,
 	'admin_email' => 'you@example.com',
-	'start_of_week' => 1,
+	/* translators: default start of the week. 0 = Sunday, 1 = Monday */
+	'start_of_week' => _x( '1', 'start of week' ),
 	'use_balanceTags' => 0,
 	'use_smilies' => 1,
 	'require_name_email' => 1,
@@ -217,7 +377,6 @@ function populate_options() {
 	'default_comment_status' => 'open',
 	'default_ping_status' => 'open',
 	'default_pingback_flag' => 1,
-	'default_post_edit_rows' => 20,
 	'posts_per_page' => 10,
 	/* translators: default date format, see http://php.net/date */
 	'date_format' => __('F j, Y'),
@@ -241,17 +400,16 @@ function populate_options() {
 	'ping_sites' => 'http://rpc.pingomatic.com/',
 	'advanced_edit' => 0,
 	'comment_max_links' => 2,
-	'gmt_offset' => date('Z') / 3600,
+	'gmt_offset' => $gmt_offset,
 
 	// 1.5
 	'default_email_category' => 1,
 	'recently_edited' => '',
-	'template' => WP_DEFAULT_THEME,
+	'template' => $template,
 	'stylesheet' => WP_DEFAULT_THEME,
 	'comment_whitelist' => 1,
 	'blacklist_keys' => '',
 	'comment_registration' => 0,
-	'rss_language' => 'en',
 	'html_type' => 'text/html',
 
 	// 1.5.1
@@ -285,8 +443,6 @@ function populate_options() {
 
 	// 2.6
 	'avatar_default' => 'mystery',
-	'enable_app' => 0,
-	'enable_xmlrpc' => 0,
 
 	// 2.7
 	'large_size_w' => 1024,
@@ -306,14 +462,10 @@ function populate_options() {
 	'widget_categories' => array(),
 	'widget_text' => array(),
 	'widget_rss' => array(),
+	'uninstall_plugins' => array(),
 
 	// 2.8
-	'timezone_string' => '',
-
-	// 2.9
-	'embed_autourls' => 1,
-	'embed_size_w' => '',
-	'embed_size_h' => 600,
+	'timezone_string' => $timezone_string,
 
 	// 3.0
 	'page_for_posts' => 0,
@@ -321,7 +473,16 @@ function populate_options() {
 
 	// 3.1
 	'default_post_format' => 0,
+
+	// 3.5
+	'link_manager_enabled' => 0,
 	);
+
+	// 3.3
+	if ( ! is_multisite() ) {
+		$options['initial_db_version'] = ! empty( $wp_current_db_version ) && $wp_current_db_version < $wp_db_version
+			? $wp_current_db_version : $wp_db_version;
+	}
 
 	// 3.0 multisite
 	if ( is_multisite() ) {
@@ -331,7 +492,7 @@ function populate_options() {
 	}
 
 	// Set autoload to no for these options
-	$fat_options = array( 'moderation_keys', 'recently_edited', 'blacklist_keys' );
+	$fat_options = array( 'moderation_keys', 'recently_edited', 'blacklist_keys', 'uninstall_plugins' );
 
 	$existing_options = $wpdb->get_col("SELECT option_name FROM $wpdb->options");
 
@@ -360,7 +521,23 @@ function populate_options() {
 	if ( !__get_option('home') ) update_option('home', $guessurl);
 
 	// Delete unused options
-	$unusedoptions = array ('blodotgsping_url', 'bodyterminator', 'emailtestonly', 'phoneemail_separator', 'smilies_directory', 'subjectprefix', 'use_bbcode', 'use_blodotgsping', 'use_phoneemail', 'use_quicktags', 'use_weblogsping', 'weblogs_cache_file', 'use_preview', 'use_htmltrans', 'smilies_directory', 'fileupload_allowedusers', 'use_phoneemail', 'default_post_status', 'default_post_category', 'archive_mode', 'time_difference', 'links_minadminlevel', 'links_use_adminlevels', 'links_rating_type', 'links_rating_char', 'links_rating_ignore_zero', 'links_rating_single_image', 'links_rating_image0', 'links_rating_image1', 'links_rating_image2', 'links_rating_image3', 'links_rating_image4', 'links_rating_image5', 'links_rating_image6', 'links_rating_image7', 'links_rating_image8', 'links_rating_image9', 'weblogs_cacheminutes', 'comment_allowed_tags', 'search_engine_friendly_urls', 'default_geourl_lat', 'default_geourl_lon', 'use_default_geourl', 'weblogs_xml_url', 'new_users_can_blog', '_wpnonce', '_wp_http_referer', 'Update', 'action', 'rich_editing', 'autosave_interval', 'deactivated_plugins', 'can_compress_scripts', 'page_uris', 'update_core', 'update_plugins', 'update_themes', 'doing_cron', 'random_seed', 'rss_excerpt_length', 'secret', 'use_linksupdate', 'default_comment_status_page', 'wporg_popular_tags', 'what_to_show');
+	$unusedoptions = array(
+		'blodotgsping_url', 'bodyterminator', 'emailtestonly', 'phoneemail_separator', 'smilies_directory',
+		'subjectprefix', 'use_bbcode', 'use_blodotgsping', 'use_phoneemail', 'use_quicktags', 'use_weblogsping',
+		'weblogs_cache_file', 'use_preview', 'use_htmltrans', 'smilies_directory', 'fileupload_allowedusers',
+		'use_phoneemail', 'default_post_status', 'default_post_category', 'archive_mode', 'time_difference',
+		'links_minadminlevel', 'links_use_adminlevels', 'links_rating_type', 'links_rating_char',
+		'links_rating_ignore_zero', 'links_rating_single_image', 'links_rating_image0', 'links_rating_image1',
+		'links_rating_image2', 'links_rating_image3', 'links_rating_image4', 'links_rating_image5',
+		'links_rating_image6', 'links_rating_image7', 'links_rating_image8', 'links_rating_image9',
+		'weblogs_cacheminutes', 'comment_allowed_tags', 'search_engine_friendly_urls', 'default_geourl_lat',
+		'default_geourl_lon', 'use_default_geourl', 'weblogs_xml_url', 'new_users_can_blog', '_wpnonce',
+		'_wp_http_referer', 'Update', 'action', 'rich_editing', 'autosave_interval', 'deactivated_plugins',
+		'can_compress_scripts', 'page_uris', 'update_core', 'update_plugins', 'update_themes', 'doing_cron',
+		'random_seed', 'rss_excerpt_length', 'secret', 'use_linksupdate', 'default_comment_status_page',
+		'wporg_popular_tags', 'what_to_show', 'rss_language', 'language', 'enable_xmlrpc', 'enable_app',
+		'autoembed_urls', 'default_post_edit_rows',
+	);
 	foreach ( $unusedoptions as $option )
 		delete_option($option);
 
@@ -615,13 +792,32 @@ function populate_roles_300() {
 		$role->add_cap( 'update_core' );
 		$role->add_cap( 'list_users' );
 		$role->add_cap( 'remove_users' );
+
+		// Never used, will be removed. create_users or
+		// promote_users is the capability you're looking for.
 		$role->add_cap( 'add_users' );
+
 		$role->add_cap( 'promote_users' );
 		$role->add_cap( 'edit_theme_options' );
 		$role->add_cap( 'delete_themes' );
 		$role->add_cap( 'export' );
 	}
 }
+
+/**
+ * Install Network.
+ *
+ * @since 3.0.0
+ *
+ */
+if ( !function_exists( 'install_network' ) ) :
+function install_network() {
+	if ( ! defined( 'WP_INSTALLING_NETWORK' ) )
+		define( 'WP_INSTALLING_NETWORK', true );
+
+	dbDelta( wp_get_db_schema( 'global' ) );
+}
+endif;
 
 /**
  * populate network settings
@@ -645,7 +841,7 @@ function populate_network( $network_id = 1, $domain = '', $email = '', $site_nam
 	if ( $network_id == $wpdb->get_var( $wpdb->prepare( "SELECT id FROM $wpdb->site WHERE id = %d", $network_id ) ) )
 		$errors->add( 'siteid_exists', __( 'The network already exists.' ) );
 
-	$site_user = get_user_by_email( $email );
+	$site_user = get_user_by( 'email', $email );
 	if ( ! is_email( $email ) )
 		$errors->add( 'invalid_email', __( 'You must provide a valid e-mail address.' ) );
 
@@ -689,10 +885,9 @@ BLOG_URL
 You can log in to the administrator account with the following information:
 Username: USERNAME
 Password: PASSWORD
-Login Here: BLOG_URLwp-login.php
+Log in here: BLOG_URLwp-login.php
 
-We hope you enjoy your new site.
-Thanks!
+We hope you enjoy your new site. Thanks!
 
 --The Team @ SITE_NAME' );
 
@@ -702,7 +897,7 @@ Thanks!
 		'admin_user_id' => $site_user->ID,
 		'registration' => 'none',
 		'upload_filetypes' => 'jpg jpeg png gif mp3 mov avi wmv midi mid pdf',
-		'blog_upload_space' => 10,
+		'blog_upload_space' => 100,
 		'fileupload_maxk' => 1500,
 		'site_admins' => $site_admins,
 		'allowedthemes' => $allowed_themes,
@@ -713,9 +908,13 @@ Thanks!
 		// @todo - network admins should have a method of editing the network siteurl (used for cookie hash)
 		'siteurl' => get_option( 'siteurl' ) . '/',
 		'add_new_users' => '0',
-		'upload_space_check_disabled' => '0',
+		'upload_space_check_disabled' => is_multisite() ? get_site_option( 'upload_space_check_disabled' ) : '1',
 		'subdomain_install' => intval( $subdomain_install ),
-		'global_terms_enabled' => global_terms_enabled() ? '1' : '0'
+		'global_terms_enabled' => global_terms_enabled() ? '1' : '0',
+		'ms_files_rewriting' => is_multisite() ? get_site_option( 'ms_files_rewriting' ) : '0',
+		'initial_db_version' => get_option( 'initial_db_version' ),
+		'active_sitewide_plugins' => array(),
+		'WPLANG' => get_locale(),
 	);
 	if ( ! $subdomain_install )
 		$sitemeta['illegal_names'][] = 'blog';
@@ -732,28 +931,26 @@ Thanks!
 	}
 	$wpdb->query( "INSERT INTO $wpdb->sitemeta ( site_id, meta_key, meta_value ) VALUES " . $insert );
 
-	$current_site->domain = $domain;
-	$current_site->path = $path;
-	$current_site->site_name = ucfirst( $domain );
-
-	if ( !is_multisite() ) {
+	// When upgrading from single to multisite, assume the current site will become the main site of the network.
+	// When using populate_network() to create another network in an existing multisite environment,
+	// skip these steps since the main site of the new network has not yet been created.
+	if ( ! is_multisite() ) {
+		$current_site = new stdClass;
+		$current_site->domain = $domain;
+		$current_site->path = $path;
+		$current_site->site_name = ucfirst( $domain );
 		$wpdb->insert( $wpdb->blogs, array( 'site_id' => $network_id, 'domain' => $domain, 'path' => $path, 'registered' => current_time( 'mysql' ) ) );
-		$blog_id = $wpdb->insert_id;
+		$current_site->blog_id = $blog_id = $wpdb->insert_id;
 		update_user_meta( $site_user->ID, 'source_domain', $domain );
 		update_user_meta( $site_user->ID, 'primary_blog', $blog_id );
-		if ( !$upload_path = get_option( 'upload_path' ) ) {
-			$upload_path = substr( WP_CONTENT_DIR, strlen( ABSPATH ) ) . '/uploads';
-			update_option( 'upload_path', $upload_path );
-		}
-		update_option( 'fileupload_url', get_option( 'siteurl' ) . '/' . $upload_path );
+
+		if ( $subdomain_install )
+			$wp_rewrite->set_permalink_structure( '/%year%/%monthnum%/%day%/%postname%/' );
+		else
+			$wp_rewrite->set_permalink_structure( '/blog/%year%/%monthnum%/%day%/%postname%/' );
+
+		flush_rewrite_rules();
 	}
-
-	if ( $subdomain_install )
-		update_option( 'permalink_structure', '/%year%/%monthnum%/%day%/%postname%/');
-	else
-		update_option( 'permalink_structure', '/blog/%year%/%monthnum%/%day%/%postname%/');
-
-	$wp_rewrite->flush_rules();
 
 	if ( $subdomain_install ) {
 		$vhost_ok = false;
@@ -762,7 +959,7 @@ Thanks!
 		$page = wp_remote_get( 'http://' . $hostname, array( 'timeout' => 5, 'httpversion' => '1.1' ) );
 		if ( is_wp_error( $page ) )
 			$errstr = $page->get_error_message();
-		elseif ( 200 == $page['response']['code'] )
+		elseif ( 200 == wp_remote_retrieve_response_code( $page ) )
 				$vhost_ok = true;
 
 		if ( ! $vhost_ok ) {
@@ -779,5 +976,3 @@ Thanks!
 
 	return true;
 }
-
-?>

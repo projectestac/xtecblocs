@@ -1,12 +1,12 @@
 <?php // Do not delete these lines
 	if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-		die (__('Please do not load this page directly. Thanks!','xtec'));
+		die (__('Please do not load this page directly. Thanks!','xtec-11'));
 
         if (!empty($post->post_password)) { // if there's a password
             if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) {  // and it doesn't match the cookie
 				?>
 				
-				<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments','xtec'); ?><p>
+				<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments','xtec-11'); ?><p>
 				
 				<?php
 				return;
@@ -21,8 +21,8 @@
 
 <!-- You can start editing here. -->
 		<div class="contentwo">
-<?php if ($comments) : ?><?php _e('No responses','xtec'); ?>
-	<h3 id="comments"><?php comments_number(__('No responses','xtec'), __('One response','xtec'), __('% responses','xtec'));?> <?php _e('to','xtec'); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
+<?php if ($comments) : ?><?php _e('No responses','xtec-11'); ?>
+	<h3 id="comments"><?php comments_number(__('No responses','xtec-11'), __('One response','xtec-11'), __('% responses','xtec-11'));?> <?php _e('to','xtec-11'); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
 
 	<dl class="commentlist">
 
@@ -62,9 +62,9 @@
 				echo "' alt='' class='gravatar' width='".$gravatar_size."' height='".$gravatar_size."' /></a>";
 
 				} ?>
-				<?php comment_author_link() ?></strong> <small>(<?php comment_time('H:i:s'); ?>)</small> : <?php edit_comment_link(__('edit','xtec'),'',''); ?>
+				<?php comment_author_link() ?></strong> <small>(<?php comment_time('H:i:s'); ?>)</small> : <?php edit_comment_link(__('edit','xtec-11'),'',''); ?>
 				<?php if ($comment->comment_approved == '0') : ?>
-				<small><?php _e('Your comment is awaiting moderation','xtec'); ?></small>
+				<small><?php _e('Your comment is awaiting moderation','xtec-11'); ?></small>
 				<?php endif; ?>
 				
 				<br style="display:none;"/>
@@ -90,42 +90,42 @@
 
 <?php if ('open' == $post->comment_status) : ?>
 
-<h3 id="respond"><?php _e('Leave a comment','xtec'); ?></h3>
+<h3 id="respond"><?php _e('Leave a comment','xtec-11'); ?></h3>
 
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-<p><?php _e('You must be','xtec'); ?> <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>"><?php _e('logged in','xtec'); ?></a> <?php _e('to post a comment','xtec'); ?></p>
+<p><?php _e('You must be','xtec-11'); ?> <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>"><?php _e('logged in','xtec-11'); ?></a> <?php _e('to post a comment','xtec-11'); ?></p>
 <?php else : ?>
 
 <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 
 <?php if ( $user_ID ) : ?>
 
-<p><?php printf(__('Logged in as %s.','xtec'), '<a href="'.get_option('siteurl').'/wp-admin/profile.php">'.$user_identity.'</a>'); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e('Log out of this account','xtec') ?>"><?php _e('Log out &raquo;','xtec'); ?></a></p>
+<p><?php printf(__('Logged in as %s.','xtec-11'), '<a href="'.get_option('siteurl').'/wp-admin/profile.php">'.$user_identity.'</a>'); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e('Log out of this account','xtec-11') ?>"><?php _e('Log out &raquo;','xtec-11'); ?></a></p>
 
 <?php else : ?>
 
 <p>
 	<input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
-	<label for="author"><?php _e('Name','xtec'); ?> <?php if ($req) _e('(required)','xtec'); ?></label>
+	<label for="author"><?php _e('Name','xtec-11'); ?> <?php if ($req) _e('(required)','xtec-11'); ?></label>
 </p>
 <p>
 	<input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" />
-	<label for="email"><?php _e('Mail','xtec'); ?> <?php _e('(will not be published)','xtec'); ?> <?php if ($req) _e('(required)','xtec'); ?></label>
+	<label for="email"><?php _e('Mail','xtec-11'); ?> <?php _e('(will not be published)','xtec-11'); ?> <?php if ($req) _e('(required)','xtec-11'); ?></label>
 </p>
 <p>
 	<input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-	<label for="url"><?php _e('Website','xtec'); ?></label>
+	<label for="url"><?php _e('Website','xtec-11'); ?></label>
 </p>
 
 <?php endif; ?>
 
-<p><small><?php _e('You can use these tags','xtec'); ?> : <?php echo allowed_tags(); ?></small></p>
+<p><small><?php _e('You can use these tags','xtec-11'); ?> : <?php echo allowed_tags(); ?></small></p>
 
 <p>
 <textarea name="comment" id="comment" cols="60" rows="10" tabindex="4"></textarea>
 </p>
 <p>
-<input name="submit" type="submit" id="submit" tabindex="5" value="<?php _e('Submit comment','xtec'); ?>" />
+<input name="submit" type="submit" id="submit" tabindex="5" value="<?php _e('Submit comment','xtec-11'); ?>" />
 <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
 </p>
 

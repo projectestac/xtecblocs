@@ -8,7 +8,7 @@ Template Name: Links
 
 <div id="content" class="widecolumn">
 
-<h2><?php _e('Links:','xtec');?></h2>
+<h2><?php _e('Links:','xtec-11');?></h2>
 <ul>
 <?php get_links_list(); ?>
 </ul>

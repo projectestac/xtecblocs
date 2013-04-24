@@ -160,7 +160,7 @@ function wp_widget_control( $sidebar_args ) {
 		$query_arg['key'] = $key;
 	}
 
-	// We aren't showing a widget control, we're outputing a template for a mult-widget control
+	// We aren't showing a widget control, we're outputting a template for a multi-widget control
 	if ( isset($sidebar_args['_display']) && 'template' == $sidebar_args['_display'] && $widget_number ) {
 		// number == -1 implies a template where id numbers are replaced by a generic '__i__'
 		$control['params'][0]['number'] = -1;
@@ -179,7 +179,11 @@ function wp_widget_control( $sidebar_args ) {
 	<div class="widget-top">
 	<div class="widget-title-action">
 		<a class="widget-action hide-if-no-js" href="#available-widgets"></a>
-		<a class="widget-control-edit hide-if-js" href="<?php echo esc_url( add_query_arg( $query_arg ) ); ?>"><span class="edit"><?php _e('Edit'); ?></span><span class="add"><?php _e('Add'); ?></span></a>
+		<a class="widget-control-edit hide-if-js" href="<?php echo esc_url( add_query_arg( $query_arg ) ); ?>">
+			<span class="edit"><?php _ex( 'Edit', 'widget' ); ?></span>
+			<span class="add"><?php _ex( 'Add', 'widget' ); ?></span>
+			<span class="screen-reader-text"><?php echo $widget_title; ?></span>
+		</a>
 	</div>
 	<div class="widget-title"><h4><?php echo $widget_title ?><span class="in-widget-title"></span></h4></div>
 	</div>
@@ -207,8 +211,8 @@ function wp_widget_control( $sidebar_args ) {
 		<a class="widget-control-close" href="#close"><?php _e('Close'); ?></a>
 		</div>
 		<div class="alignright<?php if ( 'noform' === $has_form ) echo ' widget-control-noform'; ?>">
-		<img src="<?php echo esc_url( admin_url( 'images/wpspin_light.gif' ) ); ?>" class="ajax-feedback " title="" alt="" />
-		<?php submit_button( __( 'Save' ), 'button-primary widget-control-save', 'savewidget', false ); ?>
+			<?php submit_button( __( 'Save' ), 'button-primary widget-control-save right', 'savewidget', false, array( 'id' => 'widget-' . esc_attr( $id_format ) . '-savewidget' ) ); ?>
+			<span class="spinner"></span>
 		</div>
 		<br class="clear" />
 	</div>
@@ -222,4 +226,3 @@ function wp_widget_control( $sidebar_args ) {
 	echo $sidebar_args['after_widget'];
 	return $sidebar_args;
 }
-

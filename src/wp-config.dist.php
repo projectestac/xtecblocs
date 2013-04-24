@@ -16,13 +16,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', '');
+define('DB_NAME', 'database_name_here');
 
 /** MySQL database username */
-define('DB_USER', '');
+define('DB_USER', 'username_here');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'password_here');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -32,23 +32,6 @@ define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
-
-/** Multisite configuration */
-
-define('WP_ALLOW_MULTISITE', true);
-
-// Uncomment these lines if it is a clean installation.
-//define( 'MULTISITE', true );
-//define( 'SUBDOMAIN_INSTALL', false );
-
-// Uncomment these line if it is a wpmu updated installation.
-//define('VHOST', 'no');
-
-$base = '/';
-define( 'DOMAIN_CURRENT_SITE', 'localhost' );
-define( 'PATH_CURRENT_SITE', '/' );
-define( 'SITE_ID_CURRENT_SITE', 1 );
-define( 'BLOG_ID_CURRENT_SITE', 1 );
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -86,23 +69,7 @@ $table_prefix  = 'wp_';
  * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
  * language support.
  */
-define('WPLANG', 'ca');
-
-//XTEC ************ AFEGIT - Constants de configuració d'XTECBlocs
-
-/** HyperDB settings */
-// HyperDB databases prefix
-define('DB_PREFIX','xtecblocs_');
-// HyperDB additional databases
-define('DB_NUMS',1);
-
-/** WP Super Cache settings */
-define('WP_CACHE', true);
-
-/** Sets RSS fetch time out */
-define('MAGPIE_FETCH_TIME_OUT', 10); // WordPress default value is 2
-
-//************ FI
+define('WPLANG', '');
 
 /**
  * For developers: WordPress debugging mode.

@@ -1,8 +1,8 @@
 /*  
 Theme Name: XTEC
 Theme URI: http://blocs.xtec.cat
-Description: The XTEC WordPress theme
-Version: 1.0
+Description: Versió 1.1 de l'aparença XTEC de Wordpress. Aquesta revisió de l'aparença permet visualitzar subpàgines al menú de la capçalera.
+Version: 1.1
 Author: XTEC BLOCS
 Author URI: http://blocs.xtec.cat
 */
@@ -185,10 +185,26 @@ list-style: none;
 }
 
 .invertedshiftdown2 li{
+	float: left;
+	position:relative;
 display: inline;
 margin: 0 2px 0 0;
 padding: 0;
 text-transform:uppercase;
+}
+
+.invertedshiftdown2 li ul {
+	margin:0;
+	height:auto;
+	width:auto;
+	position:absolute;
+	top:32px;
+	display:none;
+	opacity:.9;
+}
+
+.invertedshiftdown2 li:hover ul {
+	display:block;
 }
 
 .invertedshiftdown2 a{
@@ -218,6 +234,28 @@ padding-bottom: 0; /*Set padding-bottom value to 0 */
 border-bottom-color: #D10000; /*Highlight red color theme*/
 color: white;
 }
+
+
+.invertedshiftdown2 li ul a{
+float: left;
+display: block;
+font: bold 12px Arial;
+color: #fff;
+text-decoration: none;
+margin: 0 1px 0 0; /*Margin between each menu item*/
+padding: 5px 10px 5px 10px; /*Padding within each menu item*/
+background-color: #80addb; /*Default menu color*/
+border-bottom: 0px solid white;
+}
+
+.invertedshiftdown2 li ul a:hover{
+background-color: #069; /*Highlight red color theme*/
+padding-top: 5px; /*Set padding-top value to default's padding-top + padding-bottom */
+padding-bottom: 5px; /*Set padding-bottom value to 0 */
+border-bottom-color: #069; /*Highlight red color theme*/
+color: #91BEEC;;
+}
+
 
 #frame { background-color: #fff;}
 #header {background-color: #fff;}

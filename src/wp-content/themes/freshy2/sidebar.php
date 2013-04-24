@@ -9,7 +9,7 @@
 	
 			<?php freshy_menu($freshy_options['args_pages'],$freshy_options['args_cats']); ?>
 			
-			<h2><?php _e('Search','freshy-2'); ?></h2>
+			<h2><?php _e('Search',TEMPLATE_DOMAIN); ?></h2>
 			<?php include (TEMPLATEPATH . '/searchform.php'); ?>
 			
 		<?php endif; ?>

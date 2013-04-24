@@ -26,7 +26,7 @@
 function get_postdata($postid) {
 	_deprecated_function( __FUNCTION__, '1.5.1', 'get_post()' );
 
-	$post = &get_post($postid);
+	$post = get_post($postid);
 
 	$postdata = array (
 		'ID' => $post->ID,
@@ -57,14 +57,14 @@ function get_postdata($postid) {
  * @deprecated Use The Loop - {@link http://codex.wordpress.org/The_Loop Use new WordPress Loop}
  */
 function start_wp() {
-	global $wp_query, $post;
+	global $wp_query;
 
 	_deprecated_function( __FUNCTION__, '1.5', __('new WordPress Loop') );
 
 	// Since the old style loop is being used, advance the query iterator here.
 	$wp_query->next_post();
 
-	setup_postdata($post);
+	setup_postdata( get_post() );
 }
 
 /**
@@ -149,7 +149,7 @@ function previous_post($format='%', $previous='previous post: ', $title='yes', $
 
 	$string = '<a href="'.get_permalink($post->ID).'">'.$previous;
 	if ( 'yes' == $title )
-		$string .= apply_filters('the_title', $post->post_title, $post);
+		$string .= apply_filters('the_title', $post->post_title, $post->ID);
 	$string .= '</a>';
 	$format = str_replace('%', $string, $format);
 	echo $format;
@@ -185,7 +185,7 @@ function next_post($format='%', $next='next post: ', $title='yes', $in_same_cat=
 
 	$string = '<a href="'.get_permalink($post->ID).'">'.$next;
 	if ( 'yes' == $title )
-		$string .= apply_filters('the_title', $post->post_title, $nextpost);
+		$string .= apply_filters('the_title', $post->post_title, $post->ID);
 	$string .= '</a>';
 	$format = str_replace('%', $string, $format);
 	echo $format;
@@ -984,7 +984,7 @@ function get_links($category = -1, $before = '', $after = '<br />', $between = '
 
 		if ( $show_updated )
 			if (substr($row->link_updated_f, 0, 2) != '00')
-				$title .= ' ('.__('Last updated') . ' ' . date(get_option('links_updated_date_format'), $row->link_updated_f + (get_option('gmt_offset') * 3600)) . ')';
+				$title .= ' ('.__('Last updated') . ' ' . date(get_option('links_updated_date_format'), $row->link_updated_f + (get_option('gmt_offset') * HOUR_IN_SECONDS)) . ')';
 
 		if ( '' != $title )
 			$title = ' title="' . $title . '"';
@@ -1215,7 +1215,7 @@ function get_author_rss_link($echo = false, $author_id = 1) {
  */
 function comments_rss() {
 	_deprecated_function( __FUNCTION__, '2.2', 'get_post_comments_feed_link()' );
-	return get_post_comments_feed_link();
+	return esc_url( get_post_comments_feed_link() );
 }
 
 /**
@@ -1323,7 +1323,7 @@ function get_category_children( $id, $before = '/', $after = '', $visited = arra
  *
  * @since 1.5
  * @deprecated 2.8
- * @deprecated Use the_author_meta('description')
+ * @deprecated Use get_the_author_meta('description')
  * @see get_the_author_meta()
  *
  * @return string The author's description.
@@ -1351,7 +1351,7 @@ function the_author_description() {
  *
  * @since 1.5
  * @deprecated 2.8
- * @deprecated Use the_author_meta('login')
+ * @deprecated Use get_the_author_meta('login')
  * @see get_the_author_meta()
  *
  * @return string The author's login name (username).
@@ -1379,7 +1379,7 @@ function the_author_login() {
  *
  * @since 1.5
  * @deprecated 2.8
- * @deprecated Use the_author_meta('first_name')
+ * @deprecated Use get_the_author_meta('first_name')
  * @see get_the_author_meta()
  *
  * @return string The author's first name.
@@ -1892,7 +1892,7 @@ function get_alloptions() {
 function get_the_attachment_link($id = 0, $fullsize = false, $max_dims = false, $permalink = false) {
 	_deprecated_function( __FUNCTION__, '2.5', 'wp_get_attachment_link()' );
 	$id = (int) $id;
-	$_post = & get_post($id);
+	$_post = get_post($id);
 
 	if ( ('attachment' != $_post->post_type) || !$url = wp_get_attachment_url($_post->ID) )
 		return __('Missing Attachment');
@@ -1921,7 +1921,7 @@ function get_the_attachment_link($id = 0, $fullsize = false, $max_dims = false, 
 function get_attachment_icon_src( $id = 0, $fullsize = false ) {
 	_deprecated_function( __FUNCTION__, '2.5', 'wp_get_attachment_image_src()' );
 	$id = (int) $id;
-	if ( !$post = & get_post($id) )
+	if ( !$post = get_post($id) )
 		return false;
 
 	$file = get_attached_file( $post->ID );
@@ -1966,7 +1966,7 @@ function get_attachment_icon_src( $id = 0, $fullsize = false ) {
 function get_attachment_icon( $id = 0, $fullsize = false, $max_dims = false ) {
 	_deprecated_function( __FUNCTION__, '2.5', 'wp_get_attachment_image()' );
 	$id = (int) $id;
-	if ( !$post = & get_post($id) )
+	if ( !$post = get_post($id) )
 		return false;
 
 	if ( !$src = get_attachment_icon_src( $post->ID, $fullsize ) )
@@ -2023,12 +2023,11 @@ function get_attachment_icon( $id = 0, $fullsize = false, $max_dims = false ) {
 function get_attachment_innerHTML($id = 0, $fullsize = false, $max_dims = false) {
 	_deprecated_function( __FUNCTION__, '2.5', 'wp_get_attachment_image()' );
 	$id = (int) $id;
-	if ( !$post = & get_post($id) )
+	if ( !$post = get_post($id) )
 		return false;
 
 	if ( $innerHTML = get_attachment_icon($post->ID, $fullsize, $max_dims))
 		return $innerHTML;
-
 
 	$innerHTML = esc_attr($post->post_title);
 
@@ -2073,7 +2072,7 @@ function sanitize_url( $url, $protocols = null ) {
  * Checks and cleans a URL.
  *
  * A number of characters are removed from the URL. If the URL is for displaying
- * (the default behaviour) amperstands are also replaced. The 'clean_url' filter
+ * (the default behaviour) ampersands are also replaced. The 'clean_url' filter
  * is applied to the returned cleaned URL.
  *
  * @since 1.2.0
@@ -2128,7 +2127,6 @@ function wp_specialchars( $string, $quote_style = ENT_NOQUOTES, $charset = false
 		return esc_html( $string );
 	}
 }
-
 
 /**
  * Escaping for HTML attributes.
@@ -2566,7 +2564,7 @@ function is_term( $term, $taxonomy = '', $parent = 0 ) {
  * Is the current admin page generated by a plugin?
  *
  * @since 1.5.0
- * @deprecated 3.1
+ * @deprecated 3.1.0
  * @deprecated Use global $plugin_page and/or get_plugin_page_hookname() hooks.
  *
  * @global $plugin_page
@@ -2592,7 +2590,7 @@ function is_plugin_page() {
  * for updating the category cache.
  *
  * @since 1.5.0
- * @deprecated 3.1
+ * @deprecated 3.1.0
  *
  * @return bool Always return True
  */
@@ -2602,3 +2600,767 @@ function update_category_cache() {
 	return true;
 }
 
+/**
+ * Check for PHP timezone support
+ *
+ * @since 2.9.0
+ * @deprecated 3.2.0
+ *
+ * @return bool
+ */
+function wp_timezone_supported() {
+	_deprecated_function( __FUNCTION__, '3.2' );
+
+	return true;
+}
+
+/**
+ * Display editor: TinyMCE, HTML, or both.
+ *
+ * @since 2.1.0
+ * @deprecated 3.3.0
+ * @deprecated Use wp_editor()
+ * @see wp_editor()
+ *
+ * @param string $content Textarea content.
+ * @param string $id Optional, default is 'content'. HTML ID attribute value.
+ * @param string $prev_id Optional, not used
+ * @param bool $media_buttons Optional, default is true. Whether to display media buttons.
+ * @param int $tab_index Optional, not used
+ */
+function the_editor($content, $id = 'content', $prev_id = 'title', $media_buttons = true, $tab_index = 2, $extended = true) {
+	_deprecated_function( __FUNCTION__, '3.3', 'wp_editor()' );
+
+	wp_editor( $content, $id, array( 'media_buttons' => $media_buttons ) );
+	return;
+}
+
+/**
+ * Perform the query to get the $metavalues array(s) needed by _fill_user and _fill_many_users
+ *
+ * @since 3.0.0
+ * @deprecated 3.3.0
+ *
+ * @param array $ids User ID numbers list.
+ * @return array of arrays. The array is indexed by user_id, containing $metavalues object arrays.
+ */
+function get_user_metavalues($ids) {
+	_deprecated_function( __FUNCTION__, '3.3' );
+
+	$objects = array();
+
+	$ids = array_map('intval', $ids);
+	foreach ( $ids as $id )
+		$objects[$id] = array();
+
+	$metas = update_meta_cache('user', $ids);
+
+	foreach ( $metas as $id => $meta ) {
+		foreach ( $meta as $key => $metavalues ) {
+			foreach ( $metavalues as $value ) {
+				$objects[$id][] = (object)array( 'user_id' => $id, 'meta_key' => $key, 'meta_value' => $value);
+			}
+		}
+	}
+
+	return $objects;
+}
+
+/**
+ * Sanitize every user field.
+ *
+ * If the context is 'raw', then the user object or array will get minimal santization of the int fields.
+ *
+ * @since 2.3.0
+ * @deprecated 3.3.0
+ *
+ * @param object|array $user The User Object or Array
+ * @param string $context Optional, default is 'display'. How to sanitize user fields.
+ * @return object|array The now sanitized User Object or Array (will be the same type as $user)
+ */
+function sanitize_user_object($user, $context = 'display') {
+	_deprecated_function( __FUNCTION__, '3.3' );
+
+	if ( is_object($user) ) {
+		if ( !isset($user->ID) )
+			$user->ID = 0;
+		if ( !is_a( $user, 'WP_User' ) ) {
+			$vars = get_object_vars($user);
+			foreach ( array_keys($vars) as $field ) {
+				if ( is_string($user->$field) || is_numeric($user->$field) )
+					$user->$field = sanitize_user_field($field, $user->$field, $user->ID, $context);
+			}
+		}
+		$user->filter = $context;
+	} else {
+		if ( !isset($user['ID']) )
+			$user['ID'] = 0;
+		foreach ( array_keys($user) as $field )
+			$user[$field] = sanitize_user_field($field, $user[$field], $user['ID'], $context);
+		$user['filter'] = $context;
+	}
+
+	return $user;
+}
+
+/**
+ * Get boundary post relational link.
+ *
+ * Can either be start or end post relational link.
+ *
+ * @since 2.8.0
+ * @deprecated 3.3.0
+ *
+ * @param string $title Optional. Link title format.
+ * @param bool $in_same_cat Optional. Whether link should be in a same category.
+ * @param string $excluded_categories Optional. Excluded categories IDs.
+ * @param bool $start Optional, default is true. Whether to display link to first or last post.
+ * @return string
+ */
+function get_boundary_post_rel_link($title = '%title', $in_same_cat = false, $excluded_categories = '', $start = true) {
+	_deprecated_function( __FUNCTION__, '3.3' );
+
+	$posts = get_boundary_post($in_same_cat, $excluded_categories, $start);
+	// If there is no post stop.
+	if ( empty($posts) )
+		return;
+
+	// Even though we limited get_posts to return only 1 item it still returns an array of objects.
+	$post = $posts[0];
+
+	if ( empty($post->post_title) )
+		$post->post_title = $start ? __('First Post') : __('Last Post');
+
+	$date = mysql2date(get_option('date_format'), $post->post_date);
+
+	$title = str_replace('%title', $post->post_title, $title);
+	$title = str_replace('%date', $date, $title);
+	$title = apply_filters('the_title', $title, $post->ID);
+
+	$link = $start ? "<link rel='start' title='" : "<link rel='end' title='";
+	$link .= esc_attr($title);
+	$link .= "' href='" . get_permalink($post) . "' />\n";
+
+	$boundary = $start ? 'start' : 'end';
+	return apply_filters( "{$boundary}_post_rel_link", $link );
+}
+
+/**
+ * Display relational link for the first post.
+ *
+ * @since 2.8.0
+ * @deprecated 3.3.0
+ *
+ * @param string $title Optional. Link title format.
+ * @param bool $in_same_cat Optional. Whether link should be in a same category.
+ * @param string $excluded_categories Optional. Excluded categories IDs.
+ */
+function start_post_rel_link($title = '%title', $in_same_cat = false, $excluded_categories = '') {
+	_deprecated_function( __FUNCTION__, '3.3' );
+
+	echo get_boundary_post_rel_link($title, $in_same_cat, $excluded_categories, true);
+}
+
+/**
+ * Get site index relational link.
+ *
+ * @since 2.8.0
+ * @deprecated 3.3.0
+ *
+ * @return string
+ */
+function get_index_rel_link() {
+	_deprecated_function( __FUNCTION__, '3.3' );
+
+	$link = "<link rel='index' title='" . esc_attr( get_bloginfo( 'name', 'display' ) ) . "' href='" . esc_url( user_trailingslashit( get_bloginfo( 'url', 'display' ) ) ) . "' />\n";
+	return apply_filters( "index_rel_link", $link );
+}
+
+/**
+ * Display relational link for the site index.
+ *
+ * @since 2.8.0
+ * @deprecated 3.3.0
+ */
+function index_rel_link() {
+	_deprecated_function( __FUNCTION__, '3.3' );
+
+	echo get_index_rel_link();
+}
+
+/**
+ * Get parent post relational link.
+ *
+ * @since 2.8.0
+ * @deprecated 3.3.0
+ *
+ * @param string $title Optional. Link title format.
+ * @return string
+ */
+function get_parent_post_rel_link($title = '%title') {
+	_deprecated_function( __FUNCTION__, '3.3' );
+
+	if ( ! empty( $GLOBALS['post'] ) && ! empty( $GLOBALS['post']->post_parent ) )
+		$post = get_post($GLOBALS['post']->post_parent);
+
+	if ( empty($post) )
+		return;
+
+	$date = mysql2date(get_option('date_format'), $post->post_date);
+
+	$title = str_replace('%title', $post->post_title, $title);
+	$title = str_replace('%date', $date, $title);
+	$title = apply_filters('the_title', $title, $post->ID);
+
+	$link = "<link rel='up' title='";
+	$link .= esc_attr( $title );
+	$link .= "' href='" . get_permalink($post) . "' />\n";
+
+	return apply_filters( "parent_post_rel_link", $link );
+}
+
+/**
+ * Display relational link for parent item
+ *
+ * @since 2.8.0
+ * @deprecated 3.3.0
+ */
+function parent_post_rel_link($title = '%title') {
+	_deprecated_function( __FUNCTION__, '3.3' );
+
+	echo get_parent_post_rel_link($title);
+}
+
+/**
+ * Add the "Dashboard"/"Visit Site" menu.
+ *
+ * @since 3.2.0
+ * @deprecated 3.3.0
+ */
+function wp_admin_bar_dashboard_view_site_menu( $wp_admin_bar ) {
+	_deprecated_function( __FUNCTION__, '3.3' );
+
+	$user_id = get_current_user_id();
+
+	if ( 0 != $user_id ) {
+		if ( is_admin() )
+			$wp_admin_bar->add_menu( array( 'id' => 'view-site', 'title' => __( 'Visit Site' ), 'href' => home_url() ) );
+		elseif ( is_multisite() )
+			$wp_admin_bar->add_menu( array( 'id' => 'dashboard', 'title' => __( 'Dashboard' ), 'href' => get_dashboard_url( $user_id ) ) );
+		else
+			$wp_admin_bar->add_menu( array( 'id' => 'dashboard', 'title' => __( 'Dashboard' ), 'href' => admin_url() ) );
+	}
+}
+
+/**
+ * Checks if the current user belong to a given blog.
+ *
+ * @since MU
+ * @deprecated 3.3.0
+ * @deprecated Use is_user_member_of_blog()
+ * @see is_user_member_of_blog()
+ *
+ * @param int $blog_id Blog ID
+ * @return bool True if the current users belong to $blog_id, false if not.
+ */
+function is_blog_user( $blog_id = 0 ) {
+	_deprecated_function( __FUNCTION__, '3.3', 'is_user_member_of_blog()' );
+
+	return is_user_member_of_blog( get_current_user_id(), $blog_id );
+}
+
+/**
+ * Open the file handle for debugging.
+ *
+ * @since 0.71
+ * @deprecated Use error_log()
+ * @link http://www.php.net/manual/en/function.error-log.php
+ * @deprecated 3.4.0
+ */
+function debug_fopen( $filename, $mode ) {
+	_deprecated_function( __FUNCTION__, 'error_log()' );
+	return false;
+}
+
+/**
+ * Write contents to the file used for debugging.
+ *
+ * @since 0.71
+ * @deprecated Use error_log() instead.
+ * @link http://www.php.net/manual/en/function.error-log.php
+ * @deprecated 3.4.0
+ */
+function debug_fwrite( $fp, $string ) {
+	_deprecated_function( __FUNCTION__, 'error_log()' );
+	if ( ! empty( $GLOBALS['debug'] ) )
+		error_log( $string );
+}
+
+/**
+ * Close the debugging file handle.
+ *
+ * @since 0.71
+ * @deprecated Use error_log()
+ * @link http://www.php.net/manual/en/function.error-log.php
+ * @deprecated 3.4.0
+ */
+function debug_fclose( $fp ) {
+	_deprecated_function( __FUNCTION__, 'error_log()' );
+}
+
+/**
+ * Retrieve list of themes with theme data in theme directory.
+ *
+ * The theme is broken, if it doesn't have a parent theme and is missing either
+ * style.css and, or index.php. If the theme has a parent theme then it is
+ * broken, if it is missing style.css; index.php is optional.
+ *
+ * @since 1.5.0
+ * @deprecated 3.4.0
+ * @deprecated Use wp_get_themes()
+ * @see wp_get_themes()
+ *
+ * @return array Theme list with theme data.
+ */
+function get_themes() {
+	_deprecated_function( __FUNCTION__, '3.4', 'wp_get_themes()' );
+
+	global $wp_themes;
+	if ( isset( $wp_themes ) )
+		return $wp_themes;
+
+	$themes = wp_get_themes();
+	$wp_themes = array();
+
+	foreach ( $themes as $theme ) {
+		$name = $theme->get('Name');
+		if ( isset( $wp_themes[ $name ] ) )
+			$wp_themes[ $name . '/' . $theme->get_stylesheet() ] = $theme;
+		else
+			$wp_themes[ $name ] = $theme;
+	}
+
+	return $wp_themes;
+}
+
+/**
+ * Retrieve theme data.
+ *
+ * @since 1.5.0
+ * @deprecated 3.4.0
+ * @deprecated Use wp_get_theme()
+ * @see wp_get_theme()
+ *
+ * @param string $theme Theme name.
+ * @return array|null Null, if theme name does not exist. Theme data, if exists.
+ */
+function get_theme( $theme ) {
+	_deprecated_function( __FUNCTION__, '3.4', 'wp_get_theme( $stylesheet )' );
+
+	$themes = get_themes();
+	if ( is_array( $themes ) && array_key_exists( $theme, $themes ) )
+		return $themes[ $theme ];
+	return null;
+}
+
+/**
+ * Retrieve current theme name.
+ *
+ * @since 1.5.0
+ * @deprecated 3.4.0
+ * @deprecated Use (string) wp_get_theme()
+ * @see wp_get_theme()
+ *
+ * @return string
+ */
+function get_current_theme() {
+	_deprecated_function( __FUNCTION__, '3.4', 'wp_get_theme()' );
+
+	if ( $theme = get_option( 'current_theme' ) )
+		return $theme;
+
+	return wp_get_theme()->get('Name');
+}
+
+/**
+ * Accepts matches array from preg_replace_callback in wpautop() or a string.
+ *
+ * Ensures that the contents of a <<pre>>...<</pre>> HTML block are not
+ * converted into paragraphs or line-breaks.
+ *
+ * @since 1.2.0
+ * @deprecated 3.4.0
+ *
+ * @param array|string $matches The array or string
+ * @return string The pre block without paragraph/line-break conversion.
+ */
+function clean_pre($matches) {
+	_deprecated_function( __FUNCTION__, '3.4' );
+
+	if ( is_array($matches) )
+		$text = $matches[1] . $matches[2] . "</pre>";
+	else
+		$text = $matches;
+
+	$text = str_replace(array('<br />', '<br/>', '<br>'), array('', '', ''), $text);
+	$text = str_replace('<p>', "\n", $text);
+	$text = str_replace('</p>', '', $text);
+
+	return $text;
+}
+
+
+/**
+ * Add callbacks for image header display.
+ *
+ * @since 2.1.0
+ * @deprecated 3.4.0
+ * @deprecated Use add_theme_support('custom-header', $args)
+ * @see add_theme_support()
+ *
+ * @param callback $wp_head_callback Call on 'wp_head' action.
+ * @param callback $admin_head_callback Call on custom header administration screen.
+ * @param callback $admin_preview_callback Output a custom header image div on the custom header administration screen. Optional.
+ */
+function add_custom_image_header( $wp_head_callback, $admin_head_callback, $admin_preview_callback = '' ) {
+	_deprecated_function( __FUNCTION__, '3.4', 'add_theme_support( \'custom-header\', $args )' );
+	$args = array(
+		'wp-head-callback'    => $wp_head_callback,
+		'admin-head-callback' => $admin_head_callback,
+	);
+	if ( $admin_preview_callback )
+		$args['admin-preview-callback'] = $admin_preview_callback;
+	return add_theme_support( 'custom-header', $args );
+}
+
+/**
+ * Remove image header support.
+ *
+ * @since 3.1.0
+ * @deprecated 3.4.0
+ * @deprecated Use remove_theme_support('custom-header')
+ * @see remove_theme_support()
+ *
+ * @return bool Whether support was removed.
+ */
+function remove_custom_image_header() {
+	_deprecated_function( __FUNCTION__, '3.4', 'remove_theme_support( \'custom-header\' )' );
+	return remove_theme_support( 'custom-header' );
+}
+
+/**
+ * Add callbacks for background image display.
+ *
+ * @since 3.0.0
+ * @deprecated 3.4.0
+ * @deprecated Use add_theme_support('custom-background, $args)
+ * @see add_theme_support()
+ *
+ * @param callback $wp_head_callback Call on 'wp_head' action.
+ * @param callback $admin_head_callback Call on custom background administration screen.
+ * @param callback $admin_preview_callback Output a custom background image div on the custom background administration screen. Optional.
+ */
+function add_custom_background( $wp_head_callback = '', $admin_head_callback = '', $admin_preview_callback = '' ) {
+	_deprecated_function( __FUNCTION__, '3.4', 'add_theme_support( \'custom-background\', $args )' );
+	$args = array();
+	if ( $wp_head_callback )
+		$args['wp-head-callback'] = $wp_head_callback;
+	if ( $admin_head_callback )
+		$args['admin-head-callback'] = $admin_head_callback;
+	if ( $admin_preview_callback )
+		$args['admin-preview-callback'] = $admin_preview_callback;
+	return add_theme_support( 'custom-background', $args );
+}
+
+/**
+ * Remove custom background support.
+ *
+ * @since 3.1.0
+ * @see add_custom_background()
+ *
+ * @return bool Whether support was removed.
+ */
+function remove_custom_background() {
+	_deprecated_function( __FUNCTION__, '3.4', 'remove_theme_support( \'custom-background\' )' );
+	return remove_theme_support( 'custom-background' );
+}
+
+/**
+ * Retrieve theme data from parsed theme file.
+ *
+ * @since 1.5.0
+ * @deprecated 3.4.0
+ * @deprecated Use wp_get_theme()
+ * @see wp_get_theme()
+ *
+ * @param string $theme_file Theme file path.
+ * @return array Theme data.
+ */
+function get_theme_data( $theme_file ) {
+	_deprecated_function( __FUNCTION__, '3.4', 'wp_get_theme()' );
+	$theme = new WP_Theme( basename( dirname( $theme_file ) ), dirname( dirname( $theme_file ) ) );
+
+	$theme_data = array(
+		'Name' => $theme->get('Name'),
+		'URI' => $theme->display('ThemeURI', true, false),
+		'Description' => $theme->display('Description', true, false),
+		'Author' => $theme->display('Author', true, false),
+		'AuthorURI' => $theme->display('AuthorURI', true, false),
+		'Version' => $theme->get('Version'),
+		'Template' => $theme->get('Template'),
+		'Status' => $theme->get('Status'),
+		'Tags' => $theme->get('Tags'),
+		'Title' => $theme->get('Name'),
+		'AuthorName' => $theme->get('Author'),
+	);
+
+	foreach ( apply_filters( 'extra_theme_headers', array() ) as $extra_header ) {
+		if ( ! isset( $theme_data[ $extra_header ] ) )
+			$theme_data[ $extra_header ] = $theme->get( $extra_header );
+	}
+
+	return $theme_data;
+}
+
+/**
+ * Alias of update_post_cache().
+ *
+ * @see update_post_cache() Posts and pages are the same, alias is intentional
+ *
+ * @since 1.5.1
+ * @deprecated 3.4.0
+ *
+ * @param array $pages list of page objects
+ */
+function update_page_cache( &$pages ) {
+	_deprecated_function( __FUNCTION__, '3.4', 'update_post_cache()' );
+
+	update_post_cache( $pages );
+}
+
+/**
+ * Will clean the page in the cache.
+ *
+ * Clean (read: delete) page from cache that matches $id. Will also clean cache
+ * associated with 'all_page_ids' and 'get_pages'.
+ *
+ * @since 2.0.0
+ * @deprecated 3.4.0
+ *
+ * @uses do_action() Will call the 'clean_page_cache' hook action.
+ *
+ * @param int $id Page ID to clean
+ */
+function clean_page_cache( $id ) {
+	_deprecated_function( __FUNCTION__, '3.4', 'clean_post_cache()' );
+
+	clean_post_cache( $id );
+}
+
+/**
+ * Retrieve nonce action "Are you sure" message.
+ *
+ * Deprecated in 3.4.1 and 3.5.0. Backported to 3.3.3.
+ *
+ * @since 2.0.4
+ * @deprecated 3.4.1
+ * @deprecated Use wp_nonce_ays()
+ * @see wp_nonce_ays()
+ *
+ * @param string $action Nonce action.
+ * @return string Are you sure message.
+ */
+function wp_explain_nonce( $action ) {
+	_deprecated_function( __FUNCTION__, '3.4.1', 'wp_nonce_ays()' );
+	return __( 'Are you sure you want to do this?' );
+}
+
+/**
+ * Display "sticky" CSS class, if a post is sticky.
+ *
+ * @since 2.7.0
+ * @deprecated 3.5.0
+ * @deprecated Use post_class()
+ * @see post_class()
+ *
+ * @param int $post_id An optional post ID.
+ */
+function sticky_class( $post_id = null ) {
+	_deprecated_function( __FUNCTION__, '3.5', 'post_class()' );
+	if ( is_sticky( $post_id ) )
+		echo ' sticky';
+}
+
+/**
+ * Retrieve post ancestors.
+ *
+ * This is no longer needed as WP_Post lazy-loads the ancestors
+ * property with get_post_ancestors().
+ *
+ * @since 2.3.4
+ * @deprecated 3.5.0
+ * @see get_post_ancestors()
+ */
+function _get_post_ancestors( &$post ) {
+	_deprecated_function( __FUNCTION__, '3.5' );
+}
+
+/**
+ * Load an image from a string, if PHP supports it.
+ *
+ * @since 2.1.0
+ * @deprecated 3.5.0
+ * @see wp_get_image_editor()
+ *
+ * @param string $file Filename of the image to load.
+ * @return resource The resulting image resource on success, Error string on failure.
+ */
+function wp_load_image( $file ) {
+	_deprecated_function( __FUNCTION__, '3.5', 'wp_get_image_editor()' );
+
+	if ( is_numeric( $file ) )
+		$file = get_attached_file( $file );
+
+	if ( ! is_file( $file ) )
+		return sprintf(__('File &#8220;%s&#8221; doesn&#8217;t exist?'), $file);
+
+	if ( ! function_exists('imagecreatefromstring') )
+		return __('The GD image library is not installed.');
+
+	// Set artificially high because GD uses uncompressed images in memory
+	@ini_set( 'memory_limit', apply_filters( 'image_memory_limit', WP_MAX_MEMORY_LIMIT ) );
+	$image = imagecreatefromstring( file_get_contents( $file ) );
+
+	if ( !is_resource( $image ) )
+		return sprintf(__('File &#8220;%s&#8221; is not an image.'), $file);
+
+	return $image;
+}
+
+/**
+ * Scale down an image to fit a particular size and save a new copy of the image.
+ *
+ * The PNG transparency will be preserved using the function, as well as the
+ * image type. If the file going in is PNG, then the resized image is going to
+ * be PNG. The only supported image types are PNG, GIF, and JPEG.
+ *
+ * Some functionality requires API to exist, so some PHP version may lose out
+ * support. This is not the fault of WordPress (where functionality is
+ * downgraded, not actual defects), but of your PHP version.
+ *
+ * @since 2.5.0
+ * @deprecated 3.5.0
+ * @see wp_get_image_editor()
+ *
+ * @param string $file Image file path.
+ * @param int $max_w Maximum width to resize to.
+ * @param int $max_h Maximum height to resize to.
+ * @param bool $crop Optional. Whether to crop image or resize.
+ * @param string $suffix Optional. File suffix.
+ * @param string $dest_path Optional. New image file path.
+ * @param int $jpeg_quality Optional, default is 90. Image quality percentage.
+ * @return mixed WP_Error on failure. String with new destination path.
+ */
+function image_resize( $file, $max_w, $max_h, $crop = false, $suffix = null, $dest_path = null, $jpeg_quality = 90 ) {
+	_deprecated_function( __FUNCTION__, '3.5', 'wp_get_image_editor()' );
+
+	$editor = wp_get_image_editor( $file );
+	if ( is_wp_error( $editor ) )
+		return $editor;
+	$editor->set_quality( $jpeg_quality );
+
+	$resized = $editor->resize( $max_w, $max_h, $crop );
+	if ( is_wp_error( $resized ) )
+		return $resized;
+
+	$dest_file = $editor->generate_filename( $suffix, $dest_path );
+	$saved = $editor->save( $dest_file );
+
+	if ( is_wp_error( $saved ) )
+		return $saved;
+
+	return $dest_file;
+}
+
+/**
+ * Retrieve a single post, based on post ID.
+ *
+ * Has categories in 'post_category' property or key. Has tags in 'tags_input'
+ * property or key.
+ *
+ * @since 1.0.0
+ * @deprecated 3.5.0
+ * @see get_post()
+ *
+ * @param int $postid Post ID.
+ * @param string $mode How to return result, either OBJECT, ARRAY_N, or ARRAY_A.
+ * @return object|array Post object or array holding post contents and information
+ */
+function wp_get_single_post( $postid = 0, $mode = OBJECT ) {
+	_deprecated_function( __FUNCTION__, '3.5', 'get_post()' );
+	return get_post( $postid, $mode, 'edit' );
+}
+
+/**
+ * Check that the user login name and password is correct.
+ *
+ * @since 0.71
+ * @deprecated 3.5.0
+ * @deprecated Use wp_authenticate()
+ * @see wp_authenticate()
+ *
+ * @param string $user_login User name.
+ * @param string $user_pass User password.
+ * @return bool False if does not authenticate, true if username and password authenticates.
+ */
+function user_pass_ok($user_login, $user_pass) {
+	_deprecated_function( __FUNCTION__, '3.5', 'wp_authenticate()' );
+	$user = wp_authenticate( $user_login, $user_pass );
+	if ( is_wp_error( $user ) )
+		return false;
+
+	return true;
+}
+
+/**
+ * Callback formerly fired on the save_post hook. No longer needed.
+ *
+ * @since 2.3.0
+ * @deprecated 3.5.0
+ */
+function _save_post_hook() {}
+
+/**
+ * Check if the installed version of GD supports particular image type
+ *
+ * @since 2.9.0
+ * @deprecated 3.5.0
+ * see wp_image_editor_supports()
+ *
+ * @param string $mime_type
+ * @return bool
+ */
+function gd_edit_image_support($mime_type) {
+	_deprecated_function( __FUNCTION__, '3.5', 'wp_image_editor_supports()' );
+
+	if ( function_exists('imagetypes') ) {
+		switch( $mime_type ) {
+			case 'image/jpeg':
+				return (imagetypes() & IMG_JPG) != 0;
+			case 'image/png':
+				return (imagetypes() & IMG_PNG) != 0;
+			case 'image/gif':
+				return (imagetypes() & IMG_GIF) != 0;
+		}
+	} else {
+		switch( $mime_type ) {
+			case 'image/jpeg':
+				return function_exists('imagecreatefromjpeg');
+			case 'image/png':
+				return function_exists('imagecreatefrompng');
+			case 'image/gif':
+				return function_exists('imagecreatefromgif');
+		}
+	}
+	return false;
+}

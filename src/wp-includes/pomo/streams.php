@@ -3,7 +3,7 @@
  * Classes, which help reading streams of data from files.
  * Based on the classes from Danilo Segan <danilo@kvota.net>
  *
- * @version $Id: streams.php 406 2010-02-07 11:10:24Z nbachiyski $
+ * @version $Id: streams.php 718 2012-10-31 00:32:02Z nbachiyski $
  * @package pomo
  * @subpackage streams
  */
@@ -22,7 +22,7 @@ class POMO_Reader {
 	/**
 	 * Sets the endianness of the file.
 	 *
-	 * @param string $endian 'big' or 'little'
+	 * @param $endian string 'big' or 'little'
 	 */
 	function setEndian($endian) {
 		$this->endian = $endian;
@@ -106,7 +106,7 @@ if ( !class_exists( 'POMO_FileReader' ) ):
 class POMO_FileReader extends POMO_Reader {
 	function POMO_FileReader($filename) {
 		parent::POMO_Reader();
-		$this->_f = fopen($filename, 'r');
+		$this->_f = fopen($filename, 'rb');
 	}
 
 	function read($bytes) {

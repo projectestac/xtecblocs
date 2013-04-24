@@ -7,8 +7,8 @@
 	<div id="content">
 	
 		<div class="post" id="post-none">
-			<h2 class="center"><?php _e('Error 404','xtec'); ?></h2>
-			<p class="center"><?php _e("Sorry, but you are looking for something that is not here",'xtec'); ?></p>
+			<h2 class="center"><?php _e('Error 404','xtec-11'); ?></h2>
+			<p class="center"><?php _e("Sorry, but you are looking for something that is not here",'xtec-11'); ?></p>
 			<?php include (TEMPLATEPATH . "/searchform.php"); ?>
 		</div>
 		

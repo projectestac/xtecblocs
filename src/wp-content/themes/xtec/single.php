@@ -16,12 +16,12 @@
 					<span class="date_month"><?php the_time('m') ?></span>
 					<span class="date_year"><?php the_time('Y') ?></span>
 				</small>
-				<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Read','xtec'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></h2>
+				<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Read'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></h2>
 
 				
 					
 				<div class="entry">
-					<?php the_content('<span class="readmore">'.__('Read the rest of this entry &raquo;','xtec').'</span>'); ?>
+					<?php the_content('<span class="readmore">'.__('Read the rest of this entry &raquo;','xtec-11').'</span>'); ?>
 				</div>
 	
 				<?php link_pages('<p><strong>Pages:</strong> ', '</p>', 'number'); ?>
@@ -34,27 +34,27 @@
 			</p>
 			<br/>
 		<div class="contentwo">
-			<h3><?php _e('Actions','xtec'); ?></h3>
+			<h3><?php _e('Actions','xtec-11'); ?></h3>
 			<ul class="postmetadata">
 		<?php if ('open' == $post-> comment_status) : ?>
-			<li class="with_icon"><img class="icon" src="<?php echo get_bloginfo('stylesheet_directory') ?>/images/icons/feed-icon-16x16.gif" alt="rss" />&nbsp;<?php comments_rss_link(__('Comments rss','xtec')); ?></li>
+			<li class="with_icon"><img class="icon" src="<?php echo get_bloginfo('stylesheet_directory') ?>/images/icons/feed-icon-16x16.gif" alt="rss" />&nbsp;<?php comments_rss_link(__('Comments rss','xtec-11')); ?></li>
 		<?php endif; ?>
 		<?php if ('open' == $post->ping_status) : ?>
-			<li class="with_icon"><img class="icon" src="<?php echo get_bloginfo('stylesheet_directory') ?>/images/icons/trackback-icon-16x16.gif" alt="trackback" />&nbsp;<a href="<?php trackback_url(true); ?> " rel="trackback" title="make a trackback"><?php _e('Trackback','xtec'); ?></a></li>
+			<li class="with_icon"><img class="icon" src="<?php echo get_bloginfo('stylesheet_directory') ?>/images/icons/trackback-icon-16x16.gif" alt="trackback" />&nbsp;<a href="<?php trackback_url(true); ?> " rel="trackback" title="make a trackback"><?php _e('Trackback','xtec-11'); ?></a></li>
 		<?php endif; ?>
 		<?php if ($user_ID) : ?>
-			<li class="with_icon"><img class="icon" src="<?php echo get_bloginfo('stylesheet_directory') ?>/images/icons/edit-icon-16x16.gif" alt="edit" />&nbsp;<?php edit_post_link(__('Edit','xtec'),'',''); ?></li>
+			<li class="with_icon"><img class="icon" src="<?php echo get_bloginfo('stylesheet_directory') ?>/images/icons/edit-icon-16x16.gif" alt="edit" />&nbsp;<?php edit_post_link(__('Edit','xtec-11'),'',''); ?></li>
 		<?php endif; ?>
 			</ul>
 				
-			<h3><?php _e('Informations','xtec'); ?></h3>
+			<h3><?php _e('Informations','xtec-11'); ?></h3>
 			<ul class="postmetadata">
-					<!--<li><?php _e('Author','xtec'); ?> : <?php the_author() ?></li>-->
-					<li><?php _e('Date','xtec'); ?> : <?php the_time('d F Y') ?></li>
+					<!--<li><?php _e('Author','xtec-11'); ?> : <?php the_author() ?></li>-->
+					<li><?php _e('Date'); ?> : <?php the_time('d F Y') ?></li>
 				<?php if(function_exists('mdv_last_modified')) : ?>
-					<li><?php _e('Last modified','xtec'); ?> : <?php mdv_last_modified('j F Y') ?></li>
+					<li><?php _e('Last modified','xtec-11'); ?> : <?php mdv_last_modified('j F Y') ?></li>
 				<?php endif; ?>
-					<li class="tag"><?php _e('Categories','xtec'); ?> : <?php the_category(', ') ?></li>
+					<li class="tag"><?php _e('Categories','xtec-11'); ?> : <?php the_category(', ') ?></li>
 				<?php if(function_exists('the_bunny_tags')) : ?>
 					<li><?php the_bunny_tags('Tags : ', '', ', '); ?></li>
 				<?php endif; ?>
@@ -67,8 +67,8 @@
 	<!-- nothing found -->
 	<?php else : ?>
 
-		<h2><?php _e('Not Found','xtec'); ?></h2>
-		<p><?php _e('Sorry, but you are looking for something that isn\'t here.','xtec'); ?></p>
+		<h2><?php _e('Not Found','xtec-11'); ?></h2>
+		<p><?php _e('Sorry, but you are looking for something that isn\'t here.','xtec-11'); ?></p>
 		<?php include (TEMPLATEPATH . "/searchform.php"); ?>
 
 	<?php endif; ?>

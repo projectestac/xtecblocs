@@ -18,10 +18,16 @@ require_once( ABSPATH . WPINC . '/http.php' );
 $title = __( 'Update Network' );
 $parent_file = 'upgrade.php';
 
-add_contextual_help($current_screen,
-	'<p>' . __('Only use this screen once you have updated to a new version of WordPress through Dashboard > Updates. Clicking the Update Network button will step through each site in the network, five at a time, and make sure any database updates are applied.') . '</p>' .
-	'<p>' . __('If a version update to core has not happened, clicking this button won&#8217;t affect anything.') . '</p>' .
-	'<p>' . __('If this process fails for any reason, users logging in to their sites will force the same update.') . '</p>' .
+get_current_screen()->add_help_tab( array(
+	'id'      => 'overview',
+	'title'   => __('Overview'),
+	'content' =>
+		'<p>' . __('Only use this screen once you have updated to a new version of WordPress through Updates/Available Updates (via the Network Administration navigation menu or the Toolbar). Clicking the Update Network button will step through each site in the network, five at a time, and make sure any database updates are applied.') . '</p>' .
+		'<p>' . __('If a version update to core has not happened, clicking this button won&#8217;t affect anything.') . '</p>' .
+		'<p>' . __('If this process fails for any reason, users logging in to their sites will force the same update.') . '</p>'
+) );
+
+get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
 	'<p>' . __('<a href="http://codex.wordpress.org/Network_Admin_Updates_Screen" target="_blank">Documentation on Update Network</a>') . '</p>' .
 	'<p>' . __('<a href="http://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>'
@@ -54,9 +60,12 @@ switch ( $action ) {
 		}
 		echo "<ul>";
 		foreach ( (array) $blogs as $details ) {
-			$siteurl = get_blog_option( $details['blog_id'], 'siteurl' );
+			switch_to_blog( $details['blog_id'] );
+			$siteurl = site_url();
+			$upgrade_url = admin_url( 'upgrade.php?step=upgrade_db' );
+			restore_current_blog();
 			echo "<li>$siteurl</li>";
-			$response = wp_remote_get( trailingslashit( $siteurl ) . "wp-admin/upgrade.php?step=upgrade_db", array( 'timeout' => 120, 'httpversion' => '1.1' ) );
+			$response = wp_remote_get( $upgrade_url, array( 'timeout' => 120, 'httpversion' => '1.1' ) );
 			if ( is_wp_error( $response ) )
 				wp_die( sprintf( __( 'Warning! Problem updating %1$s. Your server may not be able to connect to sites running on it. Error message: <em>%2$s</em>' ), $siteurl, $response->get_error_message() ) );
 			do_action( 'after_mu_upgrade', $response );

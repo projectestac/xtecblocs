@@ -70,7 +70,7 @@ $freshy_options = get_option('freshy_options');
 					
 				<li class="<?php if (is_home()) echo 'current_page_item'; ?>">
 					<a href="<?php echo get_settings('home'); ?>">
-						<?php _e($freshy_options['first_menu_label'],'freshy-2'); ?>
+						<?php _e($freshy_options['first_menu_label'],TEMPLATE_DOMAIN); ?>
 					</a>
 				</li>
 					
@@ -85,7 +85,7 @@ $freshy_options = get_option('freshy_options');
 					?>
 					<li>
 						<a href="<?php echo $custom_menu['url']; ?>">
-							<?php _e($custom_menu['label'],'freshy-2'); ?>
+							<?php _e($custom_menu['label'],TEMPLATE_DOMAIN); ?>
 						</a>
 					</li>
 					<?php
@@ -100,13 +100,13 @@ $freshy_options = get_option('freshy_options');
 				<?php if ($freshy_options['last_menu_type']=='email') : ?>
 						
 					<a href="mailto:<?php echo $freshy_options['contact_email']; ?>">
-						<?php _e($freshy_options['last_menu_label'],'freshy-2'); ?>
+						<?php _e($freshy_options['last_menu_label'],TEMPLATE_DOMAIN); ?>
 					</a>
 						
 				<?php elseif ($freshy_options['last_menu_type']=='link') : ?>
 						
 					<a href="<?php echo $freshy_options['contact_link']; ?>">
-						<?php _e($freshy_options['last_menu_label'],'freshy-2'); ?>
+						<?php _e($freshy_options['last_menu_label'],TEMPLATE_DOMAIN); ?>
 					</a>
 						
 				<?php endif; ?>	

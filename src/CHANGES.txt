@@ -1,5 +1,8 @@
 
 Changes in progress
+
+Actualitzar a versió 3.5.1
+
 ---------------------------------------------------------------------------------------
 v.13.03.11
 - ENS-1068-0010: Problemes amb les etiquetes i núvols d'etiquetes en els blocs (parametrització de l'script)
