@@ -1,0 +1,39 @@
+/*   
+Theme Name: Delicacy Theme
+Theme URI: http://webtuts.pl
+Description: Szablon Wordpress dla stron o profilu kulinarnym
+Author: Aleksandra Łączek
+Author URI: http://webtuts.pl
+Version: 1
+*/
+
+#Delicacy-meta div.section {
+    border-bottom:  1px solid #dfdfdf;
+    border-top:  1px solid white;
+    /*box-shadow: white 0 1px 0;    */
+}
+#Delicacy-meta div.section.first {
+    border-top:  0 none;
+}
+
+#Delicacy-meta label {
+    display: inline-block;
+    width: 20%;
+}
+#Delicacy-meta input,
+#Delicacy-meta select
+{
+    display: inline-block;
+    width: 60%;
+}
+
+#Delicacy-meta textarea
+{
+    width: 90%;
+    height: 150px;
+}
+
+#Delicacy-meta p.howto
+{
+}
+/*echo '<div style="border-top: 1px solid #DFDFDF; border-bottom: 1px solid white; height: 0; width: auto;"></div>';*/

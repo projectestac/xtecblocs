@@ -1,0 +1,59 @@
+
+/*** print styles -- incomplete ***/
+
+body{
+  background: white;
+  color: black;
+  font-size: 12pt;
+  font-family: "Times New Roman", sans;
+}
+
+h1.title{
+  font-weight: normal;
+}
+
+
+#logo{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+
+#logo a{
+  display: inline
+}
+
+
+a:link, a:visited {
+  color: #520;
+  background: transparent;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.post a:link:after, .post a:visited:after {
+  content: " (" attr(href) ") ";
+  font-size: 90%;
+}
+
+.alignleft{
+  float:left;
+  margin-right:10px;
+}
+
+.alignright{
+  float:right;
+  margin-left:10px;
+}
+
+.aligncenter{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+
+
+/* clearfix */
+.clear-block:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}

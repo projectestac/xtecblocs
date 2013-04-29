@@ -1,0 +1,19 @@
+/* Orange Color Scheme CSS */
+
+a {color: #f65e1f;}
+a:hover {color: #cc4e19;} /*#f04253*/
+
+#navigation {background: #f65e1f;}
+
+#navigation:before, #navigation:after {
+    border: 1.5em solid #cc4e19;
+}
+#navigation .main-menu:before, #navigation .main-menu:after {
+    border-color: #9e2f01 transparent transparent transparent;
+}
+#logo p {color: #f65e1f;}
+
+.nivo-controlNav a.active {
+    background: #cc4e19;
+    color: #cc4e19;
+}

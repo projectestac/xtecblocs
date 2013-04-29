@@ -1,0 +1,218 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Freshy Theme for WordPress\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2009-01-11 06:22+0100\n"
+"Last-Translator: \n"
+"Language-Team: Julien De Luca <contact@jide.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: sidebar.php
+msgid "Search"
+msgstr "Caută"
+
+#: sidebar.php
+msgid "Archive"
+msgstr "Arhivă"
+
+#: sidebar.php
+msgid "Categories"
+msgstr "Categorii"
+
+#: sidebar.php
+msgid "Links"
+msgstr "Linkuri"
+
+#: sidebar.php
+msgid "Recent posts"
+msgstr "Posturi recente"
+
+#: sidebar.php
+msgid "Recent comments"
+msgstr "Comentarii recente"
+
+#: header.php
+msgid "Home"
+msgstr "Acasă"
+
+#: sidebar.php
+msgid "Random image"
+msgstr "Imagine aleatorie"
+
+#: index.php
+msgid "No Comments &#187;"
+msgstr "Nici un comentariu &#187;"
+
+#: index.php
+msgid "1 Comment &#187;"
+msgstr "1 Comentariu &#187;"
+
+#: index.php
+msgid "% Comments &#187;"
+msgstr "% Comentarii &#187;"
+
+#: index.php
+msgid "Sorry, but you are looking for something that is not here"
+msgstr "Ne pare rău, dar ceea ce cauţi nu este aici"
+
+#: index.php
+msgid "Not found"
+msgstr "Nu s-a găsit"
+
+#: index.php
+msgid "Error 404"
+msgstr "Eroare 404"
+
+#: index.php
+msgid "Last works"
+msgstr "Ultimele lucruri"
+
+#: index.php
+msgid "Last news"
+msgstr "Ultimele ştiri"
+
+#: single.php
+msgid "Author"
+msgstr "Autor"
+
+#: single.php
+msgid "Informations"
+msgstr "Informaţii"
+
+#: single.php
+msgid "Actions"
+msgstr "Acţiuni"
+
+#: single.php
+msgid "Date"
+msgstr "Data"
+
+#: single.php
+msgid "Comments rss"
+msgstr "Comentarii RSS"
+
+#: single.php
+msgid "Trackback"
+msgstr "Trackback"
+
+#: comments.php
+msgid "Leave a comment"
+msgstr "Adaugă un comentariu"
+
+#: comments.php
+msgid "Logout"
+msgstr "Deconectează-te"
+
+#: comments.php
+msgid "Logged in as"
+msgstr "Logat ca"
+
+#: comments.php
+msgid "You must be"
+msgstr "Tu trebuie să fi"
+
+#: comments.php
+msgid "logged in"
+msgstr "Logat"
+
+#: comments.php
+msgid "to post a comment"
+msgstr "pentru a adăuga un comentariu"
+
+#: comments.php
+msgid "Your comment is awaiting moderation"
+msgstr "Comentariul tău aşteaptă moderarea"
+
+#: comments.php
+msgid "This post is password protected. Enter the password to view comments"
+msgstr "Acest post este protejat cu parolă. Introduce parola pentru a vedea comentariile"
+
+#: comments.php
+msgid "Mail"
+msgstr "Email"
+
+#: comments.php
+msgid "Name"
+msgstr "Nume"
+
+#: comments.php
+msgid "Website"
+msgstr "Site web"
+
+#: comments.php
+msgid "(required)"
+msgstr "(cerut)"
+
+#: comments.php
+msgid "(will not be published)"
+msgstr "(nu va fi publicat)"
+
+#: comments.php
+msgid "No responses"
+msgstr "Nici un răspuns"
+
+#: comments.php
+msgid "One response"
+msgstr "Un răspuns"
+
+#: comments.php
+msgid "% responses"
+msgstr "% răspunsuri"
+
+#: comments.php
+msgid "to"
+msgstr "către"
+
+#: comments.php
+msgid "Last modified"
+msgstr "Ultima modificare"
+
+#: comments.php
+msgid "You can use these tags"
+msgstr "Poţi folosi aceste etichete"
+
+#: comments.php
+msgid "Submit comment"
+msgstr "Trimite comentariul"
+
+#: comments.php
+msgid "Submit"
+msgstr "Trimite"
+
+#: index.php
+msgid "Rss feeds from"
+msgstr "Flux Rss de la"
+
+#: index.php
+msgid "Read the rest of this entry &raquo;"
+msgstr "Lire la suite &raquo;"
+
+#: footer.php
+msgid "comments"
+msgstr "comentarii"
+
+#: index.php
+msgid "&laquo; Previous Entries"
+msgstr "&laquo; Înregistrări anterioare"
+
+#: index.php
+msgid "Next Entries &raquo;"
+msgstr "Următoarele înregistrări &raquo;"
+
+#: index.php
+msgid "Comments"
+msgstr "Comentarii"
+
+#: index.php
+msgid "Edit"
+msgstr "Editează"
+
+#: index.php
+msgid "edit"
+msgstr "editează"
+

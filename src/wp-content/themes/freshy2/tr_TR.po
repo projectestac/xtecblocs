@@ -1,0 +1,202 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Freshy Theme for WordPress\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2006-09-13 00:15+0200\n"
+"Last-Translator: mek <murat@ktu.edu.tr>\n"
+"Language-Team: Julien De Luca <contact@jide.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: sidebar.php
+msgid "Search"
+msgstr "Arama"
+
+#: sidebar.php
+msgid "Archive"
+msgstr "Arşiv"
+
+#: sidebar.php
+msgid "Categories"
+msgstr "Kategori"
+
+#: sidebar.php
+msgid "Links"
+msgstr "Bağlantılar"
+
+#: sidebar.php
+msgid "Recent posts"
+msgstr "Yeni mesajlar"
+
+#: sidebar.php
+msgid "Recent comments"
+msgstr "Yeni yorumlar"
+
+#: header.php
+msgid "Home"
+msgstr "Ana Sayfa"
+
+#: sidebar.php
+msgid "Random image"
+msgstr "Rastgele Resimler"
+
+#: index.php
+msgid "Comments"
+msgstr "Yorumlar"
+
+#: index.php
+msgid "No Comments &#187;"
+msgstr "Henüz yorum yok"
+
+#: index.php
+msgid "1 Comment &#187;"
+msgstr "1 yorum var"
+
+#: index.php
+msgid "% Comments &#187;"
+msgstr "% yorum var"
+
+#: index.php
+msgid "Sorry, but you are looking for something that is not here"
+msgstr "Aradığınız sayfa burada bulunamıyor"
+
+#: index.php
+msgid "Not found"
+msgstr "Bulunamadı"
+
+#: index.php
+msgid "Error 404"
+msgstr "Hata 404"
+
+#: index.php
+msgid "Last works"
+msgstr "Son Çalışmalar"
+
+#: index.php
+msgid "Last news"
+msgstr "Son Haberler"
+
+#: single.php
+msgid "Author"
+msgstr "Yazar"
+
+#: single.php
+msgid "Informations"
+msgstr "Bilgiler"
+
+#: single.php
+msgid "Actions"
+msgstr "Olaylar"
+
+#: single.php
+msgid "Date"
+msgstr "Tarih"
+
+#: single.php
+msgid "Comments rss"
+msgstr "RSS Yorumlar"
+
+#: single.php
+msgid "Trackback"
+msgstr "Trackback"
+
+#: comments.php
+msgid "Leave a comment"
+msgstr "Yorum gönder"
+
+#: comments.php
+msgid "Logout"
+msgstr "Çıkış"
+
+#: comments.php
+msgid "Logged in as"
+msgstr "Giriş Yapıldı"
+
+#: comments.php
+msgid "You must be"
+msgstr "Olmalısınız"
+
+#: comments.php
+msgid "logged in"
+msgstr "giriş yapıldı"
+
+#: comments.php
+msgid "to post a comment"
+msgstr "yorum gönder"
+
+#: comments.php
+msgid "Your comment is awaiting moderation"
+msgstr "Yorumunuz onay bekliyor"
+
+#: comments.php
+msgid "This post is password protected. Enter the password to view comments"
+msgstr "Bu mesaj şifre korumalıdır. Mesajı görebilmek için lütfen şifreyi giriniz"
+
+#: comments.php
+msgid "Mail"
+msgstr "E-Mail"
+
+#: comments.php
+msgid "Name"
+msgstr "İsim"
+
+#: comments.php
+msgid "Website"
+msgstr "Web Sitesi"
+
+#: comments.php
+msgid "(required)"
+msgstr "(gerekli)"
+
+#: comments.php
+msgid "(will not be published)"
+msgstr "(yayınlanmayacak)"
+
+#: comments.php
+msgid "No responses"
+msgstr "Yanıt yok"
+
+#: comments.php
+msgid "One response"
+msgstr "1 yanıt var"
+
+#: comments.php
+msgid "% responses"
+msgstr "% yanıt var"
+
+#: comments.php
+msgid "to"
+msgstr "kime"
+
+#: comments.php
+msgid "Last modified"
+msgstr "Son Düzeltme"
+
+#: comments.php
+msgid "You can use these tags"
+msgstr "Bu kodları kullanabilirsiniz"
+
+#: comments.php
+msgid "Submit comment"
+msgstr "Yorumu Gönder"
+
+#: comments.php
+msgid "Submit"
+msgstr "Gönder"
+
+#: index.php
+msgid "Rss feeds from"
+msgstr "RSS Besleme Yeri"
+
+#: index.php
+msgid "Read the rest of this entry &raquo;"
+msgstr "Bu mesajı okuyun"
+
+#: footer.php
+msgid "comments"
+msgstr "yorumlar"
+

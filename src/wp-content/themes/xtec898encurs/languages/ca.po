@@ -1,0 +1,480 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Encurs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-04 16:55+0100\n"
+"PO-Revision-Date: 2011-10-05 16:05+0100\n"
+"Last-Translator: Francesc Bassas i Bullich\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;_c\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Catalan\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:5
+msgid "Error 404 - No s'ha trobat"
+msgstr ""
+
+#: ../archive.php:9
+msgid "Archive for the"
+msgstr "Arxiu pel"
+
+#: ../archive.php:9
+msgid "Category"
+msgstr "Categoria"
+
+#: ../archive.php:12
+#: ../archive.php:15
+#: ../archive.php:18
+msgid "Archive for"
+msgstr "Arxiu de"
+
+#: ../archive.php:21
+msgid "Author Archive"
+msgstr "Arxiu d'autor"
+
+#: ../archive.php:24
+msgid "Blog Archives"
+msgstr "Arxius del bloc"
+
+#: ../archive.php:30
+#: ../archive.php:62
+#: ../index.php:33
+#: ../search.php:10
+#: ../search.php:36
+msgid "&laquo; Previous Entries"
+msgstr "&laquo; Entrades anteriors"
+
+#: ../archive.php:31
+#: ../archive.php:63
+#: ../index.php:34
+#: ../search.php:11
+#: ../search.php:37
+msgid "Next Entries &raquo;"
+msgstr "Entrades següents &raquo;"
+
+#: ../archive.php:43
+#: ../index.php:15
+#: ../search.php:23
+msgid "Permanent Link to"
+msgstr "Enllaç permanent a"
+
+#: ../archive.php:49
+#: ../index.php:22
+#: ../search.php:26
+msgid "Edit"
+msgstr "Edita"
+
+#: ../archive.php:50
+#: ../index.php:23
+#: ../search.php:27
+#: ../sidebar.php:51
+msgid "Categories"
+msgstr "Categories"
+
+#: ../archive.php:51
+#: ../comments-popup.php:22
+#: ../index.php:24
+#: ../search.php:28
+msgid "Comments"
+msgstr "Comentaris"
+
+#: ../archive.php:51
+#: ../index.php:24
+#: ../search.php:28
+msgid "No Comments"
+msgstr "No hi ha comentaris"
+
+#: ../archive.php:51
+#: ../index.php:24
+#: ../search.php:28
+msgid "1 Comment"
+msgstr "1 comentari"
+
+#: ../archive.php:51
+#: ../index.php:24
+#: ../search.php:28
+msgid "% Comments"
+msgstr "% comentaris"
+
+#: ../archive.php:52
+#: ../index.php:25
+#: ../search.php:29
+msgid "Author"
+msgstr "Autor"
+
+#: ../archive.php:69
+#: ../index.php:39
+msgid "Not Found"
+msgstr "No s'ha trobat"
+
+#: ../attachment.php:18
+msgid "Permanent Link:"
+msgstr "Enllaç permanent:"
+
+#: ../attachment.php:22
+#: ../index.php:18
+#: ../single.php:16
+msgid "Read the rest of this entry &raquo;"
+msgstr "Llegeix la resta d'aquest article &raquo;"
+
+#: ../attachment.php:24
+#: ../page.php:12
+#: ../single.php:19
+msgid "Pages:"
+msgstr "Pàgines:"
+
+#: ../attachment.php:28
+#: ../single.php:23
+msgid "This entry was posted"
+msgstr "Aquest article es va publicar el"
+
+#: ../attachment.php:36
+#: ../single.php:31
+msgid "on"
+msgstr "el"
+
+#: ../attachment.php:36
+#: ../comments.php:39
+#: ../single.php:31
+msgid "at"
+msgstr "a les"
+
+#: ../attachment.php:38
+#: ../single.php:34
+msgid "and is filed under"
+msgstr "i s'ha arxivat com a"
+
+#: ../attachment.php:39
+#: ../single.php:35
+msgid "You can follow any responses to this entry through the"
+msgstr "Podeu seguir qualsevol resposta a aquesta entrada a través de"
+
+#: ../attachment.php:39
+msgid "feed"
+msgstr "canal"
+
+#: ../attachment.php:43
+#: ../single.php:39
+msgid "You can"
+msgstr "Podeu"
+
+#: ../attachment.php:43
+#: ../single.php:39
+msgid "leave a response"
+msgstr "deixar una respota"
+
+#: ../attachment.php:43
+#: ../single.php:39
+msgid "or"
+msgstr "o"
+
+#: ../attachment.php:43
+#: ../attachment.php:47
+#: ../single.php:39
+#: ../single.php:43
+msgid "trackback"
+msgstr "afegir un retroenllaç"
+
+#: ../attachment.php:43
+#: ../attachment.php:47
+#: ../single.php:39
+#: ../single.php:43
+msgid "from your own site."
+msgstr "des del vostre lloc web"
+
+#: ../attachment.php:47
+#: ../single.php:43
+msgid "Responses are currently closed, but you can"
+msgstr "Les respostes estan deshabilitades, però podeu"
+
+#: ../attachment.php:51
+#: ../single.php:47
+msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+msgstr "Podeu anar al final i deixar una resposta. Fer pings no està permès."
+
+#: ../attachment.php:55
+#: ../single.php:51
+msgid "Both comments and pings are currently closed."
+msgstr "Ambdós, comentaris i pings estan tancats."
+
+#: ../attachment.php:57
+#: ../page.php:15
+#: ../single.php:53
+msgid "Edit this entry."
+msgstr "Edita aquesta entrada"
+
+#: ../attachment.php:69
+msgid "Sorry, no attachments matched your criteria."
+msgstr "No s'han trobat adjunts que responguin al vostre criteri."
+
+#: ../comments-popup.php:9
+msgid "Comments on"
+msgstr "Comentaris a"
+
+#: ../comments-popup.php:24
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on this post."
+msgstr "Canal <abbr title=\"en anglès, Really Simple Syndication\">RSS</abbr> pels comentaris a aquest article."
+
+#: ../comments-popup.php:27
+msgid "The <abbr title=\"Universal Resource Locator\">URL</abbr> to TrackBack this entry is:"
+msgstr "L'<abbr title=\"en anglès, Universal Resource Locator\">URL</abbr> pels retroenllaços a aquest article és:"
+
+#: ../comments-popup.php:45
+msgid "Comment"
+msgstr "Comentari"
+
+#: ../comments-popup.php:45
+msgid "Trackback"
+msgstr "Retroenllaç"
+
+#: ../comments-popup.php:45
+msgid "Pingback"
+msgstr "Retroping"
+
+#: ../comments-popup.php:45
+msgid "by"
+msgstr "per"
+
+#: ../comments-popup.php:51
+msgid "No comments yet."
+msgstr "Encara no hi ha comentaris."
+
+#: ../comments-popup.php:55
+msgid "Leave a comment"
+msgstr "Deixa un comentari"
+
+#: ../comments-popup.php:56
+msgid "Line and paragraph breaks automatic, e-mail address never displayed, <acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed:"
+msgstr "El salt de línia i paràgraf són automàtics, l'adreça de correu electrònic no es mostrarà mai, l'<acronym title=\"en anglès, Hypertext Markup Language\">HTML</acronym> és permès:"
+
+#: ../comments-popup.php:60
+#: ../comments.php:80
+msgid "Logged in as"
+msgstr "Identificat com a"
+
+#: ../comments-popup.php:60
+#: ../comments.php:80
+msgid "Log out of this account"
+msgstr "Surt d'aquest compte"
+
+#: ../comments-popup.php:60
+#: ../comments.php:80
+msgid "Logout"
+msgstr "Surt"
+
+#: ../comments-popup.php:64
+#: ../comments.php:85
+msgid "Name"
+msgstr "Nom"
+
+#: ../comments-popup.php:71
+msgid "E-mail"
+msgstr "Correu electrònic"
+
+#: ../comments-popup.php:81
+msgid "Your Comment"
+msgstr "El vostre comentari"
+
+#: ../comments-popup.php:87
+msgid "Say It!"
+msgstr "Digues-ho!"
+
+#: ../comments-popup.php:92
+msgid "Sorry, the comment form is closed at this time."
+msgstr "El formulari de comentaris està tancat ara mateix."
+
+#: ../comments-popup.php:97
+msgid "Close this window."
+msgstr "Tanca aquesta finestra."
+
+#: ../comments.php:3
+msgid "Please do not load this page directly. Thanks!"
+msgstr "No carregueu aquesta pàgina directament."
+
+#: ../comments.php:9
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Aquest article està protegit per contrasenya. Inseriu la contrasenya per veure els comentaris."
+
+#: ../comments.php:23
+msgid "No Responses"
+msgstr "Cap resposta"
+
+#: ../comments.php:23
+msgid "One Response"
+msgstr "Una resposta"
+
+#: ../comments.php:23
+msgid "% Responses"
+msgstr "% Respostes"
+
+#: ../comments.php:23
+msgid "to"
+msgstr "a"
+
+#: ../comments.php:30
+msgid "Says:"
+msgstr "Diu:"
+
+#: ../comments.php:32
+msgid "Your comment is awaiting moderation."
+msgstr "El vostre comentari està en espera de moderació."
+
+#: ../comments.php:39
+msgid "edit"
+msgstr "edita"
+
+#: ../comments.php:62
+msgid "Comments are closed."
+msgstr "Els comentaris estan tancats."
+
+#: ../comments.php:70
+msgid "Leave a Reply"
+msgstr "Deixa una resposta"
+
+#: ../comments.php:73
+msgid "You must be"
+msgstr "Heu"
+
+#: ../comments.php:73
+msgid "logged in"
+msgstr "d'identificar-vos"
+
+#: ../comments.php:73
+msgid "to post a comment."
+msgstr "per publicar un comentari."
+
+#: ../comments.php:88
+msgid "Mail"
+msgstr "Correu electrònic"
+
+#: ../comments.php:88
+msgid "will not be published"
+msgstr "no serà publicat"
+
+#: ../comments.php:91
+msgid "Website"
+msgstr "Lloc web"
+
+#: ../comments.php:95
+msgid "XHTML:"
+msgstr "XHTML:"
+
+#: ../comments.php:95
+msgid "You can use these tags:"
+msgstr "Podeu utilitzar aquestes etiquetes:"
+
+#: ../comments.php:99
+msgid "Submit Comment"
+msgstr "Envia el comentari"
+
+#: ../footer.php:8
+msgid "Entries (RSS)"
+msgstr "Entrades (RSS)"
+
+#: ../footer.php:9
+msgid "Comments (RSS)"
+msgstr "Comentaris (RSS)"
+
+#: ../functions.php:21
+#: ../sidebar.php:43
+msgid "Pages"
+msgstr "Pàgines"
+
+#: ../index.php:40
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr "Esteu buscant alguna cosa que no està aquí."
+
+#: ../page.php:9
+msgid "Read the rest of this page"
+msgstr "Llegeix la resta d'aquesta pàgina &raquo;"
+
+#: ../search.php:7
+msgid "Search Results"
+msgstr "Resultats de cerca"
+
+#: ../search.php:42
+msgid "No posts found. Try a different search?"
+msgstr "No s'han trobat articles. Proveu una cerca diferent?"
+
+#: ../searchform.php:3
+msgid "Search"
+msgstr "Cerca"
+
+#: ../sidebar.php:22
+msgid "You are currently browsing the archives for the"
+msgstr "Esteu navegant pels arxius del"
+
+#: ../sidebar.php:22
+msgid "category."
+msgstr "categoria."
+
+#: ../sidebar.php:25
+#: ../sidebar.php:28
+#: ../sidebar.php:31
+#: ../sidebar.php:37
+msgid "You are currently browsing the"
+msgstr "Esteu navegant el"
+
+#: ../sidebar.php:25
+msgid "weblog archives for the day"
+msgstr "arxius del bloc del dia"
+
+#: ../sidebar.php:28
+#: ../sidebar.php:34
+msgid "weblog archives for"
+msgstr "arxius del bloc per"
+
+#: ../sidebar.php:31
+msgid "weblog archives for the year"
+msgstr "arxius del bloc de l'any"
+
+#: ../sidebar.php:34
+msgid "You have searched the"
+msgstr "Heu cercat el "
+
+#: ../sidebar.php:34
+msgid "If you are unable to find anything in these search results, you can try one of these links."
+msgstr "Si no sou capaços de cercar res en aquests resultats de cerca, podeu provar algun d'aquests enllaços."
+
+#: ../sidebar.php:37
+msgid "weblog archives."
+msgstr "arxius del bloc."
+
+#: ../sidebar.php:45
+msgid "Archives"
+msgstr "Arxius"
+
+#: ../sidebar.php:56
+msgid "Meta"
+msgstr "Meta"
+
+#: ../sidebar.php:60
+msgid "This page validates as XHTML 1.0 Transitional"
+msgstr "Aquesta pàgina valida XHTML 1.0 Transitional"
+
+#: ../sidebar.php:64
+msgid "Create a new blog"
+msgstr "Crea un bloc nou"
+
+#: ../sidebar.php:64
+msgid "New Blog"
+msgstr "Arxiu del bloc"
+
+#: ../single.php:13
+msgid "Permanent Link"
+msgstr "Enllaç permanent"
+
+#: ../single.php:35
+msgid "feed."
+msgstr "canal."
+
+#: ../single.php:66
+msgid "Sorry, no posts matched your criteria."
+msgstr "No s'han trobat articles que responguin al vostre criteri."
+

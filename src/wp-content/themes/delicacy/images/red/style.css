@@ -1,0 +1,19 @@
+/* Red Color Scheme CSS */
+
+a {color: #C22420;}
+a:hover {color: #a51e1b;} /*#f04253*/
+
+#navigation {background: #C22420;}
+
+#navigation:before, #navigation:after {
+    border: 1.5em solid #a51e1b;
+}
+#navigation .main-menu:before, #navigation .main-menu:after {
+    border-color: #7d0e0a transparent transparent transparent;
+}
+#logo p {color: #C22420;}
+
+.nivo-controlNav a.active {
+    background: #a51e1b;
+    color: #a51e1b;
+}

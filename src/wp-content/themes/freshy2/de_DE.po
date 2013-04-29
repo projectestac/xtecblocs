@@ -1,0 +1,202 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Freshy Theme for WordPress\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2006-08-01 15:08+0100\n"
+"Last-Translator: Uwe Dauernheim <uwe@dauernheim.net>\n"
+"Language-Team: Julien De Luca <contact@jide.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: sidebar.php
+msgid "Search"
+msgstr "Suche"
+
+#: sidebar.php
+msgid "Archive"
+msgstr "Archiv"
+
+#: sidebar.php
+msgid "Categories"
+msgstr "Kategorien"
+
+#: sidebar.php
+msgid "Links"
+msgstr "Links"
+
+#: sidebar.php
+msgid "Recent posts"
+msgstr "Aktuelle Beitr&auml;"
+
+#: sidebar.php
+msgid "Recent comments"
+msgstr "Aktuelle Kommentare"
+
+#: header.php
+msgid "Home"
+msgstr "Home"
+
+#: sidebar.php
+msgid "Random image"
+msgstr "Zuf&auml;lliges Bild"
+
+#: index.php
+msgid "Comments"
+msgstr "Kommentare"
+
+#: index.php
+msgid "No Comments &#187;"
+msgstr "Keine Kommentare &#187;"
+
+#: index.php
+msgid "1 Comment &#187;"
+msgstr "1 Kommentar &#187;"
+
+#: index.php
+msgid "% Comments &#187;"
+msgstr "% Kommentare &#187;"
+
+#: index.php
+msgid "Sorry, but you are looking for something that is not here"
+msgstr "Verzeihung, aber Du suchst nach etwas, was nicht existiert"
+
+#: index.php
+msgid "Not found"
+msgstr "Nicht gefunden"
+
+#: index.php
+msgid "Error 404"
+msgstr "Fehler 404"
+
+#: index.php
+msgid "Last works"
+msgstr "Aktuelle Arbeiten"
+
+#: index.php
+msgid "Last news"
+msgstr "Aktuelle Nachrichten"
+
+#: single.php
+msgid "Author"
+msgstr "Autor"
+
+#: single.php
+msgid "Informations"
+msgstr "Informationen"
+
+#: single.php
+msgid "Actions"
+msgstr "Aktionen"
+
+#: single.php
+msgid "Date"
+msgstr "Datum"
+
+#: single.php
+msgid "Comments rss"
+msgstr "RSS Kommentare"
+
+#: single.php
+msgid "Trackback"
+msgstr "Trackback"
+
+#: comments.php
+msgid "Leave a comment"
+msgstr "Schreib einen Kommentar"
+
+#: comments.php
+msgid "Logout"
+msgstr "Abmelden"
+
+#: comments.php
+msgid "Logged in as"
+msgstr "Angemeldet als"
+
+#: comments.php
+msgid "You must be"
+msgstr "Du musst"
+
+#: comments.php
+msgid "logged in"
+msgstr "angemeldet sein"
+
+#: comments.php
+msgid "to post a comment"
+msgstr "um einen Beitrag zu kommentieren"
+
+#: comments.php
+msgid "Your comment is awaiting moderation"
+msgstr "Dein Kommentar wurd von einem Moderator gepr&uuml;ft"
+
+#: comments.php
+msgid "This post is password protected. Enter the password to view comments"
+msgstr "Dieser Beitrag ist Kennwortgesch&uuml;tzt. Gib das Kennwort ein um den Beitrag zu lesen"
+
+#: comments.php
+msgid "Mail"
+msgstr "E-Mail"
+
+#: comments.php
+msgid "Name"
+msgstr "Name"
+
+#: comments.php
+msgid "Website"
+msgstr "Webseite"
+
+#: comments.php
+msgid "(required)"
+msgstr "(erforderlich)"
+
+#: comments.php
+msgid "(will not be published)"
+msgstr "(wird nicht ver&ouml;ffentlicht)"
+
+#: comments.php
+msgid "No responses"
+msgstr "Keine Antwort"
+
+#: comments.php
+msgid "One response"
+msgstr "1 Antwort"
+
+#: comments.php
+msgid "% responses"
+msgstr "% Antworten"
+
+#: comments.php
+msgid "to"
+msgstr "zu"
+
+#: comments.php
+msgid "Last modified"
+msgstr "Zuletzt ge&auml;ndert am"
+
+#: comments.php
+msgid "You can use these tags"
+msgstr "Du kannst diese Tags verwenden"
+
+#: comments.php
+msgid "Submit comment"
+msgstr "Kommentar abschicken"
+
+#: comments.php
+msgid "Submit"
+msgstr "Abschicken"
+
+#: index.php
+msgid "Rss feeds from"
+msgstr "RSS Feeds von"
+
+#: index.php
+msgid "Read the rest of this entry &raquo;"
+msgstr "Lesen &raquo;"
+
+#: footer.php
+msgid "comments"
+msgstr "Kommentare"
+

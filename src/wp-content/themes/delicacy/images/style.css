@@ -1,0 +1,24 @@
+/* CSS Document */
+/* color  */ /* #3170c9 */
+
+a {color: #C83746;}
+a: hover {color: #f04253;}
+
+nav, nav ul ul, .postformat, .page-header, .widget-title {
+	background: #3170c9 url(line.png) top left repeat-x;
+}
+.left-corner, .right-corner {
+	background: transparent url(corners.png);
+}
+
+.entry-title a:hover, #copy a:hover, .date-i a:hover, .comment-i a:hover, .author-i a:hover, #recentcomments li:hover  {
+	border-bottom:  1px dashed #3170c9;
+}
+.widget ul li a:hover {
+	border-bottom:  1px dashed #3170c9;
+	color: #3170c9;
+	}
+#wp-calendar a, #wp-calendar #prev a:hover, #wp-calendar #next a:hover {
+	background: #3170c9 url(line.png) bottom left repeat-x;
+	}
+.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {color: #3170c9;}

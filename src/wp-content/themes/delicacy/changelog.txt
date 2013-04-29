@@ -1,0 +1,8 @@
+06.03.2012 - version 1.2.4
+
+* Updated meta-box script
+* Various minor tweaks, to make Delicacy compatibile with current WP Theme Review requirements
+
+03.02.2012 - version 1.2.2
+
+* Everything is brand new.

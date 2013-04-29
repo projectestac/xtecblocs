@@ -1,0 +1,188 @@
+/* =Reset
+-------------------------------------------------------------- */
+
+caption, th, td {
+	text-align: right;
+}
+
+/* =Global
+----------------------------------------------- */
+
+/* Text elements */
+
+ul, ol {
+	margin: 0 3em 1.6em 0;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+	margin-right: 1.6em;
+	margin-left: auto;
+}
+
+blockquote {
+	border-right: 5px solid #f5f5f5;
+	padding: 0 1.6em 0 0;
+	border-left: none;
+}
+
+textarea {
+	padding-right: 3px;
+	padding-left: 0;
+}
+
+/* Alignment */
+.alignright {
+	float: right;
+	margin-left: 1.6em;
+	margin-right: auto;
+}
+
+.alignleft {
+	float: left;
+	margin-right: 1.6em;
+	margin-left: auto;
+}
+
+/* =Layout
+----------------------------------------------- */
+
+.sidebar-active #primary {
+	float: right;
+	margin: 0 0 0 -25%;
+}
+
+.sidebar-active #content {
+	margin: 0 0 0 35%;
+}
+
+#secondary {
+	float: left;
+}
+
+/* =Menu
+----------------------------------------------- */
+
+.main-navigation {
+	float: right;
+}
+
+.main-navigation ul {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.main-navigation ul ul {
+	float: right;
+	right: 0;
+	left: auto;
+}
+
+.main-navigation ul ul ul {
+	right: 100%;
+	left: auto;
+}
+
+.main-navigation ul ul a {
+	text-align: right;
+}
+
+/* =Navigation
+----------------------------------------------- */
+
+.site-content .nav-previous {
+	float: right;
+}
+
+.site-content .nav-next,
+.next-image {
+	float: left;
+	text-align: left;
+}
+
+/* =Comments
+----------------------------------------------- */
+
+#commentform .required {
+	margin-right: -5px;
+	margin-left: auto;
+}
+
+ul.commentlist > li.comment > ul.children,
+ol.commentlist > li.comment > ul.children {
+	padding-right: 100px;
+	padding-left: 0;
+}
+
+ul.children .comment-author {
+	border-left: 0 none;
+	clear: right;
+	border-right: none;
+}
+
+ul.children .comment-content,
+ul.children .comment-content .comment-meta,
+ul.children .reply {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.avatar {
+	float: right;
+	margin-left: 10px;
+	margin-right: auto;
+}
+
+.comment-content,
+.comment-content .comment-meta,
+.reply {
+	padding-right: 220px;
+	padding-left: 0;
+}
+
+.comment-author {
+	float: right;
+	margin-left: 20px;
+	margin-right: auto;
+}
+
+.comment-author cite.fn {
+	float: right;
+}
+
+.comment-form-comment label {
+	float: right;
+}
+
+#reply-title small {
+	float: left;
+}
+
+/* =Widgets
+----------------------------------------------- */
+
+.widget-right,
+.widget-middle,
+.widget-left {
+	float: right;
+	margin-left: 5%;
+	margin-right: auto;
+}
+
+.widget-left {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+@media only screen and ( max-width: 800px ) {
+	.comment-content,
+	.comment-content .comment-meta,
+	.reply {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	ul.commentlist > li.comment > ul.children,
+		ol.commentlist > li.comment > ul.children {
+		padding-right: 50px;
+		padding-left: 0;
+	}
+}

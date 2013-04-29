@@ -1,0 +1,277 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Mystique 2.5 (Standard)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-14 18:50+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: xs\n"
+"Language-Team: digitalnature.eu <hello@digitalnature.eu>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: c:\\wamp\\www\\wpmu\\wp-content\\themes\\mystique-lite\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPath-2: ..\n"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/404.php:15
+msgid "The requested page was not found."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/archive.php:25
+#, php-format
+msgid "Posts tagged %s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/archive.php:28
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/archive.php:31
+#, php-format
+msgid "Archive for %s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/archive.php:34
+#, php-format
+msgid "Archive for year %s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/archive.php:37
+msgid "Blog Archives"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/archive.php:52
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/author.php:61
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/home.php:23
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/search.php:35
+msgid "&laquo; Previous"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/archive.php:53
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/author.php:62
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/home.php:24
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/search.php:36
+msgid "Next &raquo;"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/archive.php:60
+#, php-format
+msgid "Oops, there aren't any posts in the %s category yet :("
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/archive.php:62
+msgid "There aren't any posts within this date :("
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/archive.php:64
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/home.php:29
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/page.php:56
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/single.php:95
+msgid "Oops, nothing here :("
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/author.php:26
+msgid "This user hasn't shared any profile information"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/author.php:30
+msgid "Home page:"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/author.php:50
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/single.php:64
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/teaser.php:30
+#, php-format
+msgid "Posts by %s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/author.php:67
+#, php-format
+msgid "%s's RSS Feed"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/author.php:70
+#, php-format
+msgid "%s has't written any posts yet"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/comment.php:16
+#, php-format
+msgid "%1$s %2$s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/comment.php:28
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/comment.php:28
+msgid "This comment is awaiting moderation."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/comment.php:42
+msgid "Reply <span>&darr;</span>"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/comments.php:4
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/comments.php:10
+#, php-format
+msgid "One comment"
+msgid_plural "%s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/comments.php:19
+msgid "&laquo; Older Comments"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/comments.php:20
+msgid "Newer Comments &raquo;"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/comments.php:25
+msgid "Comments are closed."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/footer.php:28
+#, php-format
+msgid "Powered by %1$s and %2$s theme by %3$s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/footer.php:32
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/footer.php:52
+#, php-format
+msgid "%1$s queries in %2$s seconds"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/footer.php:44
+msgid "Go to Top"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/functions.php:33
+#, php-format
+msgid "You are using the light version of Mystique. Starting from version 3.0, Mystique has been ported to a powerful framework that incorporates the extended functionality and customization options from the old versions and more. If you need them download and install %1$s from it's %2$s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/functions.php:35
+msgid "official website"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/functions.php:40
+msgid "Close and don't show this again"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/functions.php:89
+msgid "Primary Sidebar"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/functions.php:122
+msgid "Top Navigation"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/functions.php:123
+msgid "Primary Navigation"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/functions.php:124
+msgid "Footer Navigation"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/functions.php:332
+msgid "Home Page"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/functions.php:332
+msgid "Home"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/page.php:33
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/single.php:38
+msgid "Pages &raquo;"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/search.php:17
+#, php-format
+msgid "Search results for %1$s (%2$s)"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/search.php:41
+msgid "Nothing found :("
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/search.php:42
+msgid "Try a different search..."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/searchform.php:6
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/searchform.php:8
+msgid "Search Website"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/searchform.php:8
+msgid "Search"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/sidebar.php:17
+msgid "Archives"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/sidebar.php:29
+msgid "Meta"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/single.php:64
+#, php-format
+msgid "This entry was posted by %1$s on %2$s at %3$s, and is filed under %4$s. Follow any responses to this post through %5$s."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/single.php:69
+#, php-format
+msgid "You can <a%1$s>leave a response</a> or <a%2$s>trackback</a> from your own site."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/single.php:71
+#, php-format
+msgid "Responses are currently closed, but you can <a%1$s>trackback</a> from your own site."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/single.php:73
+msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/single.php:75
+msgid "Both comments and pings are currently closed."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/single.php:84
+msgid "Edit"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/teaser.php:12
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/teaser.php:26
+#, php-format
+msgid "by %s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique-lite/teaser.php:36
+#, php-format
+msgid "in %s"
+msgstr ""
+
+#: ../functions.php:33
+#, php-format
+msgid "You are using the standard version of Mystique. Starting from version 3.0, Mystique has been also ported to a powerful framework that incorporates extended functionality and advanced customization options. Download and install %1$s from the %2$s, <strong>only if you need its features</strong>!"
+msgstr ""
+
+#: ../functions.php:40
+msgid "Close and don't show this message again"
+msgstr ""
+

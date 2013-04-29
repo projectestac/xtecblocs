@@ -1,0 +1,202 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Freshy Theme for WordPress\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-03-18 22:48+0100\n"
+"Last-Translator: Luca Bernardi <lukino.berna@gmail.com>\n"
+"Language-Team: Julien De Luca <contact@jide.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: sidebar.php
+msgid "Navigation"
+msgstr "Menu"
+
+#: sidebar.php
+msgid "Search"
+msgstr "Ricerca"
+
+#: sidebar.php
+msgid "Archive"
+msgstr "Archivio"
+
+#: sidebar.php
+msgid "Categories"
+msgstr "Categorie"
+
+#: sidebar.php
+msgid "Links"
+msgstr "Collegamenti"
+
+#: sidebar.php
+msgid "Recent posts"
+msgstr "Ultimi Post"
+
+#: sidebar.php
+msgid "Recent comments"
+msgstr "Commenti Recenti"
+
+#: header.php
+msgid "Home"
+msgstr "Inizio"
+
+#: sidebar.php
+msgid "Random image"
+msgstr "Immagine Casuale"
+
+#: index.php
+msgid "No Comments &#187;"
+msgstr "Nessun Commento &#187;"
+
+#: index.php
+msgid "1 Comment &#187;"
+msgstr "1 Commento &#187;"
+
+#: index.php
+msgid "% Comments &#187;"
+msgstr "% Commenti &#187;"
+
+#: index.php
+msgid "Sorry, but you are looking for something that is not here"
+msgstr "Spiacente, stai cercando qualcosa che non si trova qui"
+
+#: index.php
+msgid "Not found"
+msgstr "Non trovato"
+
+#: index.php
+msgid "Error 404"
+msgstr "Errore 404"
+
+#: index.php
+msgid "Last works"
+msgstr "Ultimi lavori"
+
+#: index.php
+msgid "Last news"
+msgstr "Ultime notizie"
+
+#: single.php
+msgid "Author"
+msgstr "Autore"
+
+#: single.php
+msgid "Informations"
+msgstr "Informazioni"
+
+#: single.php
+msgid "Actions"
+msgstr "Azioni"
+
+#: single.php
+msgid "Date"
+msgstr "Data"
+
+#: single.php
+msgid "Comments rss"
+msgstr "Commenti RSS "
+
+#: single.php
+msgid "Trackback"
+msgstr "Trackback"
+
+#: comments.php
+msgid "Leave a comment"
+msgstr "Lascia un commento"
+
+#: comments.php
+msgid "Logout"
+msgstr "Scollegati"
+
+#: comments.php
+msgid "Logged in as"
+msgstr "Loggato come"
+
+#: comments.php
+msgid "You must be"
+msgstr "Devi essere"
+
+#: comments.php
+msgid "logged in"
+msgstr "Loggato"
+
+#: comments.php
+msgid "to post a comment"
+msgstr "Per postare un commento"
+
+#: comments.php
+msgid "Your comment is awaiting moderation"
+msgstr "Il tuo commento è in attesa di essere moderato"
+
+#: comments.php
+msgid "This post is password protected. Enter the password to view comments"
+msgstr "Questo post è protetto da password. Inserisci la password per visualizzare i commenti"
+
+#: comments.php
+msgid "Mail"
+msgstr "E-mail"
+
+#: comments.php
+msgid "Name"
+msgstr "Nome"
+
+#: comments.php
+msgid "Website"
+msgstr "Sito web"
+
+#: comments.php
+msgid "(required)"
+msgstr "(richiesto)"
+
+#: comments.php
+msgid "(will not be published)"
+msgstr "(non sarà pubblicato)"
+
+#: comments.php
+msgid "No responses"
+msgstr "senza risposta"
+
+#: comments.php
+msgid "One response"
+msgstr "Una risposta"
+
+#: comments.php
+msgid "% responses"
+msgstr "% risposte"
+
+#: comments.php
+msgid "to"
+msgstr "a"
+
+#: comments.php
+msgid "Last modified"
+msgstr "Ultima modifica"
+
+#: comments.php
+msgid "You can use these tags"
+msgstr "Puoi usare questi tag"
+
+#: comments.php
+msgid "Submit comment"
+msgstr "Invia un commento"
+
+#: comments.php
+msgid "Submit"
+msgstr "Invia"
+
+#: index.php
+msgid "Rss feeds from"
+msgstr "Rss feed da"
+
+#: index.php
+msgid "Read the rest of this entry &raquo;"
+msgstr "Leggi il resto dell'articolo &raquo;"
+
+#: footer.php
+msgid "comments"
+msgstr "commenti"
+

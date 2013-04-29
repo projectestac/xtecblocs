@@ -1,0 +1,19 @@
+/* Violet Color Scheme CSS */
+
+a {color: #ba89b6;}
+a:hover {color: #986794;} /*#f04253*/
+
+#navigation {background: #ba89b6;}
+
+#navigation:before, #navigation:after {
+    border: 1.5em solid #986794;
+}
+#navigation .main-menu:before, #navigation .main-menu:after {
+    border-color: #804f7c transparent transparent transparent;
+}
+#logo p {color: #ba89b6;}
+
+.nivo-controlNav a.active {
+    background: #986794;
+    color: #986794;
+}
