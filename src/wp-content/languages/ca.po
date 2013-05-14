@@ -2,13 +2,16 @@
 # This file is distributed under the same license as the 3.5.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2013-01-25 04:28:03+0000\n"
+"PO-Revision-Date: 2013-05-13 14:42+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/0.1\n"
 "Project-Id-Version: 3.5.x\n"
+"POT-Creation-Date: \n"
+"Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
+"Language-Team: \n"
 
 #: wp-login.php:492
 msgid "New password"
@@ -28,17 +31,21 @@ msgstr "Formulari de registre"
 
 #: wp-login.php:544
 msgid "Register For This Site"
-msgstr "Registra'm en aquest lloc"
+msgstr "Registra'm en aquest bloc"
 
 #: wp-login.php:557
 msgid "A password will be e-mailed to you."
 msgstr "Rebreu una contrasenya per correu electrònic."
 
-#: wp-login.php:565 wp-login.php:710 wp-login.php:712
+#: wp-login.php:565
+#: wp-login.php:710
+#: wp-login.php:712
 msgid "Password Lost and Found"
 msgstr "Recuperació de la contrasenya perduda"
 
-#: wp-login.php:565 wp-login.php:710 wp-login.php:712
+#: wp-login.php:565
+#: wp-login.php:710
+#: wp-login.php:712
 msgid "Lost your password?"
 msgstr "Heu perdut la contrasenya?"
 
@@ -100,7 +107,7 @@ msgstr "<strong>Autor:</strong> %s"
 
 #: wp-mail.php:218
 msgid "<strong>Posted title:</strong> %s"
-msgstr "<strong>Títol de l'entrada:</strong> %s"
+msgstr "<strong>Títol de l'article:</strong> %s"
 
 #: wp-mail.php:221
 msgid "Oops: %s"
@@ -112,15 +119,15 @@ msgstr "Missió aconseguida. S'ha esborrat el missatge <strong>%s</strong>."
 
 #: wp-signup.php:65
 msgid "Site Name:"
-msgstr "Nom del lloc web:"
+msgstr "Nom del bloc:"
 
 #: wp-signup.php:67
 msgid "Site Domain:"
-msgstr "Domini del lloc web:"
+msgstr "Domini del bloc:"
 
 #: wp-signup.php:80
 msgid "sitename"
-msgstr "nom del lloc"
+msgstr "nom del bloc"
 
 #: wp-signup.php:82
 msgid "domain"
@@ -136,7 +143,7 @@ msgstr "Ha de ser d'almenys 4 caràcters, lletres i números solament. No es pot
 
 #: wp-signup.php:88
 msgid "Site Title:"
-msgstr "Títol del lloc web:"
+msgstr "Títol del bloc:"
 
 #: wp-signup.php:97
 msgid "Privacy:"
@@ -144,7 +151,7 @@ msgstr "Privadesa:"
 
 #: wp-signup.php:98
 msgid "Allow search engines to index this site."
-msgstr "Permet als cercadors indexar aquest lloc."
+msgstr "Permet als cercadors indexar aquest bloc."
 
 #: wp-signup.php:102
 msgid "Yes"
@@ -168,7 +175,7 @@ msgstr "Us enviem el correu electrònic de registre a aquesta adreça. (Comprove
 
 #: wp-signup.php:163
 msgid "Get <em>another</em> %s site in seconds"
-msgstr "Obté <em>altre</em> lloc web %s en segons"
+msgstr "Obté <em>altre</em> bloc %s en segons"
 
 #: wp-signup.php:166
 msgid "There was a problem, please correct the form below and try again."
@@ -176,11 +183,11 @@ msgstr "Ha hagut un problema, corregiu el formulari d'aquí sota i proveu de nou
 
 #: wp-signup.php:169
 msgid "Welcome back, %s. By filling out the form below, you can <strong>add another site to your account</strong>. There is no limit to the number of sites you can have, so create to your heart&#8217;s content, but write responsibly!"
-msgstr "Benvinguts de nou, %s. En emplenar el formulari d'aquí sota, podeu <strong>afegir un altre lloc web al vostre compte</strong>. No hi ha límit al nombre de llocs web que podeu tenir, així que creeu el que senti el vostre cor, però escriviu amb responsabilitat."
+msgstr "Benvinguts de nou, %s. En emplenar el formulari d'aquí sota, podeu <strong>afegir un altre bloc al vostre compte</strong>. No hi ha límit al nombre de blocs que podeu tenir, així que creeu el que senti el vostre cor, però escriviu amb responsabilitat."
 
 #: wp-signup.php:175
 msgid "Sites you are already a member of:"
-msgstr "Llocs dels quals ja sou membres:"
+msgstr "Blocs dels quals ja sou membres:"
 
 #: wp-signup.php:184
 msgid "If you&#8217;re not going to use a great site domain, leave it for a new user. Now have at it!"
@@ -188,15 +195,15 @@ msgstr "Si no aneu a fer servir el domini d'un gran lloc, deseu-lo per a un altr
 
 #: wp-signup.php:189
 msgid "Create Site"
-msgstr "Crea un lloc web"
+msgstr "Crea un blog"
 
 #: wp-signup.php:219
 msgid "The site %s is yours."
-msgstr "El lloc web %s és vostre."
+msgstr "El bloc %s és vostre."
 
 #: wp-signup.php:221
 msgid "<a href=\"http://%1$s\">http://%2$s</a> is your new site. <a href=\"%3$s\">Log in</a> as &#8220;%4$s&#8221; using your existing password."
-msgstr "<a href=\"http://%1$s\">http://%2$s</a> és el vostre nou lloc web.  <a href=\"%3$s\">Entreu</a> com a &#8220;%4$s&#8221; fent servir la vostra contrasenya."
+msgstr "<a href=\"http://%1$s\">http://%2$s</a> és el vostre nou bloc.  <a href=\"%3$s\">Entreu</a> com a &#8220;%4$s&#8221; fent servir la vostra contrasenya."
 
 #: wp-signup.php:243
 msgid "Get your own %s account in seconds"
@@ -204,7 +211,7 @@ msgstr "Obteniu el vostre compte %s en segons"
 
 #: wp-signup.php:256
 msgid "Gimme a site!"
-msgstr "Dòna'm un lloc web!"
+msgstr "Dòna'm un bloc!"
 
 #: wp-signup.php:259
 msgid "Just a username, please."
@@ -222,7 +229,8 @@ msgstr "El nou nom d'usuari és %s"
 msgid "But, before you can start using your new username, <strong>you must activate it</strong>."
 msgstr "Però, abans de començar a fer servir el vostre nom d'usuari, <strong>haureu d'activar-lo</strong>."
 
-#: wp-signup.php:292 wp-signup.php:356
+#: wp-signup.php:292
+#: wp-signup.php:356
 msgid "Check your inbox at <strong>%s</strong> and click the link given."
 msgstr "Comproveu la safata d'entrada a <strong>%1$s</strong> i cliqueu en l'enllaç que hi trobareu."
 
@@ -236,15 +244,15 @@ msgstr "Registre"
 
 #: wp-signup.php:353
 msgid "Congratulations! Your new site, %s, is almost ready."
-msgstr "Felicitacions! El vostre nou lloc web, %s, ja quasi està llest."
+msgstr "Felicitacions! El vostre nou bloc, %s, ja quasi està llest."
 
 #: wp-signup.php:355
 msgid "But, before you can start using your site, <strong>you must activate it</strong>."
-msgstr "Però, abans de començar a fer servir el vostre web, <strong>heu d'activar-lo</strong>."
+msgstr "Però, abans de començar a fer servir el vostre bloc, <strong>heu d'activar-lo</strong>."
 
 #: wp-signup.php:357
 msgid "If you do not activate your site within two days, you will have to sign up again."
-msgstr "Si no activeu el vostre lloc web en dos dies, haureu de registrar-vos altra vegada."
+msgstr "Si no activeu el vostre bloc en dos dies, haureu de registrar-vos altra vegada."
 
 #: wp-signup.php:358
 msgid "Still waiting for your email?"
@@ -288,7 +296,7 @@ msgstr "usuari"
 
 #: wp-signup.php:385
 msgid "Greetings Site Administrator! You are currently allowing &#8220;%s&#8221; registrations. To change or disable registration go to your <a href=\"%s\">Options page</a>."
-msgstr "Felicitats administrador del lloc web! Actualment esteu permetent &#8220;%s&#8221; registres. Per a canviar o desactivar el registre, aneu a la <a href=\"%s\">pàgina d'opcions</a>."
+msgstr "Felicitats administrador del bloc! Actualment esteu permetent &#8220;%s&#8221; registres. Per a canviar o desactivar el registre, aneu a la <a href=\"%s\">pàgina d'opcions</a>."
 
 #: wp-signup.php:391
 msgid "Registration has been disabled."
@@ -296,7 +304,7 @@ msgstr "El registre s'ha desactivat."
 
 #: wp-signup.php:394
 msgid "You must first <a href=\"%s\">log in</a>, and then you can create a new site."
-msgstr "Primer, heu d'<a href=\"%s\">iniciar la sessió</a>, i després podeu crear un nou lloc web."
+msgstr "Primer, heu d'<a href=\"%s\">iniciar la sessió</a>, i després podeu crear un nou bloc."
 
 #: wp-signup.php:402
 msgid "User registration has been disabled."
@@ -304,7 +312,7 @@ msgstr "El registre d'usuaris s'ha desactivat."
 
 #: wp-signup.php:408
 msgid "Site registration has been disabled."
-msgstr "El registre de llocs web s'ha desactivat."
+msgstr "El registre de blocs s'ha desactivat."
 
 #: wp-signup.php:422
 msgid "Sorry, new registrations are not allowed at this time."
@@ -316,11 +324,11 @@ msgstr "Ja esteu identificats. No necessiteu registrar-vos de nou!"
 
 #: wp-signup.php:430
 msgid "<p><em>The site you were looking for, <strong>%s</strong> does not exist, but you can create it now!</em></p>"
-msgstr "<p><em>El lloc web que esteu cercant, <strong>%s</strong> no existeix, però podeu crear-lo ara!</em></p>"
+msgstr "<p><em>El bloc que esteu cercant, <strong>%s</strong> no existeix, però podeu crear-lo ara!</em></p>"
 
 #: wp-signup.php:432
 msgid "<p><em>The site you were looking for, <strong>%s</strong>, does not exist.</em></p>"
-msgstr "<p><em>El lloc web que esteu cercant, <strong>%s</strong>, no existeix.</em></p>"
+msgstr "<p><em>El bloc que esteu cercant, <strong>%s</strong>, no existeix.</em></p>"
 
 #: wp-includes/js/tinymce/langs/wp-langs.php:240
 msgid "Learn word"
@@ -621,7 +629,8 @@ msgid "Plugin"
 msgstr "Extensió"
 
 #: wp-includes/js/tinymce/langs/wp-langs.php:342
-#: wp-includes/post-template.php:1443 wp-includes/theme-compat/sidebar.php:21
+#: wp-includes/post-template.php:1443
+#: wp-includes/theme-compat/sidebar.php:21
 msgid "Author"
 msgstr "Autor"
 
@@ -1176,7 +1185,8 @@ msgstr "Més..."
 msgid "Next page..."
 msgstr "Pàgina següent..."
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:507 wp-includes/media.php:1500
+#: wp-includes/js/tinymce/langs/wp-langs.php:507
+#: wp-includes/media.php:1500
 msgid "Add Media"
 msgstr "Afegeix un mèdia"
 
@@ -1192,7 +1202,8 @@ msgstr "Afegeix vídeo"
 msgid "Add Audio"
 msgstr "Afegeix Àudio"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:511 wp-includes/media.php:1535
+#: wp-includes/js/tinymce/langs/wp-langs.php:511
+#: wp-includes/media.php:1535
 msgid "Edit Gallery"
 msgstr "Edita la galeria"
 
@@ -1223,17 +1234,20 @@ msgid "Size"
 msgstr "Mida"
 
 #: wp-includes/js/tinymce/langs/wp-langs.php:522
-#: wp-includes/media-template.php:319 wp-includes/media.php:1374
+#: wp-includes/media-template.php:319
+#: wp-includes/media.php:1374
 msgid "Thumbnail"
 msgstr "Miniatura"
 
 #: wp-includes/js/tinymce/langs/wp-langs.php:523
-#: wp-includes/media-template.php:320 wp-includes/media.php:1375
+#: wp-includes/media-template.php:320
+#: wp-includes/media.php:1375
 msgid "Medium"
 msgstr "Mitjana"
 
 #: wp-includes/js/tinymce/langs/wp-langs.php:524
-#: wp-includes/media-template.php:322 wp-includes/media.php:1377
+#: wp-includes/media-template.php:322
+#: wp-includes/media.php:1377
 msgid "Full Size"
 msgstr "Mida Original"
 
@@ -1313,7 +1327,8 @@ msgid "130%"
 msgstr "130%"
 
 #: wp-includes/js/tinymce/langs/wp-langs.php:548
-#: wp-includes/media-template.php:226 wp-includes/media-template.php:391
+#: wp-includes/media-template.php:226
+#: wp-includes/media-template.php:391
 msgid "Caption"
 msgstr "Llegenda"
 
@@ -1379,7 +1394,7 @@ msgstr "Hi ha un botó a la caixa d'eines d'edició per inserir imatges allotjad
 
 #: wp-includes/js/tinymce/wp-mce-help.php:182
 msgid "If you need to upload an image or another media file from your computer, you can use the Media Library button above the editor. The media library will attempt to create a thumbnail-sized copy from each uploaded image. To insert your image into the post, first click on the thumbnail to reveal a menu of options. When you have selected the options you like, click \"Insert into Post\" and your image or file will appear in the post you are editing."
-msgstr "Si necessiteu penjar una imatge o altre fitxer mèdia des del vostre ordinador, podeu utilitzar el botó de la mediateca que hi ha a la part superior de l'editor. La mediateca intentarà crear una còpia en miniatura de cada imatge que pengeu. Per inserir la imatge a l'entrada, primer feu clic a la miniatura perquè aparegui el menú d'opcions. Quan seleccioneu les opcions que us agradin, feu clic a \"Insereix a l'entrada\" i la imatge o fitxer apareixerà a l'entrada que esteu editant."
+msgstr "Si necessiteu penjar una imatge o altre fitxer mèdia des del vostre ordinador, podeu utilitzar el botó de la mediateca que hi ha a la part superior de l'editor. La mediateca intentarà crear una còpia en miniatura de cada imatge que pengeu. Per inserir la imatge a l'article, primer feu clic a la miniatura perquè aparegui el menú d'opcions. Quan seleccioneu les opcions que us agradin, feu clic a \"Insereix a l'article\" i la imatge o fitxer apareixerà a l'article que esteu editant."
 
 #: wp-includes/js/tinymce/wp-mce-help.php:183
 msgid "HTML in the Rich Editor"
@@ -1387,7 +1402,7 @@ msgstr "HTML en l'editor visual"
 
 #: wp-includes/js/tinymce/wp-mce-help.php:184
 msgid "Any HTML entered directly into the rich editor will show up as text when the post is viewed. What you see is what you get. When you want to include HTML elements that cannot be generated with the toolbar buttons, you must enter it by hand in the Text editor. Examples are tables and &lt;code&gt;. To do this, click the Text tab and edit the code, then switch back to Visual mode. If the code is valid and understood by the editor, you should see it rendered immediately."
-msgstr "Qualsevol codi HMTL introduït directament a l'editor de text enriquit es mostrarà com a text quan es visualitza l'entrada. El que vegeu és el que obteniu. Quan voleu incloure elements HTML que no s'han generat amb els botons de la barra d'eines, heu d'introduir-los a mà a l'editor de text. Exemples són les taules i &lt;code&gt;. Per fer això, feu clic a la pestanya de text i editeu el codi, aleshores canvieu de nou al mode visual. Si el codi és correcte i l'editor el comprèn, hauríeu de veure'l renderitzat immediatament."
+msgstr "Qualsevol codi HMTL introduït directament a l'editor de text enriquit es mostrarà com a text quan es visualitza l'article. El que vegeu és el que obteniu. Quan voleu incloure elements HTML que no s'han generat amb els botons de la barra d'eines, heu d'introduir-los a mà a l'editor de text. Exemples són les taules i &lt;code&gt;. Per fer això, feu clic a la pestanya de text i editeu el codi, aleshores canvieu de nou al mode visual. Si el codi és correcte i l'editor el comprèn, hauríeu de veure'l renderitzat immediatament."
 
 #: wp-includes/js/tinymce/wp-mce-help.php:185
 msgid "Pasting in the Rich Editor"
@@ -1541,8 +1556,10 @@ msgstr "Tens Moxie?"
 msgid "Comments Feed"
 msgstr "Canal de comentaris"
 
-#: wp-includes/link-template.php:725 wp-includes/link-template.php:932
-#: wp-includes/link-template.php:1007 wp-includes/link-template.php:1048
+#: wp-includes/link-template.php:725
+#: wp-includes/link-template.php:932
+#: wp-includes/link-template.php:1007
+#: wp-includes/link-template.php:1048
 msgid "Edit This"
 msgstr "Edita això"
 
@@ -1558,13 +1575,15 @@ msgstr "Edita l'enllaç"
 msgid "Use commas instead of %s to separate excluded categories."
 msgstr "Feu servir comes en comptes de %s per separar les categories excloses."
 
-#: wp-includes/link-template.php:1221 wp-includes/link-template.php:1389
+#: wp-includes/link-template.php:1221
+#: wp-includes/link-template.php:1389
 msgid "Previous Post"
-msgstr "Entrada prèvia"
+msgstr "Article prèvia"
 
-#: wp-includes/link-template.php:1221 wp-includes/link-template.php:1389
+#: wp-includes/link-template.php:1221
+#: wp-includes/link-template.php:1389
 msgid "Next Post"
-msgstr "Entrada següent"
+msgstr "Article següent"
 
 #: wp-includes/link-template.php:1744
 msgid "Newer Comments &raquo;"
@@ -1600,7 +1619,7 @@ msgstr "<strong>ERROR</strong>: <code>$table_prefix</code> a <code>wp-config.php
 
 #: wp-includes/load.php:428
 msgid "The site you have requested is not installed properly. Please contact the system administrator."
-msgstr "El lloc web que heu sol·licitat no s'ha instal·lat correctament. Contacteu amb l'administrador del sistema."
+msgstr "El bloc que heu sol·licitat no s'ha instal·lat correctament. Contacteu amb l'administrador del sistema."
 
 #: wp-includes/locale.php:109
 msgid "S_Sunday_initial"
@@ -1727,7 +1746,8 @@ msgstr "Refresca"
 msgid "Delete Permanently"
 msgstr "Esborra permanentment"
 
-#: wp-includes/media-template.php:231 wp-includes/media-template.php:397
+#: wp-includes/media-template.php:231
+#: wp-includes/media-template.php:397
 msgid "Alt Text"
 msgstr "Text Alt"
 
@@ -1739,7 +1759,8 @@ msgstr "Descripció"
 msgid "Edit"
 msgstr "Edita"
 
-#: wp-includes/media-template.php:248 wp-includes/script-loader.php:435
+#: wp-includes/media-template.php:248
+#: wp-includes/script-loader.php:435
 msgid "Clear"
 msgstr "Neteja"
 
@@ -1747,24 +1768,29 @@ msgstr "Neteja"
 msgid "Attachment Display Settings"
 msgstr "Configuració de la visualització dels adjunts"
 
-#: wp-includes/media-template.php:284 wp-includes/media-template.php:343
+#: wp-includes/media-template.php:284
+#: wp-includes/media-template.php:343
 #: wp-includes/media-template.php:420
 msgid "Link To"
 msgstr "Enllaça a"
 
-#: wp-includes/media-template.php:292 wp-includes/media-template.php:426
+#: wp-includes/media-template.php:292
+#: wp-includes/media-template.php:426
 msgid "Custom URL"
 msgstr "URL personalitzada"
 
-#: wp-includes/media-template.php:298 wp-includes/media-template.php:354
+#: wp-includes/media-template.php:298
+#: wp-includes/media-template.php:354
 msgid "Attachment Page"
 msgstr "Pàgina de les adjuncions "
 
-#: wp-includes/media-template.php:295 wp-includes/media-template.php:351
+#: wp-includes/media-template.php:295
+#: wp-includes/media-template.php:351
 msgid "Media File"
 msgstr "Mèdia"
 
-#: wp-includes/media-template.php:321 wp-includes/media.php:1376
+#: wp-includes/media-template.php:321
+#: wp-includes/media.php:1376
 msgid "Large"
 msgstr "Gran"
 
@@ -1784,7 +1810,8 @@ msgstr "Ordre aleatori"
 msgid "No editor could be selected."
 msgstr "No s'ha seleccionat cap editor."
 
-#: wp-includes/media.php:1273 wp-includes/script-loader.php:323
+#: wp-includes/media.php:1273
+#: wp-includes/script-loader.php:323
 msgid "Allowed Files"
 msgstr "Fitxers permesos"
 
@@ -1838,7 +1865,7 @@ msgstr "Insereix a la pàgina"
 
 #: wp-includes/media.php:1522
 msgid "Insert into post"
-msgstr "Insereix a l'entrada"
+msgstr "Insereix a l'article"
 
 #: wp-includes/media.php:1523
 msgid "Uploaded to this page"
@@ -1846,7 +1873,7 @@ msgstr "S'ha penjat a aquesta pàgina"
 
 #: wp-includes/media.php:1523
 msgid "Uploaded to this post"
-msgstr "S'ha penjat a aquesta entrada"
+msgstr "S'ha penjat a aquest article"
 
 #: wp-includes/media.php:1524
 msgid ""
@@ -1914,13 +1941,14 @@ msgstr "Aquest usuari no existeix."
 
 #: wp-includes/ms-functions.php:290
 msgid "<strong>ERROR</strong>: Site URL already taken."
-msgstr "<strong>ERROR</strong>: La URL del lloc ja existeix."
+msgstr "<strong>ERROR</strong>: La URL del bloc ja existeix."
 
 #: wp-includes/ms-functions.php:297
 msgid "<strong>ERROR</strong>: problem creating site entry."
-msgstr "<strong>ERROR</strong>: s'ha produít un problema en creat l'entrada del lloc web."
+msgstr "<strong>ERROR</strong>: s'ha produít un problema en creat l'article del bloc."
 
-#: wp-includes/ms-functions.php:439 wp-includes/ms-functions.php:565
+#: wp-includes/ms-functions.php:439
+#: wp-includes/ms-functions.php:565
 msgid "Only lowercase letters (a-z) and numbers are allowed."
 msgstr "Solament estan permeses lletres en minúscula de la 'a' a la 'z' i números."
 
@@ -1956,11 +1984,13 @@ msgstr "Introduïu una adreça electrònica vàlida."
 msgid "Sorry, that email address is not allowed!"
 msgstr "Aquesta adreça de correu electrònic no està permesa!"
 
-#: wp-includes/ms-functions.php:483 wp-includes/user.php:1313
+#: wp-includes/ms-functions.php:483
+#: wp-includes/user.php:1313
 msgid "Sorry, that username already exists!"
 msgstr "Aquest nom d'usuari ja existeix!"
 
-#: wp-includes/ms-functions.php:487 wp-includes/user.php:1328
+#: wp-includes/ms-functions.php:487
+#: wp-includes/user.php:1328
 msgid "Sorry, that email address is already used!"
 msgstr "Aquesta adreça de correu electrònic ja l'estan utilitzant!"
 
@@ -1978,7 +2008,7 @@ msgstr "Ja s'ha usat aquest adreça electrònica. Comproveu si us ha arribat un 
 
 #: wp-includes/ms-functions.php:562
 msgid "Please enter a site name."
-msgstr "Entreu un nom del lloc web"
+msgstr "Entreu un nom de bloc."
 
 #: wp-includes/ms-functions.php:568
 msgid "That name is not allowed."
@@ -1986,35 +2016,36 @@ msgstr "Aquest nom no està permès."
 
 #: wp-includes/ms-functions.php:571
 msgid "Site name must be at least 4 characters."
-msgstr "El nom del lloc web ha de tenir almenys 4 caràcters."
+msgstr "El nom del bloc ha de tenir almenys 4 caràcters."
 
 #: wp-includes/ms-functions.php:574
 msgid "Sorry, site names may not contain the character &#8220;_&#8221;!"
-msgstr "Els noms dels llocs web no poden contenir el caràcter &#8220;_&#8221;!"
+msgstr "Els noms dels blocs no poden contenir el caràcter &#8220;_&#8221;!"
 
 #: wp-includes/ms-functions.php:578
 msgid "Sorry, you may not use that site name."
-msgstr "Ho sentim, no podeu fer servir aquest nom de lloc web."
+msgstr "Ho sentim, no podeu fer servir aquest nom de bloc."
 
 #: wp-includes/ms-functions.php:584
 msgid "Sorry, site names must have letters too!"
-msgstr "Els noms de lloc web han de tenir lletres també!"
+msgstr "Els noms de bloc han de tenir lletres també!"
 
 #: wp-includes/ms-functions.php:591
 msgid "Please enter a site title."
-msgstr "Entreu el títol del lloc web."
+msgstr "Entreu el títol del bloc."
 
-#: wp-includes/ms-functions.php:602 wp-includes/ms-functions.php:968
+#: wp-includes/ms-functions.php:602
+#: wp-includes/ms-functions.php:968
 msgid "Sorry, that site already exists!"
-msgstr "Ho sentim, aquest lloc web ja existeix!"
+msgstr "Ho sentim, aquest bloc ja existeix!"
 
 #: wp-includes/ms-functions.php:606
 msgid "Sorry, that site is reserved!"
-msgstr "Ho sentim, aquest lloc web està reservat!"
+msgstr "Ho sentim, aquest bloc està reservat!"
 
 #: wp-includes/ms-functions.php:617
 msgid "That site is currently reserved but may be available in a couple days."
-msgstr "Aquest lloc web està actualment reservat per pot estar disponible en un parell de dies."
+msgstr "Aquest bloc està actualment reservat però pot estar disponible en un parell de dies."
 
 #: wp-includes/ms-functions.php:740
 msgid ""
@@ -2034,11 +2065,12 @@ msgstr ""
 "\n"
 "Una vegada l'activeu, rebreu *altre correu electrònic* amb les dades d'entrada.\n"
 "\n"
-"Una vegada l'activeu, podeu visitar el vostre lloc web aquí:\n"
+"Una vegada l'activeu, podeu visitar el vostre bloc aquí:\n"
 "\n"
 "%s"
 
-#: wp-includes/ms-functions.php:750 wp-includes/ms-functions.php:801
+#: wp-includes/ms-functions.php:750
+#: wp-includes/ms-functions.php:801
 msgid "[%1$s] Activate %2$s"
 msgstr "[%1$s] Activa %2$s"
 
@@ -2066,7 +2098,7 @@ msgstr "L'usuari ja està actiu."
 
 #: wp-includes/ms-functions.php:843
 msgid "The site is already active."
-msgstr "El lloc web ja és actiu."
+msgstr "El bloc ja és actiu."
 
 #: wp-includes/ms-functions.php:859
 msgid "Could not create user"
@@ -2078,7 +2110,7 @@ msgstr "Aquest nom d'usuari ja està actiu."
 
 #: wp-includes/ms-functions.php:974
 msgid "Could not create site."
-msgstr "No s'ha pogut crear el lloc web."
+msgstr "No s'ha pogut crear el bloc."
 
 #: wp-includes/ms-functions.php:1027
 msgid ""
@@ -2096,7 +2128,7 @@ msgstr ""
 
 #: wp-includes/ms-functions.php:1034
 msgid "New Site Registration: %s"
-msgstr "Registre de nou lloc web: %s"
+msgstr "Registre de nou bloc: %s"
 
 #: wp-includes/ms-functions.php:1062
 msgid ""
@@ -2140,7 +2172,7 @@ msgid ""
 msgstr ""
 "Hola blocaire,\n"
 "\n"
-"El lloc SITE_NAME nou s'ha configurat correctament a:\n"
+"El bloc SITE_NAME nou s'ha configurat correctament a:\n"
 "BLOG_URL\n"
 "\n"
 "Podeu entrar en el compte administratiu amb la següent informació:\n"
@@ -2148,13 +2180,13 @@ msgstr ""
 "Contrasenya: PASSWORD\n"
 "Entreu aquí: BLOG_URLwp-login.php\n"
 "\n"
-"Esperem que gaudiu del lloc nou. Gràcies!\n"
+"Esperem que gaudiu del bloc nou. Gràcies!\n"
 "\n"
 "--L'equip @ SITE_NAME"
 
 #: wp-includes/ms-functions.php:1258
 msgid "New %1$s Site: %2$s"
-msgstr "Nou lloc web %1$s: %2$s"
+msgstr "Nou bloc %1$s: %2$s"
 
 #: wp-includes/ms-functions.php:1306
 msgid "New %1$s User: %2$s"
@@ -2166,11 +2198,11 @@ msgstr "El fitxer és massa gran. Els fitxers han de ser de menys de %d Kb de gr
 
 #: wp-includes/ms-functions.php:1686
 msgid "An error occurred adding you to this site. Back to the <a href=\"%s\">homepage</a>."
-msgstr "S'ha produït un error afegint-vos a aquest lloc web. Torneu a la <a href=\"%s\">pàgina d'inici</a>."
+msgstr "S'ha produït un error afegint-vos a aquest bloc. Torneu a la <a href=\"%s\">pàgina d'inici</a>."
 
 #: wp-includes/ms-functions.php:1688
 msgid "You have been added to this site. Please visit the <a href=\"%s\">homepage</a> or <a href=\"%s\">log in</a> using your username and password."
-msgstr "Heu estat afegit a aquest lloc web. Visiteu la <a href=\"%s\">pàgina principal</a> o <a href=\"%s\">entreu</a> amb el nom i la contrasenya."
+msgstr "Heu estat afegit a aquest bloc. Visiteu la <a href=\"%s\">pàgina principal</a> o <a href=\"%s\">entreu</a> amb el nom i la contrasenya."
 
 #: wp-includes/ms-functions.php:1688
 msgid "WordPress &rsaquo; Success"
@@ -2210,23 +2242,23 @@ msgstr "Aquest usuari ha triat suprimir el seu compte i el contingut no està ja
 
 #: wp-includes/ms-load.php:96
 msgid "This site has not been activated yet. If you are having problems activating your site, please contact <a href=\"mailto:%1$s\">%1$s</a>."
-msgstr "Aquest lloc web no s'ha activat encara. Si esteu tenint problemes per activar el vostre web, contacteu amb <a href=\"mailto:%1$s\">%1$s</a>."
+msgstr "Aquest bloc no s'ha activat encara. Si esteu tenint problemes per activar el vostre web, contacteu amb <a href=\"mailto:%1$s\">%1$s</a>."
 
 #: wp-includes/ms-load.php:103
 msgid "This site has been archived or suspended."
-msgstr "Aquest lloc web ha estat arxivat o suspès."
+msgstr "Aquest bloc ha estat arxivat o suspès."
 
 #: wp-includes/ms-load.php:219
 msgid "That site does not exist. Please try <a href=\"%s\">%s</a>."
-msgstr "Aquest lloc web no existeix. Intenteu-ho amb <a href=\"%s\">%s</a>."
+msgstr "Aquest bloc no existeix. Intenteu-ho amb <a href=\"%s\">%s</a>."
 
 #: wp-includes/ms-load.php:221
 msgid "No site defined on this host. If you are the owner of this site, please check <a href=\"http://codex.wordpress.org/Debugging_a_WordPress_Network\">Debugging a WordPress Network</a> for help."
-msgstr "No s'ha definit cap lloc web en aquest amfitrió. Si sou propietari d'aquest lloc web, pegueu un cop d'ull a <a href=\"http://codex.wordpress.org/Debugging_a_WordPress_Network\">Depurant una xarxa Wordpress</a> (en anglès) per si trobeu ajuda."
+msgstr "No s'ha definit cap bloc en aquest amfitrió. Si sou propietari d'aquest bloc, pegueu un cop d'ull a <a href=\"http://codex.wordpress.org/Debugging_a_WordPress_Network\">Depurant una xarxa Wordpress</a> (en anglès) per si trobeu ajuda."
 
 #: wp-includes/ms-load.php:241
 msgid "If your site does not display, please contact the owner of this network."
-msgstr "Si el lloc no es mostra, contacteu amb el propietari de la xarxa."
+msgstr "Si el bloc no es mostra, contacteu amb el propietari de la xarxa."
 
 #: wp-includes/ms-load.php:242
 msgid "If you are the owner of this network please check that MySQL is running properly and all tables are error free."
@@ -2238,7 +2270,7 @@ msgstr "<strong>Les taules de la base de dades no existeixen.</strong> Això vol
 
 #: wp-includes/ms-load.php:246
 msgid "<strong>Could not find site <code>%1$s</code>.</strong> Searched for table <code>%2$s</code> in database <code>%3$s</code>. Is that right?"
-msgstr "<strong>No es pot trobar el lloc web <code>%1$s</code>.</strong> Resultats de la cerca per a la taula <em>%2$s</em> en la base de dades <code>%3$s</code>. És correcte?"
+msgstr "<strong>No es pot trobar el bloc <code>%1$s</code>.</strong> Resultats de la cerca per a la taula <em>%2$s</em> en la base de dades <code>%3$s</code>. És correcte?"
 
 #: wp-includes/ms-load.php:247
 msgid "What do I do now?"
@@ -2262,9 +2294,10 @@ msgstr "Les taules de la base de dades falten."
 
 #: wp-includes/ms-settings.php:122
 msgid "No site by that name on this system."
-msgstr "No hi ha cap lloc web amb aquest nom al sistema."
+msgstr "No hi ha cap bloc amb aquest nom al sistema."
 
-#: wp-includes/nav-menu.php:226 wp-includes/nav-menu.php:233
+#: wp-includes/nav-menu.php:226
+#: wp-includes/nav-menu.php:233
 msgid "The menu name <strong>%s</strong> conflicts with another menu name. Please try another."
 msgstr "El nom del menú <strong>%s</strong> entra en conflicte amb una altre nom de menú. Proveu amb un altre."
 
@@ -2290,33 +2323,40 @@ msgstr "Hauríeu d'especificar una acció per verificar-se en fer servir el prim
 
 #: wp-includes/pluggable.php:1014
 msgid "New comment on your post \"%s\""
-msgstr "Hi ha un nou retroenllaç a l'entrada \"%s\""
+msgstr "Hi ha un nou retroenllaç a l'article \"%s\""
 
-#: wp-includes/pluggable.php:1016 wp-includes/pluggable.php:1129
+#: wp-includes/pluggable.php:1016
+#: wp-includes/pluggable.php:1129
 msgid "Author : %1$s (IP: %2$s , %3$s)"
 msgstr "Autor : %1$s (IP: %2$s , %3$s)"
 
-#: wp-includes/pluggable.php:1017 wp-includes/pluggable.php:1130
+#: wp-includes/pluggable.php:1017
+#: wp-includes/pluggable.php:1130
 msgid "E-mail : %s"
 msgstr "Correu electrònic : %s"
 
-#: wp-includes/pluggable.php:1018 wp-includes/pluggable.php:1028
-#: wp-includes/pluggable.php:1037 wp-includes/pluggable.php:1116
-#: wp-includes/pluggable.php:1123 wp-includes/pluggable.php:1131
+#: wp-includes/pluggable.php:1018
+#: wp-includes/pluggable.php:1028
+#: wp-includes/pluggable.php:1037
+#: wp-includes/pluggable.php:1116
+#: wp-includes/pluggable.php:1123
+#: wp-includes/pluggable.php:1131
 msgid "URL    : %s"
 msgstr "URL    : %s"
 
-#: wp-includes/pluggable.php:1019 wp-includes/pluggable.php:1132
+#: wp-includes/pluggable.php:1019
+#: wp-includes/pluggable.php:1132
 msgid "Whois  : http://whois.arin.net/rest/ip/%s"
 msgstr "Whois  : http://whois.arin.net/rest/ip/%s"
 
-#: wp-includes/pluggable.php:1020 wp-includes/pluggable.php:1133
+#: wp-includes/pluggable.php:1020
+#: wp-includes/pluggable.php:1133
 msgid "Comment: "
 msgstr "Comentari: "
 
 #: wp-includes/pluggable.php:1021
 msgid "You can see all comments on this post here: "
-msgstr "Podeu veure tots els comentaris d'aquesta entrada aquí: "
+msgstr "Podeu veure tots els comentaris d'aquest article aquí: "
 
 #: wp-includes/pluggable.php:1023
 msgid "[%1$s] Comment: \"%2$s\""
@@ -2324,19 +2364,21 @@ msgstr "[%1$s] Comentari des de: \"%2$s\""
 
 #: wp-includes/pluggable.php:1025
 msgid "New trackback on your post \"%s\""
-msgstr "Hi ha un nou retroenllaç a l'entrada \"%s\""
+msgstr "Hi ha un nou retroenllaç a l'article \"%s\""
 
-#: wp-includes/pluggable.php:1027 wp-includes/pluggable.php:1036
+#: wp-includes/pluggable.php:1027
+#: wp-includes/pluggable.php:1036
 msgid "Website: %1$s (IP: %2$s , %3$s)"
 msgstr "Lloc web: %1$s (IP: %2$s , %3$s)"
 
-#: wp-includes/pluggable.php:1029 wp-includes/pluggable.php:1038
+#: wp-includes/pluggable.php:1029
+#: wp-includes/pluggable.php:1038
 msgid "Excerpt: "
 msgstr "Extracte: "
 
 #: wp-includes/pluggable.php:1030
 msgid "You can see all trackbacks on this post here: "
-msgstr "Podeu veure tots els retroenllaços d'aquesta entrada aquí: "
+msgstr "Podeu veure tots els retroenllaços d'aquest article aquí: "
 
 #: wp-includes/pluggable.php:1032
 msgid "[%1$s] Trackback: \"%2$s\""
@@ -2344,11 +2386,11 @@ msgstr "[%1$s] Retroenllaç des de: \"%2$s\""
 
 #: wp-includes/pluggable.php:1034
 msgid "New pingback on your post \"%s\""
-msgstr "Hi ha un nou retroping de l'entrada \"%s\""
+msgstr "Hi ha un nou retroping de l'article \"%s\""
 
 #: wp-includes/pluggable.php:1039
 msgid "You can see all pingbacks on this post here: "
-msgstr "Podeu veure tots els retropings d'aquesta entrada aquí: "
+msgstr "Podeu veure tots els retropings d'aquest article aquí: "
 
 #: wp-includes/pluggable.php:1041
 msgid "[%1$s] Pingback: \"%2$s\""
@@ -2358,23 +2400,27 @@ msgstr "[%1$s] Retroping des de: \"%2$s\""
 msgid "Permalink: %s"
 msgstr "Enllaç permanent: %s"
 
-#: wp-includes/pluggable.php:1046 wp-includes/pluggable.php:1139
+#: wp-includes/pluggable.php:1046
+#: wp-includes/pluggable.php:1139
 msgid "Trash it: %s"
 msgstr "Envia-la a la Paperera: %s"
 
-#: wp-includes/pluggable.php:1048 wp-includes/pluggable.php:1141
+#: wp-includes/pluggable.php:1048
+#: wp-includes/pluggable.php:1141
 msgid "Delete it: %s"
 msgstr "Suprimeix-lo: %s"
 
-#: wp-includes/pluggable.php:1049 wp-includes/pluggable.php:1142
+#: wp-includes/pluggable.php:1049
+#: wp-includes/pluggable.php:1142
 msgid "Spam it: %s"
 msgstr "Marca com a brossa: %s"
 
 #: wp-includes/pluggable.php:1113
 msgid "A new trackback on the post \"%s\" is waiting for your approval"
-msgstr "Hi ha un nou retroenllaç a l'entrada \"%s\" esperant la vostra aprovació."
+msgstr "Hi ha un nou retroenllaç a l'article \"%s\" esperant la vostra aprovació."
 
-#: wp-includes/pluggable.php:1115 wp-includes/pluggable.php:1122
+#: wp-includes/pluggable.php:1115
+#: wp-includes/pluggable.php:1122
 msgid "Website : %1$s (IP: %2$s , %3$s)"
 msgstr "Lloc web : %1$s (IP: %2$s , %3$s)"
 
@@ -2384,7 +2430,7 @@ msgstr "Extracte del retroenllaç: "
 
 #: wp-includes/pluggable.php:1120
 msgid "A new pingback on the post \"%s\" is waiting for your approval"
-msgstr "Hi ha un nou retroping a l'entrada \"%s\" esperant l'aprovació"
+msgstr "Hi ha un nou retroping a l'article \"%s\" esperant l'aprovació"
 
 #: wp-includes/pluggable.php:1124
 msgid "Pingback excerpt: "
@@ -2392,7 +2438,7 @@ msgstr "Extracte del retroping: "
 
 #: wp-includes/pluggable.php:1127
 msgid "A new comment on the post \"%s\" is waiting for your approval"
-msgstr "Un nou comentari a l'entrada \"%s\" espera l'aprovació"
+msgstr "Un nou comentari a l'article \"%s\" espera l'aprovació"
 
 #: wp-includes/pluggable.php:1137
 msgid "Approve it: %s"
@@ -2418,9 +2464,10 @@ msgstr "[%s] Contrasenya perduda/canviada"
 
 #: wp-includes/pluggable.php:1202
 msgid "New user registration on your site %s:"
-msgstr "Registre d'usuari nou al lloc web %s:"
+msgstr "Registre d'usuari nou al bloc %s:"
 
-#: wp-includes/pluggable.php:1203 wp-includes/pluggable.php:1211
+#: wp-includes/pluggable.php:1203
+#: wp-includes/pluggable.php:1211
 #: wp-login.php:233
 msgid "Username: %s"
 msgstr "Nom d'usuari: %s"
@@ -2459,7 +2506,7 @@ msgstr "(més...)"
 
 #: wp-includes/post-template.php:267
 msgid "There is no excerpt because this is a protected post."
-msgstr "No hi ha extracte perquè és una entrada protegida."
+msgstr "No hi ha extracte perquè és un article protegit."
 
 #: wp-includes/post-template.php:633
 msgid "Pages:"
@@ -2479,7 +2526,7 @@ msgstr "Pàgina d'inici"
 
 #: wp-includes/post-template.php:1226
 msgid "This post is password protected. To view it please enter your password below:"
-msgstr "Aquesta entrada està protegida. Per veure-la, introduïu la vostra contrasenya:"
+msgstr "Aquesta article està protegit. Per veure'l, introduïu la vostra contrasenya:"
 
 #: wp-includes/post-template.php:1227
 msgid "Submit"
@@ -2533,7 +2580,7 @@ msgstr "Accions"
 #: wp-includes/post.php:22
 msgctxt "add new on admin bar"
 msgid "Post"
-msgstr "Entrada"
+msgstr "Article"
 
 #: wp-includes/post.php:38
 msgctxt "add new on admin bar"
@@ -2647,9 +2694,10 @@ msgstr[1] "Paperera <span class=\"count\">(%s)</span>"
 
 #: wp-includes/post.php:808
 msgid "Invalid post"
-msgstr "Entrada no vàlida"
+msgstr "Article no vàlid"
 
-#: wp-includes/post.php:866 wp-includes/post.php:887
+#: wp-includes/post.php:866
+#: wp-includes/post.php:887
 msgid "Draft"
 msgstr "Esborrany"
 
@@ -2657,12 +2705,14 @@ msgstr "Esborrany"
 msgid "Pending Review"
 msgstr "Pendent de revisió"
 
-#: wp-includes/post.php:868 wp-includes/post.php:888
+#: wp-includes/post.php:868
+#: wp-includes/post.php:888
 #: wp-includes/script-loader.php:385
 msgid "Private"
 msgstr "Privada"
 
-#: wp-includes/post.php:869 wp-includes/post.php:889
+#: wp-includes/post.php:869
+#: wp-includes/post.php:889
 #: wp-includes/script-loader.php:390
 msgid "Published"
 msgstr "Publicada"
@@ -2684,7 +2734,7 @@ msgstr "Pàgines"
 #: wp-includes/post.php:1497
 msgctxt "post type singular name"
 msgid "Post"
-msgstr "Entrada"
+msgstr "Article"
 
 #: wp-includes/post.php:1497
 msgctxt "post type singular name"
@@ -2703,7 +2753,7 @@ msgstr "Afegeix"
 
 #: wp-includes/post.php:1499
 msgid "Add New Post"
-msgstr "Afegeix una entrada nova"
+msgstr "Afegeix un article nou"
 
 #: wp-includes/post.php:1499
 msgid "Add New Page"
@@ -2711,7 +2761,7 @@ msgstr "Afegeix una pàgina nova"
 
 #: wp-includes/post.php:1500
 msgid "Edit Post"
-msgstr "Edita l'entrada"
+msgstr "Edita l'article"
 
 #: wp-includes/post.php:1500
 msgid "Edit Page"
@@ -2735,7 +2785,7 @@ msgstr "Cerca pàgines"
 
 #: wp-includes/post.php:1504
 msgid "No posts found."
-msgstr "No s'ha trobat cap entrada."
+msgstr "No s'ha trobat cap article."
 
 #: wp-includes/post.php:1504
 msgid "No pages found."
@@ -2743,7 +2793,7 @@ msgstr "No s'ha trobat cap pàgina."
 
 #: wp-includes/post.php:1505
 msgid "No posts found in Trash."
-msgstr "No s'ha trobat cap entrada a la paperera."
+msgstr "No s'ha trobat cap article a la paperera."
 
 #: wp-includes/post.php:1505
 msgid "No pages found in Trash."
@@ -2817,17 +2867,18 @@ msgstr "Buf, la data que heu donat no és vàlida."
 
 #: wp-includes/post.php:2872
 msgid "Could not update post in the database"
-msgstr "No s'ha pogut actualitzar l'entrada a la base de dades"
+msgstr "No s'ha pogut actualitzar l'article a la base de dades"
 
 #: wp-includes/post.php:2888
 msgid "Could not insert post into the database"
-msgstr "No s'ha pogut inserir l'entrada a la base de dades"
+msgstr "No s'ha pogut inserir l'article a la base de dades"
 
 #: wp-includes/post.php:2935
 msgid "The page template is invalid."
 msgstr "La plantilla de pàgina no és vàlida"
 
-#: wp-includes/post.php:3203 wp-includes/script-loader.php:391
+#: wp-includes/post.php:3203
+#: wp-includes/script-loader.php:391
 #: wp-includes/script-loader.php:416
 msgctxt "tag delimiter"
 msgid ","
@@ -2899,19 +2950,32 @@ msgctxt "Post format"
 msgid "Audio"
 msgstr "Àudio"
 
-#: wp-includes/query.php:143 wp-includes/query.php:164
-#: wp-includes/query.php:184 wp-includes/query.php:208
-#: wp-includes/query.php:232 wp-includes/query.php:256
-#: wp-includes/query.php:285 wp-includes/query.php:305
-#: wp-includes/query.php:325 wp-includes/query.php:345
-#: wp-includes/query.php:366 wp-includes/query.php:386
-#: wp-includes/query.php:416 wp-includes/query.php:445
-#: wp-includes/query.php:465 wp-includes/query.php:492
-#: wp-includes/query.php:512 wp-includes/query.php:532
-#: wp-includes/query.php:552 wp-includes/query.php:572
-#: wp-includes/query.php:601 wp-includes/query.php:628
-#: wp-includes/query.php:648 wp-includes/query.php:668
-#: wp-includes/query.php:688 wp-includes/query.php:708
+#: wp-includes/query.php:143
+#: wp-includes/query.php:164
+#: wp-includes/query.php:184
+#: wp-includes/query.php:208
+#: wp-includes/query.php:232
+#: wp-includes/query.php:256
+#: wp-includes/query.php:285
+#: wp-includes/query.php:305
+#: wp-includes/query.php:325
+#: wp-includes/query.php:345
+#: wp-includes/query.php:366
+#: wp-includes/query.php:386
+#: wp-includes/query.php:416
+#: wp-includes/query.php:445
+#: wp-includes/query.php:465
+#: wp-includes/query.php:492
+#: wp-includes/query.php:512
+#: wp-includes/query.php:532
+#: wp-includes/query.php:552
+#: wp-includes/query.php:572
+#: wp-includes/query.php:601
+#: wp-includes/query.php:628
+#: wp-includes/query.php:648
+#: wp-includes/query.php:668
+#: wp-includes/query.php:688
+#: wp-includes/query.php:708
 msgid "Conditional query tags do not work before the query is run. Before then, they always return false."
 msgstr "Les etiquetes de consulta condicionals no funcionen abans d'executar la consulta. Mentre no s'executi, sempre retornen false."
 
@@ -2919,7 +2983,8 @@ msgstr "Les etiquetes de consulta condicionals no funcionen abans d'executar la 
 msgid "\"caller_get_posts\" is deprecated. Use \"ignore_sticky_posts\" instead."
 msgstr "\"caller_get_posts\" està obsoleta. Useu per contra \"ignore_sticky_posts\" . "
 
-#: wp-includes/registration-functions.php:7 wp-includes/registration.php:7
+#: wp-includes/registration-functions.php:7
+#: wp-includes/registration.php:7
 msgid "This file no longer needs to be included."
 msgstr "Aquest fitxer ja no ha de ser inclòs. "
 
@@ -2979,15 +3044,18 @@ msgstr "direcció del text"
 msgid "Toggle Editor Text Direction"
 msgstr "Commuta la direcció del text de l'editor"
 
-#: wp-includes/script-loader.php:100 wp-includes/script-loader.php:353
+#: wp-includes/script-loader.php:100
+#: wp-includes/script-loader.php:353
 msgid "You do not have permission to do that."
 msgstr "No teniu permisos per fer això."
 
-#: wp-includes/script-loader.php:101 wp-includes/script-loader.php:354
+#: wp-includes/script-loader.php:101
+#: wp-includes/script-loader.php:354
 msgid "An unidentified error has occurred."
 msgstr "S'ha produït un error no identificat."
 
-#: wp-includes/script-loader.php:106 wp-includes/script-loader.php:223
+#: wp-includes/script-loader.php:106
+#: wp-includes/script-loader.php:223
 msgid "Dismiss"
 msgstr "Descarta-ho"
 
@@ -3021,7 +3089,7 @@ msgstr "Heu intentat enviar a la cua massa fitxers."
 
 #: wp-includes/script-loader.php:206
 msgid "%s exceeds the maximum upload size for this site."
-msgstr "%s sobrepassa la mida màxima de càrrega per aquest lloc web."
+msgstr "%s sobrepassa la mida màxima de càrrega per aquest bloc."
 
 #: wp-includes/script-loader.php:207
 msgid "This file is empty. Please try another."
@@ -3099,7 +3167,8 @@ msgstr "s'ha mogut a la paperera."
 msgid "&#8220;%s&#8221; has failed to upload."
 msgstr "&#8220;%s&#8221; no s'ha pogut penjar a causa d'un error"
 
-#: wp-includes/script-loader.php:271 wp-login.php:500
+#: wp-includes/script-loader.php:271
+#: wp-login.php:500
 msgid "Strength indicator"
 msgstr "Indicador de robustesa"
 
@@ -3124,7 +3193,8 @@ msgstr "Robusta"
 msgid "Mismatch"
 msgstr "No conincideixen"
 
-#: wp-includes/script-loader.php:291 wp-includes/script-loader.php:415
+#: wp-includes/script-loader.php:291
+#: wp-includes/script-loader.php:415
 msgid "(no title)"
 msgstr "(sense títol)"
 
@@ -3216,7 +3286,8 @@ msgstr "Publicat com a privada"
 msgid "Submitted on:"
 msgstr "Enviat el:"
 
-#: wp-includes/script-loader.php:413 wp-includes/script-loader.php:421
+#: wp-includes/script-loader.php:413
+#: wp-includes/script-loader.php:421
 msgid "Error while saving the changes."
 msgstr "S'ha produït un error mentre es desaven els canvis."
 
@@ -3317,7 +3388,8 @@ msgstr "Afegeix una categoria d'enllaços"
 msgid "New Link Category Name"
 msgstr "Nom de categoria d'enllaços nova"
 
-#: wp-includes/taxonomy.php:111 wp-includes/taxonomy.php:112
+#: wp-includes/taxonomy.php:111
+#: wp-includes/taxonomy.php:112
 msgctxt "post format"
 msgid "Format"
 msgstr "Format"
@@ -3426,11 +3498,13 @@ msgstr "Afegeix o elimina etiquetes"
 msgid "Choose from the most used tags"
 msgstr "Trieu una de les etiquetes més usades"
 
-#: wp-includes/taxonomy.php:875 wp-includes/taxonomy.php:3002
+#: wp-includes/taxonomy.php:875
+#: wp-includes/taxonomy.php:3002
 msgid "Empty Term"
 msgstr "Terme buit"
 
-#: wp-includes/taxonomy.php:2055 wp-includes/taxonomy.php:2379
+#: wp-includes/taxonomy.php:2055
+#: wp-includes/taxonomy.php:2379
 msgid "A name is required for this term"
 msgstr "Es requereix un nom per a aquest terme"
 
@@ -3438,7 +3512,8 @@ msgstr "Es requereix un nom per a aquest terme"
 msgid "A term with the name provided already exists with this parent."
 msgstr "Un terme amb el nom proporcionat ja existeix amb aquest pare."
 
-#: wp-includes/taxonomy.php:2097 wp-includes/taxonomy.php:2104
+#: wp-includes/taxonomy.php:2097
+#: wp-includes/taxonomy.php:2104
 #: wp-includes/taxonomy.php:2114
 msgid "Could not insert term into the database"
 msgstr "No s'ha pogut inserir el terme a la base de dades"
@@ -3481,11 +3556,11 @@ msgstr "%1$s - Comentaris a %2$s"
 
 #: wp-includes/theme-compat/comments-popup.php:35
 msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on this post."
-msgstr "Canal <abbr title=\"Really Simple Syndication\">RSS</abbr> pels comentaris a aquesta entrada."
+msgstr "Canal <abbr title=\"Really Simple Syndication\">RSS</abbr> pels comentaris a aquest article."
 
 #: wp-includes/theme-compat/comments-popup.php:38
 msgid "The <abbr title=\"Universal Resource Locator\">URL</abbr> to TrackBack this entry is: <em>%s</em>"
-msgstr "L'<abbr title=\"Universal Resource Locator\">URL</abbr> pels retroenllaços a aquesta entrada és: <em>%s</em>"
+msgstr "L'<abbr title=\"Universal Resource Locator\">URL</abbr> pels retroenllaços a aquest article és: <em>%s</em>"
 
 #: wp-includes/theme-compat/comments-popup.php:56
 msgid "by %1$s &#8212; %2$s @ <a href=\"#comment-%3$s\">%4$s</a>"
@@ -3507,7 +3582,8 @@ msgstr "El salt de línia i paràgraf són automàtics, l'adreça de correu elec
 msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out &raquo;</a>"
 msgstr "Heu iniciat sessió com a <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Tanca aquesta sessió\">Tanca la sessió &raquo;</a>"
 
-#: wp-includes/theme-compat/comments-popup.php:80 wp-login.php:553
+#: wp-includes/theme-compat/comments-popup.php:80
+#: wp-login.php:553
 msgid "E-mail"
 msgstr "Correu electrònic"
 
@@ -3533,7 +3609,7 @@ msgstr "Tanca aquesta finestra."
 
 #: wp-includes/theme-compat/comments-popup.php:114
 msgid "Sorry, no posts matched your criteria."
-msgstr "No hi ha cap entrada que es correspongui amb els criteris."
+msgstr "No hi ha cap article que es correspongui amb els criteris."
 
 #: wp-includes/theme-compat/comments-popup.php:118
 msgid "Powered by <a href=\"%s\" title=\"Powered by WordPress, state-of-the-art semantic personal publishing platform\"><strong>WordPress</strong></a>"
@@ -3541,7 +3617,7 @@ msgstr "Funciona amb el <a href=\"%s\" title=\"Funciona amb el WordPress, una pl
 
 #: wp-includes/theme-compat/comments.php:17
 msgid "This post is password protected. Enter the password to view comments."
-msgstr "Aquesta entrada està protegida amb contrasenya. Introduïu-la per veure'n els comentaris."
+msgstr "Aquest article està protegit amb contrasenya. Introduïu-la per veure'n els comentaris."
 
 #: wp-includes/theme-compat/comments.php:26
 msgid "One Response to %2$s"
@@ -3632,7 +3708,7 @@ msgstr "Heu cercat <strong>&#8216;%3$s&#8217;</strong> als arxius del bloc <a hr
 
 #: wp-includes/theme-compat/sidebar.php:47
 msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives."
-msgstr "Esteu navegant pels arxius del lloc <a href=\"%1$s/\">%2$s</a>."
+msgstr "Esteu navegant pels arxius del bloc <a href=\"%1$s/\">%2$s</a>."
 
 #: wp-includes/theme-compat/sidebar.php:73
 msgid "This page validates as XHTML 1.0 Transitional"
@@ -3684,7 +3760,7 @@ msgstr "<strong>ERROR</strong>: El vostre compte s'ha marcat com a brossa."
 
 #: wp-includes/user.php:101
 msgid "Site Suspended."
-msgstr "Lloc web suspès."
+msgstr "Bloc suspès."
 
 #: wp-includes/user.php:110
 msgid "<strong>ERROR</strong>: The password you entered for the username <strong>%1$s</strong> is incorrect. <a href=\"%2$s\" title=\"Password Lost and Found\">Lost your password</a>?"
@@ -3719,7 +3795,8 @@ msgstr "Jabber / Google Talk"
 msgid "There are no options for this widget."
 msgstr "No hi ha opcions per a aquest giny."
 
-#: wp-includes/widgets.php:488 wp-includes/widgets.php:547
+#: wp-includes/widgets.php:488
+#: wp-includes/widgets.php:547
 msgid "Sidebar %d"
 msgstr "Barra lateral %d"
 
@@ -3853,7 +3930,9 @@ msgstr "No s'ha pogut enviar el correu electrònic."
 msgid "Possible reason: your host may have disabled the mail() function..."
 msgstr "Possible raó: el servidor pot tenir deshabilitada la funció mail()..."
 
-#: wp-login.php:271 wp-login.php:274 wp-login.php:279
+#: wp-login.php:271
+#: wp-login.php:274
+#: wp-login.php:279
 msgid "Invalid key"
 msgstr "Clau no vàlida"
 
@@ -3917,7 +3996,8 @@ msgstr "Reinicialitza la contrasenya"
 msgid "Your password has been reset."
 msgstr "La contrasenya ha estat reinicialitzada."
 
-#: wp-login.php:485 wp-login.php:504
+#: wp-login.php:485
+#: wp-login.php:504
 msgid "Reset Password"
 msgstr "Reinicialitza la contrasenya"
 
@@ -3937,7 +4017,8 @@ msgstr "Codi d'activació:"
 msgid "Activate"
 msgstr "Activa"
 
-#: wp-activate.php:80 wp-activate.php:100
+#: wp-activate.php:80
+#: wp-activate.php:100
 msgid "Your account is now active!"
 msgstr "El vostre compte és actiu ara!"
 
@@ -3947,23 +4028,25 @@ msgstr "El compte s'ha activat. Ara podeu <a href=\"%1$s\">iniciar la sessió</a
 
 #: wp-activate.php:86
 msgid "Your site at <a href=\"%1$s\">%2$s</a> is active. You may now log in to your site using your chosen username of &#8220;%3$s&#8221;. Please check your email inbox at %4$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href=\"%5$s\">reset your password</a>."
-msgstr "El lloc web <a href=\"%1$s\">%2$s</a> s'ha activat. Podeu entrar al web fent servir el nom d'usuari &#8220;%3$s&#8221; que heu triat.  Reviseu a la safata d'entrada del vostre compte de correu a %4$s per aconseguir la contrasenya i les instruccions per identificar-vos.  Si no rebeu un correu electrònic, reviseu la paperera o la carpeta de correu brossa. Si així i tot no rebeu un correu electrònic en una hora, podeu <a href=\"%5$s\">reiniciar la contrasenya</a>."
+msgstr "El bloc <a href=\"%1$s\">%2$s</a> s'ha activat. Podeu entrar al web fent servir el nom d'usuari &#8220;%3$s&#8221; que heu triat.  Reviseu a la safata d'entrada del vostre compte de correu a %4$s per aconseguir la contrasenya i les instruccions per identificar-vos.  Si no rebeu un correu electrònic, reviseu la paperera o la carpeta de correu brossa. Si així i tot no rebeu un correu electrònic en una hora, podeu <a href=\"%5$s\">reiniciar la contrasenya</a>."
 
 #: wp-activate.php:91
 msgid "An error occurred during the activation"
 msgstr "S'ha produït un error durant l'activació."
 
-#: wp-activate.php:103 wp-signup.php:125
+#: wp-activate.php:103
+#: wp-signup.php:125
 msgid "Username:"
 msgstr "Nom d'usuari:"
 
-#: wp-activate.php:104 wp-includes/post-template.php:1227
+#: wp-activate.php:104
+#: wp-includes/post-template.php:1227
 msgid "Password:"
 msgstr "Contrasenya:"
 
 #: wp-activate.php:108
 msgid "Your account is now activated. <a href=\"%1$s\">View your site</a> or <a href=\"%2$s\">Log in</a>"
-msgstr "S'ha activat el vostre compte. <a href=\"%1$s\">Mostreu la pàgina web</a> o <a href=\"%2$s\">entreu</a>"
+msgstr "S'ha activat el vostre compte. <a href=\"%1$s\">Mostreu el bloc</a> o <a href=\"%2$s\">entreu</a>"
 
 #: wp-activate.php:110
 msgid "Your account is now activated. <a href=\"%1$s\">Log in</a> or go back to the <a href=\"%2$s\">homepage</a>."
@@ -4067,7 +4150,7 @@ msgstr "<strong>Registre correcte!</strong> Consulteu el correu electrònic per 
 
 #: wp-content/plugins/akismet/admin.php:157
 msgid "For many people, <a href=\"%1$s\">Akismet</a> will greatly reduce or even completely eliminate the comment and trackback spam you get on your site. If one does happen to get through, simply mark it as \"spam\" on the moderation screen and Akismet will learn from the mistakes. If you don't have an API key yet, you can get one at <a href=\"%2$s\">Akismet.com</a>."
-msgstr "Per molta gent, l'<a href=\"%1$s\">Akismet</a> reduirà considerablement o fins i tot eliminarà del tot la brossa dels comentaris i retroenllaços que arriba al vostre lloc web. Si es cola algun missatge no desitjat, només heu de marcar-lo com a \\\"brossa\\\" en la pantalla de moderació i Akismet ho aprendrà. Si encara no disposeu d'una clau API, podeu aconseguir-ne una a <a href=\"%2$s\">Akismet.com</a>."
+msgstr "Per molta gent, l'<a href=\"%1$s\">Akismet</a> reduirà considerablement o fins i tot eliminarà del tot la brossa dels comentaris i retroenllaços que arriba al vostre bloc. Si es cola algun missatge no desitjat, només heu de marcar-lo com a \\\"brossa\\\" en la pantalla de moderació i Akismet ho aprendrà. Si encara no disposeu d'una clau API, podeu aconseguir-ne una a <a href=\"%2$s\">Akismet.com</a>."
 
 #: wp-content/plugins/akismet/admin.php:159
 msgid "Akismet API Key"
@@ -4370,9 +4453,12 @@ msgstr "En aquest moment hi ha %1$s comentaris identificats com a brossa."
 msgid "Delete all"
 msgstr "Suprimeix-los tots"
 
-#: wp-content/plugins/akismet/legacy.php:176 wp-includes/admin-bar.php:646
-#: wp-includes/class-wp-editor.php:831 wp-includes/default-widgets.php:194
-#: wp-includes/general-template.php:164 wp-includes/media.php:1501
+#: wp-content/plugins/akismet/legacy.php:176
+#: wp-includes/admin-bar.php:646
+#: wp-includes/class-wp-editor.php:831
+#: wp-includes/default-widgets.php:194
+#: wp-includes/general-template.php:164
+#: wp-includes/media.php:1501
 msgid "Search"
 msgstr "Cerca"
 
@@ -4394,13 +4480,15 @@ msgid "Search Spam &raquo;"
 msgstr "Cerca brossa &raquo;"
 
 #: wp-content/plugins/akismet/legacy.php:239
-#: wp-content/plugins/akismet/legacy.php:306 wp-includes/link-template.php:1606
+#: wp-content/plugins/akismet/legacy.php:306
+#: wp-includes/link-template.php:1606
 #: wp-includes/link-template.php:1642
 msgid "&laquo; Previous Page"
 msgstr "&laquo; Pàgina prèvia"
 
 #: wp-content/plugins/akismet/legacy.php:260
-#: wp-content/plugins/akismet/legacy.php:327 wp-includes/link-template.php:1535
+#: wp-content/plugins/akismet/legacy.php:327
+#: wp-includes/link-template.php:1535
 #: wp-includes/link-template.php:1643
 msgid "Next Page &raquo;"
 msgstr "Pàgina següent &raquo;"
@@ -4413,9 +4501,10 @@ msgstr "IP:"
 msgid "Not Spam"
 msgstr "No és brossa"
 
-#: wp-content/plugins/akismet/legacy.php:294 wp-includes/post.php:1502
+#: wp-content/plugins/akismet/legacy.php:294
+#: wp-includes/post.php:1502
 msgid "View Post"
-msgstr "Mostra l'entrada"
+msgstr "Mostra l'article"
 
 #: wp-content/plugins/akismet/legacy.php:333
 msgid "De-spam marked comments &raquo;"
@@ -4445,12 +4534,18 @@ msgstr "Mostra el nombre de comentaris brossa que l'Akismet ha capturat"
 msgid "Spam Blocked"
 msgstr "S'han blocat els comentaris brossa"
 
-#: wp-content/plugins/akismet/widget.php:72 wp-includes/default-widgets.php:66
-#: wp-includes/default-widgets.php:215 wp-includes/default-widgets.php:281
-#: wp-includes/default-widgets.php:339 wp-includes/default-widgets.php:379
-#: wp-includes/default-widgets.php:425 wp-includes/default-widgets.php:511
-#: wp-includes/default-widgets.php:615 wp-includes/default-widgets.php:722
-#: wp-includes/default-widgets.php:1067 wp-includes/default-widgets.php:1140
+#: wp-content/plugins/akismet/widget.php:72
+#: wp-includes/default-widgets.php:66
+#: wp-includes/default-widgets.php:215
+#: wp-includes/default-widgets.php:281
+#: wp-includes/default-widgets.php:339
+#: wp-includes/default-widgets.php:379
+#: wp-includes/default-widgets.php:425
+#: wp-includes/default-widgets.php:511
+#: wp-includes/default-widgets.php:615
+#: wp-includes/default-widgets.php:722
+#: wp-includes/default-widgets.php:1067
+#: wp-includes/default-widgets.php:1140
 msgid "Title:"
 msgstr "Títol:"
 
@@ -4460,15 +4555,18 @@ msgid_plural "<strong class=\"count\">%1$s spam</strong> blocked by <strong>Akis
 msgstr[0] "<strong class=\"count\">%1$s brossa</strong> blocat per l'<strong>Akismet</strong>"
 msgstr[1] "<strong class=\"count\">%1$s brosses</strong> blocats per l'<strong>Akismet</strong>"
 
-#: wp-includes/admin-bar.php:80 wp-includes/admin-bar.php:89
+#: wp-includes/admin-bar.php:80
+#: wp-includes/admin-bar.php:89
 msgid "About WordPress"
 msgstr "Quant al WordPress"
 
-#: wp-includes/admin-bar.php:98 wp-includes/default-widgets.php:320
+#: wp-includes/admin-bar.php:98
+#: wp-includes/default-widgets.php:320
 msgid "WordPress.org"
 msgstr "WordPress.org (en anglès)"
 
-#: wp-includes/admin-bar.php:99 wp-includes/default-widgets.php:318
+#: wp-includes/admin-bar.php:99
+#: wp-includes/default-widgets.php:318
 #: wp-login.php:78
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
@@ -4509,7 +4607,8 @@ msgstr "El meu compte"
 msgid "Edit My Profile"
 msgstr "Edita el perfil"
 
-#: wp-includes/admin-bar.php:198 wp-includes/class-wp-admin-bar.php:357
+#: wp-includes/admin-bar.php:198
+#: wp-includes/class-wp-admin-bar.php:357
 msgid "Log Out"
 msgstr "Surt"
 
@@ -4521,24 +4620,27 @@ msgstr "Administrador de la xarxa: %s"
 msgid "Global Dashboard: %s"
 msgstr "Tauler global: %s"
 
-#: wp-includes/admin-bar.php:247 wp-includes/admin-bar.php:387
+#: wp-includes/admin-bar.php:247
+#: wp-includes/admin-bar.php:387
 #: wp-includes/deprecated.php:2847
 msgid "Visit Site"
-msgstr "Visita el web"
+msgstr "Visita el bloc"
 
 #: wp-includes/admin-bar.php:255
 msgid "Edit Site"
-msgstr "Edita el lloc"
+msgstr "Edita el bloc"
 
-#: wp-includes/admin-bar.php:265 wp-includes/admin-bar.php:312
-#: wp-includes/admin-bar.php:362 wp-includes/deprecated.php:2849
+#: wp-includes/admin-bar.php:265
+#: wp-includes/admin-bar.php:312
+#: wp-includes/admin-bar.php:362
+#: wp-includes/deprecated.php:2849
 #: wp-includes/deprecated.php:2851
 msgid "Dashboard"
 msgstr "Tauler"
 
 #: wp-includes/admin-bar.php:292
 msgid "My Sites"
-msgstr "Els meus llocs"
+msgstr "Els meus blocs"
 
 #: wp-includes/admin-bar.php:305
 msgid "Network Admin"
@@ -4546,7 +4648,7 @@ msgstr "Administrador de la xarxa"
 
 #: wp-includes/admin-bar.php:318
 msgid "Sites"
-msgstr "Llocs"
+msgstr "Blocs"
 
 #: wp-includes/admin-bar.php:324
 msgid "Users"
@@ -4556,9 +4658,10 @@ msgstr "Usuaris"
 msgid "Visit Network"
 msgstr "Visiteu la xarxa"
 
-#: wp-includes/admin-bar.php:370 wp-includes/post.php:1501
+#: wp-includes/admin-bar.php:370
+#: wp-includes/post.php:1501
 msgid "New Post"
-msgstr "Entrada nova"
+msgstr "Article nou"
 
 #: wp-includes/admin-bar.php:379
 msgid "Manage Comments"
@@ -4602,7 +4705,8 @@ msgstr "Temes"
 msgid "Customize"
 msgstr "Personalitza"
 
-#: wp-includes/admin-bar.php:598 wp-includes/functions.php:2691
+#: wp-includes/admin-bar.php:598
+#: wp-includes/functions.php:2691
 msgid "Widgets"
 msgstr "Ginys"
 
@@ -4610,7 +4714,8 @@ msgstr "Ginys"
 msgid "Menus"
 msgstr "Menús"
 
-#: wp-includes/admin-bar.php:604 wp-includes/js/tinymce/langs/wp-langs.php:413
+#: wp-includes/admin-bar.php:604
+#: wp-includes/js/tinymce/langs/wp-langs.php:413
 msgid "Background"
 msgstr "Fons"
 
@@ -4630,7 +4735,8 @@ msgstr "Useu <code>get_the_author()</code> en el seu lloc si no voleu que el val
 msgid "Visit %s&#8217;s website"
 msgstr "Visita el web de %s"
 
-#: wp-includes/author-template.php:204 wp-includes/author-template.php:318
+#: wp-includes/author-template.php:204
+#: wp-includes/author-template.php:318
 msgid "Posts by %s"
 msgstr "Entrades de %s"
 
@@ -4642,7 +4748,8 @@ msgstr "Darrera actualització: %s"
 msgid "Bookmarks"
 msgstr "Favorits"
 
-#: wp-includes/capabilities.php:590 wp-includes/capabilities.php:610
+#: wp-includes/capabilities.php:590
+#: wp-includes/capabilities.php:610
 #: wp-includes/capabilities.php:636
 msgid "Use <code>WP_User->ID</code> instead."
 msgstr "Useu per contra <code>WP_User->ID</code>."
@@ -4651,9 +4758,12 @@ msgstr "Useu per contra <code>WP_User->ID</code>."
 msgid "Usage of user levels by plugins and themes is deprecated. Use roles and capabilities instead."
 msgstr "L'ús de tipus d'usuari per les extensions i els temes és obsolet. Useu en el seu lloc rols i capacitats."
 
-#: wp-includes/category-template.php:59 wp-includes/category-template.php:174
-#: wp-includes/category-template.php:177 wp-includes/category-template.php:184
-#: wp-includes/category-template.php:197 wp-includes/category-template.php:200
+#: wp-includes/category-template.php:59
+#: wp-includes/category-template.php:174
+#: wp-includes/category-template.php:177
+#: wp-includes/category-template.php:184
+#: wp-includes/category-template.php:197
+#: wp-includes/category-template.php:200
 #: wp-includes/category-template.php:207
 msgid "View all posts in %s"
 msgstr "Mostra totes les entrades a %s"
@@ -4666,8 +4776,10 @@ msgstr "General"
 msgid "No categories"
 msgstr "No hi ha categories"
 
-#: wp-includes/category-template.php:422 wp-includes/default-widgets.php:444
-#: wp-includes/default-widgets.php:450 wp-includes/theme-compat/sidebar.php:63
+#: wp-includes/category-template.php:422
+#: wp-includes/default-widgets.php:444
+#: wp-includes/default-widgets.php:450
+#: wp-includes/theme-compat/sidebar.php:63
 msgid "Categories"
 msgstr "Categories"
 
@@ -4689,7 +4801,8 @@ msgstr "Canal de totes les entrades arxivades en %s"
 msgid "Tags: "
 msgstr "Etiquetes: "
 
-#: wp-includes/class-http.php:122 wp-includes/class-wp-xmlrpc-server.php:5314
+#: wp-includes/class-http.php:122
+#: wp-includes/class-wp-xmlrpc-server.php:5314
 msgid "A valid URL was not provided."
 msgstr "No heu introduït una URL vàlida."
 
@@ -4705,13 +4818,17 @@ msgstr "El directori de destí per al flux de fitxers no existeix o no té permi
 msgid "There are no HTTP transports available which can complete the requested request."
 msgstr "No hi ha transports HTTP disponibles que puguin completar la sol·licitud."
 
-#: wp-includes/class-http.php:742 wp-includes/class-http.php:924
-#: wp-includes/class-http.php:943 wp-includes/class-http.php:1123
+#: wp-includes/class-http.php:742
+#: wp-includes/class-http.php:924
+#: wp-includes/class-http.php:943
+#: wp-includes/class-http.php:1123
 msgid "Could not open handle for fopen() to %s"
 msgstr "No s'ha pogut obrir un gestor per fopen() a %s"
 
-#: wp-includes/class-http.php:782 wp-includes/class-http.php:966
-#: wp-includes/class-http.php:1164 wp-includes/class-http.php:1183
+#: wp-includes/class-http.php:782
+#: wp-includes/class-http.php:966
+#: wp-includes/class-http.php:1164
+#: wp-includes/class-http.php:1183
 msgid "Too many redirects."
 msgstr "Massa redireccionaments."
 
@@ -4723,11 +4840,16 @@ msgstr "URL mal formada: %s"
 msgid "No server specified"
 msgstr "Servidor no especificat"
 
-#: wp-includes/class-pop3.php:90 wp-includes/class-pop3.php:102
-#: wp-includes/class-pop3.php:123 wp-includes/class-pop3.php:246
-#: wp-includes/class-pop3.php:300 wp-includes/class-pop3.php:311
-#: wp-includes/class-pop3.php:359 wp-includes/class-pop3.php:393
-#: wp-includes/class-pop3.php:426 wp-includes/class-pop3.php:525
+#: wp-includes/class-pop3.php:90
+#: wp-includes/class-pop3.php:102
+#: wp-includes/class-pop3.php:123
+#: wp-includes/class-pop3.php:246
+#: wp-includes/class-pop3.php:300
+#: wp-includes/class-pop3.php:311
+#: wp-includes/class-pop3.php:359
+#: wp-includes/class-pop3.php:393
+#: wp-includes/class-pop3.php:426
+#: wp-includes/class-pop3.php:525
 #: wp-includes/class-pop3.php:548
 msgid "Error "
 msgstr "Error "
@@ -4736,11 +4858,13 @@ msgstr "Error "
 msgid "no login ID submitted"
 msgstr "no s'ha enviat l'identificador d'usuari"
 
-#: wp-includes/class-pop3.php:118 wp-includes/class-pop3.php:138
+#: wp-includes/class-pop3.php:118
+#: wp-includes/class-pop3.php:138
 msgid "connection not established"
 msgstr "connexió no establerta"
 
-#: wp-includes/class-pop3.php:135 wp-includes/class-pop3.php:171
+#: wp-includes/class-pop3.php:135
+#: wp-includes/class-pop3.php:171
 msgid "No password submitted"
 msgstr "No s'ha enviat la contrasenya"
 
@@ -4748,11 +4872,16 @@ msgstr "No s'ha enviat la contrasenya"
 msgid "Authentication failed"
 msgstr "Ha fallat l'autenticació "
 
-#: wp-includes/class-pop3.php:162 wp-includes/class-pop3.php:205
-#: wp-includes/class-pop3.php:230 wp-includes/class-pop3.php:272
-#: wp-includes/class-pop3.php:346 wp-includes/class-pop3.php:386
-#: wp-includes/class-pop3.php:416 wp-includes/class-pop3.php:450
-#: wp-includes/class-pop3.php:513 wp-includes/class-pop3.php:578
+#: wp-includes/class-pop3.php:162
+#: wp-includes/class-pop3.php:205
+#: wp-includes/class-pop3.php:230
+#: wp-includes/class-pop3.php:272
+#: wp-includes/class-pop3.php:346
+#: wp-includes/class-pop3.php:386
+#: wp-includes/class-pop3.php:416
+#: wp-includes/class-pop3.php:450
+#: wp-includes/class-pop3.php:513
+#: wp-includes/class-pop3.php:578
 msgid "No connection to server"
 msgstr "No hi ha connexió amb el servidor"
 
@@ -4764,7 +4893,8 @@ msgstr "No s'ha enviat l'identificador d'usuari"
 msgid "No server banner"
 msgstr "No hi identificació del servidor"
 
-#: wp-includes/class-pop3.php:176 wp-includes/class-pop3.php:186
+#: wp-includes/class-pop3.php:176
+#: wp-includes/class-pop3.php:186
 msgid "abort"
 msgstr "cancel·la"
 
@@ -4881,12 +5011,12 @@ msgstr "Imatge penjada aleatòria"
 
 #: wp-includes/class-wp-customize-manager.php:717
 msgid "Site Title & Tagline"
-msgstr "Títol i descripció curta del lloc web"
+msgstr "Títol i descripció curta del bloc"
 
 #: wp-includes/class-wp-customize-manager.php:728
 #: wp-includes/class-wp-xmlrpc-server.php:368
 msgid "Site Title"
-msgstr "Títol del lloc web"
+msgstr "Títol del bloc"
 
 #: wp-includes/class-wp-customize-manager.php:739
 msgid "Tagline"
@@ -4936,7 +5066,8 @@ msgstr "Posició del fons"
 #: wp-includes/js/tinymce/langs/wp-langs.php:82
 #: wp-includes/js/tinymce/langs/wp-langs.php:375
 #: wp-includes/js/tinymce/langs/wp-langs.php:474
-#: wp-includes/media-template.php:267 wp-includes/media-template.php:405
+#: wp-includes/media-template.php:267
+#: wp-includes/media-template.php:405
 msgid "Left"
 msgstr "Esquerra"
 
@@ -4944,7 +5075,8 @@ msgstr "Esquerra"
 #: wp-includes/js/tinymce/langs/wp-langs.php:83
 #: wp-includes/js/tinymce/langs/wp-langs.php:454
 #: wp-includes/js/tinymce/langs/wp-langs.php:475
-#: wp-includes/media-template.php:270 wp-includes/media-template.php:408
+#: wp-includes/media-template.php:270
+#: wp-includes/media-template.php:408
 msgid "Center"
 msgstr "Centrat"
 
@@ -4952,7 +5084,8 @@ msgstr "Centrat"
 #: wp-includes/js/tinymce/langs/wp-langs.php:84
 #: wp-includes/js/tinymce/langs/wp-langs.php:376
 #: wp-includes/js/tinymce/langs/wp-langs.php:472
-#: wp-includes/media-template.php:273 wp-includes/media-template.php:411
+#: wp-includes/media-template.php:273
+#: wp-includes/media-template.php:411
 msgid "Right"
 msgstr "Dreta"
 
@@ -5010,12 +5143,14 @@ msgstr "Pàgina inicial"
 msgid "Posts page"
 msgstr "Pàgina d'entrades"
 
-#: wp-includes/class-wp-editor.php:114 wp-includes/class-wp-editor.php:674
+#: wp-includes/class-wp-editor.php:114
+#: wp-includes/class-wp-editor.php:674
 msgctxt "Name for the Text editor tab (formerly HTML)"
 msgid "Text"
 msgstr "Text"
 
-#: wp-includes/class-wp-editor.php:115 wp-includes/class-wp-editor.php:673
+#: wp-includes/class-wp-editor.php:115
+#: wp-includes/class-wp-editor.php:673
 msgid "Visual"
 msgstr "Visual"
 
@@ -5025,7 +5160,8 @@ msgstr "Anglès=en,Danès=da,Holandès=nl,Finès=fi,Francès=fr,Alemany=de,Itali
 
 #: wp-includes/class-wp-editor.php:664
 #: wp-includes/js/tinymce/langs/wp-langs.php:21
-#: wp-includes/script-loader.php:289 wp-includes/script-loader.php:382
+#: wp-includes/script-loader.php:289
+#: wp-includes/script-loader.php:382
 msgid "Update"
 msgstr "Actualitza"
 
@@ -5087,7 +5223,8 @@ msgstr "Ajuda (Alt + Shift + H)"
 msgid "Updated."
 msgstr "S'ha actualitzat."
 
-#: wp-includes/class-wp-editor.php:718 wp-includes/media-template.php:180
+#: wp-includes/class-wp-editor.php:718
+#: wp-includes/media-template.php:180
 msgid "Saved."
 msgstr "Desat."
 
@@ -5111,14 +5248,16 @@ msgstr "d/m/Y"
 msgid "Enter the destination URL"
 msgstr "Introduïu la URL de destinació"
 
-#: wp-includes/class-wp-editor.php:817 wp-includes/media.php:1499
+#: wp-includes/class-wp-editor.php:817
+#: wp-includes/media.php:1499
 msgid "URL"
 msgstr "URL"
 
 #: wp-includes/class-wp-editor.php:820
 #: wp-includes/js/tinymce/langs/wp-langs.php:382
 #: wp-includes/js/tinymce/langs/wp-langs.php:547
-#: wp-includes/media-template.php:222 wp-includes/media-template.php:379
+#: wp-includes/media-template.php:222
+#: wp-includes/media-template.php:379
 #: wp-includes/post.php:4881
 msgid "Title"
 msgstr "Títol"
@@ -5135,13 +5274,16 @@ msgstr "O enllaça a un contingut existent"
 msgid "No search term specified. Showing recent items."
 msgstr "No s'ha especificat cap terme de cerca. Es mostren els articles més recents."
 
-#: wp-includes/class-wp-editor.php:853 wp-includes/script-loader.php:290
+#: wp-includes/class-wp-editor.php:853
+#: wp-includes/script-loader.php:290
 msgid "Add Link"
 msgstr "Afegeix un enllaç"
 
 #: wp-includes/class-wp-editor.php:856
-#: wp-includes/js/tinymce/langs/wp-langs.php:22 wp-includes/media.php:1503
-#: wp-includes/script-loader.php:318 wp-includes/script-loader.php:374
+#: wp-includes/js/tinymce/langs/wp-langs.php:22
+#: wp-includes/media.php:1503
+#: wp-includes/script-loader.php:318
+#: wp-includes/script-loader.php:374
 msgid "Cancel"
 msgstr "Cancel·la"
 
@@ -5216,7 +5358,8 @@ msgstr "Falta la plantilla."
 msgid "The parent theme is missing. Please install the \"%s\" parent theme."
 msgstr "El tema pare no existeix. Instal·leu el tema pare \"%s\"."
 
-#: wp-includes/class-wp-theme.php:267 wp-includes/class-wp-theme.php:271
+#: wp-includes/class-wp-theme.php:267
+#: wp-includes/class-wp-theme.php:271
 msgid "The \"%s\" theme is not a valid parent theme."
 msgstr "El tema \"%s\" no és un tema pare vàlid."
 
@@ -5224,11 +5367,13 @@ msgstr "El tema \"%s\" no és un tema pare vàlid."
 msgid "Visit author homepage"
 msgstr "Visita el lloc web de l'autor"
 
-#: wp-includes/class-wp-theme.php:656 wp-includes/comment-template.php:30
+#: wp-includes/class-wp-theme.php:656
+#: wp-includes/comment-template.php:30
 msgid "Anonymous"
 msgstr "Anònim"
 
-#: wp-includes/class-wp-theme.php:663 wp-includes/formatting.php:3054
+#: wp-includes/class-wp-theme.php:663
+#: wp-includes/formatting.php:3054
 msgid ", "
 msgstr ", "
 
@@ -5250,7 +5395,7 @@ msgstr "Versió de Programa"
 
 #: wp-includes/class-wp-xmlrpc-server.php:321
 msgid "Site URL"
-msgstr "URL del lloc web"
+msgstr "URL del bloc"
 
 #: wp-includes/class-wp-xmlrpc-server.php:326
 msgid "Home URL"
@@ -5286,7 +5431,7 @@ msgstr "Fus horari"
 
 #: wp-includes/class-wp-xmlrpc-server.php:373
 msgid "Site Tagline"
-msgstr "Lema del lloc web"
+msgstr "Lema del bloc"
 
 #: wp-includes/class-wp-xmlrpc-server.php:378
 msgid "Date Format"
@@ -5347,7 +5492,7 @@ msgstr "S'han passat un nombre insuficient d'arguments a aquest mètode XML-RPC.
 #: wp-includes/class-wp-xmlrpc-server.php:4380
 #: wp-includes/class-wp-xmlrpc-server.php:4432
 msgid "Invalid post type"
-msgstr "Tipus d'entrada no vàlida"
+msgstr "Tipus d'article no vàlid"
 
 #: wp-includes/class-wp-xmlrpc-server.php:1009
 #: wp-includes/class-wp-xmlrpc-server.php:1258
@@ -5363,21 +5508,21 @@ msgstr "Tipus d'entrada no vàlida"
 #: wp-includes/class-wp-xmlrpc-server.php:5155
 #: wp-includes/class-wp-xmlrpc-server.php:5267
 msgid "Invalid post ID."
-msgstr "Identificador de l'entrada no vàlid."
+msgstr "Identificador de l'article no vàlid."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1011
 msgid "Sorry, you are not allowed to edit this post."
-msgstr "No teniu permisos per editar aquesta entrada."
+msgstr "No teniu permisos per editar aquesta article."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1013
 #: wp-includes/class-wp-xmlrpc-server.php:4384
 msgid "The post type may not be changed."
-msgstr "El tipus d'entrada no es pot canviar."
+msgstr "El tipus d'article no es pot canviar."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1016
 #: wp-includes/class-wp-xmlrpc-server.php:3869
 msgid "Sorry, you are not allowed to post on this site."
-msgstr "No teniu autorització per publicar en aquest lloc web."
+msgstr "No teniu autorització per publicar en aquest bloc."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1025
 msgid "Sorry, you are not allowed to create private posts in this post type"
@@ -5403,11 +5548,11 @@ msgstr "Identificador d'autor no vàlid."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1082
 msgid "Sorry, you cannot stick a private post."
-msgstr "No podeu fixar una entrada privada."
+msgstr "No podeu fixar una article privat."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1087
 msgid "Sorry, you are not allowed to stick this post."
-msgstr "No teniu permisos per fixar aquesta entrada."
+msgstr "No teniu permisos per fixar aquest article."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1100
 #: wp-includes/class-wp-xmlrpc-server.php:3283
@@ -5419,7 +5564,7 @@ msgstr "Identificador d'adjunt incorrecte."
 #: wp-includes/class-wp-xmlrpc-server.php:1121
 #: wp-includes/class-wp-xmlrpc-server.php:1144
 msgid "Sorry, one of the given taxonomies is not supported by the post type."
-msgstr "No està admesa una de les taxonomies donades per al tipus d'entrada."
+msgstr "No està admesa una de les taxonomies donades per al tipus d'article."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1124
 #: wp-includes/class-wp-xmlrpc-server.php:1147
@@ -5429,7 +5574,8 @@ msgstr "No teniu permès assignar un terme a una de les taxonomies donades."
 #: wp-includes/class-wp-xmlrpc-server.php:1131
 #: wp-includes/class-wp-xmlrpc-server.php:1651
 #: wp-includes/class-wp-xmlrpc-server.php:1738
-#: wp-includes/class-wp-xmlrpc-server.php:1805 wp-includes/taxonomy.php:2052
+#: wp-includes/class-wp-xmlrpc-server.php:1805
+#: wp-includes/taxonomy.php:2052
 msgid "Invalid term ID"
 msgstr "Identificador de terme és invàlid"
 
@@ -5445,19 +5591,19 @@ msgstr "No teniu permès afegir un terme a una de les taxonomies donades."
 #: wp-includes/class-wp-xmlrpc-server.php:3889
 #: wp-includes/class-wp-xmlrpc-server.php:4296
 msgid "Sorry, your entry could not be posted. Something wrong happened."
-msgstr "Desgraciadament l'entrada no s'ha pogut publicar per algun problema tècnic."
+msgstr "Desgraciadament l'article no s'ha pogut publicar per algun problema tècnic."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1263
 msgid "There is a revision of this post that is more recent."
-msgstr "Hi ha una revisió d'aquesta entrada que és més recent."
+msgstr "Hi ha una revisió d'aquest article que és més recent."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1322
 msgid "Sorry, you are not allowed to delete this post."
-msgstr "No teniu permisos per suprimir aquesta entrada."
+msgstr "No teniu permisos per suprimir aquest article."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1327
 msgid "The post cannot be deleted."
-msgstr "No es pot suprimir l'entrada."
+msgstr "No es pot suprimir l'article."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1404
 #: wp-includes/class-wp-xmlrpc-server.php:3602
@@ -5466,25 +5612,29 @@ msgstr "No es pot suprimir l'entrada."
 #: wp-includes/class-wp-xmlrpc-server.php:4961
 #: wp-includes/class-wp-xmlrpc-server.php:5158
 msgid "Sorry, you cannot edit this post."
-msgstr "No teniu autorització per editar aquesta entrada."
+msgstr "No teniu autorització per editar aquest article."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1459
 msgid "The post type specified is not valid"
-msgstr "El tipus d'entrada especificada no és vàlida"
+msgstr "El tipus d'article especificat no és vàlid"
 
 #: wp-includes/class-wp-xmlrpc-server.php:1465
 msgid "Sorry, you are not allowed to edit posts in this post type"
-msgstr "No teniu permès editar entrades en aquest tipus d'entrada"
+msgstr "No teniu permès editar entrades en aquest tipus d'article"
 
 #: wp-includes/class-wp-xmlrpc-server.php:1545
 #: wp-includes/class-wp-xmlrpc-server.php:1633
 #: wp-includes/class-wp-xmlrpc-server.php:1725
 #: wp-includes/class-wp-xmlrpc-server.php:1792
 #: wp-includes/class-wp-xmlrpc-server.php:1845
-#: wp-includes/class-wp-xmlrpc-server.php:1924 wp-includes/taxonomy.php:518
-#: wp-includes/taxonomy.php:880 wp-includes/taxonomy.php:1009
-#: wp-includes/taxonomy.php:1197 wp-includes/taxonomy.php:1901
-#: wp-includes/taxonomy.php:2045 wp-includes/taxonomy.php:2176
+#: wp-includes/class-wp-xmlrpc-server.php:1924
+#: wp-includes/taxonomy.php:518
+#: wp-includes/taxonomy.php:880
+#: wp-includes/taxonomy.php:1009
+#: wp-includes/taxonomy.php:1197
+#: wp-includes/taxonomy.php:1901
+#: wp-includes/taxonomy.php:2045
+#: wp-includes/taxonomy.php:2176
 #: wp-includes/taxonomy.php:2353
 msgid "Invalid taxonomy"
 msgstr "Taxonomia incorrecta"
@@ -5541,7 +5691,8 @@ msgstr "No teniu permès assignar termes en aquesta taxonomia."
 msgid "Sorry, you cannot edit users."
 msgstr "No podeu editar usuaris."
 
-#: wp-includes/class-wp-xmlrpc-server.php:2042 wp-includes/user.php:1456
+#: wp-includes/class-wp-xmlrpc-server.php:2042
+#: wp-includes/user.php:1456
 msgid "Invalid user ID"
 msgstr "Identificador d'usuari no vàlid."
 
@@ -5591,11 +5742,11 @@ msgstr "No teniu permís per editar aquesta pàgina."
 
 #: wp-includes/class-wp-xmlrpc-server.php:2517
 msgid "Sorry, you cannot edit posts on this site."
-msgstr "No podeu editar entrades en aquest lloc web."
+msgstr "No podeu editar entrades en aquest bloc."
 
 #: wp-includes/class-wp-xmlrpc-server.php:2552
 msgid "Sorry, you must be able to edit posts on this site in order to view tags."
-msgstr "Heu de tenir permís per editar entrades en aquest lloc web per a veure les etiquetes."
+msgstr "Heu de tenir permís per editar entrades en aquest bloc per a veure les etiquetes."
 
 #: wp-includes/class-wp-xmlrpc-server.php:2597
 msgid "Sorry, you do not have the right to add a category."
@@ -5612,7 +5763,7 @@ msgstr "No teniu permisos per suprimir una categoria."
 
 #: wp-includes/class-wp-xmlrpc-server.php:2688
 msgid "Sorry, you must be able to edit posts to this site in order to view categories."
-msgstr "Heu de tenir permís per editar entrades en aquest lloc web per a veure les categories."
+msgstr "Heu de tenir permís per editar entrades en aquest bloc per a veure les categories."
 
 #: wp-includes/class-wp-xmlrpc-server.php:2724
 #: wp-includes/class-wp-xmlrpc-server.php:2825
@@ -5620,7 +5771,7 @@ msgstr "Heu de tenir permís per editar entrades en aquest lloc web per a veure 
 #: wp-includes/class-wp-xmlrpc-server.php:2880
 #: wp-includes/class-wp-xmlrpc-server.php:2886
 msgid "You are not allowed to moderate comments on this site."
-msgstr "No teniu autorització per moderar comentaris en aquest lloc web."
+msgstr "No teniu autorització per moderar comentaris en aquest bloc."
 
 #: wp-includes/class-wp-xmlrpc-server.php:2729
 #: wp-includes/class-wp-xmlrpc-server.php:2828
@@ -5658,7 +5809,7 @@ msgstr "Es necessita una adreça de correu electrònic vàlida"
 #: wp-includes/class-wp-xmlrpc-server.php:3151
 #: wp-includes/class-wp-xmlrpc-server.php:3364
 msgid "You are not allowed access to details about this site."
-msgstr "No teniu autorització per accedir als detalls sobre aquest lloc web."
+msgstr "No teniu autorització per accedir als detalls sobre aquest bloc."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3067
 msgid "You are not allowed access to details about comments."
@@ -5676,14 +5827,14 @@ msgstr "No teniu permisos per penjar fitxers."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3437
 msgid "Sorry, you are not allowed to edit this post type."
-msgstr "No teniu autorització per editar aquest tipus d'entrada"
+msgstr "No teniu autorització per editar aquest tipus d'article"
 
 #: wp-includes/class-wp-xmlrpc-server.php:3532
 #: wp-includes/class-wp-xmlrpc-server.php:3593
 #: wp-includes/class-wp-xmlrpc-server.php:3596
 #: wp-includes/class-wp-xmlrpc-server.php:3599
 msgid "Invalid post ID"
-msgstr "Identificador d'entrada no vàlid."
+msgstr "Identificador d'article no vàlid."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3535
 msgid "Sorry, you are not allowed to edit posts."
@@ -5696,12 +5847,12 @@ msgstr "Les revisions estan desactivades."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3704
 msgid "Sorry, you do not have access to user data on this site."
-msgstr "No teniu accés a les dades d'usuari en aquest lloc web."
+msgstr "No teniu accés a les dades d'usuari en aquest bloc."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3792
 #: wp-includes/class-wp-xmlrpc-server.php:5019
 msgid "Either there are no posts, or something went wrong."
-msgstr "O bé no hi ha cap entrada o bé ha ocorregut un problema tècnic."
+msgstr "O bé no hi ha cap article o bé ha ocorregut un problema tècnic."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3831
 #: wp-includes/class-wp-xmlrpc-server.php:3841
@@ -5713,39 +5864,39 @@ msgstr "Aquest fitxer no es pot editar."
 #: wp-includes/class-wp-xmlrpc-server.php:4733
 #: wp-includes/class-wp-xmlrpc-server.php:5221
 msgid "Sorry, no such post."
-msgstr "No existeix l'entrada."
+msgstr "No existeix l'article."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3929
 #: wp-includes/class-wp-xmlrpc-server.php:4376
 msgid "Sorry, you do not have the right to edit this post."
-msgstr "No teniu permís per editar aquesta entrada."
+msgstr "No teniu permís per editar aquest article."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3934
 #: wp-includes/class-wp-xmlrpc-server.php:4537
 msgid "Sorry, you do not have the right to publish this post."
-msgstr "No teniu permisos per publicar aquesta entrada."
+msgstr "No teniu permisos per publicar aquest article."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3945
 msgid "For some strange yet very annoying reason, this post could not be edited."
-msgstr "Per algun motiu estrany i molest aquesta entrada no s'ha pogut publicar."
+msgstr "Per algun motiu estrany i molest aquest article no s'ha pogut publicar."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3981
 msgid "Sorry, you do not have the right to delete this post."
-msgstr "No teniu autorització per suprimir aquesta entrada."
+msgstr "No teniu autorització per suprimir aquest article."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3986
 msgid "For some strange yet very annoying reason, this post could not be deleted."
-msgstr "Per algun motiu estrany i molest aquesta entrada no s'ha pogut suprimir."
+msgstr "Per algun motiu estrany i molest aquest article no s'ha pogut suprimir."
 
 #: wp-includes/class-wp-xmlrpc-server.php:4055
 msgid "Sorry, you are not allowed to publish pages on this site."
-msgstr "No teniu autorització per publicar en aquest lloc web."
+msgstr "No teniu autorització per publicar en aquest bloc."
 
 #: wp-includes/class-wp-xmlrpc-server.php:4066
 #: wp-includes/class-wp-xmlrpc-server.php:4079
 #: wp-includes/class-wp-xmlrpc-server.php:4084
 msgid "Sorry, you are not allowed to publish posts on this site."
-msgstr "No teniu permisos per publicar entrades en aquest lloc web."
+msgstr "No teniu permisos per publicar entrades en aquest bloc."
 
 #: wp-includes/class-wp-xmlrpc-server.php:4092
 #: wp-includes/class-wp-xmlrpc-server.php:4390
@@ -5758,7 +5909,7 @@ msgstr "Amb aquest nom d'usuari no teniu autorització per crear pàgines."
 
 #: wp-includes/class-wp-xmlrpc-server.php:4425
 msgid "You are not allowed to change the post author as this user."
-msgstr "Amb aquest nom d'usuari no teniu autorització per canviar l'autor de l'entrada."
+msgstr "Amb aquest nom d'usuari no teniu autorització per canviar l'autor de l'article."
 
 #: wp-includes/class-wp-xmlrpc-server.php:4429
 msgid "You are not allowed to change the page author as this user."
@@ -5770,12 +5921,12 @@ msgstr "No teniu permís per publicar aquesta pàgina."
 
 #: wp-includes/class-wp-xmlrpc-server.php:4573
 msgid "Sorry, your entry could not be edited. Something wrong happened."
-msgstr "No s'ha pogut editar l'entrada. S'ha produït un error."
+msgstr "No s'ha pogut editar l'article. S'ha produït un error."
 
 #: wp-includes/class-wp-xmlrpc-server.php:4872
 #: wp-includes/class-wp-xmlrpc-server.php:5071
 msgid "Sorry, you must be able to edit posts on this site in order to view categories."
-msgstr "Heu de tenir permís per editar entrades en aquest lloc web per veure les categories."
+msgstr "Heu de tenir permís per editar entrades en aquest bloc per veure les categories."
 
 #: wp-includes/class-wp-xmlrpc-server.php:4952
 msgid "Could not write file %1$s (%2$s)"
@@ -5783,11 +5934,11 @@ msgstr "No s'ha pogut escriure el fitxer %1$s (%2$s)"
 
 #: wp-includes/class-wp-xmlrpc-server.php:5112
 msgid "Sorry, you can not edit this post."
-msgstr "No teniu autorització per editar aquesta entrada."
+msgstr "No teniu autorització per editar aquesta article."
 
 #: wp-includes/class-wp-xmlrpc-server.php:5270
 msgid "Sorry, you cannot publish this post."
-msgstr "No podeu publicar aquesta entrada"
+msgstr "No podeu publicar aquest article"
 
 #: wp-includes/class-wp-xmlrpc-server.php:5319
 msgid "Is there no link to us?"
@@ -5828,19 +5979,23 @@ msgstr "Retroping de %1$s a %2$s registrat."
 msgid "The specified target URL does not exist."
 msgstr "La URL de destinació no existeix."
 
-#: wp-includes/comment-template.php:580 wp-includes/comment-template.php:975
+#: wp-includes/comment-template.php:580
+#: wp-includes/comment-template.php:975
 msgid "% Comments"
 msgstr "% comentaris"
 
-#: wp-includes/comment-template.php:582 wp-includes/comment-template.php:973
+#: wp-includes/comment-template.php:582
+#: wp-includes/comment-template.php:973
 msgid "No Comments"
 msgstr "No hi ha comentaris"
 
-#: wp-includes/comment-template.php:584 wp-includes/comment-template.php:974
+#: wp-includes/comment-template.php:584
+#: wp-includes/comment-template.php:974
 msgid "1 Comment"
 msgstr "1 comentari"
 
-#: wp-includes/comment-template.php:678 wp-includes/comment-template.php:1535
+#: wp-includes/comment-template.php:678
+#: wp-includes/comment-template.php:1535
 msgctxt "noun"
 msgid "Comment"
 msgstr "Comentari"
@@ -5869,7 +6024,8 @@ msgstr "Escriviu la vostra contrasenya per veure els comentaris."
 msgid "Comment on %s"
 msgstr "Comentaris a %s"
 
-#: wp-includes/comment-template.php:1038 wp-includes/script-loader.php:364
+#: wp-includes/comment-template.php:1038
+#: wp-includes/script-loader.php:364
 msgid "Reply"
 msgstr "Respon"
 
@@ -5889,12 +6045,14 @@ msgstr "Entra per fer un comentari"
 msgid "Click here to cancel reply."
 msgstr "Feu clic aquí per cancel·lar la resposta."
 
-#: wp-includes/comment-template.php:1196 wp-includes/comment-template.php:1542
+#: wp-includes/comment-template.php:1196
+#: wp-includes/comment-template.php:1542
 #: wp-includes/theme-compat/comments.php:58
 msgid "Leave a Reply"
 msgstr "Deixa un comentari"
 
-#: wp-includes/comment-template.php:1197 wp-includes/comment-template.php:1543
+#: wp-includes/comment-template.php:1197
+#: wp-includes/comment-template.php:1543
 #: wp-includes/theme-compat/comments.php:58
 msgid "Leave a Reply to %s"
 msgstr "Respon a %s"
@@ -5973,11 +6131,13 @@ msgctxt "adjective"
 msgid "Spam"
 msgstr "Correu brossa"
 
-#: wp-includes/comment.php:679 wp-includes/comment.php:681
+#: wp-includes/comment.php:679
+#: wp-includes/comment.php:681
 msgid "Duplicate comment detected; it looks as though you&#8217;ve already said that!"
 msgstr "Comentari duplicat: sembla ser que ja s'havia dit això abans!"
 
-#: wp-includes/comment.php:738 wp-includes/comment.php:740
+#: wp-includes/comment.php:738
+#: wp-includes/comment.php:740
 msgid "You are posting comments too quickly. Slow down."
 msgstr "Esteu enviant comentaris massa ràpid. Calma i bons aliments."
 
@@ -6003,14 +6163,17 @@ msgstr "Diària"
 
 #: wp-includes/default-widgets.php:17
 msgid "Your site&#8217;s WordPress Pages"
-msgstr "Les pàgines del WordPress del teu lloc"
+msgstr "Les pàgines del WordPress del teu bloc"
 
-#: wp-includes/default-widgets.php:18 wp-includes/default-widgets.php:24
-#: wp-includes/post-template.php:818 wp-includes/theme-compat/sidebar.php:55
+#: wp-includes/default-widgets.php:18
+#: wp-includes/default-widgets.php:24
+#: wp-includes/post-template.php:818
+#: wp-includes/theme-compat/sidebar.php:55
 msgid "Pages"
 msgstr "Pàgines"
 
-#: wp-includes/default-widgets.php:68 wp-includes/default-widgets.php:159
+#: wp-includes/default-widgets.php:68
+#: wp-includes/default-widgets.php:159
 msgid "Sort by:"
 msgstr "Ordenat per:"
 
@@ -6090,13 +6253,14 @@ msgstr "Nombre d'enllaços que cal mostrar:"
 
 #: wp-includes/default-widgets.php:193
 msgid "A search form for your site"
-msgstr "Un formulari de cerca per al teu lloc"
+msgstr "Un formulari de cerca per al teu bloc"
 
 #: wp-includes/default-widgets.php:236
 msgid "A monthly archive of your site&#8217;s posts"
-msgstr "Un arxiu mensual de les entrades del teu lloc web"
+msgstr "Un arxiu mensual de les entrades del teu bloc"
 
-#: wp-includes/default-widgets.php:237 wp-includes/default-widgets.php:244
+#: wp-includes/default-widgets.php:237
+#: wp-includes/default-widgets.php:244
 #: wp-includes/theme-compat/sidebar.php:57
 msgid "Archives"
 msgstr "Arxius"
@@ -6105,11 +6269,13 @@ msgstr "Arxius"
 msgid "Select Month"
 msgstr "Selecciona el mes"
 
-#: wp-includes/default-widgets.php:283 wp-includes/default-widgets.php:515
+#: wp-includes/default-widgets.php:283
+#: wp-includes/default-widgets.php:515
 msgid "Display as dropdown"
 msgstr "Mostra com un menú desplegable"
 
-#: wp-includes/default-widgets.php:285 wp-includes/default-widgets.php:518
+#: wp-includes/default-widgets.php:285
+#: wp-includes/default-widgets.php:518
 msgid "Show post counts"
 msgstr "Mostra el nombre d'entrades"
 
@@ -6117,14 +6283,15 @@ msgstr "Mostra el nombre d'entrades"
 msgid "Log in/out, admin, feed and WordPress links"
 msgstr "Entra/surt, administració, canals RSS i enllaços del WordPress"
 
-#: wp-includes/default-widgets.php:302 wp-includes/default-widgets.php:307
+#: wp-includes/default-widgets.php:302
+#: wp-includes/default-widgets.php:307
 #: wp-includes/theme-compat/sidebar.php:69
 msgid "Meta"
 msgstr "Meta"
 
 #: wp-includes/default-widgets.php:316
 msgid "Syndicate this site using RSS 2.0"
-msgstr "Sindica aquest lloc fent servir RSS 2.0"
+msgstr "Sindica aquest bloc fent servir RSS 2.0"
 
 #: wp-includes/default-widgets.php:316
 msgid "Entries <abbr title=\"Really Simple Syndication\">RSS</abbr>"
@@ -6138,13 +6305,14 @@ msgstr "Últims comentaris a totes les entrades en RSS"
 msgid "Comments <abbr title=\"Really Simple Syndication\">RSS</abbr>"
 msgstr "<abbr title=\"en inglés, Really Simple Syndication\">RSS</abbr> dels comentaris"
 
-#: wp-includes/default-widgets.php:318 wp-includes/theme-compat/sidebar.php:75
+#: wp-includes/default-widgets.php:318
+#: wp-includes/theme-compat/sidebar.php:75
 msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
 msgstr "Funcionant amb el WordPress, plataforma semàntica de publicació personal de primer ordre."
 
 #: wp-includes/default-widgets.php:352
 msgid "A calendar of your site&#8217;s posts"
-msgstr "Un calendari de les entrades del teu lloc web"
+msgstr "Un calendari de les entrades del teu bloc"
 
 #: wp-includes/default-widgets.php:353
 msgid "Calendar"
@@ -6176,9 +6344,10 @@ msgstr "Mostra la jerarquia"
 
 #: wp-includes/default-widgets.php:535
 msgid "The most recent posts on your site"
-msgstr "Les entrades més recents del teu lloc web"
+msgstr "Les entrades més recents del teu bloc"
 
-#: wp-includes/default-widgets.php:536 wp-includes/default-widgets.php:561
+#: wp-includes/default-widgets.php:536
+#: wp-includes/default-widgets.php:561
 msgid "Recent Posts"
 msgstr "Entrades recents"
 
@@ -6194,7 +6363,8 @@ msgstr "Mostreu la data de les entrades?"
 msgid "The most recent comments"
 msgstr "Comentaris més recents"
 
-#: wp-includes/default-widgets.php:636 wp-includes/default-widgets.php:677
+#: wp-includes/default-widgets.php:636
+#: wp-includes/default-widgets.php:677
 msgid "Recent Comments"
 msgstr "Comentaris recents"
 
@@ -6227,7 +6397,8 @@ msgstr "Sindica aquest contingut"
 msgid "<strong>RSS Error</strong>: %s"
 msgstr "<strong>Error del fil RSS</strong>: %s"
 
-#: wp-includes/default-widgets.php:847 wp-includes/rss.php:895
+#: wp-includes/default-widgets.php:847
+#: wp-includes/rss.php:895
 msgid "An error has occurred, which probably means the feed is down. Try again later."
 msgstr "S'ha produït un error; probablement l'RSS ha deixat de funcionar. Torneu-ho a provar d'aquí una estona."
 
@@ -6299,9 +6470,12 @@ msgstr "Seleccioneu el menú:"
 msgid "new WordPress Loop"
 msgstr "Nou bucle del WordPress"
 
-#: wp-includes/deprecated.php:707 wp-includes/js/tinymce/langs/wp-langs.php:520
-#: wp-includes/media-template.php:276 wp-includes/media-template.php:301
-#: wp-includes/media-template.php:414 wp-includes/media-template.php:429
+#: wp-includes/deprecated.php:707
+#: wp-includes/js/tinymce/langs/wp-langs.php:520
+#: wp-includes/media-template.php:276
+#: wp-includes/media-template.php:301
+#: wp-includes/media-template.php:414
+#: wp-includes/media-template.php:429
 msgid "None"
 msgstr "Cap"
 
@@ -6309,19 +6483,21 @@ msgstr "Cap"
 msgid "Last updated"
 msgstr "Darrera actualització"
 
-#: wp-includes/deprecated.php:1898 wp-includes/post-template.php:1166
+#: wp-includes/deprecated.php:1898
+#: wp-includes/post-template.php:1166
 msgid "Missing Attachment"
 msgstr "Falta l'adjunt"
 
 #: wp-includes/deprecated.php:2732
 msgid "First Post"
-msgstr "Primera entrada"
+msgstr "Primera article"
 
 #: wp-includes/deprecated.php:2732
 msgid "Last Post"
-msgstr "Darrera entrada"
+msgstr "Darrer article"
 
-#: wp-includes/deprecated.php:3175 wp-includes/functions.php:2002
+#: wp-includes/deprecated.php:3175
+#: wp-includes/functions.php:2002
 msgid "Are you sure you want to do this?"
 msgstr "Segur que voleu fer això?"
 
@@ -6341,19 +6517,23 @@ msgstr "El fitxer '%s' no és cap imatge."
 msgid "Comments on %s"
 msgstr "Comentaris a %s"
 
-#: wp-includes/feed-atom-comments.php:21 wp-includes/feed-rss2-comments.php:24
+#: wp-includes/feed-atom-comments.php:21
+#: wp-includes/feed-rss2-comments.php:24
 msgid "Comments for %1$s searching on %2$s"
 msgstr "Comentaris per %1$s buscant %2$s"
 
-#: wp-includes/feed-atom-comments.php:23 wp-includes/feed-rss2-comments.php:26
+#: wp-includes/feed-atom-comments.php:23
+#: wp-includes/feed-rss2-comments.php:26
 msgid "Comments for %s"
 msgstr "Comentaris per %s"
 
-#: wp-includes/feed-atom-comments.php:52 wp-includes/feed-rss2-comments.php:44
+#: wp-includes/feed-atom-comments.php:52
+#: wp-includes/feed-rss2-comments.php:44
 msgid "Comment on %1$s by %2$s"
 msgstr "Comentari de %2$s a %1$s"
 
-#: wp-includes/feed-atom-comments.php:54 wp-includes/feed-rss2-comments.php:46
+#: wp-includes/feed-atom-comments.php:54
+#: wp-includes/feed-rss2-comments.php:46
 msgid "By: %s"
 msgstr "Per: %s"
 
@@ -6365,7 +6545,8 @@ msgstr "Comentaris a: %s"
 msgid "Protected Comments: Please enter your password to view comments."
 msgstr "Comentaris protegits: introdueix la contrasenya per veure els comentaris."
 
-#: wp-includes/formatting.php:37 wp-includes/formatting.php:3270
+#: wp-includes/formatting.php:37
+#: wp-includes/formatting.php:3270
 msgctxt "opening curly double quote"
 msgid "&#8220;"
 msgstr "&#8220;"
@@ -6428,11 +6609,13 @@ msgid_plural "%s days"
 msgstr[0] "%s dia"
 msgstr[1] "%s dies"
 
-#: wp-includes/formatting.php:2175 wp-includes/general-template.php:1978
+#: wp-includes/formatting.php:2175
+#: wp-includes/general-template.php:1978
 msgid "&hellip;"
 msgstr "&hellip;"
 
-#: wp-includes/formatting.php:2180 wp-includes/script-loader.php:303
+#: wp-includes/formatting.php:2180
+#: wp-includes/script-loader.php:303
 msgctxt "word count: words or characters?"
 msgid "words"
 msgstr "paraules"
@@ -6447,7 +6630,7 @@ msgstr "L'adreça del WordPress que heu entrat no sembla ser una URL vàlida. En
 
 #: wp-includes/formatting.php:2860
 msgid "The Site address you entered did not appear to be a valid URL. Please enter a valid URL."
-msgstr "L'adreça del lloc web que heu introduït no sembla ser una URL vàlida. Entreu una URL vàlida."
+msgstr "L'adreça del bloc que heu introduït no sembla ser una URL vàlida. Entreu una URL vàlida."
 
 #: wp-includes/formatting.php:2901
 msgid "The timezone you have entered is not valid. Please select a valid timezone."
@@ -6469,7 +6652,8 @@ msgstr "Error: %s no és una plantilla de fils de subscripció vàlida."
 msgid "One or more database tables are unavailable. The database may need to be <a href=\"%s\">repaired</a>."
 msgstr "Una o més taules de la base de dades no estan disponibles. La base de dades necessita ser <a href=\"%s\">reparada</a>."
 
-#: wp-includes/functions.php:1602 wp-includes/functions.php:1725
+#: wp-includes/functions.php:1602
+#: wp-includes/functions.php:1725
 msgid "Unable to create directory %s. Is its parent directory writable by the server?"
 msgstr "No es pot crear el directori %s. Teniu permís d'escriptura en el directori superior?"
 
@@ -6497,7 +6681,8 @@ msgstr "Heu sortit de %s"
 msgid "Do you really want to <a href='%s'>log out</a>?"
 msgstr "Realment voleu <a href='%s'>sortir</a>?"
 
-#: wp-includes/functions.php:2004 wp-includes/ms-functions.php:1641
+#: wp-includes/functions.php:2004
+#: wp-includes/ms-functions.php:1641
 msgid "Please try again."
 msgstr "Torneu-ho a provar."
 
@@ -6505,7 +6690,8 @@ msgstr "Torneu-ho a provar."
 msgid "&laquo; Back"
 msgstr "« Tornar enrere"
 
-#: wp-includes/functions.php:2090 wp-load.php:62
+#: wp-includes/functions.php:2090
+#: wp-load.php:62
 msgid "WordPress &rsaquo; Error"
 msgstr "WordPress &rsaquo; Error"
 
@@ -6513,15 +6699,18 @@ msgstr "WordPress &rsaquo; Error"
 msgid "Database Error"
 msgstr "Error de la base de dades"
 
-#: wp-includes/functions.php:2753 wp-includes/ms-load.php:237
+#: wp-includes/functions.php:2753
+#: wp-includes/ms-load.php:237
 msgid "Error establishing a database connection"
 msgstr "S'ha produït un error en establir la connexió amb la base de dades"
 
-#: wp-includes/functions.php:2839 wp-includes/functions.php:2879
+#: wp-includes/functions.php:2839
+#: wp-includes/functions.php:2879
 msgid "%1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
 msgstr "%1$s és <strong>obsolet</strong> des de la versió %2$s! Usa %3$s com a substitució."
 
-#: wp-includes/functions.php:2841 wp-includes/functions.php:2881
+#: wp-includes/functions.php:2841
+#: wp-includes/functions.php:2881
 msgid "%1$s is <strong>deprecated</strong> since version %2$s with no alternative available."
 msgstr "%1$s és <strong>obsolet</strong> des de la versió %2$s i no hi ha cap alternativa disponible!"
 
@@ -6549,7 +6738,8 @@ msgstr "%1$s s'ha cridat <strong>de manera incorrecta</strong>. %2$s %3$s"
 msgid "Select a city"
 msgstr "Selecciona una ciutat"
 
-#: wp-includes/functions.php:3399 wp-includes/functions.php:3403
+#: wp-includes/functions.php:3399
+#: wp-includes/functions.php:3403
 msgid "UTC"
 msgstr "UTC"
 
@@ -6578,8 +6768,11 @@ msgstr "Els scripts i estils no haurien de registrar-se o encuar-se fins el %1$s
 msgid "Search for:"
 msgstr "Cerca:"
 
-#: wp-includes/general-template.php:189 wp-login.php:449 wp-login.php:477
-#: wp-login.php:508 wp-login.php:564
+#: wp-includes/general-template.php:189
+#: wp-login.php:449
+#: wp-login.php:477
+#: wp-login.php:508
+#: wp-login.php:564
 msgid "Log in"
 msgstr "Entra"
 
@@ -6587,24 +6780,33 @@ msgstr "Entra"
 msgid "Log out"
 msgstr "Surt"
 
-#: wp-includes/general-template.php:261 wp-login.php:549 wp-login.php:682
+#: wp-includes/general-template.php:261
+#: wp-login.php:549
+#: wp-login.php:682
 msgid "Username"
 msgstr "Nom d'usuari"
 
-#: wp-includes/general-template.php:262 wp-login.php:686
+#: wp-includes/general-template.php:262
+#: wp-login.php:686
 msgid "Password"
 msgstr "Contrasenya"
 
-#: wp-includes/general-template.php:263 wp-login.php:690
+#: wp-includes/general-template.php:263
+#: wp-login.php:690
 msgid "Remember Me"
 msgstr "Recorda'm"
 
-#: wp-includes/general-template.php:264 wp-login.php:673 wp-login.php:692
+#: wp-includes/general-template.php:264
+#: wp-login.php:673
+#: wp-login.php:692
 msgid "Log In"
 msgstr "Entra"
 
-#: wp-includes/general-template.php:341 wp-login.php:451 wp-login.php:510
-#: wp-login.php:560 wp-login.php:709
+#: wp-includes/general-template.php:341
+#: wp-login.php:451
+#: wp-login.php:510
+#: wp-login.php:560
+#: wp-login.php:709
 msgid "Register"
 msgstr "Registra"
 
@@ -6637,11 +6839,13 @@ msgctxt "calendar caption"
 msgid "%1$s %2$s"
 msgstr "%1$s %2$s"
 
-#: wp-includes/general-template.php:1172 wp-includes/general-template.php:1180
+#: wp-includes/general-template.php:1172
+#: wp-includes/general-template.php:1180
 msgid "View posts for %1$s %2$s"
 msgstr "Mostra totes les entrades per a %1$s %2$s"
 
-#: wp-includes/general-template.php:1600 wp-includes/general-template.php:1623
+#: wp-includes/general-template.php:1600
+#: wp-includes/general-template.php:1623
 msgctxt "feed link"
 msgid "&raquo;"
 msgstr "&raquo;"
@@ -6709,8 +6913,10 @@ msgid "Insert"
 msgstr "Insereix"
 
 #: wp-includes/js/tinymce/langs/wp-langs.php:23
-#: wp-includes/js/tinymce/wp-mce-help.php:245 wp-includes/media-template.php:32
-#: wp-includes/script-loader.php:187 wp-includes/script-loader.php:319
+#: wp-includes/js/tinymce/wp-mce-help.php:245
+#: wp-includes/media-template.php:32
+#: wp-includes/script-loader.php:187
+#: wp-includes/script-loader.php:319
 #: wp-login.php:620
 msgid "Close"
 msgstr "Tanca"
@@ -6739,7 +6945,7 @@ msgstr "Actualment no suportat pel vostre navegador, podeu usar una combinació 
 
 #: wp-includes/js/tinymce/langs/wp-langs.php:29
 msgid "Sorry, but we have noticed that your popup-blocker has disabled a window that provides application functionality. You will need to disable popup blocking on this site in order to fully utilize this tool."
-msgstr "Disculpeu, però hem notat que el vostre bloquejador de finestres ha desactivat una finestra que aporta funcionalitat a l'aplicació. Necessiteu desactivar el bloqueig d'anuncis emergents en aquest lloc web si voleu utilitzar aquest editor amb totes les possibilitats."
+msgstr "Disculpeu, però hem notat que el vostre bloquejador de finestres ha desactivat una finestra que aporta funcionalitat a l'aplicació. Necessiteu desactivar el bloqueig d'anuncis emergents en aquest bloc si voleu utilitzar aquest editor amb totes les possibilitats."
 
 #: wp-includes/js/tinymce/langs/wp-langs.php:30
 msgid "ERROR: Invalid values entered, these are marked in red."
@@ -6948,174 +7154,219 @@ msgstr "Insereix la data"
 msgid "Insert time"
 msgstr "Insereix l'hora"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:93 wp-includes/locale.php:131
+#: wp-includes/js/tinymce/langs/wp-langs.php:93
+#: wp-includes/locale.php:131
 #: wp-includes/locale.php:146
 msgid "January"
 msgstr "gener"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:93 wp-includes/locale.php:132
+#: wp-includes/js/tinymce/langs/wp-langs.php:93
+#: wp-includes/locale.php:132
 #: wp-includes/locale.php:147
 msgid "February"
 msgstr "febrer"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:93 wp-includes/locale.php:133
+#: wp-includes/js/tinymce/langs/wp-langs.php:93
+#: wp-includes/locale.php:133
 #: wp-includes/locale.php:148
 msgid "March"
 msgstr "març"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:93 wp-includes/locale.php:134
+#: wp-includes/js/tinymce/langs/wp-langs.php:93
+#: wp-includes/locale.php:134
 #: wp-includes/locale.php:149
 msgid "April"
 msgstr "abril"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:93 wp-includes/locale.php:135
+#: wp-includes/js/tinymce/langs/wp-langs.php:93
+#: wp-includes/locale.php:135
 #: wp-includes/locale.php:150
 msgid "May"
 msgstr "maig"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:93 wp-includes/locale.php:136
+#: wp-includes/js/tinymce/langs/wp-langs.php:93
+#: wp-includes/locale.php:136
 #: wp-includes/locale.php:151
 msgid "June"
 msgstr "juny"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:93 wp-includes/locale.php:137
+#: wp-includes/js/tinymce/langs/wp-langs.php:93
+#: wp-includes/locale.php:137
 #: wp-includes/locale.php:152
 msgid "July"
 msgstr "juliol"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:93 wp-includes/locale.php:138
+#: wp-includes/js/tinymce/langs/wp-langs.php:93
+#: wp-includes/locale.php:138
 #: wp-includes/locale.php:153
 msgid "August"
 msgstr "agost"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:93 wp-includes/locale.php:139
+#: wp-includes/js/tinymce/langs/wp-langs.php:93
+#: wp-includes/locale.php:139
 #: wp-includes/locale.php:154
 msgid "September"
 msgstr "setembre"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:93 wp-includes/locale.php:140
+#: wp-includes/js/tinymce/langs/wp-langs.php:93
+#: wp-includes/locale.php:140
 #: wp-includes/locale.php:155
 msgid "October"
 msgstr "octubre"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:93 wp-includes/locale.php:141
+#: wp-includes/js/tinymce/langs/wp-langs.php:93
+#: wp-includes/locale.php:141
 #: wp-includes/locale.php:156
 msgid "November"
 msgstr "novembre"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:93 wp-includes/locale.php:142
+#: wp-includes/js/tinymce/langs/wp-langs.php:93
+#: wp-includes/locale.php:142
 #: wp-includes/locale.php:157
 msgid "December"
 msgstr "desembre"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:94 wp-includes/locale.php:146
+#: wp-includes/js/tinymce/langs/wp-langs.php:94
+#: wp-includes/locale.php:146
 msgid "Jan_January_abbreviation"
 msgstr "gen"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:94 wp-includes/locale.php:147
+#: wp-includes/js/tinymce/langs/wp-langs.php:94
+#: wp-includes/locale.php:147
 msgid "Feb_February_abbreviation"
 msgstr "feb"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:94 wp-includes/locale.php:148
+#: wp-includes/js/tinymce/langs/wp-langs.php:94
+#: wp-includes/locale.php:148
 msgid "Mar_March_abbreviation"
 msgstr "mar"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:94 wp-includes/locale.php:149
+#: wp-includes/js/tinymce/langs/wp-langs.php:94
+#: wp-includes/locale.php:149
 msgid "Apr_April_abbreviation"
 msgstr "abr"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:94 wp-includes/locale.php:150
+#: wp-includes/js/tinymce/langs/wp-langs.php:94
+#: wp-includes/locale.php:150
 msgid "May_May_abbreviation"
 msgstr "mai"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:94 wp-includes/locale.php:151
+#: wp-includes/js/tinymce/langs/wp-langs.php:94
+#: wp-includes/locale.php:151
 msgid "Jun_June_abbreviation"
 msgstr "jun"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:94 wp-includes/locale.php:152
+#: wp-includes/js/tinymce/langs/wp-langs.php:94
+#: wp-includes/locale.php:152
 msgid "Jul_July_abbreviation"
 msgstr "jul"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:94 wp-includes/locale.php:153
+#: wp-includes/js/tinymce/langs/wp-langs.php:94
+#: wp-includes/locale.php:153
 msgid "Aug_August_abbreviation"
 msgstr "ago"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:94 wp-includes/locale.php:154
+#: wp-includes/js/tinymce/langs/wp-langs.php:94
+#: wp-includes/locale.php:154
 msgid "Sep_September_abbreviation"
 msgstr "set"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:94 wp-includes/locale.php:155
+#: wp-includes/js/tinymce/langs/wp-langs.php:94
+#: wp-includes/locale.php:155
 msgid "Oct_October_abbreviation"
 msgstr "oct"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:94 wp-includes/locale.php:156
+#: wp-includes/js/tinymce/langs/wp-langs.php:94
+#: wp-includes/locale.php:156
 msgid "Nov_November_abbreviation"
 msgstr "nov"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:94 wp-includes/locale.php:157
+#: wp-includes/js/tinymce/langs/wp-langs.php:94
+#: wp-includes/locale.php:157
 msgid "Dec_December_abbreviation"
 msgstr "des"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:95 wp-includes/locale.php:99
-#: wp-includes/locale.php:109 wp-includes/locale.php:122
+#: wp-includes/js/tinymce/langs/wp-langs.php:95
+#: wp-includes/locale.php:99
+#: wp-includes/locale.php:109
+#: wp-includes/locale.php:122
 msgid "Sunday"
 msgstr "diumenge"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:95 wp-includes/locale.php:100
-#: wp-includes/locale.php:110 wp-includes/locale.php:123
+#: wp-includes/js/tinymce/langs/wp-langs.php:95
+#: wp-includes/locale.php:100
+#: wp-includes/locale.php:110
+#: wp-includes/locale.php:123
 msgid "Monday"
 msgstr "dilluns"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:95 wp-includes/locale.php:101
-#: wp-includes/locale.php:111 wp-includes/locale.php:124
+#: wp-includes/js/tinymce/langs/wp-langs.php:95
+#: wp-includes/locale.php:101
+#: wp-includes/locale.php:111
+#: wp-includes/locale.php:124
 msgid "Tuesday"
 msgstr "dimarts "
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:95 wp-includes/locale.php:102
-#: wp-includes/locale.php:112 wp-includes/locale.php:125
+#: wp-includes/js/tinymce/langs/wp-langs.php:95
+#: wp-includes/locale.php:102
+#: wp-includes/locale.php:112
+#: wp-includes/locale.php:125
 msgid "Wednesday"
 msgstr "dimecres"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:95 wp-includes/locale.php:103
-#: wp-includes/locale.php:113 wp-includes/locale.php:126
+#: wp-includes/js/tinymce/langs/wp-langs.php:95
+#: wp-includes/locale.php:103
+#: wp-includes/locale.php:113
+#: wp-includes/locale.php:126
 msgid "Thursday"
 msgstr "dijous"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:95 wp-includes/locale.php:104
-#: wp-includes/locale.php:114 wp-includes/locale.php:127
+#: wp-includes/js/tinymce/langs/wp-langs.php:95
+#: wp-includes/locale.php:104
+#: wp-includes/locale.php:114
+#: wp-includes/locale.php:127
 msgid "Friday"
 msgstr "divendres"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:95 wp-includes/locale.php:105
-#: wp-includes/locale.php:115 wp-includes/locale.php:128
+#: wp-includes/js/tinymce/langs/wp-langs.php:95
+#: wp-includes/locale.php:105
+#: wp-includes/locale.php:115
+#: wp-includes/locale.php:128
 msgid "Saturday"
 msgstr "dissabte"
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:96 wp-includes/locale.php:122
+#: wp-includes/js/tinymce/langs/wp-langs.php:96
+#: wp-includes/locale.php:122
 msgid "Sun"
 msgstr "dg."
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:96 wp-includes/locale.php:123
+#: wp-includes/js/tinymce/langs/wp-langs.php:96
+#: wp-includes/locale.php:123
 msgid "Mon"
 msgstr "dl."
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:96 wp-includes/locale.php:124
+#: wp-includes/js/tinymce/langs/wp-langs.php:96
+#: wp-includes/locale.php:124
 msgid "Tue"
 msgstr "dt."
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:96 wp-includes/locale.php:125
+#: wp-includes/js/tinymce/langs/wp-langs.php:96
+#: wp-includes/locale.php:125
 msgid "Wed"
 msgstr "dc."
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:96 wp-includes/locale.php:126
+#: wp-includes/js/tinymce/langs/wp-langs.php:96
+#: wp-includes/locale.php:126
 msgid "Thu"
 msgstr "dj."
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:96 wp-includes/locale.php:127
+#: wp-includes/js/tinymce/langs/wp-langs.php:96
+#: wp-includes/locale.php:127
 msgid "Fri"
 msgstr "dv."
 
-#: wp-includes/js/tinymce/langs/wp-langs.php:96 wp-includes/locale.php:128
+#: wp-includes/js/tinymce/langs/wp-langs.php:96
+#: wp-includes/locale.php:128
 msgid "Sat"
 msgstr "ds."
 
@@ -7337,7 +7588,8 @@ msgid "Cell"
 msgstr "Cel·la"
 
 #: wp-includes/js/tinymce/langs/wp-langs.php:206
-#: wp-includes/script-loader.php:465 wp-includes/script-loader.php:577
+#: wp-includes/script-loader.php:465
+#: wp-includes/script-loader.php:577
 msgid "The changes you made will be lost if you navigate away from this page."
 msgstr "Perdreu els canvis que heu fet si abandoneu aquesta pàgina."
 
@@ -7401,3 +7653,4 @@ msgstr "Cap suggeriment"
 #: wp-includes/js/tinymce/langs/wp-langs.php:239
 msgid "No misspellings found."
 msgstr "No s'ha trobat cap falta d'ortografia."
+
