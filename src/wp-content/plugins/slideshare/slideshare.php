@@ -9,7 +9,16 @@ Author URI: http://yoast.com/
 */
 
 function slideshare_init() {
+	//XTEC ************ MODIFICAT - Corregit un bug que impedeix la traducció.
+	//2011.05.11 @fbassas
+
+        /*
 	load_plugin_textdomain( 'slideshare', null, plugins_url( 'languages' , __FILE__ )  );
+        */
+
+        //************ FI
+
+        load_plugin_textdomain( 'slideshare', null, dirname( plugin_basename( __FILE__ )) . '/languages' );
 }
 add_action( 'init', 'slideshare_init' );
 
