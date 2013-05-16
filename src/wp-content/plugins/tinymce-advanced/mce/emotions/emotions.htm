@@ -1,94 +1,42 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>{#emotions.emotions_desc}</title>
-<script type="text/javascript" type="text/javascript" src="../../tiny_mce_popup.js?v=3211"></script>
-<script type="text/javascript" type="text/javascript">
-var EmotionsDialog = {
-	init : function(ed) {
-		tinyMCEPopup.resizeToInnerSize();
-	},
-
-	insert : function insertEmotion(code) {
-    	tinyMCEPopup.execCommand('mceInsertContent', false, code);
-		tinyMCEPopup.close();
-	}
-};
-tinyMCEPopup.onInit.add(EmotionsDialog.init, EmotionsDialog);
-
-document.write('<base href="'+tinymce.baseURL+'" />');
-</script>
-<style type="text/css">
-	table#emotions {border:0;}
-	#emotions img {border:0;margin:4px;}
-</style>
-<base target="_self" />
+	<title>{#emotions_dlg.title}</title>
+	<script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+	<script type="text/javascript" src="js/emotions.js"></script>
 </head>
-<body style="display: none">
-	<div align="center">
-		<div class="title">{#emotions.emotions_desc}:<br /><br /></div>
+<body style="display: none" role="application" aria-labelledby="app_title">
+<span style="display:none;" id="app_title">{#emotions_dlg.title}</span>
+<div align="center">
+	<div class="title">{#emotions_dlg.title}:<br /><br /></div>
 
-		<table id="emotions">
-		  <tr>
-			<td><a href="javascript:EmotionsDialog.insert(' 8-) ');">
-            <img src="../images/smilies/icon_cool.gif" width="15" height="15" alt="8-)" title="8-)" /></a></td>
-            
-			<td><a href="javascript:EmotionsDialog.insert(' :cry: ');">
-            <img src="../images/smilies/icon_cry.gif" width="15" height="15" alt=":cry:" title=":cry:" /></a></td>
-            
-			<td><a href="javascript:EmotionsDialog.insert(' :oops: ');">
-            <img src="../images/smilies/icon_redface.gif" width="15" height="15" alt=":oops:" title=":oops:" /></a></td>
-
-			<td><a href="javascript:EmotionsDialog.insert(' :mrgreen: ');">
-            <img src="../images/smilies/icon_mrgreen.gif" width="15" height="15" alt=":mrgreen:" title=":mrgreen:" /></a></td>
-            
-		    <td><a href="javascript:EmotionsDialog.insert(' :-( ');">
-            <img src="../images/smilies/icon_sad.gif" width="15" height="15" alt=":-(" title=":-(" /></a></td>
-
-			<td><a href="javascript:EmotionsDialog.insert(' :twisted: ');">
-            <img src="../images/smilies/icon_twisted.gif" width="15" height="15" alt=":twisted:" title=":twisted:" /></a></td>
-          </tr>
-
-		  <tr>
-			<td><a href="javascript:EmotionsDialog.insert(' :evil: ');">
-            <img src="../images/smilies/icon_evil.gif" width="15" height="15" alt=":evil:" title=":evil:" /></a></td>
-
-			<td><a href="javascript:EmotionsDialog.insert(' :lol: ');">
-            <img src="../images/smilies/icon_lol.gif" width="15" height="15" alt=":lol:" title=":lol:" /></a></td>
-            
-		  <td><a href="javascript:EmotionsDialog.insert(' :roll: ');">
-            <img src="../images/smilies/icon_rolleyes.gif" width="15" height="15" alt=":roll:" title=":roll:" /></a></td>
-
-			<td><a href="javascript:EmotionsDialog.insert(' :-? ');">
-            <img src="../images/smilies/icon_confused.gif" width="15" height="15" alt=":-?" title=":-?" /></a></td>
-
-			<td><a href="javascript:EmotionsDialog.insert(' :-) ');">
-            <img src="../images/smilies/icon_smile.gif" width="15" height="15" alt=":-)" title=":-)" /></a></td>
-
-			<td><a href="javascript:EmotionsDialog.insert(' :-o ');">
-            <img src="../images/smilies/icon_surprised.gif" width="15" height="15" alt=":-o" title=":-o" /></a></td>
-          </tr>
-
-		  <tr>
-			<td><a href="javascript:EmotionsDialog.insert(' :-P ');">
-            <img src="../images/smilies/icon_razz.gif" width="15" height="15" alt=":-P" title=":-P" /></a></td>
-
-			<td><a href="javascript:EmotionsDialog.insert(' :-| ');">
-            <img src="../images/smilies/icon_neutral.gif" width="15" height="15" alt=":-|" title=":-|" /></a></td>
-
-			<td><a href="javascript:EmotionsDialog.insert(' ;-) ');">
-            <img src="../images/smilies/icon_wink.gif" width="15" height="15" alt=";-)" title=";-)" /></a></td>
-
-			<td><a href="javascript:EmotionsDialog.insert(' :-x ');">
-            <img src="../images/smilies/icon_mad.gif" width="15" height="15" alt=":-x" title=":-x" /></a></td>
-
-		    <td><a href="javascript:EmotionsDialog.insert(' 8-O ');">
-            <img src="../images/smilies/icon_eek.gif" width="15" height="15" alt="8-O" title="8-O" /></a></td>
-
-            <td><a href="javascript:EmotionsDialog.insert(' :-D ');">
-            <img src="../images/smilies/icon_biggrin.gif" width="15" height="15" alt=":-D" title=":-D" /></a></td>
-		  </tr>
-		</table>
-	</div>
+	<table id="emoticon_table" role="presentation" border="0" cellspacing="0" cellpadding="4">
+		<tr>
+			<td><a class="emoticon_link" role="button" title="{#emotions_dlg.cool}. {#emotions_dlg.usage}" href="javascript:EmotionsDialog.insert('smiley-cool.gif','emotions_dlg.cool');"><img src="img/smiley-cool.gif" width="18" height="18" border="0" alt="{#emotions_dlg.cool}. {#emotions_dlg.usage}" /></a></td>
+			<td><a class="emoticon_link" role="button" title="{#emotions_dlg.cry}. {#emotions_dlg.usage}" href="javascript:EmotionsDialog.insert('smiley-cry.gif','emotions_dlg.cry');"><img src="img/smiley-cry.gif" width="18" height="18" border="0" alt="{#emotions_dlg.cry}. {#emotions_dlg.usage}" /></a></td>
+			<td><a class="emoticon_link" role="button" title="{#emotions_dlg.embarassed}. {#emotions_dlg.usage}" href="javascript:EmotionsDialog.insert('smiley-embarassed.gif','emotions_dlg.embarassed');"><img src="img/smiley-embarassed.gif" width="18" height="18" border="0" alt="{#emotions_dlg.embarassed}. {#emotions_dlg.usage}"  /></a></td>
+			<td><a class="emoticon_link" role="button" title="{#emotions_dlg.foot_in_mouth}. {#emotions_dlg.usage}" href="javascript:EmotionsDialog.insert('smiley-foot-in-mouth.gif','emotions_dlg.foot_in_mouth');"><img src="img/smiley-foot-in-mouth.gif" width="18" height="18" border="0" alt="{#emotions_dlg.foot_in_mouth}. {#emotions_dlg.usage}" /></a></td>
+		</tr>
+		<tr>
+			<td><a class="emoticon_link" role="button" title="{#emotions_dlg.frown}. {#emotions_dlg.usage}" href="javascript:EmotionsDialog.insert('smiley-frown.gif','emotions_dlg.frown');"><img src="img/smiley-frown.gif" width="18" height="18" border="0" alt="{#emotions_dlg.frown}. {#emotions_dlg.usage}" /></a></td>
+			<td><a class="emoticon_link" role="button" title="{#emotions_dlg.innocent}. {#emotions_dlg.usage}" href="javascript:EmotionsDialog.insert('smiley-innocent.gif','emotions_dlg.innocent');"><img src="img/smiley-innocent.gif" width="18" height="18" border="0" alt="{#emotions_dlg.innocent}. {#emotions_dlg.usage}"  /></a></td>
+			<td><a class="emoticon_link" role="button" title="{#emotions_dlg.kiss}. {#emotions_dlg.usage}" href="javascript:EmotionsDialog.insert('smiley-kiss.gif','emotions_dlg.kiss');"><img src="img/smiley-kiss.gif" width="18" height="18" border="0" alt="{#emotions_dlg.kiss}. {#emotions_dlg.usage}" /></a></td>
+			<td><a class="emoticon_link" role="button" title="{#emotions_dlg.laughing}. {#emotions_dlg.usage}" href="javascript:EmotionsDialog.insert('smiley-laughing.gif','emotions_dlg.laughing');"><img src="img/smiley-laughing.gif" width="18" height="18" border="0" alt="{#emotions_dlg.laughing}. {#emotions_dlg.usage}" /></a></td>
+		</tr>
+		<tr>
+			<td><a class="emoticon_link" role="button" title="{#emotions_dlg.money_mouth}. {#emotions_dlg.usage}" href="javascript:EmotionsDialog.insert('smiley-money-mouth.gif','emotions_dlg.money_mouth');"><img src="img/smiley-money-mouth.gif" width="18" height="18" border="0" alt="{#emotions_dlg.money_mouth}. {#emotions_dlg.usage}"/></a></td>
+			<td><a class="emoticon_link" role="button" title="{#emotions_dlg.sealed}. {#emotions_dlg.usage}" href="javascript:EmotionsDialog.insert('smiley-sealed.gif','emotions_dlg.sealed');"><img src="img/smiley-sealed.gif" width="18" height="18" border="0" alt="{#emotions_dlg.sealed}. {#emotions_dlg.usage}" /></a></td>
+			<td><a class="emoticon_link" role="button" title="{#emotions_dlg.smile}. {#emotions_dlg.usage}" href="javascript:EmotionsDialog.insert('smiley-smile.gif','emotions_dlg.smile');"><img src="img/smiley-smile.gif" width="18" height="18" border="0" alt="{#emotions_dlg.smile}. {#emotions_dlg.usage}" /></a></td>
+			<td><a class="emoticon_link" role="button" title="{#emotions_dlg.surprised}. {#emotions_dlg.usage}" href="javascript:EmotionsDialog.insert('smiley-surprised.gif','emotions_dlg.surprised');"><img src="img/smiley-surprised.gif" width="18" height="18" border="0" alt="{#emotions_dlg.surprised}. {#emotions_dlg.usage}" /></a></td>
+		</tr>
+		<tr>
+			<td><a class="emoticon_link" role="button" title="{#emotions_dlg.tongue_out}. {#emotions_dlg.usage}" href="javascript:EmotionsDialog.insert('smiley-tongue-out.gif','emotions_dlg.tongue_out');"><img src="img/smiley-tongue-out.gif" width="18" height="18" border="0" alt="{#emotions_dlg.tongue-out}. {#emotions_dlg.usage}" /></a></td>
+			<td><a class="emoticon_link" role="button" title="{#emotions_dlg.undecided}. {#emotions_dlg.usage}" href="javascript:EmotionsDialog.insert('smiley-undecided.gif','emotions_dlg.undecided');"><img src="img/smiley-undecided.gif" width="18" height="18" border="0" alt="{#emotions_dlg.undecided}. {#emotions_dlg.usage}" /></a></td>
+			<td><a class="emoticon_link" role="button" title="{#emotions_dlg.wink}. {#emotions_dlg.usage}" href="javascript:EmotionsDialog.insert('smiley-wink.gif','emotions_dlg.wink');"><img src="img/smiley-wink.gif" width="18" height="18" border="0" alt="{#emotions_dlg.wink}. {#emotions_dlg.usage}" /></a></td>
+			<td><a class="emoticon_link" role="button" title="{#emotions_dlg.yell}. {#emotions_dlg.usage}" href="javascript:EmotionsDialog.insert('smiley-yell.gif','emotions_dlg.yell');"><img src="img/smiley-yell.gif" width="18" height="18" border="0" alt="{#emotions_dlg.yell}. {#emotions_dlg.usage}" /></a></td>
+		</tr>
+	</table>
+	<div>{#emotions_dlg.usage}</div>
+</div>
 </body>
 </html>
