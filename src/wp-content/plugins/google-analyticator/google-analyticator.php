@@ -180,6 +180,54 @@ $url = http_build_query( array(
                         );
 
     ?>
+
+<!--XTEC ************ MODIFICAT - Localization support
+2013.05.17 @jmiro227-->
+
+    <div class="wrap">
+
+        <h2><?php _e('Activate Google Analyticator', 'google-analyticator'); ?></h2>
+
+            <p><strong><?php _e('Google Authentication Code', 'google-analyticator'); ?> </strong> </p>
+
+        <p><?php _e('You need to sign in to Google and grant this plugin access to your Google Analytics account', 'google-analyticator'); ?></p>
+
+        <p>
+            <a
+                onclick="window.open('https://accounts.google.com/o/oauth2/auth?<?php echo $url ?>', 'activate','width=700, height=600, menubar=0, status=0, location=0, toolbar=0')"
+                target="_blank"
+                href="javascript:void(0);"> <?php _e('Click Here', 'google-analyticator'); ?> </a> - <small> <?php _e('Or', 'google-analyticator'); ?> <a target="_blank" href="https://accounts.google.com/o/oauth2/auth?<?php echo $url ?>"><?php _e('here', 'google-analyticator'); ?></a> <?php _e('if you have popups blocked', 'google-analyticator'); ?></small>
+        </p>
+
+        <div  id="key">
+
+            <p><?php _e('Enter your Google Authentication Code in this box. This code will be used to get an Authentication Token so you can access your website stats.', 'google-analyticator'); ?></p>
+            <form method="post" action="<?php echo admin_url('options-general.php?page=google-analyticator.php');?>">
+                <?php wp_nonce_field('google-analyticator-update_settings'); ?>
+                <input type="text" name="key_ga_google_token" value="" style="width:450px;"/>
+                <input type="submit"  value="<?php _e('Save &amp; Continue', 'google-analyticator'); ?>" />
+            </form>
+        </div>
+
+		<br /><br /><br />
+		<hr />
+		<br />
+
+            <p><strong><?php _e("I Don't Want To Authenticate Through Google", 'google-analyticator'); ?> </strong> </p>
+            
+            <p><?php _e("If you don't want to authenticate through Google and only use the tracking capability of the plugin", 'google-analyticator'); ?> (<strong><u><?php _e('not the dashboard functionality', 'google-analyticator'); ?></u></strong>), <?php _e('you can do this by clicking the button below.', 'google-analyticator'); ?> </p>
+            <p><?php _e('You will be asked on the next page to manually enter your Google Analytics UID.', 'google-analyticator'); ?></p>
+            <form method="post" action="<?php echo admin_url('options-general.php?page=google-analyticator.php');?>">
+            <input type="hidden" name="key_ga_google_token" value="" />
+            <?php wp_nonce_field('google-analyticator-update_settings'); ?>
+            <input type="submit"  value="<?php _e('Continue Without Authentication', 'google-analyticator'); ?>" />
+            </form>
+
+
+    </div>
+
+<!--************ ORIGINAL
+
     <div class="wrap">
 
         <h2>Activate Google Analyticator</h2>
@@ -222,8 +270,11 @@ $url = http_build_query( array(
 
     </div>
 
+************ FI-->
+
     <?php
 }
+
 
 // Add settings option
 function ga_filter_plugin_actions($links) {
