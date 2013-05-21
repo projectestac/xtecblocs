@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Google Analyticator 6.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/google-analyticator\n"
 "POT-Creation-Date: 2010-04-14 23:15+0000\n"
-"PO-Revision-Date: 2013-05-21 10:16+0100\n"
+"PO-Revision-Date: 2013-05-21 10:27+0100\n"
 "Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr "Codi d'autenticació de Google"
 # 2013.05.17 @jmiro227
 #: google-analyticator.php:
 msgid "You need to sign in to Google and grant this plugin access to your Google Analytics account"
-msgstr "Es necessita iniciar sessió a Google i atorgar permís a aquest plugin per accedir al compte de Google Analytics"
+msgstr "Es necessita iniciar sessió a Google i atorgar permís a aquesta extensió per accedir al compte de Google Analytics"
 
 # XTEC ************ AFEGIT
 # 2013.05.17 @jmiro227
@@ -157,7 +157,7 @@ msgstr "Ginys del tauler d'administració"
 # 2013.05.17 @jmiro227
 #: google-analyticator.php:
 msgid "You have not authenticated with Google - you cannot use dashboard widgets! Reset the plugin to authenticate.."
-msgstr "No s'ha autenticat amb Google - no pot utilitzar els giyns del tauler! Cal restablir el plugin per autenticar-se..."
+msgstr "No s'ha autenticat amb Google - no pot utilitzar els giyns del tauler! Cal restablir l'extenssió per autenticar-se..."
 
 # XTEC ************ AFEGIT
 # 2013.05.17 @jmiro227
