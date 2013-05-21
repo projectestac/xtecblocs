@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Google Analyticator 6.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/google-analyticator\n"
 "POT-Creation-Date: 2010-04-14 23:15+0000\n"
-"PO-Revision-Date: 2013-05-17 14:25+0100\n"
+"PO-Revision-Date: 2013-05-21 10:16+0100\n"
 "Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -50,6 +50,36 @@ msgstr "aquí"
 #: google-analyticator.php:
 msgid "Or"
 msgstr "O"
+
+# XTEC ************ AFEGIT
+# 2013.05.17 @jmiro227
+#: google-analyticator.php:
+msgid "Tracking Settings"
+msgstr "Configuració de Seguiment"
+
+# XTEC ************ AFEGIT
+# 2013.05.17 @jmiro227
+#: google-analyticator.php:
+msgid "Link Tracking Settings"
+msgstr "Configuració de seguiment de vincles"
+
+# XTEC ************ AFEGIT
+# 2013.05.17 @jmiro227
+#: google-analyticator.php:
+msgid "Additional Tracking Code"
+msgstr "Codi de seguiment addicional"
+
+# XTEC ************ AFEGIT
+# 2013.05.17 @jmiro227
+#: google-analyticator.php:
+msgid "Enabling this option will treat outbound links and downloads as events instead of pageviews. Since the introduction of <a href=\"https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide\">event tracking in Analytics</a>, this is the recommended way to track these types of actions. Only disable this option if you must use the old pageview tracking method."
+msgstr "L'activació d'aquesta opció tractarà enllaços sortints i descàrregues com esdeveniments en lloc de pàgines vistes. Des de la introducció dels <a href=\"https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide\">el seguiment d'esdeveniments a Analytics </a>, aquest és el mètode recomanat per realitzar un seguiment d'aquest tipus d'accions. Només desactivar aquesta opció si ha d'utilitzar el vell mètode de seguiment de visites de pàgina."
+
+# XTEC ************ AFEGIT
+# 2013.05.17 @jmiro227
+#: google-analyticator.php:
+msgid "By selecting \"Yes\", This tells Google Analytics to anonymize the information sent by the tracker objects by removing the last octet of the IP address prior to its storage. Note that this will slightly reduce the accuracy of geographic reporting."
+msgstr "En seleccionar \"Sí\", Google Analytics farà anonima la informació enviada traient l'últim octet de l'adreça IP abans del seu emmagatzematge. Tingueu en compte que això reduirà lleugerament la precisió de la informació geogràfica."
 
 # XTEC ************ AFEGIT
 # 2013.05.17 @jmiro227
@@ -104,6 +134,36 @@ msgstr "Se li demanarà, a la pàgina següent, que introdueixi manualment l'UID
 #: google-analyticator.php:
 msgid "Continue Without Authentication"
 msgstr "Continuar sense autenticació"
+
+# XTEC ************ AFEGIT
+# 2013.05.17 @jmiro227
+#: google-analyticator.php:
+msgid "Enter any additional lines of tracking code that you would like to include in the Google Analytics tracking script. The code in this section will be displayed <strong>before</strong> the Google Analytics tracker is initialized."
+msgstr "Introduïu qualssevol línies de codi de seguiment addicional que us agradaria incloure en l'script de seguiment del Google Analytics. El codi en aquesta secció es mostrarà <strong>abans</strong> que el seguidor de Google Analytics s'iniciï."
+
+# XTEC ************ AFEGIT
+# 2013.05.17 @jmiro227
+#: google-analyticator.php:
+msgid "Enter any additional lines of tracking code that you would like to include in the Google Analytics tracking script. The code in this section will be displayed <strong>after</strong> the Google Analytics tracker is initialized."
+msgstr "Introduïu qualssevol línies addicionals de codi de seguiment que vulgueu incloure en l'script de seguiment de Google Analytics. El codi en aquesta secció es mostrarà <strong>després</strong> que el seguidor de Google Analytics s'inicialitzi."
+
+# XTEC ************ AFEGIT
+# 2013.05.17 @jmiro227
+#: google-analyticator.php:
+msgid "Admin Dashboard Widgets"
+msgstr "Ginys del tauler d'administració"
+
+# XTEC ************ AFEGIT
+# 2013.05.17 @jmiro227
+#: google-analyticator.php:
+msgid "You have not authenticated with Google - you cannot use dashboard widgets! Reset the plugin to authenticate.."
+msgstr "No s'ha autenticat amb Google - no pot utilitzar els giyns del tauler! Cal restablir el plugin per autenticar-se..."
+
+# XTEC ************ AFEGIT
+# 2013.05.17 @jmiro227
+#: google-analyticator.php:
+msgid "Deauthorize &amp; Reset Google Analyticator."
+msgstr "Retirar l'autorització i reinicialitzar el Google Analyticator."
 
 #: class.analytics.stats.php:120
 msgid "WordPress HTTP error."

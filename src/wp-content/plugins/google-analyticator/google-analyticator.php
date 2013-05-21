@@ -622,7 +622,12 @@ function ga_options_page() {
 				</tr>
                                 <tr>
                                     <td colspan="2">
+<!--XTEC ************ MODIFICAT - Localization support
+2013.05.17 @jmiro227-->
+                                        <h3><?php _e('Link Tracking Settings', 'google-analyticator'); ?></h3>
+<!--************ ORIGINAL
                                         <h3>Link Tracking Settings</h3>
+************ FI-->
                                     </td>
                                 </tr>
 				<tr>
@@ -729,7 +734,13 @@ function ga_options_page() {
 				</tr>
                                 <tr>
                                     <td colspan="2">
+
+<!--XTEC ************ MODIFICAT - Localization support
+2013.05.17 @jmiro227-->
+                                        <h3><?php _e('Additional Tracking Code', 'google-analyticator'); ?></h3>
+<!--************ ORIGINAL
                                         <h3>Additional Tracking Code </h3>
+************ FI-->
                                     </td>
                                 </tr>
 				<tr>
@@ -762,7 +773,13 @@ function ga_options_page() {
 				</tr>
 				<tr>
                                     <td colspan="2">
-                                        <h3>Admin Dashboard Widgets</h3>
+
+<!--XTEC ************ MODIFICAT - Localization support
+2013.05.17 @jmiro227-->
+                                        <h3><?php _e('Admin Dashboard Widgets', 'google-analyticator'); ?></h3>
+<!--************ ORIGINAL
+                                        <h3>Admin Dashboard WidgetsS</h3>
+************ FI-->
                                         <?php if(!$useAuth): ?>
                                         <div style="margin:10px auto; border:3px #f00 solid; background-color:#fdd; color:#000; padding:10px; text-align:center;">
                                             <?php _e('You have not authenticated with Google - you cannot use dashboard widgets! Reset the plugin to authenticate..', 'google-analyticator'); ?>
