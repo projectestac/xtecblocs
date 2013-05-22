@@ -1,0 +1,375 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Add This\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-07 14:30+0100\n"
+"PO-Revision-Date: 2013-05-21 14:41+0100\n"
+"Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Catalan\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../addthis_post_metabox.php:35
+msgid "Remove AddThis:"
+msgstr "Suprimeix l'AddThis:"
+
+#: ../addthis_settings_functions.php:101
+msgid "Choose the sharing tool to display"
+msgstr "Escolliu l'eina de compartició a visualitzar"
+
+#: ../addthis_settings_functions.php:103
+msgid "above"
+msgstr "per sobre"
+
+#: ../addthis_settings_functions.php:104
+msgid "below"
+msgstr "per sota"
+
+#: ../addthis_settings_functions.php:106
+msgid "the post:"
+msgstr "l'article:"
+
+#: ../addthis_settings_functions.php:128
+msgid "Build your own"
+msgstr "Construïu la vostra pròpia"
+
+#: ../addthis_settings_functions.php:134
+msgid "Size"
+msgstr "Mida"
+
+#: ../addthis_settings_functions.php:134
+msgid "The size of the icons to display"
+msgstr "La mida de la icona a visualitzar"
+
+#: ../addthis_settings_functions.php:135
+msgid "Services to always show:"
+msgstr "Serveis a mostrar sempre:"
+
+#: ../addthis_settings_functions.php:135
+msgid "Enter a comma-separated list of <a href='//addthis.com/services'>service codes</a>"
+msgstr "Inseriu una llista separada per comes de <a href=\"//addthis.com/services/list\">codis de servei</a>"
+
+#: ../addthis_settings_functions.php:136
+msgid "Automatically personalized:"
+msgstr "Personalitzats automàticament:"
+
+#: ../addthis_settings_functions.php:146
+msgid "Enter the number of automatically user-personalized items you want displayed"
+msgstr "Inseriu el nombre d'elements automàtics personalitzats que voleu que es visualitzin"
+
+#: ../addthis_settings_functions.php:149
+msgid "More"
+msgstr "Més"
+
+#: ../addthis_settings_functions.php:149
+msgid "Display our iconic logo that offers sharing to over 330 destinations"
+msgstr "Visualitza el nostre logotip emblemàtic que ofereix la compartició amb més de 330 destinacions."
+
+#: ../addthis_settings_functions.php:160
+msgid "Custom button"
+msgstr "Botó personalitzat"
+
+#: ../addthis_settings_functions.php:165
+msgid "None"
+msgstr "Cap"
+
+#: ../addthis_settings_functions.php:166
+msgid "More options"
+msgstr "Més opcions"
+
+#: ../addthis_sidebar_widget.php:16
+msgid "Make it wasy for your users to share content to over 300 destinations"
+msgstr "Facilita als vostres usuaris compartir contingut amb més de 330 destinacions."
+
+#: ../addthis_sidebar_widget.php:84
+msgid "Title:"
+msgstr "Títol:"
+
+#: ../addthis_sidebar_widget.php:86
+msgid "Style:"
+msgstr "Estil:"
+
+#: ../addthis_social_widget.php:43
+msgid "AddThis Social Bookmarking Widget"
+msgstr "Giny de marcadors socials AddThis"
+
+#: ../addthis_social_widget.php:44
+msgid "Help your visitor promote your site! The AddThis Social Bookmarking Widget allows any visitor to bookmark your site easily with many popular services. Sign up for an AddThis.com account to see how your visitors are sharing your content--which services they're using for sharing, which content is shared the most, and more. It's all free--even the pretty charts and graphs."
+msgstr "Ajudeu als vostres visitants a promocionar el vostre lloc! El Giny de marcadors socials AddThis permet a qualsevol visitant marcar de manera senzilla el vostre lloc a través de molts serveis populars. Registreu-vos amb un compte d'AddThis.com per veure com els vostres visitants comparteixen el vostre contingut--quins serveis utilitzen per compartir, quin és el contingut que es comparteix més, i més. És tot gratuït--fins i tot les impressionants taules i gràfics."
+
+#: ../addthis_social_widget.php:397
+#, php-format
+msgid "Configure the AddThis plugin to enable users to share your content around the web.<br /> <a href=\"%1$s\">Configuration options</a> | <a href=\"%2$s\" id=\"php_below_min_nag-no\">Ignore this notice</a>"
+msgstr "Configureu l'extensió AddThis per permetre als usuaris compartir el vostre contingut a tota la web.<br /><a href=\"%1$s\">Opcions de configuració</a> | <a href=\"%2$s\" id=\"php_below_min_nag-no\">Ignora aquest avís</a>"
+
+#: ../addthis_social_widget.php:406
+#, php-format
+msgid "Sign up for AddThis and add your username/password to recieve analytics about how people are sharing your content.<br /> <a href=\"%1$s\">Enter username and password</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"%2$s\" target=\"_blank\">Sign Up</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"%3$s\">Ignore this notice</a>"
+msgstr "Registreu-vos a AddThis i afegiu el vostre nom d'usuari i contrasenya per rebre estadístiques de com la gent comparteix el vostre contingut.<br /> <a href=\"%1$s\">Inseriu el nom d'usuari i la contrasenya</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"%2$s\" target=\"_blank\">Registra</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"%3$s\">Ignora aquest avís</a>"
+
+#: ../addthis_social_widget.php:415
+#, php-format
+msgid "We have updated the options for the AddThis plugin.  Check out the <a href=\"%1$s\">AddThis settings page</a> to see the new styles and options.<br /> <a href=\"%1$s\">See New Options</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"%2$s\">Ignore this notice</a>"
+msgstr "Hem actualitzat les opcions per l'extensió de l'AddThis. Vegeu la <a href=\"%1$s\">Pàgina d'opcions de l'AddThis</a> per veure els nous estils i opcions.<br /> <a href=\"%1$s\">Veure les noves opcions</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"%2$s\">Ignora aquest avís</a>"
+
+#: ../addthis_social_widget.php:458
+msgid "Cheatin&#8217; uh?"
+msgstr "Fent trampes, eh?"
+
+#: ../addthis_social_widget.php:554
+msgid "There was an error retrieving your stats from the AddThis servers.  Please wait and try again in a few moments"
+msgstr "Hi ha hagut un error a l'hora de recuperar les vostres estadístiques dels servidors d'AddThis. Espereu i torneu a intentar-ho en uns moments"
+
+#: ../addthis_social_widget.php:563
+msgid "The Username / Password / Profile combination you presented is not valid"
+msgstr "La combinació nom d'usuari / contrasenya / perfil que heu presentat no és vàlida."
+
+# XTEC ************ MODIFICAT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "The Username, password and profile combination you entered is invalid"
+msgstr "La combinació nom d'usuari,contrasenya, perfil que heu usat no és vàlida."
+
+#: ../addthis_social_widget.php:564
+msgid "Please confirm that you have correctly entered your AddThis username, password and profile id"
+msgstr "Confirmeu que heu introduït correctament el vostre nom d'usuari AddThis, contrasenya i id de perfil."
+
+# XTEC ************ MODIFICAT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "Please confirm that you have correctly entered your AddThis username, password and profile ID."
+msgstr "Confirmeu que heu introduït correctament el vostre nom d'usuari AddThis, contrasenya i ID de perfil."
+
+#: ../addthis_social_widget.php:569
+msgid "Something has gone terribly wrong! This should never happen, but somehow did.  We are working to correct it right now.  We will get everything up again soon"
+msgstr "Alguna cosa ha anat malament. Això no hauria de passar mai, però d'alguna manera ha passat. Estem treballant per corregir-ho des d'ara mateix. Ho posarem tot en marxa molt aviat"
+
+#: ../addthis_social_widget.php:575
+msgid "There was an error retrieving your analytics. If you wait a momeent and try again, you should be all set "
+msgstr "Hi ha hagut algun error recuperant les vostres estadístiques. Si espereu un moment i ho torneu a provar, hauria d'estar tot apunt"
+
+# XTEC ************ MODIFICAT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "There was an error retrieving your analytics. If you wait a moment and try again, you should be all set "
+msgstr "Hi ha hagut algun error recuperant les vostres estadístiques. Si espereu un moment i ho torneu a provar, hauria d'estar tot apunt"
+
+#: ../addthis_social_widget.php:655
+msgid "Yesterday"
+msgstr "Ahir"
+
+#: ../addthis_social_widget.php:656
+msgid "Last Week"
+msgstr "Última setmana"
+
+#: ../addthis_social_widget.php:657
+msgid "Last Month"
+msgstr "Últim mes"
+
+#: ../addthis_social_widget.php:671
+msgid "Shares"
+msgstr "Compartits"
+
+#: ../addthis_social_widget.php:672
+msgid "Clicks"
+msgstr "Clics"
+
+#: ../addthis_social_widget.php:673
+msgid "Viral Lift"
+msgstr "Viral Lift"
+
+#: ../addthis_social_widget.php:684
+msgid "Most Shared URLs (last month)"
+msgstr "URLs més compartides (últim mes)"
+
+#: ../addthis_social_widget.php:694
+msgid "Top Services for shares(last month)"
+msgstr "Serveis destacats per compartir (darrer mes)"
+
+#: ../addthis_social_widget.php:695
+#: ../addthis_social_widget.php:709
+msgid "share stats for the last month"
+msgstr "compartiu les estadístiques pel darrer mes"
+
+#: ../addthis_social_widget.php:698
+msgid "Most Clicked URLs (last month)"
+msgstr "URLs més clicades (últim mes)"
+
+#: ../addthis_social_widget.php:708
+msgid "Top Services for clicks(last month)"
+msgstr "Serveis destacats per clics (últim mes)"
+
+#: ../addthis_social_widget.php:712
+msgid "View More Analytics"
+msgstr "Mostra més estadístiques"
+
+#: ../addthis_social_widget.php:716
+msgid "We haven't recorded any sharing events in the last month for this site.  This could be because you just installed addthis."
+msgstr "No hem registrat cap event de compartició en el darrer mes pel vostre lloc. Això pot ser degut a que acabeu d'instal·lar l'AddThis."
+
+#: ../addthis_social_widget.php:717
+msgid "If you want some ideas for increasing your sharing, check out:"
+msgstr "Si voleu algunes idees per incrementar la vostra compartició, consulteu:"
+
+#: ../addthis_social_widget.php:718
+msgid "The AddThis Blog"
+msgstr "El bloc de l'AddThis"
+
+#: ../addthis_social_widget.php:719
+msgid "Three tips for getting the most shares"
+msgstr "Tres consells per obtenir més comparticions"
+
+#: ../addthis_social_widget.php:720
+msgid "The AddThis Forum"
+msgstr "Fòrum de l'Addthis"
+
+#: ../addthis_social_widget.php:733
+msgid "I'm sorry, but we seemed to encounter an error. Please ensure that your password, username and pubid are correct"
+msgstr "Sembla que s'ha produït un error. Assegureu-vos que la vostra contrasenya, usuari i pubid són correctes"
+
+#: ../addthis_social_widget.php:738
+msgid "I'm sorry, but we seemed to have encountered an error when requesting your analytics.  Please wait a few moments and try again"
+msgstr "Sembla que s'ha produït un errer quan es sol·licitaven les vostres estadístiques. Espereu una estona i torneu-ho a provar de nou."
+
+#: ../addthis_social_widget.php:754
+msgid "Loading&#8230;"
+msgstr "Llegint&#8230;"
+
+#: ../addthis_social_widget.php:754
+msgid "This widget requires JavaScript."
+msgstr "Aquest widget necessita JavaScript."
+
+#: ../addthis_social_widget.php:1649
+msgid "Basic"
+msgstr "Bàsic"
+
+#: ../addthis_social_widget.php:1650
+msgid "Advanced"
+msgstr "Avançat"
+
+#: ../addthis_social_widget.php:1664
+msgid "<h3><a href='https://www.addthis.com/register?profile=wpp' target='_blank'>Register</a> for free in-depth analytics reports and better understand your site's social traffic.</h3>"
+msgstr "<h3><a href='https://www.addthis.com/register?profile=wpp' target='_blank'>Registreu-vos</a> per veure informes d'estadístiques i comprendre millor el tràfic social del vostre lloc.</h3>"
+
+#: ../addthis_social_widget.php:1669
+msgid "AddThis profile ID:"
+msgstr "ID del perfil de l'AddThis:"
+
+#: ../addthis_social_widget.php:1673
+msgid "AddThis username:"
+msgstr "Nom d'usuari de l'AddThis"
+
+#: ../addthis_social_widget.php:1677
+msgid "AddThis password:"
+msgstr "Contrasenya de l'AddThis"
+
+#: ../addthis_social_widget.php:1677
+msgid "required for displaying stats"
+msgstr "necessari per a visualitzar les estadístiques"
+
+#: ../addthis_social_widget.php:1689
+msgid "Show stats in admin dashboard:"
+msgstr "Mostra les estadístiques en el tauler d'administració:"
+
+#: ../addthis_social_widget.php:1693
+msgid "Track <a href=\"//www.addthis.com/blog/2010/03/11/clickback-analytics-measure-traffic-back-to-your-site-from-addthis/\" target=\"_blank\">clickbacks</a>:"
+msgstr "Segueix els <a href=\"//www.addthis.com/blog/2010/03/11/clickback-analytics-measure-traffic-back-to-your-site-from-addthis/\" target=\"_blank\">clickbacks</a>:"
+
+#: ../addthis_social_widget.php:1697
+msgid "Track address bar shares:"
+msgstr "Segueix els compartits per la barra d'adreces:"
+
+#: ../addthis_social_widget.php:1701
+msgid "Show on homepage:"
+msgstr "Mostra a la pàgina d'inici:"
+
+#: ../addthis_social_widget.php:1705
+msgid "Show on <a href=\"//codex.wordpress.org/Pages\" target=\"blank\">pages</a>:"
+msgstr "Mostra en les <a href=\"//codex.wordpress.org/Pages\" target=\"blank\">pàgines</a>:"
+
+#: ../addthis_social_widget.php:1709
+msgid "Show in archives:"
+msgstr "Mostra en arxius:"
+
+#: ../addthis_social_widget.php:1713
+msgid "Show in categories:"
+msgstr "Mostra en categories:"
+
+#: ../addthis_social_widget.php:1717
+msgid "Show on excerpts:"
+msgstr "Mostra en extractes:"
+
+#: ../addthis_social_widget.php:1721
+msgid "Enable enhanced accessibility:"
+msgstr "Habilita la millora de l'accessibilitat:"
+
+#: ../addthis_social_widget.php:1725
+msgid "Google Analytics property ID:"
+msgstr "Propietat ID del Google Analytics:"
+
+#: ../addthis_social_widget.php:1733
+msgid "For more details on the following options, see <a href=\"//addthis.com/customization\">our customization documentation</a>"
+msgstr "Per a més detalls sobre les opcions, consulteu <a href=\"//addthis.com/customization\">la nostra documentació sobre la personalització</a>"
+
+#: ../addthis_social_widget.php:1736
+msgid "Custom service list:"
+msgstr "Llista de serveis personalitzada:"
+
+#: ../addthis_social_widget.php:1737
+msgid "Important: AddThis optimizes displayed services based on popularity and language, and personalizes the list for each user. You may decrease sharing by overriding these features."
+msgstr "Important: AddThis optimitza la visualització del serveis basast en la popularitat i l'idioma, i personalitza la llista per a cada usuari. Podeu disminuïr la compartició sobreescribint aquestes característiques."
+
+#: ../addthis_social_widget.php:1741
+msgid "Enter a comma-separated list of <a href=\"//addthis.com/services/list\">service codes</a>"
+msgstr "Inseriu una llista separada per comes de <a href=\"//addthis.com/services/list\">codis de servei</a>"
+
+#: ../addthis_social_widget.php:1745
+msgid "Brand:"
+msgstr "Marca:"
+
+#: ../addthis_social_widget.php:1749
+msgid "<a href='http://www.addthis.com/help/client-api#configuration-sharing-templates'>Twitter Template:</a><br/><span class='description'>(not for tweet button)</span>"
+msgstr "<a href='http://www.addthis.com/help/client-api#configuration-sharing-templates'>Plantilla del Twitter:</a><br/><span class='description'>(no pel botó de Twitter)</span>"
+
+#: ../addthis_social_widget.php:1753
+msgid "Bitly login:"
+msgstr "Nom d'usuari del Bitly:"
+
+#: ../addthis_social_widget.php:1757
+msgid "Bitly key:"
+msgstr "Clau del Bitly:"
+
+#: ../addthis_social_widget.php:1761
+msgid "Language:"
+msgstr "Idioma:"
+
+#: ../addthis_social_widget.php:1775
+msgid "Header background:"
+msgstr "Fons de la capçalera"
+
+#: ../addthis_social_widget.php:1779
+msgid "Header color:"
+msgstr "Color de la capçalera:"
+
+#: ../addthis_social_widget.php:1783
+msgid "addthis_config values:<br/><span class=\"description\">(json format)</span>"
+msgstr "addthis_config valors:<br/><span class=\"description\">(format json)</span>"
+
+#: ../addthis_social_widget.php:1787
+msgid "addthis_share values:<br/><span class=\"description\">(json format)</span>"
+msgstr "addthis_share valors:<br/><span class=\"description\">(format json)</span>"
+
+#: ../addthis_social_widget.php:1808
+msgid "Save Changes"
+msgstr "Desa els canvis"
+
+#: ../addthis_social_widget.php:1809
+msgid "Preview"
+msgstr "Previsualitza"
+

@@ -44,6 +44,10 @@ function addthis_early(){
     }
 }
 
+//XTEC ************ AFEGIT - Localization support
+//2013.05.21 @jmiro227
+load_plugin_textdomain( 'addthis_trans_domain', null, dirname( plugin_basename( __FILE__ )) . '/languages' );
+//************ FI
 
 define( 'addthis_style_default' , 'fb_tw_p1_sc');
 define( 'ADDTHIS_PLUGIN_VERSION' , '3.0.5');
@@ -440,8 +444,13 @@ function addthis_admin_notices(){
 
     if ($options == false && ! get_user_meta($user_id, 'addthis_ignore_notices'))
     {
-        echo '<div class="updated addthis_setup_nag"><p>'; 
-        printf(__('Configure the AddThis plugin to enable users to share your content around the web.<br /> <a href="%1$s">Configuration options</a> | <a href="%2$s" id="php_below_min_nag-no">Ignore this notice</a>'), 
+        echo '<div class="updated addthis_setup_nag"><p>';
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227 
+        printf(__('Configure the AddThis plugin to enable users to share your content around the web.<br /> <a href="%1$s">Configuration options</a> | <a href="%2$s" id="php_below_min_nag-no">Ignore this notice</a>','addthis_trans_domain'),
+//************ ORIGINAL
+//        printf(__('Configure the AddThis plugin to enable users to share your content around the web.<br /> <a href="%1$s">Configuration options</a> | <a href="%2$s" id="php_below_min_nag-no">Ignore this notice</a>'),
+//************ FI  
             admin_url('options-general.php?page=' .  basename(__FILE__) ),
             '?addthis_nag_ignore=0'); 
         echo "</p></div>";
@@ -449,8 +458,15 @@ function addthis_admin_notices(){
     
     elseif ( ( ! isset($options['username']) ||  $options['username'] == false) && ! get_user_meta($user_id, 'addthis_nag_username_ignore'))
     {
-        echo '<div class="updated addthis_setup_nag"><p>'; 
-        printf( __('Sign up for AddThis and add your username/password to recieve analytics about how people are sharing your content.<br /> <a href="%1$s">Enter username and password</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%2$s" target="_blank">Sign Up</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%3$s">Ignore this notice</a>'),
+        echo '<div class="updated addthis_setup_nag"><p>';
+
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+        printf( __('Sign up for AddThis and add your username/password to recieve analytics about how people are sharing your content.<br /> <a href="%1$s">Enter username and password</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%2$s" target="_blank">Sign Up</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%3$s">Ignore this notice</a>','addthis_trans_domain'),
+//************ ORIGINAL
+//        printf( __('Sign up for AddThis and add your username/password to recieve analytics about how people are sharing your content.<br /> <a href="%1$s">Enter username and password</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%2$s" target="_blank">Sign Up</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%3$s">Ignore this notice</a>'),
+//************ FI 
+
         admin_url('options-general.php?page=' . basename(__FILE__) ),
         'https://www.addthis.com/register?profile=wpp',
         '?addthis_nag_username_ignore=0');
@@ -458,8 +474,13 @@ function addthis_admin_notices(){
     }
     elseif ( (get_user_meta($user_id, 'addthis_nag_updated_options') == true  ) ) 
     {
-        echo '<div class="updated addthis_setup_nag"><p>'; 
-        printf( __('We have updated the options for the AddThis plugin.  Check out the <a href="%1$s">AddThis settings page</a> to see the new styles and options.<br /> <a href="%1$s">See New Options</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%2$s">Ignore this notice</a>'),
+        echo '<div class="updated addthis_setup_nag"><p>';
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+        printf( __('We have updated the options for the AddThis plugin.  Check out the <a href="%1$s">AddThis settings page</a> to see the new styles and options.<br /> <a href="%1$s">See New Options</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%2$s">Ignore this notice</a>','addthis_trans_domain'),
+//************ ORIGINAL 
+//        printf( __('We have updated the options for the AddThis plugin.  Check out the <a href="%1$s">AddThis settings page</a> to see the new styles and options.<br /> <a href="%1$s">See New Options</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%2$s">Ignore this notice</a>'),
+//************ FI 
         admin_url('options-general.php?page=' . basename(__FILE__) ),
         '?addthis_nag_updated_ignore=0');
         echo "</p></div>";
@@ -551,14 +572,24 @@ function addthis_render_dashboard_widget() {
         $username = urlencode($options['username']);
     else
     {
-        echo 'No Username entered';
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+          echo __('No Username entered','addthis_trans_domain');
+//************ ORIGINAL 
+//        echo 'No Username entered';
+//************ FI
         return false;
     }
     if (isset($options['password']))
         $password = urlencode($options['password']);
     else
     {
-        echo 'No Password entered';
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+          echo __('No Password entered','addthis_trans_domain');
+//************ ORIGINAL
+//        echo 'No Password entered';
+//************ FI
         return false;
     }
     $domain = get_home_url();
@@ -602,28 +633,55 @@ function addthis_render_dashboard_widget() {
       
             if ( is_wp_error( $stats[$metric.$dimension.$period] ) )
             {
-                    echo "There was an error retrieving your stats from the AddThis servers.  Please wait and try again in a few moments.\n";
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+                    echo __('There was an error retrieving your stats from the AddThis servers.  Please wait and try again in a few moments','addthis_trans_domain') . "\n";
+//************ ORIGINAL 
+//                    echo "There was an error retrieving your stats from the AddThis servers.  Please wait and try again in a few moments.\n";
+//************ FI
+
+
                     if (defined(WP_DEBUG) && WP_DEBUG == TRUE)
-                        echo "Error Code:" .  $stats[$metric.$dimension.$period]->get_error_code();
-                    
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+                        echo __("Error Code:",'addthis_trans_domain') .  $stats[$metric.$dimension.$period]->get_error_code();
+//************ ORIGINAL 
+//                        echo "Error Code:" .  $stats[$metric.$dimension.$period]->get_error_code();
+//************ FI      
                     exit;
             }
             
             else if ($stats[$metric.$dimension.$period]['response']['code'] == 401 )
             {
-                    echo "The username, password, and profile combination you entered is invalid.<br />";
-                    echo "Please confirm that you have correctly entered your AddThis username, password and profile ID.";
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+                    echo __('The Username, password and profile combination you entered is invalid','addthis_trans_domain') . ".<br />";
+                    echo __('Please confirm that you have correctly entered your AddThis username, password and profile ID.','addthis_trans_domain');
+//************ ORIGINAL
+//                    echo "The username, password, and profile combination you entered is invalid.<br />";
+//                    echo "Please confirm that you have correctly entered your AddThis username, password and profile ID.";
+//************ FI 
                     exit;
             }
             else if ( $stats[$metric.$dimension.$period]['response']['code'] == 500)
             {
-                    echo "Something has gone terribly wrong! This should never happen, but somehow did.  We are working to correct it right now.  We will get everything up again soon.";
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+                    echo __('Something has gone terribly wrong! This should never happen, but somehow did.  We are working to correct it right now.  We will get everything up again soon','addthis_trans_domain');
+//************ ORIGINAL
+//                    echo "Something has gone terribly wrong! This should never happen, but somehow did.  We are working to correct it right now.  We will get everything up again soon.";
+//************ FI
                     exit;
             }
 
             else if ($stats[$metric.$dimension.$period]['response']['code'] == 501 )  
-            { 
-                    echo "There was an error retrieving your analytics. If you wait a momeent and try again, you should be all set.";
+            {
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+                    echo __('There was an error retrieving your analytics. If you wait a moment and try again, you should be all set ','addthis_trans_domain');
+//************ ORIGINAL 
+//                    echo "There was an error retrieving your analytics. If you wait a momeent and try again, you should be all set.";
+//************ FI
                     exit;
             }
             else if ($stats[$metric.$dimension.$period]['response']['code'] != 201 )
@@ -710,10 +768,19 @@ function addthis_render_dashboard_widget() {
 
 
     echo "<div id='at_tabs'>";
-    echo "<ul>";    
-    echo "<li class='at_time_period'><a href='#tab1'>Yesterday</a></li>";
-    echo "<li class='at_time_period'><a href='#tab2'>Last Week</a></li>";
-    echo "<li class='at_time_period'><a href='#tab3'>Last Month</a></li>";
+    echo "<ul>";
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+    echo "<li class='at_time_period'><a href='#tab1'>" . __('Yesterday','addthis_trans_domain') . "</a></li>";
+    echo "<li class='at_time_period'><a href='#tab2'>" . __('Last Week','addthis_trans_domain') . "</a></li>";
+    echo "<li class='at_time_period'><a href='#tab3'>" . __('Last Month','addthis_trans_domain') . "</a></li>";
+//************ ORIGINAL 
+//    echo "<li class='at_time_period'><a href='#tab1'>Yesterday</a></li>";
+//    echo "<li class='at_time_period'><a href='#tab2'>Last Week</a></li>";
+//    echo "<li class='at_time_period'><a href='#tab3'>Last Month</a></li>";
+//************ FI
+
+   
     echo "</ul><div class='clear'>&nbsp;</div>";
     $tab = 0;
     foreach (array('yesterday', 'lastweek', 'lastmonth') as $timePeriod )
@@ -727,10 +794,17 @@ function addthis_render_dashboard_widget() {
             '<table class="atw-table">
                 <colgroup><col width="33%"/><col width="33%"/><col width="33%"/></colgroup>
                 <tr>';
-        echo '<td><div class="atw-cell"><h3>'. $stats['shares'].'</h3>Shares</div></td>';
-        echo '<td><div class="atw-cell"><h3>'. $stats['clickbacks'].'</h3>Clicks</div></td>';
-        echo '<td><div class="atw-cell"><h3>'.  $viral .'</h3>Viral Lift</div></td>';
-        
+
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+        echo '<td><div class="atw-cell"><h3>'. $stats['shares'].'</h3>' . __('Shares','addthis_trans_domain') . '</div></td>';
+        echo '<td><div class="atw-cell"><h3>'. $stats['clickbacks'].'</h3>' . __('Clicks','addthis_trans_domain') . '</div></td>';
+        echo '<td><div class="atw-cell"><h3>'.  $viral .'</h3>' . __('Viral Lift','addthis_trans_domain') . '</div></td>';
+//************ ORIGINAL 
+//        echo '<td><div class="atw-cell"><h3>'. $stats['shares'].'</h3>Shares</div></td>';
+//        echo '<td><div class="atw-cell"><h3>'. $stats['clickbacks'].'</h3>Clicks</div></td>';
+//        echo '<td><div class="atw-cell"><h3>'.  $viral .'</h3>Viral Lift</div></td>';
+//************ FI        
         echo '</tr>';
         echo '</table>';
         echo '</div>';
@@ -740,7 +814,13 @@ function addthis_render_dashboard_widget() {
         echo "<div>";
         echo "</div>";
         echo "<div id='tstab1'>";
-        echo "<h5> Most Shared URLs (last month) </h5>";
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+        echo "<h5> " . __('Most Shared URLs (last month)','addthis_trans_domain') ." </h5>";
+//************ ORIGINAL 
+//        echo "<h5> Most Shared URLs (last month) </h5>";
+//************ FI
+
         echo "<ul>";
         $count = count($shareurls);
         for($i = 0; ( $i < 5 && $i < $count ); $i++)
@@ -750,11 +830,24 @@ function addthis_render_dashboard_widget() {
             echo "<li><span class='urlCount'>" .  $url->shares . "</span><span class='urlUrl'>". $displayUrl . "</span></li>";
         }
         echo "</ul>";
-        echo "<h5>Top Services for shares(last month)</h5>";
-        echo "<img src='{$servicesCharts['shares']}' width='118' height='145' alt='share stats for the last month' />";
+
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+        echo "<h5>" . __('Top Services for shares(last month)','addthis_trans_domain') . "</h5>";
+        echo "<img src='{$servicesCharts['shares']}' width='118' height='145' alt='" . __('share stats for the last month','addthis_trans_domain') . "' />";
+//************ ORIGINAL 
+//        echo "<h5>Top Services for shares(last month)</h5>";
+//        echo "<img src='{$servicesCharts['shares']}' width='118' height='145' alt='share stats for the last month' />";
+//************ FI
         echo "</div>";
         echo '<div id="tstab2">';
-        echo '<h5> Most Clicked URLs (last month) </h5>';
+
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+        echo '<h5> ' . __('Most Clicked URLs (last month)','addthis_trans_domain') . ' </h5>';
+//************ ORIGINAL
+//        echo '<h5> Most Clicked URLs (last month) </h5>';
+//************ FI
         echo "<ul>";
         $count = count($clickbackurls);
         for($i = 0; (  $i < 5 && $i < $count ); $i++)
@@ -764,17 +857,39 @@ function addthis_render_dashboard_widget() {
             echo "<li><span class='urlCount'>" .  $url->clickbacks . "</span><span class='urlUrl'>". $displayUrl . "</span></li>";
         }
         echo "</ul>";
-        echo "<h5>Top Services for clicks(last month)</h5>";
-        echo "<img src='{$servicesCharts['clickbacks']}' width='118' height='145' alt='share stats for the last month' />";
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+        echo "<h5>" . __('Top Services for clicks(last month)','addthis_trans_domain') . "</h5>";
+        echo "<img src='{$servicesCharts['clickbacks']}' width='118' height='145' alt='" . __('share stats for the last month','addthis_trans_domain') . "' />";
+//************ ORIGINAL
+//        echo "<h5>Top Services for clicks(last month)</h5>";
+//        echo "<img src='{$servicesCharts['clickbacks']}' width='118' height='145' alt='share stats for the last month' />";
+//************ FI
+
         echo "</div>";
         echo '<div class="clear">&nbsp;</div>';
         echo '<p><a class="button rbutton" href="//www.addthis.com/analytics/summary?domain='.$domain.'">View More Analytics</a></p>';
     }
 elseif($stats['sharesday']['response']['code'] == 200){
 
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
     echo
     <<<ENDHTML
-        <p>We haven't recorded any sharing events in the last month for this site.  This could be because you just installed addthis.  If you would like to increase your sharing,</p> 
+         <p><?php _e('We haven\'t recorded any sharing events in the last month for this site.  This could be because you just installed addthis.'); ?></p>
+         <p><?php _e('If you want some ideas for increasing your sharing, check out:'); ?></p>
+         <ul>
+            <li><span class='b'><a href="//www.addthis.com//blog/"><?php _e('The AddThis Blog'); ?></a></span></li>
+            <li><span class='b'><a href="//www.addthis.com//blog/2010/11/09/3-tips-for-getting-the-most-shares/"><?php _e('Three tips for getting the most shares'); ?></a></span></li>
+            <li><span class='b'><a href="//www.addthis.com/forum/">?php _e('The AddThis Forum'); ?></a></span></li>
+        <ul>
+ENDHTML;
+
+//************ ORIGINAL
+/*
+    echo
+    <<<ENDHTML
+        <p>We haven't recorded any sharing events in the last month for this site.  This could be because you just installed addthis. If you would like to increase your sharing,</p> 
          <p>If you want some ideas for increasing your sharing, check out:</p>
          <ul>
             <li><span class='b'><a href="//www.addthis.com//blog/">The AddThis Blog</a></span></li>
@@ -782,14 +897,25 @@ elseif($stats['sharesday']['response']['code'] == 200){
             <li><span class='b'><a href="//www.addthis.com/forum/">The AddThis Forum</a></span></li>
         <ul>
 ENDHTML;
+*/
+//************ FI
 }
 elseif ($stats['sharesday']['response']['code'] == 401){
-    echo "I'm sorry, but we seemed to encounter an error. Please ensure that your password, username and pubid are correct.";
-
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+    echo __("I'm sorry, but we seemed to encounter an error. Please ensure that your password, username and pubid are correct",'addthis_trans_domain') . ".";
+//************ ORIGINAL
+//    echo "I'm sorry, but we seemed to encounter an error. Please ensure that your password, username and pubid are correct.";
+//************ FI
 }
 
 else{
-    echo "I'm sorry, but we seemed to have encountered an error when requesting your analytics.  Please wait a few moments and try again.";
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+    echo __("I'm sorry, but we seemed to have encountered an error when requesting your analytics.  Please wait a few moments and try again",'addthis_trans_domain') . ".";
+//************ ORIGINAL
+//    echo "I'm sorry, but we seemed to have encountered an error when requesting your analytics.  Please wait a few moments and try again.";
+//************ FI
 }
 die();
 } 
@@ -805,7 +931,13 @@ function addthis_dashboard_init() {
 
 function addthis_render_dashboard_widget_holder()
 {
-     echo '<p class="widget-loading hide-if-no-js">' . __( 'Loading&#8230;' ) . '</p><p class="describe hide-if-js">' . __('This widget requires JavaScript.') . '</p>';
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+     echo '<p class="widget-loading hide-if-no-js">' . __( 'Loading&#8230;','addthis_trans_domain') . '</p><p class="describe hide-if-js">' . __('This widget requires JavaScript.','addthis_trans_domain') . '</p>';
+//************ ORIGINAL
+//     echo '<p class="widget-loading hide-if-no-js">' . __( 'Loading&#8230;' ) . '</p><p class="describe hide-if-js">' . __('This widget requires JavaScript.') . '</p>';
+//************ FI
+
 }
 
 
@@ -1897,8 +2029,15 @@ function addthis_plugin_options_php4() {
     <span class="addthis-title">AddThis</span> <span class="addthis-plugin-name">Share</span>
     <div class="page-header" id="tabs">
         <ul class="nav-tab-wrapper">
+<!--XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227 -->
+            <li><h2 class="nav-tab-wrapper"><a href="#tabs-1"><?php _e('Basic', 'addthis_trans_domain' ); ?></a></h2></li>
+            <li><h2 class="nav-tab-wrapper"><a href="#tabs-2"><?php _e('Advanced', 'addthis_trans_domain' ); ?></a></h2></li>
+<!--************ ORIGINAL
             <li><h2 class="nav-tab-wrapper"><a href="#tabs-1">Basic</a></h2></li>
             <li><h2 class="nav-tab-wrapper"><a href="#tabs-2">Advanced</a></h2></li>
+************ FI -->
+
             <li style="float: right; border: none;padding-right:0px;"> 
             <strong><?php _e("AddThis Profile ID:", 'addthis_trans_domain' ); ?></strong>
             <input id="addthis_profile"  type="text" name="addthis_settings[addthis_profile]" value="<?php echo $profile; ?>" autofill='off' autocomplete='off'  />
@@ -1906,7 +2045,14 @@ function addthis_plugin_options_php4() {
             <span id="addthis-profile-validation-message" style="float: right;color:red;font-size:10px"></span>
                                                 <?php
                                                 if ($credential_validation_status == 1) {
-                                                    echo '<span style="float: right;color:green;font-size:10px;">&#10004; Valid AddThis Profile ID</span>';
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+                                                    echo '<span style="float: right;color:green;font-size:10px;">&#10004; ' . __('Valid AddThis Profile ID','addthis_trans_domain') . '</span>';
+
+//************ ORIGINAL
+//                                                    echo '<span style="float: right;color:green;font-size:10px;">&#10004; Valid AddThis Profile ID</span>';
+
+//************ FI
                                                 }
                                                 ?>
             </li>
@@ -1937,7 +2083,12 @@ function addthis_plugin_options_php4() {
 						<td><input id="addthis_username"  type="text" name="addthis_settings[addthis_username]" value="<?php echo $username; ?>" autofill='off' autocomplete='off'  /></td>
 					</tr>
 					<tr id="password_row" >
+<!--XTEC ************ MODIFICAT - Localization support
+2013.05.21 @jmiro227 -->
+						<td><?php _e("AddThis password:", 'addthis_trans_domain' ); ?><br/><span style="font-size:10px"><?php _e("(required for displaying stats)", 'addthis_trans_domain' ); ?></span></td>
+<!--************ ORIGINAL
 						<td><?php _e("AddThis password:", 'addthis_trans_domain' ); ?><br/><span style="font-size:10px">(required for displaying stats)</span></td>
+************ FI -->
 						<td><input id="addthis_password" type="password" name="addthis_settings[addthis_password]" value="<?php echo $password; ?>" autocomplete='off' autofill='off'  /></td>
 					</tr>
                                         <tr>
@@ -1946,11 +2097,21 @@ function addthis_plugin_options_php4() {
                                             </td>
                                             <td style="vertical-align:top;margin-top:0;padding-top:0;line-height:5px;font-size:10px">
                                                 <img class="addthis-admin-loader" style="display:none" src="<?php echo plugins_url('img/loader.gif', __FILE__)?>" />
+<!--XTEC ************ MODIFICAT - Localization support
+2013.05.21 @jmiro227 -->
+                                                <span class="addthis-admin-loader" style="display:none;color:gray"><?php _e("Connecting to AddThis profile", 'addthis_trans_domain' ); ?> <?php echo $profile; ?>..</span>
+<!--************ ORIGINAL
                                                 <span class="addthis-admin-loader" style="display:none;color:gray">Connecting to AddThis profile <?php echo $profile; ?>..</span>
+************ FI -->
                                                 <span id="addthis-credential-validation-message" style="color:red"></span>
                                                 <?php
                                                 if ($credential_validation_status == 1) {
-                                                    echo '<span style="color:green">&#10004; Valid AddThis Credentials</span>';
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+                                                    echo '<span style="color:green">&#10004; ' . __('Valid AddThis Credentials','addthis_trans_domain') . '</span>';
+//************ ORIGINAL
+//                                                    echo '<span style="color:green">&#10004; Valid AddThis Credentials</span>';
+//************ FI
                                                 }
                                                 ?>
                                             </td>
@@ -2008,10 +2169,20 @@ function addthis_plugin_options_php4() {
 					<td><input type="checkbox" name="addthis_settings[addthis_copytracking2]" value="true" <?php echo ( $addthis_copytracking2 == true ? 'checked="checked"' : ''); ?>/></td>
 				</tr>
                 <tr>
+<!--XTEC ************ MODIFICAT - Localization support
+2013.05.21 @jmiro227 -->
+                    <th><h2><?php _e("Display Options", 'addthis_trans_domain' ); ?></h2></th>
+<!--************ ORIGINAL
                     <th><h2>Display Options</h2></th>
+************ FI -->
                 </tr>
 				<tr valign="top">
+<!--XTEC ************ MODIFICAT - Localization support
+2013.05.21 @jmiro227 -->
+					<td colspan="2"><?php _e("For more details on the following options, see ", 'addthis_trans_domain' ); ?><a href="//support.addthis.com/customer/portal/articles/381263-addthis-client-api"><?php _e("our customization documentation", 'addthis_trans_domain' ); ?></a>.</td>
+<!--************ ORIGINAL
 					<td colspan="2">For more details on the following options, see <a href="//support.addthis.com/customer/portal/articles/381263-addthis-client-api">our customization documentation</a>.</td>
+************ FI -->
 				</tr>
 				<tr valign="top">
 					<th scope="row"><?php _e("Custom service list:", 'addthis_trans_domain' ); ?><br /><span class='description'><?php _e(
@@ -2055,7 +2226,12 @@ function addthis_plugin_options_php4() {
 				</tr>
 
                 <tr>
+<!--XTEC ************ MODIFICAT - Localization support
+2013.05.21 @jmiro227 -->
+                    <th><h2><?php _e("Additional Options", 'addthis_trans_domain' ); ?></h2></th>
+<!--************ ORIGINAL
                     <th><h2>Additional Options</h2></th>
+************ FI -->
                 </tr>
 				<tr>
 					<th scope="row"><?php _e("Show analytics in admin dashboard:", 'addthis_trans_domain' ); ?></th>
@@ -2085,7 +2261,12 @@ function addthis_plugin_options_php4() {
 				<tr valign="top">
 					<th scope="row"><?php _e("addthis_config values:<br/><span class=\"description\">(json format)</span>", 'addthis_trans_domain' ); ?></th>
 					<td><textarea rows='3' cols='40' type="text" name="addthis_settings[addthis_config_json]" id="addthis-config-json"/><?php echo $addthis_config_json; ?></textarea></td>
+<!--XTEC ************ MODIFICAT - Localization support
+2013.05.21 @jmiro227 -->
+					<td id="config-error" style="display: none;color: red;float: left;margin-top: 25px;width: 150px;"><?php _e("Invalid JSON format", 'addthis_trans_domain' ); ?></td>
+<!--************ ORIGINAL
 					<td id="config-error" style="display: none;color: red;float: left;margin-top: 25px;width: 150px;">Invalid JSON format</td>
+************ FI -->
 				</tr>
 				<tr valign="top">
 					<th scope="row"><?php _e("addthis_share values:<br/><span class=\"description\">(json format)</span>", 'addthis_trans_domain' ); ?></th>
@@ -2110,8 +2291,14 @@ function addthis_plugin_options_php4() {
 
 
     ?>    
+<!--XTEC ************ MODIFICAT - Localization support
+2013.05.21 @jmiro227 -->
+		<input type="submit" name="Submit" value="<?php _e('Save Changes', 'addthis_trans_domain') ?>"  id="submit-button"/>
+		<a href="<?php echo $preview_link; ?>" class="thickbox thickbox-preview" id="preview" ><?php _e('Preview', 'addthis_trans_domain'); ?></a>
+<!--************ ORIGINAL
 		<input type="submit" name="Submit" value="<?php _e('Save Changes') ?>"  id="submit-button"/>
 		<a href="<?php echo $preview_link; ?>" class="thickbox thickbox-preview" id="preview" ><?php _e('Preview'); ?></a>
+************ FI -->
     </p>
 
     </form>
