@@ -2190,7 +2190,7 @@ function addthis_plugin_options_php4() {
 				<tr valign="top">
 <!--XTEC ************ MODIFICAT - Localization support
 2013.05.21 @jmiro227 -->
-					<td colspan="2"><?php _e("For more details on the following options, see ", 'addthis_trans_domain' ); ?><a href="//support.addthis.com/customer/portal/articles/381263-addthis-client-api"><?php _e("our customization documentation", 'addthis_trans_domain' ); ?></a>.</td>
+					<td colspan="2"><?php _e("For more details on the following options, see <a href=\"//support.addthis.com/customer/portal/articles/381263-addthis-client-api\">our customization documentation</a>.", 'addthis_trans_domain' ); ?></td>
 <!--************ ORIGINAL
 					<td colspan="2">For more details on the following options, see <a href="//support.addthis.com/customer/portal/articles/381263-addthis-client-api">our customization documentation</a>.</td>
 ************ FI -->

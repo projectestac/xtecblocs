@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Add This\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:30+0100\n"
-"PO-Revision-Date: 2013-05-23 13:27+0100\n"
+"PO-Revision-Date: 2013-05-23 18:30+0100\n"
 "Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 # 2013.05.21 @jmiro227
 #: ../addthis_social_widget.php:
 msgid "AddThis Profile ID:"
-msgstr "ID del perfil de AddThis:"
+msgstr "ID del perfil de Add:"
 
 # XTEC ************ AFEGIT
 # 2013.05.21 @jmiro227
@@ -236,6 +236,90 @@ msgstr "Confirmeu que heu introduït correctament el vostre nom d'usuari AddThis
 msgid "Please confirm that you have correctly entered your AddThis username, password and profile ID."
 msgstr "Confirmeu que heu introduït correctament el vostre nom d'usuari AddThis, contrasenya i ID de perfil."
 
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "<a href='https://www.addthis.com/register?profile=wpp' target='_blank'>Register</a> for free in-depth analytics reports and better understand your site's social traffic."
+msgstr "<a href='https://www.addthis.com/register?profile=wpp' target='_blank'>Registreu-vos</a> per veure informes d'estadístiques més detallats i comprendre millor el tràfic social del vostre bloc."
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "homepage:"
+msgstr "Pàgina principal:"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "AddThis email / username:"
+msgstr "Email d'AddThis / nom d'usuari:"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "<a href=\"//codex.wordpress.org/Pages\" target=\"blank\">pages</a>:"
+msgstr "<a href=\"//codex.wordpress.org/Pages\" target=\"blank\">Altres pàgines</a>:"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "archives:"
+msgstr "Arxius:"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "categories:"
+msgstr "Categories:"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "<a href=\"//www.addthis.com/blog/2010/03/11/clickback-analytics-measure-traffic-back-to-your-site-from-addthis/\" target=\"_blank\">clickbacks</a>:"
+msgstr "<a href=\"//www.addthis.com/blog/2010/03/11/clickback-analytics-measure-traffic-back-to-your-site-from-addthis/\" target=\"_blank\">Clickbacks</a>:"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "address bar shares:"
+msgstr "Compartits per la barra d'adreces:"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "copied text:"
+msgstr "Text copiat:"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "excerpts:"
+msgstr "Extractes:"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "For more details on the following options, see <a href=\"//support.addthis.com/customer/portal/articles/381263-addthis-client-api\">our customization documentation</a>."
+msgstr "Per més detalls sobre les següents opcions, veure <a href=\"//support.addthis.com/customer/portal/articles/381263-addthis-client-api\"> la nostra documentació sobre personalitzacions</a>."
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "Twitter via:"
+msgstr "Via twitter:"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "Show analytics in admin dashboard:"
+msgstr "Mostra analytics al tauler d'administració:"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "Enable enhanced accessibility:"
+msgstr "Habilitar l'accessibilitat millorada:"
+
 #: ../addthis_social_widget.php:569
 msgid "Something has gone terribly wrong! This should never happen, but somehow did.  We are working to correct it right now.  We will get everything up again soon"
 msgstr "Alguna cosa ha anat malament. Això no hauria de passar mai, però d'alguna manera ha passat. Estem treballant per corregir-ho des d'ara mateix. Ho posarem tot en marxa molt aviat"
@@ -360,8 +444,8 @@ msgid "AddThis password:"
 msgstr "Contrasenya de l'AddThis"
 
 #: ../addthis_social_widget.php:1677
-msgid "required for displaying stats"
-msgstr "necessari per a visualitzar les estadístiques"
+msgid "(required for displaying stats)"
+msgstr "(necessari per a visualitzar les estadístiques)"
 
 #: ../addthis_social_widget.php:1689
 msgid "Show stats in admin dashboard:"
@@ -396,12 +480,12 @@ msgid "Show on excerpts:"
 msgstr "Mostra en extractes:"
 
 #: ../addthis_social_widget.php:1721
-msgid "Enable enhanced accessibility:"
-msgstr "Habilita la millora de l'accessibilitat:"
+msgid "(Enable enhanced accessibility:)"
+msgstr "(Habilita la millora de l'accessibilitat:)"
 
 #: ../addthis_social_widget.php:1725
 msgid "Google Analytics property ID:"
-msgstr "Propietat ID del Google Analytics:"
+msgstr "\"Property ID\" del Google Analytics:"
 
 #: ../addthis_social_widget.php:1733
 msgid "For more details on the following options, see <a href=\"//addthis.com/customization\">our customization documentation</a>"
@@ -449,11 +533,11 @@ msgstr "Color de la capçalera:"
 
 #: ../addthis_social_widget.php:1783
 msgid "addthis_config values:<br/><span class=\"description\">(json format)</span>"
-msgstr "addthis_config valors:<br/><span class=\"description\">(format json)</span>"
+msgstr "Valors \"addthis_config\":<br/><span class=\"description\">(format json)</span>"
 
 #: ../addthis_social_widget.php:1787
 msgid "addthis_share values:<br/><span class=\"description\">(json format)</span>"
-msgstr "addthis_share valors:<br/><span class=\"description\">(format json)</span>"
+msgstr "Valors \"addthis_share\":<br/><span class=\"description\">(format json)</span>"
 
 #: ../addthis_social_widget.php:1808
 msgid "Save Changes"
