@@ -224,7 +224,12 @@ Class AddThis_addjs{
             // Get rid of our keys, we just want the names which are the keys elsewhere
             $uninstalled = array_values($uninstalled);
 
-            $string = __('Want to increase your site traffic?  AddThis also has ');
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+            $string = __('Want to increase your site traffic?  AddThis also has ','addthis_trans_domain');
+//************ ORIGINAL
+//            $string = __('Want to increase your site traffic?  AddThis also has ');
+//************ FI 
             $count = count($uninstalled);
             if ($count == 1){
                 $string .= __('a plugin for ', 'addthis');
@@ -237,9 +242,19 @@ Class AddThis_addjs{
                     if ($i < ($count - 2))
                         $string .= ', ';
                     else if ($i == ($count -2))
-                        $string .= ' and ';
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+                        $string .= __(' and ','addthis_trans_domain');
+//************ ORIGINAL
+//                     $string .= ' and ';
+//************ FI 
                     else if ($i == ($count -1))
-                        $string .= ' plugins available.';                    
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+                        $string .= __(' plugins available.','addthis_trans_domain');
+//************ ORIGINAL
+//                      $string .= ' plugins available.';
+//************ FI                   
                 }
             }
 

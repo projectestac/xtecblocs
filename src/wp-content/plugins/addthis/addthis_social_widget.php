@@ -868,7 +868,12 @@ function addthis_render_dashboard_widget() {
 
         echo "</div>";
         echo '<div class="clear">&nbsp;</div>';
-        echo '<p><a class="button rbutton" href="//www.addthis.com/analytics/summary?domain='.$domain.'">View More Analytics</a></p>';
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+        echo '<p><a class="button rbutton" href="//www.addthis.com/analytics/summary?domain='.$domain.'">'. __('View More Analytics','addthis_trans_domain') . '</a></p>';
+//************ ORIGINAL
+//        echo '<p><a class="button rbutton" href="//www.addthis.com/analytics/summary?domain='.$domain.'">View More Analytics</a></p>';
+//************ FI
     }
 elseif($stats['sharesday']['response']['code'] == 200){
 
@@ -1734,8 +1739,14 @@ function validate_addthis_api_credentials()
             '&password=' . urlencode($_POST['addthis_password']).
             '&pubid=' . urlencode($_POST['addthis_profile']);
         $response = wp_remote_get($url);
-        $credential_error = '&#x2716; The username, password, and profile combination you entered is invalid.';
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+        $credential_error = __('&#x2716; The username, password, and profile combination you entered is invalid.','addthis_trans_domain');
+//************ ORIGINAL
+//        $credential_error = '&#x2716; The username, password, and profile combination you entered is invalid.';
+//************ FI
         $profile_error = '&#x2716; Invalid AddThis profile ID';
+
 
         if (!is_wp_error($response)) {
             if ($response['response']['code'] == 200) {

@@ -83,16 +83,31 @@ function _addthis_version_notification($atversion_update_status, $atversion)
     if ($atversion_update_status == ADDTHIS_ATVERSION_AUTO_UPDATE || $atversion_update_status == ADDTHIS_ATVERSION_MANUAL_UPDATE) {
         ?>
         <div class="addthis-notification addthis-success-message">
+<!--XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227 -->
+            <div style="float:left"><?php _e('Your AddThis sharing plugin has been updated.', 'addthis_trans_domain' ); ?></div>
+<!--************ ORIGINAL
             <div style="float:left">Your AddThis sharing plugin has been updated.</div>
+************ FI -->
             <div style="float:right">
-                <a href="#" class="addthis-revert-atversion">Revert back to previous version</a>
+<!--XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227 -->
+                <a href="#" class="addthis-revert-atversion"><?php _e('Revert back to previous version', 'addthis_trans_domain' ); ?></a>
+<!--************ ORIGINAL
+               <a href="#" class="addthis-revert-atversion">Revert back to previous version</a>
+************ FI -->
             </div>
         </div>
         <?php
     } else {
         ?>
         <div class="addthis-notification addthis-warning-message">
+<!--XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227 -->
+            <div style="float:left"><?php _e('Update AddThis to activate new features that will make sharing even easier.', 'addthis_trans_domain' ); ?></div>
+<!--************ ORIGINAL
             <div style="float:left">Update AddThis to activate new features that will make sharing even easier.</div>
+************ FI -->
             <div style="float:right">
                 <a href="#" class="addthis-update-atversion"><img src="<?php echo $imgLocationBase . 'update.png';?>" /></a>
             </div>
@@ -161,7 +176,15 @@ function _addthis_swap_first_two_elements (&$array, $key)
                 echo _e('Enable the following sharing tool at the ', 'addthis_trans_domain' );
                 echo '<strong>';
                 echo _e($legend, 'addthis_trans_domain');
-                echo '</strong> of posts:</label></div>';
+
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+               echo '</strong>'.__(' of posts:', 'addthis_trans_domain').'</label></div>';
+//************ ORIGINAL
+//                echo '</strong> of posts:</label></div>';
+//************ FI
+
+
                     
                  $imgLocationBase = apply_filters( 'at_files_uri',  plugins_url( '' , basename(dirname(__FILE__)))) . '/addthis/img/'  ;
                  $imgLocationBase = apply_filters( 'addthis_files_uri',  plugins_url( '' , basename(dirname(__FILE__)))) . '/addthis/img/'  ;
@@ -213,9 +236,19 @@ function _addthis_swap_first_two_elements (&$array, $key)
                     {
                         $checked = 'checked="checked"';
                     }
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+                    echo "<div class='$name"."_option select_row'><span class='radio mt4'><input $checked type='radio' value='custom_string' name='addthis_settings[$name]' id='$name"."_custom_string' /></span> <label for='{$name}_custom_string'>".__('Custom button', 'addthis_trans_domain')."</label><div class='clear'></div></div>";
+//************ ORIGINAL
+//                    echo "<div class='$name"."_option select_row'><span class='radio mt4'><input $checked type='radio' value='custom_string' name='addthis_settings[$name]' id='$name"."_custom_string' /></span> <label for='{$name}_custom_string'>Custom button</label><div class='clear'></div></div>";
+//************ FI
 
-                    echo "<div class='$name"."_option select_row'><span class='radio mt4'><input $checked type='radio' value='custom_string' name='addthis_settings[$name]' id='$name"."_custom_string' /></span> <label for='{$name}_custom_string'>Custom button</label><div class='clear'></div></div>";
-                    _e( sprintf("<div style='max-width: 748px;margin-left:20px' class='%s_custom_string_input'> This text box allows you to enter any AddThis markup that you wish. To see examples of what you can do, visit <a href='https://www.addthis.com/get/sharing'>AddThis.com Sharing Tools</a> and select any sharing tool. You can also check out our <a href='http://support.addthis.com/customer/portal/articles/381263-addthis-client-api#rendering-decoration'>Client API</a>. For any help you may need, please visit <a href='http://support.addthis.com'>AddThis Support</a></div>", $name ),'addthis_trans_domain');
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+                    echo "<div style='max-width: 748px;margin-left:20px' class=" . sprintf("'%s_custom_string_input'", $name) . ">" . __("This text box allows you to enter any AddThis markup that you wish. To see examples of what you can do, visit ", 'addthis_trans_domain') . "<a href='https://www.addthis.com/get/sharing'>" . __("AddThis Sharing Tools", 'addthis_trans_domain') . "</a>" . __(" and select any sharing tool. You can also check out our ", 'addthis_trans_domain') .  "<a href='http://support.addthis.com/customer/portal/articles/381263-addthis-client-api#rendering-decoration'>" . "API" . "</a>." . __(" For any help you may need, please visit ", 'addthis_trans_domain') . "<a href='http://support.addthis.com'>" . __("AddThis Support", 'addthis_trans_domain') . "</a></div>";
+//************ ORIGINAL
+//                    _e( sprintf("<div style='max-width: 748px;margin-left:20px' class='%s_custom_string_input'> This text box allows you to enter any AddThis markup that you wish. To see examples of what you can do, visit <a href='https://www.addthis.com/get/sharing'>AddThis.com Sharing Tools</a> and select any sharing tool. You can also check out our <a href='http://support.addthis.com/customer/portal/articles/381263-addthis-client-api#rendering-decoration'>Client API</a>. For any help you may need, please visit <a href='http://support.addthis.com'>AddThis Support</a></div>", $name ),'addthis_trans_domain');
+//************ FI
                     echo "<textarea style='max-width:748px;margin-left:20px'  rows='5' cols='120' name='addthis_settings[$name"."_custom_string]' class='$name"."_custom_string_input' />".esc_textarea($custom_string)."</textarea>";
 
                     echo '</div>';

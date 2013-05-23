@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Add This\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:30+0100\n"
-"PO-Revision-Date: 2013-05-21 14:41+0100\n"
+"PO-Revision-Date: 2013-05-23 13:27+0100\n"
 "Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,96 @@ msgstr ""
 "X-Poedit-Language: Catalan\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: ..\n"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "AddThis Profile ID:"
+msgstr "ID del perfil de AddThis:"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: addthis_addjs.php:
+msgid "Want to increase your site traffic?  AddThis also has "
+msgstr "Voleu augmentar el seu trànsit del lloc? AddThis també té les extensions "
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: addthis_addjs.php:
+msgid " and "
+msgstr " i "
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: addthis_addjs.php:
+msgid " plugins available."
+msgstr " disponibles."
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_settings_functions.php:
+msgid "Top Sharing Tool"
+msgstr "Eina de compartició de la part superior"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_settings_functions.php:
+msgid "Bottom Sharing Tool"
+msgstr "Eina de compartició de la part inferior"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_settings_functions.php:
+msgid "Enable the following sharing tool at the "
+msgstr "Activeu la següent eina de compartició a la "
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_settings_functions.php:
+msgid "Top"
+msgstr "part superior"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_settings_functions.php:
+msgid "Bottom"
+msgstr "part inferior"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_settings_functions.php:
+msgid "This text box allows you to enter any AddThis markup that you wish. To see examples of what you can do, visit "
+msgstr "Aquest quadre de text permet introduir qualsevol tipus de codi AddThis que es desitgi. Per veure exemples del que es pot fer, visiteu "
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_settings_functions.php:
+msgid "AddThis Support"
+msgstr "el suport d'AddThis"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_settings_functions.php:
+msgid "AddThis Sharing Tools"
+msgstr "les Eines de compartició d'AddThis"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_settings_functions.php:
+msgid " and select any sharing tool. You can also check out our "
+msgstr " i trieu-ne qualsevol. També podeu provar el nostre "
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_settings_functions.php:
+msgid " For any help you may need, please visit "
+msgstr " Si necessiteu suport, siusplau visiteu "
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_settings_functions.php:
+msgid " of posts:"
+msgstr " dels articles:"
 
 #: ../addthis_post_metabox.php:35
 msgid "Remove AddThis:"
