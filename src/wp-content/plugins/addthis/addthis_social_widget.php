@@ -2062,7 +2062,6 @@ function addthis_plugin_options_php4() {
 
 //************ ORIGINAL
 //                                                    echo '<span style="float: right;color:green;font-size:10px;">&#10004; Valid AddThis Profile ID</span>';
-
 //************ FI
                                                 }
                                                 ?>
@@ -2137,7 +2136,12 @@ function addthis_plugin_options_php4() {
             <?php echo $version_notification_content?>
 			<table class="form-table">
                 <tr>
-                    <th><h2>Show AddThis on &hellip;</h2></th> 
+<!--XTEC ************ MODIFICAT - Localization support
+2013.05.21 @jmiro227 -->
+                    <th><h2><?php _e("Show AddThis on &hellip;", 'addthis_trans_domain' ); ?></h2></th>
+<!--************ ORIGINAL
+                    <th><h2>Show AddThis on &hellip;</h2></th>
+************ FI --> 
 
                 </tr>
 					<th scope="row"><?php _e("homepage:", 'addthis_trans_domain' ); ?></th>
@@ -2160,7 +2164,12 @@ function addthis_plugin_options_php4() {
 					<td><input type="checkbox" name="addthis_settings[addthis_showonexcerpts]" value="true" <?php echo ( $addthis_showonexcerpts == true ? 'checked="checked"' : ''); ?>/></td>
 				</tr>
                 <tr>
-                    <th><h2>Have AddThis track &hellip;</h2></th> 
+<!--XTEC ************ MODIFICAT - Localization support
+2013.05.21 @jmiro227 -->
+                    <th><h2><?php _e("Have AddThis track &hellip;", 'addthis_trans_domain' ); ?></h2></th>
+<!--************ ORIGINAL
+                    <th><h2>Have AddThis track &hellip;</h2></th>
+************ FI --> 
                 </tr>
 				<tr>
 					<th scope="row"><?php _e("<a href=\"//www.addthis.com/blog/2010/03/11/clickback-analytics-measure-traffic-back-to-your-site-from-addthis/\" target=\"_blank\">clickbacks</a>:", 'addthis_trans_domain' ); ?></th>

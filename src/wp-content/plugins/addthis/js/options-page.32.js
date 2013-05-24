@@ -268,10 +268,20 @@ jQuery(document).ready(function($) {
         
         if(isUsernameEmpty != isPasswordEmpty) {
             var emptyLabel = isUsernameEmpty ? "username" : "password";
-            addthis_validation_message.html("&#x2716; AddThis " + emptyLabel + " is required to view analytics").next().hide();
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+            addthis_validation_message.html("&#x2716; Es requereix el nom d'usuari i la contrassenya per veure les estadístiques").next().hide();
+//************ ORIGINAL
+//            addthis_validation_message.html("&#x2716; AddThis " + emptyLabel + " is required to view analytics").next().hide();
+//************ FI
             return false;
         } else if (isProfileEmpty && !isUsernameEmpty && !isPasswordEmpty) {
-            addthis_profile_validation_message.html("&#x2716; AddThis profile ID is required to view analytics").next().hide();
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227 
+            addthis_profile_validation_message.html("&#x2716; Es requereix l'ID del perfil de l'AddThis per veure les estadístiques").next().hide();
+//************ ORIGINAL
+//            addthis_profile_validation_message.html("&#x2716; AddThis profile ID is required to view analytics").next().hide();
+//************ FI 
             $('html, body').animate({"scrollTop":0}, 'slow');
             return false;
         } else if (!validationRequired || isAnyFieldEmpty) {

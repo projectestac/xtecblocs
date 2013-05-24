@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Add This\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:30+0100\n"
-"PO-Revision-Date: 2013-05-23 18:30+0100\n"
+"PO-Revision-Date: 2013-05-24 13:09+0100\n"
 "Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,13 +19,13 @@ msgstr ""
 # 2013.05.21 @jmiro227
 #: ../addthis_social_widget.php:
 msgid "AddThis Profile ID:"
-msgstr "ID del perfil de Add:"
+msgstr "ID del perfil d'AddThis:"
 
 # XTEC ************ AFEGIT
 # 2013.05.21 @jmiro227
 #: addthis_addjs.php:
 msgid "Want to increase your site traffic?  AddThis also has "
-msgstr "Voleu augmentar el seu trànsit del lloc? AddThis també té les extensions "
+msgstr "Voleu augmentar el trànsit seu del bloc? AddThis també té les extensions "
 
 # XTEC ************ AFEGIT
 # 2013.05.21 @jmiro227
@@ -214,7 +214,7 @@ msgstr "Fent trampes, eh?"
 
 #: ../addthis_social_widget.php:554
 msgid "There was an error retrieving your stats from the AddThis servers.  Please wait and try again in a few moments"
-msgstr "Hi ha hagut un error a l'hora de recuperar les vostres estadístiques dels servidors d'AddThis. Espereu i torneu a intentar-ho en uns moments"
+msgstr "Hi ha hagut un error a l'hora de recuperar les vostres estadístiques dels servidors d'AddThis. Espereu i torneu a intentar-ho en uns moments."
 
 #: ../addthis_social_widget.php:563
 msgid "The Username / Password / Profile combination you presented is not valid"
@@ -319,6 +319,48 @@ msgstr "Mostra analytics al tauler d'administració:"
 #: ../addthis_social_widget.php:
 msgid "Enable enhanced accessibility:"
 msgstr "Habilitar l'accessibilitat millorada:"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "Show AddThis on &hellip;"
+msgstr "Mostrar AddThis a &hellip;"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "Have AddThis track &hellip;"
+msgstr "AddThis farà el següiment de &hellip;"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "Display Options"
+msgstr "Opcions de visualització"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "Additional Options"
+msgstr "Altres opcions"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "Valid AddThis Credentials"
+msgstr "Credencials vàlides"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "Valid AddThis Profile ID"
+msgstr "ID vàlid"
+
+# XTEC ************ AFEGIT
+# 2013.05.21 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "&#x2716; The username, password, and profile combination you entered is invalid."
+msgstr "&#x2716; La combinació introduïda d'usuari, contrasenya, i perfil, és invàlida."
 
 #: ../addthis_social_widget.php:569
 msgid "Something has gone terribly wrong! This should never happen, but somehow did.  We are working to correct it right now.  We will get everything up again soon"
