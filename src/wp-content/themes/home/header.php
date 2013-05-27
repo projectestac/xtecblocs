@@ -60,7 +60,12 @@
 						<?php } ?>
 						<!-- end of check user -->
 						<li><a href="<?php echo get_option('home');?>">Inici</a></li>
-						<li><a target="_blank" href="http://phobos.xtec.cat/forum/viewforum.php?f=45">Fòrum</a></li>	
+<!--XTEC ************ MODIFICAT - Canvi enllaç a Fòrum per Suport
+2013.05.13 @author-->
+						<li><a target="_blank" href="http://educat.xtec.cat/group/blocs-a-l-aula">Suport</a></li>
+<!--************ ORIGINAL
+						<li><a target="_blank" href="http://phobos.xtec.cat/forum/viewforum.php?f=45">Fòrum</a></li>
+************ FI-->
 						<li><a href="index.php?a=terms">Condicions d'ús</a></li>
 						<li><a href="http://sites.google.com/a/xtec.cat/ajudaxtecblocs" target="_blank">Ajuda</a></li>
 				<?php if (!is_user_logged_in()){?>
