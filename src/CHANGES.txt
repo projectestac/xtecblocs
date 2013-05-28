@@ -1,6 +1,9 @@
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+v.13.06.03
+- ENS-1068-00015: Modificar enllaç del fòrum per apuntar al grup de la Xarxa Docent 
+
 v.13.03.11
 - ENS-1068-0010: Problemes amb les etiquetes i núvols d'etiquetes en els blocs (parametrització de l'script)
 - ENS-1068-0043: Prohibir la creació (i modificació) de comptes d'usuari/ària amb més de 8 caràcters i adreça @xtec.cat
