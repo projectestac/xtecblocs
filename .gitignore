@@ -1,13 +1,6 @@
 src/.htaccess
-src/.htaccess.des
-src/.htaccess.int
-src/.htaccess.acc
-src/.htaccess.prod
 src/wp-config.php
-src/wp-config.des.php
-src/wp-config.int.php
-src/wp-config.acc.php
-src/wp-config.prod.php
+src/wp-content/wp-cache-config.php
 src/wp-content/blogs.dir/*
 src/wp-content/cache/*
 src/wp-content/weekblog_images.dir/*
