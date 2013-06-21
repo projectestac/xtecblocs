@@ -3,6 +3,11 @@
 if ( !defined('TADV_ADMIN_PAGE') || !current_user_can('manage_options') )
 	wp_die('Access denied');
 
+//XTEC ************ AFEGIT - Localization
+//2013.06.21 @jmiro227
+load_plugin_textdomain( 'tadv', null, dirname( plugin_basename( __FILE__ )) . '/languages' );
+//************ FI
+
 if ( isset( $_POST['tadv_uninstall'] ) ) {
 	check_admin_referer( 'tadv-uninstall' );
 
@@ -350,7 +355,12 @@ if ( is_array($buttons) ) {
 	</div>
 
 	<table class="clear" style="margin:10px 0"><tr><td style="padding:2px 12px 8px;">
+<!--XTEC ************ MODIFICAT - Localization
+2013.06.21 @jmiro227-->
+                <?php _e('Also enable:', 'tadv'); ?>
+<!--************ ORIGINAL
 		Also enable:
+************ FI-->
 		
 		<label for="advimage" class="tadv-box"><?php _e('Advanced Image', 'tadv'); ?> &nbsp;
 		<input type="checkbox" class="tadv-chk"  name="advimage" id="advimage" <?php if ( !empty($tadv_options['advimage']) ) echo ' checked="checked"'; ?> /></label> &bull;
