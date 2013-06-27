@@ -165,3 +165,255 @@ msgstr "Habilitar també:"
 msgid "Import editor-style.css."
 msgstr "Importar el fitxer editor-style.css"
 
+#: tadv_admin.php:
+msgid "Bold"
+msgstr "Negreta"
+
+#: tadv_admin.php:
+msgid "Horizontal rule"
+msgstr "Separador"
+
+#: tadv_admin.php:
+msgid "Hide next row"
+msgstr "Amaga fila"
+
+#: tadv_admin.php:
+msgid "Quote"
+msgstr "Dobles cometes"
+
+#: tadv_admin.php:
+msgid "Italic"
+msgstr "Cursiva"
+
+#: tadv_admin.php:
+msgid "Strikethrough"
+msgstr "Tatxat"
+
+#: tadv_admin.php:
+msgid "Underline"
+msgstr "Subrallat"
+
+#: tadv_admin.php:
+msgid "Bullet List"
+msgstr "Llista desord."
+
+#: tadv_admin.php:
+msgid "Numbered List"
+msgstr "Llista ord."
+
+#: tadv_admin.php:
+msgid "Outdent"
+msgstr "Treu Sagnat"
+
+#: tadv_admin.php:
+msgid "Indent"
+msgstr "Sagna"
+
+#: tadv_admin.php:
+msgid "Allign Left"
+msgstr "Alineació esqu."
+
+#: tadv_admin.php:
+msgid "Center"
+msgstr "Centrat"
+
+#: tadv_admin.php:
+msgid "Alligh Right"
+msgstr "Alinea dreta"
+
+#: tadv_admin.php:
+msgid "Justify"
+msgstr "Justificat"
+
+#: tadv_admin.php:
+msgid "Cut"
+msgstr "Retalla"
+
+#: tadv_admin.php:
+msgid "Copy"
+msgstr "Copia"
+
+#: tadv_admin.php:
+msgid "Paste"
+msgstr "Enganxa"
+
+#: tadv_admin.php:
+msgid "Link"
+msgstr "Enllaça"
+
+#: tadv_admin.php:
+msgid "Remove Link"
+msgstr "Elimina enllaç"
+
+#: tadv_admin.php:
+msgid "Insert Image"
+msgstr "Inserix imatge"
+
+#: tadv_admin.php:
+msgid "More Tag"
+msgstr "Etiqueta 'més'"
+
+#: tadv_admin.php:
+msgid "Split Page"
+msgstr "Divideix pàgina"
+
+#: tadv_admin.php:
+msgid "Search"
+msgstr "Cerca"
+
+#: tadv_admin.php:
+msgid "Replace"
+msgstr "Substitueix"
+
+#: tadv_admin.php:
+msgid "Help"
+msgstr "Ajut"
+
+#: tadv_admin.php:
+msgid "Full Screen"
+msgstr "Pantalla compl."
+
+#: tadv_admin.php:
+msgid "Text Color"
+msgstr "Color del text"
+
+#: tadv_admin.php:
+msgid "Paste as Text"
+msgstr "Enganxa text"
+
+#: tadv_admin.php:
+msgid "Paste from Word"
+msgstr "Enganxa Word"
+
+#: tadv_admin.php:
+msgid "Remove Format"
+msgstr "Elimina el format"
+
+#: tadv_admin.php:
+msgid "Clean Code"
+msgstr "Neteja el codi"
+
+#: tadv_admin.php:
+msgid "Check Spelling"
+msgstr "Corrector ort."
+
+#: tadv_admin.php:
+msgid "Character Map"
+msgstr " Caràcters"
+
+#: tadv_admin.php:
+msgid "Print"
+msgstr "imprimir"
+
+#: tadv_admin.php:
+msgid "Undo"
+msgstr "Desfer"
+
+#: tadv_admin.php:
+msgid "Redo"
+msgstr "Refer"
+
+#: tadv_admin.php:
+msgid "Table"
+msgstr "Taula"
+
+#: tadv_admin.php:
+msgid "Citation"
+msgstr "Citar"
+
+#: tadv_admin.php:
+msgid "Inserted Text"
+msgstr "Text insertat"
+
+#: tadv_admin.php:
+msgid "Deleted Text"
+msgstr "Text esborrat"
+
+#: tadv_admin.php:
+msgid "Abbreviation"
+msgstr "Abrebiatura"
+
+#: tadv_admin.php:
+msgid "Acronym"
+msgstr "Acrònim"
+
+#: tadv_admin.php:
+msgid "XHTML Attribs"
+msgstr "Atributs XHTML"
+
+#: tadv_admin.php:
+msgid "Layer"
+msgstr "Capa"
+
+#: tadv_admin.php:
+msgid "Advanced HR"
+msgstr "Sep. avançat"
+
+#: tadv_admin.php:
+msgid "View HTML"
+msgstr "Veure HTML"
+
+#: tadv_admin.php:
+msgid "Hidden Chars"
+msgstr "Caràcters ocults"
+
+#: tadv_admin.php:
+msgid "NB Space"
+msgstr "Espai NB"
+
+#: tadv_admin.php:
+msgid "Sub"
+msgstr "Sub"
+
+#: tadv_admin.php:
+msgid "Sup"
+msgstr "Sup"
+
+#: tadv_admin.php:
+msgid "Visual Aids"
+msgstr "Ajuts visuals"
+
+#: tadv_admin.php:
+msgid "Insert Date"
+msgstr "Insereix data"
+
+#: tadv_admin.php:
+msgid "Insert Time"
+msgstr "Insereix hora"
+
+#: tadv_admin.php:
+msgid "Anchor"
+msgstr "Ancora"
+
+#: tadv_admin.php:
+msgid "Style"
+msgstr "Estil"
+
+#: tadv_admin.php:
+msgid "Smilies"
+msgstr "Emoticones"
+
+#: tadv_admin.php:
+msgid "Insert Movie"
+msgstr "Insereix video"
+
+#: tadv_admin.php:
+msgid "IE Spell"
+msgstr "Corrector de l'IE"
+
+#: tadv_admin.php:
+msgid "Font select"
+msgstr " "
+
+#: tadv_admin.php:
+msgid "Font size select"
+msgstr "  "
+
+#: tadv_admin.php:
+msgid "Style select"
+msgstr "   "
+
+#: tadv_admin.php:
+msgid "Format select"
+msgstr "    "
+
