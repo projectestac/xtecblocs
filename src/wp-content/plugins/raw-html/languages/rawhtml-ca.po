@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: raw-html\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:30+0100\n"
-"PO-Revision-Date: 2013-07-11 12:32+0100\n"
+"PO-Revision-Date: 2013-07-11 13:24+0100\n"
 "Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 # 2013.05.21 @jmiro227
 #: ../include/formatting-override.php:
 msgid "Disable wptexturize"
-msgstr "Deshabilitar \"wptexturize\""
+msgstr "Deshabilita \"wptexturize\""
 
 # XTEC ************ AFEGIT
 # 2013.05.21 @jmiro227
@@ -31,13 +31,13 @@ msgstr "\"wptexturize\" està relacionat amb les dobles cometes i alguns caràct
 # 2013.05.21 @jmiro227
 #: ../include/formatting-override.php:
 msgid "Disable automatic paragraphs"
-msgstr "Deshabilitar els paràgrafs automàtics"
+msgstr "Deshabilita els paràgrafs automàtics"
 
 # XTEC ************ AFEGIT
 # 2013.05.21 @jmiro227
 #: ../include/formatting-override.php:
 msgid "Disable convert_chars"
-msgstr "Deshabilitar \"convert_chars\""
+msgstr "Deshabilita \"convert_chars\""
 
 # XTEC ************ AFEGIT
 # 2013.05.21 @jmiro227
@@ -49,5 +49,5 @@ msgstr "\"convert_chars\" converteix el caràcter '&' a codificació html i solu
 # 2013.05.21 @jmiro227
 #: ../include/formatting-override.php:
 msgid "Disable smilies"
-msgstr "Deshabilitar les emoticones"
+msgstr "Deshabilita les emoticones"
 
