@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Network Admin package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2013-06-21 10:20+0100\n"
+"PO-Revision-Date: 2013-07-11 17:53+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -610,9 +610,11 @@ msgstr "No podeu crear un usuari buit."
 msgid "Cannot add user."
 msgstr "No es pot afegir l'usuari."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/network/users.php:27
 msgid "Transfer or delete posts before deleting users."
-msgstr "Transfereix o suprimeix les entrades abans de suprimir els usuaris."
+msgstr "Transfereix o suprimeix els articles abans de suprimir els usuaris."
 
 #: wp-admin/network/users.php:40
 msgid "Warning! User %s cannot be deleted."
@@ -622,9 +624,11 @@ msgstr "Atenció! L'usuari %s no pot ser eliminat."
 msgid "Warning! User cannot be deleted. The user %s is a network administrator."
 msgstr "Atenció! No es pot eliminar aquest usuari. L'usuari %s és un administrador de la xarxa."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/network/users.php:50
 msgid "What should be done with posts owned by <em>%s</em>?"
-msgstr "Què s'hauria de fer amb les entrades de <em>%s</em>?"
+msgstr "Què s'hauria de fer amb els articles de <em>%s</em>?"
 
 #: wp-admin/network/users.php:68
 msgid "Site: %s"
@@ -650,9 +654,11 @@ msgstr "També podeu anar a la pàgina del perfil de l'usuari si feu clic al nom
 msgid "You can sort the table by clicking on any of the bold headings and switch between list and excerpt views by using the icons in the upper right."
 msgstr "Podeu ordenar la taula fent clic a qualsevol capçalera en negreta i canviar entre la vista de llista i extracte fent servir les icones de dalt a la dreta."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/network/users.php:238
 msgid "The bulk action will permanently delete selected users, or mark/unmark those selected as spam. Spam users will have posts removed and will be unable to sign up again with the same email addresses."
-msgstr "Les accions en massa eliminaran permanentment els usuaris seleccionats, o marcaran/desmarcaran els seleccionats com a brossa. Als usuaris brossa se'ls eliminaran les entrades i no podran registrar-se altra vegada amb el mateix correu electrònic."
+msgstr "Les accions en massa eliminaran permanentment els usuaris seleccionats, o marcaran/desmarcaran els seleccionats com a brossa. Als usuaris brossa se'ls eliminaran els articles i no podran registrar-se altra vegada amb el mateix correu electrònic."
 
 #: wp-admin/network/users.php:239
 msgid "You can make an existing user an additional super admin by going to the Edit User profile page and checking the box to grant that privilege."
@@ -1049,9 +1055,11 @@ msgstr "Aquesta pantalla estableix i canvia les opcions per a la xarxa en conjun
 msgid "Operational settings has fields for the network&#8217;s name and admin email."
 msgstr "La configuració operacional té camps per al nom de la xarxa i el correu electrònic de l'administrador."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/network/settings.php:28
 msgid "Dashboard Site is an option to give a site to users who do not have a site on the system. Their default role is Subscriber, but that default can be changed. The Admin Notice Feed can provide a notice on all dashboards of the latest post via RSS or Atom, or provide no such notice if left blank."
-msgstr "El Tauler és una opció per donar un lloc als usuaris que no tenen un bloc al sistema. El rol per defecte és Subscriptor, però això es pot canviar. El canal de notícies de l'administració pot avisar a tots els taulers de les darreres entrades via RSS o Atom o no avisar si es deixa en blanc."
+msgstr "El Tauler és una opció per donar un lloc als usuaris que no tenen un bloc al sistema. El rol per defecte és Subscriptor, però això es pot canviar. El canal de notícies de l'administració pot avisar a tots els taulers dels darrers articles via RSS o Atom o no avisar si es deixa en blanc."
 
 #: wp-admin/network/settings.php:29
 msgid "Registration settings can disable/enable public signups. If you let others sign up for a site, install spam plugins. Spaces, not commas, should separate names banned as sites for this network."

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2013-05-30 10:33+0100\n"
+"PO-Revision-Date: 2013-07-11 18:51+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -79,9 +79,11 @@ msgstr "Quan assigneu més d'una categoria o etiqueta a una article, només una 
 msgid "Custom Structures"
 msgstr "Estructures personalitzades"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/options-permalink.php:38
 msgid "The Optional fields let you customize the &#8220;category&#8221; and &#8220;tag&#8221; base names that will appear in archive URLs. For example, the page listing all posts in the &#8220;Uncategorized&#8221; category could be <code>/topics/uncategorized</code> instead of <code>/category/uncategorized</code>."
-msgstr "Els camps opcionals us permeten personalitzar els noms base &#8220;categoria&#8221; i &#8220;etiqueta&#8221; que apareixeran a les URL d'arxius. Per exemple, la pàgina que mostra totes les entrades de la categoria &#8220;General&#8221; podria ser <code>/temes/general</code> en lloc de <code>/categoria/general</code>."
+msgstr "Els camps opcionals us permeten personalitzar els noms base &#8220;categoria&#8221; i &#8220;etiqueta&#8221; que apareixeran a les URL d'arxius. Per exemple, la pàgina que mostra totes els articles de la categoria &#8220;General&#8221; podria ser <code>/temes/general</code> en lloc de <code>/categoria/general</code>."
 
 #: wp-admin/options-permalink.php:44
 msgid "<a href=\"http://codex.wordpress.org/Settings_Permalinks_Screen\" target=\"_blank\">Documentation on Permalinks Settings</a>"
@@ -194,13 +196,17 @@ msgstr "La <a href=\"http://codex.wordpress.org/Glossary#Character_set\">codific
 msgid "This screen contains the settings that affect the display of your content."
 msgstr "Aquesta pantalla conté la configuració que afecten a la visualització del contingut."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/options-reading.php:57
 msgid "You can choose what&#8217;s displayed on the front page of your site. It can be posts in reverse chronological order (classic blog), or a fixed/static page. To set a static home page, you first need to create two <a href=\"%s\">Pages</a>. One will become the front page, and the other will be where your posts are displayed."
-msgstr "Podeu triar què voleu que es mostri a la pàgina principal del bloc. Poden ser entrades en ordre cronològic invers (bloc clàssic), o una pàgina estàtica o fixa. Per mostrar una pàgina estàtica, primer cal que creeu dues <a href=\"%s\">pàgines</a>. Una serà la pàgina principal, i l'altra serà on es mostraran les entrades."
+msgstr "Podeu triar què voleu que es mostri a la pàgina principal del bloc. Poden ser articles en ordre cronològic invers (bloc clàssic), o una pàgina estàtica o fixa. Per mostrar una pàgina estàtica, primer cal que creeu dues <a href=\"%s\">pàgines</a>. Una serà la pàgina principal, i l'altra serà on es mostraran els articles."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/options-reading.php:58
 msgid "You can also control the display of your content in RSS feeds, including the maximum numbers of posts to display and whether to show full text or a summary."
-msgstr "Podeu també controlar el que es mostra al contingut dels fils de subscripció RSS, que inclou el nombre màxim d'entrades a mostrar i si cal mostrar el text sencer o un sumari."
+msgstr "Podeu també controlar el que es mostra al contingut dels fils de subscripció RSS, que inclou el nombre màxim d'articles a mostrar i si cal mostrar el text sencer o un sumari."
 
 #: wp-admin/options-reading.php:64
 #: wp-admin/options-reading.php:145
@@ -238,9 +244,11 @@ msgstr "Una <a href=\"%s\">pàgina estàtica</a> (seleccioneu a continuació)"
 msgid "Front page: %s"
 msgstr "Pàgina inicial: %s"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/options-reading.php:118
 msgid "Posts page: %s"
-msgstr "Pàgina d'entrades: %s"
+msgstr "Pàgina d'articles: %s"
 
 #: wp-admin/options-reading.php:121
 msgid "<strong>Warning:</strong> these pages should not be the same!"
@@ -250,9 +258,11 @@ msgstr "<strong>Avís:</strong> aquestes pàgines haurien de ser diferents!"
 msgid "Blog pages show at most"
 msgstr "Les pàgines mostren com a màxim"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/options-reading.php:129
 msgid "posts"
-msgstr "entrades"
+msgstr "articles"
 
 #: wp-admin/options-reading.php:133
 msgid "Syndication feeds show the most recent"
@@ -318,9 +328,11 @@ msgstr "La configuració de la publicació per correu electrònic us permet envi
 msgid "Update Services"
 msgstr "Serveis d'actualització"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/options-writing.php:43
 msgid "If desired, WordPress will automatically alert various services of your new posts."
-msgstr "Si voleu, el WordPress avisarà automàticament a diversos serveis que hi ha entrades noves."
+msgstr "Si voleu, el WordPress avisarà automàticament a diversos serveis que hi ha articles nous."
 
 #: wp-admin/options-writing.php:49
 msgid "<a href=\"http://codex.wordpress.org/Settings_Writing_Screen\" target=\"_blank\">Documentation on Writing Settings</a>"
@@ -371,9 +383,11 @@ msgstr "Arrossegueu i deixeu anar el següent enllaç a la vostra barra d'adrece
 msgid "If your bookmarks toolbar is hidden: copy the code below, open your Bookmarks manager, create new bookmark, type Press This into the name field and paste the code into the URL field."
 msgstr "Si la barra d'adreces d'interès està oculta: copieu el codi següent, obriu el gestor de les adreces d'interès, creeu una adreça d'interès nova, teclegeu \"Premeu això\" en el camp del nom i enganxeu el codi en el camp de la URL."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/options-writing.php:128
 msgid "Post via e-mail"
-msgstr "Publica entrades per correu electrònic"
+msgstr "Publica articles per correu electrònic"
 
 #: wp-admin/options-writing.php:129
 msgid "To post to WordPress by e-mail you must set up a secret e-mail account with POP3 access. Any mail received at this address will be posted, so it&#8217;s a good idea to keep this address very secret. Here are three random strings you could use: <kbd>%s</kbd>, <kbd>%s</kbd>, <kbd>%s</kbd>."
@@ -391,9 +405,11 @@ msgstr "Port"
 msgid "Login Name"
 msgstr "Nom d'usuari"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/options-writing.php:150
 msgid "Default Mail Category"
-msgstr "Categoria per defecte de les entrades fetes per correu electrònic"
+msgstr "Categoria per defecte dels articles fets per correu electrònic"
 
 #: wp-admin/options-writing.php:166
 msgid "When you publish a new post, WordPress automatically notifies the following site update services. For more about this, see <a href=\"http://codex.wordpress.org/Update_Services\">Update Services</a> on the Codex. Separate multiple service <abbr title=\"Universal Resource Locator\">URL</abbr>s with line breaks."
@@ -1114,9 +1130,11 @@ msgstr "Addició de temes"
 msgid "Click on the \"Live Preview\" link under any theme to preview that theme and change theme options in a separate, full-screen view. Any installed theme can be previewed and customized in this way."
 msgstr "Feu clic a l'enllaç \"Previsualització\" a la part inferior de qualsevol tema per previsualitzar aquest tema i canviar les seves opcions en una pantalla separada a vista completa. Qualsevol tema instal·lat es pot previsualitzar i personalitzar d'aquesta forma."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/themes.php:74
 msgid "The theme being previewed is fully interactive &mdash; navigate to different pages to see how the theme handles posts, archives, and other page templates."
-msgstr "El tema que s'està previsualitzant és completament interactiu &mdash; navegueu per diferents pàgines per veure com es veuen les entrades, els arxius, i altres plantilles del tema."
+msgstr "El tema que s'està previsualitzant és completament interactiu &mdash; navegueu per diferents pàgines per veure com es veuen els articles, els arxius, i altres plantilles del tema."
 
 #: wp-admin/themes.php:75
 msgid "In the left-hand pane you can edit the theme settings. The settings will differ, depending on what theme features the theme being previewed supports. To accept the new settings and activate the theme all in one step, click the \"Save &amp; Activate\" button at the top of the left-hand pane."
@@ -1198,9 +1216,11 @@ msgctxt "theme name"
 msgid "Name"
 msgstr "Nom"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/tools.php:22
 msgid "Categories have hierarchy, meaning that you can nest sub-categories. Tags do not have hierarchy and cannot be nested. Sometimes people start out using one on their posts, then later realize that the other would work better for their content."
-msgstr "Les categories tenen jerarquia, que vol dir que podeu niar subcategories. Les etiquetes no tenen jerarquia i no poden niar-se. A vegades la gent comença a usar una en les seves entrades, aleshores se n'adona que l'altra seria més apropiada per al seu contingut."
+msgstr "Les categories tenen jerarquia, que vol dir que podeu niar subcategories. Les etiquetes no tenen jerarquia i no poden niar-se. A vegades la gent comença a usar un dels seus articles, aleshores se n'adona que l'altra seria més apropiada per al seu contingut."
 
 #: wp-admin/tools.php:23
 msgid "The Categories and Tags Converter link on this screen will take you to the Import screen, where that Converter is one of the plugins you can install. Once that plugin is installed, the Activate Plugin &amp; Run Importer link will take you to a screen where you can choose to convert tags into categories or vice versa."
@@ -1611,7 +1631,7 @@ msgstr "Podeu canviar la contrasenya, activar les dreceres de teclat, canviar l'
 
 #: wp-admin/user-edit.php:41
 msgid "Your username cannot be changed, but you can use other fields to enter your real name or a nickname, and change which name to display on your posts."
-msgstr "El nom d'usuari no es pot canviar, però podeu fer servir altres camps per escriure el nom real o un àlies i canviar quin nom voleu que aparegui a les entrades."
+msgstr "El nom d'usuari no es pot canviar, però podeu fer servir altres camps per escriure el nom real o un àlies i canviar quin nom voleu que aparegui als articles."
 
 #: wp-admin/user-edit.php:42
 msgid "Required fields are indicated; the rest are optional. Profile information will only be displayed if your theme is set up to do so."
@@ -1858,17 +1878,23 @@ msgstr "Aquest és un resum bàsic dels diferents rols d'usuari i els permisos a
 msgid "Administrators have access to all the administration features."
 msgstr "Els administradors tenen accés a totes les característiques d'administració."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/user-new.php:169
 msgid "Editors can publish posts, manage posts as well as manage other people&#8217;s posts, etc."
-msgstr "Els editors poden publicar entrades, gestionar tant entrades pròpies com d'altres usuaris, etcètera"
+msgstr "Els editors poden publicar articles, gestionar tant articles pròpis com d'altres usuaris, etcètera"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/user-new.php:170
 msgid "Authors can publish and manage their own posts, and are able to upload files."
-msgstr "Els autors poden publicar i gestionar les seves entrades, i poden penjar fitxers."
+msgstr "Els autors poden publicar i gestionar les seus articles, i poden penjar fitxers."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/user-new.php:171
 msgid "Contributors can write and manage their posts but not publish posts or upload media files."
-msgstr "Els col·laboradors poden escriure i gestionar les seves entrades però no poden publicar-ne o penjar fitxers multimèdia."
+msgstr "Els col·laboradors poden escriure i gestionar els seus articles però no poden publicar-ne o penjar fitxers multimèdia."
 
 #: wp-admin/user-new.php:172
 msgid "Subscribers can read comments/comment/receive newsletters, etc. but cannot create regular site content."
@@ -1987,9 +2013,11 @@ msgstr "Podeu amagar/mostrar les columnes segons les vostre necessitats i decidi
 msgid "You can filter the list of users by User Role using the text links in the upper left to show All, Administrator, Editor, Author, Contributor, or Subscriber. The default view is to show all users. Unused User Roles are not listed."
 msgstr "Podeu filtrar la llista d'usuaris pel rol d'usuari fent servir els enllaços de text de la part superior esquerra per mostrar Tots, Administradors, Editors, Autors, Col·laboradors i Subscriptors. La vista predeterminada és mostrar tots els usuaris. Els rols que no s'usen no es llisten."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/users.php:37
 msgid "You can view all posts made by a user by clicking on the number under the Posts column."
-msgstr "Podeu veure totes les entrades fetes per un usuari en fer clic en el número que hi ha a la part inferior de la columna d'entrades."
+msgstr "Podeu veure tots els articles fets per un usuari en fer clic en el número que hi ha a la part inferior de la columna d'articles."
 
 #: wp-admin/users.php:41
 msgid "Hovering over a row in the users list will display action links that allow you to manage users. You can perform the following actions:"
@@ -1999,13 +2027,17 @@ msgstr "En passar el cursor per sobre una fila a la llista d'usuaris es mostrara
 msgid "Edit takes you to the editable profile screen for that user. You can also reach that screen by clicking on the username."
 msgstr "Edita us porta a una pantalla d'edició del perfil per a aquest usuari. Podeu també anar a aquesta pantalla en fer clic en el nom d'usuari."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/users.php:46
 msgid "Remove allows you to remove a user from your site. It does not delete their posts. You can also remove multiple users at once by using Bulk Actions."
-msgstr "Suprimeix us permet suprimir un usuari de la bloc. No se suprimeix les seves entrades. Podeu també suprimir molts usuaris d'una vegada fent servir les accions en massa."
+msgstr "Suprimeix us permet suprimir un usuari de la bloc. No se suprimeixen els seus articles. Podeu també suprimir molts usuaris d'una vegada fent servir les accions en massa."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/users.php:48
 msgid "Delete brings you to the Delete Users screen for confirmation, where you can permanently remove a user from your site and delete their posts. You can also delete multiple users at once by using Bulk Actions."
-msgstr "Suprimeix us portarà a una pantalla de confirmació per suprimir usuaris, on podeu suprimir permanentment un usuari del bloc i suprimir les seves entrades. Podeu també suprimir molts usuaris a la vegada en fer servir les accions en massa."
+msgstr "Suprimeix us portarà a una pantalla de confirmació per suprimir usuaris, on podeu suprimir permanentment un usuari del bloc i suprimir els seus articles. Podeu també suprimir molts usuaris a la vegada en fer servir les accions en massa."
 
 #: wp-admin/users.php:61
 msgid "<a href=\"http://codex.wordpress.org/Users_Screen\" target=\"_blank\">Documentation on Managing Users</a>"
@@ -2057,19 +2089,25 @@ msgstr "Identificador #%1$s: %2$s <strong>No es pot suprimir l'usuari actual.</s
 msgid "ID #%1$s: %2$s"
 msgstr "Identificador #%1$s: %2$s"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/users.php:241
 msgid "What should be done with posts owned by this user?"
 msgid_plural "What should be done with posts owned by these users?"
-msgstr[0] "Què s'ha de fer amb les entrades d'aquest usuari?"
-msgstr[1] "Què s'ha de fer amb les entrades d'aquests usuaris?"
+msgstr[0] "Què s'ha de fer amb les articles d'aquest usuari?"
+msgstr[1] "Què s'ha de fer amb lels articles d'aquests usuaris?"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/users.php:244
 msgid "Delete all posts."
-msgstr "Suprimeix totes les entrades."
+msgstr "Suprimeix tots els articles."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/users.php:246
 msgid "Attribute all posts to:"
-msgstr "Atribueix totes les entrades a:"
+msgstr "Atribueix tots els articles a:"
 
 #: wp-admin/users.php:250
 msgid "Confirm Deletion"
@@ -2837,9 +2875,11 @@ msgstr "Imatge desada"
 msgid "Blogger"
 msgstr "Blogger"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/includes/import.php:138
 msgid "Install the Blogger importer to import posts, comments, and users from a Blogger blog."
-msgstr "Instal·la l'importador de Blogger per importar entrades, comentaris i usuaris d'un bloc de Blogger."
+msgstr "Instal·la l'importador de Blogger per importar articles, comentaris i usuaris d'un bloc de Blogger."
 
 #: wp-admin/includes/import.php:143
 #: wp-admin/tools.php:21
@@ -2855,17 +2895,21 @@ msgstr "Instal·la el convertidor de categories i etiquetes per convertir catego
 msgid "LiveJournal"
 msgstr "LiveJournal"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/includes/import.php:150
 msgid "Install the LiveJournal importer to import posts from LiveJournal using their API."
-msgstr "Instal·la l'importador del LiveJournal per importar entrades del LiveJournal amb la seva API."
+msgstr "Instal·la l'importador del LiveJournal per importar articles del LiveJournal amb la seva API."
 
 #: wp-admin/includes/import.php:155
 msgid "Movable Type and TypePad"
 msgstr "Movable Type i TypePad"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/includes/import.php:156
 msgid "Install the Movable Type importer to import posts and comments from a Movable Type or TypePad blog."
-msgstr "Instal·la l'importador de Movable Type per importar entrades i comentaris d'un bloc de Movable Type o TypePad."
+msgstr "Instal·la l'importador de Movable Type per importar articles i comentaris d'un bloc de Movable Type o TypePad."
 
 #: wp-admin/includes/import.php:161
 msgid "Blogroll"
@@ -2875,21 +2919,27 @@ msgstr "Blogroll"
 msgid "Install the blogroll importer to import links in OPML format."
 msgstr "Instal·la l'importador de llistes d'enllaços per importar enllaços en format OPML."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/includes/import.php:168
 msgid "Install the RSS importer to import posts from an RSS feed."
-msgstr "Instal·la l'importador de RSS per importar entrades d'un canal RSS."
+msgstr "Instal·la l'importador de RSS per importar articles d'un canal RSS."
 
 #: wp-admin/includes/import.php:173
 msgid "Tumblr"
 msgstr "Tumblr"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/includes/import.php:174
 msgid "Install the Tumblr importer to import posts &amp; media from Tumblr using their API."
-msgstr "Instal·la l'importador del Tumblr per importar entrades i mèdia des del Tumblr fent servir la seva API."
+msgstr "Instal·la l'importador del Tumblr per importar articles i mèdia des del Tumblr fent servir la seva API."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/includes/import.php:180
 msgid "Install the WordPress importer to import posts, pages, comments, custom fields, categories, and tags from a WordPress export file."
-msgstr "Instal·la l'importador del WordPress per importar entrades, pàgines, comentaris, camps personalitzats, categories i etiquetes des d'un fitxer d'exportació del WordPress."
+msgstr "Instal·la l'importador del WordPress per importar articles, pàgines, comentaris, camps personalitzats, categories i etiquetes des d'un fitxer d'exportació del WordPress."
 
 #: wp-admin/includes/media.php:18
 msgid "From Computer"
@@ -4013,17 +4063,21 @@ msgstr "S'ha suprimit el grup d'opcions \"%s\" . Utilitzeu altre grup de paràme
 msgid "You are not allowed to edit pages as this user."
 msgstr "Amb aquest nom d'usuari no teniu autorització per editar pàgines."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/includes/post.php:35
 msgid "You are not allowed to edit posts as this user."
-msgstr "Amb aquest nom d'usuari no teniu autorització per editar entrades."
+msgstr "Amb aquest nom d'usuari no teniu autorització per editar articles."
 
 #: wp-admin/includes/post.php:287
 msgid "You are not allowed to edit pages."
 msgstr "No esteu autoritzat a editar pàgines."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/includes/post.php:289
 msgid "You are not allowed to edit posts."
-msgstr "No teniu autorització per editar entrades."
+msgstr "No teniu autorització per editar articles."
 
 #: wp-admin/includes/post.php:436
 msgid "Auto Draft"
@@ -4033,9 +4087,11 @@ msgstr "Esborrany automàtic"
 msgid "You are not allowed to create pages on this site."
 msgstr "No teniu permisos per crear pàgines en aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/includes/post.php:529
 msgid "You are not allowed to create posts or drafts on this site."
-msgstr "No teniu autorització per crear entrades o esborranys en aquest bloc."
+msgstr "No teniu autorització per crear articles o esborranys en aquest bloc."
 
 #: wp-admin/includes/post.php:1055
 msgid "Click to edit this part of the permalink"
@@ -4338,9 +4394,11 @@ msgstr "El grup d'opcions miscel·lànies s'ha suprimit. Useu altre grup de par�
 msgid "The privacy options group has been removed. Use another settings group."
 msgstr "S'ha suprimit el grup d'opcions sobre la privacitat. Utilitzeu altre grup de paràmetres."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/includes/template.php:1270
 msgid "Find Posts or Pages"
-msgstr "Troba entrades o pàgines"
+msgstr "Troba articles o pàgines"
 
 #: wp-admin/includes/template.php:1439
 msgctxt "post state"
@@ -4566,9 +4624,11 @@ msgstr "Plantilla d'amplària completa"
 msgid "Microformats"
 msgstr "Microformats"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/includes/theme.php:200
 msgid "Post Formats"
-msgstr "Formats de les entrades"
+msgstr "Formats dels articles"
 
 #: wp-admin/includes/theme.php:201
 msgid "RTL Language Support"
@@ -4738,13 +4798,15 @@ msgstr "hola-mon"
 msgid "Mr WordPress"
 msgstr "Sr. WordPress"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/includes/upgrade.php:165
 msgid ""
 "Hi, this is a comment.\n"
 "To delete a comment, just log in and view the post&#039;s comments. There you will have the option to edit or delete them."
 msgstr ""
 "Hola, això és un comentari:\n"
-"Per suprimir un comentari, simplement entreu i mireu els comentaris de les entrades. Allà tindreu una opció per editar o suprimir-los."
+"Per suprimir un comentari, simplement entreu i mireu els comentaris dels articles. Allà tindreu una opció per editar o suprimir-los."
 
 #: wp-admin/includes/upgrade.php:183
 msgid ""
@@ -4905,17 +4967,21 @@ msgstr "Les caixes del tauler són:"
 msgid "<strong>Right Now</strong> - Displays a summary of the content on your site and identifies which theme and version of WordPress you are using."
 msgstr "<strong>Ara mateix</strong> - Mostra un resum del contingut del bloc i identifica quin tema i versió del WordPress esteu fent servir."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/index.php:76
 msgid "<strong>Recent Comments</strong> - Shows the most recent comments on your posts (configurable, up to 30) and allows you to moderate them."
-msgstr "<strong>Comentaris recents</strong> - Mostra els comentaris més recents de les entrades (configurable fins a 30) i us permet moderar-los."
+msgstr "<strong>Comentaris recents</strong> - Mostra els comentaris més recents dels articles (configurable fins a 30) i us permet moderar-los."
 
 #: wp-admin/index.php:78
 msgid "<strong>Incoming Links</strong> - Shows links to your site found by Google Blog Search."
 msgstr "<strong>Enllaços entrants</strong> - Mostra els enllaços cap al bloc trobats per Google Blog Search."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/index.php:80
 msgid "<strong>QuickPress</strong> - Allows you to create a new post and either publish it or save it as a draft."
-msgstr "<strong>Editor Ràpid</strong> - Us permet crear noves entrades i publicar-les o desar-les com a esborranys"
+msgstr "<strong>Editor Ràpid</strong> - Us permet crear nous articles i publicar-los o desar-los com a esborranys"
 
 #: wp-admin/index.php:81
 msgid "<strong>Recent Drafts</strong> - Displays links to the 5 most recent draft posts you&#8217;ve started."
@@ -5062,9 +5128,11 @@ msgstr "Afegeix un enllaç"
 msgid "You can add links here to be displayed on your site, usually using <a href=\"%s\">Widgets</a>. By default, links to several sites in the WordPress community are included as examples."
 msgstr "Podeu afegir enllaços aquí per mostrar-los al bloc, normalment fent servir <a href=\"%s\">Ginys</a>. Per defecte, els enllaços a diversos llocs web de la comunitat del WordPress estan inclosos com a exemples."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/link-manager.php:48
 msgid "Links may be separated into Link Categories; these are different than the categories used on your posts."
-msgstr "Els enllaços es poden separar en categories d'enllaços; aquestes són diferents de les categories usades en els entrades."
+msgstr "Els enllaços es poden separar en categories d'enllaços; aquestes són diferents de les categories usades en els articles."
 
 #: wp-admin/link-manager.php:49
 msgid "You can customize the display of this screen using the Screen Options tab and/or the dropdown filters above the links table."
@@ -5172,9 +5240,11 @@ msgstr "Repara i optimitza la base de dades"
 msgid "Upload New Media"
 msgstr "Penja mèdia nous"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/media-new.php:47
 msgid "You can upload media files here without creating a post first. This allows you to upload files to use with posts and pages later and/or to get a web link for a particular file that you can share. There are three options for uploading files:"
-msgstr "Podeu penjar fitxers mèdia aquí sense crear primer un article. Això us permet penjar els fitxers que aneu a usar en les entrades i pàgines després i/o aconseguir un enllaç a un fitxer en particular que voleu compartir. Hi ha tres opcions per a penjar fitxers:"
+msgstr "Podeu penjar fitxers mèdia aquí sense crear primer un article. Això us permet penjar els fitxers que aneu a usar en els articles i pàgines després i/o aconseguir un enllaç a un fitxer en particular que voleu compartir. Hi ha tres opcions per a penjar fitxers:"
 
 #: wp-admin/media-new.php:49
 msgid "<strong>Drag and drop</strong> your files into the area below. Multiple files are allowed."
@@ -5555,9 +5625,11 @@ msgstr "Quan acabeu de fer el menú personalitzat, assegureu-vos que feu clic al
 msgid "You do not have sufficient permissions to manage options for this site."
 msgstr "No teniu permès gestionar les opcions d'aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/options-discussion.php:21
 msgid "This screen provides many options for controlling the management and display of comments and links to your posts/pages. So many, in fact, they won&#8217;t all fit here! :) Use the documentation links to get information on what each discussion setting does."
-msgstr "Aquesta pantalla us proporciona moltes opcions per controlar la gestió i visualització dels comentaris i enllaços en les entrades/pàgines. Tantes, de fet, que no caben totes aquí :) Utilitzeu els enllaços de la documentació per obtenir informació sobre què fa cada paràmetre de discussió."
+msgstr "Aquesta pantalla us proporciona moltes opcions per controlar la gestió i visualització dels comentaris i enllaços en les articles/pàgines. Tantes, de fet, que no caben totes aquí :) Utilitzeu els enllaços de la documentació per obtenir informació sobre què fa cada paràmetre de discussió."
 
 #: wp-admin/options-discussion.php:22
 #: wp-admin/options-general.php:69
@@ -5574,18 +5646,22 @@ msgstr "Heu de fer clic al botó Desa els canvis de la part inferior de la panta
 msgid "<a href=\"http://codex.wordpress.org/Settings_Discussion_Screen\" target=\"_blank\">Documentation on Discussion Settings</a>"
 msgstr "<a href=\"http://codex.wordpress.org/Settings_Discussion_Screen\" target=\"_blank\">Documentació sobre la configuració de la discussió</a> (en anglès)"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/options-discussion.php:43
 #: wp-admin/options-discussion.php:44
 msgid "Default article settings"
-msgstr "Opcions per defecte per a les entrades"
+msgstr "Opcions per defecte per als articles"
 
 #: wp-admin/options-discussion.php:47
 msgid "Attempt to notify any blogs linked to from the article"
 msgstr "Prova de notificar els blocs als quals enllaça l'article"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/options-discussion.php:57
 msgid "These settings may be overridden for individual articles."
-msgstr "Aquests valors es poden modificar per a entrades individuals."
+msgstr "Aquests valors es poden modificar per als articles individuals."
 
 #: wp-admin/options-discussion.php:61
 #: wp-admin/options-discussion.php:62
@@ -5604,9 +5680,11 @@ msgstr "Els usuaris han de registrar-se i identificar-se per comentar"
 msgid "(Signup has been disabled. Only members of this site can comment.)"
 msgstr "(El registre està desactivat. Solament els membres d'aquest bloc poden fer comentaris.)"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/options-discussion.php:74
 msgid "Automatically close comments on articles older than %s days"
-msgstr "Automàticament tanqueu els comentaris en entrades de fa més %s dies."
+msgstr "Automàticament tanqueu els comentaris en articles de fa més %s dies."
 
 #: wp-admin/options-discussion.php:91
 msgid "Enable threaded (nested) comments %s levels deep"
@@ -6652,9 +6730,11 @@ msgstr "Canvia"
 msgid "Role"
 msgstr "Rol"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/includes/class-wp-users-list-table.php:306
 msgid "View posts by this author"
-msgstr "Mostra les entrades fetes per aquest autor"
+msgstr "Mostra els articles fets per aquest autor"
 
 #: wp-admin/includes/dashboard.php:33
 msgid "You are using an insecure browser!"
@@ -7715,9 +7795,11 @@ msgstr "Nou gestor de mèdia"
 msgid "Beautiful Interface"
 msgstr "Interfície bella"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/about.php:52
 msgid "Adding media has been streamlined with an all-new experience, making it a breeze to upload files and place them into your posts."
-msgstr "L'addició dels mèdia s'ha racionalitzat amb tota una nova experiència, fent que en un sospir pengeu els fitxers i els poseu a les entrades."
+msgstr "L'addició dels mèdia s'ha racionalitzat amb tota una nova experiència, fent que en un sospir pengeu els fitxers i els poseu als articles."
 
 #: wp-admin/about.php:55
 msgid "Picturesque Galleries"
@@ -7819,9 +7901,11 @@ msgstr "El <code>switch_to_blog()</code> és ara molt més ràpid i més fiable.
 msgid "XML-RPC API"
 msgstr "API XML-RPC:"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/about.php:121
 msgid "The <a href=\"%s\">WordPress API</a> is now always enabled, and supports fetching users, editing profiles, managing post revisions, and searching posts."
-msgstr "L'<a href=\"%s\">API del WordPress</a> ara està sempre activada, i suporta la cerca d'usuaris, l'edició de perfils, la gestió de les revisions i la cerca d'entrades."
+msgstr "L'<a href=\"%s\">API del WordPress</a> ara està sempre activada, i suporta la cerca d'usuaris, l'edició de perfils, la gestió de les revisions i la cerca d'articles."
 
 #: wp-admin/about.php:121
 msgid "http://codex.wordpress.org/XML-RPC_WordPress_API"
@@ -8588,9 +8672,11 @@ msgctxt "comments per page (screen options)"
 msgid "Comments"
 msgstr "Comentaris"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit-comments.php:118
 msgid "You can manage comments made on your site similar to the way you manage posts and other content. This screen is customizable in the same ways as other management screens, and you can act on comments using the on-hover action links or the Bulk Actions."
-msgstr "Podeu gestionar els comentaris fets al bloc de manera similar a com gestioneu les entrades i altre contingut. Aquesta pantalla es pot personalitzar de la mateixa manera a altres pantalles d'administració, i podeu actuar amb els comentaris fent servir els enllaços d'acció que es mostren en passar el cursor per sobre o en accions en massa."
+msgstr "Podeu gestionar els comentaris fets al bloc de manera similar a com gestioneu els articles i altre contingut. Aquesta pantalla es pot personalitzar de la mateixa manera a altres pantalles d'administració, i podeu actuar amb els comentaris fent servir els enllaços d'acció que es mostren en passar el cursor per sobre o en accions en massa."
 
 #: wp-admin/edit-comments.php:122
 msgid "Moderating Comments"
@@ -8608,9 +8694,11 @@ msgstr "A la columna de l'<strong>autor</strong>, a més del nom de l'autor, l'a
 msgid "In the <strong>Comment</strong> column, above each comment it says &#8220;Submitted on,&#8221; followed by the date and time the comment was left on your site. Clicking on the date/time link will take you to that comment on your live site. Hovering over any comment gives you options to approve, reply (and approve), quick edit, edit, spam mark, or trash that comment."
 msgstr "A la columna <strong>Comentaris</strong>, a la part superior de cada comentari hi diu &#8220;Enviat el,&#8221; seguit per la data i l'hora en què el comentari es va fer. En fer clic a l'enllaç de la data i hora us portarà al comentari en el bloc. En passar el ratolí per sobre de qualsevol comentari, apareixeran opcions per aprovar, respondre (i aprovar), edició ràpida, editar, marcar com a brossa, o enviar a la paperera aquest comentari."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit-comments.php:127
 msgid "In the <strong>In Response To</strong> column, there are three elements. The text is the name of the post that inspired the comment, and links to the post editor for that entry. The View Post link leads to that post on your live site. The small bubble with the number in it shows the number of approved comments that post has received. If the bubble is gray, you have moderated all comments for that post. If it is blue, there are pending comments. Clicking the bubble will filter the comments screen to show only comments on that post."
-msgstr "A la columna <strong>En resposta a</strong>, hi ha tres elements. El text és el nom de l'article que ha inspirat el comentari, i enllaços a l'editor d'entrades per a aquest article. L'enllaç Mostra l'article us portarà a aquest article al bloc. La bombolleta amb el número dintre mostra el nombre de comentaris aprovats que ha rebut aquest article. Si la bombolleta és grisa, teniu tots els comentaris d'aquest article moderats. Si és de color blau, hi ha comentaris pendents. En fer clic a la bombolleta es filtrarà la pantalla de comentaris per mostrar solament els comentaris d'aquest article."
+msgstr "A la columna <strong>En resposta a</strong>, hi ha tres elements. El text és el nom de l'article que ha inspirat el comentari, i enllaços a l'editor d'articles per a aquest article. L'enllaç Mostra l'article us portarà a aquest article al bloc. La bombolleta amb el número dintre mostra el nombre de comentaris aprovats que ha rebut aquest article. Si la bombolleta és grisa, teniu tots els comentaris d'aquest article moderats. Si és de color blau, hi ha comentaris pendents. En fer clic a la bombolleta es filtrarà la pantalla de comentaris per mostrar solament els comentaris d'aquest article."
 
 #: wp-admin/edit-comments.php:128
 msgid "Many people take advantage of keyboard shortcuts to moderate their comments more quickly. Use the link to the side to learn more."
@@ -8830,29 +8918,37 @@ msgstr "S'està personalitzant aquesta pantalla"
 msgid "<strong>Title</strong> - Enter a title for your post. After you enter a title, you&#8217;ll see the permalink below, which you can edit."
 msgstr "<strong>Títol</strong> - Introdueix un títol per a l'article. Una vegada introduït veureu l'enllaç permanent, que podreu editar, a la part inferior."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit-form-advanced.php:184
 msgid "<strong>Post editor</strong> - Enter the text for your post. There are two modes of editing: Visual and Text. Choose the mode by clicking on the appropriate tab. Visual mode gives you a WYSIWYG editor. Click the last icon in the row to get a second row of controls. The Text mode allows you to enter HTML along with your post text. Line breaks will be converted to paragraphs automatically. You can insert media files by clicking the icons above the post editor and following the directions. You can go to the distraction-free writing screen via the Fullscreen icon in Visual mode (second to last in the top row) or the Fullscreen button in Text mode (last in the row). Once there, you can make buttons visible by hovering over the top area. Exit Fullscreen back to the regular post editor."
-msgstr "<strong>Editor d'entrades</strong> - Introduïu el tex de l'article. Hi ha dos modes d'edició: Visual i Text. Trieu el mode fent clic a la pestanya adequada. El mode visual us proporciona un editor WYSIWYG. Feu clic a la darrera icona de la fila per mostrar una segona fila de controls. El mode text us permet introduir text HMTL i el text de l'article alhora. Els salts de línia es convertiran en paràgrafs automàticament. Podeu inserir mèdia si feu clic a les icones que hi ha a la part superior de l'editor i seguir les instruccions. Podeu anar a la pantalla d'escriptura lliure de distraccions fent clic a la icona de pantalla completa que hi ha al mode visual (penúltima icona de la fila superior) o el botó de pantalla completa del mode text (darrer en la fila). Una vegada sigueu, podeu fer visibles els botons en passar el cursor per sobre de l'àrea superior. Tornareu a l'editor d'entrades si feu clic al botó per sortir de la pantalla completa."
+msgstr "<strong>Editor d'articles</strong> - Introduïu el tex de l'article. Hi ha dos modes d'edició: Visual i Text. Trieu el mode fent clic a la pestanya adequada. El mode visual us proporciona un editor WYSIWYG. Feu clic a la darrera icona de la fila per mostrar una segona fila de controls. El mode text us permet introduir text HMTL i el text de l'article alhora. Els salts de línia es convertiran en paràgrafs automàticament. Podeu inserir mèdia si feu clic a les icones que hi ha a la part superior de l'editor i seguir les instruccions. Podeu anar a la pantalla d'escriptura lliure de distraccions fent clic a la icona de pantalla completa que hi ha al mode visual (penúltima icona de la fila superior) o el botó de pantalla completa del mode text (darrer en la fila). Una vegada sigueu, podeu fer visibles els botons en passar el cursor per sobre de l'àrea superior. Tornareu a l'editor d'articles si feu clic al botó per sortir de la pantalla completa."
 
 #: wp-admin/edit-form-advanced.php:188
 msgid "Title and Post Editor"
 msgstr "Títol i editor de l'article"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit-form-advanced.php:193
 msgid "You can also create posts with the <a href=\"%s\">Press This bookmarklet</a>."
-msgstr "Podeu també crear entrades amb el bookmarklet <a href=\"%s\">Premeu això</a>."
+msgstr "Podeu també crear articles amb el bookmarklet <a href=\"%s\">Premeu això</a>."
 
 #: wp-admin/edit-form-advanced.php:195
 msgid "<a href=\"http://codex.wordpress.org/Posts_Add_New_Screen\" target=\"_blank\">Documentation on Writing and Editing Posts</a>"
-msgstr "<a href=\"http://codex.wordpress.org/Posts_Add_New_Screen\" target=\"_blank\">Documentació sobre l'escriptura i edició d'entrades</a> (en anglès)"
+msgstr "<a href=\"http://codex.wordpress.org/Posts_Add_New_Screen\" target=\"_blank\">Documentació sobre l'escriptura i edició d'articles</a> (en anglès)"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit-form-advanced.php:199
 msgid "Pages are similar to Posts in that they have a title, body text, and associated metadata, but they are different in that they are not part of the chronological blog stream, kind of like permanent posts. Pages are not categorized or tagged, but can have a hierarchy. You can nest Pages under other Pages by making one the &#8220;Parent&#8221; of the other, creating a group of Pages."
-msgstr "Les pàgines són similars a les entrades perquè tenen títol, cos i metadades associades, però són diferents perquè no són part del flux cronològic del bloc, són com entrades permanents. Les pàgines no tenen categories ni estan etiquetades, però poden tenir jerarquia. Podeu niar unes pàgines sota altres en fer que una siga &#8220;pare&#8221; de l'altra, creant un grup de pàgines."
+msgstr "Les pàgines són similars als articles perquè tenen títol, cos i metadades associades, però són diferents perquè no són part del flux cronològic del bloc, són com articles permanents. Les pàgines no tenen categories ni estan etiquetades, però poden tenir jerarquia. Podeu niar unes pàgines sota altres en fer que una siga &#8220;pare&#8221; de l'altra, creant un grup de pàgines."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit-form-advanced.php:200
 msgid "Creating a Page is very similar to creating a Post, and the screens can be customized in the same way using drag and drop, the Screen Options tab, and expanding/collapsing boxes as you choose. This screen also has the distraction-free writing space, available in both the Visual and Text modes via the Fullscreen buttons. The Page editor mostly works the same as the Post editor, but there are some Page-specific features in the Page Attributes box:"
-msgstr "Crear una pàgina és molt similar a crear una article, i les pantalles es poden personalitzar de la mateixa forma, arrossegant i desant anar, amb la pestanya de les opcions de pantalla, o bé ampliant i reduint les caixes que trieu. Aquesta pantalla també té l'espai d'escriptura lliure de distraccions, disponible en els modes d'edició visual i text gràcies als botons de pantalla completa. L'editor de pàgines quasi funciona igual que el d'entrades, però hi ha algunes característiques específiques de les pàgines a la caixa atributs de la pàgina:"
+msgstr "Crear una pàgina és molt similar a crear una article, i les pantalles es poden personalitzar de la mateixa forma, arrossegant i desant anar, amb la pestanya de les opcions de pantalla, o bé ampliant i reduint les caixes que trieu. Aquesta pantalla també té l'espai d'escriptura lliure de distraccions, disponible en els modes d'edició visual i text gràcies als botons de pantalla completa. L'editor de pàgines quasi funciona igual que el d'articles, però hi ha algunes característiques específiques de les pàgines a la caixa atributs de la pàgina:"
 
 #: wp-admin/edit-form-advanced.php:204
 msgid "About Pages"
@@ -9138,25 +9234,33 @@ msgstr "La descripció no acostuma a ser gaire visible per defecte, però alguns
 msgid "You attempted to edit an item that doesn&#8217;t exist. Perhaps it was deleted?"
 msgstr "Heu intentat editar una pàgina que no existeix. Potser ha estat suprimida?"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit-tags.php:191
 msgid "You can use categories to define sections of your site and group related posts. The default category is &#8220;Uncategorized&#8221; until you change it in your <a href=\"%s\">writing settings</a>."
-msgstr "Podeu fer servir les categories per definir seccions del bloc i grups d'entrades relacionades. La categoria per defecte és &#8220;general&#8221; fins que ho canvieu a la <a href=\"%s\">configuració d'escriptura</a>."
+msgstr "Podeu fer servir les categories per definir seccions del bloc i grups d'articles relacionats. La categoria per defecte és &#8220;general&#8221; fins que ho canvieu a la <a href=\"%s\">configuració d'escriptura</a>."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit-tags.php:193
 msgid "You can create groups of links by using Link Categories. Link Category names must be unique and Link Categories are separate from the categories you use for posts."
-msgstr "Podeu crear grups d'enllaços en usar les categories d'enllaços. Els noms de les categories d'enllaços han de ser únics i les categories d'enllaços són independents de les categories que feu servir a les entrades."
+msgstr "Podeu crear grups d'enllaços en usar les categories d'enllaços. Els noms de les categories d'enllaços han de ser únics i les categories d'enllaços són independents de les categories que feu servir als articles."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit-tags.php:195
 msgid "You can assign keywords to your posts using <strong>tags</strong>. Unlike categories, tags have no hierarchy, meaning there&#8217;s no relationship from one tag to another."
-msgstr "Es poden assignar paraules clau a les entrades fent servir les <strong>etiquetes</strong>. A diferència de les categories, les etiquetes no tenen jerarquia, que vol dir que no hi ha cap relació d'una etiqueta a l'altra."
+msgstr "Es poden assignar paraules clau als articles fent servir les <strong>etiquetes</strong>. A diferència de les categories, les etiquetes no tenen jerarquia, que vol dir que no hi ha cap relació d'una etiqueta a l'altra."
 
 #: wp-admin/edit-tags.php:198
 msgid "You can delete Link Categories in the Bulk Action pull-down, but that action does not delete the links within the category. Instead, it moves them to the default Link Category."
 msgstr "Podeu suprimir categories d'enllaços al menú desplegable de les accions massives, però això no suprimeix els enllaços de la categoria. Per contra, els mou a la categoria predeterminada d'enllaços."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit-tags.php:200
 msgid "What&#8217;s the difference between categories and tags? Normally, tags are ad-hoc keywords that identify important information in your post (names, subjects, etc) that may or may not recur in other posts, while categories are pre-determined sections. If you think of your site like a book, the categories are like the Table of Contents and the tags are like the terms in the index."
-msgstr "Quina és la diferència entre categories i etiquetes? Normalment, les etiquetes són paraules clau específiques que identifiquen informació important de l'article (noms, assumptes, etcètera), que poden o no poden repetir-se en altres entrades, mentre que les categories són seccions predeterminades. Si penseu en el bloc com si fos un llibre, les categories serien la taula de continguts i les etiquetes serien com els termes de l'índex."
+msgstr "Quina és la diferència entre categories i etiquetes? Normalment, les etiquetes són paraules clau específiques que identifiquen informació important de l'article (noms, assumptes, etcètera), que poden o no poden repetir-se en altres articles, mentre que les categories són seccions predeterminades. Si penseu en el bloc com si fos un llibre, les categories serien la taula de continguts i les etiquetes serien com els termes de l'índex."
 
 #: wp-admin/edit-tags.php:210
 msgid "When adding a new category on this screen, you&#8217;ll fill in the following fields:"
@@ -9232,9 +9336,11 @@ msgstr "No s'ha actualitzat l'element."
 msgid "Items deleted."
 msgstr "Elements suprimits."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit-tags.php:301
 msgid "<strong>Note:</strong><br />Deleting a category does not delete the posts in that category. Instead, posts that were only assigned to the deleted category are set to the category <strong>%s</strong>."
-msgstr "<strong>Nota:</strong><br />La supressió d'una categoria no esborra les seves entrades. Les entrades que només estaven assignades a aquesta categoria passaran a formar part de la categoria <strong>%s</strong>."
+msgstr "<strong>Nota:</strong><br />La supressió d'una categoria no esborra els seus articles. Els articles que només estaven assignades a aquesta categoria passaran a formar part de la categoria <strong>%s</strong>."
 
 #: wp-admin/edit-tags.php:303
 msgid "Categories can be selectively converted to tags using the <a href=\"%s\">category to tag converter</a>."
@@ -9274,9 +9380,11 @@ msgstr "No teniu permís per suprimir aquest element."
 msgid "Error in deleting..."
 msgstr "Error en suprimir..."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit.php:156
 msgid "This screen provides access to all of your posts. You can customize the display of this screen to suit your workflow."
-msgstr "Aquesta pantalla proporciona accés a totes les entrades. Podeu personalitzar la visualització d'aquesta pantalla per adaptar-la al vostre flux de treball."
+msgstr "Aquesta pantalla proporciona accés a totes els articles. Podeu personalitzar la visualització d'aquesta pantalla per adaptar-la al vostre flux de treball."
 
 #: wp-admin/edit.php:160
 msgid "Screen Content"
@@ -9286,30 +9394,40 @@ msgstr "Pantalla de contingut"
 msgid "You can customize the display of this screen&#8217;s contents in a number of ways:"
 msgstr "Podeu personalitzar com es mostra el contingut en aquesta pantalla de diverses formes:"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit.php:164
 msgid "You can hide/display columns based on your needs and decide how many posts to list per screen using the Screen Options tab."
-msgstr "Podeu amagar/mostrar les columnes segons les vostre necessitats i decidir quantes entrades llistar per pantalla fent servir la pestanya Opcions de pantalla."
+msgstr "Podeu amagar/mostrar les columnes segons les vostre necessitats i decidir quants articles llistar per pantalla fent servir la pestanya Opcions de pantalla."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit.php:165
 msgid "You can filter the list of posts by post status using the text links in the upper left to show All, Published, Draft, or Trashed posts. The default view is to show all posts."
-msgstr "Podeu filtrar la llista d'entrades per l'estat de l'article fent servir els enllaços de la part superior esquerra per mostrar Tots, els Publicats, els Esborranys o les entrades de la Paperera. La visualització per defecte és mostrar totes les entrades."
+msgstr "Podeu filtrar la llista d'articles per l'estat de l'article fent servir els enllaços de la part superior esquerra per mostrar Tots, els Publicats, els Esborranys o els articles de la Paperera. La visualització per defecte és mostrar tots els articles."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit.php:166
 msgid "You can view posts in a simple title list or with an excerpt. Choose the view you prefer by clicking on the icons at the top of the list on the right."
-msgstr "Podeu veure les entrades en una simple llista de títols o amb un extracte. Trieu la vista que preferiu fent clic en les icones que hi ha a la part de dalt a la dreta."
+msgstr "Podeu veure els articles en una simple llista de títols o amb un extracte. Trieu la vista que preferiu fent clic en les icones que hi ha a la part de dalt a la dreta."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit.php:167
 msgid "You can refine the list to show only posts in a specific category or from a specific month by using the dropdown menus above the posts list. Click the Filter button after making your selection. You also can refine the list by clicking on the post author, category or tag in the posts list."
-msgstr "Podeu refinar la llista per mostrar solament les entrades d'una categoria específica o d'un mes especific en utilitzar els menús desplegables que hi ha a sobre de la llista d'entrades. Feu clic al botó Filtre per a fer la selecció. També podeu refinar la llista en fer clic en l'autor de l'article, la categoria o etiqueta en la llista d'entrades."
+msgstr "Podeu refinar la llista per mostrar solamentels articles d'una categoria específica o d'un mes especific en utilitzar els menús desplegables que hi ha a sobre de la llista d'articles. Feu clic al botó Filtre per a fer la selecció. També podeu refinar la llista en fer clic en l'autor de l'article, la categoria o etiqueta en la llista d'articles."
 
 #: wp-admin/edit.php:172
 #: wp-admin/upload.php:159
 msgid "Available Actions"
 msgstr "Accions disponibles "
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit.php:174
 msgid "Hovering over a row in the posts list will display action links that allow you to manage your post. You can perform the following actions:"
-msgstr "En passar el cursor per sobre una fila a la llista d'entrades es mostraran els enllaços d'accions que us permeten gestionar les entrades. Podeu realitzar les següents accions:"
+msgstr "En passar el cursor per sobre una fila a la llista d'articles, es mostraran els enllaços d'accions que us permeten gestionarels articles. Podeu realitzar les següents accions:"
 
 #: wp-admin/edit.php:176
 msgid "<strong>Edit</strong> takes you to the editing screen for that post. You can also reach that screen by clicking on the post title."
@@ -9332,29 +9450,39 @@ msgstr "<strong>Mostra</strong> us ensenyarà com es veurà l'esborrany de l'art
 msgid "Bulk Actions"
 msgstr "Accions massives "
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit.php:186
 msgid "You can also edit or move multiple posts to the trash at once. Select the posts you want to act on using the checkboxes, then select the action you want to take from the Bulk Actions menu and click Apply."
-msgstr "Podeu també editar o moure moltes entrades a la paperera d'una vegada. Seleccioneu les entrades sobre les que voleu actuar en fer servir les caselles de verificació, aleshores seleccioneu l'acció que voleu fer del menú d'accions en massa i feu clic a Aplica."
+msgstr "Podeu també editar o moure molts articles a la paperera d'una vegada. Seleccioneu els articles sobre les que voleu actuar en fer servir les caselles de verificació, aleshores seleccioneu l'acció que voleu fer del menú d'accions en massa i feu clic a Aplica."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit.php:187
 msgid "When using Bulk Edit, you can change the metadata (categories, author, etc.) for all selected posts at once. To remove a post from the grouping, just click the x next to its name in the Bulk Edit area that appears."
-msgstr "Quan useu l'edició en massa, podeu canviar les metadades (categories, autor, etc.) per a totes les entrades seleccionades d'una vegada. Per suprimir un article del grup, simplement feu clic a la x que hi ha prop del seu nom en l'àrea d'edició en massa que apareix."
+msgstr "Quan useu l'edició en massa, podeu canviar les metadades (categories, autor, etc.) per a tots els articles seleccionats d'una vegada. Per suprimir un article del grup, simplement feu clic a la x que hi ha prop del seu nom en l'àrea d'edició en massa que apareix."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit.php:192
 msgid "<a href=\"http://codex.wordpress.org/Posts_Screen\" target=\"_blank\">Documentation on Managing Posts</a>"
-msgstr "<a href=\"http://codex.wordpress.org/Posts_Screen\" target=\"_blank\">Documentació sobre la gestió d'entrades</a> (en anglès)"
+msgstr "<a href=\"http://codex.wordpress.org/Posts_Screen\" target=\"_blank\">Documentació sobre la gestió d'articles</a> (en anglès)"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit.php:201
 msgid "Pages are similar to posts in that they have a title, body text, and associated metadata, but they are different in that they are not part of the chronological blog stream, kind of like permanent posts. Pages are not categorized or tagged, but can have a hierarchy. You can nest pages under other pages by making one the &#8220;Parent&#8221; of the other, creating a group of pages."
-msgstr "Les pàgines són similars a les entrades perquè tenen títol, cos i metadades associades, però són diferents perquè no són part del flux cronològic del bloc, són com entrades permanents. Les pàgines no tenen categories ni estan etiquetades, però poden tenir jerarquia. Podeu niar unes pàgines sota altres en fer que una siga &#8220;pare&#8221; de l'altra, creant un grup de pàgines."
+msgstr "Les pàgines són similars als articles perquè tenen títol, cos i metadades associades, però són diferents perquè no són part del flux cronològic del bloc, són com articles permanents. Les pàgines no tenen categories ni estan etiquetades, però poden tenir jerarquia. Podeu niar unes pàgines sota altres en fer que una siga &#8220;pare&#8221; de l'altra, creant un grup de pàgines."
 
 #: wp-admin/edit.php:205
 msgid "Managing Pages"
 msgstr "Gestió de les pàgines"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/edit.php:207
 msgid "Managing pages is very similar to managing posts, and the screens can be customized in the same way."
-msgstr "Gestionar les pàgines és molt similar a gestionar les entrades, i les pantalles es poden personalitzar de la mateixa manera."
+msgstr "Gestionar les pàgines és molt similar a gestionar els articles, i les pantalles es poden personalitzar de la mateixa manera."
 
 #: wp-admin/edit.php:208
 msgid "You can also perform the same types of actions, including narrowing the list by using the filters, acting on a page using the action links that appear when you hover over a row, or using the Bulk Actions menu to edit the metadata for multiple pages at once."
@@ -9403,9 +9531,11 @@ msgstr "No teniu permís per exportar el contingut d'aquest bloc."
 msgid "Export"
 msgstr "Exporta"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/export.php:49
 msgid "You can export a file of your site&#8217;s content in order to import it into another installation or platform. The export file will be an XML file format called WXR. Posts, pages, comments, custom fields, categories, and tags can be included. You can choose for the WXR file to include only certain posts or pages by setting the dropdown filters to limit the export by category, author, date range by month, or publishing status."
-msgstr "Podeu exportar un fitxer amb el contingut del vostre bloc per a importar-lo a altra instal·lació o plataforma. El fitxer exportat serà un fitxer XML amb el format anomenat WXR. S'inclouran les entrades, les pàgines, els comentaris, els camps personalitzats, les categories, i les etiquetes. Podeu triar el fitxer WXR per incloure solament certes entrades o pàgines si configureu els filtres que limiten la categoria a exportar, l'autor, el rang de dates per mesos, o l'estat de publicació."
+msgstr "Podeu exportar un fitxer amb el contingut del vostre bloc per a importar-lo a altra instal·lació o plataforma. El fitxer exportat serà un fitxer XML amb el format anomenat WXR. S'inclouran els articles, les pàgines, els comentaris, els camps personalitzats, les categories, i les etiquetes. Podeu triar el fitxer WXR per incloure solament certes articles o pàgines si configureu els filtres que limiten la categoria a exportar, l'autor, el rang de dates per mesos, o l'estat de publicació."
 
 #: wp-admin/export.php:50
 msgid "Once generated, your WXR file can be imported by another WordPress site or by another blogging platform able to access this format."
@@ -9419,9 +9549,11 @@ msgstr "<a href=\"http://codex.wordpress.org/Tools_Export_Screen\" target=\"_bla
 msgid "When you click the button below WordPress will create an XML file for you to save to your computer."
 msgstr "Quan feu clic al botó de sota, el WordPress crearà un fitxer XML que podreu desar al vostre ordinador."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/export.php:134
 msgid "This format, which we call WordPress eXtended RSS or WXR, will contain your posts, pages, comments, custom fields, categories, and tags."
-msgstr "Aquest format, que nosaltres anomenem WordPress eXtended RSS o bé WXR, contindrà les entrades, comentaris, camps personalitzats categories i etiquetes."
+msgstr "Aquest format, que nosaltres anomenem WordPress eXtended RSS o bé WXR, contindrà els articles, comentaris, camps personalitzats categories i etiquetes."
 
 #: wp-admin/export.php:135
 msgid "Once you&#8217;ve saved the download file, you can use the Import function in another WordPress installation to import the content from this site."
@@ -9435,16 +9567,20 @@ msgstr "Trieu què voleu exportar"
 msgid "All content"
 msgstr "Tot el contingut"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/export.php:141
 msgid "This will contain all of your posts, pages, comments, custom fields, terms, navigation menus and custom posts."
-msgstr "Aquest contindrà totes les entrades, pàgines, comentaris, camps personalitzats, termes, menús de navegació i entrades personalitzades."
+msgstr "Aquest contindrà tots els articles, pàgines, comentaris, camps personalitzats, termes, menús de navegació i articles personalitzats."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/export.php:143
 #: wp-admin/includes/class-wp-terms-list-table.php:108
 #: wp-admin/includes/class-wp-users-list-table.php:169
 #: wp-admin/menu.php:49
 msgid "Posts"
-msgstr "Entrades"
+msgstr "Articles"
 
 #: wp-admin/export.php:146
 msgid "Categories:"
@@ -9537,9 +9673,11 @@ msgstr "ERROR:"
 msgid "The <strong>%s</strong> importer is invalid or is not installed."
 msgstr "L'importador <strong>%s</strong> no és vàlid o no està instal·lat."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-admin/import.php:60
 msgid "If you have posts or comments in another system, WordPress can import those into this site. To get started, choose a system to import from below:"
-msgstr "Si teniu entrades o comentaris en un altre sistema, el WordPress pot importar-los al lloc web actual. Per començar, trieu aquí sota el sistema des del qual els importareu:"
+msgstr "Si teniu articles o comentaris en un altre sistema, el WordPress pot importar-los al lloc web actual. Per començar, trieu aquí sota el sistema des del qual els importareu:"
 
 #: wp-admin/import.php:76
 msgid "No importers are available."

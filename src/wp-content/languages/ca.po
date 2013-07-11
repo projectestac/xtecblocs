@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the 3.5.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2013-06-21 09:57+0100\n"
+"PO-Revision-Date: 2013-07-11 18:50+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2717,14 +2717,18 @@ msgstr "Privada"
 msgid "Published"
 msgstr "Publicada"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/post.php:1238
 msgid "Post types cannot exceed 20 characters in length"
-msgstr "Els tipus d'entrades no poden tenir més de 20 caràcters"
+msgstr "Els tipus d'articles no poden tenir més de 20 caràcters"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/post.php:1496
 msgctxt "post type general name"
 msgid "Posts"
-msgstr "Entrades"
+msgstr "Articles"
 
 #: wp-includes/post.php:1496
 msgctxt "post type general name"
@@ -2775,9 +2779,11 @@ msgstr "Pàgina nova"
 msgid "View Page"
 msgstr "Mostra la pàgina"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/post.php:1503
 msgid "Search Posts"
-msgstr "Cerca a les entrades"
+msgstr "Cerca a els articles"
 
 #: wp-includes/post.php:1503
 msgid "Search Pages"
@@ -2803,9 +2809,11 @@ msgstr "No s'ha trobat cap pàgina a la paperera."
 msgid "Parent Page:"
 msgstr "Pàgina mare"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/post.php:1507
 msgid "All Posts"
-msgstr "Totes les entrades"
+msgstr "Tots els articles"
 
 #: wp-includes/post.php:1507
 msgid "All Pages"
@@ -2853,9 +2861,11 @@ msgid_plural "Video <span class=\"count\">(%s)</span>"
 msgstr[0] "Vídeo <span class=\"count\">(%s)</span>"
 msgstr[1] "Vídeos <span class=\"count\">(%s)</span>"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/post.php:2633
 msgid "Passing an integer number of posts is deprecated. Pass an array of arguments instead."
-msgstr "El pas d'un nombre enter d'entrades és obsolet. Passeu per contra una matriu d'arguments."
+msgstr "El pas d'un nombre enter d'articles és obsolet. Passeu per contra una matriu d'arguments."
 
 #: wp-includes/post.php:2731
 msgid "Content, title, and excerpt are empty."
@@ -3059,13 +3069,17 @@ msgstr "S'ha produït un error no identificat."
 msgid "Dismiss"
 msgstr "Descarta-ho"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/script-loader.php:183
 msgid "Next &gt;"
-msgstr "Entrades següents &gt;"
+msgstr "Articles següents &gt;"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/script-loader.php:184
 msgid "&lt; Prev"
-msgstr "&lt; Entrades anteriors"
+msgstr "&lt; Articles anteriors"
 
 #: wp-includes/script-loader.php:185
 msgid "Image"
@@ -4168,9 +4182,11 @@ msgstr "Per quins motius pot ser invàlida la meva clau?"
 msgid "This can mean one of two things, either you copied the key wrong or that the plugin is unable to reach the Akismet servers, which is most often caused by an issue with your web host around firewalls or similar."
 msgstr "Una de dos, o bé heu copiat la clau malament o bé l'extensió és incapaç d'accedir als servidors d'Akismet, la qual cosa normalment és causa d'un problema en vostre servidor web que té a veure amb tallafocs o similars."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-content/plugins/akismet/admin.php:170
 msgid "Auto-delete spam submitted on posts more than a month old."
-msgstr "Realitzat l'esborrament automàtic dels comentaris brossa en les entrades de més d'un mes."
+msgstr "Realitzat l'esborrament automàtic dels comentaris brossa en les articles de més d'un mes."
 
 #: wp-content/plugins/akismet/admin.php:171
 msgid "Show the number of comments you've approved beside each comment author."
@@ -4735,10 +4751,12 @@ msgstr "Useu <code>get_the_author()</code> en el seu lloc si no voleu que el val
 msgid "Visit %s&#8217;s website"
 msgstr "Visita el web de %s"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/author-template.php:204
 #: wp-includes/author-template.php:318
 msgid "Posts by %s"
-msgstr "Entrades de %s"
+msgstr "Articles de %s"
 
 #: wp-includes/bookmark-template.php:81
 msgid "Last updated: %s"
@@ -4758,6 +4776,8 @@ msgstr "Useu per contra <code>WP_User->ID</code>."
 msgid "Usage of user levels by plugins and themes is deprecated. Use roles and capabilities instead."
 msgstr "L'ús de tipus d'usuari per les extensions i els temes és obsolet. Useu en el seu lloc rols i capacitats."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/category-template.php:59
 #: wp-includes/category-template.php:174
 #: wp-includes/category-template.php:177
@@ -4766,7 +4786,7 @@ msgstr "L'ús de tipus d'usuari per les extensions i els temes és obsolet. Useu
 #: wp-includes/category-template.php:200
 #: wp-includes/category-template.php:207
 msgid "View all posts in %s"
-msgstr "Mostra totes les entrades a %s"
+msgstr "Mostra tots els articles a %s"
 
 #: wp-includes/category-template.php:161
 msgid "Uncategorized"
@@ -4789,13 +4809,17 @@ msgid_plural "%s topics"
 msgstr[0] "%s tema"
 msgstr[1] "%s temes"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/category-template.php:830
 msgid "View all posts filed under %s"
-msgstr "Mostra totes les entrades arxivades en %s"
+msgstr "Mostra tots els articles arxivats a %s"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/category-template.php:845
 msgid "Feed for all posts filed under %s"
-msgstr "Canal de totes les entrades arxivades en %s"
+msgstr "Canal de tots els articles arxivats a %s"
 
 #: wp-includes/category-template.php:1017
 msgid "Tags: "
@@ -5127,9 +5151,11 @@ msgstr "El tema admet una pàgina principal estàtica."
 msgid "Front page displays"
 msgstr "Mostra la pàgina principal"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/class-wp-customize-manager.php:944
 msgid "Your latest posts"
-msgstr "Les darreres entrades"
+msgstr "Els darrers articles"
 
 #: wp-includes/class-wp-customize-manager.php:945
 msgid "A static page"
@@ -5139,9 +5165,11 @@ msgstr "Una pàgina estàtica"
 msgid "Front page"
 msgstr "Pàgina inicial"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/class-wp-customize-manager.php:968
 msgid "Posts page"
-msgstr "Pàgina d'entrades"
+msgstr "Pàgina d'articles"
 
 #: wp-includes/class-wp-editor.php:114
 #: wp-includes/class-wp-editor.php:674
@@ -5473,9 +5501,11 @@ msgstr "Amplada de la imatge de mida gran"
 msgid "Large size image height"
 msgstr "Alçada de la imatge de mida gran"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:428
 msgid "Allow people to post comments on new articles"
-msgstr "Permet a la gent fer comentaris a les noves entrades"
+msgstr "Permet a la gent fer comentaris als nous articles"
 
 #: wp-includes/class-wp-xmlrpc-server.php:433
 msgid "Allow link notifications from other blogs (pingbacks and trackbacks)"
@@ -5524,22 +5554,30 @@ msgstr "El tipus d'article no es pot canviar."
 msgid "Sorry, you are not allowed to post on this site."
 msgstr "No teniu autorització per publicar en aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1025
 msgid "Sorry, you are not allowed to create private posts in this post type"
-msgstr "No teniu permès crear entrades privades en aquest tipus d'entrades"
+msgstr "No teniu permès crear articles privats en aquest tipus d'article"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1030
 msgid "Sorry, you are not allowed to publish posts in this post type"
-msgstr "No teniu permès publicar entrades en aquest tipus d'entrades"
+msgstr "No teniu permès publicar articles en aquest tipus d'article"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1039
 msgid "Sorry, you are not allowed to create password protected posts in this post type"
-msgstr "No teniu permès crear entrades protegides amb contrasenya en aquest tipus d'entrades"
+msgstr "No teniu permès crear articles protegits amb contrasenya en aquest tipus d'articles"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1044
 #: wp-includes/class-wp-xmlrpc-server.php:4121
 msgid "You are not allowed to create posts as this user."
-msgstr "Amb aquest nom d'usuari no teniu autorització per crear entrades."
+msgstr "Amb aquest nom d'usuari no teniu autorització per crear articles."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1049
 #: wp-includes/class-wp-xmlrpc-server.php:4133
@@ -5618,9 +5656,11 @@ msgstr "No teniu autorització per editar aquest article."
 msgid "The post type specified is not valid"
 msgstr "El tipus d'article especificat no és vàlid"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1465
 msgid "Sorry, you are not allowed to edit posts in this post type"
-msgstr "No teniu permès editar entrades en aquest tipus d'article"
+msgstr "No teniu permès editar articles en aquest tipus d'article"
 
 #: wp-includes/class-wp-xmlrpc-server.php:1545
 #: wp-includes/class-wp-xmlrpc-server.php:1633
@@ -5740,13 +5780,17 @@ msgstr "Error en intentar suprimir la pàgina."
 msgid "Sorry, you do not have the right to edit this page."
 msgstr "No teniu permís per editar aquesta pàgina."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:2517
 msgid "Sorry, you cannot edit posts on this site."
-msgstr "No podeu editar entrades en aquest bloc."
+msgstr "No podeu editar articles en aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:2552
 msgid "Sorry, you must be able to edit posts on this site in order to view tags."
-msgstr "Heu de tenir permís per editar entrades en aquest bloc per a veure les etiquetes."
+msgstr "Heu de tenir permís per editar articles en aquest bloc per a veure les etiquetes."
 
 #: wp-includes/class-wp-xmlrpc-server.php:2597
 msgid "Sorry, you do not have the right to add a category."
@@ -5761,9 +5805,11 @@ msgstr "Error en la categoria nova."
 msgid "Sorry, you do not have the right to delete a category."
 msgstr "No teniu permisos per suprimir una categoria."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:2688
 msgid "Sorry, you must be able to edit posts to this site in order to view categories."
-msgstr "Heu de tenir permís per editar entrades en aquest bloc per a veure les categories."
+msgstr "Heu de tenir permís per editar articles en aquest bloc per a veure les categories."
 
 #: wp-includes/class-wp-xmlrpc-server.php:2724
 #: wp-includes/class-wp-xmlrpc-server.php:2825
@@ -5836,9 +5882,11 @@ msgstr "No teniu autorització per editar aquest tipus d'article"
 msgid "Invalid post ID"
 msgstr "Identificador d'article no vàlid."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:3535
 msgid "Sorry, you are not allowed to edit posts."
-msgstr "No teniu permisos per editar entradess."
+msgstr "No teniu permisos per editar articles."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3539
 #: wp-includes/class-wp-xmlrpc-server.php:3606
@@ -5892,11 +5940,13 @@ msgstr "Per algun motiu estrany i molest aquest article no s'ha pogut suprimir."
 msgid "Sorry, you are not allowed to publish pages on this site."
 msgstr "No teniu autorització per publicar en aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:4066
 #: wp-includes/class-wp-xmlrpc-server.php:4079
 #: wp-includes/class-wp-xmlrpc-server.php:4084
 msgid "Sorry, you are not allowed to publish posts on this site."
-msgstr "No teniu permisos per publicar entrades en aquest bloc."
+msgstr "No teniu permisos per publicar articles en aquest bloc."
 
 #: wp-includes/class-wp-xmlrpc-server.php:4092
 #: wp-includes/class-wp-xmlrpc-server.php:4390
@@ -5923,10 +5973,12 @@ msgstr "No teniu permís per publicar aquesta pàgina."
 msgid "Sorry, your entry could not be edited. Something wrong happened."
 msgstr "No s'ha pogut editar l'article. S'ha produït un error."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:4872
 #: wp-includes/class-wp-xmlrpc-server.php:5071
 msgid "Sorry, you must be able to edit posts on this site in order to view categories."
-msgstr "Heu de tenir permís per editar entrades en aquest bloc per veure les categories."
+msgstr "Heu de tenir permís per editar articles en aquest bloc per veure les categories."
 
 #: wp-includes/class-wp-xmlrpc-server.php:4952
 msgid "Could not write file %1$s (%2$s)"
@@ -6255,9 +6307,11 @@ msgstr "Nombre d'enllaços que cal mostrar:"
 msgid "A search form for your site"
 msgstr "Un formulari de cerca per al teu bloc"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/default-widgets.php:236
 msgid "A monthly archive of your site&#8217;s posts"
-msgstr "Un arxiu mensual de les entrades del teu bloc"
+msgstr "Un arxiu mensual dels articles del teu bloc"
 
 #: wp-includes/default-widgets.php:237
 #: wp-includes/default-widgets.php:244
@@ -6274,10 +6328,12 @@ msgstr "Selecciona el mes"
 msgid "Display as dropdown"
 msgstr "Mostra com un menú desplegable"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/default-widgets.php:285
 #: wp-includes/default-widgets.php:518
 msgid "Show post counts"
-msgstr "Mostra el nombre d'entrades"
+msgstr "Mostra el nombre d'articles"
 
 #: wp-includes/default-widgets.php:301
 msgid "Log in/out, admin, feed and WordPress links"
@@ -6293,13 +6349,17 @@ msgstr "Meta"
 msgid "Syndicate this site using RSS 2.0"
 msgstr "Sindica aquest bloc fent servir RSS 2.0"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/default-widgets.php:316
 msgid "Entries <abbr title=\"Really Simple Syndication\">RSS</abbr>"
-msgstr "<abbr title=\"en anglès, Really Simple Syndication\">RSS</abbr> de les entrades"
+msgstr "<abbr title=\"en anglès, Really Simple Syndication\">RSS</abbr> dels articles"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/default-widgets.php:317
 msgid "The latest comments to all posts in RSS"
-msgstr "Últims comentaris a totes les entrades en RSS"
+msgstr "Últims comentaris a totes els articles en RSS"
 
 #: wp-includes/default-widgets.php:317
 msgid "Comments <abbr title=\"Really Simple Syndication\">RSS</abbr>"
@@ -6310,9 +6370,11 @@ msgstr "<abbr title=\"en inglés, Really Simple Syndication\">RSS</abbr> dels co
 msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
 msgstr "Funcionant amb el WordPress, plataforma semàntica de publicació personal de primer ordre."
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/default-widgets.php:352
 msgid "A calendar of your site&#8217;s posts"
-msgstr "Un calendari de les entrades del teu bloc"
+msgstr "Un calendari dels articles del teu bloc"
 
 #: wp-includes/default-widgets.php:353
 msgid "Calendar"
@@ -6342,22 +6404,30 @@ msgstr "Selecciona la categoria"
 msgid "Show hierarchy"
 msgstr "Mostra la jerarquia"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/default-widgets.php:535
 msgid "The most recent posts on your site"
-msgstr "Les entrades més recents del teu bloc"
+msgstr "Els articles més recents del teu bloc"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/default-widgets.php:536
 #: wp-includes/default-widgets.php:561
 msgid "Recent Posts"
-msgstr "Entrades recents"
+msgstr "Articles recents"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/default-widgets.php:618
 msgid "Number of posts to show:"
-msgstr "Nombre d'entrades que cal mostrar:"
+msgstr "Nombre d'articles que cal mostrar:"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/default-widgets.php:622
 msgid "Display post date?"
-msgstr "Mostreu la data de les entrades?"
+msgstr "Mostreu la data dels articles?"
 
 #: wp-includes/default-widgets.php:635
 msgid "The most recent comments"
@@ -6841,10 +6911,12 @@ msgctxt "calendar caption"
 msgid "%1$s %2$s"
 msgstr "%1$s %2$s"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/general-template.php:1172
 #: wp-includes/general-template.php:1180
 msgid "View posts for %1$s %2$s"
-msgstr "Mostra totes les entrades per a %1$s %2$s"
+msgstr "Mostra totes els articles per a %1$s %2$s"
 
 #: wp-includes/general-template.php:1600
 #: wp-includes/general-template.php:1623
@@ -6872,9 +6944,11 @@ msgstr "%1$s %2$s %3$s Canal de les categories"
 msgid "%1$s %2$s %3$s Tag Feed"
 msgstr "%1$s %2$s %3$s Canal de les etiquetes"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/general-template.php:1631
 msgid "%1$s %2$s Posts by %3$s Feed"
-msgstr "%1$s %2$s Entrades per al Canal %3$s "
+msgstr "%1$s %2$s Articles per al Canal %3$s "
 
 #: wp-includes/general-template.php:1633
 msgid "%1$s %2$s Search Results for &#8220;%3$s&#8221; Feed"
@@ -6884,13 +6958,17 @@ msgstr "%1$s %2$s Resultats de la cerca per al Canal &quot;%3$s&quot; "
 msgid "%1$s %2$s %3$s Feed"
 msgstr "s%1$s %2$s canal d'informació"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/general-template.php:1930
 msgid "&laquo; Previous"
-msgstr "&laquo; Entrades anteriors"
+msgstr "&laquo; Articles anteriors"
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-includes/general-template.php:1931
 msgid "Next &raquo;"
-msgstr "Entrades següents &raquo;"
+msgstr "Articles següents &raquo;"
 
 #: wp-includes/general-template.php:2038
 msgctxt "admin color scheme"
