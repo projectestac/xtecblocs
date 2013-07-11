@@ -78,17 +78,39 @@ function rawhtml_add_custom_box() {
 /* Displays the custom box */
 function rawhtml_meta_box(){
 	global $post;
+
+//XTEC ************ AFEGIT - Localization support
+//2013.05.21 @jmiro227
+load_plugin_textdomain( 'rawhtml', null, dirname( plugin_basename(RAWHTML_PLUGIN_FILE) ) . '/languages' );
+//die (dirname( plugin_basename(RAWHTML_PLUGIN_FILE )));
+
+//************ FI
+
 	// Use nonce for verification
 	echo '<input type="hidden" name="rawhtml_nonce" id="rawhtml_nonce" value="' . 
 	wp_create_nonce( plugin_basename(RAWHTML_PLUGIN_FILE) ) . '" />';
 	
 	//Output checkboxes 
+
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+	$fields = array(
+		'disable_wptexturize' => array(__("Disable wptexturize", 'rawhtml'), __("wptexturize is responsible for smart quotes and other typographic characters", 'rawhtml')),
+		'disable_wpautop' => array(__("Disable automatic paragraphs", 'rawhtml'), null),
+		'disable_convert_chars' => array(__("Disable convert_chars", 'rawhtml'), __("convert_chars converts ampersand to HTML entities and \"fixes\" some Unicode character", 'rawhtml')),
+		'disable_convert_smilies' => array(__("Disable smilies", 'rawhtml'), null),
+	);
+//************ ORIGINAL
+/*
 	$fields = array(
 		'disable_wptexturize' => array('Disable wptexturize', 'wptexturize is responsible for smart quotes and other typographic characters'),
 		'disable_wpautop' => array('Disable automatic paragraphs', null),
 		'disable_convert_chars' => array('Disable convert_chars', 'convert_chars converts ampersand to HTML entities and "fixes" some Unicode character'),
 		'disable_convert_smilies' => array('Disable smilies', null),
 	);
+*/
+//************ FI 
+
 	$settings = rawhtml_get_post_settings($post->ID);
 
 	echo '<ul>';
