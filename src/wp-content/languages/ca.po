@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the 3.5.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2013-07-17 12:46+0100\n"
+"PO-Revision-Date: 2013-07-17 13:19+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -177,7 +177,7 @@ msgstr "Us enviem el correu electrònic de registre a aquesta adreça. (Comprove
 # 2013.06.21 @jmiro227
 #: wp-signup.php:163
 msgid "Get <em>another</em> %s site in seconds"
-msgstr "Crea un <em>altre</em> bloc a %s en segons"
+msgstr "Creeu un <em>altre</em> bloc a %s en segons"
 
 #: wp-signup.php:166
 msgid "There was a problem, please correct the form below and try again."

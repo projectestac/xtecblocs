@@ -4,10 +4,10 @@
 switch($_GET['a']){
 	case "new":
 		$redirect=site_url('?a=new');?>
-		<h3>Crea un bloc amb dues passes</h3> 
+		<h3>Creeu un bloc en dues passes</h3> 
 		<ol>
-		<li><img src="<?php bloginfo('template_directory'); ?>/images/step11.png" align="absmiddle" /> Valida't al portal</li>
-		<li class="step"><img src="<?php bloginfo('template_directory'); ?>/images/step12.png" align="absmiddle" /> Dóna un nom i un t&iacute;tol al bloc nou</li>
+		<li><img src="<?php bloginfo('template_directory'); ?>/images/step11.png" align="absmiddle" /> Valideu-vos al portal</li>
+		<li class="step"><img src="<?php bloginfo('template_directory'); ?>/images/step12.png" align="absmiddle" /> Doneu un nom i un t&iacute;tol al bloc nou</li>
 		</ol><?php
 		break;
 	case "login":
@@ -20,7 +20,7 @@ switch($_GET['a']){
 		
 	<h3>Validació</h3> 
 	<div class="loginForm">
-		<p>Per validar-te utilitza el nom d'usuari/ària de la XTEC o de l'edu365.</p>
+		<p>Per validar-vos utilitzeu el nom d'usuari/ària de la XTEC o de l'edu365.</p>
 		<?php if(isset($_REQUEST['error']) && $_REQUEST['error']==1) {?>
 			<p class="error">Identificació incorrecta.</p>
 		<?php } ?>
