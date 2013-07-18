@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the 3.5.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2013-07-17 13:19+0100\n"
+"PO-Revision-Date: 2013-07-18 09:10+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -201,9 +201,11 @@ msgstr "Blocs dels quals ja sou membre:"
 msgid "If you&#8217;re not going to use a great site domain, leave it for a new user. Now have at it!"
 msgstr " "
 
+# XTEC ************ CORREGIT
+# 2013.06.21 @jmiro227
 #: wp-signup.php:189
 msgid "Create Site"
-msgstr "Crea un blog"
+msgstr "Crea un bloc"
 
 #: wp-signup.php:219
 msgid "The site %s is yours."
