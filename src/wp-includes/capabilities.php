@@ -1191,7 +1191,7 @@ function map_meta_cap( $cap, $user_id ) {
 			$caps[] = 'do_not_allow';
 
 //XTEC ************ MODIFICAT - Permetre unfiltered_html per admin
-//2013.07.25 @author
+//2013.07.25 @jmiro227
 		elseif ( is_multisite() && ! (is_super_admin( $user_id ) || is_admin ($user_id)))
 //************ ORIGINAL
 //		elseif ( is_multisite() && ! (is_super_admin( $user_id ))
