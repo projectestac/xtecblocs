@@ -22,8 +22,13 @@ if(is_admin()){
 
   if(!get_option('mystique_basic_notice')){
 
+//XTEC ************ ELIMINAT - Eliminar indo de download
+//2013.09.05 @jmiro227
+/*
     add_action('admin_notices',                 'mystique_basic_notice');
     add_action('wp_ajax_mystique_hide_notice',  'mystique_hide_notice');
+*/
+//************ FI
 
     function mystique_basic_notice(){
        ?>

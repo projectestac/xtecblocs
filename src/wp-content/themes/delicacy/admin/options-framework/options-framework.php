@@ -228,10 +228,15 @@ if ( !function_exists( 'optionsframework_page' ) ) :
 function optionsframework_page() {
 	settings_errors(); ?>
     <?php $theme = wp_get_theme(); if ( $theme->name == 'Delicacy' ) : ?>
+
+<!-- XTEC ************ ELIMINAT - Treure el boto de compra
+2013.09.05 @jmiro227
     <div id="optionsframework-themepromo">
         <h2><?php _e('Upgrade to Delicacy Pro!','delicacy'); ?></h2>
         <p><?php _e('All Delicacy features plus <b>responsive design</b>, unlimited <b>color schemes</b> and <b>lifetime updates</b>.','more'); ?> <a href="http://webtuts.pl/delicacy-pro/"><?php _e('Buy now!','delicacy'); ?></a></p>
 	</div>
+************ FI -->
+
     <?php endif; ?>
     <div id="optionsframework-wrap" class="wrap">
     <?php screen_icon( 'themes' ); ?>
