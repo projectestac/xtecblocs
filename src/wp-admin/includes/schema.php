@@ -645,6 +645,10 @@ function populate_roles_160() {
 	// Add caps for Author role
 	$role =& get_role('author');
 	$role->add_cap('upload_files');
+//XTEC ************ AFEGIT - Afegir la capacitat unfiltered_html pel role author
+//2013.09.10 @jmiro227
+	$role->add_cap('unfiltered_html');
+//************ FI
 	$role->add_cap('edit_posts');
 	$role->add_cap('edit_published_posts');
 	$role->add_cap('publish_posts');
@@ -655,6 +659,10 @@ function populate_roles_160() {
 
 	// Add caps for Contributor role
 	$role =& get_role('contributor');
+//XTEC ************ AFEGIT - Afegir la capacitat unfiltered_html pel role contributor
+//2013.09.10 @jmiro227
+	$role->add_cap('unfiltered_html');
+//************ FI
 	$role->add_cap('edit_posts');
 	$role->add_cap('read');
 	$role->add_cap('level_1');

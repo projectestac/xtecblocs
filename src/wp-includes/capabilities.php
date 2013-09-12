@@ -1190,9 +1190,11 @@ function map_meta_cap( $cap, $user_id ) {
 		if ( defined( 'DISALLOW_UNFILTERED_HTML' ) && DISALLOW_UNFILTERED_HTML )
 			$caps[] = 'do_not_allow';
 
-//XTEC ************ MODIFICAT - Permetre unfiltered_html per admin
+//XTEC ************ MODIFICAT - Permetre unfiltered_html per tots els usuaris que tenen el unfiltered_html i edit_posts
 //2013.07.25 @jmiro227
-		elseif ( is_multisite() && ! (is_super_admin( $user_id ) || is_admin ($user_id)))
+
+		elseif ( is_multisite() && ! (is_super_admin( $user_id ) || current_user_can('edit_posts')))
+//		elseif ( is_multisite() && ! (is_super_admin( $user_id ) || is_admin ($user_id)))
 //************ ORIGINAL
 //		elseif ( is_multisite() && ! (is_super_admin( $user_id ))
 //************ FI
