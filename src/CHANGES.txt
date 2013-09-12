@@ -2,6 +2,13 @@
 Changes in progress
 
 ---------------------------------------------------------------------------------------
+v.13.09.18
+- Eliminar opcions de compra del temes delicacy i mystique.
+- Canvi de l'enllaç de la pàgina principal que fa referència a Wordpress MU.
+- Canvi de l'enllaç de la pàgina principal que apunta a l'espai de cursos (mentre no està disponible).
+- Permetre la capability unfiltered_html per tots els rols excepte el de subscriptor.
+
+
 v.13.07.29
 - Primera versió amb WP 3.5.1
 
