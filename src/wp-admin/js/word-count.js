@@ -1,1 +1,42 @@
-(function(a){wpWordCount={init:function(){var b=this,c=0,d=a("#content");a("#wp-word-count").html(wordCountL10n.count.replace(/%d/,'<span id="word-count">0</span>'));b.block=0;b.wc(d.val());d.keyup(function(f){if(f.keyCode==c){return true}if(13==f.keyCode||8==c||46==c){b.wc(d.val())}c=f.keyCode;return true})},wc:function(d){var e=this,c=a("#word-count"),b=0;if(e.block){return}e.block=1;setTimeout(function(){if(d){d=d.replace(/<.[^<>]*?>/g," ").replace(/&nbsp;|&#160;/gi," ");d=d.replace(/[0-9.(),;:!?%#$¿'"_+=\\/-]*/g,"");d.replace(/\S\s+/g,function(){b++})}c.html(b.toString());setTimeout(function(){e.block=0},2000)},1)}};a(document).ready(function(){wpWordCount.init()})}(jQuery));
+(function($,undefined) {
+	wpWordCount = {
+
+		settings : {
+			strip : /<[a-zA-Z\/][^<>]*>/g, // strip HTML tags
+			clean : /[0-9.(),;:!?%#$¿'"_+=\\/-]+/g, // regexp to remove punctuation, etc.
+			w : /\S\s+/g, // word-counting regexp
+			c : /\S/g // char-counting regexp for asian languages
+		},
+
+		block : 0,
+
+		wc : function(tx, type) {
+			var t = this, w = $('.word-count'), tc = 0;
+
+			if ( type === undefined )
+				type = wordCountL10n.type;
+			if ( type !== 'w' && type !== 'c' )
+				type = 'w';
+
+			if ( t.block )
+				return;
+
+			t.block = 1;
+
+			setTimeout( function() {
+				if ( tx ) {
+					tx = tx.replace( t.settings.strip, ' ' ).replace( /&nbsp;|&#160;/gi, ' ' );
+					tx = tx.replace( t.settings.clean, '' );
+					tx.replace( t.settings[type], function(){tc++;} );
+				}
+				w.html(tc.toString());
+
+				setTimeout( function() { t.block = 0; }, 2000 );
+			}, 1 );
+		}
+	}
+
+	$(document).bind( 'wpcountwords', function(e, txt) {
+		wpWordCount.wc(txt);
+	});
+}(jQuery));

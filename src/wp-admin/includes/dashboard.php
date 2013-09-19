@@ -1,6 +1,6 @@
 <?php
 /**
- * WordPress Dashboard Widget Administration Panel API
+ * WordPress Dashboard Widget Administration Screen API
  *
  * @package WordPress
  * @subpackage Administration
@@ -24,6 +24,16 @@ function wp_dashboard_setup() {
 		$widget_options = array();
 
 	/* Register Widgets and Controls */
+
+	$response = wp_check_browser_version();
+
+	if ( $response && $response['upgrade'] ) {
+		add_filter( 'postbox_classes_dashboard_dashboard_browser_nag', 'dashboard_browser_nag_class' );
+		if ( $response['insecure'] )
+			wp_add_dashboard_widget( 'dashboard_browser_nag', __( 'You are using an insecure browser!' ), 'wp_dashboard_browser_nag' );
+		else
+			wp_add_dashboard_widget( 'dashboard_browser_nag', __( 'Your browser is out of date!' ), 'wp_dashboard_browser_nag' );
+	}
 
 	// Right Now
 	if ( is_blog_admin() && current_user_can('edit_posts') )
@@ -76,8 +86,8 @@ function wp_dashboard_setup() {
 	if ( !isset( $widget_options['dashboard_primary'] ) ) {
 		$update = true;
 		$widget_options['dashboard_primary'] = array(
-			'link' => apply_filters( 'dashboard_primary_link',  __( 'http://wordpress.org/news/' ) ),
-			'url' => apply_filters( 'dashboard_primary_feed',  __( 'http://wordpress.org/news/feed/' ) ),
+			'link' => apply_filters( 'dashboard_primary_link', __( 'http://wordpress.org/news/' ) ),
+			'url' => apply_filters( 'dashboard_primary_feed', __( 'http://wordpress.org/news/feed/' ) ),
 			'title' => apply_filters( 'dashboard_primary_title', __( 'WordPress Blog' ) ),
 			'items' => 2,
 			'show_summary' => 1,
@@ -91,8 +101,8 @@ function wp_dashboard_setup() {
 	if ( !isset( $widget_options['dashboard_secondary'] ) ) {
 		$update = true;
 		$widget_options['dashboard_secondary'] = array(
-			'link' => apply_filters( 'dashboard_secondary_link',  __( 'http://planet.wordpress.org/' ) ),
-			'url' => apply_filters( 'dashboard_secondary_feed',  __( 'http://planet.wordpress.org/feed/' ) ),
+			'link' => apply_filters( 'dashboard_secondary_link', __( 'http://planet.wordpress.org/' ) ),
+			'url' => apply_filters( 'dashboard_secondary_feed', __( 'http://planet.wordpress.org/feed/' ) ),
 			'title' => apply_filters( 'dashboard_secondary_title', __( 'Other WordPress News' ) ),
 			'items' => 5,
 			'show_summary' => 0,
@@ -121,6 +131,7 @@ function wp_dashboard_setup() {
 	}
 
 	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['widget_id']) ) {
+		check_admin_referer( 'edit-dashboard-widget_' . $_POST['widget_id'], 'dashboard-widget-nonce' );
 		ob_start(); // hack - but the same hack wp-admin/widgets.php uses
 		wp_dashboard_trigger_widget_control( $_POST['widget_id'] );
 		ob_end_clean();
@@ -161,12 +172,18 @@ function wp_add_dashboard_widget( $widget_id, $widget_name, $callback, $control_
 	$location = 'normal';
 	if ( in_array($widget_id, $side_widgets) )
 		$location = 'side';
-	add_meta_box( $widget_id, $widget_name , $callback, $screen->id, $location, 'core' );
+
+	$priority = 'core';
+	if ( 'dashboard_browser_nag' === $widget_id )
+		$priority = 'high';
+
+	add_meta_box( $widget_id, $widget_name, $callback, $screen, $location, $priority );
 }
 
 function _wp_dashboard_control_callback( $dashboard, $meta_box ) {
 	echo '<form action="" method="post" class="dashboard-widget-control-form">';
 	wp_dashboard_trigger_widget_control( $meta_box['id'] );
+	wp_nonce_field( 'edit-dashboard-widget_' . $meta_box['id'], 'dashboard-widget-nonce' );
 	echo '<input type="hidden" name="widget_id" value="' . esc_attr($meta_box['id']) . '" />';
 	submit_button( __('Submit') );
 	echo '</form>';
@@ -178,54 +195,29 @@ function _wp_dashboard_control_callback( $dashboard, $meta_box ) {
  * @since 2.5.0
  */
 function wp_dashboard() {
-	global $screen_layout_columns;
-
 	$screen = get_current_screen();
+	$class = 'columns-' . get_current_screen()->get_columns();
 
-	$hide2 = $hide3 = $hide4 = '';
-	switch ( $screen_layout_columns ) {
-		case 4:
-			$width = 'width:24.5%;';
-			break;
-		case 3:
-			$width = 'width:32.67%;';
-			$hide4 = 'display:none;';
-			break;
-		case 2:
-			$width = 'width:49%;';
-			$hide3 = $hide4 = 'display:none;';
-			break;
-		default:
-			$width = 'width:98%;';
-			$hide2 = $hide3 = $hide4 = 'display:none;';
-	}
 ?>
-<div id="dashboard-widgets" class="metabox-holder">
-<?php
-	echo "\t<div class='postbox-container' style='$width'>\n";
-	do_meta_boxes( $screen->id, 'normal', '' );
+<div id="dashboard-widgets" class="metabox-holder <?php echo $class; ?>">
+	<div id='postbox-container-1' class='postbox-container'>
+	<?php do_meta_boxes( $screen->id, 'normal', '' ); ?>
+	</div>
+	<div id='postbox-container-2' class='postbox-container'>
+	<?php do_meta_boxes( $screen->id, 'side', '' ); ?>
+	</div>
+	<div id='postbox-container-3' class='postbox-container'>
+	<?php do_meta_boxes( $screen->id, 'column3', '' ); ?>
+	</div>
+	<div id='postbox-container-4' class='postbox-container'>
+	<?php do_meta_boxes( $screen->id, 'column4', '' ); ?>
+	</div>
+</div>
 
-	echo "\t</div><div class='postbox-container' style='{$hide2}$width'>\n";
-	do_meta_boxes( $screen->id, 'side', '' );
-
-	echo "\t</div><div class='postbox-container' style='{$hide3}$width'>\n";
-	do_meta_boxes( $screen->id, 'column3', '' );
-
-	echo "\t</div><div class='postbox-container' style='{$hide4}$width'>\n";
-	do_meta_boxes( $screen->id, 'column4', '' );
-?>
-</div></div>
-
-<form style="display:none" method="get" action="">
-	<p>
 <?php
 	wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
 	wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false );
-?>
-	</p>
-</form>
 
-<?php
 }
 
 /* Dashboard Widgets */
@@ -258,7 +250,7 @@ function wp_dashboard_right_now() {
 
 	echo '</tr><tr>';
 	/* TODO: Show status breakdown on hover
-	if ( $can_edit_pages && !empty($num_pages->publish) ) { // how many pages is not exposed in feeds.  Don't show if !current_user_can
+	if ( $can_edit_pages && !empty($num_pages->publish) ) { // how many pages is not exposed in feeds. Don't show if !current_user_can
 		$post_type_texts[] = '<a href="edit-pages.php">'.sprintf( _n( '%s page', '%s pages', $num_pages->publish ), number_format_i18n( $num_pages->publish ) ).'</a>';
 	}
 	if ( $can_edit_posts && !empty($num_posts->draft) ) {
@@ -311,7 +303,6 @@ function wp_dashboard_right_now() {
 	echo "</tr>";
 	do_action('right_now_content_table_end');
 	echo "\n\t</table>\n\t</div>";
-
 
 	echo "\n\t".'<div class="table table_discussion">';
 	echo "\n\t".'<p class="sub">' . __('Discussion') . '</p>'."\n\t".'<table>';
@@ -369,39 +360,47 @@ function wp_dashboard_right_now() {
 	echo "\n\t</table>\n\t</div>";
 
 	echo "\n\t".'<div class="versions">';
-	$ct = current_theme_info();
+	$theme = wp_get_theme();
 
 	echo "\n\t<p>";
-	if ( !empty($wp_registered_sidebars) ) {
+
+	if ( $theme->errors() ) {
+		if ( ! is_multisite() || is_super_admin() )
+			echo '<span class="error-message">' . __('ERROR: The themes directory is either empty or doesn&#8217;t exist. Please check your installation.') . '</span>';
+	} elseif ( ! empty($wp_registered_sidebars) ) {
 		$sidebars_widgets = wp_get_sidebars_widgets();
 		$num_widgets = 0;
 		foreach ( (array) $sidebars_widgets as $k => $v ) {
-			if ( 'wp_inactive_widgets' == $k )
+			if ( 'wp_inactive_widgets' == $k || 'orphaned_widgets' == substr( $k, 0, 16 ) )
 				continue;
 			if ( is_array($v) )
 				$num_widgets = $num_widgets + count($v);
 		}
 		$num = number_format_i18n( $num_widgets );
 
-		$switch_themes = $ct->title;
-		if ( current_user_can( 'switch_themes') ) {
-			echo '<a href="themes.php" class="button rbutton">' . __('Change Theme') . '</a>';
+		$switch_themes = $theme->display('Name');
+		if ( current_user_can( 'switch_themes') )
 			$switch_themes = '<a href="themes.php">' . $switch_themes . '</a>';
-		}
 		if ( current_user_can( 'edit_theme_options' ) ) {
 			printf(_n('Theme <span class="b">%1$s</span> with <span class="b"><a href="widgets.php">%2$s Widget</a></span>', 'Theme <span class="b">%1$s</span> with <span class="b"><a href="widgets.php">%2$s Widgets</a></span>', $num_widgets), $switch_themes, $num);
 		} else {
 			printf(_n('Theme <span class="b">%1$s</span> with <span class="b">%2$s Widget</span>', 'Theme <span class="b">%1$s</span> with <span class="b">%2$s Widgets</span>', $num_widgets), $switch_themes, $num);
 		}
 	} else {
-		if ( current_user_can( 'switch_themes' ) ) {
-			echo '<a href="themes.php" class="button rbutton">' . __('Change Theme') . '</a>';
-			printf( __('Theme <span class="b"><a href="themes.php">%1$s</a></span>'), $ct->title );
-		} else {
-			printf( __('Theme <span class="b">%1$s</span>'), $ct->title );
-		}
+		if ( current_user_can( 'switch_themes' ) )
+			printf( __('Theme <span class="b"><a href="themes.php">%1$s</a></span>'), $theme->display('Name') );
+		else
+			printf( __('Theme <span class="b">%1$s</span>'), $theme->display('Name') );
 	}
 	echo '</p>';
+
+	// Check if search engines are asked not to index this site.
+	if ( !is_network_admin() && !is_user_admin() && current_user_can('manage_options') && '1' != get_option('blog_public') ) {
+		$title = apply_filters('privacy_on_link_title', __('Your site is asking search engines not to index its content') );
+		$content = apply_filters('privacy_on_link_text', __('Search Engines Discouraged') );
+
+		echo "<p><a href='options-reading.php' title='$title'>$content</a></p>";
+	}
 
 	update_right_now_message();
 
@@ -439,16 +438,16 @@ function wp_network_dashboard_right_now() {
 	<p class="youhave"><?php echo $sentence; ?></p>
 	<?php do_action( 'wpmuadminresult', '' ); ?>
 
-	<form name="searchform" action="<?php echo network_admin_url('users.php'); ?>" method="get">
+	<form action="<?php echo network_admin_url('users.php'); ?>" method="get">
 		<p>
-			<input type="text" name="s" value="" size="17" />
+			<input type="search" name="s" value="" size="30" autocomplete="off" />
 			<?php submit_button( __( 'Search Users' ), 'button', 'submit', false, array( 'id' => 'submit_users' ) ); ?>
 		</p>
 	</form>
 
-	<form name="searchform" action="<?php echo network_admin_url('sites.php'); ?>" method="get">
+	<form action="<?php echo network_admin_url('sites.php'); ?>" method="get">
 		<p>
-			<input type="text" name="s" value="" size="17" />
+			<input type="search" name="s" value="" size="30" autocomplete="off" />
 			<?php submit_button( __( 'Search Sites' ), 'button', 'submit', false, array( 'id' => 'submit_sites' ) ); ?>
 		</p>
 	</form>
@@ -457,7 +456,7 @@ function wp_network_dashboard_right_now() {
 	do_action( 'mu_activity_box_end' );
 }
 
-function wp_dashboard_quick_press_output() {
+function wp_dashboard_quick_press() {
 	global $post_ID;
 
 	$drafts = false;
@@ -483,7 +482,7 @@ function wp_dashboard_quick_press_output() {
 			if ( $drafts_query->posts )
 				$drafts =& $drafts_query->posts;
 		}
-		printf('<p class="textright">' . __('You can also try %s, easy blogging from anywhere on the Web.') . '</p>', '<a href="' . esc_url( admin_url( 'tools.php' ) ) . '">' . __('Press This') . '</a>' );
+		printf('<p class="easy-blogging">' . __('You can also try %s, easy blogging from anywhere on the Web.') . '</p>', '<a href="' . esc_url( admin_url( 'tools.php' ) ) . '">' . __('Press This') . '</a>' );
 		$_REQUEST = array(); // hack for get_default_post_to_edit()
 	}
 
@@ -493,53 +492,74 @@ function wp_dashboard_quick_press_output() {
 		$post = get_post( $last_post_id );
 		if ( empty( $post ) || $post->post_status != 'auto-draft' ) { // auto-draft doesn't exists anymore
 			$post = get_default_post_to_edit('post', true);
-			update_user_option( (int) $GLOBALS['current_user']->ID, 'dashboard_quick_press_last_post_id', (int) $post->ID ); // Save post_ID
+			update_user_option( get_current_user_id(), 'dashboard_quick_press_last_post_id', (int) $post->ID ); // Save post_ID
 		} else {
 			$post->post_title = ''; // Remove the auto draft title
 		}
 	} else {
-		$post = get_default_post_to_edit('post', true);
-		update_user_option( (int) $GLOBALS['current_user']->ID, 'dashboard_quick_press_last_post_id', (int) $post->ID ); // Save post_ID
+		$post = get_default_post_to_edit( 'post' , true);
+		$user_id = get_current_user_id();
+		// Don't create an option if this is a super admin who does not belong to this site.
+		if ( ! ( is_super_admin( $user_id ) && ! in_array( get_current_blog_id(), array_keys( get_blogs_of_user( $user_id ) ) ) ) )
+			update_user_option( $user_id, 'dashboard_quick_press_last_post_id', (int) $post->ID ); // Save post_ID
 	}
 
 	$post_ID = (int) $post->ID;
+
+	$media_settings = array(
+		'id' => $post->ID,
+		'nonce' => wp_create_nonce( 'update-post_' . $post->ID ),
+	);
+
+	if ( current_theme_supports( 'post-thumbnails', $post->post_type ) && post_type_supports( $post->post_type, 'thumbnail' ) ) {
+		$featured_image_id = get_post_meta( $post->ID, '_thumbnail_id', true );
+		$media_settings['featuredImageId'] = $featured_image_id ? $featured_image_id : -1;
+	}
 ?>
 
 	<form name="post" action="<?php echo esc_url( admin_url( 'post.php' ) ); ?>" method="post" id="quick-press">
-		<h4 id="quick-post-title"><label for="title"><?php _e('Title') ?></label></h4>
-		<div class="input-text-wrap">
-			<input type="text" name="post_title" id="title" tabindex="1" autocomplete="off" value="<?php echo esc_attr( $post->post_title ); ?>" />
+		<div class="input-text-wrap" id="title-wrap">
+			<label class="screen-reader-text prompt" for="title" id="title-prompt-text"><?php _e( 'Enter title here' ); ?></label>
+			<input type="text" name="post_title" id="title" autocomplete="off" value="<?php echo esc_attr( $post->post_title ); ?>" />
 		</div>
 
 		<?php if ( current_user_can( 'upload_files' ) ) : ?>
-		<div id="media-buttons" class="hide-if-no-js">
-			<?php do_action( 'media_buttons' ); ?>
+		<div id="wp-content-wrap" class="wp-editor-wrap hide-if-no-js wp-media-buttons">
+			<?php do_action( 'media_buttons', 'content' ); ?>
 		</div>
 		<?php endif; ?>
 
-		<h4 id="content-label"><label for="content"><?php _e('Content') ?></label></h4>
 		<div class="textarea-wrap">
-			<textarea name="content" id="content" class="mceEditor" rows="3" cols="15" tabindex="2"><?php echo esc_textarea( $post->post_content ); ?></textarea>
+			<label class="screen-reader-text" for="content"><?php _e( 'Content' ); ?></label>
+			<textarea name="content" id="content" class="mceEditor" rows="3" cols="15"><?php echo esc_textarea( $post->post_content ); ?></textarea>
 		</div>
 
-		<script type="text/javascript">edCanvas = document.getElementById('content');edInsertContent = null;</script>
+		<script type="text/javascript">
+		edCanvas = document.getElementById('content');
+		edInsertContent = null;
+		<?php if ( $_POST ) : ?>
+		wp.media.editor.remove('content');
+		wp.media.view.settings.post = <?php echo json_encode( $media_settings ); // big juicy hack. ?>;
+		wp.media.editor.add('content');
+		<?php endif; ?>
+		</script>
 
-		<h4><label for="tags-input"><?php _e('Tags') ?></label></h4>
-		<div class="input-text-wrap">
-			<input type="text" name="tags_input" id="tags-input" tabindex="3" value="<?php echo get_tags_to_edit( $post->ID ); ?>" />
+		<div class="input-text-wrap" id="tags-input-wrap">
+			<label class="screen-reader-text prompt" for="tags-input" id="tags-input-prompt-text"><?php _e( 'Tags (separate with commas)' ); ?></label>
+			<input type="text" name="tags_input" id="tags-input" value="<?php echo get_tags_to_edit( $post->ID ); ?>" />
 		</div>
 
 		<p class="submit">
+			<span id="publishing-action">
+				<input type="submit" name="publish" id="publish" accesskey="p" class="button-primary" value="<?php current_user_can('publish_posts') ? esc_attr_e('Publish') : esc_attr_e('Submit for Review'); ?>" />
+				<span class="spinner"></span>
+			</span>
 			<input type="hidden" name="action" id="quickpost-action" value="post-quickpress-save" />
-			<input type="hidden" name="quickpress_post_ID" value="<?php echo $post_ID; ?>" />
+			<input type="hidden" name="post_ID" value="<?php echo $post_ID; ?>" />
 			<input type="hidden" name="post_type" value="post" />
 			<?php wp_nonce_field('add-post'); ?>
-			<?php submit_button( __( 'Save Draft' ), 'button', 'save', false, array( 'id' => 'save-post', 'tabindex'=> 4 ) ); ?>
+			<?php submit_button( __( 'Save Draft' ), 'button', 'save', false, array( 'id' => 'save-post' ) ); ?>
 			<input type="reset" value="<?php esc_attr_e( 'Reset' ); ?>" class="button" />
-			<span id="publishing-action">
-				<input type="submit" name="publish" id="publish" accesskey="p" tabindex="5" class="button-primary" value="<?php current_user_can('publish_posts') ? esc_attr_e('Publish') : esc_attr_e('Submit for Review'); ?>" />
-				<img class="waiting" src="<?php echo esc_url( admin_url( 'images/wpspin_light.gif' ) ); ?>" />
-			</span>
 			<br class="clear" />
 		</p>
 
@@ -548,10 +568,6 @@ function wp_dashboard_quick_press_output() {
 <?php
 	if ( $drafts )
 		wp_dashboard_recent_drafts( $drafts );
-}
-
-function wp_dashboard_quick_press() {
-	echo '<p class="widget-loading hide-if-no-js">' . __( 'Loading&#8230;' ) . '</p><p class="describe hide-if-js">' . __('This widget requires JavaScript.') . '</p>';
 }
 
 function wp_dashboard_recent_drafts( $drafts = false ) {
@@ -573,7 +589,7 @@ function wp_dashboard_recent_drafts( $drafts = false ) {
 			$url = get_edit_post_link( $draft->ID );
 			$title = _draft_or_post_title( $draft->ID );
 			$item = "<h4><a href='$url' title='" . sprintf( __( 'Edit &#8220;%s&#8221;' ), esc_attr( $title ) ) . "'>" . esc_html($title) . "</a> <abbr title='" . get_the_time(__('Y/m/d g:i:s A'), $draft) . "'>" . get_the_time( get_option( 'date_format' ), $draft ) . '</abbr></h4>';
-			if ( $the_content = preg_split( '#\s#', strip_tags( $draft->post_content ), 11, PREG_SPLIT_NO_EMPTY ) )
+			if ( $the_content = preg_split( '#[\r\n\t ]#', strip_tags( $draft->post_content ), 11, PREG_SPLIT_NO_EMPTY ) )
 				$item .= '<p>' . join( ' ', array_slice( $the_content, 0, 10 ) ) . ( 10 < count( $the_content ) ? '&hellip;' : '' ) . '</p>';
 			$list[] = $item;
 		}
@@ -581,7 +597,7 @@ function wp_dashboard_recent_drafts( $drafts = false ) {
 	<ul>
 		<li><?php echo join( "</li>\n<li>", $list ); ?></li>
 	</ul>
-	<p class="textright"><a href="edit.php?post_status=draft" class="button"><?php _e('View all'); ?></a></p>
+	<p class="textright"><a href="edit.php?post_status=draft" ><?php _e('View all'); ?></a></p>
 <?php
 	} else {
 		_e('There are no drafts at the moment');
@@ -596,11 +612,6 @@ function wp_dashboard_recent_drafts( $drafts = false ) {
 function wp_dashboard_recent_comments() {
 	global $wpdb;
 
-	if ( current_user_can('edit_posts') )
-		$allowed_states = array('0', '1');
-	else
-		$allowed_states = array('1');
-
 	// Select all comment types and filter out spam later for better query performance.
 	$comments = array();
 	$start = 0;
@@ -609,44 +620,36 @@ function wp_dashboard_recent_comments() {
 	$total_items = isset( $widgets['dashboard_recent_comments'] ) && isset( $widgets['dashboard_recent_comments']['items'] )
 		? absint( $widgets['dashboard_recent_comments']['items'] ) : 5;
 
-	while ( count( $comments ) < $total_items && $possible = $wpdb->get_results( "SELECT * FROM $wpdb->comments c LEFT JOIN $wpdb->posts p ON c.comment_post_ID = p.ID WHERE p.post_status != 'trash' ORDER BY c.comment_date_gmt DESC LIMIT $start, 50" ) ) {
+	$comments_query = array( 'number' => $total_items * 5, 'offset' => 0 );
+	if ( ! current_user_can( 'edit_posts' ) )
+		$comments_query['status'] = 'approve';
 
+	while ( count( $comments ) < $total_items && $possible = get_comments( $comments_query ) ) {
 		foreach ( $possible as $comment ) {
-			if ( count( $comments ) >= $total_items )
-				break;
-			if ( in_array( $comment->comment_approved, $allowed_states ) && current_user_can( 'read_post', $comment->comment_post_ID ) )
-				$comments[] = $comment;
+			if ( ! current_user_can( 'read_post', $comment->comment_post_ID ) )
+				continue;
+			$comments[] = $comment;
+			if ( count( $comments ) == $total_items )
+				break 2;
 		}
-
-		$start = $start + 50;
+		$comments_query['offset'] += $comments_query['number'];
+		$comments_query['number'] = $total_items * 10;
 	}
 
-	if ( $comments ) :
-?>
-
-		<div id="the-comment-list" class="list:comment">
-<?php
+	if ( $comments ) {
+		echo '<div id="the-comment-list" data-wp-lists="list:comment">';
 		foreach ( $comments as $comment )
 			_wp_dashboard_recent_comments_row( $comment );
-?>
+		echo '</div>';
 
-		</div>
-
-<?php
-		if ( current_user_can('edit_posts') ) { ?>
-			<p class="textright"><a href="edit-comments.php" class="button"><?php _e('View all'); ?></a></p>
-<?php	}
+		if ( current_user_can('edit_posts') )
+			_get_list_table('WP_Comments_List_Table')->views();
 
 		wp_comment_reply( -1, false, 'dashboard', false );
 		wp_comment_trashnotice();
-
-	else :
-?>
-
-	<p><?php _e( 'No comments yet.' ); ?></p>
-
-<?php
-	endif; // $comments;
+	} else {
+		echo '<p>' . __( 'No comments yet.' ) . '</p>';
+	}
 }
 
 function _wp_dashboard_recent_comments_row( &$comment, $show_date = true ) {
@@ -677,15 +680,15 @@ function _wp_dashboard_recent_comments_row( &$comment, $show_date = true ) {
 		$trash_url = esc_url( "comment.php?action=trashcomment&p=$comment->comment_post_ID&c=$comment->comment_ID&$del_nonce" );
 		$delete_url = esc_url( "comment.php?action=deletecomment&p=$comment->comment_post_ID&c=$comment->comment_ID&$del_nonce" );
 
-		$actions['approve'] = "<a href='$approve_url' class='dim:the-comment-list:comment-$comment->comment_ID:unapproved:e7e7d3:e7e7d3:new=approved vim-a' title='" . esc_attr__( 'Approve this comment' ) . "'>" . __( 'Approve' ) . '</a>';
-		$actions['unapprove'] = "<a href='$unapprove_url' class='dim:the-comment-list:comment-$comment->comment_ID:unapproved:e7e7d3:e7e7d3:new=unapproved vim-u' title='" . esc_attr__( 'Unapprove this comment' ) . "'>" . __( 'Unapprove' ) . '</a>';
+		$actions['approve'] = "<a href='$approve_url' data-wp-lists='dim:the-comment-list:comment-$comment->comment_ID:unapproved:e7e7d3:e7e7d3:new=approved' class='vim-a' title='" . esc_attr__( 'Approve this comment' ) . "'>" . __( 'Approve' ) . '</a>';
+		$actions['unapprove'] = "<a href='$unapprove_url' data-wp-lists='dim:the-comment-list:comment-$comment->comment_ID:unapproved:e7e7d3:e7e7d3:new=unapproved' class='vim-u' title='" . esc_attr__( 'Unapprove this comment' ) . "'>" . __( 'Unapprove' ) . '</a>';
 		$actions['edit'] = "<a href='comment.php?action=editcomment&amp;c={$comment->comment_ID}' title='" . esc_attr__('Edit comment') . "'>". __('Edit') . '</a>';
 		$actions['reply'] = '<a onclick="commentReply.open(\''.$comment->comment_ID.'\',\''.$comment->comment_post_ID.'\');return false;" class="vim-r hide-if-no-js" title="'.esc_attr__('Reply to this comment').'" href="#">' . __('Reply') . '</a>';
-		$actions['spam'] = "<a href='$spam_url' class='delete:the-comment-list:comment-$comment->comment_ID::spam=1 vim-s vim-destructive' title='" . esc_attr__( 'Mark this comment as spam' ) . "'>" . /* translators: mark as spam link */  _x( 'Spam', 'verb' ) . '</a>';
+		$actions['spam'] = "<a href='$spam_url' data-wp-lists='delete:the-comment-list:comment-$comment->comment_ID::spam=1' class='vim-s vim-destructive' title='" . esc_attr__( 'Mark this comment as spam' ) . "'>" . /* translators: mark as spam link */ _x( 'Spam', 'verb' ) . '</a>';
 		if ( !EMPTY_TRASH_DAYS )
-			$actions['delete'] = "<a href='$delete_url' class='delete:the-comment-list:comment-$comment->comment_ID::trash=1 delete vim-d vim-destructive'>" . __('Delete Permanently') . '</a>';
+			$actions['delete'] = "<a href='$delete_url' data-wp-lists='delete:the-comment-list:comment-$comment->comment_ID::trash=1' class='delete vim-d vim-destructive'>" . __('Delete Permanently') . '</a>';
 		else
-			$actions['trash'] = "<a href='$trash_url' class='delete:the-comment-list:comment-$comment->comment_ID::trash=1 delete vim-d vim-destructive' title='" . esc_attr__( 'Move this comment to the trash' ) . "'>" . _x('Trash', 'verb') . '</a>';
+			$actions['trash'] = "<a href='$trash_url' data-wp-lists='delete:the-comment-list:comment-$comment->comment_ID::trash=1' class='delete vim-d vim-destructive' title='" . esc_attr__( 'Move this comment to the trash' ) . "'>" . _x('Trash', 'verb') . '</a>';
 
 		$actions = apply_filters( 'comment_row_actions', array_filter($actions), $comment );
 
@@ -767,7 +770,7 @@ function wp_dashboard_recent_comments_control() {
 }
 
 function wp_dashboard_incoming_links() {
-	echo '<p class="widget-loading hide-if-no-js">' . __( 'Loading&#8230;' ) . '</p><p class="describe hide-if-js">' . __('This widget requires JavaScript.') . '</p>';
+	wp_dashboard_cached_rss_widget( 'dashboard_incoming_links', 'wp_dashboard_incoming_links_output' );
 }
 
 /**
@@ -833,10 +836,13 @@ function wp_dashboard_incoming_links_output() {
 			/* translators: incoming links feed, %1$s is other person, %3$s is content */
 			$text = __( '%1$s linked here saying, "%3$s"' );
 
-		if ( !empty($show_date) ) {
-			if ( !empty($show_author) || !empty($show_summary) )
-				/* translators: incoming links feed, %4$s is the date */
-				$text .= ' ' . __( 'on %4$s' );
+		if ( !empty( $show_date ) ) {
+			if ( $link )
+				/* translators: incoming links feed, %1$s is other person, %3$s is content, %4$s is the date */
+				$text = __( '%1$s linked here <a href="%2$s">saying</a>, "%3$s" on %4$s' );
+			else
+				/* translators: incoming links feed, %1$s is other person, %3$s is content, %4$s is the date */
+				$text = __( '%1$s linked here saying, "%3$s" on %4$s' );
 			$date = esc_html( strip_tags( $item->get_date() ) );
 			$date = strtotime( $date );
 			$date = gmdate( get_option( 'date_format' ), $date );
@@ -855,7 +861,7 @@ function wp_dashboard_incoming_links_control() {
 }
 
 function wp_dashboard_primary() {
-	echo '<p class="widget-loading hide-if-no-js">' . __( 'Loading&#8230;' ) . '</p><p class="describe hide-if-js">' . __('This widget requires JavaScript.') . '</p>';
+	wp_dashboard_cached_rss_widget( 'dashboard_primary', 'wp_dashboard_rss_output' );
 }
 
 function wp_dashboard_primary_control() {
@@ -877,7 +883,7 @@ function wp_dashboard_rss_output( $widget_id ) {
 }
 
 function wp_dashboard_secondary() {
-	echo '<p class="widget-loading hide-if-no-js">' . __( 'Loading&#8230;' ) . '</p><p class="describe hide-if-js">' . __('This widget requires JavaScript.') . '</p>';
+	wp_dashboard_cached_rss_widget( 'dashboard_secondary', 'wp_dashboard_secondary_output' );
 }
 
 function wp_dashboard_secondary_control() {
@@ -916,7 +922,10 @@ function wp_dashboard_secondary_output() {
 }
 
 function wp_dashboard_plugins() {
-	echo '<p class="widget-loading hide-if-no-js">' . __( 'Loading&#8230;' ) . '</p><p class="describe hide-if-js">' . __('This widget requires JavaScript.') . '</p>';
+	wp_dashboard_cached_rss_widget( 'dashboard_plugins', 'wp_dashboard_plugins_output', array(
+		'http://wordpress.org/extend/plugins/rss/browse/popular/',
+		'http://wordpress.org/extend/plugins/rss/browse/new/'
+	) );
 }
 
 /**
@@ -927,14 +936,13 @@ function wp_dashboard_plugins() {
 function wp_dashboard_plugins_output() {
 	$popular = fetch_feed( 'http://wordpress.org/extend/plugins/rss/browse/popular/' );
 	$new     = fetch_feed( 'http://wordpress.org/extend/plugins/rss/browse/new/' );
-	$updated = fetch_feed( 'http://wordpress.org/extend/plugins/rss/browse/updated/' );
 
 	if ( false === $plugin_slugs = get_transient( 'plugin_slugs' ) ) {
 		$plugin_slugs = array_keys( get_plugins() );
-		set_transient( 'plugin_slugs', $plugin_slugs, 86400 );
+		set_transient( 'plugin_slugs', $plugin_slugs, DAY_IN_SECONDS );
 	}
 
-	foreach ( array( 'popular' => __('Most Popular'), 'new' => __('Newest Plugins'), 'updated' => __('Recently Updated') ) as $feed => $label ) {
+	foreach ( array( 'popular' => __('Most Popular'), 'new' => __('Newest Plugins') ) as $feed => $label ) {
 		if ( is_wp_error($$feed) || !$$feed->get_item_quantity() )
 			continue;
 
@@ -979,12 +987,7 @@ function wp_dashboard_plugins_output() {
 		if ( !isset($items[$item_key]) )
 			continue;
 
-		// current bbPress feed item titles are: user on "topic title"
-		if ( preg_match( '/&quot;(.*)&quot;/s', $item->get_title(), $matches ) )
-			$title = $matches[1];
-		else // but let's make it forward compatible if things change
-			$title = $item->get_title();
-		$title = esc_html( $title );
+		$title = esc_html( $item->get_title() );
 
 		$description = esc_html( strip_tags(@html_entity_decode($item->get_description(), ENT_QUOTES, get_option('blog_charset'))) );
 
@@ -1004,7 +1007,7 @@ function wp_dashboard_plugins_output() {
  * Checks to see if all of the feed url in $check_urls are cached.
  *
  * If $check_urls is empty, look for the rss feed url found in the dashboard
- * widget optios of $widget_id. If cached, call $callback, a function that
+ * widget options of $widget_id. If cached, call $callback, a function that
  * echoes out output for this widget. If not cache, echo a "Loading..." stub
  * which is later replaced by AJAX call (see top of /wp-admin/index.php)
  *
@@ -1016,30 +1019,35 @@ function wp_dashboard_plugins_output() {
  * @return bool False on failure. True on success.
  */
 function wp_dashboard_cached_rss_widget( $widget_id, $callback, $check_urls = array() ) {
-	$loading = '<p class="widget-loading">' . __( 'Loading&#8230;' ) . '</p>';
+	$loading = '<p class="widget-loading hide-if-no-js">' . __( 'Loading&#8230;' ) . '</p><p class="hide-if-js">' . __( 'This widget requires JavaScript.' ) . '</p>';
+	$doing_ajax = ( defined('DOING_AJAX') && DOING_AJAX );
 
 	if ( empty($check_urls) ) {
 		$widgets = get_option( 'dashboard_widget_options' );
-		if ( empty($widgets[$widget_id]['url']) ) {
+		if ( empty($widgets[$widget_id]['url']) && ! $doing_ajax ) {
 			echo $loading;
 			return false;
 		}
 		$check_urls = array( $widgets[$widget_id]['url'] );
 	}
 
-	include_once ABSPATH . WPINC . '/class-feed.php';
-	foreach ( $check_urls as $check_url ) {
-		$cache = new WP_Feed_Cache_Transient('', md5($check_url), '');
-		if ( ! $cache->load() ) {
-			echo $loading;
-			return false;
-		}
+	$cache_key = 'dash_' . md5( $widget_id );
+	if ( false !== ( $output = get_transient( $cache_key ) ) ) {
+		echo $output;
+		return true;
+	}
+
+	if ( ! $doing_ajax ) {
+		echo $loading;
+		return false;
 	}
 
 	if ( $callback && is_callable( $callback ) ) {
 		$args = array_slice( func_get_args(), 2 );
 		array_unshift( $args, $widget_id );
+		ob_start();
 		call_user_func_array( $callback, $args );
+		set_transient( $cache_key, ob_get_flush(), 12 * HOUR_IN_SECONDS ); // Default lifetime in cache of 12 hours (same as the feeds)
 	}
 
 	return true;
@@ -1087,7 +1095,7 @@ function wp_dashboard_rss_control( $widget_id, $form_inputs = array() ) {
 	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['widget-rss'][$number]) ) {
 		$_POST['widget-rss'][$number] = stripslashes_deep( $_POST['widget-rss'][$number] );
 		$widget_options[$widget_id] = wp_widget_rss_process( $_POST['widget-rss'][$number] );
-		// title is optional.  If black, fill it if possible
+		// title is optional. If black, fill it if possible
 		if ( !$widget_options[$widget_id]['title'] && isset($_POST['widget-rss'][$number]['title']) ) {
 			$rss = fetch_feed($widget_options[$widget_id]['url']);
 			if ( is_wp_error($rss) ) {
@@ -1099,6 +1107,8 @@ function wp_dashboard_rss_control( $widget_id, $form_inputs = array() ) {
 			}
 		}
 		update_option( 'dashboard_widget_options', $widget_options );
+		$cache_key = 'dash_' . md5( $widget_id );
+		delete_transient( $cache_key );
 	}
 
 	wp_widget_rss_form( $widget_options[$widget_id], $form_inputs );
@@ -1106,17 +1116,17 @@ function wp_dashboard_rss_control( $widget_id, $form_inputs = array() ) {
 
 // Display File upload quota on dashboard
 function wp_dashboard_quota() {
-	if ( !is_multisite() || !current_user_can('edit_posts') || get_site_option( 'upload_space_check_disabled' ) )
+	if ( !is_multisite() || !current_user_can('upload_files') || get_site_option( 'upload_space_check_disabled' ) )
 		return true;
 
 	$quota = get_space_allowed();
-	$used = get_dirsize( BLOGUPLOADDIR ) / 1024 / 1024;
+	$used = get_space_used();
 
 	if ( $used > $quota )
 		$percentused = '100';
 	else
 		$percentused = ( $used / $quota ) * 100;
-	$used_color = ( $percentused < 70 ) ? ( ( $percentused >= 40 ) ? 'waiting' : 'approved' ) : 'spam';
+	$used_color = ( $percentused >= 70 ) ? ' spam' : '';
 	$used = round( $used, 2 );
 	$percentused = number_format( $percentused );
 
@@ -1125,7 +1135,7 @@ function wp_dashboard_quota() {
 	<div class="table table_content musubtable">
 	<table>
 		<tr class="first">
-			<td class="first b b-posts"><?php printf( __( '<a href="%1$s" title="Manage Uploads" class="musublink">%2$sMB</a>' ), esc_url( admin_url( 'upload.php' ) ), $quota ); ?></td>
+			<td class="first b b-posts"><?php printf( __( '<a href="%1$s" title="Manage Uploads" class="musublink">%2$sMB</a>' ), esc_url( admin_url( 'upload.php' ) ), number_format_i18n( $quota ) ); ?></td>
 			<td class="t posts"><?php _e( 'Space Allowed' ); ?></td>
 		</tr>
 	</table>
@@ -1133,8 +1143,8 @@ function wp_dashboard_quota() {
 	<div class="table table_discussion musubtable">
 	<table>
 		<tr class="first">
-			<td class="b b-comments"><?php printf( __( '<a href="%1$s" title="Manage Uploads" class="musublink">%2$sMB (%3$s%%)</a>' ), esc_url( admin_url( 'upload.php' ) ), $used, $percentused ); ?></td>
-			<td class="last t comments <?php echo $used_color;?>"><?php _e( 'Space Used' );?></td>
+			<td class="b b-comments"><?php printf( __( '<a href="%1$s" title="Manage Uploads" class="musublink">%2$sMB (%3$s%%)</a>' ), esc_url( admin_url( 'upload.php' ) ), number_format_i18n( $used, 2 ), $percentused ); ?></td>
+			<td class="last t comments<?php echo $used_color;?>"><?php _e( 'Space Used' );?></td>
 		</tr>
 	</table>
 	</div>
@@ -1143,9 +1153,147 @@ function wp_dashboard_quota() {
 }
 add_action( 'activity_box_end', 'wp_dashboard_quota' );
 
+// Display Browser Nag Meta Box
+function wp_dashboard_browser_nag() {
+	$notice = '';
+	$response = wp_check_browser_version();
+
+	if ( $response ) {
+		if ( $response['insecure'] ) {
+			$msg = sprintf( __( "It looks like you're using an insecure version of <a href='%s'>%s</a>. Using an outdated browser makes your computer unsafe. For the best WordPress experience, please update your browser." ), esc_attr( $response['update_url'] ), esc_html( $response['name'] ) );
+		} else {
+			$msg = sprintf( __( "It looks like you're using an old version of <a href='%s'>%s</a>. For the best WordPress experience, please update your browser." ), esc_attr( $response['update_url'] ), esc_html( $response['name'] ) );
+		}
+
+		$browser_nag_class = '';
+		if ( !empty( $response['img_src'] ) ) {
+			$img_src = ( is_ssl() && ! empty( $response['img_src_ssl'] ) )? $response['img_src_ssl'] : $response['img_src'];
+
+			$notice .= '<div class="alignright browser-icon"><a href="' . esc_attr($response['update_url']) . '"><img src="' . esc_attr( $img_src ) . '" alt="" /></a></div>';
+			$browser_nag_class = ' has-browser-icon';
+		}
+		$notice .= "<p class='browser-update-nag{$browser_nag_class}'>{$msg}</p>";
+
+		$browsehappy = 'http://browsehappy.com/';
+		$locale = get_locale();
+		if ( 'en_US' !== $locale )
+			$browsehappy = add_query_arg( 'locale', $locale, $browsehappy );
+
+		$notice .= '<p>' . sprintf( __( '<a href="%1$s" class="update-browser-link">Update %2$s</a> or learn how to <a href="%3$s" class="browse-happy-link">browse happy</a>' ), esc_attr( $response['update_url'] ), esc_html( $response['name'] ), esc_url( $browsehappy ) ) . '</p>';
+		$notice .= '<p class="hide-if-no-js"><a href="" class="dismiss">' . __( 'Dismiss' ) . '</a></p>';
+		$notice .= '<div class="clear"></div>';
+	}
+
+	echo apply_filters( 'browse-happy-notice', $notice, $response );
+}
+
+function dashboard_browser_nag_class( $classes ) {
+	$response = wp_check_browser_version();
+
+	if ( $response && $response['insecure'] )
+		$classes[] = 'browser-insecure';
+
+	return $classes;
+}
+
+/**
+ * Check if the user needs a browser update
+ *
+ * @since 3.2.0
+ *
+ * @return array|bool False on failure, array of browser data on success.
+ */
+function wp_check_browser_version() {
+	if ( empty( $_SERVER['HTTP_USER_AGENT'] ) )
+		return false;
+
+	$key = md5( $_SERVER['HTTP_USER_AGENT'] );
+
+	if ( false === ($response = get_site_transient('browser_' . $key) ) ) {
+		global $wp_version;
+
+		$options = array(
+			'body'			=> array( 'useragent' => $_SERVER['HTTP_USER_AGENT'] ),
+			'user-agent'	=> 'WordPress/' . $wp_version . '; ' . home_url()
+		);
+
+		$response = wp_remote_post( 'http://api.wordpress.org/core/browse-happy/1.0/', $options );
+
+		if ( is_wp_error( $response ) || 200 != wp_remote_retrieve_response_code( $response ) )
+			return false;
+
+		/**
+		 * Response should be an array with:
+		 *  'name' - string - A user friendly browser name
+		 *  'version' - string - The most recent version of the browser
+		 *  'current_version' - string - The version of the browser the user is using
+		 *  'upgrade' - boolean - Whether the browser needs an upgrade
+		 *  'insecure' - boolean - Whether the browser is deemed insecure
+		 *  'upgrade_url' - string - The url to visit to upgrade
+		 *  'img_src' - string - An image representing the browser
+		 *  'img_src_ssl' - string - An image (over SSL) representing the browser
+		 */
+		$response = maybe_unserialize( wp_remote_retrieve_body( $response ) );
+
+		if ( ! is_array( $response ) )
+			return false;
+
+		set_site_transient( 'browser_' . $key, $response, WEEK_IN_SECONDS );
+	}
+
+	return $response;
+}
+
 /**
  * Empty function usable by plugins to output empty dashboard widget (to be populated later by JS).
  */
 function wp_dashboard_empty() {}
 
-?>
+/**
+ * Displays a welcome panel to introduce users to WordPress.
+ *
+ * @since 3.3.0
+ */
+function wp_welcome_panel() {
+	?>
+	<div class="welcome-panel-content">
+	<h3><?php _e( 'Welcome to WordPress!' ); ?></h3>
+	<p class="about-description"><?php _e( 'We&#8217;ve assembled some links to get you started:' ); ?></p>
+	<div class="welcome-panel-column-container">
+	<div class="welcome-panel-column">
+		<h4><?php _e( 'Get Started' ); ?></h4>
+		<a class="button button-primary button-hero load-customize hide-if-no-customize" href="<?php echo wp_customize_url(); ?>"><?php _e( 'Customize Your Site' ); ?></a>
+		<a class="button button-primary button-hero hide-if-customize" href="<?php echo admin_url( 'themes.php' ); ?>"><?php _e( 'Customize Your Site' ); ?></a>
+		<?php if ( current_user_can( 'install_themes' ) || ( current_user_can( 'switch_themes' ) && count( wp_get_themes( array( 'allowed' => true ) ) ) > 1 ) ) : ?>
+			<p class="hide-if-no-customize"><?php printf( __( 'or, <a href="%s">change your theme completely</a>' ), admin_url( 'themes.php' ) ); ?></p>
+		<?php endif; ?>
+	</div>
+	<div class="welcome-panel-column">
+		<h4><?php _e( 'Next Steps' ); ?></h4>
+		<ul>
+		<?php if ( 'page' == get_option( 'show_on_front' ) && ! get_option( 'page_for_posts' ) ) : ?>
+			<li><?php printf( '<a href="%s" class="welcome-icon welcome-edit-page">' . __( 'Edit your front page' ) . '</a>', get_edit_post_link( get_option( 'page_on_front' ) ) ); ?></li>
+			<li><?php printf( '<a href="%s" class="welcome-icon welcome-add-page">' . __( 'Add additional pages' ) . '</a>', admin_url( 'post-new.php?post_type=page' ) ); ?></li>
+		<?php elseif ( 'page' == get_option( 'show_on_front' ) ) : ?>
+			<li><?php printf( '<a href="%s" class="welcome-icon welcome-edit-page">' . __( 'Edit your front page' ) . '</a>', get_edit_post_link( get_option( 'page_on_front' ) ) ); ?></li>
+			<li><?php printf( '<a href="%s" class="welcome-icon welcome-add-page">' . __( 'Add additional pages' ) . '</a>', admin_url( 'post-new.php?post_type=page' ) ); ?></li>
+			<li><?php printf( '<a href="%s" class="welcome-icon welcome-write-blog">' . __( 'Add a blog post' ) . '</a>', admin_url( 'post-new.php' ) ); ?></li>
+		<?php else : ?>
+			<li><?php printf( '<a href="%s" class="welcome-icon welcome-write-blog">' . __( 'Write your first blog post' ) . '</a>', admin_url( 'post-new.php' ) ); ?></li>
+			<li><?php printf( '<a href="%s" class="welcome-icon welcome-add-page">' . __( 'Add an About page' ) . '</a>', admin_url( 'post-new.php?post_type=page' ) ); ?></li>
+		<?php endif; ?>
+			<li><?php printf( '<a href="%s" class="welcome-icon welcome-view-site">' . __( 'View your site' ) . '</a>', home_url( '/' ) ); ?></li>
+		</ul>
+	</div>
+	<div class="welcome-panel-column welcome-panel-last">
+		<h4><?php _e( 'More Actions' ); ?></h4>
+		<ul>
+			<li><?php printf( '<div class="welcome-icon welcome-widgets-menus">' . __( 'Manage <a href="%1$s">widgets</a> or <a href="%2$s">menus</a>' ) . '</div>', admin_url( 'widgets.php' ), admin_url( 'nav-menus.php' ) ); ?></li>
+			<li><?php printf( '<a href="%s" class="welcome-icon welcome-comments">' . __( 'Turn comments on or off' ) . '</a>', admin_url( 'options-discussion.php' ) ); ?></li>
+			<li><?php printf( '<a href="%s" class="welcome-icon welcome-learn-more">' . __( 'Learn more about getting started' ) . '</a>', __( 'http://codex.wordpress.org/First_Steps_With_WordPress' ) ); ?></li>
+		</ul>
+	</div>
+	</div>
+	</div>
+	<?php
+}

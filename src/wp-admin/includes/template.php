@@ -8,31 +8,33 @@
  * @subpackage Administration
  */
 
-
 //
 // Category Checklists
 //
 
 /**
- * {@internal Missing Short Description}}
+ * Walker to output an unordered list of category checkbox <input> elements.
  *
+ * @see Walker
+ * @see wp_category_checklist()
+ * @see wp_terms_checklist()
  * @since 2.5.1
  */
 class Walker_Category_Checklist extends Walker {
 	var $tree_type = 'category';
 	var $db_fields = array ('parent' => 'parent', 'id' => 'term_id'); //TODO: decouple this
 
-	function start_lvl(&$output, $depth, $args) {
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
 		$output .= "$indent<ul class='children'>\n";
 	}
 
-	function end_lvl(&$output, $depth, $args) {
+	function end_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
 		$output .= "$indent</ul>\n";
 	}
 
-	function start_el(&$output, $category, $depth, $args) {
+	function start_el( &$output, $category, $depth, $args, $id = 0 ) {
 		extract($args);
 		if ( empty($taxonomy) )
 			$taxonomy = 'category';
@@ -46,35 +48,39 @@ class Walker_Category_Checklist extends Walker {
 		$output .= "\n<li id='{$taxonomy}-{$category->term_id}'$class>" . '<label class="selectit"><input value="' . $category->term_id . '" type="checkbox" name="'.$name.'[]" id="in-'.$taxonomy.'-' . $category->term_id . '"' . checked( in_array( $category->term_id, $selected_cats ), true, false ) . disabled( empty( $args['disabled'] ), false, false ) . ' /> ' . esc_html( apply_filters('the_category', $category->name )) . '</label>';
 	}
 
-	function end_el(&$output, $category, $depth, $args) {
+	function end_el( &$output, $category, $depth = 0, $args = array() ) {
 		$output .= "</li>\n";
 	}
 }
 
 /**
- * {@internal Missing Short Description}}
+ * Output an unordered list of checkbox <input> elements labelled
+ * with category names.
  *
+ * @see wp_terms_checklist()
  * @since 2.5.1
  *
- * @param unknown_type $post_id
- * @param unknown_type $descendants_and_self
- * @param unknown_type $selected_cats
- * @param unknown_type $popular_cats
+ * @param int $post_id Mark categories associated with this post as checked. $selected_cats must not be an array.
+ * @param int $descendants_and_self ID of the category to output along with its descendents.
+ * @param bool|array $selected_cats List of categories to mark as checked.
+ * @param bool|array $popular_cats Override the list of categories that receive the "popular-category" class.
+ * @param object $walker Walker object to use to build the output.
+ * @param bool $checked_ontop Move checked items out of the hierarchy and to the top of the list.
  */
 function wp_category_checklist( $post_id = 0, $descendants_and_self = 0, $selected_cats = false, $popular_cats = false, $walker = null, $checked_ontop = true ) {
-	wp_terms_checklist($post_id,
-	 	array(
-			'taxonomy' => 'category',
-			'descendants_and_self' => $descendants_and_self,
-			'selected_cats' => $selected_cats,
-			'popular_cats' => $popular_cats,
-			'walker' => $walker,
-			'checked_ontop' => $checked_ontop
-  ));
+	wp_terms_checklist( $post_id, array(
+		'taxonomy' => 'category',
+		'descendants_and_self' => $descendants_and_self,
+		'selected_cats' => $selected_cats,
+		'popular_cats' => $popular_cats,
+		'walker' => $walker,
+		'checked_ontop' => $checked_ontop
+	) );
 }
 
 /**
- * Taxonomy independent version of wp_category_checklist
+ * Output an unordered list of checkbox <input> elements labelled
+ * with term names. Taxonomy independent version of wp_category_checklist().
  *
  * @since 3.0.0
  *
@@ -90,6 +96,8 @@ function wp_terms_checklist($post_id = 0, $args = array()) {
 		'taxonomy' => 'category',
 		'checked_ontop' => true
 	);
+	$args = apply_filters( 'wp_terms_checklist_args', $args, $post_id );
+
 	extract( wp_parse_args($args, $defaults), EXTR_SKIP );
 
 	if ( empty($walker) || !is_a($walker, 'Walker') )
@@ -142,21 +150,26 @@ function wp_terms_checklist($post_id = 0, $args = array()) {
 }
 
 /**
- * {@internal Missing Short Description}}
+ * Retrieve a list of the most popular terms from the specified taxonomy.
+ *
+ * If the $echo argument is true then the elements for a list of checkbox
+ * <input> elements labelled with the names of the selected terms is output.
+ * If the $post_ID global isn't empty then the terms associated with that
+ * post will be marked as checked.
  *
  * @since 2.5.0
  *
- * @param unknown_type $taxonomy
- * @param unknown_type $default
- * @param unknown_type $number
- * @param unknown_type $echo
- * @return unknown
+ * @param string $taxonomy Taxonomy to retrieve terms from.
+ * @param int $default Unused.
+ * @param int $number Number of terms to retrieve. Defaults to 10.
+ * @param bool $echo Optionally output the list as well. Defaults to true.
+ * @return array List of popular term IDs.
  */
 function wp_popular_terms_checklist( $taxonomy, $default = 0, $number = 10, $echo = true ) {
-	global $post_ID;
+	$post = get_post();
 
-	if ( $post_ID )
-		$checked_terms = wp_get_object_terms($post_ID, $taxonomy, array('fields'=>'ids'));
+	if ( $post && $post->ID )
+		$checked_terms = wp_get_object_terms($post->ID, $taxonomy, array('fields'=>'ids'));
 	else
 		$checked_terms = array();
 
@@ -221,42 +234,6 @@ function wp_link_category_checklist( $link_id = 0 ) {
 	}
 }
 
-/**
- * Get the column headers for a screen
- *
- * @since 2.7.0
- *
- * @param string|object $screen The screen you want the headers for
- * @return array Containing the headers in the format id => UI String
- */
-function get_column_headers( $screen ) {
-	if ( is_string( $screen ) )
-		$screen = convert_to_screen( $screen );
-
-	global $_wp_column_headers;
-
-	if ( !isset( $_wp_column_headers[ $screen->id ] ) ) {
-		$_wp_column_headers[ $screen->id ] = apply_filters( 'manage_' . $screen->id . '_columns', array() );
-	}
-
-	return $_wp_column_headers[ $screen->id ];
-}
-
-/**
- * Get a list of hidden columns.
- *
- * @since 2.7.0
- *
- * @param string|object $screen The screen you want the hidden columns for
- * @return array
- */
-function get_hidden_columns( $screen ) {
-	if ( is_string( $screen ) )
-		$screen = convert_to_screen( $screen );
-
-	return (array) get_user_option( 'manage' . $screen->id . 'columnshidden' );
-}
-
 // adds hidden fields with the data for use in the inline editor for posts and pages
 /**
  * {@internal Missing Short Description}}
@@ -294,21 +271,27 @@ function get_inline_data($post) {
 	if ( $post->post_type == 'page' )
 		echo '<div class="page_template">' . esc_html( get_post_meta( $post->ID, '_wp_page_template', true ) ) . '</div>';
 
-	if ( $post_type_object->hierarchical )
+	if ( post_type_supports( $post->post_type, 'page-attributes' ) )
 		echo '<div class="menu_order">' . $post->menu_order . '</div>';
 
 	$taxonomy_names = get_object_taxonomies( $post->post_type );
 	foreach ( $taxonomy_names as $taxonomy_name) {
 		$taxonomy = get_taxonomy( $taxonomy_name );
 
-		if ( $taxonomy->hierarchical && $taxonomy->show_ui )
-				echo '<div class="post_category" id="'.$taxonomy_name.'_'.$post->ID.'">' . implode( ',', wp_get_object_terms( $post->ID, $taxonomy_name, array('fields'=>'ids')) ) . '</div>';
-		elseif ( $taxonomy->show_ui )
-			echo '<div class="tags_input" id="'.$taxonomy_name.'_'.$post->ID.'">' . esc_html( str_replace( ',', ', ', get_terms_to_edit($post->ID, $taxonomy_name) ) ) . '</div>';
+		if ( $taxonomy->hierarchical && $taxonomy->show_ui ) {
+				echo '<div class="post_category" id="' . $taxonomy_name . '_' . $post->ID . '">'
+					. implode( ',', wp_get_object_terms( $post->ID, $taxonomy_name, array( 'fields' => 'ids' ) ) ) . '</div>';
+		} elseif ( $taxonomy->show_ui ) {
+			echo '<div class="tags_input" id="'.$taxonomy_name.'_'.$post->ID.'">'
+				. esc_html( str_replace( ',', ', ', get_terms_to_edit( $post->ID, $taxonomy_name ) ) ) . '</div>';
+		}
 	}
 
 	if ( !$post_type_object->hierarchical )
 		echo '<div class="sticky">' . (is_sticky($post->ID) ? 'sticky' : '') . '</div>';
+
+	if ( post_type_supports( $post->post_type, 'post-formats' ) )
+		echo '<div class="post_format">' . esc_html( get_post_format( $post->ID ) ) . '</div>';
 
 	echo '</div>';
 }
@@ -344,34 +327,40 @@ function wp_comment_reply($position = '1', $checkbox = false, $mode = 'single', 
 <?php else : ?>
 <div id="com-reply" style="display:none;"><div id="replyrow" style="display:none;">
 <?php endif; ?>
-	<div id="replyhead" style="display:none;"><?php _e('Reply to Comment'); ?></div>
-
+	<div id="replyhead" style="display:none;"><h5><?php _e( 'Reply to Comment' ); ?></h5></div>
+	<div id="addhead" style="display:none;"><h5><?php _e('Add new Comment'); ?></h5></div>
 	<div id="edithead" style="display:none;">
 		<div class="inside">
 		<label for="author"><?php _e('Name') ?></label>
-		<input type="text" name="newcomment_author" size="50" value="" tabindex="101" id="author" />
+		<input type="text" name="newcomment_author" size="50" value="" id="author" />
 		</div>
 
 		<div class="inside">
 		<label for="author-email"><?php _e('E-mail') ?></label>
-		<input type="text" name="newcomment_author_email" size="50" value="" tabindex="102" id="author-email" />
+		<input type="text" name="newcomment_author_email" size="50" value="" id="author-email" />
 		</div>
 
 		<div class="inside">
 		<label for="author-url"><?php _e('URL') ?></label>
-		<input type="text" id="author-url" name="newcomment_author_url" size="103" value="" tabindex="103" />
+		<input type="text" id="author-url" name="newcomment_author_url" size="103" value="" />
 		</div>
 		<div style="clear:both;"></div>
 	</div>
 
-	<div id="replycontainer"><textarea rows="8" cols="40" name="replycontent" tabindex="104" id="replycontent"></textarea></div>
+	<div id="replycontainer">
+	<?php
+	$quicktags_settings = array( 'buttons' => 'strong,em,link,block,del,ins,img,ul,ol,li,code,spell,close' );
+	wp_editor( '', 'replycontent', array( 'media_buttons' => false, 'tinymce' => false, 'quicktags' => $quicktags_settings ) );
+	?>
+	</div>
 
 	<p id="replysubmit" class="submit">
-	<a href="#comments-form" class="cancel button-secondary alignleft" tabindex="106"><?php _e('Cancel'); ?></a>
-	<a href="#comments-form" class="save button-primary alignright" tabindex="104">
+	<a href="#comments-form" class="save button-primary alignright">
+	<span id="addbtn" style="display:none;"><?php _e('Add Comment'); ?></span>
 	<span id="savebtn" style="display:none;"><?php _e('Update Comment'); ?></span>
 	<span id="replybtn" style="display:none;"><?php _e('Submit Reply'); ?></span></a>
-	<img class="waiting" style="display:none;" src="<?php echo esc_url( admin_url( 'images/wpspin_light.gif' ) ); ?>" alt="" />
+	<a href="#comments-form" class="cancel button-secondary alignleft"><?php _e('Cancel'); ?></a>
+	<span class="waiting spinner"></span>
 	<span class="error" style="display:none;"></span>
 	<br class="clear" />
 	</p>
@@ -384,8 +373,11 @@ function wp_comment_reply($position = '1', $checkbox = false, $mode = 'single', 
 	<input type="hidden" name="position" id="position" value="<?php echo $position; ?>" />
 	<input type="hidden" name="checkbox" id="checkbox" value="<?php echo $checkbox ? 1 : 0; ?>" />
 	<input type="hidden" name="mode" id="mode" value="<?php echo esc_attr($mode); ?>" />
-	<?php wp_nonce_field( 'replyto-comment', '_ajax_nonce-replyto-comment', false ); ?>
-	<?php wp_comment_form_unfiltered_html_nonce(); ?>
+	<?php
+		wp_nonce_field( 'replyto-comment', '_ajax_nonce-replyto-comment', false );
+		if ( current_user_can( 'unfiltered_html' ) )
+			wp_nonce_field( 'unfiltered-html-comment', '_wp_unfiltered_html_comment', false );
+	?>
 <?php if ( $table_row ) : ?>
 </td></tr></tbody></table>
 <?php else : ?>
@@ -425,11 +417,11 @@ function list_meta( $meta ) {
 <table id="list-table" style="display: none;">
 	<thead>
 	<tr>
-		<th class="left">' . __( 'Name' ) . '</th>
+		<th class="left">' . _x( 'Name', 'meta name' ) . '</th>
 		<th>' . __( 'Value' ) . '</th>
 	</tr>
 	</thead>
-	<tbody id="the-list" class="list:meta">
+	<tbody id="the-list" data-wp-lists="list:meta">
 	<tr><td></td></tr>
 	</tbody>
 </table>'; //TBODY needed for list-manipulation JS
@@ -440,11 +432,11 @@ function list_meta( $meta ) {
 <table id="list-table">
 	<thead>
 	<tr>
-		<th class="left"><?php _e( 'Name' ) ?></th>
+		<th class="left"><?php _ex( 'Name', 'meta name' ) ?></th>
 		<th><?php _e( 'Value' ) ?></th>
 	</tr>
 	</thead>
-	<tbody id='the-list' class='list:meta'>
+	<tbody id='the-list' data-wp-lists='list:meta'>
 <?php
 	foreach ( $meta as $entry )
 		echo _list_meta_row( $entry, $count );
@@ -466,7 +458,7 @@ function list_meta( $meta ) {
 function _list_meta_row( $entry, &$count ) {
 	static $update_nonce = false;
 
-	if ( is_protected_meta( $entry['meta_key'] ) )
+	if ( is_protected_meta( $entry['meta_key'], 'post' ) )
 		return;
 
 	if ( !$update_nonce )
@@ -478,8 +470,6 @@ function _list_meta_row( $entry, &$count ) {
 		$style = 'alternate';
 	else
 		$style = '';
-	if ('_' == $entry['meta_key'] { 0 } )
-		$style .= ' hidden';
 
 	if ( is_serialized( $entry['meta_value'] ) ) {
 		if ( is_serialized_string( $entry['meta_value'] ) ) {
@@ -499,17 +489,17 @@ function _list_meta_row( $entry, &$count ) {
 	$delete_nonce = wp_create_nonce( 'delete-meta_' . $entry['meta_id'] );
 
 	$r .= "\n\t<tr id='meta-{$entry['meta_id']}' class='$style'>";
-	$r .= "\n\t\t<td class='left'><label class='screen-reader-text' for='meta[{$entry['meta_id']}][key]'>" . __( 'Key' ) . "</label><input name='meta[{$entry['meta_id']}][key]' id='meta[{$entry['meta_id']}][key]' tabindex='6' type='text' size='20' value='{$entry['meta_key']}' />";
+	$r .= "\n\t\t<td class='left'><label class='screen-reader-text' for='meta[{$entry['meta_id']}][key]'>" . __( 'Key' ) . "</label><input name='meta[{$entry['meta_id']}][key]' id='meta[{$entry['meta_id']}][key]' type='text' size='20' value='{$entry['meta_key']}' />";
 
 	$r .= "\n\t\t<div class='submit'>";
-	$r .= get_submit_button( __( 'Delete' ), "delete:the-list:meta-{$entry['meta_id']}::_ajax_nonce=$delete_nonce deletemeta", "deletemeta[{$entry['meta_id']}]", false, array( 'tabindex' => '6' ) );
+	$r .= get_submit_button( __( 'Delete' ), 'deletemeta small', "deletemeta[{$entry['meta_id']}]", false, array( 'data-wp-lists' => "delete:the-list:meta-{$entry['meta_id']}::_ajax_nonce=$delete_nonce" ) );
 	$r .= "\n\t\t";
-	$r .= get_submit_button( __( 'Update' ), "add:the-list:meta-{$entry['meta_id']}::_ajax_nonce-add-meta=$update_nonce updatemeta" , 'updatemeta', false, array( 'tabindex' => '6' ) );
+	$r .= get_submit_button( __( 'Update' ), 'updatemeta small', "meta-{$entry['meta_id']}-submit", false, array( 'data-wp-lists' => "add:the-list:meta-{$entry['meta_id']}::_ajax_nonce-add-meta=$update_nonce" ) );
 	$r .= "</div>";
 	$r .= wp_nonce_field( 'change-meta', '_ajax_nonce', false, false );
 	$r .= "</td>";
 
-	$r .= "\n\t\t<td><label class='screen-reader-text' for='meta[{$entry['meta_id']}][value]'>" . __( 'Value' ) . "</label><textarea name='meta[{$entry['meta_id']}][value]' id='meta[{$entry['meta_id']}][value]' tabindex='6' rows='2' cols='30'>{$entry['meta_value']}</textarea></td>\n\t</tr>";
+	$r .= "\n\t\t<td><label class='screen-reader-text' for='meta[{$entry['meta_id']}][value]'>" . __( 'Value' ) . "</label><textarea name='meta[{$entry['meta_id']}][value]' id='meta[{$entry['meta_id']}][value]' rows='2' cols='30'>{$entry['meta_value']}</textarea></td>\n\t</tr>";
 	return $r;
 }
 
@@ -535,7 +525,7 @@ function meta_form() {
 <table id="newmeta">
 <thead>
 <tr>
-<th class="left"><label for="metakeyselect"><?php _e( 'Name' ) ?></label></th>
+<th class="left"><label for="metakeyselect"><?php _ex( 'Name', 'meta name' ) ?></label></th>
 <th><label for="metavalue"><?php _e( 'Value' ) ?></label></th>
 </tr>
 </thead>
@@ -544,7 +534,7 @@ function meta_form() {
 <tr>
 <td id="newmetaleft" class="left">
 <?php if ( $keys ) { ?>
-<select id="metakeyselect" name="metakeyselect" tabindex="7">
+<select id="metakeyselect" name="metakeyselect">
 <option value="#NONE#"><?php _e( '&mdash; Select &mdash;' ); ?></option>
 <?php
 
@@ -553,19 +543,21 @@ function meta_form() {
 	}
 ?>
 </select>
-<input class="hide-if-js" type="text" id="metakeyinput" name="metakeyinput" tabindex="7" value="" />
+<input class="hide-if-js" type="text" id="metakeyinput" name="metakeyinput" value="" />
 <a href="#postcustomstuff" class="hide-if-no-js" onclick="jQuery('#metakeyinput, #metakeyselect, #enternew, #cancelnew').toggle();return false;">
 <span id="enternew"><?php _e('Enter new'); ?></span>
 <span id="cancelnew" class="hidden"><?php _e('Cancel'); ?></span></a>
 <?php } else { ?>
-<input type="text" id="metakeyinput" name="metakeyinput" tabindex="7" value="" />
+<input type="text" id="metakeyinput" name="metakeyinput" value="" />
 <?php } ?>
 </td>
-<td><textarea id="metavalue" name="metavalue" rows="2" cols="25" tabindex="8"></textarea></td>
+<td><textarea id="metavalue" name="metavalue" rows="2" cols="25"></textarea></td>
 </tr>
 
-<tr><td colspan="2" class="submit">
-<?php submit_button( __( 'Add Custom Field' ), 'add:the-list:newmeta', 'addmeta', false, array( 'id' => 'addmetasub', 'tabindex' => '9' ) ); ?>
+<tr><td colspan="2">
+<div class="submit">
+<?php submit_button( __( 'Add Custom Field' ), 'secondary', 'addmeta', false, array( 'id' => 'newmeta-submit', 'data-wp-lists' => 'add:the-list:newmeta' ) ); ?>
+</div>
 <?php wp_nonce_field( 'add-meta', '_ajax_nonce-add-meta', false ); ?>
 </td></tr>
 </tbody>
@@ -585,7 +577,8 @@ function meta_form() {
  * @param unknown_type $multi
  */
 function touch_time( $edit = 1, $for_post = 1, $tab_index = 0, $multi = 0 ) {
-	global $wp_locale, $post, $comment;
+	global $wp_locale, $comment;
+	$post = get_post();
 
 	if ( $for_post )
 		$edit = ! ( in_array($post->post_status, array('draft', 'pending') ) && (!$post->post_date_gmt || '0000-00-00 00:00:00' == $post->post_date_gmt ) );
@@ -613,10 +606,12 @@ function touch_time( $edit = 1, $for_post = 1, $tab_index = 0, $multi = 0 ) {
 
 	$month = "<select " . ( $multi ? '' : 'id="mm" ' ) . "name=\"mm\"$tab_index_attribute>\n";
 	for ( $i = 1; $i < 13; $i = $i +1 ) {
-		$month .= "\t\t\t" . '<option value="' . zeroise($i, 2) . '"';
+		$monthnum = zeroise($i, 2);
+		$month .= "\t\t\t" . '<option value="' . $monthnum . '"';
 		if ( $i == $mm )
 			$month .= ' selected="selected"';
-		$month .= '>' . $wp_locale->get_month_abbrev( $wp_locale->get_month( $i ) ) . "</option>\n";
+		/* translators: 1: month number (01, 02, etc.), 2: month abbreviation */
+		$month .= '>' . sprintf( __( '%1$s-%2$s' ), $monthnum, $wp_locale->get_month_abbrev( $wp_locale->get_month( $i ) ) ) . "</option>\n";
 	}
 	$month .= '</select>';
 
@@ -678,17 +673,16 @@ function page_template_dropdown( $default = '' ) {
  * @return unknown
  */
 function parent_dropdown( $default = 0, $parent = 0, $level = 0 ) {
-	global $wpdb, $post_ID;
+	global $wpdb;
+	$post = get_post();
 	$items = $wpdb->get_results( $wpdb->prepare("SELECT ID, post_parent, post_title FROM $wpdb->posts WHERE post_parent = %d AND post_type = 'page' ORDER BY menu_order", $parent) );
 
 	if ( $items ) {
 		foreach ( $items as $item ) {
 			// A page cannot be its own parent.
-			if (!empty ( $post_ID ) ) {
-				if ( $item->ID == $post_ID ) {
-					continue;
-				}
-			}
+			if ( $post->ID && $item->ID == $post->ID )
+				continue;
+
 			$pad = str_repeat( '&nbsp;', $level * 3 );
 			if ( $item->ID == $default)
 				$current = ' selected="selected"';
@@ -713,7 +707,7 @@ function parent_dropdown( $default = 0, $parent = 0, $level = 0 ) {
  */
 function the_attachment_links( $id = false ) {
 	$id = (int) $id;
-	$post = & get_post( $id );
+	$post = get_post( $id );
 
 	if ( $post->post_type != 'attachment' )
 		return false;
@@ -754,7 +748,6 @@ function the_attachment_links( $id = false ) {
 <?php
 }
 
-
 /**
  * Print out <option> html elements for role selectors
  *
@@ -779,56 +772,6 @@ function wp_dropdown_roles( $selected = false ) {
 }
 
 /**
- * {@internal Missing Short Description}}
- *
- * @since 2.3.0
- *
- * @param unknown_type $size
- * @return unknown
- */
-function wp_convert_hr_to_bytes( $size ) {
-	$size = strtolower($size);
-	$bytes = (int) $size;
-	if ( strpos($size, 'k') !== false )
-		$bytes = intval($size) * 1024;
-	elseif ( strpos($size, 'm') !== false )
-		$bytes = intval($size) * 1024 * 1024;
-	elseif ( strpos($size, 'g') !== false )
-		$bytes = intval($size) * 1024 * 1024 * 1024;
-	return $bytes;
-}
-
-/**
- * {@internal Missing Short Description}}
- *
- * @since 2.3.0
- *
- * @param unknown_type $bytes
- * @return unknown
- */
-function wp_convert_bytes_to_hr( $bytes ) {
-	$units = array( 0 => 'B', 1 => 'kB', 2 => 'MB', 3 => 'GB' );
-	$log = log( $bytes, 1024 );
-	$power = (int) $log;
-	$size = pow(1024, $log - $power);
-	return $size . $units[$power];
-}
-
-/**
- * {@internal Missing Short Description}}
- *
- * @since 2.5.0
- *
- * @return unknown
- */
-function wp_max_upload_size() {
-	$u_bytes = wp_convert_hr_to_bytes( ini_get( 'upload_max_filesize' ) );
-	$p_bytes = wp_convert_hr_to_bytes( ini_get( 'post_max_size' ) );
-	$bytes = apply_filters( 'upload_size_limit', min($u_bytes, $p_bytes), $u_bytes, $p_bytes );
-	return $bytes;
-}
-
-/**
  * Outputs the form used by the importers to accept the data to be imported
  *
  * @since 2.0.0
@@ -844,7 +787,7 @@ function wp_import_upload_form( $action ) {
 		<p><strong><?php echo $upload_dir['error']; ?></strong></p></div><?php
 	else :
 ?>
-<form enctype="multipart/form-data" id="import-upload-form" method="post" action="<?php echo esc_attr(wp_nonce_url($action, 'import-upload')); ?>">
+<form enctype="multipart/form-data" id="import-upload-form" method="post" class="wp-upload-form" action="<?php echo esc_attr(wp_nonce_url($action, 'import-upload')); ?>">
 <p>
 <label for="upload"><?php _e( 'Choose a file from your computer:' ); ?></label> (<?php printf( __('Maximum size: %s' ), $size ); ?>)
 <input type="file" id="upload" name="import" size="25" />
@@ -865,12 +808,19 @@ function wp_import_upload_form( $action ) {
  * @param string $id String for use in the 'id' attribute of tags.
  * @param string $title Title of the meta box.
  * @param string $callback Function that fills the box with the desired content. The function should echo its output.
- * @param string $page The type of edit page on which to show the box (post, page, link).
- * @param string $context The context within the page where the boxes should show ('normal', 'advanced').
- * @param string $priority The priority within the context where the boxes should show ('high', 'low').
+ * @param string|object $screen Optional. The screen on which to show the box (post, page, link). Defaults to current screen.
+ * @param string $context Optional. The context within the page where the boxes should show ('normal', 'advanced').
+ * @param string $priority Optional. The priority within the context where the boxes should show ('high', 'low').
  */
-function add_meta_box($id, $title, $callback, $page, $context = 'advanced', $priority = 'default', $callback_args=null) {
+function add_meta_box( $id, $title, $callback, $screen = null, $context = 'advanced', $priority = 'default', $callback_args = null ) {
 	global $wp_meta_boxes;
+
+	if ( empty( $screen ) )
+		$screen = get_current_screen();
+	elseif ( is_string( $screen ) )
+		$screen = convert_to_screen( $screen );
+
+	$page = $screen->id;
 
 	if ( !isset($wp_meta_boxes) )
 		$wp_meta_boxes = array();
@@ -899,7 +849,7 @@ function add_meta_box($id, $title, $callback, $page, $context = 'advanced', $pri
 			// If no priority given and id already present, use existing priority
 			if ( empty($priority) ) {
 				$priority = $a_priority;
-			// else if we're adding to the sorted priortiy, we don't know the title or callback. Glab them from the previously added context/priority.
+			// else if we're adding to the sorted priority, we don't know the title or callback. Grab them from the previously added context/priority.
 			} elseif ( 'sorted' == $priority ) {
 				$title = $wp_meta_boxes[$page][$a_context][$a_priority][$id]['title'];
 				$callback = $wp_meta_boxes[$page][$a_context][$a_priority][$id]['callback'];
@@ -925,16 +875,23 @@ function add_meta_box($id, $title, $callback, $page, $context = 'advanced', $pri
  *
  * @since 2.5.0
  *
- * @param string $page page identifier, also known as screen identifier
+ * @param string|object $screen Screen identifier
  * @param string $context box context
  * @param mixed $object gets passed to the box callback function as first parameter
  * @return int number of meta_boxes
  */
-function do_meta_boxes($page, $context, $object) {
+function do_meta_boxes( $screen, $context, $object ) {
 	global $wp_meta_boxes;
 	static $already_sorted = false;
 
-	$hidden = get_hidden_meta_boxes($page);
+	if ( empty( $screen ) )
+		$screen = get_current_screen();
+	elseif ( is_string( $screen ) )
+		$screen = convert_to_screen( $screen );
+
+	$page = $screen->id;
+
+	$hidden = get_hidden_meta_boxes( $screen );
 
 	printf('<div id="%s-sortables" class="meta-box-sortables">', htmlspecialchars($context));
 
@@ -942,10 +899,12 @@ function do_meta_boxes($page, $context, $object) {
 	do {
 		// Grab the ones the user has manually sorted. Pull them out of their previous context/priority and into the one the user chose
 		if ( !$already_sorted && $sorted = get_user_option( "meta-box-order_$page" ) ) {
-			foreach ( $sorted as $box_context => $ids )
-				foreach ( explode(',', $ids) as $id )
-					if ( $id )
-						add_meta_box( $id, null, null, $page, $box_context, 'sorted' );
+			foreach ( $sorted as $box_context => $ids ) {
+				foreach ( explode(',', $ids ) as $id ) {
+					if ( $id && 'dashboard_browser_nag' !== $id )
+						add_meta_box( $id, null, null, $screen, $box_context, 'sorted' );
+				}
+			}
 		}
 		$already_sorted = true;
 
@@ -961,7 +920,8 @@ function do_meta_boxes($page, $context, $object) {
 					$style = '';
 					$hidden_class = in_array($box['id'], $hidden) ? ' hide-if-js' : '';
 					echo '<div id="' . $box['id'] . '" class="postbox ' . postbox_classes($box['id'], $page) . $hidden_class . '" ' . '>' . "\n";
-					echo '<div class="handlediv" title="' . esc_attr__('Click to toggle') . '"><br /></div>';
+					if ( 'dashboard_browser_nag' != $box['id'] )
+						echo '<div class="handlediv" title="' . esc_attr__('Click to toggle') . '"><br /></div>';
 					echo "<h3 class='hndle'><span>{$box['title']}</span></h3>\n";
 					echo '<div class="inside">' . "\n";
 					call_user_func($box['callback'], $object, $box);
@@ -984,11 +944,18 @@ function do_meta_boxes($page, $context, $object) {
  * @since 2.6.0
  *
  * @param string $id String for use in the 'id' attribute of tags.
- * @param string $page The type of edit page on which to show the box (post, page, link).
+ * @param string|object $screen The screen on which to show the box (post, page, link).
  * @param string $context The context within the page where the boxes should show ('normal', 'advanced').
  */
-function remove_meta_box($id, $page, $context) {
+function remove_meta_box($id, $screen, $context) {
 	global $wp_meta_boxes;
+
+	if ( empty( $screen ) )
+		$screen = get_current_screen();
+	elseif ( is_string( $screen ) )
+		$screen = convert_to_screen( $screen );
+
+	$page = $screen->id;
 
 	if ( !isset($wp_meta_boxes) )
 		$wp_meta_boxes = array();
@@ -999,67 +966,6 @@ function remove_meta_box($id, $page, $context) {
 
 	foreach ( array('high', 'core', 'default', 'low') as $priority )
 		$wp_meta_boxes[$page][$context][$priority][$id] = false;
-}
-
-/**
- * {@internal Missing Short Description}}
- *
- * @since 2.7.0
- *
- * @param unknown_type $screen
- */
-function meta_box_prefs($screen) {
-	global $wp_meta_boxes;
-
-	if ( is_string($screen) )
-		$screen = convert_to_screen($screen);
-
-	if ( empty($wp_meta_boxes[$screen->id]) )
-		return;
-
-	$hidden = get_hidden_meta_boxes($screen);
-
-	foreach ( array_keys($wp_meta_boxes[$screen->id]) as $context ) {
-		foreach ( array_keys($wp_meta_boxes[$screen->id][$context]) as $priority ) {
-			foreach ( $wp_meta_boxes[$screen->id][$context][$priority] as $box ) {
-				if ( false == $box || ! $box['title'] )
-					continue;
-				// Submit box cannot be hidden
-				if ( 'submitdiv' == $box['id'] || 'linksubmitdiv' == $box['id'] )
-					continue;
-				$box_id = $box['id'];
-				echo '<label for="' . $box_id . '-hide">';
-				echo '<input class="hide-postbox-tog" name="' . $box_id . '-hide" type="checkbox" id="' . $box_id . '-hide" value="' . $box_id . '"' . (! in_array($box_id, $hidden) ? ' checked="checked"' : '') . ' />';
-				echo "{$box['title']}</label>\n";
-			}
-		}
-	}
-}
-
-/**
- * Get Hidden Meta Boxes
- *
- * @since 2.7.0
- *
- * @param string|object $screen Screen identifier
- * @return array Hidden Meta Boxes
- */
-function get_hidden_meta_boxes( $screen ) {
-	if ( is_string( $screen ) )
-		$screen = convert_to_screen( $screen );
-
-	$hidden = get_user_option( "metaboxhidden_{$screen->id}" );
-
-	// Hide slug boxes by default
-	if ( !is_array( $hidden ) ) {
-		if ( 'post' == $screen->base || 'page' == $screen->base )
-			$hidden = array('slugdiv', 'trackbacksdiv', 'postcustom', 'postexcerpt', 'commentstatusdiv', 'commentsdiv', 'authordiv', 'revisionsdiv');
-		else
-			$hidden = array( 'slugdiv' );
-		$hidden = apply_filters('default_hidden_meta_boxes', $hidden, $screen);
-	}
-
-	return $hidden;
 }
 
 /**
@@ -1086,8 +992,13 @@ function add_settings_section($id, $title, $callback, $page) {
 	global $wp_settings_sections;
 
 	if ( 'misc' == $page ) {
-		_deprecated_argument( __FUNCTION__, '3.0', __( 'The miscellaneous options group has been removed. Use another settings group.' ) );
+		_deprecated_argument( __FUNCTION__, '3.0', sprintf( __( 'The "%s" options group has been removed. Use another settings group.' ), 'misc' ) );
 		$page = 'general';
+	}
+
+	if ( 'privacy' == $page ) {
+		_deprecated_argument( __FUNCTION__, '3.5', sprintf( __( 'The "%s" options group has been removed. Use another settings group.' ), 'privacy' ) );
+		$page = 'reading';
 	}
 
 	if ( !isset($wp_settings_sections) )
@@ -1108,7 +1019,7 @@ function add_settings_section($id, $title, $callback, $page) {
  * do_settings_fields() in do_settings-sections()
  *
  * The $callback argument should be the name of a function that echoes out the
- * html input tags for this setting field. Use get_option() to retrive existing
+ * html input tags for this setting field. Use get_option() to retrieve existing
  * values to show.
  *
  * @since 2.7.0
@@ -1119,7 +1030,7 @@ function add_settings_section($id, $title, $callback, $page) {
  * @param string $title Formatted title of the field. Shown as the label for the field during output.
  * @param string $callback Function that fills the field with the desired form inputs. The function should echo its output.
  * @param string $page The slug-name of the settings page on which to show the section (general, reading, writing, ...).
- * @param string $section The slug-name of the section of the settingss page in which to show the box (default, ...).
+ * @param string $section The slug-name of the section of the settings page in which to show the box (default, ...).
  * @param array $args Additional arguments
  */
 function add_settings_field($id, $title, $callback, $page, $section = 'default', $args = array()) {
@@ -1128,6 +1039,11 @@ function add_settings_field($id, $title, $callback, $page, $section = 'default',
 	if ( 'misc' == $page ) {
 		_deprecated_argument( __FUNCTION__, '3.0', __( 'The miscellaneous options group has been removed. Use another settings group.' ) );
 		$page = 'general';
+	}
+
+	if ( 'privacy' == $page ) {
+		_deprecated_argument( __FUNCTION__, '3.5', __( 'The privacy options group has been removed. Use another settings group.' ) );
+		$page = 'reading';
 	}
 
 	if ( !isset($wp_settings_fields) )
@@ -1153,19 +1069,23 @@ function add_settings_field($id, $title, $callback, $page, $section = 'default',
  *
  * @param string $page The slug name of the page whos settings sections you want to output
  */
-function do_settings_sections($page) {
+function do_settings_sections( $page ) {
 	global $wp_settings_sections, $wp_settings_fields;
 
-	if ( !isset($wp_settings_sections) || !isset($wp_settings_sections[$page]) )
+	if ( ! isset( $wp_settings_sections ) || !isset( $wp_settings_sections[$page] ) )
 		return;
 
 	foreach ( (array) $wp_settings_sections[$page] as $section ) {
-		echo "<h3>{$section['title']}</h3>\n";
-		call_user_func($section['callback'], $section);
-		if ( !isset($wp_settings_fields) || !isset($wp_settings_fields[$page]) || !isset($wp_settings_fields[$page][$section['id']]) )
+		if ( $section['title'] )
+			echo "<h3>{$section['title']}</h3>\n";
+
+		if ( $section['callback'] )
+			call_user_func( $section['callback'], $section );
+
+		if ( ! isset( $wp_settings_fields ) || !isset( $wp_settings_fields[$page] ) || !isset( $wp_settings_fields[$page][$section['id']] ) )
 			continue;
 		echo '<table class="form-table">';
-		do_settings_fields($page, $section['id']);
+		do_settings_fields( $page, $section['id'] );
 		echo '</table>';
 	}
 }
@@ -1193,7 +1113,7 @@ function do_settings_fields($page, $section) {
 	foreach ( (array) $wp_settings_fields[$page][$section] as $field ) {
 		echo '<tr valign="top">';
 		if ( !empty($field['args']['label_for']) )
-			echo '<th scope="row"><label for="' . $field['args']['label_for'] . '">' . $field['title'] . '</label></th>';
+			echo '<th scope="row"><label for="' . esc_attr( $field['args']['label_for'] ) . '">' . $field['title'] . '</label></th>';
 		else
 			echo '<th scope="row">' . $field['title'] . '</th>';
 		echo '<td>';
@@ -1262,34 +1182,36 @@ function add_settings_error( $setting, $code, $message, $type = 'error' ) {
  * @param boolean $sanitize Whether to re-sanitize the setting value before returning errors.
  * @return array Array of settings errors
  */
-function get_settings_errors( $setting = '', $sanitize = FALSE ) {
+function get_settings_errors( $setting = '', $sanitize = false ) {
 	global $wp_settings_errors;
 
 	// If $sanitize is true, manually re-run the sanitizisation for this option
 	// This allows the $sanitize_callback from register_setting() to run, adding
 	// any settings errors you want to show by default.
 	if ( $sanitize )
-		sanitize_option( $setting, get_option($setting));
+		sanitize_option( $setting, get_option( $setting ) );
 
 	// If settings were passed back from options.php then use them
-	// Ignore transients if $sanitize is true, we dont' want the old values anyway
-	if ( isset($_GET['settings-updated']) && $_GET['settings-updated'] && get_transient('settings_errors') ) {
-		$settings_errors = get_transient('settings_errors');
-		delete_transient('settings_errors');
-	// Otherwise check global in case validation has been run on this pageload
-	} elseif ( count( $wp_settings_errors ) ) {
-		$settings_errors = $wp_settings_errors;
-	} else {
-		return;
+	if ( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] && get_transient( 'settings_errors' ) ) {
+		$wp_settings_errors = array_merge( (array) $wp_settings_errors, get_transient( 'settings_errors' ) );
+		delete_transient( 'settings_errors' );
 	}
+
+	// Check global in case errors have been added on this pageload
+	if ( ! count( $wp_settings_errors ) )
+		return array();
 
 	// Filter the results to those of a specific setting if one was set
 	if ( $setting ) {
-		foreach ( (array) $settings_errors as $key => $details )
-			if ( $setting != $details['setting'] )
-				unset( $settings_errors[$key] );
+		$setting_errors = array();
+		foreach ( (array) $wp_settings_errors as $key => $details ) {
+			if ( $setting == $details['setting'] )
+				$setting_errors[] = $wp_settings_errors[$key];
+		}
+		return $setting_errors;
 	}
-	return $settings_errors;
+
+	return $wp_settings_errors;
 }
 
 /**
@@ -1314,13 +1236,15 @@ function get_settings_errors( $setting = '', $sanitize = FALSE ) {
  * @param boolean $sanitize Whether to re-sanitize the setting value before returning errors.
  * @param boolean $hide_on_update If set to true errors will not be shown if the settings page has already been submitted.
  */
-function settings_errors( $setting = '', $sanitize = FALSE, $hide_on_update = FALSE ) {
+function settings_errors( $setting = '', $sanitize = false, $hide_on_update = false ) {
 
-	if ($hide_on_update AND $_GET['settings-updated']) return;
+	if ( $hide_on_update && ! empty( $_GET['settings-updated'] ) )
+		return;
 
 	$settings_errors = get_settings_errors( $setting, $sanitize );
 
-	if ( !is_array($settings_errors) ) return;
+	if ( empty( $settings_errors ) )
+		return;
 
 	$output = '';
 	foreach ( $settings_errors as $key => $details ) {
@@ -1354,18 +1278,8 @@ function find_posts_div($found_action = '') {
 				<?php wp_nonce_field( 'find-posts', '_ajax_nonce', false ); ?>
 				<label class="screen-reader-text" for="find-posts-input"><?php _e( 'Search' ); ?></label>
 				<input type="text" id="find-posts-input" name="ps" value="" />
-				<input type="button" id="find-posts-search" value="<?php esc_attr_e( 'Search' ); ?>" class="button" /><br />
-
-				<?php
-				$post_types = get_post_types( array('public' => true), 'objects' );
-				foreach ( $post_types as $post ) {
-					if ( 'attachment' == $post->name )
-						continue;
-				?>
-				<input type="radio" name="find-posts-what" id="find-posts-<?php echo esc_attr($post->name); ?>" value="<?php echo esc_attr($post->name); ?>" <?php checked($post->name,  'post'); ?> />
-				<label for="find-posts-<?php echo esc_attr($post->name); ?>"><?php echo $post->label; ?></label>
-				<?php
-				} ?>
+				<span class="spinner"></span>
+				<input type="button" id="find-posts-search" value="<?php esc_attr_e( 'Search' ); ?>" class="button" />
 			</div>
 			<div id="find-posts-response"></div>
 		</div>
@@ -1387,120 +1301,9 @@ function find_posts_div($found_action = '') {
  * @since 2.7.0
  */
 function the_post_password() {
-	global $post;
-	if ( isset( $post->post_password ) ) echo esc_attr( $post->post_password );
-}
-
-/**
- * {@internal Missing Short Description}}
- *
- * @since 2.7.0
- */
-function favorite_actions( $screen = null ) {
-	$default_action = false;
-
-	if ( is_string($screen) )
-		$screen = convert_to_screen($screen);
-
-	if ( $screen->is_user )
-		return;
-
-	if ( isset($screen->post_type) ) {
-		$post_type_object = get_post_type_object($screen->post_type);
-		if ( 'add' != $screen->action )
-			$default_action = array('post-new.php?post_type=' . $post_type_object->name => array($post_type_object->labels->new_item, $post_type_object->cap->edit_posts));
-		else
-			$default_action = array('edit.php?post_type=' . $post_type_object->name => array($post_type_object->labels->name, $post_type_object->cap->edit_posts));
-	}
-
-	if ( !$default_action ) {
-		if ( $screen->is_network ) {
-			$default_action = array('sites.php' => array( __('Sites'), 'manage_sites'));
-		} else {
-			switch ( $screen->id ) {
-				case 'upload':
-					$default_action = array('media-new.php' => array(__('New Media'), 'upload_files'));
-					break;
-				case 'media':
-					$default_action = array('upload.php' => array(__('Edit Media'), 'upload_files'));
-					break;
-				case 'link-manager':
-				case 'link':
-					if ( 'add' != $screen->action )
-						$default_action = array('link-add.php' => array(__('New Link'), 'manage_links'));
-					else
-						$default_action = array('link-manager.php' => array(__('Edit Links'), 'manage_links'));
-					break;
-				case 'users':
-					$default_action = array('user-new.php' => array(__('New User'), 'create_users'));
-					break;
-				case 'user':
-					$default_action = array('users.php' => array(__('Edit Users'), 'edit_users'));
-					break;
-				case 'plugins':
-					$default_action = array('plugin-install.php' => array(__('Install Plugins'), 'install_plugins'));
-					break;
-				case 'plugin-install':
-					$default_action = array('plugins.php' => array(__('Manage Plugins'), 'activate_plugins'));
-					break;
-				case 'themes':
-					$default_action = array('theme-install.php' => array(__('Install Themes'), 'install_themes'));
-					break;
-				case 'theme-install':
-					$default_action = array('themes.php' => array(__('Manage Themes'), 'switch_themes'));
-					break;
-				default:
-					$default_action = array('post-new.php' => array(__('New Post'), 'edit_posts'));
-					break;
-			}
-		}
-	}
-
-	if ( !$screen->is_network ) {
-		$actions = array(
-			'post-new.php' => array(__('New Post'), 'edit_posts'),
-			'edit.php?post_status=draft' => array(__('Drafts'), 'edit_posts'),
-			'post-new.php?post_type=page' => array(__('New Page'), 'edit_pages'),
-			'media-new.php' => array(__('Upload'), 'upload_files'),
-			'edit-comments.php' => array(__('Comments'), 'moderate_comments')
-			);
-	} else {
-		$actions = array(
-			'sites.php' => array( __('Sites'), 'manage_sites'),
-			'users.php' => array( __('Users'), 'manage_network_users')
-		);
-	}
-
-	$default_key = array_keys($default_action);
-	$default_key = $default_key[0];
-	if ( isset($actions[$default_key]) )
-		unset($actions[$default_key]);
-	$actions = array_merge($default_action, $actions);
-	$actions = apply_filters( 'favorite_actions', $actions, $screen );
-
-	$allowed_actions = array();
-	foreach ( $actions as $action => $data ) {
-		if ( current_user_can($data[1]) )
-			$allowed_actions[$action] = $data[0];
-	}
-
-	if ( empty($allowed_actions) )
-		return;
-
-	$first = array_keys($allowed_actions);
-	$first = $first[0];
-	echo '<div id="favorite-actions">';
-	echo '<div id="favorite-first"><a href="' . $first . '">' . $allowed_actions[$first] . '</a></div><div id="favorite-toggle"><br /></div>';
-	echo '<div id="favorite-inside">';
-
-	array_shift($allowed_actions);
-
-	foreach ( $allowed_actions as $action => $label) {
-		echo "<div class='favorite-action'><a href='$action'>";
-		echo $label;
-		echo "</a></div>\n";
-	}
-	echo "</div></div>\n";
+	$post = get_post();
+	if ( isset( $post->post_password ) )
+		echo esc_attr( $post->post_password );
 }
 
 /**
@@ -1510,13 +1313,13 @@ function favorite_actions( $screen = null ) {
  * returned.
  *
  * @since 2.7.0
- * @param int $post_id The post id. If not supplied the global $post is used.
+ * @param mixed $post Post id or object. If not supplied the global $post is used.
  * @return string The post title if set
  */
-function _draft_or_post_title( $post_id = 0 ) {
-	$title = get_the_title($post_id);
-	if ( empty($title) )
-		$title = __('(no title)');
+function _draft_or_post_title( $post = 0 ) {
+	$title = get_the_title( $post );
+	if ( empty( $title ) )
+		$title = __( '(no title)' );
 	return $title;
 }
 
@@ -1544,19 +1347,16 @@ function _admin_search_query() {
  */
 function iframe_header( $title = '', $limit_styles = false ) {
 	show_admin_bar( false );
-	global $hook_suffix, $current_screen, $current_user, $admin_body_class, $wp_locale;
+	global $hook_suffix, $current_user, $admin_body_class, $wp_locale;
 	$admin_body_class = preg_replace('/[^a-z0-9_-]+/i', '-', $hook_suffix);
-	$admin_body_class .= ' iframe';
 
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" <?php do_action('admin_xml_ns'); ?> <?php language_attributes(); ?>>
-<head>
-<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php echo get_option('blog_charset'); ?>" />
+	$current_screen = get_current_screen();
+
+	@header( 'Content-Type: ' . get_option( 'html_type' ) . '; charset=' . get_option( 'blog_charset' ) );
+	_wp_admin_html_begin();
+?>
 <title><?php bloginfo('name') ?> &rsaquo; <?php echo $title ?> &#8212; <?php _e('WordPress'); ?></title>
 <?php
-wp_enqueue_style( 'global' );
-if ( ! $limit_styles )
-	wp_enqueue_style( 'wp-admin' );
 wp_enqueue_style( 'colors' );
 ?>
 <script type="text/javascript">
@@ -1568,9 +1368,9 @@ var userSettings = {
 		'uid': '<?php if ( ! isset($current_user) ) $current_user = wp_get_current_user(); echo $current_user->ID; ?>',
 		'time':'<?php echo time() ?>'
 	},
-	ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>',
+	ajaxurl = '<?php echo admin_url( 'admin-ajax.php', 'relative' ); ?>',
 	pagenow = '<?php echo $current_screen->id; ?>',
-	typenow = '<?php if ( isset($current_screen->post_type) ) echo $current_screen->post_type; ?>',
+	typenow = '<?php echo $current_screen->post_type; ?>',
 	adminpage = '<?php echo $admin_body_class; ?>',
 	thousandsSeparator = '<?php echo addslashes( $wp_locale->number_format['thousands_sep'] ); ?>',
 	decimalPoint = '<?php echo addslashes( $wp_locale->number_format['decimal_point'] ); ?>',
@@ -1585,9 +1385,11 @@ do_action("admin_print_scripts-$hook_suffix");
 do_action('admin_print_scripts');
 do_action("admin_head-$hook_suffix");
 do_action('admin_head');
+
+$admin_body_class .= ' locale-' . sanitize_html_class( strtolower( str_replace( '_', '-', get_locale() ) ) );
 ?>
 </head>
-<body<?php if ( isset($GLOBALS['body_id']) ) echo ' id="' . $GLOBALS['body_id'] . '"'; ?>  class="no-js <?php echo $admin_body_class; ?>">
+<body<?php if ( isset($GLOBALS['body_id']) ) echo ' id="' . $GLOBALS['body_id'] . '"'; ?> class="wp-admin wp-core-ui no-js iframe <?php echo apply_filters( 'admin_body_class', '' ) . ' ' . $admin_body_class; ?>">
 <script type="text/javascript">
 //<![CDATA[
 (function(){
@@ -1621,22 +1423,22 @@ function iframe_footer() {
 
 function _post_states($post) {
 	$post_states = array();
-	if ( isset($_GET['post_status']) )
-		$post_status = $_GET['post_status'];
+	if ( isset( $_REQUEST['post_status'] ) )
+		$post_status = $_REQUEST['post_status'];
 	else
 		$post_status = '';
 
 	if ( !empty($post->post_password) )
-		$post_states[] = __('Password protected');
+		$post_states['protected'] = __('Password protected');
 	if ( 'private' == $post->post_status && 'private' != $post_status )
-		$post_states[] = __('Private');
+		$post_states['private'] = __('Private');
 	if ( 'draft' == $post->post_status && 'draft' != $post_status )
-		$post_states[] = __('Draft');
+		$post_states['draft'] = __('Draft');
 	if ( 'pending' == $post->post_status && 'pending' != $post_status )
 		/* translators: post state */
-		$post_states[] = _x('Pending', 'post state');
+		$post_states['pending'] = _x('Pending', 'post state');
 	if ( is_sticky($post->ID) )
-		$post_states[] = __('Sticky');
+		$post_states['sticky'] = __('Sticky');
 
 	$post_states = apply_filters( 'display_post_states', $post_states );
 
@@ -1655,304 +1457,34 @@ function _post_states($post) {
 		echo ' - <span class="post-state-format">' . get_post_format_string( get_post_format( $post->ID ) ) . '</span>';
 }
 
-/**
- * Convert a screen string to a screen object
- *
- * @since 3.0.0
- *
- * @param string $screen The name of the screen
- * @return object An object containing the safe screen name and id
- */
-function convert_to_screen( $screen ) {
-	$screen = str_replace( array('.php', '-new', '-add', '-network', '-user' ), '', $screen);
+function _media_states( $post ) {
+	$media_states = array();
+	$stylesheet = get_option('stylesheet');
 
-	if ( is_network_admin() )
-		$screen .= '-network';
-	elseif ( is_user_admin() )
-		$screen .= '-user';
-
-	$screen = (string) apply_filters( 'screen_meta_screen', $screen );
-	$screen = (object) array('id' => $screen, 'base' => $screen);
-	return $screen;
-}
-
-function screen_meta($screen) {
-	global $wp_meta_boxes, $_wp_contextual_help, $wp_list_table, $wp_current_screen_options;
-
-	if ( is_string($screen) )
-		$screen = convert_to_screen($screen);
-
-	$columns = get_column_headers( $screen );
-	$hidden = get_hidden_columns( $screen );
-
-	$meta_screens = array('index' => 'dashboard');
-
-	if ( isset($meta_screens[$screen->id]) ) {
-		$screen->id = $meta_screens[$screen->id];
-		$screen->base = $screen->id;
+	if ( current_theme_supports( 'custom-header') ) {
+		$meta_header = get_post_meta($post->ID, '_wp_attachment_is_custom_header', true );
+		if ( ! empty( $meta_header ) && $meta_header == $stylesheet )
+			$media_states[] = __( 'Header Image' );
 	}
 
-	$show_screen = false;
-	if ( !empty($wp_meta_boxes[$screen->id]) || !empty($columns) )
-		$show_screen = true;
-
-	$screen_options = screen_options($screen);
-	if ( $screen_options )
-		$show_screen = true;
-
-	if ( !isset($_wp_contextual_help) )
-		$_wp_contextual_help = array();
-
-	$settings = apply_filters('screen_settings', '', $screen);
-
-	switch ( $screen->id ) {
-		case 'widgets':
-			$settings = '<p><a id="access-on" href="widgets.php?widgets-access=on">' . __('Enable accessibility mode') . '</a><a id="access-off" href="widgets.php?widgets-access=off">' . __('Disable accessibility mode') . "</a></p>\n";
-			$show_screen = true;
-			break;
-	}
-	if ( ! empty( $settings ) )
-		$show_screen = true;
-
-	if ( !empty($wp_current_screen_options) )
-		$show_screen = true;
-
-?>
-<div id="screen-meta">
-<?php if ( $show_screen ) : ?>
-<div id="screen-options-wrap" class="hidden">
-	<form id="adv-settings" action="" method="post">
-	<?php if ( isset($wp_meta_boxes[$screen->id]) ) : ?>
-		<h5><?php _ex('Show on screen', 'Metaboxes') ?></h5>
-		<div class="metabox-prefs">
-			<?php meta_box_prefs($screen); ?>
-			<br class="clear" />
-		</div>
-		<?php endif;
-		if ( ! empty($columns) ) : ?>
-		<h5><?php echo ( isset( $columns['_title'] ) ?  $columns['_title'] :  _x('Show on screen', 'Columns') ) ?></h5>
-		<div class="metabox-prefs">
-<?php
-	$special = array('_title', 'cb', 'comment', 'media', 'name', 'title', 'username', 'blogname');
-
-	foreach ( $columns as $column => $title ) {
-		// Can't hide these for they are special
-		if ( in_array( $column, $special ) )
-			continue;
-		if ( empty( $title ) )
-			continue;
-
-		if ( 'comments' == $column )
-			$title = __( 'Comments' );
-		$id = "$column-hide";
-		echo '<label for="' . $id . '">';
-		echo '<input class="hide-column-tog" name="' . $id . '" type="checkbox" id="' . $id . '" value="' . $column . '"' . checked( !in_array($column, $hidden), true, false ) . ' />';
-		echo "$title</label>\n";
-	}
-?>
-			<br class="clear" />
-		</div>
-	<?php endif;
-	echo screen_layout($screen);
-
-	if ( !empty( $screen_options ) ) {
-		?>
-		<h5><?php _ex('Show on screen', 'Screen Options') ?></h5>
-		<?php
+	if ( current_theme_supports( 'custom-background') ) {
+		$meta_background = get_post_meta($post->ID, '_wp_attachment_is_custom_background', true );
+		if ( ! empty( $meta_background ) && $meta_background == $stylesheet )
+			$media_states[] = __( 'Background Image' );
 	}
 
-	echo $screen_options;
-	echo $settings; ?>
-<div><?php wp_nonce_field( 'screen-options-nonce', 'screenoptionnonce', false ); ?></div>
-</form>
-</div>
+	$media_states = apply_filters( 'display_media_states', $media_states );
 
-<?php endif; // $show_screen
-
-	$_wp_contextual_help = apply_filters('contextual_help_list', $_wp_contextual_help, $screen);
-	?>
-	<div id="contextual-help-wrap" class="hidden">
-	<?php
-	$contextual_help = '';
-	if ( isset($_wp_contextual_help[$screen->id]) ) {
-		$contextual_help .= '<div class="metabox-prefs">' . $_wp_contextual_help[$screen->id] . "</div>\n";
-	} else {
-		$contextual_help .= '<div class="metabox-prefs">';
-		$default_help = __('<a href="http://codex.wordpress.org/" target="_blank">Documentation</a>');
-		$default_help .= '<br />';
-		$default_help .= __('<a href="http://wordpress.org/support/" target="_blank">Support Forums</a>');
-		$contextual_help .= apply_filters('default_contextual_help', $default_help);
-		$contextual_help .= "</div>\n";
+	if ( ! empty( $media_states ) ) {
+		$state_count = count( $media_states );
+		$i = 0;
+		echo ' - ';
+		foreach ( $media_states as $state ) {
+			++$i;
+			( $i == $state_count ) ? $sep = '' : $sep = ', ';
+			echo "<span class='post-state'>$state$sep</span>";
+		}
 	}
-
-	echo apply_filters('contextual_help', $contextual_help, $screen->id, $screen);
-	?>
-	</div>
-
-<div id="screen-meta-links">
-<div id="contextual-help-link-wrap" class="hide-if-no-js screen-meta-toggle">
-<a href="#contextual-help" id="contextual-help-link" class="show-settings"><?php _e('Help') ?></a>
-</div>
-<?php if ( $show_screen ) { ?>
-<div id="screen-options-link-wrap" class="hide-if-no-js screen-meta-toggle">
-<a href="#screen-options" id="show-settings-link" class="show-settings"><?php _e('Screen Options') ?></a>
-</div>
-<?php } ?>
-</div>
-</div>
-<?php
-}
-
-/**
- * Add contextual help text for a page
- *
- * @since 2.7.0
- *
- * @param string $screen The handle for the screen to add help to.  This is usually the hook name returned by the add_*_page() functions.
- * @param string $help Arbitrary help text
- */
-function add_contextual_help($screen, $help) {
-	global $_wp_contextual_help;
-
-	if ( is_string($screen) )
-		$screen = convert_to_screen($screen);
-
-	if ( !isset($_wp_contextual_help) )
-		$_wp_contextual_help = array();
-
-	$_wp_contextual_help[$screen->id] = $help;
-}
-
-function screen_layout($screen) {
-	global $screen_layout_columns, $wp_current_screen_options;
-
-	if ( is_string($screen) )
-		$screen = convert_to_screen($screen);
-
-	// Back compat for plugins using the filter instead of add_screen_option()
-	$columns = apply_filters('screen_layout_columns', array(), $screen->id, $screen);
-	if ( !empty($columns) && isset($columns[$screen->id]) )
-		add_screen_option('layout_columns', array('max' => $columns[$screen->id]) );
-
-	if ( !isset($wp_current_screen_options['layout_columns']) ) {
-		$screen_layout_columns = 0;
-		return '';
-	}
-
-	$screen_layout_columns = get_user_option("screen_layout_$screen->id");
-	$num = $wp_current_screen_options['layout_columns']['max'];
-
-	if ( ! $screen_layout_columns ) {
-		if ( isset($wp_current_screen_options['layout_columns']['default']) )
-			$screen_layout_columns = $wp_current_screen_options['layout_columns']['default'];
-		else
-			$screen_layout_columns = 2;
-	}
-
-	$i = 1;
-	$return = '<h5>' . __('Screen Layout') . "</h5>\n<div class='columns-prefs'>" . __('Number of Columns:') . "\n";
-	while ( $i <= $num ) {
-		$return .= "<label><input type='radio' name='screen_columns' value='$i'" . ( ($screen_layout_columns == $i) ? " checked='checked'" : "" ) . " /> $i</label>\n";
-		++$i;
-	}
-	$return .= "</div>\n";
-	return $return;
-}
-
-/**
- * Register and configure an admin screen option
- *
- * @since 3.1.0
- *
- * @param string $option An option name.
- * @param mixed $args Option dependent arguments
- * @return void
- */
-function add_screen_option( $option, $args = array() ) {
-	global $wp_current_screen_options;
-
-	if ( !isset($wp_current_screen_options) )
-		$wp_current_screen_options = array();
-
-	$wp_current_screen_options[$option] = $args;
-}
-
-function screen_options($screen) {
-	global $wp_current_screen_options;
-
-	if ( is_string($screen) )
-		$screen = convert_to_screen($screen);
-
-	if ( !isset($wp_current_screen_options['per_page']) )
-		return '';
-
-	$per_page_label = $wp_current_screen_options['per_page']['label'];
-
-	if ( empty($wp_current_screen_options['per_page']['option']) ) {
-		$option = str_replace( '-', '_', "{$screen->id}_per_page" );
-	} else {
-		$option = $wp_current_screen_options['per_page']['option'];
-	}
-
-	$per_page = (int) get_user_option( $option );
-	if ( empty( $per_page ) || $per_page < 1 ) {
-		if ( isset($wp_current_screen_options['per_page']['default']) )
-			$per_page = $wp_current_screen_options['per_page']['default'];
-		else
-			$per_page = 20;
-	}
-
-	if ( 'edit_comments_per_page' == $option )
-		$per_page = apply_filters( 'comments_per_page', $per_page, isset($_REQUEST['comment_status']) ? $_REQUEST['comment_status'] : 'all' );
-	elseif ( 'categories_per_page' == $option )
-		$per_page = apply_filters( 'edit_categories_per_page', $per_page );
-	else
-		$per_page = apply_filters( $option, $per_page );
-
-	// Back compat
-	if ( isset( $screen->post_type ) )
-		$per_page = apply_filters( 'edit_posts_per_page', $per_page, $screen->post_type );
-
-	$return = "<div class='screen-options'>\n";
-	if ( !empty($per_page_label) )
-		$return .= "<input type='text' class='screen-per-page' name='wp_screen_options[value]' id='$option' maxlength='3' value='$per_page' /> <label for='$option'>$per_page_label</label>\n";
-	$return .= get_submit_button( __( 'Apply' ), 'button', 'screen-options-apply', false );
-	$return .= "<input type='hidden' name='wp_screen_options[option]' value='" . esc_attr($option) . "' />";
-	$return .= "</div>\n";
-	return $return;
-}
-
-function screen_icon($screen = '') {
-	global $current_screen, $typenow;
-
-	if ( empty($screen) )
-		$screen = $current_screen;
-	elseif ( is_string($screen) )
-		$name = $screen;
-
-	$class = 'icon32';
-
-	if ( empty($name) ) {
-		if ( !empty($screen->parent_base) )
-			$name = $screen->parent_base;
-		else
-			$name = $screen->base;
-
-		if ( 'edit' == $name && isset($screen->post_type) && 'page' == $screen->post_type )
-			$name = 'edit-pages';
-
-		$post_type = '';
-		if ( isset( $screen->post_type ) )
-			$post_type = $screen->post_type;
-		elseif ( $current_screen == $screen )
-			$post_type = $typenow;
-		if ( $post_type )
-			$class .= ' ' . sanitize_html_class( 'icon32-posts-' . $post_type );
-	}
-
-?>
-	<div id="icon-<?php echo $name; ?>" class="<?php echo $class; ?>"><br /></div>
-<?php
 }
 
 /**
@@ -2021,98 +1553,6 @@ function compression_test() {
 }
 
 /**
- *  Get the current screen object
- *
- *  @since 3.1.0
- *
- * @return object Current screen object
- */
-function get_current_screen() {
-	global $current_screen;
-
-	if ( !isset($current_screen) )
-		return null;
-
-	return $current_screen;
-}
-
-/**
- * Set the current screen object
- *
- * @since 3.0.0
- *
- * @uses $current_screen
- *
- * @param string $id Screen id, optional.
- */
-function set_current_screen( $id =  '' ) {
-	global $current_screen, $hook_suffix, $typenow, $taxnow;
-
-	$action = '';
-
-	if ( empty($id) ) {
-		$current_screen = $hook_suffix;
-		$current_screen = str_replace('.php', '', $current_screen);
-		if ( preg_match('/-add|-new$/', $current_screen) )
-			$action = 'add';
-		$current_screen = str_replace('-new', '', $current_screen);
-		$current_screen = str_replace('-add', '', $current_screen);
-		$current_screen = array('id' => $current_screen, 'base' => $current_screen);
-	} else {
-		$id = sanitize_key($id);
-		if ( false !== strpos($id, '-') ) {
-			list( $id, $typenow ) = explode('-', $id, 2);
-			if ( taxonomy_exists( $typenow ) ) {
-				$id = 'edit-tags';
-				$taxnow = $typenow;
-				$typenow = '';
-			}
-		}
-		$current_screen = array('id' => $id, 'base' => $id);
-	}
-
-	$current_screen = (object) $current_screen;
-
-	$current_screen->action = $action;
-
-	// Map index to dashboard
-	if ( 'index' == $current_screen->base )
-		$current_screen->base = 'dashboard';
-	if ( 'index' == $current_screen->id )
-		$current_screen->id = 'dashboard';
-
-	if ( 'edit' == $current_screen->id ) {
-		if ( empty($typenow) )
-			$typenow = 'post';
-		$current_screen->id .= '-' . $typenow;
-		$current_screen->post_type = $typenow;
-	} elseif ( 'post' == $current_screen->id ) {
-		if ( empty($typenow) )
-			$typenow = 'post';
-		$current_screen->id = $typenow;
-		$current_screen->post_type = $typenow;
-	} elseif ( 'edit-tags' == $current_screen->id ) {
-		if ( empty($taxnow) )
-			$taxnow = 'post_tag';
-		$current_screen->id = 'edit-' . $taxnow;
-		$current_screen->taxonomy = $taxnow;
-	}
-
-	$current_screen->is_network = is_network_admin();
-	$current_screen->is_user = is_user_admin();
-
-	if ( $current_screen->is_network ) {
-		$current_screen->base .= '-network';
-		$current_screen->id .= '-network';
-	} elseif ( $current_screen->is_user ) {
-		$current_screen->base .= '-user';
-		$current_screen->id .= '-user';
-	}
-
-	$current_screen = apply_filters('current_screen', $current_screen);
-}
-
-/**
  * Echos a submit button, with provided text and appropriate class
  *
  * @since 3.1.0
@@ -2125,11 +1565,11 @@ function set_current_screen( $id =  '' ) {
  * 			   false otherwise. Defaults to true
  * @param array|string $other_attributes Other attributes that should be output with the button,
  *                     mapping attributes to their values, such as array( 'tabindex' => '1' ).
- *                     These attributes will be ouput as attribute="value", such as tabindex="1".
+ *                     These attributes will be output as attribute="value", such as tabindex="1".
  *                     Defaults to no other attributes. Other attributes can also be provided as a
  *                     string such as 'tabindex="1"', though the array format is typically cleaner.
  */
-function submit_button( $text = NULL, $type = 'primary', $name = 'submit', $wrap = true, $other_attributes = NULL ) {
+function submit_button( $text = null, $type = 'primary', $name = 'submit', $wrap = true, $other_attributes = null ) {
 	echo get_submit_button( $text, $type, $name, $wrap, $other_attributes );
 }
 
@@ -2146,23 +1586,27 @@ function submit_button( $text = NULL, $type = 'primary', $name = 'submit', $wrap
  * 			   false otherwise. Defaults to true
  * @param array|string $other_attributes Other attributes that should be output with the button,
  *                     mapping attributes to their values, such as array( 'tabindex' => '1' ).
- *                     These attributes will be ouput as attribute="value", such as tabindex="1".
+ *                     These attributes will be output as attribute="value", such as tabindex="1".
  *                     Defaults to no other attributes. Other attributes can also be provided as a
  *                     string such as 'tabindex="1"', though the array format is typically cleaner.
  */
-function get_submit_button( $text = NULL, $type = 'primary', $name = 'submit', $wrap = true, $other_attributes = NULL ) {
-	switch ( $type ) :
-		case 'primary' :
-		case 'secondary' :
-			$class = 'button-' . $type;
-			break;
-		case 'delete' :
-			$class = 'button-secondary delete';
-			break;
-		default :
-			$class = $type; // Custom cases can just pass in the classes they want to be used
-	endswitch;
-	$text = ( NULL == $text ) ? __( 'Save Changes' ) : $text;
+function get_submit_button( $text = null, $type = 'primary large', $name = 'submit', $wrap = true, $other_attributes = null ) {
+	if ( ! is_array( $type ) )
+		$type = explode( ' ', $type );
+
+	$button_shorthand = array( 'primary', 'small', 'large' );
+	$classes = array( 'button' );
+	foreach ( $type as $t ) {
+		if ( 'secondary' === $t || 'button-secondary' === $t )
+			continue;
+		$classes[] = in_array( $t, $button_shorthand ) ? 'button-' . $t : $t;
+	}
+	$class = implode( ' ', array_unique( $classes ) );
+
+	if ( 'delete' === $type )
+		$class = 'button-secondary delete';
+
+	$text = $text ? $text : __( 'Save Changes' );
 
 	// Default the id attribute to $name unless an id was specifically provided in $other_attributes
 	$id = $name;
@@ -2190,3 +1634,234 @@ function get_submit_button( $text = NULL, $type = 'primary', $name = 'submit', $
 	return $button;
 }
 
+function _wp_admin_html_begin() {
+	$admin_html_class = ( is_admin_bar_showing() ) ? 'wp-toolbar' : '';
+?>
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html xmlns="http://www.w3.org/1999/xhtml" class="ie8 <?php echo $admin_html_class; ?>" <?php do_action('admin_xml_ns'); ?> <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if !(IE 8) ]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" class="<?php echo $admin_html_class; ?>" <?php do_action('admin_xml_ns'); ?> <?php language_attributes(); ?>>
+<!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php echo get_option('blog_charset'); ?>" />
+<?php
+}
+
+final class WP_Internal_Pointers {
+	/**
+	 * Initializes the new feature pointers.
+	 *
+	 * @since 3.3.0
+	 *
+	 * All pointers can be disabled using the following:
+	 *     remove_action( 'admin_enqueue_scripts', array( 'WP_Internal_Pointers', 'enqueue_scripts' ) );
+	 *
+	 * Individual pointers (e.g. wp330_toolbar) can be disabled using the following:
+	 *     remove_action( 'admin_print_footer_scripts', array( 'WP_Internal_Pointers', 'pointer_wp330_toolbar' ) );
+	 */
+	public static function enqueue_scripts( $hook_suffix ) {
+		/*
+		 * Register feature pointers
+		 * Format: array( hook_suffix => pointer_id )
+		 */
+
+		$registered_pointers = array(
+			'index.php'    => 'wp330_toolbar',
+			'post-new.php' => 'wp350_media',
+			'post.php'     => 'wp350_media',
+			'themes.php'   => array( 'wp330_saving_widgets', 'wp340_customize_current_theme_link' ),
+			'appearance_page_custom-header' => 'wp340_choose_image_from_library',
+			'appearance_page_custom-background' => 'wp340_choose_image_from_library',
+		);
+
+		// Check if screen related pointer is registered
+		if ( empty( $registered_pointers[ $hook_suffix ] ) )
+			return;
+
+		$pointers = (array) $registered_pointers[ $hook_suffix ];
+
+		$caps_required = array(
+			'wp330_saving_widgets' => array( 'edit_theme_options', 'switch_themes' ),
+			'wp340_customize_current_theme_link' => array( 'edit_theme_options' ),
+			'wp340_choose_image_from_library' => array( 'edit_theme_options' ),
+			'wp350_media' => array( 'upload_files' ),
+		);
+
+		// Get dismissed pointers
+		$dismissed = explode( ',', (string) get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) );
+
+		$got_pointers = false;
+		foreach ( array_diff( $pointers, $dismissed ) as $pointer ) {
+			if ( isset( $caps_required[ $pointer ] ) ) {
+				foreach ( $caps_required[ $pointer ] as $cap ) {
+					if ( ! current_user_can( $cap ) )
+						continue 2;
+				}
+			}
+
+			// Bind pointer print function
+			add_action( 'admin_print_footer_scripts', array( 'WP_Internal_Pointers', 'pointer_' . $pointer ) );
+			$got_pointers = true;
+		}
+
+		if ( ! $got_pointers )
+			return;
+
+		// Add pointers script and style to queue
+		wp_enqueue_style( 'wp-pointer' );
+		wp_enqueue_script( 'wp-pointer' );
+	}
+
+	/**
+	 * Print the pointer javascript data.
+	 *
+	 * @since 3.3.0
+	 *
+	 * @param string $pointer_id The pointer ID.
+	 * @param string $selector The HTML elements, on which the pointer should be attached.
+	 * @param array  $args Arguments to be passed to the pointer JS (see wp-pointer.js).
+	 */
+	private static function print_js( $pointer_id, $selector, $args ) {
+		if ( empty( $pointer_id ) || empty( $selector ) || empty( $args ) || empty( $args['content'] ) )
+			return;
+
+		?>
+		<script type="text/javascript">
+		//<![CDATA[
+		(function($){
+			var options = <?php echo json_encode( $args ); ?>, setup;
+
+			if ( ! options )
+				return;
+
+			options = $.extend( options, {
+				close: function() {
+					$.post( ajaxurl, {
+						pointer: '<?php echo $pointer_id; ?>',
+						action: 'dismiss-wp-pointer'
+					});
+				}
+			});
+
+			setup = function() {
+				$('<?php echo $selector; ?>').pointer( options ).pointer('open');
+			};
+
+			if ( options.position && options.position.defer_loading )
+				$(window).bind( 'load.wp-pointers', setup );
+			else
+				$(document).ready( setup );
+
+		})( jQuery );
+		//]]>
+		</script>
+		<?php
+	}
+
+	public static function pointer_wp330_toolbar() {
+		$content  = '<h3>' . __( 'New Feature: Toolbar' ) . '</h3>';
+		$content .= '<p>' .  __( 'We&#8217;ve combined the admin bar and the old Dashboard header into one persistent toolbar. Hover over the toolbar items to see what&#8217;s new.' ) . '</p>';
+
+		if ( is_multisite() && is_super_admin() )
+			$content .= '<p>' . __( 'Network Admin is now located in the My Sites menu.' ) . '</p>';
+
+		WP_Internal_Pointers::print_js( 'wp330_toolbar', '#wpadminbar', array(
+			'content'  => $content,
+			'position' => array( 'edge' => 'top', 'align' => 'center' ),
+		) );
+	}
+
+	/**
+	 * Print 'Updated Media Uploader' for 3.3.0.
+	 *
+	 * @since 3.3.0
+	 */
+	public static function pointer_wp330_media_uploader() {}
+
+	/**
+	 * Print 'New Feature: Saving Widgets' for 3.3.0.
+	 *
+	 * @since 3.3.0
+	 */
+	public static function pointer_wp330_saving_widgets() {
+		$content  = '<h3>' . __( 'New Feature: Saving Widgets' ) . '</h3>';
+		$content .= '<p>' . __( 'If you change your mind and revert to your previous theme, we&#8217;ll put the widgets back the way you had them.' ) . '</p>';
+
+		WP_Internal_Pointers::print_js( 'wp330_saving_widgets', '#message2', array(
+			'content'  => $content,
+			'position' => array( 'edge' => 'top', 'align' => is_rtl() ? 'right' : 'left' ),
+		) );
+	}
+
+	/**
+	 * Print 'New Feature: Current Theme Customize Link' for 3.4.0.
+	 *
+	 * @since 3.4.0
+	 */
+	public static function pointer_wp340_customize_current_theme_link() {
+		$content  = '<h3>' . __( 'New Feature: Customizer' ) . '</h3>';
+		$content .= '<p>' . __( 'Click Customize to change the header, background, title and menus of the current theme, all in one place.' ) . '</p>';
+		$content .= '<p>' . __( 'Click the Live Preview links in the Available Themes list below to customize and preview another theme before activating it.' ) . '</p>';
+
+		WP_Internal_Pointers::print_js( 'wp340_customize_current_theme_link', '#customize-current-theme-link', array(
+			'content'  => $content,
+			'position' => array( 'edge' => 'top', 'align' => is_rtl() ? 'right' : 'left', 'offset' => is_rtl() ? '32 0' : '-32 0' ),
+		) );
+	}
+
+	/**
+	 * Print 'New Feature: Choose Image from Library' for 3.4.0.
+	 *
+	 * @since 3.4.0
+	 */
+	public static function pointer_wp340_choose_image_from_library() {
+		$content  = '<h3>' . __( 'New Feature: Choose Image from Library' ) . '</h3>';
+		$content .= '<p>' . __( 'Want to use an image you uploaded earlier? Select it from your media library instead of uploading it again.' ) . '</p>';
+
+		WP_Internal_Pointers::print_js( 'wp340_choose_image_from_library', '#choose-from-library-link', array(
+			'content'  => $content,
+			'position' => array( 'edge' => 'top', 'align' => is_rtl() ? 'right' : 'left', 'defer_loading' => true ),
+		) );
+	}
+
+	public static function pointer_wp350_media() {
+		$content  = '<h3>' . __( 'New Media Manager' ) . '</h3>';
+		$content .= '<p>' . __( 'Uploading files and creating image galleries has a whole new look. Check it out!' ) . '</p>';
+
+		self::print_js( 'wp350_media', '.insert-media', array(
+			'content'  => $content,
+			'position' => array( 'edge' => is_rtl() ? 'right' : 'left', 'align' => 'center' ),
+		) );
+	}
+
+	/**
+	 * Prevents new users from seeing existing 'new feature' pointers.
+	 *
+	 * @since 3.3.0
+	 */
+	public static function dismiss_pointers_for_new_users( $user_id ) {
+		add_user_meta( $user_id, 'dismissed_wp_pointers', 'wp330_toolbar,wp330_saving_widgets,wp340_choose_image_from_library,wp340_customize_current_theme_link,wp350_media' );
+	}
+}
+
+add_action( 'admin_enqueue_scripts', array( 'WP_Internal_Pointers', 'enqueue_scripts'                ) );
+add_action( 'user_register',         array( 'WP_Internal_Pointers', 'dismiss_pointers_for_new_users' ) );
+
+/**
+ * Convert a screen string to a screen object
+ *
+ * @since 3.0.0
+ *
+ * @param string $hook_name The hook name (also known as the hook suffix) used to determine the screen.
+ * @return WP_Screen Screen object.
+ */
+function convert_to_screen( $hook_name ) {
+	if ( ! class_exists( 'WP_Screen' ) ) {
+		_doing_it_wrong( 'convert_to_screen(), add_meta_box()', __( "Likely direct inclusion of wp-admin/includes/template.php in order to use add_meta_box(). This is very wrong. Hook the add_meta_box() call into the add_meta_boxes action instead." ), '3.3' );
+		return (object) array( 'id' => '_invalid', 'base' => '_are_belong_to_us' );
+	}
+
+	return WP_Screen::get( $hook_name );
+}

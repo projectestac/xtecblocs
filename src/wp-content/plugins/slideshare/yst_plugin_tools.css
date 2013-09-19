@@ -73,3 +73,14 @@ div.inside .button:hover, div.inside .button-primary:hover {
 #yoast-icon {
 	background: url(images/yoast-32x32.png) top left no-repeat;
 }
+
+strong.red {
+	color: green;
+	font-weight: bold;
+	font-size: 105%;
+}
+
+.postbox#donate {
+	border-color: green;
+	border-width: 2px;
+}

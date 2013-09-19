@@ -2,7 +2,7 @@
 /**
  * Class for working with PO files
  *
- * @version $Id: po.php 406 2010-02-07 11:10:24Z nbachiyski $
+ * @version $Id: po.php 718 2012-10-31 00:32:02Z nbachiyski $
  * @package pomo
  * @subpackage po
  */
@@ -19,6 +19,7 @@ ini_set('auto_detect_line_endings', 1);
 if ( !class_exists( 'PO' ) ):
 class PO extends Gettext_Translations {
 
+	var $comments_before_headers = '';
 
 	/**
 	 * Exports headers to a PO entry
@@ -31,7 +32,11 @@ class PO extends Gettext_Translations {
 			$header_string.= "$header: $value\n";
 		}
 		$poified = PO::poify($header_string);
-		return rtrim("msgid \"\"\nmsgstr $poified");
+		if ($this->comments_before_headers)
+			$before_headers = $this->prepend_each_line(rtrim($this->comments_before_headers)."\n", '# ');
+		else
+			$before_headers = '';
+		return rtrim("{$before_headers}msgid \"\"\nmsgstr $poified");
 	}
 
 	/**
@@ -74,6 +79,15 @@ class PO extends Gettext_Translations {
 		$res = fwrite($fh, $export);
 		if (false === $res) return false;
 		return fclose($fh);
+	}
+
+	/**
+	 * Text to include as a comment before the start of the PO contents
+	 *
+	 * Doesn't need to include # in the beginning of lines, these are added automatically
+	 */
+	function set_comment_before_headers( $text ) {
+		$this->comments_before_headers = $text;
 	}
 
 	/**
@@ -215,7 +229,13 @@ class PO extends Gettext_Translations {
 			}
 		}
 		PO::read_line($f, 'clear');
-		return $res !== false;
+		if ( false === $res ) {
+			return false;
+		}
+		if ( ! $this->headers && ! $this->entries ) {
+			return false;
+		}
+		return true;
 	}
 
 	function read_entry($f, $lineno = 0) {
@@ -254,7 +274,7 @@ class PO extends Gettext_Translations {
 					return false;
 				}
 				// add comment
-				$this->add_comment_to_entry($entry, $line);
+				$this->add_comment_to_entry($entry, $line);;
 			} elseif (preg_match('/^msgctxt\s+(".*")/', $line, $m)) {
 				if ($is_final($context)) {
 					PO::read_line($f, 'put-back');
@@ -335,6 +355,7 @@ class PO extends Gettext_Translations {
 			return true;
 		}
 		$line = $use_last_line? $last_line : fgets($f);
+		$line = ( "\r\n" == substr( $line, -2 ) ) ? rtrim( $line, "\r\n" ) . "\n" : $line;
 		$last_line = $line;
 		$use_last_line = false;
 		return $line;

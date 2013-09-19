@@ -3,7 +3,7 @@
  * The template for displaying Comments.
  *
  * The area of the page that contains both current comments
- * and the comment form.  The actual display of comments is
+ * and the comment form. The actual display of comments is
  * handled by a callback to twentyten_comment which is
  * located in the functions.php file.
  *
@@ -62,15 +62,13 @@
 			</div><!-- .navigation -->
 <?php endif; // check for comment navigation ?>
 
-<?php else : // or, if we don't have comments:
-
-	/* If there are no comments and comments are closed,
-	 * let's leave a little note, shall we?
+	<?php
+	/* If there are no comments and comments are closed, let's leave a little note, shall we?
+	 * But we only want the note on posts and pages that had comments in the first place.
 	 */
-	if ( ! comments_open() ) :
-?>
-	<p class="nocomments"><?php _e( 'Comments are closed.', 'twentyten' ); ?></p>
-<?php endif; // end ! comments_open() ?>
+	if ( ! comments_open() && get_comments_number() ) : ?>
+		<p class="nocomments"><?php _e( 'Comments are closed.' , 'twentyten' ); ?></p>
+	<?php endif;  ?>
 
 <?php endif; // end have_comments() ?>
 

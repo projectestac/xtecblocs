@@ -32,7 +32,8 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 			'fields' => 'all_with_meta'
 		);
 
-		$args['search'] = ltrim($args['search'], '*');
+		if ( wp_is_large_network( 'users' ) )
+			$args['search'] = ltrim( $args['search'], '*' );
 
 		if ( $role == 'super' ) {
 			$logins = implode( "', '", get_super_admins() );
@@ -41,7 +42,7 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 
 		// If the network is large and a search is not being performed, show only the latest users with no paging in order
 		// to avoid expensive count queries.
-		if ( !$usersearch && ( get_blog_count() >= 10000 ) ) {
+		if ( !$usersearch && wp_is_large_network( 'users' ) ) {
 			if ( !isset($_REQUEST['orderby']) )
 				$_GET['orderby'] = $_REQUEST['orderby'] = 'id';
 			if ( !isset($_REQUEST['order']) )
@@ -161,10 +162,10 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 
 				$attributes = "$class$style";
 
-
 				switch ( $column_name ) {
 					case 'cb': ?>
 						<th scope="row" class="check-column">
+							<label class="screen-reader-text" for="blog_<?php echo $user->ID; ?>"><?php echo sprintf( __( 'Select %s' ), $user->user_login ); ?></label>
 							<input type="checkbox" id="blog_<?php echo $user->ID ?>" name="allusers[]" value="<?php echo esc_attr( $user->ID ) ?>" />
 						</th>
 					<?php
@@ -172,11 +173,7 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 
 					case 'username':
 						$avatar	= get_avatar( $user->user_email, 32 );
-						if ( get_current_user_id() == $user->ID ) {
-							$edit_link = esc_url( network_admin_url( 'profile.php' ) );
-						} else {
-							$edit_link = esc_url( network_admin_url( add_query_arg( 'wp_http_referer', urlencode( stripslashes( $_SERVER['REQUEST_URI'] ) ), 'user-edit.php?user_id=' . $user->ID ) ) );
-						}
+						$edit_link = esc_url( add_query_arg( 'wp_http_referer', urlencode( stripslashes( $_SERVER['REQUEST_URI'] ) ), get_edit_user_link( $user->ID ) ) );
 
 						echo "<td $attributes>"; ?>
 							<?php echo $avatar; ?><strong><a href="<?php echo $edit_link; ?>" class="edit"><?php echo stripslashes( $user->user_login ); ?></a><?php
@@ -188,10 +185,11 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 								$actions = array();
 								$actions['edit'] = '<a href="' . $edit_link . '">' . __( 'Edit' ) . '</a>';
 
-								if ( current_user_can( 'delete_user', $user->ID) && ! in_array( $user->user_login, $super_admins ) ) {
-									$actions['delete'] = '<a href="' . $delete = esc_url( network_admin_url( add_query_arg( '_wp_http_referer', urlencode( stripslashes( $_SERVER['REQUEST_URI'] ) ), wp_nonce_url( 'edit.php', 'deleteuser' ) . '&amp;action=deleteuser&amp;id=' . $user->ID ) ) ) . '" class="delete">' . __( 'Delete' ) . '</a>';
+								if ( current_user_can( 'delete_user', $user->ID ) && ! in_array( $user->user_login, $super_admins ) ) {
+									$actions['delete'] = '<a href="' . $delete = esc_url( network_admin_url( add_query_arg( '_wp_http_referer', urlencode( stripslashes( $_SERVER['REQUEST_URI'] ) ), wp_nonce_url( 'users.php', 'deleteuser' ) . '&amp;action=deleteuser&amp;id=' . $user->ID ) ) ) . '" class="delete">' . __( 'Delete' ) . '</a>';
 								}
 
+								$actions = apply_filters( 'ms_user_row_actions', $actions, $user );
 								echo $this->row_actions( $actions );
 							?>
 						</td>
@@ -240,7 +238,7 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 									if ( get_blog_status( $val->userblog_id, 'archived' ) == 1 )
 										$class .= 'site-archived ';
 
-									$actions['view'] = '<a class="' . $class . '" href="' .  esc_url( get_home_url( $val->userblog_id ) )  . '">' . __( 'View' ) . '</a>';
+									$actions['view'] = '<a class="' . $class . '" href="' . esc_url( get_home_url( $val->userblog_id ) ) . '">' . __( 'View' ) . '</a>';
 
 									$actions = apply_filters('ms_user_list_site_actions', $actions, $val->userblog_id);
 
@@ -272,5 +270,3 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 		}
 	}
 }
-
-?>

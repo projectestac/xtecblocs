@@ -1,210 +1,190 @@
-# Translation of Development (trunk) in Catalan
-# This file is distributed under the same license as the Development (trunk) package.
+# Copyright (C) 2012 Blogger Importer
+# This file is distributed under the same license as the Blogger Importer package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2011-08-29 11:14+0100\n"
+"Project-Id-Version: Blogger Importer 0.5\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/blogger-importer\n"
+"POT-Creation-Date: 2012-06-13 16:29:40+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/0.1\n"
-"Project-Id-Version: Development (trunk)\n"
-"POT-Creation-Date: \n"
-"Last-Translator: Francesc Bassas i Bullich\n"
+"PO-Revision-Date: 2013-07-08 13:22+0100\n"
+"Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
 "Language-Team: \n"
 
-#: blogger-importer.php:68
+#: blogger-importer.php:101
 msgid "Import Blogger"
-msgstr "Importa des del Blogger"
+msgstr "Importació Blogger"
 
-#: blogger-importer.php:69
+#: blogger-importer.php:102
 msgid "Howdy! This importer allows you to import posts and comments from your Blogger account into your WordPress site."
-msgstr "Aquest importador us permet importat les entrades i els comentaris des d'un compte del Blogger al lloc web del WordPress."
+msgstr "Hola! Aquest importador us permet importar missatges i comentaris del seu compte de Blogger al seu lloc de WordPress."
 
-#: blogger-importer.php:70
+#: blogger-importer.php:103
 msgid "To use this importer, you must have a Google account and an upgraded (New, was Beta) blog hosted on blogspot.com or a custom domain (not FTP)."
-msgstr "Per a usar aquest importador, heu de tenir un compte de Google i un bloc actualitzat (dels nous, abans anomenats Beta) que ha d'estar a blogspot.com o en un domini propi (no FTP)."
+msgstr "Per utilitzar aquest importador, heu de tenir un compte de Google i una versió millorada (New, was Beta) de bloc allotjat a blogspot.com o un domini personalitzat (no FTP)."
 
-#: blogger-importer.php:71
+#: blogger-importer.php:104
 msgid "The first thing you need to do is tell Blogger to let WordPress access your account. You will be sent back here after providing authorization."
-msgstr "El primer que heu de fer és dir a Blogger que deixi al WordPress accedir al vostre compte. Sereu redirigits altre cop cap aquí després de fer l'autorització."
+msgstr "El primer que cal fer és dir-li a Blogger que deixi a WordPress accedir al seu compte. Retornarà aquí després de donar l'autorització."
 
-#: blogger-importer.php:72
+#: blogger-importer.php:105
 msgid "Authorize"
-msgstr "Autoritza"
-
-#: blogger-importer.php:111
-msgid "Authorization failed"
-msgstr "Ha fallat l'autenticació "
-
-#: blogger-importer.php:112
-msgid "Something went wrong. If the problem persists, send this info to support:"
-msgstr "Hi ha hagut un problema tècnic. Si persisteix, envieu aquesta informació al suport:"
-
-#: blogger-importer.php:169
-msgid "Trouble signing in"
-msgstr "Hi ha hagut un problema intentant entrar al compte d'usuari"
-
-#: blogger-importer.php:170
-msgid "We were not able to gain access to your account. Try starting over."
-msgstr "No ha estat possible accedir al vostre compte. Torneu-ho a provar."
-
-#: blogger-importer.php:208
-msgid "No blogs found"
-msgstr "No s'ha trobat cap bloc"
-
-#: blogger-importer.php:209
-msgid "We were able to log in but there were no blogs. Try a different account next time."
-msgstr "Hem tingut accés però no hi ha cap bloc. Proveu-ho amb un altre compte."
-
-#: blogger-importer.php:216
-msgid "Import"
-msgstr "Importa"
-
-#: blogger-importer.php:217
-msgid "Continue"
-msgstr "Continua"
-
-#: blogger-importer.php:218
-msgid "Importing..."
-msgstr "S'està important..."
-
-#: blogger-importer.php:219
-msgid "Set Authors"
-msgstr "Determina els autors"
-
-#: blogger-importer.php:220
-msgid "Preparing author mapping form..."
-msgstr "S'està preparant el formulari de correspondència d'autors..."
-
-#: blogger-importer.php:221
-msgid "Final Step: Author Mapping"
-msgstr "L'últim pas: Correspondència d'autors"
-
-#: blogger-importer.php:222
-msgid "Nothing was imported. Had you already imported this blog?"
-msgstr "No s'ha importat res. Potser ja havíeu importat aquest bloc?"
-
-#: blogger-importer.php:224
-msgid "Blogger Blogs"
-msgstr "Blocs de Blogger"
+msgstr "Autoritzar"
 
 #: blogger-importer.php:225
+msgid "Trouble signing in"
+msgstr "Problemes per registrar-se"
+
+#: blogger-importer.php:225
+msgid "We were not able to gain access to your account. Try starting over."
+msgstr "No hem estat capaços d'obtenir accés al seu compte. Proveu a començar de nou."
+
+#: blogger-importer.php:267
+msgid "No blogs found"
+msgstr "No s'han trobat blogs"
+
+#: blogger-importer.php:267
+msgid "We were able to log in but there were no blogs. Try a different account next time."
+msgstr "Hem estat capaços de connectar però no hi havia blocs. Proveu amb un compte diferent la propera vegada."
+
+#: blogger-importer.php:275
+msgid "Import"
+msgstr "Importar"
+
+#: blogger-importer.php:276
+msgid "Continue"
+msgstr "Continuar"
+
+#: blogger-importer.php:277
+msgid "Importing..."
+msgstr "Important..."
+
+#: blogger-importer.php:278
+msgid "Set Authors"
+msgstr "Definir autors"
+
+#: blogger-importer.php:279
+msgid "Preparing author mapping form..."
+msgstr "Preparant la correspondencia d'autors de..."
+
+#: blogger-importer.php:280
+msgid "Final Step: Author Mapping"
+msgstr "Pas final: Correspondència d'autors"
+
+#: blogger-importer.php:281
+msgid "Nothing was imported. Had you already imported this blog?"
+msgstr "No s'ha importat res. Ja havia importat aquest blog?"
+
+#: blogger-importer.php:283
+msgid "Blogger Blogs"
+msgstr "Blogs de Blogger"
+
+#: blogger-importer.php:284
 msgid "Blog Name"
-msgstr "Nom del bloc"
+msgstr "Nom del blog"
 
-#: blogger-importer.php:226
+#: blogger-importer.php:285
 msgid "Blog URL"
-msgstr "URL del bloc"
+msgstr "URL del blog"
 
-#: blogger-importer.php:227
+#: blogger-importer.php:286
 msgid "The Magic Button"
-msgstr "El botó màgic"
+msgstr "Botò màgic"
 
-#: blogger-importer.php:228
+#: blogger-importer.php:287
 msgid "Posts"
 msgstr "Entrades"
 
-#: blogger-importer.php:229
+#: blogger-importer.php:288
 msgid "Comments"
 msgstr "Comentaris"
 
-#: blogger-importer.php:230
+#: blogger-importer.php:289
 msgid "This feature requires Javascript but it seems to be disabled. Please enable Javascript and then reload this page. Don&#8217;t worry, you can turn it back off when you&#8217;re done."
-msgstr "Aquesta opció requereix Javascript, que sembla estar desactivat. Si us plau activeu el Javascript i torneu a carregar aquesta pàgina. No us preocupeu, podeu tornar a desactivar-lo després."
+msgstr "Aquesta funció requereix Javascript però sembla estar deshabilitat. Si us plau, activeu el Javascript i torneu a carregar la pàgina. No es preocupi, pot tornar-ho a desactivar quan hagi acabat."
 
-#: blogger-importer.php:685
+#: blogger-importer.php:858
 msgid "All posts were imported with the current user as author. Use this form to move each Blogger user&#8217;s posts to a different WordPress user. You may <a href=\"%s\">add users</a> and then return to this page and complete the user mapping. This form may be used as many times as you like until you activate the &#8220;Restart&#8221; function below."
-msgstr "Totes les entrades s'han importat amb l'actual usuari com a autor. Feu servir aquest formulari per moure cada entrada de l'usuari del Blogger a un diferent usuari del WordPress. Podeu <a href=\"%s\">afegir usuaris</a> i aleshores tornar a aquesta pàgina i completar el mapa d'usuaris. Aquest formulari es pot fer servir tantes vegades com vulgueu fins que activeu la funció &#8220;Reinicia#8221; d'aquí sota."
+msgstr "Tots els missatges han estat importats amb l'usuari actual com a autor. Utilitzeu aquest formulari per moure els missatges de cada usuari de Blogger a un usuari diferent de WordPress . Vostè pot <a href=\"%s\"> afegir usuaris </ a> i després tornar a aquesta pàgina i completar l'assignació d'usuari. Aquest formulari es pot utilitzar tantes vegades com vulgui fins que s'activi la funció \"Reinicia\" següent."
 
-#: blogger-importer.php:686
+#: blogger-importer.php:860
 msgid "Author mapping"
 msgstr "Correspondència d'autors"
 
-#: blogger-importer.php:688
-msgid "Blogger username"
-msgstr "Nom d'usuari de Blogger"
-
-#: blogger-importer.php:689
-msgid "WordPress login"
-msgstr "Compte d'usuari de WordPress"
-
-#: blogger-importer.php:690
-msgid "Save Changes"
-msgstr "Desa els canvis"
-
-#: blogger-importer.php:747
-msgid "Could not connect to https://www.google.com"
-msgstr "No s'ha pogut connectar amb https://www.google.com"
-
-#: blogger-importer.php:748
-msgid "There was a problem opening a secure connection to Google. This is what went wrong:"
-msgstr "Hi ha hagut un problema obrint una connexió segura amb Google. Això ha fallat:"
-
-#: blogger-importer.php:759
-msgid "Could not connect to %s"
-msgstr "No s'ha pogut connectar amb %s"
-
-#: blogger-importer.php:760
-msgid "There was a problem opening a connection to Blogger. This is what went wrong:"
-msgstr "Hi ha hagut un problema obrint una connexió amb Blogger. Això ha fallat:"
-
-#: blogger-importer.php:826
-msgid "Congratulations!"
-msgstr "Enhorabona!"
-
-#: blogger-importer.php:826
-msgid "Now that you have imported your Blogger blog into WordPress, what are you going to do? Here are some suggestions:"
-msgstr "Ara que heu importat el bloc del Blogger al WordPress, Què penseu fer? Alguns suggeriments:"
-
-#: blogger-importer.php:826
-msgid "That was hard work! Take a break."
-msgstr "Ha estat una feinada! Descanseu."
-
-#: blogger-importer.php:828
-msgid "In case you haven&#8217;t done it already, you can import the posts from your other blogs:"
-msgstr "Si encara no ho heu fet, podeu importar les entrades dels vostres blocs:"
-
-#: blogger-importer.php:830
-msgid "Go to <a href=\"%s\" target=\"%s\">Authors &amp; Users</a>, where you can modify the new user(s) or delete them. If you want to make all of the imported posts yours, you will be given that option when you delete the new authors."
-msgstr "Aneu a <a href=\"%s\" target=\"%s\">Autors i Usuaris</a>, on podreu modificar els nous usuaris o suprimir-los. Si voleu assignar-vos totes les entrades importats, s'us donarà l'opció quan elimineu els nous autors."
-
-#: blogger-importer.php:831
-msgid "For security, click the link below to reset this importer."
-msgstr "Per seguretat, cliqueu el següent enllaç per restablir l'importador."
-
 #: blogger-importer.php:862
-msgid "Restart"
-msgstr "Reinicia"
+msgid "Blogger username"
+msgstr "Ususari de Blogger"
 
 #: blogger-importer.php:863
-msgid "We have saved some information about your Blogger account in your WordPress database. Clearing this information will allow you to start over. Restarting will not affect any posts you have already imported. If you attempt to re-import a blog, duplicate posts and comments will be skipped."
-msgstr "Hem registrat informacions sobre el vostre compte de Blogger a la vostra base de dades del WordPress. Eliminant aquesta informació us permet reiniciar el procés. Reiniciar no afectarà les entrades que ja heu importat. Si proveu de re-importar un bloc, les entrades i comentaris duplicats se saltaran."
+msgid "WordPress login"
+msgstr "Registre de WordPress"
 
 #: blogger-importer.php:864
-msgid "Clear account information"
-msgstr "Elimina la informació del compte"
+msgid "Save Changes"
+msgstr "Desar canvis"
 
-#: blogger-importer.php:914
+#: blogger-importer.php:941
+msgid "Congratulations!"
+msgstr "Felicitats!"
+
+#: blogger-importer.php:941
+msgid "Now that you have imported your Blogger blog into WordPress, what are you going to do? Here are some suggestions:"
+msgstr "Ara que ha importat el seu blog de ​​Blogger a WordPress, què més pot fer? Heus aquí alguns suggeriments:"
+
+#: blogger-importer.php:942
+msgid "That was hard work! Take a break."
+msgstr "Aquest ha estat un treball dur! Faci un descans."
+
+#: blogger-importer.php:944
+msgid "In case you haven&#8217;t done it already, you can import the posts from your other blogs:"
+msgstr "Si no ha fet ja neteja, pot importar els missatges dels seus altres blocs:"
+
+#: blogger-importer.php:946
+msgid "Go to <a href=\"%s\" target=\"%s\">Authors &amp; Users</a>, where you can modify the new user(s) or delete them. If you want to make all of the imported posts yours, you will be given that option when you delete the new authors."
+msgstr "Anar a <a href=\"%s\" target=\"%s\"> autors i usuaris </ a>, on es pot modificar el nou usuari (s) o eliminar-los. Si vostè vol fer seus tots els missatges importats, se li donarà l'opció quan elimini els nous autors."
+
+#: blogger-importer.php:948
+msgid "For security, click the link below to reset this importer."
+msgstr "Per raons de seguretat, feu clic al següent enllaç per restablir aquest importador."
+
+#: blogger-importer.php:982
+msgid "Restart"
+msgstr "Reinici"
+
+#: blogger-importer.php:983
+msgid "We have saved some information about your Blogger account in your WordPress database. Clearing this information will allow you to start over. Restarting will not affect any posts you have already imported. If you attempt to re-import a blog, duplicate posts and comments will be skipped."
+msgstr "Hem desat una mica d'informació sobre el seu compte de Blogger a la base de dades de WordPress. L'esborrat d'aquesta informació li permetrà començar de nou. El reinici no afectarà les entrades que ja s'ha importat. Si voleu tornar a importar un bloc, les entrades duplicades i els comentaris seran omesos."
+
+#: blogger-importer.php:985
+msgid "Clear account information"
+msgstr "Eliminar informació del compte"
+
+#: blogger-importer.php:1026
 msgid "Blogger"
 msgstr "Blogger"
 
-#: blogger-importer.php:914
-msgid "Import posts, comments, and users from a Blogger blog."
-msgstr "Importa les entrades, comentaris i usuaris des d'un bloc de Blogger."
+#: blogger-importer.php:1026
+msgid "Import categories, posts and comments then maps users from a Blogger blog."
+msgstr "Primer s'importen les categories, entrades i comentaris, a continuació assigna els usuaris a partir d'un bloc de Blogger."
 
+#. Plugin Name of the plugin/theme
 msgid "Blogger Importer"
-msgstr "Importador del Blogger"
+msgstr "Blogger Importer"
 
+#. Plugin URI of the plugin/theme
 msgid "http://wordpress.org/extend/plugins/blogger-importer/"
-msgstr "http://wordpress.org/extend/plugins/blogger-importer/"
+msgstr ""
 
-msgid "Import posts, comments, tags, and attachments from a Blogger blog."
-msgstr "Importa entrades, comentaris, etiquetes, i adjunts d'un bloc Blogger."
+#. Description of the plugin/theme
+msgid "Import posts, comments and tags from a Blogger blog and migrate authors to Wordpress users."
+msgstr "Importa missatges, comentaris i etiquetes d'un bloc de Blogger i migra els autors cap a usuaris de Wordpress."
 
+#. Author of the plugin/theme
 msgid "wordpressdotorg"
-msgstr "wordpressdotorg"
+msgstr ""
 
+#. Author URI of the plugin/theme
 msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
+msgstr ""
 

@@ -18,7 +18,7 @@
 <!-- You can start editing here. -->
 
 <?php if ( have_comments() ) : ?>
-	<h3 id="comments"><?php comments_number(__('No Responses','freshy-2'), __('One Response','freshy-2'), __('% Responses','freshy-2') );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
+	<h3 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
 
 	<div class="navigation">
 		<div class="alignleft"><?php previous_comments_link() ?></div>
@@ -50,7 +50,7 @@
 
 <div id="respond">
 
-<h3><?php comment_form_title( __('Leave a Reply','freshy-2'), __('Leave a Reply to %s','freshy-2') ); ?></h3>
+<h3><?php comment_form_title( 'Leave a Reply', 'Leave a Reply to %s' ); ?></h3>
 
 <div class="cancel-comment-reply">
 	<small><?php cancel_comment_reply_link(); ?></small>
@@ -64,18 +64,18 @@
 
 <?php if ( $user_ID ) : ?>
 
-<p><?php _e('Logged in as','freshy-2')?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e('Log out of this account','freshy-2')?>"><?php _e('Log out &raquo;','freshy-2')?></a></p>
+<p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a></p>
 
 <?php else : ?>
 
 <p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-<label for="author"><small><?php _e('Name','freshy-2')?> <?php if ($req) echo "(required)"; ?></small></label></p>
+<label for="author"><small>Name <?php if ($req) echo "(required)"; ?></small></label></p>
 
 <p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-<label for="email"><small><?php _e('Mail (will not be published)','freshy-2')?> <?php if ($req) echo "(required)"; ?></small></label></p>
+<label for="email"><small>Mail (will not be published) <?php if ($req) echo "(required)"; ?></small></label></p>
 
 <p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-<label for="url"><small><?php _e('Website','freshy-2')?></small></label></p>
+<label for="url"><small>Website</small></label></p>
 
 <?php endif; ?>
 
@@ -83,7 +83,7 @@
 
 <p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
 
-<p><input name="submit" type="submit" id="submit" tabindex="5" value="<?php _e('Submit Comment','freshy-2')?>" />
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
 <?php comment_id_fields(); ?>
 </p>
 <?php do_action('comment_form', $post->ID); ?>

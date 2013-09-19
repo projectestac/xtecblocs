@@ -3,8 +3,8 @@
 	<div id="content">
 				
 		<div class="post" id="post-none">
-			<h2><?php _e('Not found','freshy-2'); ?></h2>
-			<p><?php _e("Sorry, but you are looking for something that is not here",'freshy-2'); ?></p>
+			<h2><?php _e('Not found',TEMPLATE_DOMAIN); ?></h2>
+			<p><?php _e("Sorry, but you are looking for something that is not here",TEMPLATE_DOMAIN); ?></p>
 		</div>
 	
 	</div>

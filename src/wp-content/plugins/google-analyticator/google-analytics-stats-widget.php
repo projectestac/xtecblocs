@@ -17,7 +17,7 @@ class GoogleStatsWidget extends WP_Widget
 	function widget($args, $instance) {
 		extract($args);
 		$title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title']);
-		$acnt = $instance['account'];
+		$acnt = false;
 		$timeFrame = empty($instance['timeFrame']) ? '1' : $instance['timeFrame'];
 		$pageBg = empty($instance['pageBg']) ? 'fff' : $instance['pageBg'];
 		$widgetBg = empty($instance['widgetBg']) ? '999' : $instance['widgetBg'];
@@ -86,28 +86,24 @@ class GoogleStatsWidget extends WP_Widget
 		
 		# Get the class for interacting with the Google Analytics
 		require_once('class.analytics.stats.php');
-	
+
 		# Create a new Gdata call
 		$stats = new GoogleAnalyticsStats();
 		
 		# Check if Google sucessfully logged in
 		$login = $stats->checkLogin();
 	
+                if( !$login )
+                    return false; 
+
 		# Get a list of accounts
-		$accounts = $stats->getAnalyticsAccounts();
+		//$accounts = $stats->getAnalyticsAccounts();
+		$accounts = $stats->getSingleProfile();
+
+
 		
 		# Output the options
 		echo '<p style="text-align:right;"><label for="' . $this->get_field_name('title') . '">' . __('Title', 'google-analyticator') . ': <input style="width: 250px;" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . $title . '" /></label></p>';
-		# The list of accounts
-		echo '<p style="text-align:right;"><label for="' . $this->get_field_name('account') . '">' . __('Analytics account', 'google-analyticator') . ': ';
-		echo '<select name="' . $this->get_field_name('account') . '" id="' . $this->get_field_id('account') . '" style="margin-top: -3px; margin-bottom: 10px;">';
-		if ( count($accounts) > 0 )
-			foreach ( $accounts AS $account ) { $select = ( $acnt == $account['id'] ) ? ' selected="selected"' : ''; echo '<option value="' . $account['id'] . '"' . $select . '>' . $account['title'] . '</option>'; }
-		elseif ( $login == false )
-			echo '<option value="">' . __('Authenticate on settings page.', 'google-analyticator') . '</option>';
-		else
-			echo '<option value="">' . __('No Analytics accounts available.', 'google-analyticator') . '</option>';
-		echo '</select></label></p>';
 		# Time frame
 		echo '<p style="text-align:right;"><label for="' . $this->get_field_name('timeFrame') . '">' . __('Days of data to get', 'google-analyticator') . ': <input style="width: 150px;" id="' . $this->get_field_id('timeFrame') . '" name="' . $this->get_field_name('timeFrame') . '" type="text" value="' . $timeFrame . '" /></label></p>';		
 		# Page background
@@ -195,53 +191,44 @@ class GoogleStatsWidget extends WP_Widget
 	 **/
 	function getUniqueVisitors($account, $time = 1)
 	{
-		# Get the value from the database
-		$visits = maybe_unserialize(get_option('google_stats_visits_' . $account));
+            // IF we have a cached version, return that, if not, continue on.
+            if ( get_transient( 'google_stats_uniques' ) )
+                return get_transient( 'google_stats_uniques' );
 
-		# Check to make sure the timeframe is an int and greater than one
-		$time = (int) $time;
-		if ( $time < 1 )
-			$time = 1;
+            # Get the class for interacting with the Google Analytics
+            require_once('class.analytics.stats.php');
 
-		# Check if the call has been made before
-		if ( is_array($visits) ) {
+            # Create a new Gdata call
+            $stats = new GoogleAnalyticsStats();
 
-			# Check if the last time called was within two hours, if so, return that
-			if ( $visits['lastcalled'] > ( time() - 7200 ) )
-				return $visits['unique'];
-		
-		}
+            # Check if Google sucessfully logged in
+            if ( ! $stats->checkLogin() )
+                    return false;
 
-		# If here, the call has not been made or it is expired
-		
-		# Get the current memory limit
-		$current_mem_limit = substr(ini_get('memory_limit'), 0, -1);
+            $account = $stats->getSingleProfile();
+            $account = $account[0]['id'];
 
-		# Check if this limit is less than 96M, if so, increase it
-		if ( $current_mem_limit < 96 || $current_mem_limit == '' ) {
-			if ( function_exists('memory_get_usage') )
-				@ini_set('memory_limit', '96M');
-		}
+            # Set the account to the one requested
+            $stats->setAccount($account);
 
-		# Get the class for interacting with the Google Analytics
-		require_once('class.analytics.stats.php');
+            # Get the latest stats
+            $before = date('Y-m-d', strtotime('-' . $time . ' days'));
+            $yesterday = date('Y-m-d', strtotime('-1 day'));
 
-		# Create a new Gdata call
-		$stats = new GoogleAnalyticsStats();
+            try{
+                $result = $stats->getMetrics('ga:visitors', $before, $yesterday);
+            }
+            catch(Exception $e){
+                print 'GA Widget - there was a service error ' . $e->getCode() . ':' . $e->getMessage();
+            }
 
-		# Set the account to the one requested
-		$stats->setAccount($account);
+            $uniques = number_format($result->totalsForAllResults['ga:visitors']);
 
-		# Get the latest stats
-		$before = date('Y-m-d', strtotime('-' . $time . ' days'));
-		$yesterday = date('Y-m-d', strtotime('-1 day'));
-		$uniques = number_format($stats->getMetric('ga:visitors', $before, $yesterday));
+            # Store the array
+            set_transient( 'google_stats_uniques', $uniques, 60*60*12 );
 
-		# Store the array
-		update_option('google_stats_visits_' . $account, array('unique'=>$uniques, 'lastcalled'=>time()));
-
-		# Return the visits
-		return $uniques;
+            # Return the visits
+            return $uniques;
 	}
 
 }// END class

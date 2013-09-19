@@ -16,6 +16,7 @@ if (!class_exists('Yoast_Plugin_Admin')) {
 		var $optionname = '';
 		var $homepage	= '';
 		var $accesslvl	= 'manage_options';
+		var $feed		= 'http://yoast.com/feed/';
 		
 		function Yoast_Plugin_Admin() {
 			add_action( 'admin_menu', array(&$this, 'register_settings_page') );
@@ -160,10 +161,20 @@ if (!class_exists('Yoast_Plugin_Admin')) {
 			$content .= '<ul>';
 			$content .= '<li><a href="'.$this->homepage.'">'.__('Link to it so other folks can find out about it.','slideshare').'</a></li>';
 			$content .= '<li><a href="http://wordpress.org/extend/plugins/'.$hook.'/">'.__('Give it a good rating on WordPress.org.','slideshare').'</a></li>';
+			$content .= '<li><strong>'.__('Donate a token of your appreciation using the button below.','slideshare').'</strong></li>';
 			$content .= '<li><a href="http://wordpress.org/extend/plugins/'.$hook.'/">'.__('Let other people know that it works with your WordPress setup.','slideshare').'</a></li>';
 			$content .= '</ul>';
-			$this->postbox($hook.'like', __('Like this plugin?'), $content);
+			$this->postbox($hook.'like', __('Like this plugin?','slideshare'), $content);
 		}	
+		
+		function donate_box() {
+			$this->postbox('donate','<strong class="red">Donate $10, $20 or $50!</strong>','<p>'.__('This plugin has cost me countless hours of work, if you use it, please donate a token of your appreciation!','slideshare').'</p><br/><form style="margin: 0 auto; width: 147px;" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="hosted_button_id" value="JB99Y7YD2RHAA">
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
+			</form>');
+		}
 		
 		/**
 		 * Info box with link to the bug tracker.
@@ -174,6 +185,15 @@ if (!class_exists('Yoast_Plugin_Admin')) {
 			}
 			$content = '<p>'.__('If you\'ve found a bug in this plugin, please submit it in the Support Forums with a clear description.', 'slideshare').'</p>';
 			$this->postbox($this->hook.'support', __('Found a bug?','slideshare'), $content);
+		}
+
+		function text_limit( $text, $limit, $finish = '&hellip;') {
+			if( strlen( $text ) > $limit ) {
+		    	$text = substr( $text, 0, $limit );
+				$text = substr( $text, 0, - ( strlen( strrchr( $text,' ') ) ) );
+				$text .= $finish;
+			}
+			return $text;
 		}
 
 		function fetch_rss_items( $num ) {
@@ -217,14 +237,14 @@ if (!class_exists('Yoast_Plugin_Admin')) {
 			$content .= '<li class="rss"><a href="'.$this->feed.'">'.__('Subscribe with RSS', 'slideshare').'</a></li>';
 			$content .= '<li class="email"><a href="http://yoast.com/wordpress-newsletter/">'.__('Subscribe by email', 'slideshare').'</a></li>';
 			$content .= '</ul>';
-			$this->postbox('yoastlatest', __('Latest news from Yoast'), $content);
+			$this->postbox('yoastlatest', __('Latest news from Yoast','slideshare'), $content);
 		}
 
 		/**
 		 * Widget with latest news from Yoast.com for dashbaord
 		 */
 		function db_widget() {
-			$options = get_option('yoastdbwidget');
+			$options = get_option('wpseo_yoastdbwidget');
 
 			$network = '';
 			if ( function_exists('is_network_admin') && is_network_admin() )
@@ -242,7 +262,7 @@ if (!class_exists('Yoast_Plugin_Admin')) {
 			$rss_items = $this->fetch_rss_items( 3 );
 
 			echo '<div class="rss-widget">';
-			echo '<a href="http://yoast.com/" title="Go to Yoast.com"><img src="'.WPSEO_URL.'images/yoast-logo-rss.png" class="alignright" alt="Yoast"/></a>';			
+			echo '<a href="http://yoast.com/" title="Go to Yoast.com"><img src="'.plugins_url('images/yoast-logo-rss.png', __FILE__).'" class="alignright" alt="Yoast"/></a>';			
 			echo '<ul>';
 
 			if ( !$rss_items ) {
@@ -252,7 +272,7 @@ if (!class_exists('Yoast_Plugin_Admin')) {
 					echo '<li class="yoast">';
 					echo '<a class="rsswidget" href="'.esc_url( $item->get_permalink(), $protocolls=null, 'display' ).'">'. esc_html( $item->get_title() ) .'</a>';
 					echo ' <span class="rss-date">'. $item->get_date('F j, Y') .'</span>';
-					echo '<div class="rssSummary">'. esc_html( $this->text_limit( strip_tags( $item->get_description() ), 150 ) ).'</div>';
+					echo '<div class="rssSummary">'. esc_html( $this->text_limit( strip_tags( $item->get_description() ), 200 ) ).'</div>';
 					echo '</li>';
 			    }
 			}						
@@ -261,12 +281,12 @@ if (!class_exists('Yoast_Plugin_Admin')) {
 			echo '<br class="clear"/><div style="margin-top:10px;border-top: 1px solid #ddd; padding-top: 10px; text-align:center;">';
 			echo '<a href="'.$this->feed.'"><img src="'.get_bloginfo('wpurl').'/wp-includes/images/rss.png" alt=""/> '.__('Subscribe with RSS', 'slideshare').'</a>';
 			echo ' &nbsp; &nbsp; &nbsp; ';
-			echo '<a href="http://yoast.com/wordpress-newsletter/"><img src="'.WPSEO_URL.'images/email_sub.png" alt=""/> '.__('Subscribe by email', 'slideshare').'</a>';
+			echo '<a href="http://yoast.com/wordpress-newsletter/"><img src="'.plugins_url('images/email_sub.png', __FILE__).'" alt=""/> '.__('Subscribe by email', 'slideshare').'</a>';
 			echo '<form class="alignright" method="post"><input type="hidden" name="yoast_removedbwidget" value="true"/><input title="'.__('Remove this widget from all users dashboards', 'slideshare').'" class="button" type="submit" value="X"/></form>';
 			echo '</div>';
 			echo '</div>';
 		}
-		
+
 		function widget_setup() {
 			$network = '';
 			if ( function_exists('is_network_admin') && is_network_admin() )

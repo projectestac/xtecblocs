@@ -8,12 +8,12 @@ Template Name: Archives
 
 	<div id="content">
 		<div class="post" id="post-none">
-			<h2><?php _e('Archives by month','freshy-2'); ?></h2>
+			<h2><?php _e('Archives by month',TEMPLATE_DOMAIN); ?></h2>
 			<ul>
 				<?php wp_get_archives('type=monthly'); ?>
 			</ul>
 			
-			<h2><?php _e('Archives by category','freshy-2'); ?></h2>
+			<h2><?php _e('Archives by category',TEMPLATE_DOMAIN); ?></h2>
 			<ul>
 				<?php wp_list_cats(); ?>
 			</ul>

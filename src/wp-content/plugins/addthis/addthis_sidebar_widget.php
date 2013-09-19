@@ -1,8 +1,4 @@
 <?php
-
-//XTEC ************ FITXER MODIFICAT - Per donar suport a la internazionalització de l'extensió.
-//2011.10.06 @fbassas
-
 /** 
  * Add this Widget that allows you to pick your poison, add a widget title, and share your content
  */
@@ -16,14 +12,18 @@ class AddThisSidebarWidget extends WP_Widget {
      */
     function AddThisSidebarWidget()
     {
-
-        $widget_ops = array( 'classname' => 'atwidget', 'description' => __('Make it wasy for your users to share content to over 300 destinations', 'addthis_trans_domain') );
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+        $widget_ops = array( 'classname' => 'atwidget', 'description' => __('Make it wasy for your users to share content to over 300 destinations','addthis_trans_domain') );
+//************ ORIGINAL
+//        $widget_ops = array( 'classname' => 'atwidget', 'description' => 'Make it wasy for your users to share content to over 300 destinations' );
+//************ FI
 
         /* Widget control settings. */
         $control_ops = array( 'width' => 325);
 
         /* Create the widget. */
-        $this->WP_Widget( 'addthis-widget', 'AddThis Widget', $widget_ops, $control_ops );
+        $this->WP_Widget( 'addthis-widget', 'AddThis Share', $widget_ops, $control_ops );
     
     }
 
@@ -45,7 +45,6 @@ class AddThisSidebarWidget extends WP_Widget {
         printf(apply_filters('addthis_sidebar_style_output',  $addthis_new_styles[$instance['style']]['src']), '');
         
         echo $after_widget;
-    
     }
 
     /**
@@ -85,9 +84,17 @@ class AddThisSidebarWidget extends WP_Widget {
         global $addthis_new_styles; 
 
         ?>
-            <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'addthis_trans_domain'); ?> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></label></p>
+<!--XTEC ************ MODIFICAT - Localization support
+2013.05.21 @jmiro227 -->
+            <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','addthis_trans_domain'); ?> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></label></p>
 
-            <p><label for="<?php echo $this->get_field_id('style');?>"><?php _e('Style:', 'addthis_trans_domain', 'addthis'); ?><br /></label></p>
+            <p><label for="<?php echo $this->get_field_id('style');?>"><?php _e('Style:','addthis_trans_domain'); ?><br /></label></p>
+<!--************ ORIGINAL
+           <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></label></p>
+
+            <p><label for="<?php echo $this->get_field_id('style');?>"><?php _e('Style:', 'addthis'); ?><br /></label></p>
+************ FI -->
+ 
                 <?php foreach ($addthis_new_styles as $k => $v)
                 {
                  
@@ -95,7 +102,7 @@ class AddThisSidebarWidget extends WP_Widget {
                     if ($k === $style)
                         $checked = 'checked="checked"';
                     
-                    echo '<input '.$checked.' style="margin:-15px 2px 0;"  type="radio" name="' . $this->get_field_name('style') . '" value="'.$k.'"><img src="'. plugins_url( '/addthis/img/' .  $v['img'], basename(dirname(__FILE__)) )  .'" /><br />';
+                    echo '<div style="height:auto;"><input '.$checked.' style="margin:5px 5px 0 0;" type="radio" name="' . $this->get_field_name('style') . '" value="'.$k.'"><img align="middle" style="padding:5px 0" src="'. plugins_url( '/addthis/img/' .  $v['img'], basename(dirname(__FILE__)) )  .'" /></div>';
                 }
                 ?>
         <?php

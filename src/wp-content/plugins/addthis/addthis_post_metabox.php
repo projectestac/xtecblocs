@@ -22,6 +22,11 @@ class addthis_post_metabox{
     function post_metabox(){
         global $post_id;
 
+//XTEC ************ AFEGIT - Localization support
+//2013.05.21 @jmiro227
+load_plugin_textdomain( 'addthis_trans_domain', null, dirname( plugin_basename( __FILE__ )) . '/languages' );
+//************ FI
+
         if ( is_null($post_id) )
             $checked = '';
         else
@@ -32,13 +37,21 @@ class addthis_post_metabox{
 
         wp_nonce_field('addthis_postmetabox_nonce', 'addthis_postmetabox_nonce');
         echo '<label for="addthis_show_option">';
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
         _e("Remove AddThis:", 'addthis_trans_domain' );
+//************ ORIGINAL
+/*
+        _e("Remove AddThis:", 'myplugin_textdomain' );
+*/
+//************ FI
         echo '</label> ';
         echo '<input type="checkbox" id="addthis_show_option" name="addthis_show_option" value="1" '.$checked.'>';
     }
 
     function save_post($post_id)
     {
+    	global $post;
         if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
             return;
 
@@ -51,8 +64,9 @@ class addthis_post_metabox{
         }
         else
         {
+        	delete_post_meta($post_id, 'addthis_exclude');
             $custom_fields = get_post_custom($post_id);
-            if (! isset ($custom_fields['addthis_exclude'][0])  )
+            if (! isset ($custom_fields['addthis_exclude'][0]) && ($post->post_type=="post")  )
             {
                 add_post_meta($post_id, 'addthis_exclude', 'true');
             }
