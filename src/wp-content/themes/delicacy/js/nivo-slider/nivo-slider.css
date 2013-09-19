@@ -1,0 +1,135 @@
+/*
+ * jQuery Nivo Slider v2.7.1
+ * http://nivo.dev7studios.com
+ *
+ * Copyright 2011, Gilbert Pellegrom
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * March 2010
+ */
+ 
+/* The Nivo Slider styles */
+.nivoSlider {
+	position:relative;
+    width:100%;
+	height:auto;
+	overflow: hidden;
+}
+.nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+    max-width: none;
+}
+.nivo-main-image {
+	display: block !important;
+	position: relative !important; 
+	width: 100% !important;
+}
+/* If an image is wrapped in a link */
+.nivoSlider a.nivo-imageLink {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	border:0;
+	padding:0;
+	margin:0;
+	z-index:6;
+	display:none;
+	border: none !important;
+}
+/* The slices and boxes in the Slider */
+.nivo-slice {
+	display:block;
+	position:absolute;
+	z-index:5;
+	height:100%;
+}
+.nivo-box {
+	display:block;
+	position:absolute;
+	z-index:5;
+    overflow: hidden;
+}
+.nivo-box img { display:block; }
+.nivo-caption p {
+	margin: 0;
+}
+.nivo-html-caption {
+    display:none;
+}
+.nivo-caption {
+    position: absolute;
+    left: 0px;
+    bottom: 20px;
+    background: #000;
+    padding: 10px;
+    color: #fff;
+    opacity: 0.8;
+    width: 70%;
+    z-index: 8;
+}
+.nivo-caption h2 {
+    margin: 6px 0;
+}
+.nivo-caption h2 a {
+    color: #fff;
+    text-transform: none;
+}
+/* Direction nav styles (e.g. Next & Prev) */
+.nivo-directionNav a {
+	position:absolute;
+	top:45%;
+	z-index:9;
+	cursor:pointer;
+}
+.nivo-prevNav {
+	left:0px;
+}
+.nivo-nextNav {
+	right:0px;
+}
+/* Control nav styles (e.g. 1,2,3...) */
+.nivo-controlNav {
+	text-align:center;
+	padding: 15px 0;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    z-index: 100;
+}
+.nivo-controlNav a {
+	z-index:9;
+	cursor:pointer;
+    display: block;
+    background: #ccc;
+    color: #ccc;
+    padding: 1px 3px;
+    margin-bottom: 3px;
+}
+.nivo-controlNav a.active {
+	font-weight:bold;
+}
+.nivoslider .nivo-caption a {
+    color:#fff;
+}
+.nivoslider .nivo-caption a:hover {
+    color:#fff;
+}
+.nivoSlider .nivo-directionNav a {
+	display:block;
+	width:30px;
+	height:30px;
+	text-indent:-9999px;
+	border:0;
+}
+.nivoSlider a.nivo-nextNav {
+	background-position:-30px 0;
+	right:15px;
+}
+.nivoSlider a.nivo-prevNav {
+	left:15px;
+}

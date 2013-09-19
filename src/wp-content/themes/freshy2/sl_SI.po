@@ -1,0 +1,202 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Freshy Theme for WordPress\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2008-08-01 10:43+0100\n"
+"Last-Translator: Miha Rekar <miha.rekar@gmail.com>\n"
+"Language-Team: Julien De Luca <contact@jide.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: sidebar.php
+msgid "Search"
+msgstr "Išči"
+
+#: sidebar.php
+msgid "Archive"
+msgstr "Arhiv"
+
+#: sidebar.php
+msgid "Categories"
+msgstr "Kategorije"
+
+#: sidebar.php
+msgid "Links"
+msgstr "Povezave"
+
+#: sidebar.php
+msgid "Recent posts"
+msgstr "Zadnji posti"
+
+#: sidebar.php
+msgid "Recent comments"
+msgstr "Zadnji komentarji"
+
+#: header.php
+msgid "Home"
+msgstr "Domov"
+
+#: sidebar.php
+msgid "Random image"
+msgstr "Naključna slika"
+
+#: index.php
+msgid "Comments"
+msgstr "Komentarji"
+
+#: index.php
+msgid "No Comments &#187;"
+msgstr "Ni komentarjev &#187;"
+
+#: index.php
+msgid "1 Comment &#187;"
+msgstr "1 komentar &#187;"
+
+#: index.php
+msgid "% Comments &#187;"
+msgstr "% komentarjev &#187;"
+
+#: index.php
+msgid "Sorry, but you are looking for something that is not here"
+msgstr "Ni ni."
+
+#: index.php
+msgid "Not found"
+msgstr "Nisem našel"
+
+#: index.php
+msgid "Error 404"
+msgstr "Napaka 404"
+
+#: index.php
+msgid "Last works"
+msgstr "Zadnja dela"
+
+#: index.php
+msgid "Last news"
+msgstr "Zadnje novice"
+
+#: single.php
+msgid "Author"
+msgstr "Avtor"
+
+#: single.php
+msgid "Informations"
+msgstr "Informacije"
+
+#: single.php
+msgid "Actions"
+msgstr "Akcije"
+
+#: single.php
+msgid "Date"
+msgstr "Datum"
+
+#: single.php
+msgid "Comments rss"
+msgstr "RSS komentarjev"
+
+#: single.php
+msgid "Trackback"
+msgstr "Trackback"
+
+#: comments.php
+msgid "Leave a comment"
+msgstr "Napiši komentar"
+
+#: comments.php
+msgid "Logout"
+msgstr "Izpis"
+
+#: comments.php
+msgid "Logged in as"
+msgstr "Prijavljen kot"
+
+#: comments.php
+msgid "You must be"
+msgstr "Moraš biti"
+
+#: comments.php
+msgid "logged in"
+msgstr "prijavljen"
+
+#: comments.php
+msgid "to post a comment"
+msgstr ", da napišeš komentar"
+
+#: comments.php
+msgid "Your comment is awaiting moderation"
+msgstr "Tvoj komentar čaka na odobritev"
+
+#: comments.php
+msgid "This post is password protected. Enter the password to view comments"
+msgstr "Ta post je zaščiten. Vnesi geslo, da ga lahko vidiš."
+
+#: comments.php
+msgid "Mail"
+msgstr "E-Mail"
+
+#: comments.php
+msgid "Name"
+msgstr "Ime"
+
+#: comments.php
+msgid "Website"
+msgstr "Spletna stran:"
+
+#: comments.php
+msgid "(required)"
+msgstr "(zahtevano)"
+
+#: comments.php
+msgid "(will not be published)"
+msgstr "(ne bo javno objavljen)"
+
+#: comments.php
+msgid "No responses"
+msgstr "Ni odgovorov"
+
+#: comments.php
+msgid "One response"
+msgstr "1 odgovor"
+
+#: comments.php
+msgid "% responses"
+msgstr "% odgovorov"
+
+#: comments.php
+msgid "to"
+msgstr "za"
+
+#: comments.php
+msgid "Last modified"
+msgstr "Zadnjič urejano"
+
+#: comments.php
+msgid "You can use these tags"
+msgstr "Lahko uporabiš te tage"
+
+#: comments.php
+msgid "Submit comment"
+msgstr "Pošlji komentar"
+
+#: comments.php
+msgid "Submit"
+msgstr "Pošlji"
+
+#: index.php
+msgid "Rss feeds from"
+msgstr "RSS feedi od"
+
+#: index.php
+msgid "Read the rest of this entry &raquo;"
+msgstr "Preberi ostalo &raquo;"
+
+#: footer.php
+msgid "comments"
+msgstr "komentarjev"
+

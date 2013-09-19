@@ -1,0 +1,198 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Freshy Theme for WordPress\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2006-07-07 23:02+0100\n"
+"Last-Translator: \n"
+"Language-Team: Julien De Luca <contact@jide.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: sidebar.php
+msgid "Search"
+msgstr "Szukaj"
+
+#: sidebar.php
+msgid "Archive"
+msgstr "Archiwum"
+
+#: sidebar.php
+msgid "Categories"
+msgstr "Kategorie"
+
+#: sidebar.php
+msgid "Links"
+msgstr "Linki"
+
+#: sidebar.php
+msgid "Recent posts"
+msgstr "Ostatnio dodane"
+
+#: sidebar.php
+msgid "Recent comments"
+msgstr "Ostatnie komentarze"
+
+#: header.php
+msgid "Home"
+msgstr "Główna"
+
+#: sidebar.php
+msgid "Random image"
+msgstr "Losowy obrazek"
+
+#: index.php
+msgid "No Comments &#187;"
+msgstr "Bez komentarzy &#187;"
+
+#: index.php
+msgid "1 Comment &#187;"
+msgstr "1 komentarz &#187;"
+
+#: index.php
+msgid "% Comments &#187;"
+msgstr "% komentarzy &#187;"
+
+#: index.php
+msgid "Sorry, but you are looking for something that is not here"
+msgstr "D&eacute;sol&eacute;, mais ce que vous cherchez n'a pas pu &ecirc;tre trouv&eacute;"
+
+#: index.php
+msgid "Not found"
+msgstr "Aucune page trouv&eacute;e"
+
+#: index.php
+msgid "Error 404"
+msgstr "Błąd 404"
+
+#: index.php
+msgid "Last works"
+msgstr "Ostatnie prace"
+
+#: index.php
+msgid "Last news"
+msgstr "Ostatnie niusy"
+
+#: single.php
+msgid "Author"
+msgstr "Autor"
+
+#: single.php
+msgid "Informations"
+msgstr "Informacje"
+
+#: single.php
+msgid "Actions"
+msgstr "Akcje"
+
+#: single.php
+msgid "Date"
+msgstr "Data"
+
+#: single.php
+msgid "Comments rss"
+msgstr "Komentarze rss"
+
+#: single.php
+msgid "Trackback"
+msgstr "Trackback"
+
+#: comments.php
+msgid "Leave a comment"
+msgstr "Napisz komentarz"
+
+#: comments.php
+msgid "Logout"
+msgstr "Wyloguj"
+
+#: comments.php
+msgid "Logged in as"
+msgstr "Zalogowany jako"
+
+#: comments.php
+msgid "You must be"
+msgstr "Musisz być"
+
+#: comments.php
+msgid "logged in"
+msgstr "zalogowany"
+
+#: comments.php
+msgid "to post a comment"
+msgstr "aby pisać komentarze"
+
+#: comments.php
+msgid "Your comment is awaiting moderation"
+msgstr "Twój komentarz czeka na zatwierdzenie przez moderatora"
+
+#: comments.php
+msgid "This post is password protected. Enter the password to view comments"
+msgstr "Ten wpis jest chroniony hasłem. Wpisz hasło jeśli chcesz zobaczyć treść wpisu."
+
+#: comments.php
+msgid "Mail"
+msgstr "E-mail"
+
+#: comments.php
+msgid "Name"
+msgstr "Nick"
+
+#: comments.php
+msgid "Website"
+msgstr "URL"
+
+#: comments.php
+msgid "(required)"
+msgstr "(wymagane)"
+
+#: comments.php
+msgid "(will not be published)"
+msgstr "(nie zostanie wyświetlony)"
+
+#: comments.php
+msgid "No responses"
+msgstr "Brak odpowiedzi"
+
+#: comments.php
+msgid "One response"
+msgstr "Jedna odpowiedź"
+
+#: comments.php
+msgid "% responses"
+msgstr "% odpowiedzi"
+
+#: comments.php
+msgid "to"
+msgstr "do"
+
+#: comments.php
+msgid "Last modified"
+msgstr "Ostatnio zmodyfikowany"
+
+#: comments.php
+msgid "You can use these tags"
+msgstr "Możesz używać następujących tagów"
+
+#: comments.php
+msgid "Submit comment"
+msgstr "Wyślij komentarz"
+
+#: comments.php
+msgid "Submit"
+msgstr "Wyślij"
+
+#: index.php
+msgid "Rss feeds from"
+msgstr "Kanał Rss dla"
+
+#: index.php
+msgid "Read the rest of this entry &raquo;"
+msgstr "Więcej &raquo;"
+
+#: footer.php
+msgid "comments"
+msgstr "komentarze"
+

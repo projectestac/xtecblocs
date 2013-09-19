@@ -1,0 +1,740 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Delicacy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-15 16:32+0100\n"
+"PO-Revision-Date: 2013-02-15 16:33+0100\n"
+"Last-Translator: Aleksandra Łączek <a.laczek@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ./\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:5
+msgid "Page not found"
+msgstr ""
+
+#: ../404.php:6
+msgid "Try searching the site:"
+msgstr ""
+
+#: ../archive.php:9
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: ../archive.php:11
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: ../archive.php:13
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: ../archive.php:15
+msgid "Blog Archives for category"
+msgstr ""
+
+#: ../archive.php:17
+msgid "Blog Archives for tag"
+msgstr ""
+
+#: ../archive.php:19
+msgid "Blog Archives"
+msgstr ""
+
+#: ../archive.php:34
+#: ../comments.php:13
+#: ../image.php:12
+#: ../index.php:22
+#: ../index.php:37
+#: ../page-fullwidth.php:12
+#: ../page.php:9
+#: ../search.php:18
+#: ../single.php:9
+msgid "No comments"
+msgstr ""
+
+#: ../archive.php:34
+#: ../comments.php:13
+#: ../image.php:12
+#: ../index.php:22
+#: ../index.php:37
+#: ../page-fullwidth.php:12
+#: ../page.php:9
+#: ../search.php:18
+#: ../single.php:9
+msgid "1 comment"
+msgstr ""
+
+#: ../archive.php:34
+#: ../comments.php:13
+#: ../image.php:12
+#: ../index.php:22
+#: ../index.php:37
+#: ../page-fullwidth.php:12
+#: ../page.php:9
+#: ../search.php:18
+#: ../single.php:9
+msgid "Comments: %"
+msgstr ""
+
+#: ../archive.php:36
+#: ../index.php:24
+msgid "Permalink"
+msgstr ""
+
+#: ../archive.php:52
+#: ../index.php:54
+#: ../search.php:31
+msgid "Previous Entries"
+msgstr ""
+
+#: ../archive.php:53
+#: ../index.php:55
+#: ../search.php:32
+msgid "Next entries"
+msgstr ""
+
+#: ../archive.php:59
+#: ../search.php:40
+msgid "Not found"
+msgstr ""
+
+#: ../comments.php:7
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: ../comments.php:34
+msgid "Comments are closed."
+msgstr ""
+
+#: ../footer.php:9
+msgid "Proudly powered by"
+msgstr ""
+
+#: ../footer.php:9
+msgid "WordPress"
+msgstr ""
+
+#: ../footer.php:9
+msgid "Design by "
+msgstr ""
+
+#: ../footer.php:9
+msgid "WebTuts.pl"
+msgstr ""
+
+#: ../functions.php:37
+msgid "Delicacy Main Menu"
+msgstr ""
+
+#: ../functions.php:118
+msgid "Continue reading"
+msgstr ""
+
+#: ../functions.php:226
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: ../functions.php:226
+msgid "Edit"
+msgstr ""
+
+#: ../functions.php:231
+msgid "Your comment awaits moderation."
+msgstr ""
+
+#: ../image.php:18
+msgid "Next image &raquo;"
+msgstr ""
+
+#: ../image.php:18
+msgid "&laquo; Previous image"
+msgstr ""
+
+#: ../index.php:61
+msgid "Not Found"
+msgstr ""
+
+#: ../options.php:31
+msgid "Red"
+msgstr ""
+
+#: ../options.php:31
+msgid "Violet"
+msgstr ""
+
+#: ../options.php:31
+msgid "Green"
+msgstr ""
+
+#: ../options.php:31
+msgid "Blue"
+msgstr ""
+
+#: ../options.php:31
+msgid "Gold"
+msgstr ""
+
+#: ../options.php:31
+msgid "Orange"
+msgstr ""
+
+#: ../options.php:32
+msgid "Display full content for each post"
+msgstr ""
+
+#: ../options.php:32
+msgid "Display excerpt for each post"
+msgstr ""
+
+#: ../options.php:33
+msgid "No"
+msgstr ""
+
+#: ../options.php:33
+msgid "Yes"
+msgstr ""
+
+#: ../options.php:34
+msgid "Newest posts"
+msgstr ""
+
+#: ../options.php:34
+msgid "Posts from selected category"
+msgstr ""
+
+#: ../options.php:55
+msgid "Basic settings"
+msgstr ""
+
+#: ../options.php:58
+msgid "Color scheme"
+msgstr ""
+
+#: ../options.php:59
+msgid "Select color scheme."
+msgstr ""
+
+#: ../options.php:66
+msgid "Custom logo image"
+msgstr ""
+
+#: ../options.php:67
+msgid "You can upload custom image for your website logo (optional)."
+msgstr ""
+
+#: ../options.php:71
+msgid "Do You want to use custom favicon?"
+msgstr ""
+
+#: ../options.php:78
+msgid "Favicon URL"
+msgstr ""
+
+#: ../options.php:79
+msgid "If You choose to use custom favicon, input here FULL URL to the favicon.ico image."
+msgstr ""
+
+#: ../options.php:84
+#: ../searchform.php:4
+msgid "Search"
+msgstr ""
+
+#: ../options.php:85
+msgid "Do you want to include search in the header?"
+msgstr ""
+
+#: ../options.php:91
+msgid "Header widget"
+msgstr ""
+
+#: ../options.php:92
+msgid "Do you want to display header widget area?"
+msgstr ""
+
+#: ../options.php:98
+msgid "Home Page settings"
+msgstr ""
+
+#: ../options.php:101
+msgid "Home Page layout"
+msgstr ""
+
+#: ../options.php:107
+msgid "Do You want to display image slider on the Home Page?"
+msgstr ""
+
+#: ../options.php:113
+msgid "Slider should display:"
+msgstr ""
+
+#: ../options.php:120
+msgid "Select Category for Featured Posts slider"
+msgstr ""
+
+#: ../options.php:121
+msgid "Posts from this category will be rotating in image slider on the Home Page. IMPORTANT: Make sure all posts in this category have Featured Image set."
+msgstr ""
+
+#: ../options.php:127
+msgid "Number of slides"
+msgstr ""
+
+#: ../page-fullwidth.php:16
+#: ../page.php:13
+msgid "Pages: "
+msgstr ""
+
+#: ../page-fullwidth.php:19
+#: ../page.php:16
+msgid "Edit this entry"
+msgstr ""
+
+#: ../search.php:7
+msgid "Search results for"
+msgstr ""
+
+#: ../search.php:41
+msgid "Sorry, but no posts were found <br />Try another search..."
+msgstr ""
+
+#: ../sidebar.php:7
+msgid "Archives"
+msgstr ""
+
+#: ../sidebar.php:13
+msgid "Meta"
+msgstr ""
+
+#: ../single.php:14
+msgid "Pages:"
+msgstr ""
+
+#: ../single.php:15
+msgid "Tagged: "
+msgstr ""
+
+#: ../admin/recipe-config.php:9
+msgid "Culinary recipe"
+msgstr ""
+
+#: ../admin/recipe-config.php:17
+msgid "Recipe title"
+msgstr ""
+
+#: ../admin/recipe-config.php:23
+msgid "Servings"
+msgstr ""
+
+#: ../admin/recipe-config.php:24
+msgid "Enter the number of servings eg. \"4\""
+msgstr ""
+
+#: ../admin/recipe-config.php:31
+#: ../admin/recipe-config.php:239
+msgid "Prep time"
+msgstr ""
+
+#: ../admin/recipe-config.php:32
+msgid "How long does it take to prep (without cooking time)? IMPORTANT! Input amount of minutes only! For time longer than 1 hour, for example 1h30m enter 90"
+msgstr ""
+
+#: ../admin/recipe-config.php:40
+msgid "Cooking time"
+msgstr ""
+
+#: ../admin/recipe-config.php:41
+msgid "Toal time of cooking, baking etc. IMPORTANT! Input amount of minutes only!"
+msgstr ""
+
+#: ../admin/recipe-config.php:49
+#: ../admin/recipe-config.php:249
+msgid "Recipe type"
+msgstr ""
+
+#: ../admin/recipe-config.php:50
+msgid "The type of dish, for example: appetizer, entree, dessert ..."
+msgstr ""
+
+#: ../admin/recipe-config.php:58
+#: ../admin/recipe-config.php:246
+msgid "Difficulty"
+msgstr ""
+
+#: ../admin/recipe-config.php:62
+#: ../admin/recipe-config.php:221
+msgid "easy"
+msgstr ""
+
+#: ../admin/recipe-config.php:63
+#: ../admin/recipe-config.php:222
+msgid "medium"
+msgstr ""
+
+#: ../admin/recipe-config.php:64
+#: ../admin/recipe-config.php:223
+msgid "hard"
+msgstr ""
+
+#: ../admin/recipe-config.php:71
+#: ../admin/recipe-config.php:254
+msgid "Ingredients"
+msgstr ""
+
+#: ../admin/recipe-config.php:72
+msgid "Enter all the ingredients. IMPORTANT: Seperate the ingredients with a single line break."
+msgstr ""
+
+#: ../admin/recipe-config.php:79
+#: ../admin/recipe-config.php:258
+msgid "Directions"
+msgstr ""
+
+#: ../admin/recipe-config.php:240
+msgid "Cook time"
+msgstr ""
+
+#: ../admin/recipe-config.php:241
+msgid "Total time"
+msgstr ""
+
+#: ../admin/recipe-config.php:243
+msgid "Yield"
+msgstr ""
+
+#: ../admin/recipe-config.php:259
+msgid "Published on"
+msgstr ""
+
+#: ../admin/recipe-config.php:260
+msgid "by"
+msgstr ""
+
+#: ../admin/options-framework/options-framework.php:163
+#: ../admin/options-framework/options-framework.php:379
+msgid "Theme Options"
+msgstr ""
+
+#: ../admin/options-framework/options-framework.php:196
+msgid "Clear"
+msgstr ""
+
+#: ../admin/options-framework/options-framework.php:197
+msgid "Default"
+msgstr ""
+
+#: ../admin/options-framework/options-framework.php:198
+msgid "Select Color"
+msgstr ""
+
+#: ../admin/options-framework/options-framework.php:243
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: ../admin/options-framework/options-framework.php:275
+msgid "Default options restored."
+msgstr ""
+
+#: ../admin/options-framework/options-framework.php:329
+msgid "Options saved."
+msgstr ""
+
+#: ../admin/options-framework/options-medialibrary-uploader.php:26
+msgid "Theme Options Media"
+msgstr ""
+
+#: ../admin/options-framework/options-medialibrary-uploader.php:126
+msgid "Upload"
+msgstr ""
+
+#: ../admin/options-framework/options-medialibrary-uploader.php:149
+msgid "View File"
+msgstr ""
+
+#: ../admin/options-framework/options-medialibrary-uploader.php:282
+msgid "Gallery"
+msgstr ""
+
+#: ../admin/options-framework/options-medialibrary-uploader.php:282
+msgid "Previously Uploaded"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:232
+msgid "No Repeat"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:233
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:234
+msgid "Repeat Vertically"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:235
+msgid "Repeat All"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:248
+msgid "Top Left"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:249
+msgid "Top Center"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:250
+msgid "Top Right"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:251
+msgid "Middle Left"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:252
+msgid "Middle Center"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:253
+msgid "Middle Right"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:254
+msgid "Bottom Left"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:255
+msgid "Bottom Center"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:256
+msgid "Bottom Right"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:269
+msgid "Scroll Normally"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:270
+msgid "Fixed in Place"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:344
+msgid "Normal"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:345
+msgid "Italic"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:346
+msgid "Bold"
+msgstr ""
+
+#: ../admin/options-framework/options-sanitize.php:347
+msgid "Bold Italic"
+msgstr ""
+
+#: ../admin/widgets/about-widget.php:19
+msgid "About section with autor image"
+msgstr ""
+
+#: ../admin/widgets/about-widget.php:25
+msgid "Delicacy: About"
+msgstr ""
+
+#: ../admin/widgets/about-widget.php:75
+msgid "About"
+msgstr ""
+
+#: ../admin/widgets/about-widget.php:80
+#: ../admin/widgets/archives-widget.php:106
+#: ../admin/widgets/recent-posts-widget.php:98
+#: ../admin/widgets/seasonal-recipes-widget.php:104
+#: ../admin/widgets/social-widget.php:86
+msgid "Title"
+msgstr ""
+
+#: ../admin/widgets/about-widget.php:86
+msgid "About the author text"
+msgstr ""
+
+#: ../admin/widgets/about-widget.php:92
+msgid "Author image URL"
+msgstr ""
+
+#: ../admin/widgets/about-widget.php:94
+msgid "Suggested image dimensions: 90x120px"
+msgstr ""
+
+#: ../admin/widgets/archives-widget.php:19
+msgid "Displays a list of monthly archives, categories or pages in two columns."
+msgstr ""
+
+#: ../admin/widgets/archives-widget.php:25
+msgid "Delicacy: Archives / Categories / Pages List"
+msgstr ""
+
+#: ../admin/widgets/archives-widget.php:113
+msgid "Type"
+msgstr ""
+
+#: ../admin/widgets/archives-widget.php:115
+msgid "archives"
+msgstr ""
+
+#: ../admin/widgets/archives-widget.php:116
+msgid "categories"
+msgstr ""
+
+#: ../admin/widgets/archives-widget.php:117
+msgid "pages"
+msgstr ""
+
+#: ../admin/widgets/recent-posts-widget.php:19
+msgid "Displays a list of recent posts with post thumbnails, date and number of comments"
+msgstr ""
+
+#: ../admin/widgets/recent-posts-widget.php:25
+msgid "Delicacy: Recent posts"
+msgstr ""
+
+#: ../admin/widgets/recent-posts-widget.php:93
+msgid "Recent posts"
+msgstr ""
+
+#: ../admin/widgets/recent-posts-widget.php:104
+msgid "Number of posts to show"
+msgstr ""
+
+#: ../admin/widgets/seasonal-recipes-widget.php:19
+msgid "Widget for Header Widget area. Rotates links for posts with a selected tag in the header (i.e. recipes for dishes currently in season)."
+msgstr ""
+
+#: ../admin/widgets/seasonal-recipes-widget.php:25
+msgid "Delicacy: Featured posts"
+msgstr ""
+
+#: ../admin/widgets/seasonal-recipes-widget.php:99
+msgid "Featured:"
+msgstr ""
+
+#: ../admin/widgets/seasonal-recipes-widget.php:110
+msgid "Number of posts to rotate"
+msgstr ""
+
+#: ../admin/widgets/seasonal-recipes-widget.php:116
+msgid "Select tag"
+msgstr ""
+
+#: ../admin/widgets/social-widget.php:19
+msgid "Displays icons with linked to RSS / Facebook/ Twitter / Flickr"
+msgstr ""
+
+#: ../admin/widgets/social-widget.php:25
+msgid "Delicacy: Social icons"
+msgstr ""
+
+#: ../admin/widgets/social-widget.php:50
+msgid "Follow me on Flickr"
+msgstr ""
+
+#: ../admin/widgets/social-widget.php:51
+msgid "Follow me on Twitter"
+msgstr ""
+
+#: ../admin/widgets/social-widget.php:52
+msgid "Follow me on Facebook"
+msgstr ""
+
+#: ../admin/widgets/social-widget.php:53
+msgid "Subscribe to RSS feed"
+msgstr ""
+
+#: ../admin/widgets/social-widget.php:81
+msgid "Follow me"
+msgstr ""
+
+#: ../admin/widgets/social-widget.php:92
+msgid "URL address of your RSS feed"
+msgstr ""
+
+#: ../admin/widgets/social-widget.php:94
+msgid "Enter full feed URL. If you don't want to display this, leave empty."
+msgstr ""
+
+#: ../admin/widgets/social-widget.php:99
+msgid "URL address of your Facebook profile or page"
+msgstr ""
+
+#: ../admin/widgets/social-widget.php:101
+msgid "Enter full URL of your Facebook profile or page. If you don't want to display this, leave empty."
+msgstr ""
+
+#: ../admin/widgets/social-widget.php:105
+msgid "URL address of your Twitter profile page"
+msgstr ""
+
+#: ../admin/widgets/social-widget.php:107
+msgid "Enter full URL of your Twitter profile page. If you don't want to display this, leave empty."
+msgstr ""
+
+#: ../admin/widgets/social-widget.php:113
+msgid "Enter full URL to your Flickr profile. If you don't want to display this, leave empty."
+msgstr ""
+
+#: ../includes/nivo_default.php:51
+msgid "Newest"
+msgstr ""
+
+#: ../meta-box/meta-box-3.2.2.class.php:108
+#: ../meta-box/meta-box-3.2.2.class.php:349
+msgid "Delete this image"
+msgstr ""
+
+#: ../meta-box/meta-box-3.2.2.class.php:108
+#: ../meta-box/meta-box-3.2.2.class.php:306
+#: ../meta-box/meta-box-3.2.2.class.php:349
+msgid "Delete"
+msgstr ""
+
+#: ../meta-box/meta-box-3.2.2.class.php:302
+msgid "Uploaded files"
+msgstr ""
+
+#: ../meta-box/meta-box-3.2.2.class.php:312
+msgid "Upload new files"
+msgstr ""
+
+#: ../meta-box/meta-box-3.2.2.class.php:315
+msgid "Add more file"
+msgstr ""
+
+#: ../meta-box/meta-box-3.2.2.class.php:356
+msgid "Add more images"
+msgstr ""
+
+#: ../meta-box/meta-box-3.2.2.class.php:363
+msgid "Select a color"
+msgstr ""
+
+#: ../meta-box/meta-box.php:79
+msgid "RW_Meta_Box Debug:"
+msgstr ""
+
+#: ../meta-box/metabox-def.php:57
+msgid "How long does it take to prep (without cooking time, eg. 20 min.)"
+msgstr ""
+
+#: ../meta-box/metabox-def.php:65
+msgid "Toal time of cooking, baking etc."
+msgstr ""
+

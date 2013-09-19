@@ -1,0 +1,47 @@
+/**
+*
+* CSS for IExploiter 7
+*
+*/
+#header h1{ top: -3px; }
+#header h1 span { top: -3px; }
+#header { margin-bottom: 5px;}
+
+
+
+#sidebar { margin-top: 40px;}
+
+#blau {  
+margin-top:0px;
+max-width: 100%;
+min-width: 370px;
+}
+
+#cel { 
+margin-top: 0px;
+margin-bottom: 20px; 
+background-color: #fff;
+max-width: 100%;
+min-width: 370px;
+}
+
+#content { margin-top: 40px;}
+#sidebar p.creabloc a span { top: -36px; }
+#sidebar p.espaicursos a span { top: -36px;}
+
+div.article p.data { font-size: 0.7em; }
+div.article p.comentari {font-size: 0.68em;}
+#sideleft { margin-left: 0.2%;}
+#sideright { margin-right: 0.2%;  }
+#bloc_destacat p { font-size: 0.7em; }
+h3.noticies{margin-top:0px}
+.sideboxleft { margin-right: -3px;}
+.sideboxright { margin-left: -3px;}
+.contentboxheadright {margin-left: -3px;}
+.contentboxheadleft { margin-right: -3px;}
+/*
+#bloc_destacat p { font-size: 0.8em; }
+#cel {margin-top: 5px;}
+#sidebar p.creabloc a span {
+	top: -38px;
+}*/

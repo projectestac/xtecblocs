@@ -1,0 +1,19 @@
+/* Gold Color Scheme CSS */
+
+a {color: #e0ae01;}
+a:hover {color: #C09F2B;} /*#f04253*/
+
+#navigation {background: #e0ae01;}
+
+#navigation:before, #navigation:after {
+    border: 1.5em solid #C09F2B;
+}
+#navigation .main-menu:before, #navigation .main-menu:after {
+    border-color: #8d6e01 transparent transparent transparent;
+}
+#logo p {color: #e0ae01;}
+
+.nivo-controlNav a.active {
+    background: #C09F2B;
+    color: #C09F2B;
+}

@@ -1,0 +1,19 @@
+/* Blue Color Scheme CSS */
+
+a {color: #0078A6;}
+a:hover {color: #006992;} /*#f04253*/
+
+#navigation {background: #0078A6;}
+
+#navigation:before, #navigation:after {
+    border: 1.5em solid #006992;
+}
+#navigation .main-menu:before, #navigation .main-menu:after {
+    border-color: #003b51 transparent transparent transparent;
+}
+#logo p {color: #0078A6;}
+
+.nivo-controlNav a.active {
+    background: #006992;
+    color: #006992;
+}

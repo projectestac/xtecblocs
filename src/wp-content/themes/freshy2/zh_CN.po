@@ -1,0 +1,198 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Freshy Theme for WordPress\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2006-07-16 00:56+0800\n"
+"Last-Translator: kk\n"
+"Language-Team: Xuqing Kuang <xuqingkuang@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Simpfiled Chinese\n"
+"X-Poedit-Country: CHINESE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: sidebar.php
+msgid "Search"
+msgstr "搜索"
+
+#: sidebar.php
+msgid "Archive"
+msgstr "档案"
+
+#: sidebar.php
+msgid "Categories"
+msgstr "分类"
+
+#: sidebar.php
+msgid "Links"
+msgstr "链接"
+
+#: sidebar.php
+msgid "Recent posts"
+msgstr "最新博客"
+
+#: sidebar.php
+msgid "Recent comments"
+msgstr "最后回复"
+
+#: header.php
+msgid "Home"
+msgstr "首页"
+
+#: sidebar.php
+msgid "Random image"
+msgstr "随机照片"
+
+#: index.php
+msgid "No Comments &#187;"
+msgstr "没有回复 &#187;"
+
+#: index.php
+msgid "1 Comment &#187;"
+msgstr "1 条恢复 &#187;"
+
+#: index.php
+msgid "% Comments &#187;"
+msgstr "% 条回复 &#187;"
+
+#: index.php
+msgid "Sorry, but you are looking for something that is not here"
+msgstr "对不起，你找的东西可能不在这里"
+
+#: index.php
+msgid "Not found"
+msgstr "没有找到"
+
+#: index.php
+msgid "Error 404"
+msgstr "404 错误"
+
+#: index.php
+msgid "Last works"
+msgstr "最新完成"
+
+#: index.php
+msgid "Last news"
+msgstr "最新新闻"
+
+#: single.php
+msgid "Author"
+msgstr "作者"
+
+#: single.php
+msgid "Informations"
+msgstr "信息"
+
+#: single.php
+msgid "Actions"
+msgstr "事件"
+
+#: single.php
+msgid "Date"
+msgstr "日期"
+
+#: single.php
+msgid "Comments rss"
+msgstr "RSS 回复"
+
+#: single.php
+msgid "Trackback"
+msgstr "Trackback"
+
+#: comments.php
+msgid "Leave a comment"
+msgstr "留言"
+
+#: comments.php
+msgid "Logout"
+msgstr "注销"
+
+#: comments.php
+msgid "Logged in as"
+msgstr "登录为"
+
+#: comments.php
+msgid "You must be"
+msgstr "你必须"
+
+#: comments.php
+msgid "logged in"
+msgstr "登录"
+
+#: comments.php
+msgid "to post a comment"
+msgstr "回复"
+
+#: comments.php
+msgid "Your comment is awaiting moderation"
+msgstr "你的回复需要经过审核后才能显示"
+
+#: comments.php
+msgid "This post is password protected. Enter the password to view comments"
+msgstr "本条信息被作者保护，请作者获取输入密码，并输入后查看"
+
+#: comments.php
+msgid "Mail"
+msgstr "电子邮件"
+
+#: comments.php
+msgid "Name"
+msgstr "姓名"
+
+#: comments.php
+msgid "Website"
+msgstr "网站"
+
+#: comments.php
+msgid "(required)"
+msgstr "(需要)"
+
+#: comments.php
+msgid "(will not be published)"
+msgstr "(不发表)"
+
+#: comments.php
+msgid "No responses"
+msgstr "没有回馈"
+
+#: comments.php
+msgid "One response"
+msgstr "一条回馈"
+
+#: comments.php
+msgid "% responses"
+msgstr "% 条回馈"
+
+#: comments.php
+msgid "to"
+msgstr "到"
+
+#: comments.php
+msgid "Last modified"
+msgstr "最后修改"
+
+#: comments.php
+msgid "You can use these tags"
+msgstr "你可以使用这些标记"
+
+#: comments.php
+msgid "Submit comment"
+msgstr "提交回复"
+
+#: comments.php
+msgid "Submit"
+msgstr "提交"
+
+#: index.php
+msgid "Rss feeds from"
+msgstr "RSS 从"
+
+#: index.php
+msgid "Read the rest of this entry &raquo;"
+msgstr "休息片刻 &raquo;"
+
+#: footer.php
+msgid "comments"
+msgstr "回复"
+

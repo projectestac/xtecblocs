@@ -1,0 +1,577 @@
+# Copyright (C) 2010 Delicacy
+# This file is distributed under the same license as the Delicacy package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Delicacy 1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/Delicacy\n"
+"POT-Creation-Date: 2011-11-25 14:23:22+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2011-11-25 15:48+0100\n"
+"Last-Translator: Aleksandra Łączek <a.laczek@gmail.com>\n"
+"Language-Team: Aleksandra Łączek\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: page.php:9
+#: comments.php:13
+#: search.php:16
+#: admin/widgets/recent-posts-widget.php:65
+#: archive.php:32
+#: index.php:47
+#: index.php:58
+#: single.php:8
+msgid "No comments"
+msgstr "Brak komentarzy"
+
+#: page.php:9
+#: comments.php:13
+#: search.php:16
+#: admin/widgets/recent-posts-widget.php:65
+#: archive.php:32
+#: index.php:47
+#: index.php:58
+#: single.php:8
+msgid "1 comment"
+msgstr "1 komentarz"
+
+#: page.php:9
+#: comments.php:13
+#: search.php:16
+#: admin/widgets/recent-posts-widget.php:65
+#: archive.php:32
+#: index.php:47
+#: index.php:58
+#: single.php:8
+msgid "Comments: %"
+msgstr "Komentarze: %"
+
+#: page.php:13
+msgid "Pages: "
+msgstr "Strony:"
+
+#: page.php:16
+msgid "Edit this entry"
+msgstr "Edytuj wpis."
+
+#: comments.php:7
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Ten wpis jest chroniony hasłem. Podaj hasło aby wyświetlic komentarze."
+
+#: comments.php:34
+msgid "Comments are closed."
+msgstr "Komentarze zamknięte."
+
+#: footer.php:9
+msgid "Proudly powered by"
+msgstr "Dumnie wspierane przez"
+
+#: footer.php:9
+msgid "WordPress"
+msgstr ""
+
+#: footer.php:9
+msgid "Design by "
+msgstr "Szablon WordPress zaprojektowany przez"
+
+#: footer.php:9
+msgid "WebTuts.pl"
+msgstr ""
+
+#: sidebar.php:7
+#: admin/widgets/archives-widget.php:99
+msgid "Archives"
+msgstr "Archiwa"
+
+#: sidebar.php:13
+msgid "Meta"
+msgstr "Meta"
+
+#: 404.php:4
+msgid "Page not found"
+msgstr "Nie znaleziono strony"
+
+#: 404.php:5
+msgid "Try searching the site:"
+msgstr "Spróbuj wyszukać na stronie:"
+
+#: meta-box/meta-box-3.2.2.class.php:108
+#: meta-box/meta-box-3.2.2.class.php:349
+msgid "Delete this image"
+msgstr "Usuń obrazek"
+
+#: meta-box/meta-box-3.2.2.class.php:108
+#: meta-box/meta-box-3.2.2.class.php:306
+#: meta-box/meta-box-3.2.2.class.php:349
+msgid "Delete"
+msgstr "Usuń"
+
+#: meta-box/meta-box-3.2.2.class.php:302
+msgid "Uploaded files"
+msgstr "Wgrane pliki"
+
+#: meta-box/meta-box-3.2.2.class.php:312
+msgid "Upload new files"
+msgstr "Wgraj nowe pliki"
+
+#: meta-box/meta-box-3.2.2.class.php:315
+msgid "Add more file"
+msgstr "Dodaj więcej plików"
+
+#: meta-box/meta-box-3.2.2.class.php:356
+msgid "Add more images"
+msgstr "Dodaj więcej obrazków"
+
+#: meta-box/meta-box-3.2.2.class.php:363
+msgid "Select a color"
+msgstr "Wybierz kolor"
+
+#: search.php:5
+msgid "Search results for"
+msgstr "Wyniki wyszukiwania dla"
+
+#: search.php:24
+#: archive.php:41
+#: index.php:69
+msgid "Previous Entries"
+msgstr "Starsze wpisy"
+
+#: search.php:24
+#: archive.php:41
+#: index.php:69
+msgid "Next entries"
+msgstr "Nowsze wpisy"
+
+#: search.php:31
+#: archive.php:45
+msgid "Not found"
+msgstr "Nie znaleziono"
+
+#: search.php:32
+msgid "Sorry, but no posts were found <br />Try another search..."
+msgstr "Nie znaleziono wpisów spełniających kryteria <br /> Spróbuj wyszukać ponownie..."
+
+#: admin/options-framework.php:227
+msgid "Save Options"
+msgstr "Zapisz ustawienia"
+
+#: admin/options-framework.php:228
+msgid "Restore Defaults"
+msgstr "Przywróć ustawienia domyślne"
+
+#: admin/options-framework.php:228
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr "Kliknij OK aby zresetować ustawienia."
+
+#: admin/options-framework.php:260
+msgid "Default options restored."
+msgstr "Przywrócono ustawienia domyślne."
+
+#: admin/options-framework.php:301
+msgid "Options saved."
+msgstr "Zapisano nowe ustawienia."
+
+#: admin/options-framework.php:359
+msgid "Theme Options"
+msgstr "Opcje Szablonu"
+
+#: admin/options-medialibrary-uploader.php:26
+msgid "Options Framework Internal Container"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:128
+msgid "Upload"
+msgstr "Wgraj"
+
+#: admin/options-medialibrary-uploader.php:151
+msgid "View File"
+msgstr "Wyświetl plik"
+
+#: admin/options-medialibrary-uploader.php:288
+msgid "Gallery"
+msgstr "Galeria"
+
+#: admin/options-medialibrary-uploader.php:288
+msgid "Previously Uploaded"
+msgstr ""
+
+#: admin/widgets/about-widget.php:19
+msgid "About section with autor image"
+msgstr "Sekcja \"O Autorze\""
+
+#: admin/widgets/about-widget.php:25
+msgid "Delicacy: About"
+msgstr "Delicacy: O autorze / O stronie"
+
+#: admin/widgets/about-widget.php:75
+msgid "About"
+msgstr "O autorze"
+
+#: admin/widgets/about-widget.php:80
+#: admin/widgets/seasonal-recipes-widget.php:104
+#: admin/widgets/archives-widget.php:104
+#: admin/widgets/recent-posts-widget.php:100
+#: admin/widgets/social-widget.php:86
+msgid "Title"
+msgstr "Tytuł"
+
+#: admin/widgets/about-widget.php:86
+msgid "About the author text"
+msgstr "Opis"
+
+#: admin/widgets/about-widget.php:92
+msgid "Author image URL"
+msgstr "Adres URL obrazka"
+
+#: admin/widgets/about-widget.php:94
+msgid "Suggested image dimensions: 90x120px"
+msgstr "Optymalne wymiary obrazka to 90x120px"
+
+#: admin/widgets/seasonal-recipes-widget.php:19
+msgid "Widget for Header Widget area. Rotates links for posts with a selected tag in the header (i.e. recipes for dishes currently in season)."
+msgstr "Widget dla obszaru Header Widget. Rotuj linki do wpisów z określonym tageim (np. w celu wyświetlenia przepisów sezonowych)."
+
+#: admin/widgets/seasonal-recipes-widget.php:25
+msgid "Delicacy: Featured posts"
+msgstr "Delicacy: Polecane"
+
+#: admin/widgets/seasonal-recipes-widget.php:99
+msgid "Featured:"
+msgstr "Polecam:"
+
+#: admin/widgets/seasonal-recipes-widget.php:110
+msgid "Number of posts to rotate"
+msgstr "Ilość wpisów do wyświetlenia"
+
+#: admin/widgets/seasonal-recipes-widget.php:116
+msgid "Select tag"
+msgstr "Wybierz tag"
+
+#: admin/widgets/archives-widget.php:19
+msgid "Displays a list of monthly archives, categories or pages in two columns."
+msgstr "Wyświetla listę archiwów, kategorii lub stron w dwóch kolumnach."
+
+#: admin/widgets/archives-widget.php:25
+msgid "Delicacy: Archives / Categories / Pages List"
+msgstr "Delicacy: Archiwa / Kategorie / Strony"
+
+#: admin/widgets/archives-widget.php:111
+msgid "Type"
+msgstr "Typ"
+
+#: admin/widgets/archives-widget.php:113
+msgid "archives"
+msgstr "archiwa"
+
+#: admin/widgets/archives-widget.php:114
+msgid "categories"
+msgstr "kategorie"
+
+#: admin/widgets/archives-widget.php:115
+msgid "pages"
+msgstr "strony"
+
+#: admin/widgets/recent-posts-widget.php:19
+msgid "Displays a list of recent posts with post thumbnails, date and number of comments"
+msgstr "Wyświetla najnowsze wpisy z miniaturami, datą oraz liczbą komentarzy"
+
+#: admin/widgets/recent-posts-widget.php:25
+msgid "Delicacy: Recent posts"
+msgstr "Delicacy: Najnowsze wpisy"
+
+#: admin/widgets/recent-posts-widget.php:95
+msgid "Recent posts"
+msgstr "Najnowsze wpisy"
+
+#: admin/widgets/recent-posts-widget.php:106
+msgid "Number of posts to show"
+msgstr "Ilość wpisów do wyświetlenia"
+
+#: admin/widgets/social-widget.php:19
+msgid "Displays icons with linked to RSS / Facebook/ Twitter / Flickr"
+msgstr "Wyświetla linki do kanału RSS, profliu na Facebooku, Twitterze oraz Flickr"
+
+#: admin/widgets/social-widget.php:25
+msgid "Delicacy: Social icons"
+msgstr "Delicacy: Bądź na bieżąco"
+
+#: admin/widgets/social-widget.php:50
+msgid "Follow me on Flickr"
+msgstr "Flickr"
+
+#: admin/widgets/social-widget.php:51
+msgid "Follow me on Twitter"
+msgstr "Twitter"
+
+#: admin/widgets/social-widget.php:52
+msgid "Follow me on Facebook"
+msgstr "Facebook"
+
+#: admin/widgets/social-widget.php:53
+msgid "Subscribe to RSS feed"
+msgstr "Subskrybuj kanał RSS"
+
+#: admin/widgets/social-widget.php:81
+msgid "Follow me"
+msgstr "Bądź na bieżąco"
+
+#: admin/widgets/social-widget.php:92
+msgid "URL address of your RSS feed"
+msgstr "Adres URL kanału RSS"
+
+#: admin/widgets/social-widget.php:94
+msgid "Enter full feed URL. If you don't want to display this, leave empty."
+msgstr "Podaj pełny adres. Jeśli nie chcesz wyświetlać tej pozycji, pozostaw to pole puste."
+
+#: admin/widgets/social-widget.php:99
+msgid "URL address of your Facebook profile or page"
+msgstr "Adres URL strony lub profilu na Facebook"
+
+#: admin/widgets/social-widget.php:101
+msgid "Enter full URL of your Facebook profile or page. If you don't want to display this, leave empty."
+msgstr "Podaj pełny adres strony lub profilu na Facebook. Jeśli nie chcesz wyświetlać tej pozycji, pozostaw to pole puste."
+
+#: admin/widgets/social-widget.php:105
+msgid "URL address of your Twitter profile page"
+msgstr "Adres URL profilu na Twitterze"
+
+#: admin/widgets/social-widget.php:107
+msgid "Enter full URL of your Twitter profile page. If you don't want to display this, leave empty."
+msgstr "Podaj pełny adres profliu na Twitterze. Jeśli nie chcesz wyświetlać tej pozycji, pozostaw to pole puste."
+
+#: admin/widgets/social-widget.php:113
+msgid "Enter full URL to your Flickr profile. If you don't want to display this, leave empty."
+msgstr "Podaj pełny adres profilu na Flickr. Jeśli nie chcesz wyświetlać tej pozycji, pozostaw to pole puste."
+
+#: archive.php:9
+msgid "Daily Archives: %s"
+msgstr "Archiwum dla %s"
+
+#: archive.php:11
+msgid "Monthly Archives: %s"
+msgstr "Archiwum dla %s"
+
+#: archive.php:13
+msgid "Yearly Archives: %s"
+msgstr "Archiwum dla %s"
+
+#: archive.php:15
+msgid "Blog Archives for category"
+msgstr "Archiwum kategorii"
+
+#: archive.php:17
+msgid "Blog Archives for tag"
+msgstr "Archiwum dla tagu"
+
+#: archive.php:19
+msgid "Blog Archives"
+msgstr "Archiwaum dla"
+
+#: header.php:30
+msgid "Page %s"
+msgstr "Strona %s"
+
+#: index.php:32
+msgid "Newest"
+msgstr "Najnowsze"
+
+#: index.php:73
+msgid "Not Found"
+msgstr "Nie znaleziono"
+
+#: options.php:32
+msgid "Red"
+msgstr "Czerwony"
+
+#: options.php:32
+msgid "Green"
+msgstr "Zielony"
+
+#: options.php:32
+msgid "Blue"
+msgstr "Niebieski"
+
+#: options.php:32
+msgid "Gold"
+msgstr "Złoty"
+
+#: options.php:32
+msgid "Pink"
+msgstr "Różowy"
+
+#: options.php:32
+msgid "Orange"
+msgstr "Pomarańczowy"
+
+#: options.php:33
+msgid "Display full content for each post"
+msgstr "Wyświetlaj pełną treść wpisów"
+
+#: options.php:33
+msgid "Display excerpt for each post"
+msgstr "Wyświetlaj sterszczenie"
+
+#: options.php:54
+msgid "Basic settings"
+msgstr "Ustawienia podstawowe"
+
+#: options.php:57
+msgid "Color scheme"
+msgstr "Schemat kolorów"
+
+#: options.php:58
+msgid "Select color scheme."
+msgstr "Wybierz schemat kolorów."
+
+#: options.php:65
+msgid "Background Image"
+msgstr "Tło strony"
+
+#: options.php:66
+msgid "Select background pattern."
+msgstr "Wybierz wzór tła dla swojej strony."
+
+#: options.php:79
+msgid "Custom logo image"
+msgstr "Logo"
+
+#: options.php:80
+msgid "You can upload custom image for your website logo (optional)."
+msgstr "Możesz wgrać własny obrazek logo (opcjonalnie)."
+
+#: options.php:84
+msgid "Favicon URL"
+msgstr "Adres URL favicon"
+
+#: options.php:89
+msgid "Home Page Settings"
+msgstr "Ustawienia Strony Głównej"
+
+#: options.php:95
+msgid "Select a Category"
+msgstr "Wybierz kategorię"
+
+#: options.php:96
+msgid "Posts from this category will be rotating in image slider on the Home Page. IMPORTANT: Make sure all posts in this category have Featured Immage option set"
+msgstr "Wpisy z tej kategorii będą rotowane w pokazie slajdów na stronie głównej. WAŻNE: Upewnij się, że wpisy które chcesz rotować mają ustawioną ikonę wpisu."
+
+#: functions.php:38
+msgid "Delicacy Main Menu"
+msgstr ""
+
+#: functions.php:45
+msgid "Continue reading"
+msgstr "Czytaj dalej"
+
+#: functions.php:146
+msgid "Culinary recipe"
+msgstr "Przepis kulinarny"
+
+#: functions.php:153
+#: single.php:38
+msgid "Servings"
+msgstr "Ilość porcji"
+
+#: functions.php:154
+msgid "Enter the number of servings eg. \"4\""
+msgstr "Podaj ilość porcji jaką można przygotować z podanych składników, np. 4"
+
+#: functions.php:160
+#: single.php:36
+msgid "Prep time"
+msgstr "Czas przygotowania"
+
+#: functions.php:161
+msgid "How long does it take to prep (without cooking time, eg. 20 min.)"
+msgstr "Podaj czas przygotowania potrawy, np. 20 min (bez czasu pieczenia, gotowania etc.)"
+
+#: functions.php:168
+msgid "Cooking time"
+msgstr "Czas gotowania"
+
+#: functions.php:169
+msgid "Toal time of cooking, baking etc."
+msgstr "Łączny czas gotowania, pieczenia etc., np. 1 h 20 min"
+
+#: functions.php:176
+#: single.php:39
+msgid "Difficulty"
+msgstr "Poziom trudności"
+
+#: functions.php:181
+#: single.php:30
+msgid "easy"
+msgstr "łatwe"
+
+#: functions.php:182
+#: single.php:31
+msgid "medium"
+msgstr "średnie"
+
+#: functions.php:183
+#: single.php:32
+msgid "hard"
+msgstr "trudne"
+
+#: functions.php:189
+#: single.php:15
+msgid "Ingredients"
+msgstr "Składniki"
+
+#: functions.php:190
+msgid "Enter all the ingredients. IMPORTANT: Seperate the ingredients with a single line break."
+msgstr "Podaj wszystkie składniki. WAŻNE: Każdą pozycję wprowadzaj w nowej linii, oddzielając ENTER-em"
+
+#: functions.php:196
+#: single.php:45
+msgid "Directions"
+msgstr "Przygotowanie"
+
+#: functions.php:225
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions.php:225
+msgid "Edit"
+msgstr "Edytuj"
+
+#: functions.php:230
+msgid "Your comment awaits moderation."
+msgstr "Twój komentarz oczekuje na moderację."
+
+#: single.php:37
+msgid "Cook time"
+msgstr "Czas gotowania"
+
+#: single.php:50
+msgid "Pages:"
+msgstr "Strony: "
+
+#: single.php:51
+msgid "Tagged: "
+msgstr "Tagi: "
+
+#: searchform.php:4
+msgid "Search"
+msgstr "Szukaj"
+
+#. Theme Name of the plugin/theme
+msgid "Delicacy"
+msgstr ""
+
+#. #-#-#-#-#  Delicacy.pot (Delicacy 1)  #-#-#-#-#
+#. Theme URI of the plugin/theme
+#. #-#-#-#-#  Delicacy.pot (Delicacy 1)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "http://webtuts.pl"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Culinary oriented WordPress Theme"
+msgstr "Szablon WordPress dla stron o profilu kulinarnym"
+
+#. Author of the plugin/theme
+msgid "Aleksandra Łączek"
+msgstr ""
+

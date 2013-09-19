@@ -1,0 +1,46 @@
+-/*Classic Chalkboard Theme*/
+-2.0 - Initial Release
+-12-27-2012 - 2.1
+-*Fixed stray div tag issue with templates
+-*Added sidebar to posts
+-*Fixed mismatching heading tags in sidebar (h4>h5)
+-*Removed duplicate date line from templates
+-
+-12-30-2012 - 2.2
+-*Fixed sticky post styling issue
+-*Fixed text domain issues/theme-slug
+-*Added HTML Reset
+-*Added style class for post/page titles
+-*Modified entry-meta styling
+-*Added permalink to content end for empty title posts
+-
+-1-11-2013 - 2.3
+-*Fixed <pre> code wrap
+-*Fixed namespacing/forward-facing text.
+-*Fixed nested list styling.
+-*Added blockquote styling.
+-*Rounded comment form box.
+-*Comments are closed removed.
+-*Added search form to 404 template
+-*Replaced bloginfo tags with modern tags
+-*Added JS comment functionality.
+-
+-1-13-2013 - 2.4
+-*Modified title tag
+-*Fixed paragraph spacing issue.
+-*Reduced site title font size from 300% to 250%.
+-*Fixed page width/zoom issue.
+-
+-2-25-2013 - 2.5
+- Now uses _s theme as a base
+- Added background color/texture with support for custom backgrounds
+- Added support for custom headers
+- Change content font such that it is easier to read in large quantities
+- Updated chalkboard texture such that seams are less noticeable
+- Added wood grain texture to chalkboard's "frame"
+- Added support for footer widgets
+- Sidebar now appears on all views, or not at all if no widgets are assigned
+- Retina-ized all graphics
+- Added RTL styles
+- Minor tweaks/fixes
+- MAJOR overhaul. Please see chalkboard.diff file for complete changes.

@@ -1,0 +1,19 @@
+/* Green Color Scheme CSS */
+
+a {color: #9DB102;}
+a:hover {color: #768702;} /*#f04253*/
+
+#navigation {background: #9DB102;}
+
+#navigation:before, #navigation:after {
+    border: 1.5em solid #768702;
+}
+#navigation .main-menu:before, #navigation .main-menu:after {
+    border-color: #566300 transparent transparent transparent;
+}
+#logo p {color: #9DB102;}
+
+.nivo-controlNav a.active {
+    background: #768702;
+    color: #768702;
+}

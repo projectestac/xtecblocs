@@ -1,0 +1,198 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Freshy Theme for WordPress\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-02-19 23:38+0800\n"
+"Last-Translator: UNO <nazo.813@gmail.com>\n"
+"Language-Team: Xuqing Kuang <xuqingkuang@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Simpfiled Chinese\n"
+"X-Poedit-Country: CHINESE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: sidebar.php
+msgid "Search"
+msgstr "搜尋"
+
+#: sidebar.php
+msgid "Archive"
+msgstr "月份彙整"
+
+#: sidebar.php
+msgid "Categories"
+msgstr "分類彙整"
+
+#: sidebar.php
+msgid "Links"
+msgstr "連結"
+
+#: sidebar.php
+msgid "Recent posts"
+msgstr "最新文章"
+
+#: sidebar.php
+msgid "Recent comments"
+msgstr "最新迴響"
+
+#: header.php
+msgid "Home"
+msgstr "首頁"
+
+#: sidebar.php
+msgid "Random image"
+msgstr "隨機圖片"
+
+#: index.php
+msgid "No Comments &#187;"
+msgstr "没有迴響 &#187;"
+
+#: index.php
+msgid "1 Comment &#187;"
+msgstr "1 個迴響 &#187;"
+
+#: index.php
+msgid "% Comments &#187;"
+msgstr "% 個迴響 &#187;"
+
+#: index.php
+msgid "Sorry, but you are looking for something that is not here"
+msgstr "對不起，沒有你要找的文章。"
+
+#: index.php
+msgid "Not found"
+msgstr "找不到"
+
+#: index.php
+msgid "Error 404"
+msgstr "404 錯誤"
+
+#: index.php
+msgid "Last works"
+msgstr "最新工作"
+
+#: index.php
+msgid "Last news"
+msgstr "最新消息"
+
+#: single.php
+msgid "Author"
+msgstr "作者"
+
+#: single.php
+msgid "Informations"
+msgstr "資訊"
+
+#: single.php
+msgid "Actions"
+msgstr "動作"
+
+#: single.php
+msgid "Date"
+msgstr "日期"
+
+#: single.php
+msgid "Comments rss"
+msgstr "RSS 迴響"
+
+#: single.php
+msgid "Trackback"
+msgstr "引用"
+
+#: comments.php
+msgid "Leave a comment"
+msgstr "留言"
+
+#: comments.php
+msgid "Logout"
+msgstr "登出"
+
+#: comments.php
+msgid "Logged in as"
+msgstr "登入為"
+
+#: comments.php
+msgid "You must be"
+msgstr "你必須"
+
+#: comments.php
+msgid "logged in"
+msgstr "登入"
+
+#: comments.php
+msgid "to post a comment"
+msgstr "發表迴響"
+
+#: comments.php
+msgid "Your comment is awaiting moderation"
+msgstr "你的留言經審核之後才能顯示"
+
+#: comments.php
+msgid "This post is password protected. Enter the password to view comments"
+msgstr "文章受到保護，輸入密碼之後方可瀏覽。"
+
+#: comments.php
+msgid "Mail"
+msgstr "電子郵件"
+
+#: comments.php
+msgid "Name"
+msgstr "姓名"
+
+#: comments.php
+msgid "Website"
+msgstr "網站"
+
+#: comments.php
+msgid "(required)"
+msgstr "(必須)"
+
+#: comments.php
+msgid "(will not be published)"
+msgstr "(不會被發表)"
+
+#: comments.php
+msgid "No responses"
+msgstr "無回應"
+
+#: comments.php
+msgid "One response"
+msgstr "一則回應"
+
+#: comments.php
+msgid "% responses"
+msgstr "% 則回應"
+
+#: comments.php
+msgid "to"
+msgstr "到"
+
+#: comments.php
+msgid "Last modified"
+msgstr "最後修改"
+
+#: comments.php
+msgid "You can use these tags"
+msgstr "你可以使用這些標籤"
+
+#: comments.php
+msgid "Submit comment"
+msgstr "送出迴響"
+
+#: comments.php
+msgid "Submit"
+msgstr "送出"
+
+#: index.php
+msgid "Rss feeds from"
+msgstr "RSS 迴響從"
+
+#: index.php
+msgid "Read the rest of this entry &raquo;"
+msgstr "繼續閱讀 &raquo;"
+
+#: footer.php
+msgid "comments"
+msgstr "迴響"
+

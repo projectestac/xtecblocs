@@ -1,0 +1,34 @@
+/* Nivo Theme Default */
+
+.theme-default .nivoSlider {
+	position:relative;
+}
+.theme-default .nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+}
+.theme-default .nivoSlider a {
+	border:0;
+	display:block;
+}
+
+.theme-default .nivo-controlNav {
+	text-align:center;
+	padding: 15px 0;
+}
+.theme-default .nivo-controlNav a {
+	display:inline-block;
+	width:16px;
+	height:13px;
+	text-indent:-9999px;
+	border:0;
+	margin-right:3px;
+}
+.theme-default .nivo-controlNav a.active {
+	background-position:0 -16px;
+}
+.theme-default .nivo-caption a.more_link {
+    display: inline;
+}

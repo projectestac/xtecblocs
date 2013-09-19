@@ -1,0 +1,19 @@
+/* Pink Color Scheme CSS */
+
+a {color: #BC6197;}
+a:hover {color: #A13E79;}
+
+#navigation {background: #ce77ab;}
+
+#navigation:before, #navigation:after {
+    border: 1.5em solid #B16692;
+}
+#navigation .main-menu:before, #navigation .main-menu:after {
+    border-color: #732052 transparent transparent transparent;
+}
+#logo p {color: #BC6197;}
+
+.nivo-controlNav a.active {
+    background: #A13E79;
+    color: #A13E79;
+}

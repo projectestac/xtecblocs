@@ -1,0 +1,154 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Freshy Theme for WordPress\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2006-11-14 13:14+0100\n"
+"Last-Translator: csy <csy@vipmail.hu>\n"
+"Language-Team: Julien De Luca <contact@jide.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Search"
+msgstr "Keresés"
+
+msgid "Archive"
+msgstr "Archivum"
+
+msgid "Categories"
+msgstr "Kategóriák"
+
+msgid "Links"
+msgstr "Linkek"
+
+msgid "Recent posts"
+msgstr "Utolsó bejegyzések"
+
+msgid "Recent comments"
+msgstr "Utolsó hozzászólások"
+
+msgid "Home"
+msgstr "Home"
+
+msgid "Random image"
+msgstr "Véletlen kép"
+
+msgid "Comments"
+msgstr "Hozzászólások"
+
+msgid "No Comments &#187;"
+msgstr "Nincs hozzászólás &#187;"
+
+msgid "1 Comment &#187;"
+msgstr "1 Hozzászólás &#187;"
+
+msgid "% Comments &#187;"
+msgstr "% Hozzászólás &#187;"
+
+msgid "Sorry, but you are looking for something that is not here"
+msgstr "Bocsi, de olyasmit keresel, ami nincs itt."
+
+msgid "Not found"
+msgstr "Nem találom"
+
+msgid "Error 404"
+msgstr "404 es hiba"
+
+msgid "Last works"
+msgstr "Friss munkák"
+
+msgid "Last news"
+msgstr "Friss hírek"
+
+msgid "Author"
+msgstr "Szerző"
+
+msgid "Informations"
+msgstr "Információk"
+
+msgid "Actions"
+msgstr "Lehetőségek"
+
+msgid "Date"
+msgstr "Dátum"
+
+msgid "Comments rss"
+msgstr "RSS hozzászólások"
+
+msgid "Trackback"
+msgstr "Trackback"
+
+msgid "Leave a comment"
+msgstr "Szólj hozzá"
+
+msgid "Logout"
+msgstr "Kijelentkezés"
+
+msgid "Logged in as"
+msgstr "Bejelentkezve, mint"
+
+msgid "You must be"
+msgstr "Neked kell"
+
+msgid "logged in"
+msgstr "Bejelentkezve"
+
+msgid "to post a comment"
+msgstr "hozzászólok"
+
+msgid "Your comment is awaiting moderation"
+msgstr "Hozzászólásod moderációra vár"
+
+msgid "This post is password protected. Enter the password to view comments"
+msgstr "Jelszóval védett bejegyzés. Írd be a jelszót, ha látni akarod"
+
+msgid "Mail"
+msgstr "E-Mail"
+
+msgid "Name"
+msgstr "Név"
+
+msgid "Website"
+msgstr "Weboldal"
+
+msgid "(required)"
+msgstr "(szükséges)"
+
+msgid "(will not be published)"
+msgstr "(nem publikus)"
+
+msgid "No responses"
+msgstr "Nincsennek válaszok"
+
+msgid "One response"
+msgstr "1 válasz"
+
+msgid "% responses"
+msgstr "% válasz"
+
+msgid "to"
+msgstr "neki"
+
+msgid "Last modified"
+msgstr "Utoljára módosított"
+
+msgid "You can use these tags"
+msgstr "Ezeket a TAG-eket használhatod"
+
+msgid "Submit comment"
+msgstr "Hozzászólok"
+
+msgid "Submit"
+msgstr "Feliratkozom"
+
+msgid "Rss feeds from"
+msgstr "RSS Feedek tőle"
+
+msgid "Read the rest of this entry &raquo;"
+msgstr "Olvasd el ezt a bejegyzést &raquo;"
+
+msgid "comments"
+msgstr "hozzászólások"
+

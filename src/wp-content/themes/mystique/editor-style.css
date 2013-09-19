@@ -1,0 +1,212 @@
+
+
+/* theme editor styles -- incomplete */
+
+html .mceContentBody{
+  font:normal normal 0.8em "Lucida Grande","Lucida Sans Unicode",verdana,arial,Tahoma,Verdana,sans-serif;
+  font-size-adjust:none;
+  color:#504e53;
+}
+
+
+/*** GENERAL ELEMENTS ***/
+
+/* links */
+a{
+  color:#536a86;
+  outline:none;
+  text-decoration:none;
+}
+
+a:hover{
+  color:#ed1e24;
+  text-decoration:underline;
+}
+
+/* headings */
+h1,h2,h3,h4,h5,h6{
+  font-weight:normal;
+  margin:.75em 0 .25em;
+}
+
+h1{
+  font-size:250%;
+  letter-spacing:-.04em;
+}
+
+h2{
+  font-size:200%;
+  letter-spacing:-0.03em;
+}
+
+h3{
+  font-size:160%;
+  letter-spacing:-0.02em;
+}
+
+h4{
+  font-size:140%;
+  font-weight:bold;
+  letter-spacing:-0.02em;
+}
+
+h5{
+  font-size:130%;
+  font-weight:bold;
+  letter-spacing:-0.02em;
+}
+
+h6{
+  font-size:120%;
+  text-transform:uppercase;
+}
+
+
+/* tables */
+table{
+  margin:1em 0 2em 0;
+  width:100%;
+  border-collapse:collapse;
+  border-spacing:0;
+}
+
+td, th{
+  padding:2px 5px;
+  border:2px solid #fff;
+}
+
+td{background:#efefef;}
+
+th{
+  font-weight:bold;
+  background:#ddd;
+}
+
+caption, th{text-align:left;}
+.table-sort th{cursor:n-resize;}
+
+
+
+/* forms */
+form{
+  margin:1em 0 2em 0;
+}
+
+input, select, textarea{
+  font:normal normal 1em "Lucida Grande","Lucida Sans Unicode",verdana,arial,Tahoma,Verdana,sans-serif;
+  display:block;
+  margin-bottom:5px;
+  padding:5px 10px;
+}
+
+optgroup{
+  font-style: italic;
+  font-weight: normal;
+  color: #ddd;
+}
+
+option{
+  color: #333;
+}
+
+textarea{
+  width:75%;
+  height: 160px;
+}
+
+input[type="checkbox"], input[type="radio"]{
+  padding: 0;
+  display:inline;
+  vertical-align:-1px;
+}
+
+input[type="submit"]{
+  cursor:pointer;
+}
+
+label{
+  font-weight:normal;
+  display:block;
+  margin-top:5px;
+}
+
+fieldset{
+  padding:10px;
+  border:1px solid #ddd;
+  background:#fff;
+  margin:1em 0 2em 0;
+}
+
+legend{
+  border:1px solid #ddd;
+  padding:5px 10px;
+  font-size:115%;
+  font-style:italic;
+}
+
+/* lists */
+ul, ol{
+  list-style-type:disc;
+  list-style-position:outside;
+  margin:0 0 10px 15px;
+  line-height: 150%;
+}
+
+dl{margin:1em 0 2em 0;}
+dt{
+  font-weight:bold;
+  text-decoration:underline;
+}
+
+/* other */
+p{
+  margin:.25em 0 .75em 0;
+  line-height:140%;
+}
+
+img{border:0;}
+small{font-size:80%;}
+
+hr{
+  color:#b4aca1;
+  background-color:#b4aca1;
+  border-bottom:1px solid #f6f4eb;
+}
+
+pre{
+  font:12px "Courier New", Courier, "Lucida Console", Monaco, "DejaVu Sans Mono", "Nimbus Mono L", "Bitstream Vera Sans Mono", monospace;
+  overflow:auto;
+  white-space:pre-wrap;/* <- css3 */
+  white-space:0;/* <- ff */
+  background:#fff;
+  padding:10px;
+  margin:.25em 0 .75em 0;
+  border:1px solid #ddd;
+}
+
+code{
+  background: #ddd;
+  font:12px "Courier New", Courier, "Lucida Console", Monaco, "DejaVu Sans Mono", "Nimbus Mono L", "Bitstream Vera Sans Mono", monospace;
+  text-shadow: #fff 0px 1px 1px;
+  padding: 0 4px;
+}
+
+
+blockquote {
+  background:#f9f9f9;
+  border-left:10px solid #ccc;
+  margin:1.5em 10px;
+  padding:.5em 10px;
+  quotes:"\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+  color:#ccc;
+  content:open-quote;
+  font-size:4em;
+  line-height:.1em;
+  margin-right:.25em;
+  vertical-align:-.4em;
+}
+
+blockquote p{display:inline;font-style:italic;}
