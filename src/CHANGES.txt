@@ -2,6 +2,7 @@
 Changes in progress
 - Recuperar el directori ws.
 - Eliminar referències a edu365 en crear un nou bloc.
+- Afegit apc.php.
 
 ---------------------------------------------------------------------------------------
 v.13.09.18
