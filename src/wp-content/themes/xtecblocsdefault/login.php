@@ -20,7 +20,8 @@ switch($_GET['a']){
 		
 	<h3>Validació</h3> 
 	<div class="loginForm">
-		<p>Per validar-vos utilitzeu el nom d'usuari/ària de la XTEC o de l'edu365.</p>
+		<!--<p>Per validar-vos utilitzeu el nom d'usuari/ària de la XTEC o de l'edu365.</p>-->
+		<p>Per validar-vos utilitzeu el nom d'usuari/ària de la XTEC.</p>
 		<?php if(isset($_REQUEST['error']) && $_REQUEST['error']==1) {?>
 			<p class="error">Identificació incorrecta.</p>
 		<?php } ?>
