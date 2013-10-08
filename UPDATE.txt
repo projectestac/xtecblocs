@@ -1,0 +1,35 @@
+ACTUALITZACIÓ XTECBlocs
+----------------------------------------------------------------------
+
+1. Tractament especial de fitxers:
+
+    Fitxers que s'han de conservar en fer un desplegament:
+
+	* '$HOME/html/.htaccess'			(controla l'accés als blocs)
+	* '$HOME/html/wp-config.php'			(configuració del WordPress)
+	* '$HOME/html/wp-content/wp-cache-config.php'	(configuració de la memòria cau del WP Super Cache)
+	* '$HOME/html/wp-content/blogs.dir'     	(enllaç simbòlic a '$HOME/blogs.dir/' amb els fitxers dels usuaris)
+	* '$HOME/html/wp-content/cache' 		(enllaç simbòlic a '$HOME/cache/' amb els fitxers de la memòria cau del WP Super Cache)
+
+
+2. Copiar del repositori (repoapp) el directori següent i tot el seu contingut:
+	
+	* $REPOAPP/a7_itt/XTECBLOCS/XTECBLOCS_vXX.XX.XX/PHP/html/
+
+  al directori següent del servidor:
+
+	* $HOME/html/
+
+
+
+COMPROVACIÓ
+--------------------------------------------------------------------
+
+Si tot ha anat bé, la pàgina inicial dels blocs es carregarà i es podrà accedir a diferents parts de la pàgina com per exemple als darrers blocs creats.
+
+	- Nagios (si tot va bé ha de mostrar OK):
+		* Acceptació:	http://pwc-acc.xtec.cat/xtec_blocs/works.php
+		* Producció:	http://blocs.xtec.cat/works.php
+	- Aplicació:
+		* Acceptació:	http://pwc-acc.xtec.cat/xtec_blocs/
+		* Producció:	http://blocs.xtec.cat/

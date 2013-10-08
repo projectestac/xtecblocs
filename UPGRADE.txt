@@ -1,0 +1,67 @@
+UPGRADE d'XTECBlocs
+----------------------------------------------------------------------
+
+1. Tancar l'accés públic a XTECBLOCS (sols producció):
+
+    S'ha de tancar l'accés exterior incloent una pàgina que informi de l'actualització que s'està fent i de la seva durada.
+    TAC accedirà directament a un dels frontals modificat el /etc/hosts de les estacions de treball.
+
+
+2. Realitzar un backup de les BD's d'XTECBLOCS (sols producció): 
+
+    * xtec_blocs_0, ..., xtec_blocs_N
+    * xtec_blocs_global
+
+
+3. Realitzar un backup dels directoris (sols producció): 
+
+    * '$HOME/html'
+    * '$HOME/html/wp-content/blogs.dir'
+    * '$HOME/html/wp-content/cache' /* es podria obviar */
+
+
+4. Tasques prèvies de preparació per part de TAC (TAC informarà si és pot continuar)
+
+    - Desactivació de pluguins
+    - Desactivació de temes
+
+
+5. Tractament especial de fitxers:
+
+    Fitxers que s'han de CONSERVAR en fer aquest desplegament:
+
+	* '$HOME/html/wp-content/blogs.dir'     	(enllaç simbòlic a '$HOME/blogs.dir/' amb els fitxers dels usuaris)
+	* '$HOME/html/wp-content/cache' 		(enllaç simbòlic a '$HOME/cache/' amb els fitxers de la memòria cau del WP Super Cache)
+
+    Fitxers que s'han de SUBTITUIR pels corresponents a l'entorn destí:
+
+	* '$HOME/html/.htaccess'			(controla l'accés als blocs)
+	* '$HOME/html/wp-config.php'			(configuració del WordPress, s'ha de completar amb els PASSWD de BD segons entorn)
+	* '$HOME/html/wp-content/wp-cache-config.php'	(configuració de la memòria cau del WP Super Cache)
+
+    	Aquests fitxers a es troben a $REPOAPP/a7_itt/XTECBLOCS/XTECBLOCS_vXX.XX.XX/PHP/html/ amb extensions .des, .int, . acc i .prod. S'haura de renombrar el corresponent a l'entorn de destí treient l'extenssió.
+
+
+6. Copiar del repositori (repoapp) el directori següent i tot el seu contingut tenint en compte lo indicat a l'apartat anterior:
+	
+	* $REPOAPP/a7_itt/XTECBLOCS/XTECBLOCS_vXX.XX.XX/PHP/html/
+
+	al directori següent del servidor:
+
+	* $HOME/html/
+
+
+7. TAC ha de realitzar uns procediments amb una finestra de 2 DIES (sols producció).
+
+    - Upgrade BD comuna i blog principal
+    - Reactivació de temes
+    - Reactivació de plugins
+    - Upgrade de cada blog (30000)
+
+
+8. Recuperar l'acces públic a l'aplicació (sols producció).
+
+
+    
+
+	
