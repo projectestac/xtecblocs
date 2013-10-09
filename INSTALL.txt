@@ -17,16 +17,31 @@ Requisits
 	- Connectivitat per SSL pel port 443 (Extensió Blogger Importer i Google Analyticator)
 
 
+
+
+Procés de pre-instal·lació
+--------------------------
+
+	A - Creació de BD's Mysql
+        -------------------------
+
+	B - Creació de sistemes de fitxers
+	----------------------------------
+
+
+
+
+
 Procés d'instal·lació
 ---------------------
 
-	A - Copia de fitxers del repositori al servidor
-	-----------------------------------------------
+	A - Copia de fitxers del repositori als servidors web
+	-----------------------------------------------------
 
-		* Copiar els recursivament els fitxers '.../XTECBLOCS/XTECBLOCS_vxx.xx.xx/PHP/html/*' del repositori al directori '.../html' del servidor.
+		* Copiar recursivament els fitxers '.../XTECBLOCS/XTECBLOCS_vxx.xx.xx/PHP/html/*' del repositori al directori '.../html' dels servidors web.
 			
 	
-	B - Creació dels directoris '.../blogs.dir' i '.../cache' al servidor
+	B - Creació dels directoris '.../blogs.dir' i '.../cache' als servidors web
 	---------------------------------------------------------------------
 
 		* Aquest directoris han de ser visibles per nfs a tots els frontals i estar fora de l'arbre de directori que conté el codi de l'aplicació '.../html/'.
@@ -61,6 +76,72 @@ Procés d'instal·lació
 		* '.../html/wp-config.php'			(s'ha de completar amb els PASSWD de BD segons entorn).
 		* '.../html/wp-content/wp-cache-config.php'
 
+
+
+	F - Comentar temporalment les seguents linies del '.../html/wp-config.php'
+	--------------------------------------------------------------------------
+
+		define('MULTISITE', true);
+		define('SUBDOMAIN_INSTALL', false);
+		define('DOMAIN_CURRENT_SITE', '...');
+		define('PATH_CURRENT_SITE', '/.../');
+		define('SITE_ID_CURRENT_SITE', 1);
+		define('BLOG_ID_CURRENT_SITE', 1);
+
+
+
+	G - Instal.lar el wordpress en MONOSITE
+	---------------------------------------
+
+		* Accedir a la url base '.../' i seguir les instruccions.
+
+
+
+	H - Activar el mode MULTISITE
+	------------------------------
+
+		* Accedir a la url '.../wp-admin/network/setup.php' i seguir les instruccions sense canviar el contingut de cap fitxer.
+		* Descomentar les linies del '.../html/wp-config.php' comentades anteriorment al pas F.
+
+
+
+
+Procés de post-instal·lació
+--------------------------
+
+
+	A - Activar themes
+	------------------
+
+		* Accedir a la url '.../wp-admin/network/themes.php'
+
+
+
+	B - Assignar el tema al blog principal (XTECBlocs Default)
+	----------------------------------------
+
+		* Accedir a la url '.../wp-admin/themes.php'
+
+
+
+	C - Desactivar el tema del blog principal (XTECBlocs Default)
+	-----------------------------------------
+
+		* Accedir a la url '.../wp-admin/network/themes.php'
+
+
+
+	D - Activar pluguins (menys Addthis i Weekblog2)
+	---------------------
+
+		* Accedir a la url '.../wp-admin/network/plugins.php'
+
+
+
+	E - Config del pluguin manager (l'Addthis ha d’estar configurat com a "All users" + "Update options". Fer l’acció "activar per tothom")
+	------------------------------
+
+		* Accedir a la url '.../wp-admin/network/plugins.php?page=plugin-management'
 
 
 
