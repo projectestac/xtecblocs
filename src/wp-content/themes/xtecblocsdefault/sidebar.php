@@ -7,13 +7,15 @@
 			<p class="creabloc"><a href="index.php?a=new">Crea el teu bloc<span></span></a></p>
 		</div>
 
+
+<?php if( !defined('IS_FRM') or !IS_FRM ): ?>
 		<div id="cel">
 			<span class="celrightcorner">&nbsp;</span>
 			<span class="celleftcorner">&nbsp;</span>
 			<!-- <p class="espaicursos"><a id="espaicursoslink" target="_blank" href="http://hipolit2.xtec.cat/blocs">Espai de cursos<span id="espaicursos"></span></a></p>-->
-			<p class="espaicursos"><a id="espaicursoslink" target="_blank" href="espai-de-cursos">Espai de cursos<span id="espaicursos"></span></a></p>		
+			<p class="espaicursos"><a id="espaicursoslink" target="_blank" href="http://blocs.xtec.cat/blocs_formacio">Espai de proves<span id="espaicursos"></span></a></p>		
 		</div>
-
+<?php endif; ?>
 		<script>
 		 changeImage();
 		</script>

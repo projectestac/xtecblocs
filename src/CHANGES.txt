@@ -3,6 +3,7 @@ Changes in progress
 - Recuperar el directori ws.
 - Eliminar referències a edu365 en crear un nou bloc.
 - Afegit apc.php.
+- Canviar la icona d'accés a l'entorn de formació, canviar el link al nou entorn i no mostrar-ho al propi entorn de formació.
 
 ---------------------------------------------------------------------------------------
 v.13.09.18
