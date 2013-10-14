@@ -1,0 +1,111 @@
+/*
+ *   base.css
+ *   Full d'estil mínim
+ *   @autor Xavier Belanche <xbelanch at xtec dot cat>
+ *
+ */
+ 
+/************************
+**** Elements de bloc ***
+*************************/
+
+p, dl         { display: block; font-size: 0.9em; line-height:1.5em;}
+address       { display: block; font-style: italic; }
+dd            { display: block; margin-left: 2em; }
+blockquote    { display: block; margin: 1em 1.5em; }
+h1   { display: block; font-size: 2.5em;  margin: 0.5625em 0; }
+h2   { display: block; font-size: 1.9em;  margin: 0.75em 0; }
+h3   { display: block; font-size: 1.6em;  margin: 1.2em 0;   }
+h4   { display: block; font-size: 1.5em;  margin: 1.35em 0;   }
+h5   { display: block; font-size: 1.25em;  margin: 1.5em 0; }
+h6   { display: block; font-size: 1.1em;  margin: 2em 0; }
+pre  { display: block; font-family: monospace; white-space: pre; margin: 1em; font-size: 1.2em }
+
+/***********************
+** Elements en línia **
+************************/
+em { font-style: italic;}
+strong { font-weight: bold;}
+abbr { speak: spell-out; }
+acronym { speak: normal; }
+abbr, acronym {  border-bottom: 1px dotted; cursor: help; text-transform: uppercase; font-weight: bold;}
+code, kbd, samp {font-family: monospace;}
+code { padding: 3px 6px; font-weight: bold;}
+kbd { padding: 3px 6px; font-size: 1.2em; font-weight: bold;}
+ins {text-decoration: underline;}
+del {text-decoration: line-through;}
+sub {vertical-align: -0.25em; font-size: smaller; line-height: normal;}
+sup {vertical-align: 0.5em; font-size: smaller; line-height: normal;}
+
+/************************
+** Elements de llista **
+*************************/
+dl { margin: 20px }
+dt { padding-left: 1em; font-weight: bold;  }
+dd { padding-bottom: 1em; text-indent: 1em; }
+ul { list-style: disc; margin: 1em 0; margin-left: 4.5em; padding-left: 0; }
+ol { list-style: decimal;  margin: 1em 0; margin-left: 4.5em; padding-left: 0; }
+ul ul, ul ol, ul dl, ol ul, ol ol, ol dl, dl ul, dl ol, dl dl 
+{ margin-top: 0; margin-bottom: 0; }
+ol ul, ul ul { list-style-type: circle; }
+ol ol ul, ol ul ul, ul ol ul, ul ul ul { list-style-type: square; }
+
+/**************************
+****** Element imatge *****
+***************************/
+img {border: 0;}
+
+/* Begin Images */
+p img {
+	padding: 0;
+	max-width: 100%;
+	}
+
+/*	Using 'class="alignright"' on an image will (who would've
+	thought?!) align the image to the right. And using 'class="centered',
+	will of course center the image. This is much better than using
+	align="center", being much more futureproof (and valid) */
+
+img.centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+	}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+	}
+
+.alignright {
+	float: right;
+	}
+
+.alignleft {
+	float: left
+	}
+/* End Images */
+
+/************************
+** Comentaris ***
+*************************/
+p.comentari {
+	clear:both;
+}
+
+/************************
+** Elements de taules ***
+*************************/
+table { border-spacing: 2px; border-collapse: separate; margin-top: 0; margin-bottom: 0; text-indent: 0; border-top: 1px solid #999; border-left: 1px solid #999; border-collapse: collapse;}
+caption {text-align: center;}
+td { padding: 5px;}
+th {font-weight: bold; padding: 5px; }
+th, td { border-right: 1px solid #999; border-bottom: 1px solid #999;}
+tbody, thead, tfoot {vertical-align: middle;} 
