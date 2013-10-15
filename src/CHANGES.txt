@@ -1,12 +1,14 @@
+---------------------------------------------------------------------------------------
 
-Changes in progress
+
+v13.10.17
 - Recuperar el directori ws.
 - Eliminar referències a edu365 en crear un nou bloc.
 - Afegit apc.php.
 - Canviar la icona d'accés a l'entorn de formació, canviar el link al nou entorn i no mostrar-ho al propi entorn de formació.
 - Aparença de l'entorn de formació.
 
----------------------------------------------------------------------------------------
+
 v.13.09.18
 - Eliminar opcions de compra del temes delicacy i mystique.
 - Canvi de l'enllaç de la pàgina principal que fa referència a Wordpress MU.
