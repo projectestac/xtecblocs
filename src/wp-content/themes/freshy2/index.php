@@ -27,10 +27,21 @@
 						<dt><?php _e('Comments',TEMPLATE_DOMAIN); ?></dt><dd><?php comments_popup_link(__('No Comments &#187;',TEMPLATE_DOMAIN), __('1 Comment &#187;',TEMPLATE_DOMAIN), __('% Comments &#187;',TEMPLATE_DOMAIN)); ?></dd>
 						<dt><?php _e('Categories',TEMPLATE_DOMAIN); ?></dt><dd><?php the_category(', ') ?></dd>
 					<?php if(function_exists('the_tags')) : ?>
-						<?php the_tags('<dt>Tags</dt><dd>', ', ', '</dd>'); ?> 
+
+					<!-- XTEC ************ MODIFICAT - Translate
+					//2013.10.30 @jmeler -->
+					<?php the_tags('<dt>'.__('Tags',TEMPLATE_DOMAIN).'</dt><dd>', ', ', '</dd>'); ?> 						<!-- <?php the_tags('<dt>Tags</dt><dd>', ', ', '</dd>'); ?>
+					FI ********************-->
+
 					<?php endif; ?>
 					<?php if(function_exists('the_bunny_tags')) : ?>
-						<?php the_bunny_tags('<dt>Tags</dt><dd>', '</dd>', ', '); ?>
+
+					<!-- XTEC ************ MODIFICAT - Translate
+					//2013.10.30 @jmeler -->
+					<?php the_bunny_tags('<dt>'.__('Tags',TEMPLATE_DOMAIN).'</dt><dd>', '</dd>', ', '); ?>
+					<!-- <?php the_bunny_tags('<dt>Tags</dt><dd>', '</dd>', ', '); ?>
+					FI ******************** -->
+
 					<?php endif; ?>
 					<?php if(function_exists('the_bookmark_links')) : ?>
 						<dt><?php _e('Spread the word',TEMPLATE_DOMAIN); ?></dt><dd><?php the_bookmark_links(); ?></dd>

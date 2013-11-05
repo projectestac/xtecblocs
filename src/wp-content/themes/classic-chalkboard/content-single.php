@@ -32,17 +32,43 @@
 			if ( ! chalkboard_categorized_blog() ) {
 				// This blog only has 1 category so we just need to worry about tags in the meta text
 				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'classicchalkboard' );
+
+				//XTEC ************ MODIFICAT - Translate
+				//2013.10.30 @jmeler 
+					$meta_text = __( 'Etiquetes:  %2$s. <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Enllaç permanent</a>.', 'classicchalkboard' );
+				/*
+					$meta_text = __( 'This entry was tagged %2$s. <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'classicchalkboard' );
+				*/
+				//************ FI
+
 				} else {
-					$meta_text = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'classicchalkboard' );
+
+				//XTEC ************ MODIFICAT - Translate
+				//2013.10.30 @jmeler 
+					$meta_text = __( '<a href="%3$s" title="Enllaç permanent a %4$s" rel="bookmark">Enllaç permanent</a>.', 'classicchalkboard' );
+				/*$meta_text = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'classicchalkboard' );*/
+
+				//************ FI
 				}
 
 			} else {
 				// But this blog has loads of categories so we should probably display them here
 				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'classicchalkboard' );
+
+				//XTEC ************ MODIFICAT - Translate
+				//2013.10.30 @jmeler 
+					$meta_text = __( 'Article publicat a %1$s i etiquetat com %2$s. <a href="%3$s" title="Enllaç permanent a %4$s" rel="bookmark">Enllaç permanent</a>.', 'classicchalkboard' );
+					/*$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'classicchalkboard' );*/
+
+				//************ FI
 				} else {
-					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'classicchalkboard' );
+
+				//XTEC ************ MODIFICAT - Translate
+				//2013.10.30 @jmeler 
+					$meta_text = __( 'Article publicat a %1$s. <a href="%3$s" title="Enllaç permanent a %4$s" rel="bookmark">Enllaç permanent</a>.', 'classicchalkboard' );
+					/*$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'classicchalkboard' );*/
+
+				//************ FI
 				}
 
 			} // end check for categories on this blog

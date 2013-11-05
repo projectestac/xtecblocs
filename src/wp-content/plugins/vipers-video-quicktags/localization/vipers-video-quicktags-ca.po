@@ -1,22 +1,13 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Viper007Bond
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: Viper's Video Quicktags 6.3.0\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/vipers-video-quicktags\n"
-"POT-Creation-Date: 2011-05-26 19:07:06+00:00\n"
-"PO-Revision-Date: 2013-05-10 14:24+0100\n"
-"Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Xavi Meler <jmeler@xtec.cat>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-Language: Catalan\n"
-"X-Poedit-SourceCharset: utf-8\n"
 
 #: vipers-video-quicktags.php:246
 msgid "Click here to view the embedded video."
@@ -1182,10 +1173,13 @@ msgstr ""
 "\n"
 "En poques paraules, no es podrà utilitzar JW's FLV Media Player en un lloc comercial sense haver comprat una llicència comercial."
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: vipers-video-quicktags.php:2453
 msgid "Media Type"
-msgstr "Tipus de mèdia"
+msgstr "Tipus de recurs multimèdia"
 
+#************ FI
 #: vipers-video-quicktags.php:2454
 msgid "Show Editor Button?"
 msgstr "Mostra el botó a l'editor?"

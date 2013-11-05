@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------
+v13.11.07
+- "Blocs més actius" té una entrada en blanc (AGIN 1068-2013-0012)
+- Eliminar bloc d'exemples (AGIN 1068-2013-0013)
+- Traduccions al Català
 
 
 v13.10.17

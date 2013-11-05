@@ -17,7 +17,15 @@
 	<div class="entry-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'classicchalkboard' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+		<p><?php 
+		//XTEC ************ MODIFICAT - Translate
+		//2013.10.30 @jmeler
+		printf( __( 'Publica el primer article. <a href="%1$s">Comença aquí</a>.', 'classicchalkboard' ), esc_url( admin_url( 'post-new.php' ) ) ); 
+		/*printf( __( 'Ready to publish your first post?. <a href="%1$s">Get started here</a>.', 'classicchalkboard' ), esc_url( admin_url( 'post-new.php' ) ) ); */
+		//************ FI
+?>
+
+</p>
 
 		<?php elseif ( is_search() ) : ?>
 

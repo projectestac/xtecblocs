@@ -1,18 +1,19 @@
-# Translation of 3.5.x in Catalan
-# This file is distributed under the same license as the 3.5.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2013-07-18 09:10+0100\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Xavi Meler <jmeler@xtec.cat>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/0.1\n"
-"Project-Id-Version: 3.5.x\n"
-"POT-Creation-Date: \n"
-"Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
-"Language-Team: \n"
 
+# XTEC ************ AFEGIT
+# 2013.10.30 @jmeler
+# Add "Plural-Forms: nplurals=2; plural=n != 1;\n" to header
+#************ FI
 #: wp-login.php:492
 msgid "New password"
 msgstr "Contrasenya nova"
@@ -483,10 +484,14 @@ msgstr "Definició"
 msgid "Underline"
 msgstr "Subratllat"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-includes/js/tinymce/langs/wp-langs.php:292
 msgid "Strikethrough (Alt + Shift + D)"
-msgstr "Tatxat (Alt + Shift + D)"
+msgstr "Ratllat (Alt + Shift + D)"
 
+#msgstr "Tatxat (Alt + Shift + D)"
+#************ FI
 #: wp-includes/js/tinymce/langs/wp-langs.php:293
 msgid "Align Left (Alt + Shift + L)"
 msgstr "Alinea a l'esquerra (Alt + Shift + L)"
@@ -1197,11 +1202,14 @@ msgstr "Més..."
 msgid "Next page..."
 msgstr "Pàgina següent..."
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-includes/js/tinymce/langs/wp-langs.php:507
 #: wp-includes/media.php:1500
 msgid "Add Media"
-msgstr "Afegeix un mèdia"
+msgstr "Insereix un fitxer multimèdia"
 
+#************ FI
 #: wp-includes/js/tinymce/langs/wp-langs.php:508
 msgid "Add an Image"
 msgstr "Afegeix imatge"
@@ -1404,10 +1412,14 @@ msgstr "Imatges i adjunts"
 msgid "There is a button in the editor toolbar for inserting images that are already hosted somewhere on the internet. If you have a URL for an image, click this button and enter the URL in the box which appears."
 msgstr "Hi ha un botó a la caixa d'eines d'edició per inserir imatges allotjades en algun altre lloc d'Internet. Si teniu una URL per a una imatge, feu clic a aquest botó i introduïu la URL en la caixa que apareix."
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-includes/js/tinymce/wp-mce-help.php:182
 msgid "If you need to upload an image or another media file from your computer, you can use the Media Library button above the editor. The media library will attempt to create a thumbnail-sized copy from each uploaded image. To insert your image into the post, first click on the thumbnail to reveal a menu of options. When you have selected the options you like, click \"Insert into Post\" and your image or file will appear in the post you are editing."
-msgstr "Si necessiteu penjar una imatge o altre fitxer mèdia des del vostre ordinador, podeu utilitzar el botó de la mediateca que hi ha a la part superior de l'editor. La mediateca intentarà crear una còpia en miniatura de cada imatge que pengeu. Per inserir la imatge a l'article, primer feu clic a la miniatura perquè aparegui el menú d'opcions. Quan seleccioneu les opcions que us agradin, feu clic a \"Insereix a l'article\" i la imatge o fitxer apareixerà a l'article que esteu editant."
+msgstr "Si necessiteu penjar una imatge o altre fitxer multimèdia des del vostre ordinador, podeu utilitzar el botó de la mediateca que hi ha a la part superior de l'editor. La mediateca intentarà crear una còpia en miniatura de cada imatge que pengeu. Per inserir la imatge a l'article, primer feu clic a la miniatura perquè aparegui el menú d'opcions. Quan seleccioneu les opcions que us agradin, feu clic a \"Insereix a l'article\" i la imatge o fitxer apareixerà a l'article que esteu editant."
 
+#msgstr "Si necessiteu penjar una imatge o altre mèdia des del vostre ordinador, podeu utilitzar el botó de la mediateca que hi ha a la part superior de l'editor. La mediateca intentarà crear una còpia en miniatura de cada imatge que pengeu. Per inserir la imatge a l'article, primer feu clic a la miniatura perquè aparegui el menú d'opcions. Quan seleccioneu les opcions que us agradin, feu clic a \"Insereix a l'article\" i la imatge o fitxer apareixerà a l'article que esteu editant."
+#************ FI
 #: wp-includes/js/tinymce/wp-mce-help.php:183
 msgid "HTML in the Rich Editor"
 msgstr "HTML en l'editor visual"
@@ -1796,11 +1808,15 @@ msgstr "URL personalitzada"
 msgid "Attachment Page"
 msgstr "Pàgina de les adjuncions "
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-includes/media-template.php:295
 #: wp-includes/media-template.php:351
 msgid "Media File"
-msgstr "Mèdia"
+msgstr "Fitxer Multimèdia"
 
+#msgstr "Mèdia"
+#************ FI
 #: wp-includes/media-template.php:321
 #: wp-includes/media.php:1376
 msgid "Large"
@@ -1851,10 +1867,14 @@ msgstr "Penja imatges"
 msgid "Media Library"
 msgstr "Mediateca"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-includes/media.php:1517
 msgid "Insert Media"
-msgstr "Insereix un mèdia"
+msgstr "Insereix un fitxer multimèdia"
 
+#msgstr "Insereix un mèdia"
+#************ FI
 #: wp-includes/media.php:1518
 msgid "Create a new gallery"
 msgstr "Crea una galeria nova"
@@ -1863,10 +1883,14 @@ msgstr "Crea una galeria nova"
 msgid "&#8592; Return to library"
 msgstr "&#8592; Torna a la mediateca"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-includes/media.php:1520
 msgid "All media items"
-msgstr "Tots els mèdia"
+msgstr "Tots els fitxers multimèdia"
 
+#msgstr "Tots els mèdia"
+#************ FI
 #: wp-includes/media.php:1521
 msgid "No items found."
 msgstr "No s'han trobat elements."
@@ -2599,25 +2623,37 @@ msgctxt "add new on admin bar"
 msgid "Page"
 msgstr "Pàgina"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-includes/post.php:55
 msgctxt "post type general name"
 msgid "Media"
-msgstr "Mèdia"
+msgstr "Multimèdia"
 
+#msgstr "Mèdia"
+#************ FI
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-includes/post.php:56
 msgctxt "add new from admin bar"
 msgid "Media"
-msgstr "Mèdia"
+msgstr "Multimèdia"
 
+#msgstr "Mèdia"
+#************ FI
 #: wp-includes/post.php:57
 msgctxt "add new media"
 msgid "Add New"
 msgstr "Afegeix nou"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-includes/post.php:58
 msgid "Edit Media"
-msgstr "Edita un mèdia"
+msgstr "Edita un element multimèdia"
 
+# msgstr "Edita un mèdia"
+#************ FI
 #: wp-includes/post.php:59
 msgid "View Attachment Page"
 msgstr "Visualitza la pàgina d'adjuncions"
@@ -2947,11 +2983,15 @@ msgctxt "Post format"
 msgid "Link"
 msgstr "Enllaç"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-includes/post.php:5330
 msgctxt "Post format"
 msgid "Image"
-msgstr "imatge"
+msgstr "Imatge"
 
+#msgstr "imatge"
+#************ FI
 #: wp-includes/post.php:5331
 msgctxt "Post format"
 msgid "Quote"
@@ -7689,15 +7729,23 @@ msgstr "Perdreu els canvis que heu fet si abandoneu aquesta pàgina."
 msgid "Toggle fullscreen mode (Alt + Shift + G)"
 msgstr "Commuta al mode de pantalla completa (Alt + Shift + G)"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-includes/js/tinymce/langs/wp-langs.php:214
 #: wp-includes/js/tinymce/langs/wp-langs.php:391
 msgid "Insert / edit embedded media"
-msgstr "Insereix/Edita un mèdia incrustat"
+msgstr "Insereix/Edita un element multimèdia incrustat"
 
+#msgstr "Insereix/Edita un element mèdia incrustat"
+#************ FI
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-includes/js/tinymce/langs/wp-langs.php:215
 msgid "Edit embedded media"
-msgstr "Edita el mèdia incrustat"
+msgstr "Edita l'element multimèdia incrustat"
 
+#msgstr "Edita el mèdia incrustat"
+#************ FI
 #: wp-includes/js/tinymce/langs/wp-langs.php:219
 msgid "Document properties"
 msgstr "Propietats del document"

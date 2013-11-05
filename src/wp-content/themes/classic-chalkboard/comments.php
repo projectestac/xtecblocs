@@ -29,8 +29,19 @@
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
+
+		//XTEC ************ MODIFICAT - Translate
+		//2013.10.30 @jmeler 
+
+			printf( _nx( 'Un comentari a &ldquo;%2$s&rdquo;', '%1$s comentaris a &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'classicchalkboard' ),
+			number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+		/*
 				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'classicchalkboard' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+				number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+		*/
+		//************ FI
+
+
 			?>
 		</h2>
 

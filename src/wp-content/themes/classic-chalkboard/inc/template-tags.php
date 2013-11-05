@@ -96,9 +96,22 @@ function chalkboard_comment( $comment, $args, $depth ) {
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time datetime="<?php comment_time( 'c' ); ?>">
 					<?php
 						/* translators: 1: date, 2: time */
-						printf( __( '%1$s at %2$s', 'chalkboard' ), get_comment_date(), get_comment_time() ); ?>
+
+						//XTEC ************ MODIFICAT - Translate
+						//2013.10.30 @jmeler 
+						printf( __( '%1$s %2$s', 'chalkboard' ), get_comment_date(), get_comment_time() ); 
+						/*printf( __( '%1$s at %2$s', 'chalkboard' ), get_comment_date(), get_comment_time() );*/
+						//************ FI
+
+					?>
 					</time></a>
-					<?php edit_comment_link( __( '(Edit)', 'chalkboard' ), ' ' );
+
+					<?php 
+					//XTEC ************ MODIFICAT - Translate
+					//2013.10.30 @jmeler 
+					edit_comment_link( __( '(Edita)', 'chalkboard' ), ' ' );
+					// edit_comment_link( __( '(Edit)', 'chalkboard' ), ' ' );
+					//************ FI
 					?>
 				</div><!-- .comment-meta .commentmetadata -->
 			</footer>
@@ -123,7 +136,10 @@ if ( ! function_exists( 'chalkboard_posted_on' ) ) :
  * @since Chalkboard 1.0
  */
 function chalkboard_posted_on() {
-	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'chalkboard' ),
+
+	//XTEC ************ MODIFICAT - Translate
+	//2013.10.30 @jmeler Change "Posted on ... by ..." to "Publicat a ... per ..." 
+	printf( __( 'Publicat a <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="byline"> per <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>','chalkboard'),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
@@ -132,6 +148,7 @@ function chalkboard_posted_on() {
 		esc_attr( sprintf( __( 'View all posts by %s', 'chalkboard' ), get_the_author() ) ),
 		get_the_author()
 	);
+	//************ FI
 }
 endif;
 

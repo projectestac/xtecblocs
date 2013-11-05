@@ -16,12 +16,27 @@
 			
 			<div class="meta">
 				<dl>
+
 				<?php if(function_exists('the_tags')) : ?>
-					<?php the_tags('<dt>Tags</dt><dd>', ', ', '</dd>'); ?> 
+
+					<!-- XTEC ************ MODIFICAT - Translate
+					//2013.10.30 @jmeler -->
+					<?php the_tags('<dt>'.__('Tags',TEMPLATE_DOMAIN).'</dt><dd>', ', ', '</dd>'); ?> 
+					<!--<?php the_tags('<dt>Tags</dt><dd>', ', ', '</dd>'); ?> 
+					FI ******************** -->
+
 				<?php endif; ?>
+
 				<?php if(function_exists('the_bunny_tags')) : ?>
-					<?php the_bunny_tags('<dt>Tags</dt><dd>', '</dd>', ', '); ?>
+
+					<!-- XTEC ************ MODIFICAT - Translate
+					//2013.10.30 @jmeler -->
+					<?php the_bunny_tags('<dt>'.__('Tags',TEMPLATE_DOMAIN).'</dt><dd>', '</dd>', ', '); ?>
+					<!-- <?php the_bunny_tags('<dt>Tags</dt><dd>', '</dd>', ', '); ?>
+					FI ******************** -->
+
 				<?php endif; ?>
+
 				<?php if(function_exists('the_bookmark_links')) : ?>
 					<dt><?php _e('Spread the word',TEMPLATE_DOMAIN); ?></dt><dd><?php the_bookmark_links(); ?></dd>
 				<?php endif; ?>

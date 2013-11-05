@@ -1,3 +1,21 @@
+
+<div class="sidebox">
+	<span class="sideboxright">&nbsp;</span>
+	<span class="sideboxleft">&nbsp;</span>
+	<h3 class="noticies">Cerca</h3>
+	<div class="sidecontent">
+		<form action="<?php echo get_option('home');?>/index.php" method="get" enctype="text/plain" class="cerca">
+		<input type="hidden" value="search" name="a" />
+				<input type="submit" value="Cerca" class="botocerca"/>
+		<input type="text" name="word" maxlength="18" size="15" />
+
+		
+		</form>
+		<!-- 
+		end of Cerca 
+		-->
+	</div>
+</div>
 <div class="sidebox">
 	<span class="sideboxright"></span>
 	<span class="sideboxleft"></span>
@@ -14,6 +32,8 @@
 		</ul>
 	</div>
 </div>
+
+
 <div class="sidebox">
 	<span class="sideboxright">&nbsp;</span>
 	<span class="sideboxleft">&nbsp;</span>
@@ -33,23 +53,9 @@
 		-->
 	</div>
 </div>
-<div class="sidebox">
-	<span class="sideboxright">&nbsp;</span>
-	<span class="sideboxleft">&nbsp;</span>
-	<h3 class="noticies">Cerca</h3>
-	<div class="sidecontent">
-		<form action="<?php echo get_option('home');?>/index.php" method="get" enctype="text/plain" class="cerca">
-		<input type="hidden" value="search" name="a" />
-				<input type="submit" value="Cerca" class="botocerca"/>
-		<input type="text" name="word" maxlength="18" size="15" />
 
-		
-		</form>
-		<!-- 
-		end of Cerca 
-		-->
-	</div>
-</div>
+<!-- XTEC ************ ELIMINAT - Bloc d'exemples ja no és necessari i els blocs enllaçats no estan actualitzats
+2013.10.29 @jmeler
 <div class="sidebox">
 	<span class="sideboxright">&nbsp;</span>
 	<span class="sideboxleft">&nbsp;</span>
@@ -60,8 +66,10 @@
 		<li><a href="pissarramagica" target="_blank">La pissarra màgica</a></li>
 		<li><a href="primatic" target="_blank">Les TIC a primària</a></li>
 		</ul>
-		<!-- 
-		end of els descriptors 
-	-->
 	</div>
 </div>
+************ FI -->
+
+
+
+

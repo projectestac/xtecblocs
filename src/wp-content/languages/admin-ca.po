@@ -1,18 +1,19 @@
-# Translation of Administration in Catalan
-# This file is distributed under the same license as the Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2013-07-12 10:10+0100\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Xavi Meler <jmeler@xtec.cat>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/0.1\n"
-"Project-Id-Version: Administration\n"
-"POT-Creation-Date: \n"
-"Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
-"Language-Team: \n"
 
+# XTEC ************ AFEGIT
+# 2013.10.30 @jmeler
+# Add "Plural-Forms: nplurals=2; plural=n != 1;\n" to header
+#************ FI
 #: wp-admin/user-edit.php:22
 #: wp-admin/user-edit.php:24
 msgid "Invalid user ID."
@@ -164,18 +165,26 @@ msgstr "Categoria base"
 msgid "Tag base"
 msgstr "Etiqueta base"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/options-permalink.php:256
 msgid "If your <code>web.config</code> file were <a href=\"http://codex.wordpress.org/Changing_File_Permissions\">writable</a>, we could do this automatically, but it isn&#8217;t so this is the url rewrite rule you should have in your <code>web.config</code> file. Click in the field and press <kbd>CTRL + a</kbd> to select all. Then insert this rule inside of the <code>/&lt;configuration&gt;/&lt;system.webServer&gt;/&lt;rewrite&gt;/&lt;rules&gt;</code> element in <code>web.config</code> file."
-msgstr "Si el vostre fitxer <code>web.config</code> tingués <a href=\"http://codex.wordpress.org/Changing_File_Permissions\">permís d'escriptura</a> podríem fer-ho automàticament però no en té, així que aquesta és l'URL que hauríeu de tenir al vostre fitxer <code>web.config</code>. Cliqueu en el camp i premeu <kbd>CTRL + a</kbd> per seleccionar-ho tot. Aleshores inseriu aquesta regla dins de l'element <code>/&lt;configuration&gt;/&lt;system.webServer&gt;/&lt;rewrite&gt;/&lt;rules&gt;</code> del vostre fitxer <code>web.config</code>."
+msgstr "Si el vostre fitxer <code>web.config</code> tingués <a href=\"http://codex.wordpress.org/Changing_File_Permissions\">permís d'escriptura</a> podríem fer-ho automàticament però no en té, així que aquesta és l'URL que hauríeu de tenir al vostre fitxer <code>web.config</code>. Feu clic en el camp i premeu <kbd>CTRL + a</kbd> per seleccionar-ho tot. Aleshores inseriu aquesta regla dins de l'element <code>/&lt;configuration&gt;/&lt;system.webServer&gt;/&lt;rewrite&gt;/&lt;rules&gt;</code> del vostre fitxer <code>web.config</code>."
 
+#msgstr "Si el vostre fitxer <code>web.config</code> tingués <a href=\"http://codex.wordpress.org/Changing_File_Permissions\">permís d'escriptura</a> podríem fer-ho automàticament però no en té, així que aquesta és l'URL que hauríeu de tenir al vostre fitxer <code>web.config</code>. Cliqueu en el camp i premeu <kbd>CTRL + a</kbd> per seleccionar-ho tot. Aleshores inseriu aquesta regla dins de l'element <code>/&lt;configuration&gt;/&lt;system.webServer&gt;/&lt;rewrite&gt;/&lt;rules&gt;</code> del vostre fitxer <code>web.config</code>."
+#************ FI
 #: wp-admin/options-permalink.php:261
 msgid "If you temporarily make your <code>web.config</code> file writable for us to generate rewrite rules automatically, do not forget to revert the permissions after rule has been saved."
 msgstr "Si de manera temporal ens doneu permís d'escriptura sobre el fitxer <code>web.config</code> per generar regles de reescriptura automàticament, no oblideu reestablir els permisos d'aquest fitxer després que la regla s'hagi desat."
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/options-permalink.php:263
 msgid "If the root directory of your site were <a href=\"http://codex.wordpress.org/Changing_File_Permissions\">writable</a>, we could do this automatically, but it isn&#8217;t so this is the url rewrite rule you should have in your <code>web.config</code> file. Create a new file, called <code>web.config</code> in the root directory of your site. Click in the field and press <kbd>CTRL + a</kbd> to select all. Then insert this code into the <code>web.config</code> file."
-msgstr "Si el directori arrel de la pàgina web tingués <a href=\"http://codex.wordpress.org/Changing_File_Permissions\">permís d'escriptura</a>, podríem fer-ho automàticament, però no els té, així que aquesta és la regla rewrite que hauríeu de tenir al vostre fitxer <code>web.config</code>. Creeu un fitxer nou al directori arrel del lloc web anomenat <code>web.config</code>. Cliqueu al camp i premeu <kbd>CTRL + a</kbd> per seleccionar-ho tot. Aleshores inseriu aquesta regla dins del fitxer <code>web.config</code>."
+msgstr "Si el directori arrel de la pàgina web tingués <a href=\"http://codex.wordpress.org/Changing_File_Permissions\">permís d'escriptura</a>, podríem fer-ho automàticament, però no els té, així que aquesta és la regla rewrite que hauríeu de tenir al vostre fitxer <code>web.config</code>. Creeu un fitxer nou al directori arrel del lloc web anomenat <code>web.config</code>. Feu clic al camp i premeu <kbd>CTRL + a</kbd> per seleccionar-ho tot. Aleshores inseriu aquesta regla dins del fitxer <code>web.config</code>."
 
+#msgstr "Si el directori arrel de la pàgina web tingués <a href=\"http://codex.wordpress.org/Changing_File_Permissions\">permís d'escriptura</a>, podríem fer-ho automàticament, però no els té, així que aquesta és la regla rewrite que hauríeu de tenir al vostre fitxer <code>web.config</code>. Creeu un fitxer nou al directori arrel del lloc web anomenat <code>web.config</code>. Cliqueu al camp i premeu <kbd>CTRL + a</kbd> per seleccionar-ho tot. Aleshores inseriu aquesta regla dins del fitxer <code>web.config</code>."
+#************ FI
 #: wp-admin/options-permalink.php:268
 msgid "If you temporarily make your site&#8217;s root directory writable for us to generate the <code>web.config</code> file automatically, do not forget to revert the permissions after the file has been created."
 msgstr "Si de manera temporal ens doneu permís d'escriptura sobre el directori arrel del lloc web per poder generar el fitxer <code>web.config</code> automàticament, no oblideu reestablir els permisos una vegada el fitxer hagi estat creat."
@@ -289,11 +298,15 @@ msgstr "Sumari"
 msgid "Allow search engines to index this site"
 msgstr "Permet als cercadors indexar aquest bloc"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/options-reading.php:151
 #: wp-admin/options-reading.php:156
 msgid "Discourage search engines from indexing this site"
-msgstr "Desanima els motors de cerca d'indexar aquest bloc"
+msgstr "No indexar aquest bloc"
 
+#msgstr "Desanima als motors de cerca d'indexar aquest bloc"
+#************ FI
 #: wp-admin/options-reading.php:152
 msgid "Note: Neither of these options blocks access to your site &mdash; it is up to search engines to honor your request."
 msgstr "Nota: Cap d'aquestes opcions bloquen l'accés al teu bloc &mdash; es decisió dels cercadors fer cas de la vostra petició."
@@ -1557,14 +1570,22 @@ msgstr "Elements multimèdia"
 msgid "All the files you&#8217;ve uploaded are listed in the Media Library, with the most recent uploads listed first. You can use the Screen Options tab to customize the display of this screen."
 msgstr "Tots els fitxers que heu penjat estan llistats a la Mediateca, els més recents primer. Podeu fer servir la pestanya Opcions de pantalla per personalitzar la visualització d'aquesta pantalla."
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/upload.php:155
 msgid "You can narrow the list by file type/status using the text link filters at the top of the screen. You also can refine the list by date using the dropdown menu above the media table."
-msgstr "Podeu reduir la llista pel tipus/estat del fitxer fent servir els filtres a la part superior de la pantalla. També podeu refinar la llista per data fent servir el menú desplegable que hi ha a sobre la taula dels mèdia."
+msgstr "Podeu reduir la llista pel tipus/estat del fitxer fent servir els filtres a la part superior de la pantalla. També podeu refinar la llista per data fent servir el menú desplegable que hi ha a sobre la taula dels fitxers multimèdia."
 
+#msgstr "Podeu reduir la llista pel tipus/estat del fitxer fent servir els filtres a la part superior de la pantalla. També podeu refinar la llista per data fent servir el menú desplegable que hi ha a sobre la taula dels fitxers mèdia."
+#************ FI
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/upload.php:161
 msgid "Hovering over a row reveals action links: Edit, Delete Permanently, and View. Clicking Edit or on the media file&#8217;s name displays a simple screen to edit that individual file&#8217;s metadata. Clicking Delete Permanently will delete the file from the media library (as well as from any posts to which it is currently attached). View will take you to the display page for that file."
-msgstr "En passar el cursor per sobre d'una fila es mostren enllaços a accions: Edita, Esborra permanentment i Mostra. En fer clic a Edita o en el nom del fitxer mèdia es mostra una pantalla simple per editar les metadades d'aquest fitxer individual. En fer clic a Esborra permanentment s'esborrarà el fitxer de la mediateca (així com també de qualsevol article a la qual el fitxer estigui ara adjuntat). Mostra us portarà a la pàgina per visualitzar aquest fitxer."
+msgstr "En passar el cursor per sobre d'una fila es mostren enllaços a accions: Edita, Esborra permanentment i Mostra. En fer clic a Edita o en el nom del fitxer multimèdia es mostra una pantalla simple per editar les metadades d'aquest fitxer individual. En fer clic a Esborra permanentment s'esborrarà el fitxer de la mediateca (així com també de qualsevol article a la qual el fitxer estigui ara adjuntat). Mostra us portarà a la pàgina per visualitzar aquest fitxer."
 
+#msgstr "En passar el cursor per sobre d'una fila es mostren enllaços a accions: Edita, Esborra permanentment i Mostra. En fer clic a Edita o en el nom del fitxer mèdia es mostra una pantalla simple per editar les metadades d'aquest fitxer individual. En fer clic a Esborra permanentment s'esborrarà el fitxer de la mediateca (així com també de qualsevol article a la qual el fitxer estigui ara adjuntat). Mostra us portarà a la pàgina per visualitzar aquest fitxer."
+#************ FI
 #: wp-admin/upload.php:165
 msgid "Attaching Files"
 msgstr "Adjunció de fitxers"
@@ -1573,50 +1594,85 @@ msgstr "Adjunció de fitxers"
 msgid "If a media file has not been attached to any post, you will see that in the Attached To column, and can click on Attach File to launch a small popup that will allow you to search for a post and attach the file."
 msgstr "Si un fitxer multimèdia no s'ha adjuntat a cap article, veureu això en la columna Adjuntat a, i podeu fer clic a Adjunta fitxer per llançar una petita finestra emergent que us permetrà cercar un article i adjuntar-hi un fitxer."
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/upload.php:172
 msgid "<a href=\"http://codex.wordpress.org/Media_Library_Screen\" target=\"_blank\">Documentation on Media Library</a>"
-msgstr "<a href=\"http://codex.wordpress.org/Media_Library_Screen\" target=\"_blank\">Documentació sobre la biblioteca d'elements mèdia</a> (en anglès)"
+msgstr "<a href=\"http://codex.wordpress.org/Media_Library_Screen\" target=\"_blank\">Documentació sobre la biblioteca d'elements multimèdia</a> (en anglès)"
 
+#msgstr "<a href=\"http://codex.wordpress.org/Media_Library_Screen\" target=\"_blank\">Documentació sobre la biblioteca d'elements mèdia</a> (en anglès)"
+#************ FI
 #: wp-admin/upload.php:199
 msgid "Reattached %d attachment."
 msgid_plural "Reattached %d attachments."
 msgstr[0] "%d adjunt tornat a adjuntar."
 msgstr[1] "%d adjunts tornats a adjuntar."
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/upload.php:204
 msgid "Media attachment permanently deleted."
 msgid_plural "%d media attachments permanently deleted."
-msgstr[0] "Mèdia adjunt suprimit definitivament."
-msgstr[1] "%d mèdia adjunts suprimits definitivament."
+msgstr[0] "Fitxers multimèdia adjunt suprimit definitivament."
+msgstr[1] "%d fitxers multimèdia adjunts suprimits definitivament."
 
+#msgstr[0] "Fitxers mèdia adjunt suprimit definitivament."
+#msgstr[1] "%d fitxers mèdia adjunts suprimits definitivament."
+#************ FI
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/upload.php:209
 msgid "Media attachment moved to the trash."
 msgid_plural "%d media attachments moved to the trash."
-msgstr[0] "Mèdia adjunt mogut a la paperera."
-msgstr[1] "%d mèdia adjunts moguts a la paperera."
+msgstr[0] "Element multimèdia adjunt mogut a la paperera."
+msgstr[1] "%d elements multimèdia adjunts moguts a la paperera."
 
+#msgstr[0] "Element mèdia adjunt mogut a la paperera."
+#msgstr[1] "%d elements mèdia adjunts moguts a la paperera."
+#************ FI
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/upload.php:215
 msgid "Media attachment restored from the trash."
 msgid_plural "%d media attachments restored from the trash."
-msgstr[0] "Mèdia adjunt restaurat des de la paperera."
-msgstr[1] "%d mèdia adjunts restaurats des de la paperera."
+msgstr[0] "Element multimèdia adjunt restaurat des de la paperera."
+msgstr[1] "%d element multimèdia adjunts restaurats des de la paperera."
 
+#msgstr[0] "Mèdia adjunt restaurat des de la paperera."
+#msgstr[1] "%d mèdia adjunts restaurats des de la paperera."
+#************ FI
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/upload.php:220
 msgid "Media permanently deleted."
-msgstr "Mèdia suprimit definitivament."
+msgstr "Element multimèdia suprimit definitivament."
 
+#msgstr "Mèdia suprimit definitivament."
+#************ FI
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/upload.php:221
 msgid "Error saving media attachment."
-msgstr "Error en desar el mèdia adjunt."
+msgstr "Error en desar el fitxer multimèdia adjunt."
 
+#msgstr "Error en desar el mèdia adjunt."
+#************ FI
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/upload.php:222
 msgid "Media moved to the trash."
-msgstr "S'han mogut els mèdia a la paperera."
+msgstr "S'han mogut els fitxers multimèdia a la paperera."
 
+#msgstr "S'han mogut els mèdia a la paperera."
+#************ FI
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/upload.php:223
 msgid "Media restored from the trash."
-msgstr "S'han recuperat els mèdia de la paperera."
+msgstr "S'han recuperat els fitxers multimèdia de la paperera."
 
+#msgstr "S'han recuperat els mèdia de la paperera."
+#************ FI
 #: wp-admin/user-edit.php:28
 msgid "Edit User"
 msgstr "Edita l'usuari"
@@ -2781,10 +2837,14 @@ msgstr "Podeu especificar el ràtio d'aspecte de la selecció escapçada i alesh
 msgid "Crop Selection"
 msgstr "Selecció escapçada"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/includes/image-edit.php:126
 msgid "Once started, the selection can be adjusted by entering new values (in pixels). Note that these values are scaled to approximately match the original image dimensions. The minimum selection size equals the thumbnail size as set in the Media settings."
-msgstr "Una vegada començat, la selecció pot ser ajustada si entreu nous valors (en píxels). Fixeu-vos que aquestos valors són escalats per ajustar-se aproximadament a les dimensions de la imatge original. La mida de la selecció mínima és igual a la mida de la miniatura definida en la configuració dels mèdia."
+msgstr "Una vegada començat, la selecció pot ser ajustada si entreu nous valors (en píxels). Fixeu-vos que aquestos valors són escalats per ajustar-se aproximadament a les dimensions de la imatge original. La mida de la selecció mínima és igual a la mida de la miniatura definida en la configuració dels elements multimèdia."
 
+#msgstr "Una vegada començat, la selecció pot ser ajustada si entreu nous valors (en píxels). Fixeu-vos que aquestos valors són escalats per ajustar-se aproximadament a les dimensions de la imatge original. La mida de la selecció mínima és igual a la mida de la miniatura definida en la configuració dels mèdia."
+#************ FI
 #: wp-admin/includes/image-edit.php:131
 msgid "Aspect ratio:"
 msgstr "Ràtio de l'aspecte:"
@@ -2931,10 +2991,12 @@ msgstr "Tumblr"
 
 # XTEC ************ CORREGIT
 # 2013.06.21 @jmiro227
+# 2013.10.30 @jmeler
 #: wp-admin/includes/import.php:174
 msgid "Install the Tumblr importer to import posts &amp; media from Tumblr using their API."
-msgstr "Instal·la l'importador del Tumblr per importar articles i mèdia des del Tumblr fent servir la seva API."
+msgstr "Instal·la l'importador del Tumblr per importar articles i elements multimèdia des del Tumblr fent servir la seva API."
 
+#msgstr "Instal·la l'importador del Tumblr per importar articles i mèdia des del Tumblr fent servir la seva API."
 # XTEC ************ CORREGIT
 # 2013.06.21 @jmiro227
 #: wp-admin/includes/import.php:180
@@ -3050,20 +3112,28 @@ msgstr "o"
 msgid "Your browser has some limitations uploading large files with the multi-file uploader. Please use the browser uploader for files over 100MB."
 msgstr "El vostre navegador té algunes limitacions per penjar fitxers grans amb el carregador de múltiples fitxers. Useu el carregador del navegador per a fitxers de més de 100Mb."
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/includes/media.php:1610
 msgid "Add media files from your computer"
-msgstr "Afegiu els mèdia des del vostre ordinador"
+msgstr "Afegiu els fitxers multimèdia des del vostre ordinador"
 
+#msgstr "Afegiu els mèdia des del vostre ordinador"
+#************ FI
 #: wp-admin/includes/media.php:1639
 #: wp-admin/includes/media.php:1837
 #: wp-admin/includes/media.php:2083
 msgid "Save all changes"
 msgstr "Desa tots els canvis"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/includes/media.php:1674
 msgid "Insert media from another website"
-msgstr "Inseriu un mèdia d'altra pàgina web"
+msgstr "Inseriu un element multimèdia d'altra pàgina web"
 
+#msgstr "Inseriu un mèdia d'altra pàgina web"
+#************ FI
 #: wp-admin/includes/media.php:1812
 msgid "All Tabs:"
 msgstr "Totes les pestanyes:"
@@ -3087,12 +3157,16 @@ msgctxt "verb"
 msgid "Clear"
 msgstr "Neteja"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/includes/media.php:1826
 #: wp-admin/menu.php:63
 #: wp-admin/menu.php:215
 msgid "Media"
-msgstr "Mèdia"
+msgstr "Multimèdia"
 
+#msgstr "Mèdia"
+#************ FI
 #: wp-admin/includes/media.php:1849
 msgid "Link thumbnails to:"
 msgstr "Enllaça miniatures a:"
@@ -3129,12 +3203,16 @@ msgstr "Columnes de la galeria:"
 msgid "Update gallery settings"
 msgstr "Actualitza les opcions de la galeria"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/includes/media.php:1964
 #: wp-admin/includes/media.php:1966
 #: wp-admin/upload.php:238
 msgid "Search Media"
-msgstr "Cerca mèdia"
+msgstr "Cerca element multimèdia"
 
+#msgstr "Cerca mèdia"
+#************ FI
 #: wp-admin/includes/media.php:1989
 msgid "All Types"
 msgstr "Tots els tipus"
@@ -3303,10 +3381,14 @@ msgstr "Afegeix un comentari"
 msgid "Show comments"
 msgstr "Mostra els comentaris"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/includes/meta-boxes.php:626
 msgid "(no parent)"
-msgstr "(sense pare)"
+msgstr "(sense categoria mare)"
 
+#msgstr "(sense pare)"
+#************ FI
 #: wp-admin/includes/meta-boxes.php:653
 msgid "Need help? Use the Help tab in the upper right of your screen."
 msgstr "Necessiteu ajuda? Feu servir la pestanya «Ajuda» de dalt a la dreta de la vostra pantalla."
@@ -3438,7 +3520,7 @@ msgstr "parents"
 
 #: wp-admin/includes/meta-boxes.php:899
 msgid "parent"
-msgstr "pare/mare"
+msgstr "Categoria mare"
 
 #: wp-admin/includes/meta-boxes.php:902
 msgid "sibling"
@@ -5240,16 +5322,23 @@ msgstr "El WordPress també pot intentar optimitzar la base de dades. Això mill
 msgid "Repair and Optimize Database"
 msgstr "Repara i optimitza la base de dades"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/media-new.php:40
 msgid "Upload New Media"
-msgstr "Penja mèdia nous"
+msgstr "Afegiu nous fitxers multimèdia"
 
+#msgstr "Penja mèdia nous"
+#************ FI
 # XTEC ************ CORREGIT
 # 2013.06.21 @jmiro227
+# 2013.10.30 @jmeler
 #: wp-admin/media-new.php:47
 msgid "You can upload media files here without creating a post first. This allows you to upload files to use with posts and pages later and/or to get a web link for a particular file that you can share. There are three options for uploading files:"
-msgstr "Podeu penjar fitxers mèdia aquí sense crear primer un article. Això us permet penjar els fitxers que aneu a usar en els articles i pàgines després i/o aconseguir un enllaç a un fitxer en particular que voleu compartir. Hi ha tres opcions per a penjar fitxers:"
+msgstr "Podeu penjar fitxers multimèdia aquí sense crear primer un article. Això us permet penjar els fitxers que aneu a usar en els articles i pàgines després i/o aconseguir un enllaç a un fitxer en particular que voleu compartir. Hi ha tres opcions per a penjar fitxers:"
 
+#msgstr "Podeu penjar mèdia aquí sense crear primer un article. Això us permet penjar els fitxers que aneu a usar en els articles i pàgines després i/o aconseguir un enllaç a un fitxer en particular que voleu compartir. Hi ha tres opcions per a penjar fitxers:"
+#************ FI
 #: wp-admin/media-new.php:49
 msgid "<strong>Drag and drop</strong> your files into the area below. Multiple files are allowed."
 msgstr "<strong>Arrossegueu i deixeu anar</strong> els fitxers en l'àrea d'aquí sota. Es permeten diversos fitxers a la vegada."
@@ -5262,10 +5351,14 @@ msgstr "En fer clic a <strong>Seleccioneu fitxers</strong> s'obre una finestra d
 msgid "Revert to the <strong>Browser Uploader</strong> by clicking the link below the drag and drop box."
 msgstr "Torna al <strong>carregador del navegador</strong> en fer clic a l'enllaç que hi ha a la part inferior de la caixa per arrossegar i desar."
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/media-new.php:56
 msgid "<a href=\"http://codex.wordpress.org/Media_Add_New_Screen\" target=\"_blank\">Documentation on Uploading Media Files</a>"
-msgstr "<a href=\"http://codex.wordpress.org/Media_Add_New_Screen\" target=\"_blank\">Documentació sobre la càrrega de fitxers mèdia</a> (en anglès)"
+msgstr "<a href=\"http://codex.wordpress.org/Media_Add_New_Screen\" target=\"_blank\">Documentació sobre la càrrega de fitxers multimèdia</a> (en anglès)"
 
+#msgstr "<a href=\"http://codex.wordpress.org/Media_Add_New_Screen\" target=\"_blank\">Documentació sobre la càrrega de fitxers mèdia</a> (en anglès)"
+#************ FI
 #: wp-admin/media.php:23
 #: wp-admin/media.php:57
 msgid "You are not allowed to edit this attachment."
@@ -5294,11 +5387,14 @@ msgctxt "file"
 msgid "Add New"
 msgstr "Afegeix"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/media.php:117
 #: wp-admin/media.php:126
 msgid "Update Media"
-msgstr "Actualitza el mèdia"
+msgstr "Actualitza el element multimèdia"
 
+#************ FI
 #: wp-admin/menu-header.php:172
 msgid "Collapse menu"
 msgstr "Redueix el menú"
@@ -5435,6 +5531,8 @@ msgstr "Gràcies per fer servir el %s, el bloc s'ha esborrat. Que tingueu un bon
 msgid "I'm sorry, the link you clicked is stale. Please select another option."
 msgstr "L'enllaç on heu fet clic és obsolet. Seleccioneu altra opció."
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/ms-delete-site.php:46
 msgid ""
 "Dear User,\n"
@@ -5455,7 +5553,7 @@ msgstr ""
 "Blocaire,\n"
 "Fa poc heu clicat l'enllaç 'Esborra el bloc' de la vostra pàgina web i heu emplenat un\n"
 "formulari en aquesta pàgina.\n"
-"Si realment voleu esborrar el vostre web, cliqueu en l'enllaç d'aquí sota. No\n"
+"Si realment voleu esborrar el vostre web, feu clic en l'enllaç d'aquí sota. No\n"
 "us preguntarem que confirmeu de nou així que feu clic solament si esteu completament segurs:\n"
 "###URL_DELETE###\n"
 "\n"
@@ -5467,6 +5565,22 @@ msgstr ""
 "l'administrador del web\n"
 "###SITE_NAME###"
 
+#msgstr ""
+#"Blocaire,\n"
+#"Fa poc heu clicat l'enllaç 'Esborra el bloc' de la vostra pàgina web i heu emplenat un\n"
+#"formulari en aquesta pàgina.\n"
+#"Si realment voleu esborrar el vostre web, cliqueu en l'enllaç d'aquí sota. No\n"
+#"us preguntarem que confirmeu de nou així que feu clic solament si esteu completament segurs:\n"
+#"###URL_DELETE###\n"
+#"\n"
+#"Si esborreu el web, considereu la possibilitat de crear una nova pàgina web aquí\n"
+#"en algun moment en el futur! (Però recordeu que el vostre web actual i el nom d'usuari\n"
+#"ja no seran mai més.)\n"
+#"\n"
+#"Gràcies per fer servir el lloc web,\n"
+#"l'administrador del web\n"
+#"###SITE_NAME###"
+#************ FI
 #: wp-admin/ms-delete-site.php:64
 msgid "Delete My Site"
 msgstr "Suprimeix el meu bloc"
@@ -5973,10 +6087,14 @@ msgstr "La setmana comença el"
 msgid "Site Language"
 msgstr "Idioma del bloc"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/options-media.php:15
 msgid "Media Settings"
-msgstr "Opcions dels mèdia"
+msgstr "Opcions dels elements multimèdia"
 
+#msgstr "Opcions dels mèdia"
+#************ FI
 #: wp-admin/options-media.php:18
 msgid "You can set maximum sizes for images inserted into your written content; you can also insert an image as Full Size."
 msgstr "Podeu especificar les mides màximes de les imatges que s'insereixin al contingut escrit; també podeu inserir una imatge a mida completa."
@@ -5985,10 +6103,14 @@ msgstr "Podeu especificar les mides màximes de les imatges que s'insereixin al 
 msgid "Uploading Files allows you to choose the folder and path for storing your uploaded files."
 msgstr "Penja fitxers us permet triar la carpeta i camí on desar els fitxers que pengeu."
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/options-media.php:34
 msgid "<a href=\"http://codex.wordpress.org/Settings_Media_Screen\" target=\"_blank\">Documentation on Media Settings</a>"
-msgstr "<a href=\"http://codex.wordpress.org/Settings_Media_Screen\" target=\"_blank\">Documentació sobre els elements mèdia</a> (en anglès)"
+msgstr "<a href=\"http://codex.wordpress.org/Settings_Media_Screen\" target=\"_blank\">Documentació sobre els elements multimèdia</a> (en anglès)"
 
+#msgstr "<a href=\"http://codex.wordpress.org/Settings_Media_Screen\" target=\"_blank\">Documentació sobre els mèdia</a> (en anglès)"
+#************ FI
 #: wp-admin/options-media.php:49
 msgid "Image sizes"
 msgstr "Mida de les imatges"
@@ -6212,12 +6334,16 @@ msgstr "[més]"
 msgid "[less]"
 msgstr "[menys]"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/includes/class-wp-posts-list-table.php:849
 #: wp-admin/includes/meta-boxes.php:635
 #: wp-admin/includes/meta-boxes.php:636
 msgid "Parent"
-msgstr "pare/mare"
+msgstr "Categoria mare"
 
+#msgstr "pare/mare"
+#************ FI
 #: wp-admin/includes/class-wp-posts-list-table.php:855
 msgid "Main Page (no parent)"
 msgstr "Pàgina principal (sense superior)"
@@ -6841,13 +6967,17 @@ msgid_plural "Pending"
 msgstr[0] "Pendent"
 msgstr[1] "Pendents"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/includes/dashboard.php:349
 msgctxt "comment"
 msgid "Spam"
 msgid_plural "Spam"
 msgstr[0] "Brossa"
-msgstr[1] "Brosses"
+msgstr[1] "Brossa"
 
+#msgstr[1] "Brosses"
+#************ FI
 #: wp-admin/includes/dashboard.php:385
 msgid "Theme <span class=\"b\">%1$s</span> with <span class=\"b\"><a href=\"widgets.php\">%2$s Widget</a></span>"
 msgid_plural "Theme <span class=\"b\">%1$s</span> with <span class=\"b\"><a href=\"widgets.php\">%2$s Widgets</a></span>"
@@ -7329,20 +7459,28 @@ msgstr "Adjunta a un article"
 msgid "Scan for lost attachments"
 msgstr "Cerca fitxers adjunts perduts"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/includes/class-wp-media-list-table.php:125
 msgid "No media attachments found."
-msgstr "No s'ha trobat adjunt cap mèdia."
+msgstr "No s'ha trobat adjunt cap fitxer multimèdia."
 
+#msgstr "No s'ha trobat adjunt cap mèdia."
+#************ FI
 #: wp-admin/includes/class-wp-media-list-table.php:133
 msgctxt "column name"
 msgid "File"
 msgstr "Fitxer"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/includes/class-wp-media-list-table.php:157
 msgctxt "column name"
 msgid "Uploaded to"
-msgstr "Penjat a"
+msgstr "Pujat a"
 
+#msgstr "Penjat a"
+#************ FI
 #: wp-admin/includes/class-wp-media-list-table.php:162
 msgctxt "column name"
 msgid "Date"
@@ -7790,21 +7928,28 @@ msgstr "Crèdits"
 msgid "Freedoms"
 msgstr "Llibertats"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/about.php:45
 #: wp-admin/includes/template.php:1830
 msgid "New Media Manager"
-msgstr "Nou gestor de mèdia"
+msgstr "Nou gestor de elements multimèdia"
 
+#msgstr "Nou gestor de mèdia"
+#************ FI
 #: wp-admin/about.php:51
 msgid "Beautiful Interface"
 msgstr "Interfície bella"
 
 # XTEC ************ CORREGIT
 # 2013.06.21 @jmiro227
+# 2013.10.30 @jmeler
 #: wp-admin/about.php:52
 msgid "Adding media has been streamlined with an all-new experience, making it a breeze to upload files and place them into your posts."
-msgstr "L'addició dels mèdia s'ha racionalitzat amb tota una nova experiència, fent que en un sospir pengeu els fitxers i els poseu als articles."
+msgstr "L'addició dels elements multimèdia s'ha racionalitzat amb tota una nova experiència, fent que en un sospir pengeu els fitxers i els poseu als articles."
 
+#msgstr "L'addició dels mèdia s'ha racionalitzat amb tota una nova experiència, fent que en un sospir pengeu els fitxers i els poseu als articles."
+#************ FI
 #: wp-admin/about.php:55
 msgid "Picturesque Galleries"
 msgstr "Galeries pintoresques"
@@ -8470,10 +8615,14 @@ msgstr "Aquesta pantalla s'utilitza per personalitzar la secció de capçalera d
 msgid "You can choose from the theme&#8217;s default header images, or use one of your own. You can also customize how your Site Title and Tagline are displayed."
 msgstr "Podeu triar una de les imatges de capçalera predeterminats del tema, o fer servir una pròpia. Podeu també personalitzar com es mostra el títol del bloc i el lema."
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/custom-header.php:116
 msgid "You can set a custom image header for your site. Simply upload the image and crop it, and the new header will go live immediately. Alternatively, you can use an image that has already been uploaded to your Media Library by clicking the &#8220;Choose Image&#8221; button."
-msgstr "Podeu establir una imatge de capçalera personalitzat. Simplement pengeu una imatge i escapceu-la, i la nova capçalera s'activarà immediatament. També podeu fer servir una imatge que ja s'ha penjat a la mediateca si feu clic al botó &#8220;Tria imatge&#8221;."
+msgstr "Podeu establir una imatge de capçalera personalitzat. Simplement pengeu una imatge i escapceu-la, i la nova capçalera s'activarà immediatament. També podeu fer servir una imatge que ja s'ha pujat a la mediateca si feu clic al botó &#8220;Tria imatge&#8221;."
 
+#msgstr "Podeu establir una imatge de capçalera personalitzat. Simplement pengeu una imatge i escapceu-la, i la nova capçalera s'activarà immediatament. També podeu fer servir una imatge que ja s'ha penjat a la mediateca si feu clic al botó &#8220;Tria imatge&#8221;."
+#************ FI
 #: wp-admin/custom-header.php:117
 msgid "Some themes come with additional header images bundled. If you see multiple images displayed, select the one you&#8217;d like and click the &#8220;Save Changes&#8221; button."
 msgstr "Alguns temes venen amb un conjunt d'imatges de capçalera addicional. Si es mostren un munt d'imatges, seleccioneu-ne una que us agradi i feu clic al botó &#8220;Desa els canvis&#8221;."
@@ -8864,13 +9013,17 @@ msgstr "Pàgina programada per al: <strong>%1$s</strong>. <a target=\"_blank\" h
 msgid "Page draft updated. <a target=\"_blank\" href=\"%s\">Preview page</a>"
 msgstr "Esborrany de pàgina actualitzat. <a target=\"_blank\" href=\"%s\">Mostra la pàgina</a>"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/edit-form-advanced.php:62
 #: wp-admin/media.php:95
 #: wp-admin/upload.php:194
 #: wp-admin/upload.php:219
 msgid "Media attachment updated."
-msgstr "Mèdia adjunt actualitzat."
+msgstr "Fitxer multimèdia adjunt actualitzat."
 
+#msgstr "Mèdia adjunt actualitzat."
+#************ FI
 #: wp-admin/edit-form-advanced.php:94
 msgid "There is an autosave of this post that is more recent than the version below. <a href=\"%s\">View the autosave</a>"
 msgstr "Hi ha un desat automàtic d'aquesta article que és més recent que la versió que segueix.  <a href=\"%s\">Mostra la versió desada</a>"
@@ -8924,10 +9077,13 @@ msgstr "<strong>Títol</strong> - Introdueix un títol per a l'article. Una vega
 
 # XTEC ************ CORREGIT
 # 2013.06.21 @jmiro227
+# 2013.10.30 @jmeler
 #: wp-admin/edit-form-advanced.php:184
 msgid "<strong>Post editor</strong> - Enter the text for your post. There are two modes of editing: Visual and Text. Choose the mode by clicking on the appropriate tab. Visual mode gives you a WYSIWYG editor. Click the last icon in the row to get a second row of controls. The Text mode allows you to enter HTML along with your post text. Line breaks will be converted to paragraphs automatically. You can insert media files by clicking the icons above the post editor and following the directions. You can go to the distraction-free writing screen via the Fullscreen icon in Visual mode (second to last in the top row) or the Fullscreen button in Text mode (last in the row). Once there, you can make buttons visible by hovering over the top area. Exit Fullscreen back to the regular post editor."
-msgstr "<strong>Editor d'articles</strong> - Introduïu el tex de l'article. Hi ha dos modes d'edició: Visual i Text. Trieu el mode fent clic a la pestanya adequada. El mode visual us proporciona un editor WYSIWYG. Feu clic a la darrera icona de la fila per mostrar una segona fila de controls. El mode text us permet introduir text HMTL i el text de l'article alhora. Els salts de línia es convertiran en paràgrafs automàticament. Podeu inserir mèdia si feu clic a les icones que hi ha a la part superior de l'editor i seguir les instruccions. Podeu anar a la pantalla d'escriptura lliure de distraccions fent clic a la icona de pantalla completa que hi ha al mode visual (penúltima icona de la fila superior) o el botó de pantalla completa del mode text (darrer en la fila). Una vegada sigueu, podeu fer visibles els botons en passar el cursor per sobre de l'àrea superior. Tornareu a l'editor d'articles si feu clic al botó per sortir de la pantalla completa."
+msgstr "<strong>Editor d'articles</strong> - Introduïu el tex de l'article. Hi ha dos modes d'edició: Visual i Text. Trieu el mode fent clic a la pestanya adequada. El mode visual us proporciona un editor WYSIWYG. Feu clic a la darrera icona de la fila per mostrar una segona fila de controls. El mode text us permet introduir text HMTL i el text de l'article alhora. Els salts de línia es convertiran en paràgrafs automàticament. Podeu inserir fitxers multimèdia si feu clic a les icones que hi ha a la part superior de l'editor i seguir les instruccions. Podeu anar a la pantalla d'escriptura lliure de distraccions fent clic a la icona de pantalla completa que hi ha al mode visual (penúltima icona de la fila superior) o el botó de pantalla completa del mode text (darrer en la fila). Una vegada sigueu, podeu fer visibles els botons en passar el cursor per sobre de l'àrea superior. Tornareu a l'editor d'articles si feu clic al botó per sortir de la pantalla completa."
 
+#msgstr "<strong>Editor d'articles</strong> - Introduïu el tex de l'article. Hi ha dos modes d'edició: Visual i Text. Trieu el mode fent clic a la pestanya adequada. El mode visual us proporciona un editor WYSIWYG. Feu clic a la darrera icona de la fila per mostrar una segona fila de controls. El mode text us permet introduir text HMTL i el text de l'article alhora. Els salts de línia es convertiran en paràgrafs automàticament. Podeu inserir mèdia si feu clic a les icones que hi ha a la part superior de l'editor i seguir les instruccions. Podeu anar a la pantalla d'escriptura lliure de distraccions fent clic a la icona de pantalla completa que hi ha al mode visual (penúltima icona de la fila superior) o el botó de pantalla completa del mode text (darrer en la fila). Una vegada sigueu, podeu fer visibles els botons en passar el cursor per sobre de l'àrea superior. Tornareu a l'editor d'articles si feu clic al botó per sortir de la pantalla completa."
+#************ FI
 #: wp-admin/edit-form-advanced.php:188
 msgid "Title and Post Editor"
 msgstr "Títol i editor de l'article"
@@ -8980,28 +9136,48 @@ msgstr "Per a les imatges solament, podeu fer clic en Edita la imatge a sota de 
 msgid "Note that you crop the image by clicking on it (the Crop icon is already selected) and dragging the cropping frame to select the desired part. Then click Save to retain the cropping."
 msgstr "Fixeu-vos que podeu retallar la imatge en fer clic sobre ella (la icona de retall ja està seleccionada) i arrossegant el requadre de retall per seleccionar la part desitjada. Aleshores feu clic a Desa per a mantenir el retall."
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/edit-form-advanced.php:222
 #: wp-admin/media.php:78
 msgid "Remember to click Update Media to save metadata entered or changed."
-msgstr "Recordeu fer clic en Actualitza els mèdia per desar les metadades que heu introduït o canviat."
+msgstr "Recordeu fer clic en Actualitza els fitxers multimèdia per desar les metadades que heu introduït o canviat."
 
+#msgstr "Recordeu fer clic en Actualitza els mèdia per desar les metadades que heu introduït o canviat."
+#************ FI
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/edit-form-advanced.php:227
 #: wp-admin/media.php:83
 msgid "<a href=\"http://codex.wordpress.org/Media_Add_New_Screen#Edit_Media\" target=\"_blank\">Documentation on Edit Media</a>"
-msgstr "<a href=\"http://codex.wordpress.org/Media_Add_New_Screen#Edit_Media\" target=\"_blank\">Documentació sobre l'edició d'elements mèdia</a> (en anglès)"
+msgstr "<a href=\"http://codex.wordpress.org/Media_Add_New_Screen#Edit_Media\" target=\"_blank\">Documentació sobre l'edició d'elements multimèdia</a> (en anglès)"
 
+#msgstr "<a href=\"http://codex.wordpress.org/Media_Add_New_Screen#Edit_Media\" target=\"_blank\">Documentació sobre l'edició dels mèdia</a> (en anglès)"
+#************ FI
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/edit-form-advanced.php:233
 msgid "You can upload and insert media (images, audio, documents, etc.) by clicking the Add Media button. You can select from the images and files already uploaded to the Media Library, or upload new media to add to your page or post. To create an image gallery, select the images to add and click the &#8220;Create a new gallery&#8221; button."
-msgstr "Podeu penjar i inserir mèdia (imatges, àudio, documents, etc.) en fer clic al botó Afegeix mèdia. Podeu seleccionar d'entre les imatges i fitxers ja penjats a la mediateca, o penjar un nou mèdia per afegir a la pàgina o a l'article. Per crear una galeria d'imatges, seleccioneu les imatges que voleu afegir i feu clic al botó &#8220;Crea una galeria nova&#8221;."
+msgstr "Podeu penjar i inserir fitxers multimèdia (imatges, àudio, documents, etc.) en fer clic al botó Afegiu un fitxer multimèdia. Podeu seleccionar d'entre les imatges i fitxers ja penjats a la mediateca, o penjar un nou element multimèdia per afegir a la pàgina o a l'article. Per crear una galeria d'imatges, seleccioneu les imatges que voleu afegir i feu clic al botó &#8220;Crea una galeria nova&#8221;."
 
+#msgstr "Podeu penjar i inserir mèdia (imatges, àudio, documents, etc.) en fer clic al botó Afegiu un mèdia. Podeu seleccionar d'entre les imatges i fitxers ja penjats a la mediateca, o penjar un nou mèdia per afegir a la pàgina o a l'article. Per crear una galeria d'imatges, seleccioneu les imatges que voleu afegir i feu clic al botó &#8220;Crea una galeria nova&#8221;."
+#************ FI
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/edit-form-advanced.php:234
 msgid "You can also embed media from many popular websites including Twitter, YouTube, Flickr and others by pasting the media URL on its own line into the content of your post/page. Please refer to the Codex to <a href=\"http://codex.wordpress.org/Embeds\">learn more about embeds</a>."
-msgstr "Podeu també incrustar mèdia des de moltes pàgines webs populars com ara el Twitter, el Youtube, el Flickr i altres en enganxar la URL del mèdia a la seva pròpia línia al contingut de l'article o pàgina. Remeteu-vos al Codex per <a href=\"http://codex.wordpress.org/Embeds\">aprendre més sobre les incrustacions</a> (en anglès)."
+msgstr "Podeu també incrustar elements multimèdia des de moltes pàgines webs populars com ara el Twitter, el Youtube, el Flickr i altres en enganxar la URL del element multimèdia a la seva pròpia línia al contingut de l'article o pàgina. Remeteu-vos al Codex per <a href=\"http://codex.wordpress.org/Embeds\">aprendre més sobre les incrustacions</a> (en anglès)."
 
+#msgstr "Podeu també incrustar mèdia des de moltes pàgines webs populars com ara el Twitter, el Youtube, el Flickr i altres en enganxar la URL del mèdia a la seva pròpia línia al contingut de l'article o pàgina. Remeteu-vos al Codex per <a href=\"http://codex.wordpress.org/Embeds\">aprendre més sobre les incrustacions</a> (en anglès)."
+#************ FI
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/edit-form-advanced.php:238
 msgid "Inserting Media"
-msgstr "S'està inserint el mèdia"
+msgstr "S'està inserint l'element multimèdia"
 
+#msgstr "S'està inserint el mèdia"
+#************ FI
 #: wp-admin/edit-form-advanced.php:244
 msgid "Several boxes on this screen contain settings for how your content will be published, including:"
 msgstr "Algunes caixes d'aquesta pantalla contenen paràmetres de com el contingut es publicarà, com ara:"
@@ -9180,10 +9356,14 @@ msgstr "Adreça Web"
 msgid "Example: <code>http://wordpress.org/</code> &#8212; don&#8217;t forget the <code>http://</code>"
 msgstr "Exemple: <code>http://wordpress.org/</code> &#8212; no oblideu posar <code>http://</code>"
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/edit-link-form.php:102
 msgid "This will be shown when someone hovers over the link in the blogroll, or optionally below the link."
-msgstr "Això es mostra quan algú plana amb el cursor sobre l'enllaç a la llista d'enllaços, o de manera opcional sota l'enllaç."
+msgstr "Això es mostra quan algú passa amb el cursor per sobre de l'enllaç a la llista d'enllaços, o de manera opcional sota l'enllaç."
 
+#msgstr "Això es mostra quan algú plana amb el cursor sobre l'enllaç a la llista d'enllaços, o de manera opcional sota l'enllaç."
+#************ FI
 #: wp-admin/edit-tag-form.php:14
 msgid "You did not select an item for editing."
 msgstr "No heu seleccionat un element a editar."
@@ -9214,7 +9394,7 @@ msgstr "El resum és el mateix nom expressat en caràcters admesos en una URL. S
 #: wp-admin/edit-tags.php:373
 msgctxt "Taxonomy Parent"
 msgid "Parent"
-msgstr "Pare"
+msgstr "Categoria mare"
 
 #: wp-admin/edit-tag-form.php:57
 #: wp-admin/edit-tags.php:376
@@ -9282,10 +9462,14 @@ msgstr "<strong>Nom</strong> - El nom és com apareix al bloc."
 msgid "<strong>Slug</strong> - The &#8220;slug&#8221; is the URL-friendly version of the name. It is usually all lowercase and contains only letters, numbers, and hyphens."
 msgstr "<strong>Resum</strong> - El &#8220;resum&#8221; és la URL amigable del nom. Normalment són minúscules i conté solament lletres, noms i guions."
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/edit-tags.php:221
 msgid "<strong>Parent</strong> - Categories, unlike tags, can have a hierarchy. You might have a Jazz category, and under that have child categories for Bebop and Big Band. Totally optional. To create a subcategory, just choose another category from the Parent dropdown."
-msgstr "<strong>Pare</strong> - Les categories, a diferència de les etiquetes, poden tenir una jerarquia. Podeu tenir una categoria Jazz, i per sota d'aquesta tenir categories filles per al Bebop i el Big Band. Totalment opcional. Per crear una subcategoria, trieu altra categoria del menú desplegable del pare."
+msgstr "<strong>Categoria mare</strong> - Les categories, a diferència de les etiquetes, poden tenir una jerarquia. Podeu tenir una categoria Jazz, i per sota d'aquesta tenir categories filles per al Bebop i el Big Band. Totalment opcional. Per crear una subcategoria, trieu altra categoria del menú desplegable del pare."
 
+#msgstr "<strong>Pare</strong> - Les categories, a diferència de les etiquetes, poden tenir una jerarquia. Podeu tenir una categoria Jazz, i per sota d'aquesta tenir categories filles per al Bebop i el Big Band. Totalment opcional. Per crear una subcategoria, trieu altra categoria del menú desplegable del pare."
+#************ FI
 #: wp-admin/edit-tags.php:223
 msgid "<strong>Description</strong> - The description is not prominent by default; however, some themes may display it."
 msgstr "<strong>Descripció</strong> - La descripció no és prominent per defecte; tanmateix, alguns temes poden mostrar-la."
@@ -9871,12 +10055,16 @@ msgid_plural "Approved"
 msgstr[0] "Aprovat "
 msgstr[1] "Aprovats "
 
+# XTEC ************ CORREGIT
+# 2013.10.30 @jmeler
 #: wp-admin/includes/class-wp-comments-list-table.php:151
 msgid "Spam <span class=\"count\">(<span class=\"spam-count\">%s</span>)</span>"
 msgid_plural "Spam <span class=\"count\">(<span class=\"spam-count\">%s</span>)</span>"
 msgstr[0] "Brossa <span class=\"count\">(<span class=\"spam-count\">%s</span>)</span>"
-msgstr[1] "Brosses <span class=\"count\">(<span class=\"spam-count\">%s</span>)</span>"
+msgstr[1] "Brossa <span class=\"count\">(<span class=\"spam-count\">%s</span>)</span>"
 
+#msgstr[1] "Brosses <span class=\"count\">(<span class=\"spam-count\">%s</span>)</span>"
+#************ FI
 #: wp-admin/includes/class-wp-comments-list-table.php:152
 msgid "Trash <span class=\"count\">(<span class=\"trash-count\">%s</span>)</span>"
 msgid_plural "Trash <span class=\"count\">(<span class=\"trash-count\">%s</span>)</span>"
