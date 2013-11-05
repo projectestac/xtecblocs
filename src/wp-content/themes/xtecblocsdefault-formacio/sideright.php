@@ -32,9 +32,10 @@ if (is_user_logged_in()){
 
 		$number = xtec_descriptors_count_bloc_descriptors($blog->userblog_id);
 		
-		//XTEC ************ AFEGIT -if blog's titles is empty, compose title from url
-		//ex: http://agora/blocs/elspinguins/ -> elspinguins
+		//XTEC ************ AFEGIT 
 		//2013.10.30 @jmeler 
+		// if blog's titles is empty, compose title from url
+		// ex: http://agora/blocs/elspinguins/ --> elspinguins
 		
 		if (empty($blog->blogname))	
 			$blog->blogname="Bloc ".substr(trim($blog->path,"/"),strpos(trim($blog->path,"/"),"/")+1);
@@ -93,12 +94,15 @@ blocs per fer desaparèixer l'avís.</p>
 <div class="sidecontent">
 <ul>
 
-<!-- XTEC ************ MODIFICAT - if blog's titles is empty, compose title from url
-2013.10.30 @jmeler -->
-		
+	
 <?php if (!empty($blogs) ) {
 
 	foreach ( $blogs as $blog ){
+
+		//XTEC ************ AFEGIT 
+		//2013.10.30 @jmeler 
+		// if blog's titles is empty, compose title from url
+		// ex: http://agora/blocs/elspinguins/ --> elspinguins
 
 		$titolBlog=get_blog_option($blog, 'blogname');
 
@@ -108,7 +112,7 @@ blocs per fer desaparèixer l'avís.</p>
 		}else		
 			$titolBlog = stripslashes(get_blog_option($blog, 'blogname'));
 
-		
+		//FI ************ 
 
 ?>
 	<li><a href='<?php echo get_blogaddress_by_id($blog);?>'
@@ -119,22 +123,6 @@ blocs per fer desaparèixer l'avís.</p>
 
 <?php } 
 }?>
-
-<!--************ ORIGINAL
-<?php if (!empty($blogs) ) {
-
-	foreach ( $blogs as $blog ){
-?>
-	<li><a href='<?php echo get_blogaddress_by_id($blog);?>'
-	target="_blank" title="Entra al bloc"><?php echo stripslashes(get_blog_option($blog, 'blogname');?></a>&nbsp;<a
-	href="index.php?a=delPrefer&blogId=<?php echo $blog?>"
-	title="Esborra"><img src="<?php bloginfo('template_directory'); ?>/images/delete.gif"
-	border="0" alt="Esborra" /></a></li>
-
-<?php } 
-}?>
-FI ************ -->
-
 </ul>
 </div>
 </div>
@@ -148,17 +136,18 @@ FI ************ -->
 <h3 class="noticies">Els blocs més actius</h3>
 <div class="sidecontent">
 <ul>
-<!--XTEC ************ MODIFICAT - if blog's title is empty, get url
-2013.10.30 @jmeler -->
 <?php
 $mostActive=xtec_lastest_posts_most_active_blogs();
 if(count($mostActive)>0){
 
 	foreach ( $mostActive as $active ){
+	//XTEC ************ AFEGIT - if blog's title is empty, get url
+	//2013.10.30 @jmeler
 		if (empty($active['blog_title']))	
 			$titolBlog=substr($active['blog_url'],strrpos($active['blog_url'],'/')+1); 
 		else		
 			$titolBlog=stripslashes($active['blog_title']);
+	//************ FI	
 	?>
 	
 	<li><a href='<?php echo $active['blog_url'];?>' target="_blank"
@@ -169,24 +158,6 @@ if(count($mostActive)>0){
 		<?php
 	}
 }?>
-
-<!--************ ORIGINAL
-<?php
-$mostActive=xtec_lastest_posts_most_active_blogs();
-if(count($mostActive)>0){
-
-	foreach ( $mostActive as $active ){
-	?>
-	<li><a href='<?php echo $active['blog_url'];?>' target="_blank"
-		title="Entra al bloc"><?php echo stripslashes($active['blog_title'];?></a><?php if(is_user_logged_in()){?>
-	<a href="index.php?a=addPrefer&blogId=<?php echo $active['blogId']?>"
-		title="Preferit"><img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif"
-		border="0" alt="Preferit" /></a><?php };?></li>
-		<?php
-	}
-}?>
-************ FI-->
-
 </ul>
 
 
@@ -206,17 +177,21 @@ if(count($mostActive)>0){
 $blogs = xtec_api_lastest_blogs(5,3000,'registered');
 if( is_array( $blogs ) ) {?>
 <ul>
-
-<!-- XTEC ************ MODIFICAT - if blog's titles is empty, compose title from url
-2013.10.30 @jmeler  
-TODO: error?: xtec_api_lastest_blogs returns empty items-->
 <?php foreach( $blogs as $blog ) {
+
+	//XTEC ************ AFEGIT 
+	//2013.10.30 @jmeler 
+	// if blog's titles is empty, compose title from url
+	// ex: http://agora/blocs/elspinguins/ --> elspinguins
+
+	// TODO: error: xtec_api_lastest_blogs returns empty items
 	if ( !empty($blog['blog_url']) ){	
 		if ( empty($blog['blog_title']) )	
 			$titolBlog = "Bloc ".substr($blog['blog_url'], strrpos( trim($blog['blog_url'],"/") ,'/')+1,-1); 
 		else		
 			$titolBlog = stripslashes($blog['blog_title']);
-	
+	//************ FI	
+
 ?>
     <li><a href="<?php echo $blog['blog_url']; ?>" target="_blank"><?php echo $titolBlog; ?></a><?php if(is_user_logged_in()){?>
     <a href="index.php?a=addPrefer&blogId=<?php echo $blog['blog_id']?>"
@@ -226,22 +201,6 @@ TODO: error?: xtec_api_lastest_blogs returns empty items-->
 <?php 
 }
 }?>
-
-<!--************ ORIGINAL
-<?php foreach( $blogs as $blog ) {
-	?>
-    <li><a href="<?php echo $blog['blog_url']; ?>" target="_blank"><?php echo stripslashes($blog['blog_title']); ?></a><?php if(is_user_logged_in()){?>
-    <a href="index.php?a=addPrefer&blogId=<?php echo $blog['blog_id']?>"
-        title="Preferit"><img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif"
-        border="0" alt="Preferit" /></a><?php };?></li>
-        
-<?php 
-}
-}?>
-
-************ FI-->
-
-
 </ul>
 <ul id="cloudtags">
     <li id="mes"><a
