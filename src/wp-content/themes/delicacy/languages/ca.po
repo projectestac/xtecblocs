@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Delicacy\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-02-15 16:32+0100\n"
-"PO-Revision-Date: 2013-10-30 18:09+0100\n"
+"PO-Revision-Date: 2013-11-05 18:41+0100\n"
 "Last-Translator: Xavi Meler <jmeler@xtec.cat>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -85,7 +85,7 @@ msgstr "1 comentari"
 #: ../search.php:18
 #: ../single.php:9
 msgid "Comments: %"
-msgstr ""
+msgstr "Comentaris: %"
 
 #: ../archive.php:36
 #: ../index.php:24
@@ -144,7 +144,7 @@ msgstr ""
 #: ../functions.php:226
 #, php-format
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s - %2$s"
 
 #: ../functions.php:226
 msgid "Edit"
@@ -740,4 +740,7 @@ msgstr ""
 #: ../meta-box/metabox-def.php:65
 msgid "Toal time of cooking, baking etc."
 msgstr ""
+
+msgid "Reply"
+msgstr "Contesta"
 

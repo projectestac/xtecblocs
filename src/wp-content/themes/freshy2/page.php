@@ -22,7 +22,8 @@
 					<!-- XTEC ************ MODIFICAT - Translate
 					//2013.10.30 @jmeler -->
 					<?php the_tags('<dt>'.__('Tags',TEMPLATE_DOMAIN).'</dt><dd>', ', ', '</dd>'); ?> 
-					<!--<?php the_tags('<dt>Tags</dt><dd>', ', ', '</dd>'); ?> 
+					<!--************ ORIGINAL
+					< ?php the_tags('<dt>Tags</dt><dd>', ', ', '</dd>'); ?> 
 					FI ******************** -->
 
 				<?php endif; ?>
@@ -32,7 +33,8 @@
 					<!-- XTEC ************ MODIFICAT - Translate
 					//2013.10.30 @jmeler -->
 					<?php the_bunny_tags('<dt>'.__('Tags',TEMPLATE_DOMAIN).'</dt><dd>', '</dd>', ', '); ?>
-					<!-- <?php the_bunny_tags('<dt>Tags</dt><dd>', '</dd>', ', '); ?>
+					<!-- ************ ORIGINAL
+					< ?php the_bunny_tags('<dt>Tags</dt><dd>', '</dd>', ', '); ?>
 					FI ******************** -->
 
 				<?php endif; ?>

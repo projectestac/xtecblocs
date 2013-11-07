@@ -223,7 +223,18 @@ function delicacy_comments($comment, $args, $depth) {
 
 				<div class="comment-author">
 					<strong><?php echo get_comment_author_link() ?></strong>
-					<small><?php printf(__('%1$s at %2$s','delicacy'), get_comment_date(),  get_comment_time()) ?><?php edit_comment_link(__('Edit','delicacy'),'  ','') ?> <?php comment_reply_link(array_merge( $args, array('reply_text' => 'Reply', 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?></small>
+					<small><?php printf(__('%1$s at %2$s','delicacy'), get_comment_date(),  get_comment_time()) ?><?php edit_comment_link(__('Edit','delicacy'),'  ','') ?> 
+
+<!-- XTEC ************ MODIFICAT - Translate
+//2013.11.05 @jmeler -->
+
+	<?php comment_reply_link(array_merge( $args, array('reply_text' => __('Reply','delicacy'), 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+
+<!-- ***********ORIGINAL
+< ?php comment_reply_link(array_merge( $args, array('reply_text' => 'Reply', 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?> 
+*************FI-->
+
+</small>
 				</div>
 
 				<div class="comment-text">

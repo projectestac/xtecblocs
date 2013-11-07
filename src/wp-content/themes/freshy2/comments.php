@@ -22,7 +22,8 @@
 	<!-- XTEC ************ MODIFICAT - Translate
 	//2013.10.30 @jmeler -->
 	<h3 id="comments"><?php comments_number( __('No responses',TEMPLATE_DOMAIN), __('One response',TEMPLATE_DOMAIN), __('% responses',TEMPLATE_DOMAIN) );?> <?php _e('to',TEMPLATE_DOMAIN) ?> &#8220;<?php the_title(); ?>&#8221;</h3>
-	<!--<h3 id="comments"><?php comments_number( ('No responses',TEMPLATE_DOMAIN), __('One response',TEMPLATE_DOMAIN), __('% 		responses',TEMPLATE_DOMAIN) );?> <?php _e('to',TEMPLATE_DOMAIN) ?> &#8220;<?php the_title(); ?>&#8221;</h3>
+	<!-- ************ ORIGINAL
+	<h3 id="comments">< ?php comments_number( ('No responses',TEMPLATE_DOMAIN), __('One response',TEMPLATE_DOMAIN), __('% 		responses',TEMPLATE_DOMAIN) );?> <?php _e('to',TEMPLATE_DOMAIN) ?> &#8220;<?php the_title(); ?>&#8221;</h3>
 	************ FI-->
 
 	<div class="navigation">
@@ -58,7 +59,8 @@
 <!-- XTEC ************ MODIFICAT - Translate
 //2013.10.30 @jmeler -->
 <h3><?php comment_form_title( __('Leave a Reply',TEMPLATE_DOMAIN) ); ?></h3>
-<!-- <h3><?php comment_form_title('Leave a Reply','Leave a Reply to %s'); ?></h3>
+<!-- ************ ORIGINAL
+<h3>< ?php comment_form_title('Leave a Reply','Leave a Reply to %s'); ?></h3>
 ************ FI-->
 
 <div class="cancel-comment-reply">
@@ -76,7 +78,8 @@
 <!-- XTEC ************ MODIFICAT - Translate
 //2013.10.30 @jmeler -->
 <p><?php _e('Logged in as',TEMPLATE_DOMAIN) ?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account"><?php _e('Log out') ?> &raquo;</a></p>
-<!-- <p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account"><?php _e('Log out') ?> &raquo;</a></p> 
+<!-- ************ ORIGINAL
+<p>Logged in as <a href="< ?php echo get_option('siteurl'); ?>/wp-admin/profile.php">< ?php echo $user_identity; ?></a>. <a href="< ?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">< ?php _e('Log out') ?> &raquo;</a></p> 
 ************ FI-->
 
 <?php else : ?>
@@ -92,14 +95,14 @@
 
 <?php endif; ?>
 
-<!--<p><small><strong>XHTML:</strong> You can use these tags: <code><?php echo allowed_tags(); ?></code></small></p>-->
+<!--<p><small><strong>XHTML:</strong> You can use these tags: <code>< ?php echo allowed_tags(); ?></code></small></p>-->
 
 <p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
 
 <!-- XTEC ************ MODIFICAT - Translate
 //2013.10.30 @jmeler -->
 <p><input name="submit" type="submit" id="submit" tabindex="5" value=<?php _e('Submit Comment',TEMPLATE_DOMAIN) ?>/>
-<!--
+<!--************ ORIGINAL
 <p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment"/>
 ************ FI-->
 

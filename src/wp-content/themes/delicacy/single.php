@@ -13,7 +13,15 @@
 		<div class="clear"></div>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'delicacy' ) . '</span>', 'after' => '</div>' ) ); ?>
 		<p><?php the_tags( __( 'Tagged: ', 'delicacy' ), ', ', ''); ?></p>
-    	<?php edit_post_link('Edit this entry','<p>', '</p>'); ?>
+
+	<!-- XTEC ************ MODIFICAT - Translate
+	//2013.11.05 @jmeler -->
+    	<?php edit_post_link(__('Edit this entry','delicacy'),'<p>', '</p>'); ?>
+
+	<!-- *************** ORIGINAL
+	< ?php edit_post_link(__('Edit this entry','delicacy'),'<p>', '</p>'); ?> 
+	***************** FI-->
+	
 	</div>
 	</article>
 

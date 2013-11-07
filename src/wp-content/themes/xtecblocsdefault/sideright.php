@@ -37,8 +37,11 @@ if (is_user_logged_in()){
 		// if blog's titles is empty, compose title from url
 		// ex: http://agora/blocs/elspinguins/ --> elspinguins
 		
+		$blog->blogname=trim($blog->blogname);
+		$pathBlog=trim($blog->path,"/");
+
 		if (empty($blog->blogname))	
-			$blog->blogname="Bloc ".substr(trim($blog->path,"/"),strpos(trim($blog->path,"/"),"/")+1);
+			$blog->blogname="Bloc ".substr($pathBlog,strpos($pathBlog,"/")+1);
 
 		//FI ************
 		
@@ -104,11 +107,12 @@ blocs per fer desaparèixer l'avís.</p>
 		// if blog's titles is empty, compose title from url
 		// ex: http://agora/blocs/elspinguins/ --> elspinguins
 
-		$titolBlog=get_blog_option($blog, 'blogname');
+		$titolBlog=trim(get_blog_option($blog, 'blogname'));
+		$urlBlog=trim($urlBlog,"/");
 
 		if ( empty( $titolBlog ) ){
 			$urlBlog=get_blog_option($blog, 'siteurl');
-			$titolBlog = "Bloc ".substr($urlBlog, strrpos( trim($urlBlog,"/") ,'/')+1); 
+			$titolBlog = "Bloc ".substr($urlBlog, strrpos($urlBlog,'/')+1); 
 		}else		
 			$titolBlog = stripslashes(get_blog_option($blog, 'blogname'));
 
@@ -143,10 +147,13 @@ if(count($mostActive)>0){
 	foreach ( $mostActive as $active ){
 	//XTEC ************ AFEGIT - if blog's title is empty, get url
 	//2013.10.30 @jmeler
-		if (empty($active['blog_title']))	
-			$titolBlog=substr($active['blog_url'],strrpos($active['blog_url'],'/')+1); 
-		else		
-			$titolBlog=stripslashes($active['blog_title']);
+
+		$titolBlog=trim(stripslashes($active['blog_title']));	
+		$urlBlog  =trim($active['blog_url'],"/");
+	
+		if (empty($titolBlog))	
+			$titolBlog="Bloc ".substr($urlBlog,strrpos($urlBlog,'/')+1); 
+		
 	//************ FI	
 	?>
 	
@@ -184,12 +191,16 @@ if( is_array( $blogs ) ) {?>
 	// if blog's titles is empty, compose title from url
 	// ex: http://agora/blocs/elspinguins/ --> elspinguins
 
-	// TODO: error: xtec_api_lastest_blogs returns empty items
+	// TODO: error?: xtec_api_lastest_blogs returns empty items
+
+	$titolBlog = trim(stripslashes($blog['blog_title']));
+	$urlBlog= trim($blog['blog_url'],"/");
+
 	if ( !empty($blog['blog_url']) ){	
-		if ( empty($blog['blog_title']) )	
-			$titolBlog = "Bloc ".substr($blog['blog_url'], strrpos( trim($blog['blog_url'],"/") ,'/')+1,-1); 
-		else		
-			$titolBlog = stripslashes($blog['blog_title']);
+		if (empty($titolBlog))	
+			$titolBlog = "Bloc ".substr($urlBlog, strrpos( $urlBlog ,'/')+1); 
+			
+	
 	//************ FI	
 
 ?>
