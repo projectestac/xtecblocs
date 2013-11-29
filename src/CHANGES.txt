@@ -1,5 +1,10 @@
+Changes in progress
 ---------------------------------------------------------------------------------------
+
+
+
 v13.11.07
+---------------------------------------------------------------------------------------
 - "Blocs més actius" té una entrada en blanc (AGIN 1068-2013-0012)
 - Eliminar bloc d'exemples (AGIN 1068-2013-0013)
 - Traduccions al Català
@@ -7,6 +12,7 @@ v13.11.07
 
 
 v13.10.17
+---------------------------------------------------------------------------------------
 - Recuperar el directori ws.
 - Eliminar referències a edu365 en crear un nou bloc.
 - Afegit apc.php.
@@ -15,6 +21,7 @@ v13.10.17
 
 
 v.13.09.18
+---------------------------------------------------------------------------------------
 - Eliminar opcions de compra del temes delicacy i mystique.
 - Canvi de l'enllaç de la pàgina principal que fa referència a Wordpress MU.
 - Canvi de l'enllaç de la pàgina principal que apunta a l'espai de cursos (mentre no està disponible).
@@ -22,44 +29,53 @@ v.13.09.18
 
 
 v.13.07.29
+---------------------------------------------------------------------------------------
 - Primera versió amb WP 3.5.1
 
 
 v.13.07.09 (No va a producció)
+---------------------------------------------------------------------------------------
 - Afegits fitxers per refer l'importador de blogs 
 
 
 v.13.06.03
+---------------------------------------------------------------------------------------
 - ENS-1068-00015: Modificar enllaç del fòrum per apuntar al grup de la Xarxa Docent 
 
 
 v.13.03.11
+---------------------------------------------------------------------------------------
 - ENS-1068-0010: Problemes amb les etiquetes i núvols d'etiquetes en els blocs (parametrització de l'script)
 - ENS-1068-0043: Prohibir la creació (i modificació) de comptes d'usuari/ària amb més de 8 caràcters i adreça @xtec.cat
 
 
 v.13.02.28
+---------------------------------------------------------------------------------------
 - ENS-1068-0010: Problemes amb les etiquetes i núvols d'etiquetes en els blocs
 - ENS-1068-0012: Usuaris que abans tenien compte xtec encara poden accedir
 - ENS-1068-0043: Prohibir la creació de comptes d'usuari/ària amb més de 8 caràcters i adreça @xtec.cat
 
 
 v.12.11.15
+---------------------------------------------------------------------------------------
 - Actualitzar a versió 3.1.4 i actualitzar plugins: multisite-plugin-manager, creative-commons-configurator-1, blogger-importer, wp-super-cache, wordpress-importer
 
 
 v.11.11.09
+---------------------------------------------------------------------------------------
 Errors solucionats:
 - La icona d'afegir com a preferit en el bloc de Darreres entrades als blocs del portal d'XTECBlocs es mostrava de manera incorrecta.
 
 
 v.11.11.07
+---------------------------------------------------------------------------------------
 Errors solucinats:
 - Es carregaven estils erronis a la pàgina de registre.
 - S'utilitzava una variable global com a no global.
 
 
 v11.10.20
+---------------------------------------------------------------------------------------
 Canvis:
 - S'ha eliminat l'extensió XTEC Weekblog i s'ha afegit l'extensió XTEC WeekBlog 2 que millora la fiabilitat, usabilitat i funcionalitat de la gestió dels blocs de la setmana.
 - S'ha adaptat l'aparença XTECBlocs Default per suportar la nova extensió XTEC WeekBlog 2.
@@ -72,6 +88,7 @@ Errors solucionats:
 
 
 v11.10.05
+---------------------------------------------------------------------------------------
 Canvis:
 - S'ha actualitzat l'aparença Default de la versió 1.6 a la versió 1.7.2.
 - S'ha afegit la versió 2.3.0 de l'extensió AddThis amb suport per la internacionalització i amb la traducció al català.
@@ -109,11 +126,13 @@ Noves funcionalitats:
 
 
 v11.09.16
+---------------------------------------------------------------------------------------
 Errors solucionats:
 - S'ha corregit una cadena de traducció de l'extensió XTEC Users que havia quedat desfasada.
 
 
 v11.08.30
+---------------------------------------------------------------------------------------
 Canvis:
 - S'ha afegit un nou estil a l'aparença XTEC 898 En Curs.
 - S'ha afegit l'extensió Blogger Importer que permet importar blocs de Blogger.
@@ -124,11 +143,13 @@ Errors solucionats:
 
 
 v11.07.27
+---------------------------------------------------------------------------------------
 Errors solucionats:
 - L'aparença Many Colors Idea no visualitzava la capçalera en les pàgines i els articles.
 
 
 v11.06.15
+---------------------------------------------------------------------------------------
 Canvis:
 - S'ha actualitzat la versió de WordPress MU 2.7 a la versió 3.1.2 del WordPress.
 - S'han adaptat algunes consultes SQL a base de dades que podien utilitzar funcions de l'API de Wordpress.
@@ -193,16 +214,19 @@ Noves funcionalitats:
 
 
 v11.05.06
+---------------------------------------------------------------------------------------
 Canvis:
 - S'ha eliminat l'aplicació de les Preguntes Més Freqüents i s'ha modificat l'enllaç d'ajuda cap a la nova ajuda d'XTECBlocs.
 
 
 v11.03.21
+---------------------------------------------------------------------------------------
 Canvis:
 - S'ha canviat el sistema d'enviament de mails del plugin WP Mail SMTP pel plugin XTEC Mail que utilitza el sistema d'enviament de mails per servei web del Departament d'Ensenyament.
 
 
 v11.02.09
+---------------------------------------------------------------------------------------
 Canvis:
 - S'ha augmentat el temps d'espera de la variable MAGPIE_FETCH_TIME_OUT per a incrementar el temps de resposta quan es solicita algun feed RSS.
 - S'ha tret del plugin XTEC Maintenance alguna informació per mostrar-la des del nou plugin XTEC Info.
@@ -217,6 +241,7 @@ Noves funcionalitats:
 
 
 v11.01.10
+---------------------------------------------------------------------------------------
 Canvis:
 - S'han modificat els logotips institucionals dels temes 'Home' i 'Home (Hipòlit)' i les 'Condicions d'ús' per respondre al canvi de nom del Departament que passa a ser d'Ensenyament en comptes d'Educació.
 
@@ -225,16 +250,19 @@ Errors solucionats:
 
 
 v11.01.05
+---------------------------------------------------------------------------------------
 Errors solucionats:
 - S'ha corregit un error en una consulta del fitxer wp-content/themes/home/xtecfunc.php
  
  
 v10.12.02
+---------------------------------------------------------------------------------------
 Noves funcionalitats:
 - S'ha afegit la possibilitat d'utilitzar múltiples bases de dades amb l'ajuda del plugin HyperDB v1.0.
 
 
 v10.10.01
+---------------------------------------------------------------------------------------
 Errors solucionats:
 - S'ha deshabilitat el widget de Google Analytics perquè no funcionava correctament.
 
@@ -244,6 +272,7 @@ Canvis:
 
 
 v10.07.23
+---------------------------------------------------------------------------------------
 Noves funcionalitats:
 - S'ha afegit l'aparença XTEC En Curs.
 - S'ha creat l'aparença del portal d'XTECBlocs per a Hipòlit.
@@ -266,11 +295,13 @@ Canvis:
 
 
 v10.06.18
+---------------------------------------------------------------------------------------
 Canvis:
 - Canviades les IP que poden accedir al "web service" (html/ws/.htaccess)
 
 
 v10.06.15
+---------------------------------------------------------------------------------------
 Noves funcionalitats:
 - S'ha habilitat la possibilitat d'autenticar usuaris des de l'exterior de XTECBlocs.
 Errors solucionats:
@@ -278,6 +309,7 @@ Errors solucionats:
 
 
 v10.06.09
+---------------------------------------------------------------------------------------
 Noves funcionalitats:
 - El plugin WP Mail SMTP controla ara la gestió del correu.
 - S'ha limitat el registre de noms d'usuaris a noms amb lletres de l'a a la zeta, números del 0 al 9, punts, guions i guions baixos.
@@ -287,6 +319,7 @@ Errors solucionats:
 
 
 v10.05.28
+---------------------------------------------------------------------------------------
 Noves funcionalitats:
 - S'ha afegit un nou plugin per a la gestió d'usuaris. XTEC Users permet ara distingir entre dos tipus d'usuaris: els usuaris de la XTEC que continuen validant a través del LDAP i que tenen permisos de creació de blocs i creació d'usuaris i els usuaris creats per usuaris de la XTEC que únicament podran col·laborar en els blocs com a editors, autors, col·laboradors o subscriptors. Els administradors dels blocs (només poden ser usuaris XTEC) poden convidar a altres usuaris a participar en el seu bloc.
 - Els usuaris poden canviar el correu electrònic del seu perfil.
@@ -307,6 +340,7 @@ Canvis:
 
 
 v10.04.27
+---------------------------------------------------------------------------------------
 Noves funcionalitats:
 - S'ha convertit la gestió de l'eliminació de blocs en el plugin XTEC Maintenance que inclou noves funcionalitats.
 - El plugin XTEC Settings controla ara que l'usuari no pugui modificar la seva contrassenya ni demanar-ne una de nova en cas d'haver-la perdut.
@@ -324,14 +358,17 @@ Errors solucionats:
 
 
 v10.03.22
+---------------------------------------------------------------------------------------
 Afegit de nou el plugin Simpler iPaper 1.3.
 
 
 v10.02.26
+---------------------------------------------------------------------------------------
 Eliminat el plugin Simpler iPaper 1.3 per mirar de solucionar problemes en el desplegament a producció.
 
 
 v10.02.10
+---------------------------------------------------------------------------------------
 Modificat el fitxer wp-content/themes/home/sideright.php que contenia alguns errors de sintaxi.
 Modificat el fitxer wp-admin/xtec-weekbloc/xtecfunc.php per millorar la comprensió del formulari.
 Modificat el fitxer wp-content/mu-plugins/smtp-mail.php que redeclarava la classe PHPMailer sense comprovar que ja estigués declarada. Això provocava problemes a l'hora de crear usuaris des de l'administració.
@@ -340,22 +377,26 @@ Afegit el plugin Simpler iPaper 1.3 que permet embedir documents allotjats a Scr
 
 
 v10.01.12
+---------------------------------------------------------------------------------------
 Descomentada una línia del fitxer /wp-admin/wpmu-xtec-search.php que no havia d'estar comentada.
 Afegit el connector xtecstats, de creació pròpia, per visualitzar estadístiques dels blocs instalats.
 Afegida una nova versió de l'aparença xtec perquè permeti visualitzar les subpàgines en el menú de la capçalera.
 
 
 v9.12.17
+---------------------------------------------------------------------------------------
 Actualitzat el connector Google Analyticator des de la versió 4.3.1 a la versió 5.3.2 i s'ha corregit una incompatibilitat amb el Wordpress Múltiple.
 Afegit el directori /wp-includes/js/tinymce/plugins/emotions per evitar que sorgeixi el problema de les redireccions internes.
 
 
 v9.11.16
+---------------------------------------------------------------------------------------
 Modificat el fitxer wp-admin/includes/dashboard.php pel de la versió 2.7.1 per corregir diferents errors d'entre ells la visió dels comentaris pendents per a usuaris no autoritzats.
 Corregida una errada ortogràfica detectada en el correu d'invitació: l'invitació -> la invitació
 
 
 v9.10.26
+---------------------------------------------------------------------------------------
 Eliminades les restes de l'aparença mandingo.
 Afegida l'aparença Freshy 2.0
 Afegits els fitxers necessaris per a l'activació del connector wordpress super cache
@@ -363,6 +404,7 @@ Afegida una restricció en els widgets RSS que evita que un usuari afegeixi un w
 
 
 v9.10.07
+---------------------------------------------------------------------------------------
 Corregit un error al mostrar un missatge d'error. També s'ha modificat la invitació pels usuaris EDU perquè no sigui necessari la confirmació via correu electrònic (wp-admin/user-new.php)
 Aparença principal Home: eliminat l'enllaç a contacte
 Aparença principal Home: habilitat l'espai de notícies perquè hi puguin aparèixer dues al mateix temps.
@@ -370,12 +412,14 @@ Aparença principal Home: compactat l'espai de darreres entrades a blocs.
 
 
 v9.09.15
+---------------------------------------------------------------------------------------
 Canviada la propietat disabled del camp correu electrònic a readonly. (wp-admin/user-edit.php)
 Afegida l'aparença xtec898_200910
 Modificat un camp de l'style.css de l'aparença xtec898plus_200910
 
 
 v9.09.01
+---------------------------------------------------------------------------------------
 Creat un plugin que permet a l'administrador del lloc web convertir la codificació de caràcters de les taules d'un bloc a utf8.
 Petites modificacions en la traducció a català.
 Afegida l'aparença de "Cinema en curs 2009-2010"
@@ -385,6 +429,7 @@ Eliminades un parell de restriccions per mostrar el bloc de la setmana post_stat
 
 
 v9.07.09
+---------------------------------------------------------------------------------------
 Actualitzat el Google Analyticator de la versió 1.54 a la 4.3.1.
 Creat un plugin XTEC TinyMCE que afegeix 2 plugins a l'editor TinyMCE, un d'emoticones i un altre per la creació de taules.
 Afegit un enllaç per eliminar els blocs de l'usuari a la pàgina principal.
@@ -394,6 +439,7 @@ Petites modificacions en la traducció a català.
 
 
 v9.07.01
+---------------------------------------------------------------------------------------
 XTECBlocs migra de la versió 1.2.4 de Wordpress Mu a la versió 2.7 de Wordpress Mu.
 La versió 1.2.4 està basada en Wordpress 2.2.2. La nova en Wordpress 2.7.
 Changelog més significatiu des de la versió 2.2.2 a la 2.7:
