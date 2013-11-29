@@ -1,6 +1,6 @@
 Changes in progress
 ---------------------------------------------------------------------------------------
-
+- Homogeneïtzar la mida de la font a l'aparença XTEC (AGIN 1068-2013-0022)
 
 
 v13.11.07
@@ -9,7 +9,6 @@ v13.11.07
 - Eliminar bloc d'exemples (AGIN 1068-2013-0013)
 - Traduccions al Català
 - Instal·lar castellà (AGIN 1068-2013-0019)
-- Homogeneïtzar la mida de la font a l'aparença XTEC (AGIN 1068-2013-0022)
 
 
 v13.10.17
