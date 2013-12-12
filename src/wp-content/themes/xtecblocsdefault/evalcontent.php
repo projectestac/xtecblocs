@@ -10,7 +10,17 @@ switch ($_REQUEST['a']){
 		break;
 	case 'new':
 		if (is_user_logged_in()){?>
-			<iframe src="wp-signup.php" width="100%" height="750" scrolling="auto" frameborder="0"></iframe>			
+			<?php 
+			// XTEC ***** MODIFICAT - We remove the iframe and add a redirect to the page so is less complicated for the end user 
+			// 2013.12.13 Marc Espinosa Zamora <marc.espinosa.zamora@upcnet.es> 
+			// CODI ORIGINAL 
+			// <iframe src="wp-signup.php" width="100%" height="700" scrolling="auto" frameborder="0"></iframe> -
+			// CODI MODIFICAT 
+			?>
+			<script>window.location = 'wp-signup.php';</script>
+			<?php
+			// ***** FI
+			?>
 		<?php }else{
 			include('login.php');
 		}

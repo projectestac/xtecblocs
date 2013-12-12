@@ -4,7 +4,17 @@
 		<div id="blau">
 			<span class="blaurightcorner">&nbsp;</span>
 			<span class="blauleftcorner">&nbsp;</span>
-			<p class="creabloc"><a href="index.php?a=new">Crea el teu bloc<span></span></a></p>
+			<?php
+                        // XTEC ***** MODIFICAT - We change the link so we go directly to the wanted page instead of going to a page who opens a iframe
+                        // 2013.12.13 Marc Espinosa Zamora <marc.espinosa.zamora@upcnet.es>
+                        // CODI ORIGINAL
+                        // <p class="creabloc"><a href="index.php?a=new">Crea el teu bloc<span></span></a></p>
+                        // CODI MODIFICAT
+                        ?>
+			<p class="creabloc"><a href="wp-signup.php">Crea el teu bloc<span></span></a></p>
+			<?php	
+			// ***** FI
+			?>
 		</div>
 
 		<div id="cel">
