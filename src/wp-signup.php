@@ -94,7 +94,16 @@ function show_blog_form($blogname = '', $blog_title = '', $errors = '') {
 
 	<div id="privacy">
         <p class="privacy-intro">
-            <label for="blog_public_on"><?php _e('Privacy:') ?></label>
+	<?php
+	// XTEC ***** MODIFICAT - Changed term privacy for visibility
+	// ***** CODI ORIGINAL
+	/*<label for="blog_public_on"><?php _e('Privacy:') ?></label> */
+	// ***** CODI MODIFICAT
+	?>
+            <label for="blog_public_on"><?php _e('Visibility:') ?></label>
+	<?php
+	// ***** FI
+	?>
             <?php _e( 'Allow search engines to index this site.' ); ?>
             <br style="clear:both" />
             <label class="checkbox" for="blog_public_on">

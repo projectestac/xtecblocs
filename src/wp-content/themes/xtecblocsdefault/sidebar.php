@@ -36,8 +36,13 @@
 					<?php include("sideright.php");?> 
 			</div> <!-- end of sideright -->
 		<div id="sidefooter">
-			<?php $numberBlogs=getBlogsNumber();?>
-			<p>En aquests moments hi ha <?php echo $numberBlogs['blogs']; ?> blocs creats dels quals un <?php echo round($numberBlogs['blogsPrivate']*100/$numberBlogs['blogs'],2);?> % són privats.</p>
+		<?php
+			// XTEC ***** ELIMINAT - Removed blogs visibility statistics
+			// ***** CODI ORIGINAL
+			//$numberBlogs=getBlogsNumber();
+			/*<p>En aquests moments hi ha <?php echo $numberBlogs['blogs'];?> blocs creats dels quals un <?php echo round($numberBlogs['blogsPrivate']*100/$numberBlogs['blogs'],2);?> % són privats.</p>*/
+			// ***** FI
+		?>
 			<h3>Avís legal</h3>
 			<p>XTECBlocs ha estat desenvolupat amb <a href="http://wordpress.org/" target="_blank">WordPress</a>. Articles (<a href="feed">RSS</a>) i Comentaris (<a href="comments/feed">RSS</a>).</p>
 			<p class="logogencat">Logo <acronym title="Generalitat de Catalunya"><a href="http://www.gencat.cat/educacio">GENCAT<span></span></a></acronym></p>

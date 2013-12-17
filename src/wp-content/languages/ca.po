@@ -7794,3 +7794,8 @@ msgstr "Cap suggeriment"
 msgid "No misspellings found."
 msgstr "No s'ha trobat cap falta d'ortografia."
 
+#: XTEC ***** AFEGIT - New catalan strings
+#: wp-signup.php:97
+msgid "Visibility:"
+msgstr "Visibilitat:"
+
