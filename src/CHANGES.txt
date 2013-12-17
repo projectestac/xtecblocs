@@ -1,7 +1,8 @@
 Changes in progress
 ---------------------------------------------------------------------------------------
 - Homogeneïtzar la mida de la font a l'aparença XTEC (AGIN 1068-2013-0022)
-- Creació d'un nou bloc sense IFRAME (AGIN 1068-2013-0011)
+- Modified Delicacy theme footer to not show Copyright referenc
+
 
 v13.11.07
 ---------------------------------------------------------------------------------------
