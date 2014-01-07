@@ -1,6 +1,7 @@
 Changes in progress
 ---------------------------------------------------------------------------------------
 - Homogeneïtzar la mida de la font a l'aparença XTEC (AGIN 1068-2013-0022)
+- Creació d'un nou bloc sense IFRAME (AGIN 1068-2013-0011)
 - Modified Delicacy theme footer to not show Copyright reference (ENS/1068/00154)
 - Modified term "privacy" for visibility at signup form (ENS/1068/00153)
 - Removed blog visibility statistics at sidebar (ENS/1068/00153)
