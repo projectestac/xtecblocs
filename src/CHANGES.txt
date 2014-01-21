@@ -5,7 +5,7 @@ Changes in progress
 - Substituir terme "Privadesa" per "Visibilitat" (AGIN 1068-2013-0030)
 - Eliminar la referència "Copyright © [nom del bloc]" al final de la pàgina (AGIN 1068-2013-0031)
 - Esborrar estadístiques de blogs creats i privats a la columna de l'esquerra
-
+- Evitar que un RSS mal configurat provoqui bucle de peticions (AGIN 1068-2013-0010)
 
 v13.11.07
 ---------------------------------------------------------------------------------------
