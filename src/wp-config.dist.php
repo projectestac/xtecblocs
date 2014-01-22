@@ -16,6 +16,8 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
+define('WP_CACHE', true); //Added by WP-Cache Manager
+define( 'WPCACHEHOME', 'wp-super-cache_plugin_home_filesystem_path_here' ); //Added by WP-Cache Manager
 define('DB_NAME', 'database_name_here');
 
 /** MySQL database username */
@@ -71,6 +73,13 @@ $table_prefix  = 'wp_';
  */
 define('WPLANG', '');
 
+//XTEC ************ AFEGIT - Constants de configuració d'XTECBlocs
+
+/** HyperDB settings */
+// HyperDB databases prefix
+define('DB_PREFIX','hyperdb_database_prefix_here');
+define('DB_NUMS','hyperdb_additional_database_number'); /** HyperDB additional databases */
+
 /**
  * For developers: WordPress debugging mode.
  *
@@ -80,6 +89,26 @@ define('WPLANG', '');
  */
 define('WP_DEBUG', false);
 
+define('WP_ALLOW_MULTISITE', true);
+
+define('MULTISITE', true);
+define('SUBDOMAIN_INSTALL', false);
+define('DOMAIN_CURRENT_SITE','domain_current_site_name_here');
+define('PATH_CURRENT_SITE', 'domain_current_site_path_here');
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);
+
+/**
+ * True if FRM environment, false or undefined otherwise.
+ */
+//define('IS_FRM', true);
+
+/**
+ * HTTPS config.
+ */
+//define('FORCE_SSL_LOGIN', true);
+//define('FORCE_SSL_ADMIN', true);
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
@@ -88,3 +117,4 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
