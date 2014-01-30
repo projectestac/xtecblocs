@@ -1,5 +1,8 @@
 Changes in progress
 ---------------------------------------------------------------------------------------
+
+v14.01.30
+---------------------------------------------------------------------------------------
 - Homogeneïtzar la mida de la font a l'aparença XTEC (AGIN 1068-2013-0022)
 - Crear un nou bloc sense IFRAME (AGIN 1068-2013-0011)
 - Substituir terme "Privadesa" per "Visibilitat" (AGIN 1068-2013-0030)
