@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Xavi Meler <jmeler@xtec.cat>\n"
+"Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1735,11 +1735,14 @@ msgstr "Usuari actualitzat."
 msgid "&larr; Back to Users"
 msgstr "&larr; Torna als usuaris"
 
+# Afegeix un existent
+# XTEC ************ CORREGIT
+# 2014.02.03 @jmiro227
 #: wp-admin/user-edit.php:187
 #: wp-admin/users.php:432
 msgctxt "user"
 msgid "Add Existing"
-msgstr "Afegeix un existent"
+msgstr "Convida un usuari existent"
 
 #: wp-admin/user-edit.php:202
 msgid "Personal Options"
@@ -1985,14 +1988,20 @@ msgctxt "user"
 msgid "Add New User"
 msgstr "Afegeix"
 
+# Afegeix un usuari existent
+# XTEC ************ CORREGIT
+# 2014.02.03 @jmiro22
 #: wp-admin/user-new.php:228
 msgctxt "user"
 msgid "Add Existing User"
-msgstr "Afegeix un usuari existent"
+msgstr "Convida un usuari existent"
 
+# Afegeix un usuari existent
+# XTEC ************ CORREGIT
+# 2014.02.03 @jmiro22
 #: wp-admin/user-new.php:261
 msgid "Add Existing User"
-msgstr "Afegeix un usuari existent"
+msgstr "Convida un usuari existent"
 
 #: wp-admin/user-new.php:263
 msgid "Enter the email address of an existing user on this network to invite them to this site. That person will be sent an email asking them to confirm the invite."
@@ -2016,9 +2025,12 @@ msgstr "No envieu el correu electrònic de confirmació"
 msgid "Add the user without sending them a confirmation email."
 msgstr "Afegeix un usuari sense enviar-li el correu electrònic de confirmació."
 
+# Afegeix un usuari existent
+# XTEC ************ CORREGIT
+# 2014.02.03 @jmiro22
 #: wp-admin/user-new.php:293
 msgid "Add Existing User "
-msgstr "Afegeix un usuari existent"
+msgstr "Convida un usuari existent"
 
 #: wp-admin/user-new.php:302
 msgid "Create a brand new user and add it to this site."
