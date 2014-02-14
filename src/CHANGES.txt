@@ -1,6 +1,6 @@
 Changes in progress
 ---------------------------------------------------------------------------------------
-- Canvi de literals "Afegeix un usuari existent" -> "Convida un usuari existent" (ENS/1068/00162)
+- Canvi de literals "Afegeix un usuari existent" -> "Convida un usuari existent" (AGIN 1068-2014-0001)
 
 
 v14.01.30
