@@ -3,10 +3,10 @@
 Plugin Name: Anti-spam
 Plugin URI: http://wordpress.org/plugins/anti-spam/
 Description: No spam in comments. No captcha.
-Version: 1.7
+Version: 2.1
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/plugins/
-License: GPLv2 or later
+License: GPLv3
 */
 
 $antispam_send_spam_comment_to_admin = false; // if true, than rejected spam comments will be sent to admin email
@@ -15,7 +15,7 @@ $antispam_allow_trackbacks = false; // if true, than trackbacks will be allowed
 // trackbacks almost not used by users, but mostly used by spammers; pingbacks are always enabled
 // more about the difference between trackback and pingback - http://web-profile.com.ua/web/trackback-vs-pingback/
 
-$antispam_version = '1.7';
+$antispam_version = '2.1';
 
 
 if ( ! function_exists( 'antispam_scripts_styles_init' ) ) :
@@ -34,16 +34,16 @@ if ( ! function_exists( 'antispam_form_part' ) ) :
 	function antispam_form_part() {
 		if ( ! is_user_logged_in() ) { // add anti-spam fields only for not logged in users
 			$antispam_form_part = '
-	<p class="comment-form-anti-spam" style="clear:both;">
-		<label for="anti-spam-q">Current <span style="display:none;">month</span> <span style="display:inline;">ye@r</span> <span style="display:none;">day</span></label> <span class="required">*</span>
-		<input type="hidden" name="anti-spam-a" id="anti-spam-a" value="'.date('Y').'" />
-		<input type="text" name="anti-spam-q" id="anti-spam-q" size="30" value="1980" />
+	<p class="comment-form-ant-spm" style="clear:both;">
+		<strong>Current <span style="display:none;">day</span> <span style="display:none;">month</span> <span style="display:inline;">ye@r</span></strong> <span class="required">*</span>
+		<input type="hidden" name="ant-spm-a" id="ant-spm-a" value="'.date('Y').'" />
+		<input type="text" name="ant-spm-q" id="ant-spm-q" size="30" value="21" />
 	</p>
 	'; // question (hidden with js) [aria-required="true" required="required"]
 			$antispam_form_part .= '
-	<p class="comment-form-anti-spam-2" style="display:none;">
-		<label for="anti-spam-e-email-url">Leave this field empty</label> <span class="required">*</span>
-		<input type="text" name="anti-spam-e-email-url" id="anti-spam-e-email-url" size="30" value=""/>
+	<p class="comment-form-ant-spm-2" style="display:none;">
+		<strong>Leave this field empty</strong> <span class="required">*</span>
+		<input type="text" name="ant-spm-e-email-url" id="ant-spm-e-email-url" size="30" value=""/>
 	</p>
 	'; // empty field (hidden with css)
 			echo $antispam_form_part;
@@ -91,7 +91,7 @@ if ( ! function_exists( 'antispam_check_comment' ) ) :
 			$antispam_message_spam_info .= "\r\n\r\n";
 
 			$antispam_message_append = '-----------------------------'."\r\n";
-			$antispam_message_append .= 'This is spam comment rejected by Anti-spam plugin. wordpress.org/plugins/anti-spam/' . "\r\n";
+			$antispam_message_append .= 'This is spam comment rejected by Anti-spam plugin - wordpress.org/plugins/anti-spam/' . "\r\n";
 			$antispam_message_append .= 'You may edit "anti-spam.php" file and disable this notification.' . "\r\n";
 			$antispam_message_append .= 'You should find "$antispam_send_spam_comment_to_admin" and make it equal to "false".' . "\r\n";
 		}
@@ -99,17 +99,17 @@ if ( ! function_exists( 'antispam_check_comment' ) ) :
 		if ( ! is_user_logged_in() && $comment_type != 'pingback' && $comment_type != 'trackback' ) { // logged in user is not a spammer
 			$spam_flag = false;
 
-			if ( trim( $_POST['anti-spam-q'] ) != date('Y') ) { // answer is wrong - maybe spam
+			if ( trim( $_POST['ant-spm-q'] ) != date('Y') ) { // answer is wrong - maybe spam
 				$spam_flag = true;
-				if ( empty( $_POST['anti-spam-q'] ) ) { // empty answer - maybe spam
-					$antispam_error_message .= 'Error: empty answer. ['.$_POST['anti-spam-q'].']<br> ';
+				if ( empty( $_POST['ant-spm-q'] ) ) { // empty answer - maybe spam
+					$antispam_error_message .= 'Error: empty answer. ['.$_POST['ant-spm-q'].']<br> ';
 				} else {
-					$antispam_error_message .= 'Error: answer is wrong. ['.$_POST['anti-spam-q'].']<br> ';
+					$antispam_error_message .= 'Error: answer is wrong. ['.$_POST['ant-spm-q'].']<br> ';
 				}
 			}
-			if ( ! empty( $_POST['anti-spam-e-email-url'] ) ) { // field is not empty - maybe spam
+			if ( ! empty( $_POST['ant-spm-e-email-url'] ) ) { // field is not empty - maybe spam
 				$spam_flag = true;
-				$antispam_error_message .= 'Error: field should be empty. ['.$_POST['anti-spam-e-email-url'].']<br> ';
+				$antispam_error_message .= 'Error: field should be empty. ['.$_POST['ant-spm-e-email-url'].']<br> ';
 			}
 			if ( $spam_flag ) { // if we have spam
 				if ( $antispam_send_spam_comment_to_admin ) { // if sending email to admin is enabled
@@ -161,8 +161,9 @@ endif; // end of antispam_check_comment()
 if ( ! function_exists( 'antispam_plugin_meta' ) ) :
 	function antispam_plugin_meta( $links, $file ) { // add 'Plugin page' and 'Donate' links to plugin meta row
 		if ( strpos( $file, 'anti-spam.php' ) !== false ) {
-			$links = array_merge( $links, array( '<a href="http://web-profile.com.ua/wordpress/plugins/anti-spam/" title="Plugin page">' . __('Anti-spam') . '</a>' ) );
-			$links = array_merge( $links, array( '<a href="http://web-profile.com.ua/donate/" title="Support the development">' . __('Donate') . '</a>' ) );
+			$links = array_merge( $links, array( '<a href="http://web-profile.com.ua/wordpress/plugins/anti-spam/" title="Plugin page">Anti-spam</a>' ) );
+			$links = array_merge( $links, array( '<a href="http://web-profile.com.ua/donate/" title="Support the development">Donate</a>' ) );
+			$links = array_merge( $links, array( '<a href="http://codecanyon.net/item/antispam-pro/6491169" title="Anti-spam Pro">Anti-spam Pro</a>' ) );
 		}
 		return $links;
 	}
