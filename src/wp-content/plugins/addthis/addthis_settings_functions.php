@@ -22,13 +22,15 @@ function addthis_kses($string, $customstyles)
     $mytags['a'][ 'gplusoneannotation' ]= array();
     $mytags['a'][ 'fblikelayout' ]= array();
     $mytags['a'][ 'fblikesend' ]= array();
-    $mytags['a'][ 'fblikeshow_faces' ]= array();
+    $mytags['a'][ 'fblikeshowfaces' ]= array();
     $mytags['a'][ 'fblikewidth' ]= array();
     $mytags['a'][ 'fblikeaction' ]= array();
     $mytags['a'][ 'fblikefont' ]= array();
     $mytags['a'][ 'fblikecolorscheme' ]= array();
     $mytags['a'][ 'fblikeref' ]= array();
     $mytags['a'][ 'fblikehref' ]= array();
+    $mytags['a'][ 'fbsharelayout' ]= array();
+    $mytags['a'][ 'fblikelocale' ]= array();
     $mytags['a'][ 'twcount' ]= array();
     $mytags['a'][ 'twurl' ]= array();
     $mytags['a'][ 'twvia' ]= array();
@@ -37,13 +39,14 @@ function addthis_kses($string, $customstyles)
     $mytags['a'][ 'twlang' ]= array();
     $mytags['a'][ 'twhashtags' ]= array();
     $mytags['a'][ 'twcounturl' ]= array();
+    $mytags['a'][ 'twscreenname' ]= array();
     $mytags['a'][ 'pipinitlayout' ]= array();
     $mytags['a'][ 'pipiniturl' ]= array();
     $mytags['a'][ 'pipinitmedia' ]= array();
     $mytags['a'][ 'pipinitdescription' ]= array();
-    
-    $pretags = array( 'g:plusone:', 'fb:like:', 'tw:', 'pi:pinit:');
-    $posttags = array('gplusone', 'fblike', 'tw', 'pipinit');
+        
+    $pretags = array( 'g:plusone:', 'fb:like:', 'tw:', 'pi:pinit:', 'fb:share:layout', 'fb:like:locale');
+    $posttags = array('gplusone', 'fblike', 'tw', 'pipinit', 'fbsharelayout', 'fblikelocale');
 
     foreach($pretags as $i => $attr)
     {
@@ -55,12 +58,32 @@ function addthis_kses($string, $customstyles)
         $post_pattern[] = '/[^_]'.$attr.'/';
         $posttags[$i] = ' '.$attr;
     }
+    
     $temp_string = preg_replace( $pre_pattern, $posttags, $string);
+    if (strpos($temp_string, "twscreen_name") != false) {
+    	$temp_string = str_replace('twscreen_name', 'twscreenname', $temp_string);
+    }
+    if (strpos($temp_string, "fblikeshow_faces") != false) {
+    	$temp_string = str_replace('fblikeshow_faces', 'fblikeshowfaces', $temp_string);
+    }
+    
     $new_temp_string = wp_kses($temp_string, $mytags);
-    $new_string = preg_replace( $post_pattern, $pretags, $new_temp_string);
+    
     // Add in our %s so that the url and title get added properly
-
-    $new_string = substr_replace($new_string, $customstyles, 4, 0);
+	if (!preg_match('/(<img[^>]+>)/i', $string, $matches)) {
+        $new_string = preg_replace( $post_pattern, $pretags, $new_temp_string);
+        $new_string = substr_replace($new_string, $customstyles, 4, 0);
+    }
+    else {
+    	$new_string = substr_replace($new_temp_string, $customstyles, 4, 0);
+    }
+    
+	if (strpos($new_string, "tw:screenname") != false) {
+    	$new_string = str_replace('tw:screenname', 'tw:screen_name', $new_string);
+    }
+	if (strpos($new_string, "fb:like:showfaces") != false) {
+    	$new_string = str_replace('fb:like:showfaces', 'fb:like:show_faces', $new_string);
+    }
     
     return $new_string;
 }
@@ -83,31 +106,16 @@ function _addthis_version_notification($atversion_update_status, $atversion)
     if ($atversion_update_status == ADDTHIS_ATVERSION_AUTO_UPDATE || $atversion_update_status == ADDTHIS_ATVERSION_MANUAL_UPDATE) {
         ?>
         <div class="addthis-notification addthis-success-message">
-<!--XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227 -->
-            <div style="float:left"><?php _e('Your AddThis sharing plugin has been updated.', 'addthis_trans_domain' ); ?></div>
-<!--************ ORIGINAL
             <div style="float:left">Your AddThis sharing plugin has been updated.</div>
-************ FI -->
             <div style="float:right">
-<!--XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227 -->
-                <a href="#" class="addthis-revert-atversion"><?php _e('Revert back to previous version', 'addthis_trans_domain' ); ?></a>
-<!--************ ORIGINAL
-               <a href="#" class="addthis-revert-atversion">Revert back to previous version</a>
-************ FI -->
+                <a href="#" class="addthis-revert-atversion">Revert back to previous version</a>
             </div>
         </div>
         <?php
     } else {
         ?>
         <div class="addthis-notification addthis-warning-message">
-<!--XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227 -->
-            <div style="float:left"><?php _e('Update AddThis to activate new features that will make sharing even easier.', 'addthis_trans_domain' ); ?></div>
-<!--************ ORIGINAL
             <div style="float:left">Update AddThis to activate new features that will make sharing even easier.</div>
-************ FI -->
             <div style="float:right">
                 <a href="#" class="addthis-update-atversion"><img src="<?php echo $imgLocationBase . 'update.png';?>" /></a>
             </div>
@@ -168,23 +176,8 @@ function _addthis_swap_first_two_elements (&$array, $key)
             <td id="<?php echo $name ?>" colspan="2">
               <fieldset>  
 		<legend>&nbsp;<strong><?php _e("$legend Sharing Tool", 'addthis_trans_domain') ?></strong> &nbsp;</legend>
-                
+                <div style="float: left; width: 395px;">
 		<?php 
-                    $sharing_checked = $option == 'none' ? '' : 'checked="checked"';
-                    echo "<div class='enable-sharing-tool'><input type='checkbox' {$sharing_checked} value='{$option}' id='enable_{$name}' name='addthis_settings[enable_{$name}]' />
-                <label for='enable_{$name}'>";
-                echo _e('Enable the following sharing tool at the ', 'addthis_trans_domain' );
-                echo '<strong>';
-                echo _e($legend, 'addthis_trans_domain');
-
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-               echo '</strong>'.__(' of posts:', 'addthis_trans_domain').'</label></div>';
-//************ ORIGINAL
-//                echo '</strong> of posts:</label></div>';
-//************ FI
-
-
                     
                  $imgLocationBase = apply_filters( 'at_files_uri',  plugins_url( '' , basename(dirname(__FILE__)))) . '/addthis/img/'  ;
                  $imgLocationBase = apply_filters( 'addthis_files_uri',  plugins_url( '' , basename(dirname(__FILE__)))) . '/addthis/img/'  ;
@@ -199,10 +192,25 @@ function _addthis_swap_first_two_elements (&$array, $key)
                         continue;
                     echo "<div class='$name"."_option select_row'><span class='radio'><input $checked type='radio' value='".$k."' id='{$k}_{$name}' name='addthis_settings[$name]' /></span><label for='{$k}_{$name}'> <img alt='".$k."'  src='". $imgLocationBase  .  $v['img'] ."' align='left' /></label><div class='clear'></div></div>";
                 }
-                
+                $ischecked = '';
+                if ($option == 'disable' ){
+                	$ischecked = 'checked="checked"';
+                }
+				echo "<div class='$name"."_option select_row'><span class='radio'><input type='radio' $ischecked value='disable' id='disable_{$name}' name='addthis_settings[$name]' /></span><label for='disable_{$name}'>Do not show a sharing tool at the <strong>$legend</strong> of posts</label></div>";
+				
+				$checked = '';
+                if ($option == 'custom_string' || $option == 'none' && 'custom_strin' == $addthis_default_options[$name] )
+                {
+                    $checked = 'checked="checked"';
+                }
+
+                echo "<div class='$name"."_option select_row'><span class='radio mt4'><input $checked type='radio' value='custom_string' name='addthis_settings[$name]' id='$name"."_custom_string' /></span> <label for='{$name}_custom_string'>Custom button</label><div class='clear'></div></div>";
+                _e( sprintf("<div style='max-width: 555px;margin-left:20px' class='%s_custom_string_input'> This text box allows you to enter any AddThis markup that you wish. To see examples of what you can do, visit <a href='https://www.addthis.com/get/sharing'>AddThis.com Sharing Tools</a> and select any sharing tool. You can also check out our <a href='http://support.addthis.com/customer/portal/articles/381263-addthis-client-api#rendering-decoration'>Client API</a>. For any help you may need, please visit <a href='http://support.addthis.com'>AddThis Support</a></div>", $name ),'addthis_trans_domain');
+                echo "<textarea style='max-width:555px;margin-left:20px'  rows='5' cols='100' name='addthis_settings[$name"."_custom_string]' class='$name"."_custom_string_input' />".esc_textarea($custom_string)."</textarea>";
+				               
                 $class = 'hidden';
                 $checked = '';
-                if ($option == 'custom' || ($option == 'none' && 'custom' == $addthis_default_options[$name]  ) ){
+                if ($option == 'custom' || ($option == 'none' && 'custom' == $addthis_default_options[$name]  ) ) {
                     $checked = 'checked="checked"';
                     $class = '';
 
@@ -225,41 +233,73 @@ function _addthis_swap_first_two_elements (&$array, $key)
 
                         }
                     echo "</select><br/><span class='description'>Enter the number of automatically user-personalized items you want displayed</span></li>";
-                   $custom_more = ( $custom_more ) ? 'checked="checked"' : '';
+                    $custom_more = ( $custom_more ) ? 'checked="checked"' : '';
                     
                     echo "<li><input $custom_more type='checkbox' class='at_do_custom' name='addthis_settings[$name"."_custom_more]' value='true' /><span class='at_custom_label'>More</span><br/><span class='description'>Display our iconic logo that offers sharing to over 330 destinations</span></li>";
                     echo "</ul></div>";
+                    
                 }
-               
-                    $checked = '';
-                    if ($option == 'custom_string' || $option == 'none' && 'custom_strin' == $addthis_default_options[$name] )
-                    {
-                        $checked = 'checked="checked"';
-                    }
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-                    echo "<div class='$name"."_option select_row'><span class='radio mt4'><input $checked type='radio' value='custom_string' name='addthis_settings[$name]' id='$name"."_custom_string' /></span> <label for='{$name}_custom_string'>".__('Custom button', 'addthis_trans_domain')."</label><div class='clear'></div></div>";
-//************ ORIGINAL
-//                    echo "<div class='$name"."_option select_row'><span class='radio mt4'><input $checked type='radio' value='custom_string' name='addthis_settings[$name]' id='$name"."_custom_string' /></span> <label for='{$name}_custom_string'>Custom button</label><div class='clear'></div></div>";
-//************ FI
-
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-                    echo "<div style='max-width: 748px;margin-left:20px' class=" . sprintf("'%s_custom_string_input'", $name) . ">" . __("This text box allows you to enter any AddThis markup that you wish. To see examples of what you can do, visit ", 'addthis_trans_domain') . "<a href='https://www.addthis.com/get/sharing'>" . __("AddThis Sharing Tools", 'addthis_trans_domain') . "</a>" . __(" and select any sharing tool. You can also check out our ", 'addthis_trans_domain') .  "<a href='http://support.addthis.com/customer/portal/articles/381263-addthis-client-api#rendering-decoration'>" . "API" . "</a>." . __(" For any help you may need, please visit ", 'addthis_trans_domain') . "<a href='http://support.addthis.com'>" . __("AddThis Support", 'addthis_trans_domain') . "</a></div>";
-//************ ORIGINAL
-//                    _e( sprintf("<div style='max-width: 748px;margin-left:20px' class='%s_custom_string_input'> This text box allows you to enter any AddThis markup that you wish. To see examples of what you can do, visit <a href='https://www.addthis.com/get/sharing'>AddThis.com Sharing Tools</a> and select any sharing tool. You can also check out our <a href='http://support.addthis.com/customer/portal/articles/381263-addthis-client-api#rendering-decoration'>Client API</a>. For any help you may need, please visit <a href='http://support.addthis.com'>AddThis Support</a></div>", $name ),'addthis_trans_domain');
-//************ FI
-                    echo "<textarea style='max-width:748px;margin-left:20px'  rows='5' cols='120' name='addthis_settings[$name"."_custom_string]' class='$name"."_custom_string_input' />".esc_textarea($custom_string)."</textarea>";
-
-                    echo '</div>';
+                echo '</div>';
                 ?>
-                               				
-			  </fieldset>	
-            </td>
-        </tr>
+              </div>       
+              <div class="<?php echo $name;?>_button_set select_row" style="float: left; width: 480px;">
+              	<div id="<?php echo $name;?>_custom_btns">
+              	<?php //if ($name == "above") { ?>
+              		<span class="<?php echo $name;?>-smart-sharing-container">
+              			<p id="customizedMessage" class="mb40 personalizedMessage customize-message-section customize-your-buttons" style="display:none;">
+	      					Your buttons are currently customized.  <a href="#" class="<?php echo $name;?>-customize-sharing-link customize-your-buttons">Show customization.</a>
+	      				</p>
+	      				<p id="personalizedMessage" class="mb40 personalizedMessage customize-message-section customize-your-buttons">
+	      					AddThis boosts sharing by automatically showing the right buttons to each user based on their location and activity across the web.  <a href="#" class="<?php echo $name;?>-customize-sharing-link customize-your-buttons">Disable and select your own buttons.</a>
+	      				</p>
+						<p class="mb40 smart-sharing-link customize-message-section">Your buttons are currently customized. <a href="#" class="<?php echo $name;?>-customize-sharing-link smart-sharing-link">Let AddThis choose instead and boost sharing</a>
+                            <span class="row-right" data-content="Smartest sharing buttons on the web. Automated to show each user the services that they use most based on their location and activity across the web." data-original-title="Smart Sharing."> (<a href="#">?</a>)</span>
+                        </p>
+						<span class="smart-sharing-inner-container">
+		          			<p class="hide">
+			            		<label>
+			              			<input type="radio" checked="checked" name="<?php echo $name;?>-sharing" id="<?php echo $name;?>-enable-smart-sharing" value="<?php echo $name;?>-enable-smart-sharing"/> Use Smart Buttons <strong>(Recommended)</strong>
+			            		</label>
+			            		<label>
+			              			<input type="radio" name="<?php echo $name;?>-sharing" id="<?php echo $name;?>-disable-smart-sharing"> Customize your buttons
+			            		</label>
+		          			</p>
+		          			<div class="customize-buttons">
+		            			<div class="sharing-buttons">
+		              				<h4 class="sortable-heading">Button Options</h4>
+		              				<input type="text" class="sharing-buttons-search" placeholder="Find a service" maxlength="20" size="30" style="width: 230px; height: 41px; margin: 0;">
+		              				<ul class="sortable"></ul>
+		            			</div>
+					            <div class="selected-services">
+		              				<h4 class="sortable-heading">Selected Buttons</h4>
+		              				<ul class="sortable" data-type="addthisButtons"></ul>
+		            			</div>
+		          			</div>
+		          			<div class="vertical-drag">
+		            			<i class="icon-arrow-up"></i>
+		            			<i class="icon-arrow-down"></i>
+		            			<p>Drag up or down to reorder services</p>
+		          			</div>
+		          			<div class="horizontal-drag">
+		            			<i class="icon-arrow-right"></i>
+		            			<p>Drag across to add service</p>
+		          			</div>
+		          			<a href="#" class="restore-default-options" style="float: left; padding-left: 100px;">Restore default options</a>
+		          			<?php $list = $name.'_chosen_list'; ?>
+		          			<input type="hidden" id="<?php echo $name?>-chosen-list" name="addthis_settings[<?php echo $name;?>_chosen_list]" value="<?php echo $options[$list];?>"/>
+	        			</span>
+      				</span>
+      				<script type="text/javascript">
+      				window.page = 'sharing-buttons';
+      				//$('.follow-tooltip').popover({ trigger: "hover" });
+			      </script>
+<!-- 			      <div id="atcode"></div> -->
+			      <?php //} ?>
+	           </div>  
+             </div>        				
+		</fieldset>	
+    </td>
+</tr>
 
 <?php
  }
-
-
-?>

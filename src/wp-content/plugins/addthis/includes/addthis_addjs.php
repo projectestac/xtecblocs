@@ -50,8 +50,9 @@ Class AddThis_addjs{
         $this->_options = $options;
         
         // Version of AddThis code to use
-        $this->atversion = array_key_exists('atversion_update_status', $options) && $options['atversion_update_status'] == ADDTHIS_ATVERSION_REVERTED ? $options['atversion'] : ADDTHIS_ATVERSION;
-        
+        if (is_array($options)) {
+       		$this->atversion = array_key_exists('atversion_update_status', $options) && $options['atversion_update_status'] == ADDTHIS_ATVERSION_REVERTED ? $options['atversion'] : ADDTHIS_ATVERSION;
+        }
         // set the cuid
         $base = get_option('home');
         $cuid = hash_hmac('md5', $base, 'addthis'); 
@@ -99,6 +100,7 @@ Class AddThis_addjs{
         } else {        	
         	 $this->addAfterToJs();
         	 echo $this->jsToAdd;
+             $this->jsToAdd = false;
         }
     }
 
@@ -162,12 +164,21 @@ Class AddThis_addjs{
     }
 
     function addWidgetToJs(){
-        $this->jsToAdd .= '<script type="text/javascript" src="//s7.addthis.com/js/'.$this->atversion.'/addthis_widget.js#pubid='. urlencode( $this->pubid ).'"></script>';
+        $addthis_settings_options = get_option('addthis_settings');
+        $addthis_asynchronous_loading = $addthis_settings_options['addthis_asynchronous_loading'];
+        if(isset($addthis_asynchronous_loading) && $addthis_asynchronous_loading) {
+            $this->jsToAdd .= '<script type="text/javascript" src="//s7.addthis.com/js/'.$this->atversion.'/addthis_widget.js#pubid='. urlencode( $this->pubid ).'&async=1"></script>';
+            $this->jsToAdd .= '<script type="text/javascript">jQuery(document).ready(function($) { addthis.init(); }); </script>';
+        } else {
+            $this->jsToAdd .= '<script type="text/javascript" src="//s7.addthis.com/js/'.$this->atversion.'/addthis_widget.js#pubid='. urlencode( $this->pubid ).'"></script>';
+        }
     }
 
     function addAfterToJs(){
-        if (! empty($this->jsAfterAdd))
+        if (! empty($this->jsAfterAdd)) {
             $this->jsToAdd .= '<script type="text/javascript">' . $this->jsAfterAdd . '</script>';
+            $this->jsAfterAdd = NULL;
+        }
     }
 
 
@@ -224,12 +235,7 @@ Class AddThis_addjs{
             // Get rid of our keys, we just want the names which are the keys elsewhere
             $uninstalled = array_values($uninstalled);
 
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-            $string = __('Want to increase your site traffic?  AddThis also has ','addthis_trans_domain');
-//************ ORIGINAL
-//            $string = __('Want to increase your site traffic?  AddThis also has ');
-//************ FI 
+            $string = __('Want to increase your site traffic?  AddThis also has ');
             $count = count($uninstalled);
             if ($count == 1){
                 $string .= __('a plugin for ', 'addthis');
@@ -242,19 +248,9 @@ Class AddThis_addjs{
                     if ($i < ($count - 2))
                         $string .= ', ';
                     else if ($i == ($count -2))
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-                        $string .= __(' and ','addthis_trans_domain');
-//************ ORIGINAL
-//                     $string .= ' and ';
-//************ FI 
+                        $string .= ' and ';
                     else if ($i == ($count -1))
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-                        $string .= __(' plugins available.','addthis_trans_domain');
-//************ ORIGINAL
-//                      $string .= ' plugins available.';
-//************ FI                   
+                        $string .= ' plugins available.';                    
                 }
             }
 

@@ -22,11 +22,6 @@ class addthis_post_metabox{
     function post_metabox(){
         global $post_id;
 
-//XTEC ************ AFEGIT - Localization support
-//2013.05.21 @jmiro227
-load_plugin_textdomain( 'addthis_trans_domain', null, dirname( plugin_basename( __FILE__ )) . '/languages' );
-//************ FI
-
         if ( is_null($post_id) )
             $checked = '';
         else
@@ -37,14 +32,7 @@ load_plugin_textdomain( 'addthis_trans_domain', null, dirname( plugin_basename( 
 
         wp_nonce_field('addthis_postmetabox_nonce', 'addthis_postmetabox_nonce');
         echo '<label for="addthis_show_option">';
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-        _e("Remove AddThis:", 'addthis_trans_domain' );
-//************ ORIGINAL
-/*
         _e("Remove AddThis:", 'myplugin_textdomain' );
-*/
-//************ FI
         echo '</label> ';
         echo '<input type="checkbox" id="addthis_show_option" name="addthis_show_option" value="1" '.$checked.'>';
     }

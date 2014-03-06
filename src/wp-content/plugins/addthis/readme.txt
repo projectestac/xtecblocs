@@ -1,9 +1,9 @@
 === Share Buttons by AddThis === 
 Contributors: srijith.v, solchea, _mjk_, addthis_paul
 Tags: share, addthis, social, bookmark, sharing, bookmarking, widget,AddThis, addtoany, aim, bookmark, buzz, del.icio.us, Digg,e-mail, email, Facebook, google bookmarks, google buzz, myspace,network, NewsVine, Reddit, Share, share this, sharethis, social, socialize, stumbleupon, twitter, windows live, yahoo buzz, pintrest, widget
-Requires at least: 2.9
-Tested up to: 3.5
-Stable tag: 3.0.5
+Requires at least: 3.0
+Tested up to: 3.8.1
+Stable tag: 3.5.9
 
 AddThis Share Buttons help drive traffic to your site by helping visitors share, bookmark and email your content to over 330 services.
 
@@ -56,7 +56,7 @@ All of the options required through this plugin require javascript.   JavaScript
 1. It's free!
 
 = Who else uses AddThis? =
-Over 14,000,000 sites have installed AddThis. With over a billion unique users, AddThis is helping share content all over the world, in more than sixty languages. You might be surprised who's sharing their website using AddThis--<a href="http://www.addthis.com/features#partners">here are just a few</a>.
+Over 14,000,000 sites have installed AddThis. With over a billion unique users, AddThis is helping share content all over the world, in more than sixty languages.
 
 = What services does AddThis support? =
 We currently support over 330 services, from email and blogging platforms to social networks and news aggregators, and we add new services every month. Want to know if your favorite service is supported? This list is accurate up to the minute: <a href="http://www.addthis.com/services">http://www.addthis.com/services</a>.
@@ -75,6 +75,44 @@ In the screen options you can enable the AddThis meta box.  Check the box and sa
 PHP 5+ is preferred; PHP 4 is supported.
 
 == Changelog ==
+
+= 3.5.9 =
+* CURL bug fix
+
+= 3.5.8 =
+* Resolved conflict with another plugin
+
+= 3.5.7 =
+* Minor updates
+
+= 3.5.6 =
+* Fix for better analytics
+
+= 3.5.5 =
+* Minor bug fixes. 
+
+= 3.5.4 =
+* Fixed JS errors in Options page. 
+
+= 3.5.3 =
+* Fix for wrong url being shared while using Custom Button option
+
+= 3.5.2 =
+* Minor bug fixes.  
+
+= 3.5.1 =
+* Reintroduced Custom Button Code box 
+
+= 3.5 =
+* Drag and drop customization of buttons
+* Better preview of buttons
+* Bug fixes
+
+= 3.1 =
+* Better support for excerpts
+* Internal issues with tw:screenname resolved
+* Better JSON validation
+* Bug fixes
 
 = 3.0.5 = 
 * Bug fixes: Style conflicts resolved
@@ -222,6 +260,39 @@ Fixed nondeterministic bug with the_title(), causing the title to occasionally a
 
 
 == Upgrade Notice ==
+
+= 3.5.9 =
+* CURL bug fix
+
+= 3.5.8 =
+Minor bug fix
+
+= 3.5.7 =
+Minor updates
+
+= 3.5.6 =
+Minor updates
+
+= 3.5.5 =
+Bug fixes
+
+= 3.5.4 =
+Bug fixes
+
+= 3.5.3 =
+Fix for wrong url being shared while using Custom Button option
+
+= 3.5.2 = 
+Bug fixes. 
+
+= 3.5.1 = 
+Reintroduced Custom Button Code box
+
+= 3.5 =
+Drag and drop customization of buttons, better preview of buttons
+
+= 3.1 =
+Bug fixes, better validations
 
 = 3.0.5 = 
 Bug fixes
