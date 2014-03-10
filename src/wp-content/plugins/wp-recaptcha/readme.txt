@@ -1,9 +1,9 @@
 === Plugin Name ===
-Contributors: BlaenkDenum
+Contributors: recaptchanet
 Tags: comments, registration, recaptcha, antispam, mailhide, captcha
 Requires at least: 2.7
 Tested up to: 2.9.1
-Stable tag: 3.1.6
+Stable tag: 3.2
 
 Integrates reCAPTCHA anti-spam methods with WordPress including comment, registration, and email spam protection.
 
@@ -44,6 +44,8 @@ To install in regular WordPress and [WordPress MultiSite](http://codex.wordpress
 
 == ChangeLog ==
 
+= Version 3.2
+* Transferred ownership back to Google
 = Version 3.1.6 =
 * WordPress MS fixes. Should now work out of the box at the individual blog level. Thanks to [huyz](http://huyz.us/)
 * NOTICE: If anyone is interested in taking up development of this plugin, please contact me at blaenk@gmail.com.

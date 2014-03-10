@@ -358,6 +358,7 @@ COMMENT_FORM;
             // set the minimum capability needed to skip the captcha if there is one
             if (isset($this->options['bypass_for_registered_users']) && $this->options['bypass_for_registered_users'] && $this->options['minimum_bypass_level'])
                 $needed_capability = $this->options['minimum_bypass_level'];
+
             // skip the reCAPTCHA display if the minimum capability is met
             if ((isset($needed_capability) && $needed_capability && current_user_can($needed_capability)) || !$this->options['show_in_comments'])
                 return;
@@ -526,25 +527,16 @@ JS;
         
         // add the settings page
         function add_settings_page() {
-
             // add the options page
-// XTEC ********** MODIFICAT -> Adapt pluggin to Xtecblocs Wordpress
-// 2012.04.04 @mmartinez
-            if (($this->environment == Environment::WordPressMU || $this->environment == Environment::WordPressMS) && $this->is_authority())
-            	add_options_page('WP-reCAPTCHA', 'WP-reCAPTCHA', 'manage_options', __FILE__, array(&$this, 'show_settings_page'));
-// *********** ORIGINAL
-			//if ($this->environment == Environment::WordPressMU && $this->is_authority())
-                //add_submenu_page('wpmu-admin.php', 'WP-reCAPTCHA', 'WP-reCAPTCHA', 'manage_options', __FILE__, array(&$this, 'show_settings_page'));
-// *********** FI
+            if ($this->environment == Environment::WordPressMU && $this->is_authority())
+                add_submenu_page('wpmu-admin.php', 'WP-reCAPTCHA', 'WP-reCAPTCHA', 'manage_options', __FILE__, array(&$this, 'show_settings_page'));
 
             /*  re-add when we figure out a way to add network-wide settings in ms
             if ($this->environment == Environment::WordPressMS && $this->is_authority())
                 add_submenu_page('ms-admin.php', 'WP-reCAPTCHA', 'WP-reCAPTCHA', 'manage_options', __FILE__, array(&$this, 'show_settings_page'));
              */
-// XTEC ********** ELIMINAT -> Adapt pluggin to Xtecblocs Wordpress
-// 2012.04.04 @mmartinez
-            //add_options_page('WP-reCAPTCHA', 'WP-reCAPTCHA', 'manage_options', __FILE__, array(&$this, 'show_settings_page'));
-// ********** FI
+            
+            add_options_page('WP-reCAPTCHA', 'WP-reCAPTCHA', 'manage_options', __FILE__, array(&$this, 'show_settings_page'));
         }
         
         // store the xhtml in a separate file and use include on it
