@@ -9,6 +9,10 @@ require 'screen-options/screen-options.php';
 //Apply function $func to $content unless it's been disabled for the current post 
 function maybe_use_filter($func, $content){
 	global $post;
+	if ( !isset($post) ) {
+		return $func($content);
+	}
+
 	$settings = rawhtml_get_post_settings($post->ID);
 	if ( $settings['disable_' . $func] ) {
 		return $content;
