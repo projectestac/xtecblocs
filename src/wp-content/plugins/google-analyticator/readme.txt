@@ -1,9 +1,9 @@
-=== Google Analyticator ===
+﻿=== Google Analyticator ===
 Contributors: VideoUserManuals
 Tags: stats, statistics, google, analytics, google analytics, tracking, widget
 Requires at least: 3.2
-Tested up to: 3.5
-Stable tag: 6.4.3
+Tested up to: 3.8
+Stable tag: 6.4.7.3
 
 Adds the necessary JavaScript code to enable Google Analytics. Includes widgets for Analytics data display.
 
@@ -11,13 +11,13 @@ Adds the necessary JavaScript code to enable Google Analytics. Includes widgets 
 
 Google Analyticator is back! Google Analyticator adds the necessary JavaScript code to enable Google Analytics logging on any WordPress blog. This eliminates the need to edit your template code to begin logging. Google Analyticator also includes several widgets for displaying Analytics data in the admin and on your blog.
 
-For a video explaining the simple installation process, please [visit the new home of Google Analyticator](http://www.videousermanuals.com/google-analyticator/).
+For a video explaining the simple installation process, please [visit the new home of Google Analyticator](http://www.videousermanuals.com/google-analyticator/?utm_campaign=analyticator&utm_medium=plugin&utm_source=description).
 
 = Features =
 
 Google Analyticator Has the Following Features:
 
-- Supports standard Google Analytics tracking via the latest async tracking methods (faster and more reliable than the older ga.js tracking method)
+- Supports Universal (analytics.js) and traditional analytics (ga.js)
 - Includes an admin dashboard widget that displays a graph of the last 30 days of visitors, a summary of site usage, the top pages, the top referrers, and the top searches
 - Includes a widget that can be used to display visitor stat information on the front-end
 - Supports outbound link tracking of all links on the page, including links not managed by WordPress
@@ -29,16 +29,18 @@ Google Analyticator Has the Following Features:
 - Installs easily - unlike other plugins, the user doesn't even have to know their Analytics UID
 - Provides complete control over options; disable any feature if needed
 - Supports localization - get the settings page in your language of choice
+- Ability to hide Google UID dropdown
+- Added Polish Translation
 
-For more information, visit the [Google Analyticator plugin page](http://www.videousermanuals.com/google-analyticator/).
+For more information, visit the [Google Analyticator plugin page](http://www.videousermanuals.com/google-analyticator/?utm_campaign=analyticator&utm_medium=plugin&utm_source=description).
 
-If you have a great idea on how to improve the plugin, we would love to hear from you at the [Google Analyticator Feature Request page](http://www.videousermanuals.com/google-analyticator/feature-request/)
+If you have a great idea on how to improve the plugin, we would love to hear from you at the [Google Analyticator Feature Request page](http://www.videousermanuals.com/google-analyticator/feature-request/?utm_campaign=analyticator&utm_medium=plugin&utm_source=description)
 
 A big thank you from the whole community to [Ronald](http://ronaldheft.com/) for all the hard work he put into this plugin.
 
 == Installation ==
 
-Please visit the new home of [Google Analyticator](http://www.videousermanuals.com/google-analyticator/) for installation information.
+Please visit the new home of [Google Analyticator](http://www.videousermanuals.com/google-analyticator/?utm_campaign=analyticator&utm_medium=plugin&utm_source=description) for installation information.
 
 If you are updating, you will need to Authenticate your site again, so it will work with the new Google API
 
@@ -57,7 +59,51 @@ For any support issues, please use the official WordPress support forums.
 5. An example of a front-end widget configuration.
 6. An example of a front-end widget configuration.
 
+
 == Changelog ==
+
+= 6.4.7.3 =
+* Bug fix: Test data left in place of Domain name / UID dropdown
+
+= 6.4.7.2 =
+* Ability to hide Google UID dropdown
+* Bug fix: rename stats_init to ganalyticator_stats_init
+* Bug fix: Moved analyticsSnippet from line 1110 to line 1111
+* Bug fix: added condition for empty href reported by @Jesin A http://wordpress.org/support/topic/bug-external-trackingjs-interferes-with-some-themes?replies=1
+* Added Polish Translation from @mleczakm http://wordpress.org/support/topic/localization-translation
+
+= 6.4.7 =
+* Add missing Google PHP API classes
+
+= 6.4.6 =
+* Introduce Demographics and Interests support
+* Enhanced Link attribution support
+* added Universal Tracking (analytics.js) option
+* Fixed sidebar Ad background for wp 3.8
+* Used Custom Dimensions as replacement of Custom Variables for analytics.js
+
+= 6.4.5 =
+* Introduce Remarketing support
+* Introduce Option to remove tracking on wp-login.
+* Add link to Analytics training and option to remove.
+
+= 6.4.4.3 =
+* Bug fix: Duplicate data sometimes showing
+* Bug fix: Flotr jQuery library clash with WooCommerce.
+
+= 6.4.4.2 =
+* Updated graph to not show current day as stats are incomplete.
+
+= 6.4.4.1 =
+* Update caused random Google error. Removed problem code.
+
+= 6.4.4 =
+* Added point tooltip. 
+* removed jquery.sparkline.min.js
+* added jquery.flot.min.js
+* added 30 days, 60 days and yesterday selection
+* removed line google-analytics-summary-widget.php line 222
+* Use un-minified JS if script debug on. Props simonwheatley
 
 = 6.4.3 =
 * Fixes over strict validation on one field where not required causing PHP Errors. Thanks for head start jeremyclarke. 
@@ -192,7 +238,7 @@ For any support issues, please use the official WordPress support forums.
 * Adds support for automatically retrieving an Analytics account's UID if Google Analyticator is authenticated with Google.
 * Updates the Google Analytics API class to use the WordPress HTTP API, thus removing cURL as a core requirement for the widget.
 * Updates the UID setting help to remove old urchin.js references and provide additional help for finding a UID.
-* Prepares all strings for localization. If you would like to translate Google Analyticator, [visit our forums](http://plugins.spiralwebconsulting.com/forums/viewforum.php?f=16).
+* Prepares all strings for localization. 
 
 = 4.3.4 =
 * Fixes a bug that was breaking the save button on the settings page in IE.

@@ -249,5 +249,3 @@ $plugin_dir = basename(dirname(__FILE__));
 load_plugin_textdomain('google-analyticator', 'wp-content/plugins/' . $plugin_dir . '/localizations', $plugin_dir . '/localizations');
 
 //************ FI
-
-?>

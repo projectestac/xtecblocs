@@ -5,8 +5,12 @@ if ( !class_exists('SimplePie') ) {
 	require_once (ABSPATH . WPINC . '/class-feed.php');
 }
 
-require_once 'google-api-php-client/src/Google_Client.php';
-require_once 'google-api-php-client/src/contrib/Google_AnalyticsService.php';
+if ( !class_exists('Google_Client') ) {
+	require_once 'google-api-php-client/src/Google_Client.php';
+}
+if ( !class_exists('Google_AnalyticsService') ) {
+	require_once 'google-api-php-client/src/contrib/Google_AnalyticsService.php';
+}
 
 /**
  * Handles interactions with Google Analytics' Stat API
@@ -34,7 +38,8 @@ class GoogleAnalyticsStats
             $this->client->setClientId(GOOGLE_ANALYTICATOR_CLIENTID);
             $this->client->setClientSecret(GOOGLE_ANALYTICATOR_CLIENTSECRET);
             $this->client->setRedirectUri(GOOGLE_ANALYTICATOR_REDIRECT);
-            $this->client->setScopes(array(GOOGLE_ANALYTICATOR_SCOPE));
+			
+            $this->client->setScopes(array("https://www.googleapis.com/auth/analytics"));
 
             // Magic. Returns objects from the Analytics Service instead of associative arrays.
             $this->client->setUseObjects(true);
