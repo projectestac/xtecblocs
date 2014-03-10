@@ -3,12 +3,12 @@
 Plugin Name: Multisite Plugin Manager
 Plugin URI: http://wordpress.org/extend/plugins/multisite-plugin-manager/
 Description: The essential plugin for every multisite install! Manage plugin access permissions across your entire multisite network.
-Version: 3.1.2
+Version: 3.1.4
 Author: Aaron Edwards
 Author URI: http://uglyrobot.com
 Network: true
 
-Copyright 2009-2012 UglyRobot Web Development (http://uglyrobot.com)
+Copyright 2009-2014 UglyRobot Web Development (http://uglyrobot.com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License (Version 2 - GPLv2) as published by
@@ -29,10 +29,10 @@ class PluginManager {
 	function __construct() {
 		//declare hooks
 		add_action( 'network_admin_menu', array( &$this, 'add_menu' ) );
-		add_action( 'wpmu_new_blog', array( &$this, 'new_blog' ) ); //auto activation hook
+		add_action( 'wpmu_new_blog', array( &$this, 'new_blog' ), 50 ); //auto activation hook
 		add_filter( 'all_plugins', array( &$this, 'remove_plugins' ) );
 		add_filter( 'plugin_action_links', array( &$this, 'action_links' ), 10, 4 );
-		add_filter( 'active_plugins', array( &$this, 'check_activated' ) );
+		//add_filter( 'active_plugins', array( &$this, 'check_activated' ) );
 		add_action( 'admin_notices', array( &$this, 'supporter_message' ) );
 		add_action( 'plugins_loaded', array( &$this, 'localization' ) );
 
@@ -42,10 +42,6 @@ class PluginManager {
 
 		add_filter( 'plugin_row_meta' , array( &$this, 'remove_plugin_meta' ), 10, 2 );
 		add_action( 'admin_init', array( &$this, 'remove_plugin_update_row' ) );
-	}
-
-	function PluginManager() {
-		$this->__construct();
 	}
 
 	function localization() {
@@ -58,7 +54,7 @@ class PluginManager {
 
 	function admin_page() {
 
-		if (!is_site_admin())
+		if (!current_user_can('manage_network_options'))
 			die('Nice Try!');
 
 		$this->process_form();
@@ -67,7 +63,7 @@ class PluginManager {
 		<div class="icon32" id="icon-plugins"><br></div>
 		<h2><?php _e('Manage Plugins', 'pm'); ?></h2>
 
-		<?php if ($_REQUEST['saved']) { ?>
+		<?php if (isset($_REQUEST['saved'])) { ?>
 		<div id="message" class="updated fade"><p><?php _e('Settings Saved', 'pm'); ?></p></div>
 		<?php }
 
@@ -182,7 +178,7 @@ class PluginManager {
 
 	//removes the meta information for normal admins
 	function remove_plugin_meta($plugin_meta, $plugin_file) {
-	  if ( is_super_admin() ) {
+	  if ( is_network_admin() || is_super_admin() ) {
 			return $plugin_meta;
 		} else {
     	remove_all_actions("after_plugin_row_$plugin_file");
@@ -191,7 +187,7 @@ class PluginManager {
 	}
 
   function remove_plugin_update_row() {
-	  if ( !is_super_admin() ) {
+	  if ( !is_network_admin() && !is_super_admin() ) {
     	remove_all_actions('after_plugin_row');
 		}
 	}
@@ -307,6 +303,12 @@ class PluginManager {
 
 	function mass_activate($plugin) {
 		global $wpdb;
+		
+		if (wp_is_large_network()) {
+			?><div class="error"><p><?php _e('Failed to mass activate: Your multisite network is too large for this function.', 'pm'); ?></p></div><?php
+			return false;
+		}
+		
     set_time_limit(120);
 
 		$blogs = $wpdb->get_col("SELECT blog_id FROM {$wpdb->blogs} WHERE site_id = {$wpdb->siteid} AND spam = 0");
@@ -324,6 +326,12 @@ class PluginManager {
 
 	function mass_deactivate($plugin) {
   	global $wpdb;
+		
+		if (wp_is_large_network()) {
+			?><div class="error"><p><?php _e('Failed to mass activate: Your multisite network is too large for this function.', 'pm'); ?></p></div><?php
+			return false;
+		}
+		
     set_time_limit(120);
 
 		$blogs = $wpdb->get_col("SELECT blog_id FROM {$wpdb->blogs} WHERE site_id = {$wpdb->siteid} AND spam = 0");
@@ -364,7 +372,7 @@ class PluginManager {
 	function action_links($action_links, $plugin_file, $plugin_data, $context) {
 		global $psts, $blog_id;
 		
-	  if (is_super_admin()) //don't filter siteadmin
+	  if (is_network_admin() || is_super_admin()) //don't filter siteadmin
 	    return $action_links;
 
 	  $auto_activate = (array)get_site_option('pm_auto_activate_list');
@@ -455,4 +463,3 @@ class PluginManager {
 }
 
 $pm = new PluginManager();
-?>
