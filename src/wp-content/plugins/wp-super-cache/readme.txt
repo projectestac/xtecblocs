@@ -1,8 +1,8 @@
 === WP Super Cache ===
 Contributors: donncha, automattic
 Tags: performance,caching,wp-cache,wp-super-cache,cache
-Tested up to: 3.5
-Stable tag: 1.2
+Tested up to: 3.8.1
+Stable tag: 1.4
 Requires at least: 3.0
 
 A very fast caching engine for WordPress that produces static html files.
@@ -56,16 +56,35 @@ The cache directory, usually wp-content/cache/ is only for temporary files. Do n
 
 == Upgrade Notice ==
 
-= 1.2 =
-Lots of bugfixes, garbage collection improved, more details at http://ocaoimh.ie/y/3i
+= 1.4 =
+Dynamic cached content now disabled by default. mfunc replaced by wpsc_cachedata filter. Read http://ocaoimh.ie/y/6j before updating if you use mfunc/mclude/dynamic-cached-content.
 
 == Changelog ==
+= 1.4 =
+* Replace legacy mfunc/mnclude/dynamic-cached-content functionality with a "wpsc_cachedata" cacheaction filter.
+* Added dynamic-cache-test.php plugin example wpsc_cachedata filter plugin.
+* Delete post, tag and category cache when a post changes from draft to publish or vice versa. Props @Biranit.
+* Update advanced-cache.php and wp-config.php if wp-cache-phase1.php doesn't load, usually happening after migrating to a new hosting service.
+* Misc bugfixes.
+
+= 1.3.2 =
+* Any mfunc/mclude/dynamic-cached-content tags in comments are now removed.
+* Dynamic cached content feature disabled by default and must be enabled on the Advanced Settings page.
+* Support for the mobile theme in Jetpack via helper plugin on script's Plugins tab.
+
+= 1.3.1 =
+* Minor updates to documentation
+* Fixed XSS in settings page.
+
+= 1.3 =
+* mfunc tags could be executed in comments. Fixed.
+* More support for sites that use the LOGGED_IN_COOKIE constant and custom cookies.
 
 = 1.2 =
 * Garbage collection of old cache files is significantly improved. I added a scheduled job that keeps an eye on things and restarts the job if necessary. Also, if you enable caching from the Easy page garbage collection will be enabled too.
 * Editors can delete single cached files from the admin bar now.
 * Fixed the cached page counter on the settings page.
-* Some sites that updated to 1.0 experienced too much garbage collection. There are still stragglers out there who haven.t upgraded but that.s fixed now!
+* Some sites that updated to 1.0 experienced too much garbage collection. There are still stragglers out there who haven't upgraded but that's fixed now!
 * Supercached mobile files are now used as there was a tiny little typo that needed fixing.
 * If your site is in a directory and you saw problems updating a page then that should be fixed now.
 * The deactivate hook has been changed so your configuration isn.t hosed when you upgrade. Unfortunately this will only happen after you do this upgrade.
@@ -362,58 +381,27 @@ No, it will do the opposite. Super Cache files are compressed and stored that wa
 
 = How do I make certain parts of the page stay dynamic? =
 
-There are 2 ways of doing this. You can use Javascript to draw the part of the page you want to keep dynamic. That's what Google Adsense and many widgets from external sites do. Or you can use a WP Super Cache tag to do the job but you can't use mod_rewrite mode caching. You have to switch to PHP or legacy caching.
+Note: this functionality is disabled by default. You will have to enable it on the Advanced Settings page.
 
-There are a few ways to do this, you can have functions that stay dynamic or you can include other files on every page load. To execute PHP code on every page load you can use either the "dynamic-cached-content", "mfunc", or "mclude" tags. The "dynamic-cached-content" tag is easier to use but the other tags can still be used. Make sure you duplicate the PHP code when using these tags. The first code is executed when the page is cached, while the second chunk of code is executed when the cached page is served to the next visitor.
+There are 2 ways of doing this. You can use Javascript to draw the part of the page you want to keep dynamic. That's what Google Adsense and many widgets from external sites do and is the recommended way. Or you can use a WP Super Cache filter to do the job but you can't use mod_rewrite mode caching. You have to switch to PHP or legacy caching.
+
+WP Super Cache 1.4 introduced a cacheaction filter called wpsc_cachedata. The cached page to be displayed goes through this filter and allows modification of the page. If the page contains a placeholder tag the filter can be used to replace that tag with your dynamically generated html.
+The function that hooks on to the wpsc_cachedata filter should be put in a file in the WP Super Cache plugins folder unless you use the late_init feature. An example plugin is included. Edit [dynamic-cache-test.php](http://svn.wp-plugins.org/wp-super-cache/trunk/plugins/dynamic-cache-test.php) to see the example code.
+There are two example functions there. There's a simple function that replaces a string (or tag) you define when the cached page is served. The other example function uses an output buffer to generate the dynamic content. Due to a limitation in how PHP works the output buffer code MUST run before the wpsc_cachedata filter is hit, at least for when a page is cached. It doesn't matter when serving cached pages. See [this post](http://ocaoimh.ie/y/6j) for a more technical and longer explanation.
 To execute WordPress functions you must enable the 'Late init' feature on the advanced settings page.
 
-= dynamic-cached-content example =
-
-This code will include the file adverts.php and will execute the functions "print_sidebar_ad()" and "do_more_stuff()". Make sure there's no space before or after the PHP tags.
-
-`<!--dynamic-cached-content--><?php
-include_once( ABSPATH . '/scripts/adverts.php' );
-print_sidebar_ad();
-do_more_stuff();
-?><!--
-include_once( ABSPATH . '/scripts/adverts.php' );
-print_sidebar_ad();
-do_more_stuff();
---><!--/dynamic-cached-content-->`
-
-= mfunc example =
-
-To execute the function "function_name()":
-
-`<!--mfunc function_name( 'parameter', 'another_parameter' ) -->
-<?php function_name( 'parameter', 'another_parameter' ) ?>
-<!--/mfunc-->`
-
-= mclude example =
-To include another file:
-
-`<!--mclude file.php-->
-<?php include_once( ABSPATH . 'file.php' ); ?>
-<!--/mclude-->`
-
-That will include file.php under the ABSPATH directory, which is the same as where your wp-config.php file is located.
-
-Example:
-`<!--mfunc date( 'Y-m-d H:i:s' ) -->
-<?php date( 'Y-m-d H:i:s' ) ?>
-<!--/mfunc-->`
-
 = How do I use WordPress functions in cached dynamic pages? =
-
-See the next qestion, you have to load WordPress before the cached file is served.
-
 = How do I delay serving the cache until the "init" action fires? =
 
-Cached files are served before almost all of WordPress is loaded. While that's great for performance it's a pain when you want to extend the plugin using a core part of WordPress. Set $wp_super_cache_late_init to "1" in wp-content/wp-cache-config.php and cached files will be served when "init" fires. WordPress and it's plugins will be loaded now. This is very useful when you are using the mfunc tag in your theme.
+Cached files are served before almost all of WordPress is loaded. While that's great for performance it's a pain when you want to extend the plugin using a core part of WordPress. Enable 'Late init' mode on the Advanced settings page and cached files will be served when "init" fires. WordPress and it's plugins will be loaded now.
 
 = Why don't WP UserOnline, Popularity Contest, WP Postratings or plugin X not work or update on my blog now? =
 
-This plugin caches entire pages but some plugins think they can run PHP code every time a page loads. To fix this, the plugin needs to use Javascript/AJAX methods or the dynamic-cached-content/mfunc/mclude code described in the previous answer to update or display dynamic information.
+This plugin caches entire pages but some plugins think they can run PHP code every time a page loads. To fix this, the plugin needs to use Javascript/AJAX methods or the wpsc_cachedata filter described in the previous answer to update or display dynamic information.
+
+= Why do my WP Super Cache plugin disappear when I upgrade the plugin? =
+
+WordPress deletes the plugin folder when it updates a plugin. This is the same with WP Super Cache so any modified files in wp-super-cache/plugins/ will be deleted. You can define the variable $wp_cache_plugins_dir in wp-config.php or wp-content/wp-cache-config.php and point it at a directory outside of the wp-super-cache folder. The plugin will look there for it's plugins.
 
 = What does the Cache Rebuild feature do? =
 
@@ -575,3 +563,4 @@ Translators who did a great job converting the text of the plugin to their nativ
 * [Nata Strazda](http://www.webhostingrating.com/) (Lithuanian)
 * [Alexander Alexandrov](http://www.designcontest.com/) (Belarusian)
 * [Michail Bogdanov](http://www.webhostinghub.com/) (Romanian)
+* [Anja Skrba](http://science.webhostinggeeks.com/wordpress-super-cache) (Serbo-Croatian)

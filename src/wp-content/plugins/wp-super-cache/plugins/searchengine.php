@@ -8,9 +8,9 @@ function wp_supercache_searchengine( $string ) {
 	if( $string != '' )
 		return $string;
 
-	if( $_COOKIE[ '7a1254cba80da02d5478d91cfd0a873a' ] == 1 ) {
+	if( isset( $_COOKIE[ '7a1254cba80da02d5478d91cfd0a873a' ] ) && $_COOKIE[ '7a1254cba80da02d5478d91cfd0a873a' ] == 1 ) {
 		$string = 'searchengine';
-	} elseif( $_SERVER[ 'HTTP_REFERER' ] != '' ) {
+	} elseif( isset( $_SERVER[ 'HTTP_REFERER' ] ) && $_SERVER[ 'HTTP_REFERER' ] != '' ) {
 		if( is_array( $passingthrough ) == false )
 			return $string;
 
@@ -65,7 +65,7 @@ function wp_supercache_searchengine_admin() {
 	?>
 		<fieldset id="<?php echo $id; ?>" class="options"> 
 		<h4><?php _e( 'No Adverts for Friends', 'wp-super-cache' ); ?></h4>
-		<form name="wp_manager" action="<?php echo $_SERVER[ "REQUEST_URI" ]; ?>" method="post">
+		<form name="wp_manager" action="" method="post">
 		<label><input type="radio" name="cache_no_adverts_for_friends" value="1" <?php if( $cache_no_adverts_for_friends == 'yes' ) { echo 'checked="checked" '; } ?>/> <?php _e( 'Enabled', 'wp-super-cache' ); ?></label>
 		<label><input type="radio" name="cache_no_adverts_for_friends" value="0" <?php if( $cache_no_adverts_for_friends == 'no' ) { echo 'checked="checked" '; } ?>/> <?php _e( 'Disabled', 'wp-super-cache' ); ?></label>
 		<p><?php _e( '', 'wp-super-cache' ); ?></p><?php
