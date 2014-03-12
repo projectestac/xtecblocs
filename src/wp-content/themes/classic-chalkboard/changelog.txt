@@ -44,3 +44,9 @@
 - Added RTL styles
 - Minor tweaks/fixes
 - MAJOR overhaul. Please see chalkboard.diff file for complete changes.
+
+-5-19-2013 - 2.6
+- Added theme option panel.
+- Added option to disable footer credit link
+- Added option to change background to green chalkboard.
+- Removed obsolute <hgroup> and fixed misc. validation issues.
