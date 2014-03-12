@@ -25,9 +25,24 @@
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
-if ( ! isset( $content_width ) ) {
+if ( ! isset( $content_width ) )
 	$content_width = 440; /* pixels */
+	
+/**
+ * Adjusts content_width value for when there are no active widgets in the
+ * sidebar.
+ *
+ * @since Reddle 1.2
+ */
+function reddle_set_content_width() {
+	global $content_width;
+
+	if ( ! is_active_sidebar( 'sidebar-1' ) && ! is_active_sidebar( 'sidebar-2' ) ) {
+		$content_width = 908; /* pixels */
+	}
 }
+add_action( 'template_redirect', 'reddle_set_content_width' );
+
 
 if ( ! function_exists( 'reddle_setup' ) ):
 /**
@@ -84,11 +99,6 @@ endif; // reddle_setup
 add_action( 'after_setup_theme', 'reddle_setup' );
 
 /**
- * Implement the Custom Header feature
- */
-require( get_template_directory() . '/inc/custom-header.php' );
-
-/**
  * Enqueue scripts and styles
  */
 function reddle_scripts() {
@@ -142,52 +152,52 @@ add_filter( 'get_the_excerpt', 'reddle_custom_excerpt_more' );
  */
 function reddle_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Sidebar 1', 'reddle' ),
-		'id' => 'sidebar-1',
+		'name'          => __( 'Sidebar 1', 'reddle' ),
+		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Sidebar 2', 'reddle' ),
-		'id' => 'sidebar-2',
-		'description' => __( 'An optional second sidebar area', 'reddle' ),
+		'name'          => __( 'Sidebar 2', 'reddle' ),
+		'id'            => 'sidebar-2',
+		'description'   => __( 'An optional second sidebar area', 'reddle' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'First Footer Area', 'reddle' ),
-		'id' => 'sidebar-3',
-		'description' => __( 'An optional widget area for your site footer', 'reddle' ),
+		'name'          => __( 'First Footer Area', 'reddle' ),
+		'id'            => 'sidebar-3',
+		'description'   => __( 'An optional widget area for your site footer', 'reddle' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Second Footer Area', 'reddle' ),
-		'id' => 'sidebar-4',
-		'description' => __( 'An optional widget area for your site footer', 'reddle' ),
+		'name'          => __( 'Second Footer Area', 'reddle' ),
+		'id'            => 'sidebar-4',
+		'description'   => __( 'An optional widget area for your site footer', 'reddle' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Third Footer Area', 'reddle' ),
-		'id' => 'sidebar-5',
-		'description' => __( 'An optional widget area for your site footer', 'reddle' ),
+		'name'          => __( 'Third Footer Area', 'reddle' ),
+		'id'            => 'sidebar-5',
+		'description'   => __( 'An optional widget area for your site footer', 'reddle' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
 	) );
 }
 add_action( 'init', 'reddle_widgets_init' );
@@ -269,42 +279,34 @@ if ( ! function_exists( 'reddle_comment' ) ) :
  */
 function reddle_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
-	switch ( $comment->comment_type ) :
-		case 'pingback' :
-		case 'trackback' :
-	?>
+
+	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
+
 	<li class="post pingback">
 		<p><?php _e( 'Pingback:', 'reddle' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '[Edit]', 'reddle' ), ' ' ); ?></p>
-	<?php
-			break;
-		default :
-	?>
+
+	<?php else: ?>
+
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<article id="comment-<?php comment_ID(); ?>" class="comment">
 			<footer>
 				<div class="comment-author vcard">
 					<?php
-					$comment_avatar_size = 47;
-					if ( 0 != $comment->comment_parent )
-						$comment_avatar_size = 23;
-
-					echo get_avatar( $comment, $comment_avatar_size );
+						$comment_avatar_size = ( 0 == $comment->comment_parent ) ? 47 : 23;
+						echo get_avatar( $comment, $comment_avatar_size );
 					?>
 					<cite class="fn"><?php comment_author_link(); ?></cite>
 				</div><!-- .comment-author .vcard -->
-				<?php if ( $comment->comment_approved == '0' ) : ?>
+				<?php if ( '0' == $comment->comment_approved ) : ?>
 					<em><?php _e( 'Your comment is awaiting moderation.', 'reddle' ); ?></em>
 					<br />
 				<?php endif; ?>
 
 				<div class="comment-meta commentmetadata">
 					<a class="comment-time" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
-					<?php
-						/* translators: 1: date, 2: time */
-						printf( __( '%1$s at %2$s', 'reddle' ), get_comment_date(), get_comment_time() ); ?>
+					<?php printf(  _x( '%1$s at %2$s', '1: date, 2: time', 'reddle' ), get_comment_date(), get_comment_time() ); ?>
 					</time></a>
-					<?php edit_comment_link( __( '[Edit]', 'reddle' ), ' ' );
-					?>
+					<?php edit_comment_link( __( '[Edit]', 'reddle' ), ' ' ); ?>
 				</div><!-- .comment-meta .commentmetadata -->
 			</footer>
 
@@ -316,8 +318,7 @@ function reddle_comment( $comment, $args, $depth ) {
 		</article><!-- #comment-## -->
 
 	<?php
-			break;
-	endswitch;
+	endif;
 }
 endif; // ends check for reddle_comment()
 
@@ -333,6 +334,59 @@ function reddle_posted_on() {
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'reddle' ), get_the_author() ) ),
 		esc_html( get_the_author() )
+	);
+}
+endif;
+
+if ( ! function_exists( 'reddle_the_attached_image' ) ) :
+/**
+ * Prints the attached image with a link to the next attached image.
+ */
+function reddle_the_attached_image() {
+	$post                = get_post();
+	$attachment_size     = apply_filters( 'reddle_attachment_size', 1200 );
+	$attachment_size     = array( $attachment_size, $attachment_size );
+	$next_attachment_url = wp_get_attachment_url();
+
+	/**
+	 * Grab the IDs of all the image attachments in a gallery so we can get the
+	 * URL of the next adjacent image in a gallery, or the first image (if
+	 * we're looking at the last image in a gallery), or, in a gallery of one,
+	 * just the link to that image file.
+	 */
+	$attachment_ids = get_posts( array(
+		'post_parent'    => $post->post_parent,
+		'fields'         => 'ids',
+		'numberposts'    => -1,
+		'post_status'    => 'inherit',
+		'post_type'      => 'attachment',
+		'post_mime_type' => 'image',
+		'order'          => 'ASC',
+		'orderby'        => 'menu_order ID'
+	) );
+
+	// If there is more than 1 attachment in a gallery...
+	if ( count( $attachment_ids ) > 1 ) {
+		foreach ( $attachment_ids as $attachment_id ) {
+			if ( $attachment_id == $post->ID ) {
+				$next_id = current( $attachment_ids );
+				break;
+			}
+		}
+
+		// get the URL of the next image attachment...
+		if ( $next_id )
+			$next_attachment_url = get_attachment_link( $next_id );
+
+		// or get the URL of the first image attachment.
+		else
+			$next_attachment_url = get_attachment_link( array_shift( $attachment_ids ) );
+	}
+
+	printf( '<a href="%1$s" title="%2$s" rel="attachment">%3$s</a>',
+		esc_url( $next_attachment_url ),
+		the_title_attribute( array( 'echo' => false ) ),
+		wp_get_attachment_image( $post->ID, $attachment_size )
 	);
 }
 endif;
@@ -479,31 +533,14 @@ add_action( 'save_post', 'reddle_category_transient_flusher' );
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
  */
 function reddle_enhanced_image_navigation( $url ) {
-	global $post, $wp_rewrite;
+	$post = get_post();
 
-	$id = (int) $post->ID;
-	$object = get_post( $id );
-	if ( wp_attachment_is_image( $post->ID ) && ( $wp_rewrite->using_permalinks() && ( $object->post_parent > 0 ) && ( $object->post_parent != $id ) ) )
+	if ( wp_attachment_is_image() && ( $GLOBALS['wp_rewrite']->using_permalinks() && $post->post_parent > 0 && $post->post_parent != $post->ID ) )
 		$url = $url . '#main';
 
 	return $url;
 }
 add_filter( 'attachment_link', 'reddle_enhanced_image_navigation' );
-
-/**
- * Adjusts content_width value for when there are no active widgets in the
- * sidebar, or we have a header image.
- *
- * @since Reddle 1.2
- */
-function reddle_content_width() {
-
-	if ( ( ! is_active_sidebar( 'sidebar-1' ) && ! is_active_sidebar( 'sidebar-2' ) ) || '' == get_header_image() ) {
-		global $content_width;
-		$content_width = 908; /* pixels */
-	}
-}
-add_action( 'template_redirect', 'reddle_content_width' );
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
@@ -531,6 +568,17 @@ function reddle_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'reddle_wp_title', 10, 2 );
+
+/**
+ * Implement the Custom Header feature
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Load WP.com compatibility file.
+ */
+if ( file_exists( get_template_directory() . '/inc/wpcom.php' ) )
+	require get_template_directory() . '/inc/wpcom.php';
 
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and a Reddle.

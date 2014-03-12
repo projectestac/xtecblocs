@@ -10,21 +10,12 @@
  * @package Reddle
  * @since Reddle 1.0
  */
-?>
-	<div id="comments">
-	<?php if ( post_password_required() ) : ?>
-		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'reddle' ); ?></p>
-	</div><!-- #comments -->
-	<?php
-			/* Stop the rest of comments.php from being processed,
-			 * but don't kill the script entirely -- we still have
-			 * to fully load the template.
-			 */
-			return;
-		endif;
-	?>
 
-	<?php // You can start editing here -- including this comment! ?>
+if ( post_password_required() )
+	return;
+?>
+
+<div id="comments">
 
 	<?php if ( have_comments() ) : ?>
 		<h2 id="comments-title">

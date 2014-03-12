@@ -10,15 +10,15 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	if ( '' != get_the_post_thumbnail() ) :
-			$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+		$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 	?>
 	<div class="entry-image">
-			<img class="featured-image" src="<?php echo $thumbnail[0]; ?>" alt="">
+		<img class="featured-image" src="<?php echo $thumbnail[0]; ?>" alt="">
 	</div>
 
 	<?php endif; ?>
 	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
@@ -50,9 +50,7 @@
 		$tags_list = get_the_tag_list( '', __( ', ', 'reddle' ) );
 
 		// Check to see if there is a need for an article footer
-		if (
-			'post' == get_post_type() || $categories_list && reddle_categorized_blog()
-		) :
+		if ( 'post' == get_post_type() || $categories_list && reddle_categorized_blog() ) :
 	?>
 	<footer class="entry-meta">
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
@@ -74,4 +72,4 @@
 		<?php edit_post_link( __( 'Edit', 'reddle' ), '<p class="edit-link">', '</p>' ); ?>
 	</footer><!-- #entry-meta -->
 	<?php endif; // check to see if there is a need for an article footer ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- #post-## -->

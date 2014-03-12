@@ -20,7 +20,7 @@ get_header(); ?>
 
 					<?php get_template_part( 'content', 'page' ); ?>
 
-					<?php comments_template( '', true ); ?>
+					<?php comments_template(); ?>
 
 				<?php endwhile; // end of the loop. ?>
 
