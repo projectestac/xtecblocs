@@ -528,15 +528,23 @@ JS;
         // add the settings page
         function add_settings_page() {
             // add the options page
-            if ($this->environment == Environment::WordPressMU && $this->is_authority())
-                add_submenu_page('wpmu-admin.php', 'WP-reCAPTCHA', 'WP-reCAPTCHA', 'manage_options', __FILE__, array(&$this, 'show_settings_page'));
+// XTEC ********** MODIFICAT -> Adapt pluggin to Xtecblocs Wordpress
+// 2012.04.04 @mmartinez
+            if (($this->environment == Environment::WordPressMU || $this->environment == Environment::WordPressMS) && $this->is_authority())
+            	add_options_page('WP-reCAPTCHA', 'WP-reCAPTCHA', 'manage_options', __FILE__, array(&$this, 'show_settings_page'));
+// *********** ORIGINAL
+			//if ($this->environment == Environment::WordPressMU && $this->is_authority())
+                //add_submenu_page('wpmu-admin.php', 'WP-reCAPTCHA', 'WP-reCAPTCHA', 'manage_options', __FILE__, array(&$this, 'show_settings_page'));
+// *********** FI
 
             /*  re-add when we figure out a way to add network-wide settings in ms
             if ($this->environment == Environment::WordPressMS && $this->is_authority())
                 add_submenu_page('ms-admin.php', 'WP-reCAPTCHA', 'WP-reCAPTCHA', 'manage_options', __FILE__, array(&$this, 'show_settings_page'));
              */
-            
-            add_options_page('WP-reCAPTCHA', 'WP-reCAPTCHA', 'manage_options', __FILE__, array(&$this, 'show_settings_page'));
+// XTEC ********** ELIMINAT -> Adapt pluggin to Xtecblocs Wordpress
+// 2012.04.04 @mmartinez
+            //add_options_page('WP-reCAPTCHA', 'WP-reCAPTCHA', 'manage_options', __FILE__, array(&$this, 'show_settings_page'));
+// ********** FI
         }
         
         // store the xhtml in a separate file and use include on it

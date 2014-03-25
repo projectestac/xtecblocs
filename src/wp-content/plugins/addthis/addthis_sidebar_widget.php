@@ -12,8 +12,12 @@ class AddThisSidebarWidget extends WP_Widget {
      */
     function AddThisSidebarWidget()
     {
-
-        $widget_ops = array( 'classname' => 'atwidget', 'description' => 'Make it wasy for your users to share content to over 300 destinations' );
+//XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227
+        $widget_ops = array( 'classname' => 'atwidget', 'description' => __('Make it wasy for your users to share content to over 300 destinations','addthis_trans_domain') );
+//************ ORIGINAL
+//        $widget_ops = array( 'classname' => 'atwidget', 'description' => 'Make it wasy for your users to share content to over 300 destinations' );
+//************ FI
 
         /* Widget control settings. */
         $control_ops = array( 'width' => 325);
@@ -80,9 +84,17 @@ class AddThisSidebarWidget extends WP_Widget {
         global $addthis_new_styles; 
 
         ?>
-            <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></label></p>
+<!--XTEC ************ MODIFICAT - Localization support
+2013.05.21 @jmiro227 -->
+            <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','addthis_trans_domain'); ?> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></label></p>
+
+            <p><label for="<?php echo $this->get_field_id('style');?>"><?php _e('Style:','addthis_trans_domain'); ?><br /></label></p>
+<!--************ ORIGINAL
+           <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></label></p>
 
             <p><label for="<?php echo $this->get_field_id('style');?>"><?php _e('Style:', 'addthis'); ?><br /></label></p>
+************ FI -->
+ 
                 <?php foreach ($addthis_new_styles as $k => $v)
                 {
                  

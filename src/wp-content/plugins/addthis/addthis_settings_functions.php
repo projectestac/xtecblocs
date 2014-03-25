@@ -106,16 +106,31 @@ function _addthis_version_notification($atversion_update_status, $atversion)
     if ($atversion_update_status == ADDTHIS_ATVERSION_AUTO_UPDATE || $atversion_update_status == ADDTHIS_ATVERSION_MANUAL_UPDATE) {
         ?>
         <div class="addthis-notification addthis-success-message">
+<!--XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227 -->
+            <div style="float:left"><?php _e('Your AddThis sharing plugin has been updated.', 'addthis_trans_domain' ); ?></div>
+<!--************ ORIGINAL
             <div style="float:left">Your AddThis sharing plugin has been updated.</div>
+************ FI -->
             <div style="float:right">
-                <a href="#" class="addthis-revert-atversion">Revert back to previous version</a>
+<!--XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227 -->
+                <a href="#" class="addthis-revert-atversion"><?php _e('Revert back to previous version', 'addthis_trans_domain' ); ?></a>
+<!--************ ORIGINAL
+               <a href="#" class="addthis-revert-atversion">Revert back to previous version</a>
+************ FI -->
             </div>
         </div>
         <?php
     } else {
         ?>
         <div class="addthis-notification addthis-warning-message">
+<!--XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227 -->
+            <div style="float:left"><?php _e('Update AddThis to activate new features that will make sharing even easier.', 'addthis_trans_domain' ); ?></div>
+<!--************ ORIGINAL
             <div style="float:left">Update AddThis to activate new features that will make sharing even easier.</div>
+************ FI -->
             <div style="float:right">
                 <a href="#" class="addthis-update-atversion"><img src="<?php echo $imgLocationBase . 'update.png';?>" /></a>
             </div>
