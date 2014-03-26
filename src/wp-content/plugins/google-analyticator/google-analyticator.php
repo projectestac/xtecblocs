@@ -912,7 +912,12 @@ if(!$addons){?>
           </p></td>
       </tr>
       <tr>
+<!--XTEC ************ MODIFICAT - Localization support
+2014.03.26 @jmiro227-->
+        <td colspan="2"><h3><?php _e('Additional Tracking Code', 'google-analyticator'); ?></h3></td>
+<!--************ ORIGINAL
         <td colspan="2"><h3>Additional Tracking Code </h3></td>
+************ FI-->
       </tr>
       <tr>
         <th valign="top" style="padding-top: 10px;"> <label for="<?php echo key_ga_extra; ?>">
@@ -951,7 +956,12 @@ if(!$addons){?>
           </p></td>
       </tr>
       <tr>
+<!--XTEC ************ MODIFICAT - Localization support
+2014.03.26 @jmiro227-->
+        <td colspan="2"><h3><?php _e('Admin Dashboard Widgets', 'google-analyticator'); ?></h3>
+<!--************ ORIGINAL
         <td colspan="2"><h3>Admin Dashboard Widgets</h3>
+************ FI-->
           <?php if(!$useAuth): ?>
           <div style="margin:10px auto; border:3px #f00 solid; background-color:#fdd; color:#000; padding:10px; text-align:center;">
             <?php _e('You have not authenticated with Google - you cannot use dashboard widgets! Reset the plugin to authenticate..', 'google-analyticator'); ?>
