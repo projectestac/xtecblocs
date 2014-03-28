@@ -2179,6 +2179,8 @@ function addthis_plugin_options_php4() {
     ?>
 
     <p>
+<!--XTEC ************ ELIMINAT - Removing advertisements
+//2014.03.28 @jmiro227
         <?php if(!at_share_is_pro_user()) { ?>
             <div class="updated addthis_setup_nag">
                 <p>AddThis Pro now available - start your trial at 
@@ -2189,6 +2191,7 @@ function addthis_plugin_options_php4() {
             </div>
         <?php } ?>
         <?php echo $addthis_addjs->getAtPluginPromoText();  ?>
+************ FI -->
     </p>
     <img alt='addthis' src="//cache.addthis.com/icons/v1/thumbs/32x32/more.png" class="header-img"/>
     <span class="addthis-title">AddThis</span> <span class="addthis-plugin-name">Share</span>
