@@ -106,12 +106,7 @@ function _addthis_version_notification($atversion_update_status, $atversion)
     if ($atversion_update_status == ADDTHIS_ATVERSION_AUTO_UPDATE || $atversion_update_status == ADDTHIS_ATVERSION_MANUAL_UPDATE) {
         ?>
         <div class="addthis-notification addthis-success-message">
-<!--XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227 -->
-            <div style="float:left"><?php _e('Your AddThis sharing plugin has been updated.', 'addthis_trans_domain' ); ?></div>
-<!--************ ORIGINAL
-            <div style="float:left">Your AddThis sharing plugin has been updated.</div>
-************ FI -->
+
             <div style="float:right">
 <!--XTEC ************ MODIFICAT - Localization support
 //2013.05.21 @jmiro227 -->
@@ -211,7 +206,13 @@ function _addthis_swap_first_two_elements (&$array, $key)
                 if ($option == 'disable' ){
                 	$ischecked = 'checked="checked"';
                 }
-				echo "<div class='$name"."_option select_row'><span class='radio'><input type='radio' $ischecked value='disable' id='disable_{$name}' name='addthis_settings[$name]' /></span><label for='disable_{$name}'>Do not show a sharing tool at the <strong>$legend</strong> of posts</label></div>";
+
+// ************ MODIFICAT - Localization support
+//2014.03.28 @jmiro227
+				echo "<div class='$name"."_option select_row'><span class='radio'><input type='radio' $ischecked value='disable' id='disable_{$name}' name='addthis_settings[$name]' /></span><label for='disable_{$name}'>";_e('Do not show a sharing tool at the', 'addthis_trans_domain' ); echo ' <strong>'; _e($legend, 'addthis_trans_domain' ); echo '</strong> ';_e('of posts', 'addthis_trans_domain' ); echo '</label></div>';
+//************ ORIGINAL
+//				echo "<div class='$name"."_option select_row'><span class='radio'><input type='radio' $ischecked value='disable' id='disable_{$name}' name='addthis_settings[$name]' /></span><label for='disable_{$name}'>Do not show a sharing tool at the <strong>$legend</strong> of posts</label></div>";
+//************ FI -->
 				
 				$checked = '';
                 if ($option == 'custom_string' || $option == 'none' && 'custom_strin' == $addthis_default_options[$name] )
@@ -219,7 +220,12 @@ function _addthis_swap_first_two_elements (&$array, $key)
                     $checked = 'checked="checked"';
                 }
 
-                echo "<div class='$name"."_option select_row'><span class='radio mt4'><input $checked type='radio' value='custom_string' name='addthis_settings[$name]' id='$name"."_custom_string' /></span> <label for='{$name}_custom_string'>Custom button</label><div class='clear'></div></div>";
+// ************ MODIFICAT - Localization support
+//2014.03.28 @jmiro227
+                echo "<div class='$name"."_option select_row'><span class='radio mt4'><input $checked type='radio' value='custom_string' name='addthis_settings[$name]' id='$name"."_custom_string' /></span> <label for='{$name}_custom_string'>"; _e('Custom button', 'addthis_trans_domain' ); echo"</label><div class='clear'></div></div>";
+//************ ORIGINAL
+//                echo "<div class='$name"."_option select_row'><span class='radio mt4'><input $checked type='radio' value='custom_string' name='addthis_settings[$name]' id='$name"."_custom_string' /></span> <label for='{$name}_custom_string'>Custom button</label><div class='clear'></div></div>";
+//************ FI -->
                 _e( sprintf("<div style='max-width: 555px;margin-left:20px' class='%s_custom_string_input'> This text box allows you to enter any AddThis markup that you wish. To see examples of what you can do, visit <a href='https://www.addthis.com/get/sharing'>AddThis.com Sharing Tools</a> and select any sharing tool. You can also check out our <a href='http://support.addthis.com/customer/portal/articles/381263-addthis-client-api#rendering-decoration'>Client API</a>. For any help you may need, please visit <a href='http://support.addthis.com'>AddThis Support</a></div>", $name ),'addthis_trans_domain');
                 echo "<textarea style='max-width:555px;margin-left:20px'  rows='5' cols='100' name='addthis_settings[$name"."_custom_string]' class='$name"."_custom_string_input' />".esc_textarea($custom_string)."</textarea>";
 				               
@@ -265,7 +271,14 @@ function _addthis_swap_first_two_elements (&$array, $key)
 	      					Your buttons are currently customized.  <a href="#" class="<?php echo $name;?>-customize-sharing-link customize-your-buttons">Show customization.</a>
 	      				</p>
 	      				<p id="personalizedMessage" class="mb40 personalizedMessage customize-message-section customize-your-buttons">
+
+<!--XTEC ************ MODIFICAT - Localization support
+//2013.05.21 @jmiro227 -->
+<?php _e('AddThis boosts sharing by automatically showing the right buttons to each user based on their location and activity across the web.', 'addthis_trans_domain' ); ?>  <a href="#" class="<?php echo $name;?>-customize-sharing-link customize-your-buttons"><?php _e('Disable and select your own buttons.','addthis_trans_domain'); ?></a>
+
+<!--************ ORIGINAL
 	      					AddThis boosts sharing by automatically showing the right buttons to each user based on their location and activity across the web.  <a href="#" class="<?php echo $name;?>-customize-sharing-link customize-your-buttons">Disable and select your own buttons.</a>
+************ FI -->
 	      				</p>
 						<p class="mb40 smart-sharing-link customize-message-section">Your buttons are currently customized. <a href="#" class="<?php echo $name;?>-customize-sharing-link smart-sharing-link">Let AddThis choose instead and boost sharing</a>
                             <span class="row-right" data-content="Smartest sharing buttons on the web. Automated to show each user the services that they use most based on their location and activity across the web." data-original-title="Smart Sharing."> (<a href="#">?</a>)</span>
