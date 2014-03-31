@@ -777,7 +777,12 @@ if(!$addons){?>
           </p></td>
       </tr>
       <tr>
+<!--XTEC ************ MODIFICAT - Localization support
+2014.03.26 @jmiro227-->
+        <td colspan="2"><h3><?php _e('Link Tracking Settings', 'google-analyticator'); ?></h3></td>
+<!--************ ORIGINAL
         <td colspan="2"><h3>Link Tracking Settings</h3></td>
+************ FI-->
       </tr>
       <tr>
         <th width="30%" valign="top" style="padding-top: 10px;"> <label for="<?php echo key_ga_outbound ?>">

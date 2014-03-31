@@ -8,12 +8,96 @@ msgstr ""
 "Project-Id-Version: Google Analyticator 6.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/google-analyticator\n"
 "POT-Creation-Date: 2010-04-14 23:15+0000\n"
-"PO-Revision-Date: 2013-10-30 16:59+0100\n"
-"Last-Translator: Xavi Meler <jmeler@xtec.cat>\n"
+"PO-Revision-Date: 2014-03-31 13:13+0100\n"
+"Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+# XTEC ************ AFEGIT
+# 2014.03.31 @jmiro227
+#: google-analyticator.php:
+msgid "You can disable the ad on the admin dashboard."
+msgstr "Es pot desactivar la publicitat des del panell d'administració"
+
+# XTEC ************ AFEGIT
+# 2014.03.31 @jmiro227
+#: google-analyticator.php:
+msgid "Display Ad"
+msgstr "Mostrar publicitat"
+
+# XTEC ************ AFEGIT
+# 2014.03.31 @jmiro227
+#: google-analyticator.php:
+msgid "You can tag your pages to implement an enhanced link-tracking functionality by enabling this option. <a href=\"https://support.google.com/analytics/answer/2558867?hl=en\" target=\"_blank\">learn more</a>"
+msgstr "Habilitant aquesta opció es podran etiquetar les pàgines i fer servir el seguiment d'enllaços millorat. <a href=\"https://support.google.com/analytics/answer/2558867?hl=en\" target=\"_blank\">learn more</a>"
+
+# XTEC ************ AFEGIT
+# 2014.03.31 @jmiro227
+#: google-analyticator.php:
+msgid "Enhanced Link Attribution"
+msgstr "Atribució d'enllaços millorada"
+
+# XTEC ************ AFEGIT
+# 2014.03.31 @jmiro227
+#: google-analyticator.php:
+msgid "This will track all access to wp-login.php"
+msgstr "Es registraran tots els accessos a la pàgina 'wp-login.php'"
+
+# XTEC ************ AFEGIT
+# 2014.03.31 @jmiro227
+#: google-analyticator.php:
+msgid "Track WordPress Login Page"
+msgstr "Fer seguiment de la pàgina de validació de WordPress"
+
+# XTEC ************ AFEGIT
+# 2014.03.31 @jmiro227
+#: google-analyticator.php:
+msgid "To use remarketing, <a href=\"https://support.google.com/analytics/answer/2884495\" target=\"_blank\">Edit permission</a> is required"
+msgstr "Per usar l'opció de 'remarketing', cal <a href=\"https://support.google.com/analytics/answer/2884495\" target=\"_blank\">Editar els permisos</a>"
+
+# XTEC ************ AFEGIT
+# 2014.03.31 @jmiro227
+#: google-analyticator.php:
+msgid "In order to use remarketing, <a href=\"https://support.google.com/analytics/answer/2611270\" target=\"_blank\">please make sure you complete this checklist from Google</a>"
+msgstr "Per poder usar l'opció de 'remarketing', <a href=\"https://support.google.com/analytics/answer/2611270\" target=\"_blank\">siusplau, asseguris de complir els següents requisitis</a>"
+
+# XTEC ************ AFEGIT
+# 2014.03.31 @jmiro227
+#: google-analyticator.php:
+msgid "Enable Remarketing, Demographics and Interests reports"
+msgstr "Habilitar els informes de 'Remarketing', 'Demographics' i 'Interests'"
+
+# XTEC ************ AFEGIT
+# 2014.03.31 @jmiro227
+#: google-analyticator.php:
+msgid "Anonymize IP Addresses"
+msgstr "Anonimitzar l'adreça IP"
+
+# XTEC ************ AFEGIT
+# 2014.03.31 @jmiro227
+#: google-analyticator.php:
+msgid "If you are using Universal Analytics make sure you have changed your account to a Universal Analytics property in Google Analytics. Read more about Universal Analytics <a href=\"https://support.google.com/analytics/answer/2817075?hl=en\" target=\"_blank\">here</a>."
+msgstr "Si utilitza Universal Analytics cal que s'asseguri d'haber modificat el seu compte de Google Analytics per habilitar Universal Analytics. Llegir més sobre Universal Analytics <a href=\"https://support.google.com/analytics/answer/2817075?hl=en\" target=\"_blank\">Aquí</a>."
+
+# XTEC ************ AFEGIT
+# 2014.03.31 @jmiro227
+#: google-analyticator.php:
+msgid "Hide Google Analytics UID after saving"
+msgstr "Oculta l'UID d'Analytics despres de desar-lo"
+
+# XTEC ************ AFEGIT
+# 2014.03.31 @jmiro227
+#: google-analyticator.php:
+msgid "Tracking Code"
+msgstr "Codi de següiment"
+
+# XTEC ************ AFEGIT
+# 2014.03.31 @jmiro227
+#: google-analyticator.php:
+msgid "Analytics Account"
+msgstr "Compte d'Analytics"
 
 # XTEC ************ AFEGIT
 # 2013.05.17 @jmiro227
