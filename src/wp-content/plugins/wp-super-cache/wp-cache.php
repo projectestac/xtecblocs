@@ -2648,7 +2648,12 @@ function wp_cache_admin_notice() {
 		wp_cache_create_advanced_cache();
 	}
 }
-add_action( 'admin_notices', 'wp_cache_admin_notice' );
+
+//XTEC ************ ELIMINAT - Do not show this unconfiguration warning to users and admins (superadmis are able to get this warning anyway)
+//2014.01.04 @jmiro227
+//add_action( 'admin_notices', 'wp_cache_admin_notice' );
+//************ FI
+
 
 function wp_cache_check_site() {
 	global $wp_super_cache_front_page_check, $wp_super_cache_front_page_clear, $wp_super_cache_front_page_text, $wp_super_cache_front_page_notification;
