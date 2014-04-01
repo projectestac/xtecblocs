@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Add This\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:30+0100\n"
-"PO-Revision-Date: 2014-04-01 14:28+0100\n"
+"PO-Revision-Date: 2014-04-01 18:41+0100\n"
 "Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,10 +16,65 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 
 # XTEC ************ AFEGIT
+# 2014.04.01 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "Posted in"
+msgstr "publicat a"
+
+# XTEC ************ AFEGIT
+# 2014.04.01 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "Child Category I"
+msgstr "Subcategoria I"
+
+# XTEC ************ AFEGIT
+# 2014.04.01 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "Parent Category I"
+msgstr "Supracategoria I"
+
+# XTEC ************ AFEGIT
+# 2014.04.01 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "Parent Category II"
+msgstr "Supracategoria II"
+
+# XTEC ************ AFEGIT
+# 2014.04.01 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "Edit"
+msgstr "Edició"
+
+# XTEC ************ AFEGIT
+# 2014.04.01 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "2 Responses"
+msgstr "2 Respostes"
+
+# XTEC ************ AFEGIT
+# 2014.04.01 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "on September 17, 2008"
+msgstr "el 17 de setembre de 2008"
+
+# XTEC ************ AFEGIT
+# 2014.04.01 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "Published by"
+msgstr "Publicat per"
+
+# XTEC ************ AFEGIT
+# 2014.04.01 @jmiro227
+#: ../addthis_social_widget.php:
+msgid "Another Post with Everything in it"
+msgstr "Un article amb totes les opcions"
+
+# XTEC ************ AFEGIT
 # 2014.03.28 @jmiro227
+# 2014.04.01 @jmiro227
 #: ../addthis_social_widget.php:
 msgid "Do not show a sharing tool at the"
-msgstr "No la mostra l'eina a la"
+msgstr "No mostra l'eina a la"
 
 # XTEC ************ AFEGIT
 # 2014.03.28 @jmiro227
@@ -620,5 +675,5 @@ msgstr "Desa els canvis"
 
 #: ../addthis_social_widget.php:1809
 msgid "Preview"
-msgstr "Previsualitza"
+msgstr "Previsualització"
 

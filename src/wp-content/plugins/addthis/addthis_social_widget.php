@@ -2297,16 +2297,16 @@ function addthis_plugin_options_php4() {
                 			<tr>
                                 <td id="below" colspan="2">
                                     <fieldset>  
-                        				<legend id="previewHeader">&nbsp;<strong>Preview</strong> &nbsp;</legend>
+                        				<legend id="previewHeader">&nbsp;<strong><?php _e('Preview', 'addthis_trans_domain'); ?></strong> &nbsp;</legend>
                         	            <div id="previewBox" class="previewbox">
                         			    	<div id="addthis_share_demo" class="addthis_tshare_demo" >
                                                 <div class="addthis-share-list">
-                                                    <h3 style="margin-top:0;">Another Post with Everything in it</h3>
+                                                    <h3 style="margin-top:0;"><?php _e('Another Post with Everything in it', 'addthis_trans_domain'); ?></h3>
                                                     <div id="above_previewContainer" style="float: left; width: 100%;"></div>
-                                                    <p style="float: left; width: 100%;">Published by <a href="#">admin</a> on September 17, 2008 | <a href="#">2 Responses</a> | <a href="#">Edit</a></p> 
+                                                    <p style="float: left; width: 100%;"><?php _e('Published by', 'addthis_trans_domain'); ?> <a href="#">admin</a> <?php _e('on September 17, 2008', 'addthis_trans_domain'); ?> | <a href="#"><?php _e('2 Responses', 'addthis_trans_domain'); ?></a> | <a href="#"><?php _e('Edit', 'addthis_trans_domain'); ?></a></p> 
                                                     <div id="preview_post"><p style="float: left; width: 100%;">Lorem dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p></div>
                                                     <div id="below_previewContainer" style="float: left; width: 100%;"></div>
-                                                    <p style="float:left;">Posted in <a href="#">Child Category I</a>, <a href="#">Parent Category I</a>, <a href="#">Parent Category II</a></p>
+                                                    <p style="float:left;"><?php _e('Posted in', 'addthis_trans_domain'); ?> <a href="#"><?php _e('Child Category I', 'addthis_trans_domain'); ?></a>, <a href="#"><?php _e('Parent Category I', 'addthis_trans_domain'); ?></a>, <a href="#"><?php _e('Parent Category II', 'addthis_trans_domain'); ?></a></p>
                                                   </div>
                         			          </div>                    
                         			    </div>      				
