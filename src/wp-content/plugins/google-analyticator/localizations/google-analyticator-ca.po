@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Google Analyticator 6.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/google-analyticator\n"
 "POT-Creation-Date: 2010-04-14 23:15+0000\n"
-"PO-Revision-Date: 2014-03-31 13:13+0100\n"
+"PO-Revision-Date: 2014-04-01 14:48+0100\n"
 "Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,9 +23,10 @@ msgstr "Es pot desactivar la publicitat des del panell d'administració"
 
 # XTEC ************ AFEGIT
 # 2014.03.31 @jmiro227
+# 2014.04.01 @jmiro227
 #: google-analyticator.php:
 msgid "Display Ad"
-msgstr "Mostrar publicitat"
+msgstr "Mostra publicitat"
 
 # XTEC ************ AFEGIT
 # 2014.03.31 @jmiro227
@@ -65,15 +66,17 @@ msgstr "Per poder usar l'opció de 'remarketing', <a href=\"https://support.goog
 
 # XTEC ************ AFEGIT
 # 2014.03.31 @jmiro227
+# 2014.04.01 @jmiro227
 #: google-analyticator.php:
 msgid "Enable Remarketing, Demographics and Interests reports"
-msgstr "Habilitar els informes de 'Remarketing', 'Demographics' i 'Interests'"
+msgstr "Habilita els informes de 'Remarketing', 'Demographics' i 'Interests'"
 
 # XTEC ************ AFEGIT
 # 2014.03.31 @jmiro227
+# 2014.04.01 @jmiro227
 #: google-analyticator.php:
 msgid "Anonymize IP Addresses"
-msgstr "Anonimitzar l'adreça IP"
+msgstr "Anonimitza l'adreça IP"
 
 # XTEC ************ AFEGIT
 # 2014.03.31 @jmiro227
@@ -101,9 +104,10 @@ msgstr "Compte d'Analytics"
 
 # XTEC ************ AFEGIT
 # 2013.05.17 @jmiro227
+# 2014.04.01 @jmiro227
 #: google-analyticator.php:
 msgid "Activate Google Analyticator"
-msgstr "Activar Google Analyticator"
+msgstr "Activa el Google Analyticator"
 
 # XTEC ************ AFEGIT
 # 2013.05.17 @jmiro227
@@ -223,9 +227,10 @@ msgstr "Se li demanarà, a la pàgina següent, que introdueixi manualment l'UID
 
 # XTEC ************ AFEGIT
 # 2013.05.17 @jmiro227
+# 2014.04.01 @jmiro227
 #: google-analyticator.php:
 msgid "Continue Without Authentication"
-msgstr "Continuar sense autenticació"
+msgstr "Continua sense autenticació"
 
 # XTEC ************ AFEGIT
 # 2013.05.17 @jmiro227
@@ -253,9 +258,10 @@ msgstr "No s'ha autenticat amb Google - no pot utilitzar els giyns del tauler! C
 
 # XTEC ************ AFEGIT
 # 2013.05.17 @jmiro227
+# 2014.04.01 @jmiro227
 #: google-analyticator.php:
 msgid "Deauthorize &amp; Reset Google Analyticator."
-msgstr "Retirar l'autorització i reinicialitzar el Google Analyticator."
+msgstr "Retira l'autorització i reinicialitzar el Google Analyticator."
 
 #: class.analytics.stats.php:120
 msgid "WordPress HTTP error."
@@ -406,7 +412,7 @@ msgstr "Seguiment d'enllaços de sortida"
 
 #: google-analyticator.php:413
 msgid "Disabling this option will turn off the tracking of outbound links. It's recommended not to disable this option unless you're a privacy advocate (now why would you be using Google Analytics in the first place?) or it's causing some kind of weird issue."
-msgstr "Al desactivar aquesta opció es desactivarà el seguiment dels enllaços de sortida. És recomanable no deshabilitar aquesta opció a no ser que siguis un defensor de la privacitat (sinó perquè esteu utilitzant el Google Analytics des d'un primer moment?) o bé si està causant algun tipus de problema estrany."
+msgstr "En desactivar aquesta opció es desactivarà el seguiment dels enllaços de sortida. És recomanable no deshabilitar aquesta opció a no ser que siguis un defensor de la privacitat (sinó perquè esteu utilitzant el Google Analytics des d'un primer moment?) o bé si està causant algun tipus de problema estrany."
 
 #: google-analyticator.php:418
 msgid "Event tracking"
@@ -414,7 +420,7 @@ msgstr "Seguiment d'events"
 
 #: google-analyticator.php:436
 msgid "Enabling this option will treat outbound links and downloads as events instead of pageviews. Since the introduction of <a href=\"http://code.google.com/apis/analytics/docs/tracking/eventTrackerOverview.html\">event tracking in Analytics</a>, this is the recommended way to track these types of actions. Only disable this option if you must use the old pageview tracking method."
-msgstr "A l'habilitar aquesta opció es tractaran els enllaços de sortida i de descàrrega com a events en comptes de com a pàgines vistes. Des de la introducció de <a href=\"http://code.google.com/apis/analytics/docs/tracking/eventTrackerOverview.html\">event tracking in Analytics</a>, aquesta és una manera recomanada per fer el seguiment d'aquest tipus d'accions. Només deshabiliteu aquesta opció si heu d'utilitzar l'antic mètode de seguiment de pàgines vistes."
+msgstr "En habilitar aquesta opció es tractaran els enllaços de sortida i de descàrrega com a events en comptes de com a pàgines vistes. Des de la introducció de <a href=\"http://code.google.com/apis/analytics/docs/tracking/eventTrackerOverview.html\">event tracking in Analytics</a>, aquesta és una manera recomanada per fer el seguiment d'aquest tipus d'accions. Només deshabiliteu aquesta opció si heu d'utilitzar l'antic mètode de seguiment de pàgines vistes."
 
 #: google-analyticator.php:441
 msgid "Download extensions to track"
