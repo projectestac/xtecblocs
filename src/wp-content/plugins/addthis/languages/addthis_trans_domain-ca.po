@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Add This\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:30+0100\n"
-"PO-Revision-Date: 2014-03-28 13:34+0100\n"
+"PO-Revision-Date: 2014-04-01 14:28+0100\n"
 "Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 # 2014.03.28 @jmiro227
 #: ../addthis_social_widget.php:
 msgid "Do not show a sharing tool at the"
-msgstr "No mostrar a la"
+msgstr "No la mostra l'eina a la"
 
 # XTEC ************ AFEGIT
 # 2014.03.28 @jmiro227
@@ -340,21 +340,24 @@ msgstr "Via twitter:"
 
 # XTEC ************ AFEGIT
 # 2013.05.21 @jmiro227
+# 2014.04.01 @jmiro227
 #: ../addthis_social_widget.php:
 msgid "Show analytics in admin dashboard:"
-msgstr "Mostra analytics al tauler d'administració:"
+msgstr "Mostra estadístiques al tauler d'administració:"
 
 # XTEC ************ AFEGIT
 # 2013.05.21 @jmiro227
+# 2014.04.01 @jmiro227
 #: ../addthis_social_widget.php:
 msgid "Enable enhanced accessibility:"
-msgstr "Habilitar l'accessibilitat millorada:"
+msgstr "Habilita l'accessibilitat millorada:"
 
 # XTEC ************ AFEGIT
 # 2013.05.21 @jmiro227
+# 2014.04.01 @jmiro227
 #: ../addthis_social_widget.php:
 msgid "Show AddThis on &hellip;"
-msgstr "Mostrar AddThis a &hellip;"
+msgstr "Mostra l'AddThis a &hellip;"
 
 # XTEC ************ AFEGIT
 # 2013.05.21 @jmiro227
