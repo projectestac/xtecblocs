@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Google Analyticator 6.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/google-analyticator\n"
 "POT-Creation-Date: 2010-04-14 23:15+0000\n"
-"PO-Revision-Date: 2014-04-01 14:48+0100\n"
+"PO-Revision-Date: 2014-04-01 17:32+0100\n"
 "Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -48,9 +48,10 @@ msgstr "Es registraran tots els accessos a la pàgina 'wp-login.php'"
 
 # XTEC ************ AFEGIT
 # 2014.03.31 @jmiro227
+# 2014.04.01 @jmiro227
 #: google-analyticator.php:
 msgid "Track WordPress Login Page"
-msgstr "Fer seguiment de la pàgina de validació de WordPress"
+msgstr "Seguiment de la pàgina de validació de WordPress"
 
 # XTEC ************ AFEGIT
 # 2014.03.31 @jmiro227
