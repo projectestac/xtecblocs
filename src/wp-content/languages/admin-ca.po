@@ -4264,10 +4264,12 @@ msgstr "j F Y G:i"
 msgid "Just another %s site"
 msgstr "Un altre bloc d'%s "
 
+# XTEC ************ CORREGIT
+# 2014.04.01 @jmiro227
 #: wp-admin/includes/schema.php:574
 msgctxt "User role"
 msgid "Administrator"
-msgstr "Administradors"
+msgstr "Administrador"
 
 #: wp-admin/includes/schema.php:576
 msgctxt "User role"
