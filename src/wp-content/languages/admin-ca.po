@@ -3398,7 +3398,7 @@ msgstr "Mostra els comentaris"
 # 2014.01.03 @jmiro227
 #: wp-admin/includes/meta-boxes.php:626
 msgid "(no parent)"
-msgstr "(cap)"
+msgstr "(capdemunt)"
 
 #msgstr "(sense pare)"
 #************ FI
@@ -6356,7 +6356,7 @@ msgstr "[menys]"
 #: wp-admin/includes/meta-boxes.php:635
 #: wp-admin/includes/meta-boxes.php:636
 msgid "Parent"
-msgstr "Situa la pàgina a: (categoria mare)"
+msgstr "Situa la pàgina a:"
 
 #msgstr "pare/mare"
 #************ FI
