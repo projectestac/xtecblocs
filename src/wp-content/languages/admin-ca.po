@@ -3395,9 +3395,10 @@ msgstr "Mostra els comentaris"
 
 # XTEC ************ CORREGIT
 # 2013.10.30 @jmeler
+# 2014.01.03 @jmiro227
 #: wp-admin/includes/meta-boxes.php:626
 msgid "(no parent)"
-msgstr "(sense categoria mare)"
+msgstr "(cap)"
 
 #msgstr "(sense pare)"
 #************ FI
@@ -3532,7 +3533,7 @@ msgstr "parents"
 
 #: wp-admin/includes/meta-boxes.php:899
 msgid "parent"
-msgstr "Categoria mare"
+msgstr "categoria mare"
 
 #: wp-admin/includes/meta-boxes.php:902
 msgid "sibling"
@@ -6350,11 +6351,12 @@ msgstr "[menys]"
 
 # XTEC ************ CORREGIT
 # 2013.10.30 @jmeler
+# 2014.04.03 @jmiro227
 #: wp-admin/includes/class-wp-posts-list-table.php:849
 #: wp-admin/includes/meta-boxes.php:635
 #: wp-admin/includes/meta-boxes.php:636
 msgid "Parent"
-msgstr "Categoria mare"
+msgstr "Situa la pàgina a: (categoria mare)"
 
 #msgstr "pare/mare"
 #************ FI
