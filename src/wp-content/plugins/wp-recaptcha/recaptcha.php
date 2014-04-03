@@ -358,7 +358,6 @@ COMMENT_FORM;
             // set the minimum capability needed to skip the captcha if there is one
             if (isset($this->options['bypass_for_registered_users']) && $this->options['bypass_for_registered_users'] && $this->options['minimum_bypass_level'])
                 $needed_capability = $this->options['minimum_bypass_level'];
-
             // skip the reCAPTCHA display if the minimum capability is met
             if ((isset($needed_capability) && $needed_capability && current_user_can($needed_capability)) || !$this->options['show_in_comments'])
                 return;
@@ -527,6 +526,7 @@ JS;
         
         // add the settings page
         function add_settings_page() {
+
             // add the options page
 // XTEC ********** MODIFICAT -> Adapt pluggin to Xtecblocs Wordpress
 // 2012.04.04 @mmartinez

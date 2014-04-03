@@ -19,7 +19,11 @@
    <h2><?php _e('reCAPTCHA Options', 'recaptcha'); ?></h2>
    <p><?php _e('reCAPTCHA is a free, accessible CAPTCHA service that helps to digitize books while blocking spam on your blog.', 'recaptcha'); ?></p>
    
-   <form method="post" action="options.php">
+   <form method="post" action="<?php 
+   		if (WPPlugin::determine_environment() == Environment::WordPressMU || WPPlugin::determine_environment() == Environment::WordPressMS) 
+   		    echo "options-general.php?page=wp-recaptcha/recaptcha.php";
+   		else 
+   			echo "options.php"; ?>">
       <?php settings_fields('recaptcha_options_group'); ?>
 
       <h3><?php _e('Authentication', 'recaptcha'); ?></h3>
@@ -138,7 +142,7 @@
          </tr>
       </table>
 
-      <p class="submit"><input type="submit" class="button-primary" title="<?php _e('Save reCAPTCHA Options') ?>" value="<?php _e('Save reCAPTCHA Changes') ?> &raquo;" /></p>
+      <p class="submit"><input type="submit" name="submit" class="button-primary" title="<?php _e('Save reCAPTCHA Options') ?>" value="<?php _e('Save reCAPTCHA Changes') ?> &raquo;" /></p>
    </form>
    
    <?php do_settings_sections('recaptcha_options_page'); ?>
