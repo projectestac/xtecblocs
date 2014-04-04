@@ -1,8 +1,19 @@
 Changes in progress
 ---------------------------------------------------------------------------------------
+
+
+v14.04.10
+---------------------------------------------------------------------------------------
 - Canvi de literals "Afegeix un usuari existent" -> "Convida un usuari existent" (AGIN 1068-2014-0001)
 - Actualització a la versió de WP 5.3.2
-
+- Addthis 3.0.5 -> 3.5.9
+- Anti-spam plugin update 1.7 -> 2.1
+- Blogger-importer plugin update 0.5 ->0.7
+- Google Analyticator 6.4.3 -> 6.4.7.3
+- Multisite Plugin Manager 3.1.2 -> 3.1.4
+- Raw html: 1.4.10 -> 1.4.11
+- WP Super Cache 1.2 -> 1.4
+- Canvi de literals en crear una pàgina nova: "Categoria mare" -> "Situa la pàgina a:", "(sense categoria mare)" -> "(capdemunt)".
 
 
 v14.01.30
