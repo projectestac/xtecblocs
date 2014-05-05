@@ -1,5 +1,6 @@
 Changes in progress
 ---------------------------------------------------------------------------------------
+- Canvi al cercador per treballar amb els resultats de Google (AGIN 1068-2014-0009)
 
 
 v14.04.10

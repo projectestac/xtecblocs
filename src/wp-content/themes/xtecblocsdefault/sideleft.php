@@ -1,16 +1,24 @@
-
 <div class="sidebox">
 	<span class="sideboxright">&nbsp;</span>
 	<span class="sideboxleft">&nbsp;</span>
 	<h3 class="noticies">Cerca</h3>
 	<div class="sidecontent">
+<!-- XTEC ************ MODIFICAT - Cerca amb Google
+2014.05.05 @jmiro227 -->
+		<form method="POST">
+			<input type="text" id="paraulaCerca" name="paraulaCerca" style="width:117px;float:left;" onkeydown="if (event.keyCode == 13) {document.getElementById('botoCerca').focus();document.getElementById('botoCerca').click();event.returnValue=false}"/>
+			<button type="button" id="botoCerca" onclick="open('https://www.google.com/search?q=site:'+'<?php echo DOMAIN_CURRENT_SITE ?>'+'+'+document.getElementById('paraulaCerca').value,'','');" value="Cerca">Cerca</button>
+		</form>
+
+<!-- ************ ORIGINAL
 		<form action="<?php echo get_option('home');?>/index.php" method="get" enctype="text/plain" class="cerca">
 		<input type="hidden" value="search" name="a" />
-				<input type="submit" value="Cerca" class="botocerca"/>
+		<input type="submit" value="Cerca" class="botocerca"/>
 		<input type="text" name="word" maxlength="18" size="15" />
 
-		
 		</form>
+************ FI -->
+
 		<!-- 
 		end of Cerca 
 		-->
