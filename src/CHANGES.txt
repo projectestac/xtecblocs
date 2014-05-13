@@ -1,6 +1,7 @@
 Changes in progress
 ---------------------------------------------------------------------------------------
 - Canvi al cercador per treballar amb els resultats de Google (AGIN 1068-2014-0009)
+- Millorar les traduccions (AGIN 1068-2014-0012)
 
 
 v14.04.10
