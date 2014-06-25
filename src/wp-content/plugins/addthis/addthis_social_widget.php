@@ -23,7 +23,7 @@
 * Plugin Name: AddThis Social Bookmarking Widget
 * Plugin URI: http://www.addthis.com
 * Description: Help your visitor promote your site! The AddThis Social Bookmarking Widget allows any visitor to bookmark your site easily with many popular services. Sign up for an AddThis.com account to see how your visitors are sharing your content--which services they're using for sharing, which content is shared the most, and more. It's all free--even the pretty charts and graphs.
-* Version: 3.5.9
+* Version: 3.5.10
 *
 * Author: The AddThis Team
 * Author URI: http://www.addthis.com/blog
@@ -499,7 +499,7 @@ function addthis_admin_notices(){
 //2013.05.21 @jmiro227
         printf( __('Sign up for AddThis and add your username/password to recieve analytics about how people are sharing your content.<br /> <a href="%1$s">Enter username and password</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%2$s" target="_blank">Sign Up</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%3$s">Ignore this notice</a>','addthis_trans_domain'),
 //************ ORIGINAL
-//        printf( __('Sign up for AddThis and add your username/password to recieve analytics about how people are sharing your content.<br /> <a href="%1$s">Enter username and password</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%2$s" target="_blank">Sign Up</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%3$s">Ignore this notice</a>'),
+//        printf( __('Sign up for AddThis and add your username/password to receive analytics about how people are sharing your content.<br /> <a href="%1$s">Enter username and password</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%2$s" target="_blank">Sign Up</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%3$s">Ignore this notice</a>'),
 //************ FI 
 
         admin_url('options-general.php?page=' . basename(__FILE__) ),
@@ -1850,7 +1850,6 @@ function validate_addthis_api_credentials()
 //************ FI
         $profile_error = '&#x2716; Invalid AddThis profile ID';
 
-
         if (!is_wp_error($response)) {
             if ($response['response']['code'] == 200) {
                 $ajax_response['profileerror'] = 'false';
@@ -2297,16 +2296,16 @@ function addthis_plugin_options_php4() {
                 			<tr>
                                 <td id="below" colspan="2">
                                     <fieldset>  
-                        				<legend id="previewHeader">&nbsp;<strong><?php _e('Preview', 'addthis_trans_domain'); ?></strong> &nbsp;</legend>
+                        				<legend id="previewHeader">&nbsp;<strong>Preview</strong> &nbsp;</legend>
                         	            <div id="previewBox" class="previewbox">
                         			    	<div id="addthis_share_demo" class="addthis_tshare_demo" >
                                                 <div class="addthis-share-list">
-                                                    <h3 style="margin-top:0;"><?php _e('Another Post with Everything in it', 'addthis_trans_domain'); ?></h3>
+                                                    <h3 style="margin-top:0;">Another Post with Everything in it</h3>
                                                     <div id="above_previewContainer" style="float: left; width: 100%;"></div>
-                                                    <p style="float: left; width: 100%;"><?php _e('Published by', 'addthis_trans_domain'); ?> <a href="#">admin</a> <?php _e('on September 17, 2008', 'addthis_trans_domain'); ?> | <a href="#"><?php _e('2 Responses', 'addthis_trans_domain'); ?></a> | <a href="#"><?php _e('Edit', 'addthis_trans_domain'); ?></a></p> 
+                                                    <p style="float: left; width: 100%;">Published by <a href="#">admin</a> on September 17, 2008 | <a href="#">2 Responses</a> | <a href="#">Edit</a></p> 
                                                     <div id="preview_post"><p style="float: left; width: 100%;">Lorem dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p></div>
                                                     <div id="below_previewContainer" style="float: left; width: 100%;"></div>
-                                                    <p style="float:left;"><?php _e('Posted in', 'addthis_trans_domain'); ?> <a href="#"><?php _e('Child Category I', 'addthis_trans_domain'); ?></a>, <a href="#"><?php _e('Parent Category I', 'addthis_trans_domain'); ?></a>, <a href="#"><?php _e('Parent Category II', 'addthis_trans_domain'); ?></a></p>
+                                                    <p style="float:left;">Posted in <a href="#">Child Category I</a>, <a href="#">Parent Category I</a>, <a href="#">Parent Category II</a></p>
                                                   </div>
                         			          </div>                    
                         			    </div>      				

@@ -165,7 +165,7 @@ Class AddThis_addjs{
 
     function addWidgetToJs(){
         $addthis_settings_options = get_option('addthis_settings');
-        $addthis_asynchronous_loading = $addthis_settings_options['addthis_asynchronous_loading'];
+        $addthis_asynchronous_loading = (isset($addthis_settings_options['addthis_asynchronous_loading']))?$addthis_settings_options['addthis_asynchronous_loading']:false;
         if(isset($addthis_asynchronous_loading) && $addthis_asynchronous_loading) {
             $this->jsToAdd .= '<script type="text/javascript" src="//s7.addthis.com/js/'.$this->atversion.'/addthis_widget.js#pubid='. urlencode( $this->pubid ).'&async=1"></script>';
             $this->jsToAdd .= '<script type="text/javascript">jQuery(document).ready(function($) { addthis.init(); }); </script>';

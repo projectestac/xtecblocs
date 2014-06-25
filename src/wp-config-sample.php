@@ -1,90 +1,90 @@
 <?php
-/**
- * The base configurations of the WordPress.
+/** 
+ * Les configuracions bàsiques del WordPress.
  *
- * This file has the following configurations: MySQL settings, Table Prefix,
- * Secret Keys, WordPress Language, and ABSPATH. You can find more information
- * by visiting {@link http://codex.wordpress.org/Editing_wp-config.php Editing
- * wp-config.php} Codex page. You can get the MySQL settings from your web host.
+ * Aquest fitxer té les següents configuracions: configuració de MySQL, prefix de taules,
+ * claus secretes, idioma del WordPress i ABSPATH. Trobaràs més informació 
+ * al Còdex (en anglès): {@link http://codex.wordpress.org/Editing_wp-config.php Editant
+ * el wp-config.php}. Les dades per a configurar MySQL les pots obtenir del
+ * teu proveïdor d'hostatjament de web.
  *
- * This file is used by the wp-config.php creation script during the
- * installation. You don't have to use the web site, you can just copy this file
- * to "wp-config.php" and fill in the values.
+ * Aquest fitxer és usat per l'script de creació de wp-config.php durant la
+ * instal·lació. No cal que usis el web, pots simplement copiar aquest fitxer
+ * sota el nom "wp-config.php" i omplir-lo amb els teus valors.
  *
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'database_name_here');
+// ** Configuració de MySQL - Pots obtenir aquestes informacions del teu proveïdor de web ** //
+/** El nom de la base de dades per al WordPress */
+define('DB_NAME', 'elnomdelabasededades');
 
-/** MySQL database username */
-define('DB_USER', 'username_here');
+/** El teu nom d'usuari a MySQL */
+define('DB_USER', 'elnomdusuari');
 
-/** MySQL database password */
-define('DB_PASSWORD', 'password_here');
+/** La teva contrasenya a MySQL */
+define('DB_PASSWORD', 'latevacontrasenya');
 
-/** MySQL hostname */
+/** Nom del host de MySQL */
 define('DB_HOST', 'localhost');
 
-/** Database Charset to use in creating database tables. */
+/** Joc de caràcters usat en crear taules a la base de dades. */
 define('DB_CHARSET', 'utf8');
 
-/** The Database Collate type. Don't change this if in doubt. */
+/** Tipus d'ordenació en la base de dades. No ho canvïis si tens cap dubte. */
 define('DB_COLLATE', '');
 
 /**#@+
- * Authentication Unique Keys and Salts.
+ * Claus úniques d'autentificació.
  *
- * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
- * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
+ * Canvia-les per frases úniques diferents!
+ * Les pots generar usant el {@link https://api.wordpress.org/secret-key/1.1/salt/ servei de claus secretes de WordPress.org}
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
-
+define('AUTH_KEY', 			'escriu una frase única teva aquí');
+define('SECURE_AUTH_KEY', 	'escriu una frase única teva aquí');
+define('LOGGED_IN_KEY', 	'escriu una frase única teva aquí');
+define('NONCE_KEY', 		'escriu una frase única teva aquí');
+define('AUTH_SALT',        	'escriu una frase única teva aquí');
+define('SECURE_AUTH_SALT', 	'escriu una frase única teva aquí');
+define('LOGGED_IN_SALT',   	'escriu una frase única teva aquí');
+define('NONCE_SALT',       	'escriu una frase única teva aquí');
 /**#@-*/
 
 /**
- * WordPress Database Table prefix.
+ * Prefix de taules per a la base de dades del WordPress.
  *
- * You can have multiple installations in one database if you give each a unique
- * prefix. Only numbers, letters, and underscores please!
+ * Pots tenir múltiples instal·lacions en una única base de dades usant prefixos
+ * diferents. Només xifres, lletres i subratllats!
  */
 $table_prefix  = 'wp_';
 
 /**
- * WordPress Localized Language, defaults to English.
+ * Idioma de localització del WordPress.
  *
- * Change this to localize WordPress. A corresponding MO file for the chosen
- * language must be installed to wp-content/languages. For example, install
- * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
- * language support.
+ * Modifica això per a canviar l'idioma del WordPress, si no el vols tenir en català.
+ * Un fitxer MO corresponent a l'idioma escollit ha de ser present al subdirectori wp-content/languages.
+ * Per exemple, copia el fitxer de_DE.mo a wp-content/languages i escriu define ('WPLANG', 'de_DE');
+ * per a obtenir la traducció alemanya. O escriu define ('WPLANG', 'ca'); per a
+ * veure la versió original americana.
  */
-define('WPLANG', '');
+define ('WPLANG', 'ca');
 
 /**
- * For developers: WordPress debugging mode.
+ * Per a desenvolupadors: WordPress en mode depuració.
  *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
+ * Canvieu això si voleu que es mostren els avisos durant el desenvolupament.
+ * És molt recomanable que les extensions i el desenvolupadors de temes facien servir WP_DEBUG
+ * al seus entorns de desenvolupament.
  */
 define('WP_DEBUG', false);
 
-/* That's all, stop editing! Happy blogging. */
+// Això és tot, prou d'editar - que bloguis de gust!
 
-/** Absolute path to the WordPress directory. */
+/** Ruta absoluta del directori del Wordpress. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
-/** Sets up WordPress vars and included files. */
+/** Assigna les variables del WordPress vars i fitxers inclosos. */
 require_once(ABSPATH . 'wp-settings.php');

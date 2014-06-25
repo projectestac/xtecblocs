@@ -86,8 +86,6 @@ function rawhtml_meta_box(){
 //XTEC ************ AFEGIT - Localization support
 //2013.07.11 @jmiro227
 load_plugin_textdomain( 'rawhtml', null, dirname( plugin_basename(RAWHTML_PLUGIN_FILE) ) . '/languages' );
-//die (dirname( plugin_basename(RAWHTML_PLUGIN_FILE )));
-
 //************ FI
 
 	// Use nonce for verification

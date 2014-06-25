@@ -1,7 +1,4 @@
 (function() {
-	// Load plugin specific language pack
-	tinymce.PluginManager.requireLangPack('vipersvideoquicktags');
-
 	tinymce.create('tinymce.plugins.VipersVideoQuicktags', {
 		/**
 		 * Initializes the plugin, this will be executed after the plugin has been created.
@@ -14,104 +11,145 @@
 		init : function(ed, url) {
 			if ( typeof VVQButtonClick == 'undefined' ) return;
 
-			ed.addButton('vvqYouTube', {
-				title : 'vipersvideoquicktags.youtube',
-				image : url + '/../../buttons/youtube.png',
-				onclick : function() {
-					VVQButtonClick('youtube');
-				}
-			});
-			ed.addButton('vvqGoogleVideo', {
-				title : 'vipersvideoquicktags.googlevideo',
-				image : url + '/../../buttons/googlevideo.png',
-				onclick : function() {
-					VVQButtonClick('googlevideo');
-				}
-			});
-			ed.addButton('vvqDailyMotion', {
-				title : 'vipersvideoquicktags.dailymotion',
-				image : url + '/../../buttons/dailymotion.png',
-				onclick : function() {
-					VVQButtonClick('dailymotion');
-				}
-			});
-			ed.addButton('vvqVimeo', {
-				title : 'vipersvideoquicktags.vimeo',
-				image : url + '/../../buttons/vimeo.png',
-				onclick : function() {
-					VVQButtonClick('vimeo');
-				}
-			});
-			ed.addButton('vvqVeoh', {
-				title : 'vipersvideoquicktags.veoh',
-				image : url + '/../../buttons/veoh.png',
-				onclick : function() {
-					VVQButtonClick('veoh');
-				}
-			});
-			ed.addButton('vvqViddler', {
-				title : 'vipersvideoquicktags.viddler',
-				image : url + '/../../buttons/viddler.png',
-				onclick : function() {
-					VVQButtonClick('viddler');
-				}
-			});
-			ed.addButton('vvqMetacafe', {
-				title : 'vipersvideoquicktags.metacafe',
-				image : url + '/../../buttons/metacafe.png',
-				onclick : function() {
-					VVQButtonClick('metacafe');
-				}
-			});
-			ed.addButton('vvqBlipTV', {
-				title : 'vipersvideoquicktags.bliptv',
-				image : url + '/../../buttons/bliptv.png',
-				onclick : function() {
-					VVQButtonClick('bliptv');
-				}
-			});
-			ed.addButton('vvqFlickrVideo', {
-				title : 'vipersvideoquicktags.flickrvideo',
-				image : url + '/../../buttons/flickrvideo.png',
-				onclick : function() {
-					VVQButtonClick('flickrvideo');
-				}
-			});
-			ed.addButton('vvqSpike', {
-				title : 'vipersvideoquicktags.spike',
-				image : url + '/../../buttons/spike.png',
-				onclick : function() {
-					VVQButtonClick('spike');
-				}
-			});
-			ed.addButton('vvqMySpace', {
-				title : 'vipersvideoquicktags.myspace',
-				image : url + '/../../buttons/myspace.png',
-				onclick : function() {
-					VVQButtonClick('myspace');
-				}
-			});
-			ed.addButton('vvqFLV', {
-				title : 'vipersvideoquicktags.flv',
-				image : url + '/../../buttons/flv.png',
-				onclick : function() {
-					VVQButtonClick('flv');
-				}
-			});
-			ed.addButton('vvqQuicktime', {
-				title : 'vipersvideoquicktags.quicktime',
-				image : url + '/../../buttons/quicktime.png',
-				onclick : function() {
-					VVQButtonClick('quicktime');
-				}
-			});
-			ed.addButton('vvqVideoFile', {
-				title : 'vipersvideoquicktags.videofile',
-				image : url + '/../../buttons/videofile.png',
-				onclick : function() {
-					VVQButtonClick('videofile');
-				}
-			});
+			if ( VVQButtons.youtube ) {
+				ed.addButton('vvqYouTube', {
+					title  : VVQData['youtube'].title,
+					image  : url + '/../../buttons/youtube.png',
+					onclick: function () {
+						VVQButtonClick('youtube');
+					}
+				});
+			}
+
+			if ( VVQButtons.googlevideo ) {
+				ed.addButton('vvqGoogleVideo', {
+					title  : VVQData['googlevideo'].title,
+					image  : url + '/../../buttons/googlevideo.png',
+					onclick: function () {
+						VVQButtonClick('googlevideo');
+					}
+				});
+			}
+
+			if ( VVQButtons.dailymotion ) {
+				ed.addButton('vvqDailyMotion', {
+					title  : VVQData['dailymotion'].title,
+					image  : url + '/../../buttons/dailymotion.png',
+					onclick: function () {
+						VVQButtonClick('dailymotion');
+					}
+				});
+			}
+
+			if ( VVQButtons.vimeo ) {
+				ed.addButton('vvqVimeo', {
+					title  : VVQData['vimeo'].title,
+					image  : url + '/../../buttons/vimeo.png',
+					onclick: function () {
+						VVQButtonClick('vimeo');
+					}
+				});
+			}
+
+			if ( VVQButtons.veoh ) {
+				ed.addButton('vvqVeoh', {
+					title  : VVQData['veoh'].title,
+					image  : url + '/../../buttons/veoh.png',
+					onclick: function () {
+						VVQButtonClick('veoh');
+					}
+				});
+			}
+
+			if ( VVQButtons.viddler ) {
+				ed.addButton('vvqViddler', {
+					title  : VVQData['viddler'].title,
+					image  : url + '/../../buttons/viddler.png',
+					onclick: function () {
+						VVQButtonClick('viddler');
+					}
+				});
+			}
+
+			if ( VVQButtons.metacafe ) {
+				ed.addButton('vvqMetacafe', {
+					title  : VVQData['metacafe'].title,
+					image  : url + '/../../buttons/metacafe.png',
+					onclick: function () {
+						VVQButtonClick('metacafe');
+					}
+				});
+			}
+
+			if ( VVQButtons.bliptv ) {
+				ed.addButton('vvqBlipTV', {
+					title  : VVQData['bliptv'].title,
+					image  : url + '/../../buttons/bliptv.png',
+					onclick: function () {
+						VVQButtonClick('bliptv');
+					}
+				});
+			}
+
+			if ( VVQButtons.flickrvideo ) {
+				ed.addButton('vvqFlickrVideo', {
+					title  : VVQData['flickrvideo'].title,
+					image  : url + '/../../buttons/flickrvideo.png',
+					onclick: function () {
+						VVQButtonClick('flickrvideo');
+					}
+				});
+			}
+
+			if ( VVQButtons.spike ) {
+				ed.addButton('vvqSpike', {
+					title  : VVQData['spike'].title,
+					image  : url + '/../../buttons/spike.png',
+					onclick: function () {
+						VVQButtonClick('spike');
+					}
+				});
+			}
+
+			if ( VVQButtons.myspace ) {
+				ed.addButton('vvqMySpace', {
+					title  : VVQData['myspace'].title,
+					image  : url + '/../../buttons/myspace.png',
+					onclick: function () {
+						VVQButtonClick('myspace');
+					}
+				});
+			}
+
+			if ( VVQButtons.flv ) {
+				ed.addButton('vvqFLV', {
+					title  : VVQData['flv'].title,
+					image  : url + '/../../buttons/flv.png',
+					onclick: function () {
+						VVQButtonClick('flv');
+					}
+				});
+			}
+
+			if ( VVQButtons.quicktime ) {
+				ed.addButton('vvqQuicktime', {
+					title  : VVQData['quicktime'].title,
+					image  : url + '/../../buttons/quicktime.png',
+					onclick: function () {
+						VVQButtonClick('quicktime');
+					}
+				});
+			}
+
+			if ( VVQButtons.videofile ) {
+				ed.addButton('vvqVideoFile', {
+					title  : VVQData['videofile'].title,
+					image  : url + '/../../buttons/videofile.png',
+					onclick: function () {
+						VVQButtonClick('videofile');
+					}
+				});
+			}
 		},
 
 		/**

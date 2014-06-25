@@ -1,6 +1,6 @@
 <?php
 
-//XTEC ************ FITXER AFEGIT - HyperDB v1.0
+//XTEC ************ FITXER AFEGIT - HyperDB
 
 // HyperDB
 // This file should be installed at ABSPATH/wp-content/db.php

@@ -106,7 +106,7 @@ function _addthis_version_notification($atversion_update_status, $atversion)
     if ($atversion_update_status == ADDTHIS_ATVERSION_AUTO_UPDATE || $atversion_update_status == ADDTHIS_ATVERSION_MANUAL_UPDATE) {
         ?>
         <div class="addthis-notification addthis-success-message">
-
+            <div style="float:left">Your AddThis sharing plugin has been updated.</div>
             <div style="float:right">
 <!--XTEC ************ MODIFICAT - Localization support
 //2013.05.21 @jmiro227 -->
