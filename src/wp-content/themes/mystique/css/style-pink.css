@@ -1,0 +1,74 @@
+/*
+Style Name: Pink
+Color: #f88ca9
+Description: Pink color scheme
+Author: digitalnature
+Version: 3.0
+
+*/
+
+/* all theme styles must be prefixed with "style-" and have all the meta data fields as above */
+
+
+
+a{color:#ec0e4a;}
+a:hover{color: #f6156f;}
+
+span.alt{color:#ec0e4a;}
+
+#logo a:hover span.alt{color:#f88ca9;}
+
+
+.block .title h3,
+.block .title .br,
+.block .title .bl{
+  background-image: url(../images/style-pink/block-t.png);
+}
+
+#meta .navi{border-color: #4a4a4a;}
+
+#meta .navi li,
+#meta .navi li a{
+  background-image: url(../images/style-pink/tabs.png);
+}
+
+.comment .comment-head,
+.comment .comment-head .ext{
+  background-image:url(../images/style-pink/comment.png);
+}
+
+
+.comment.role-administrator > .comment-head,
+.comment a.show:hover,
+.no-fx .block a.more:hover, .block .fadeThis a.more .hover,
+table.calendar td.today a, table.calendar td.today span,
+.tagcloud a:hover,
+.nav-footer .active > a,
+.nav-footer .active-parent > a,
+.nav-footer li.open > a,
+.nav-footer li:hover > a{
+  background-color:#ec0e4a;
+}
+
+.page-navi a:hover{
+  border:1px solid #ec0e4a;
+  background-color:#ec0e4a;
+}
+
+.search-form fieldset,
+.search-form .submit{
+  background-image:url(../images/style-pink/search.png);
+}
+
+.block-tabs a{
+  color: #f88ca9;
+}
+
+.block-tabs a:hover{
+  color: #fbbccd;
+}
+
+
+.block-tabs .block a.more:hover{
+  background-color: #ec0e4a;
+}

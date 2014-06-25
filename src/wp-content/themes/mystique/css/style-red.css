@@ -1,0 +1,73 @@
+/*
+Style Name: Red
+Color: #bf1616
+Description: Red color scheme
+Author: digitalnature
+Version: 3.0
+
+*/
+
+/* all theme styles must be prefixed with "style-" and have all the meta data fields as above */
+
+
+
+a{color:#bf1616;}
+a:hover{color: #df2121;}
+
+span.alt{color:#bf1616;}
+
+#logo a:hover span.alt{color:#d7f205;}
+
+
+.block .title h3,
+.block .title .br,
+.block .title .bl{
+  background-image: url(../images/style-red/block-t.png);
+}
+
+#meta .navi{border-color: #4a4a4a;}
+
+#meta .navi li,
+#meta .navi li a{
+  background-image: url(../images/style-red/tabs.png);
+}
+
+.comment .comment-head,
+.comment .comment-head .ext{
+  background-image:url(../images/style-red/comment.png);
+}
+
+
+.comment.role-administrator > .comment-head,
+.comment a.show:hover,
+.no-fx .block a.more:hover, .block .fadeThis a.more .hover,
+table.calendar td.today a, table.calendar td.today span,
+.tagcloud a:hover,
+.nav-footer .active > a,
+.nav-footer .active-parent > a,
+.nav-footer li.open > a,
+.nav-footer li:hover > a{
+  background-color:#bf1616;
+}
+
+.page-navi a:hover{
+  border:1px solid #bf1616;
+  background-color:#bf1616;
+}
+
+.search-form fieldset,
+.search-form .submit{
+  background-image:url(../images/style-red/search.png);
+}
+
+.block-tabs a{
+  color: #ff837e;
+}
+
+.block-tabs a:hover{
+  color: #ffbfb4;
+}
+
+.block-tabs .block a.more:hover{
+  background-color: #ff4242;
+}

@@ -1,0 +1,2660 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Mystique 3.0.9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-20 14:35+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: José Antonio Ramírez - http://www.nGeeks.com <geekrmx@ngeeks.com>\n"
+"Language-Team: nGeeks.com <contacto@ngeeks.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: _a;_ae;_an:1,2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:22
+msgid "The requested page was not found."
+msgstr "La página solicitada no se ha encontrado."
+
+#: about-the-author.php:17
+#: meta.php:37
+#, php-format
+msgid "About %s"
+msgstr "Acerca de %s"
+
+#: about-the-author.php:18
+#, php-format
+msgid "%s post"
+msgid_plural "%s posts"
+msgstr[0] "%s entrada"
+msgstr[1] "%s entradas"
+
+#: about-the-author.php:27
+#: archive.php:53
+msgid "Nothing here :("
+msgstr "No hay nada aquí :("
+
+#: about-the-author.php:32
+#: author.php:83
+#, php-format
+msgid "%s's RSS Feed"
+msgstr "Feed RSS de %s"
+
+#: archive.php:26
+#, php-format
+msgid "Posts tagged %s"
+msgstr "Entradas etiquetadas con %s"
+
+#: archive.php:28
+#: archive.php:30
+#, php-format
+msgid "Archive for %s"
+msgstr "Archivo de %s"
+
+#: archive.php:32
+#, php-format
+msgid "Archive for year %s"
+msgstr "Archivo del año %s"
+
+#: archive.php:34
+msgid "Blog Archives"
+msgstr "Archivo del blog"
+
+#: archive.php:49
+#, php-format
+msgid "There aren't any posts in the %s category yet :("
+msgstr "Todavía no hay entradas en la categoría %s"
+
+#: archive.php:51
+msgid "There aren't any posts within this date :("
+msgstr "No hay entradas en esa fecha :("
+
+#: author.php:30
+#, php-format
+msgid "%s karma"
+msgstr "%s karma"
+
+#: author.php:32
+#, php-format
+msgid "(%1$s comments, %2$s posts)"
+msgstr "(%1$s comentarios, %2$s entradas)"
+
+#: author.php:42
+msgid "This user hasn't shared any profile information"
+msgstr "Este usuario no ha compartido ninguna información de perfil"
+
+#: author.php:48
+msgid "Home page:"
+msgstr "Web:"
+
+#: author.php:75
+#, php-format
+msgid "Posts by %s"
+msgstr "Entradas de %s"
+
+#: author.php:86
+#, php-format
+msgid "%s hasn't written any posts yet"
+msgstr "%s no ha publicado ninguna entrada todavía"
+
+#: comment.php:17
+#, php-format
+msgid "%1$s written by %2$s %3$s"
+msgstr "%1$s escrito por %2$s %3$s"
+
+#: comment.php:34
+msgid "Your comment is awaiting moderation."
+msgstr "Tu comentario está en espera de moderación."
+
+#: comment.php:34
+msgid "This comment is awaiting moderation."
+msgstr "Este comentario está en espera de moderación."
+
+#: commentform.php:22
+msgid "Name"
+msgstr "Nombre"
+
+#: commentform.php:22
+msgid "(required)"
+msgstr "(requerido)"
+
+#: commentform.php:23
+msgid "E-mail"
+msgstr "E-mail"
+
+#: commentform.php:23
+msgid "(required, will not be published)"
+msgstr "(requerido, no será publicado)"
+
+#: commentform.php:23
+msgid "(will not be published)"
+msgstr "(no será publicado)"
+
+#: commentform.php:24
+msgid "Website"
+msgstr "Sitio web"
+
+#: commentform.php:58
+#, php-format
+msgid "Logged in as %s."
+msgstr "Identificado como %s."
+
+#: commentform.php:59
+msgid "Log out of this account"
+msgstr "Cerrar sesión de este usuario"
+
+#: commentform.php:59
+msgid "Log out?"
+msgstr "¿Cerrar sesión?"
+
+#: commentform.php:65
+#, php-format
+msgid "Welcome back %s."
+msgstr "Bienvenido de nuevo %s."
+
+#: commentform.php:67
+msgid "Change &raquo;"
+msgstr "Cambiar &raquo;"
+
+#: commentform.php:97
+msgid "Type your comment"
+msgstr "Escribe tu comentario"
+
+#: commentform.php:103
+#, php-format
+msgid "You may use these %1$s tags: %2$s"
+msgstr "Puedes usar las siguientes etiquetas %1$s: %2$s"
+
+#: commentform.php:114
+msgid "Post Comment"
+msgstr "Publicar comentario"
+
+#: commentform.php:116
+msgid "Cancel reply"
+msgstr "Cancelar respuesta"
+
+#: commentform.php:130
+msgid "Comments are closed"
+msgstr "Los comentarios están cerrados"
+
+#: footer.php:41
+msgid "Go to Top"
+msgstr "Ir arriba"
+
+#: functions.php:107
+msgid "Primary Sidebar"
+msgstr "Barra lateral principal"
+
+#: functions.php:109
+msgid "This is the default sidebar, active on 2 or 3 column layouts. If no widgets are visible, the page will fall back to a single column layout."
+msgstr "Ésta es la barra lateral por defecto, visible en los diseños de 2 o 3 columnas. Si no hay widgets visibles, la página cambiará al diseño de una sola columna."
+
+#: functions.php:125
+msgid "Secondary Sidebar"
+msgstr "Barra lateral secundaria"
+
+#: functions.php:127
+msgid "This sidebar is active only on a 3 column setup, if at least one of its widgets is visible to the current user."
+msgstr "Esta barra lateral solo está activa en el diseño de 3 columnas, si al menos uno de sus widgets está visible para el usuario."
+
+#: functions.php:135
+msgid "Footer"
+msgstr "Pie de página"
+
+#: functions.php:137
+msgid "Active only if at least one of its widgets is visible to the current user. You can add between 1 and 6 widgets here (3 or 4 are optimal). They will adjust their size based on the widget count."
+msgstr "Activo sólo si al menos uno de sus widgets está visible para el usuario. Puedes agregar de 1 a 6 widgets aquí (3 o 4 es lo óptimo). El tamaño se ajustará dependiendo de la cantidad de widgets."
+
+#: functions.php:145
+msgid "Arbitrary Widgets"
+msgstr "Widgets arbitrarios"
+
+#: functions.php:147
+#, php-format
+msgid "Widgets from this area can be grouped into tabs, or added into posts/pages using the %1$s or %2$s shortcodes."
+msgstr "Los widgets de esta área pueden ser agrupados en pestañas, o añadidos en entradas/páginas usando los shortcodes %1$s o %2$s."
+
+#: functions.php:179
+msgid "Page Top"
+msgstr "Principio de la página"
+
+#: functions.php:180
+msgid "Below Header (Main)"
+msgstr "Debajo de la cabecera (Principal)"
+
+#: functions.php:181
+msgid "Above Footer"
+msgstr "Encima del pie de página"
+
+#: home.php:27
+msgid "Oops, nothing here :("
+msgstr "Ups, no hay nada aquí :("
+
+#: internal-sign-up.php:20
+msgid "User registration is currently not allowed."
+msgstr "En este momento no se permite el registro de usuarios."
+
+#: internal-sign-up.php:35
+msgid "You left the user name field empty."
+msgstr "No has introducido un nombre de usuario."
+
+#: internal-sign-up.php:38
+msgid "Invalid user name, illegal characters."
+msgstr "Nombre de usuario no válido, caracteres no permitidos."
+
+#: internal-sign-up.php:41
+msgid "User name already exists, choose another."
+msgstr "El nombre de usuario ya existe, elige otro."
+
+#: internal-sign-up.php:44
+msgid "You left the e-mail field empty."
+msgstr "No has introducido un e-mail."
+
+#: internal-sign-up.php:47
+msgid "Invalid e-mail address."
+msgstr "Dirección de e-mail no válida."
+
+#: internal-sign-up.php:50
+msgid "This email is already registered, please choose a different one."
+msgstr "Este e-mail ya está registrado, por favor elige uno diferente."
+
+#: internal-sign-up.php:60
+#, php-format
+msgid "Registration failed, please contact the <a href=\"mailto:%s\">webmaster</a>"
+msgstr "El registro ha fallado, por favor contacta con el <a href=\"mailto:%s\">webmaster</a>"
+
+#: internal-sign-up.php:83
+#, php-format
+msgid "Sign-up on %s"
+msgstr "Registrarse en %s"
+
+#: internal-sign-up.php:87
+msgid "Thank you. Your password has been e-mailed to you."
+msgstr "Gracias. Se ha enviado la contraseña a tu e-mail."
+
+#: internal-sign-up.php:94
+msgid "Desired user name"
+msgstr "Nombre de usuario"
+
+#: internal-sign-up.php:99
+msgid "E-mail address"
+msgstr "E-mail"
+
+#: internal-sign-up.php:105
+msgid "Sign up"
+msgstr "Registrarse"
+
+#: meta.php:23
+#, php-format
+msgid "Searching for %1$s (%2$s)"
+msgstr "Búsqueda para %1$s (%2$s)"
+
+#: meta.php:24
+#, php-format
+msgid "Comments (%s)"
+msgstr "Comentarios (%s)"
+
+#: meta.php:29
+#, php-format
+msgid "Pings (%s)"
+msgstr "Pings (%s)"
+
+#: meta.php:33
+msgid "Related Posts"
+msgstr "Entradas relacionadas"
+
+#: meta.php:67
+msgid "Filter"
+msgstr "Filtro"
+
+#: meta.php:76
+msgid "Comment Feed for this Post"
+msgstr "Feed de comentarios de esta entrada"
+
+#: related-posts.php:17
+#: teaser-gallery.php:13
+#: teaser.php:53
+#, php-format
+msgid "Permanent Link: %s"
+msgstr "Enlace permanente: %s"
+
+#: related-posts.php:25
+msgid "Didn't find any related posts :("
+msgstr "No se han encontrado entradas relacionadas :("
+
+#: search.php:24
+#, php-format
+msgid "Search results for %1$s (%2$s)"
+msgstr "Resultados de búsqueda para %1$s (%2$s)"
+
+#: search.php:46
+msgid "Nothing found :("
+msgstr "No se han encontrado resultados :("
+
+#: search.php:47
+msgid "Try a different search..."
+msgstr "Probar una búsqueda diferente..."
+
+#: searchform.php:11
+#: searchform.php:13
+msgid "Search Website"
+msgstr "Buscar"
+
+#: sidebar.php:32
+#: sidebar.php:49
+#, php-format
+msgid "%s is empty. Add widgets here, otherwise this area will not be visible in the frontend"
+msgstr "La <em>%s</em> está vacía. Añade widgets aquí, si no esta área no estará visible."
+
+#: single.php:62
+#, php-format
+msgid "This entry was posted by %1$s on %2$s at %3$s, and is filed under %4$s. Follow any responses to this post through %5$s."
+msgstr "Este artículo fue publicado por %1$s el %2$s a las %3$s, y está archivado en %4$s. Sigue las respuestas a esta entrada a través de %5$s. "
+
+#: single.php:71
+#, php-format
+msgid "You can <a%1$s>leave a response</a> or <a%2$s>trackback</a> from your own site."
+msgstr "Puedes <a%1$s>dejar un comentario</a> o <a%2$s>enviar un trackback</a> desde tu propio sitio."
+
+#: single.php:74
+#, php-format
+msgid "Responses are currently closed, but you can <a%1$s>trackback</a> from your own site."
+msgstr "En este momento no se permiten comentarios, pero puedes <a%1$s>enviar un trackback</a> desde tu propio sitio."
+
+#: single.php:77
+msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+msgstr "Puedes ir hasta abajo y dejar una respuesta. No se permiten pings."
+
+#: single.php:80
+msgid "Both comments and pings are currently closed."
+msgstr "Están cerrados tanto los comentarios como los pings."
+
+#: teaser.php:71
+#, php-format
+msgid "by %s"
+msgstr "por %s"
+
+#: teaser.php:75
+#, php-format
+msgid "in %s"
+msgstr "en %s"
+
+#: core/Atom.php:683
+#, php-format
+msgid "You can customize your %1$s theme from the <%2$s>theme settings</a> page."
+msgstr "Puedes configurar tu tema %1$s desde la página <%2$s>Opciones de Mystique</a>."
+
+#: core/Atom.php:720
+#, php-format
+msgid "%s year ago"
+msgid_plural "%s years ago"
+msgstr[0] "hace %s año"
+msgstr[1] "hace %s años"
+
+#: core/Atom.php:721
+#, php-format
+msgid "%s month ago"
+msgid_plural "%s months ago"
+msgstr[0] "hace %s mes"
+msgstr[1] "hace %s meses"
+
+#: core/Atom.php:722
+#, php-format
+msgid "%s week ago"
+msgid_plural "%s weeks ago"
+msgstr[0] "hace %s semana"
+msgstr[1] "hace %s semanas"
+
+#: core/Atom.php:723
+#, php-format
+msgid "%s day ago"
+msgid_plural "%s days ago"
+msgstr[0] "hace %s día"
+msgstr[1] "hace %s días"
+
+#: core/Atom.php:724
+#, php-format
+msgid "%s hour ago"
+msgid_plural "%s hours ago"
+msgstr[0] "hace %s hora"
+msgstr[1] "hace %s horas"
+
+#: core/Atom.php:725
+#, php-format
+msgid "%s minute ago"
+msgid_plural "%s minutes ago"
+msgstr[0] "hace %s minuto"
+msgstr[1] "hace %s minutos"
+
+#: core/Atom.php:726
+#, php-format
+msgid "%s second ago"
+msgid_plural "%s seconds ago"
+msgstr[0] "hace %s segundos"
+msgstr[1] "hace %s segundos"
+
+#: core/Atom.php:1048
+#, php-format
+msgid "Archive for week %1$s of %2$s"
+msgstr "Archivo de la semana %1$s de %2$s"
+
+#: core/Atom.php:1065
+#, php-format
+msgid "Search results for %s"
+msgstr "Resultados de la búsqueda para %s"
+
+#: core/Atom.php:1069
+msgid "404 Not Found"
+msgstr "404 No encontrado"
+
+#: core/Atom.php:1075
+#, php-format
+msgid "Page %s"
+msgstr "Página %s"
+
+#: core/Atom.php:1079
+#, php-format
+msgid "Comment Page %s"
+msgstr "Página de comentarios %s"
+
+#: core/Atom.php:1376
+msgid "Show Older Posts"
+msgstr "Mostrar entradas más antiguas"
+
+#: core/Atom.php:1380
+#, php-format
+msgid "Page %1$s of %2$s"
+msgstr "Página %1$s de %2$s"
+
+#: core/Atom.php:1382
+msgid "&laquo; Previous"
+msgstr "&laquo; Anterior"
+
+#: core/Atom.php:1424
+msgid "Next &raquo;"
+msgstr "Siguiente &raquo;"
+
+#: core/Atom.php:1456
+msgid "RSS Feeds"
+msgstr "Feeds RSS"
+
+#: core/Atom.php:1459
+msgid "Twitter updates"
+msgstr "Actualizaciones de Twitter"
+
+#: core/Atom.php:1462
+msgid "Facebook page"
+msgstr "Página de Facebook"
+
+#: core/Atom.php:1465
+msgid "Flick photostream"
+msgstr "Galería de Flickr"
+
+#: core/Atom.php:1468
+msgid "MySpace page"
+msgstr "Página de MySpace"
+
+#: core/Atom.php:2401
+#: core/Atom.php:2482
+msgid "Home Page"
+msgstr "Página principal"
+
+#: core/Atom.php:2401
+#: core/Atom.php:2482
+msgid "Home"
+msgstr "Inicio"
+
+#: core/AtomAdmin.php:61
+msgid "Welcome!"
+msgstr "Bienvenido!"
+
+#: core/AtomAdmin.php:62
+msgid "Design"
+msgstr "Diseño"
+
+#: core/AtomAdmin.php:63
+msgid "Content options"
+msgstr "Opciones de contenido"
+
+#: core/AtomAdmin.php:64
+msgid "CSS"
+msgstr "CSS"
+
+#: core/AtomAdmin.php:65
+msgid "Advanced"
+msgstr "Avanzado"
+
+#: core/AtomAdmin.php:66
+msgid "Modules"
+msgstr "Módulos"
+
+#: core/AtomAdmin.php:269
+msgid "Insert Atom Element"
+msgstr "Insertar elemento Atom"
+
+#: core/AtomAdmin.php:311
+msgid "Checking..."
+msgstr "Comprobando..."
+
+#: core/AtomAdmin.php:402
+msgid "Error while featuring posts"
+msgstr "Error al destacar entradas"
+
+#: core/AtomAdmin.php:473
+msgid "Nothing to configure in single column mode"
+msgstr "Nada que configurar en el diseño de una sola columna"
+
+#: core/AtomAdmin.php:579
+#: core/AtomAdmin.php:584
+msgid "Uploading"
+msgstr "Subiendo"
+
+#: core/AtomAdmin.php:593
+msgid "Try Another Image?"
+msgstr "¿Intentar con otra imagen?"
+
+#: core/AtomAdmin.php:601
+msgid "Change Image"
+msgstr "Cambiar imagen"
+
+#: core/AtomAdmin.php:629
+msgid "Upload Image"
+msgstr "Subir imagen"
+
+#: core/AtomAdmin.php:704
+msgid "General Info"
+msgstr "Información general"
+
+#: core/AtomAdmin.php:707
+#, php-format
+msgid "Core (ATOM) version: %s"
+msgstr "Versión del núcleo (ATOM): %s"
+
+#: core/AtomAdmin.php:710
+#, php-format
+msgid "Theme Version: %s"
+msgstr "Versión del tema: %s"
+
+#: core/AtomAdmin.php:710
+#, php-format
+msgid "(Child theme of %s)"
+msgstr "(Tema hijo de %s)"
+
+#: core/AtomAdmin.php:711
+msgid "Check for update"
+msgstr "Comprobar actualizaciones"
+
+#: core/AtomAdmin.php:716
+msgid "Theme documentation"
+msgstr "Documentación del tema"
+
+#: core/AtomAdmin.php:717
+msgid "Project Homepage"
+msgstr "Sitio web del proyecto"
+
+#: core/AtomAdmin.php:723
+msgid "Available Languages"
+msgstr "Idiomas disponibles"
+
+#: core/AtomAdmin.php:735
+#, php-format
+msgid "%1$s, translator: %2$s (%3$s)"
+msgstr "%1$s, traductor: %2$s (%3$s)"
+
+#: core/AtomAdmin.php:743
+msgid "Import / export / reset or backup Theme Options"
+msgstr "Importar / exportar / restablecer o hacer una copia de seguridad de las opciones del tema"
+
+#: core/AtomAdmin.php:744
+msgid "If you wish to import or export theme settings from another website that's using this theme, you may do so here. Below you can copy the current settings stored as a encoded string, or paste new settings..."
+msgstr "Si quieres importar o exportar una configuración del tema de otro sitio web, puedes hacerlo aquí. Debajo puedes copiar la configuración actual guardada como una cadena codificada, o pegar una nueva configuración..."
+
+#: core/AtomAdmin.php:754
+msgid "Reset options to defaults"
+msgstr "Volver a la configuración por defecto"
+
+#: core/AtomAdmin.php:754
+msgid "Reset all theme settings to the default values? Are you sure?"
+msgstr "¿Restablecer todas las opciones del tema a los valores por defecto? ¿Estás seguro?"
+
+#: core/AtomAdmin.php:755
+msgid "Import options"
+msgstr "Importar opciones"
+
+#: core/AtomAdmin.php:755
+msgid "Import these settings? Are you sure?"
+msgstr "¿Importar esta configuración? ¿Estás seguro?"
+
+#: core/AtomAdmin.php:785
+#: core/AtomAdmin.php:2150
+msgid "Loading..."
+msgstr "Cargando..."
+
+#: core/AtomAdmin.php:793
+msgid "It appears that your home page has javascript errors on it. Deactivate all plugins, then activate them back one by one to find out which one is causing errors."
+msgstr "Parece que tu página principal tiene errores JavaScript. Desactiva todos los plugins, luego actívalos de nuevo uno por uno para encontrar cuál está causando errores."
+
+#: core/AtomAdmin.php:803
+msgid "Layout Style (Global)"
+msgstr "Estilo de diseño (Global)"
+
+#: core/AtomAdmin.php:807
+msgid "One column (No sidebars)"
+msgstr "Una columna (Sin barras laterales)"
+
+#: core/AtomAdmin.php:808
+msgid "Two columns, left sidebar"
+msgstr "Dos columnas, barra lateral izquierda"
+
+#: core/AtomAdmin.php:809
+msgid "Two columns, right sidebar"
+msgstr "Dos columnas, barra lateral derecha"
+
+#: core/AtomAdmin.php:810
+msgid "Three columns"
+msgstr "Tres columnas"
+
+#: core/AtomAdmin.php:811
+msgid "Three columns, sidebars to the left"
+msgstr "Tres columnas, barras laterales a la izquierda"
+
+#: core/AtomAdmin.php:812
+msgid "Three columns, sidebars to the right"
+msgstr "Tres columnas, barras laterales a la derecha"
+
+#: core/AtomAdmin.php:817
+#, php-format
+msgid "Note that widget visibility options can be used to override this setting for individual pages or posts (you can also select the appropriate template when editing pages, or use the %s custom field)"
+msgstr "Ten en cuenta que las opciones de visibilidad de los widgets se pueden usar para anular esta configuración en páginas o entradas individuales (también puedes seleccionar la plantilla adecuada al editar páginas, o usar el campo personalizado %s)"
+
+#: core/AtomAdmin.php:826
+msgid "Column Sizes"
+msgstr "Tamaños de columna"
+
+#: core/AtomAdmin.php:851
+msgid "Page Width"
+msgstr "Ancho de página"
+
+#: core/AtomAdmin.php:857
+#, php-format
+msgid "Fixed (%s)"
+msgstr "Fijo (%s)"
+
+#: core/AtomAdmin.php:864
+#, php-format
+msgid "Fluid, but not more than %s pixels"
+msgstr "Fluido, pero no más de %s píxeles"
+
+#: core/AtomAdmin.php:871
+msgid "Semi-Fluid (Fixed Sidebars)"
+msgstr "Semi-fluido (Barras laterales fijas)"
+
+#: core/AtomAdmin.php:882
+msgid "Site Title (Logo)"
+msgstr "Título del sitio (Logo)"
+
+#: core/AtomAdmin.php:885
+msgid "Current logo image"
+msgstr "Imagen de logo actual"
+
+#: core/AtomAdmin.php:886
+#: core/AtomAdmin.php:923
+#: core/AtomAdmin.php:947
+msgid "Remove"
+msgstr "Eliminar"
+
+#: core/AtomAdmin.php:898
+msgid "Styles &amp; colors"
+msgstr "Estilos y colores"
+
+#: core/AtomAdmin.php:904
+#, php-format
+msgid "%1$s by %2$s"
+msgstr "%1$s por %2$s"
+
+#: core/AtomAdmin.php:908
+msgid "Disabled"
+msgstr "Deshabilitado"
+
+#: core/AtomAdmin.php:908
+msgid "use custom styles"
+msgstr "usar estilos personalizados"
+
+#: core/AtomAdmin.php:908
+msgid "Blank"
+msgstr "Blank"
+
+#: core/AtomAdmin.php:917
+msgid "Page Background"
+msgstr "Fondo de página"
+
+#: core/AtomAdmin.php:921
+msgid "Current background image"
+msgstr "Imagen de fondo actual"
+
+#: core/AtomAdmin.php:942
+msgid "Favicon"
+msgstr "Favicon"
+
+#: core/AtomAdmin.php:945
+msgid "Current favicon"
+msgstr "Favicon actual"
+
+#: core/AtomAdmin.php:974
+msgid "Footer content"
+msgstr "Contenido del pie de página"
+
+#: core/AtomAdmin.php:980
+msgid "You can add HTML code."
+msgstr "Puedes insertar código HTML."
+
+#: core/AtomAdmin.php:980
+msgid "HTML is allowed, but some tags may be filtered."
+msgstr "Se permite HTML, pero algunas etiquetas pueden ser filtradas."
+
+#: core/AtomAdmin.php:982
+#, php-format
+msgid "Use %s for convenient adjustments"
+msgstr "Usa %s para hacer los ajustes convenientes."
+
+#: core/AtomAdmin.php:982
+msgid "[shortcodes]"
+msgstr "[shortcodes]"
+
+#: core/AtomAdmin.php:993
+msgid "Post Previews"
+msgstr "Previsualizaciones de entradas"
+
+#: core/AtomAdmin.php:1000
+#: core/AtomAdmin.php:1512
+msgid "Title"
+msgstr "Título"
+
+#: core/AtomAdmin.php:1010
+msgid "Content"
+msgstr "Contenido"
+
+#: core/AtomAdmin.php:1013
+msgid "Full post"
+msgstr "Entrada completa"
+
+#: core/AtomAdmin.php:1014
+msgid "Full post, filtered"
+msgstr "Entrada completa, filtrada"
+
+#: core/AtomAdmin.php:1015
+msgid "Excerpt"
+msgstr "Extracto"
+
+#: core/AtomAdmin.php:1016
+#: core/AtomAdmin.php:1017
+#: core/AtomAdmin.php:1018
+#, php-format
+msgid "First %s words, filtered"
+msgstr "Primeras %s palabras, filtrada"
+
+#: core/AtomAdmin.php:1028
+msgid "Category"
+msgstr "Categoría"
+
+#: core/AtomAdmin.php:1038
+msgid "Date/Time"
+msgstr "Fecha/Hora"
+
+#: core/AtomAdmin.php:1041
+msgid "Relative (Time Since)"
+msgstr "Relativo (tiempo transcurrido desde la publicación)"
+
+#: core/AtomAdmin.php:1042
+msgid "Absolute (Use Time/Date settings)"
+msgstr "Absoluto (usa los ajustes de hora/fecha de WordPress)"
+
+#: core/AtomAdmin.php:1052
+#: core/AtomAdmin.php:1514
+msgid "Author"
+msgstr "Autor"
+
+#: core/AtomAdmin.php:1062
+msgid "Comments Link"
+msgstr "Enlace a comentarios"
+
+#: core/AtomAdmin.php:1072
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: core/AtomAdmin.php:1082
+msgid "Thumbnails"
+msgstr "Miniaturas"
+
+#: core/AtomAdmin.php:1086
+msgid "Left Aligned"
+msgstr "Alineada a la izquierda"
+
+#: core/AtomAdmin.php:1087
+msgid "Right Aligned"
+msgstr "Alineada a la derecha"
+
+#: core/AtomAdmin.php:1097
+#, php-format
+msgid "Small, %s"
+msgstr "Pequeño, %s"
+
+#: core/AtomAdmin.php:1098
+#, php-format
+msgid "Medium, %s"
+msgstr "Mediano, %s"
+
+#: core/AtomAdmin.php:1099
+#, php-format
+msgid "Large, %s"
+msgstr "Grande, %s"
+
+#: core/AtomAdmin.php:1100
+#, php-format
+msgid "Very Small, %s"
+msgstr "Muy pequeño, %s"
+
+#: core/AtomAdmin.php:1101
+#, php-format
+msgid "Larger, %s"
+msgstr "Más grande, %s"
+
+#: core/AtomAdmin.php:1102
+#, php-format
+msgid "Very Large, %s"
+msgstr "Muy grande, %s"
+
+#: core/AtomAdmin.php:1106
+#, php-format
+msgid "Theme Default, %s"
+msgstr "Por defecto, %s"
+
+#: core/AtomAdmin.php:1113
+msgid "Thumbnail Size"
+msgstr "Tamaño de la imagen en miniatura"
+
+#: core/AtomAdmin.php:1124
+#, php-format
+msgid "Media setting, %s"
+msgstr "Configuración multimedia, %s"
+
+#: core/AtomAdmin.php:1128
+msgid "Note that for the new sized thumbnails to take effect, all existing images must be resized. See the Advanced page."
+msgstr "Ten en cuenta que para que las miniaturas con el nuevo tamaño se vean, todas las imágenes existentes deben ser redimensionadas. Consulta la página <em>Avanzado</em>."
+
+#: core/AtomAdmin.php:1140
+msgid "Use first attachment as thumbnail, if none is set"
+msgstr "Usar la primera imagen de la entrada como miniatura, si no se ha establecido ninguna"
+
+#: core/AtomAdmin.php:1150
+msgid "Navigation"
+msgstr "Navegación"
+
+#: core/AtomAdmin.php:1152
+#, php-format
+msgid "Single link (%s)"
+msgstr "Enlace único (%s)"
+
+#: core/AtomAdmin.php:1153
+msgid "Previous / Next links"
+msgstr "Enlaces Anterior/Siguiente"
+
+#: core/AtomAdmin.php:1154
+msgid "Page numbers"
+msgstr "Números de página"
+
+#: core/AtomAdmin.php:1164
+msgid "Comments"
+msgstr "Comentarios"
+
+#: core/AtomAdmin.php:1171
+msgid "Display Comment Search Form"
+msgstr "Mostrar formulario de búsqueda de comentarios"
+
+#: core/AtomAdmin.php:1181
+msgid "Allow Comment Ratings (Karma)"
+msgstr "Permitir valoraciones de comentarios (Karma)"
+
+#: core/AtomAdmin.php:1188
+#, php-format
+msgid "Hide comments with %s karma and below"
+msgstr "Ocultar comentarios con karma %s o inferior"
+
+#: core/AtomAdmin.php:1204
+msgid "Single Post Page"
+msgstr "Página de entrada individual"
+
+#: core/AtomAdmin.php:1211
+msgid "Previous/Next Links"
+msgstr "Enlaces Anterior/Siguiente"
+
+#: core/AtomAdmin.php:1223
+msgid "Share Links"
+msgstr "Enlaces para compartir"
+
+#: core/AtomAdmin.php:1233
+msgid "Meta Information"
+msgstr "Información Meta"
+
+#: core/AtomAdmin.php:1245
+msgid "About the Author"
+msgstr "Acerca del autor"
+
+#: core/AtomAdmin.php:1263
+msgid "Social Media Links (Leave blank to disable)"
+msgstr "Enlaces de medios sociales (Dejar en blanco para deshabilitar)"
+
+#: core/AtomAdmin.php:1272
+msgid "RSS Feed"
+msgstr "Feed RSS"
+
+#: core/AtomAdmin.php:1326
+#, php-format
+msgid "Check %s to see existing theme classes and properties, which you can redefine here."
+msgstr "Revisa el archivo %s para ver clases y propiedades existentes en el tema, las cuales puedes redefinir aquí."
+
+#: core/AtomAdmin.php:1328
+#, php-format
+msgid "All URLs must have absolute paths. You can use the %1$s keyword to point to the %2$s."
+msgstr "Todas las URLs deben tener rutas absolutas. Puedes usar la palabra clave %1$s para apuntar a la %2$s."
+
+#: core/AtomAdmin.php:1328
+msgid "parent theme URL"
+msgstr "URL del tema padre"
+
+#: core/AtomAdmin.php:1331
+#, php-format
+msgid "To get the child theme URL use %s."
+msgstr "Para obtener la URL del tema hijo usa %s."
+
+#: core/AtomAdmin.php:1333
+#, php-format
+msgid "Read the %s to see all available keywords."
+msgstr "Consulta la %s para ver todas las palabras clave disponibles."
+
+#: core/AtomAdmin.php:1333
+#: core/AtomAdmin.php:1467
+#: core/AtomAdmin.php:1794
+msgid "documentation"
+msgstr "documentación"
+
+#: core/AtomAdmin.php:1358
+msgid "Use jQuery"
+msgstr "Usar jQuery"
+
+#: core/AtomAdmin.php:1360
+msgid "Only uncheck if you know what you're doing. Your site will load faster without jQuery, but features that depend on it will be disabled."
+msgstr "Desactívalo sólo si sabes lo que estás haciendo. Tu sitio cargará más rápido sin jQuery, pero las características que dependen de éste serán deshabilitadas."
+
+#: core/AtomAdmin.php:1369
+msgid "Animate content"
+msgstr "Animar contenido"
+
+#: core/AtomAdmin.php:1371
+msgid "Enable jQuery effects such as fading or sliding. Effects can render the site slightly slower on less powerful PCs"
+msgstr "Activar efectos jQuery como desvanecimiento o deslizamiento. Los efectos pueden hacer que el sitio funcione un poco más lento en PCs menos potentes."
+
+#: core/AtomAdmin.php:1379
+msgid "Optimize website for faster loading"
+msgstr "Optimizar sitio web para carga rápida"
+
+#: core/AtomAdmin.php:1381
+#, php-format
+msgid "Compresses and concatenates stylesheets and javascript files (using %s). Leave this unchecked if you're experiencing conflicts with other plugins, or if you're using a cache plugin that handles such functions"
+msgstr "Comprime y concatena hojas de estilos y archivos JavaScript (usando %s). Deja esta casilla desactivada si estás experimentando conflictos con otros plugins, o si estás usando un plugin de caché que se encarga de esas funciones."
+
+#: core/AtomAdmin.php:1393
+msgid "Only Super Admins can change this option"
+msgstr "Solo los administradores pueden cambiar esta opción"
+
+#: core/AtomAdmin.php:1395
+msgid "Automatically create missing thumbnail sizes"
+msgstr "Crear automáticamente los tamaños de miniaturas que faltan"
+
+#: core/AtomAdmin.php:1397
+#, php-format
+msgid "Asynchronously update thumbnails if needed. You can also use the %s plugin to process all missing thumbnail sizes manually, in a single pass"
+msgstr "Actualiza miniaturas de forma asíncrona si es necesario. También puedes usar el plugin %s para procesar todos los tamaños de miniaturas que faltan de forma manual, en un solo paso."
+
+#: core/AtomAdmin.php:1406
+#, php-format
+msgid "Use theme built-in lightbox (%s) on all image links"
+msgstr "Usar lightbox integrado en el tema (%s) para todos los enlaces a imágenes"
+
+#: core/AtomAdmin.php:1408
+msgid "Uncheck if you prefer a lightbox plugin"
+msgstr "Desmarca esta opción si prefieres usar un plugin de Lightbox."
+
+#: core/AtomAdmin.php:1416
+msgid "Automatically generate meta descriptions"
+msgstr "Generar automáticamente descripciones meta"
+
+#: core/AtomAdmin.php:1418
+#, php-format
+msgid "Uncheck if you're using a SEO plugin, otherwise you'll get duplicate fields! Note that you don't need such plugins, %s is heavily optimized for search engines"
+msgstr "¡Desactivar si estás usando un plugin SEO, si no tendrás campos duplicados! Ten en cuenta que no necesitas esos plugins, %s está profundamente optimizado para motores de búsqueda."
+
+#: core/AtomAdmin.php:1427
+msgid "Display debug messages (english only)"
+msgstr "Mostrar mensajes de depuración (solo en inglés)"
+
+#: core/AtomAdmin.php:1429
+msgid "Status notifications about the theme setup (only visible to administrators)."
+msgstr "Notificaciones de estado sobre la configuración del tema (solo visibles para los administradores)."
+
+#: core/AtomAdmin.php:1430
+msgid "Only enable this if you need to, because it can significantly slow down page load for admins"
+msgstr "Sólo activar esta opción si es necesario, ya que puede ralentizar considerablemente la carga de páginas para los administradores."
+
+#: core/AtomAdmin.php:1439
+msgid "Theme auto-uninstall"
+msgstr "Auto-desinstalación del tema"
+
+#: core/AtomAdmin.php:1441
+#, php-format
+msgid "Check to remove all %s settings from the database after you switch the theme (Featured post records are preserved)."
+msgstr "Activar para borrar toda la configuración de %s de la base de datos después de cambiar de tema (Los registros de entradas destacadas se conservan)."
+
+#: core/AtomAdmin.php:1449
+msgid "User-defined code"
+msgstr "Código definido por el usuario"
+
+#: core/AtomAdmin.php:1459
+msgid "Only edit this if you know what you're doing!"
+msgstr "¡Edita esto sólo si sabes lo que estás haciendo!"
+
+#: core/AtomAdmin.php:1467
+#, php-format
+msgid "The code you add here is included in the front-end on initialization. This is almost the same thing as editing the %1$s file from the theme directory, the difference is that the changes you make here are preserved after theme updates. Read the %2$s for more information."
+msgstr "El código que añadas aquí será incluido en el front-end en la inicialización. Esto es casi lo mismo que editar el archivo %1$s del directorio del tema, la diferencia es que los cambios que hagas aquí son conservados tras las actualizaciones del tema. Lee la %2$s para más información."
+
+#: core/AtomAdmin.php:1475
+#, php-format
+msgid "data is saved to %s"
+msgstr "los datos se guardan en %s"
+
+#: core/AtomAdmin.php:1478
+#, php-format
+msgid "To use this function you must have an active child theme of %s, and give WordPress write permissions to the child theme folder."
+msgstr "Para usar esta función debes tener un tema hijo de %s activo, y dar a WordPress permisos de escritura en la carpeta del tema hijo."
+
+#: core/AtomAdmin.php:1499
+#, php-format
+msgid "Modules act like plugins that can further extend %s."
+msgstr "Los módulos actúan como plugins que además pueden extender %s."
+
+#: core/AtomAdmin.php:1513
+msgid "Type"
+msgstr "Tipo"
+
+#: core/AtomAdmin.php:1515
+msgid "Description"
+msgstr "Descripción"
+
+#: core/AtomAdmin.php:1554
+msgid "Currently there are no modules installed."
+msgstr "Actualmente no hay módulos instalados."
+
+#: core/AtomAdmin.php:1573
+msgid "Save Changes"
+msgstr "Guardar cambios"
+
+#: core/AtomAdmin.php:1635
+#: core/AtomAdmin.php:1732
+#: core/AtomAdmin.php:1932
+msgid "You are not authorised to perform this operation."
+msgstr "No estás autorizado a realizar esta operación."
+
+#: core/AtomAdmin.php:1638
+msgid "Import failed. Invalid settings. "
+msgstr "La importación ha fallado. Configuración no válida."
+
+#: core/AtomAdmin.php:1639
+msgid "Settings saved, but failed to update user functions. Is your uploads directory writeable?"
+msgstr "Configuración guardada, pero no se pudieron actualizar las funciones de usuario. ¿Se puede escribir en tu directorio de subidas?"
+
+#: core/AtomAdmin.php:1645
+msgid "Update"
+msgstr "Actualizar"
+
+#: core/AtomAdmin.php:1654
+msgid "Settings saved."
+msgstr "Configuración guardada."
+
+#: core/AtomAdmin.php:1654
+msgid "View site"
+msgstr "Ver sitio"
+
+#: core/AtomAdmin.php:1669
+#, php-format
+msgid "<strong>There is a new version of %1$s available</strong>. <a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">View %1$s %3$s details</a> or notify the site administrator."
+msgstr "<strong>Hay una nueva versión de %1$s disponible</strong>. <a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">Ver detalles de %1$s %3$s</a> o avisar al administrador del sitio."
+
+#: core/AtomAdmin.php:1671
+#, php-format
+msgid "<strong>There is a new version of %1$s available</strong>. <a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">View %1$s %3$s details</a> or <a href=\"%4$s\" >upgrade automatically</a>."
+msgstr "<strong>Hay una nueva versión de %1$s disponible</strong>. <a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">Ver detalles de %1$s %3$s</a> o <a href=\"%4$s\" >actualizar automáticamente</a>."
+
+#: core/AtomAdmin.php:1678
+msgid "Sorry, this page requires JavaScript to be enabled in your browser :("
+msgstr "Lo sentimos, esta página requiere que JavaScript esté habilitado en tu navegador :("
+
+#: core/AtomAdmin.php:1786
+msgid "Do not edit core theme files because you will use any changes you make here when you update!"
+msgstr "¡No edites archivos del núcleo del tema porque perderás cualquier cambio que hagas aquí cuando actualices!"
+
+#: core/AtomAdmin.php:1791
+#, php-format
+msgid "To make small CSS customizations you can use the %1$s option from the theme settings. For extensive customizations activate and edit the %2$s theme if available, or create your own child theme. Read the %3$s for more information."
+msgstr "Para hacer pequeñas personalizaciones CSS puedes usar la opción %1$s en la configuración del tema. Para personalizaciones extensas activa y edita el tema %2$s si está disponible, o crea tu propio tema hijo. Lee la %3$s para más información."
+
+#: core/AtomAdmin.php:1792
+msgid "User CSS"
+msgstr "CSS del usuario"
+
+#: core/AtomAdmin.php:1912
+#, php-format
+msgid "%s is available"
+msgstr "%s está disponible"
+
+#: core/AtomAdmin.php:1914
+msgid "You have the latest version"
+msgstr "Tienes la última versión"
+
+#: core/AtomAdmin.php:1940
+#, php-format
+msgid "Upload Error: %s"
+msgstr "Error de subida: %s"
+
+#: core/AtomAdmin.php:1964
+#, php-format
+msgid "Latest News from %s"
+msgstr "Últimas noticias de %s"
+
+#: core/AtomAdmin.php:2043
+#: core/AtomAdmin.php:2156
+msgid "Hide Page Visibility Options"
+msgstr "Ocultar opciones de visibilidad"
+
+#: core/AtomAdmin.php:2043
+#: core/AtomAdmin.php:2164
+msgid "Show Page Visibility Options"
+msgstr "Mostrar opciones de visibilidad"
+
+#: core/AtomAdmin.php:2204
+msgid "Blog Homepage"
+msgstr "Página principal del blog"
+
+#: core/AtomAdmin.php:2205
+msgid "Search Results"
+msgstr "Resultados de búsqueda"
+
+#: core/AtomAdmin.php:2206
+msgid "Author Archives"
+msgstr "Archivos de autores"
+
+#: core/AtomAdmin.php:2207
+msgid "Date-based Archives"
+msgstr "Archivos de fechas"
+
+#: core/AtomAdmin.php:2208
+msgid "Tag Archives"
+msgstr "Archivos de etiquetas"
+
+#: core/AtomAdmin.php:2209
+msgid "Category Archives"
+msgstr "Archivos de categorías"
+
+#: core/AtomAdmin.php:2247
+msgid "Show this widget on:"
+msgstr "Mostrar este widget en:"
+
+#: core/AtomAdmin.php:2264
+#, php-format
+msgid "Single: %s"
+msgstr "Individual: %s"
+
+#: core/AtomAdmin.php:2274
+#, php-format
+msgid "Tax Archive: %s"
+msgstr "Archivo de taxonomía: %s"
+
+#: core/AtomAdmin.php:2290
+#, php-format
+msgid "Page: %s"
+msgstr "Página: %s"
+
+#: core/AtomAdmin.php:2299
+msgid "To:"
+msgstr "A:"
+
+#: core/AtomAdmin.php:2304
+msgid "Unregistered user (Visitor)"
+msgstr "Usuario no registrado (Visitante)"
+
+#: core/AtomAdmin.php:2326
+#, php-format
+msgid "To include this widget into your posts or pages use one of the following shortcodes: %s"
+msgstr "Para incluir este widget en tus entradas o páginas usa uno de los siguientes shortcodes: %s"
+
+#: core/AtomAdmin.php:2387
+msgid "Featured"
+msgstr "Destacado"
+
+#: core/AtomObjectAuthor.php:212
+#, php-format
+msgid "Posts by %1$s (%2$s)"
+msgstr "Entradas de %1$s (%2$s)"
+
+#: core/AtomObjectComment.php:37
+#: core/AtomObjectPost.php:62
+msgid "Edit"
+msgstr "Editar"
+
+#: core/AtomObjectComment.php:44
+msgid "Delete"
+msgstr "Borrar"
+
+#: core/AtomObjectComment.php:49
+msgid "Spam"
+msgstr "Spam"
+
+#: core/AtomObjectComment.php:54
+msgid "Approve"
+msgstr "Aprobar"
+
+#: core/AtomObjectComment.php:64
+msgid "Reply"
+msgstr "Responder"
+
+#: core/AtomObjectComment.php:69
+msgid "Quote"
+msgstr "Citar"
+
+#: core/AtomObjectComment.php:191
+msgid "Show"
+msgstr "Mostrar"
+
+#: core/AtomObjectPost.php:67
+msgid "Print"
+msgstr "Imprimir"
+
+#: core/AtomObjectPost.php:489
+#, php-format
+msgid "%s topic"
+msgid_plural "%s topics"
+msgstr[0] "%s tema"
+msgstr[1] "%s temas"
+
+#: core/AtomObjectPost.php:517
+msgid "More &gt;"
+msgstr "Más &gt;"
+
+#: core/AtomObjectPost.php:791
+#, php-format
+msgid "Share this post on %s"
+msgstr "Compartir esta entrada en %s"
+
+#: core/AtomObjectPost.php:812
+msgid "Pages &raquo;"
+msgstr "Páginas &raquo;"
+
+#: core/AtomObjectPost.php:893
+#, php-format
+msgid "And %s more..."
+msgstr "Y %s más..."
+
+#: core/AtomWidgetArchives.php:19
+#: core/AtomWidgetArchives.php:23
+msgid "Archives"
+msgstr "Archivos"
+
+#: core/AtomWidgetArchives.php:19
+msgid "Archives of your site's posts"
+msgstr "Archivos de las entradas de tu sitio"
+
+#: core/AtomWidgetArchives.php:91
+#, php-format
+msgid "%1$s %2$d"
+msgstr "%1$s %2$d"
+
+#: core/AtomWidgetArchives.php:168
+msgid "Select Day:"
+msgstr "Seleccionar día:"
+
+#: core/AtomWidgetArchives.php:169
+msgid "Select Week:"
+msgstr "Seleccionar semana:"
+
+#: core/AtomWidgetArchives.php:170
+msgid "Select Month:"
+msgstr "Seleccionar mes:"
+
+#: core/AtomWidgetArchives.php:171
+msgid "Select Year:"
+msgstr "Seleccionar año:"
+
+#: core/AtomWidgetArchives.php:216
+#: core/AtomWidgetBlogs.php:186
+#: core/AtomWidgetLifestream.php:275
+#: core/AtomWidgetLinks.php:92
+msgid "Title:"
+msgstr "Título:"
+
+#: core/AtomWidgetArchives.php:254
+msgid "Type:"
+msgstr "Tipo:"
+
+#: core/AtomWidgetArchives.php:256
+msgid "Yearly"
+msgstr "Anual"
+
+#: core/AtomWidgetArchives.php:257
+msgid "Monthly"
+msgstr "Mensual"
+
+#: core/AtomWidgetArchives.php:258
+msgid "Weekly"
+msgstr "Semanal"
+
+#: core/AtomWidgetArchives.php:259
+msgid "Daily"
+msgstr "Diario"
+
+#: core/AtomWidgetArchives.php:264
+#: core/AtomWidgetCalendar.php:301
+msgid "Post Type:"
+msgstr "Tipo de entrada:"
+
+#: core/AtomWidgetArchives.php:275
+#: core/AtomWidgetLinks.php:142
+msgid "Limit to:"
+msgstr "Limitar a:"
+
+#: core/AtomWidgetArchives.php:276
+msgid "Entries"
+msgstr "elementos"
+
+#: core/AtomWidgetArchives.php:283
+msgid "Show post count"
+msgstr "Mostrar número de entradas"
+
+#: core/AtomWidgetArchives.php:288
+msgid "Show as dropdown"
+msgstr "Mostrar como desplegable"
+
+#: core/AtomWidgetArchives.php:294
+msgid "Day archive date format:"
+msgstr "Formato de fecha para archivos de días"
+
+#: core/AtomWidgetArchives.php:299
+msgid "Week archive date format:"
+msgstr "Formato de fecha para archivos de semanas"
+
+#: core/AtomWidgetBlogs.php:18
+msgid "Network Blogs"
+msgstr "Blogs de la red"
+
+#: core/AtomWidgetBlogs.php:18
+msgid "A list of site blogs"
+msgstr "Una lista de blogs del sitio"
+
+#: core/AtomWidgetBlogs.php:34
+msgid "Recently updated blogs"
+msgstr "Blogs actualizados recientemente"
+
+#: core/AtomWidgetBlogs.php:154
+#: core/AtomWidgetBlogs.php:225
+#: core/AtomWidgetLifestream.php:282
+msgid "Show More"
+msgstr "Mostrar más"
+
+#: core/AtomWidgetBlogs.php:191
+#: core/AtomWidgetLinks.php:109
+msgid "Order by:"
+msgstr "Ordenar por:"
+
+#: core/AtomWidgetBlogs.php:193
+msgid "Last Update"
+msgstr "Última actualización"
+
+#: core/AtomWidgetBlogs.php:194
+msgid "Registered Date"
+msgstr "Fecha de registro"
+
+#: core/AtomWidgetBlogs.php:195
+msgid "Site ID"
+msgstr "ID del sitio"
+
+#: core/AtomWidgetBlogs.php:196
+msgid "Nothing, Randomize"
+msgstr "Nada, aleatorio"
+
+#: core/AtomWidgetBlogs.php:201
+#: core/AtomWidgetLifestream.php:286
+msgid "How many entries to display?"
+msgstr "¿Cuántos elementos mostrar?"
+
+#: core/AtomWidgetBlogs.php:206
+msgid "Exclude:"
+msgstr "Excluir:"
+
+#: core/AtomWidgetBlogs.php:208
+msgid "Site IDs, separated by commas."
+msgstr "IDs de sitios, separados por comas."
+
+#: core/AtomWidgetBlogs.php:214
+msgid "Exclude sites marked as mature"
+msgstr "Excluir sitios marcados para adultos"
+
+#: core/AtomWidgetBlogs.php:218
+msgid "Avatar Size:"
+msgstr "Tamaño de avatar:"
+
+#: core/AtomWidgetBlogs.php:219
+msgid "pixels"
+msgstr "píxeles"
+
+#: core/AtomWidgetBlogs.php:225
+#: core/AtomWidgetLifestream.php:282
+#, php-format
+msgid "Display %s Link"
+msgstr "Mostrar enlace %s"
+
+#: core/AtomWidgetCalendar.php:17
+#: core/AtomWidgetCalendar.php:187
+msgid "Calendar"
+msgstr "Calendario"
+
+#: core/AtomWidgetCalendar.php:17
+msgid "A calendar of your site's posts"
+msgstr "Un calendario de las entradas de tu sitio"
+
+#: core/AtomWidgetCalendar.php:170
+#: core/AtomWidgetCalendar.php:179
+#, php-format
+msgid "View posts for %1$s %2$s"
+msgstr "Ver entradas de %1$s %2$s"
+
+#: core/AtomWidgetCalendar.php:314
+msgid "Use AJAX for month navigation"
+msgstr "Usar AJAX para navegación por meses"
+
+#: core/AtomWidgetCalendar.php:318
+msgid "One-letter day abbreviation"
+msgstr "Abreviación de día con una letra"
+
+#: core/AtomWidgetLifestream.php:14
+msgid "Your activity around social networks"
+msgstr "Tu actividad en las redes sociales"
+
+#: core/AtomWidgetLifestream.php:16
+msgid "Lifestream"
+msgstr "Lifestream"
+
+#: core/AtomWidgetLifestream.php:21
+msgid "My Lifestream"
+msgstr "Mi Lifestream"
+
+#: core/AtomWidgetLifestream.php:130
+#, php-format
+msgid "%s followers"
+msgstr "%s followers"
+
+#: core/AtomWidgetLifestream.php:131
+#, php-format
+msgid "%s tweets"
+msgstr "%s tweets"
+
+#: core/AtomWidgetLifestream.php:158
+#, php-format
+msgid "Twitter returned error: %s"
+msgstr "Twitter devolvió error: %s"
+
+#: core/AtomWidgetLifestream.php:159
+msgid "Could not retrieve tweets. Possible reasons:"
+msgstr "No se pudieron recuperar tweets. Posibles razones:"
+
+#: core/AtomWidgetLifestream.php:166
+msgid "Unavailable for the moment"
+msgstr "No disponible en este momento"
+
+#: core/AtomWidgetLifestream.php:229
+msgid "Loading tweets..."
+msgstr "Cargando tweets..."
+
+#: core/AtomWidgetLifestream.php:234
+msgid "jQuery is required by this widget"
+msgstr "Este widget requiere jQuery"
+
+#: core/AtomWidgetLifestream.php:265
+msgid "General settings"
+msgstr "Configuración general"
+
+#: core/AtomWidgetLifestream.php:291
+msgid "Max. records to keep in database"
+msgstr "Máximo de registros a mantener en la base de datos:"
+
+#: core/AtomWidgetLifestream.php:296
+msgid "Check for new data every:"
+msgstr "Comprobar si hay nuevos datos cada:"
+
+#: core/AtomWidgetLifestream.php:298
+msgid "60 seconds"
+msgstr "60 segundos"
+
+#: core/AtomWidgetLifestream.php:299
+msgid "90 seconds"
+msgstr "90 segundos"
+
+#: core/AtomWidgetLifestream.php:300
+msgid "2 minutes"
+msgstr "2 minutos"
+
+#: core/AtomWidgetLifestream.php:301
+msgid "5 minutes"
+msgstr "5 minutos"
+
+#: core/AtomWidgetLifestream.php:309
+msgid "Get:"
+msgstr "Obtener:"
+
+#: core/AtomWidgetLifestream.php:311
+msgid "Recently played tracks"
+msgstr "Temas escuchados recientemente"
+
+#: core/AtomWidgetLifestream.php:312
+msgid "Loved tracks"
+msgstr "Temas favoritos"
+
+#: core/AtomWidgetLifestream.php:313
+msgid "Top tracks"
+msgstr "Temas más escuchados"
+
+#: core/AtomWidgetLifestream.php:314
+msgid "Top artists"
+msgstr "Artistas más escuchados"
+
+#: core/AtomWidgetLifestream.php:322
+#, php-format
+msgid "%s user name:"
+msgstr "Usuario de %s:"
+
+#: core/AtomWidgetLinks.php:21
+#: core/AtomWidgetLinks.php:143
+msgid "Links"
+msgstr "Enlaces"
+
+#: core/AtomWidgetLinks.php:21
+msgid "Your blogroll/links"
+msgstr "Los enlaces de tu blog"
+
+#: core/AtomWidgetLinks.php:25
+msgid "Blogroll"
+msgstr "Enlaces"
+
+#: core/AtomWidgetLinks.php:65
+#, php-format
+msgid "%s out of 10"
+msgstr "%s de 10"
+
+#: core/AtomWidgetLinks.php:69
+msgid "No links yet :("
+msgstr "Todavía no hay enlaces :("
+
+#: core/AtomWidgetLinks.php:97
+msgid "Link Category:"
+msgstr "Categoría de enlaces:"
+
+#: core/AtomWidgetLinks.php:99
+msgid "-- All categories --"
+msgstr "-- Todas las categorías --"
+
+#: core/AtomWidgetLinks.php:112
+msgid "Rating"
+msgstr "Valoración"
+
+#: core/AtomWidgetLinks.php:113
+msgid "URL"
+msgstr "URL"
+
+#: core/AtomWidgetLinks.php:114
+msgid "ID"
+msgstr "ID"
+
+#: core/AtomWidgetLinks.php:115
+msgid "Owner"
+msgstr "Propietario"
+
+#: core/AtomWidgetLinks.php:116
+msgid "Notes"
+msgstr "Notas"
+
+#: core/AtomWidgetLinks.php:123
+msgid "Hide Private Links"
+msgstr "Ocultar enlaces privados"
+
+#: core/AtomWidgetLinks.php:128
+msgid "Display Link Image"
+msgstr "Mostrar imagen del enlace"
+
+#: core/AtomWidgetLinks.php:133
+msgid "Display Link Rating"
+msgstr "Mostrar valoración del enlace"
+
+#: core/AtomWidgetLinks.php:138
+msgid "Display Link Description"
+msgstr "Mostrar descripción del enlace"
+
+#: core/AtomWidgetLogin.php:20
+msgid "Login"
+msgstr "Iniciar sesión"
+
+#: core/AtomWidgetLogin.php:20
+msgid "Login and Lost Password forms"
+msgstr "Formularios de inicio de sesión y recuperación de contraseña"
+
+#: core/AtomWidgetLogin.php:24
+msgid "Log in"
+msgstr "Iniciar sesión"
+
+#: core/AtomWidgetLogin.php:25
+msgid "Hello Guest. Login below if you have an account"
+msgstr "Hola Invitado, inicia sesión si tienes una cuenta"
+
+#: core/AtomWidgetLogin.php:52
+msgid "Please enter a valid user name and password"
+msgstr "Por favor, escribe un nombre de usuario y contraseña válidos"
+
+#: core/AtomWidgetLogin.php:104
+msgid "Login Successful, redirecting..."
+msgstr "Inicio de sesión correcto, redirigiendo..."
+
+#: core/AtomWidgetLogin.php:127
+#, php-format
+msgid "Welcome %s"
+msgstr "Bienvenido %s"
+
+#: core/AtomWidgetLogin.php:137
+#: core/AtomWidgetLogin.php:233
+#: core/hooks.php:1470
+msgid "Dashboard"
+msgstr "Escritorio"
+
+#: core/AtomWidgetLogin.php:140
+#: core/AtomWidgetLogin.php:245
+msgid "Write"
+msgstr "Escribir"
+
+#: core/AtomWidgetLogin.php:144
+#: core/AtomWidgetLogin.php:239
+msgid "Profile"
+msgstr "Perfil"
+
+#: core/AtomWidgetLogin.php:145
+msgid "Log Out"
+msgstr "Cerrar sesión"
+
+#: core/AtomWidgetLogin.php:160
+msgid "User"
+msgstr "Usuario"
+
+#: core/AtomWidgetLogin.php:161
+msgid "Password"
+msgstr "Contraseña"
+
+#: core/AtomWidgetLogin.php:165
+msgid "Log In"
+msgstr "Iniciar sesión"
+
+#: core/AtomWidgetLogin.php:173
+msgid "Remember me"
+msgstr "Recordarme"
+
+#: core/AtomWidgetLogin.php:179
+msgid "Lost your password?"
+msgstr "¿Has perdido tu contraseña?"
+
+#: core/AtomWidgetLogin.php:194
+msgid "Register"
+msgstr "Registrarse"
+
+#: core/AtomWidgetLogin.php:224
+msgid "Initial Status Text (or HTML):"
+msgstr "Texto de estado inicial (o HTML):"
+
+#: core/AtomWidgetLogin.php:229
+msgid "Welcome screen links (if enough permissions):"
+msgstr "Enlaces de pantalla de bienvenida (si se tienen suficientes permisos):"
+
+#: core/AtomWidgetLogin.php:257
+msgid "Log out"
+msgstr "Cerrar sesión"
+
+#: core/AtomWidgetMenu.php:17
+msgid "Menus"
+msgstr "Menús"
+
+#: core/AtomWidgetMenu.php:17
+msgid "Display a custom menu"
+msgstr "Mostrar un menú personalizado"
+
+#: core/AtomWidgetMenu.php:72
+msgid "No menus have been created yet."
+msgstr "Todavía no se han creado menús."
+
+#: core/AtomWidgetMenu.php:72
+msgid "Create some"
+msgstr "Crear alguno"
+
+#: core/AtomWidgetMenu.php:83
+msgid "Select Menu:"
+msgstr "Seleccionar menú:"
+
+#: core/AtomWidgetMenu.php:95
+msgid "Behaviour:"
+msgstr "Comportamiento:"
+
+#: core/AtomWidgetMenu.php:97
+msgid "Expanded"
+msgstr "Expandido"
+
+#: core/AtomWidgetMenu.php:98
+msgid "Collapsible, Standard"
+msgstr "Plegable, Estándar"
+
+#: core/AtomWidgetMenu.php:99
+msgid "Collapsible, Accordion style"
+msgstr "Plegable, Estilo acordeón"
+
+#: core/AtomWidgetMenu.php:104
+msgid "Expand/Collapse Fire Event:"
+msgstr "Acción para expandir/contraer:"
+
+#: core/AtomWidgetMenu.php:106
+#: core/AtomWidgetTabs.php:411
+msgid "Click"
+msgstr "Clic"
+
+#: core/AtomWidgetMenu.php:107
+#: core/AtomWidgetTabs.php:412
+msgid "Double-Click"
+msgstr "Doble clic"
+
+#: core/AtomWidgetMenu.php:108
+#: core/AtomWidgetTabs.php:413
+msgid "Mouse Over"
+msgstr "Puntero del ratón encima"
+
+#: core/AtomWidgetMenu.php:111
+#, php-format
+msgid "Note: Links with the %s URL will behave the same way as the arrows. You should use them on menus with children"
+msgstr "Nota: Los enlaces con la URL %s se comportarán de la misma manera que las flechas. Deberías usarlos en menús con hijos."
+
+#: core/AtomWidgetMeta.php:15
+#: core/AtomWidgetMeta.php:19
+msgid "Meta"
+msgstr "Meta"
+
+#: core/AtomWidgetMeta.php:15
+msgid "Log in/out, admin, feed and WordPress links"
+msgstr "Inicio/Cierre de sesión, administración, RSS y enlaces de WordPress"
+
+#: core/AtomWidgetMeta.php:45
+msgid "Syndicate this site using RSS 2.0"
+msgstr "Suscribirse a este sitio usando RSS 2.0"
+
+#: core/AtomWidgetMeta.php:45
+msgid "Entries <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr "<abbr title=\"Really Simple Syndication\">RSS</abbr> de entradas"
+
+#: core/AtomWidgetMeta.php:49
+msgid "The latest comments to all posts in RSS"
+msgstr "Los últimos comentarios de todas las entradas en RSS"
+
+#: core/AtomWidgetMeta.php:49
+msgid "Comments <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr "<abbr title=\"Really Simple Syndication\">RSS</abbr> de comentarios"
+
+#: core/AtomWidgetMeta.php:53
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr "Funciona con WordPress, una avanzada plataforma semántica de publicación personal."
+
+#: core/AtomWidgetMeta.php:57
+msgid "Theme developed by digitalnature"
+msgstr "Tema desarrollado por digitalnature"
+
+#: core/AtomWidgetMeta.php:89
+msgid "Links to display:"
+msgstr "Enlaces a mostrar:"
+
+#: core/AtomWidgetMeta.php:93
+msgid "Login / Logout / Site Admin"
+msgstr "Iniciar sesión / Cerrar sesión / Administrador del sitio"
+
+#: core/AtomWidgetMeta.php:98
+msgid "Post RSS"
+msgstr "RSS de entradas"
+
+#: core/AtomWidgetMeta.php:103
+msgid "Comment RSS"
+msgstr "RSS de comentarios"
+
+#: core/AtomWidgetMeta.php:108
+msgid "External: WordPress.org"
+msgstr "Externo: WordPress.org"
+
+#: core/AtomWidgetMeta.php:113
+msgid "External: digitalnature.eu"
+msgstr "Externo: digitalnature.eu"
+
+#: core/AtomWidgetPages.php:20
+#: core/AtomWidgetPages.php:28
+msgid "Pages"
+msgstr "Páginas"
+
+#: core/AtomWidgetPages.php:20
+msgid "Your site&#8217;s WordPress Pages"
+msgstr "Páginas de WordPress de tu sitio"
+
+#: core/AtomWidgetPages.php:105
+#: core/AtomWidgetTerms.php:189
+msgid "Display:"
+msgstr "Mostrar:"
+
+#: core/AtomWidgetPages.php:108
+msgid "All Pages"
+msgstr "Todas las páginas"
+
+#: core/AtomWidgetPages.php:113
+msgid "Children of the active page"
+msgstr "Hijos de la página activa"
+
+#: core/AtomWidgetPages.php:117
+#: core/AtomWidgetTerms.php:201
+msgid "Start from root"
+msgstr "Empezar por la raíz"
+
+#: core/AtomWidgetPages.php:123
+msgid "Children of:"
+msgstr "Hijos de:"
+
+#: core/AtomWidgetPages.php:145
+msgid "Sort by:"
+msgstr "Ordenar por:"
+
+#: core/AtomWidgetPages.php:147
+msgid "Page title"
+msgstr "Título de página"
+
+#: core/AtomWidgetPages.php:148
+msgid "Page order"
+msgstr "Orden de página"
+
+#: core/AtomWidgetPages.php:149
+msgid "Page ID"
+msgstr "ID de página"
+
+#: core/AtomWidgetPages.php:150
+msgid "Date, created"
+msgstr "Fecha, creado"
+
+#: core/AtomWidgetPages.php:151
+msgid "Date, modified"
+msgstr "Fecha, modificado"
+
+#: core/AtomWidgetPages.php:159
+msgid "Page IDs, separated by commas."
+msgstr "IDs de páginas, separados por comas."
+
+#: core/AtomWidgetPages.php:163
+#: core/AtomWidgetTerms.php:274
+msgid "Depth:"
+msgstr "Profundidad:"
+
+#: core/AtomWidgetPages.php:166
+#: core/AtomWidgetTerms.php:276
+msgid "0 = All levels"
+msgstr "0 = Todos los niveles"
+
+#: core/AtomWidgetPosts.php:19
+msgid "Posts"
+msgstr "Entradas"
+
+#: core/AtomWidgetPosts.php:19
+msgid "List posts based on filters you choose"
+msgstr "Lista entradas basándose en los filtros que tú elijas"
+
+#: core/AtomWidgetPosts.php:54
+msgid "Recent Posts"
+msgstr "Entradas recientes"
+
+#: core/AtomWidgetPosts.php:315
+#: core/AtomWidgetRecentComments.php:212
+msgid "Network (site-wide) content"
+msgstr "Contenido de la red (todo el sitio)"
+
+#: core/AtomWidgetPosts.php:317
+msgid "Get posts from all network blogs"
+msgstr "Obtener entradas de todos los blogs de la red"
+
+#: core/AtomWidgetPosts.php:342
+msgid "Date (Recent posts)"
+msgstr "Fecha (Entradas recientes)"
+
+#: core/AtomWidgetPosts.php:343
+msgid "Modified date (Recently modified)"
+msgstr "Fecha modificada (Modificadas recientemente)"
+
+#: core/AtomWidgetPosts.php:344
+msgid "Comment count"
+msgstr "Número de comentarios"
+
+#: core/AtomWidgetPosts.php:345
+msgid "View count"
+msgstr "Número de visitas"
+
+#: core/AtomWidgetPosts.php:346
+msgid "Title, alphabetically"
+msgstr "Título, alfabéticamente"
+
+#: core/AtomWidgetPosts.php:347
+msgid "Nothing, get random posts"
+msgstr "Nada, obtener entradas aleatorias"
+
+#: core/AtomWidgetPosts.php:366
+msgid "Show posts from:"
+msgstr "Mostrar entradas de:"
+
+#: core/AtomWidgetPosts.php:380
+#, php-format
+msgid "Content has max %s <em>words</em>"
+msgstr "El contenido tendrá como máximo %s <em>palabras</em>"
+
+#: core/AtomWidgetPosts.php:384
+msgid "Thumbnail Size:"
+msgstr "Tamaño de la imagen en miniatura"
+
+#: core/AtomWidgetPosts.php:395
+msgid "Get only context-related posts"
+msgstr "Obtener solo entradas relacionadas con el contexto"
+
+#: core/AtomWidgetPosts.php:401
+#: core/AtomWidgetTopCommenters.php:157
+#: core/AtomWidgetUsers.php:297
+msgid "Display mode"
+msgstr "Modo de visualización"
+
+#: core/AtomWidgetPosts.php:402
+#: core/AtomWidgetTopCommenters.php:158
+#: core/AtomWidgetUsers.php:298
+msgid "Full"
+msgstr "Completo"
+
+#: core/AtomWidgetPosts.php:403
+#: core/AtomWidgetTopCommenters.php:159
+#: core/AtomWidgetUsers.php:299
+msgid "Details"
+msgstr "Detalles"
+
+#: core/AtomWidgetPosts.php:404
+#: core/AtomWidgetTopCommenters.php:160
+#: core/AtomWidgetUsers.php:300
+msgid "Brief"
+msgstr "Sumario"
+
+#: core/AtomWidgetPosts.php:405
+#: core/AtomWidgetTopCommenters.php:161
+msgid "Post thumbnails"
+msgstr "Imágenes en miniatura de las entradas"
+
+#: core/AtomWidgetPosts.php:406
+#: core/AtomWidgetTopCommenters.php:162
+#: core/AtomWidgetUsers.php:302
+msgid "Custom Template"
+msgstr "Plantilla personalizada"
+
+#: core/AtomWidgetPosts.php:423
+#, php-format
+msgid "<strong>Important:</strong> %1$s sized thumbnails have to be created if you just added this widget, or if you're changing the thumbnail size. Read more about thumbnail sizes %2$s"
+msgstr "<strong>Importante:</strong> Se tienen que crear miniaturas de tamaño %1$s si acabas de agregar este widget o si cambias el tamaño de las miniaturas. Lee más sobre tamaños de miniaturas %2$s."
+
+#: core/AtomWidgetPosts.php:423
+msgid "here"
+msgstr "aquí"
+
+#: core/AtomWidgetRecentComments.php:20
+#: core/AtomWidgetRecentComments.php:36
+msgid "Recent Comments"
+msgstr "Comentarios recientes"
+
+#: core/AtomWidgetRecentComments.php:20
+msgid "The most recent comments"
+msgstr "Los últimos comentarios"
+
+#: core/AtomWidgetRecentComments.php:24
+#, php-format
+msgid "on %s"
+msgstr "en %s"
+
+#: core/AtomWidgetRecentComments.php:214
+msgid "Get comments from all network blogs"
+msgstr "Obtener comentarios de todos los blog de la red"
+
+#: core/AtomWidgetRecentComments.php:231
+#, php-format
+msgid "Content has max %s word(s)"
+msgstr "El contenido tendrá como máximo %s palabra(s)"
+
+#: core/AtomWidgetRecentComments.php:246
+#: core/AtomWidgetTerms.php:280
+msgid "Template:"
+msgstr "Plantilla:"
+
+#: core/AtomWidgetSearch.php:16
+msgid "Search"
+msgstr "Buscar"
+
+#: core/AtomWidgetSearch.php:16
+msgid "A search form for your site"
+msgstr "Un formulario de búsqueda para tu sitio"
+
+#: core/AtomWidgetSplitter.php:21
+msgid "Column Splitter"
+msgstr "Divisor de columna"
+
+#: core/AtomWidgetSplitter.php:21
+msgid "Splits area into 2 columns"
+msgstr "Dividir área en 2 columnas"
+
+#: core/AtomWidgetSplitter.php:72
+msgid "Widgets surrounded by splitters will be grouped into columns (two per row)."
+msgstr "Los widgets rodeados por divisores serán agrupados en columnas (dos por fila)."
+
+#: core/AtomWidgetTabs.php:23
+msgid "Tabbed Widgets"
+msgstr "Widgets en pestañas"
+
+#: core/AtomWidgetTabs.php:23
+msgid "Group arbitrary widgets into tabs"
+msgstr "Agrupa widgets arbitrarios en pestañas"
+
+#: core/AtomWidgetTabs.php:251
+msgid "This widget requires jQuery to be enabled"
+msgstr "Este widget requiere jQuery para estar habilitado"
+
+#: core/AtomWidgetTabs.php:268
+msgid "To add tabs, you must have at least one active arbitrary widget. Click save to refresh..."
+msgstr "Para añadir pestañas debes tener al menos un widget arbitrario activo. Haz clic en guardar para actualizar..."
+
+#: core/AtomWidgetTabs.php:287
+msgid "Create Tabs for:"
+msgstr "Crear pestañas para:"
+
+#: core/AtomWidgetTabs.php:400
+msgid "Transition effect:"
+msgstr "Efecto de transición:"
+
+#: core/AtomWidgetTabs.php:402
+msgid "-- None --"
+msgstr "-- Ninguno --"
+
+#: core/AtomWidgetTabs.php:403
+msgid "Fade"
+msgstr "Desvanecer"
+
+#: core/AtomWidgetTabs.php:404
+msgid "Toggle Height"
+msgstr "Cambiar altura"
+
+#: core/AtomWidgetTabs.php:409
+msgid "Switch-Tab event:"
+msgstr "Acción para cambiar de pestaña:"
+
+#: core/AtomWidgetTagCloud.php:17
+msgid "Tag Cloud"
+msgstr "Nube de etiquetas"
+
+#: core/AtomWidgetTagCloud.php:17
+msgid "Your most used tags in cloud format"
+msgstr "Tus etiquetas más usadas en formato de nube"
+
+#: core/AtomWidgetTagCloud.php:210
+#: core/AtomWidgetTerms.php:237
+msgid "Taxonomy:"
+msgstr "Taxonomía:"
+
+#: core/AtomWidgetTagCloud.php:221
+msgid "Max. number of tags to show:"
+msgstr "Número máximo de etiquetas a mostrar"
+
+#: core/AtomWidgetTagCloud.php:227
+msgid "Smallest:"
+msgstr "La más pequeña:"
+
+#: core/AtomWidgetTagCloud.php:239
+msgid "Largest:"
+msgstr "La más grande:"
+
+#: core/AtomWidgetTerms.php:19
+msgid "Terms"
+msgstr "Términos"
+
+#: core/AtomWidgetTerms.php:19
+msgid "A list of taxonomy terms like categories or post tags"
+msgstr "Una lista de términos de taxonomía como categorías o etiquetas de entrada"
+
+#: core/AtomWidgetTerms.php:23
+#, php-format
+msgid "View all posts filed under %s"
+msgstr "Ver todas las entradas en %s"
+
+#: core/AtomWidgetTerms.php:31
+msgid "Categories"
+msgstr "Categorías"
+
+#: core/AtomWidgetTerms.php:192
+msgid "All Terms"
+msgstr "Todos los términos"
+
+#: core/AtomWidgetTerms.php:197
+msgid "Children of the active term"
+msgstr "Hijos del término activo"
+
+#: core/AtomWidgetTerms.php:252
+msgid "Hierarchical?"
+msgstr "¿Jerárquico?"
+
+#: core/AtomWidgetTerms.php:255
+msgid "Hide empty?"
+msgstr "¿Ocultar vacíos?"
+
+#: core/AtomWidgetTerms.php:262
+#: core/AtomWidgetUsers.php:258
+msgid "Post count, descending"
+msgstr "Número de entradas, descendente"
+
+#: core/AtomWidgetTerms.php:264
+msgid "Slug"
+msgstr "Slug"
+
+#: core/AtomWidgetTerms.php:269
+msgid "Exclude (IDs separated by comma):"
+msgstr "Excluir (IDs separados por comas):"
+
+#: core/AtomWidgetText.php:17
+msgid "Arbitrary text, HTML/PHP or shortcodes"
+msgstr "Texto arbitrario, HTML/PHP o shortcodes"
+
+#: core/AtomWidgetText.php:17
+msgid "Arbitrary text, HTML or shortcodes"
+msgstr "Texto arbitrario, HTML o shortcodes"
+
+#: core/AtomWidgetText.php:18
+msgid "Text"
+msgstr "Texto"
+
+#: core/AtomWidgetText.php:86
+msgid "Toggle Visual &lt;&gt; HTML"
+msgstr "Cambiar Visual &lt;&gt; HTML"
+
+#: core/AtomWidgetText.php:97
+msgid "Automatically add paragraphs"
+msgstr "Añadir párrafos automáticamente"
+
+#: core/AtomWidgetText.php:104
+#, php-format
+msgid "Execute code within %s tags"
+msgstr "Ejecutar código entre etiquetas %s"
+
+#: core/AtomWidgetTopCommenters.php:19
+#: core/AtomWidgetTopCommenters.php:51
+msgid "Top Commenters"
+msgstr "Ranking de comentaristas"
+
+#: core/AtomWidgetTopCommenters.php:19
+msgid "People who frequently comment the blog"
+msgstr "Las personas que comentan frecuentemente en el blog"
+
+#: core/AtomWidgetTopCommenters.php:94
+#, php-format
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "%s comentario"
+msgstr[1] "%s comentarios"
+
+#: core/AtomWidgetTwitter.php:15
+msgid "Twitter"
+msgstr "Twitter"
+
+#: core/AtomWidgetTwitter.php:15
+msgid "Your latest Twitter updates"
+msgstr "Tus últimas actualizaciones de Twitter"
+
+#: core/AtomWidgetTwitter.php:25
+msgid "Tweets"
+msgstr "Tweets"
+
+#: core/AtomWidgetTwitter.php:185
+msgid "Could not retrieve tweets."
+msgstr "No se pudieron recuperar tweets."
+
+#: core/AtomWidgetTwitter.php:189
+msgid "Possible reasons:"
+msgstr "Posibles razones:"
+
+#: core/AtomWidgetTwitter.php:191
+msgid "Your host doesn't allow outgoing connections"
+msgstr "Tu host no permite conexiones salientes"
+
+#: core/AtomWidgetTwitter.php:192
+msgid "Your server has made too many requests and is being limited (try increasing the cache value)"
+msgstr "Tu servidor ha hecho demasiadas peticiones y ha sido limitado (prueba a aumentar el valor de caché)"
+
+#: core/AtomWidgetTwitter.php:193
+msgid "The user has protected his/her tweets"
+msgstr "El usuario ha protegido sus tweets"
+
+#: core/AtomWidgetTwitter.php:194
+msgid "Twitter may be down"
+msgstr "Twitter puede estar caído"
+
+#: core/AtomWidgetTwitter.php:263
+msgid "Show profile info"
+msgstr "Mostrar información de perfil"
+
+#: core/AtomWidgetTwitter.php:270
+#, php-format
+msgid "Keep data cached for %s minute(s)"
+msgstr "Mantener datos almacenados en caché durante %s minuto(s)"
+
+#: core/AtomWidgetUsers.php:16
+msgid "Users"
+msgstr "Usuarios"
+
+#: core/AtomWidgetUsers.php:16
+msgid "A list of users/authors from your blog"
+msgstr "Una lista de usuarios/autores de tu blog"
+
+#: core/AtomWidgetUsers.php:49
+msgid "Authors"
+msgstr "Autores"
+
+#: core/AtomWidgetUsers.php:151
+#, php-format
+msgid "%1$s (%2$s posts)"
+msgstr "%1$s (%2$s entradas)"
+
+#: core/AtomWidgetUsers.php:245
+msgid "Role"
+msgstr "Perfil"
+
+#: core/AtomWidgetUsers.php:247
+msgid "-- Any --"
+msgstr "-- Ninguno --"
+
+#: core/AtomWidgetUsers.php:255
+msgid "Sort by"
+msgstr "Ordenar por:"
+
+#: core/AtomWidgetUsers.php:259
+msgid "Date registered, newest first"
+msgstr "Fecha de registro, más recientes primero"
+
+#: core/AtomWidgetUsers.php:278
+msgid "User IDs, separated by commas."
+msgstr "IDs de usuarios, separados por comas."
+
+#: core/AtomWidgetUsers.php:301
+msgid "Avatar thumbnails"
+msgstr "Miniaturas de avatares"
+
+#: core/AtomWidgetUsers.php:301
+msgid "Avatars thumbnails"
+msgstr "Miniaturas de avatares"
+
+#: core/hooks.php:1367
+#, php-format
+msgid "Tags: %s"
+msgstr "Etiquetas: %s"
+
+#: core/hooks.php:1457
+#, php-format
+msgid "Your site is running on %1$s. %2$s requires at least %3$s. Please update your site even if you're not going to use this theme, because outdated applications expose you to security risks"
+msgstr "Tu sitio está funcionando con %1$s. %2$s requiere al menos %3$s. Por favor, actualiza tu sitio incluso si no vas a utilizar este tema, ya que las aplicaciones desactualizadas se exponen a riesgos de seguridad."
+
+#: core/hooks.php:1465
+#, php-format
+msgid "The site is temporarily down for maintainance. Come back in a few minutes, or login in <a%s>here</a> if you're de site admin"
+msgstr "Este sitio está fuera de servicio temporalmente por mantenimiento. Vuelve dentro de unos minutos o inicia sesión <a%s>aquí</a> si eres un administrador del sitio."
+
+#: core/hooks.php:1470
+#, php-format
+msgid "Go to your %s"
+msgstr "Ir a tu %s"
+
+#: core/hooks.php:1495
+#, php-format
+msgid "%s settings"
+msgstr "Configuración de %s"
+
+#: core/requests.php:90
+msgid "You can't vote your own comment :("
+msgstr "No puedes votar tu propio comentario :("
+
+#: core/requests.php:94
+msgid "You can only vote once :)"
+msgstr "Solo puedes votar una vez :)"
+
+#: core/requests.php:97
+msgid "Invalid vote"
+msgstr "Voto no válido"
+
+#: core/requests.php:103
+msgid "Failed."
+msgstr "Falló."
+
+#: core/shortcodes.php:39
+msgid "Please specify the column number / total column count"
+msgstr "Por favor, especifica el número de columna / número total de columnas"
+
+#: core/shortcodes.php:438
+#, php-format
+msgid "PR %s"
+msgstr "PR %s"
+
+#: core/shortcodes.php:477
+msgid "Please specify a valid service and user ID"
+msgstr "Por favor, especifica un servicio e ID de usuario válidos"
+
+#: core/shortcodes.php:520
+#, php-format
+msgid "Powered by %1$s and %2$s theme by %3$s"
+msgstr "Funciona con %1$s · Tema %2$s de %3$s · Traducido por <a href=\"http://www.ngeeks.com\">nGeeks.com</a>"
+
+#: core/shortcodes.php:541
+msgid "Copyright &copy;"
+msgstr "Copyright &copy;"
+
+#: core/shortcodes.php:560
+#, php-format
+msgid "%1$s queries in %2$s seconds (%3$sM)"
+msgstr "%1$s peticiones en %2$s segundos (%3$s MB)"
+
+#: mods/AdBlocks/module.php:35
+msgid "Ads"
+msgstr "Anuncios"
+
+#: mods/AdBlocks/module.php:108
+msgid "This section helps you create advertisment blocks in non-widgetized areas. For widgetized areas such as sidebars, simply use a text widget to display your ads."
+msgstr "Esta sección te ayuda a crear bloques de publicidad en áreas sin widgets. Para áreas con widgets como las barras laterales, usa simplemente un widget de texto para mostrar tus anuncios."
+
+#: mods/AdBlocks/module.php:111
+msgid "Create New Ad"
+msgstr "Crear nuevo anuncio"
+
+#: mods/AdBlocks/module.php:146
+msgid "Single Post Pages"
+msgstr "Páginas de entrada individual"
+
+#: mods/AdBlocks/module.php:156
+#: mods/AdBlocks/module.php:163
+msgid "After Header"
+msgstr "Después de la cabecera"
+
+#: mods/AdBlocks/module.php:157
+#: mods/AdBlocks/module.php:164
+msgid "Before Main"
+msgstr "Antes del contenido principal"
+
+#: mods/AdBlocks/module.php:158
+#: mods/AdBlocks/module.php:165
+msgid "After Main"
+msgstr "Después del contenido principal"
+
+#: mods/AdBlocks/module.php:159
+msgid "Before Comment"
+msgstr "Antes de los comentarios"
+
+#: mods/AdBlocks/module.php:166
+msgid "Before Post Teaser"
+msgstr "Antes del resumen de entrada"
+
+#: mods/AdBlocks/module.php:167
+msgid "After Post Teaser"
+msgstr "Después del resumen de entrada"
+
+#: mods/AdBlocks/module.php:179
+msgid "Show on:"
+msgstr "Mostrar en:"
+
+#: mods/AdBlocks/module.php:201
+msgid "When:"
+msgstr "Cuando:"
+
+#: mods/AdBlocks/module.php:203
+msgid "Anytime"
+msgstr "En cualquier momento"
+
+#: mods/AdBlocks/module.php:205
+msgid "Comments are open"
+msgstr "Los comentarios están abiertos"
+
+#: mods/AdBlocks/module.php:210
+msgid "Anyone"
+msgstr "Cualquiera"
+
+#: mods/AdBlocks/module.php:211
+msgid "Visitor only"
+msgstr "Solo visitantes"
+
+#: mods/PhotoGallery/module.php:26
+msgid "Slide Horizontally"
+msgstr "Deslizar horizontalmente"
+
+#: mods/PhotoGallery/module.php:27
+msgid "Slide Vertically"
+msgstr "Deslizar verticalmente"
+
+#: mods/PhotoGallery/module.php:28
+msgid "Random Tiles"
+msgstr "Cuadros aleatorios"
+
+#: mods/PhotoGallery/module.php:29
+msgid "Horizontal Tiles"
+msgstr "Cuadros horizontales"
+
+#: mods/PhotoGallery/module.php:30
+msgid "Diagonal Tiles"
+msgstr "Cuadros diagonales"
+
+#: mods/PhotoGallery/module.php:31
+msgid "Spiral"
+msgstr "Espiral"
+
+#: mods/PhotoGallery/module.php:32
+msgid "Random Stripes"
+msgstr "Franjas aleatorias"
+
+#: mods/PhotoGallery/module.php:33
+msgid "Stripe Wave"
+msgstr "Ola de franjas"
+
+#: mods/PhotoGallery/module.php:34
+msgid "Curtain"
+msgstr "Cortina"
+
+#: mods/PhotoGallery/module.php:35
+msgid "Interweave"
+msgstr "Entrelazado"
+
+#: mods/PhotoGallery/module.php:69
+msgid "Photo Gallery"
+msgstr "Galería de imágenes"
+
+#: mods/PhotoGallery/module.php:105
+msgid "Content source"
+msgstr "Fuente de contenido"
+
+#: mods/PhotoGallery/module.php:110
+#, php-format
+msgid "%s that I mark as featured"
+msgstr "%s marcados como destacados"
+
+#: mods/PhotoGallery/module.php:110
+msgid "Media items"
+msgstr "Elementos multimedia"
+
+#: mods/PhotoGallery/module.php:115
+#: mods/PhotoGallery/module.php:126
+msgid "Plugin not installed"
+msgstr "Plugin no instalado"
+
+#: mods/PhotoGallery/module.php:117
+msgid "Atom gallery"
+msgstr "Atom gallery"
+
+#: mods/PhotoGallery/module.php:119
+#: mods/PhotoGallery/module.php:130
+msgid "-- All galleries --"
+msgstr "-- Todas las galerías --"
+
+#: mods/PhotoGallery/module.php:128
+msgid "NextGEN gallery"
+msgstr "NextGEN Gallery"
+
+#: mods/PhotoGallery/module.php:140
+msgid "Options"
+msgstr "Opciones"
+
+#: mods/PhotoGallery/module.php:143
+msgid "Dimensions:"
+msgstr "Dimensiones:"
+
+#: mods/PhotoGallery/module.php:147
+msgid "(Images of this size must already exist)"
+msgstr "(Las imágenes de este tamaño ya deben existir)"
+
+#: mods/PhotoGallery/module.php:151
+msgid "Number of items to show:"
+msgstr "Número de elementos a mostrar:"
+
+#: mods/PhotoGallery/module.php:157
+#, php-format
+msgid "Exclude items older than %s day(s)"
+msgstr "Excluir elementos con más de %s día(s)"
+
+#: mods/PhotoGallery/module.php:162
+#, php-format
+msgid "Auto-Cycle every %s second(s)"
+msgstr "Cambiar diapositiva cada %s segundo(s)"
+
+#: mods/PhotoGallery/module.php:163
+msgid "(0 to disable auto-play)"
+msgstr "(0 para desactivar reproducción automática)"
+
+#: mods/PhotoGallery/module.php:167
+msgid "Slides link to:"
+msgstr "La diapositiva enlaza a:"
+
+#: mods/PhotoGallery/module.php:169
+msgid "Original image"
+msgstr "Imagen original"
+
+#: mods/PhotoGallery/module.php:170
+msgid "Post URL"
+msgstr "URL de la entrada del elemento multimedia"
+
+#: mods/PhotoGallery/module.php:171
+msgid "Attached (parent) post URL, if any"
+msgstr "URL de la entrada adjunta (padre), si existe"
+
+#: mods/PhotoGallery/module.php:172
+msgid "Nothing"
+msgstr "Nada"
+
+#: mods/PhotoGallery/module.php:180
+msgid "Captions:"
+msgstr "Leyenda:"
+
+#: mods/PhotoGallery/module.php:182
+msgid "Image title and description"
+msgstr "Título y descripción de la imagen"
+
+#: mods/PhotoGallery/module.php:183
+msgid "Filtered content from the attached post, if any"
+msgstr "Contenido filtrado de la entrada adjunta, si existe"
+
+#: mods/PhotoGallery/module.php:184
+msgid "Excerpt from the attached post, if any"
+msgstr "Extracto de la entrada adjunta, si existe"
+
+#: mods/PhotoGallery/module.php:192
+msgid "Previous/Next links (on mouse over)"
+msgstr "Enlaces Anterior/Siguiente (al pasar el ratón por encima)"
+
+#: mods/PhotoGallery/module.php:199
+msgid "Pager (on mouse over)"
+msgstr "Paginación (al pasar el ratón por encima)"
+
+#: mods/PhotoGallery/module.php:202
+msgid "Effects"
+msgstr "Efectos"
+
+#: mods/PhotoGallery/module.php:217
+msgid "Visible on:"
+msgstr "Visible en:"
+
+#: mods/SocialMediaIcons/module.php:33
+msgid "My Twitter"
+msgstr "Mi Twitter"
+
+#: mods/SocialMediaIcons/module.php:58
+msgid "Failed to create sprite image with the selected icons. Make sure your upload directory is writable"
+msgstr "No se pudo crear la imagen sprite con los iconos seleccionados. Asegúrate de que tu directorio de subida tiene permisos de escritura."
+
+#: mods/SocialMediaIcons/module.php:62
+msgid "Social-Media Icons"
+msgstr "Iconos de medios sociales"
+
+#: mods/SocialMediaIcons/module.php:310
+msgid "Drag and drop icons below to enable or disable them."
+msgstr "Arrastrar y soltar iconos de abajo para activarlos o desactivarlos."
+
+#: mods/SocialMediaIcons/module.php:320
+msgid "Active icons"
+msgstr "Iconos activos"
+
+#: mods/SocialMediaIcons/module.php:338
+msgid "Label"
+msgstr "Etiqueta"
+
+#: mods/SocialMediaIcons/module.php:343
+msgid "Target URI"
+msgstr "URI de destino"
+
+#: mods/SocialMediaIcons/module.php:351
+msgid "Inactive icons"
+msgstr "Iconos inactivos"
+
+#: mods/SocialMediaIcons/module.php:364
+#, php-format
+msgid "You can also include your own icons within this list, by copying them in %s"
+msgstr "También puedes incluir tus propios iconos en esta lista, copiándolos en: %s"
+
+#: mods/SocialMediaIcons/module.php:368
+msgid "Activate a child theme to add your own icons in this list."
+msgstr "Activa un tema hijo para añadir tus propios iconos a esta lista."
+
+#~ msgid "Featured gallery"
+#~ msgstr "Galería de destacados"
+
+#~ msgid "Important:"
+#~ msgstr "Importante:"
+
+#~ msgid "Images must have at least a %s pixel resolution."
+#~ msgstr "Las imágenes deben tener al menos %s píxeles de resolución."

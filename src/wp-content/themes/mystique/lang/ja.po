@@ -1,0 +1,3103 @@
+msgid ""
+msgstr ""
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: yast.info <yastinfo@gmail.com>\n"
+"Last-Translator: yast - http://yast.info <yastinfo@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"PO-Revision-Date: 2012-02-13 18:15:03\n"
+"POT-Creation-Date: 2012-02-13 18:15:03\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Project-Id-Version: Mystique 3.2.9.1\n"
+"Report-Msgid-Bugs-To: wp-polyglots@lists.automattic.com\n"
+"X-Generator: ATOM 2.0 r14 (Translate Module)\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _a;_ae;_an:1,2;nt:1,2;nte:1,2;t;te\\n\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-SearchPath-0: \\var\\www\\wordpress\\wp-content\\themes\\mystique\n"
+"X-Poedit-SearchPath-1: .\\n\"\n"
+"X-Poedit-SearchPath-2: ..\\n\"\n"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:609
+#, php-format
+msgid "%s settings"
+msgstr "%s 設定"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1015
+#, php-format
+msgid "%s year ago"
+msgid_plural "%s years ago"
+msgstr[0] "%s 年前"
+msgstr[1] "%s 年前"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1016
+#, php-format
+msgid "%s month ago"
+msgid_plural "%s months ago"
+msgstr[0] "%s ヶ月前"
+msgstr[1] "%s ヶ月前"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1017
+#, php-format
+msgid "%s week ago"
+msgid_plural "%s weeks ago"
+msgstr[0] "%s 週間前"
+msgstr[1] "%s 週間前"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1018
+#, php-format
+msgid "%s day ago"
+msgid_plural "%s days ago"
+msgstr[0] "%s 日前"
+msgstr[1] "%s 日前"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1019
+#, php-format
+msgid "%s hour ago"
+msgid_plural "%s hours ago"
+msgstr[0] "%s 時間前"
+msgstr[1] "%s 時間前"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1020
+#, php-format
+msgid "%s minute ago"
+msgid_plural "%s minutes ago"
+msgstr[0] "%s 分前"
+msgstr[1] "%s 分前"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1021
+#, php-format
+msgid "%s second ago"
+msgid_plural "%s seconds ago"
+msgstr[0] "%s 秒前"
+msgstr[1] "%s 秒前"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1443
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1451
+#, php-format
+msgid "Archive for %s"
+msgstr "%s のアーカイブ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1455
+#, php-format
+msgid "Archive for year %s"
+msgstr "%s 年のアーカイブ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1465
+#, php-format
+msgid "Search results for %s"
+msgstr "%s の検索結果"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1469
+msgid "404 Not Found"
+msgstr "404 Not Found"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1475
+#, php-format
+msgid "Page %s"
+msgstr "ページ %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1479
+#, php-format
+msgid "Comment Page %s"
+msgstr "コメントページ %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1776
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1871
+msgid "Home Page"
+msgstr "ホームページ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1776
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1871
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:3355
+msgid "Home"
+msgstr "Home"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1800
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1884
+msgid "Search Website"
+msgstr "ウェブサイトの検索"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2059
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:199
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1015
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1819
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3087
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3353
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5686
+msgid "Show More"
+msgstr "Show More"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2068
+msgid "&laquo; Previous"
+msgstr "&laquo; 前へ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2113
+msgid "Next &raquo;"
+msgstr "次へ &raquo;"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2693
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1589
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4564
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5655
+msgid "Name"
+msgstr "名前"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2693
+msgid "(required)"
+msgstr "(必須)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2694
+msgid "E-mail"
+msgstr "E-mail"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2694
+msgid "(required, will not be published)"
+msgstr "(必須/公開されません)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2694
+msgid "(will not be published)"
+msgstr "(公開されません)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2695
+msgid "Website"
+msgstr "ウェブサイト"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:3379
+#, php-format
+msgid "Search: %s"
+msgstr "検索: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:3402
+#, php-format
+msgid "Archives: %s"
+msgstr "アーカイブ: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:3970
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5439
+msgid "Edit"
+msgstr "編集"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:4662
+msgid "More &gt;"
+msgstr "More &gt;"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:4947
+msgid "Anonymous"
+msgstr "Anonymous"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:4976
+#, php-format
+msgid "Share this post on %s"
+msgstr "%s でこの投稿をシェアします"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5302
+#, php-format
+msgid "Posts by %1$s (%2$s)"
+msgstr "%1$s (%2$s) による投稿"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5302
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5523
+#, php-format
+msgid "Posts by %s"
+msgstr "%s による投稿"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5446
+msgid "Delete"
+msgstr "削除"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5452
+msgid "Spam"
+msgstr "スパム"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5457
+msgid "Approve"
+msgstr "承認"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5468
+msgid "Reply"
+msgstr "返信"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5473
+msgid "Quote"
+msgstr "引用"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5592
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:288
+msgid "Show"
+msgstr "表示"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:843
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:893
+msgid "Loading..."
+msgstr "ロード中..."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:844
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2096
+msgid "Show Page Visibility Options"
+msgstr "ページの表示オプションを表示する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:845
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2096
+msgid "Hide Page Visibility Options"
+msgstr "ページの表示オプションを隠す"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:846
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2016
+msgid "Checking..."
+msgstr "確認中..."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:847
+msgid "It appears that your home page has javascript errors on it. Deactivate all plugins, then activate them back one by one to find out which one is causing errors."
+msgstr "サイトでjavascriptエラーが発生しています。全てのプラグインを無効にし、原因となるプラグインを見つけるために1つずつ有効にして下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:848
+msgid "Uploading"
+msgstr "Uploading"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:849
+msgid "Try Another Image?"
+msgstr "他の画像をトライしますか？"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:850
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:986
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1023
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1064
+msgid "Change Image"
+msgstr "画像の変更"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:851
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:986
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1023
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1064
+msgid "Upload Image"
+msgstr "画像のアップロード"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1443
+msgid "You can't vote your own comment :("
+msgstr "自分のコメントに投票は出来ません"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1447
+msgid "You can only vote once :)"
+msgstr "一度のみ投票可能です"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1451
+msgid "Invalid vote"
+msgstr "無効投票"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1458
+msgid "Failed."
+msgstr "失敗しました"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1501
+#, php-format
+msgid "%s debug info"
+msgstr "%s デバッグ情報"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1562
+#, php-format
+msgid "Your site is running on %1$s. %2$s requires at least %3$s. Please update your site even if you're not going to use this theme, because outdated applications expose you to security risks"
+msgstr "このサイトは、%1$s 上で動作しています。 %2$s は少なくとも %3$s を要求します。時代遅れのアプリケーションは、セキュリティリスクにさらされるので、このテーマを使わない場合でもサイトをアップデートして下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1570
+#, php-format
+msgid "The site is temporarily down for maintainance. Come back in a few minutes, or login in <a%s>here</a> if you're the site admin"
+msgstr "サイトは、メンテナンスのために一時的にダウンしています。数分後に再度確認するか、あなたがこのサイトの管理者の場合、 <a%s> ここ </a> からログインして下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1576
+#, php-format
+msgid "Go to your %s"
+msgstr "%s へ行く"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1576
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-shortcodes.php:110
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1948
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2141
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1597
+#, php-format
+msgid "To make small CSS customizations you can use the %1$s option from the theme settings. For extensive customizations activate and edit the %2$s theme if available, or create your own child theme. Read the %3$s for more information."
+msgstr "小規模なCSSのカスタマイズのために、テーマ設定から %1$s オプションを使用することが出来ます。大規模なカスタマイズのためには、可能であるならば %2$s テーマを編集するか、子テーマを作成します。詳細は、 %3$s を読んで下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1598
+msgid "User CSS"
+msgstr "ユーザCSS"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1600
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:731
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:774
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1022
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3111
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3362
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4587
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5099
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5708
+msgid "documentation"
+msgstr "ドキュメント"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1603
+msgid "Do not edit core theme files because you will loose any changes you make here when you update!"
+msgstr "アップデートした際に変更が失われるためコアテーマファイルの編集をしないで下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1665
+msgid "Stop spamming dude!"
+msgstr "スパムを止めてください！"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2133
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:288
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:160
+msgid "Blog Homepage"
+msgstr "Blogホームページ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2134
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1670
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:294
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:161
+msgid "Search Results"
+msgstr "検索結果"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2135
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1671
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:292
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:162
+msgid "Author Archives"
+msgstr "投稿者アーカイブ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2136
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1672
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:293
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:163
+msgid "Date-based Archives"
+msgstr "日付ベースアーカイブ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2137
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1673
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:291
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:164
+msgid "Tag Archives"
+msgstr "タグアーカイブ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2138
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1674
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:290
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:165
+msgid "Category Archives"
+msgstr "カテゴリーアーカイブ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2180
+msgid "Show this widget on:"
+msgstr "ウィジェットの表示箇所:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2197
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1698
+#, php-format
+msgid "Single: %s"
+msgstr "シングル: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2207
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1712
+#, php-format
+msgid "Tax Archive: %s"
+msgstr "Tax アーカイブ: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2223
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1762
+#, php-format
+msgid "Page: %s"
+msgstr "ページ: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2232
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:358
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:332
+msgid "To:"
+msgstr "表示対象者:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2237
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1617
+msgid "Unregistered user (Visitor)"
+msgstr "未登録ユーザ (ビジター)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2260
+#, php-format
+msgid "To include this widget into your posts or pages use one of the following shortcodes: %s"
+msgstr "このウィジェットを投稿やページに含めるには、次のいずれかのショートコードを利用します: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2452
+msgid "Featured"
+msgstr "Featured"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2522
+#, php-format
+msgid "You can customize your %1$s theme from the <%2$s>theme settings</a> page."
+msgstr "<%2$s>テーマ設定</a> ページから %1$s テーマのカスタマイズを行なうことができます。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:264
+msgid "Insert Atom Element"
+msgstr "Atomエレメントを挿入する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:312
+msgid "Nothing to configure in single column mode"
+msgstr "シングルカラムモードでの設定はありません"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:543
+msgid "You don't have sufficient permissions to change this option"
+msgstr "このオプションを変更するためのパーミッションがありません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:578
+msgid "You can add HTML code."
+msgstr "HTMLコードの追加が可能です。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:578
+msgid "HTML is allowed, but some tags may be filtered out for security reasons."
+msgstr "HTMLは許可されますが、一部のタグはセキュリティ上の理由から除外されることがあります。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:695
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:502
+msgid "Save Changes"
+msgstr "変更を保存"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:711
+msgid "User-defined code"
+msgstr "ユーザー定義のコード"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:720
+msgid "Only edit this if you know what you're doing!"
+msgstr "Only edit this if you know what you're doing!"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:729
+#, php-format
+msgid "The code you add here is included in the front-end on initialization. This is almost the same thing as editing the %1$s file from the theme directory, the difference is that the changes you make here are preserved after theme updates. Read the %2$s for more information."
+msgstr "ここで追加したコードは、初期化時にフロントエンドに含まれます。これはテーマディレクトリの %1$s ファイルを編集していることとほぼ同じです。違いは、ここで加えた変更がテーマのアップデート後に保存されていることです。詳細に関しては %2$s を読んで下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:736
+#, php-format
+msgid "This will affect all blogs using the %s theme!"
+msgstr "%s テーマを使用している全てのブログに影響します！"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:745
+#, php-format
+msgid "Data is saved to %s."
+msgstr "データは、 %s に保存されています。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:748
+#, php-format
+msgid "To use this function you must have an active child theme of %s, and give WordPress write permissions to the child theme folder."
+msgstr "この機能を使用するためには、 %s の有効な子テーマを持っている必要があります。そして子テーマディレクトリに書き込み権を与える必要があります。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:767
+#, php-format
+msgid "Check %s to see existing theme classes and properties, which you can redefine here."
+msgstr "再定義可能な既存テーマのクラスやプロパティを見るには %s をチェックして下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:769
+#, php-format
+msgid "All URLs must have absolute paths. You can use the %1$s keyword to point to the %2$s."
+msgstr "全てのURLは、絶対パスである必要があります。 %2$s を指すために、 %1$s キーワードを使用することが可能です。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:769
+msgid "parent theme URL"
+msgstr "親テーマのURL"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:772
+#, php-format
+msgid "To get the child theme URL use %s."
+msgstr "子テーマのURLを得るために、 %s を使います。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:774
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1022
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3111
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3362
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4587
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5099
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5708
+#, php-format
+msgid "Read the %s to see all available keywords."
+msgstr "利用可能な全てのキーワードを見るために %s を読んで下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:796
+msgid "General Info"
+msgstr "一般情報"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:799
+#, php-format
+msgid "Core (ATOM) version: %s"
+msgstr "コア(ATOM) バージョン %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:802
+#, php-format
+msgid "Theme Version: %s"
+msgstr "テーマバージョン: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:805
+#, php-format
+msgid "(Child theme of %s)"
+msgstr "(%s の子テーマ)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:811
+msgid "Check for update"
+msgstr "アップデートを確認する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:817
+msgid "Theme documentation"
+msgstr "テーマのドキュメント"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:818
+msgid "Project Homepage"
+msgstr "プロジェクトのホームページ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:836
+msgid "Available Languages"
+msgstr "利用可能な言語"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:843
+#, php-format
+msgid "%1$s - Translator: %2$s (%3$s)"
+msgstr "%1$s - 翻訳者: %2$s (%3$s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:851
+msgid "Import / export / reset or backup Theme Options"
+msgstr "テーマオプションのインポート/エクスポート/リセット/バックアップ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:853
+msgid "If you wish to import or export theme settings from another website that's using this theme, you may do so here. Below you can copy the current settings stored as a encoded string, or paste new settings..."
+msgstr "このテーマを利用している他のウェブサイトからテーマの設定をインポートやエクスポート可能です。以下の文字列のコードをコピーし、現在のテーマの設定を保存したり、下のボックスに新しい設定を貼り付けたりすることも出来ます。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:863
+msgid "Reset options to defaults"
+msgstr "テーマ設定をデフォルトにリセットする"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:863
+msgid "Reset all theme settings to the default values? Are you sure?"
+msgstr "全てのテーマ設定をデフォルトにリセットします。よろしいですか？"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:864
+msgid "Import options"
+msgstr "テーマ設定のインポート"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:864
+msgid "Import these settings? Are you sure?"
+msgstr "この設定をインポートします。よろしいですか？"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:902
+msgid "Layout Style (Global)"
+msgstr "全体的なレイアウトスタイル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:906
+msgid "One column (No sidebars)"
+msgstr "1カラム (サイドバーなし)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:907
+msgid "Two columns, left sidebar"
+msgstr "2カラム/左サイドバー"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:908
+msgid "Two columns, right sidebar"
+msgstr "2カラム/右サイドバー"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:909
+msgid "Three columns"
+msgstr "3カラム"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:910
+msgid "Three columns, sidebars to the left"
+msgstr "3カラム/左サイドバー"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:911
+msgid "Three columns, sidebars to the right"
+msgstr "3カラム/右サイドバー"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:916
+#, php-format
+msgid "Note that widget visibility options can be used to override this setting for individual pages or posts (you can also select the appropriate template when editing pages, or use the %s custom field)"
+msgstr "ウィジェットの表示オプションが、個々のページや投稿のためのこの設定を上書きできることに注意してください(また、ページ編集時や %s  カスタムフィールドを使用する際に適切なテンプレートを選択することが可能です)。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:925
+msgid "Column Sizes"
+msgstr "カラムサイズ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:950
+msgid "Page Width"
+msgstr "ページ幅"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:956
+#, php-format
+msgid "Fixed (%s)"
+msgstr "固定 (%s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:963
+#, php-format
+msgid "Fluid, but not more than %s pixels"
+msgstr "可変(上限を %s ピクセルとする)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:970
+msgid "Semi-Fluid (Fixed Sidebars)"
+msgstr "半可変 (固定されたサイドバー)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:981
+msgid "Site Title (Logo)"
+msgstr "サイトタイトル (ロゴ)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:984
+msgid "Current logo image"
+msgstr "現在のロゴイメージ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:985
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1022
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1063
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:369
+msgid "Remove"
+msgstr "削除"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:997
+msgid "Styles &amp; colors"
+msgstr "色とスタイル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1007
+msgid "use custom styles"
+msgstr "カスタムスタイルを使用する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1016
+msgid "Page Background"
+msgstr "ページ背景"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1020
+msgid "Current background image"
+msgstr "現在の背景イメージ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1041
+msgid "Header Background"
+msgstr "ヘッダー背景"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1058
+msgid "Favicon"
+msgstr "Favicon"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1061
+msgid "Current favicon"
+msgstr "現在のfavicon"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1094
+#, php-format
+msgid "Modules act like plugins that can further extend %s. Keep in mind that by disabling a module your are removing its options as well (if it has any)"
+msgstr "モジュールは、プラグインのように振る舞い %s の機能を拡張することが出来ます。モジュールを無効にすると、そのモジュールにオプションがあった場合、そのオプションの設定が消えることにご注意下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1103
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:197
+msgid "Title"
+msgstr "タイトル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1104
+msgid "Type"
+msgstr "タイプ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1105
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:258
+msgid "Author"
+msgstr "投稿者/作者"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1106
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1595
+msgid "Description"
+msgstr "説明"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1145
+msgid "Currently there are no modules installed."
+msgstr "現在、インストールされたモジュールはありません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1188
+msgid "Update"
+msgstr "アップデート"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1211
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1307
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1545
+msgid "You are not authorised to perform this operation."
+msgstr "この操作を実行する権限がありません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1227
+msgid "Import failed. Invalid settings. "
+msgstr "インポートに失敗しました。無効な設定です。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1228
+msgid "Settings saved, but failed to update user functions. Is your child theme directory writable?"
+msgstr "設定は保存されましたが、ユーザ関数のアップデートに失敗しました。子テーマディレクトリは書き込み可能ですか？"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1242
+msgid "Settings saved."
+msgstr "設定が保存されました。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1242
+msgid "View site"
+msgstr "サイトを見る"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1257
+#, php-format
+msgid "<strong>There is a new version of %1$s available</strong>. <a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">View %1$s %3$s details</a> or notify the site administrator."
+msgstr "<strong>利用可能な %1$s の新しいバージョンがあります</strong>。<a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\"> %1$s %3$s の詳細を見る</a> か、サイト管理者に通知します。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1259
+#, php-format
+msgid "<strong>There is a new version of %1$s available</strong>. <a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">View %1$s %3$s details</a> or <a href=\"%4$s\" >upgrade automatically</a>."
+msgstr "<strong>利用可能な %1$s の新しいバージョンがあります</strong>。<a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\"> %1$s %3$s の詳細を見る</a> か、<a href=\"%4$s\" >自動アップグレード</a>します。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1418
+#, php-format
+msgid "%s is available"
+msgstr "%s が利用可能です"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1420
+msgid "You have the latest version"
+msgstr "最新バージョンを利用しています"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1553
+#, php-format
+msgid "Upload Error: %s"
+msgstr "アップロードエラー: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1578
+#, php-format
+msgid "Latest News from %s"
+msgstr "%s からの最新ニュース"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1669
+msgid "Blog"
+msgstr "Blog"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-shortcodes.php:51
+msgid "Please specify the column number / total column count"
+msgstr "カラム番号 / 総カラム数を指定して下さい"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-shortcodes.php:104
+msgid "RSS Feeds"
+msgstr "RSSフィード"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-shortcodes.php:110
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1879
+msgid "Log in"
+msgstr "ログイン"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-shortcodes.php:476
+#, php-format
+msgid "PR %d"
+msgstr "PR %d"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-shortcodes.php:518
+msgid "Please specify a valid service and user ID"
+msgstr "有効なサービス及びユーザISを指定して下さい"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-shortcodes.php:560
+#, php-format
+msgid "Powered by %1$s and %2$s theme by %3$s"
+msgstr "Powered by %1$s and %2$s theme by %3$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-shortcodes.php:586
+msgid "Copyright &copy;"
+msgstr "Copyright &copy;"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:189
+#, php-format
+msgid "Show next %d entries"
+msgstr "次の %d エントリーを表示する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:488
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:491
+msgid "Archives"
+msgstr "Archives"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:489
+msgid "Archives of your site's posts"
+msgstr "サイトの投稿のアーカイブ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:584
+#, php-format
+msgid "%1$s %2$d"
+msgstr "%1$s %2$d"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:670
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2939
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4169
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5580
+msgid "Show All"
+msgstr "Show All"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:678
+msgid "Select Day:"
+msgstr "日にちを選択して下さい:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:679
+msgid "Select Week:"
+msgstr "週を選択して下さい:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:680
+msgid "Select Month:"
+msgstr "月を選択して下さい:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:681
+msgid "Select Year:"
+msgstr "年を選択して下さい:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:742
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:976
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1570
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1807
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2127
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2281
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2436
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2652
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3021
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3332
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4224
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4535
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4822
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5064
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5373
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5638
+msgid "Title:"
+msgstr "タイトル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:747
+msgid "Type:"
+msgstr "タイプ:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:749
+msgid "Yearly"
+msgstr "年別"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:750
+msgid "Monthly"
+msgstr "月別"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:751
+msgid "Weekly"
+msgstr "週別"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:752
+msgid "Daily"
+msgstr "日別"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:757
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1397
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3026
+msgid "Post Type:"
+msgstr "タイプ:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:767
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1620
+msgid "Limit to:"
+msgstr "次に制限します:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:768
+msgid "Entries"
+msgstr "エントリー"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:775
+msgid "Show post count"
+msgstr "投稿数を表示する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:780
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4552
+msgid "Show as dropdown"
+msgstr "ドロップダウンとして表示する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:786
+msgid "Day archive date format:"
+msgstr "日別アーカイブの日付フォーマット"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:791
+msgid "Week archive date format:"
+msgstr "週別アーカイブの日付フォーマット"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:827
+msgid "Network Blogs"
+msgstr "ネットワークブログ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:828
+msgid "A list of site blogs"
+msgstr "サイトブログのリスト"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:832
+msgid "Recently updated blogs"
+msgstr "最近アップデートされたブログ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:981
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1587
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3035
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4562
+msgid "Order by:"
+msgstr "順序:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:983
+msgid "Last Update"
+msgstr "Last Update"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:984
+msgid "Registered Date"
+msgstr "登録日"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:985
+msgid "Site ID"
+msgstr "サイトID"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:986
+msgid "Nothing, Randomize"
+msgstr "なし,ランダムに"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:991
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1812
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3069
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3337
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5069
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5383
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5680
+msgid "How many entries to display?"
+msgstr "いくつのエントリーを表示しますか？"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:996
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2668
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5079
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5673
+msgid "Exclude:"
+msgstr "除外する:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:998
+msgid "Site IDs, separated by commas."
+msgstr "サイトIDをカンマで区切ります。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1004
+msgid "Exclude sites marked as mature"
+msgstr "Matureとしてマークされたサイトを除外する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1008
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3347
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5074
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5690
+msgid "Avatar Size:"
+msgstr "アバターサイズ:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1009
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3082
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3348
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5075
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5691
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:257
+msgid "pixels"
+msgstr "ピクセル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1015
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1819
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3087
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3353
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5686
+#, php-format
+msgid "Display %s Link"
+msgstr "%s リンクを表示する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1058
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1216
+msgid "Calendar"
+msgstr "Calendar"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1059
+msgid "A calendar of your site's posts"
+msgstr "サイトの投稿カレンダー"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1199
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1208
+#, php-format
+msgid "View posts for %1$s %2$s"
+msgstr "%2$s年 %1$sの投稿を見る"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1410
+msgid "Use AJAX for month navigation, when possible"
+msgstr "可能な場合、月のナビゲーションにAJAXを使用する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1453
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1621
+msgid "Links"
+msgstr "Links"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1454
+msgid "Your blogroll/links"
+msgstr "ブログロール/リンク"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1456
+msgid "Blogroll"
+msgstr "Blogroll"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1575
+msgid "Link Category:"
+msgstr "リンクカテゴリー"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1577
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3051
+msgid "-- All categories --"
+msgstr "-- 全てのカテゴリー --"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1590
+msgid "Rating"
+msgstr "レーティング"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1591
+msgid "URL"
+msgstr "URL"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1593
+msgid "Owner"
+msgstr "オーナー"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1594
+msgid "Notes"
+msgstr "ノート"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1601
+msgid "Hide Private Links"
+msgstr "プライベートリンクを隠す"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1606
+msgid "Display Link Image"
+msgstr "リンクの画像を表示する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1611
+msgid "Display Link Rating"
+msgstr "リンクレーティングを表示する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1616
+msgid "Display Link Description"
+msgstr "リンクの説明を表示する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1650
+msgid "Lifestream"
+msgstr "ライフストリーム"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1651
+msgid "Your activity around social networks"
+msgstr "ソーシャルネットワーク周りでのあなたの行動"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1656
+msgid "My Lifestream"
+msgstr "My Lifestream"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1823
+msgid "Max. records to keep in database"
+msgstr "データベースに保持する最大記録数"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1831
+#, php-format
+msgid "Check for new data every %s seconds (Time-out)"
+msgstr "%s 秒毎に新しいデータを確認します(タイムアウト)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1835
+msgid "Services:"
+msgstr "サービス:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1875
+msgid "Login"
+msgstr "Login"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1876
+msgid "Login and Lost Password forms"
+msgstr "ログイン及びパスワード紛失フォーム"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1880
+msgid "Hello Guest. Login below if you have an account"
+msgstr "ようこそ。アカウントをお持ちであれば以下よりログインして下さい"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1906
+msgid "Please enter a valid user name and password"
+msgstr "有効なユーザー名とパスワードを入力して下さい"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1936
+#, php-format
+msgid "Welcome %s"
+msgstr "ようこそ %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1951
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2153
+msgid "Write"
+msgstr "新規投稿を追加"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1954
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2159
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:184
+msgid "Comments"
+msgstr "コメント"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1957
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2147
+msgid "Profile"
+msgstr "プロフィール"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1959
+msgid "Log Out"
+msgstr "ログアウト"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1974
+msgid "User"
+msgstr "ユーザー名"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1975
+msgid "Password"
+msgstr "パスワード"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1979
+msgid "Log In"
+msgstr "ログイン"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1987
+msgid "Remember me"
+msgstr "ログイン状態を保存する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2021
+msgid "Login Successful, redirecting..."
+msgstr "ログインに成功しました。リダイレクトをしています..."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2057
+msgid "Lost your password?"
+msgstr "パスワードを忘れましたか?"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2132
+msgid "Initial Status Text (or HTML):"
+msgstr "初期のステータステキスト(もしくはHTML):"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2137
+msgid "Welcome screen links (if enough permissions):"
+msgstr "Welcome画面のリンク(パーミッションが十分な場合):"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2165
+msgid "Log out"
+msgstr "ログアウト"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2199
+msgid "Menus"
+msgstr "Menus"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2200
+msgid "Display custom menus"
+msgstr "カスタムメニューを表示する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2274
+msgid "No menus have been created yet."
+msgstr "まだメニューは作成されていません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2285
+msgid "Select Menu:"
+msgstr "メニューを選択する:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2297
+msgid "Behaviour:"
+msgstr "振る舞い:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2299
+msgid "Expanded"
+msgstr "展開"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2300
+msgid "Collapsible, Standard"
+msgstr "たたむ,標準"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2301
+msgid "Collapsible, Accordion style"
+msgstr "たたむ,アコーディオンスタイル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2306
+msgid "Expand/Collapse Fire Event:"
+msgstr "展開/たたむトリガーイベント:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2308
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3954
+msgid "Click"
+msgstr "クリック"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2309
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3955
+msgid "Double-Click"
+msgstr "ダブルクリック"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2310
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3956
+msgid "Mouse Over"
+msgstr "マウスオーバー"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2344
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2347
+msgid "Meta"
+msgstr "メタ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2380
+msgid "Entries <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr "エントリー <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2384
+msgid "The latest comments to all posts in RSS"
+msgstr "RSS内の全投稿の最新コメント"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2384
+msgid "Comments <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr "コメント <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2388
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2392
+msgid "Theme developed by digitalnature"
+msgstr "Theme developed by digitalnature"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2449
+msgid "Post RSS"
+msgstr "投稿RSS"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2454
+msgid "Comment RSS"
+msgstr "コメントRSS"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2459
+msgid "External: WordPress.org"
+msgstr "外部: WordPress.org"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2464
+msgid "External: digitalnature.eu"
+msgstr "外部: digitalnature.eu"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2508
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2515
+msgid "Pages"
+msgstr "Pages"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2509
+msgid "Your site&#8217;s WordPress Pages"
+msgstr "このサイトのWordPressページ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2617
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4492
+msgid "Display:"
+msgstr "表示:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2620
+msgid "All Pages"
+msgstr "全てのページ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2625
+msgid "Children of the active page"
+msgstr "有効なページの子ページ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2629
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4504
+msgid "Start from root"
+msgstr "rootからスタートする"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2635
+msgid "Children of:"
+msgstr "次の子ページ:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2657
+msgid "Sort by:"
+msgstr "ソート:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2659
+msgid "Page title"
+msgstr "ページタイトル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2660
+msgid "Page order"
+msgstr "ページ順"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2661
+msgid "Page ID"
+msgstr "ページID"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2662
+msgid "Date, created"
+msgstr "作成日時"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2663
+msgid "Date, modified"
+msgstr "更新日時"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2671
+msgid "Page IDs, separated by commas."
+msgstr "ページIDをカンマで区切って下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2675
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4577
+msgid "Depth:"
+msgstr "深さ:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2678
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4579
+msgid "0 = All levels"
+msgstr "0 = 全てのレベル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2718
+msgid "Posts"
+msgstr "Posts"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2719
+msgid "List posts based on filters you choose"
+msgstr "選択したフィルターに基づいた投稿リスト"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2724
+msgid "Recent Posts"
+msgstr "最近の投稿"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3037
+msgid "Date (Recent posts)"
+msgstr "日時 (最近投稿した)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3038
+msgid "Modified date (Recently modified)"
+msgstr "更新日時 (最近更新された)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3039
+msgid "Comment count"
+msgstr "コメント数"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3041
+msgid "Title, alphabetically"
+msgstr "タイトル,アルファベット順"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3042
+msgid "Nothing, get random posts"
+msgstr "なし,投稿をランダムに"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3061
+msgid "Show posts from:"
+msgstr "次からの投稿を表示します:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3075
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3343
+#, php-format
+msgid "Content has max %s characters"
+msgstr "内容は最大 %s 文字になります"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3079
+msgid "Thumbnail Size:"
+msgstr "サムネイルサイズ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3092
+msgid "Get only context-related posts"
+msgstr "コンテキストに関連した投稿のみを取得する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3098
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5086
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5695
+msgid "Display mode"
+msgstr "表示モード"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3099
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5087
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5696
+msgid "Full"
+msgstr "全部"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3100
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5088
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5697
+msgid "Details"
+msgstr "詳細"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3101
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5089
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5698
+msgid "Brief"
+msgstr "要約"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3102
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5090
+msgid "Post thumbnails"
+msgstr "投稿サムネイル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3103
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5091
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5700
+msgid "Custom Template"
+msgstr "カスタムテンプレート"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3120
+#, php-format
+msgid "<strong>Important:</strong> %1$s sized thumbnails have to be created if you just added this widget, or if you're changing the thumbnail size. Read more about thumbnail sizes %2$s"
+msgstr "<strong>重要:</strong> このウィジェットを追加したり、サムネイルサイズを変更した場合、 %1$s サイズのサムネイルが作成されている必要があります。サムネイルサイズについて %2$s を読んで下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3120
+msgid "here"
+msgstr "ここ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3157
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3162
+msgid "Recent Comments"
+msgstr "Recent Comments"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3158
+msgid "The most recent comments"
+msgstr "もっとも最近のコメント"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3358
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4583
+msgid "Template:"
+msgstr "テンプレート:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3397
+msgid "Search"
+msgstr "Search"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3398
+msgid "A search form for your site"
+msgstr "このサイトの検索フォーム"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3452
+msgid "Column Splitter"
+msgstr "Column Splitter"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3453
+msgid "Splits area into 2 columns"
+msgstr "2列にエリアを分割します"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3513
+msgid "Widgets surrounded by splitters will be grouped into columns (two per row)."
+msgstr "splitterに囲まれたウィジェットは、カラムの中で1列に2つ表示できるようグループ化されます。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3555
+msgid "Tabbed Widgets"
+msgstr "Tabbed Widgets"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3556
+msgid "Group arbitrary widgets into tabs"
+msgstr "Arbitraryウィジェットをタブの中へグループ化します"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3812
+msgid "To add tabs, you must have at least one active arbitrary widget. Click save to refresh..."
+msgstr "タブを追加するには、少なくとも1つはArbitraryウィジェットを有効にする必要があります。リフレッシュするために保存をして下さい..."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3832
+msgid "Create Tabs for:"
+msgstr "以下のためにタブを作成します:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3943
+msgid "Transition effect:"
+msgstr "トランジッション効果:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3945
+msgid "-- None --"
+msgstr "-- なし --"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3946
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:40
+msgid "Fade"
+msgstr "フェード"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3947
+msgid "Toggle Height"
+msgstr "上下による切り替え"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3952
+msgid "Switch-Tab event:"
+msgstr "タブ切り替えイベント:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3990
+msgid "Tag Cloud"
+msgstr "Tag Cloud"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3991
+msgid "Your most used tags in cloud format"
+msgstr "最も使われているタグをクラウド形式で表示します"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3993
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:272
+msgid "Tags"
+msgstr "タグ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4229
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4540
+msgid "Taxonomy:"
+msgstr "分類:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4240
+msgid "Max. number of tags to show:"
+msgstr "タグを表示する最大数"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4246
+msgid "Smallest:"
+msgstr "最小"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4258
+msgid "Largest:"
+msgstr "最大"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4300
+msgid "Terms"
+msgstr "Terms"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4301
+msgid "A list of taxonomy terms like categories or post tags"
+msgstr "カテゴリや投稿タグのような分類した用語のリスト"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4304
+msgid "Categories"
+msgstr "カテゴリー"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4322
+#, php-format
+msgid "View all posts filed under %s"
+msgstr "%s にファイルされた全ての投稿を見る"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4555
+msgid "Hierarchical?"
+msgstr "階層構造にしますか？"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4558
+msgid "Hide empty?"
+msgstr "空を隠しますか？"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4565
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5656
+msgid "Post count, descending"
+msgstr "投稿数,降順"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4566
+msgid "ID"
+msgstr "ID"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4572
+msgid "Exclude (IDs separated by comma):"
+msgstr "除外 (IDをカンマで区切ります):"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4621
+msgid "Text"
+msgstr "Text"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4622
+msgid "Arbitrary text, HTML/PHP or shortcodes"
+msgstr "任意のテキスト,HTML/PHP,ショートコード"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4622
+msgid "Arbitrary text, HTML or shortcodes"
+msgstr "任意のテキスト,HTML,ショートコード"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4852
+msgid "Automatically add paragraphs"
+msgstr "自動的に段落を追加する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4898
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4902
+msgid "Top Commenters"
+msgstr "Top Commenters"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4899
+msgid "People who frequently comment the blog"
+msgstr "ブログに頻繁にコメントしてくれている人々"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5000
+#, php-format
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "%s 件のコメント"
+msgstr[1] "%s 件のコメント"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5082
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5676
+msgid "User IDs, separated by commas."
+msgstr "ユーザーIDをカンマで区切ります。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5082
+msgid "Enter \"0\" to exclude all unregistered commenters."
+msgstr "全ての未登録コメンターを除外する場合、 \"0\" を入力します。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5140
+msgid "Twitter"
+msgstr "Twitter"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5141
+msgid "Your latest Twitter updates"
+msgstr "あなたの最新のTweetをアップデートします"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5144
+msgid "Tweets"
+msgstr "Tweets"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5220
+#, php-format
+msgid "%s followers"
+msgstr "%s followers"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5221
+#, php-format
+msgid "%s tweets"
+msgstr "%s tweets"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5245
+#, php-format
+msgid "Twitter returned error: %s"
+msgstr "Twitterはエラーを返しました: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5246
+msgid "Could not retrieve tweets."
+msgstr "Tweetを読み込むことが出来ませんでした。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5250
+msgid "Possible reasons:"
+msgstr "考えられる理由:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5252
+msgid "Your host doesn't allow outgoing connections"
+msgstr "あなたのホストは外部接続が許可されていません"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5253
+msgid "Your server has made too many requests and is being limited (try increasing the cache value)"
+msgstr "あなたのサーバーでリクエストが非常にたくさん発行され制限されています(キャッシュの値を増やしてみてください)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5254
+msgid "The user has protected his/her tweets"
+msgstr "そのユーザはプロテクトされたTweetを持っています"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5255
+msgid "Twitter may be down"
+msgstr "恐らくTwitterが落ちています"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5259
+msgid "Unavailable for the moment"
+msgstr "現在ご利用出来ません"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5378
+#, php-format
+msgid "%s user name:"
+msgstr "%s ユーザー名:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5390
+msgid "Show profile info"
+msgstr "プロフィール情報を表示する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5397
+#, php-format
+msgid "Keep data cached for %s minute(s)"
+msgstr "%s 分間のデータをキャッシュする"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5433
+msgid "Users"
+msgstr "Users"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5434
+msgid "A list of users/authors from your blog"
+msgstr "サイトのユーザー/投稿者のリスト"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5643
+msgid "Role"
+msgstr "役割"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5645
+msgid "-- Any --"
+msgstr "-- 全て --"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5653
+msgid "Sort by"
+msgstr "並べ替え"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5657
+msgid "Date registered, newest first"
+msgstr "登録日順,最新が始めに"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5699
+msgid "Avatar thumbnails"
+msgstr "アバターサムネイル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5699
+msgid "Avatars thumbnails"
+msgstr "アバターサムネイル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:136
+msgid "Primary Sidebar"
+msgstr "プライマリサイドバー"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:137
+msgid "This is the default sidebar, active on 2 or 3 column layouts. If no widgets are visible, the page will fall back to a single column layout."
+msgstr "これは、2,3カラムを有効にした時のデフォルトのサイドバーです。ウィジェットを非表示にした場合、1カラムレイアウトになります。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:146
+msgid "Secondary Sidebar"
+msgstr "セカンダリサイドバー"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:147
+msgid "This sidebar is active only on a 3 column setup, if at least one of its widgets is visible to the current user."
+msgstr "このサイドバーは、3カラム設定にした時のみ有効です。少なくとも一つ有効にすれば現在のユーザーに表示出来ます。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:157
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:185
+msgid "Footer"
+msgstr "フッター"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:158
+msgid "Active only if at least one of its widgets is visible to the current user. You can add between 1 and 6 widgets here (3 or 4 are optimal). They will adjust their size based on the widget count."
+msgstr "少なくとも1つウィジェットを有効にすることで、現在のユーザーに表示出来ます。1～6ウィジェットを追加することが可能です(3～4が最適)。ウィジェットの数に応じサイズは自動調整されます。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:167
+msgid "Arbitrary Widgets"
+msgstr "Arbitraryウィジェット"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:168
+#, php-format
+msgid "Widgets from this area can be grouped into tabs, or added into posts/pages using the %1$s or %2$s shortcodes."
+msgstr "このエリアのウィジェットは、タブの中へグループ化することが出来ます。また%1$s や %2$s のショートコードを使用して記事やページへ追加することが出来ます。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:179
+msgid "Welcome"
+msgstr "ようこそ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:180
+msgid "Design"
+msgstr "デザイン"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:181
+msgid "Content options"
+msgstr "コンテンツオプション"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:182
+msgid "Post teasers"
+msgstr "投稿テザー"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:183
+msgid "Single pages"
+msgstr "シングルページ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:186
+msgid "CSS"
+msgstr "CSS"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:187
+msgid "Advanced"
+msgstr "アドバンス"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:188
+msgid "Modules"
+msgstr "モジュール"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:204
+msgid "Content"
+msgstr "コンテンツ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:213
+msgid "User limit"
+msgstr "ユーザ制限"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:214
+msgid "Full post"
+msgstr "全文投稿"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:215
+msgid "Full post, filtered"
+msgstr "フィルターした全文投稿"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:216
+msgid "Excerpt"
+msgstr "抜粋"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:225
+#, php-format
+msgid "~ %s characters"
+msgstr "~ %s 文字"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:232
+msgid "Category"
+msgstr "カテゴリー"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:240
+msgid "Date / Time"
+msgstr "日付 / 時間"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:249
+msgid "Relative"
+msgstr "相対表示"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:250
+msgid "Absolute"
+msgstr "絶対表示"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:265
+msgid "Comment Count"
+msgstr "コメント数"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:279
+msgid "Thumbnails"
+msgstr "サムネイル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:288
+msgid "Left Aligned"
+msgstr "左揃え"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:289
+msgid "Right Aligned"
+msgstr "右揃え"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:298
+msgid "Thumbnail Size"
+msgstr "サムネイルサイズ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:299
+msgid "Note that for the new sized thumbnails to take effect, all existing images must be resized. See the Advanced page."
+msgstr "サムネイルの新しいサイズを得るには、既存全ての画像をリサイズする必要があります。Advancedページを参照して下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:301
+msgid "Very Small, 60 x 60"
+msgstr "極小, 60 x 60"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:302
+msgid "Small, 90 x 90"
+msgstr "小, 90 x 90"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:303
+msgid "Medium, 120 x 120"
+msgstr "中, 120 x 120"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:304
+msgid "Large, 140 x 140"
+msgstr "大, 140 x 140"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:305
+msgid "Larger, 180 x 180"
+msgstr "特大, 180 x 180"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:306
+msgid "Very large, 210 x 210"
+msgstr "極大, 210 x 210"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:307
+#, php-format
+msgid "Default media setting: %d x %d"
+msgstr "デフォルトのメディア設定: %d x %d"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:315
+msgid "Use first attachment as thumbnail, if none is set"
+msgstr "設定されていない場合、最初にアタッチされている画像をサムネイルとして使用する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:322
+msgid "Navigation"
+msgstr "ナビゲーション"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:324
+msgid "Single link for older posts"
+msgstr "過去の投稿のためのシングルリンク"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:325
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:349
+msgid "Previous / Next links"
+msgstr "前へ / 次へ リンク"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:326
+msgid "Page numbers"
+msgstr "ページ番号"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:334
+msgid "Allow Comment Ratings (Karma)"
+msgstr "コメントのレーティング(カルマ)を許可する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:342
+#, php-format
+msgid "Hide comments with %s karma and below"
+msgstr "%s カルマ以下のコメントを隠す"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:356
+msgid "Share Links"
+msgstr "シェアリンク"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:363
+msgid "Meta Information"
+msgstr "メタ情報"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:370
+msgid "About the Author"
+msgstr "投稿者について"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:377
+msgid "Related Posts"
+msgstr "関連記事"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:384
+#, php-format
+msgid "Use %s for convenient adjustments"
+msgstr "便利な調整のために %s を使用して下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:384
+msgid "shortcodes"
+msgstr "ショートコード"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:391
+msgid "Use jQuery"
+msgstr "jQueryを使用する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:392
+msgid "Only uncheck if you know what you're doing. Your site will load faster without jQuery, but features that depend on it will be disabled."
+msgstr "何を行っているか理解している場合のみオフにします。jQueryを使用しないことでより速くサイトをロードすることが出来ますが、これに依存した機能はオフになります。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:400
+msgid "Animate content"
+msgstr "アニメーションコンテンツ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:401
+msgid "Enable jQuery effects such as fading or sliding. Effects can render the site slightly slower on less powerful PCs"
+msgstr "フェードやスライドのようなjQueryエフェクトを有効にします。エフェクトは、非力なマシンで若干遅くなる程度でレンダリングすることが可能です。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:409
+msgid "Optimize website for faster loading"
+msgstr "ロードを高速にするためのウェブサイト最適化"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:410
+#, php-format
+msgid "Compresses and concatenates stylesheets and javascript files (using %s). Leave this unchecked if you're experiencing conflicts with other plugins, or if you're using a cache plugin that handles such functions"
+msgstr "スタイルシートとJavaScriptを %s を使用して圧縮及び連結させます。他のプラグインと競合していたり、同じようなキャッシュ機能のプラグインを使用していた場合は、オフにします。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:418
+msgid "Automatically create missing thumbnail sizes"
+msgstr "足りないサイズのサムネイル自動生成"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:419
+#, php-format
+msgid "Asynchronously update thumbnails if needed. You can also use the %s plugin to process all missing thumbnail sizes manually, in a single pass"
+msgstr "必要に応じ非同期でサムネイルをアップデートします。%s プラグインを使用し、手動で一回で全ての足りないサムネイルサイズを処理することが出来ます。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:427
+msgid "Use theme built-in lightbox on all image links"
+msgstr "全ての画像リンクにテーマビルトインのlightboxを使用する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:428
+msgid "Uncheck if you prefer a lightbox plugin"
+msgstr "lightboxプラグインの方を好む場合はオフにします。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:435
+msgid "Automatically generate meta descriptions"
+msgstr "メタ情報の自動生成"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:436
+#, php-format
+msgid "Uncheck if you're using a SEO plugin, otherwise you'll get duplicate fields! Note that you don't need such plugins, %s is heavily optimized for search engines"
+msgstr "SEOプラグインを使用している場合はオフにします。オフにしないと、重複するフィールドが発生します。検索エンジンに %s を最適化させるのに、このようなプラグインは必要ありません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:443
+msgid "Display debug messages (english only)"
+msgstr "デバッグメッセージを表示する(英語のみ)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:444
+msgid "Status notifications about the theme setup (only visible to administrators). Only enable this when you need to, because it can significantly slow down page load for admins"
+msgstr "(管理者のみに見える)テーマ設定についてのステータス通知。ページの読み込みが遅くなるため必要な時のみオンにします。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:451
+msgid "Theme auto-uninstall"
+msgstr "テーマの自動アンインストール"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:452
+#, php-format
+msgid "Check to remove all %s settings from the database after you switch to a different theme (Featured post records are preserved)."
+msgstr "(Featured投稿が記録されている)異なるテーマに変更した後、データーベースから %s の設定を全て削除するためにチェックします。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:45
+msgid "Ads"
+msgstr "広告"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:179
+msgid "This section helps you create advertisment blocks in non-widgetized areas. For widgetized areas such as sidebars, simply use a text widget to display your ads."
+msgstr "このセクションで、非ウィジェットエリアの広告ブロックを作成することが出来ます。サイドバーのようなウィジェットエリアで広告を表示するにはtextウィジェットを使用してください。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:184
+#, php-format
+msgid "It appears that a plugin has already registered the %s shortcode."
+msgstr "プラグインが既に %s ショートコードを登録しているように見えます。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:189
+msgid "Create New Ad"
+msgstr "新規広告を作成する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:289
+msgid "Single Post Pages"
+msgstr "シングル投稿ページ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:299
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:306
+msgid "After Header"
+msgstr "ヘッダーの後"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:300
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:307
+msgid "Before Main"
+msgstr "メインの前"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:301
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:308
+msgid "After Main"
+msgstr "メインの後"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:302
+msgid "Before Comment"
+msgstr "コメントの前"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:309
+msgid "Before Post Teaser"
+msgstr "投稿テザーの前"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:310
+msgid "After Post Teaser"
+msgstr "投稿テザーの後"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:322
+msgid "Visibility:"
+msgstr "表示:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:324
+msgid "Automatic"
+msgstr "自動"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:329
+msgid "Manual"
+msgstr "手動"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:330
+msgid "Use shortcode"
+msgstr "ショートコードを使用する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:351
+msgid "When:"
+msgstr "いつ:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:353
+msgid "Anytime"
+msgstr "常時"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:354
+msgid "Comments are closed"
+msgstr "コメントクローズ時"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:355
+msgid "Comments are open"
+msgstr "コメントオープン時"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:360
+msgid "Anyone"
+msgstr "全員"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:361
+msgid "Visitor only"
+msgstr "ビジターのみ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:41
+msgid "Slide Horizontally"
+msgstr "水平方向のスライド"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:42
+msgid "Slide Vertically"
+msgstr "垂直方向のスライド"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:43
+msgid "Random Tiles"
+msgstr "ランダムタイル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:44
+msgid "Horizontal Tiles"
+msgstr "水平タイル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:45
+msgid "Diagonal Tiles"
+msgstr "対角タイル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:46
+msgid "Spiral"
+msgstr "スパイラル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:47
+msgid "Random Stripes"
+msgstr "ランダムストライプ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:48
+msgid "Stripe Wave"
+msgstr "ストライプウェーブ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:49
+msgid "Curtain"
+msgstr "カーテン"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:50
+msgid "Interweave"
+msgstr "インターウィーブ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:86
+msgid "Photo Gallery"
+msgstr "フォトギャラリー"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:180
+msgid "Content source"
+msgstr "コンテンツソース"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:185
+#, php-format
+msgid "%s that I mark as featured"
+msgstr "Featuredマークを付与した %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:185
+msgid "Media items"
+msgstr "メディアライブラリのアイテム"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:215
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:227
+msgid "Plugin not installed"
+msgstr "プラグインがインストールされていません"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:217
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:229
+#, php-format
+msgid "%s gallery"
+msgstr "%s ギャラリー"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:219
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:231
+msgid "-- All galleries --"
+msgstr "-- 全てのギャラリー --"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:251
+msgid "Options"
+msgstr "オプション"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:254
+msgid "Dimensions:"
+msgstr "サイズ:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:258
+msgid "Images of this size must already exist!"
+msgstr "このサイズの画像が既にある必要があります！"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:262
+msgid "Number of items to show:"
+msgstr "表示するアイテムの数"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:268
+#, php-format
+msgid "Exclude items older than %s day(s)"
+msgstr "%s 日より古いアイテムは除外する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:269
+#, php-format
+msgid "Set to %d to ignore date"
+msgstr "日にちを無視するには %d を設定します"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:274
+#, php-format
+msgid "Auto-Cycle every %s second(s)"
+msgstr "%s 秒毎に自動的に切り替える"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:275
+#, php-format
+msgid "Set to %d to disable auto-play"
+msgstr "オートプレイを無効にするには %d を設定します"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:279
+msgid "Slides link to:"
+msgstr "スライドのリンク先:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:281
+msgid "Original image"
+msgstr "オリジナルの画像"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:282
+msgid "Post URL"
+msgstr "記事のURL"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:283
+msgid "Attached (parent) post URL, if any"
+msgstr "添付された(親)記事のURL(もしあれば)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:284
+msgid "Nothing"
+msgstr "なし"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:292
+msgid "Captions:"
+msgstr "キャプション:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:294
+msgid "Image title and description"
+msgstr "画像タイトルと説明"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:295
+msgid "Filtered content from the attached post, if any"
+msgstr "添付された記事からフィルターされた内容(もしあれば)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:296
+msgid "Excerpt from the attached post, if any"
+msgstr "添付された記事から抜粋(もしあれば)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:304
+msgid "Previous/Next links (on mouse over)"
+msgstr "前へ/次へリンク(マウスオーバー時)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:311
+msgid "Pager (on mouse over)"
+msgstr "ページャ(マウスオーバー時)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:314
+msgid "Effects"
+msgstr "エフェクト"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:329
+msgid "Visible on:"
+msgstr "表示箇所:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:63
+msgid "Failed to create sprite image with the selected icons. Make sure your upload directory is writable"
+msgstr "選択したアイコンでスプライト画像の作成に失敗しました。アップロードディレクトリが書き込み可能か確認して下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:67
+msgid "Social-Media Icons"
+msgstr "ソーシャルメディアアイコン"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:219
+msgid "Drag and drop icons below to enable or disable them."
+msgstr "下でアイコンをドラッグ＆ドロップし有効/無効の設定をして下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:229
+msgid "Active icons"
+msgstr "アクティブなアイコン"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:246
+msgid "Label"
+msgstr "ラベル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:251
+msgid "Target URI"
+msgstr "ターゲットURI"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:256
+msgid "Meta info (some themes may display this)"
+msgstr "メタ情報 (いくつかのテーマで表示されます)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:264
+msgid "Inactive icons"
+msgstr "利用可能なアイコン"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:278
+#, php-format
+msgid "You can also include your own icons within this list, by copying them in %s"
+msgstr "%s にコピーすることにより、このリストに自分のアイコンを追加することが出来ます"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:282
+msgid "Activate a child theme to add your own icons in this list."
+msgstr "このリストに独自のアイコンを追加するには子テーマを有効にします。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:42
+msgid "Translate"
+msgstr "翻訳"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:48
+msgid "Failed to save .mo / .po files. Is your child theme directory writable?"
+msgstr ".mo / .po ファイルの保存に失敗しました。子テーマディレクトリが書き込み可能ですか？"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:379
+msgid "Failed to load pot template"
+msgstr "potテンプレートの読み込みに失敗しました"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:466
+msgid "To enable editing, activate a child theme and give WordPress write permissions to the child theme folder."
+msgstr "編集を可能にするために、子テーマを有効にして下さい。そして子テーマディレクトリの書き込み権をWordpressに与えて下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:472
+#, php-format
+msgid "There is no translation for your current site language (%s). The default english template was loaded."
+msgstr "このサイトに言語(%s)の翻訳ファイルがありません。デフォルトの英語テンプレートがロードされました。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:478
+#, php-format
+msgid "Editing %1$s (%2$s), %3$s translated"
+msgstr "%1$s (%2$s) 編集中 / %3$s 翻訳完了"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:480
+msgid "unsaved"
+msgstr "保存されていません"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:489
+msgid "Translator(s):"
+msgstr "翻訳者:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:495
+msgid "Team:"
+msgstr "チーム:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:502
+#, php-format
+msgid "Click on the black text below to edit the strings. Modified strings will temporarily be auto-saved. Press the \"%s\" button to export strings to .mo / .po files in your child theme directory."
+msgstr "以下の黒い文字列をクリックし、文字を編集します。編集された文字は一時的に自動保存されます。子テーマのディレクトリ内に.mo/.poファイルをエクスポートするために\"%s\" ボタンをクリックして下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:511
+msgid "Singular form"
+msgstr "単数形"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:512
+msgid "Plural form(s)"
+msgstr "複数形"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/404.php:30
+msgid "The requested page was not found."
+msgstr "要求されたページはありません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/about-the-author.php:23
+#, php-format
+msgid "About %s"
+msgstr "%s について"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/about-the-author.php:33
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/archive.php:63
+msgid "Nothing here :("
+msgstr "ここにはありません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/about-the-author.php:38
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/author.php:90
+#, php-format
+msgid "%s's RSS Feed"
+msgstr "%s のRSSフィード"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/archive-forum.php:39
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/archive-topic.php:40
+msgid "There are no forums here yet :("
+msgstr "ここにはまだフォーラムはありません"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/archive.php:44
+msgid "Blog Archives"
+msgstr "ブログアーカイブ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/archive.php:59
+#, php-format
+msgid "There aren't any posts in the %s category yet :("
+msgstr "%s カテゴリーにはまだ投稿がありません"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/archive.php:61
+msgid "There aren't any posts within this date :("
+msgstr "この期限内に投稿はありません"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/author.php:38
+#, php-format
+msgid "%s karma"
+msgstr "%s カルマ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/author.php:40
+#, php-format
+msgid "(%1$s comments, %2$s posts)"
+msgstr "(%1$s 件のコメント, %2$s 件の投稿)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/author.php:49
+msgid "This user hasn't shared any profile information"
+msgstr "このユーザーは共有されたプロフィール情報を持っていません"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/author.php:55
+msgid "Home page:"
+msgstr "ホームページ:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/author.php:93
+#, php-format
+msgid "%s hasn't written any posts yet"
+msgstr "%s は、まだ記事を書いていません"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/comment.php:29
+#, php-format
+msgid "%1$s written by %2$s %3$s"
+msgstr "%1$s written by %2$s %3$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/comment.php:45
+msgid "Your comment is awaiting moderation."
+msgstr "あなたのコメントは管理者の承認待ちです。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/comment.php:45
+msgid "This comment is awaiting moderation."
+msgstr "このコメントは管理者の承認待ちです。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/commentform.php:53
+#, php-format
+msgid "Logged in as %s."
+msgstr "%s としてログインしました。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/commentform.php:54
+msgid "Log out of this account"
+msgstr "このアカウントのログアウトをします"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/commentform.php:54
+msgid "Log out?"
+msgstr "ログアウトしますか？"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/commentform.php:60
+#, php-format
+msgid "Welcome back %s."
+msgstr "おかえりなさい %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/commentform.php:81
+msgid "Type your comment"
+msgstr "コメントを入力して下さい"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/commentform.php:85
+#, php-format
+msgid "You may use these %1$s tags: %2$s"
+msgstr "次の %1$s タグが利用可能です: %2$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/commentform.php:97
+msgid "Post Comment"
+msgstr "コメントを投稿する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/commentform.php:99
+msgid "Cancel reply"
+msgstr "返信をキャンセル"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/footer.php:49
+msgid "Go to Top"
+msgstr "ページのトップへ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-anonymous.php:22
+msgid "Name (required):"
+msgstr "名前 (必須)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-anonymous.php:30
+msgid "Mail (will not be published) (required):"
+msgstr "メール (必須/公開されません)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-anonymous.php:38
+msgid "Website:"
+msgstr "ウェブサイト:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:24
+#, php-format
+msgid "Reply To: %s"
+msgstr "返信: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:40
+msgid "This topic is marked as closed to new replies, however your posting capabilities still allow you to do so."
+msgstr "このトピックは、新しいリプライにはクローズとしてマークされました。しかしあなたの投稿機能はまだ実行可能です。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:46
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:58
+msgid "Your account has the ability to post unrestricted HTML content."
+msgstr "あなたのアカウントは、無制限のHTMLコンテンツを投稿可能です。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:57
+msgid "Reply:"
+msgstr "返信:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:68
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:92
+#, php-format
+msgid "You may use these %s tags and attributes:"
+msgstr "あなたはこれらの %s タグと属性を使用できます:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:76
+msgid "Tags:"
+msgstr "タグ:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:89
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:129
+msgid "Notify the author of follow-up replies via email"
+msgstr "e-mailで返信の続きを投稿者に通知します"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:91
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:131
+msgid "Notify me of follow-up replies via email"
+msgstr "e-mailで返信の続きを私に通知します"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:101
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:144
+msgid "Keep a log of this edit:"
+msgstr "この編集のログを保存します:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:104
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:148
+msgid "Optional reason for editing:"
+msgstr "編集の理由(任意):"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:118
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:75
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:81
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:160
+msgid "Submit"
+msgstr "投稿"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:138
+#, php-format
+msgid "The topic &#8216;%s&#8217; is closed to new replies."
+msgstr "トピック &#8216;%s&#8217; は新規リプライは受け付けていません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:146
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:180
+#, php-format
+msgid "The forum &#8216;%s&#8217; is closed to new topics and replies."
+msgstr "フォーラム &#8216;%s&#8217; は、新規トピックと返信は受け付けていません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:154
+msgid "You cannot reply to this topic."
+msgstr "このトピックに返信することは出来ません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:154
+msgid "You must be logged in to reply to this topic."
+msgstr "このトピックに返信するためにはログインする必要があります。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:19
+#, php-format
+msgid "Merge topic \"%s\""
+msgstr "トピック \"%s\" をマージする"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:26
+msgid "Select the topic to merge this one into. The destination topic will remain the lead topic, and this one will change into a reply."
+msgstr "このトピックにマージするトピックを選択します。行き先であるトピックが残り、一つの返信に変更されます。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:27
+msgid "To keep this topic as the lead, go to the other topic and use the merge tool from there instead."
+msgstr "このトピックをleadトピックとして保持するために、他のトピックへ移動し、代わりにそこからマージツールを使用します。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:31
+msgid "All replies within both topics will be merged chronologically. The order of the merged replies is based on the time and date they were posted. If the destination topic was created after this one, it's post date will be updated to second earlier than this one."
+msgstr "両方のトピックの全てのリプライは時系列でマージされます。マージされたリプライの順は、それらが投稿された日時をベースとしています。もし、目的のトピックがこのトピックより後に作成された場合、その投稿日時はこれよりも早い時間にアップデートされます。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:36
+msgid "Merge with this topic:"
+msgstr "このトピックとマージする:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:44
+msgid "No topics were found to which the topic could be merged to!"
+msgstr "マージできるトピックは見つかりませんでした！"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:48
+msgid "There are no other topics in this forum to merge with."
+msgstr "このフォーラムにマージする他のトピックはありません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:56
+msgid "Merge topic subscribers"
+msgstr "トピックの購読者をマージします"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:62
+msgid "Merge topic favoriters"
+msgstr "トピックのfavoriterをマージします"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:67
+msgid "Merge topic tags"
+msgstr "トピックのタグをマージします"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:71
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:77
+msgid "<strong>WARNING:</strong> This process cannot be undone."
+msgstr "<strong>WARNING:</strong> このプロセスを取り消すことは出来ません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:86
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:92
+msgid "You do not have the permissions to edit this topic!"
+msgstr "このトピックを編集するためのパーミッションがありません！"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:86
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:92
+msgid "You cannot edit this topic."
+msgstr "このトピックを編集することは出来ません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:25
+msgid "When you split a topic, you are slicing it in half starting with the reply you just selected. Choose to use that reply as a new topic with a new title, or merge those replies into an existing topic."
+msgstr "トピックを分割する際、選択したリプライから始まるように半分にスライスします。新しいタイトルの新しいトピックとして返信を使用するのか、既存のトピックにこれらのトピックを結合するのか選択して下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:29
+msgid "If you use the existing topic option, replies within both topics will be merged chronologically. The order of the merged replies is based on the time and date they were posted."
+msgstr "既存のトピックオプションを使用した時、両方のトピックの返信が年代順に結合されます。結合されたリプライの順番は、投稿された日時に基づきます。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:34
+#, php-format
+msgid "New topic in <strong>%s</strong> titled:"
+msgstr "<strong>%s</strong> の新しいトピックのタイトル:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:35
+#, php-format
+msgid "Split: %s"
+msgstr "分割: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:42
+msgid "Use an existing topic in this forum:"
+msgstr "このフォーラムで既存のトピックを使用する"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:51
+msgid "No other topics found!"
+msgstr "他にトピックはありません！"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:64
+msgid "Copy subscribers to the new topic"
+msgstr "新しいトピックに購読者をコピーする"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:69
+msgid "Copy favoriters to the new topic"
+msgstr "新しいトピックにfavoriterをコピーする"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:72
+msgid "Copy topic tags to the new topic"
+msgstr "新しいトピックにトピックタグをコピーする"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:17
+#, php-format
+msgid "Manage Tag: \"%s\""
+msgstr "タグ管理: \"%s\""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:23
+msgid "Rename"
+msgstr "名前の変更"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:26
+msgid "Leave the slug empty to have one automatically generated."
+msgstr "slugを自動生成させるために、空にして下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:30
+msgid "Changing the slug affects its permalink. Any links to the old slug will stop working."
+msgstr "slugの変更は、パーマリンクに影響します。古いslugへのどんなリンクも動作しないでしょう。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:36
+msgid "Name:"
+msgstr "名前:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:57
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:71
+msgid "Merge"
+msgstr "結合"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:60
+msgid "Merging tags together cannot be undone."
+msgstr "タグの結合を行なうと元には戻せません"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:66
+msgid "Existing tag:"
+msgstr "既存のタグ:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:71
+#, php-format
+msgid "Are you sure you want to merge the \"%s\" tag into the tag you specified?"
+msgstr "指定したタグに \"%s\" タグを結合してよろしいですか？"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:86
+msgid "This does not delete your topics. Only the tag itself is deleted."
+msgstr "あなたのトピックは削除されません。タグのみが削除されます。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:90
+msgid "Deleting a tag cannot be undone."
+msgstr "タグを削除すると元に戻すことは出来ません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:91
+msgid "Any links to this tag will no longer function."
+msgstr "このタグへのどんなリンクももはや機能しません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:97
+#, php-format
+msgid "Are you sure you want to delete the \"%s\" tag? This is permanent and cannot be undone."
+msgstr "\"%s\" タグを削除しますか？元には戻せません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:33
+#, php-format
+msgid "Now Editing &ldquo;%s&rdquo;"
+msgstr "&ldquo;%s&rdquo; を現在編集中"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:35
+#, php-format
+msgid "Create New Topic in &ldquo;%s&rdquo;"
+msgstr "&ldquo;%s&rdquo; に新規トピックを作成します"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:35
+msgid "Create New Topic"
+msgstr "新規トピックの作成"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:52
+msgid "This forum is marked as closed to new topics, however your posting capabilities still allow you to do so."
+msgstr "このフォーラムは、新規トピックの作成をクローズしているとマークされています。しかし投稿はまだ可能です。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:69
+#, php-format
+msgid "Topic Title (Maximum Length: %d):"
+msgstr "トピックタイトル (最大長: %d):"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:81
+msgid "Topic Description:"
+msgstr "トピックの記述"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:100
+msgid "Topic Tags:"
+msgstr "トピックタグ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:109
+msgid "Forum:"
+msgstr "フォーラム:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:118
+msgid "Topic Type:"
+msgstr "トピックタイプ:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:188
+msgid "You cannot create new topics at this time."
+msgstr "現在新規トピックの作成が出来ません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:188
+msgid "You must be logged in to create new topics."
+msgstr "新規トピックの作成のためにログインする必要があります。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:21
+msgid "First Name"
+msgstr "名"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:25
+msgid "Last Name"
+msgstr "姓"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:29
+msgid "Nickname"
+msgstr "ニックネーム"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:33
+msgid "Display name publicly as"
+msgstr "公式の表示名"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:39
+msgid "Contact Info"
+msgstr "コンタクト情報"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:54
+msgid "About Yourself"
+msgstr "あなたについて"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:54
+msgid "About the user"
+msgstr "ユーザーについて"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:57
+msgid "Biographical Info"
+msgstr "経歴情報"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:59
+msgid "Share a little biographical information to fill out your profile. This may be shown publicly."
+msgstr "プロフィールを記入するために経歴情報を少し共有します。これは公開されるかもしれません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:64
+msgid "Account"
+msgstr "アカウント"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:67
+msgid "Username"
+msgstr "ユーザー名"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:69
+msgid "Usernames cannot be changed."
+msgstr "ユーザ名は変更することが出来ません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:72
+msgid "Email"
+msgstr "Email"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:80
+#, php-format
+msgid "There is a pending email address change to <code>%1$s</code>. <a href=\"%2$s\">Cancel</a>"
+msgstr "<code>%1$s</code> に変更する保留中のe-mailアドレスがあります。 <a href=\"%2$s\">キャンセル</a>"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:88
+msgid "New Password"
+msgstr "新しいパスワード"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:90
+msgid "If you would like to change the password type a new one. Otherwise leave this blank."
+msgstr "パスワードを変更したい場合、新しいパスワードをタイプします。それ以外の場合は空白のままにします。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:94
+msgid "Type your new password again"
+msgstr "新しいパスワードを再度入力します"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:97
+msgid "Hint: The password should be at least seven characters long. To make it stronger, use upper and lower case letters, numbers and symbols like ! \" ? $ % ^ &amp;)."
+msgstr "ヒント: パスワードは少なくとも7文字以上にするべきです。より強固なパスワードのためには、大文字、小文字、数字、! \" ? $ % ^ &amp;) などの記号を使用します。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:103
+msgid "Role:"
+msgstr "役割:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:111
+msgid "Super Admin"
+msgstr "Super Admin"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:114
+msgid "Grant this user super admin privileges for the Network."
+msgstr "ネットワークのために、このユーザに最高のadmin権限を与えて下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:126
+msgid "Update Profile"
+msgstr "プロフィールのアップデート"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:126
+msgid "Update User"
+msgstr "ユーザーのアップデート"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/home.php:36
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-categories.php:93
+msgid "Oops, nothing here :("
+msgstr "ここにはありません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-forums.php:21
+msgid "Forum"
+msgstr "フォーラム"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-forums.php:22
+msgid "Topics"
+msgstr "トピック"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-forums.php:23
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-replies.php:35
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-replies.php:45
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-topics.php:29
+msgid "Replies"
+msgstr "返信"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-forums.php:24
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-topics.php:30
+msgid "Freshness"
+msgstr "フレッシュネス"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-topics.php:27
+msgid "Topic"
+msgstr "トピック"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-topics.php:28
+msgid "Voices"
+msgstr "ボイス"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/meta.php:25
+#, php-format
+msgid "Comments (%s)"
+msgstr "コメント (%s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/meta.php:29
+#, php-format
+msgid "Pings (%s)"
+msgstr "トラックバック (%s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/meta.php:62
+msgid "Comment Feed for this Post"
+msgstr "この投稿のコメントフィード"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-archives.php:22
+msgid "Blog archives grouped by month"
+msgstr "月毎にグループ化されたブログアーカイブ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-c1.php:20
+msgid "1 column page (no sidebars)"
+msgstr "1カラムページ(サイドバーなし)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-c2left.php:20
+msgid "2 column page (left sidebar)"
+msgstr "2カラムページ(左サイドバー)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-c2right.php:20
+msgid "2 column page (right sidebar)"
+msgstr "2カラムページ(右サイドバー)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-c3.php:20
+msgid "3 column page"
+msgstr "3カラムページ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-c3left.php:20
+msgid "3 column page (sidebars on the left)"
+msgstr "3カラムページ(左サイドバー)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-c3right.php:20
+msgid "3 column page (sidebars on the right)"
+msgstr "3カラムページ(右サイドバー)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-lost-pw.php:23
+msgid "Password recovery"
+msgstr "パスワードの復元"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-lost-pw.php:36
+msgid "Enter a username or e-mail address."
+msgstr "ユーザー名かe-mailアドレスを入力して下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-lost-pw.php:41
+msgid "There is no user registered with that email address."
+msgstr "そのメールアドレスで登録されているユーザーはいません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-lost-pw.php:46
+msgid "There is no user with that name."
+msgstr "その名前のユーザーはいません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-lost-pw.php:104
+msgid "Failed to send confirmation e-mail. Please contact the site admin."
+msgstr "確認メールの送付に失敗しました。サイトの管理者に問い合わせて下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-lost-pw.php:210
+msgid "Get New Password"
+msgstr "新しいパスワードを入手します"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:21
+msgid "Sign-up"
+msgstr "サインアップ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:108
+msgid "You left the user name field empty."
+msgstr "ユーザー名フィールドが空のままです。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:111
+msgid "Invalid user name, illegal characters."
+msgstr "無効なユーザー名,不正な文字。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:115
+msgid "User name already registered, choose another."
+msgstr "ユーザー名は既に登録されています。他の名前を選択してください。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:120
+msgid "You left the e-mail field empty."
+msgstr "e-mailフィールドが空のままです。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:123
+msgid "Invalid e-mail address."
+msgstr "無効なe-mailアドレスです。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:127
+msgid "This email is already registered, please choose another one."
+msgstr "このe-mailは既に登録されています。他のを選択して下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:142
+#, php-format
+msgid "Registration failed, please contact the <a href=\"mailto:%s\">webmaster</a>"
+msgstr "登録は失敗しました。<a href=\"mailto:%s\">webmaster</a>にコンタクトを取って下さい。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:188
+msgid "You must be logged in to do this"
+msgstr "これを実行するのはログインする必要があります"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:208
+msgid "Registration has been disabled."
+msgstr "登録が無効になっています。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:396
+msgid "Next"
+msgstr "次へ"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-users.php:21
+msgid "User list"
+msgstr "ユーザーリスト"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/related-posts.php:21
+#, php-format
+msgid "Permanent Link: %s"
+msgstr "パーマネントリンク: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/related-posts.php:27
+msgid "Didn't find any related posts :("
+msgstr "関連する投稿が見つかりませんでした。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/search.php:31
+#, php-format
+msgid "Search results for %1$s (%2$d)"
+msgstr "%1$s (%2$d) の検索結果"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/search.php:49
+msgid "Nothing found :("
+msgstr "何も見つかりませんでした。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/search.php:50
+msgid "Try a different search..."
+msgstr "他の検索をトライして下さい..."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/sidebar.php:39
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/sidebar.php:56
+#, php-format
+msgid "%s is empty. Add widgets here, otherwise this area will not be visible in the frontend"
+msgstr "%s が空です。ここにウィジェットを追加して下さい。そうしない場合、このエリアはフロントエンドには表示されません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single-forum.php:59
+msgid "There are no topics in this forum."
+msgstr "このフォーラムにはトピックはありません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single-forum.php:70
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single-topic.php:121
+msgid "You do not have permission to view this forum."
+msgstr "このフォーラムを閲覧するための権限がありません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single-reply.php:64
+#, php-format
+msgid "Posted on %1$s at %2$s"
+msgstr "%1$s %2$s に投稿されました。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single-view.php:42
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/taxonomy-topic-tag.php:41
+msgid "No topics found."
+msgstr "トピックが見つかりませんでした。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single.php:68
+#, php-format
+msgid "This entry was posted by %1$s on %2$s at %3$s, and is filed under %4$s. Follow any responses to this post through %5$s."
+msgstr "このエントリーは、%1$s によって %2$s %3$s に投稿され、 %4$s 内でファイルされています。 %5$s を経由してこの投稿に対するコメントをフォロー出来ます。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single.php:77
+#, php-format
+msgid "You can <a%1$s>leave a response</a> or <a%2$s>trackback</a> from your own site."
+msgstr "<a%1$s>コメント</a> と <a%2$s>トラックバック</a> の両方を受け付けています。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single.php:80
+#, php-format
+msgid "Responses are currently closed, but you can <a%1$s>trackback</a> from your own site."
+msgstr "コメントは現在受け付けていませんが、 <a%1$s>トラックバック</a> は受け付けています。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single.php:83
+msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+msgstr "コメントを受け付けていますが、トラックバックは現在受け付けていません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single.php:86
+msgid "Both comments and pings are currently closed."
+msgstr "コメントとトラックバックの両方を現在受け付けていません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/taxonomy-topic-tag-edit.php:28
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/taxonomy-topic-tag.php:28
+#, php-format
+msgid "Topic Tag: %s"
+msgstr "トピックタグ: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/teaser.php:73
+#, php-format
+msgid "by %s"
+msgstr "by %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/teaser.php:77
+#, php-format
+msgid "in %s"
+msgstr "( %s )"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-details.php:23
+#, php-format
+msgid "Profile: %s"
+msgstr "プロフィール: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-details.php:27
+#, php-format
+msgid "Edit Profile of User %s"
+msgstr "ユーザー %s のプロフィールを編集します"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-details.php:27
+msgid "(Edit)"
+msgstr "(編集)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-favorites.php:18
+msgid "Favorite Forum Topics"
+msgstr "お気に入りフォーラムトピック"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-favorites.php:25
+msgid "You currently have no favorite topics."
+msgstr "現在、あなたはお気に入りのトピックを持っていません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-favorites.php:25
+msgid "This user has no favorite topics."
+msgstr "このユーザーはお気に入りのトピックを持っていません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-subscriptions.php:22
+msgid "Subscribed Forum Topics"
+msgstr "購読済みフォーラムトピック"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-subscriptions.php:30
+msgid "You are not currently subscribed to any topics."
+msgstr "あなたは現在どんなトピックも購読していません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-subscriptions.php:30
+msgid "This user is not currently subscribed to any topics."
+msgstr "このユーザーは現在どんなトピックも購読していません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-topics-created.php:19
+msgid "Forum Topics Created"
+msgstr "フォーラムトピックが作成されました"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-topics-created.php:26
+msgid "You have not created any topics."
+msgstr "あなたはトピックを作成していません。"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-topics-created.php:26
+msgid "This user has not created any topics."
+msgstr "このユーザーはトピックを作成していません。"

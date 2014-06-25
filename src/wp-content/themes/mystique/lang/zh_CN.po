@@ -1,0 +1,3602 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Mystique 3.2.9.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-03-11 19:30+0800\n"
+"PO-Revision-Date: 2012-03-11 19:35+0800\n"
+"Last-Translator: Laycher <i@laycher.com>\n"
+"Language-Team: Laycher http://laycher.com <i@laycher.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__;_;gettext;gettext_noop;_n:1,2;_a;_ae;_an:1,2;nt:1,2;nte:1,2;t;te;atom()->te\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SearchPath-0: D:\\web\\wordpress\\wp-content\\themes\\mystique\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPath-2: ..\n"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:609
+#, php-format
+msgid "%s settings"
+msgstr "%s设置"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1015
+#, php-format
+msgid "%s year ago"
+msgid_plural "%s years ago"
+msgstr[0] "%s年前"
+msgstr[1] "%s年前"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1016
+#, php-format
+msgid "%s month ago"
+msgid_plural "%s months ago"
+msgstr[0] "%s个月前"
+msgstr[1] "%s个月前"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1017
+#, php-format
+msgid "%s week ago"
+msgid_plural "%s weeks ago"
+msgstr[0] "%s周前"
+msgstr[1] "%s周前"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1018
+#, php-format
+msgid "%s day ago"
+msgid_plural "%s days ago"
+msgstr[0] "%s天前"
+msgstr[1] "%s天前"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1019
+#, php-format
+msgid "%s hour ago"
+msgid_plural "%s hours ago"
+msgstr[0] "%s小时前"
+msgstr[1] "%s小时前"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1020
+#, php-format
+msgid "%s minute ago"
+msgid_plural "%s minutes ago"
+msgstr[0] "%s分钟前"
+msgstr[1] "%s分钟前"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1021
+#, php-format
+msgid "%s second ago"
+msgid_plural "%s seconds ago"
+msgstr[0] "%s秒前"
+msgstr[1] "%s秒前"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1443
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1451
+#, php-format
+msgid "Archive for %s"
+msgstr "%s的文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1447
+#, php-format
+msgid "Archive for week %1$s of %2$s"
+msgstr "%1$s ,%2$s的文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1455
+#, php-format
+msgid "Archive for year %s"
+msgstr "%s年的文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1465
+#, php-format
+msgid "Search results for %s"
+msgstr "对 %s 的搜索结果"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1469
+msgid "404 Not Found"
+msgstr "404，抱歉，没有找到"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1475
+#, php-format
+msgid "Page %s"
+msgstr "第%s页"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1479
+#, php-format
+msgid "Comment Page %s"
+msgstr "评论页面 %s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1776
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1871
+msgid "Home Page"
+msgstr "首页"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1776
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1871
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:3355
+msgid "Home"
+msgstr "首页"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1800
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:1884
+msgid "Search Website"
+msgstr "搜索"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:2059
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:199
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1015
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1819
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3087
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3353
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5686
+msgid "Show More"
+msgstr "显示更多"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:2065
+#, php-format
+msgid "Page %1$s of %2$s"
+msgstr "%1$s / %2$s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:2068
+msgid "&laquo; Previous"
+msgstr "&laquo;前一页"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:2113
+msgid "Next &raquo;"
+msgstr "后一页&raquo;"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:2693
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1589
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4564
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5655
+msgid "Name"
+msgstr "昵称"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:2693
+msgid "(required)"
+msgstr "（必须）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:2694
+msgid "E-mail"
+msgstr "邮箱"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:2694
+msgid "(required, will not be published)"
+msgstr "（必须，不会公布）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:2694
+msgid "(will not be published)"
+msgstr "（不会公布）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:2695
+msgid "Website"
+msgstr "网站"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:3379
+#, php-format
+msgid "Search: %s"
+msgstr "搜索：%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:3402
+#, php-format
+msgid "Archives: %s"
+msgstr "归档：%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:3970
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:5439
+msgid "Edit"
+msgstr "编辑"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:4599
+#, php-format
+msgid "%s topic"
+msgid_plural "%s topics"
+msgstr[0] "%s主题"
+msgstr[1] "%s主题"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:4662
+msgid "More &gt;"
+msgstr "阅读更多&gt;"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:4947
+msgid "Anonymous"
+msgstr "匿名"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:4976
+#, php-format
+msgid "Share this post on %s"
+msgstr "分享到%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:5302
+#, php-format
+msgid "Posts by %1$s (%2$s)"
+msgstr "由%1$s (%2$s)发布"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:5302
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5523
+#, php-format
+msgid "Posts by %s"
+msgstr "%s发表的文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:5446
+msgid "Delete"
+msgstr "删除"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:5452
+msgid "Spam"
+msgstr "垃圾评论"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:5457
+msgid "Approve"
+msgstr "批准"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:5468
+msgid "Reply"
+msgstr "回复"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:5473
+msgid "Quote"
+msgstr "引用"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-core.php:5592
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:288
+msgid "Show"
+msgstr "显示所有"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:843
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:893
+msgid "Loading..."
+msgstr "读取中..."
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:844
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:2096
+msgid "Show Page Visibility Options"
+msgstr "显示页面可见选项"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:845
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:2096
+msgid "Hide Page Visibility Options"
+msgstr "隐藏页面可见选项"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:846
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2016
+msgid "Checking..."
+msgstr "检查中..."
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:847
+msgid "It appears that your home page has javascript errors on it. Deactivate all plugins, then activate them back one by one to find out which one is causing errors."
+msgstr "您的首页有javascript错误。关闭所有的插件，然后一个一个激活看看是那个插件引起的错误。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:848
+msgid "Uploading"
+msgstr "上传中"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:849
+msgid "Try Another Image?"
+msgstr "试试另一个图片？"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:850
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:986
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1023
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1064
+msgid "Change Image"
+msgstr "换图片"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:851
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:986
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1023
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1064
+msgid "Upload Image"
+msgstr "上传图片"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1443
+msgid "You can't vote your own comment :("
+msgstr "您不能投票给您自己的评论 :("
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1447
+msgid "You can only vote once :)"
+msgstr "您只能投一次票 :)"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1451
+msgid "Invalid vote"
+msgstr "无效的投票"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1458
+msgid "Failed."
+msgstr "失败。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1501
+#, php-format
+msgid "%s debug info"
+msgstr "%s 调试信息"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1562
+#, php-format
+msgid "Your site is running on %1$s. %2$s requires at least %3$s. Please update your site even if you're not going to use this theme, because outdated applications expose you to security risks"
+msgstr "您的网站运行在%1$s。%2$s至少需要%3$s。请更新您的网站，即时您不打算使用这个主题，因为过时的应用会带来安全风险"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1570
+#, php-format
+msgid "The site is temporarily down for maintainance. Come back in a few minutes, or login in <a%s>here</a> if you're the site admin"
+msgstr "网站暂时维护中。请过一会儿再回来，或者如果您是网站管理者，请在<a%s>这里</a>登录"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1576
+#: D:\web\wordpress\wp-content\themes\mystique/atom-shortcodes.php:110
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1948
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2141
+msgid "Dashboard"
+msgstr "控制面板"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1576
+#, php-format
+msgid "Go to your %s"
+msgstr "您的%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1598
+msgid "User CSS"
+msgstr "用户的CSS"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1600
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:731
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:774
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1022
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3111
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3362
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4587
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5099
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5708
+msgid "documentation"
+msgstr "文件"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1597
+#, php-format
+msgid "To make small CSS customizations you can use the %1$s option from the theme settings. For extensive customizations activate and edit the %2$s theme if available, or create your own child theme. Read the %3$s for more information."
+msgstr "你可以在主题设置中的%1$s选项做一些小的CSS调整。想要调整更多，编辑主题%2$s，或者创建自己的子主题。请查看%3$s获取更多信息。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1603
+msgid "Do not edit core theme files because you will loose any changes you make here when you update!"
+msgstr "不要编辑核心主题文件，因为当你更新主题的时候，这些修改将会丢失！"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1665
+msgid "Stop spamming dude!"
+msgstr "停止滥发信息！"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1865
+msgid "Page Attributes"
+msgstr "页面属性"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1865
+msgid "Attributes"
+msgstr "属性"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1890
+msgid "(no parent)"
+msgstr "（没有父级）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1896
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1897
+msgid "Parent"
+msgstr "父级"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1947
+msgid "Template"
+msgstr "模板"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1948
+msgid "Page Template"
+msgstr "页面模版"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1950
+msgid "Default Template"
+msgstr "默认模版"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1959
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1961
+msgid "Order"
+msgstr "顺序"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:1964
+msgid "Need help? Use the Help tab in the upper right of your screen."
+msgstr "需要帮助？请使用在你的屏幕的右上角的“帮助”选项。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:2133
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:288
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:160
+msgid "Blog Homepage"
+msgstr "博客首页"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:2134
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1670
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:294
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:161
+msgid "Search Results"
+msgstr "搜索结果"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:2135
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1671
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:292
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:162
+msgid "Author Archives"
+msgstr "作者归档"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:2136
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1672
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:293
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:163
+msgid "Date-based Archives"
+msgstr "根据数据归档"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:2137
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1673
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:291
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:164
+msgid "Tag Archives"
+msgstr "标签归档"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:2138
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1674
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:290
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:165
+msgid "Category Archives"
+msgstr "分类归档"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:2180
+msgid "Show this widget on:"
+msgstr "显示这个小工具在："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:2197
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1698
+#, php-format
+msgid "Single: %s"
+msgstr "单个页面：%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:2207
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1712
+#, php-format
+msgid "Tax Archive: %s"
+msgstr "归档：%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:2223
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1762
+#, php-format
+msgid "Page: %s"
+msgstr "第%s页"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:2232
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:358
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:332
+msgid "To:"
+msgstr "给："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:2237
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1617
+msgid "Unregistered user (Visitor)"
+msgstr "没有注册的用户(游客)"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:2260
+#, php-format
+msgid "To include this widget into your posts or pages use one of the following shortcodes: %s"
+msgstr "请使用下面之一的短代码使您的小工具放在文章或者页面中：%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:2452
+msgid "Featured"
+msgstr "特点"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-hooks.php:2522
+#, php-format
+msgid "You can customize your %1$s theme from the <%2$s>theme settings</a> page."
+msgstr "您可以在<%2$s>主题设置</a>页面中自定义您的%1$s主题"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:264
+msgid "Insert Atom Element"
+msgstr "插入源元素"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:312
+msgid "Nothing to configure in single column mode"
+msgstr "在单栏模式下没有可设置的"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:543
+msgid "You don't have sufficient permissions to change this option"
+msgstr "您没有足够的权限来改变这个选项"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:578
+msgid "You can add HTML code."
+msgstr "您可以添加HTML代码"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:578
+msgid "HTML is allowed, but some tags may be filtered out for security reasons."
+msgstr "不好意思，这个文件类型出于安全的原因是不允许的。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:695
+#: D:\web\wordpress\wp-content\themes\mystique/mods/Translate/module.php:502
+msgid "Save Changes"
+msgstr "保存更改"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:711
+msgid "User-defined code"
+msgstr "用户自定义代码"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:720
+msgid "Only edit this if you know what you're doing!"
+msgstr "如果您知道您自己在做什么，您可以编辑！"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:729
+#, php-format
+msgid "The code you add here is included in the front-end on initialization. This is almost the same thing as editing the %1$s file from the theme directory, the difference is that the changes you make here are preserved after theme updates. Read the %2$s for more information."
+msgstr "在这里添加的代码将会在初始化时包含在前端。这跟编辑主题目录中的%1$s文件有相同的效果，不同之处在于您在这里的修改在主题更新后还会保存。阅读%2$s获得更多的信息。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:736
+#, php-format
+msgid "This will affect all blogs using the %s theme!"
+msgstr "这将影响所有使用%s主题的博客！"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:745
+#, php-format
+msgid "Data is saved to %s."
+msgstr "数据已保存到%s。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:748
+#, php-format
+msgid "To use this function you must have an active child theme of %s, and give WordPress write permissions to the child theme folder."
+msgstr "您必须激活%s的子主题才能使用这个功能，并且赋予WordPress对这个子主题文件夹的写权限。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:767
+#, php-format
+msgid "Check %s to see existing theme classes and properties, which you can redefine here."
+msgstr "检查%s来查看主题结构和配置，通过这些你可以重新定义。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:769
+msgid "parent theme URL"
+msgstr "父级主题的地址"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:769
+#, php-format
+msgid "All URLs must have absolute paths. You can use the %1$s keyword to point to the %2$s."
+msgstr "所有的URL地址必须是绝对地址。你可以用%1$s关键字来指向%2$s。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:772
+#, php-format
+msgid "To get the child theme URL use %s."
+msgstr "使用%s来获取子主题的URL。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:774
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1022
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3111
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3362
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4587
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5099
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5708
+#, php-format
+msgid "Read the %s to see all available keywords."
+msgstr "阅读%s来查看所有可用的关键词。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:796
+msgid "General Info"
+msgstr "基本信息"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:799
+#, php-format
+msgid "Core (ATOM) version: %s"
+msgstr "核心（ATOM）版本：%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:802
+#, php-format
+msgid "Theme Version: %s"
+msgstr "主题版本：%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:805
+#, php-format
+msgid "(Child theme of %s)"
+msgstr "（%s的子主题）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:811
+msgid "Check for update"
+msgstr "检查更新"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:817
+msgid "Theme documentation"
+msgstr "主题文件"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:818
+msgid "Project Homepage"
+msgstr "项目首页"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:836
+msgid "Available Languages"
+msgstr "可用的语言"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:843
+#, php-format
+msgid "%1$s - Translator: %2$s (%3$s)"
+msgstr "%1$s - 翻译者: %2$s (%3$s)"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:851
+msgid "Import / export / reset or backup Theme Options"
+msgstr "导入/导出/还原/备份 主题选项"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:853
+msgid "If you wish to import or export theme settings from another website that's using this theme, you may do so here. Below you can copy the current settings stored as a encoded string, or paste new settings..."
+msgstr "在这里你可以实现从另一个使用这个主题的网站导入或导出主题设置。在下面的框中，你可以拷贝下面加密的字符来保存现在的设置，你还可以粘贴新的设置的代码。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:863
+msgid "Reset options to defaults"
+msgstr "恢复到默认选项"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:863
+msgid "Reset all theme settings to the default values? Are you sure?"
+msgstr "您确定要恢复所有的主题设置到默认值吗？"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:864
+msgid "Import options"
+msgstr "导入选项"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:864
+msgid "Import these settings? Are you sure?"
+msgstr "您确定要导入这些设置吗？"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:902
+msgid "Layout Style (Global)"
+msgstr "布局样式（全局）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:906
+msgid "One column (No sidebars)"
+msgstr "1栏（没有侧边栏）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:907
+msgid "Two columns, left sidebar"
+msgstr "2栏页面，侧边栏在左边"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:908
+msgid "Two columns, right sidebar"
+msgstr "2栏页面，侧边栏在右边"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:909
+msgid "Three columns"
+msgstr "三栏"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:910
+msgid "Three columns, sidebars to the left"
+msgstr "3栏页面，侧边栏在左边"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:911
+msgid "Three columns, sidebars to the right"
+msgstr "3栏页面，侧边栏在右边"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:916
+#, php-format
+msgid "Note that widget visibility options can be used to override this setting for individual pages or posts (you can also select the appropriate template when editing pages, or use the %s custom field)"
+msgstr "请注意，小工具的可视化选项会无视那些单独的页面或者文章的设置（您也可以在编辑页面的时候选择合适的模板或者使用%s自定义范围）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:925
+msgid "Column Sizes"
+msgstr "列的大小"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:950
+msgid "Page Width"
+msgstr "页面宽度"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:956
+#, php-format
+msgid "Fixed (%s)"
+msgstr "固定的（%s）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:963
+#, php-format
+msgid "Fluid, but not more than %s pixels"
+msgstr "可变的，但是不能超过%s像素"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:970
+msgid "Semi-Fluid (Fixed Sidebars)"
+msgstr "部分可变（侧边栏固定）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:981
+msgid "Site Title (Logo)"
+msgstr "站点标题（Logo）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:984
+msgid "Current logo image"
+msgstr "现在的logo图像"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:985
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1022
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1063
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:369
+msgid "Remove"
+msgstr "去除"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:997
+msgid "Styles &amp; colors"
+msgstr "样式&amp;颜色"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1003
+#, php-format
+msgid "%1$s by %2$s"
+msgstr "%1$s 由 %2$s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1007
+msgid "Disabled"
+msgstr "关闭的"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1007
+msgid "use custom styles"
+msgstr "使用自定义样式"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1007
+msgid "Blank"
+msgstr "空白"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1016
+msgid "Page Background"
+msgstr "页面背景"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1020
+msgid "Current background image"
+msgstr "现在的背景图像"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1041
+msgid "Header Background"
+msgstr "头部背景"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1058
+msgid "Favicon"
+msgstr "网站图标"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1061
+msgid "Current favicon"
+msgstr "现在的网站图标"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1094
+#, php-format
+msgid "Modules act like plugins that can further extend %s. Keep in mind that by disabling a module your are removing its options as well (if it has any)"
+msgstr "模块就像插件一样，可以更大程度扩展%s功能。请记住如果你关闭一个模块的功能也要取消它的选项（如果有的话）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1103
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:197
+msgid "Title"
+msgstr "名称"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1104
+msgid "Type"
+msgstr "类型"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1105
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:258
+msgid "Author"
+msgstr "作者"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1106
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1595
+msgid "Description"
+msgstr "描述"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1145
+msgid "Currently there are no modules installed."
+msgstr "现在没有安装好的模块。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1188
+msgid "Update"
+msgstr "更新"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1211
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1307
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1545
+msgid "You are not authorised to perform this operation."
+msgstr "你未被授权执行此操作。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1227
+msgid "Import failed. Invalid settings. "
+msgstr "导入失败。无效的设置。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1228
+msgid "Settings saved, but failed to update user functions. Is your child theme directory writable?"
+msgstr "设置已保存，但是更新用户功能失败。您的子主题目录可写吗？"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1242
+msgid "Settings saved."
+msgstr "设置已保存。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1242
+msgid "View site"
+msgstr "浏览站点"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1257
+#, php-format
+msgid "<strong>There is a new version of %1$s available</strong>. <a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">View %1$s %3$s details</a> or notify the site administrator."
+msgstr "<strong>这里有一个可用的%1$s新版本</strong>。<a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">查看%1$s %3$s的细节</a>或者通知网站管理者。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1259
+#, php-format
+msgid "<strong>There is a new version of %1$s available</strong>. <a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">View %1$s %3$s details</a> or <a href=\"%4$s\" >upgrade automatically</a>."
+msgstr "<strong>这里有一个可用的%1$s新版本</strong>。<a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">查看%1$s %3$s的细节</a>或者<a href=\"%4$s\" >自动升级</a>。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1418
+#, php-format
+msgid "%s is available"
+msgstr "%s是可用的"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1420
+msgid "You have the latest version"
+msgstr "您已经有最新版本了"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1441
+msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini."
+msgstr "上传的文件大小超过了php.ini中设置的upload_max_filesize。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1442
+msgid "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form."
+msgstr "上传的文件大小超过了在HTML表格中设置的MAX_FILE_SIZE。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1443
+msgid "The uploaded file was only partially uploaded."
+msgstr "上传的文件只上传了部分。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1444
+msgid "No file was uploaded."
+msgstr "没有文件被上传。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1445
+msgid "Missing a temporary folder."
+msgstr "缺少一个临时文件夹。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1446
+msgid "Failed to write file to disk."
+msgstr "文件写入硬盘失败。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1447
+msgid "File upload stopped by extension."
+msgstr "文件上传被停止。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1456
+msgid "File is empty. Please upload something more substantial."
+msgstr "文件空。请上传一些有内容的文件。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1459
+msgid "File is empty. Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini or by post_max_size being defined as smaller than upload_max_filesize in php.ini."
+msgstr "文件空。请上传一些有内容的文件。这个错误的发生可能是由于您在php.ini配置中禁止了上传功能或者php.ini配置中的设置的post_max_size比upload_max_filesize小造成的。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1466
+msgid "Specified file failed upload test."
+msgstr "指定文件上传测试失败。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1478
+msgid "Sorry, this file type is not permitted for security reasons."
+msgstr "不好意思，这个文件类型出于安全的原因是不允许的。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1511
+#, php-format
+msgid "The uploaded file could not be moved to %s."
+msgstr "这个上传的文件不能移动到 %s。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1553
+#, php-format
+msgid "Upload Error: %s"
+msgstr "更新错误：%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1578
+#, php-format
+msgid "Latest News from %s"
+msgstr "来自%s的最新文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-interface.php:1669
+msgid "Blog"
+msgstr "博客"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-shortcodes.php:51
+msgid "Please specify the column number / total column count"
+msgstr "请指定列数字/总列数"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-shortcodes.php:104
+msgid "RSS Feeds"
+msgstr "RSS订阅"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-shortcodes.php:110
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1879
+msgid "Log in"
+msgstr "登录"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-shortcodes.php:476
+#, php-format
+msgid "PR %d"
+msgstr "PR %d"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-shortcodes.php:518
+msgid "Please specify a valid service and user ID"
+msgstr "请指定一个有效的服务和用户ID"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-shortcodes.php:560
+#, php-format
+msgid "Powered by %1$s and %2$s theme by %3$s"
+msgstr "自豪地使用%1$s，%2$s主题来自%3$s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-shortcodes.php:586
+msgid "Copyright &copy;"
+msgstr "Copyright &copy;"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-shortcodes.php:604
+#, php-format
+msgid "%1$s queries in %2$s seconds (%3$sM)"
+msgstr "%1$s queries in %2$s seconds (%3$sM)"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:189
+#, php-format
+msgid "Show next %d entries"
+msgstr "显示下%d个条目"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:488
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:491
+msgid "Archives"
+msgstr "归档"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:489
+msgid "Archives of your site's posts"
+msgstr "您的网站文章的归档"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:584
+#, php-format
+msgid "%1$s %2$d"
+msgstr "%1$s %2$d"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:670
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2939
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4169
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5580
+msgid "Show All"
+msgstr "显示所有"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:678
+msgid "Select Day:"
+msgstr "选择日："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:679
+msgid "Select Week:"
+msgstr "选择星期："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:680
+msgid "Select Month:"
+msgstr "选择月份："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:681
+msgid "Select Year:"
+msgstr "选择年份："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:742
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:976
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1570
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1807
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2127
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2281
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2436
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2652
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3021
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3332
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4224
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4535
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4822
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5064
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5373
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5638
+msgid "Title:"
+msgstr "标题："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:747
+msgid "Type:"
+msgstr "类型："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:749
+msgid "Yearly"
+msgstr "每年"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:750
+msgid "Monthly"
+msgstr "每月"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:751
+msgid "Weekly"
+msgstr "每星期"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:752
+msgid "Daily"
+msgstr "每日"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:757
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1397
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3026
+msgid "Post Type:"
+msgstr "发表类型："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:767
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1620
+msgid "Limit to:"
+msgstr "仅限于："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:768
+msgid "Entries"
+msgstr "条目"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:775
+msgid "Show post count"
+msgstr "显示发表数目"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:780
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4552
+msgid "Show as dropdown"
+msgstr "下拉式显示"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:786
+msgid "Day archive date format:"
+msgstr "日期按日格式归档："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:791
+msgid "Week archive date format:"
+msgstr "日期按周格式归档："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:827
+msgid "Network Blogs"
+msgstr "网络日志"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:828
+msgid "A list of site blogs"
+msgstr "一个网站博客的列表"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:832
+msgid "Recently updated blogs"
+msgstr "最新更新的博客"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:981
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1587
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3035
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4562
+msgid "Order by:"
+msgstr "排序方式："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:983
+msgid "Last Update"
+msgstr "上次更新"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:984
+msgid "Registered Date"
+msgstr "注册日期"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:985
+msgid "Site ID"
+msgstr "网站ID"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:986
+msgid "Nothing, Randomize"
+msgstr "没有，随机选择"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:991
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1812
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3069
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3337
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5069
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5383
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5680
+msgid "How many entries to display?"
+msgstr "显示多少条条目？"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:996
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2668
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5079
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5673
+msgid "Exclude:"
+msgstr "排除："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:998
+msgid "Site IDs, separated by commas."
+msgstr "站点ID，用逗号分隔。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1004
+msgid "Exclude sites marked as mature"
+msgstr "排除标记为到期的位置"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1008
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3347
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5074
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5690
+msgid "Avatar Size:"
+msgstr "头像尺寸："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1009
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3082
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3348
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5075
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5691
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:257
+msgid "pixels"
+msgstr "像素"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1015
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1819
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3087
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3353
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5686
+#, php-format
+msgid "Display %s Link"
+msgstr "显示%s链接"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1058
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1216
+msgid "Calendar"
+msgstr "日历"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1059
+msgid "A calendar of your site's posts"
+msgstr "您的网站文章的日历"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1199
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1208
+#, php-format
+msgid "View posts for %1$s %2$s"
+msgstr "看关于%1$s %2$s的文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1410
+msgid "Use AJAX for month navigation, when possible"
+msgstr "当可能的时候，为月导航使用AJAX"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1415
+msgid "One-letter day abbreviation"
+msgstr "天的一个字母缩写"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1453
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1621
+msgid "Links"
+msgstr "链接"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1454
+msgid "Your blogroll/links"
+msgstr "您的网站提要/友情链接"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1456
+msgid "Blogroll"
+msgstr "网站提要"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1522
+#, php-format
+msgid "%s out of 10"
+msgstr "%s 超过了10"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1575
+msgid "Link Category:"
+msgstr "链接分类："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1577
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3051
+msgid "-- All categories --"
+msgstr "-- 所有分类 --"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1590
+msgid "Rating"
+msgstr "等级"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1591
+msgid "URL"
+msgstr "URL"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1593
+msgid "Owner"
+msgstr "拥有者"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1594
+msgid "Notes"
+msgstr "注解"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1601
+msgid "Hide Private Links"
+msgstr "隐藏私密链接"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1606
+msgid "Display Link Image"
+msgstr "显示链接图片"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1611
+msgid "Display Link Rating"
+msgstr "显示链接等级"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1616
+msgid "Display Link Description"
+msgstr "显示链接描述"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1650
+msgid "Lifestream"
+msgstr "生活流"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1651
+msgid "Your activity around social networks"
+msgstr "您周围活动的社会网络"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1656
+msgid "My Lifestream"
+msgstr "我的生活流"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1823
+msgid "Max. records to keep in database"
+msgstr "在数据库中最大程度的保存记录"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1831
+#, php-format
+msgid "Check for new data every %s seconds (Time-out)"
+msgstr "每%s秒检查新数据（暂停时间）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1835
+msgid "Services:"
+msgstr "服务："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1875
+msgid "Login"
+msgstr "登录"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1876
+msgid "Login and Lost Password forms"
+msgstr "登录和丢失密码的表格"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1880
+msgid "Hello Guest. Login below if you have an account"
+msgstr "你好，游客。如果你有账户，请登录"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1906
+msgid "Please enter a valid user name and password"
+msgstr "请输入一个有效的用户名和密码"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1936
+#, php-format
+msgid "Welcome %s"
+msgstr "欢迎 %s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1951
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2153
+msgid "Write"
+msgstr "写文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1954
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2159
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:184
+msgid "Comments"
+msgstr "评论"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1957
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2147
+msgid "Profile"
+msgstr "个人资料"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1959
+msgid "Log Out"
+msgstr "退出"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1974
+msgid "User"
+msgstr "用户"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1975
+msgid "Password"
+msgstr "密码"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1979
+msgid "Log In"
+msgstr "登录"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:1987
+msgid "Remember me"
+msgstr "记住我"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2021
+msgid "Login Successful, redirecting..."
+msgstr "登录成果能够，自动转向中..."
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2057
+msgid "Lost your password?"
+msgstr "忘记密码？"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2084
+msgid "Register"
+msgstr "注册"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2132
+msgid "Initial Status Text (or HTML):"
+msgstr "最初的状态文本(或HTML):"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2137
+msgid "Welcome screen links (if enough permissions):"
+msgstr "欢迎屏幕链接（如果有足够的权限）："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2165
+msgid "Log out"
+msgstr "退出"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2199
+msgid "Menus"
+msgstr "菜单"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2200
+msgid "Display custom menus"
+msgstr "显示定制的菜单"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2274
+msgid "No menus have been created yet."
+msgstr "还没有创建菜单。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2274
+msgid "Create some"
+msgstr "创建一些"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2285
+msgid "Select Menu:"
+msgstr "选择菜单："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2297
+msgid "Behaviour:"
+msgstr "行为："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2299
+msgid "Expanded"
+msgstr "展开的"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2300
+msgid "Collapsible, Standard"
+msgstr "可折叠的，标准的"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2301
+msgid "Collapsible, Accordion style"
+msgstr "可折叠的，折叠样式"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2306
+msgid "Expand/Collapse Fire Event:"
+msgstr "展开/折叠事件："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2308
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3954
+msgid "Click"
+msgstr "单击"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2309
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3955
+msgid "Double-Click"
+msgstr "双击"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2310
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3956
+msgid "Mouse Over"
+msgstr "鼠标移上"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2313
+#, php-format
+msgid "Note: Links with the %s URL will behave the same way as the arrows. You should use them on menus with children"
+msgstr "注意：带有%s的URL的链接将于箭头表现的一样。您应该在子级菜单上用他们。 "
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2344
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2347
+msgid "Meta"
+msgstr "Meta"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2345
+msgid "Log in/out, admin, feed and WordPress links"
+msgstr "登录/退出，管理，订阅和WordPress链接"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2380
+msgid "Syndicate this site using RSS 2.0"
+msgstr "网站使用RSS 2.0"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2380
+msgid "Entries <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr "条目<abbr title=\"Really Simple Syndication\">RSS</abbr>"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2384
+msgid "The latest comments to all posts in RSS"
+msgstr "RSS中最新的评论"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2384
+msgid "Comments <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr "评论<abbr title=\"Really Simple Syndication\">RSS</abbr>"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2388
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr "由WordPress驱动，先进的个人作品平台。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2392
+msgid "Theme developed by digitalnature"
+msgstr "主题由digitalnature开发"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2440
+msgid "Links to display:"
+msgstr "要显示的链接："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2444
+msgid "Login / Logout / Site Admin"
+msgstr "登录/退出/站点管理"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2449
+msgid "Post RSS"
+msgstr "文章RSS"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2454
+msgid "Comment RSS"
+msgstr "评论RSS"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2459
+msgid "External: WordPress.org"
+msgstr " 更多：WordPress.org"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2464
+msgid "External: digitalnature.eu"
+msgstr "更多：digitalnature.eu"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2508
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2515
+msgid "Pages"
+msgstr "页面"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2509
+msgid "Your site&#8217;s WordPress Pages"
+msgstr "您的网站的WordPress页面"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2617
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4492
+msgid "Display:"
+msgstr "显示："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2620
+msgid "All Pages"
+msgstr "所有页面"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2625
+msgid "Children of the active page"
+msgstr "活动页面的子页面"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2629
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4504
+msgid "Start from root"
+msgstr "从根开始"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2635
+msgid "Children of:"
+msgstr "孩子："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2657
+msgid "Sort by:"
+msgstr "排序方式："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2659
+msgid "Page title"
+msgstr "页面标题"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2660
+msgid "Page order"
+msgstr "页面顺序"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2661
+msgid "Page ID"
+msgstr "页面ID"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2662
+msgid "Date, created"
+msgstr "创建日期"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2663
+msgid "Date, modified"
+msgstr "修改日期"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2671
+msgid "Page IDs, separated by commas."
+msgstr "页面ID，用逗号分割"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2675
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4577
+msgid "Depth:"
+msgstr "深度："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2678
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4579
+msgid "0 = All levels"
+msgstr "0 = All levels"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2718
+msgid "Posts"
+msgstr "发表文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2719
+msgid "List posts based on filters you choose"
+msgstr "更具您选择的条件显示文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:2724
+msgid "Recent Posts"
+msgstr "最新文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3012
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3324
+msgid "Network (site-wide) content"
+msgstr "网络（全网站）内容"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3014
+msgid "Get posts from all network blogs"
+msgstr "从所有网络博客获取文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3037
+msgid "Date (Recent posts)"
+msgstr "时间（最近的文章）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3038
+msgid "Modified date (Recently modified)"
+msgstr "修改日期（最近修改）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3039
+msgid "Comment count"
+msgstr "评论总数"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3040
+msgid "View count"
+msgstr "浏览次数"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3041
+msgid "Title, alphabetically"
+msgstr "按字母排序的标题"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3042
+msgid "Nothing, get random posts"
+msgstr "没有，只是获取随机文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3061
+msgid "Show posts from:"
+msgstr "显示文章从："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3075
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3343
+#, php-format
+msgid "Content has max %s characters"
+msgstr "评论最大 %s 个字符"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3079
+msgid "Thumbnail Size:"
+msgstr "预览缩略图大小:"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3092
+msgid "Get only context-related posts"
+msgstr "只获取上下文相关联的文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3098
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5086
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5695
+msgid "Display mode"
+msgstr "显示模式"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3099
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5087
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5696
+msgid "Full"
+msgstr "全部"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3100
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5088
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5697
+msgid "Details"
+msgstr "细节"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3101
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5089
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5698
+msgid "Brief"
+msgstr "主要的"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3102
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5090
+msgid "Post thumbnails"
+msgstr "文章预览缩略图"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3103
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5091
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5700
+msgid "Custom Template"
+msgstr "自定义模版"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3120
+msgid "here"
+msgstr "这里"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3120
+#, php-format
+msgid "<strong>Important:</strong> %1$s sized thumbnails have to be created if you just added this widget, or if you're changing the thumbnail size. Read more about thumbnail sizes %2$s"
+msgstr "<strong>重要：</strong>如果你刚刚添加这个小工具或者你刚改变了预览缩略图的尺寸，%1$s尺寸大小的预览缩略图将会创建。阅读更多关于预览缩略图尺寸%2$s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3157
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3162
+msgid "Recent Comments"
+msgstr "最新评论"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3158
+msgid "The most recent comments"
+msgstr "最新评论"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3173
+#, php-format
+msgid "on %s"
+msgstr "在 %s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3326
+msgid "Get comments from all network blogs"
+msgstr "从所有网络博客获取评论"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3358
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4583
+msgid "Template:"
+msgstr "模板:"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3397
+msgid "Search"
+msgstr "搜索"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3398
+msgid "A search form for your site"
+msgstr "一个您的网站的搜索表格"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3452
+msgid "Column Splitter"
+msgstr "列分离"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3453
+msgid "Splits area into 2 columns"
+msgstr "分成两列"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3513
+msgid "Widgets surrounded by splitters will be grouped into columns (two per row)."
+msgstr "被分离包围的小工具将被成组分成列（每列两个）。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3555
+msgid "Tabbed Widgets"
+msgstr "有选项卡的小工具"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3556
+msgid "Group arbitrary widgets into tabs"
+msgstr "将任意的小工具集中到选项卡中"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3812
+msgid "To add tabs, you must have at least one active arbitrary widget. Click save to refresh..."
+msgstr "您必须至少拥有一个可用的小工具才能添加选项卡。点击保存刷新..."
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3832
+msgid "Create Tabs for:"
+msgstr "创建选项卡"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3943
+msgid "Transition effect:"
+msgstr "转变影响："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3945
+msgid "-- None --"
+msgstr "--没有--"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3946
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:40
+msgid "Fade"
+msgstr "淡入淡出"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3947
+msgid "Toggle Height"
+msgstr "触发器高度"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3952
+msgid "Switch-Tab event:"
+msgstr "改变标签的事件："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3990
+msgid "Tag Cloud"
+msgstr "标签云"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3991
+msgid "Your most used tags in cloud format"
+msgstr "您必须按照固定的格式来使用标签"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:3993
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:272
+msgid "Tags"
+msgstr "标签"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4229
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4540
+msgid "Taxonomy:"
+msgstr "分类法："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4240
+msgid "Max. number of tags to show:"
+msgstr "显示标签的最大数目："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4246
+msgid "Smallest:"
+msgstr "最小的："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4258
+msgid "Largest:"
+msgstr "最大:"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4300
+msgid "Terms"
+msgstr "条款"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4301
+msgid "A list of taxonomy terms like categories or post tags"
+msgstr "像分类或者文章标签的一个分类列表"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4304
+msgid "Categories"
+msgstr "分类"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4322
+#, php-format
+msgid "View all posts filed under %s"
+msgstr "查看 %s下的所有文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4495
+msgid "All Terms"
+msgstr "所有条款"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4500
+msgid "Children of the active term"
+msgstr "孩子的活跃时期"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4555
+msgid "Hierarchical?"
+msgstr "按等级划分？"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4558
+msgid "Hide empty?"
+msgstr "隐藏空的？"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4565
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5656
+msgid "Post count, descending"
+msgstr "发表数目，降序"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4566
+msgid "ID"
+msgstr "ID"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4567
+msgid "Slug"
+msgstr "强击"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4572
+msgid "Exclude (IDs separated by comma):"
+msgstr "除了（ID用逗号分隔）："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4621
+msgid "Text"
+msgstr "文本"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4622
+msgid "Arbitrary text, HTML/PHP or shortcodes"
+msgstr "任意文版，HTML/PHP或者短代码"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4622
+msgid "Arbitrary text, HTML or shortcodes"
+msgstr "任意文版，HTML或者短代码"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4852
+msgid "Automatically add paragraphs"
+msgstr "自动增加分段"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4859
+#, php-format
+msgid "Execute code within %s tags"
+msgstr "执行代码包含%s的标签"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4898
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4902
+msgid "Top Commenters"
+msgstr "最热心评论人"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:4899
+msgid "People who frequently comment the blog"
+msgstr "经常评论博客的人"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5000
+#, php-format
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "%s条评论"
+msgstr[1] "%s条评论"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5082
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5676
+msgid "User IDs, separated by commas."
+msgstr "用户ID，用逗号分隔。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5082
+msgid "Enter \"0\" to exclude all unregistered commenters."
+msgstr "输入\"0\"来排除所有未注册的评论者。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5140
+msgid "Twitter"
+msgstr "Twitter"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5141
+msgid "Your latest Twitter updates"
+msgstr "您的Twitter的最新更新"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5144
+msgid "Tweets"
+msgstr "Tweets"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5220
+#, php-format
+msgid "%s followers"
+msgstr "%s追随者"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5221
+#, php-format
+msgid "%s tweets"
+msgstr "%s tweets"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5245
+#, php-format
+msgid "Twitter returned error: %s"
+msgstr "Twitter返回错误:%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5246
+msgid "Could not retrieve tweets."
+msgstr "无法取回tweets。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5250
+msgid "Possible reasons:"
+msgstr "可能原因："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5252
+msgid "Your host doesn't allow outgoing connections"
+msgstr "您的运营商不允许您连到外面去"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5253
+msgid "Your server has made too many requests and is being limited (try increasing the cache value)"
+msgstr "你的服务器有太多的请求，变得受限制了（尝试提高缓存的值）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5254
+msgid "The user has protected his/her tweets"
+msgstr "用户保护了他/她的tweets"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5255
+msgid "Twitter may be down"
+msgstr "Twitter可能关闭了"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5259
+msgid "Unavailable for the moment"
+msgstr "暂时不可用"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5378
+#, php-format
+msgid "%s user name:"
+msgstr "%s的昵称："
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5390
+msgid "Show profile info"
+msgstr "显示个人资料信息"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5397
+#, php-format
+msgid "Keep data cached for %s minute(s)"
+msgstr "保存数据缓存%s分钟"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5433
+msgid "Users"
+msgstr "用户"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5434
+msgid "A list of users/authors from your blog"
+msgstr "一个您的博客的用户/作者的列表"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5438
+msgid "Authors"
+msgstr "作者"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5523
+#, php-format
+msgid "%1$s (%2$s posts)"
+msgstr "%1$s (%2$s 主题)"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5530
+#, php-format
+msgid "%s post"
+msgid_plural "%s posts"
+msgstr[0] "%s篇文章"
+msgstr[1] "%s篇文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5643
+msgid "Role"
+msgstr "角色"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5645
+msgid "-- Any --"
+msgstr "--任何--"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5653
+msgid "Sort by"
+msgstr "排序"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5657
+msgid "Date registered, newest first"
+msgstr "注册的日期，最新的排第一"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5699
+msgid "Avatar thumbnails"
+msgstr "头像预览缩略图"
+
+#: D:\web\wordpress\wp-content\themes\mystique/atom-widgets.php:5699
+msgid "Avatars thumbnails"
+msgstr "头像预览缩略图"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:66
+msgid "Page Top"
+msgstr "页面模版"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:67
+msgid "Below Header (Main)"
+msgstr "页眉之下（主要）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:68
+msgid "Above Footer"
+msgstr "页脚之上"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:136
+msgid "Primary Sidebar"
+msgstr "主要的侧表栏"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:137
+msgid "This is the default sidebar, active on 2 or 3 column layouts. If no widgets are visible, the page will fall back to a single column layout."
+msgstr "这是默认的侧边栏，可分两栏或者三栏。如果没有可见的小工具，页面将以单栏形式显示。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:146
+msgid "Secondary Sidebar"
+msgstr "第二侧边栏"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:147
+msgid "This sidebar is active only on a 3 column setup, if at least one of its widgets is visible to the current user."
+msgstr "这个侧边栏只有启用3栏是才会激活，当且仅当至少有一个小工具是对当前用户可见的。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:157
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:185
+msgid "Footer"
+msgstr "页脚"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:158
+msgid "Active only if at least one of its widgets is visible to the current user. You can add between 1 and 6 widgets here (3 or 4 are optimal). They will adjust their size based on the widget count."
+msgstr "当且仅当至少有一个它的小工具是对当前用户可见的时候才会激活。你可以添加1到6个小工具（3个或4个是理想的）。他们会根据小工具的数目调整自己的大小。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:167
+msgid "Arbitrary Widgets"
+msgstr "任意的小工具"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:168
+#, php-format
+msgid "Widgets from this area can be grouped into tabs, or added into posts/pages using the %1$s or %2$s shortcodes."
+msgstr "这里的小工具都可以合并到一个选项卡中，或者用短代码%1$s或%2$s加到文章/页面中。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:179
+msgid "Welcome"
+msgstr "欢迎"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:180
+msgid "Design"
+msgstr "设计"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:181
+msgid "Content options"
+msgstr "内容选项"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:182
+msgid "Post teasers"
+msgstr "文章广告"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:183
+msgid "Single pages"
+msgstr "单个页面"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:186
+msgid "CSS"
+msgstr "CSS"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:187
+msgid "Advanced"
+msgstr "高级"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:188
+msgid "Modules"
+msgstr "模块"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:204
+msgid "Content"
+msgstr "内容"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:213
+msgid "User limit"
+msgstr "用户限制"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:214
+msgid "Full post"
+msgstr "文章的全部"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:215
+msgid "Full post, filtered"
+msgstr "部分文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:216
+msgid "Excerpt"
+msgstr "摘要"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:225
+#, php-format
+msgid "~ %s characters"
+msgstr "~ %s 个字符"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:232
+msgid "Category"
+msgstr "分类"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:240
+msgid "Date / Time"
+msgstr "日期/时间"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:249
+msgid "Relative"
+msgstr "模板"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:250
+msgid "Absolute"
+msgstr "绝对的"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:265
+msgid "Comment Count"
+msgstr "评论数目"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:279
+msgid "Thumbnails"
+msgstr "预览缩略图"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:288
+msgid "Left Aligned"
+msgstr "左对齐"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:289
+msgid "Right Aligned"
+msgstr "右对齐"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:298
+msgid "Thumbnail Size"
+msgstr "预览缩略图大小"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:299
+msgid "Note that for the new sized thumbnails to take effect, all existing images must be resized. See the Advanced page."
+msgstr "注意，新设置的预览缩略图大小起效后，所有已经存在的图像也会重新改变大小。具体看高级设置页面。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:301
+msgid "Very Small, 60 x 60"
+msgstr "非常小，60 x 60"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:302
+msgid "Small, 90 x 90"
+msgstr "小，90 x 90"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:303
+msgid "Medium, 120 x 120"
+msgstr "中等，120 x 120"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:304
+msgid "Large, 140 x 140"
+msgstr "大，140 x 140"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:305
+msgid "Larger, 180 x 180"
+msgstr "更大，180 x 180"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:306
+msgid "Very large, 210 x 210"
+msgstr "非常大，210 x 210"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:307
+#, php-format
+msgid "Default media setting: %d x %d"
+msgstr "默认媒体设置：%d x %d"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:315
+msgid "Use first attachment as thumbnail, if none is set"
+msgstr "如果没有设置预览缩略图，则使用第一个附件"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:322
+msgid "Navigation"
+msgstr "导航"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:324
+msgid "Single link for older posts"
+msgstr "单独的链接给较早发布的文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:325
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:349
+msgid "Previous / Next links"
+msgstr "前一个/后一个链接"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:326
+msgid "Page numbers"
+msgstr "页数"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:334
+msgid "Allow Comment Ratings (Karma)"
+msgstr "允许评分（星）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:342
+#, php-format
+msgid "Hide comments with %s karma and below"
+msgstr "隐藏低于或等于%s颗星的评论"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:356
+msgid "Share Links"
+msgstr "分享链接"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:363
+msgid "Meta Information"
+msgstr "Meta信息"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:370
+msgid "About the Author"
+msgstr "关于作者"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:377
+msgid "Related Posts"
+msgstr "相关文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:384
+msgid "shortcodes"
+msgstr "shortcodes"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:384
+#, php-format
+msgid "Use %s for convenient adjustments"
+msgstr "使用%s便于调整"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:391
+msgid "Use jQuery"
+msgstr "使用jQuery"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:392
+msgid "Only uncheck if you know what you're doing. Your site will load faster without jQuery, but features that depend on it will be disabled."
+msgstr "如果你知道你在做什么，你就可以取消它。您的网站没有jQuery将会加载更快，但是特效将会消失。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:400
+msgid "Animate content"
+msgstr "生动的内容"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:401
+msgid "Enable jQuery effects such as fading or sliding. Effects can render the site slightly slower on less powerful PCs"
+msgstr "开启jQuery效果，比如渐变或滑动。这些效果可能是在少数电脑上使网站速度稍稍变慢。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:409
+msgid "Optimize website for faster loading"
+msgstr "优化使网站变得加载更快"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:410
+#, php-format
+msgid "Compresses and concatenates stylesheets and javascript files (using %s). Leave this unchecked if you're experiencing conflicts with other plugins, or if you're using a cache plugin that handles such functions"
+msgstr "压缩和连锁样式表和javascript文件（用%s）。如果你发现这个与其它插件冲去，或者你在使用有类似功能的缓存插件请不要选这个选项。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:418
+msgid "Automatically create missing thumbnail sizes"
+msgstr "自动创建丢失的预览缩略图的大小"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:419
+#, php-format
+msgid "Asynchronously update thumbnails if needed. You can also use the %s plugin to process all missing thumbnail sizes manually, in a single pass"
+msgstr "如果需要则开启异步更新。你也可以使用%s插件来处理所有丢失预览缩略图的大小，只需要一个过程。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:427
+msgid "Use theme built-in lightbox on all image links"
+msgstr "使用内置的lightbox来显示所有的图像链接"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:428
+msgid "Uncheck if you prefer a lightbox plugin"
+msgstr "取消选择除非更愿意使用一个lightbox插件"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:435
+msgid "Automatically generate meta descriptions"
+msgstr "自动生成meta描述"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:436
+#, php-format
+msgid "Uncheck if you're using a SEO plugin, otherwise you'll get duplicate fields! Note that you don't need such plugins, %s is heavily optimized for search engines"
+msgstr "取消选择除非你在使用SEO插件，否则你会有重复的字段！请注意，你不需要这样的插件，%s 已经能够很大程度上针对搜索引擎做了优化。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:443
+msgid "Display debug messages (english only)"
+msgstr "显示调试的信息（只有英语）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:444
+msgid "Status notifications about the theme setup (only visible to administrators). Only enable this when you need to, because it can significantly slow down page load for admins"
+msgstr "主题安装的状态通知（只显示给管理员）。当你需要的时候才会启用，因为它对管理来说会明显降低页面的加载速度。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:451
+msgid "Theme auto-uninstall"
+msgstr "主题自动删除"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:452
+#, php-format
+msgid "Check to remove all %s settings from the database after you switch to a different theme (Featured post records are preserved)."
+msgstr "启用另一个主题后，检查你已经删除了数据库中所有%s 的设置（特别发布的记录将被保存）。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/functions.php:728
+msgid "There is no excerpt because this is a protected post."
+msgstr "这里没有引用是因为这是一篇受保护的文章。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:45
+msgid "Ads"
+msgstr "广告"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:179
+msgid "This section helps you create advertisment blocks in non-widgetized areas. For widgetized areas such as sidebars, simply use a text widget to display your ads."
+msgstr "这部分帮助你在没有小工具的区域创建广告区域。想要在侧边栏放一个类似于小工具的广告区域，可以使用Text文本小工具显示您的广告。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:184
+#, php-format
+msgid "It appears that a plugin has already registered the %s shortcode."
+msgstr "这表明已经有一个插件注册使用了%s这个短代码。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:189
+msgid "Create New Ad"
+msgstr "创建新广告"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:289
+msgid "Single Post Pages"
+msgstr "单个发布页面"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:299
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:306
+msgid "After Header"
+msgstr "在页眉之后"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:300
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:307
+msgid "Before Main"
+msgstr "主要的之前"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:301
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:308
+msgid "After Main"
+msgstr "主要的之后"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:302
+msgid "Before Comment"
+msgstr "发表评论前"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:309
+msgid "Before Post Teaser"
+msgstr "发布文章前"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:310
+msgid "After Post Teaser"
+msgstr "发布文章之后"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:322
+msgid "Visibility:"
+msgstr "可见性："
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:324
+msgid "Automatic"
+msgstr "自动的"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:329
+msgid "Manual"
+msgstr "手册"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:330
+msgid "Use shortcode"
+msgstr "使用短代码"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:351
+msgid "When:"
+msgstr "什么时候："
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:353
+msgid "Anytime"
+msgstr "任何时间"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:354
+msgid "Comments are closed"
+msgstr "评论已关闭"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:355
+msgid "Comments are open"
+msgstr "可评论"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:360
+msgid "Anyone"
+msgstr "任何人"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/AdBlocks/module.php:361
+msgid "Visitor only"
+msgstr "只允许游客"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:41
+msgid "Slide Horizontally"
+msgstr "水平滑动"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:42
+msgid "Slide Vertically"
+msgstr "垂直滑动"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:43
+msgid "Random Tiles"
+msgstr "随机Tiles"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:44
+msgid "Horizontal Tiles"
+msgstr "水平Tiles"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:45
+msgid "Diagonal Tiles"
+msgstr "对角Tiles"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:46
+msgid "Spiral"
+msgstr "螺旋的"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:47
+msgid "Random Stripes"
+msgstr "随机条纹"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:48
+msgid "Stripe Wave"
+msgstr "条纹波"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:49
+msgid "Curtain"
+msgstr "遮挡"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:50
+msgid "Interweave"
+msgstr "混合"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:86
+msgid "Photo Gallery"
+msgstr "相册"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:180
+msgid "Content source"
+msgstr "内容来源"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:185
+msgid "Media items"
+msgstr "媒体库"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:185
+#, php-format
+msgid "%s that I mark as featured"
+msgstr "我把%s标为特色"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:215
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:227
+msgid "Plugin not installed"
+msgstr "插件没有安装"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:217
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:229
+#, php-format
+msgid "%s gallery"
+msgstr "%s 相册"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:219
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:231
+msgid "-- All galleries --"
+msgstr "-- 所有相册 --"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:251
+msgid "Options"
+msgstr "选项"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:254
+msgid "Dimensions:"
+msgstr "面积："
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:258
+msgid "Images of this size must already exist!"
+msgstr "图像的尺寸必须有！"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:262
+msgid "Number of items to show:"
+msgstr "显示条目的数目："
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:268
+#, php-format
+msgid "Exclude items older than %s day(s)"
+msgstr "去除超过%s天的老条目"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:269
+#, php-format
+msgid "Set to %d to ignore date"
+msgstr "忽略的日期设置为%d"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:274
+#, php-format
+msgid "Auto-Cycle every %s second(s)"
+msgstr "每%s秒自动循环"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:275
+#, php-format
+msgid "Set to %d to disable auto-play"
+msgstr "关闭自动播放设置为%d"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:279
+msgid "Slides link to:"
+msgstr "幻灯片链接为："
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:281
+msgid "Original image"
+msgstr "最初的图片"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:282
+msgid "Post URL"
+msgstr "文章URL"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:283
+msgid "Attached (parent) post URL, if any"
+msgstr "如果有链接的话附上URL"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:284
+msgid "Nothing"
+msgstr "没有"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:292
+msgid "Captions:"
+msgstr "说明："
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:294
+msgid "Image title and description"
+msgstr "图片标题和描述"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:295
+msgid "Filtered content from the attached post, if any"
+msgstr "如果有附加的文章的话，过滤内容"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:296
+msgid "Excerpt from the attached post, if any"
+msgstr "从附加的文章的引用，如果有的话"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:304
+msgid "Previous/Next links (on mouse over)"
+msgstr "前一个/后一个链接（鼠标移上）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:311
+msgid "Pager (on mouse over)"
+msgstr "Pager(鼠标移上时)"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:314
+msgid "Effects"
+msgstr "影响"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/PhotoGallery/module.php:329
+msgid "Visible on:"
+msgstr "显示在:"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:63
+msgid "Failed to create sprite image with the selected icons. Make sure your upload directory is writable"
+msgstr "创建与选中的图标关联的sprite图像失败。确保您的上传目录是可写的"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:67
+msgid "Social-Media Icons"
+msgstr "社会媒体图标"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:219
+msgid "Drag and drop icons below to enable or disable them."
+msgstr "拖入或拖出下面的图标以启用或禁用他们。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:229
+msgid "Active icons"
+msgstr "激活的图标"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:246
+msgid "Label"
+msgstr "标签"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:251
+msgid "Target URI"
+msgstr "目的链接地址"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:256
+msgid "Meta info (some themes may display this)"
+msgstr "Meta信息（有些主题可以显示这个）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:264
+msgid "Inactive icons"
+msgstr "未启用的图标"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:278
+#, php-format
+msgid "You can also include your own icons within this list, by copying them in %s"
+msgstr "您也可以通过拷贝它们到%s来加入您自己所有的图标。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:282
+msgid "Activate a child theme to add your own icons in this list."
+msgstr "激活一个子主题来添加您自己的图标到这个列表中。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/Translate/module.php:42
+msgid "Translate"
+msgstr "翻译"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/Translate/module.php:48
+msgid "Failed to save .mo / .po files. Is your child theme directory writable?"
+msgstr "保存.mo / .po文件失败。您的子主题目录可写吗？"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/Translate/module.php:379
+msgid "Failed to load pot template"
+msgstr "读取pot模板失败"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/Translate/module.php:466
+msgid "To enable editing, activate a child theme and give WordPress write permissions to the child theme folder."
+msgstr "开启编辑功能，需要激活一个子主题，并且赋予WordPress对子主题文件夹写的权限。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/Translate/module.php:472
+#, php-format
+msgid "There is no translation for your current site language (%s). The default english template was loaded."
+msgstr "这里没有适合您现在站点语言(%s)的翻译。默认的英语模板已经读取。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/Translate/module.php:478
+#, php-format
+msgid "Editing %1$s (%2$s), %3$s translated"
+msgstr "编辑%1$s (%2$s)，%3$s被翻译"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/Translate/module.php:480
+msgid "unsaved"
+msgstr "未保存"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/Translate/module.php:489
+msgid "Translator(s):"
+msgstr "翻译者:"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/Translate/module.php:495
+msgid "Team:"
+msgstr "条款:"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/Translate/module.php:502
+#, php-format
+msgid "Click on the black text below to edit the strings. Modified strings will temporarily be auto-saved. Press the \"%s\" button to export strings to .mo / .po files in your child theme directory."
+msgstr "单击下面的黑色文本区来编辑字符串。修改的字符串将会自动地临时保存。点击\"%s\"按钮来导出这些字符串到您的子主题目录中的.mo/.po文件中。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/Translate/module.php:511
+msgid "Singular form"
+msgstr "单数形式"
+
+#: D:\web\wordpress\wp-content\themes\mystique/mods/Translate/module.php:512
+msgid "Plural form(s)"
+msgstr "负数形式"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/404.php:30
+msgid "The requested page was not found."
+msgstr "请求的页面没有找到。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/about-the-author.php:23
+#, php-format
+msgid "About %s"
+msgstr "关于%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/about-the-author.php:33
+#: D:\web\wordpress\wp-content\themes\mystique/templates/archive.php:63
+msgid "Nothing here :("
+msgstr "这里没东西:("
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/about-the-author.php:38
+#: D:\web\wordpress\wp-content\themes\mystique/templates/author.php:90
+#, php-format
+msgid "%s's RSS Feed"
+msgstr "%s的RSS订阅"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/archive-forum.php:39
+#: D:\web\wordpress\wp-content\themes\mystique/templates/archive-topic.php:40
+msgid "There are no forums here yet :("
+msgstr "这里还没有论坛 :("
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/archive.php:36
+#, php-format
+msgid "Posts tagged %s"
+msgstr "文章标签%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/archive.php:44
+msgid "Blog Archives"
+msgstr "博客存档"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/archive.php:59
+#, php-format
+msgid "There aren't any posts in the %s category yet :("
+msgstr "%s 分类中还没有任何文章:("
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/archive.php:61
+msgid "There aren't any posts within this date :("
+msgstr "这个时间没有任何文章发布:("
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/author.php:38
+#, php-format
+msgid "%s karma"
+msgstr "%s 星"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/author.php:40
+#, php-format
+msgid "(%1$s comments, %2$s posts)"
+msgstr "(%1$s条评论, %2$s篇文章)"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/author.php:49
+msgid "This user hasn't shared any profile information"
+msgstr "这个家伙很懒，没有留下任何东西"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/author.php:55
+msgid "Home page:"
+msgstr "首页:"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/author.php:93
+#, php-format
+msgid "%s hasn't written any posts yet"
+msgstr "%s 还没有写文章"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/comment.php:29
+#, php-format
+msgid "%1$s written by %2$s %3$s"
+msgstr "%1$s由%2$s发表%3$s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/comment.php:45
+msgid "Your comment is awaiting moderation."
+msgstr "您的评论已提交，等待审核。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/comment.php:45
+msgid "This comment is awaiting moderation."
+msgstr "这个评论已提交，等待审核。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/commentform.php:36
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "您必须<a href=\"%s\">登录</a>才能发表评论。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/commentform.php:53
+#, php-format
+msgid "Logged in as %s."
+msgstr "登录为%s。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/commentform.php:54
+msgid "Log out of this account"
+msgstr "退出"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/commentform.php:54
+msgid "Log out?"
+msgstr "退出？"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/commentform.php:60
+#, php-format
+msgid "Welcome back %s."
+msgstr "欢迎回来，%s。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/commentform.php:62
+msgid "Change &raquo;"
+msgstr "改变 &raquo;"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/commentform.php:81
+msgid "Type your comment"
+msgstr "输入您的评论"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/commentform.php:85
+#, php-format
+msgid "You may use these %1$s tags: %2$s"
+msgstr "您可以使用这些%1$s标签：%2$s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/commentform.php:97
+msgid "Post Comment"
+msgstr "发表评论"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/commentform.php:99
+msgid "Cancel reply"
+msgstr "取消回复"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/footer.php:49
+msgid "Go to Top"
+msgstr "回到顶部"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-anonymous.php:22
+msgid "Name (required):"
+msgstr "昵称（必须的）:"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-anonymous.php:30
+msgid "Mail (will not be published) (required):"
+msgstr "邮箱(不会公布)(必须的)："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-anonymous.php:38
+msgid "Website:"
+msgstr "网站："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-reply.php:24
+#, php-format
+msgid "Reply To: %s"
+msgstr "回复给：%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-reply.php:40
+msgid "This topic is marked as closed to new replies, however your posting capabilities still allow you to do so."
+msgstr "这个主题关闭了回复功能，但是您的发表能力仍然允许您这样做。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-reply.php:46
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:58
+msgid "Your account has the ability to post unrestricted HTML content."
+msgstr "你的账户能够发表不受限制的HTML内容。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-reply.php:57
+msgid "Reply:"
+msgstr "回复："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-reply.php:68
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:92
+#, php-format
+msgid "You may use these %s tags and attributes:"
+msgstr "您可能使用这些%s标签和属性："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-reply.php:76
+msgid "Tags:"
+msgstr "标签："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-reply.php:89
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:129
+msgid "Notify the author of follow-up replies via email"
+msgstr "通过邮件通知作者回复评论"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-reply.php:91
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:131
+msgid "Notify me of follow-up replies via email"
+msgstr "通过邮件通知我有新的回复"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-reply.php:101
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:144
+msgid "Keep a log of this edit:"
+msgstr "保存编辑的日志："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-reply.php:104
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:148
+msgid "Optional reason for editing:"
+msgstr "编辑的可选原因："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-reply.php:118
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-merge.php:75
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-split.php:81
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:160
+msgid "Submit"
+msgstr "提交"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-reply.php:138
+#, php-format
+msgid "The topic &#8216;%s&#8217; is closed to new replies."
+msgstr "这个主题&#8216;%s&#8217;已经关闭了评论。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-reply.php:146
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:180
+#, php-format
+msgid "The forum &#8216;%s&#8217; is closed to new topics and replies."
+msgstr "这个论坛&#8216;%s&#8217;已经关闭了新主题和回复。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-reply.php:154
+msgid "You cannot reply to this topic."
+msgstr "您不能回复这个主题。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-reply.php:154
+msgid "You must be logged in to reply to this topic."
+msgstr "您必须登录才能回复这个主题。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-merge.php:19
+#, php-format
+msgid "Merge topic \"%s\""
+msgstr "合并主题\"%s\""
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-merge.php:26
+msgid "Select the topic to merge this one into. The destination topic will remain the lead topic, and this one will change into a reply."
+msgstr "选择想要合并到的主题。目标主题将会保留主主题，并且这个将转变成一个回复。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-merge.php:27
+msgid "To keep this topic as the lead, go to the other topic and use the merge tool from there instead."
+msgstr "为了保持这个主题领先，去其他主题，使用替代的合并工具。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-merge.php:31
+msgid "All replies within both topics will be merged chronologically. The order of the merged replies is based on the time and date they were posted. If the destination topic was created after this one, it's post date will be updated to second earlier than this one."
+msgstr "所有在这些主题的回复将被同时合并。合并之后的回复顺序将会按照发布的时间来排序。如果目的主题的创建时间比这个晚，它的发表日期将会更新为第二个比这个早的。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-merge.php:36
+msgid "Merge with this topic:"
+msgstr "与这个主题合并："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-merge.php:44
+msgid "No topics were found to which the topic could be merged to!"
+msgstr "没有发现可以合并的主题！"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-merge.php:48
+msgid "There are no other topics in this forum to merge with."
+msgstr "这个论坛没有其他主题可以合并。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-merge.php:56
+msgid "Merge topic subscribers"
+msgstr "合并主题的订阅者"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-merge.php:62
+msgid "Merge topic favoriters"
+msgstr "合并主题爱好者"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-merge.php:67
+msgid "Merge topic tags"
+msgstr "合并主题标签"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-merge.php:71
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-split.php:77
+msgid "<strong>WARNING:</strong> This process cannot be undone."
+msgstr "<strong>警告:</strong>这个过程是不能复原的。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-merge.php:86
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-split.php:92
+msgid "You do not have the permissions to edit this topic!"
+msgstr "你没有权限来编辑这个主题！"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-merge.php:86
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-split.php:92
+msgid "You cannot edit this topic."
+msgstr "您不能编辑这个主题。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-split.php:25
+msgid "When you split a topic, you are slicing it in half starting with the reply you just selected. Choose to use that reply as a new topic with a new title, or merge those replies into an existing topic."
+msgstr "当你分割主题时，您将把它从您刚刚选的评论处分成两半。选择一个回复用新的标题当作一个新的主题，或者合并那些回复到一个已存在的主题。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-split.php:29
+msgid "If you use the existing topic option, replies within both topics will be merged chronologically. The order of the merged replies is based on the time and date they were posted."
+msgstr "如果您使用已存在的主题的选项，所有主题中的回复都会自动合并。合并后的回复顺序是基于发表的时间来的。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-split.php:34
+#, php-format
+msgid "New topic in <strong>%s</strong> titled:"
+msgstr "新主题在<strong>%s</strong>标题中："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-split.php:35
+#, php-format
+msgid "Split: %s"
+msgstr "分离：%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-split.php:42
+msgid "Use an existing topic in this forum:"
+msgstr "使用在这个论坛中已存在的主题："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-split.php:51
+msgid "No other topics found!"
+msgstr "没有发现其他主题！"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-split.php:64
+msgid "Copy subscribers to the new topic"
+msgstr "复制订阅者到新的主题"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-split.php:69
+msgid "Copy favoriters to the new topic"
+msgstr "复制爱好者到新的主题"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-split.php:72
+msgid "Copy topic tags to the new topic"
+msgstr "复制主题标签到新的主题"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-tag.php:17
+#, php-format
+msgid "Manage Tag: \"%s\""
+msgstr "管理标签：\"%s\""
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-tag.php:23
+msgid "Rename"
+msgstr "重命名"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-tag.php:26
+msgid "Leave the slug empty to have one automatically generated."
+msgstr "让这个芯片变空，以盛放自动生成的一个。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-tag.php:30
+msgid "Changing the slug affects its permalink. Any links to the old slug will stop working."
+msgstr "更改slug影响它的永久链接。所有链接到slug的将会停止工作。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-tag.php:36
+msgid "Name:"
+msgstr "名字："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-tag.php:41
+msgid "Slug:"
+msgstr "Slug："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-tag.php:57
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-tag.php:71
+msgid "Merge"
+msgstr "合并"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-tag.php:60
+msgid "Merging tags together cannot be undone."
+msgstr "合并标签是不能复原的。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-tag.php:66
+msgid "Existing tag:"
+msgstr "存在的标签："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-tag.php:71
+#, php-format
+msgid "Are you sure you want to merge the \"%s\" tag into the tag you specified?"
+msgstr "您确定您要将\"%s\" 这个标签合并到您指明的标签吗？"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-tag.php:86
+msgid "This does not delete your topics. Only the tag itself is deleted."
+msgstr "这不会删除您的主题。只会删除标签本身。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-tag.php:90
+msgid "Deleting a tag cannot be undone."
+msgstr "删除一个标签是不能复原的。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-tag.php:91
+msgid "Any links to this tag will no longer function."
+msgstr "这个标签的所有链接将不再工作。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic-tag.php:97
+#, php-format
+msgid "Are you sure you want to delete the \"%s\" tag? This is permanent and cannot be undone."
+msgstr "您确定您要删除\"%s\" 这个标签吗？这是永久生效且不可欢迎的。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:33
+#, php-format
+msgid "Now Editing &ldquo;%s&rdquo;"
+msgstr "编辑&ldquo;%s&rdquo;"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:35
+#, php-format
+msgid "Create New Topic in &ldquo;%s&rdquo;"
+msgstr "在&ldquo;%s&rdquo;创建一个新的主题"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:35
+msgid "Create New Topic"
+msgstr "创建新主题"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:52
+msgid "This forum is marked as closed to new topics, however your posting capabilities still allow you to do so."
+msgstr "这个论坛被设置为不允许发新主题，但是您仍然有发表主题的权利。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:69
+#, php-format
+msgid "Topic Title (Maximum Length: %d):"
+msgstr "主题标题(最大长度：%d):"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:81
+msgid "Topic Description:"
+msgstr "主题描述："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:100
+msgid "Topic Tags:"
+msgstr "主题标签："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:109
+msgid "Forum:"
+msgstr "论坛："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:118
+msgid "Topic Type:"
+msgstr "主题类型："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:188
+msgid "You cannot create new topics at this time."
+msgstr "您现在不能创建新主题。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-topic.php:188
+msgid "You must be logged in to create new topics."
+msgstr "您必须登录才能发表主题。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:21
+msgid "First Name"
+msgstr "名"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:25
+msgid "Last Name"
+msgstr "姓"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:29
+msgid "Nickname"
+msgstr "昵称"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:33
+msgid "Display name publicly as"
+msgstr "公开场合下显示的名字为"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:39
+msgid "Contact Info"
+msgstr "联系方式"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:54
+msgid "About Yourself"
+msgstr "关于你自己"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:54
+msgid "About the user"
+msgstr "关于用户"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:57
+msgid "Biographical Info"
+msgstr "履历信息"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:59
+msgid "Share a little biographical information to fill out your profile. This may be shown publicly."
+msgstr "使用履历信息来填写个人资料。这个可能会被公开显示。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:64
+msgid "Account"
+msgstr "账户"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:67
+msgid "Username"
+msgstr "用户名"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:69
+msgid "Usernames cannot be changed."
+msgstr "用户名不得改变。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:72
+msgid "Email"
+msgstr "邮箱"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:80
+#, php-format
+msgid "There is a pending email address change to <code>%1$s</code>. <a href=\"%2$s\">Cancel</a>"
+msgstr "这个邮箱地址正改变为<code>%1$s</code>。<a href=\"%2$s\">取消</a>"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:88
+msgid "New Password"
+msgstr "新密码"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:90
+msgid "If you would like to change the password type a new one. Otherwise leave this blank."
+msgstr "如果您想改变密码，请输入一个新的。否则请留空。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:94
+msgid "Type your new password again"
+msgstr "再次输入新密码"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:97
+msgid "Hint: The password should be at least seven characters long. To make it stronger, use upper and lower case letters, numbers and symbols like ! \" ? $ % ^ &amp;)."
+msgstr "提示：密码长度至少7个字符。为加强密码强度，使用大小写字母、数字和特殊字符比如 ! \" ? $ % ^ &amp;)。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:103
+msgid "Role:"
+msgstr "角色："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:111
+msgid "Super Admin"
+msgstr "超级管理员"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:114
+msgid "Grant this user super admin privileges for the Network."
+msgstr "给予这个用户管理网络的超级管理员权限。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:126
+msgid "Update Profile"
+msgstr "更新个人资料"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/form-user-edit.php:126
+msgid "Update User"
+msgstr "更新用户"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/home.php:36
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-categories.php:93
+msgid "Oops, nothing here :("
+msgstr "欧浦斯，没有东西 :("
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/loop-forums.php:21
+msgid "Forum"
+msgstr "论坛"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/loop-forums.php:22
+msgid "Topics"
+msgstr "主题"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/loop-forums.php:23
+#: D:\web\wordpress\wp-content\themes\mystique/templates/loop-replies.php:35
+#: D:\web\wordpress\wp-content\themes\mystique/templates/loop-replies.php:45
+#: D:\web\wordpress\wp-content\themes\mystique/templates/loop-topics.php:29
+msgid "Replies"
+msgstr "回复"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/loop-forums.php:24
+#: D:\web\wordpress\wp-content\themes\mystique/templates/loop-topics.php:30
+msgid "Freshness"
+msgstr "新鲜"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/loop-replies.php:55
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s在%2$s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/loop-topics.php:27
+msgid "Topic"
+msgstr "主题"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/loop-topics.php:28
+msgid "Voices"
+msgstr "声音"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/loop-topics.php:55
+#, php-format
+msgid "Started by: %1$s"
+msgstr "开始于：%1$s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/loop-topics.php:59
+#, php-format
+msgid "in: <a href=\"%1$s\">%2$s</a>"
+msgstr "在：<a href=\"%1$s\">%2$s</a>"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/meta.php:25
+#, php-format
+msgid "Comments (%s)"
+msgstr "评论(%s)"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/meta.php:29
+#, php-format
+msgid "Pings (%s)"
+msgstr "Pings (%s)"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/meta.php:62
+msgid "Comment Feed for this Post"
+msgstr "订阅该文章的评论"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-archives.php:22
+msgid "Blog archives grouped by month"
+msgstr "按月份进行博客归档"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-archives.php:91
+msgid "D jS"
+msgstr "D jS"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-c1.php:20
+msgid "1 column page (no sidebars)"
+msgstr "1栏页面（没有侧边栏）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-c2left.php:20
+msgid "2 column page (left sidebar)"
+msgstr "2栏页面（侧边栏在左边）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-c2right.php:20
+msgid "2 column page (right sidebar)"
+msgstr "2栏页面（侧边栏在右边）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-c3.php:20
+msgid "3 column page"
+msgstr "3栏页面"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-c3left.php:20
+msgid "3 column page (sidebars on the left)"
+msgstr "3栏页面（侧边栏在左边）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-c3right.php:20
+msgid "3 column page (sidebars on the right)"
+msgstr "3栏页面（侧边栏在右边）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:23
+msgid "Password recovery"
+msgstr "[%s] 密码重置"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:36
+msgid "Enter a username or e-mail address."
+msgstr "输入用户名或邮箱。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:41
+msgid "There is no user registered with that email address."
+msgstr "没有用户使用这个邮箱注册。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:46
+msgid "There is no user with that name."
+msgstr "没有用户使用这个名字。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:62
+msgid "Password reset is not allowed for this user"
+msgstr "密码重置对于这个用户是不被允许的。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:82
+msgid "Someone requested that the password be reset for the following account:"
+msgstr "有人要求为下列的账户重置密码："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:84
+#, php-format
+msgid "Username: %s"
+msgstr "用户名：%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:85
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr "如果只是一个误会，请忽略这封邮件，什么事都不会发生。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:86
+msgid "To reset your password, visit the following address:"
+msgstr "为了重置您的密码，请访问下面的地址："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:98
+#, php-format
+msgid "[%s] Password Reset"
+msgstr "[%s] 密码重置"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:104
+msgid "Failed to send confirmation e-mail. Please contact the site admin."
+msgstr "发送确认邮件失败。请联系站点管理员。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:121
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:130
+msgid "Invalid key"
+msgstr "无效的密钥"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:124
+msgid "Invalid login"
+msgstr "无效登录"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:168
+msgid "Check your e-mail for the confirmation link."
+msgstr "请在您的邮箱中查看确认的链接。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:182
+msgid "Your password has been reset."
+msgstr "您的密码已经重置。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:196
+msgid "Username or E-mail:"
+msgstr "用户名或者邮箱："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-lost-pw.php:210
+msgid "Get New Password"
+msgstr "获取新密码"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:21
+msgid "Sign-up"
+msgstr "注册"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:83
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:154
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:179
+msgid "Srsly?"
+msgstr "确定吗？"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:108
+msgid "You left the user name field empty."
+msgstr "您没有填写用户名。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:111
+msgid "Invalid user name, illegal characters."
+msgstr "无效的用户名，含有非法字符。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:115
+msgid "User name already registered, choose another."
+msgstr "用户名已经被注册，请换一个。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:120
+msgid "You left the e-mail field empty."
+msgstr "您没有填写邮箱地址。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:123
+msgid "Invalid e-mail address."
+msgstr "无效的邮箱地址。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:127
+msgid "This email is already registered, please choose another one."
+msgstr "这个邮箱已经能够被注册，请换一个。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:142
+#, php-format
+msgid "Registration failed, please contact the <a href=\"mailto:%s\">webmaster</a>"
+msgstr "注册失败，请联系<a href=\"mailto:%s\">网站管理者</a>"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:188
+msgid "You must be logged in to do this"
+msgstr "您必须<a href=\"%s\">登录</a>才能发表评论。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:208
+msgid "Registration has been disabled."
+msgstr "注册已经被取消"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:211
+#, php-format
+msgid "You must first <a href=\"%s\">log in</a>, and then you can create a new site."
+msgstr "您必须<a href=\"%s\">登录</a>才能创建一个新的站点。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:247
+#, php-format
+msgid "Greetings Site Administrator! You are currently allowing &#8220;%s&#8221; registrations. To change or disable registration go to your <a href=\"%s\">Options page</a>."
+msgstr "网站管理者，你好！您现在允许 &#8220;%s&#8221;注册。改变或关闭注册请到您的<a href=\"%s\">配置页面</a>。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:260
+#, php-format
+msgid "%s is your new username"
+msgstr "%s 是您新的用户名"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:261
+msgid "But, before you can start using your new username, <strong>you must activate it</strong>."
+msgstr "但是，在您开始使用您的新用户名前，<strong>您必须激活它</strong>。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:262
+#, php-format
+msgid "Check your inbox at <strong>%1$s</strong> and click the link given."
+msgstr "在<strong>%1$s</strong>查看您的收件箱，并且点击给出的链接。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:263
+msgid "If you do not activate your username within two days, you will have to sign up again."
+msgstr "如果您在两天内还没有激活您的用户名的话，您不得不再次注册。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:266
+#, php-format
+msgid "Congratulations! Your new site, %s, is almost ready."
+msgstr "恭喜！您新的站点，%s，已经完成了。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:267
+msgid "But, before you can start using your site, <strong>you must activate it</strong>."
+msgstr "但是，在您开始使用您的站点前，<strong>您必须激活它</strong>。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:268
+#, php-format
+msgid "Check your inbox at <strong>%s</strong> and click the link given."
+msgstr "在<strong>%1$s</strong>查看您的收件箱，并且点击给出的链接。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:269
+msgid "If you do not activate your site within two days, you will have to sign up again."
+msgstr "如果您在两天内还没有激活您的用户名的话，您不得不再次注册。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:270
+msgid "Still waiting for your email?"
+msgstr "还没有收到邮件？"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:271
+msgid "If you haven&#8217;t received your email yet, there are a number of things you can do:"
+msgstr "如果您还没有收到邮件，你可以试试下面的途径："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:273
+msgid "Wait a little longer. Sometimes delivery of email can be delayed by processes outside of our control."
+msgstr "再等一会。有时候传送邮件的过程会延误，这不在我们的控制范围之内。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:274
+msgid "Check the junk or spam folder of your email client. Sometime emails wind up there by mistake."
+msgstr "在您的邮箱中检查垃圾邮件或者广告邮件。有时候邮件会错误地放在那些文件夹中。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:275
+#, php-format
+msgid "Have you entered your email correctly?  You have entered %s, if it&#8217;s incorrect, you will not receive your email."
+msgstr "您是否正确地输入了您的邮箱地址？您已经进入%s，如果它是错误的，您将不会收到您的邮件。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:279
+#, php-format
+msgid "%s is yours."
+msgstr "%s 是您的。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:282
+#, php-format
+msgid "<a href=\"http://%1$s\">http://%2$s</a> is your new site.  <a href=\"%3$s\">Log in</a> as &#8220;%4$s&#8221; using your existing password."
+msgstr "<a href=\"http://%1$s\">http://%2$s</a>是您的新站点。使用&#8220;%4$s&#8221;用户名<a href=\"%3$s\">登录</a> ，输入您的密码。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:298
+#, php-format
+msgid "Get <em>another</em> %s site in seconds"
+msgstr "在短时间内获取<em>另一个</em>%s 站点"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:301
+#, php-format
+msgid "Welcome back, %s. By filling out the form below, you can <strong>add another site to your account</strong>. There is no limit to the number of sites you can have, so create to your heart&#8217;s content, but write responsibly!"
+msgstr "欢迎回来，%s。通过填写下面的表格，你可以<strong>添加另一个站点到您的账户</strong>。这里对你可以拥有的站点数目没有限制，所以创造是发自内心的，但是写是要负责任的。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:306
+msgid "Sites you are already a member of:"
+msgstr "您已经是一下站点的会员："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:314
+msgid "If you&#8217;re not going to use a great site domain, leave it for a new user. Now have at it!"
+msgstr "如果您还没有打算用一个好的网站域名，留给一个新的用户。现在拥有它吧！"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:329
+msgid "Username:"
+msgstr "昵称："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:336
+msgid "(Must be at least 4 characters, letters and numbers only.)"
+msgstr "（至少4个字符，只允许字母和数字。）"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:342
+msgid "Email Address:"
+msgstr "邮箱地址："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:349
+msgid "We send your registration email to this address. (Double-check your email address before continuing."
+msgstr "我们将把您的注册邮件发往这个地址。（继续前请再次检查您的邮箱地址。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:375
+msgid "Gimme a site!"
+msgstr "给我一个网站！"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:382
+msgid "Just a username, please."
+msgstr "拜托，只是一个昵称。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:396
+msgid "Next"
+msgstr "下一个"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:396
+msgid "Create User"
+msgstr "创建用户"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:412
+msgid "Site Domain:"
+msgstr "网站域名："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:412
+msgid "Site Name:"
+msgstr "网站名字："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:433
+#, php-format
+msgid "Your address will be %s."
+msgstr "您的地址将是 %s。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:433
+msgid "domain"
+msgstr "域名"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:433
+msgid "sitename"
+msgstr "网站名"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:434
+msgid "Must be at least 4 characters, letters and numbers only. It cannot be changed, so choose carefully!"
+msgstr "至少4个字符，只允许字母和数字。这个不能改变，请慎重选择！"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:443
+msgid "Site Title:"
+msgstr "站点标题："
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:456
+msgid "Privacy:"
+msgstr "隐私:"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:463
+msgid "Allow my site to appear in search engines like Google, Technorati, and in public listings around this network."
+msgstr "允许我的站点出现在类似于Google、Technorati搜索引擎，并且在这个网络上公开显示。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-sign-up.php:473
+msgid "Create Site"
+msgstr "创建站点"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-users.php:21
+msgid "User list"
+msgstr "用户列表"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/page-users.php:88
+msgid "Registered"
+msgstr "注册的"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/related-posts.php:21
+#, php-format
+msgid "Permanent Link: %s"
+msgstr "永久链接：%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/related-posts.php:27
+msgid "Didn't find any related posts :("
+msgstr "不好意思，没有找到任何相关的文章 :("
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/search.php:31
+#, php-format
+msgid "Search results for %1$s (%2$d)"
+msgstr "对%1$s (%2$d)的搜索结果"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/search.php:49
+msgid "Nothing found :("
+msgstr "没有找到 :("
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/search.php:50
+msgid "Try a different search..."
+msgstr "尝试一下不同的搜索..."
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/sidebar.php:39
+#: D:\web\wordpress\wp-content\themes\mystique/templates/sidebar.php:56
+#, php-format
+msgid "%s is empty. Add widgets here, otherwise this area will not be visible in the frontend"
+msgstr "%s是空的。在这里添加小工具，否则这个区域不会在前面显示"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/single-forum.php:59
+msgid "There are no topics in this forum."
+msgstr "这个论坛没有主题。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/single-forum.php:70
+#: D:\web\wordpress\wp-content\themes\mystique/templates/single-topic.php:121
+msgid "You do not have permission to view this forum."
+msgstr "你没有权限来查看这个论坛。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/single-reply-edit.php:30
+#, php-format
+msgid "Editing reply #%d to: %s"
+msgstr "编辑评论#%d：%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/single-reply.php:64
+#, php-format
+msgid "Posted on %1$s at %2$s"
+msgstr "于%2$s发表在%1$s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/single-topic.php:59
+msgid "Creator"
+msgstr "创作者"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/single-view.php:42
+#: D:\web\wordpress\wp-content\themes\mystique/templates/taxonomy-topic-tag.php:41
+msgid "No topics found."
+msgstr "没有发现主题."
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/single.php:68
+#, php-format
+msgid "This entry was posted by %1$s on %2$s at %3$s, and is filed under %4$s. Follow any responses to this post through %5$s."
+msgstr "这篇文章由%1$s在%2$s%3$s发布在%4$s。通过%5$s可以订阅这个文章的回复。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/single.php:77
+#, php-format
+msgid "You can <a%1$s>leave a response</a> or <a%2$s>trackback</a> from your own site."
+msgstr "您可以<a%1$s>留下评论</a>或<a%2$s>引用</a>到您自己的站点。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/single.php:80
+#, php-format
+msgid "Responses are currently closed, but you can <a%1$s>trackback</a> from your own site."
+msgstr "评论现在已关闭，但是您可以从您自己的站点<a%1$s>引用</a>。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/single.php:83
+msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+msgstr "您可以直接跳到底部并回应。Pinging现在是不允许的。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/single.php:86
+msgid "Both comments and pings are currently closed."
+msgstr "评论和ping功能现在已关闭。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/taxonomy-topic-tag-edit.php:28
+#: D:\web\wordpress\wp-content\themes\mystique/templates/taxonomy-topic-tag.php:28
+#, php-format
+msgid "Topic Tag: %s"
+msgstr "主题标签：%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/teaser.php:73
+#, php-format
+msgid "by %s"
+msgstr "由%s发布"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/teaser.php:77
+#, php-format
+msgid "in %s"
+msgstr "在%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/user-details.php:23
+#, php-format
+msgid "Profile: %s"
+msgstr "个人资料：%s"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/user-details.php:27
+#, php-format
+msgid "Edit Profile of User %s"
+msgstr "编辑用户%s的个人资料"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/user-details.php:27
+msgid "(Edit)"
+msgstr "(编辑)"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/user-favorites.php:18
+msgid "Favorite Forum Topics"
+msgstr "喜爱的论坛主题"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/user-favorites.php:25
+msgid "You currently have no favorite topics."
+msgstr "您现在没有喜爱的主题。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/user-favorites.php:25
+msgid "This user has no favorite topics."
+msgstr "这个用户没有喜爱的主题。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/user-subscriptions.php:22
+msgid "Subscribed Forum Topics"
+msgstr "订阅论坛主题"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/user-subscriptions.php:30
+msgid "You are not currently subscribed to any topics."
+msgstr "您现在还没有订阅任何主题。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/user-subscriptions.php:30
+msgid "This user is not currently subscribed to any topics."
+msgstr "这个用户现在还没有订阅任何主题。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/user-topics-created.php:19
+msgid "Forum Topics Created"
+msgstr "论坛主题创建成功"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/user-topics-created.php:26
+msgid "You have not created any topics."
+msgstr "您还没有创作任何主题。"
+
+#: D:\web\wordpress\wp-content\themes\mystique/templates/user-topics-created.php:26
+msgid "This user has not created any topics."
+msgstr "这个用户还没有创作任何主题。"
+

@@ -1,0 +1,1941 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Mystique Bangla 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-09 16:17+0600\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Triple S <shaikat77@gmail.com>\n"
+"Language-Team: SEHA <admin@s3h4.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Bengali\n"
+"X-Poedit-Country: BANGLADESH\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _a;_ae;_an:1,2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\\wp-content\\themes\\mystique\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPath-2: ..\n"
+
+msgid "%1$s %2$d"
+msgstr "%1$s %2$d"
+
+msgid "%1$s (%2$s posts)"
+msgstr "%1$s (%2$s পোস্ট)"
+
+msgid "%1$s by %2$s"
+msgstr "%1$s লিখেছেন %2$s"
+
+msgid "%1$s queries in %2$s seconds (%3$sM)"
+msgstr "%2$s সেকেন্ডের মধ্যে %1$s কোয়েরী (%3$sM)"
+
+msgid "%1$s written by %2$s %3$s"
+msgstr "%1$s লিখেছেন %2$s %3$s"
+
+msgid "%1$s, translator: %2$s (%3$s)"
+msgstr "%1$s, অনুবাদক: %2$s (%3$s)"
+
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "%s টি মন্তব্য"
+msgstr[1] "%s টি মন্তব্য"
+
+msgid "%s day ago"
+msgid_plural "%s days ago"
+msgstr[0] "%s দিন আগে"
+msgstr[1] "%s দিন আগে"
+
+msgid "%s followers"
+msgstr "%s জন অনুসারী"
+
+msgid "%s hasn't written any posts yet"
+msgstr "%s এ পর্যন্ত কোন পোস্ট লিখেন নাই"
+
+msgid "%s hour ago"
+msgid_plural "%s hours ago"
+msgstr[0] "%s ঘন্টা আগে"
+msgstr[1] "%s ঘন্টা আগে"
+
+msgid "%s is available"
+msgstr "বর্তমানে %s লভ্য"
+
+msgid ""
+"%s is empty. Add widgets here, otherwise this area will not be visible in "
+"the frontend"
+msgstr "%s খালি আছে। এখানে উইজেট যুক্ত করুন, নাহলে এ স্থানটা দৃশ্যমান হবে না"
+
+msgid "%s karma"
+msgstr "% karma"
+
+msgid "%s minute ago"
+msgid_plural "%s minutes ago"
+msgstr[0] "%s মিনিট আগে"
+msgstr[1] "%s মিনিট আগে"
+
+msgid "%s month ago"
+msgid_plural "%s months ago"
+msgstr[0] "%s মাস আগে"
+msgstr[1] "%s মাস আগে"
+
+msgid "%s out of 10"
+msgstr "১০ এ %s"
+
+msgid "%s post"
+msgid_plural "%s posts"
+msgstr[0] "%s টি পোস্ট"
+msgstr[1] "%s টি পোস্ট"
+
+msgid "%s second ago"
+msgid_plural "%s seconds ago"
+msgstr[0] "%s সেকেন্ড আগে"
+msgstr[1] "%s সেকেন্ড আগে"
+
+msgid "%s settings"
+msgstr "%s সেটিংস"
+
+msgid "%s that I mark as featured"
+msgstr "%s যেটা আমি ফিচারড হিসেবে মার্ক করেছি"
+
+msgid "%s topic"
+msgid_plural "%s topics"
+msgstr[0] "%s টি টপিক"
+msgstr[1] "%s টি টপিক"
+
+msgid "%s tweets"
+msgstr "%s টি টুইটস"
+
+msgid "%s user name:"
+msgstr "%s সদস্য নাম:"
+
+msgid "%s week ago"
+msgid_plural "%s weeks ago"
+msgstr[0] "%s সপ্তাহ আগে"
+msgstr[1] "%s সপ্তাহ আগে"
+
+msgid "%s year ago"
+msgid_plural "%s years ago"
+msgstr[0] "%s বছর আগে"
+msgstr[1] "%s বছর আগে"
+
+msgid "%s's RSS Feed"
+msgstr "%s -এর RSS ফিড"
+
+msgid "&laquo; Previous"
+msgstr "&laquo; পূর্ববর্তী"
+
+msgid "(%1$s comments, %2$s posts)"
+msgstr "(%1$s টি মন্তব্য, %2$s টি পোস্ট)"
+
+msgid "(0 to disable auto-play)"
+msgstr "(অটো-প্লে বন্ধ করার জন্য 0)"
+
+msgid "(Child theme of %s)"
+msgstr "(%s -এর চাইল্ড থিম)"
+
+msgid "(required)"
+msgstr "(আবশ্যকীয়)"
+
+msgid "(required, will not be published)"
+msgstr "(আবশ্যকীয়, গোপন রাখা হবে)"
+
+msgid "(will not be published)"
+msgstr "(গোপন রাখা হবে)"
+
+msgid "-- All categories --"
+msgstr "-- সব বিভাগ --"
+
+msgid "-- All galleries --"
+msgstr "-- সব গ্যালারি --"
+
+msgid "-- Any --"
+msgstr "-- যেকোন --"
+
+msgid "-- None --"
+msgstr "-- একটাও না --"
+
+msgid "0 = All levels"
+msgstr "0 = সব লেভেল"
+
+msgid "2 minutes"
+msgstr "২ মিনিট"
+
+msgid "404 Not Found"
+msgstr "৪০৪, খুঁজে পাওয়া গেল না"
+
+msgid "5 minutes"
+msgstr "৫ মিনিট"
+
+msgid "60 seconds"
+msgstr "৬০ সেকেন্ড"
+
+msgid "90 seconds"
+msgstr "৯০ সেকেন্ড"
+
+msgid ""
+"<strong>Important:</strong> %1$s sized thumbnails have to be created if you "
+"just added this widget, or if you're changing the thumbnail size. Read more "
+"about thumbnail sizes %2$s"
+msgstr ""
+"<strong>গুরুত্বপূর্ণ:</strong> %1$s আকারের থাম্বনেইল বানাতে হবে যদি আপনি এইমাত্র এই "
+"উইজেটটি যুক্ত করে থাকেন, অথবা যদি আপনি থাম্বনেইলের আকার পরিবর্তন করেন। "
+"থাম্বনেইলের আকার %2$s সম্পর্কে আরও পড়ুন"
+
+msgid ""
+"<strong>There is a new version of %1$s available</strong>. <a href=\"%2$s\" "
+"class=\"thickbox\" title=\"%1$s\">View %1$s %3$s details</a> or <a href=\"%4"
+"$s\" >upgrade automatically</a>."
+msgstr ""
+"<strong>%1$s -এর নতুন ভার্সন এসেছে</strong>। <a href=\"%2$s\" class=\"thickbox"
+"\" title=\"%1$s\">%1$s %3$s -এর বিস্তারিত দেখুন</a> বা <a href=\"%4$s\" "
+">স্বয়ংক্রিয়ভাবে আপগ্রেড করুন</a>।"
+
+msgid ""
+"<strong>There is a new version of %1$s available</strong>. <a href=\"%2$s\" "
+"class=\"thickbox\" title=\"%1$s\">View %1$s %3$s details</a> or notify the "
+"site administrator."
+msgstr ""
+"<strong>%1$s -এর নতুন ভার্সন এসেছে</strong>। <a href=\"%2$s\" class=\"thickbox"
+"\" title=\"%1$s\">%1$s %3$s -এর বিস্তারিত দেখুন</a> বা সাইটের এডমিনকে অবহিত "
+"করুন।"
+
+msgid "A calendar of your site's posts"
+msgstr "আপনার সাইটের পোস্টের ক্যালেন্ডার"
+
+msgid "A list of site blogs"
+msgstr "সাইট ব্লগের তালিকা"
+
+msgid "A list of taxonomy terms like categories or post tags"
+msgstr "বিভাগ বা পোস্ট ট্যাগের মত ট্যাক্সোনমি টার্মের তালিকা"
+
+msgid "A list of users/authors from your blog"
+msgstr "আপনার ব্লগের সদস্য/লেখকের তালিকা"
+
+msgid "A search form for your site"
+msgstr "আপনার সাইটের জন্য সার্চ ফর্ম"
+
+msgid "About %s"
+msgstr "%s সমন্ধে"
+
+msgid "About the Author"
+msgstr "লেখক সম্পর্কে"
+
+msgid "Above Footer"
+msgstr "ফুটারের উপরে"
+
+msgid "Absolute (Use Time/Date settings)"
+msgstr "অ্যাবসল্যুট (সময়/তারিখ-এর সেটিংস ব্যবহার করুন)"
+
+msgid ""
+"Active only if at least one of its widgets is visible to the current user. "
+"You can add between 1 and 6 widgets here (3 or 4 are optimal). They will "
+"adjust their size based on the widget count."
+msgstr ""
+"শুধু তখন সক্রিয় থাকবে যখন, বর্তমান সদস্যর কাছে এটার কমপক্ষে একটি উইজেট দৃশ্যমান "
+"থাকে। আপনি এখানে ১ থেকে ৬ টি (সাধারণত ৩ বা ৪ টি থাকে) উইজেট যোগ করতে পারবেন। "
+"তারা তাদের সংখ্যা অনুযায়ী আকার ঠিক করে নিবে"
+
+msgid "Ads"
+msgstr "বিজ্ঞাপন"
+
+msgid "Advanced"
+msgstr "এডভান্স"
+
+msgid "After Header"
+msgstr "হেডারের পরে"
+
+msgid "After Main"
+msgstr "মেইনের পরে"
+
+msgid "After Post Teaser"
+msgstr "পোস্ট টিজারের পরে"
+
+msgid "All Pages"
+msgstr "সব পৃষ্ঠা"
+
+msgid "All Terms"
+msgstr "সব টার্মস্‌"
+
+msgid ""
+"All URLs must have absolute paths. You can use the %1$s keyword to point to "
+"the %2$s."
+msgstr ""
+"সকল URLএর অবশ্যই সঠিক পাথ থাকতে হবে। আপনি %2$s -এ পয়েন্ট করার জন্য %1$s কি-"
+"ওয়ার্ড ব্যবহার করতে পারেন।"
+
+msgid "Allow Comment Ratings (Karma)"
+msgstr "মন্তব্য রেটিং সম্মত (Karma)"
+
+msgid "And %s more..."
+msgstr "এবং আরো %s টি..."
+
+msgid "Animate content"
+msgstr "কন্টেন্ট এনিমেট"
+
+msgid "Anyone"
+msgstr "যেকেউ"
+
+msgid "Anytime"
+msgstr "যেকোন সময়"
+
+msgid "Approve"
+msgstr "অনুমোদন"
+
+msgid "Arbitrary Widgets"
+msgstr "ইচ্ছাধীন উইজেট"
+
+msgid "Arbitrary text, HTML or shortcodes"
+msgstr "ইচ্ছাধীন টেক্সট, HTML বা শর্টকোড"
+
+msgid "Arbitrary text, HTML/PHP or shortcodes"
+msgstr "ইচ্ছাধীন টেক্সট, HTML/PHP বা শর্টকোড"
+
+msgid "Archive for %s"
+msgstr "%s-এর জন্য আর্কাইভ"
+
+msgid "Archive for week %1$s of %2$s"
+msgstr "%1$s এর %2$s সপ্তাহের জন্য আর্কাইভ করা হয়েছে"
+
+msgid "Archive for year %s"
+msgstr "%s সালের আর্কাইভ"
+
+msgid "Archives"
+msgstr "আর্কাইভ"
+
+msgid "Archives of your site's posts"
+msgstr "আপনার সাইটের পোস্টের জন্য আর্কাইভ"
+
+msgid ""
+"Asynchronously update thumbnails if needed. You can also use the %s plugin "
+"to process all missing thumbnail sizes manually, in a single pass"
+msgstr ""
+"দরকার হলে Asynchronously থাম্বনেইল আপডেট করুন। আপনি সব মিসিং থাম্বনেইলের আকার "
+"নিজেনিজে প্রসেস করার জন্য %s প্লাগইনও ব্যবহার করতে পারেন, একক পাস-এ"
+
+msgid "Attached post, if any"
+msgstr "সংযুক্ত পোস্ট, যদি থাকে"
+
+msgid "Author"
+msgstr "লেখক"
+
+msgid "Author Archives"
+msgstr "লেখকের আর্কাইভ"
+
+msgid "Authors"
+msgstr "লেখকগণ"
+
+msgid "Auto-Cycle every %s second(s)"
+msgstr "প্রতি %s সেকেন্ডে অটো-সাইকেল হবে"
+
+msgid "Automatically add paragraphs"
+msgstr "স্বয়ংক্রিয়ভাবে প্যারাগ্রাফ যুক্তকরণ"
+
+msgid "Automatically create missing thumbnail sizes"
+msgstr "স্বয়ংক্রিয়ভাবে মিসিং থাম্বনেইলের আকার প্রস্তুতকরণ"
+
+msgid "Automatically generate meta descriptions"
+msgstr "স্বয়ংক্রিয়ভাবে মেটা ডিস্ক্রিপশন প্রস্তুতকরণ"
+
+msgid "Available Languages"
+msgstr "লভ্য ভাষা"
+
+msgid "Avatar Size:"
+msgstr "এভাটারের আকার:"
+
+msgid "Avatar thumbnails"
+msgstr "এভাটারের থাম্বনেইল"
+
+msgid "Avatars thumbnails"
+msgstr "এভাটারসমূহের থাম্বনেইল"
+
+msgid "Before Comment"
+msgstr "মন্তব্যের আগে"
+
+msgid "Before Main"
+msgstr "মেইন-এর আগে"
+
+msgid "Before Post Teaser"
+msgstr "পোস্ট টিজারের আগে"
+
+msgid "Behaviour:"
+msgstr "ব্যবহার:"
+
+msgid "Below Header (Main)"
+msgstr "হেডারের নিচে (প্রধান)"
+
+msgid "Blank"
+msgstr "খালি"
+
+msgid "Blog Archives"
+msgstr "ব্লগ আর্কাইভ"
+
+msgid "Blog Homepage"
+msgstr "ব্লগ নীড়পাতা"
+
+msgid "Blogroll"
+msgstr "ব্লগরোল"
+
+msgid "Both comments and pings are currently closed."
+msgstr "এখন মন্তব্য আর পিং দুটাই বন্ধ রাখা হয়েছে"
+
+msgid "Brief"
+msgstr "ব্রিফ"
+
+msgid "CSS"
+msgstr "CSS"
+
+msgid "Calendar"
+msgstr "ক্যালেন্ডার"
+
+msgid "Cancel reply"
+msgstr "উত্তর বাতিল করুন"
+
+msgid "Captions:"
+msgstr "ক্যাপশন:"
+
+msgid "Categories"
+msgstr "বিভাগসমূহ"
+
+msgid "Category"
+msgstr "বিভাগ"
+
+msgid "Category Archives"
+msgstr "বিভাগ আর্কাইভ"
+
+msgid "Change &raquo;"
+msgstr "পরিবর্তন &raquo;"
+
+msgid "Change Image"
+msgstr "ছবি পরিবর্তন"
+
+msgid ""
+"Check %s to see existing theme classes and properties, which you can "
+"redefine here."
+msgstr ""
+"থিমের ক্লাস ও প্রোপারটিজ দেখতে %s চেক করুন, যা আপনি এখানে পুনরায় নিরূপন করতে "
+"পারবেন।"
+
+msgid "Check for new data every:"
+msgstr "নতুন তথ্যের জন্য চেক করুন প্রতি:"
+
+msgid "Check for update"
+msgstr "আপডেট চেক করুন"
+
+msgid ""
+"Check to remove all %s settings from the database after you switch the theme "
+"(Featured post records are preserved)."
+msgstr ""
+"থিম পরিবর্তনের পর ডাটাবেস থেকে সব %s সেটিংস মোছার জন্য চেক করুন (ফিচারড পোস্টের "
+"রেকর্ড থাকবে)"
+
+msgid "Checking..."
+msgstr "চেক হচ্ছে..."
+
+msgid "Children of the active page"
+msgstr "কার্যকর পৃষ্ঠার চাইল্ড"
+
+msgid "Children of the active term"
+msgstr "কার্যকর টার্মের চাইল্ড"
+
+msgid "Children of:"
+msgstr " যার চাইল্ড:"
+
+msgid "Click"
+msgstr "ক্লিক"
+
+msgid "Collapsible, Accordion style"
+msgstr "ভাঁজবিশিষ্ট, অ্যাকর্ডিয়ন স্টাইল"
+
+msgid "Collapsible, Standard"
+msgstr "ভাঁজবিশিষ্ট, সাধারণ"
+
+msgid "Column Sizes"
+msgstr "কলামের আকার"
+
+msgid "Column Splitter"
+msgstr "কলাম ভাজক"
+
+msgid "Comment Feed for this Post"
+msgstr "এই পোস্টের মন্তব্য ফিড"
+
+msgid "Comment Page %s"
+msgstr "মন্তব্য পৃষ্ঠা %s"
+
+msgid "Comment RSS"
+msgstr "মন্তব্য RSS"
+
+msgid "Comment count"
+msgstr "মন্তব্য গণনা"
+
+msgid "Comments"
+msgstr "মন্তব্যসমূহ"
+
+msgid "Comments (%s)"
+msgstr "মন্তব্য (%s)"
+
+msgid "Comments <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr "মন্তব্য <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+
+msgid "Comments Link"
+msgstr "মন্তব্য লিংক"
+
+msgid "Comments are closed"
+msgstr "মন্তব্য বন্ধ আছে"
+
+msgid "Comments are open"
+msgstr "মন্তব্য খোলা আছে"
+
+msgid "Content"
+msgstr "কন্টেন্ট"
+
+msgid "Content has max %s <em>words</em>"
+msgstr "কন্টেন্টের সর্বোচ্চ %s টি <em>শব্দ</em> আছে"
+
+msgid "Content has max %s word(s)"
+msgstr "কন্টেন্টের সর্বোচ্চ %s টি শব্দ আছে"
+
+msgid "Content options"
+msgstr "কন্টেন্ট অপশন"
+
+msgid "Content source"
+msgstr "কন্টেন্ট সোর্স"
+
+msgid "Copyright &copy;"
+msgstr "কপিরাইট &copy;"
+
+msgid "Core (ATOM) version: %s"
+msgstr "কোর (এটম) ভার্সন: %s"
+
+msgid "Could not retrieve tweets."
+msgstr "টুইটস আনতে পারছে না।"
+
+msgid "Could not retrieve tweets. Possible reasons:"
+msgstr "টুইটস আনতে পারছে না। সাম্ভাব্য কারণ:"
+
+msgid "Create New Ad"
+msgstr "নতুন বিজ্ঞাপন তৈরি করুন"
+
+msgid "Create Tabs for:"
+msgstr "(যার জন্য) ট্যাব তৈরি করুন:"
+
+msgid "Create some"
+msgstr "কিছু বানান"
+
+msgid "Current background image"
+msgstr "বর্তমান ব্যাকগ্রাউন্ড ইমেজ"
+
+msgid "Current favicon"
+msgstr "বর্তমান ফেভিকন"
+
+msgid "Current logo image"
+msgstr "বর্তমান লোগো ইমেজ"
+
+msgid "Currently there are no modules installed."
+msgstr "বর্তমানে কোন মডিউল ইন্সটল করা নাই।"
+
+msgid "Curtain"
+msgstr "Curtain"
+
+msgid "Custom Template"
+msgstr "কাস্টোম টেমপ্লেট"
+
+msgid "Daily"
+msgstr "প্রত্যহ"
+
+msgid "Dashboard"
+msgstr "হ্যাকোল্যাব"
+
+msgid "Date (Recent posts)"
+msgstr "তারিখ (সাম্প্রতিক পোস্টসমূহ)"
+
+msgid "Date registered, newest first"
+msgstr "রেজিস্টারের তারিখ, নতুনগুলি আগে"
+
+msgid "Date, created"
+msgstr "তারিখ, প্রস্তুতকৃত"
+
+msgid "Date, modified"
+msgstr "তারিখ, পরিবর্তনকৃত"
+
+msgid "Date-based Archives"
+msgstr "ডাটা-বেসড আর্কাইভ"
+
+msgid "Date/Time"
+msgstr "তারিখ/সময়"
+
+msgid "Day archive date format:"
+msgstr "দিনের আর্কাইভ তারিখ ফরম্যাট:"
+
+msgid "Default, %s"
+msgstr "ডিফল্ট, %s"
+
+msgid "Delete"
+msgstr "মুছুন"
+
+msgid "Depth:"
+msgstr "গভীরতা:"
+
+msgid "Description"
+msgstr "বর্ণনা"
+
+msgid "Design"
+msgstr "ডিজাইন"
+
+msgid "Details"
+msgstr "বিস্তারিত বর্ণনা"
+
+msgid "Diagonal Tiles"
+msgstr "ডায়াগোনাল টাইলস"
+
+msgid "Didn't find any comments :("
+msgstr "কোন মন্তব্য খুঁজে পাওয়া গেল না :("
+
+msgid "Didn't find any related posts :("
+msgstr "এধরণের কোন পোস্ট পাওয়া গেল না :("
+
+msgid "Disabled"
+msgstr "বন্ধ করা"
+
+msgid "Display %s Link"
+msgstr "%s লিংক দেখান"
+
+msgid "Display Comment Search Form"
+msgstr "মন্তব্য সার্চ ফর্ম দেখান"
+
+msgid "Display Link Description"
+msgstr "লিংকের বর্ণনা দেখান"
+
+msgid "Display Link Image"
+msgstr "লিংকের ইমেজ দেখান"
+
+msgid "Display Link Rating"
+msgstr "লিংকের রেটিং দেখান"
+
+msgid "Display a custom menu"
+msgstr "কাস্টোম মেনু দেখান"
+
+msgid "Display debug messages (english only)"
+msgstr "ডেবাগ মেসেজ দেখান (শুধুমাত্র ইংরেজি)"
+
+msgid "Display mode"
+msgstr "ডিসপ্লে মোড"
+
+msgid "Display:"
+msgstr "ডিসপ্লে:"
+
+msgid ""
+"Do not edit core theme files because you will use any changes you make here "
+"when you update!"
+msgstr ""
+"কোর থিম ফাইল এডিট করবেন না কারন আপনি যখন আপডেট করবেন তখন এখানে যা পরিবর্তন "
+"করেছেন তা দেখবেন!"
+
+msgid "Double-Click"
+msgstr "ডাবল-ক্লিক"
+
+msgid "E-mail"
+msgstr "ই-মেইল"
+
+msgid "Edit"
+msgstr "এডিট"
+
+msgid "Effects"
+msgstr "ইফেক্টসমূহ"
+
+msgid ""
+"Enable jQuery effects such as fading or sliding. Effects can render the site "
+"slightly slower on less powerful PCs"
+msgstr ""
+"ফেডিং বা স্লাইডিং -এর মত jQuery ইফেক্ট চালু করুন (এগুলো কম ক্ষমতাসম্পন্ন পিসিতে "
+"আপনার সাইটকে কিছুটা ধীর করে দেয়)"
+
+msgid "Entries"
+msgstr "এন্ট্রিসমূহ"
+
+msgid "Entries <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr "এন্ট্রিসমূহের <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+
+msgid "Error while featuring posts"
+msgstr "পোস্ট ফিচারিং করার সময় সমস্যা হয়েছে"
+
+msgid "Excerpt"
+msgstr "উদ্ধৃতি"
+
+msgid "Excerpt from the attached post, if any"
+msgstr "সংযুক্ত পোস্ট থেকে উদ্ধৃতি দিন, যদি থাকে"
+
+msgid "Exclude (IDs separated by comma):"
+msgstr "বাদ দিন (কমা দিয়ে ID আলাদা করুন):"
+
+msgid "Exclude items older than %s day(s)"
+msgstr "দিনের বেশি পুরানো আইটেম বাদ দিন"
+
+msgid "Exclude sites marked as mature"
+msgstr "প্রাপ্তবয়স্ক চিহ্নিত সাইটসমূহ বাদ দিন"
+
+msgid "Exclude:"
+msgstr "বাদ দিন:"
+
+msgid "Execute code within %s tags"
+msgstr "%s ট্যাগের মধ্যে কোড এক্সকিউট করুন"
+
+msgid "Expand/Collapse Fire Event:"
+msgstr "বিস্তৃত/সংকুচিত ফায়ার ইভেন্ট:"
+
+msgid "Expanded"
+msgstr "বিস্তৃত"
+
+msgid "External: WordPress.org"
+msgstr "বাইরে থেকে: WordPress.org"
+
+msgid "External: digitalnature.eu"
+msgstr "বাইরে থেকে: DigitalNature.eu"
+
+msgid "Facebook page"
+msgstr "ফেসবুক পেজ"
+
+msgid "Fade"
+msgstr "ফেড"
+
+msgid "Failed."
+msgstr "ব্যর্থ।"
+
+msgid "Favicon"
+msgstr "ফেভিকন"
+
+msgid "Featured"
+msgstr "ফিচারড"
+
+msgid "Featured gallery"
+msgstr "ফিচারড গ্যালারি"
+
+msgid "Filter"
+msgstr "ফিল্টার"
+
+msgid "Filtered content from the attached post, if any"
+msgstr "সংযুক্ত পোস্ট থেকে ফিল্টারকৃত কন্টেন্ট, যদি থাকে"
+
+msgid "First %s words, filtered"
+msgstr "প্রথম %s টি শব্দ, ফিল্টারকৃত"
+
+msgid "Fixed (%s)"
+msgstr "ফিক্সড (%s)"
+
+msgid "Flick photostream"
+msgstr "ফ্লিকার ফটোস্ট্রিম"
+
+msgid "Fluid, but not more than %s pixels"
+msgstr "ফ্লুইড, কিন্তু %s পিক্সেলের চেয়ে বেশি নয়"
+
+msgid "Footer"
+msgstr "ফুটার"
+
+msgid "Footer content"
+msgstr "ফুটার কন্টেন্ট"
+
+msgid "Full"
+msgstr "সম্পূর্ণ"
+
+msgid "Full post"
+msgstr "সম্পূর্ণ পোস্ট"
+
+msgid "Full post, filtered"
+msgstr "সম্পূর্ণ পোস্ট, ফিল্টারকৃত"
+
+msgid "General Info"
+msgstr "সাধারণ তথ্য"
+
+msgid "General settings"
+msgstr "সাধারণ সেটিংস"
+
+msgid "Get comments from all network blogs"
+msgstr "সকল নেটওয়ার্ক ব্লগ থেকে মন্তব্য আনুন"
+
+msgid "Get only context-related posts"
+msgstr "শুধু কন্টেক্সট-সম্পর্কিত পোস্ট আনুন"
+
+msgid "Get posts from all network blogs"
+msgstr "সকল নেটওয়ার্ক ব্লগ থেকে পোস্ট আনুন"
+
+msgid "Get:"
+msgstr "আনুন:"
+
+msgid "Go to Top"
+msgstr "উপরে যান"
+
+msgid "Go to your %s"
+msgstr "আপনার %s -এ যান"
+
+msgid "Group arbitrary widgets into tabs"
+msgstr "ইচ্ছাধীন উইজেটসমূহকে ট্যাবে গ্রুপ করুন"
+
+msgid "HTML is allowed, but some tags may be filtered."
+msgstr "HTML সমর্থিত, কিন্তু কিছু ট্যাগ ফিল্টার করা হতে পারে।"
+
+msgid "Hello Guest. Login below if you have an account"
+msgstr "স্বাগতম অতিথি। নিচ থেকে প্রবেশ করুন যদি আপনার একাউন্ট থেকে থাকে"
+
+msgid "Hide Page Visibility Options"
+msgstr "পৃষ্ঠা দৃশ্যমানতার অপশন লুকান"
+
+msgid "Hide Private Links"
+msgstr "ব্যক্তিগত লিংক লুকান"
+
+msgid "Hide comments with %s karma and below"
+msgstr "যেসব মন্তব্যে %s karma এবং below আছে তা লুকান"
+
+msgid "Hide empty?"
+msgstr "এম্পটি লুকাবেন?"
+
+msgid "Hierarchical?"
+msgstr "Hierarchical?"
+
+msgid "Home"
+msgstr "নীড়"
+
+msgid "Home Page"
+msgstr "নীড়পাতা"
+
+msgid "Home page:"
+msgstr "নীড় পাতা:"
+
+msgid "Horizontal Tiles"
+msgstr "হোরিজোন্টাল টাইলস"
+
+msgid "How many entries to display?"
+msgstr "কতটি এন্ট্রি দেখাবে?"
+
+msgid "ID"
+msgstr "ID"
+
+msgid ""
+"If you wish to import or export theme settings from another website that's "
+"using this theme, you may do so here. Below you can copy the current "
+"settings stored as a encoded string, or paste new settings..."
+msgstr ""
+"যদি এই থিম ব্যবহার করছে এমন অন্যকোন সাইট থেকে আপনি থিম সেটিংস আমদানি বা রপ্তানি "
+"করতে চান, আপনি এখানে তা করতে পারবেন। নিচ থেকে আপনি বর্তমান সেটিংসের এনকোডেড "
+"স্ট্রিং কপি বা নতুন সেটিংস পেস্ট করতে পারবেন..."
+
+msgid "Image title and description"
+msgstr "ইমেজের টাইটেল ও বর্ণনা"
+
+msgid "Images must have at least a %s pixel resolution."
+msgstr "ইমেজের রেজুলেশন কমপক্ষে %s পিক্সেল হতে হবে।"
+
+msgid "Import / export / reset or backup Theme Options"
+msgstr "থিম অপশন আমদানি / রপ্তানি / রিসেট বা ব্যাকআপ করুন"
+
+msgid "Import failed. Invalid settings. "
+msgstr "আমদানি ব্যর্থ। সেটিংসে সমস্যা। "
+
+msgid "Import options"
+msgstr "আমদানির অপশন"
+
+msgid "Import these settings? Are you sure?"
+msgstr "এই সেটিংস আমদানি করবেন? আপনি নিশ্চিত?"
+
+msgid "Important:"
+msgstr "গুরুত্বপূর্ণ:"
+
+msgid "Initial Status Text (or HTML):"
+msgstr "ইনিশিয়াল স্ট্যাটাস টেক্সট (বা HTML):"
+
+msgid "Insert Atom Element"
+msgstr "এটম এলিমেন্ট যোগ করুন"
+
+msgid "Interweave"
+msgstr "Interweave"
+
+msgid "Invalid vote"
+msgstr "ভোটে সমস্যা"
+
+msgid ""
+"It appears that your home page has javascript errors on it. Deactivate all "
+"plugins, then activate them back one by one to find out which one is causing "
+"errors."
+msgstr ""
+"আপনার নীড়পাতায় জাভাস্ক্রিপ্ট-এ সমস্যা আছে বলে মনে হচ্ছে।সব প্লাগইন নিষ্ক্রয় করুন, "
+"তারপর একটা একটা করে সক্রিয় করে দেখুন কোনটি সমস্যা সৃষ্টি করছে।"
+
+msgid "Keep data cached for:"
+msgstr "যে জন্য তথ্য ক্যাশড করে রাখা হবে:"
+
+msgid "Large, %s"
+msgstr "বড়, %s"
+
+msgid "Larger, %s"
+msgstr "অনেক বড়, %s"
+
+msgid "Largest:"
+msgstr "সবচেয়ে বড়:"
+
+msgid "Last Update"
+msgstr "শেষ আপডেট"
+
+msgid "Latest News from %s"
+msgstr "%s থেকে সর্বশেষ সংবাদ"
+
+msgid "Layout Style (Global)"
+msgstr "লেআউট স্টাইল (বৈশ্বিক)"
+
+msgid "Left Aligned"
+msgstr "বামে চাপানো"
+
+msgid "Lifestream"
+msgstr "লাইফস্ট্রীম"
+
+msgid "Limit to:"
+msgstr "নির্ধারিত সীমা:"
+
+msgid "Link Category:"
+msgstr "লিংক বিভাগ:"
+
+msgid "Links"
+msgstr "লিংকসমূহ"
+
+msgid "Links to display:"
+msgstr "দেখানোর জন্য লিংক:"
+
+msgid "List posts based on filters you choose"
+msgstr "আপনার ফিল্টার অনুসারে পোস্ট তালিকাভুক্ত করুন"
+
+msgid "Loading tweets..."
+msgstr "টুইটস লোড হচ্ছে..."
+
+msgid "Loading..."
+msgstr "লোড হচ্ছে..."
+
+msgid "Log In"
+msgstr "প্রবেশ করুন"
+
+msgid "Log Out"
+msgstr "বের হয়ে যান"
+
+msgid "Log in"
+msgstr "প্রবেশ করুন"
+
+msgid "Log in/out, admin, feed and WordPress links"
+msgstr "প্রবেশ করুন/বের হোন, এডমিন, ফিড ও ওয়ার্ডপ্রেস লিংক"
+
+msgid "Log out"
+msgstr "বের হয়ে যান"
+
+msgid "Log out of this account"
+msgstr "এই একাউন্ট থেকে বের হয়ে যান"
+
+msgid "Log out?"
+msgstr "বের হবেন?"
+
+msgid "Logged in as %s."
+msgstr "%s হিসেবে প্রবেশকৃত"
+
+msgid "Login"
+msgstr "প্রবেশ"
+
+msgid "Login / Logout / Site Admin"
+msgstr "প্রবেশ করুন / বের হোন / সাইট এডমিন"
+
+msgid "Login Successful, redirecting..."
+msgstr "প্রবেশ করেছেন, নিয়ে যাওয়া হচ্ছে..."
+
+msgid "Login and Lost Password forms"
+msgstr "প্রবেশ ও হারানো পাসওয়ার্ড ফর্ম"
+
+msgid "Lost your password?"
+msgstr "পাসওয়ার্ড হারিয়েছেন?"
+
+msgid "Loved tracks"
+msgstr "পছন্দের ট্র্যাকসমূহ"
+
+msgid "Max. number of tags to show:"
+msgstr "দেখানোর জন্য সর্বোচ্চ ট্যাগ:"
+
+msgid "Max. records to keep in database"
+msgstr "ডাটাবেসে রাখার জন্য সর্বোচ্চ রেকর্ড"
+
+msgid "Media items"
+msgstr "মিডিয়া আইটেম"
+
+msgid "Media setting, %s"
+msgstr "মিডিয়া সেটিংস, %s"
+
+msgid "Medium, %s"
+msgstr "মধ্যম, %s"
+
+msgid "Menus"
+msgstr "মেনুসমূহ"
+
+msgid "Meta"
+msgstr "মেটা"
+
+msgid "Meta Information"
+msgstr "মেটা তথ্য"
+
+msgid "Modified date (Recently modified)"
+msgstr "বদলানো তারিখ (সাম্প্রতিকালে)"
+
+msgid "Modules"
+msgstr "মডিউলসমূহ"
+
+msgid "Modules act like plugins that can further extend %s."
+msgstr "মডিউল প্লাগইনের মতো কাজ করে যা বাড়ানোও যায় %s."
+
+msgid "Monthly"
+msgstr "মাসিক"
+
+msgid "More &gt;"
+msgstr "আরও &gt;"
+
+msgid "Mouse Over"
+msgstr "মাউস স্পর্শ করান"
+
+msgid "My Lifestream"
+msgstr "আমার লাইফস্ট্রীম"
+
+msgid "MySpace page"
+msgstr "মাইস্পেস পেজ"
+
+msgid "Name"
+msgstr "নাম"
+
+msgid "Navigation"
+msgstr "ঘুরে বেড়ানো"
+
+msgid "Network (site-wide) content"
+msgstr "নেটওয়ার্ক (সাইট থেকে) কন্টেন্ট"
+
+msgid "Network Blogs"
+msgstr "নেটওয়ার্ক ব্লগসমূহ"
+
+msgid "Next &raquo;"
+msgstr "পরবর্তী &raquo;"
+
+msgid "NextGEN gallery"
+msgstr "নেক্সট-জেন গ্যালারি"
+
+msgid "No links yet :("
+msgstr "এখনও কোন লিংক নাই :("
+
+msgid "No menus have been created yet."
+msgstr "এখনও কোন মেনু বানানো হয় নি।"
+
+msgid ""
+"Note that for the new sized thumbnails to take effect, all existing images "
+"must be resized. See the Advanced page."
+msgstr ""
+"খেয়াল করুন, নতুন আকারের থাম্বনেইলের কাজ করার জন্য, যে সব ইমেজ আছে সবার নতুন আকার "
+"লাগবে। অ্যাডভান্স পৃষ্ঠা দেখুন।"
+
+msgid ""
+"Note that widget visibility options can be used to override this setting for "
+"individual pages or posts (you can also select the appropriate template when "
+"editing pages, or use the %s custom field)"
+msgstr ""
+"খেয়াল করুন, উইজেট দৃশ্যমানতার অপশন দিয়ে নির্দিষ্ট পৃষ্ঠা বা পোস্টের জন্য এই সেটিংস "
+"বাদ দেয়া যাবে (পেজ এডিট করার সময় আপনি উপযুক্ত টেমপ্লেট নির্বাচন, বা %s কাস্টোম "
+"ফিল্ড ব্যবহার করতে পারবেন)"
+
+msgid ""
+"Note: Links with the %s URL will behave the same way as the arrows. You "
+"should use them on menus with children"
+msgstr ""
+"নোট: %s URL-সহ লিংকসমূহ তীর চিহ্নের মত আচরণ করবে। আপনি এদেরকে চাইল্ডসহ মেনুতে "
+"ব্যবহার করতে পারেন"
+
+msgid "Notes"
+msgstr "নোটসমূহ"
+
+msgid "Nothing"
+msgstr "কিছুই না"
+
+msgid "Nothing found :("
+msgstr "কিছুই পাওয়া গেল না :("
+
+msgid "Nothing here :("
+msgstr "এখানে কিছুই নাই :("
+
+msgid "Nothing to configure in single column mode"
+msgstr "একক কলাম মোডে কিছুই কনফিগার করার নাই"
+
+msgid "Nothing, Randomize"
+msgstr "কিছুই নাই, এলোমেলো করুন"
+
+msgid "Nothing, get random posts"
+msgstr "কিছুই নাই, এলোমেলো পোস্ট আনুন"
+
+msgid "Number of items to show:"
+msgstr "দেখানোর জন্য আইটেম সংখ্যা:"
+
+msgid "One column (No sidebars)"
+msgstr "একক কলাম (সাইডবার ছাড়া)"
+
+msgid "One-letter day abbreviation"
+msgstr "এক-অক্ষর দিন সংক্ষেপন"
+
+msgid "Only Super Admins can change this option"
+msgstr "কেবল সুপার এডমিন এই অপশন পরিবর্তন করতে পারবে"
+
+msgid "Only edit this if you know what you're doing!"
+msgstr "যদি আপনি জানেন কি করছেন তবেই এটা এডিট করুন!"
+
+msgid ""
+"Only enable this if you need to, because it can significantly slow down page "
+"load for admins"
+msgstr ""
+"শুধুমাত্র প্রয়োজন হলেই এটা চালু করুন, কারন এটা এডমিনদের পেজ লোডিং স্লো করে দেয়"
+
+msgid ""
+"Only uncheck if you know what you're doing. Your site will load faster "
+"without jQuery, but features that depend on it will be disabled."
+msgstr ""
+"কি করছেন জেনে থাকলে তবেই আনচেক করুন। jQuery ছাড়া আপনার সাইট দ্রুত লোড হবে, কিন্তু "
+"এটার উপর নির্ভরশীল ফিচারসমূহ বন্ধ হয়ে যাবে"
+
+msgid "Oops, nothing here :("
+msgstr "উপস্, এখানে কিছুই নাই :("
+
+msgid "Optimize website for faster loading"
+msgstr "দ্রুত লোডিং-এর জন্য সাইট অপটিমাইজ করুন"
+
+msgid "Options"
+msgstr "অপশন্স"
+
+msgid "Order by:"
+msgstr "ক্রমধারা:"
+
+msgid "Original image"
+msgstr "আসল ইমেজ"
+
+msgid "Owner"
+msgstr "মালিক"
+
+msgid "PR %s"
+msgstr "PR %s"
+
+msgid "Page %1$s of %2$s"
+msgstr "%1$s এর %2$s পৃষ্ঠা"
+
+msgid "Page %s"
+msgstr "পৃষ্ঠা %s"
+
+msgid "Page Background"
+msgstr "পৃষ্ঠা ব্যাকগ্রাউন্ড"
+
+msgid "Page ID"
+msgstr "পৃষ্ঠা ID"
+
+msgid "Page IDs, separated by commas."
+msgstr "পৃষ্ঠা IDs, কমা দিয়ে আলাদা করা।"
+
+msgid "Page Top"
+msgstr "পৃষ্ঠার উপরিভাগ"
+
+msgid "Page Width"
+msgstr "পৃষ্ঠা চওড়া"
+
+msgid "Page numbers"
+msgstr "পৃষ্ঠা নং"
+
+msgid "Page order"
+msgstr "পৃষ্ঠা ক্রম"
+
+msgid "Page title"
+msgstr "পৃষ্ঠা টাইটেল"
+
+msgid "Page: %s"
+msgstr "পৃষ্ঠা: %s"
+
+msgid "Pager (on mouse over)"
+msgstr "পেজার (মাউসের স্পর্শে)"
+
+msgid "Pages"
+msgstr "পৃষ্ঠাসমূহ"
+
+msgid "Pages &raquo;"
+msgstr "পৃষ্ঠাসমূহ &raquo;"
+
+msgid "Password"
+msgstr "পাসওয়ার্ড"
+
+msgid "People who frequently comment the blog"
+msgstr "যারা প্রায়ই ব্লগে মন্তব্য করেন"
+
+msgid ""
+"Performs a series of operations: Loads javascript in pararell with %s, "
+"compresses and concatenates stylesheets. Leave this unchecked if you're "
+"experiencing conflicts with other plugins, or if you're using a cache plugin "
+"that handles such functions"
+msgstr ""
+"সিরিজ অপারেশন্স পারফর্ম করে: %s -এর সাথে জাভাস্ক্রিপ্ট লোড করে, স্টাইলশীট কম্প্রেস ও "
+"Concatenate করে। যদি অন্য প্লাগইনে সমস্যা করে, বা আপনি কোন ক্যাশ প্লাগইন ব্যবহার "
+"করেন যা এধরণের ফাংশন নিয়ন্ত্রন করে তাহলে এটা আনচেকড রেখে দিন"
+
+msgid "Permanent Link: %s"
+msgstr "স্থায়ী লিংক: %s"
+
+msgid "Pings (%s)"
+msgstr "পিংসমূহ (%s)"
+
+msgid "Please enter a valid user name and password"
+msgstr "দয়া করে সঠিক সদস্য নাম ও পাসওয়ার্ড দিন"
+
+msgid "Please specify a valid service and user ID"
+msgstr "দয়া করে সঠিক সার্ভিস ও সদস্য ID স্পেসিফাই করুন"
+
+msgid "Please specify the column number / total column count"
+msgstr "দয়া করে"
+
+msgid "Possible reasons:"
+msgstr "সাম্ভাব্য কারণ:"
+
+msgid "Post Comment"
+msgstr "মন্তব্য করুন"
+
+msgid "Post Previews"
+msgstr "পোস্ট প্রিভিউ"
+
+msgid "Post RSS"
+msgstr "পোস্ট RSS"
+
+msgid "Post Type:"
+msgstr "পোস্ট টাইপ:"
+
+msgid "Post count, descending"
+msgstr "পোস্ট কাউন্ট, অধোগামী"
+
+msgid "Post thumbnails"
+msgstr "পোস্ট থাম্বনেইলসমূহ"
+
+msgid "Posts"
+msgstr "পোস্টসমূহ"
+
+msgid "Posts by %1$s (%2$s)"
+msgstr "%1$s (%2$s) -এর পোস্টসমূহ"
+
+msgid "Posts by %s"
+msgstr "%s -এর পোস্টসমূহ"
+
+msgid "Posts tagged %s"
+msgstr "%s ট্যাগ করা পোস্টসমূহ"
+
+msgid "Powered by %1$s and %2$s theme by %3$s"
+msgstr "Powered by %1$s and %2$s theme by %3$s"
+
+msgid ""
+"Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr "পাওয়ারড বাই ওয়ার্ডপ্রেস, স্টেট-অব-দ্যা-আর্ট সিম্যান্টিক পাবলিশিং প্ল্যাটফর্ম।"
+
+msgid "Previous / Next links"
+msgstr "পূর্ববর্তী / পরবর্তী লিংকসমূহ"
+
+msgid "Previous/Next Links"
+msgstr "পূর্ববর্তী/পরবর্তী লিংকসমূহ"
+
+msgid "Previous/Next links (on mouse over)"
+msgstr "পূর্ববর্তী/পরবর্তী লিংকসমূহ (মাউসের স্পর্শে)"
+
+msgid "Primary Sidebar"
+msgstr "প্রাথমিক সাইডবার"
+
+msgid "Print"
+msgstr "প্রিন্ট"
+
+msgid "Profile"
+msgstr "হ্যাক্রোফাইল"
+
+msgid "Project Homepage"
+msgstr "প্রোজেক্টের নীড়পাতা"
+
+msgid "Quote"
+msgstr "উদ্ধৃতি"
+
+msgid "RSS Feed"
+msgstr "RSS ফিড"
+
+msgid "RSS Feeds"
+msgstr "RSS ফিডসমূহ"
+
+msgid "Random Stripes"
+msgstr "এলোমেলো স্ট্রাইপস"
+
+msgid "Random Tiles"
+msgstr "এলোমেলো টাইলস"
+
+msgid "Rating"
+msgstr "রেটিং"
+
+msgid "Read the %s to see all available keywords."
+msgstr "সব লভ্য কি-ওয়ার্ড দেখতে %s পড়ুন।"
+
+msgid "Recent Comments"
+msgstr "সাম্প্রতিক মন্তব্যসমূহ"
+
+msgid "Recent Posts"
+msgstr "সাম্প্রতিক পোস্টসমূহ"
+
+msgid "Recently played tracks"
+msgstr "সাম্প্রতিক চালানো ট্র্যাকসমূহ"
+
+msgid "Recently updated blogs"
+msgstr "সাম্প্রতিক আপডেটকৃত ব্লগসমূহ"
+
+msgid "Register"
+msgstr "সদস্য হোন"
+
+msgid "Registered Date"
+msgstr "রেজিস্টারকৃত তারিখ"
+
+msgid "Related Posts"
+msgstr "এধরণের পোস্ট"
+
+msgid "Relative (Time Since)"
+msgstr "রলেটিভ (সময়ের মধ্যে)"
+
+msgid "Remember me"
+msgstr "আমাকে ভুলে যাওয়া চলবে না"
+
+msgid "Remove"
+msgstr "মুছুন"
+
+msgid "Reply"
+msgstr "উত্তর দিন"
+
+msgid "Reset all theme settings to the default values? Are you sure?"
+msgstr "সব থিম সেটিংস ডিফল্টে ফিরিয়ে নেবেন? আপনি নিশ্চিত?"
+
+msgid "Reset options to defaults"
+msgstr "অপশনসমূহকে ডিফল্টে ফিরিয়ে নিন"
+
+msgid ""
+"Responses are currently closed, but you can <a%1$s>trackback</a> from your "
+"own site."
+msgstr ""
+"এখন মন্তব্য করা বন্ধ রাখা হয়েছে, কিন্তু আপনি আপনার সাইট থেকে <a%2$s>ট্র্যাকব্যাক</a> "
+"করতে পারেন"
+
+msgid "Right Aligned"
+msgstr "ডানে চাপানো"
+
+msgid "Role"
+msgstr "পদমর্যাদা"
+
+msgid "Save Changes"
+msgstr "পরিবর্তন সংরক্ষণ করুন"
+
+msgid "Search"
+msgstr "সার্চ করুন"
+
+msgid "Search Results"
+msgstr "সার্চ রেজাল্ট"
+
+msgid "Search Website"
+msgstr "সাইটে সার্চ করুন"
+
+msgid "Search results for %1$s (%2$s)"
+msgstr "%1$s (%2$s)-এর জন্য সার্চ রেজাল্ট"
+
+msgid "Search results for %s"
+msgstr "%s এর জন্য সার্চ রেজাল্ট"
+
+msgid "Searching for %1$s (%2$s)"
+msgstr "%1$s (%2$s) খোঁজা হচ্ছে"
+
+msgid "Secondary Sidebar"
+msgstr "সেকেন্ডারি সাইডবার"
+
+msgid "Select Day:"
+msgstr "দিন নির্বাচন করুন:"
+
+msgid "Select Menu:"
+msgstr "মেনু নির্বাচন করুন:"
+
+msgid "Select Month:"
+msgstr "মাস নির্বাচন করুন:"
+
+msgid "Select Week:"
+msgstr "সপ্তাহ নির্বাচন করুন:"
+
+msgid "Select Year:"
+msgstr "বছর নির্বাচন করুন:"
+
+msgid "Semi-Fluid (Fixed Sidebars)"
+msgstr "আধা-ফ্লুইড (নির্ধারিত সাইডবার)"
+
+msgid ""
+"Settings saved, but failed to update user functions. Is your uploads "
+"directory writeable?"
+msgstr ""
+"সেটিংস সংরক্ষিত, কিন্তু ইউজার ফাংশন আপডেটে ব্যর্থ। আপনার আপলোড ডিরেক্টরি কি "
+"রাইটেবল?"
+
+msgid "Settings saved."
+msgstr "সেটিংস সংরক্ষিত।"
+
+msgid "Share Links"
+msgstr "লিংক শেয়ার করুন"
+
+msgid "Share this post on %s"
+msgstr "%s -এ এই পোস্টটি শেয়ার করুন"
+
+msgid "Show"
+msgstr "দেখান"
+
+msgid "Show More"
+msgstr "আরো দেখান"
+
+msgid "Show Older Posts"
+msgstr "আগের পোস্টগুলি দেখান"
+
+msgid "Show Page Visibility Options"
+msgstr "পৃষ্ঠার দৃশ্যমানতার অপশন দেখান"
+
+msgid "Show as dropdown"
+msgstr "ড্রপডাউন হিসেবে দেখান"
+
+msgid "Show on:"
+msgstr "এখানে দেখান:"
+
+msgid "Show post count"
+msgstr "পোস্ট কাউন্ট দেখান"
+
+msgid "Show posts from:"
+msgstr "এখান থেকে পোস্ট দেখান:"
+
+msgid "Show profile info"
+msgstr "হ্যাক্রোফাইলের তথ্য দেখান"
+
+msgid "Show this widget on:"
+msgstr "এখানে এই উইজেট দেখান:"
+
+msgid "Single Post Page"
+msgstr "একক পোস্ট পৃষ্ঠা"
+
+msgid "Single Post Pages"
+msgstr "একক পোস্ট পৃষ্ঠাসমূহ"
+
+msgid "Single link (%s)"
+msgstr "Single link (%s)"
+
+msgid "Single: %s"
+msgstr "একক: %s"
+
+msgid "Site ID"
+msgstr "সাইট ID"
+
+msgid "Site IDs, separated by commas."
+msgstr "সাইট IDs, কমা দিয়ে আলাদাকৃত।"
+
+msgid "Site Title (Logo)"
+msgstr "সাইট টাইটেল (লোগো)"
+
+msgid "Slide Horizontally"
+msgstr "অনুভূমিকভাবে স্লাইড করুন"
+
+msgid "Slide Vertically"
+msgstr "উল্লম্বভাবে স্লাইড করুন"
+
+msgid "Slides link to:"
+msgstr "স্লাইড লিংক করে:"
+
+msgid "Slug"
+msgstr "স্লাগ"
+
+msgid "Small, %s"
+msgstr "ছোট, %s"
+
+msgid "Smallest:"
+msgstr "সবচেয়ে ছোট:"
+
+msgid "Social Media Links (Leave blank to disable)"
+msgstr "সামাজিক মিডিয়া লিংকসমূহ (বন্ধ করতে খালি রাখুন)"
+
+msgid "Sorry, this page requires JavaScript to be enabled in your browser :("
+msgstr "দুঃখিত, এই পৃষ্ঠার জন্য আপনার ব্রাউজারে জাভাস্ক্রিপ্ট চালু থাকতে হবে :("
+
+msgid "Sort by"
+msgstr "যার মাধ্যমে বাছাই হবে"
+
+msgid "Sort by:"
+msgstr "যার মাধ্যমে বাছাই হবে:"
+
+msgid "Spam"
+msgstr "স্প্যাম"
+
+msgid "Spiral"
+msgstr "স্পাইরাল"
+
+msgid "Splits area into 2 columns"
+msgstr "এলাকাকে ২ কলামে ভাগ করে"
+
+msgid "Start from root"
+msgstr "রুট থেকে শুরু করুন"
+
+msgid ""
+"Status notifications about the theme setup (only visible to administrators)."
+msgstr "থিম সেটআপের স্ট্যাটাস নোটিফিকেশন (শুধুমাত্র এডমিনের কাছে দৃশ্যমান)."
+
+msgid "Stripe Wave"
+msgstr "স্ট্রাইপ ওয়েভ"
+
+msgid "Styles &amp; colors"
+msgstr "স্টাইল &amp; রংসমূহ"
+
+msgid "Switch-Tab event:"
+msgstr "সুইচ-ট্যাব ইভেন্ট:"
+
+msgid "Syndicate this site using RSS 2.0"
+msgstr "RSS 2.0 ব্যবহার করে এই সাইট সিন্ডিকেট করুন"
+
+msgid "Tabbed Widgets"
+msgstr "ট্যাবড উইজেট"
+
+msgid "Tag Archives"
+msgstr "ট্যাগ আর্কাইভ"
+
+msgid "Tag Cloud"
+msgstr "ট্যাগ মেঘ"
+
+msgid "Tags"
+msgstr "ট্যাগসমূহ"
+
+msgid "Tags: %s"
+msgstr "ট্যাগসমূহ: %s"
+
+msgid "Tax Archive: %s"
+msgstr "ট্যাক্স আর্কাইভ: %s"
+
+msgid "Taxonomy:"
+msgstr "ট্যাক্সোনমি:"
+
+msgid "Template:"
+msgstr "টেমপ্লেট:"
+
+msgid "Terms"
+msgstr "টার্মসমূহ"
+
+msgid "Text"
+msgstr "টেক্সট"
+
+msgid ""
+"The code you add here is included in the front-end on initialization. This "
+"is almost the same thing as editing the %1$s file from the theme directory, "
+"the difference is that the changes you make here are preserved after theme "
+"updates. Read the %2$s for more information."
+msgstr ""
+"আপনি এখানে যে কোড যোগ করবেন তা ইন্টিলাইজেশনে ফ্রন্ট-এন্ডে যুক্ত হবে। এটা প্রায় থিম "
+"ডিরেক্টরি থেকে %1$s ফাইল এডিট করার মতোই, পার্থক হচ্ছে এখানে যে পরিবর্তন করা হবে "
+"তা থিম আপডেটের পরও থাকবে। আরও তথ্যের জন্য %2$s পড়ুন।"
+
+msgid "The latest comments to all posts in RSS"
+msgstr "RSS এ সব পোস্টে সর্বশেষ মন্তব্য"
+
+msgid "The most recent comments"
+msgstr "সবচেয়ে সাম্প্রতিক মন্তব্যসমূহ"
+
+msgid "The requested page was not found."
+msgstr "আপনার কাঙ্খিত পৃষ্ঠা পাওয়া গেল না"
+
+msgid ""
+"The site is temporarily down for maintainance. Come back in a few minutes, "
+"or login in <a%s>here</a> if you're de site admin"
+msgstr ""
+"সাইট মেইন্টেন্যান্সের জন্য সাময়িকভাবে বন্ধ আছে। খুব শীঘ্রই আমরা ফিরে আসবো, কিছুক্ষণ "
+"পর খোঁজ করুন। আপনি যদি সাইট এডমিন হয়ে থাকেন তাহলে <a%s>এখান দিয়ে</a> প্রবেশ করুন"
+
+msgid "The user has protected his/her tweets"
+msgstr "এই সদস্য তার টুইটস প্রোটেক্ট করে রেখেছেন"
+
+msgid "Theme Version: %s"
+msgstr "থিম ভার্সন: %s"
+
+msgid "Theme auto-uninstall"
+msgstr "থিম অটো-আনইন্সটল"
+
+msgid "Theme developed by digitalnature"
+msgstr "থিম জন্য DigitalNature -এর কাছে কৃতজ্ঞতা"
+
+msgid "Theme documentation"
+msgstr "থিম ডকুমেনশন"
+
+msgid "There aren't any posts in the %s category yet :("
+msgstr "%s বিভাগে এখনও কোন পোস্ট নাই :("
+
+msgid "There aren't any posts within this date :("
+msgstr "এই তারিখে কোন পোস্ট নাই :("
+
+msgid "This comment is awaiting moderation."
+msgstr "এই মন্তব্যটি মডারেশনের অপেক্ষায় আছে"
+
+msgid ""
+"This entry was posted by %1$s on %2$s at %3$s, and is filed under %4$s. "
+"Follow any responses to this post through %5$s."
+msgstr ""
+"এই পোস্ট %2$s তারিখে, %3$s টার সময় %1$s লিখেছেন। এটি %4$s বিভাগে প্রকাশিত। %5"
+"$s -এর মাধ্যমে সাথে থাকুন।"
+
+msgid ""
+"This is the default sidebar, active on 2 or 3 column layouts. If no widgets "
+"are visible, the page will fall back to a single column layout."
+msgstr ""
+"এটা ২ বা ৩ কলাম লে-আউটের ডিফল্ট সাইডবার। যদি কোন উইজেট না থাকে, তাহলে ১ কলাম "
+"লে-আউট সক্রিয় হবে"
+
+msgid ""
+"This section helps you create advertisment blocks in non-widgetized areas. "
+"For widgetized areas such as sidebars, simply use a text widget to display "
+"your ads."
+msgstr ""
+"এখান থেকে আপনি নন-উইজেট এলাকায় বিজ্ঞাপন ব্লক তৈরি করতে পারবেন। সাইডবারের মতো "
+"উইজেট এলাকায় বিজ্ঞাপন দেখানোর জন্য টেক্সট উইজেট ব্যবহার করুন।"
+
+msgid ""
+"This sidebar is active only on a 3 column setup, if at least one of its "
+"widgets is visible to the current user."
+msgstr ""
+"এই ৩য় কলামের সাইডবারটি শুধু তখন সক্রিয় থাকবে যখন, বর্তমান সদস্যর কাছে ৩য় কলামের "
+"কমপক্ষে একটি উইজেট দৃশ্যমান থাকে"
+
+msgid "This user hasn't shared any profile information"
+msgstr "এই সদস্য নিজের সম্পর্কে কোন তথ্য শেয়ার করেন নাই"
+
+msgid "This widget requires jQuery to be enabled"
+msgstr "এই উইজেট কাজ করার জন্য jQuery দরকার হবে"
+
+msgid "Three columns"
+msgstr "তিন কলাম"
+
+msgid "Three columns, sidebars to the left"
+msgstr "তিন কলাম, সাইডবারসমূহ বামে"
+
+msgid "Three columns, sidebars to the right"
+msgstr "তিন কলাম, সাইডবারসমূহ ডানে"
+
+msgid "Thumbnail Size"
+msgstr "থাম্বনেইলের আকার"
+
+msgid "Thumbnail Size:"
+msgstr "থাম্বনেইলের আকার:"
+
+msgid "Thumbnails"
+msgstr "থাম্বনেইলসমূহ"
+
+msgid "Tile Wave"
+msgstr "টাইল ওয়েভ"
+
+msgid "Title"
+msgstr "টাইটেল"
+
+msgid "Title, alphabetically"
+msgstr "টাইটেল, অক্ষরানুক্রমে"
+
+msgid "Title:"
+msgstr "টাইটেল:"
+
+msgid ""
+"To add tabs, you must have at least one active arbitrary widget. Click save "
+"to refresh..."
+msgstr ""
+"ট্যাব যোগ করার জন্য আপনার কমপক্ষে একটি ইচ্ছাধীন উইজেট সক্রিয় থাকতে হবে। রিফ্রেশ "
+"করার জন্য সেভ-এ ক্লিক করুন..."
+
+msgid "To get the child theme URL use %s."
+msgstr "চাইল্ড থিমের URL পাওয়ার জন্য %s ব্যবহার করুন।"
+
+msgid ""
+"To include this widget into your posts or pages use one of the following "
+"shortcodes: %s"
+msgstr ""
+"এই উইজেটকে আপনার পোস্ট বা পৃষ্ঠায় যোগ করার জন্য এদের যেকোন একটি শর্টকোড ব্যবহার "
+"করুন: %s"
+
+msgid ""
+"To make small CSS customizations you can use the %1$s option from the theme "
+"settings. For extensive customizations activate and edit the %2$s theme if "
+"available, or create your own child theme. Read the %3$s for more "
+"information."
+msgstr ""
+"ছোটখাট CSS কাস্টোমাইজেশন করার জন্য আপনি থিম সেটিংসের %1$s অপশন ব্যবহার করতে "
+"পারেন। বড় কোন কাস্টোমাইজেশনের জন্য, যদি %2$s থিম থাকে তাহলে তা সক্রিয় ও এডিট "
+"করুন অথবা নিজেই চাইল্ড থিম "
+
+msgid "To:"
+msgstr "প্রতি:"
+
+msgid "Toggle Height"
+msgstr "উচ্চতা টুগল"
+
+msgid "Toggle Visual &lt;&gt; HTML"
+msgstr "ভিজুয়াল HTML &lt;&gt; টুগল"
+
+msgid "Top Commenters"
+msgstr "টপ মন্তব্যকারী"
+
+msgid "Top artists"
+msgstr "টপ আর্টিস্ট"
+
+msgid "Top tracks"
+msgstr "টপ ট্র্যাক"
+
+msgid "Transition effect:"
+msgstr "ট্র্যান্সিশন ইফেক্ট:"
+
+msgid "Try Another Image?"
+msgstr "অন্য ইমেজ ব্যবহার করবেন?"
+
+msgid "Try a different search..."
+msgstr "অন্য কিছু সার্চ করুন..."
+
+msgid "Tweets"
+msgstr "টুইটস"
+
+msgid "Twitter"
+msgstr "টুইটার"
+
+msgid "Twitter may be down"
+msgstr "টুইটার সম্ভবত বন্ধ আছে"
+
+msgid "Twitter returned error: %s"
+msgstr "টুইটার রিটার্নড সমস্যা: %s"
+
+msgid "Twitter updates"
+msgstr "টুইটার আপডেট"
+
+msgid "Two columns, left sidebar"
+msgstr "দুই কলাম, সাইডবার বামে"
+
+msgid "Two columns, right sidebar"
+msgstr "দুই কলাম, সাইডবার ডানে"
+
+msgid "Type"
+msgstr "টাইপ"
+
+msgid "Type your comment"
+msgstr "আপনার মন্তব্য লিখুন"
+
+msgid "Type:"
+msgstr "টাইপ:"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Unavailable for the moment"
+msgstr "এই মূহুর্তে লভ্য নয়"
+
+msgid "Uncheck if you prefer a lightbox plugin"
+msgstr "আপনি লাইটবক্স প্লাগইন চেলে আনচেক করুন"
+
+msgid ""
+"Uncheck if you're using a SEO plugin, otherwise you'll get duplicate fields! "
+"Note that you don't need such plugins, %s is heavily optimized for search "
+"engines"
+msgstr ""
+"আপনি SEO প্লাগইন ব্যবহার করলে আনচেক করুন, নতুবা ডুপ্লিকেট ফিল্ড আসবে! খেয়াল করুন "
+"আপনার এধরণের প্লাগইন দরকার নাই, %s সার্চ করার জন্য খুবই অপটিমাইজড ইঞ্জিন"
+
+msgid "Unregistered user (Visitor)"
+msgstr "আনরেজিস্টারড সদস্য (অতিথি)"
+
+msgid "Update"
+msgstr "আপডেট"
+
+msgid "Upload Error: %s"
+msgstr "আপলোড সমস্যা: %s"
+
+msgid "Upload Image"
+msgstr "ইমেজ আপলোড করুন"
+
+msgid "Uploading"
+msgstr "আপলোড হচ্ছে"
+
+msgid "Use %s for convenient adjustments"
+msgstr "কনভেনিয়েন্ট অ্যাডজাস্টমেন্টের জন্য %s ব্যবহার করুন"
+
+msgid "Use AJAX for month navigation"
+msgstr "মাস ঘুরে দেখার জন্য AJAX ব্যবহার করুন"
+
+msgid "Use first attachment as thumbnail, if none is set"
+msgstr "যদি কোন থাম্বনেইল সেট না করা হয়, তবে প্রথম সংযুক্তিকে ব্যবহার করুন"
+
+msgid "Use jQuery"
+msgstr "jQuery ব্যবহার করুন"
+
+msgid "Use theme built-in lightbox (%s) on all image links"
+msgstr "সব ইমেজ লিংকে থিমের বিল্ট-ইন লাইটবক্স (%s) ব্যবহার করুন"
+
+msgid "User"
+msgstr "সদস্য"
+
+msgid "User CSS"
+msgstr "সদস্য CSS"
+
+msgid "User IDs, separated by commas."
+msgstr "সদস্যদের ID, কমা দিয়ে আলাদাকৃত"
+
+msgid "Users"
+msgstr "সদস্যগণ"
+
+msgid "Very Large, %s"
+msgstr "খুবই বড়, %s"
+
+msgid "Very Small, %s"
+msgstr "খুবই ছোট, %s"
+
+msgid "View all posts filed under %s"
+msgstr "%s এ নথিভুক্ত সকল পোস্ট দেখুন"
+
+msgid "View count"
+msgstr "কাউন্ট দেখুন"
+
+msgid "View posts for %1$s %2$s"
+msgstr "%1$s %2$s এর জন্য পোস্ট দেখুন"
+
+msgid "View site"
+msgstr "সাইট দেখুন"
+
+msgid "Visible on:"
+msgstr "যেখানে দৃশ্যমান:"
+
+msgid "Visitor only"
+msgstr "শুধুমাত্র অতিথি"
+
+msgid "Website"
+msgstr "ওয়েবসাইট"
+
+msgid "Week archive date format:"
+msgstr "সপ্তাহ আর্কাইভের তারিখ ফরম্যাট:"
+
+msgid "Weekly"
+msgstr "সাপ্তাহিক"
+
+msgid "Welcome %s"
+msgstr "স্বাগতম %s"
+
+msgid "Welcome back %s."
+msgstr "আবারও স্বাগতম %s"
+
+msgid "Welcome screen links (if enough permissions):"
+msgstr "স্বাগত স্ক্রীনের লিংকসমূহ (যথার্থ অনুমতি থাকলে):"
+
+msgid "Welcome!"
+msgstr "স্বাগতম!"
+
+msgid "When:"
+msgstr "যখন:"
+
+msgid ""
+"Widgets from this area can be grouped into tabs, or added into posts/pages "
+"using the %1$s or %2$s shortcodes."
+msgstr ""
+"এখানের উইজেটসমূহকে ট্যাবে গ্রুপ করা, বা পোস্ট/পৃষ্ঠায় %1$s বা %2$s শর্টকোড দ্বারা যোগ "
+"করা যাবে"
+
+msgid ""
+"Widgets surrounded by splitters will be grouped into columns (two per row)."
+msgstr "স্প্লিটার দিয়ে ঘেরা উইজেটসমূহ কলামে গ্রুপ করা থাকবে (প্রতি সারিতে দু'টি)."
+
+msgid "Write"
+msgstr "লিখুন"
+
+msgid "Yearly"
+msgstr "বাৎসরিক"
+
+msgid "You are not authorised to perform this operation."
+msgstr "আপনি এটা করার জন্য অনুমোদনপ্রাপ্ত নন।"
+
+msgid ""
+"You can <a%1$s>leave a response</a> or <a%2$s>trackback</a> from your own "
+"site."
+msgstr ""
+"আপনি <a%1$s>মন্তব্য</a> করতে বা আপনার সাইট থেকে <a%2$s>ট্র্যাকব্যাক</a> করতে পারেন"
+
+msgid "You can add HTML code."
+msgstr "আপনি HTML কোড যোগ করতে পারবেন।"
+
+msgid ""
+"You can customize your %1$s theme from the <%2$s>theme settings</a> page."
+msgstr "আপনি আপনার %1$s থিমকে <%2$s>থিম সেটিংস</a> থেকে কাস্টোমাইজ করতে পারবেন"
+
+msgid "You can only vote once :)"
+msgstr "একবারের বেশি ভোট দেওয়া যাবে না :)"
+
+msgid ""
+"You can skip to the end and leave a response. Pinging is currently not "
+"allowed."
+msgstr "আপনি একেবারে নিচে গিয়ে মন্তব্য করতে পারেন। এখন পিং করা বন্ধ রাখা হয়েছে"
+
+msgid "You can't vote your own comment :("
+msgstr "নিজের মন্তব্যে ভোট দেওয়া যাবে না :("
+
+msgid "You have the latest version"
+msgstr "আপনার সর্বশেষ ভার্সন আছে"
+
+msgid "You may use these %1$s tags: %2$s"
+msgstr "আপনি এই %1$s ট্যাগ ব্যবহার করতে পারেন: %2$s "
+
+msgid "Your activity around social networks"
+msgstr "সামাজিক নেটওয়ার্কে আপনার কার্যকলাপ"
+
+msgid "Your blogroll/links"
+msgstr "আপনার ব্লগরোল/লিংকসমূহ"
+
+msgid "Your comment is awaiting moderation."
+msgstr "আপানার মন্তন্য মডারেশনের অপেক্ষায় আছে"
+
+msgid "Your host doesn't allow outgoing connections"
+msgstr "আপনার হোস্ট আউইগোয়িং কানেকশনের অনুমতি দেয় না"
+
+msgid "Your latest Twitter updates"
+msgstr "আপনার সর্বশেষ টুইটার আপডেট"
+
+msgid "Your most used tags in cloud format"
+msgstr "ক্লাউড ফরম্যাটে আপনার সর্বধিক ব্যবহৃত ট্যাগসমূহ"
+
+msgid ""
+"Your server has made too many requests and is being limited (try increasing "
+"the cache value)"
+msgstr ""
+"আপনার সার্ভার অধিক সংখ্যক রিকোয়েস্ট করে ফেলেছে আর এখন লিমিটেড হচ্ছে (ক্যাশের মান "
+"বাড়াতে চেষ্টা করুন)"
+
+msgid ""
+"Your site is running on %1$s. %2$s requires at least %3$s. Please update "
+"your site even if you're not going to use this theme, because outdated "
+"applications expose you to security risks"
+msgstr ""
+"আপনার সাইট %1$s এ চলছে। %2$s এর জন্য কমপক্ষে %3$s দরকার। আপনি এই থিম ব্যবহার না "
+"করলেও সাইটটি আপডেট করুন, কারন পুরানো আপ্লিকেশন্স আপনার নিরাপত্তার ঝুঁকি বাড়িয়ে দেয়।"
+
+msgid "Your site&#8217;s WordPress Pages"
+msgstr "আপনার সাইটের ওয়ার্ডপ্রেস পৃষ্ঠাসমূহ"
+
+msgid "[shortcodes]"
+msgstr "[শর্টকোডসমূহ]"
+
+msgid "by %s"
+msgstr "লিখেছেন %s,"
+
+msgid "documentation"
+msgstr "ডকুমেনশন"
+
+msgid "here"
+msgstr "এখানে"
+
+msgid "in %s"
+msgstr "%s বিভাগে"
+
+msgid "jQuery is required by this widget"
+msgstr "এই উইজেটে jQuery দরকার"
+
+msgid "on %s"
+msgstr "%s -এ"
+
+msgid "parent theme URL"
+msgstr "প্যারেন্ট থিমের URL"
+
+msgid "pixels"
+msgstr "পিক্সেলস"
+
+msgid "use custom styles"
+msgstr "কাস্টোম স্টাইল ব্যবহার করুন"

@@ -1,0 +1,21 @@
+
+
+/* Internet Explorer 6/7 bug-fixes -- incomplete */
+
+pre{
+  word-wrap:break-word;
+}
+
+.clear-block{
+  zoom:1;
+  display: block;
+}
+
+
+nav .sub-menu{
+  zoom: 1;
+}
+
+#main.page-content{
+  z-index: -1;
+}

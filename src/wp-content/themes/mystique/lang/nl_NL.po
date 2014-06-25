@@ -1,0 +1,2549 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Mystique 3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-03 23:51+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Raymon <rdelooff97@hotmail.com>\n"
+"Language-Team: Raymon <raydelooff@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: Netherlands\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _a;_ae;_an:1,2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: c:\\wamp\\www\\wpmu\\wp-content\\themes\\mystique\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPath-2: ..\n"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/404.php:22
+msgid "The requested page was not found."
+msgstr "De pagina die je zocht is niet gevonden."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/about-the-author.php:17
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/meta.php:37
+#, php-format
+msgid "About %s"
+msgstr "Over %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/about-the-author.php:18
+#, php-format
+msgid "%s post"
+msgid_plural "%s posts"
+msgstr[0] "%s bericht"
+msgstr[1] "%s berichten"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/about-the-author.php:27
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/archive.php:53
+msgid "Nothing here :("
+msgstr "Er is niks hier :("
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/about-the-author.php:32
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/author.php:83
+#, php-format
+msgid "%s's RSS Feed"
+msgstr "%s's RSS Feed"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/archive.php:26
+#, php-format
+msgid "Posts tagged %s"
+msgstr "Berichten met tag %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/archive.php:28
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/archive.php:30
+#, php-format
+msgid "Archive for %s"
+msgstr "Archief voor %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/archive.php:32
+#, php-format
+msgid "Archive for year %s"
+msgstr "Archief voor jaar %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/archive.php:34
+msgid "Blog Archives"
+msgstr "Blog Archieven"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/archive.php:49
+#, php-format
+msgid "There aren't any posts in the %s category yet :("
+msgstr "Er zijn nog geen berichten in de %s categorie :("
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/archive.php:51
+msgid "There aren't any posts within this date :("
+msgstr "Er zijn geen berichten op deze datum :("
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/author.php:30
+#, php-format
+msgid "%s karma"
+msgstr "%s karma"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/author.php:32
+#, php-format
+msgid "(%1$s comments, %2$s posts)"
+msgstr "(%1$s reacties, %2$s berichten)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/author.php:42
+msgid "This user hasn't shared any profile information"
+msgstr "Deze gebruiker deelt geen profiel gegevens"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/author.php:48
+msgid "Home page:"
+msgstr "Startpagina:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/author.php:75
+#, php-format
+msgid "Posts by %s"
+msgstr "Berichten van %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/author.php:86
+#, php-format
+msgid "%s hasn't written any posts yet"
+msgstr "%s heeft nog geen berichten geschreven"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/comment.php:17
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/comments.php:21
+#, php-format
+msgid "%1$s written by %2$s %3$s"
+msgstr "%1$s geschreven door %2$s %3$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/comment.php:34
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/comments.php:38
+msgid "Your comment is awaiting moderation."
+msgstr "Je reactie wacht op goedkeuring door de administrator."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/comment.php:34
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/comments.php:38
+msgid "This comment is awaiting moderation."
+msgstr "Deze reactie wacht op goedkeuring door de administrator."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/commentform.php:22
+msgid "Name"
+msgstr "Naam"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/commentform.php:22
+msgid "(required)"
+msgstr "(verplicht)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/commentform.php:23
+msgid "E-mail"
+msgstr "E-mail"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/commentform.php:23
+msgid "(required, will not be published)"
+msgstr "(verplicht, word niet gepubliceerd)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/commentform.php:23
+msgid "(will not be published)"
+msgstr "(word niet gepubliceerd)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/commentform.php:24
+msgid "Website"
+msgstr "Website"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/commentform.php:58
+#, php-format
+msgid "Logged in as %s."
+msgstr "Ingelogd als %s."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/commentform.php:59
+msgid "Log out of this account"
+msgstr "Dit account uitloggen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/commentform.php:59
+msgid "Log out?"
+msgstr "Uitloggen?"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/commentform.php:65
+#, php-format
+msgid "Welcome back %s."
+msgstr "Welkom terug %s."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/commentform.php:67
+msgid "Change &raquo;"
+msgstr "Verander &raquo;"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/commentform.php:97
+msgid "Type your comment"
+msgstr "Type je reactie"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/commentform.php:103
+#, php-format
+msgid "You may use these %1$s tags: %2$s"
+msgstr "Je mag deze %1$s tags gebruiken: %2$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/commentform.php:114
+msgid "Post Comment"
+msgstr "Verstuur reactie"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/commentform.php:116
+msgid "Cancel reply"
+msgstr "Annuleer reactie"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/commentform.php:130
+msgid "Comments are closed"
+msgstr "Reacties gesloten"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/comments.php:66
+msgid "Didn't find any comments :("
+msgstr "Geen reacties gevonden :("
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/footer.php:44
+msgid "Go to Top"
+msgstr "Naar boven"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:105
+msgid "Primary Sidebar"
+msgstr "Eerste Sidebar"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:107
+msgid "This is the default sidebar, active on 2 or 3 column layouts. If no widgets are visible, the page will fall back to a single column layout."
+msgstr "Dit is de standaard sidebar, actief bij 2 of 3 kolommen layouts. Als er geen widgets beschikbaar zijn, krijgt de pagina een één-kolom layout."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:123
+msgid "Secondary Sidebar"
+msgstr "Tweede Sidebar"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:125
+msgid "This sidebar is active only on a 3 column setup, if at least one of its widgets is visible to the current user."
+msgstr "Deze sidebar is alleen actief op een 3-koloms pagina, als tenminste één van de widgets zichtbaar is voor de gebruiker."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:133
+msgid "Footer"
+msgstr "Footer"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:135
+msgid "Active only if at least one of its widgets is visible to the current user. You can add between 1 and 6 widgets here (3 or 4 are optimal). They will adjust their size based on the widget count."
+msgstr "Alleen actief als tenminste één van de widgets zichtbaar is voor de gebruiker. Je kan hier 1 tot 6 widgets toevoegen (3 of 4 widgets zijn optmaal). Ze zullen hun grootte aanpassen aan de hoeveelheid widgets."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:143
+msgid "Arbitrary Widgets"
+msgstr "Willekeurige Widgets"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:145
+#, php-format
+msgid "Widgets from this area can be grouped into tabs, or added into posts/pages using the %1$s or %2$s shortcodes."
+msgstr "Widgets uit dit gebied kunnen worden gegroepeerd in tabs, of kunnen worden toegevoegd aan berichten/pagina's met de %1$s of %2$s shortcodes."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:153
+msgid "Popular"
+msgstr "Populair"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:184
+msgid "Page Top"
+msgstr "Pagina Top"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:185
+msgid "Below Header (Main)"
+msgstr "Onder de Header (Start)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:186
+msgid "Above Footer"
+msgstr "Boven de Footer"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/home.php:27
+msgid "Oops, nothing here :("
+msgstr "Oeps, niks gevonden hier :("
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/meta.php:23
+#, php-format
+msgid "Searching for %1$s (%2$s)"
+msgstr "Zoeken voor %1$s (%2$s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/meta.php:24
+#, php-format
+msgid "Comments (%s)"
+msgstr "Reacties (%s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/meta.php:29
+#, php-format
+msgid "Pings (%s)"
+msgstr "Pings (%s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/meta.php:33
+msgid "Related Posts"
+msgstr "Gerelateerde berichten"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/meta.php:67
+msgid "Filter"
+msgstr "Filter"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/meta.php:76
+msgid "Comment Feed for this Post"
+msgstr "Reacties feed voor dit bericht"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/related-posts.php:17
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/teaser-gallery.php:13
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/teaser.php:53
+#, php-format
+msgid "Permanent Link: %s"
+msgstr "Link: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/related-posts.php:25
+msgid "Didn't find any related posts :("
+msgstr "Geen gerelateerde berichten gevonden :("
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/search.php:22
+#, php-format
+msgid "Search results for %1$s (%2$s)"
+msgstr "Zoekresultaten voor %1$s (%2$s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/search.php:34
+msgid "Nothing found :("
+msgstr "Niks gevonden :("
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/search.php:35
+msgid "Try a different search..."
+msgstr "Probeer een andere zoekterm..."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/searchform.php:11
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/searchform.php:13
+msgid "Search Website"
+msgstr "Zoeken"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/sidebar.php:32
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/sidebar.php:49
+#, php-format
+msgid "%s is empty. Add widgets here, otherwise this area will not be visible in the frontend"
+msgstr "%s is leeg. Voeg hier widgets toe, anders word dit gebied niet zichtbaar"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/single.php:62
+#, php-format
+msgid "This entry was posted by %1$s on %2$s at %3$s, and is filed under %4$s. Follow any responses to this post through %5$s."
+msgstr "Dit bericht is gepost door %1$s op %2$s om %3$s, en is gearchiveerd onder %4$s. Volg elke reactie op deze post via %5$s."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/single.php:70
+#, php-format
+msgid "You can <a%1$s>leave a response</a> or <a%2$s>trackback</a> from your own site."
+msgstr "Je kan <a%1$s>een reactie achterlaten</a> of <a%2$s>trackback</a> van je eigen site."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/single.php:72
+#, php-format
+msgid "Responses are currently closed, but you can <a%1$s>trackback</a> from your own site."
+msgstr "Reacties zijn gesloten, maar je kan <a%1$s>trackbacken</a> via je eigen site."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/single.php:74
+msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+msgstr "Je kan naar het einde van deze pagina en een reactie achterlaten. Pingen is niet toegestaan."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/single.php:76
+msgid "Both comments and pings are currently closed."
+msgstr "Reacties en pings zijn gesloten."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/teaser.php:71
+#, php-format
+msgid "by %s"
+msgstr "door %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/teaser.php:75
+#, php-format
+msgid "in %s"
+msgstr "in %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:653
+#, php-format
+msgid "You can customize your %1$s theme from the <%2$s>theme settings</a> page."
+msgstr "Je kan je  %1$s theme aanpassen via de <%2$s>thema instellingen</a> pagina."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:690
+#, php-format
+msgid "%s year ago"
+msgid_plural "%s years ago"
+msgstr[0] "%s jaar geleden"
+msgstr[1] "%s jaren geleden"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:691
+#, php-format
+msgid "%s month ago"
+msgid_plural "%s months ago"
+msgstr[0] "%s maand geleden"
+msgstr[1] "%s maanden geleden"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:692
+#, php-format
+msgid "%s week ago"
+msgid_plural "%s weeks ago"
+msgstr[0] "%s week geleden"
+msgstr[1] "%s weken geleden"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:693
+#, php-format
+msgid "%s day ago"
+msgid_plural "%s days ago"
+msgstr[0] "%s dag geleden"
+msgstr[1] "%s dagen geleden"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:694
+#, php-format
+msgid "%s hour ago"
+msgid_plural "%s hours ago"
+msgstr[0] "%s uur geleden"
+msgstr[1] "%s uur geleden"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:695
+#, php-format
+msgid "%s minute ago"
+msgid_plural "%s minutes ago"
+msgstr[0] "%s minuut geleden"
+msgstr[1] "%s minuten geleden"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:696
+#, php-format
+msgid "%s second ago"
+msgid_plural "%s seconds ago"
+msgstr[0] "%s seconde geleden"
+msgstr[1] "%s seconden geleden"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:1015
+#, php-format
+msgid "Archive for week %1$s of %2$s"
+msgstr "Archief voor week %1$s van %2$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:1032
+#, php-format
+msgid "Search results for %s"
+msgstr "Zoekresultaten voor %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:1036
+msgid "404 Not Found"
+msgstr "404 Niet gevonden"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:1042
+#, php-format
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:1046
+#, php-format
+msgid "Comment Page %s"
+msgstr "Reacties pagina %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:1333
+msgid "Show Older Posts"
+msgstr "Toon oudere berichten"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:1337
+#, php-format
+msgid "Page %1$s of %2$s"
+msgstr "Pagina %1$s van %2$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:1339
+msgid "&laquo; Previous"
+msgstr "&laquo; Vorige"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:1381
+msgid "Next &raquo;"
+msgstr "Volgende &raquo;"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:1413
+msgid "RSS Feeds"
+msgstr "RSS Feeds"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:1416
+msgid "Twitter updates"
+msgstr "Twitter updates"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:1419
+msgid "Facebook page"
+msgstr "Facebook pagina"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:1422
+msgid "Flick photostream"
+msgstr "Flickr fotostream"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:1425
+msgid "MySpace page"
+msgstr "MySpace pagina"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:2353
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:2434
+msgid "Home Page"
+msgstr "Startpagina"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:2353
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/Atom.php:2434
+msgid "Home"
+msgstr "Startpagina"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:59
+msgid "Welcome!"
+msgstr "Welkom!"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:60
+msgid "Design"
+msgstr "Ontwerp"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:61
+msgid "Content options"
+msgstr "Inhoud opties"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:62
+msgid "CSS"
+msgstr "CSS"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:63
+msgid "Advanced"
+msgstr "Geavanceerd"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:64
+msgid "Modules"
+msgstr "Modules"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:239
+msgid "Insert Atom Element"
+msgstr "Importeer Atom Element"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:280
+msgid "Checking..."
+msgstr "Controleren..."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:371
+msgid "Error while featuring posts"
+msgstr "Berichten markeren als Aanbevolen mislukt"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:442
+msgid "Nothing to configure in single column mode"
+msgstr "Niks te configureren in de één-koloms instelling"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:548
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:553
+msgid "Uploading"
+msgstr "Uploaden"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:562
+msgid "Try Another Image?"
+msgstr "Een andere afbeelding proberen?"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:570
+msgid "Change Image"
+msgstr "Verander afbeelding"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:598
+msgid "Upload Image"
+msgstr "Upload afbeelding"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:667
+msgid "General Info"
+msgstr "Algemene info"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:670
+#, php-format
+msgid "Core (ATOM) version: %s"
+msgstr "Core (ATOM) versie: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:673
+#, php-format
+msgid "Theme Version: %s"
+msgstr "Thema versie: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:673
+#, php-format
+msgid "(Child theme of %s)"
+msgstr "(Kind thema van %s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:674
+msgid "Check for update"
+msgstr "Controleer voor updates"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:679
+msgid "Theme documentation"
+msgstr "Thema documentatie"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:680
+msgid "Project Homepage"
+msgstr "Thema startpagina"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:686
+msgid "Available Languages"
+msgstr "Beschikbare talen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:697
+#, php-format
+msgid "%1$s, translator: %2$s (%3$s)"
+msgstr "%1$s, vertaler: %2$s (%3$s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:705
+msgid "Import / export / reset or backup Theme Options"
+msgstr "Importeer / exporteer / reset of backup Thema Opties"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:706
+msgid "If you wish to import or export theme settings from another website that's using this theme, you may do so here. Below you can copy the current settings stored as a encoded string, or paste new settings..."
+msgstr "Als u een thema-instellingen wilt importeren of exporteren van een andere website die gebruik ook maakt van dit thema, kunt u dat hier doen. Hieronder kan je de huidige opgeslagen instellingen kopiëren als een gecodeerde code, of plak hier nieuwe instellingen..."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:716
+msgid "Reset options to defaults"
+msgstr "Reset de standaard instellingen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:716
+msgid "Reset all theme settings to the default values? Are you sure?"
+msgstr "Reset alle thema instellingen naar de standaard instellingen? Weet u het zeker?"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:717
+msgid "Import options"
+msgstr "Importeer opties"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:717
+msgid "Import these settings? Are you sure?"
+msgstr "Importeer deze instellingen? Weet u het zeker?"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:752
+msgid "Layout Style (Global)"
+msgstr "Layout stijl (Globaal)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:755
+msgid "One column (No sidebars)"
+msgstr "Eén kolom (Geen sidebars)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:756
+msgid "Two columns, left sidebar"
+msgstr "Twee kolommen, sidebar links"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:757
+msgid "Two columns, right sidebar"
+msgstr "Twee kolommen, sidebar rechts"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:758
+msgid "Three columns"
+msgstr "Drie kolommen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:759
+msgid "Three columns, sidebars to the left"
+msgstr "Drie kolommen, sidebars links"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:760
+msgid "Three columns, sidebars to the right"
+msgstr "Drie kolommen, sidebars rechts"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:763
+#, php-format
+msgid "Note that widget visibility options can be used to override this setting for individual pages or posts (you can also select the appropriate template when editing pages, or use the %s custom field)"
+msgstr "Merk op dat widget zichtbaarheid opties kunnen worden gebruikt om deze instelling voor afzonderlijke pagina's of berichten overschrijden (u kunt ook kiezen voor de juiste template bij het bewerken van pagina's, of maak gebruik van de %s aangepaste veld)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:771
+msgid "Column Sizes"
+msgstr "Kolom breedtes"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:796
+msgid "Page Width"
+msgstr "Pagina breedte"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:802
+#, php-format
+msgid "Fixed (%s)"
+msgstr "Vast (%s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:809
+#, php-format
+msgid "Fluid, but not more than %s pixels"
+msgstr "Flexibel, maar niet meer dan %s pixels"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:816
+msgid "Semi-Fluid (Fixed Sidebars)"
+msgstr "Vloeibaar (Vaste Sidebars)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:827
+msgid "Site Title (Logo)"
+msgstr "Site titel (Logo)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:830
+msgid "Current logo image"
+msgstr "Huidige logo afbeelding"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:831
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:868
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:892
+msgid "Remove"
+msgstr "Verwijder"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:843
+msgid "Styles &amp; colors"
+msgstr "Stijlen &amp; kleuren"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:849
+#, php-format
+msgid "%1$s by %2$s"
+msgstr "%1$s door %2$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:853
+msgid "Disabled"
+msgstr "Uitgeschakeld"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:853
+msgid "use custom styles"
+msgstr "gebruik aangepaste stijlen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:853
+msgid "Blank"
+msgstr "Leeg"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:862
+msgid "Page Background"
+msgstr "Website achtergrond"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:866
+msgid "Current background image"
+msgstr "Huidige achtergrond afbeelding"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:887
+msgid "Favicon"
+msgstr "Favicon"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:890
+msgid "Current favicon"
+msgstr "Huidige favicon"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:919
+msgid "Footer content"
+msgstr "Footer inhoud"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:925
+msgid "You can add HTML code."
+msgstr "Je mag HTML gebruiken."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:925
+msgid "HTML is allowed, but some tags may be filtered."
+msgstr "HTML is toegestaan, maar sommige tags zullen niet werken."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:927
+#, php-format
+msgid "Use %s for convenient adjustments"
+msgstr "Gebruik %s voor handige aanpassingen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:927
+msgid "[shortcodes]"
+msgstr "[shortcodes]"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:938
+msgid "Post Previews"
+msgstr "Berichten voorvertoning"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:945
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1442
+msgid "Title"
+msgstr "Titel"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:955
+msgid "Content"
+msgstr "Inhoud"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:958
+msgid "Full post"
+msgstr "Volledig bericht"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:959
+msgid "Full post, filtered"
+msgstr "Volledig bericht, gefilterd"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:960
+msgid "Excerpt"
+msgstr "Uittreksel"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:961
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:962
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:963
+#, php-format
+msgid "First %s words, filtered"
+msgstr "Eerste %s woorden, gefilterd"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:973
+msgid "Category"
+msgstr "Categorie"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:983
+msgid "Date/Time"
+msgstr "Datum/Tijd"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:986
+msgid "Relative (Time Since)"
+msgstr "Relatief (Tijd sinds)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:987
+msgid "Absolute (Use Time/Date settings)"
+msgstr "Absoluut (Gebruik Tijd/Datum instellingen)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:997
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1444
+msgid "Author"
+msgstr "Auteur"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1007
+msgid "Comments Link"
+msgstr "Reacties Link"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1017
+msgid "Tags"
+msgstr "Tags"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1027
+msgid "Thumbnails"
+msgstr "Thumbnails"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1031
+msgid "Left Aligned"
+msgstr "Links uitgelijnd"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1032
+msgid "Right Aligned"
+msgstr "Rechts uitgelijnd"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1042
+#, php-format
+msgid "Small, %s"
+msgstr "Klein, %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1043
+#, php-format
+msgid "Medium, %s"
+msgstr "Gemiddeld, %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1044
+#, php-format
+msgid "Large, %s"
+msgstr "Groot, %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1045
+#, php-format
+msgid "Very Small, %s"
+msgstr "Erg klein, %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1046
+#, php-format
+msgid "Larger, %s"
+msgstr "Groter, %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1047
+#, php-format
+msgid "Very Large, %s"
+msgstr "Erg groot, %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1051
+#, php-format
+msgid "Default, %s"
+msgstr "Standaard, %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1058
+msgid "Thumbnail Size"
+msgstr "Thumbnail grootte"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1069
+#, php-format
+msgid "Media setting, %s"
+msgstr "Media-instelling, %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1073
+msgid "Note that for the new sized thumbnails to take effect, all existing images must be resized. See the Advanced page."
+msgstr "Merk op dat voor de nieuwe grote miniaturen alle bestaande afbeeldingen moeten worden aangepast. Zie de pagina 'Geavanceerd'."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1085
+msgid "Use first attachment as thumbnail, if none is set"
+msgstr "Gebruik eerste bijlage als miniatuur, als er geen is ingesteld"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1095
+msgid "Navigation"
+msgstr "Navigatie"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1097
+#, php-format
+msgid "Single link (%s)"
+msgstr "Enkele link (%s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1098
+msgid "Previous / Next links"
+msgstr "Vorige / Volgende links"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1099
+msgid "Page numbers"
+msgstr "Pagina nummers"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1109
+msgid "Comments"
+msgstr "Reacties"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1116
+msgid "Display Comment Search Form"
+msgstr "Toon 'Doorzoek reacties' functie"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1126
+msgid "Allow Comment Ratings (Karma)"
+msgstr "Sta reactie waardering toe (Karma)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1133
+#, php-format
+msgid "Hide comments with %s karma and below"
+msgstr "Verberg reacties met %s karma en lager"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1149
+msgid "Single Post Page"
+msgstr "Berichten pagina"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1156
+msgid "Previous/Next Links"
+msgstr "Vorige/Volgende Links"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1168
+msgid "Share Links"
+msgstr "Delen Links"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1178
+msgid "Meta Information"
+msgstr "Meta Informatie"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1190
+msgid "About the Author"
+msgstr "Over de auteur"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1209
+msgid "Social Media Links (Leave blank to disable)"
+msgstr "Social Media Links (Laat leeg om uit te schakelen)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1213
+msgid "RSS Feed"
+msgstr "RSS Feed"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1267
+#, php-format
+msgid "Check %s to see existing theme classes and properties, which you can redefine here."
+msgstr "Controleer %s voor bestaande thema regels en eigenschappen, hier kun je nieuwe regels toevoegen. Als je ze hier toevoegt blijven ze bewaard na een update!"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1269
+#, php-format
+msgid "All URLs must have absolute paths. You can use the %1$s keyword to point to the %2$s."
+msgstr "Alle URLs moeten abusolute paden hebben. U kunt kunt gebruik maken van de %1$s code om te wijzen op de %2$s."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1269
+msgid "parent theme URL"
+msgstr "hoofdmap van dit thema"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1272
+#, php-format
+msgid "To get the child theme URL use %s."
+msgstr "Om een URL van een submap te krijgen, gebruik %s."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1274
+#, php-format
+msgid "Read the %s to see all available keywords."
+msgstr "Lees de %s om alle beschikbare zoekwoorden te zien."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1274
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1404
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1721
+msgid "documentation"
+msgstr "documentatie"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1299
+msgid "Use jQuery"
+msgstr "Gebruik jQuery"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1301
+msgid "Only uncheck if you know what you're doing. Your site will load faster without jQuery, but features that depend on it will be disabled."
+msgstr "Vink het alleen uit als je weet wat je aan het doen bent. Je site laad sneller zonder jQuery, functies die er van afhankelijk zijn worden dan uitgeschakeld."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1310
+msgid "Animate content"
+msgstr "Animerende inhoud"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1312
+msgid "Enable jQuery effects such as fading or sliding. Effects can render the site slightly slower on less powerful PCs"
+msgstr "Schakel jQuery effecten in zoals faden of sliders. Effecten maken de website langzamer op minder krachtige PC's"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1320
+msgid "Optimize website for faster loading"
+msgstr "Website optimaliseren voor sneller laden"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1322
+#, php-format
+msgid "Performs a series of operations: Loads javascript in pararell with %s, compresses and concatenates stylesheets. Leave this unchecked if you're experiencing conflicts with other plugins, or if you're using a cache plugin that handles such functions"
+msgstr "Voert een reeks bewerkingen uit: Laad JavaScript samen met %s, comprimeert en voegt stylesheets samen. Laat dit niet aangevinkt als je conflicten ziet met andere plug-ins, of als u gebruik maakt van een cache plugin die dergelijke taken uitvoert."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1334
+msgid "Only Super Admins can change this option"
+msgstr "Alleen Super Admins kunnen deze optie veranderen!"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1336
+msgid "Automatically create missing thumbnail sizes"
+msgstr "Automatisch genereren missende thumbnail groottes"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1338
+#, php-format
+msgid "Asynchronously update thumbnails if needed. You can also use the %s plugin to process all missing thumbnail sizes manually, in a single pass"
+msgstr "Synchroniseer thumbnail updates als het nodig is. Je kan gebruik maken van de %s plugin om alle missende thumbnail groottes handmatig the genereren, in één klik"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1347
+#, php-format
+msgid "Use theme built-in lightbox (%s) on all image links"
+msgstr "Gebruik de ingebouwde lightbox (%s) op alle afbeeldings links"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1349
+msgid "Uncheck if you prefer a lightbox plugin"
+msgstr "Uitvinken als je een andere lightbox plugin wilt gebruiken"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1357
+msgid "Automatically generate meta descriptions"
+msgstr "Automatisch genereren van meta-beschrijvingen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1359
+#, php-format
+msgid "Uncheck if you're using a SEO plugin, otherwise you'll get duplicate fields! Note that you don't need such plugins, %s is heavily optimized for search engines"
+msgstr "Uitvinken als je een SEO plugin gebruikt, anders krijg je dubbele velden! Merk op dat je niet zulke plugins nodig hebt, %s is zwaar geoptimaliseerd voor zoekmachines"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1368
+msgid "Display debug messages (english only)"
+msgstr "Weergave debug bericht (alleen in het Engels)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1370
+msgid "Status notifications about the theme setup (only visible to administrators)."
+msgstr "Status meldingen over de thema setup (alleen zichtbaar voor beheerders)."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1371
+msgid "Only enable this if you need to, because it can significantly slow down page load for admins"
+msgstr "Alleen inschakelen wanneer je deze optie nodig hebt, het laden van pagina's voor administrators word aanzienlijk vertraagd."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1380
+msgid "Theme auto-uninstall"
+msgstr "Thema instellingen automatisch deïnstalleren"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1382
+#, php-format
+msgid "Check to remove all %s settings from the database after you switch the theme (Featured post records are preserved)."
+msgstr "Vink aan om alle %s instellingen te verwijderen uit de databse nadat je veranderd van thema (Aanbevolen berichten worden bewaard)."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1395
+msgid "Only edit this if you know what you're doing!"
+msgstr "Bewerkt dit alleen als je weet wat je aan het doen bent!"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1404
+#, php-format
+msgid "The code you add here is included in the front-end on initialization. This is almost the same thing as editing the %1$s file from the theme directory, the difference is that the changes you make here are preserved after theme updates. Read the %2$s for more information."
+msgstr "De code die u hier toevoegt, word geplaatst aan het einde van de initialisatie. Dit is bijna hetzelfde als het bewerken van het %1$s bestand uit de thema map, het verschil is dat de wijzigingen die u hier maakt worden bewaard na de thema-updates. Lees de %2$s voor meer informatie."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1429
+#, php-format
+msgid "Modules act like plugins that can further extend %s."
+msgstr "Modules zijn plugins die je verder kan uitbreiden in %s."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1443
+msgid "Type"
+msgstr "Type"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1445
+msgid "Description"
+msgstr "Beschrijving"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1484
+msgid "Currently there are no modules installed."
+msgstr "Er zijn momonteel geen modules geïnstalleerd."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1503
+msgid "Save Changes"
+msgstr "Opslaan"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1565
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1662
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1859
+msgid "You are not authorised to perform this operation."
+msgstr "U bent niet bevoegd om dit uit te voeren."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1568
+msgid "Import failed. Invalid settings. "
+msgstr "Importeren mislukt. Ongeldige instellingen."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1569
+msgid "Settings saved, but failed to update user functions. Is your uploads directory writeable?"
+msgstr "Instellingen opgeslagen, maar slaagde er niet in om de gebruikersfuncties bij te werken. Is uw upload map schrijfbaar?"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1575
+msgid "Update"
+msgstr "Update"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1584
+msgid "Settings saved."
+msgstr "Instellingen opgeslagen."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1584
+msgid "View site"
+msgstr "Toon site"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1599
+#, php-format
+msgid "<strong>There is a new version of %1$s available</strong>. <a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">View %1$s %3$s details</a> or notify the site administrator."
+msgstr "<strong>Er is een nieuwe versie van %1$s beschikbaar</strong>. <a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">Bekijk %1$s %3$s details</a> of meld het de administrator."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1601
+#, php-format
+msgid "<strong>There is a new version of %1$s available</strong>. <a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">View %1$s %3$s details</a> or <a href=\"%4$s\" >upgrade automatically</a>."
+msgstr "<strong>Er is een nieuwe versie van %1$s beschikbaar</strong>. <a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">Bekijk %1$s %3$s details</a> of <a href=\"%4$s\" >upgrade automatisch</a>."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1608
+msgid "Sorry, this page requires JavaScript to be enabled in your browser :("
+msgstr "Sorry, deze pagina vereist dat JavaScript is ingeschakeld in uw browser :("
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1713
+msgid "Do not edit core theme files because you will use any changes you make here when you update!"
+msgstr "Bewerkt niet de core thema bestanden omdat hier je aanpassingen worden bewaard wanneer je update!"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1718
+#, php-format
+msgid "To make small CSS customizations you can use the %1$s option from the theme settings. For extensive customizations activate and edit the %2$s theme if available, or create your own child theme. Read the %3$s for more information."
+msgstr "Om kleine CSS aanpassingen te maken kunt u gebruik maken van de %1$s  optie uit de Thema-instellingen. Voor uitgebreide aanpassingen activeer en bewerk het %2$s thema indien beschikbaar, of maak uw eigen kind thema. Lees het %3$s voor meer informatie."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1719
+msgid "User CSS"
+msgstr "Gebruikers CSS"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1839
+#, php-format
+msgid "%s is available"
+msgstr "%s is beschikbaar"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1841
+msgid "You have the latest version"
+msgstr "Je hebt de laatste versie"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1867
+#, php-format
+msgid "Upload Error: %s"
+msgstr "Upload Error: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1891
+#, php-format
+msgid "Latest News from %s"
+msgstr "Het laatste nieuws van %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1970
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:2083
+msgid "Hide Page Visibility Options"
+msgstr "Verberg Pagina Zichbaarheid opties"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:1970
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:2091
+msgid "Show Page Visibility Options"
+msgstr "Pagina Zichtbaarheid opties"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:2077
+msgid "Loading..."
+msgstr "Laden..."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:2131
+msgid "Blog Homepage"
+msgstr "Blog Homepage"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:2132
+msgid "Search Results"
+msgstr "Zoekresultaten"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:2133
+msgid "Author Archives"
+msgstr "Auteur archieven"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:2134
+msgid "Date-based Archives"
+msgstr "Datum-gebaseerde archieven"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:2135
+msgid "Tag Archives"
+msgstr "Tag archieven"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:2136
+msgid "Category Archives"
+msgstr "Categorie archieven"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:2174
+msgid "Show this widget on:"
+msgstr "Toon deze widget op:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:2191
+#, php-format
+msgid "Single: %s"
+msgstr "Enkel: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:2201
+#, php-format
+msgid "Tax Archive: %s"
+msgstr "Categorie archief: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:2217
+#, php-format
+msgid "Page: %s"
+msgstr "Pagina: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:2226
+msgid "To:"
+msgstr "Naar:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:2231
+msgid "Unregistered user (Visitor)"
+msgstr "Ongeregistreerde gebruiker (Bezoeker)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:2252
+#, php-format
+msgid "To include this widget into your posts or pages use one of the following shortcodes: %s"
+msgstr "Om deze widget op je berichten of pagina's te gebruiken, maak gebruik van een van de volgende shortcodes: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomAdmin.php:2313
+msgid "Featured"
+msgstr "Aanbevolen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomObjectAuthor.php:206
+#, php-format
+msgid "Posts by %1$s (%2$s)"
+msgstr "Berichten van %1$s (%2$s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomObjectComment.php:37
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomObjectPost.php:61
+msgid "Edit"
+msgstr "Bewerk"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomObjectComment.php:44
+msgid "Delete"
+msgstr "Verwijder"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomObjectComment.php:49
+msgid "Spam"
+msgstr "Spam"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomObjectComment.php:54
+msgid "Approve"
+msgstr "Goedkeuren"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomObjectComment.php:64
+msgid "Reply"
+msgstr "Antwoord"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomObjectComment.php:69
+msgid "Quote"
+msgstr "Quote"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomObjectComment.php:191
+msgid "Show"
+msgstr "Toon"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomObjectPost.php:66
+msgid "Print"
+msgstr "Print"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomObjectPost.php:482
+#, php-format
+msgid "%s topic"
+msgid_plural "%s topics"
+msgstr[0] "%s topic"
+msgstr[1] "%s topics"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomObjectPost.php:507
+msgid "More &gt;"
+msgstr "Meer &gt;"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomObjectPost.php:773
+#, php-format
+msgid "Share this post on %s"
+msgstr "Deel dit bericht op %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomObjectPost.php:794
+msgid "Pages &raquo;"
+msgstr "Pagina's &raquo;"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomObjectPost.php:875
+#, php-format
+msgid "And %s more..."
+msgstr "En %s meer..."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:19
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:23
+msgid "Archives"
+msgstr "Archieven"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:19
+msgid "Archives of your site's posts"
+msgstr "Archieven van de berichten van uw site"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:91
+#, php-format
+msgid "%1$s %2$d"
+msgstr "%1$s %2$d"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:168
+msgid "Select Day:"
+msgstr "Selecteer dag:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:169
+msgid "Select Week:"
+msgstr "Selecteer week:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:170
+msgid "Select Month:"
+msgstr "Selecteer maand:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:171
+msgid "Select Year:"
+msgstr "Selecteer jaar:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:216
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:186
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:275
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:92
+msgid "Title:"
+msgstr "Titel:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:254
+msgid "Type:"
+msgstr "Type:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:256
+msgid "Yearly"
+msgstr "Jaarlijks"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:257
+msgid "Monthly"
+msgstr "Maandelijks"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:258
+msgid "Weekly"
+msgstr "Wekelijks"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:259
+msgid "Daily"
+msgstr "Dagelijks"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:264
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetCalendar.php:301
+msgid "Post Type:"
+msgstr "Bericht type:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:275
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:142
+msgid "Limit to:"
+msgstr "Limiet tot:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:276
+msgid "Entries"
+msgstr "Inzendingen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:283
+msgid "Show post count"
+msgstr "Toon berichten teller"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:288
+msgid "Show as dropdown"
+msgstr "Toon als dropdown"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:294
+msgid "Day archive date format:"
+msgstr "Dag archief datumnotatie:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetArchives.php:299
+msgid "Week archive date format:"
+msgstr "Week archief datumnotatie:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:18
+msgid "Network Blogs"
+msgstr "Netwerk blogs"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:18
+msgid "A list of site blogs"
+msgstr "Een lijst van de site blogs"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:34
+msgid "Recently updated blogs"
+msgstr "Onlangs bijgewerkte blogs"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:154
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:225
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:282
+msgid "Show More"
+msgstr "Toon meer"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:191
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:109
+msgid "Order by:"
+msgstr "Sorteer op:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:193
+msgid "Last Update"
+msgstr "Laatste update"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:194
+msgid "Registered Date"
+msgstr "Datum van registratie"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:195
+msgid "Site ID"
+msgstr "Site ID"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:196
+msgid "Nothing, Randomize"
+msgstr "Niets, willekeurig"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:201
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:286
+msgid "How many entries to display?"
+msgstr "Hoeveel items om weer te geven?"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:206
+msgid "Exclude:"
+msgstr "Uitsluiten:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:208
+msgid "Site IDs, separated by commas."
+msgstr "Site-ID's, gescheiden door komma's."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:214
+msgid "Exclude sites marked as mature"
+msgstr "Sites uitsluiten die gemarkeerd zijn als 'mature'"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:218
+msgid "Avatar Size:"
+msgstr "Avatar grootte:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:219
+msgid "pixels"
+msgstr "pixels"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetBlogs.php:225
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:282
+#, php-format
+msgid "Display %s Link"
+msgstr "Toon %s Link"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetCalendar.php:17
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetCalendar.php:187
+msgid "Calendar"
+msgstr "Kalender"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetCalendar.php:17
+msgid "A calendar of your site's posts"
+msgstr "Een kalender van de berichten van uw site"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetCalendar.php:170
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetCalendar.php:179
+#, php-format
+msgid "View posts for %1$s %2$s"
+msgstr "Bekijk berichten voor %1$s %2$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetCalendar.php:314
+msgid "Use AJAX for month navigation"
+msgstr "Gebruik AJAX voor de maand navigatie"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetCalendar.php:318
+msgid "One-letter day abbreviation"
+msgstr "Eén-letter dagen afkorting"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:14
+msgid "Your activity around social networks"
+msgstr "Uw activiteit rond sociale netwerken"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:16
+msgid "Lifestream"
+msgstr "Lifestream"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:21
+msgid "My Lifestream"
+msgstr "Mijn Lifestream"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:130
+#, php-format
+msgid "%s followers"
+msgstr "%s volgers"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:131
+#, php-format
+msgid "%s tweets"
+msgstr "%s tweets"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:158
+#, php-format
+msgid "Twitter returned error: %s"
+msgstr "Twitter fout: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:159
+msgid "Could not retrieve tweets. Possible reasons:"
+msgstr "Kan tweets niet ontvangen. Mogelijke redens:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:166
+msgid "Unavailable for the moment"
+msgstr "Niet beschikbaar op dit moment"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:229
+msgid "Loading tweets..."
+msgstr "Laden tweets..."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:234
+msgid "jQuery is required by this widget"
+msgstr "jQuery is vereist door deze widget"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:265
+msgid "General settings"
+msgstr "Algemene instellingen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:291
+msgid "Max. records to keep in database"
+msgstr "Max. aantal vermeldingen te houden in database"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:296
+msgid "Check for new data every:"
+msgstr "Controleren op nieuwe data elke:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:298
+msgid "60 seconds"
+msgstr "60 seconden"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:299
+msgid "90 seconds"
+msgstr "90 seconden"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:300
+msgid "2 minutes"
+msgstr "2 minuten"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:301
+msgid "5 minutes"
+msgstr "5 minuten"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:309
+msgid "Get:"
+msgstr "Krijg:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:311
+msgid "Recently played tracks"
+msgstr "Recent afgespeelde tracks"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:312
+msgid "Loved tracks"
+msgstr "Geliefde tracks"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:313
+msgid "Top tracks"
+msgstr "Top tracks"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:314
+msgid "Top artists"
+msgstr "Top artiesten"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLifestream.php:322
+#, php-format
+msgid "%s user name:"
+msgstr "%s gebruikersnaam:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:21
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:143
+msgid "Links"
+msgstr "Links"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:21
+msgid "Your blogroll/links"
+msgstr "Uw blogroll/ links"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:25
+msgid "Blogroll"
+msgstr "Blogroll"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:65
+#, php-format
+msgid "%s out of 10"
+msgstr "%s van de 10"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:69
+msgid "No links yet :("
+msgstr "Nog geen links :("
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:97
+msgid "Link Category:"
+msgstr "Link Categorie:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:99
+msgid "-- All categories --"
+msgstr "-- Alle categoriën --"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:112
+msgid "Rating"
+msgstr "Waardering"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:113
+msgid "URL"
+msgstr "URL"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:114
+msgid "ID"
+msgstr "ID"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:115
+msgid "Owner"
+msgstr "Eigenaar"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:116
+msgid "Notes"
+msgstr "Opmerkingen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:123
+msgid "Hide Private Links"
+msgstr "Verberg Privé Links"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:128
+msgid "Display Link Image"
+msgstr "Toon Link naar foto"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:133
+msgid "Display Link Rating"
+msgstr "Toon Link waardering"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLinks.php:138
+msgid "Display Link Description"
+msgstr "Toon Link beschrijving"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:20
+msgid "Login"
+msgstr "Inloggen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:20
+msgid "Login and Lost Password forms"
+msgstr "Login en 'Wachtwoord vergeten' forms"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:24
+msgid "Log in"
+msgstr "Inloggen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:25
+msgid "Hello Guest. Login below if you have an account"
+msgstr "Hallo gast. Log hieronder in als je een account hebt"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:52
+msgid "Please enter a valid user name and password"
+msgstr "Vul een geldige gebruikersnaam en wachtwoord in"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:104
+msgid "Login Successful, redirecting..."
+msgstr "Login successvol, doorsturen..."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:127
+#, php-format
+msgid "Welcome %s"
+msgstr "Welkom %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:137
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:233
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/hooks.php:1297
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:140
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:245
+msgid "Write"
+msgstr "Schrijf"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:144
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:239
+msgid "Profile"
+msgstr "Profiel"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:145
+msgid "Log Out"
+msgstr "Uitloggen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:160
+msgid "User"
+msgstr "Gebruiker"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:161
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:165
+msgid "Log In"
+msgstr "Inloggen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:173
+msgid "Remember me"
+msgstr "Onthoud mij"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:179
+msgid "Lost your password?"
+msgstr "Wachtwoord vergeten?"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:194
+msgid "Register"
+msgstr "Registreer"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:224
+msgid "Initial Status Text (or HTML):"
+msgstr "Initiële Status tekst (of HTML):"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:229
+msgid "Welcome screen links (if enough permissions):"
+msgstr "Welkomstscherm links (indien voldoende permissies):"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetLogin.php:257
+msgid "Log out"
+msgstr "Uitloggen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMenu.php:17
+msgid "Menus"
+msgstr "Menu's"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMenu.php:17
+msgid "Display a custom menu"
+msgstr "Toon een aangepast menu"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMenu.php:72
+msgid "No menus have been created yet."
+msgstr "Er zijn nog geen menu's aangemaakt."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMenu.php:72
+msgid "Create some"
+msgstr "Aanmaken"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMenu.php:83
+msgid "Select Menu:"
+msgstr "Selecteer menu:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMenu.php:95
+msgid "Behaviour:"
+msgstr "Gedrag:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMenu.php:97
+msgid "Expanded"
+msgstr "Uitgebreid"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMenu.php:98
+msgid "Collapsible, Standard"
+msgstr "Inklapbaar, Standaard"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMenu.php:99
+msgid "Collapsible, Accordion style"
+msgstr "Inklapbaar, Accordeon stijl"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMenu.php:104
+msgid "Expand/Collapse Fire Event:"
+msgstr "Start uitbreiden/inklappen animatie bij:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMenu.php:106
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTabs.php:311
+msgid "Click"
+msgstr "Klik"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMenu.php:107
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTabs.php:312
+msgid "Double-Click"
+msgstr "Dubbelklik"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMenu.php:108
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTabs.php:313
+msgid "Mouse Over"
+msgstr "Mouse Over"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMenu.php:111
+#, php-format
+msgid "Note: Links with the %s URL will behave the same way as the arrows. You should use them on menus with children"
+msgstr "Opmerking: Links met de URL %s zal op dezelfde manier gedragen als de pijlen. Je moet ze gebruiken op de menu's met kinderen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMeta.php:15
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMeta.php:19
+msgid "Meta"
+msgstr "Meta"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMeta.php:15
+msgid "Log in/out, admin, feed and WordPress links"
+msgstr "Inloggen/uitloggen, administrator, feed en WordPress links"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMeta.php:45
+msgid "Syndicate this site using RSS 2.0"
+msgstr "Deze pagina maakt gebruik van RSS 2.0"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMeta.php:45
+msgid "Entries <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr "Inzendingen <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMeta.php:49
+msgid "The latest comments to all posts in RSS"
+msgstr "De laatste reacties op alle berichten in RSS"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMeta.php:49
+msgid "Comments <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr "Reacties <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMeta.php:53
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMeta.php:57
+msgid "Theme developed by digitalnature"
+msgstr "Thema ontwikkeld door digitalnature"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMeta.php:89
+msgid "Links to display:"
+msgstr "Links om te weergeven:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMeta.php:93
+msgid "Login / Logout / Site Admin"
+msgstr "Inloggen / Uitloggen / Site Admin"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMeta.php:98
+msgid "Post RSS"
+msgstr "Bericht RSS"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMeta.php:103
+msgid "Comment RSS"
+msgstr "Reacties RSS"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMeta.php:108
+msgid "External: WordPress.org"
+msgstr "Extern: WordPress.org"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetMeta.php:113
+msgid "External: digitalnature.eu"
+msgstr "Extern: digitalnature.eu"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPages.php:20
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPages.php:28
+msgid "Pages"
+msgstr "Pagina's"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPages.php:20
+msgid "Your site&#8217;s WordPress Pages"
+msgstr "Uw site's WordPress pagina's"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPages.php:105
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTerms.php:189
+msgid "Display:"
+msgstr "Toon:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPages.php:108
+msgid "All Pages"
+msgstr "Alle pagina's"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPages.php:113
+msgid "Children of the active page"
+msgstr "Subs van de actieve pagina"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPages.php:117
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTerms.php:201
+msgid "Start from root"
+msgstr "Start van root"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPages.php:123
+msgid "Children of:"
+msgstr "Subs van:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPages.php:145
+msgid "Sort by:"
+msgstr "Sorteren op:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPages.php:147
+msgid "Page title"
+msgstr "Pagina titel"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPages.php:148
+msgid "Page order"
+msgstr "Paginavolgorde"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPages.php:149
+msgid "Page ID"
+msgstr "Pagina ID"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPages.php:150
+msgid "Date, created"
+msgstr "Datum, aangemaakt"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPages.php:151
+msgid "Date, modified"
+msgstr "Datum, aangepast"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPages.php:159
+msgid "Page IDs, separated by commas."
+msgstr "Pagina ID's, gescheiden door komma's."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPages.php:163
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTerms.php:274
+msgid "Depth:"
+msgstr "Diepte:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPages.php:166
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTerms.php:276
+msgid "0 = All levels"
+msgstr "0 = Alle niveaus"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:19
+msgid "Posts"
+msgstr "Berichten"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:19
+msgid "List posts based on filters you choose"
+msgstr "Lijst met berichten op basis van filters die je kiest"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:54
+msgid "Recent Posts"
+msgstr "Recente berichten"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:308
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetRecentComments.php:201
+msgid "Network (site-wide) content"
+msgstr "Netwerk (op de gehele site) inhoud"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:310
+msgid "Get posts from all network blogs"
+msgstr "Ontvang berichten uit alle netwerk blogs"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:335
+msgid "Date (Recent posts)"
+msgstr "Datum (Recente berichten)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:336
+msgid "Modified date (Recently modified)"
+msgstr "Gewijzigde datum (Recent gewijzigd)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:337
+msgid "Comment count"
+msgstr "Meeste reacties"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:338
+msgid "View count"
+msgstr "Toon teller"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:339
+msgid "Title, alphabetically"
+msgstr "Titel, alfabetisch"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:340
+msgid "Nothing, get random posts"
+msgstr "Niets, krijg willekeurige berichten"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:359
+msgid "Show posts from:"
+msgstr "Toon berichten van:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:373
+#, php-format
+msgid "Content has max %s <em>words</em>"
+msgstr "Inhoud heeft maximaal %s <em>woorden</em>"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:377
+msgid "Thumbnail Size:"
+msgstr "Thumbnail grootte:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:388
+msgid "Get only context-related posts"
+msgstr "Krijg alleen context-gerelateerde berichten"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:394
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTopCommenters.php:157
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetUsers.php:297
+msgid "Display mode"
+msgstr "Weergavemodus"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:395
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTopCommenters.php:158
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetUsers.php:298
+msgid "Full"
+msgstr "Volledig"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:396
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTopCommenters.php:159
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetUsers.php:299
+msgid "Details"
+msgstr "Details"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:397
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTopCommenters.php:160
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetUsers.php:300
+msgid "Brief"
+msgstr "Kort"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:398
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTopCommenters.php:161
+msgid "Post thumbnails"
+msgstr "Bericht thumbnails"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:399
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTopCommenters.php:162
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetUsers.php:302
+msgid "Custom Template"
+msgstr "Aangepaste template"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:416
+#, php-format
+msgid "<strong>Important:</strong> %1$s sized thumbnails have to be created if you just added this widget, or if you're changing the thumbnail size. Read more about thumbnail sizes %2$s"
+msgstr "<strong>Belangrijk:</strong> %1$s grote thumbnails moeten worden gemaakt als je zojuist deze widget heeft toegevoegd, of als je de miniaturen heeft veranderd. Lees meer over verkleinde afmetingen %2$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetPosts.php:416
+msgid "here"
+msgstr "hier"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetRecentComments.php:20
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetRecentComments.php:36
+msgid "Recent Comments"
+msgstr "Recente reacties"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetRecentComments.php:20
+msgid "The most recent comments"
+msgstr "De meest recente reacties"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetRecentComments.php:24
+#, php-format
+msgid "on %s"
+msgstr "op %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetRecentComments.php:203
+msgid "Get comments from all network blogs"
+msgstr "Haal opmerkingen op van alle netwerk blogs"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetRecentComments.php:220
+#, php-format
+msgid "Content has max %s word(s)"
+msgstr "Inhoud heeft maximaal %s woord(en)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetRecentComments.php:235
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTerms.php:280
+msgid "Template:"
+msgstr "Template:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetSearch.php:16
+msgid "Search"
+msgstr "Zoeken"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetSearch.php:16
+msgid "A search form for your site"
+msgstr "Een zoek formulier voor je site"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetSplitter.php:21
+msgid "Column Splitter"
+msgstr "Kolom splitser"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetSplitter.php:21
+msgid "Splits area into 2 columns"
+msgstr "Splits gebied in 2 kolommen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetSplitter.php:72
+msgid "Widgets surrounded by splitters will be grouped into columns (two per row)."
+msgstr "Widgets omringd door splitters worden gegroepeerd in kolommen (twee per rij)."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTabs.php:23
+msgid "Tabbed Widgets"
+msgstr "Widgets met tab"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTabs.php:23
+msgid "Group arbitrary widgets into tabs"
+msgstr "Groep willekeurige widgets in tabbladen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTabs.php:239
+msgid "This widget requires jQuery to be enabled"
+msgstr "Deze widget vereist jQuery om ingeschakeld te worden"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTabs.php:254
+msgid "To add tabs, you must have at least one active arbitrary widget. Click save to refresh..."
+msgstr "Als u tabbladen wil toevoegen, moet u ten minste één actieve willekeurig widget hebben. Klik op Opslaan om te vernieuwen..."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTabs.php:268
+msgid "Create Tabs for:"
+msgstr "Maak Tabs voor:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTabs.php:300
+msgid "Transition effect:"
+msgstr "Overgangseffect:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTabs.php:302
+msgid "-- None --"
+msgstr "-- Geen --"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTabs.php:303
+msgid "Fade"
+msgstr "Fade"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTabs.php:304
+msgid "Toggle Height"
+msgstr "Switch hoogte"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTabs.php:309
+msgid "Switch-Tab event:"
+msgstr "Switch-Tab effect:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTagCloud.php:17
+msgid "Tag Cloud"
+msgstr "Tag wolk"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTagCloud.php:17
+msgid "Your most used tags in cloud format"
+msgstr "Uw meest gebruikte tags in wolk formaat"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTagCloud.php:210
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTerms.php:237
+msgid "Taxonomy:"
+msgstr "Taxonomie:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTagCloud.php:221
+msgid "Max. number of tags to show:"
+msgstr "Max. aantal tags om te tonen:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTagCloud.php:227
+msgid "Smallest:"
+msgstr "Kleinste:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTagCloud.php:239
+msgid "Largest:"
+msgstr "Grootste:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTerms.php:19
+msgid "Terms"
+msgstr "Categoriën"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTerms.php:19
+msgid "A list of taxonomy terms like categories or post tags"
+msgstr "Een lijst van de taxonomie termen als categorieën of bericht labels"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTerms.php:23
+#, php-format
+msgid "View all posts filed under %s"
+msgstr "Bekijk alle berichten gearchiveerd onder %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTerms.php:31
+msgid "Categories"
+msgstr "Categorieën"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTerms.php:192
+msgid "All Terms"
+msgstr "Alle termen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTerms.php:197
+msgid "Children of the active term"
+msgstr "Kinderen van de actieve term"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTerms.php:252
+msgid "Hierarchical?"
+msgstr "Hiërarchisch?"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTerms.php:255
+msgid "Hide empty?"
+msgstr "Verberg leeg?"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTerms.php:262
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetUsers.php:258
+msgid "Post count, descending"
+msgstr "Aantal berichten, aflopend"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTerms.php:264
+msgid "Slug"
+msgstr "Slug"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTerms.php:269
+msgid "Exclude (IDs separated by comma):"
+msgstr "Uitsluiten (ID's gescheiden door een komma):"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetText.php:17
+msgid "Arbitrary text, HTML/PHP or shortcodes"
+msgstr "Willekeurige tekst, HTML/PHP of shortcodes"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetText.php:17
+msgid "Arbitrary text, HTML or shortcodes"
+msgstr "Willekeurige tekst, HTML of shortcodes"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetText.php:18
+msgid "Text"
+msgstr "Tekst"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetText.php:86
+msgid "Toggle Visual &lt;&gt; HTML"
+msgstr "Switch Zichtbaar &lt;&gt; HTML"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetText.php:97
+msgid "Automatically add paragraphs"
+msgstr "Automatisch paragrafen toevoegen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetText.php:104
+#, php-format
+msgid "Execute code within %s tags"
+msgstr "Uitvoeren van code binnen %s tags "
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTopCommenters.php:19
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTopCommenters.php:51
+msgid "Top Commenters"
+msgstr "Top reageerders"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTopCommenters.php:19
+msgid "People who frequently comment the blog"
+msgstr "Mensen die vaak reageren op deze blog"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTopCommenters.php:94
+#, php-format
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "%s reactie"
+msgstr[1] "%s reacties"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTwitter.php:15
+msgid "Twitter"
+msgstr "Twitter"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTwitter.php:15
+msgid "Your latest Twitter updates"
+msgstr "Je laatste Twitter updates"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTwitter.php:25
+msgid "Tweets"
+msgstr "Tweets"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTwitter.php:184
+msgid "Could not retrieve tweets."
+msgstr "Kan tweets niet ontvangen."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTwitter.php:188
+msgid "Possible reasons:"
+msgstr "Mogelijke redenen:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTwitter.php:190
+msgid "Your host doesn't allow outgoing connections"
+msgstr "Je host blokkeert uitgaande verbindingen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTwitter.php:191
+msgid "Your server has made too many requests and is being limited (try increasing the cache value)"
+msgstr "Uw server heeft te veel vragen en wordt beperkt (probeer de cache waarde te vergroten)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTwitter.php:192
+msgid "The user has protected his/her tweets"
+msgstr "De gebruiker heeft zijn/haar tweets beschermd."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTwitter.php:193
+msgid "Twitter may be down"
+msgstr "Twitter is mogelijk niet beschikbaar"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTwitter.php:262
+msgid "Show profile info"
+msgstr "Toon profiel info"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetTwitter.php:266
+msgid "Keep data cached for:"
+msgstr "Onthoud data voor:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetUsers.php:16
+msgid "Users"
+msgstr "Gebruikers"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetUsers.php:16
+msgid "A list of users/authors from your blog"
+msgstr "Een lijst van gebruikers/auteurs van uw blog"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetUsers.php:49
+msgid "Authors"
+msgstr "Auteurs"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetUsers.php:151
+#, php-format
+msgid "%1$s (%2$s posts)"
+msgstr "%1$s (%2$s berichten)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetUsers.php:245
+msgid "Role"
+msgstr "Rol"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetUsers.php:247
+msgid "-- Any --"
+msgstr "-- Alles --"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetUsers.php:255
+msgid "Sort by"
+msgstr "Sorteer op"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetUsers.php:259
+msgid "Date registered, newest first"
+msgstr "Registratie datum, nieuwste eerst"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetUsers.php:278
+msgid "User IDs, separated by commas."
+msgstr "Gebruikers-ID's, gescheiden door komma's."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetUsers.php:301
+msgid "Avatar thumbnails"
+msgstr "Avatar thumbnails"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/AtomWidgetUsers.php:301
+msgid "Avatars thumbnails"
+msgstr "Avatars thumbnails"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/hooks.php:1194
+#, php-format
+msgid "Tags: %s"
+msgstr "Tags: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/hooks.php:1284
+#, php-format
+msgid "Your site is running on %1$s. %2$s requires at least %3$s. Please update your site even if you're not going to use this theme, because outdated applications expose you to security risks"
+msgstr "Uw site draait op %1$s. %2$s vereist ten minste %3$s. Update je site, zelfs als je niet van plan om dit thema te gebruiken, omdat verouderde applicaties u blootstellen aan beveiligingsrisico's"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/hooks.php:1292
+#, php-format
+msgid "The site is temporarily down for maintainance. Come back in a few minutes, or login in <a%s>here</a> if you're de site admin"
+msgstr "De site is tijdelijk niet beschikbaar ivm werkzaamheden. Kom terug over een paar minuten, of log <a%s>hier</ a> in als je de website admin bent."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/hooks.php:1297
+#, php-format
+msgid "Go to your %s"
+msgstr "Ga naar je %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/hooks.php:1322
+#, php-format
+msgid "%s settings"
+msgstr "%s instellingen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/requests.php:88
+msgid "You can't vote your own comment :("
+msgstr "Je kan niet op je eigen reactie stemmen :("
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/requests.php:92
+msgid "You can only vote once :)"
+msgstr "Je kan maar één keer stemmen :)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/requests.php:95
+msgid "Invalid vote"
+msgstr "Ongeldige stem"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/requests.php:101
+msgid "Failed."
+msgstr "Mislukt."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/shortcodes.php:39
+msgid "Please specify the column number / total column count"
+msgstr "Vermeld het kolom nummer / totaal aantal kolommen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/shortcodes.php:438
+#, php-format
+msgid "PR %s"
+msgstr "PR %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/shortcodes.php:477
+msgid "Please specify a valid service and user ID"
+msgstr "Geef een geldige dienst en gebruikers-ID"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/shortcodes.php:518
+#, php-format
+msgid "Powered by %1$s and %2$s theme by %3$s"
+msgstr "Powered by %1$s and %2$s theme by %3$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/shortcodes.php:539
+msgid "Copyright &copy;"
+msgstr "Copyright &copy;"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/core/shortcodes.php:558
+#, php-format
+msgid "%1$s queries in %2$s seconds (%3$sM)"
+msgstr "%1$s queries in %2$s seconden (%3$sM)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:28
+msgid "Ads"
+msgstr "Advertenties"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:101
+msgid "This section helps you create advertisment blocks in non-widgetized areas. For widgetized areas such as sidebars, simply use a text widget to display your ads."
+msgstr "Deze sectie helpt u voor reclame blokken buiten de sidebars. Voor reclame in de sidebars, kunt u gewoon gebruik maken van een tekst widget om uw advertenties in te plaatsen."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:104
+msgid "Create New Ad"
+msgstr "Nieuwe advertentie maken"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:139
+msgid "Single Post Pages"
+msgstr "Bericht pagina's"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:149
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:156
+msgid "After Header"
+msgstr "Na header"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:150
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:157
+msgid "Before Main"
+msgstr "Voor de 'body'"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:151
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:158
+msgid "After Main"
+msgstr "Na de 'body'"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:152
+msgid "Before Comment"
+msgstr "Voor de reacties"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:159
+msgid "Before Post Teaser"
+msgstr "Voor bericht teaser"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:160
+msgid "After Post Teaser"
+msgstr "Na bericht teaser"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:172
+msgid "Show on:"
+msgstr "Toon op:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:194
+msgid "When:"
+msgstr "Wanneer:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:196
+msgid "Anytime"
+msgstr "Altijd"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:198
+msgid "Comments are open"
+msgstr "Reacties plaatsen toegestaan"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:203
+msgid "Anyone"
+msgstr "Iedereen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:204
+msgid "Visitor only"
+msgstr "Alleen bezoekers"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/ExtendedSocialMedia/module.php:61
+msgid "My YouTube channel"
+msgstr "Mijn Youtube kanaal"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/ExtendedSocialMedia/module.php:64
+msgid "My Last.fm profile"
+msgstr "Mijn Last.fm profiel"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:25
+msgid "Slide Horizontally"
+msgstr "Slide horizontaal"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:26
+msgid "Slide Vertically"
+msgstr "Slide verticaal"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:27
+msgid "Random Tiles"
+msgstr "Willekeurige tegels"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:28
+msgid "Horizontal Tiles"
+msgstr "Horizontale tegels"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:29
+msgid "Diagonal Tiles"
+msgstr "Diagonale tegels"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:30
+msgid "Spiral"
+msgstr "Spiraal"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:31
+msgid "Random Stripes"
+msgstr "Willekeurige strepen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:32
+msgid "Tile Wave"
+msgstr "Tegel Wave"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:33
+msgid "Stripe Wave"
+msgstr "Streep Wave"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:34
+msgid "Curtain"
+msgstr "Gordijn"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:35
+msgid "Interweave"
+msgstr "Dooreenweven"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:64
+msgid "Featured gallery"
+msgstr "Featured gallerij"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:99
+msgid "Important:"
+msgstr "Belangrijk:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:99
+#, php-format
+msgid "Images must have at least a %s pixel resolution."
+msgstr "Afbeeldingen moeten tenminste een %s pixel resolutie hebben."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:105
+msgid "Content source"
+msgstr "Inhoudsbron"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:110
+#, php-format
+msgid "%s that I mark as featured"
+msgstr "%s die ik markeer als Aanbevolen"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:110
+msgid "Media items"
+msgstr "Media items"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:116
+msgid "NextGEN gallery"
+msgstr "NextGEN gallerij"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:118
+msgid "-- All galleries --"
+msgstr "-- Alle gallerijen --"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:123
+msgid "Options"
+msgstr "Opties"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:125
+msgid "Number of items to show:"
+msgstr "Hoeveel items om te tonen:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:131
+#, php-format
+msgid "Exclude items older than %s day(s)"
+msgstr "Sluit items uit die ouder zijn dan %s dag(en)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:136
+#, php-format
+msgid "Auto-Cycle every %s second(s)"
+msgstr "Auto-Cycle elke %s seconde(n)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:138
+msgid "(0 to disable auto-play)"
+msgstr "(0 om auto-play uit te schakelen)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:142
+msgid "Slides link to:"
+msgstr "Slider links naar:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:144
+msgid "Original image"
+msgstr "Originele afbeelding"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:145
+msgid "Attached post, if any"
+msgstr "Bericht, indien van toepassing"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:146
+msgid "Nothing"
+msgstr "Niets"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:154
+msgid "Captions:"
+msgstr "Fotobijschriften:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:156
+msgid "Filtered content from the attached post, if any"
+msgstr "Gefilterde inhoud van het bijgevoegde bericht, indien van toepassing"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:157
+msgid "Excerpt from the attached post, if any"
+msgstr "Uittreksel van het bijgevoegde bericht, indien van toepassing"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:158
+msgid "Image title and description"
+msgstr "Afbeeldings titel en beschrijving"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:166
+msgid "Previous/Next links (on mouse over)"
+msgstr "Vorige/Volgende links (on mouse over)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:173
+msgid "Pager (on mouse over)"
+msgstr "Pager (mouse over)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:176
+msgid "Effects"
+msgstr "Effecten"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/FeaturedGallery/module.php:191
+msgid "Visible on:"
+msgstr "Zichtbaar op:"
+

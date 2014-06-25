@@ -1,0 +1,3390 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Mystique 3.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-01-23 15:06+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Филипп Борисов http://wp-lessons.ru <borisov.philip@gmail.com>\n"
+"Language-Team: wp-lessons.ru <wplessons@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _a;_ae;_an:1,2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:609
+#, php-format
+msgid "%s settings"
+msgstr "Настройки %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1002
+#, php-format
+msgid "You can customize your %1$s theme from the <%2$s>theme settings</a> page."
+msgstr "Вы можете настроить свою тему %1$s на <%2$s>странице настроек</a>."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1039
+#, php-format
+msgid "%s year ago"
+msgid_plural "%s years ago"
+msgstr[0] "%s год назад"
+msgstr[1] "%s лет назад"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1040
+#, php-format
+msgid "%s month ago"
+msgid_plural "%s months ago"
+msgstr[0] "%s месяц назад"
+msgstr[1] "%s месяцев назад"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1041
+#, php-format
+msgid "%s week ago"
+msgid_plural "%s weeks ago"
+msgstr[0] "%s неделя назад"
+msgstr[1] "%s недель назад"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1042
+#, php-format
+msgid "%s day ago"
+msgid_plural "%s days ago"
+msgstr[0] "%s день назад"
+msgstr[1] "%s дней назад"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1043
+#, php-format
+msgid "%s hour ago"
+msgid_plural "%s hours ago"
+msgstr[0] "%s час назад"
+msgstr[1] "%s часов назад"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1044
+#, php-format
+msgid "%s minute ago"
+msgid_plural "%s minutes ago"
+msgstr[0] "%s минута назад"
+msgstr[1] "%s минут назад"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1045
+#, php-format
+msgid "%s second ago"
+msgid_plural "%s seconds ago"
+msgstr[0] "%s секунда назад"
+msgstr[1] "%s секунд назад"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1467
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1475
+#, php-format
+msgid "Archive for %s"
+msgstr "Архивы за %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1471
+#, php-format
+msgid "Archive for week %1$s of %2$s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1479
+#, php-format
+msgid "Archive for year %s"
+msgstr "Архивы за %s год"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1489
+#, php-format
+msgid "Search results for %s"
+msgstr "Результаты поиска по запросу %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1493
+msgid "404 Not Found"
+msgstr "Ошибка 404. Ничего не найдено."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1499
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1503
+#, php-format
+msgid "Comment Page %s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1794
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1889
+msgid "Home Page"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1794
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1889
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:3375
+msgid "Home"
+msgstr "Главная"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1818
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:1902
+msgid "Search Website"
+msgstr "Поиск"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2077
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:202
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1018
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1823
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3079
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3345
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5679
+msgid "Show More"
+msgstr "Показать больше"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2083
+#, php-format
+msgid "Page %1$s of %2$s"
+msgstr "Страница %1$s из %2$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2086
+msgid "&laquo; Previous"
+msgstr "&laquo; Сюда"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2131
+msgid "Next &raquo;"
+msgstr "Туда &raquo;"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2710
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1593
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4556
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5648
+msgid "Name"
+msgstr "Имя"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2710
+msgid "(required)"
+msgstr "(обязательно)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2711
+msgid "E-mail"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2711
+msgid "(required, will not be published)"
+msgstr "(обязательно, опубликовано не будет)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2711
+msgid "(will not be published)"
+msgstr "(опубликовано не будет)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:2712
+msgid "Website"
+msgstr "Сайт"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:3399
+#, php-format
+msgid "Search: %s"
+msgstr "Поиск: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:3422
+#, php-format
+msgid "Archives: %s"
+msgstr "Архивы: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:3990
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5429
+msgid "Edit"
+msgstr "Редактировать"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:4617
+#, php-format
+msgid "%s topic"
+msgid_plural "%s topics"
+msgstr[0] "%s запись"
+msgstr[1] "%s записей"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:4652
+msgid "More &gt;"
+msgstr "Открыть полную запись &gt;"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:4938
+msgid "Anonymous"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:4967
+#, php-format
+msgid "Share this post on %s"
+msgstr "Поделиться этой записью на %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5291
+#, php-format
+msgid "Posts by %1$s (%2$s)"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5291
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5516
+#, php-format
+msgid "Posts by %s"
+msgstr "Записи автора %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5436
+msgid "Delete"
+msgstr "Удалить"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5442
+msgid "Spam"
+msgstr "Спам"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5447
+msgid "Approve"
+msgstr "Принять"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5458
+msgid "Reply"
+msgstr "Ответить"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5463
+msgid "Quote"
+msgstr "Цитировать"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-core.php:5582
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:288
+msgid "Show"
+msgstr "Показать"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:843
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:893
+msgid "Loading..."
+msgstr "Загрузка..."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:844
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2088
+msgid "Show Page Visibility Options"
+msgstr "Показать настройки отображения"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:845
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2088
+msgid "Hide Page Visibility Options"
+msgstr "Скрыть настройки отображения"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:846
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2027
+msgid "Checking..."
+msgstr "Проверка..."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:847
+msgid "It appears that your home page has javascript errors on it. Deactivate all plugins, then activate them back one by one to find out which one is causing errors."
+msgstr "Похоже на главной странице есть ошибки JavaScript. Попробуйте деактивировать все плагины и включать их по одному для нахождения проблемного."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:848
+msgid "Uploading"
+msgstr "Загрузка"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:849
+msgid "Try Another Image?"
+msgstr "Попробовать другое изображение?"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:850
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:986
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1023
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1064
+msgid "Change Image"
+msgstr "Изменить изображение"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:851
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:986
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1023
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1064
+msgid "Upload Image"
+msgstr "Загрузить изображение"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1436
+msgid "You can't vote your own comment :("
+msgstr "Вы не можете голосовать за собственный комментарий"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1440
+msgid "You can only vote once :)"
+msgstr "Голосовать можно только 1 раз"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1444
+msgid "Invalid vote"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1451
+msgid "Failed."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1494
+#, php-format
+msgid "%s debug info"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1555
+#, php-format
+msgid "Your site is running on %1$s. %2$s requires at least %3$s. Please update your site even if you're not going to use this theme, because outdated applications expose you to security risks"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1563
+#, php-format
+msgid "The site is temporarily down for maintainance. Come back in a few minutes, or login in <a%s>here</a> if you're the site admin"
+msgstr "Сайт на плановом тех. обслуживании. Приходите через несколько минут, или войдите в <a%s>панель управления</a>, если вы администратор"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1569
+#, php-format
+msgid "Go to your %s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1569
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-shortcodes.php:110
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1959
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2152
+msgid "Dashboard"
+msgstr "Консоль"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1590
+#, php-format
+msgid "To make small CSS customizations you can use the %1$s option from the theme settings. For extensive customizations activate and edit the %2$s theme if available, or create your own child theme. Read the %3$s for more information."
+msgstr "Чтобы внести небольшие изменения в стиль CSS вы можете использовать%1$s в настройках темы. Для обширных изменений активируйте и редактируйте тему %2$s, или создайте для этого собственную дочернюю тему. Дополнительная информация в %3$s."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1591
+msgid "User CSS"
+msgstr "Пользовательский стиль"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1593
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:731
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:774
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1025
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3103
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3354
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4579
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5091
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5701
+msgid "documentation"
+msgstr "документации"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1596
+msgid "Do not edit core theme files because you will loose any changes you make here when you update!"
+msgstr "Не изменяйте файлы родительской темы, т.к. вы потеряете все ваши изменения при обновлении темы!"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:1658
+msgid "Stop spamming dude!"
+msgstr "Хватит спамить, чувак!"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2125
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:232
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:160
+msgid "Blog Homepage"
+msgstr "Главная страница"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2126
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1670
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:238
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:161
+msgid "Search Results"
+msgstr "Результаты поиска"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2127
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1671
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:236
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:162
+msgid "Author Archives"
+msgstr "Страница автора"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2128
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1672
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:237
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:163
+msgid "Date-based Archives"
+msgstr "Страница архива за месяц/год"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2129
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1673
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:235
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:164
+msgid "Tag Archives"
+msgstr "Страница метки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2130
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1674
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:234
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:165
+msgid "Category Archives"
+msgstr "Страница рубрики"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2172
+msgid "Show this widget on:"
+msgstr "Показать этот виджет на:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2189
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1698
+#, php-format
+msgid "Single: %s"
+msgstr "Одиночные страницы типа %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2199
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1712
+#, php-format
+msgid "Tax Archive: %s"
+msgstr "Cтраницы типа %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2215
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1762
+#, php-format
+msgid "Page: %s"
+msgstr "Страница: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2224
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:302
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:332
+msgid "To:"
+msgstr "Для:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2229
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1617
+msgid "Unregistered user (Visitor)"
+msgstr "Незарегистрированные пользователи (гости)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2252
+#, php-format
+msgid "To include this widget into your posts or pages use one of the following shortcodes: %s"
+msgstr "Для вставки данного виджета в ваши записи или страницы, используйте следующие шорткоды: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-hooks.php:2444
+msgid "Featured"
+msgstr "Рекомендуемые"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:264
+msgid "Insert Atom Element"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:312
+msgid "Nothing to configure in single column mode"
+msgstr "Нет настроек для шаблона с одной колонкой"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:543
+msgid "You don't have sufficient permissions to change this option"
+msgstr "У вас недостаточно прав для изменения этого параметра"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:578
+msgid "You can add HTML code."
+msgstr "Можете использовать HTML код."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:578
+msgid "HTML is allowed, but some tags may be filtered out for security reasons."
+msgstr "HTML разрешен, но некоторые теги могут быть отфильтрованы по соображениям безопасности."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:695
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:502
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:711
+msgid "User-defined code"
+msgstr "Пользовательский код"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:720
+msgid "Only edit this if you know what you're doing!"
+msgstr "Изменяйте только если вы знаете, что делаете!"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:729
+#, php-format
+msgid "The code you add here is included in the front-end on initialization. This is almost the same thing as editing the %1$s file from the theme directory, the difference is that the changes you make here are preserved after theme updates. Read the %2$s for more information."
+msgstr "Код, вставленный ниже, будет добавлен во фронтенд при инициализации. Это почти тоже самое, что редактирование файла %1$s в каталоге темы, но разница в том, что изменения, внесенные вами здесь, сохраняются при обновлении темы. Больше информации вы можете найти в %2$s."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:736
+#, php-format
+msgid "This will affect all blogs using the %s theme!"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:745
+#, php-format
+msgid "Data is saved to %s."
+msgstr "Данные сохранены в файл %s."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:748
+#, php-format
+msgid "To use this function you must have an active child theme of %s, and give WordPress write permissions to the child theme folder."
+msgstr "Для использования этой функции у вас должна быть активирована дочерняя тема %s и WordPress должен иметь права на запись в папку дочерней темы."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:767
+#, php-format
+msgid "Check %s to see existing theme classes and properties, which you can redefine here."
+msgstr "Здесь вы можете переопределить правила CSS, прописанные в файле %s."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:769
+#, php-format
+msgid "All URLs must have absolute paths. You can use the %1$s keyword to point to the %2$s."
+msgstr "Все адреса URL должны быть абсолютными. Используйте %1$s для вставки %2$s."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:769
+msgid "parent theme URL"
+msgstr "адреса URL родительской темы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:772
+#, php-format
+msgid "To get the child theme URL use %s."
+msgstr "Для получения адреса URL дочерней темы используйте %s."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:774
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1025
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3103
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3354
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4579
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5091
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5701
+#, php-format
+msgid "Read the %s to see all available keywords."
+msgstr "Различные шорткоды описаны в %s."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:796
+msgid "General Info"
+msgstr "Общая информация"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:799
+#, php-format
+msgid "Core (ATOM) version: %s"
+msgstr "Версия ядра (ATOM): %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:802
+#, php-format
+msgid "Theme Version: %s"
+msgstr "Версия темы: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:805
+#, php-format
+msgid "(Child theme of %s)"
+msgstr "(Дочерняя тема %s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:811
+msgid "Check for update"
+msgstr "Проверить наличие обновлений"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:817
+msgid "Theme documentation"
+msgstr "Документация Mystique"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:818
+msgid "Project Homepage"
+msgstr "Домашняя страница Mystique"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:836
+msgid "Available Languages"
+msgstr "Доступные переводы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:843
+#, php-format
+msgid "%1$s - Translator: %2$s (%3$s)"
+msgstr "%1$s, перевел %2$s (%3$s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:851
+msgid "Import / export / reset or backup Theme Options"
+msgstr "Импорт / Экспорт / Сброс или восстановление настроек темы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:853
+msgid "If you wish to import or export theme settings from another website that's using this theme, you may do so here. Below you can copy the current settings stored as a encoded string, or paste new settings..."
+msgstr "Если вы хотите импортировать или экспортировать настройки темы с другого сайта, использующего Mystique, вы можете это сделать здесь. Ниже вы можете скопировать текущие настройки, сохраненные в закодированной строке, или вставить новые настройки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:863
+msgid "Reset options to defaults"
+msgstr "Сбросить настройки в значения по умолчанию"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:863
+msgid "Reset all theme settings to the default values? Are you sure?"
+msgstr "Сбросить все настройки темы в значения по умолчанию?"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:864
+msgid "Import options"
+msgstr "Импортировать настройки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:864
+msgid "Import these settings? Are you sure?"
+msgstr "Импортировать эти настройки?"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:902
+msgid "Layout Style (Global)"
+msgstr "Шаблон страницы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:906
+msgid "One column (No sidebars)"
+msgstr "Одна колонка (без сайдбаров)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:907
+msgid "Two columns, left sidebar"
+msgstr "Две колонки, сайдбар слева"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:908
+msgid "Two columns, right sidebar"
+msgstr "Две колонки, сайдбар справа"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:909
+msgid "Three columns"
+msgstr "Три колонки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:910
+msgid "Three columns, sidebars to the left"
+msgstr "Три колонки, сайдбары слева"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:911
+msgid "Three columns, sidebars to the right"
+msgstr "Три колонки, сайдбары справа"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:916
+#, php-format
+msgid "Note that widget visibility options can be used to override this setting for individual pages or posts (you can also select the appropriate template when editing pages, or use the %s custom field)"
+msgstr "Учтите, что настройки отображения виджетов могут быть использованы для изменения настроек индивидуальных страниц или записей. Вы также можете использовать соответствующий шаблон при редактировании страниц или дополнительное поле %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:925
+msgid "Column Sizes"
+msgstr "Размер колонок"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:950
+msgid "Page Width"
+msgstr "Ширина страницы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:956
+#, php-format
+msgid "Fixed (%s)"
+msgstr "Фиксированная (%s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:963
+#, php-format
+msgid "Fluid, but not more than %s pixels"
+msgstr "Резиновая, но не более %s пикселей"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:970
+msgid "Semi-Fluid (Fixed Sidebars)"
+msgstr "Резиновая, но сайдбары фиксированной ширины"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:981
+msgid "Site Title (Logo)"
+msgstr "Шапка (логотип)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:984
+msgid "Current logo image"
+msgstr "Текущий логотип"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:985
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1022
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1063
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:313
+msgid "Remove"
+msgstr "Удалить"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:997
+msgid "Styles &amp; colors"
+msgstr "Стиль и цвет"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1003
+#, php-format
+msgid "%1$s by %2$s"
+msgstr "%1$s от %2$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1007
+msgid "Disabled"
+msgstr "Без стиля"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1007
+msgid "use custom styles"
+msgstr "используется пользовательский CSS"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1007
+msgid "Blank"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1016
+msgid "Page Background"
+msgstr "Фон страницы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1020
+msgid "Current background image"
+msgstr "Текущее фоновое изображение"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1041
+msgid "Header Background"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1058
+msgid "Favicon"
+msgstr "Фавикон"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1061
+msgid "Current favicon"
+msgstr "Текущий фавикон"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1094
+#, php-format
+msgid "Modules act like plugins that can further extend %s. Keep in mind that by disabling a module your are removing its options as well (if it has any)"
+msgstr "Модули расширяют функционал %s. При деакцивации модуля его настройки удаляются"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1103
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:197
+msgid "Title"
+msgstr "Заголовок"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1104
+msgid "Type"
+msgstr "Тип"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1105
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:258
+msgid "Author"
+msgstr "Автор"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1106
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1599
+msgid "Description"
+msgstr "Описание"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1145
+msgid "Currently there are no modules installed."
+msgstr "В настоящий момент ни один модуль не установлен."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1188
+msgid "Update"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1211
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1307
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1545
+msgid "You are not authorised to perform this operation."
+msgstr "Вы не авторизованы для выполнения этой операции."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1227
+msgid "Import failed. Invalid settings. "
+msgstr "Не удалось импортировать. Недопустимые параметры."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1228
+msgid "Settings saved, but failed to update user functions. Is your child theme directory writable?"
+msgstr "Настройки сохранены, но не удалось обновить пользовательские функции. Проверьте права доступа на запись к директории вашей дочерней темы."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1242
+msgid "Settings saved."
+msgstr "Настройки сохранены."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1242
+msgid "View site"
+msgstr "Посмотреть сайт"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1257
+#, php-format
+msgid "<strong>There is a new version of %1$s available</strong>. <a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">View %1$s %3$s details</a> or notify the site administrator."
+msgstr "<strong>Новая версия %1$s доступна для загрузки</strong>. <a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">Посмотреть %1$s %3$s детали</a> или сообщить администратору сайта."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1259
+#, php-format
+msgid "<strong>There is a new version of %1$s available</strong>. <a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">View %1$s %3$s details</a> or <a href=\"%4$s\" >upgrade automatically</a>."
+msgstr "<strong>Новая версия %1$s доступна для загрузки</strong>. <a href=\"%2$s\" class=\"thickbox\" title=\"%1$s\">Посмотреть %1$s %3$s детали</a> или <a href=\"%4$s\" >обновить автоматически</a>."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1418
+#, php-format
+msgid "%s is available"
+msgstr "%s доступна"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1420
+msgid "You have the latest version"
+msgstr "У вас самая свежая версия"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1553
+#, php-format
+msgid "Upload Error: %s"
+msgstr "Ошибка загрузки: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1578
+#, php-format
+msgid "Latest News from %s"
+msgstr "Свежие новости от %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-interface.php:1669
+msgid "Blog"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-shortcodes.php:51
+msgid "Please specify the column number / total column count"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-shortcodes.php:104
+msgid "RSS Feeds"
+msgstr "Подпишись!"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-shortcodes.php:110
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1883
+msgid "Log in"
+msgstr "Авторизация"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-shortcodes.php:476
+#, php-format
+msgid "PR %d"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-shortcodes.php:518
+msgid "Please specify a valid service and user ID"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-shortcodes.php:560
+#, php-format
+msgid "Powered by %1$s and %2$s theme by %3$s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-shortcodes.php:586
+msgid "Copyright &copy;"
+msgstr " &copy;"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-shortcodes.php:604
+#, php-format
+msgid "%1$s queries in %2$s seconds (%3$sM)"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:191
+#, php-format
+msgid "Show next %d entries"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:491
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:494
+msgid "Archives"
+msgstr "Архивы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:492
+msgid "Archives of your site's posts"
+msgstr "Архив записей вашего сайта"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:587
+#, php-format
+msgid "%1$s %2$d"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:673
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2941
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4161
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5573
+msgid "Show All"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:681
+msgid "Select Day:"
+msgstr "Выберите день:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:682
+msgid "Select Week:"
+msgstr "Выберите неделю:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:683
+msgid "Select Month:"
+msgstr "Выберите месяц:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:684
+msgid "Select Year:"
+msgstr "Выберите год:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:745
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:979
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1574
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1811
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2138
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2292
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2447
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2663
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3014
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3324
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4216
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4527
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4814
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5056
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5366
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5631
+msgid "Title:"
+msgstr "Заголовок:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:750
+msgid "Type:"
+msgstr "Тип:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:752
+msgid "Yearly"
+msgstr "Год"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:753
+msgid "Monthly"
+msgstr "Месяц"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:754
+msgid "Weekly"
+msgstr "Неделя"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:755
+msgid "Daily"
+msgstr "День"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:760
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1401
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3019
+msgid "Post Type:"
+msgstr "Тип содержимого:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:770
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1624
+msgid "Limit to:"
+msgstr "Максимум:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:771
+msgid "Entries"
+msgstr "элементов"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:778
+msgid "Show post count"
+msgstr "Отображать число записей"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:783
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4544
+msgid "Show as dropdown"
+msgstr "В виде выпадающего списка"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:789
+msgid "Day archive date format:"
+msgstr "Формат даты для архива по дням:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:794
+msgid "Week archive date format:"
+msgstr "Формат даты для архива по неделям:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:830
+msgid "Network Blogs"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:831
+msgid "A list of site blogs"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:835
+msgid "Recently updated blogs"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:984
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1591
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3029
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4554
+msgid "Order by:"
+msgstr "Сортировать по:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:986
+msgid "Last Update"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:987
+msgid "Registered Date"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:988
+msgid "Site ID"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:989
+msgid "Nothing, Randomize"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:994
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1816
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3063
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3329
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5061
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5376
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5673
+msgid "How many entries to display?"
+msgstr "Сколько элементов отображать?"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:999
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2679
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5071
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5666
+msgid "Exclude:"
+msgstr "Исключить:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1001
+msgid "Site IDs, separated by commas."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1007
+msgid "Exclude sites marked as mature"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1011
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3339
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5066
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5683
+msgid "Avatar Size:"
+msgstr "Размер аватара:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1012
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3074
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3340
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5067
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5684
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:257
+msgid "pixels"
+msgstr "пикселей"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1018
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1823
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3079
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3345
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5679
+#, php-format
+msgid "Display %s Link"
+msgstr "Отображать кнопку %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1061
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1219
+msgid "Calendar"
+msgstr "Календарь"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1062
+msgid "A calendar of your site's posts"
+msgstr "Календарь записей вашего сайта"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1202
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1211
+#, php-format
+msgid "View posts for %1$s %2$s"
+msgstr "Просмотреть записи за %1$s %2$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1414
+msgid "Use AJAX for month navigation, when possible"
+msgstr "Использовать AJAX для навигации по месяцам"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1419
+msgid "One-letter day abbreviation"
+msgstr "Однобуквенное обозначение дней"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1457
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1625
+msgid "Links"
+msgstr "Ссылки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1458
+msgid "Your blogroll/links"
+msgstr "Ваши ссылки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1460
+msgid "Blogroll"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1526
+#, php-format
+msgid "%s out of 10"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1579
+msgid "Link Category:"
+msgstr "Рубрика ссылок:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1581
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3045
+msgid "-- All categories --"
+msgstr "-- Все рубрики --"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1594
+msgid "Rating"
+msgstr "Рейтинг"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1595
+msgid "URL"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1597
+msgid "Owner"
+msgstr "Автор"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1598
+msgid "Notes"
+msgstr "Заметки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1605
+msgid "Hide Private Links"
+msgstr "Скрывать личные ссылки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1610
+msgid "Display Link Image"
+msgstr "Показывать изображения"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1615
+msgid "Display Link Rating"
+msgstr "Показывать рейтинг ссылок"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1620
+msgid "Display Link Description"
+msgstr "Показывать описания ссылок"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1654
+msgid "Lifestream"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1655
+msgid "Your activity around social networks"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1660
+msgid "My Lifestream"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1827
+msgid "Max. records to keep in database"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1835
+#, php-format
+msgid "Check for new data every %s seconds (Time-out)"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1839
+msgid "Services:"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1879
+msgid "Login"
+msgstr "Авторизация"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1880
+msgid "Login and Lost Password forms"
+msgstr "Форма авторизации и регистрации"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1884
+msgid "Hello Guest. Login below if you have an account"
+msgstr "Привет, гость. Заходи, если есть аккаунт"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1917
+msgid "Please enter a valid user name and password"
+msgstr "Введите существующий логин и пароль"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1947
+#, php-format
+msgid "Welcome %s"
+msgstr "Добро пожаловать, %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1962
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2164
+msgid "Write"
+msgstr "Написать"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1965
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2170
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:184
+msgid "Comments"
+msgstr "Комментарии"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1968
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2158
+msgid "Profile"
+msgstr "Профиль"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1970
+msgid "Log Out"
+msgstr "Выйти"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1985
+msgid "User"
+msgstr "Пользователь"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1986
+msgid "Password"
+msgstr "Пароль"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1990
+msgid "Log In"
+msgstr "Войти"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:1998
+msgid "Remember me"
+msgstr "Запомнить меня"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2032
+msgid "Login Successful, redirecting..."
+msgstr "Успешно, подключаюсь..."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2068
+msgid "Lost your password?"
+msgstr "Забыли пароль?"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2095
+msgid "Register"
+msgstr "Зарегистрироваться"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2143
+msgid "Initial Status Text (or HTML):"
+msgstr "Текст приветствия (можно использовать HTML):"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2148
+msgid "Welcome screen links (if enough permissions):"
+msgstr "Ссылки (будут показаны, если достаточно прав):"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2176
+msgid "Log out"
+msgstr "Выход"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2210
+msgid "Menus"
+msgstr "Меню"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2211
+msgid "Display custom menus"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2285
+msgid "No menus have been created yet."
+msgstr "Еще не создано ни одного меню."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2285
+msgid "Create some"
+msgstr "Создать меню"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2296
+msgid "Select Menu:"
+msgstr "Выберите меню:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2308
+msgid "Behaviour:"
+msgstr "Стиль отображения:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2310
+msgid "Expanded"
+msgstr "Полностью раскрытое"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2311
+msgid "Collapsible, Standard"
+msgstr "Свернутое, стандарт"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2312
+msgid "Collapsible, Accordion style"
+msgstr "Свернутое, аккордеон"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2317
+msgid "Expand/Collapse Fire Event:"
+msgstr "Свернуть/развернуть меню по событию:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2319
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3946
+msgid "Click"
+msgstr "Клик"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2320
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3947
+msgid "Double-Click"
+msgstr "Двойной клик"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2321
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3948
+msgid "Mouse Over"
+msgstr "Наведение курсора мыши"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2324
+#, php-format
+msgid "Note: Links with the %s URL will behave the same way as the arrows. You should use them on menus with children"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2355
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2358
+msgid "Meta"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2356
+msgid "Log in/out, admin, feed and WordPress links"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2391
+msgid "Syndicate this site using RSS 2.0"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2391
+msgid "Entries <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2395
+msgid "The latest comments to all posts in RSS"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2395
+msgid "Comments <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2399
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr "Работает на WordPress, замечательной персональной издательской платформе."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2403
+msgid "Theme developed by digitalnature"
+msgstr "Тему создал digitalnature"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2451
+msgid "Links to display:"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2455
+msgid "Login / Logout / Site Admin"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2460
+msgid "Post RSS"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2465
+msgid "Comment RSS"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2470
+msgid "External: WordPress.org"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2475
+msgid "External: digitalnature.eu"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2519
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2526
+msgid "Pages"
+msgstr "Страницы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2520
+msgid "Your site&#8217;s WordPress Pages"
+msgstr "Страницы вашего сайта"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2628
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4484
+msgid "Display:"
+msgstr "Отображать:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2631
+msgid "All Pages"
+msgstr "Все страницы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2636
+msgid "Children of the active page"
+msgstr "Детей текущей страницы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2640
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4496
+msgid "Start from root"
+msgstr "Начиная с верхнего уровня"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2646
+msgid "Children of:"
+msgstr "Детей выбранной страницы:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2668
+msgid "Sort by:"
+msgstr "Приоритет сортировки:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2670
+msgid "Page title"
+msgstr "Заголовок страницы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2671
+msgid "Page order"
+msgstr "Порядок страницы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2672
+msgid "Page ID"
+msgstr "ID страницы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2673
+msgid "Date, created"
+msgstr "Дата создания"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2674
+msgid "Date, modified"
+msgstr "Дата изменения"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2682
+msgid "Page IDs, separated by commas."
+msgstr "ID страниц, разделенные запятыми"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2686
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4569
+msgid "Depth:"
+msgstr "Глубина:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2689
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4571
+msgid "0 = All levels"
+msgstr "0 = все уровни"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2729
+msgid "Posts"
+msgstr "Записи"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2730
+msgid "List posts based on filters you choose"
+msgstr "Самые свежие записи вашего сайта"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:2735
+msgid "Recent Posts"
+msgstr "Свежие записи"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3005
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3316
+msgid "Network (site-wide) content"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3007
+msgid "Get posts from all network blogs"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3031
+msgid "Date (Recent posts)"
+msgstr "Дате публикации"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3032
+msgid "Modified date (Recently modified)"
+msgstr "Дате изменения"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3033
+msgid "Comment count"
+msgstr "Количеству комментариев"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3034
+msgid "View count"
+msgstr "Количеству просмотров"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3035
+msgid "Title, alphabetically"
+msgstr "Заголовку"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3036
+msgid "Nothing, get random posts"
+msgstr "Не сортировать (случайные записи)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3055
+msgid "Show posts from:"
+msgstr "Отображать записи из:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3069
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3335
+#, php-format
+msgid "Content has max %s characters"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3073
+msgid "Thumbnail Size:"
+msgstr "Размер миниатюры:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3084
+msgid "Get only context-related posts"
+msgstr "Брать только подходящие по контексту записи"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3090
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5078
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5688
+msgid "Display mode"
+msgstr "Режим отображения"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3091
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5079
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5689
+msgid "Full"
+msgstr "Полный"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3092
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5080
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5690
+msgid "Details"
+msgstr "Подробный"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3093
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5081
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5691
+msgid "Brief"
+msgstr "Краткий"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3094
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5082
+msgid "Post thumbnails"
+msgstr "Таблица миниатюр"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3095
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5083
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5693
+msgid "Custom Template"
+msgstr "Ваши настройки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3112
+#, php-format
+msgid "<strong>Important:</strong> %1$s sized thumbnails have to be created if you just added this widget, or if you're changing the thumbnail size. Read more about thumbnail sizes %2$s"
+msgstr "<strong>Важно:</strong> миниатюры размером %1$s пикселей должны быть созданы, если вы только что добавили этот виджет, или поменяли размеры миниатюр в настройках виджета. Подробнее о размерах миниатюр на странице настроек темы %2$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3112
+msgid "here"
+msgstr "Расширенные"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3149
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3154
+msgid "Recent Comments"
+msgstr "Комментарии"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3150
+msgid "The most recent comments"
+msgstr "Самые свежие комментарии вашего сайта"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3165
+#, php-format
+msgid "on %s"
+msgstr "на %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3318
+msgid "Get comments from all network blogs"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3350
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4575
+msgid "Template:"
+msgstr "Шаблон:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3389
+msgid "Search"
+msgstr "Поиск"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3390
+msgid "A search form for your site"
+msgstr "Форма поиска по вашему сайту"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3444
+msgid "Column Splitter"
+msgstr "Разделитель"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3445
+msgid "Splits area into 2 columns"
+msgstr "Разделяет область на 2 колонки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3505
+msgid "Widgets surrounded by splitters will be grouped into columns (two per row)."
+msgstr "Виджеты, разделенные сплиттером, будут сгруппированы в 2 колонки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3547
+msgid "Tabbed Widgets"
+msgstr "Панель с вкладками"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3548
+msgid "Group arbitrary widgets into tabs"
+msgstr "Группирует независимые виджеты во вкладки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3804
+msgid "To add tabs, you must have at least one active arbitrary widget. Click save to refresh..."
+msgstr "Для добавления вкладок вы должны иметь хотя бы один активный независимый виджет. Нажмите сохранить для обновления..."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3824
+msgid "Create Tabs for:"
+msgstr "Создать вкладки для:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3935
+msgid "Transition effect:"
+msgstr "Эффект перехода:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3937
+msgid "-- None --"
+msgstr "-- Нет --"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3938
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:40
+msgid "Fade"
+msgstr "Затемнение"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3939
+msgid "Toggle Height"
+msgstr "Изменение высоты"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3944
+msgid "Switch-Tab event:"
+msgstr "Переключать вкладки по событию:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3982
+msgid "Tag Cloud"
+msgstr "Облако меток"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3983
+msgid "Your most used tags in cloud format"
+msgstr "Наиболее используемые метки в виде облака"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:3985
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:272
+msgid "Tags"
+msgstr "Метки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4221
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4532
+msgid "Taxonomy:"
+msgstr "Таксономия:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4232
+msgid "Max. number of tags to show:"
+msgstr "Сколько меток отображать (максимум):"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4238
+msgid "Smallest:"
+msgstr "Наименьшая:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4250
+msgid "Largest:"
+msgstr "Наибольшая:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4292
+msgid "Terms"
+msgstr "Рубрики/метки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4293
+msgid "A list of taxonomy terms like categories or post tags"
+msgstr "Список рубрик, меток или форматов"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4296
+msgid "Categories"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4314
+#, php-format
+msgid "View all posts filed under %s"
+msgstr "Посмотреть все записи в рубрике %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4487
+msgid "All Terms"
+msgstr "Все элементы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4492
+msgid "Children of the active term"
+msgstr "Вложенные пункты активного элемента"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4547
+msgid "Hierarchical?"
+msgstr "Отображать иерархию"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4550
+msgid "Hide empty?"
+msgstr "Скрывать пустые"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4557
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5649
+msgid "Post count, descending"
+msgstr "Количество записей, по убыванию"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4558
+msgid "ID"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4559
+msgid "Slug"
+msgstr "URL (постоянная ссылка)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4564
+msgid "Exclude (IDs separated by comma):"
+msgstr "Исключить (перечислите ID через запятую):"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4613
+msgid "Text"
+msgstr "Текст"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4614
+msgid "Arbitrary text, HTML/PHP or shortcodes"
+msgstr "Произвольный текст, HTML/PHP или шорткоды"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4614
+msgid "Arbitrary text, HTML or shortcodes"
+msgstr "Произвольный текст, HTML или шорткоды"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4844
+msgid "Automatically add paragraphs"
+msgstr "Автоматически добавлять абзацы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4851
+#, php-format
+msgid "Execute code within %s tags"
+msgstr "Выполнять %s код"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4890
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4894
+msgid "Top Commenters"
+msgstr "Лучшие комментаторы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4891
+msgid "People who frequently comment the blog"
+msgstr "Пользователи, чаще всего комментирующие записи на вашем сайте"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:4992
+#, php-format
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5074
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5669
+msgid "User IDs, separated by commas."
+msgstr "ID пользователей, разделенные запятыми"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5074
+msgid "Enter \"0\" to exclude all unregistered commenters."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5132
+msgid "Twitter"
+msgstr "Твиттер"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5133
+msgid "Your latest Twitter updates"
+msgstr "Ваши свежие записи в Twitter"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5136
+msgid "Tweets"
+msgstr "Твиты"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5212
+#, php-format
+msgid "%s followers"
+msgstr "%s фолловеров"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5213
+#, php-format
+msgid "%s tweets"
+msgstr "%s твитов"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5237
+#, php-format
+msgid "Twitter returned error: %s"
+msgstr "Twitter вернул ошибку: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5238
+msgid "Could not retrieve tweets."
+msgstr "Не могу загрузить ленту твитов."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5242
+msgid "Possible reasons:"
+msgstr "Возможные причины:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5244
+msgid "Your host doesn't allow outgoing connections"
+msgstr "Ваш сервер запрещает исходящие соединения"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5245
+msgid "Your server has made too many requests and is being limited (try increasing the cache value)"
+msgstr "Ваш сервер сделал слишком много запросов и попал под ограничение (попробуйте увеличить время кэширования)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5246
+msgid "The user has protected his/her tweets"
+msgstr "Пользователь скрыл свою ленту твитов"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5247
+msgid "Twitter may be down"
+msgstr "Твиттер не отвечает"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5251
+msgid "Unavailable for the moment"
+msgstr "Недоступны в данный момент"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5371
+#, php-format
+msgid "%s user name:"
+msgstr "Имя пользователя %s:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5383
+msgid "Show profile info"
+msgstr "Отображать информацию из профиля"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5390
+#, php-format
+msgid "Keep data cached for %s minute(s)"
+msgstr "Кешировать данные на %s минут"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5426
+msgid "Users"
+msgstr "Пользователи"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5427
+msgid "A list of users/authors from your blog"
+msgstr "Список пользователей/авторов вашего сайта"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5431
+msgid "Authors"
+msgstr "Авторы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5516
+#, php-format
+msgid "%1$s (%2$s posts)"
+msgstr "%1$s (%2$s записей)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5523
+#, php-format
+msgid "%s post"
+msgid_plural "%s posts"
+msgstr[0] ""
+msgstr[1] ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5636
+msgid "Role"
+msgstr "Роль"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5638
+msgid "-- Any --"
+msgstr "-- Любая --"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5646
+msgid "Sort by"
+msgstr "Сортировать по"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5650
+msgid "Date registered, newest first"
+msgstr "Дата регистрации, новые вверху"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5692
+msgid "Avatar thumbnails"
+msgstr "Таблица аватаров"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/atom-widgets.php:5692
+msgid "Avatars thumbnails"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:66
+msgid "Page Top"
+msgstr "В самом верху страницы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:67
+msgid "Below Header (Main)"
+msgstr "Под шапкой (Основное меню)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:68
+msgid "Above Footer"
+msgstr "Над подвалом"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:136
+msgid "Primary Sidebar"
+msgstr "Основная боковая панель"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:137
+msgid "This is the default sidebar, active on 2 or 3 column layouts. If no widgets are visible, the page will fall back to a single column layout."
+msgstr "Это основная боковая панель, отображается в 2 или 3-колоночном шаблоне. Если нет видимых виджетов, страница вернется в одноколоночный режим отображения"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:146
+msgid "Secondary Sidebar"
+msgstr "Дополнительная боковая панель"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:147
+msgid "This sidebar is active only on a 3 column setup, if at least one of its widgets is visible to the current user."
+msgstr "Эта боковая панель отображается только в 3-колоночном шаблоне, если хотя бы один виджет видим для текущего пользователя."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:157
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:185
+msgid "Footer"
+msgstr "Подвал"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:158
+msgid "Active only if at least one of its widgets is visible to the current user. You can add between 1 and 6 widgets here (3 or 4 are optimal). They will adjust their size based on the widget count."
+msgstr "Будет показан только если хотя бы один виджет отображается для текущего пользователя. Вы можете добавить от 1 до 6 виджетов в эту область (3 или 4 будет оптимально). Они автоматически изменят свою ширину, исходя из количества виджетов"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:167
+msgid "Arbitrary Widgets"
+msgstr "Независимые виджеты"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:168
+#, php-format
+msgid "Widgets from this area can be grouped into tabs, or added into posts/pages using the %1$s or %2$s shortcodes."
+msgstr "Виджеты из этой области могут быть сгруппированы во вкладки или вставлены в записи/страницы с помощью шорткода %1$s или %2$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:179
+msgid "Welcome"
+msgstr "Привет!"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:180
+msgid "Design"
+msgstr "Дизайн"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:181
+msgid "Content options"
+msgstr "Контент"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:182
+msgid "Post teasers"
+msgstr "Превью записей"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:183
+msgid "Single pages"
+msgstr "Страницы записей"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:186
+msgid "CSS"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:187
+msgid "Advanced"
+msgstr "Расширенные"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:188
+msgid "Modules"
+msgstr "Модули"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:204
+msgid "Content"
+msgstr "Содержимое"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:213
+msgid "User limit"
+msgstr "Ограничить"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:214
+msgid "Full post"
+msgstr "Полностью"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:215
+msgid "Full post, filtered"
+msgstr "Полностью, но с фильтром"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:216
+msgid "Excerpt"
+msgstr "Цитата"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:225
+#, php-format
+msgid "~ %s characters"
+msgstr "~ %s символов"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:232
+msgid "Category"
+msgstr "Рубрика"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:240
+msgid "Date / Time"
+msgstr "Дата и время"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:249
+msgid "Relative"
+msgstr "Относительное"
+
+# О
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:250
+msgid "Absolute"
+msgstr "Абсолютное"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:265
+msgid "Comment Count"
+msgstr "Количеству комментариев"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:279
+msgid "Thumbnails"
+msgstr "Миниатюра"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:288
+msgid "Left Aligned"
+msgstr "Слева"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:289
+msgid "Right Aligned"
+msgstr "Справа"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:298
+msgid "Thumbnail Size"
+msgstr "Размер миниатюры"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:299
+msgid "Note that for the new sized thumbnails to take effect, all existing images must be resized. See the Advanced page."
+msgstr "Обратите внимание, что для активации нового размера миниатюр, все изображения должны быть изменены. Смотрите страницу Расширенные."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:301
+msgid "Very Small, 60 x 60"
+msgstr "Очень маленькая, 60×60"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:302
+msgid "Small, 90 x 90"
+msgstr "Маленькая, 90×90"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:303
+msgid "Medium, 120 x 120"
+msgstr "Небольшая, 120×120"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:304
+msgid "Large, 140 x 140"
+msgstr "Средняя, 140×140"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:305
+msgid "Larger, 180 x 180"
+msgstr "Большая, 180×180"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:306
+msgid "Very large, 210 x 210"
+msgstr "Очень большая, 210×210"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:307
+#, php-format
+msgid "Default media setting: %d x %d"
+msgstr "Настройки медиафайлов: %d×%d"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:315
+msgid "Use first attachment as thumbnail, if none is set"
+msgstr "Использовать первое изображение на странице в качестве миниатюры, если миниатюра не задана"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:322
+msgid "Navigation"
+msgstr "Навигация"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:324
+msgid "Single link for older posts"
+msgstr "Кнопка показа предыдущих записей"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:325
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:349
+msgid "Previous / Next links"
+msgstr "Ссылки на предыдущую и следующую страницу"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:326
+msgid "Page numbers"
+msgstr "Номера страниц"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:334
+msgid "Allow Comment Ratings (Karma)"
+msgstr "Использовать рейтинг комментариев (карму)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:342
+#, php-format
+msgid "Hide comments with %s karma and below"
+msgstr "Скрывать комментарии с кармой %s и ниже"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:356
+msgid "Share Links"
+msgstr "Блок обмена ссылками в социальных медиа"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:363
+msgid "Meta Information"
+msgstr "Блок с информацией о записи (Автор, Дата и время, Рубрика)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:370
+msgid "About the Author"
+msgstr "Об авторе"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:377
+msgid "Related Posts"
+msgstr "Похожие записи"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:384
+#, php-format
+msgid "Use %s for convenient adjustments"
+msgstr "Используйте %s для отображения различной информации"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:384
+msgid "shortcodes"
+msgstr "шорткоды"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:391
+msgid "Use jQuery"
+msgstr "Использовать jQuery"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:392
+msgid "Only uncheck if you know what you're doing. Your site will load faster without jQuery, but features that depend on it will be disabled."
+msgstr "Отключайте только если вы знаете, что делаете. Ваш сайт будет загружаться быстрей без jQuery, но функции, использующие эту библиотеку, будут отключены"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:400
+msgid "Animate content"
+msgstr "Анимировать контент"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:401
+msgid "Enable jQuery effects such as fading or sliding. Effects can render the site slightly slower on less powerful PCs"
+msgstr "Включить эффекты jQuery, такие как затемнение или плавная прокрутка. Эффекты могут тормозить на медленных компьютерах"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:409
+msgid "Optimize website for faster loading"
+msgstr "Оптимизировать сайт для быстрой загрузки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:410
+#, php-format
+msgid "Compresses and concatenates stylesheets and javascript files (using %s). Leave this unchecked if you're experiencing conflicts with other plugins, or if you're using a cache plugin that handles such functions"
+msgstr "Сжимает и конкатенирует файлы стилей и скриптов, используя %s. Оставьте неотмеченным, если есть конфликты с другими плагинами, или если вы уже используете плагин с похожим функционалом"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:418
+msgid "Automatically create missing thumbnail sizes"
+msgstr "Автоматически создавать недостающие размеры миниатюр"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:419
+#, php-format
+msgid "Asynchronously update thumbnails if needed. You can also use the %s plugin to process all missing thumbnail sizes manually, in a single pass"
+msgstr "Асинхронно обновлять миниатюры при необходимости. Вы также можете использовать плагин %s для ручного пересоздания всех миниатюр"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:427
+msgid "Use theme built-in lightbox on all image links"
+msgstr "Использовать встроенный в тему плагин lightbox для всех изображений-ссылок"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:428
+msgid "Uncheck if you prefer a lightbox plugin"
+msgstr "Снимите галочку, если вы предпочитаете плагин lightbox"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:435
+msgid "Automatically generate meta descriptions"
+msgstr "Автоматически создавать мега-теги description и keywords"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:436
+#, php-format
+msgid "Uncheck if you're using a SEO plugin, otherwise you'll get duplicate fields! Note that you don't need such plugins, %s is heavily optimized for search engines"
+msgstr "Снимите галочку, если вы уже используете SEO-плагин с похожим функционалом, иначе получится дублирование! Учтите, что вам не обязательно использовать дополнительные SEO-плагины, т.к. %s хорошо оптимизирована для поисковых машин"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:443
+msgid "Display debug messages (english only)"
+msgstr "Отображать отладочную информацию (на английском)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:444
+msgid "Status notifications about the theme setup (only visible to administrators). Only enable this when you need to, because it can significantly slow down page load for admins"
+msgstr "Отображать отладочную информацию для администраторов. Предупреждение: значительно замедляет загрузку страницы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:451
+msgid "Theme auto-uninstall"
+msgstr "Автоудаление темы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/functions.php:452
+#, php-format
+msgid "Check to remove all %s settings from the database after you switch to a different theme (Featured post records are preserved)."
+msgstr "Включите для удаления всех настроек %s из базы данных после смены темы сайта (настройки рекомендуемых записей сохранятся)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:38
+msgid "Ads"
+msgstr "Рекламные блоки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:130
+msgid "This section helps you create advertisment blocks in non-widgetized areas. For widgetized areas such as sidebars, simply use a text widget to display your ads."
+msgstr "Этот раздел поможет вам создать рекламные блоки вне областей для виджетов. Чтобы вставить рекламные блоки в области для виджетов, такие как боковые панели или подвал, используйте виджет Текст"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:135
+#, php-format
+msgid "It appears that a plugin has already registered the %s shortcode."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:140
+msgid "Create New Ad"
+msgstr "Создать новый рекламный блок"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:233
+msgid "Single Post Pages"
+msgstr "Одиночные страницы записей"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:243
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:250
+msgid "After Header"
+msgstr "После шапки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:244
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:251
+msgid "Before Main"
+msgstr "Перед основной частью"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:245
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:252
+msgid "After Main"
+msgstr "После основной части"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:246
+msgid "Before Comment"
+msgstr "Перед комментариями"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:253
+msgid "Before Post Teaser"
+msgstr "Перед превью записи"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:254
+msgid "After Post Teaser"
+msgstr "После превью записи"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:266
+msgid "Visibility:"
+msgstr "Отображать:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:268
+msgid "Automatic"
+msgstr "Автоматически"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:273
+msgid "Manual"
+msgstr "Вручную"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:274
+msgid "Use shortcode"
+msgstr "Используйте шорткоды"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:295
+msgid "When:"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:297
+msgid "Anytime"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:298
+msgid "Comments are closed"
+msgstr "Комментарии закрыты"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:299
+msgid "Comments are open"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:304
+msgid "Anyone"
+msgstr "Всем"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/AdBlocks/module.php:305
+msgid "Visitor only"
+msgstr "Только гостям"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:41
+msgid "Slide Horizontally"
+msgstr "Скольжение горизонтальное"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:42
+msgid "Slide Vertically"
+msgstr "Скольжение вертикальное"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:43
+msgid "Random Tiles"
+msgstr "Плитка случайным образом"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:44
+msgid "Horizontal Tiles"
+msgstr "Плитка по горизонтали"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:45
+msgid "Diagonal Tiles"
+msgstr "Плика по диагонали"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:46
+msgid "Spiral"
+msgstr "Спираль"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:47
+msgid "Random Stripes"
+msgstr "Полосы случайным образом"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:48
+msgid "Stripe Wave"
+msgstr "Полосы волной"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:49
+msgid "Curtain"
+msgstr "Занавес"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:50
+msgid "Interweave"
+msgstr "Переплетение"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:86
+msgid "Photo Gallery"
+msgstr "Слайдер изображений"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:180
+msgid "Content source"
+msgstr "Источник изображений галереи"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:185
+#, php-format
+msgid "%s that I mark as featured"
+msgstr "%s, отмеченные как рекомендуемые"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:185
+msgid "Media items"
+msgstr "Медиафайлы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:215
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:227
+msgid "Plugin not installed"
+msgstr "Плагин не установлен"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:217
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:229
+#, php-format
+msgid "%s gallery"
+msgstr "Галерея %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:219
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:231
+msgid "-- All galleries --"
+msgstr "-- Все галереи --"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:251
+msgid "Options"
+msgstr "Настройки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:254
+msgid "Dimensions:"
+msgstr "Размер изображений:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:258
+msgid "Images of this size must already exist!"
+msgstr "Изображения указанного размера уже должны существовать!"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:262
+msgid "Number of items to show:"
+msgstr "Количество изображений для показа:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:268
+#, php-format
+msgid "Exclude items older than %s day(s)"
+msgstr "Исключить изображения, загруженные более %s дней назад"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:269
+#, php-format
+msgid "Set to %d to ignore date"
+msgstr "Введите %d для отмены"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:274
+#, php-format
+msgid "Auto-Cycle every %s second(s)"
+msgstr "Автосмена изображения каждые %s секунд"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:275
+#, php-format
+msgid "Set to %d to disable auto-play"
+msgstr "Введите %d для отмены"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:279
+msgid "Slides link to:"
+msgstr "Изображение является ссылкой на:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:281
+msgid "Original image"
+msgstr "Оригинал изображения"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:282
+msgid "Post URL"
+msgstr "Страницу изображения"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:283
+msgid "Attached (parent) post URL, if any"
+msgstr "Прикрепленную запись"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:284
+msgid "Nothing"
+msgstr "Без ссылки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:292
+msgid "Captions:"
+msgstr "Подпись:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:294
+msgid "Image title and description"
+msgstr "Название и описание изображения (медиафайла)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:295
+msgid "Filtered content from the attached post, if any"
+msgstr "Фильтрованное содержимое прикрепленной записи"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:296
+msgid "Excerpt from the attached post, if any"
+msgstr "Цитата прикрепленной записи"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:304
+msgid "Previous/Next links (on mouse over)"
+msgstr "Ссылка на предыдущее/следующее изображение (при наведении курсора мыши)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:311
+msgid "Pager (on mouse over)"
+msgstr "Переключатель изображений (при наведении курсора мыши)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:314
+msgid "Effects"
+msgstr "Эффекты"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/PhotoGallery/module.php:329
+msgid "Visible on:"
+msgstr "Отображать на:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:63
+msgid "Failed to create sprite image with the selected icons. Make sure your upload directory is writable"
+msgstr "Не получилось создать изображение-спрайт с выбранными иконками. Проверьте права доступа на запись вашей директории для загрузки."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:67
+msgid "Social-Media Icons"
+msgstr "Иконки социальных медиа"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:219
+msgid "Drag and drop icons below to enable or disable them."
+msgstr "Перетаскивайте иконки для их включения/отключения."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:229
+msgid "Active icons"
+msgstr "Активные иконки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:246
+msgid "Label"
+msgstr "Заголовок:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:251
+msgid "Target URI"
+msgstr "URL-адрес:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:256
+msgid "Meta info (some themes may display this)"
+msgstr "Дополнительная информация (может отображаться некоторыми темами)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:264
+msgid "Inactive icons"
+msgstr "Отключенные иконки"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:278
+#, php-format
+msgid "You can also include your own icons within this list, by copying them in %s"
+msgstr "Вы также можете использовать собственные иконки, помимо представленных, загрузив их в папку %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/SocialMediaIcons/module.php:282
+msgid "Activate a child theme to add your own icons in this list."
+msgstr "Активируйте дочернюю тему, чтобы добавить собственные иконки в этот список."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:42
+msgid "Translate"
+msgstr "Перевод"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:48
+msgid "Failed to save .mo / .po files. Is your child theme directory writable?"
+msgstr "Не могу сохранить .mo/.po файлы. Проверьте права на запись в директорию дочерней темы."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:379
+msgid "Failed to load pot template"
+msgstr "Не могу загрузить шаблон из .pot файла"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:466
+msgid "To enable editing, activate a child theme and give WordPress write permissions to the child theme folder."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:472
+#, php-format
+msgid "There is no translation for your current site language (%s). The default english template was loaded."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:478
+#, php-format
+msgid "Editing %1$s (%2$s), %3$s translated"
+msgstr "Редактирование %1$s (%2$s), %3$s переведено"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:480
+msgid "unsaved"
+msgstr "не сохранено"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:489
+msgid "Translator(s):"
+msgstr "Переводчик(и):"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:495
+msgid "Team:"
+msgstr "Команда:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:502
+#, php-format
+msgid "Click on the black text below to edit the strings. Modified strings will temporarily be auto-saved. Press the \"%s\" button to export strings to .mo / .po files in your child theme directory."
+msgstr "Нажмите по черному тексту для его редактирования. Измененные строки будут временно сохранены. Нажмите кнопку \"%s\" для экспорта перевода в файлы .mo/.po в папке вашей дочерней темы"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:511
+msgid "Singular form"
+msgstr "Единичная форма"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/mods/Translate/module.php:512
+msgid "Plural form(s)"
+msgstr "Множественная форма"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/404.php:30
+msgid "The requested page was not found."
+msgstr "Страница не найдена."
+
+# О
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/about-the-author.php:23
+#, php-format
+msgid "About %s"
+msgstr "О %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/about-the-author.php:33
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/archive.php:63
+msgid "Nothing here :("
+msgstr "Здесь ничего нет"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/about-the-author.php:38
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/author.php:90
+#, php-format
+msgid "%s's RSS Feed"
+msgstr "RSS лента автора %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/archive-forum.php:39
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/archive-topic.php:40
+msgid "There are no forums here yet :("
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/archive.php:36
+#, php-format
+msgid "Posts tagged %s"
+msgstr "Записи с меткой %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/archive.php:44
+msgid "Blog Archives"
+msgstr "Архивы блога"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/archive.php:59
+#, php-format
+msgid "There aren't any posts in the %s category yet :("
+msgstr "В рубрику %s ещё не добавлены записи"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/archive.php:61
+msgid "There aren't any posts within this date :("
+msgstr "Нет ни одной записи за этот день."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/author.php:38
+#, php-format
+msgid "%s karma"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/author.php:40
+#, php-format
+msgid "(%1$s comments, %2$s posts)"
+msgstr "Записей (%2$s), комментариев (%1$s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/author.php:49
+msgid "This user hasn't shared any profile information"
+msgstr "Нет информации об авторе"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/author.php:55
+msgid "Home page:"
+msgstr "Главная:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/author.php:93
+#, php-format
+msgid "%s hasn't written any posts yet"
+msgstr "У автора %s нет записей"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/comment.php:29
+#, php-format
+msgid "%1$s written by %2$s %3$s"
+msgstr "%1$s написал %2$s %3$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/comment.php:45
+msgid "Your comment is awaiting moderation."
+msgstr "Ваш комментарий ожидает проверки."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/comment.php:45
+msgid "This comment is awaiting moderation."
+msgstr "Этот комментарий ожидает проверки."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/commentform.php:53
+#, php-format
+msgid "Logged in as %s."
+msgstr "Вы вошли как %s."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/commentform.php:54
+msgid "Log out of this account"
+msgstr "Выйти из этого аккаунта"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/commentform.php:54
+msgid "Log out?"
+msgstr "Выйти?"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/commentform.php:60
+#, php-format
+msgid "Welcome back %s."
+msgstr "Добро пожаловать, %s."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/commentform.php:62
+msgid "Change &raquo;"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/commentform.php:81
+msgid "Type your comment"
+msgstr "Оставьте свой комментарий"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/commentform.php:85
+#, php-format
+msgid "You may use these %1$s tags: %2$s"
+msgstr "Вы можете использовать следующие %1$s тэги: %2$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/commentform.php:97
+msgid "Post Comment"
+msgstr "Отправить"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/commentform.php:99
+msgid "Cancel reply"
+msgstr "Не отвечать"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/footer.php:49
+msgid "Go to Top"
+msgstr "Вверх"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-anonymous.php:22
+msgid "Name (required):"
+msgstr "Имя:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-anonymous.php:30
+msgid "Mail (will not be published) (required):"
+msgstr "Email (опубликован не будет):"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-anonymous.php:38
+msgid "Website:"
+msgstr "Сайт:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:24
+#, php-format
+msgid "Reply To: %s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:40
+msgid "This topic is marked as closed to new replies, however your posting capabilities still allow you to do so."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:46
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:58
+msgid "Your account has the ability to post unrestricted HTML content."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:57
+msgid "Reply:"
+msgstr "Ответить:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:68
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:92
+#, php-format
+msgid "You may use these %s tags and attributes:"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:76
+msgid "Tags:"
+msgstr "Метки:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:89
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:129
+msgid "Notify the author of follow-up replies via email"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:91
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:131
+msgid "Notify me of follow-up replies via email"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:101
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:144
+msgid "Keep a log of this edit:"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:104
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:148
+msgid "Optional reason for editing:"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:118
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:75
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:81
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:160
+msgid "Submit"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:138
+#, php-format
+msgid "The topic &#8216;%s&#8217; is closed to new replies."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:146
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:180
+#, php-format
+msgid "The forum &#8216;%s&#8217; is closed to new topics and replies."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:154
+msgid "You cannot reply to this topic."
+msgstr "Вы не можете комментировать эту запись."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-reply.php:154
+msgid "You must be logged in to reply to this topic."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:19
+#, php-format
+msgid "Merge topic \"%s\""
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:26
+msgid "Select the topic to merge this one into. The destination topic will remain the lead topic, and this one will change into a reply."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:27
+msgid "To keep this topic as the lead, go to the other topic and use the merge tool from there instead."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:31
+msgid "All replies within both topics will be merged chronologically. The order of the merged replies is based on the time and date they were posted. If the destination topic was created after this one, it's post date will be updated to second earlier than this one."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:36
+msgid "Merge with this topic:"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:44
+msgid "No topics were found to which the topic could be merged to!"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:48
+msgid "There are no other topics in this forum to merge with."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:56
+msgid "Merge topic subscribers"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:62
+msgid "Merge topic favoriters"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:67
+msgid "Merge topic tags"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:71
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:77
+msgid "<strong>WARNING:</strong> This process cannot be undone."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:86
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:92
+msgid "You do not have the permissions to edit this topic!"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-merge.php:86
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:92
+msgid "You cannot edit this topic."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:25
+msgid "When you split a topic, you are slicing it in half starting with the reply you just selected. Choose to use that reply as a new topic with a new title, or merge those replies into an existing topic."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:29
+msgid "If you use the existing topic option, replies within both topics will be merged chronologically. The order of the merged replies is based on the time and date they were posted."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:34
+#, php-format
+msgid "New topic in <strong>%s</strong> titled:"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:35
+#, php-format
+msgid "Split: %s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:42
+msgid "Use an existing topic in this forum:"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:51
+msgid "No other topics found!"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:64
+msgid "Copy subscribers to the new topic"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:69
+msgid "Copy favoriters to the new topic"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-split.php:72
+msgid "Copy topic tags to the new topic"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:17
+#, php-format
+msgid "Manage Tag: \"%s\""
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:23
+msgid "Rename"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:26
+msgid "Leave the slug empty to have one automatically generated."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:30
+msgid "Changing the slug affects its permalink. Any links to the old slug will stop working."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:36
+msgid "Name:"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:41
+msgid "Slug:"
+msgstr "URL (постоянная ссылка):"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:57
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:71
+msgid "Merge"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:60
+msgid "Merging tags together cannot be undone."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:66
+msgid "Existing tag:"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:71
+#, php-format
+msgid "Are you sure you want to merge the \"%s\" tag into the tag you specified?"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:86
+msgid "This does not delete your topics. Only the tag itself is deleted."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:90
+msgid "Deleting a tag cannot be undone."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:91
+msgid "Any links to this tag will no longer function."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic-tag.php:97
+#, php-format
+msgid "Are you sure you want to delete the \"%s\" tag? This is permanent and cannot be undone."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:33
+#, php-format
+msgid "Now Editing &ldquo;%s&rdquo;"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:35
+#, php-format
+msgid "Create New Topic in &ldquo;%s&rdquo;"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:35
+msgid "Create New Topic"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:52
+msgid "This forum is marked as closed to new topics, however your posting capabilities still allow you to do so."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:69
+#, php-format
+msgid "Topic Title (Maximum Length: %d):"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:81
+msgid "Topic Description:"
+msgstr "Описание:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:100
+msgid "Topic Tags:"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:109
+msgid "Forum:"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:118
+msgid "Topic Type:"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:188
+msgid "You cannot create new topics at this time."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-topic.php:188
+msgid "You must be logged in to create new topics."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:21
+msgid "First Name"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:25
+msgid "Last Name"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:29
+msgid "Nickname"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:33
+msgid "Display name publicly as"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:39
+msgid "Contact Info"
+msgstr ""
+
+# О
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:54
+msgid "About Yourself"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:54
+msgid "About the user"
+msgstr "Об авторе"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:57
+msgid "Biographical Info"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:59
+msgid "Share a little biographical information to fill out your profile. This may be shown publicly."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:64
+msgid "Account"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:67
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:69
+msgid "Usernames cannot be changed."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:72
+msgid "Email"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:80
+#, php-format
+msgid "There is a pending email address change to <code>%1$s</code>. <a href=\"%2$s\">Cancel</a>"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:88
+msgid "New Password"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:90
+msgid "If you would like to change the password type a new one. Otherwise leave this blank."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:94
+msgid "Type your new password again"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:97
+msgid "Hint: The password should be at least seven characters long. To make it stronger, use upper and lower case letters, numbers and symbols like ! \" ? $ % ^ &amp;)."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:103
+msgid "Role:"
+msgstr "Роль:"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:111
+msgid "Super Admin"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:114
+msgid "Grant this user super admin privileges for the Network."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:126
+msgid "Update Profile"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/form-user-edit.php:126
+msgid "Update User"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/home.php:36
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-categories.php:88
+msgid "Oops, nothing here :("
+msgstr "Ошибка, ничего не найдено."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-forums.php:21
+msgid "Forum"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-forums.php:22
+msgid "Topics"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-forums.php:23
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-replies.php:35
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-replies.php:45
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-topics.php:29
+msgid "Replies"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-forums.php:24
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-topics.php:30
+msgid "Freshness"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-replies.php:55
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s от %2$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-topics.php:27
+msgid "Topic"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-topics.php:28
+msgid "Voices"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-topics.php:55
+#, php-format
+msgid "Started by: %1$s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/loop-topics.php:59
+#, php-format
+msgid "in: <a href=\"%1$s\">%2$s</a>"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/meta.php:25
+#, php-format
+msgid "Comments (%s)"
+msgstr "Комментарии (%s)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/meta.php:29
+#, php-format
+msgid "Pings (%s)"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/meta.php:62
+msgid "Comment Feed for this Post"
+msgstr "RSS-лента комментариев этой записи"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-lost-pw.php:32
+msgid "Enter a username or e-mail address."
+msgstr "Введите имя пользователя или адрес email."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-lost-pw.php:37
+msgid "There is no user registered with that email address."
+msgstr "Нет пользователя с таким адресом email."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-lost-pw.php:42
+msgid "There is no user with that name."
+msgstr "Нет пользователя с таким именем."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-lost-pw.php:100
+msgid "Failed to send confirmation e-mail. Please contact the site admin."
+msgstr "Ошибка при отправке письма с подтверждением. Пожалуйста, свяжитесь с администратором сайта."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-lost-pw.php:206
+msgid "Get New Password"
+msgstr "Получить новый пароль"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:79
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:150
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:175
+msgid "Srsly?"
+msgstr "Че, правда?"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:104
+msgid "You left the user name field empty."
+msgstr "Вы не указали свое имя пользователя."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:107
+msgid "Invalid user name, illegal characters."
+msgstr "Некорректное имя пользователя (недопустимые символы)."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:111
+msgid "User name already registered, choose another."
+msgstr "Такое имя пользователя уже зарегистрировано, выберите другое."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:116
+msgid "You left the e-mail field empty."
+msgstr "Вы не указали свой адрес email."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:119
+msgid "Invalid e-mail address."
+msgstr "Некорректный адрес email."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:123
+msgid "This email is already registered, please choose another one."
+msgstr "Такой адрес email уже зарегистрирован, введите другой."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:138
+#, php-format
+msgid "Registration failed, please contact the <a href=\"mailto:%s\">webmaster</a>"
+msgstr "Регистрация не удалась, пожалуйста свяжитесь с <a href=\"mailto:%s\">администратором сайта</a>"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:184
+msgid "You must be logged in to do this"
+msgstr "Вы должны быть залогинены для выполнения данного действия"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:275
+#, php-format
+msgid "%s is yours."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:392
+msgid "Next"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-sign-up.php:392
+msgid "Create User"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/page-users.php:84
+msgid "Registered"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/related-posts.php:21
+#, php-format
+msgid "Permanent Link: %s"
+msgstr "Ссылка на запись %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/related-posts.php:27
+msgid "Didn't find any related posts :("
+msgstr "Похожих записей не найдено :("
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/search.php:31
+#, php-format
+msgid "Search results for %1$s (%2$d)"
+msgstr "Результаты поиска для %1$s (%2$d)"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/search.php:49
+msgid "Nothing found :("
+msgstr "Ничего не найдено"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/search.php:50
+msgid "Try a different search..."
+msgstr "Попробуйте поискать что-нибудь другое."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/sidebar.php:39
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/sidebar.php:56
+#, php-format
+msgid "%s is empty. Add widgets here, otherwise this area will not be visible in the frontend"
+msgstr "%s пуста. Добавьте сюда виджеты, иначе эта область не будет показана на сайте"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single-forum.php:59
+msgid "There are no topics in this forum."
+msgstr "Нет ни одной темы в этом разделе."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single-forum.php:70
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single-topic.php:121
+msgid "You do not have permission to view this forum."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single-reply-edit.php:30
+#, php-format
+msgid "Editing reply #%d to: %s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single-reply.php:64
+#, php-format
+msgid "Posted on %1$s at %2$s"
+msgstr "Опубликовано в рубрике %1$s, %2$s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single-topic.php:59
+msgid "Creator"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single-view.php:42
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/taxonomy-topic-tag.php:41
+msgid "No topics found."
+msgstr "Ничего не найдено."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single.php:68
+#, php-format
+msgid "This entry was posted by %1$s on %2$s at %3$s, and is filed under %4$s. Follow any responses to this post through %5$s."
+msgstr "Эта запись написана автором %1$s, %2$s в %3$s, и размещена в категории %4$s. Следите за ответами на эту запись с помощью %5$s. "
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single.php:77
+#, php-format
+msgid "You can <a%1$s>leave a response</a> or <a%2$s>trackback</a> from your own site."
+msgstr "Вы можете <a%1$s>написать комментарий</a> или <a%2$s>разместить обратную ссылку</a> на своем сайте."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single.php:80
+#, php-format
+msgid "Responses are currently closed, but you can <a%1$s>trackback</a> from your own site."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single.php:83
+msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/single.php:86
+msgid "Both comments and pings are currently closed."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/taxonomy-topic-tag-edit.php:28
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/taxonomy-topic-tag.php:28
+#, php-format
+msgid "Topic Tag: %s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/teaser.php:73
+#, php-format
+msgid "by %s"
+msgstr "Автор: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/teaser.php:77
+#, php-format
+msgid "in %s"
+msgstr "в %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-details.php:23
+#, php-format
+msgid "Profile: %s"
+msgstr "Профиль: %s"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-details.php:27
+#, php-format
+msgid "Edit Profile of User %s"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-details.php:27
+msgid "(Edit)"
+msgstr "Изменить"
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-favorites.php:18
+msgid "Favorite Forum Topics"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-favorites.php:25
+msgid "You currently have no favorite topics."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-favorites.php:25
+msgid "This user has no favorite topics."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-subscriptions.php:22
+msgid "Subscribed Forum Topics"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-subscriptions.php:30
+msgid "You are not currently subscribed to any topics."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-subscriptions.php:30
+msgid "This user is not currently subscribed to any topics."
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-topics-created.php:19
+msgid "Forum Topics Created"
+msgstr ""
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-topics-created.php:26
+msgid "You have not created any topics."
+msgstr "Вы не создали еще ни одной записи."
+
+#: c:\wamp\www\wpmu\wp-content\themes\mystique/templates/user-topics-created.php:26
+msgid "This user has not created any topics."
+msgstr "Пользователь еще не создал ни одной записи."
+
+#~ msgid "Show Older Posts"
+#~ msgstr "Показать более старые записи"
+
+#~ msgid "Desired user name"
+#~ msgstr "Имя пользователя"
+
+#~ msgid "Searching for %1$s (%2$s)"
+#~ msgstr "Поиск по %1$s (%2$s)"
+
+#~ msgid "Filter"
+#~ msgstr "Фильтр комментариев"
+
+#~ msgid "Twitter updates"
+#~ msgstr "Follow me on Twitter!"
+
+#~ msgid "Footer content"
+#~ msgstr "Содержимое подвала"
+
+#~ msgid "Post Previews"
+#~ msgstr "Превью записей"
+
+#~ msgid "First %s words, filtered"
+#~ msgstr "Первые %s слов, с фильтром"
+
+#~ msgid "Relative (Time Since)"
+#~ msgstr "Относительное (с момента публикации)"
+
+#~ msgid "Absolute (Use Time/Date settings)"
+#~ msgstr "Абсолютное (используются настройки даты и времени сайта)"
+
+#~ msgid "Comments Link"
+#~ msgstr "Ссылка на комментарии"
+
+#~ msgid "Medium, %s"
+#~ msgstr "Средняя, %s"
+
+#~ msgid "Large, %s"
+#~ msgstr "Крупная, %s"
+
+#~ msgid "Larger, %s"
+#~ msgstr "Большая, %s"
+
+#~ msgid "Theme Default, %s"
+#~ msgstr "По умолчанию, %s"
+
+#~ msgid "Media setting, %s"
+#~ msgstr "Из настроек медиа, %s"
+
+#~ msgid "Display Comment Search Form"
+#~ msgstr "Отображать форму поиска комментариев"
+
+#~ msgid "Single Post Page"
+#~ msgstr "Страница записи"
+
+#~ msgid "Previous/Next Links"
+#~ msgstr "Ссылки на предыдущую и следующую запись"
+
+#~ msgid "Social Media Links (Leave blank to disable)"
+#~ msgstr "Ссылки на социальные медиа (оставьте поле пустым для отмены)"
+
+#~ msgid "RSS Feed"
+#~ msgstr "Лента RSS"
+
+#~ msgid ""
+#~ "Status notifications about the theme setup (only visible to "
+#~ "administrators)."
+#~ msgstr ""
+#~ "Статусные сообщения о работе Mystique (видны только администраторам сайта)"
+
+#~ msgid "Modules act like plugins that can further extend %s."
+#~ msgstr "Модули работают как плагины, которые расширяют функционал %s"
+
+#~ msgid ""
+#~ "Sorry, this page requires JavaScript to be enabled in your browser :("
+#~ msgstr ""
+#~ "Извините, но для корректного отображения этой страницы нужно включить "
+#~ "JavaScript в вашем браузере."
+
+#~ msgid "Print"
+#~ msgstr "Печать"
+
+#~ msgid "Could not retrieve tweets. Possible reasons:"
+#~ msgstr "Не удалось получить твиты. Возможные причины:"
+
+#~ msgid "Loading tweets..."
+#~ msgstr "Загрузка твитов..."
+
+#~ msgid "jQuery is required by this widget"
+#~ msgstr "Для этого виджета нужна библиотека jQuery"
+
+#~ msgid "60 seconds"
+#~ msgstr "60 секунд"
+
+#~ msgid "90 seconds"
+#~ msgstr "90 секунд"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 минуты"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 минут"
+
+#~ msgid "No links yet :("
+#~ msgstr "Нет ссылок :("
+
+#~ msgid "Content has max %s <em>words</em>"
+#~ msgstr "Отображать первые %s <em>слов</em>"
+
+#~ msgid "This widget requires jQuery to be enabled"
+#~ msgstr "Для работы этого виджета необходимо включить jQuery"
+
+#~ msgid "Toggle Visual &lt;&gt; HTML"
+#~ msgstr "Переключить Визуально &lt;&gt; HTML код"
+
+#~ msgid "Show on:"
+#~ msgstr "Показывать на:"
+
+#~ msgid "NextGEN gallery"
+#~ msgstr "NextGEN галерея"
+
+#~ msgid "Tile Wave"
+#~ msgstr "Плитка волной"
+
+#~ msgid "Featured gallery"
+#~ msgstr "Галерея-слайдер"
+
+#~ msgid "Important:"
+#~ msgstr "Важно:"
+
+#~ msgid "Images must have at least a %s pixel resolution."
+#~ msgstr "изображения должны быть размером не менее, чем %s пикселей."

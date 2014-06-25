@@ -1,0 +1,98 @@
+/*
+Style Name: Silver
+Color: #414141
+Description: Silver color scheme
+Author: digitalnature
+Version: 3.0
+
+*/
+
+/* all theme styles must be prefixed with "style-" and have all the meta data fields as above */
+
+
+
+a{color:#206ba4;}
+a:hover{color: #54a4de;}
+
+span.alt{color:#a6a6a6;}
+
+#logo a:hover span.alt{color:#d7f205;}
+
+
+.block .title h3,
+.block .title .br,
+.block .title .bl{
+  background-image: url(../images/style-silver/block-t.png);
+}
+
+#meta .navi{border-color: #4a4a4a;}
+
+#meta .navi li,
+#meta .navi li a{
+  background-image: url(../images/style-silver/tabs.png);
+  color: #333;
+  text-shadow:0px 1px 0px #eee;
+}
+
+.browser-chrome #meta .navi li a{text-shadow:0 0 0 transparent, 0px 1px 0px #eee;}
+
+#meta .navi li.active a,
+#meta .navi li.active a:hover{
+  color: #fff;
+  text-shadow:0px -1px 0px #000;
+}
+
+.browser-chrome #meta .navi li.active a,
+.browser-chrome #meta .navi li.active a:hover{text-shadow:0 0 0 transparent, 0px -1px 0px #000;}
+
+
+.comment .comment-head,
+.comment .comment-head .ext{
+  background-image:url(../images/style-silver/comment.png);
+}
+
+.comment .comment-head{
+  color: #333;
+  text-shadow: 0px 1px 0px #ddd;
+}
+
+.browser-chrome .comment .comment-head{text-shadow:0 0 0 transparent, 0px 1px 0px #ddd;}
+
+.comment .comment-head a{
+  color: #206ba4;
+  text-decoration: none;
+}
+
+.comment.role-administrator > .comment-head{
+  color: #ccc;
+  text-shadow: 0px -1px 0px #000;
+}
+
+.browser-chrome .comment.role-administrator .comment-head{text-shadow:0 0 0 transparent, 0px -1px 0px #000;}
+
+.comment.role-administrator > .comment-head a{
+  color: #54a4de;
+}
+
+
+.comment.role-administrator > .comment-head,
+.comment a.show:hover,
+.no-fx .block a.more:hover, .block .fadeThis a.more .hover,
+table.calendar td.today a, table.calendar td.today span,
+.tagcloud a:hover,
+.nav-footer .active > a,
+.nav-footer .active-parent > a,
+.nav-footer li.open > a,
+.nav-footer li:hover > a{
+  background-color:#414141;
+}
+
+.page-navi a:hover{
+  border:1px solid #414141;
+  background-color:#414141;
+}
+
+.search-form fieldset,
+.search-form .submit{
+  background-image:url(../images/style-silver/search.png);
+}
