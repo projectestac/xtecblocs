@@ -336,7 +336,17 @@ foreach( $all_buttons as $button => $name ) {
 </ul>
 </div>
 
+<!--XTEC ************ MODIFICAT - Localization
+//2013.06.21 @jmiro227 -->
+
+<p class="tadv-more-plugins"><?php _e( 'Also enable:', 'tadv' ); ?>
+
+<!--************ ORIGINAL
+
 <p class="tadv-more-plugins"><?php _e( 'Also enable:' ); ?>
+
+************ FI -->
+
 	<label>
 	<input type="checkbox" name="advlist" id="advlist" <?php if ( $this->check_setting('advlist') ) echo ' checked="checked"'; ?> />
 	<?php _e('List Style Options', 'tadv'); ?>

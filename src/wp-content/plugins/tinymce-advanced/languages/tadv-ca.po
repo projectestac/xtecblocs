@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Xavi Meler <jmeler@xtec.cat>\n"
+"Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,6 +16,122 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-Language: Catalan\n"
 "X-Poedit-SourceCharset: utf-8\n"
+
+#: tadv_admin.php:
+msgid "Export Settings"
+msgstr "Exporteu la configuració"
+
+#: tadv_admin.php:
+msgid "Import Settings"
+msgstr "Importeu la configuració"
+
+#: tadv_admin.php:
+msgid "Restore Default Settings"
+msgstr "Restaureu la configuració per defecte"
+
+#: tadv_admin.php:
+msgid "Administration"
+msgstr "Administració"
+
+#: tadv_admin.php:
+msgid "Stop removing the &lt;p&gt; and &lt;br /&gt; tags when saving and show them in the Text editor"
+msgstr "Deixeu d'eliminar els tags &lt;p&gt; and &lt;br /&gt; i mostreu-los en l'editor"
+
+#: tadv_admin.php:
+msgid "Load the CSS classes used in editor-style.css and replace the Formats button and sub-menu."
+msgstr "Carregueu el CSS 'editor-style.css' i reeemplaçeu els botons 'Formats' i 'submenú'."
+
+#: tadv_admin.php:
+msgid "New in TinyMCE 4.0/WordPress 3.9 is the editor menu. When it is enabled, most buttons are also available as menu items."
+msgstr "El menú de l'editor és nou a TinyMCE 4.0/WordPress 3.9. Quan està s'activa, la majoria dels botons també estan disponibles com a opcions de menú."
+
+#: tadv_admin.php:
+msgid "Enable the editor menu."
+msgstr "Activeu el menú de l'editor."
+
+#: tadv_admin.php:
+msgid "Drag buttons from the unused buttons below and drop them in the toolbars above, or drag the buttons in the toolbars to rearrange them."
+msgstr "Arrossegueu els botons no utilitzats i deixeu-los caure sobre les barres d'eines de dalt, o arrossegueu els botons de les barres d'eines, per reorganitzar-los."
+
+#: tadv_admin.php:
+msgid "Unused Buttons"
+msgstr "Botons no utilitzats"
+
+#: tadv_admin.php:
+msgid "List Style Options"
+msgstr "Opcions d'estil de llista"
+
+#: tadv_admin.php:
+msgid "Link (replaces the Insert/Edit Link dialog)"
+msgstr "'Enllaç' (reemplaça el quadre de diàleg 'Insereix / Edita Enllaç')"
+
+#: tadv_admin.php:
+msgid "Editor Settings"
+msgstr "Configuració de l'editor"
+
+#: tadv_admin.php:
+msgid "Search/Replace"
+msgstr "Cerca/Substitueix"
+
+#: tadv_admin.php:
+msgid "Visual Blocks"
+msgstr "Blocs Visuals"
+
+#: tadv_admin.php:
+msgid "HTML code"
+msgstr "Codi HTML"
+
+#: tadv_admin.php:
+msgid "Non-Break Space"
+msgstr "Espai 'Non-Break'"
+
+#: tadv_admin.php:
+msgid "Left to Right"
+msgstr "D'esquerra a dreta"
+
+#: tadv_admin.php:
+msgid "Right to Left"
+msgstr "De dreta a esquerra"
+
+#: tadv_admin.php:
+msgid "Text Background"
+msgstr "Fons del text"
+
+#: tadv_admin.php:
+msgid "Page Break"
+msgstr "Salt de pàgina"
+
+#: tadv_admin.php:
+msgid "Insert Anchor"
+msgstr "Inserix ancora"
+
+#: tadv_admin.php:
+msgid "Insert Date/Time"
+msgstr "Inserix Data/Hora"
+
+#: tadv_admin.php:
+msgid "Insert Media"
+msgstr "Inserix Multimedia"
+
+#: tadv_admin.php:
+msgid "Edit Image"
+msgstr "Edita Imatge"
+
+#: tadv_admin.php:
+msgid "Toolbar toggle"
+msgstr "Barra d'eines"
+
+#: tadv_admin.php:
+msgid "Remove Formatting"
+msgstr "Treure Format"
+
+#: tadv_admin.php:
+msgid "Subscript"
+msgstr "Subíndex"
+
+#: tadv_admin.php:
+msgid "Superscript"
+msgstr "Superíndex"
 
 #: tadv_admin.php:
 msgid "All options have been removed from the database. You can"
@@ -31,7 +147,7 @@ msgstr "o"
 
 #: tadv_admin.php:
 msgid "reload this page"
-msgstr "tornear a recarregar aquesta pàgina"
+msgstr "tornar a recarregar aquesta pàgina"
 
 #: tadv_admin.php:
 msgid "to reset them to the default values."
@@ -114,8 +230,16 @@ msgid "Stop removing the &lt;p&gt; and &lt;br /&gt; tags when saving and show th
 msgstr "Aturar l'eliminació de les etiquetes &lt;p&gt; i &lt;br /&gt; en desar en l'editor d'HTML"
 
 #: tadv_admin.php:
-msgid "This will make it possible to use more advanced coding in the HTML editor without the back-end filtering affecting it much. However it may behave unexpectedly in rare cases, so test it thoroughly before enabling it permanently. Also line breaks in the HTML editor would still affect the output, in particular do not use empty lines, line breaks inside HTML tags or multiple &lt;br /&gt; tags."
-msgstr "Això farà possible l'ús de codificació més avançada en l'editor d'HTML sense que el filtratge de fons afecti gaire. No obstant això, es pot comportar inesperadament en casos rars, per això cal provar-ho a fons abans d'habilitar-ho de forma permanent. També els salts de línia en l'editor d'HTML seguiran afectant la sortida, en particular, no utilitzeu línies buides, salts de línia dins de les etiquetes HTML o diverses etiquetes &lt;br /&gt;."
+msgid "This will make it possible to use more advanced coding in the HTML editor without the back-end filtering affecting it much. "
+msgstr "Això farà possible l'ús de codificació més avançada en l'editor d'HTML sense que el filtratge de fons afecti gaire. "
+
+#: tadv_admin.php:
+msgid "However it may behave unexpectedly in rare cases, so test it thoroughly before enabling it permanently. "
+msgstr "No obstant això, es pot comportar inesperadament en casos rars, per això cal provar-ho a fons abans d'habilitar-ho de forma permanent. "
+
+#: tadv_admin.php:
+msgid "Line breaks in the HTML editor would still affect the output, in particular do not use empty lines, line breaks inside HTML tags or multiple &lt;br /&gt; tags."
+msgstr "Els salts de línia en l'editor d'HTML, però, seguiran afectant la sortida. En particular, no utilitzeu línies buides, salts de línia dins de les etiquetes HTML o diverses etiquetes &lt;br /&gt;."
 
 #: tadv_admin.php:
 msgid "Language Settings"
@@ -139,7 +263,7 @@ msgstr "Desconfigurar"
 
 #: tadv_admin.php:
 msgid "Save Changes"
-msgstr "Desar els canvis"
+msgstr "Deseu els canvis"
 
 #: tadv_admin.php:
 msgid "The Kitchen Sink button shows/hides the next toolbar row. It will not work at the current place."
@@ -159,7 +283,7 @@ msgstr "Continuar"
 
 #: tadv_admin.php:
 msgid "Also enable:"
-msgstr "Habilitar també:"
+msgstr "Habiliteu també:"
 
 #: tadv_admin.php:
 msgid "Import editor-style.css."
@@ -170,7 +294,7 @@ msgid "Bold"
 msgstr "Negreta"
 
 #: tadv_admin.php:
-msgid "Horizontal rule"
+msgid "Horizontal Rule"
 msgstr "Separador"
 
 #: tadv_admin.php:
@@ -191,8 +315,6 @@ msgstr "Cursiva"
 msgid "Strikethrough"
 msgstr "Ratllat"
 
-#msgstr "Tatxat"
-#************ FI
 #: tadv_admin.php:
 msgid "Underline"
 msgstr "Subrallat"
@@ -214,15 +336,15 @@ msgid "Indent"
 msgstr "Sagna"
 
 #: tadv_admin.php:
-msgid "Allign Left"
+msgid "Align Left"
 msgstr "Alineació esqu."
 
 #: tadv_admin.php:
-msgid "Center"
+msgid "Align Center"
 msgstr "Centrat"
 
 #: tadv_admin.php:
-msgid "Alligh Right"
+msgid "Align Right"
 msgstr "Alinea dreta"
 
 #: tadv_admin.php:
@@ -287,8 +409,6 @@ msgstr "Color del text"
 msgid "Back Color"
 msgstr "Color de fons"
 
-#msgstr "Back Color"
-#************ FI
 #: tadv_admin.php:
 msgid "Paste as Text"
 msgstr "Enganxa text"
@@ -347,8 +467,6 @@ msgstr "Text esborrat"
 msgid "Abbreviation"
 msgstr "Abreviatura"
 
-#msgstr "Abrebiatura"
-#************ FI
 #: tadv_admin.php:
 msgid "Acronym"
 msgstr "Acrònim"
@@ -406,7 +524,7 @@ msgid "Style"
 msgstr "Estil"
 
 #: tadv_admin.php:
-msgid "Smilies"
+msgid "Emoticons"
 msgstr "Emoticones"
 
 #: tadv_admin.php:

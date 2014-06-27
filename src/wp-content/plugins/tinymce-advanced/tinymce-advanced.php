@@ -15,6 +15,11 @@ Released under the GPL version 2.0, http://www.gnu.org/licenses/gpl-2.0.html
 	GNU General Public License version 2.0 for more details.
 */
 
+//XTEC ************ AFEGIT - Localization
+//2013.06.21 @jmiro227
+load_plugin_textdomain( 'tadv', null, dirname( plugin_basename( __FILE__ )) . '/languages' );
+//************ FI
+
 if ( ! class_exists('Tinymce_Advanced') ) :
 
 class Tinymce_Advanced {
@@ -162,6 +167,72 @@ class Tinymce_Advanced {
 		if ( ! empty( $this->all_buttons ) )
 			return $this->all_buttons;
 
+//XTEC ************ MODIFICAT - Localization
+//2013.06.21 @jmiro227
+		$buttons = array(
+			// Core
+			'bold' => __('Bold', 'tadv'),
+			'italic' => __('Italic', 'tadv'),
+			'underline' => __('Underline', 'tadv'),
+			'strikethrough' => __('Strikethrough', 'tadv'),
+			'alignleft' => __('Align Left', 'tadv'),
+			'aligncenter' => __('Align Center', 'tadv'),
+			'alignright' => __('Align Right', 'tadv'),
+			'alignjustify' => __('Justify', 'tadv'),
+			'styleselect' => '<!--styleselect-->',
+			'formatselect' => '<!--formatselect-->',
+			'fontselect' => '<!--fontselect-->',
+			'fontsizeselect' => '<!--fontsizeselect-->',
+			'cut' => __('Cut', 'tadv'),
+			'copy' => __('Copy', 'tadv'),
+			'paste' => __('Paste', 'tadv'),
+			'bullist' => __('Bullet List', 'tadv'),
+			'numlist' => __('Numbered List', 'tadv'),
+			'outdent' => __('Outdent', 'tadv'),
+			'indent' => __('Indent', 'tadv'),
+			'blockquote' => __('Quote', 'tadv'),
+			'undo' => __('Undo', 'tadv'),
+			'redo' => __('Redo', 'tadv'),
+			'removeformat' => __('Remove Formatting', 'tadv'),
+			'subscript' => __('Subscript', 'tadv'),
+			'superscript' => __('Superscript', 'tadv'),
+
+			// From plugins
+			'hr' => __('Horizontal Rule', 'tadv'),
+			'link' => __('Link', 'tadv'),
+			'unlink' => __('Remove Link', 'tadv'),
+			'image' => __('Edit Image', 'tadv'),
+			'charmap' => __('Character Map', 'tadv'),
+			'pastetext' => __('Paste as Text', 'tadv'),
+			'print' => __('Print', 'tadv'),
+			'anchor' => __('Insert Anchor', 'tadv'),
+			'searchreplace' => __('Search/Replace', 'tadv'),
+			'visualblocks' => __('Visual Blocks', 'tadv'),
+		//	'visualchars' => 'Hidden Chars',
+			'code' => __('HTML code', 'tadv'),
+			'fullscreen' => __('Full Screen', 'tadv'),
+			'insertdatetime' => __('Insert Date/Time', 'tadv'),
+			'media' => __('Insert Media', 'tadv'),
+			'nonbreaking' => __('Non-Break Space', 'tadv'),
+			'table' => __('Table', 'tadv'),
+			'ltr' => __('Left to Right', 'tadv'),
+			'rtl' => __('Right to Left', 'tadv'),
+			'emoticons' => __('Emoticons', 'tadv'),
+			'forecolor' => __('Text Color', 'tadv'),
+			'backcolor' => __('Text Background', 'tadv'),
+
+			// Layer plugin ?
+		//	'insertlayer' => 'Layer',
+
+			// WP
+			'wp_adv'		=> __('Toolbar toggle', 'tadv'),
+			'wp_help'		=> __('Help', 'tadv'),
+			'wp_more'		=> __('More Tag', 'tadv'),
+			'wp_page'		=> __('Page Break', 'tadv'),
+		);
+
+//************ ORIGINAL
+/*
 		$buttons = array(
 			// Core
 			'bold' => 'Bold',
@@ -223,6 +294,8 @@ class Tinymce_Advanced {
 			'wp_more'		=> 'More Tag',
 			'wp_page'		=> 'Page Break',
 		);
+*/
+//************ FI
 
 		if ( function_exists('moxiecode_plugins_url') ) {
 			if ( moxiecode_plugins_url('imagemanager') )
