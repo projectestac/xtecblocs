@@ -423,7 +423,7 @@ msgstr "Inserix imatge"
 # 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "More Tag"
-msgstr "Insereix l'etiqueta 'llegir més'"
+msgstr "Insereix l'etiqueta 'llegeix més'"
 
 #: tadv_admin.php:
 msgid "Split Page"
