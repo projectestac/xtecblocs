@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2014-06-20 14:27+0100\n"
+"PO-Revision-Date: 2014-06-30 12:59+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,6 +12,11 @@ msgstr ""
 "POT-Creation-Date: \n"
 "Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
 "Language-Team: \n"
+
+# XTEC ************ AFEGIT
+# 2014.07.30 @jmiro227
+msgid "Insert nonbreaking space"
+msgstr "Insereix espai 'nonbreaking'"
 
 #: wp-includes/locale.php:184
 msgctxt "text direction"
@@ -899,9 +904,11 @@ msgstr "Caràcter especial"
 msgid "Source code"
 msgstr "Codi font"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-editor.php:856
 msgid "Emoticons"
-msgstr "Emoticons"
+msgstr "Emoticones"
 
 #: wp-includes/class-wp-editor.php:825
 msgid "Robots"
@@ -1008,9 +1015,11 @@ msgstr "Mostra els caràcters invisibles"
 msgid "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help"
 msgstr "Àrea de text enriquit. Premeu ALT+F9 per accedir al menú. Premeu ALT+F10 per accedir a la barra d'eines. Premeu ALT+0 si voleu ajuda."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-editor.php:961
 msgid "Insert Read More tag"
-msgstr "Insereix l'etiqueta 'llig més'"
+msgstr "Insereix l'etiqueta 'llegir més'"
 
 #: wp-includes/class-wp-editor.php:962
 msgid "Distraction Free Writing"

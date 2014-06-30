@@ -69,33 +69,45 @@ msgstr "'Enllaç' (reemplaça el quadre de diàleg 'Insereix / Edita Enllaç')"
 msgid "Editor Settings"
 msgstr "Configuració de l'editor"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Search/Replace"
-msgstr "Cerca/Substitueix"
+msgstr "Cerca i reemplaça"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Visual Blocks"
-msgstr "Blocs Visuals"
+msgstr "Mostra els Blocs"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "HTML code"
-msgstr "Codi HTML"
+msgstr "Codi font"
 
 #: tadv_admin.php:
 msgid "Non-Break Space"
-msgstr "Espai 'Non-Break'"
+msgstr "Insereix espai 'nonbreaking'"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Left to Right"
-msgstr "D'esquerra a dreta"
+msgstr "Direcció d'esquerra a dreta"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Right to Left"
-msgstr "De dreta a esquerra"
+msgstr "Direcció de dreta a esquerra"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Text Background"
-msgstr "Fons del text"
+msgstr "Color del Fons"
 
 #: tadv_admin.php:
 msgid "Page Break"
@@ -103,27 +115,37 @@ msgstr "Salt de pàgina"
 
 #: tadv_admin.php:
 msgid "Insert Anchor"
-msgstr "Inserix ancora"
+msgstr "Àncora"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Insert Date/Time"
-msgstr "Inserix Data/Hora"
+msgstr "Inserix data i hora"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Insert Media"
-msgstr "Inserix Multimedia"
+msgstr "Inserix/Edita un Vídeo"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Edit Image"
-msgstr "Edita Imatge"
+msgstr "Insereix/Edita Imatge"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Toolbar toggle"
-msgstr "Barra d'eines"
+msgstr "Commuta la barra d'eines"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Remove Formatting"
-msgstr "Treure Format"
+msgstr "Neteja el format"
 
 #: tadv_admin.php:
 msgid "Subscript"
@@ -295,19 +317,23 @@ msgstr "Negreta"
 
 #: tadv_admin.php:
 msgid "Horizontal Rule"
-msgstr "Separador"
+msgstr "Línia horizontal"
 
 #: tadv_admin.php:
 msgid "Hide next row"
 msgstr "Amaga fila"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Quote"
-msgstr "Dobles cometes"
+msgstr "Citació"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Italic"
-msgstr "Cursiva"
+msgstr "Itàlica"
 
 # XTEC ************ CORREGIT
 # 2013.10.30 @jmeler
@@ -319,33 +345,47 @@ msgstr "Ratllat"
 msgid "Underline"
 msgstr "Subrallat"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Bullet List"
-msgstr "Llista desord."
+msgstr "Llista amb pics"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Numbered List"
-msgstr "Llista ord."
+msgstr "Llista numerada"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Outdent"
-msgstr "Treu Sagnat"
+msgstr "Redueix el sagnat"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Indent"
-msgstr "Sagna"
+msgstr "Augmenta el sagnat"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Align Left"
-msgstr "Alineació esqu."
+msgstr "Alinea a l'esquerra."
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Align Center"
-msgstr "Centrat"
+msgstr "Alinea al centre"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Align Right"
-msgstr "Alinea dreta"
+msgstr "Alinea a la dreta"
 
 #: tadv_admin.php:
 msgid "Justify"
@@ -363,21 +403,27 @@ msgstr "Copia"
 msgid "Paste"
 msgstr "Enganxa"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Link"
-msgstr "Enllaça"
+msgstr "Insereix/edita un enllaç"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Remove Link"
-msgstr "Elimina enllaç"
+msgstr "Suprimeix l'enllaç"
 
 #: tadv_admin.php:
 msgid "Insert Image"
 msgstr "Inserix imatge"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "More Tag"
-msgstr "Etiqueta 'més'"
+msgstr "Insereix l'etiqueta 'llegir més'"
 
 #: tadv_admin.php:
 msgid "Split Page"
@@ -391,13 +437,17 @@ msgstr "Cerca"
 msgid "Replace"
 msgstr "Substitueix"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Help"
-msgstr "Ajut"
+msgstr "Tecles de drecera"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Full Screen"
-msgstr "Pantalla compl."
+msgstr "Escriptura sense distraccions"
 
 #: tadv_admin.php:
 msgid "Text Color"
@@ -411,7 +461,7 @@ msgstr "Color de fons"
 
 #: tadv_admin.php:
 msgid "Paste as Text"
-msgstr "Enganxa text"
+msgstr "Enganxa coma text pla"
 
 #: tadv_admin.php:
 msgid "Paste from Word"
@@ -429,21 +479,29 @@ msgstr "Neteja el codi"
 msgid "Check Spelling"
 msgstr "Corrector ort."
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Character Map"
-msgstr " Caràcters"
+msgstr " Caràcter especial"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Print"
-msgstr "imprimir"
+msgstr "Imprimeix"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Undo"
-msgstr "Desfer"
+msgstr "Desfés"
 
+# XTEC ************ CORREGIT (standard wordpress)
+# 2014.07.30 @jmiro227
 #: tadv_admin.php:
 msgid "Redo"
-msgstr "Refer"
+msgstr "Refés"
 
 #: tadv_admin.php:
 msgid "Table"
