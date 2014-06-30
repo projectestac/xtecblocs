@@ -161,19 +161,29 @@ if (!class_exists('Yoast_Plugin_Admin')) {
 			$content .= '<ul>';
 			$content .= '<li><a href="'.$this->homepage.'">'.__('Link to it so other folks can find out about it.','slideshare').'</a></li>';
 			$content .= '<li><a href="http://wordpress.org/extend/plugins/'.$hook.'/">'.__('Give it a good rating on WordPress.org.','slideshare').'</a></li>';
+			//XTEC ************ ELIMINAT
+			//2014.06.30 @jmiro227
+			/*
 			$content .= '<li><strong>'.__('Donate a token of your appreciation using the button below.','slideshare').'</strong></li>';
+			*/			
+			//************ FI			
 			$content .= '<li><a href="http://wordpress.org/extend/plugins/'.$hook.'/">'.__('Let other people know that it works with your WordPress setup.','slideshare').'</a></li>';
 			$content .= '</ul>';
 			$this->postbox($hook.'like', __('Like this plugin?','slideshare'), $content);
 		}	
 		
 		function donate_box() {
+			//XTEC ************ ELIMINAT
+			//2014.06.30 @jmiro227
+			/*
 			$this->postbox('donate','<strong class="red">Donate $10, $20 or $50!</strong>','<p>'.__('This plugin has cost me countless hours of work, if you use it, please donate a token of your appreciation!','slideshare').'</p><br/><form style="margin: 0 auto; width: 147px;" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 			<input type="hidden" name="cmd" value="_s-xclick">
 			<input type="hidden" name="hosted_button_id" value="JB99Y7YD2RHAA">
 			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 			<img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
 			</form>');
+			*/			
+			//************ FI
 		}
 		
 		/**
