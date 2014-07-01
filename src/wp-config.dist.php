@@ -99,9 +99,9 @@ define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);
 
 /**
- * True if FRM environment, false or undefined otherwise.
+ * DES, INT, ACC, PRO, FRM.
  */
-//define('IS_FRM', true);
+define('ENVIRONMENT', 'DES');
 
 /**
  * HTTPS config.
