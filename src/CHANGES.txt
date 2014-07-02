@@ -7,10 +7,11 @@ v14.07.XX
 - Actualització a la versió de WP 3.9.1
 - Addthis 3.5.10
 - Raw html 1.4.12
-- Tinymce Advanced 4.0.28 (Tinymce 4.0.28)
+- Tinymce Advanced 4.0.2
 - Vipers Video Quicktags 6.5.2
 - Mystique 3.3.2
 - Twenty Eleven 1.8 
+- xtec-mail
 
 v14.06.05
 ---------------------------------------------------------------------------------------
