@@ -104,6 +104,11 @@ define('BLOG_ID_CURRENT_SITE', 1);
 define('ENVIRONMENT', 'DES');
 
 /**
+ * Default blog creation theme.
+ */
+define('WP_DEFAULT_THEME', 'twentythirteen');
+
+/**
  * HTTPS config.
  */
 //define('FORCE_SSL_LOGIN', true);
