@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2014-06-30 13:41+0100\n"
+"PO-Revision-Date: 2014-07-03 13:32+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1057,25 +1057,33 @@ msgstr "Ja existeix un terme amb aquest pare amb el nom i url que heu proporcion
 msgid "A term with the name and slug provided already exists."
 msgstr "Ja existeix un terme amb el nom i url que heu proporcionat."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/default-widgets.php:17
 msgid "A list of your site&#8217;s Pages."
-msgstr "Una llista de les pàgines del lloc web."
+msgstr "Una llista de les pàgines del bloc."
 
+# XTEC ************ CORREGIT (lloc web)
+# 2014.07.30 @jmiro227
 #: wp-includes/default-widgets.php:227
 msgid "A search form for your site."
-msgstr "Un formulari de cerca del lloc web."
+msgstr "Un formulari de cerca del bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/default-widgets.php:272
 msgid "A monthly archive of your site&#8217;s Posts."
-msgstr "Un arxiu de les entrades del lloc web."
+msgstr "Un arxiu dels articles del bloc."
 
 #: wp-includes/default-widgets.php:372
 msgid "Login, RSS, &amp; WordPress.org links."
 msgstr "Inici de sessió, fils de subscripció RSS, &amp; enllaços de WordPress.org."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/default-widgets.php:436
 msgid "A calendar of your site&#8217;s Posts."
-msgstr "Un calendari de les entrades del lloc web."
+msgstr "Un calendari dels articles del bloc."
 
 #: wp-includes/default-widgets.php:480
 msgid "Arbitrary text or HTML."
@@ -1085,17 +1093,23 @@ msgstr "Text arbitrari o HTML"
 msgid "A list or dropdown of categories."
 msgstr "Una llista de categories o un desplegable"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/default-widgets.php:653
 msgid "Your site&#8217;s most recent Posts."
-msgstr "Les entrades més recents del lloc web."
+msgstr "Els articles més recents del bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/default-widgets.php:782
 msgid "Your site&#8217;s most recent comments."
-msgstr "Els comentaris més recents del lloc web."
+msgstr "Els comentaris més recents del bloc."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/default-widgets.php:921
 msgid "Entries from any RSS or Atom feed."
-msgstr "Entrades de qualsevol fil de subscripció RSS o Atom."
+msgstr "Articles de qualsevol fil de subscripció RSS o Atom."
 
 #: wp-includes/default-widgets.php:1218
 msgid "A cloud of your most used tags."
@@ -1324,13 +1338,17 @@ msgstr "La sessió ha caducat. Inicieu sessió de nou. No sortireu d'aquesta pà
 msgid "Have you entered your email correctly? You have entered %s, if it&#8217;s incorrect, you will not receive your email."
 msgstr "Heu introduït l'adreça de correu electrònic correctament? Heu introduït %s, si no és correcte, no rebreu el correu electrònic."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-signup.php:717
 msgid "The site you were looking for, <strong>%s</strong>, does not exist, but you can create it now!"
-msgstr "La pàgina web que esteu cercant, <strong>%s</strong>, no existeix, però podeu crear-la ara!"
+msgstr "El bloc que esteu cercant, <strong>%s</strong>, no existeix, però podeu crear-lo ara!"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-signup.php:719
 msgid "The site you were looking for, <strong>%s</strong>, does not exist."
-msgstr "La pàgina web que esteu cercant, <strong>%s</strong>, no existeix."
+msgstr "El bloc que esteu cercant, <strong>%s</strong>, no existeix"
 
 #: wp-includes/functions.php:4336
 msgid "The login page will open in a new window. After logging in you can close it and return to this page."
@@ -1394,9 +1412,11 @@ msgstr "No desactiveu l'script %1$s a l'àrea d'administració. Per adreçar-vos
 msgid "WordPress Address (URL)"
 msgstr "Adreça del WordPress (URL)"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:352
 msgid "Site Address (URL)"
-msgstr "Adreça del lloc web (URL)"
+msgstr "Adreça del bloc (URL)"
 
 #: wp-includes/user.php:1792
 msgid "Invalid user ID."
@@ -1538,9 +1558,11 @@ msgstr "S'ha penjat a aquesta pàgina"
 msgid "All media items"
 msgstr "Tots els fitxers multimèdia"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/media.php:2785
 msgid "Uploaded to this post"
-msgstr "S'ha penjat a aquesta entrada"
+msgstr "S'ha penjat a aquest article"
 
 #: wp-includes/post.php:2304
 msgid "Audio"
@@ -1799,9 +1821,11 @@ msgstr "Insereix un fitxer multimèdia"
 msgid "Create a new gallery"
 msgstr "Crea una galeria nova"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/media.php:2784
 msgid "Insert into post"
-msgstr "Insereix a l'entrada"
+msgstr "Insereix a l'article"
 
 #: wp-includes/media.php:2801
 msgid "Add to gallery"
@@ -1837,9 +1861,11 @@ msgstr "Nom d'usuari o contrasenya incorrectes"
 msgid "XML-RPC services are disabled on this site."
 msgstr "Els serveis XML-RPC estan desactivats en aquesta pàgina web."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1398
 msgid "There is a revision of this post that is more recent."
-msgstr "Hi ha una revisió d'aquesta entrada que és més recent."
+msgstr "Hi ha una revisió d'aquest article que és més recent."
 
 #: wp-includes/general-template.php:2095
 msgid "%1$s %2$s %3$s Feed"
@@ -1855,13 +1881,15 @@ msgstr "Mostreu la data dels articles?"
 msgid "You are not allowed to create pages as this user."
 msgstr "Amb aquest nom d'usuari no teniu autorització per crear pàgines."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:3821
 #: wp-includes/class-wp-xmlrpc-server.php:3883
 #: wp-includes/class-wp-xmlrpc-server.php:3886
 #: wp-includes/class-wp-xmlrpc-server.php:3889
 #: wp-includes/revision.php:252
 msgid "Invalid post ID"
-msgstr "Identificador d'entrada no vàlid."
+msgstr "Identificador d'article no vàlid."
 
 #: wp-includes/class-wp-xmlrpc-server.php:2211
 msgid "Sorry, you cannot edit users."
@@ -1969,9 +1997,11 @@ msgstr "Personalitza"
 msgid "Insufficient arguments passed to this XML-RPC method."
 msgstr "S'han passat un nombre insuficient d'arguments a aquest mètode XML-RPC."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1207
 msgid "Sorry, you cannot stick a private post."
-msgstr "No podeu fixar una entrada privada."
+msgstr "No podeu fixar un article privat."
 
 #: wp-includes/class-wp-customize-control.php:497
 msgid "No Image"
@@ -2002,13 +2032,17 @@ msgstr "direcció del text"
 msgid "Toggle Editor Text Direction"
 msgstr "Commuta la direcció del text de l'editor"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:634
 msgid "Site name must be at least 4 characters."
-msgstr "El nom del lloc web ha de tenir almenys 4 caràcters."
+msgstr "El nom del bloc ha de tenir almenys 4 caràcters."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:625
 msgid "Please enter a site name."
-msgstr "Entreu un nom del lloc web"
+msgstr "Entreu un nom del bloc"
 
 #: wp-includes/ms-functions.php:490
 msgid "That username is not allowed."
@@ -2018,9 +2052,11 @@ msgstr "Aquest nom d'usuari no està permès."
 msgid "Please enter a username."
 msgstr "Entreu un nom d'usuari."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:662
 msgid "Please enter a site title."
-msgstr "Entreu el títol del lloc web."
+msgstr "Entreu el títol del bloc."
 
 #: wp-includes/ms-functions.php:631
 msgid "That name is not allowed."
@@ -2071,9 +2107,11 @@ msgstr "Penja"
 msgid "Remove Image"
 msgstr "Suprimeix la imatge"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:3713
 msgid "Sorry, you are not allowed to edit this post type."
-msgstr "No teniu autorització per editar aquest tipus d'entrada"
+msgstr "No teniu autorització per editar aquest tipus d'article."
 
 #: wp-includes/class-wp-customize-manager.php:965
 msgid "Scroll"
@@ -2251,9 +2289,11 @@ msgstr "Els darrers articles"
 msgid "Front page displays"
 msgstr "Mostra la pàgina principal"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-customize-manager.php:811
 msgid "Site Title & Tagline"
-msgstr "Títol i descripció curta del lloc web"
+msgstr "Títol i descripció curta del bloc"
 
 #: wp-includes/class-wp-customize-manager.php:833
 msgid "Tagline"
@@ -2270,10 +2310,12 @@ msgctxt "word count: words or characters?"
 msgid "words"
 msgstr "words"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1138
 #: wp-includes/class-wp-xmlrpc-server.php:4716
 msgid "The post type may not be changed."
-msgstr "El tipus d'entrada no es pot canviar."
+msgstr "El tipus d'article no es pot canviar."
 
 #: wp-includes/class-wp-xmlrpc-server.php:372
 msgid "Image default size"
@@ -2287,9 +2329,11 @@ msgstr "Tipus d'enllaç per defecte de la imatge"
 msgid "Image default align"
 msgstr "Alineació per defecte de la imatge"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1136
 msgid "Sorry, you are not allowed to edit this post."
-msgstr "No teniu permisos per editar aquesta entrada."
+msgstr "No teniu permisos per editar aquest article."
 
 #: wp-includes/post.php:3584
 #: wp-includes/script-loader.php:461
@@ -2298,9 +2342,11 @@ msgctxt "tag delimiter"
 msgid ","
 msgstr ","
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/admin-bar.php:305
 msgid "Edit Site"
-msgstr "Edita el lloc"
+msgstr "Edita el bloc"
 
 # XTEC ************ CORREGIT *
 # 2013.06.21 @jmiro227
@@ -2313,9 +2359,11 @@ msgstr "No teniu permès editar articles en aquest tipus d'article"
 msgid "Invalid author ID."
 msgstr "Identificador d'autor no vàlid."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1457
 msgid "Sorry, you are not allowed to delete this post."
-msgstr "No teniu permisos per suprimir aquesta entrada."
+msgstr "No teniu permisos per suprimir aquest article."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1292
 msgid "Ambiguous term name used in a hierarchical taxonomy. Please use term ID instead."
@@ -2325,14 +2373,20 @@ msgstr "El nom del terme és ambigu en una taxonomia jeràrquica. Useu per contr
 msgid "Sorry, you are not allowed to add a term to one of the given taxonomies."
 msgstr "No teniu permès afegir un terme a una de les taxonomies donades."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1462
 msgid "The post cannot be deleted."
-msgstr "No es pot suprimir l'entrada."
+msgstr "No es pot suprimir l'article."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1606
 msgid "The post type specified is not valid"
-msgstr "El tipus d'entrada especificada no és vàlida"
+msgstr "El tipus d'article especificat no és vàlid"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1128
 #: wp-includes/class-wp-xmlrpc-server.php:3708
 #: wp-includes/class-wp-xmlrpc-server.php:4395
@@ -2340,7 +2394,7 @@ msgstr "El tipus d'entrada especificada no és vàlida"
 #: wp-includes/class-wp-xmlrpc-server.php:4712
 #: wp-includes/class-wp-xmlrpc-server.php:4764
 msgid "Invalid post type"
-msgstr "Tipus d'entrada no vàlida"
+msgstr "Tipus d'article no vàlid"
 
 # XTEC ************ CORREGIT *
 # 2013.06.21 @jmiro227
@@ -2348,10 +2402,12 @@ msgstr "Tipus d'entrada no vàlida"
 msgid "Sorry, you are not allowed to create password protected posts in this post type"
 msgstr "No teniu permès crear articles protegits amb contrasenya en aquest tipus d'articles"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1169
 #: wp-includes/class-wp-xmlrpc-server.php:4446
 msgid "You are not allowed to create posts as this user."
-msgstr "Amb aquest nom d'usuari no teniu autorització per crear entrades."
+msgstr "Amb aquest nom d'usuari no teniu autorització per crear articles."
 
 # XTEC ************ CORREGIT *
 # 2013.06.21 @jmiro227
@@ -2370,14 +2426,18 @@ msgstr "No teniu permès publicar articles en aquest tipus d'article"
 msgid "Sorry, you are not allowed to assign a term to one of the given taxonomies."
 msgstr "No teniu permès assignar un terme a una de les taxonomies donades."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1246
 #: wp-includes/class-wp-xmlrpc-server.php:1270
 msgid "Sorry, one of the given taxonomies is not supported by the post type."
-msgstr "No està admesa una de les taxonomies donades per al tipus d'entrada."
+msgstr "No està admesa una de les taxonomies donades per al tipus d'article."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1212
 msgid "Sorry, you are not allowed to stick this post."
-msgstr "No teniu permisos per fixar aquesta entrada."
+msgstr "No teniu permisos per fixar aquesta article."
 
 #: wp-includes/formatting.php:37
 #: wp-includes/formatting.php:3708
@@ -2415,9 +2475,11 @@ msgctxt "closing curly single quote"
 msgid "&#8217;"
 msgstr "&#8217;"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-signup.php:127
 msgid "Allow search engines to index this site."
-msgstr "Permet als cercadors indexar aquest lloc."
+msgstr "Permet als cercadors indexar aquest bloc."
 
 #: wp-load.php:56
 msgid "There doesn't seem to be a <code>wp-config.php</code> file. I need this before we can get started."
@@ -2439,13 +2501,17 @@ msgstr "Crea un fitxer de configuració"
 msgid "http://codex.wordpress.org/"
 msgstr "http://codex.wordpress.org/"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-activate.php:98
 msgid "Your site at <a href=\"%1$s\">%2$s</a> is active. You may now log in to your site using your chosen username of &#8220;%3$s&#8221;. Please check your email inbox at %4$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href=\"%5$s\">reset your password</a>."
-msgstr "El lloc web <a href=\"%1$s\">%2$s</a> s'ha activat. Podeu entrar al web fent servir el nom d'usuari &#8220;%3$s&#8221; que heu triat.  Reviseu a la safata d'entrada del vostre compte de correu a %4$s per aconseguir la contrasenya i les instruccions per identificar-vos.  Si no rebeu un correu electrònic, reviseu la paperera o la carpeta de correu brossa. Si així i tot no rebeu un correu electrònic en una hora, podeu <a href=\"%5$s\">reiniciar la contrasenya</a>."
+msgstr "El bloc <a href=\"%1$s\">%2$s</a> s'ha activat. Podeu entrar-hi fent servir el nom d'usuari &#8220;%3$s&#8221; que heu triat.  Reviseu a la safata d'entrada del vostre compte de correu a %4$s per aconseguir la contrasenya i les instruccions per identificar-vos.  Si no rebeu un correu electrònic, reviseu la paperera o la carpeta de correu brossa. Si així i tot no rebeu un correu electrònic en una hora, podeu <a href=\"%5$s\">reiniciar la contrasenya</a>."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-signup.php:375
 msgid "<a href=\"http://%1$s\">http://%2$s</a> is your new site. <a href=\"%3$s\">Log in</a> as &#8220;%4$s&#8221; using your existing password."
-msgstr "<a href=\"http://%1$s\">http://%2$s</a> és el vostre nou lloc web.  <a href=\"%3$s\">Entreu</a> com a &#8220;%4$s&#8221; fent servir la vostra contrasenya."
+msgstr "<a href=\"http://%1$s\">http://%2$s</a> és el vostre nou bloc.  <a href=\"%3$s\">Entreu</a> com a &#8220;%4$s&#8221; fent servir la vostra contrasenya."
 
 #: wp-activate.php:96
 msgid "Your account has been activated. You may now <a href=\"%1$s\">log in</a> to the site using your chosen username of &#8220;%2$s&#8221;. Please check your email inbox at %3$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href=\"%4$s\">reset your password</a>."
@@ -2519,9 +2585,11 @@ msgstr "L'identificador del menú no pot estar buit."
 msgid "About WordPress"
 msgstr "Quant al WordPress"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/script-loader.php:246
 msgid "%s exceeds the maximum upload size for this site."
-msgstr "%s sobrepassa la mida màxima de càrrega per aquest lloc web."
+msgstr "%s sobrepassa la mida màxima de càrrega per aquest bloc."
 
 #: wp-includes/functions.php:3244
 msgid "Please see <a href=\"http://codex.wordpress.org/Debugging_in_WordPress\">Debugging in WordPress</a> for more information."
@@ -2531,6 +2599,8 @@ msgstr "Mireu <a href=\"http://codex.wordpress.org/Debugging_in_WordPress\">la d
 msgid "Feedback"
 msgstr "Opinions (en anglès)"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:1466
 msgid ""
 "Dear User,\n"
@@ -2549,7 +2619,7 @@ msgid ""
 msgstr ""
 "Hola blocaire,\n"
 "\n"
-"El lloc SITE_NAME nou s'ha configurat correctament a:\n"
+"El bloc SITE_NAME nou s'ha configurat correctament a:\n"
 "BLOG_URL\n"
 "\n"
 "Podeu entrar en el compte administratiu amb la següent informació:\n"
@@ -2557,7 +2627,7 @@ msgstr ""
 "Contrasenya: PASSWORD\n"
 "Entreu aquí: BLOG_URLwp-login.php\n"
 "\n"
-"Esperem que gaudiu del lloc nou. Gràcies!\n"
+"Esperem que gaudiu del bloc nou. Gràcies!\n"
 "\n"
 "--L'equip @ SITE_NAME"
 
@@ -2577,13 +2647,17 @@ msgstr "<strong>ERROR</strong>: ompliu els camps necessaris (nom, correu electr�
 msgid "Could not load the preview image. Please reload the page and try again."
 msgstr "No es pot carregar la vista prèvia de la imatge. Recarregueu la pàgina i torneu-ho a provar."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:315
 msgid "<strong>ERROR</strong>: Site URL already taken."
-msgstr "<strong>ERROR</strong>: La URL del lloc ja existeix."
+msgstr "<strong>ERROR</strong>: La URL del bloc ja existeix."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:322
 msgid "<strong>ERROR</strong>: problem creating site entry."
-msgstr "<strong>ERROR</strong>: s'ha produít un problema en creat l'entrada del lloc web."
+msgstr "<strong>ERROR</strong>: s'ha produít un problema en crear l'entrada del bloc."
 
 #: wp-signup.php:135
 msgid "No"
@@ -2604,9 +2678,11 @@ msgstr "Usuaris"
 msgid "Update"
 msgstr "Actualitza"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/admin-bar.php:368
 msgid "Sites"
-msgstr "Llocs"
+msgstr "Blocs"
 
 #: wp-includes/theme-compat/comments-popup.php:80
 #: wp-login.php:698
@@ -2669,14 +2745,18 @@ msgstr "Extensions"
 msgid "Yes"
 msgstr "Sí"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/admin-bar.php:342
 msgid "My Sites"
-msgstr "Els meus llocs"
+msgstr "Els meus blocs"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-customize-manager.php:822
 #: wp-includes/class-wp-xmlrpc-server.php:404
 msgid "Site Title"
-msgstr "Títol del lloc web"
+msgstr "Títol del bloc"
 
 # XTEC ************ CORREGIT *
 # 2013.06.21 @jmiro227
@@ -2764,9 +2844,11 @@ msgstr "Permet notificacions d'enllaç des d'altres blocs (pingbacks i retroping
 msgid "Use <code>WP_User->ID</code> instead."
 msgstr "Useu per contra <code>WP_User->ID</code>."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:1967
 msgid "You have been added to this site. Please visit the <a href=\"%s\">homepage</a> or <a href=\"%s\">log in</a> using your username and password."
-msgstr "Heu estat afegit a aquest lloc web. Visiteu la <a href=\"%s\">pàgina principal</a> o <a href=\"%s\">entreu</a> amb el nom i la contrasenya."
+msgstr "Heu estat afegit a aquest bloc. Visiteu la <a href=\"%s\">pàgina principal</a> o <a href=\"%s\">entreu</a> amb el nom i la contrasenya."
 
 #: wp-includes/script-loader.php:250
 msgid "Memory exceeded. Please try another smaller file."
@@ -2789,10 +2871,12 @@ msgstr "Blau"
 msgid "The timezone you have entered is not valid. Please select a valid timezone."
 msgstr "El fus horari que heu introduït no és correcte. Seleccioneu un fus horari correcte."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/post.php:22
 msgctxt "add new on admin bar"
 msgid "Post"
-msgstr "Entrada"
+msgstr "Article"
 
 #: wp-includes/post.php:38
 msgctxt "add new on admin bar"
@@ -2848,9 +2932,11 @@ msgstr "Paraules comptades: %s"
 msgid "Your account is now activated. <a href=\"%1$s\">Log in</a> or go back to the <a href=\"%2$s\">homepage</a>."
 msgstr "S'ha activat el vostre compte. <a href=\"%1$s\">Entreu</a> o torneu enrere a la <a href=\"%2$s\">pàgina d'inici</a>."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-activate.php:120
 msgid "Your account is now activated. <a href=\"%1$s\">View your site</a> or <a href=\"%2$s\">Log in</a>"
-msgstr "S'ha activat el vostre compte. <a href=\"%1$s\">Mostreu la pàgina web</a> o <a href=\"%2$s\">entreu</a>"
+msgstr "S'ha activat el vostre compte. <a href=\"%1$s\">Mostreu la bloc</a> o <a href=\"%2$s\">entreu</a>"
 
 #: wp-includes/class-wp-editor.php:1231
 msgid "Help (Alt + Shift + H)"
@@ -2994,9 +3080,11 @@ msgstr "(Aquest missatge s'ha afegit en la versió %s.)"
 msgid "<strong>ERROR</strong>: The password you entered for the username <strong>%1$s</strong> is incorrect. <a href=\"%2$s\" title=\"Password Lost and Found\">Lost your password</a>?"
 msgstr "<strong>ERROR</strong>: La contrasenya que heu introduït per a l'usuari <strong>%1$s</strong> és incorrecta. <a href=\"%2$s\" title=\"Contrasenya perduda\">Heu perdut la contrasenya</a>?"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:5655
 msgid "Sorry, you cannot publish this post."
-msgstr "No podeu publicar aquesta entrada"
+msgstr "No podeu publicar aquest article"
 
 #: wp-includes/pluggable.php:1360
 msgid "Permalink: %s"
@@ -3110,9 +3198,11 @@ msgstr "No s'ha trobat cap pàgina a la paperera."
 msgid "No pages found."
 msgstr "No s'ha trobat cap pàgina."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/post.php:1519
 msgid "No posts found in Trash."
-msgstr "No s'ha trobat cap entrada a la paperera."
+msgstr "No s'ha trobat cap article a la paperera."
 
 #: wp-includes/admin-bar.php:469
 msgid "Shortlink"
@@ -3212,9 +3302,11 @@ msgstr "Si això fos un error, ignoreu aquest correu electrònic i no passarà r
 msgid "Enter your new password below."
 msgstr "Introduïu la contrasenya nova a continuació."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/post-formats.php:70
 msgid "Invalid post"
-msgstr "Entrada no vàlida"
+msgstr "Article no vàlid"
 
 #: wp-includes/admin-bar.php:244
 msgid "Edit My Profile"
@@ -3278,17 +3370,21 @@ msgstr "[%1$s] Activa %2$s"
 msgid "Your server is running PHP version %1$s but WordPress %2$s requires at least %3$s."
 msgstr "El servidor executa la versió %1$s del PHP però el WordPress %2$s necessita almenys la %3$s."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/pluggable.php:1462
 msgid "A new trackback on the post \"%s\" is waiting for your approval"
-msgstr "Hi ha un nou retroenllaç a l'entrada \"%s\" esperant la vostra aprovació."
+msgstr "Hi ha un nou retroenllaç a l'article \"%s\" esperant la vostra aprovació."
 
 #: wp-includes/ms-load.php:386
 msgid "If you are the owner of this network please check that MySQL is running properly and all tables are error free."
 msgstr "Si sou el propietari d'aquesta xarxa, comproveu que MySQL s'està executant correctament i totes les taules estan lliures d'error."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-load.php:385
 msgid "If your site does not display, please contact the owner of this network."
-msgstr "Si el lloc no es mostra, contacteu amb el propietari de la xarxa."
+msgstr "Si el bloc no es mostra, contacteu amb el propietari de la xarxa."
 
 #: wp-includes/theme-compat/comments.php:26
 msgid "One Response to %2$s"
@@ -3320,25 +3416,35 @@ msgstr "tots"
 msgid "Custom Menu"
 msgstr "Menú personalitzat"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/pluggable.php:1337
 msgid "New pingback on your post \"%s\""
-msgstr "Hi ha un nou retroping de l'entrada \"%s\""
+msgstr "Hi ha un nou retroping de l'article \"%s\""
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/pluggable.php:1469
 msgid "A new pingback on the post \"%s\" is waiting for your approval"
-msgstr "Hi ha un nou retroping a l'entrada \"%s\" esperant l'aprovació"
+msgstr "Hi ha un nou retroping a l'article \"%s\" esperant l'aprovació"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/pluggable.php:1476
 msgid "A new comment on the post \"%s\" is waiting for your approval"
-msgstr "Un nou comentari a l'entrada \"%s\" espera l'aprovació"
+msgstr "Un nou comentari a l'article \"%s\" espera l'aprovació"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/pluggable.php:1327
 msgid "New trackback on your post \"%s\""
-msgstr "Hi ha un nou retroenllaç a l'entrada \"%s\""
+msgstr "Hi ha un nou retroenllaç a l'article \"%s\""
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/pluggable.php:1347
 msgid "New comment on your post \"%s\""
-msgstr "Hi ha un nou retroenllaç a l'entrada \"%s\""
+msgstr "Hi ha un nou retroenllaç a l'article \"%s\""
 
 #: wp-includes/theme-compat/sidebar.php:74
 msgid "XFN"
@@ -3360,9 +3466,11 @@ msgstr "%1$s i %2$s."
 msgid "F, Y"
 msgstr "F \\d\\e Y"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/theme-compat/sidebar.php:47
 msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives."
-msgstr "Esteu navegant pels arxius del lloc <a href=\"%1$s/\">%2$s</a>."
+msgstr "Esteu navegant pels arxius del bloc <a href=\"%1$s/\">%2$s</a>."
 
 #: wp-includes/theme-compat/sidebar.php:38
 msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives for %3$s."
@@ -3408,9 +3516,11 @@ msgstr "Digues-ho!"
 msgid "Close this window."
 msgstr "Tanca aquesta finestra."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/theme-compat/comments-popup.php:114
 msgid "Sorry, no posts matched your criteria."
-msgstr "No hi ha cap entrada que es correspongui amb els criteris."
+msgstr "No hi ha cap article que es correspongui amb els criteris."
 
 #: wp-includes/theme-compat/comments-popup.php:118
 msgid "Powered by <a href=\"%s\" title=\"Powered by WordPress, state-of-the-art semantic personal publishing platform\"><strong>WordPress</strong></a>"
@@ -3456,17 +3566,21 @@ msgstr "%d consultes. %s segons."
 msgid "Comments (RSS)"
 msgstr "Comentaris (RSS)"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/theme-compat/footer.php:19
 msgid "Entries (RSS)"
-msgstr "Entrades (RSS)"
+msgstr "Articles (RSS)"
 
 #: wp-includes/theme-compat/comments-popup.php:67
 msgid "Line and paragraph breaks automatic, e-mail address never displayed, <acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed: <code>%s</code>"
 msgstr "El salt de línia i paràgraf són automàtics, l'adreça de correu electrònic no es mostrarà mai, l'<acronym title=\"Hypertext Markup Language\">HTML</acronym> permès és: <code>%s</code>"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/theme-compat/comments.php:17
 msgid "This post is password protected. Enter the password to view comments."
-msgstr "Aquesta entrada està protegida amb contrasenya. Introduïu-la per veure'n els comentaris."
+msgstr "Aquest article està protegit amb contrasenya. Introduïu-la per veure'n els comentaris."
 
 #: wp-includes/theme-compat/sidebar.php:73
 msgid "This page validates as XHTML 1.0 Transitional"
@@ -3480,13 +3594,17 @@ msgstr "El formulari de comentaris està tancat ara mateix."
 msgid "%1$s - Comments on %2$s"
 msgstr "%1$s - Comentaris a %2$s"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/theme-compat/comments-popup.php:35
 msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on this post."
-msgstr "Canal <abbr title=\"Really Simple Syndication\">RSS</abbr> pels comentaris a aquesta entrada."
+msgstr "Canal <abbr title=\"Really Simple Syndication\">RSS</abbr> pels comentaris a aquest article."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/theme-compat/comments-popup.php:38
 msgid "The <abbr title=\"Universal Resource Locator\">URL</abbr> to TrackBack this entry is: <em>%s</em>"
-msgstr "L'<abbr title=\"Universal Resource Locator\">URL</abbr> pels retroenllaços a aquesta entrada és: <em>%s</em>"
+msgstr "L'<abbr title=\"Universal Resource Locator\">URL</abbr> pels retroenllaços a aquest article és: <em>%s</em>"
 
 #: wp-includes/theme-compat/comments-popup.php:56
 msgid "by %1$s &#8212; %2$s @ <a href=\"#comment-%3$s\">%4$s</a>"
@@ -3585,9 +3703,11 @@ msgstr "Us enviem el correu electrònic de registre a aquesta adreça. (Comprove
 msgid "Search Pages"
 msgstr "Cerca pàgines"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/post.php:1513
 msgid "Add New Post"
-msgstr "Afegeix una entrada nova"
+msgstr "Afegeix un article nova"
 
 #: wp-includes/post.php:1520
 msgid "Parent Page:"
@@ -3624,10 +3744,12 @@ msgctxt "post type singular name"
 msgid "Page"
 msgstr "Pàgina"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/post.php:1511
 msgctxt "post type singular name"
 msgid "Post"
-msgstr "Entrada"
+msgstr "Article"
 
 #: wp-includes/ms-default-constants.php:126
 msgid "The constant <code>VHOST</code> <strong>is deprecated</strong>. Use the boolean constant <code>SUBDOMAIN_INSTALL</code> in wp-config.php to enable a subdomain configuration. Use is_subdomain_install() to check whether a subdomain configuration is enabled."
@@ -3661,9 +3783,11 @@ msgstr "Inclogueu una plantilla %1$s en el tema."
 msgid "Theme without %1$s"
 msgstr "Tema sense %1$s"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-load.php:390
 msgid "<strong>Could not find site <code>%1$s</code>.</strong> Searched for table <code>%2$s</code> in database <code>%3$s</code>. Is that right?"
-msgstr "<strong>No es pot trobar el lloc web <code>%1$s</code>.</strong> Resultats de la cerca per a la taula <em>%2$s</em> en la base de dades <code>%3$s</code>. És correcte?"
+msgstr "<strong>No es pot trobar el bloc <code>%1$s</code>.</strong> Resultats de la cerca per a la taula <em>%2$s</em> en la base de dades <code>%3$s</code>. És correcte?"
 
 #: wp-includes/general-template.php:626
 msgid "The <code>%s</code> option is deprecated for the family of <code>bloginfo()</code> functions."
@@ -3677,14 +3801,16 @@ msgstr "Utilitzeu per contra l'opció <code>%s</code>."
 msgid "<strong>Database tables are missing.</strong> This means that MySQL is not running, WordPress was not installed properly, or someone deleted <code>%s</code>. You really should look at your database now."
 msgstr "<strong>Les taules de la base de dades no existeixen.</strong> Això vol dir que el MySQL no s'està executant, que el WordPress no està instal·lat correctament, o que algú ha esborrat <code>%s</code>. De debò que ara <em>hauríeu</em> de pegar-li un cop d'ull a la base de dades."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:3995
 msgid "Sorry, you do not have access to user data on this site."
-msgstr "No teniu accés a les dades d'usuari en aquest lloc web."
+msgstr "No teniu accés a les dades d'usuari en aquest bloc."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1141
 #: wp-includes/class-wp-xmlrpc-server.php:4167
 msgid "Sorry, you are not allowed to post on this site."
-msgstr "No teniu autorització per publicar en aquest lloc web."
+msgstr "No teniu autorització per publicar en aquest bloc."
 
 # XTEC ************ CORREGIT *
 # 2013.06.21 @jmiro227
@@ -3701,15 +3827,21 @@ msgstr "No teniu permisos per publicar articles en aquest bloc."
 msgid "Sorry, you must be able to edit posts on this site in order to view categories."
 msgstr "Heu de tenir permís per editar articles en aquest bloc per veure les categories."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:4380
 msgid "Sorry, you are not allowed to publish pages on this site."
-msgstr "No teniu autorització per publicar en aquest lloc web."
+msgstr "No teniu autorització per publicar en aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:673
 #: wp-includes/ms-functions.php:1154
 msgid "Sorry, that site already exists!"
-msgstr "Ho sentim, aquest lloc web ja existeix!"
+msgstr "Ho sentim, aquest bloc ja existeix!"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:853
 msgid ""
 "To activate your blog, please click the following link:\n"
@@ -3728,25 +3860,33 @@ msgstr ""
 "\n"
 "Una vegada l'activeu, rebreu *altre correu electrònic* amb les dades d'entrada.\n"
 "\n"
-"Una vegada l'activeu, podeu visitar el vostre lloc web aquí:\n"
+"Una vegada l'activeu, podeu visitar el vostre bloc aquí:\n"
 "\n"
 "%s"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:1240
 msgid "New Site Registration: %s"
-msgstr "Registre de nou lloc web: %s"
+msgstr "Registre de nou bloc: %s"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:637
 msgid "Sorry, site names may not contain the character &#8220;_&#8221;!"
-msgstr "Els noms dels llocs web no poden contenir el caràcter &#8220;_&#8221;!"
+msgstr "Els noms dels bloc no poden contenir el caràcter &#8220;_&#8221;!"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:1523
 msgid "New %1$s Site: %2$s"
-msgstr "Nou lloc web %1$s: %2$s"
+msgstr "Nou bloc %1$s: %2$s"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:1003
 msgid "The site is already active."
-msgstr "El lloc web ja és actiu."
+msgstr "El bloc ja és actiu."
 
 # XTEC ************ CORREGIT *
 # 2013.06.21 @jmiro227
@@ -3762,45 +3902,61 @@ msgstr "No podeu editar articles en aquest bloc."
 msgid "Sorry, you must be able to edit posts to this site in order to view categories."
 msgstr "Heu de tenir permís per editar articles en aquest bloc per a veure les categories."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:3295
 #: wp-includes/class-wp-xmlrpc-server.php:3356
 #: wp-includes/class-wp-xmlrpc-server.php:3383
 #: wp-includes/class-wp-xmlrpc-server.php:3410
 #: wp-includes/class-wp-xmlrpc-server.php:3629
 msgid "You are not allowed access to details about this site."
-msgstr "No teniu autorització per accedir als detalls sobre aquest lloc web."
+msgstr "No teniu autorització per accedir als detalls sobre aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:1160
 msgid "Could not create site."
-msgstr "No s'ha pogut crear el lloc web."
+msgstr "No s'ha pogut crear el bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:645
 msgid "Sorry, site names must have letters too!"
-msgstr "Els noms de lloc web han de tenir lletres també!"
+msgstr "Els noms de bloc han de tenir lletres també!"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:641
 msgid "Sorry, you may not use that site name."
-msgstr "Ho sentim, no podeu fer servir aquest nom de lloc web."
+msgstr "Ho sentim, no podeu fer servir aquest nom de bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:677
 msgid "Sorry, that site is reserved!"
-msgstr "Ho sentim, aquest lloc web està reservat!"
+msgstr "Ho sentim, aquest bloc està reservat!"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:688
 msgid "That site is currently reserved but may be available in a couple days."
-msgstr "Aquest lloc web està actualment reservat però pot estar disponible en un parell de dies."
+msgstr "Aquest bloc està actualment reservat però pot estar disponible en un parell de dies."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/pluggable.php:1587
 msgid "New user registration on your site %s:"
-msgstr "Registre d'usuari nou al lloc web %s:"
+msgstr "Registre d'usuari nou al bloc %s:"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:2941
 #: wp-includes/class-wp-xmlrpc-server.php:3044
 #: wp-includes/class-wp-xmlrpc-server.php:3050
 #: wp-includes/class-wp-xmlrpc-server.php:3109
 #: wp-includes/class-wp-xmlrpc-server.php:3115
 msgid "You are not allowed to moderate comments on this site."
-msgstr "No teniu autorització per moderar comentaris en aquest lloc web."
+msgstr "No teniu autorització per moderar comentaris en aquest bloc."
 
 # XTEC ************ CORREGIT *
 # 2013.06.21 @jmiro227
@@ -3808,17 +3964,23 @@ msgstr "No teniu autorització per moderar comentaris en aquest lloc web."
 msgid "Sorry, you must be able to edit posts on this site in order to view tags."
 msgstr "Heu de tenir permís per editar articles en aquest bloc per a veure les etiquetes."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:409
 msgid "Site Tagline"
-msgstr "Lema del lloc web"
+msgstr "Lema del bloc"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-load.php:109
 msgid "This site has been archived or suspended."
-msgstr "Aquest lloc web ha estat arxivat o suspès."
+msgstr "Aquest bloc ha estat arxivat o suspès."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/load.php:439
 msgid "The site you have requested is not installed properly. Please contact the system administrator."
-msgstr "El lloc web que heu sol·licitat no s'ha instal·lat correctament. Contacteu amb l'administrador del sistema."
+msgstr "El bloc que heu sol·licitat no s'ha instal·lat correctament. Contacteu amb l'administrador del sistema."
 
 #: wp-includes/script-loader.php:537
 msgctxt "search results"
@@ -3842,17 +4004,21 @@ msgstr "L'adreça electrònica que heu introduït no sembla que sia una adreça 
 msgid "The WordPress address you entered did not appear to be a valid URL. Please enter a valid URL."
 msgstr "L'adreça del WordPress que heu entrat no sembla ser una URL vàlida. Entreu una URL vàlida."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/formatting.php:3236
 msgid "The Site address you entered did not appear to be a valid URL. Please enter a valid URL."
-msgstr "L'adreça del lloc web que heu introduït no sembla ser una URL vàlida. Entreu una URL vàlida."
+msgstr "L'adreça del bloc que heu introduït no sembla ser una URL vàlida. Entreu una URL vàlida."
 
 #: wp-includes/taxonomy.php:2440
 msgid "A term with the name provided already exists with this parent."
 msgstr "Un terme amb el nom proporcionat ja existeix amb aquest pare."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-functions.php:1965
 msgid "An error occurred adding you to this site. Back to the <a href=\"%s\">homepage</a>."
-msgstr "S'ha produït un error afegint-vos a aquest lloc web. Torneu a la <a href=\"%s\">pàgina d'inici</a>."
+msgstr "S'ha produït un error afegint-vos a aquest bloc. Torneu a la <a href=\"%s\">pàgina d'inici</a>."
 
 #: wp-includes/ms-functions.php:1881
 msgid "This file is too big. Files must be less than %d KB in size."
@@ -3884,9 +4050,11 @@ msgstr "No es pot calcular les dimensions de la imatge redimensionada"
 msgid "Must be at least 4 characters, letters and numbers only. It cannot be changed, so choose carefully!"
 msgstr "Ha de ser d'almenys 4 caràcters, lletres i números solament. No es pot canviar, així que trieu-la amb cura!"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-signup.php:676
 msgid "You must first <a href=\"%s\">log in</a>, and then you can create a new site."
-msgstr "Primer, heu d'<a href=\"%s\">iniciar la sessió</a>, i després podeu crear un nou lloc web."
+msgstr "Primer, heu d'<a href=\"%s\">iniciar la sessió</a>, i després podeu crear un nou bloc."
 
 #: wp-signup.php:711
 msgid "You are logged in already. No need to register again!"
@@ -4000,9 +4168,11 @@ msgid_plural "%d Plugin Updates"
 msgstr[0] "%d actualització d'extensions"
 msgstr[1] "%d actualitzacions d'extensions"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-signup.php:373
 msgid "The site %s is yours."
-msgstr "El lloc web %s és vostre."
+msgstr "El bloc %s és vostre."
 
 # XTEC ************ CORREGIT *
 # 2013.06.21 @jmiro227
@@ -4022,54 +4192,74 @@ msgstr " "
 msgid "Sites you are already a member of:"
 msgstr "Blocs dels quals ja sou membre:"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/ms-load.php:102
 msgid "This site has not been activated yet. If you are having problems activating your site, please contact <a href=\"mailto:%1$s\">%1$s</a>."
-msgstr "Aquest lloc web no s'ha activat encara. Si esteu tenint problemes per activar el vostre web, contacteu amb <a href=\"mailto:%1$s\">%1$s</a>."
+msgstr "Aquest bloc no s'ha activat encara. Si esteu tenint problemes per activar el vostre bloc, contacteu amb <a href=\"mailto:%1$s\">%1$s</a>."
 
 #: wp-includes/script-loader.php:261
 msgid "File canceled."
 msgstr "Fitxer cancel·lat."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-signup.php:117
 msgid "Site Title:"
-msgstr "Títol del lloc web:"
+msgstr "Títol del bloc:"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-signup.php:96
 msgid "Site Domain:"
-msgstr "Domini del lloc web:"
+msgstr "Domini del bloc:"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-signup.php:94
 msgid "Site Name:"
-msgstr "Nom del lloc web:"
+msgstr "Nom del bloc:"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-signup.php:109
 msgid "sitename"
-msgstr "nom del lloc"
+msgstr "nom del bloc"
 
 # XTEC ************ CORREGIT *
 # 2013.06.21 @jmiro227
 msgid "Get <em>another</em> %s site in seconds"
 msgstr "Creeu un <em>altre</em> bloc a %s en segons"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-signup.php:629
 msgid "Congratulations! Your new site, %s, is almost ready."
-msgstr "Felicitacions! El vostre nou lloc web, %s, ja quasi està llest."
+msgstr "Felicitacions! El vostre nou bloc, %s, ja quasi està llest."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-signup.php:690
 msgid "Site registration has been disabled."
-msgstr "El registre de llocs web s'ha desactivat."
+msgstr "El registre de blocs s'ha desactivat."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-signup.php:447
 msgid "Gimme a site!"
-msgstr "Dòna'm un lloc web!"
+msgstr "Dòna'm un bloc!"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-signup.php:631
 msgid "But, before you can start using your site, <strong>you must activate it</strong>."
-msgstr "Però, abans de començar a fer servir el vostre web, <strong>heu d'activar-lo</strong>."
+msgstr "Però, abans de començar a fer servir el vostre bloc, <strong>heu d'activar-lo</strong>."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-signup.php:633
 msgid "If you do not activate your site within two days, you will have to sign up again."
-msgstr "Si no activeu el vostre lloc web en dos dies, haureu de registrar-vos altra vegada."
+msgstr "Si no activeu el vostre bloc en dos dies, haureu de registrar-vos altra vegada."
 
 #: wp-includes/default-widgets.php:1349
 msgid "Select Menu:"
@@ -4165,6 +4355,8 @@ msgstr "No s'ha pogut editar el comentari. S'ha produït un error."
 msgid "You must be registered to comment"
 msgstr "Heu de registrar-vos per comentar"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1134
 #: wp-includes/class-wp-xmlrpc-server.php:1393
 #: wp-includes/class-wp-xmlrpc-server.php:1454
@@ -4181,7 +4373,7 @@ msgstr "Heu de registrar-vos per comentar"
 #: wp-includes/post.php:2940
 #: wp-includes/post.php:3288
 msgid "Invalid post ID."
-msgstr "Identificador de l'entrada no vàlid."
+msgstr "Identificador de l'article no vàlid."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3248
 msgid "Comment author name and email are required"
@@ -4199,6 +4391,8 @@ msgstr "No teniu autorització per accedir als detalls dels comentaris."
 msgid "You are not allowed to update options."
 msgstr "No teniu autorització per actualitzar les opcions"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1548
 #: wp-includes/class-wp-xmlrpc-server.php:3892
 #: wp-includes/class-wp-xmlrpc-server.php:4035
@@ -4206,28 +4400,36 @@ msgstr "No teniu autorització per actualitzar les opcions"
 #: wp-includes/class-wp-xmlrpc-server.php:5320
 #: wp-includes/class-wp-xmlrpc-server.php:5531
 msgid "Sorry, you cannot edit this post."
-msgstr "No teniu autorització per editar aquesta entrada."
+msgstr "No teniu autorització per editar aquest article."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:4089
 #: wp-includes/class-wp-xmlrpc-server.php:5389
 msgid "Either there are no posts, or something went wrong."
-msgstr "O bé no hi ha cap entrada o bé ha ocorregut un problema tècnic."
+msgstr "O bé no hi ha cap articleo bé ha ocorregut un problema tècnic."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:4231
 #: wp-includes/class-wp-xmlrpc-server.php:4294
 #: wp-includes/class-wp-xmlrpc-server.php:5074
 #: wp-includes/class-wp-xmlrpc-server.php:5605
 msgid "Sorry, no such post."
-msgstr "No existeix l'entrada."
+msgstr "No existeix l'article."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:4241
 #: wp-includes/class-wp-xmlrpc-server.php:4869
 msgid "Sorry, you do not have the right to publish this post."
-msgstr "No teniu permisos per publicar aquesta entrada."
+msgstr "No teniu permisos per publicar aquest article."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:4757
 msgid "You are not allowed to change the post author as this user."
-msgstr "Amb aquest nom d'usuari no teniu autorització per canviar l'autor de l'entrada."
+msgstr "Amb aquest nom d'usuari no teniu autorització per canviar l'autor de l'article."
 
 #: wp-includes/class-wp-xmlrpc-server.php:4761
 msgid "You are not allowed to change the page author as this user."
@@ -4237,17 +4439,21 @@ msgstr "Amb aquest nom d'usuari no teniu autorització per canviar l'autor de la
 msgid "Sorry, you do not have the right to publish this page."
 msgstr "No teniu permís per publicar aquesta pàgina."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:4905
 msgid "Sorry, your entry could not be edited. Something wrong happened."
-msgstr "No s'ha pogut editar l'entrada. S'ha produït un error."
+msgstr "No s'ha pogut editar l'article. S'ha produït un error."
 
 #: wp-includes/class-wp-xmlrpc-server.php:5311
 msgid "Could not write file %1$s (%2$s)"
 msgstr "No s'ha pogut escriure el fitxer %1$s (%2$s)"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:5483
 msgid "Sorry, you can not edit this post."
-msgstr "No teniu autorització per editar aquesta entrada."
+msgstr "No teniu autorització per editar aquest article."
 
 #: wp-includes/class-wp-xmlrpc-server.php:5714
 msgid "Is there no link to us?"
@@ -4397,9 +4603,11 @@ msgstr "Selecciona el mes"
 msgid "Show post counts"
 msgstr "Mostra el nombre d'articles"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/default-widgets.php:389
 msgid "Syndicate this site using RSS 2.0"
-msgstr "Sindica aquest lloc fent servir RSS 2.0"
+msgstr "Sindica aquest bloc fent servir RSS 2.0"
 
 # XTEC ************ CORREGIT *
 # 2013.06.21 @jmiro227
@@ -4434,9 +4642,11 @@ msgstr "Mostra la jerarquia"
 msgid "Recent Posts"
 msgstr "Articles recents"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/default-widgets.php:765
 msgid "Number of posts to show:"
-msgstr "Nombre d'entrades que cal mostrar:"
+msgstr "Nombre d'articles que cal mostrar:"
 
 #: wp-includes/default-widgets.php:873
 msgctxt "widgets"
@@ -5229,19 +5439,25 @@ msgstr "Insereix una marca \"salt de pàgina\""
 msgid "Comments Feed"
 msgstr "Canal de comentaris"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/link-template.php:1603
 #: wp-includes/link-template.php:1834
 msgid "Previous Post"
-msgstr "Entrada prèvia"
+msgstr "Article prèvi"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/link-template.php:1603
 #: wp-includes/link-template.php:1834
 msgid "Next Post"
-msgstr "Entrada següent"
+msgstr "Article següent"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/deprecated.php:2718
 msgid "Last Post"
-msgstr "Darrera entrada"
+msgstr "Darrer article"
 
 #: wp-includes/link-template.php:2253
 msgid "Newer Comments &raquo;"
@@ -5417,9 +5633,11 @@ msgstr "URL    : %s"
 msgid "Comment: "
 msgstr "Comentari: "
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/pluggable.php:1354
 msgid "You can see all comments on this post here: "
-msgstr "Podeu veure tots els comentaris d'aquesta entrada aquí: "
+msgstr "Podeu veure tots els comentaris d'aquest article aquí: "
 
 #: wp-includes/pluggable.php:1356
 msgid "[%1$s] Comment: \"%2$s\""
@@ -5435,17 +5653,21 @@ msgstr "Lloc web: %1$s (IP: %2$s , %3$s)"
 msgid "Excerpt: "
 msgstr "Extracte: "
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/pluggable.php:1332
 msgid "You can see all trackbacks on this post here: "
-msgstr "Podeu veure tots els retroenllaços d'aquesta entrada aquí: "
+msgstr "Podeu veure tots els retroenllaços d'aquest article aquí: "
 
 #: wp-includes/pluggable.php:1334
 msgid "[%1$s] Trackback: \"%2$s\""
 msgstr "[%1$s] Retroenllaç des de: \"%2$s\""
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/pluggable.php:1342
 msgid "You can see all pingbacks on this post here: "
-msgstr "Podeu veure tots els retropings d'aquesta entrada aquí: "
+msgstr "Podeu veure tots els retropings d'aquest article aquí: "
 
 #: wp-includes/pluggable.php:1344
 msgid "[%1$s] Pingback: \"%2$s\""
@@ -5527,9 +5749,11 @@ msgstr "Protegit: %s"
 msgid "Private: %s"
 msgstr "Privat: %s"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/post-template.php:335
 msgid "There is no excerpt because this is a protected post."
-msgstr "No hi ha extracte perquè és una entrada protegida."
+msgstr "No hi ha extracte perquè és un article protegit."
 
 #: wp-includes/post-template.php:735
 msgid "Next page"
@@ -5630,13 +5854,17 @@ msgstr[1] "Paperera <span class=\"count\">(%s)</span>"
 msgid "Content, title, and excerpt are empty."
 msgstr "El contingut, títol i extracte són buits."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/post.php:3129
 msgid "Could not update post in the database"
-msgstr "No s'ha pogut actualitzar l'entrada a la base de dades"
+msgstr "No s'ha pogut actualitzar l'article a la base de dades"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/post.php:3145
 msgid "Could not insert post into the database"
-msgstr "No s'ha pogut inserir l'entrada a la base de dades"
+msgstr "No s'ha pogut inserir l'article a la base de dades"
 
 #: wp-includes/post.php:3192
 msgid "The page template is invalid."
@@ -6003,9 +6231,11 @@ msgstr "&larr; Torna cap a %s"
 msgid "Registration Form"
 msgstr "Formulari de registre"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-login.php:689
 msgid "Register For This Site"
-msgstr "Registra'm en aquest lloc"
+msgstr "Registra'm en aquest bloc"
 
 #: wp-login.php:709
 msgid "A password will be e-mailed to you."
@@ -6073,9 +6303,11 @@ msgstr "Els articles més recents del teu bloc"
 msgid "<strong>Author:</strong> %s"
 msgstr "<strong>Autor:</strong> %s"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-mail.php:245
 msgid "<strong>Posted title:</strong> %s"
-msgstr "<strong>Títol de l'entrada:</strong> %s"
+msgstr "<strong>Títol de l'article:</strong> %s"
 
 #: wp-mail.php:248
 msgid "Oops: %s"
@@ -6241,38 +6473,50 @@ msgstr "Separa les etiquetes amb comes"
 msgid "(required)"
 msgstr "(necessari)"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/comment-template.php:2058
 #: wp-includes/theme-compat/comments.php:83
 msgid "Website"
-msgstr "Lloc web"
+msgstr "Bloc"
 
 #: wp-includes/admin-bar.php:664
 #: wp-includes/functions.php:2921
 msgid "Widgets"
 msgstr "Ginys"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:1351
 #: wp-includes/class-wp-xmlrpc-server.php:4187
 #: wp-includes/class-wp-xmlrpc-server.php:4621
 msgid "Sorry, your entry could not be posted. Something wrong happened."
-msgstr "Desgraciadament l'entrada no s'ha pogut publicar per algun problema tècnic."
+msgstr "Desgraciadament l'article no s'ha pogut publicar per algun problema tècnic."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:4236
 #: wp-includes/class-wp-xmlrpc-server.php:4708
 msgid "Sorry, you do not have the right to edit this post."
-msgstr "No teniu permís per editar aquesta entrada."
+msgstr "No teniu permís per editar aquest article."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:4252
 msgid "For some strange yet very annoying reason, this post could not be edited."
-msgstr "Per algun motiu estrany i molest aquesta entrada no s'ha pogut publicar."
+msgstr "Per algun motiu estrany i molest aquest article no s'ha pogut publicar."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:4297
 msgid "Sorry, you do not have the right to delete this post."
-msgstr "No teniu autorització per suprimir aquesta entrada."
+msgstr "No teniu autorització per suprimir aquest article."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/class-wp-xmlrpc-server.php:4302
 msgid "For some strange yet very annoying reason, this post could not be deleted."
-msgstr "Per algun motiu estrany i molest aquesta entrada no s'ha pogut suprimir."
+msgstr "Per algun motiu estrany i molest aquest article no s'ha pogut suprimir."
 
 #: wp-comments-post.php:50
 msgid "Sorry, comments are closed for this item."
@@ -6391,7 +6635,7 @@ msgstr "Error de XML: %s en la línia %d"
 
 #: wp-includes/author-template.php:177
 msgid "Visit %s&#8217;s website"
-msgstr "Visita el web de %s"
+msgstr "Visita el lloc web de %s"
 
 # XTEC ************ CORREGIT *
 # 2013.06.21 @jmiro227
@@ -6701,13 +6945,17 @@ msgctxt "post"
 msgid "Add New"
 msgstr "Afegeix"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/post.php:1516
 msgid "View Post"
-msgstr "Mostra l'entrada"
+msgstr "Mostra l'article"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/post.php:1514
 msgid "Edit Post"
-msgstr "Edita l'entrada"
+msgstr "Edita l'article"
 
 #: wp-includes/script-loader.php:531
 msgid "Done"
@@ -7018,10 +7266,12 @@ msgstr "Edita un element multimèdia"
 msgid "Edit embedded media"
 msgstr "Edita l'element multimèdia incrustat"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/admin-bar.php:426
 #: wp-includes/post.php:1515
 msgid "New Post"
-msgstr "Entrada nova"
+msgstr "Article nou"
 
 #: wp-includes/script-loader.php:364
 #: wp-includes/script-loader.php:484
@@ -7050,9 +7300,11 @@ msgstr "S'ha produït un error durant l'activació."
 msgid "Username:"
 msgstr "Nom d'usuari:"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-includes/post.php:1518
 msgid "No posts found."
-msgstr "No s'ha trobat cap entrada."
+msgstr "No s'ha trobat cap article."
 
 #: wp-includes/post.php:860
 #: wp-includes/post.php:880
@@ -7073,11 +7325,13 @@ msgstr "Esborrany"
 msgid "Y/m/d"
 msgstr "d/m/Y"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-includes/admin-bar.php:297
 #: wp-includes/admin-bar.php:443
 #: wp-includes/deprecated.php:2833
 msgid "Visit Site"
-msgstr "Visita el web"
+msgstr "Visita el bloc"
 
 #: XTEC ***** AFEGIT - New catalan strings *
 #: wp-signup.php:97

@@ -2,13 +2,16 @@
 # This file is distributed under the same license as the Twenty Thirteen package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2013-12-11 07:36:20+0000\n"
+"PO-Revision-Date: 2014-07-03 15:04+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/0.1\n"
 "Project-Id-Version: Twenty Thirteen\n"
+"POT-Creation-Date: \n"
+"Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
+"Language-Team: \n"
 
 #: 404.php:16
 msgid "Not Found"
@@ -17,9 +20,11 @@ msgstr "No s'ha trobat"
 msgid "The 2013 theme for WordPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small."
 msgstr "El tema 2013 de WordPress ens torna al blog, presentant una gamma completa de formats d'entrada, tots ells ben mostrats de forma única. Hi ha molts detalls de disseny, començant pel vibrant esquema de color i acabant amb imatges de capçalera a joc, icones i tipografia boniques, i una maquetació flexible que es veu fantàstica en qualsevol dispositiu, gran o petit."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: functions.php:233
 msgid "Appears in the footer section of the site."
-msgstr " Apareix a la secció del peu del lloc web. "
+msgstr " Apareix a la secció del peu del bloc. "
 
 msgid "http://wordpress.org/themes/twentythirteen"
 msgstr "http://wordpress.org/themes/twentythirteen"
@@ -44,7 +49,9 @@ msgstr "Apareix a la barra lateral a les entrades i pàgines."
 msgid "Full resolution"
 msgstr "A resolució completa"
 
-#: inc/back-compat.php:37 inc/back-compat.php:47 inc/back-compat.php:60
+#: inc/back-compat.php:37
+#: inc/back-compat.php:47
+#: inc/back-compat.php:60
 msgid "Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again."
 msgstr "El tema Twenty Thirteen necessita almenys la versió 3.6 del WordPress. Esteu executant la versió %s. Actualitzeu i proveu-ho de nou."
 
@@ -121,23 +128,46 @@ msgstr "Comentaris més recents  &rarr;"
 msgid "Comments are closed."
 msgstr "Els comentaris estan tancats."
 
-#: content-aside.php:13 content-audio.php:24 content-gallery.php:24
-#: content-image.php:23 content-link.php:24 content-quote.php:13
-#: content-status.php:13 content-video.php:23 content.php:41
+#: content-aside.php:13
+#: content-audio.php:24
+#: content-gallery.php:24
+#: content-image.php:23
+#: content-link.php:24
+#: content-quote.php:13
+#: content-status.php:13
+#: content-video.php:23
+#: content.php:41
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Continua llegint <span class=\"meta-nav\">&rarr;</span>"
 
-#: content-aside.php:14 content-audio.php:25 content-chat.php:24
-#: content-gallery.php:25 content-image.php:24 content-link.php:25
-#: content-quote.php:14 content-status.php:14 content-video.php:24
-#: content.php:42 image.php:70 page.php:35
+#: content-aside.php:14
+#: content-audio.php:25
+#: content-chat.php:24
+#: content-gallery.php:25
+#: content-image.php:24
+#: content-link.php:25
+#: content-quote.php:14
+#: content-status.php:14
+#: content-video.php:24
+#: content.php:42
+#: image.php:70
+#: page.php:35
 msgid "Pages:"
 msgstr "Pàgines:"
 
-#: content-aside.php:20 content-aside.php:28 content-audio.php:31
-#: content-chat.php:29 content-gallery.php:39 content-image.php:35
-#: content-link.php:19 content-quote.php:25 content-status.php:19
-#: content-video.php:35 content.php:31 image.php:44 page.php:39
+#: content-aside.php:20
+#: content-aside.php:28
+#: content-audio.php:31
+#: content-chat.php:29
+#: content-gallery.php:39
+#: content-image.php:35
+#: content-link.php:19
+#: content-quote.php:25
+#: content-status.php:19
+#: content-video.php:35
+#: content.php:31
+#: image.php:44
+#: page.php:39
 msgid "Edit"
 msgstr "Edita"
 
@@ -145,18 +175,27 @@ msgstr "Edita"
 msgid "Permalink to %s"
 msgstr "Enllaç permanent a %s"
 
-#: content-gallery.php:36 content-image.php:32 content-quote.php:22
-#: content-video.php:32 content.php:49
+#: content-gallery.php:36
+#: content-image.php:32
+#: content-quote.php:22
+#: content-video.php:32
+#: content.php:49
 msgid "Leave a comment"
 msgstr "Deixeu un comentari"
 
-#: content-gallery.php:36 content-image.php:32 content-quote.php:22
-#: content-video.php:32 content.php:49
+#: content-gallery.php:36
+#: content-image.php:32
+#: content-quote.php:22
+#: content-video.php:32
+#: content.php:49
 msgid "One comment so far"
 msgstr "Un comentari fins ara"
 
-#: content-gallery.php:36 content-image.php:32 content-quote.php:22
-#: content-video.php:32 content.php:49
+#: content-gallery.php:36
+#: content-image.php:32
+#: content-quote.php:22
+#: content-video.php:32
+#: content.php:49
 msgid "View all % comments"
 msgstr "Mostra tots els % comentaris"
 
@@ -236,7 +275,8 @@ msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
 msgid "Sticky"
 msgstr "Destacada"
 
-#: functions.php:328 functions.php:334
+#: functions.php:328
+#: functions.php:334
 msgid ", "
 msgstr ", "
 
@@ -301,3 +341,4 @@ msgstr "Twenty Thirteen"
 
 msgid "the WordPress team"
 msgstr "L'equip del WordPress"
+

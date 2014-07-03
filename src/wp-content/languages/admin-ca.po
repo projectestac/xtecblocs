@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2014-06-19 14:10+0100\n"
+"PO-Revision-Date: 2014-07-03 17:20+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,9 +30,11 @@ msgstr "Identificador d'usuari no és vàlid."
 msgid "With quicker access to crop and rotation tools, it&#8217;s now much easier to edit your images while editing posts. You can also scale images directly in the editor to find just the right fit."
 msgstr "Amb un accés més ràpid a les eines de rotació i escapçat, ara és més fàcil editar les imatges mentre escriviu entrades. Podeu també escalar imatges directament a l'editor per trobar la mida exacta."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-upgrader.php:2371
 msgid "The WordPress team is willing to help you. Forward this email to %s and the team will work with you to make sure your site is working."
-msgstr "L'equip del WordPress està desitjant ajudar-vos. Reenvieu aquest correu electrònic a %s i l'equip treballarà juntament amb vosaltres per assegurar-nos que la web funciona."
+msgstr "L'equip del WordPress està desitjant ajudar-vos. Reenvieu aquest correu electrònic a %s i l'equip treballarà juntament amb vosaltres per assegurar-nos que el bloc funciona."
 
 #: wp-admin/includes/class-wp-upgrader.php:2384
 msgid "If you reach out to us, we'll also ensure you'll never have this problem again."
@@ -86,9 +88,11 @@ msgstr "Les imatges tenen galeries; ara hem afegit llistes de reproducció senzi
 msgid "Live widget and header previews"
 msgstr "Previsualitzacions de la capçalera i dels ginys en temps real"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/about.php:191
 msgid "Add, edit, and rearrange your site&#8217;s widgets right in the theme customizer. No &#8220;save and surprise&#8221; &mdash; preview your changes live and only save them when you&#8217;re ready."
-msgstr "Afegiu, editeu i reordeneu els gins del lloc web directament al personalitzador del tema. No &#8220;deseu canvis amb sorpreses&#8221; &mdash; previsualitzeu els canvis en temps real i deseu-los solament quan estiguin llests."
+msgstr "Afegiu, editeu i reordeneu els gins del bloc directament al personalitzador del tema. No &#8220;deseu canvis amb sorpreses&#8221; &mdash; previsualitzeu els canvis en temps real i deseu-los solament quan estiguin llests."
 
 #: wp-admin/about.php:192
 msgid "The improved header image tool also lets you upload, crop, and manage headers while customizing your theme."
@@ -241,6 +245,8 @@ msgstr "Més recents"
 msgid "Remove allows you to remove a user from your site. It does not delete their posts. You can also remove multiple users at once by using Bulk Actions."
 msgstr "Suprimeix us permet suprimir un usuari de la bloc. No se suprimeixen els seus articles. Podeu també suprimir molts usuaris d'una vegada fent servir les accions en massa."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/upgrade.php:273
 msgid ""
 "Your new WordPress site has been successfully set up at:\n"
@@ -257,7 +263,7 @@ msgid ""
 "--The WordPress Team\n"
 "https://wordpress.org/\n"
 msgstr ""
-"El lloc web nou gestionat amb el WordPress s'ha configurat correctament a:\n"
+"El bloc nou gestionat amb el WordPress s'ha configurat correctament a:\n"
 "\n"
 "%1$s\n"
 "\n"
@@ -266,7 +272,7 @@ msgstr ""
 "Nom d'usuari: %2$s\n"
 "Contrasenya: %3$s\n"
 "\n"
-"Esperem que gaudiu del nou lloc web. Gràcies!\n"
+"Esperem que gaudiu del nou bloc. Gràcies!\n"
 "\n"
 "--L'equip del WordPress\n"
 "http://ca.wordpress.org/\n"
@@ -275,9 +281,11 @@ msgstr ""
 msgid "<strong>Box Controls</strong> - Click the title bar of the box to expand or collapse it. Some boxes added by plugins may have configurable content, and will show a &#8220;Configure&#8221; link in the title bar if you hover over it."
 msgstr "<strong>Caixa de controls</strong> - Feu clic a la barra del títol per ampliar-la o reduir-la. Algunes caixes que s'han afegit pels ginys poden tenir contingut configurable, i es mostrarà un enllaç &#8220;Configura&#8221; en la barra del títol si passeu el cursor per sobre."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/index.php:67
 msgid "<strong>At A Glance</strong> - Displays a summary of the content on your site and identifies which theme and version of WordPress you are using."
-msgstr "<strong>Ara mateix</strong> - Mostra un resum del contingut del lloc i identifica quin tema i versió del WordPress esteu fent servir."
+msgstr "<strong>Ara mateix</strong> - Mostra un resum del contingut del bloc i identifica quin tema i versió del WordPress esteu fent servir."
 
 #: wp-admin/maint/repair.php:101
 msgid "https://wordpress.org/support/forum/how-to-and-troubleshooting"
@@ -539,9 +547,11 @@ msgstr "%1$s Mb (%2$s%%) d'espai utilitzat"
 msgid "Theme Details"
 msgstr "Detalls del tema"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/options-reading.php:66
 msgid "When this setting is in effect, a reminder is shown in the At a Glance box of the Dashboard that says, &#8220;Search Engines Discouraged,&#8221; to remind you that your site is not being crawled."
-msgstr "Quan aquest paràmetre està activat, es mostra un recordatori a la caixa Ara mateix del tauler que diu, &#8220;Motors de cerca desactivats&#8221;, per recordar que la pàgina web no està sent rastrejada."
+msgstr "Quan aquest paràmetre està activat, es mostra un recordatori a la caixa Ara mateix del tauler que diu, &#8220;Motors de cerca desactivats&#8221;, per recordar que el bloc no està sent rastrejat."
 
 #: wp-admin/includes/dashboard.php:40
 msgid "At a Glance"
@@ -589,9 +599,11 @@ msgstr "Polseu o passeu el cursor per sobre de qualsevol tema i aleshores feu cl
 msgid "The theme being previewed is fully interactive &mdash; navigate to different pages to see how the theme handles posts, archives, and other page templates. The settings may differ depending on what theme features the theme being previewed supports. To accept the new settings and activate the theme all in one step, click the Save &amp; Activate button above the menu."
 msgstr "La previsualització del tema que esteu mirant és completametn interactiu &mdash; navegueu per diferents pàgines per veure com mostra les pàgines, els arxius i altres plantilles de pàgina. La configuració pet diferir depenent de quines funcionalitats del tema suporta el tema que esteu previsualitzant. Per acceptar la nova configuració i activar el tema en un pas, feu clic al botó Desa &amp; Activa de la part superior del menú."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/themes.php:74
 msgid "When previewing on smaller monitors, you can use the collapse icon at the bottom of the left-hand pane. This will hide the pane, giving you more room to preview your site in the new theme. To bring the pane back, click on the collapse icon again."
-msgstr "Quan previsualitzeu en monitors petits, podeu fer servir la icona redueix que hi ha a la part inferior del panell de l'esquerra. Això ocultarà el panell, i us donarà més espai per previsualitzar la pàgina web en el tema nou. Per accedir al panell de nou, feu clic a la icona redueix altra vegada."
+msgstr "Quan previsualitzeu en monitors petits, podeu fer servir la icona redueix que hi ha a la part inferior del panell de l'esquerra. Això ocultarà el panell, i us donarà més espai per previsualitzar el bloc en el tema nou. Per accedir al panell de nou, feu clic a la icona redueix altra vegada."
 
 #: wp-admin/widgets.php:339
 msgid "To activate a widget drag it to a sidebar or click on it. To deactivate a widget and delete its settings, drag it back."
@@ -607,9 +619,11 @@ msgstr[1] "%1$s de valoració basat en %2$s valoracions"
 msgid "%s rating"
 msgstr "%s valoració"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/my-sites.php:42
 msgid "This screen shows an individual user all of their sites in this network, and also allows that user to set a primary site. They can use the links under each site to visit either the frontend or the dashboard for that site."
-msgstr "Aquesta pantalla li mostra a un usuari individual tots els seus llocs en aquesta xarxa, i també permet a aquest usuari establir un lloc principal. Ell o ella poden usar els enllaços a sota de cada lloc ja sigui per visitar la pantalla principal o per visitar el tauler d'aquest lloc."
+msgstr "Aquesta pantalla li mostra a un usuari individual tots els seus blocs en aquesta xarxa, i també permet a aquest usuari establir un bloc principal. Ell o ella poden usar els enllaços a sota de cada bloc ja sigui per visitar la pantalla principal o per visitar el tauler d'aquest bloc."
 
 #: wp-admin/includes/class-wp-upgrader.php:2559
 msgid "Rollback Error: [%1$s] %2$s"
@@ -717,9 +731,11 @@ msgstr "Afegeix un giny"
 msgid "Activity"
 msgstr "Activitat"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-upgrader.php:2466
 msgid "WordPress site: %s"
-msgstr "Lloc web gestionat amb el WordPress: %s"
+msgstr "Bloc gestionat amb el WordPress: %s"
 
 #: wp-admin/includes/class-wp-upgrader.php:2472
 msgid "SUCCESS: WordPress was successfully updated to %s"
@@ -815,13 +831,17 @@ msgstr "L'actualització no s'ha pogut instal·lar perquè ha estat impossible c
 msgid "WordPress %s is also now available."
 msgstr "El WordPress %s també està disponible."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-upgrader.php:2357
 msgid "Your site at %1$s experienced a critical failure while trying to update WordPress to version %2$s."
-msgstr "El lloc web a %1$s ha experimentat una fallida crítica mentre intentava actualitzar el WordPress a la versió %2$s."
+msgstr "El bloc a %1$s ha experimentat una fallida crítica mentre intentava actualitzar el WordPress a la versió %2$s."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-upgrader.php:2397
 msgid "Your site was running version %s."
-msgstr "El lloc web està executant la versió %s."
+msgstr "El bloc està executant la versió %s."
 
 #: wp-admin/includes/class-wp-upgrader-skins.php:638
 #: wp-admin/update-core.php:349
@@ -838,21 +858,27 @@ msgstr "S'estan actualitzant les traduccions de %1$s (%2$s)&#8230;"
 msgid "Translations for %s"
 msgstr "Traduccions de %s"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-upgrader.php:2296
 msgid "[%1$s] Your site has updated to WordPress %2$s"
-msgstr "[%1$s] El lloc web s'ha actualitzat al WordPress %2$s"
+msgstr "[%1$s] El bloc s'ha actualitzat al WordPress %2$s"
 
 #: wp-admin/includes/class-wp-upgrader.php:2302
 msgid "[%1$s] WordPress %2$s is available. Please update!"
 msgstr "[%1$s] Està disponible el WordPress %2$s. Actualitzeu ara!"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-upgrader.php:2307
 msgid "[%1$s] URGENT: Your site may be down due to a failed update"
-msgstr "[%1$s] URGENT: El lloc web pot estar caigut per culpa d'una actualització fallida."
+msgstr "[%1$s] URGENT: El bloc pot estar caigut per culpa d'una actualització fallida."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-upgrader.php:2322
 msgid "Howdy! Your site at %1$s has been updated automatically to WordPress %2$s."
-msgstr "Hola! El lloc web %1$s s'ha actualitzat automàticament al WordPress %2$s."
+msgstr "Hola! El bloc %1$s s'ha actualitzat automàticament al WordPress %2$s."
 
 #: wp-admin/includes/class-wp-upgrader.php:2325
 msgid "No further action is needed on your part."
@@ -862,35 +888,47 @@ msgstr "No cal que feu res més."
 msgid "For more on version %s, see the About WordPress screen:"
 msgstr "Per a saber més de la versió %s, mireu la pantalla Quant al WordPress:"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-upgrader.php:2342
 msgid "Please update your site at %1$s to WordPress %2$s."
-msgstr "Actualitzeu el lloc web %1$s al WordPress %2$s."
+msgstr "Actualitzeu el bloc %1$s al WordPress %2$s."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-upgrader.php:2349
 msgid "We tried but were unable to update your site automatically."
-msgstr "Ho hem intentat però ha estat impossible actualitzar el lloc web automàticament."
+msgstr "Ho hem intentat però ha estat impossible actualitzar el bloc automàticament."
 
 #: wp-admin/includes/class-wp-upgrader.php:2334
 #: wp-admin/includes/class-wp-upgrader.php:2351
 msgid "Updating is easy and only takes a few moments:"
 msgstr "L'actualització és fàcil i solament triga uns moments:"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-upgrader.php:2359
 msgid "Your site at %1$s experienced a critical failure while trying to update to the latest version of WordPress, %2$s."
-msgstr "El lloc web %1$s ha experimentat una fallada crítica mentre intentava actualitzar-se a la darrera versió del WordPress, %2$s."
+msgstr "El bloc %1$s ha experimentat una fallada crítica mentre intentava actualitzar-se a la darrera versió del WordPress, %2$s."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-upgrader.php:2361
 msgid "This means your site may be offline or broken. Don't panic; this can be fixed."
-msgstr "Això significa que el lloc web pot estar caigut o trencat. No patiu, això és pot solucionar."
+msgstr "Això significa que el bloc pot estar caigut o trencat. No patiu, això és pot solucionar."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-upgrader.php:2363
 msgid "Please check out your site now. It's possible that everything is working. If it says you need to update, you should do so:"
-msgstr "Comproveu el lloc web ara. És possible que tot estigui funcionant. Si diu que necessiteu actualitzar, hauríeu de fer-ho així:"
+msgstr "Comproveu el bloc ara. És possible que tot estigui funcionant. Si diu que necessiteu actualitzar, hauríeu de fer-ho així:"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-upgrader.php:2380
 #: wp-admin/update-core.php:464
 msgid "Keeping your site updated is important for security. It also makes the internet a safer place for you and your readers."
-msgstr "Mantenir el lloc web actualitzat és important per seguretat. Fa d'Internet un lloc més segur per vós i per els vostres lectors."
+msgstr "Mantenir el bloc actualitzat és important per seguretat. Fa d'Internet un lloc més segur per vós i per els vostres lectors."
 
 #: wp-admin/includes/class-wp-upgrader.php:2374
 msgid "If you experience any issues or need support, the volunteers in the WordPress.org support forums may be able to help."
@@ -904,9 +942,11 @@ msgstr "També hi ha algunes extensions o alguns temes amb actualitzacions dispo
 msgid "The WordPress Team"
 msgstr "L'equip del WordPress"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-upgrader.php:2398
 msgid "We have some data that describes the error your site encountered."
-msgstr "Tenim alguna dada que descriu l'error que s'ha trobat al lloc web."
+msgstr "Tenim alguna dada que descriu l'error que s'ha trobat al bloc."
 
 #: wp-admin/includes/class-wp-upgrader.php:2399
 msgid "Your hosting company, support forum volunteers, or a friendly developer may be able to use this information to help you:"
@@ -997,9 +1037,11 @@ msgstr " Per defecte el WordPress utilitza <abbr title=\"Universal Resource Loca
 msgid "Upgrading to a newer version of the same theme will override changes made here. To avoid this, consider creating a <a href=\"%s\" target=\"_blank\">child theme</a> instead."
 msgstr "En actualitzar a una versió més moderna del mateix tema se sobreescriuran els canvis que heu fet aquí. Per evitar-ho, considereu pe contra la creció d'un <a href=\"%s\" target=\"_blank\">tema fill</a>."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/user-new.php:335
 msgid "Create a brand new user and add them to this site."
-msgstr "Crea un nou usuari i l'afegeix a aquest lloc web."
+msgstr "Crea un nou usuari i l'afegeix a aquest bloc."
 
 #: wp-admin/includes/ms.php:225
 msgid ""
@@ -1257,9 +1299,11 @@ msgstr "\"%1$s\" de %2$s."
 msgid "\"%s\"."
 msgstr "\"%s\"."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/meta-boxes.php:187
 msgid "Your site is configured to keep only the last %s revisions."
-msgstr "El lloc web està configurat per mantenir solament les darreres %s revisions."
+msgstr "El bloc està configurat per mantenir solament les darreres %s revisions."
 
 #: wp-admin/includes/meta-boxes.php:189
 #: wp-admin/includes/meta-boxes.php:192
@@ -1685,9 +1729,11 @@ msgstr "Seleccioneu un menú que voleu editar:"
 msgid "or <a href=\"%s\">create a new menu</a>."
 msgstr "o <a href=\"%s\">creeu-ne un de nou</a>."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/ms.php:605
 msgid "Thank you for Updating! Please visit the <a href=\"%s\">Upgrade Network</a> page to update all your sites."
-msgstr "Gràcies per actualitzar! Visiteu la pàgina <a href=\"%s\">Actualitza la xarxa</a> per actualitzar tots els llocs web."
+msgstr "Gràcies per actualitzar! Visiteu la pàgina <a href=\"%s\">Actualitza la xarxa</a> per actualitzar tots els blocs."
 
 #: wp-admin/setup-config.php:295
 msgid "All right, sparky! You&#8217;ve made it through this part of the installation. WordPress can now communicate with your database. If you are ready, time now to&hellip;"
@@ -1796,9 +1842,11 @@ msgstr "Si esteu cercant utilitzar el gestor d'enllaços, instal·leu-vos l'exte
 msgid "Manage <a href=\"%1$s\">widgets</a> or <a href=\"%2$s\">menus</a>"
 msgstr "Gestiona els <a href=\"%1$s\">ginys</a> o els <a href=\"%2$s\">menús</a>"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/custom-background.php:91
 msgid "To use a background image, simply upload it or choose an image that has already been uploaded to your Media Library by clicking the &#8220;Choose Image&#8221; button. You can display a single instance of your image, or tile it to fill the screen. You can have your background fixed in place, so your site content moves on top of it, or you can have it scroll with your site."
-msgstr "Per utilitzar una imatge de fons, simplement pengeu-la o trieu una imatge que ja s'hagi pujat a la mediateca fent clic al botó &#8220;Tria una imatge&#8221;. Podeu mostrar una sola instància de la imatge, o posar-la en mosaic per ajustar-la a la pantalla. Podeu fer que el fons estigui fixe, i així el contingut de la pàgina web es mogui per sobre d'ell, o podeu fer que es desplaci junt amb el contingut."
+msgstr "Per utilitzar una imatge de fons, simplement pengeu-la o trieu una imatge que ja s'hagi pujat a la mediateca fent clic al botó &#8220;Tria una imatge&#8221;. Podeu mostrar una sola instància de la imatge, o posar-la en mosaic per ajustar-la a la pantalla. Podeu fer que el fons estigui fixe, i així el contingut del bloc es mogui per sobre d'ell, o podeu fer que es desplaci junt amb el contingut."
 
 #: wp-admin/custom-header.php:134
 msgid "Don&#8217;t forget to click &#8220;Save Changes&#8221; when you&#8217;re done!"
@@ -1883,9 +1931,11 @@ msgstr "A la secció de text de la capçalera d'aquesta pàgina, podeu triar si 
 msgid "Theme Customizer Options"
 msgstr "Opcions del personalitzador de temes"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/options-reading.php:65
 msgid "You can choose whether or not your site will be crawled by robots, ping services, and spiders. If you want those services to ignore your site, click the checkbox next to &#8220;Discourage search engines from indexing this site&#8221; and click the Save Changes button at the bottom of the screen. Note that your privacy is not complete; your site is still visible on the web."
-msgstr "Podeu triar si voleu o no que el lloc web sigui rastrejat per motors de cerca, serveis de ping, i robots. Si voleu que aquests serveis ignorin el vostre lloc web, feu clic a la casella de selecció &#8220;Desanima els motors de cerca d'indexar aquest lloc web&#8221; i feu clic al botó per desar els canvis a la part inferior de la pantalla. Fixeu-vos que la privacitat no és completa; la vostra pàgina web és visible a Internet."
+msgstr "Podeu triar si voleu o no que el bloc sigui rastrejat per motors de cerca, serveis de ping, i robots. Si voleu que aquests serveis ignorin el vostre bloc, feu clic a la casella de selecció &#8220;Desanima els motors de cerca d'indexar aquest bloc&#8221; i feu clic al botó per desar els canvis a la part inferior de la pantalla. Fixeu-vos que la privacitat no és completa; el vostre bloc és visible a Internet."
 
 #: wp-admin/includes/dashboard.php:1331
 msgid "More Actions"
@@ -1956,9 +2006,11 @@ msgstr "Utilitzeu WP_Image_Editor::flip"
 msgid "The privacy options group has been removed. Use another settings group."
 msgstr "S'ha suprimit el grup d'opcions sobre la privacitat. Utilitzeu altre grup de paràmetres."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/options-writing.php:183
 msgid "WordPress is not notifying any <a href=\"http://codex.wordpress.org/Update_Services\">Update Services</a> because of your site&#8217;s <a href=\"%s\">visibility settings</a>."
-msgstr "El WordPress no notifica a cap <a href=\"http://codex.wordpress.org/Update_Services\">servei d'actualització</a> (en anglès) per la  <a href=\"%s\">configuració de visibilitat</a> del lloc web."
+msgstr "El WordPress no notifica a cap <a href=\"http://codex.wordpress.org/Update_Services\">servei d'actualització</a> (en anglès) per la  <a href=\"%s\">configuració de visibilitat</a> del bloc."
 
 #: wp-admin/includes/class-wp-themes-list-table.php:201
 #: wp-admin/theme-editor.php:33
@@ -2058,9 +2110,11 @@ msgstr "Podeu també controlar el que es mostra al contingut dels fils de subscr
 msgid "Search Engine Visibility"
 msgstr "Visibilitats als motors de cerca"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/options-reading.php:148
 msgid "Allow search engines to index this site"
-msgstr "Permet als cercadors indexar aquest lloc"
+msgstr "Permet als cercadors indexar aquest bloc"
 
 # XTEC ************ CORREGIT *
 # 2013.10.30 @jmeler
@@ -2101,9 +2155,11 @@ msgstr "No es pot escriure al fitxer <code>wp-config.php</code>."
 msgid "After you&#8217;ve done that, click &#8220;Run the install.&#8221;"
 msgstr "Quan acabeu, feu clic a &#8220;Executa la instal·lació.&#8221;"
 
+# XTEC ************ AFEGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/themes.php:130
 msgid "Settings saved and theme activated. <a href=\"%s\">Visit site</a>"
-msgstr "S'ha desat la configuració i s'ha activat el tema. <a href=\"%s\">Aneu al lloc web</a>"
+msgstr "S'ha desat la configuració i s'ha activat el tema. <a href=\"%s\">Aneu al bloc</a>"
 
 #: wp-admin/includes/class-wp-themes-list-table.php:200
 msgid "This <a href=\"%1$s\">child theme</a> requires its parent theme, %2$s."
@@ -2126,9 +2182,11 @@ msgstr "Capçalera flexible"
 msgid "To install the theme so you can preview it with your site&#8217;s content and customize its theme options, click the \"Install\" button at the top of the left-hand pane. The theme files will be downloaded to your website automatically. When this is complete, the theme is now available for activation, which you can do by clicking the \"Activate\" link, or by navigating to your Manage Themes screen and clicking the \"Live Preview\" link under any installed theme&#8217;s thumbnail image."
 msgstr "Per instal·lar un tema i així visualitzar-lo amb el contingut de la web i personalitzar les opcions del tema, feu clic al botó \"Instal·lar\" a la part superior del panell esquerre. Els fitxers dels temes es baixaran a la pàgina web automàticament. Quan acabi, el tema estarà disponible per activar, la qual cosa podreu fer a l'enllaç \"Activa\", o també si aneu a la pantalla gestiona els temes i feu clic a l'enllaç \"Previsualització\" que hi ha a la part inferior de la miniatura de qualsevol tema instal·lat."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/options-reading.php:50
 msgid "The <a href=\"http://codex.wordpress.org/Glossary#Character_set\">character encoding</a> of your site (UTF-8 is recommended)"
-msgstr "La <a href=\"http://codex.wordpress.org/Glossary#Character_set\">codificació de caràcters</a> (en anglès) del lloc web (UTF-8 és la recomanada)"
+msgstr "La <a href=\"http://codex.wordpress.org/Glossary#Character_set\">codificació de caràcters</a> (en anglès) del bloc (UTF-8 és la recomanada)"
 
 #: wp-admin/plugin-editor.php:135
 #: wp-admin/theme-editor.php:30
@@ -2243,9 +2301,11 @@ msgstr "Crear una pàgina és molt similar a crear una entrada, i les pantalles 
 msgid "<strong>Post editor</strong> - Enter the text for your post. There are two modes of editing: Visual and Text. Choose the mode by clicking on the appropriate tab. Visual mode gives you a WYSIWYG editor. Click the last icon in the row to get a second row of controls. The Text mode allows you to enter HTML along with your post text. Line breaks will be converted to paragraphs automatically. You can insert media files by clicking the icons above the post editor and following the directions. You can go to the distraction-free writing screen via the Fullscreen icon in Visual mode (second to last in the top row) or the Fullscreen button in Text mode (last in the row). Once there, you can make buttons visible by hovering over the top area. Exit Fullscreen back to the regular post editor."
 msgstr "<strong>Editor d'articles</strong> - Introduïu el tex de l'article. Hi ha dos modes d'edició: Visual i Text. Trieu el mode fent clic a la pestanya adequada. El mode visual us proporciona un editor WYSIWYG. Feu clic a la darrera icona de la fila per mostrar una segona fila de controls. El mode text us permet introduir text HMTL i el text de l'article alhora. Els salts de línia es convertiran en paràgrafs automàticament. Podeu inserir fitxers multimèdia si feu clic a les icones que hi ha a la part superior de l'editor i seguir les instruccions. Podeu anar a la pantalla d'escriptura lliure de distraccions fent clic a la icona de pantalla completa que hi ha al mode visual (penúltima icona de la fila superior) o el botó de pantalla completa del mode text (darrer en la fila). Una vegada sigueu, podeu fer visibles els botons en passar el cursor per sobre de l'àrea superior. Tornareu a l'editor d'articles si feu clic al botó per sortir de la pantalla completa."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/custom-header.php:509
 msgid "You can select an image to be shown at the top of your site by uploading from your computer or choosing from your media library. After selecting an image you will be able to crop it."
-msgstr "Podeu seleccionar una imatge que es mostrarà a la part superior del lloc web en penjar-la des del vostre ordinador o en triar-la de la mediateca. Després de seleccionar una imatge podreu escapçar-la."
+msgstr "Podeu seleccionar una imatge que es mostrarà a la part superior del blocen penjar-la des del vostre ordinador o en triar-la de la mediateca. Després de seleccionar una imatge podreu escapçar-la."
 
 #: wp-admin/admin-header.php:206
 msgid "Main content"
@@ -2356,21 +2416,27 @@ msgstr "Previsualització"
 msgid "This screen is used to customize the header section of your theme."
 msgstr "Aquesta pantalla s'utilitza per personalitzar la secció de capçalera del tema."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/custom-header.php:115
 msgid "You can choose from the theme&#8217;s default header images, or use one of your own. You can also customize how your Site Title and Tagline are displayed."
-msgstr "Podeu triar una de les imatges de capçalera predeterminats del tema, o fer servir una pròpia. Podeu també personalitzar com es mostra el títol del lloc web i el lema."
+msgstr "Podeu triar una de les imatges de capçalera predeterminats del tema, o fer servir una pròpia. Podeu també personalitzar com es mostra el títol del bloc i el lema."
 
 #: wp-admin/custom-header.php:123
 msgid "Some themes come with additional header images bundled. If you see multiple images displayed, select the one you&#8217;d like and click the &#8220;Save Changes&#8221; button."
 msgstr "Alguns temes venen amb un conjunt d'imatges de capçalera addicional. Si es mostren un munt d'imatges, seleccioneu-ne una que us agradi i feu clic al botó &#8220;Desa els canvis&#8221;."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/custom-header.php:124
 msgid "If your theme has more than one default header image, or you have uploaded more than one custom header image, you have the option of having WordPress display a randomly different image on each page of your site. Click the &#8220;Random&#8221; radio button next to the Uploaded Images or Default Images section to enable this feature."
-msgstr "sSi el tema té més d'una imatge de capçalera predeterminada, o heu penjat més d'una imatge de capçalera personalitzada, teniu l'opció que el WordPress mostri una imatge aleatòria diferent en cada pàgina del lloc web. Feu clic al botó d'opció &#8220;Aleatòria&#8221; que hi ha al costat de les imatges penjades o a la secció Imatges predeterminades per activar aquesta funcionalitat."
+msgstr "sSi el tema té més d'una imatge de capçalera predeterminada, o heu penjat més d'una imatge de capçalera personalitzada, teniu l'opció que el WordPress mostri una imatge aleatòria diferent en cada pàgina del bloc. Feu clic al botó d'opció &#8220;Aleatòria&#8221; que hi ha al costat de les imatges penjades o a la secció Imatges predeterminades per activar aquesta funcionalitat."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/custom-header.php:132
 msgid "For most themes, the header text is your Site Title and Tagline, as defined in the <a href=\"%1$s\">General Settings</a> section."
-msgstr "Per a la majoria de temes, el text de capçalera és el títol del lloc web i el lema, com està definit a la secció <a href=\"%1$s\">Opcions generals</a>."
+msgstr "Per a la majoria de temes, el text de capçalera és el títol del bloc i el lema, com està definit a la secció <a href=\"%1$s\">Opcions generals</a>."
 
 #: wp-admin/install.php:167
 msgid "Configuration Error"
@@ -2699,9 +2765,11 @@ msgstr "http://ma.tt/"
 msgid "Show on screen"
 msgstr "Mostra a la pantalla"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/index.php:76
 msgid "<strong>Welcome</strong> - Shows links for some of the most common tasks when setting up a new site."
-msgstr "<strong>Benvinguts</strong> - Mostra enllaços a les tasques més comuns quan estàs configurant un lloc web nou."
+msgstr "<strong>Benvinguts</strong> - Mostra enllaços a les tasques més comuns quan estàs configurant un bloc nou."
 
 #: wp-admin/includes/ajax-actions.php:236
 msgid "%1$s (%2$s)"
@@ -2756,33 +2824,45 @@ msgstr "L'amplada suggerida és de <strong>%1$d píxels</strong>."
 msgid "I'm sure I want to permanently disable my site, and I am aware I can never get it back or use %s again."
 msgstr "Estic segur que vull desactivar de manera permanent la meva pàgina web, i en sóc conscient que mai no podré tornar-hi o usar de nou %s ."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/ms-delete-site.php:85
 msgid "Delete My Site Permanently"
-msgstr "Suprimeix definitivament el meu lloc"
+msgstr "Suprimeix definitivament el meu bloc"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/ms-delete-site.php:71
 msgid "Delete My Site"
-msgstr "Suprimeix el meu lloc"
+msgstr "Suprimeix el meu bloc"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/ms-delete-site.php:79
 msgid "Remember, once deleted your site cannot be restored."
-msgstr "Recordeu que una vegada esborrat, el vostre lloc web no es pot restaurar."
+msgstr "Recordeu que una vegada esborrat, el vostre bloc no es pot restaurar."
 
 #: wp-admin/ms-delete-site.php:24
 msgid "I'm sorry, the link you clicked is stale. Please select another option."
 msgstr "L'enllaç on heu fet clic és obsolet. Seleccioneu altra opció."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/ms-delete-site.php:22
 msgid "Thank you for using %s, your site has been deleted. Happy trails to you until we meet again."
-msgstr "Gràcies per fer servir el %s, el lloc web s'ha esborrat. Que tingueu un bon camí fins que ens trobem de nou."
+msgstr "Gràcies per fer servir el %s, el bloc s'ha esborrat. Que tingueu un bon camí fins que ens trobem de nou."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/ms-delete-site.php:78
 msgid "If you do not want to use your %s site any more, you can delete it using the form below. When you click <strong>Delete My Site Permanently</strong> you will be sent an email with a link in it. Click on this link to delete your site."
-msgstr "Si no voleu fer servir el lloc web %s més, podeu esborrar-lo amb el formulari d'aquí sota. Quan feu clic en <strong>Esborra el meu web permanentment</strong> s'us enviarà un correu electrònic amb un enllaç. Feu clic en aquest enllaç per esborrar la vostra pàgina web."
+msgstr "Si no voleu fer servir el bloc %s més, podeu esborrar-lo amb el formulari d'aquí sota. Quan feu clic en <strong>Esborra el meu web permanentment</strong> s'us enviarà un correu electrònic amb un enllaç. Feu clic en aquest enllaç per esborrar la vostra pàgina web."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/ms-delete-site.php:17
 msgid "You do not have sufficient permissions to delete this site."
-msgstr "No teniu permès esborrar aquest lloc web."
+msgstr "No teniu permès esborrar aquest bloc."
 
 #: wp-admin/ms-delete-site.php:74
 msgid "Thank you. Please check your email for a link to confirm your action. Your site will not be deleted until this link is clicked. "
@@ -2790,6 +2870,7 @@ msgstr "Gràcies. Comproveu si hi ha al vostre correu electrònic un enllaç per
 
 # XTEC ************ CORREGIT *
 # 2013.10.30 @jmeler
+# 2014.07.30 @jmiro227
 #: wp-admin/ms-delete-site.php:45
 msgid ""
 "Dear User,\n"
@@ -2810,16 +2891,16 @@ msgstr ""
 "Blocaire,\n"
 "Fa poc heu clicat l'enllaç 'Esborra el bloc' de la vostra pàgina web i heu emplenat un\n"
 "formulari en aquesta pàgina.\n"
-"Si realment voleu esborrar el vostre web, feu clic en l'enllaç d'aquí sota. No\n"
+"Si realment voleu esborrar el vostre bloc, feu clic en l'enllaç d'aquí sota. No\n"
 "us preguntarem que confirmeu de nou així que feu clic solament si esteu completament segurs:\n"
 "###URL_DELETE###\n"
 "\n"
-"Si esborreu el web, considereu la possibilitat de crear una nova pàgina web aquí\n"
-"en algun moment en el futur! (Però recordeu que el vostre web actual i el nom d'usuari\n"
-"ja no seran mai més.)\n"
+"Si esborreu el bloc, considereu la possibilitat de crear un de nou aquí\n"
+"en algun moment en el futur! (Però recordeu que el vostre bloc actual i el nom d'usuari\n"
+"ja no hi seran mai més.)\n"
 "\n"
-"Gràcies per fer servir el lloc web,\n"
-"l'administrador del web\n"
+"Gràcies per fer servir XTECBlocs,\n"
+"l'administrador\n"
 "###SITE_NAME###"
 
 #: wp-admin/includes/ms.php:34
@@ -2920,13 +3001,17 @@ msgstr "No s'ha trobat cap tema."
 msgid "Visit Dashboard"
 msgstr "Visita el tauler"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/ms.php:535
 msgid "Your Sites"
-msgstr "Els llocs web"
+msgstr "Els blocs"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/ms.php:533
 msgid "If you reached this screen by accident and meant to visit one of your own sites, here are some shortcuts to help you find your way."
-msgstr "Si heu arribat a aquesta pantalla per accident i teniu la intenció de visitar un dels vostres llocs, aquí teniu algunes dreceres que us ajudaran a trobar el camí."
+msgstr "Si heu arribat a aquesta pantalla per accident i teniu la intenció de visitar un dels vostres blocs, aquí teniu algunes dreceres que us ajudaran a trobar el camí."
 
 #: wp-admin/includes/class-wp-ms-users-list-table.php:77
 msgctxt "user"
@@ -2956,10 +3041,12 @@ msgctxt "user"
 msgid "Mark as Spam"
 msgstr "Marca com a brossa"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/ms.php:530
 #: wp-admin/includes/ms.php:532
 msgid "You attempted to access the \"%1$s\" dashboard, but you do not currently have privileges on this site. If you believe you should be able to access the \"%1$s\" dashboard, please contact your network administrator."
-msgstr "Heu intentat accedir al tauler de \"%1$s\", però actualment no teniu privilegis en aquest lloc web. Si creieu que hauríeu de poder accedir al tauler \"%1$s\", contacteu amb l'administrador de la xarxa."
+msgstr "Heu intentat accedir al tauler de \"%1$s\", però actualment no teniu privilegis en aquest bloc. Si creieu que hauríeu de poder accedir al tauler \"%1$s\", contacteu amb l'administrador de la xarxa."
 
 #: wp-admin/includes/ms.php:426
 msgid "MB (Leave blank for network default)"
@@ -2987,9 +3074,11 @@ msgstr[1] "Super administradors <span class=\"count\">(%s)</span>"
 msgid "American English"
 msgstr "Anglès americà"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/ms.php:638
 msgid "Primary Site"
-msgstr "Lloc principal"
+msgstr "Bloc principal"
 
 #: wp-admin/includes/class-wp-ms-themes-list-table.php:379
 msgid "Visit Theme Site"
@@ -2999,9 +3088,11 @@ msgstr "Visita el lloc web del tema"
 msgid "Delete this theme"
 msgstr "Suprimeix aquest tema"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/ms.php:425
 msgid "Site Upload Space Quota "
-msgstr "Quota d'espai del lloc per a càrregues"
+msgstr "Quota d'espai del bloc per a càrregues"
 
 #: wp-admin/includes/class-wp-ms-themes-list-table.php:243
 #: wp-admin/includes/class-wp-ms-themes-list-table.php:286
@@ -3016,25 +3107,31 @@ msgstr "No hi ha prou espai per carregar. Es necessiten %1$s Kb."
 msgid "English"
 msgstr "Anglès"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/my-sites.php:63
 msgid "You must be a member of at least one site to use this page."
-msgstr "Heu de ser un membre d'almenys un lloc web per a usar aquesta pàgina."
+msgstr "Heu de ser un membre d'almenys un bloc per a usar aquesta pàgina."
 
 #: wp-admin/my-sites.php:94
 msgid "Global Settings"
 msgstr "Paràmetres globals"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/my-sites.php:48
 msgid "<a href=\"http://codex.wordpress.org/Dashboard_My_Sites_Screen\" target=\"_blank\">Documentation on My Sites</a>"
-msgstr "<a href=\"http://codex.wordpress.org/Dashboard_My_Sites_Screen\" target=\"_blank\">Documentació sobre els meus llocs web</a>"
+msgstr "<a href=\"http://codex.wordpress.org/Dashboard_My_Sites_Screen\" target=\"_blank\">Documentació sobre els meus blocs</a>"
 
 #: wp-admin/my-sites.php:16
 msgid "You do not have sufficient permissions to view this page."
 msgstr "No teniu permès visualitzar aquesta pàgina."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/my-sites.php:31
 msgid "The primary site you chose does not exist."
-msgstr "El lloc principal que heu triat, no existeix."
+msgstr "El bloc principal que heu triat, no existeix."
 
 #: wp-admin/my-sites.php:43
 msgid "Up until WordPress version 3.0, what is now called a Multisite Network had to be installed separately as WordPress MU (multi-user)."
@@ -3273,9 +3370,11 @@ msgstr "El WordPress pot cercar automàticament problemes comuns en la base de d
 msgid "WordPress can also attempt to optimize the database. This improves performance in some situations. Repairing and optimizing the database can take a long time and the database will be locked while optimizing."
 msgstr "El WordPress també pot intentar optimitzar la base de dades. Això millora el rendiment en algunes situacions. La reparació i optimització de la base de dades pot durar bastant temps i quedarà blocada durant l'optimització."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/user-new.php:278
 msgid "Enter the email address or username of an existing user on this network to invite them to this site. That person will be sent an email asking them to confirm the invite."
-msgstr "Introduïu l'adreça electrònica i nom d'un usuari existent en aquesta xarxa per a convidar-lo a aquest lloc web. A aquesta persona se li enviarà un correu electrònic demanant-li que confirmi la invitació."
+msgstr "Introduïu l'adreça electrònica i nom d'un usuari existent en aquesta xarxa per a convidar-lo a aquest bloc. A aquesta persona se li enviarà un correu electrònic demanant-li que confirmi la invitació."
 
 #: wp-admin/options-discussion.php:173
 msgid "An avatar is an image that follows you from weblog to weblog appearing beside your name when you comment on avatar enabled sites. Here you can enable the display of avatars for people who comment on your site."
@@ -3285,9 +3384,11 @@ msgstr "Un avatar és una imatge que us segueix de bloc en bloc i apareix al cos
 msgid "<strong>Warning:</strong> Making changes to active plugins is not recommended. If your changes cause a fatal error, the plugin will be automatically deactivated."
 msgstr "<strong>Advertència:</strong> no es recomana fer canvis a extensions actives. Si els canvis produeixen un error fatal es desactivarà automàticament l'extensió."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/user-new.php:275
 msgid "Enter the email address of an existing user on this network to invite them to this site. That person will be sent an email asking them to confirm the invite."
-msgstr "Introduïu una adreça de correu electrònic d'un usuari existent en aquesta xarxa per a convidar-lo a aquest lloc web. A aquesta persona se li enviarà un correu electrònic demanant-li que confirmi la invitació."
+msgstr "Introduïu una adreça de correu electrònic d'un usuari existent en aquesta xarxa per a convidar-lo a aquest bloc. A aquesta persona se li enviarà un correu electrònic demanant-li que confirmi la invitació."
 
 #: wp-admin/credits.php:179
 msgid "Contributing Developers"
@@ -3417,9 +3518,11 @@ msgstr "Aquest és un resum bàsic dels diferents rols d'usuari i els permisos a
 msgid "User Roles"
 msgstr "Rols d'usuari"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/user-new.php:151
 msgid "To add a new user to your site, fill in the form on this screen and click the Add New User button at the bottom."
-msgstr "Per afegir un usuari nou al lloc web, ompliu el formulari d'aquesta pantalla i feu clic al botó Afegeix usuari nou de la part inferior."
+msgstr "Per afegir un usuari nou al bloc, ompliu el formulari d'aquesta pantalla i feu clic al botó Afegeix usuari nou de la part inferior."
 
 #: wp-admin/edit-comments.php:122
 msgid "Moderating Comments"
@@ -3515,9 +3618,11 @@ msgstr "Podeu enviar el contingut de vàries formes diferents; aquesta pantalla 
 msgid "Installing themes on Multisite can only be done from the Network Admin section."
 msgstr "La instal·lació de temes en multilloc solament es pot fer des de la secció del administrador de la xarxa"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/options-general.php:65
 msgid "If you want site visitors to be able to register themselves, as opposed to by the site administrator, check the membership box. A default user role can be set for all new users, whether self-registered or registered by the site admin."
-msgstr "Si voleu que els visitants del lloc es puguin registrar tot sols, en lloc de ser registrats per l'administrador del lloc, marqueu la casella següent. Un rol d'usuari per defecte es pot definir per als usuaris nous, tant si es registren tot sols, com si ho fa l'administrador."
+msgstr "Si voleu que els visitants del bloc es puguin registrar tot sols, en lloc de ser registrats per l'administrador del lloc, marqueu la casella següent. Un rol d'usuari per defecte es pot definir per als usuaris nous, tant si es registren tot sols, com si ho fa l'administrador."
 
 #: wp-admin/options-writing.php:35
 msgid "Post Via Email"
@@ -3968,6 +4073,8 @@ msgctxt "users per page (screen options)"
 msgid "Users"
 msgstr "Usuaris"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/options-discussion.php:12
 #: wp-admin/options-general.php:13
 #: wp-admin/options-media.php:13
@@ -3975,7 +4082,7 @@ msgstr "Usuaris"
 #: wp-admin/options-reading.php:13
 #: wp-admin/options-writing.php:13
 msgid "You do not have sufficient permissions to manage options for this site."
-msgstr "No teniu permès gestionar les opcions d'aquest lloc web."
+msgstr "No teniu permès gestionar les opcions d'aquest bloc."
 
 #: wp-admin/menu.php:177
 msgctxt "plugin editor"
@@ -4054,9 +4161,11 @@ msgstr "S'han desat les opcions."
 msgid "Changed roles."
 msgstr "S'han canviat els rols."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/users.php:400
 msgid "User removed from this site."
-msgstr "S'ha suprimit l'usuari d'aquest lloc web."
+msgstr "S'ha suprimit l'usuari d'aquest bloc."
 
 #: wp-admin/includes/dashboard.php:396
 #: wp-admin/users.php:443
@@ -4197,10 +4306,12 @@ msgstr "Atribueix tots els articles a:"
 msgid "Plugins %s"
 msgstr "Extensions %s"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/menu.php:210
 #: wp-admin/ms-delete-site.php:30
 msgid "Delete Site"
-msgstr "Suprimeix el lloc web"
+msgstr "Suprimeix el bloc"
 
 #: wp-admin/edit-form-advanced.php:286
 msgid "About Pages"
@@ -4218,9 +4329,11 @@ msgstr "Títol i editor de l'entrada"
 msgid "<a href=\"http://codex.wordpress.org/Posts_Tags_Screen\" target=\"_blank\">Documentation on Tags</a>"
 msgstr "<a href=\"http://codex.wordpress.org/Posts_Tags_Screen\" target=\"_blank\">Documentació sobre les etiquetes</a> (en anglès)"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/options-reading.php:151
 msgid "Note: Neither of these options blocks access to your site &mdash; it is up to search engines to honor your request."
-msgstr "Nota: Cap d'aquestes opcions bloquen l'accés al teu lloc web &mdash; es decisió dels cercadors fer cas de la vostra petició."
+msgstr "Nota: Cap d'aquestes opcions bloquen l'accés al teu bloc &mdash; es decisió dels cercadors fer cas de la vostra petició."
 
 #: wp-admin/options-permalink.php:220
 msgid "Post name"
@@ -4239,18 +4352,22 @@ msgctxt "sample permalink base"
 msgid "archives"
 msgstr "arxius"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/import.php:104
 msgid "This importer is not installed. Please install importers from <a href=\"%s\">the main site</a>."
-msgstr "Aquest importador no està instal·lat. Instal·leu importadors des del <a href=\"%s\">lloc principal</a>."
+msgstr "Aquest importador no està instal·lat. Instal·leu importadors des del <a href=\"%s\">bloc principal</a>."
 
 #: wp-admin/options-general.php:113
 #: wp-admin/options-general.php:132
 msgid "E-mail Address"
 msgstr "Adreça de correu electrònic"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/options-general.php:310
 msgid "Site Language"
-msgstr "Idioma del lloc"
+msgstr "Idioma del bloc"
 
 #: wp-admin/options-discussion.php:45
 msgid "Attempt to notify any blogs linked to from the article"
@@ -4328,9 +4445,11 @@ msgctxt "meta name"
 msgid "Name"
 msgstr "Nom"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/user-new.php:36
 msgid "[%s] Your site invite"
-msgstr "[%s] invitacions del lloc"
+msgstr "[%s] invitacions del bloc"
 
 #: wp-admin/themes.php:247
 msgctxt "theme name"
@@ -4347,9 +4466,11 @@ msgstr "Nom"
 msgid "Icon Design"
 msgstr "Disseny de les icones"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/theme-install.php:81
 msgid "You can find additional themes for your site by using the Theme Browser/Installer on this screen, which will display themes from the <a href=\"%s\" target=\"_blank\">WordPress.org Theme Directory</a>. These themes are designed and developed by third parties, are available free of charge, and are compatible with the license WordPress uses."
-msgstr "Podeu trobar temes addicionals per al lloc en fer servir el navegador/instal·lador de temes d'aquesta pantalla, la qual mostra temes del <a href=\"%s\" target=\"_blank\">directori de temes de WordPress.org</a>. Aquests temes estan dissenyats i desenvolupats per part de tercers, estan disponibles de manera gratuïta, i són compatibles amb la llicència d'ús del WordPress."
+msgstr "Podeu trobar temes addicionals per al bloc en fer servir el navegador/instal·lador de temes d'aquesta pantalla, la qual mostra temes del <a href=\"%s\" target=\"_blank\">directori de temes de WordPress.org</a>. Aquests temes estan dissenyats i desenvolupats per part de tercers, estan disponibles de manera gratuïta, i són compatibles amb la llicència d'ús del WordPress."
 
 #: wp-admin/update-core.php:51
 msgid "Re-install Now"
@@ -4722,27 +4843,33 @@ msgstr "Plantilla de la pàgina %s"
 msgid "Post Format:"
 msgstr "Format de l'entrada:"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/plugins.php:270
 msgid "This plugin may be active on other sites in the network."
 msgid_plural "These plugins may be active on other sites in the network."
-msgstr[0] "Aquesta extensió es pot activar al altres llocs webs de la xarxa."
-msgstr[1] "Aquestes extensions es poden activar als altres llocs webs de la xarxa."
+msgstr[0] "Aquesta extensió es pot activar al altres blocs de la xarxa."
+msgstr[1] "Aquestes extensions es poden activar als altres blocs de la xarxa."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/plugins.php:377
 msgid "You cannot delete a plugin while it is active on the main site."
-msgstr "No podeu suprimir aquesta extensió mentre està activa en el lloc web principal."
+msgstr "No podeu suprimir aquesta extensió mentre està activa en el bloc principal."
 
 #: wp-admin/options-writing.php:87
 msgid "Default Post Format"
 msgstr "Format d'entrada predeterminat"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/update-core.php:23
 #: wp-admin/update-core.php:537
 #: wp-admin/update-core.php:562
 #: wp-admin/update-core.php:590
 #: wp-admin/update-core.php:618
 msgid "You do not have sufficient permissions to update this site."
-msgstr "No teniu suficients permisos per actualitzar aquest lloc web."
+msgstr "No teniu suficients permisos per actualitzar aquest bloc."
 
 # XTEC ************ CORREGIT *
 # 2014.02.03 @jmiro227
@@ -4767,10 +4894,12 @@ msgstr "Afegeix"
 msgid "Add Existing User "
 msgstr "Convida un usuari existent"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/plugin-editor.php:137
 #: wp-admin/theme-editor.php:34
 msgid "Any edits to files from this screen will be reflected on all sites in the network."
-msgstr "Qualsevol edició en els fitxers d'aquesta pantalla es farà efectiva en tots els llocs webs de la xarxa."
+msgstr "Qualsevol edició en els fitxers d'aquesta pantalla es farà efectiva en tots els blocs de la xarxa."
 
 # XTEC ************ CORREGIT *
 # 2014.02.03 @jmiro227
@@ -4798,9 +4927,11 @@ msgstr "<a href=\"http://codex.wordpress.org/Writing_a_Plugin\" target=\"_blank\
 msgid "The boxes on your Dashboard screen are:"
 msgstr "Les caixes del tauler són:"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/users.php:26
 msgid "This screen lists all the existing users for your site. Each user has one of five defined roles as set by the site admin: Site Administrator, Editor, Author, Contributor, or Subscriber. Users with roles other than Administrator will see fewer options in the dashboard navigation when they are logged in, based on their role."
-msgstr "Aquesta pantalla llista tots els usuaris existents al lloc web. Cada usuari té un dels cinc rols definits segons ho ha configurat l'administrador del lloc web: administrador del lloc web, editor, autor, col·laborador o subscriptor. Els usuaris que tenen un rol distint del d'administrador veuran unes poques opcions menys al tauler de navegació quan han iniciat la sessió, depenent del seu rol. "
+msgstr "Aquesta pantalla llista tots els usuaris existents al bloc. Cada usuari té un dels cinc rols definits segons ho ha configurat l'administrador: administrador del bloc, editor, autor, col·laborador o subscriptor. Els usuaris que tenen un rol distint del d'administrador veuran unes poques opcions menys al tauler de navegació quan han iniciat la sessió, depenent del seu rol. "
 
 #: wp-admin/options-permalink.php:45
 msgid "<a href=\"http://codex.wordpress.org/Using_Permalinks\" target=\"_blank\">Documentation on Using Permalinks</a>"
@@ -4826,13 +4957,17 @@ msgstr "Pàgina d'exemple"
 msgid "Retro (Generated)"
 msgstr "Retro (Generat)"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-themes-list-table.php:68
 msgid "You only have one theme enabled for this site right now. Visit the Network Admin to <a href=\"%1$s\">enable</a> or <a href=\"%2$s\">install</a> more themes."
-msgstr "Ara mateix solament teniu activat un tema per a aquest lloc web. Visiteu l'administració de la xarxa per a <a href=\"%1$s\">activar</a> o <a href=\"%2$s\">instal·lar</a> més temes."
+msgstr "Ara mateix solament teniu activat un tema per a aquest bloc. Visiteu l'administració de la xarxa per a <a href=\"%1$s\">activar</a> o <a href=\"%2$s\">instal·lar</a> més temes."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-themes-list-table.php:72
 msgid "You only have one theme enabled for this site right now. Visit the Network Admin to <a href=\"%1$s\">enable</a> more themes."
-msgstr "Ara mateix solament teniu un tema activat per a aquest lloc web. Visiteu l'administració de la xarxa per a <a href=\"%1$s\">activar</a> més temes."
+msgstr "Ara mateix solament teniu un tema activat per a aquest bloc. Visiteu l'administració de la xarxa per a <a href=\"%1$s\">activar</a> més temes."
 
 #: wp-admin/user-edit.php:342
 msgid "Super admin privileges cannot be removed because this user has the network admin email."
@@ -4999,9 +5134,11 @@ msgstr "<a href=\"http://codex.wordpress.org/Comment_Spam\" target=\"_blank\">Do
 msgid "<a href=\"http://codex.wordpress.org/Keyboard_Shortcuts\" target=\"_blank\">Documentation on Keyboard Shortcuts</a>"
 msgstr "<a href=\"http://codex.wordpress.org/Keyboard_Shortcuts\" target=\"_blank\">Documentació sobre les dreceres de teclat</a> (en anglès)"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/widgets.php:53
 msgid "The Available Widgets section contains all the widgets you can choose from. Once you drag a widget into a sidebar, it will open to allow you to configure its settings. When you are happy with the widget settings, click the Save button and the widget will go live on your site. If you click Delete, it will remove the widget."
-msgstr "La secció de ginys disponibles conté tots els ginys que podeu escollir. Una vegada heu arrossegat un giny a la barra lateral, el giny s'obrirà per permetre-us que configureu els seus paràmetres. Quan el giny ja estigui configurat, feu clic al botó \"Desar\" i el giny ja estarà disponible en el vostre lloc. Si feu clic al botó \"Esborrar\", el giny s'esborrarà."
+msgstr "La secció de ginys disponibles conté tots els ginys que podeu escollir. Una vegada heu arrossegat un giny a la barra lateral, el giny s'obrirà per permetre-us que configureu els seus paràmetres. Quan el giny ja estigui configurat, feu clic al botó \"Desar\" i el giny ja estarà disponible en el vostre bloc. Si feu clic al botó \"Esborrar\", el giny s'esborrarà."
 
 # XTEC ************ CORREGIT *
 # 2013.10.30 @jmeler
@@ -5047,9 +5184,11 @@ msgstr "Afegeix un usuari sense enviar-li el correu electrònic de confirmació.
 msgid "Search Installed Themes"
 msgstr "Cerca temes instal·lats"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-upgrader-skins.php:528
 msgid "Enable this theme for all sites in this network"
-msgstr "Activa aquest tema per a tots els llocs d'aquesta xarxa"
+msgstr "Activa aquest tema per a tots els blocs d'aquesta xarxa"
 
 #: wp-admin/update-core.php:298
 msgid "<strong>Please Note:</strong> Any customizations you have made to theme files will be lost. Please consider using <a href=\"%s\">child themes</a> for modifications."
@@ -5158,9 +5297,11 @@ msgstr "No s'ha trobat cap tema."
 msgid "Go to the first page"
 msgstr "Aneu a la primera pàgina"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/dashboard.php:403
 msgid "Search Sites"
-msgstr "Cerca llocs web"
+msgstr "Cerca blocs"
 
 #: wp-admin/includes/dashboard.php:357
 msgid "Create a New User"
@@ -5170,11 +5311,13 @@ msgstr "Crea un usuari nou"
 msgid "You have %1$s and %2$s."
 msgstr "Teniu %1$s i %2$s."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/dashboard.php:363
 msgid "%s site"
 msgid_plural "%s sites"
-msgstr[0] "%s lloc web "
-msgstr[1] "%s llocs web"
+msgstr[0] "%s bloc"
+msgstr[1] "%s blocs"
 
 #: wp-admin/includes/dashboard.php:362
 msgid "%s user"
@@ -5194,17 +5337,21 @@ msgstr "http://wordpress.org/news/"
 msgid "http://wordpress.org/news/feed/"
 msgstr "http://wordpress.org/news/feed/"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/options-discussion.php:66
 msgid "(Signup has been disabled. Only members of this site can comment.)"
-msgstr "(El registre està desactivat. Solament els membres d'aquest lloc web poden fer comentaris.)"
+msgstr "(El registre està desactivat. Solament els membres d'aquest bloc poden fer comentaris.)"
 
 #: wp-admin/update-core.php:67
 msgid "You can update to <a href=\"http://codex.wordpress.org/Version_%1$s\">WordPress %2$s</a> automatically or download the package and install it manually:"
 msgstr "Podeu actualitzar el <a href=\"http://codex.wordpress.org/Version_%1$s\">WordPress %2$s</a> automàticament o baixar-vos el paquet i instal·lar-lo manualment:"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/user-new.php:158
 msgid "New users will receive an email letting them know they&#8217;ve been added as a user for your site. By default, this email will also contain their password. Uncheck the box if you don&#8217;t want the password to be included in the welcome email."
-msgstr "Els usuaris nous rebran un correu electrònic fent-los saber que han estat afegits com a usuaris en el lloc web. Per defecte, aquest correu electrònic conté la seva contrasenya. Desactiveu la casella si no voleu que la contrasenya s'inclogui en el correu electrònic de benvinguda."
+msgstr "Els usuaris nous rebran un correu electrònic fent-los saber que han estat afegits com a usuaris en el bloc. Per defecte, aquest correu electrònic conté la seva contrasenya. Desactiveu la casella si no voleu que la contrasenya s'inclogui en el correu electrònic de benvinguda."
 
 #: wp-admin/includes/theme.php:151
 #: wp-admin/includes/update.php:287
@@ -5239,10 +5386,12 @@ msgstr "Feu clic a «Desa el menú» per fer públics els elements pendents del 
 msgid "Storage Space"
 msgstr "Espai d'emmagatzematge"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/dashboard.php:355
 #: wp-admin/includes/ms.php:676
 msgid "Create a New Site"
-msgstr "Crea un lloc web nou"
+msgstr "Crea un bloc nou"
 
 #: wp-admin/plugins.php:340
 msgctxt "plugins per page (screen options)"
@@ -5271,9 +5420,11 @@ msgstr "<a href=\"http://codex.wordpress.org/Using_Themes#Adding_New_Themes\" ta
 msgid "Crop and Publish"
 msgstr "Retalla i publica"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/plugins.php:347
 msgid "You can find additional plugins for your site by using the <a href=\"%1$s\">Plugin Browser/Installer</a> functionality or by browsing the <a href=\"%2$s\" target=\"_blank\">WordPress Plugin Directory</a> directly and installing new plugins manually. To manually install a plugin you generally just need to upload the plugin file into your <code>/wp-content/plugins</code> directory. Once a plugin has been installed, you can activate it here."
-msgstr "Podeu trobar extensions addicionals per al vostre lloc web tot fent servir l'<a href=\"%1$s\">Instal·lador/Navegador d'extensions</a> o bé navegant directament pel <a href=\"%2$s\" target=\"_blank\">directori d'extensions del Wordpress</a> des d'on podreu instal·lar noves extensions manualment. Normalment, per a fer una instal·lació manual d'una extensió  només necessitareu pujar el fitxer o fitxers de l'extensió al directori <code>/wp-content/plugins</code>. Una vegada s'hagi instal·lat l'extensió, podeu activar-la des d'aquí."
+msgstr "Podeu trobar extensions addicionals per al vostre bloc tot fent servir l'<a href=\"%1$s\">Instal·lador/Navegador d'extensions</a> o bé navegant directament pel <a href=\"%2$s\" target=\"_blank\">directori d'extensions del Wordpress</a> des d'on podreu instal·lar noves extensions manualment. Normalment, per a fer una instal·lació manual d'una extensió  només necessitareu pujar el fitxer o fitxers de l'extensió al directori <code>/wp-content/plugins</code>. Una vegada s'hagi instal·lat l'extensió, podeu activar-la des d'aquí."
 
 #: wp-admin/edit-link-form.php:60
 msgid "XFN stands for <a href=\"http://gmpg.org/xfn/\" target=\"_blank\">XHTML Friends Network</a>, which is optional. WordPress allows the generation of XFN attributes to show how you are related to the authors/owners of the site to which you are linking."
@@ -5346,17 +5497,21 @@ msgstr "Alguns temes mostren per defecte alguns ginys fins que editeu la barra l
 msgid "If you want to remove the widget but save its setting for possible future use, just drag it into the Inactive Widgets area. You can add them back anytime from there. This is especially helpful when you switch to a theme with fewer or different widget areas."
 msgstr "Si voleu eliminar el giny però desar-ne la configuració per a possibles usos futurs, arrossegueu-lo a l'àrea de ginys inactius. Els podeu afegir de nou quan vulgueu. Això és especialment útil quan canvieu a un tema amb menys o diferents barres laterals."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/users.php:27
 msgid "To add a new user for your site, click the Add New button at the top of the screen or Add New in the Users menu section."
-msgstr "Per afegir un usuari nou al lloc, feu clic al botó Afegeix de dalt de la pantalla o Afegeix a la secció usuaris del menú."
+msgstr "Per afegir un usuari nou al bloc, feu clic al botó Afegeix de dalt de la pantalla o Afegeix a la secció usuaris del menú."
 
 #: wp-admin/options-media.php:18
 msgid "You can set maximum sizes for images inserted into your written content; you can also insert an image as Full Size."
 msgstr "Podeu especificar les mides màximes de les imatges que s'insereixin al contingut escrit; també podeu inserir una imatge a mida completa."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/options-general.php:61
 msgid "Most themes display the site title at the top of every page, in the title bar of the browser, and as the identifying name for syndicated feeds. The tagline is also displayed by many themes."
-msgstr "La majoria de temes mostren el títol del lloc a la capçalera de cada pàgina, a la barra de títol del navegador i com a identificador dels canals de sindicació. La descripció també la mostren alguns temes."
+msgstr "La majoria de temes mostren el títol del bloc a la capçalera de cada pàgina, a la barra de títol del navegador i com a identificador dels canals de sindicació. La descripció també la mostren alguns temes."
 
 #: wp-admin/edit-form-advanced.php:356
 msgid "<strong>Order</strong> - Pages are usually ordered alphabetically, but you can choose your own order by entering a number (1 for first, etc.) in this field."
@@ -5404,9 +5559,11 @@ msgstr "Els administradors tenen accés a totes les característiques d'administ
 msgid "You can use the editor to make changes to any of your plugins&#8217; individual PHP files. Be aware that if you make changes, plugins updates will overwrite your customizations."
 msgstr "Podeu fer servir l'editor per fer canvis en qualssevol dels fitxers PHP de les extensions. Tingueu en compte que si feu canvis, les actualitzacions de les extensions sobreescriuran les vostres personalitzacions."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/link-manager.php:47
 msgid "You can add links here to be displayed on your site, usually using <a href=\"%s\">Widgets</a>. By default, links to several sites in the WordPress community are included as examples."
-msgstr "Podeu afegir enllaços aquí per mostrar-los al lloc web, normalment fent servir <a href=\"%s\">Ginys</a>. Per defecte, els enllaços a diversos llocs web de la comunitat del WordPress estan inclosos com a exemples."
+msgstr "Podeu afegir enllaços aquí per mostrar-los al bloc, normalment fent servir <a href=\"%s\">Ginys</a>. Per defecte, els enllaços a diversos blocs de la comunitat del WordPress estan inclosos com a exemples."
 
 #: wp-admin/link-manager.php:55
 msgid "If you delete a link, it will be removed permanently, as Links do not have a Trash function yet."
@@ -5416,9 +5573,11 @@ msgstr "Si esborreu un enllaç, s'eliminarà permanentment, ja que els enllaços
 msgid "Don&#8217;t forget to click on the Save Changes button when you are finished."
 msgstr "No oblideu fer clic al botó Desa els canvis quan acabeu."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/custom-background.php:90
 msgid "You can customize the look of your site without touching any of your theme&#8217;s code by using a custom background. Your background can be an image or a color."
-msgstr "Podeu personalitzar l'aparença del lloc sense tocar res del codi del tema si useu un fons personalitzat. El fons pot ser una imatge o un color."
+msgstr "Podeu personalitzar l'aparença del bloc sense tocar res del codi del tema si useu un fons personalitzat. El fons pot ser una imatge o un color."
 
 #: wp-admin/edit-tags.php:218
 msgid "<strong>Slug</strong> - The &#8220;slug&#8221; is the URL-friendly version of the name. It is usually all lowercase and contains only letters, numbers, and hyphens."
@@ -5462,9 +5621,11 @@ msgstr "Escriviu aquí el nom del menú"
 msgid "UTC means Coordinated Universal Time."
 msgstr "UTC significa Temps Coordinat Universal"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/options-general.php:60
 msgid "The fields on this screen determine some of the basics of your site setup."
-msgstr "Els camps d'aquesta pantalla determinen algunes de les bases de la instal·lació del lloc."
+msgstr "Els camps d'aquesta pantalla determinen algunes de les bases de la instal·lació del bloc."
 
 #: wp-admin/options-reading.php:56
 msgid "This screen contains the settings that affect the display of your content."
@@ -5481,17 +5642,21 @@ msgstr "Aquesta pantalla conté la configuració que afecten a la visualització
 msgid "You must click the Save Changes button at the bottom of the screen for new settings to take effect."
 msgstr "Heu de fer clic al botó Desa els canvis de la part inferior de la pantalla perquè la configuració nova tingui efecte."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/options-general.php:64
 msgid "The WordPress URL and the Site URL can be the same (example.com) or different; for example, having the WordPress core files (example.com/wordpress) in a subdirectory instead of the root directory."
-msgstr "L'URL del WordPress i l'URL del lloc poden ser la mateixa (exemple.com) o diferent; per exemple, si teniu els fitxers del WordPress en un subdirectori (exemple.com/wordpress) en lloc de tenir-los al directori arrel."
+msgstr "L'URL del WordPress i l'URL del bloc poden ser la mateixa (exemple.com) o diferent; per exemple, si teniu els fitxers del WordPress en un subdirectori (exemple.com/wordpress) en lloc de tenir-los al directori arrel."
 
 #: wp-admin/edit-link-form.php:59
 msgid "The boxes for link name, web address, and description have fixed positions, while the others may be repositioned using drag and drop. You can also hide boxes you don&#8217;t use in the Screen Options tab, or minimize boxes by clicking on the title bar of the box."
 msgstr "Les caixes per al nom de l'enllaç, l'adreça web i la descripció tenen posicions fixes, mentre que les altres poden canviar de posició si les arrossegueu i deixeu anar enlloc. Podeu també amagar les caixes que no voleu usar en la pestanya d'Opcions de pantalla, o minimitzar les caixes en fer clic en la barra del títol de la caixa."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/update-core.php:191
 msgid "While your site is being updated, it will be in maintenance mode. As soon as your updates are complete, your site will return to normal."
-msgstr "Mentre el lloc s'estigui actualitzant, estarà en mode de manteniment. Una vegada les actualitzacions hagin acabat, el bloc tornarà al seu estat normal."
+msgstr "Mentre el bloc s'estigui actualitzant, estarà en mode de manteniment. Una vegada les actualitzacions hagin acabat, el bloc tornarà al seu estat normal."
 
 #: wp-admin/update-core.php:208
 msgid "Your plugins are all up to date."
@@ -5522,9 +5687,11 @@ msgstr "Nom de la funció&hellip;"
 msgid "Activate importer"
 msgstr "Activeu l'importador"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/edit-link-form.php:58
 msgid "You can add or edit links on this screen by entering information in each of the boxes. Only the link&#8217;s web address and name (the text you want to display on your site as the link) are required fields."
-msgstr "Podeu afegir o editar enllaços en aquesta pantalla escrivint informació a cada caixa. Els únics camps obligatoris són l'adreça de l'enllaç a la pàgina web i el nom (el text que voleu mostrar al lloc com a enllaç)."
+msgstr "Podeu afegir o editar enllaços en aquesta pantalla escrivint informació a cada caixa. Els únics camps obligatoris són l'adreça de l'enllaç a la pàgina web i el nom (el text que voleu mostrar al bloc com a enllaç)."
 
 #: wp-admin/includes/class-wp-upgrader-skins.php:441
 msgid "Return to Importers"
@@ -5577,13 +5744,17 @@ msgstr "Podeu personalitzar la visualització d'aquesta pantalla amb la pestanya
 msgid "Choose a plugin to edit from the menu in the upper right and click the Select button. Click once on any file name to load it in the editor, and make your changes. Don&#8217;t forget to save your changes (Update File) when you&#8217;re finished."
 msgstr "Trieu l'extensió que vulgueu editar des del menú de dalt a la dreta i feu clic al botó Selecciona. Feu clic sobre qualsevol nom de fitxer per carregar-lo a l'editor i fer els vostres canvis. No oblideu desar els vostres canvis (Actualitza el fitxer) quan hàgeu acabat."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/plugins.php:353
 msgid "Most of the time, plugins play nicely with the core of WordPress and with other plugins. Sometimes, though, a plugin&#8217;s code will get in the way of another plugin, causing compatibility issues. If your site starts doing strange things, this may be the problem. Try deactivating all your plugins and re-activating them in various combinations until you isolate which one(s) caused the issue."
-msgstr "Gairebé sempre, les extensions funcionen bé amb el nucli del WordPress i amb altres extensions. A vegades, però, el codi d'una extensió interferirà amb una altra extensió causant problemes de compatibilitat. Si el vostre lloc comença a fer coses rares, aquest podria ser el problema. Proveu de desactivar totes les vostres extensions i reactivar-les en diverses combinacions fins que aïlleu la o les extensions que van causar el problema."
+msgstr "Gairebé sempre, les extensions funcionen bé amb el nucli del WordPress i amb altres extensions. A vegades, però, el codi d'una extensió interferirà amb una altra extensió causant problemes de compatibilitat. Si el vostre bloc comença a fer coses rares, aquest podria ser el problema. Proveu de desactivar totes les vostres extensions i reactivar-les en diverses combinacions fins que aïlleu la o les extensions que van causar el problema."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/widgets.php:60
 msgid "Widgets may be used multiple times. You can give each widget a title, to display on your site, but it&#8217;s not required."
-msgstr "Els ginys els podeu fer servir múltiples vegades. Podeu donar a cada giny un títol per mostrar-lo al lloc web, però no és obligatori."
+msgstr "Els ginys els podeu fer servir múltiples vegades. Podeu donar a cada giny un títol per mostrar-lo al bloc, però no és obligatori."
 
 #: wp-admin/widgets.php:61
 msgid "Enabling Accessibility Mode, via Screen Options, allows you to use Add and Edit buttons instead of using drag and drop."
@@ -5605,9 +5776,11 @@ msgstr "Els ginys són seccions independents de contingut que es poden ubicar a 
 msgid "You can Search for themes by keyword, author, or tag, or can get more specific and search by criteria listed in the feature filter. Alternately, you can browse the themes that are Featured, Newest, or Recently Updated. When you find a theme you like, you can preview it or install it."
 msgstr "Podeu cercar temes per paraula clau, autor o etiqueta o podeu ser més específics i cercar pels criteris llistats al filtre de característiques. Alternativament, podeu navegar pels temes que són Destacats, Els més recents o els Recentment actualitzats. Quan trobeu un tema que us agradi, podeu previsualitzar-lo o instal·lar-lo."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/theme-editor.php:32
 msgid "<strong>Advice:</strong> think very carefully about your site crashing if you are live-editing the theme currently in use."
-msgstr "<strong>Consell:</strong> penseu detingudament que el lloc es pot trencar si editeu en viu el tema que actualment està en ús."
+msgstr "<strong>Consell:</strong> penseu detingudament que el bloc es pot trencar si editeu en viu el tema que actualment està en ús."
 
 #: wp-admin/theme-editor.php:31
 msgid "After typing in your edits, click Update File."
@@ -5656,9 +5829,11 @@ msgstr "Podeu canviar la visualització d'aquesta pantalla fent servir la pestan
 msgid "<strong>Description</strong> - The description is not prominent by default; however, some themes may display it."
 msgstr "<strong>Descripció</strong> - La descripció no és prominent per defecte; tanmateix, alguns temes poden mostrar-la."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/edit-tags.php:215
 msgid "<strong>Name</strong> - The name is how it appears on your site."
-msgstr "<strong>Nom</strong> - El nom és com apareix al lloc."
+msgstr "<strong>Nom</strong> - El nom és com apareix al bloc."
 
 #: wp-admin/edit-tags.php:210
 msgid "When adding a new category on this screen, you&#8217;ll fill in the following fields:"
@@ -6026,19 +6201,25 @@ msgstr "Crea menú"
 msgid "WordPress Blog"
 msgstr "Bloc del WordPress"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/user-edit.php:329
 #: wp-admin/user-edit.php:331
 msgid "&mdash; No role for this site &mdash;"
-msgstr "&mdash; Cap rol en aquest lloc web &mdash;"
+msgstr "&mdash; Cap rol en aquest bloc &mdash;"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/options-writing.php:118
 #: wp-admin/tools.php:43
 msgid "Use Press This to clip text, images and videos from any web page. Then edit and add more straight from Press This before you save or publish it in a post on your site."
-msgstr "Useu \"Premeu això\" per capturar text, imatges i vídeos de qualsevol pàgina web. Aleshores editeu i afegiu més directament des de \"Premeu això\" abans de desar-ho o publicar-ho en una entrada al lloc."
+msgstr "Useu \"Premeu això\" per capturar text, imatges i vídeos de qualsevol pàgina web. Aleshores editeu i afegiu més directament des de \"Premeu això\" abans de desar-ho o publicar-ho en una entrada al bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/users.php:325
 msgid "Remove Users from Site"
-msgstr "Suprimiu usuaris del lloc web"
+msgstr "Suprimiu usuaris del bloc"
 
 # XTEC ************ CORREGIT *
 # 2013.06.21 @jmiro227
@@ -6046,107 +6227,147 @@ msgstr "Suprimiu usuaris del lloc web"
 msgid "You are not allowed to create posts or drafts on this site."
 msgstr "No teniu autorització per crear articles o esborranys en aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/plugin.php:421
 msgid "Custom site deleted message."
-msgstr "Missatge personalitzat per al lloc web suprimit."
+msgstr "Missatge personalitzat per al bloc suprimit."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/plugin.php:423
 msgid "Custom site suspended message."
-msgstr "Missatge personalitzat per al lloc web suspès."
+msgstr "Missatge personalitzat per al bloc suspès."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/plugin.php:422
 msgid "Custom site inactive message."
-msgstr "Missatge personalitzat per al lloc web inactiu."
+msgstr "Missatge personalitzat per al bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:124
 msgid "No sites found."
-msgstr "No s'ha trobat cap lloc web."
+msgstr "No s'ha trobat cap bloc."
 
 #: wp-admin/includes/meta-boxes.php:514
 msgid "Trackbacks are a way to notify legacy blog systems that you&#8217;ve linked to them. If you link other WordPress sites they&#8217;ll be notified automatically using <a href=\"http://codex.wordpress.org/Introduction_to_Blogging#Managing_Comments\" target=\"_blank\">pingbacks</a>, no other action necessary."
-msgstr "Els retroenllaços són una forma de notificar a sistemes de bloc tradicionals que els heu enllaçat. Si enllaceu altres llocs web gestionats amb el WordPress aquests seran notificats automàticament mitjançant <a href=\"http://codex.wordpress.org/Introduction_to_Blogging#Managing_Comments\" target=\"_blank\">retropings</a> (en anglès), sense que calgui que feu res més."
+msgstr "Els retroenllaços són una forma de notificar a sistemes de bloc tradicionals que els heu enllaçat. Si enllaceu altres blocs gestionats amb el WordPress aquests seran notificats automàticament mitjançant <a href=\"http://codex.wordpress.org/Introduction_to_Blogging#Managing_Comments\" target=\"_blank\">retropings</a> (en anglès), sense que calgui que feu res més."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/post.php:651
 msgid "You are not allowed to create pages on this site."
-msgstr "No teniu permisos per crear pàgines en aquest lloc web."
+msgstr "No teniu permisos per crear pàgines en aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/schema.php:367
 msgid "My Site"
-msgstr "El meu lloc web"
+msgstr "El meu bloc"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/upgrade.php:288
 msgid "New WordPress Site"
-msgstr "Nou lloc web gestionat amb el WordPress"
+msgstr "Nou bloc gestionat amb el WordPress"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/update.php:154
 #: wp-admin/update.php:175
 msgid "You do not have sufficient permissions to update themes for this site."
-msgstr "No teniu els permisos necessaris per actualitzar els temes del lloc web."
+msgstr "No teniu els permisos necessaris per actualitzar els temes del bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/update.php:24
 #: wp-admin/update.php:50
 #: wp-admin/update.php:71
 msgid "You do not have sufficient permissions to update plugins for this site."
-msgstr "No teniu prou permisos com per gestionar les extensions d'aquest lloc web."
+msgstr "No teniu prou permisos com per gestionar les extensions d'aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/theme-install.php:16
 #: wp-admin/update.php:201
 #: wp-admin/update.php:231
 msgid "You do not have sufficient permissions to install themes on this site."
-msgstr "No teniu els permisos necessaris per insta·lar els temes en aquest lloc web."
+msgstr "No teniu els permisos necessaris per insta·lar els temes en aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/theme-editor.php:18
 msgid "You do not have sufficient permissions to edit templates for this site."
-msgstr "No teniu permís per editar les plantilles d'aquest lloc web."
+msgstr "No teniu permís per editar les plantilles d'aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/plugins.php:31
 #: wp-admin/plugins.php:66
 #: wp-admin/plugins.php:135
 msgid "You do not have sufficient permissions to activate plugins for this site."
-msgstr "No teniu prou permisos com per activar les extensions d'aquest lloc web."
+msgstr "No teniu prou permisos com per activar les extensions d'aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/plugin-install.php:18
 #: wp-admin/update.php:96
 #: wp-admin/update.php:127
 msgid "You do not have sufficient permissions to install plugins on this site."
-msgstr "No teniu permís per instal·lar extensions en aquest lloc web."
+msgstr "No teniu permís per instal·lar extensions en aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/plugins.php:160
 #: wp-admin/plugins.php:180
 msgid "You do not have sufficient permissions to deactivate plugins for this site."
-msgstr "No teniu permís per desactivar extensions d'aquest lloc web."
+msgstr "No teniu permís per desactivar extensions d'aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/plugins.php:211
 msgid "You do not have sufficient permissions to delete plugins for this site."
-msgstr "No teniu permís per suprimir extensions d'aquest lloc web."
+msgstr "No teniu permís per suprimir extensions d'aquest bloc."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/link-add.php:13
 msgid "You do not have sufficient permissions to add links to this site."
-msgstr "No teniu permís per afegir enllaços a aquest lloc."
+msgstr "No teniu permís per afegir enllaços a aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/bookmark.php:314
 #: wp-admin/link-manager.php:12
 #: wp-admin/link-manager.php:67
 msgid "You do not have sufficient permissions to edit the links for this site."
-msgstr "No teniu els permisos necessaris per editar els enllaços d'aquest lloc web."
+msgstr "No teniu els permisos necessaris per editar els enllaços d'aquest bloc."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/export.php:13
 msgid "You do not have sufficient permissions to export the content of this site."
-msgstr "No teniu permís per exportar el contingut d'aquest lloc."
+msgstr "No teniu permís per exportar el contingut d'aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/import.php:15
 msgid "You do not have sufficient permissions to import content in this site."
-msgstr "No teniu permís per importar contingut a aquest lloc web."
+msgstr "No teniu permís per importar contingut a aquest bloc."
 
 # XTEC ************ CORREGIT *
 # 2013.06.21 @jmiro227
 #: wp-admin/import.php:59
 msgid "If you have posts or comments in another system, WordPress can import those into this site. To get started, choose a system to import from below:"
-msgstr "Si teniu articles o comentaris en un altre sistema, el WordPress pot importar-los al lloc web actual. Per començar, trieu aquí sota el sistema des del qual els importareu:"
+msgstr "Si teniu articles o comentaris en un altre sistema, el WordPress pot importar-los al bloc actual. Per començar, trieu aquí sota el sistema des del qual els importareu:"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/plugin-editor.php:18
 msgid "You do not have sufficient permissions to edit plugins for this site."
-msgstr "No teniu prou permisos com per editar les extensions d'aquest lloc web."
+msgstr "No teniu prou permisos com per editar les extensions d'aquest bloc."
 
 #: wp-admin/includes/nav-menu.php:649
 #: wp-admin/includes/nav-menu.php:891
@@ -6295,17 +6516,23 @@ msgstr "No teniu permís per moure aquest element a la paperera."
 msgid "The following themes have new versions available. Check the ones you want to update and then click &#8220;Update Themes&#8221;."
 msgstr "Els següents temes tenen versions noves disponibles. Reviseu les que voleu actualitzar i aleshores feu clic en &#8220;Actualitza els temes&#8221;."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/user-new.php:217
 msgid "User has been added to your site."
-msgstr "L'usuari s'ha afegit al lloc web."
+msgstr "L'usuari s'ha afegit al bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/user-new.php:220
 msgid "That user is already a member of this site."
-msgstr "Aquest usuari ja és un membre d'aquest lloc web."
+msgstr "Aquest usuari ja és un membre d'aquest bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/user-new.php:214
 msgid "Invitation email sent to user. A confirmation link must be clicked for them to be added to your site."
-msgstr "Correu electrònic enviat a l'usuari. S'ha de fer clic a l'enllaç de confirmació perquè sigui afegit al seu lloc web."
+msgstr "Correu electrònic enviat a l'usuari. S'ha de fer clic a l'enllaç de confirmació perquè sigui afegit al seu bloc."
 
 #: wp-admin/update-core.php:220
 msgid "The following plugins have new versions available. Check the ones you want to update and then click &#8220;Update Plugins&#8221;."
@@ -6382,25 +6609,35 @@ msgstr "Imatge destacada"
 msgid "Update to version %s"
 msgstr "Actualitza a la versió %s"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:273
 msgid "You are about to archive the site %s."
-msgstr "Esteu a punt d'arxivar el lloc web %s."
+msgstr "Esteu a punt d'arxivar el bloc %s."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:276
 msgid "You are about to unspam the site %s."
-msgstr "Esteu a punt de treure de la brossa el lloc web %s."
+msgstr "Esteu a punt de treure de la brossa el bloc %s."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:278
 msgid "You are about to mark the site %s as spam."
-msgstr "Esteu a punt de marcar com a brossa el lloc web %s."
+msgstr "Esteu a punt de marcar com a brossa el bloc %s."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:281
 msgid "You are about to delete the site %s."
-msgstr "Esteu a punt d'esborrar el lloc web %s."
+msgstr "Esteu a punt d'esborrar el bloc %s."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:271
 msgid "You are about to unarchive the site %s."
-msgstr "Esteu a punt de treure de l'arxiu el lloc web %s."
+msgstr "Esteu a punt de treure de l'arxiu el bloc %s."
 
 #: wp-admin/press-this.php:540
 msgid "You cannot modify this Taxonomy."
@@ -6418,27 +6655,35 @@ msgstr "Els noms d'usuari no es poden canviar."
 msgid "The menu has been successfully deleted."
 msgstr "S'ha suprimit correctament el menú."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/dashboard.php:300
 msgid "Your site is asking search engines not to index its content"
-msgstr "El lloc està dient als cercadors que no indexin el seu contingut"
+msgstr "El bloc està dient als cercadors que no indexin el seu contingut"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/plugins.php:13
 msgid "You do not have sufficient permissions to manage plugins for this site."
-msgstr "No teniu prou permisos com per gestionar les extensions d'aquest lloc."
+msgstr "No teniu prou permisos com per gestionar les extensions d'aquest bloc."
 
 #: wp-admin/options-general.php:110
 msgid "Enter the address here if you want your site homepage <a href=\"http://codex.wordpress.org/Giving_WordPress_Its_Own_Directory\">to be different from the directory</a> you installed WordPress."
 msgstr "Introduïu l'adreça aquí si voleu que la pàgina principal del lloc <a href=\"http://codex.wordpress.org/Giving_WordPress_Its_Own_Directory\">sigui diferent del directori</a> en el qual heu instal·lat el WordPress."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/options-general.php:100
 msgid "In a few words, explain what this site is about."
-msgstr "En unes poques paraules, expliqueu de què tracta el lloc."
+msgstr "En unes poques paraules, expliqueu de què tracta el bloc."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/options-reading.php:64
 #: wp-admin/options-reading.php:144
 #: wp-admin/options-reading.php:145
 msgid "Site Visibility"
-msgstr "Visibilitat del lloc web"
+msgstr "Visibilitat del bloc"
 
 #: wp-admin/includes/template.php:1164
 msgid "The miscellaneous options group has been removed. Use another settings group."
@@ -6489,9 +6734,11 @@ msgstr "S'està actualitzant el tema %1$s (%2$d/%3$d)"
 msgid "You must provide a domain name."
 msgstr "Heu de proporcionar un nom de domini."
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/schema.php:861
 msgid "You must provide a name for your network of sites."
-msgstr "Heu de posar un nom per a la vostra xarxa de llocs webs."
+msgstr "Heu de posar un nom per a la vostra xarxa de blocs."
 
 #: wp-admin/includes/schema.php:865
 msgid "The network already exists."
@@ -6721,13 +6968,17 @@ msgstr "El <a href=\"http://codex.wordpress.org/Version_%1$s\">WordPress %1$s</a
 msgid "You cannot install because <a href=\"http://codex.wordpress.org/Version_%1$s\">WordPress %1$s</a> requires PHP version %2$s or higher and MySQL version %3$s or higher. You are running PHP version %4$s and MySQL version %5$s."
 msgstr "No podeu instal·lar perquè el WordPress %1$s requereix la versió %2$s o superior del PHP i la versió %3$s o superior de MySQL. Esteu executant la versió %4$s del PHP i la versió %5$s de MySQL."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:266
 msgid "You are about to activate the site %s"
-msgstr "Esteu a punt d'activar el lloc web %s"
+msgstr "Esteu a punt d'activar el bloc %s"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:268
 msgid "You are about to deactivate the site %s"
-msgstr "Esteu a punt de desactivar el lloc web %s"
+msgstr "Esteu a punt de desactivar el bloc %s"
 
 #: wp-admin/comment.php:147
 msgid "This comment is currently marked as spam."
@@ -6964,6 +7215,8 @@ msgstr "hola-mon"
 msgid "Mr WordPress"
 msgstr "Sr. WordPress"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/upgrade.php:264
 msgid ""
 "Your new WordPress site has been successfully set up at:\n"
@@ -6980,7 +7233,7 @@ msgid ""
 "--The WordPress Team\n"
 "http://wordpress.org/\n"
 msgstr ""
-"El nou lloc web gestionat amb el WordPress s'ha instal·lat correctament a:\n"
+"El nou bloc gestionat amb el WordPress s'ha instal·lat correctament a:\n"
 "\n"
 "%1$s\n"
 "\n"
@@ -6989,7 +7242,7 @@ msgstr ""
 "Nom d'usuari: %2$s\n"
 "Contrasenya: %3$s\n"
 "\n"
-"Esperem que gaudiu del nou lloc web. Gràcies!\n"
+"Esperem que gaudiu del nou bloc. Gràcies!\n"
 "\n"
 "--L'equip del WordPress\n"
 "http://ca.wordpress.org/\n"
@@ -7928,10 +8181,12 @@ msgstr "Desactiva aquesta extensió"
 msgid "Network Deactivate"
 msgstr "Desactiva la xarxa"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/includes/class-wp-plugins-list-table.php:382
 #: wp-admin/includes/class-wp-upgrader-skins.php:436
 msgid "Activate this plugin for all sites in this network"
-msgstr "Activa aquesta extensió per a tots els llocs web d'aquesta xarxa"
+msgstr "Activa aquesta extensió per a tots els blocs d'aquesta xarxa"
 
 #: wp-admin/includes/class-wp-plugins-list-table.php:277
 #: wp-admin/includes/class-wp-plugins-list-table.php:382
@@ -8108,9 +8363,11 @@ msgctxt "Theme Installer"
 msgid "Recently Updated"
 msgstr "Recentment actualitzats"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/themes.php:132
 msgid "New theme activated. <a href=\"%s\">Visit site</a>"
-msgstr "Nou tema activat. <a href=\"%s\">Mostra el web</a>"
+msgstr "Nou tema activat. <a href=\"%s\">Mostra el blog</a>"
 
 #: wp-admin/themes.php:135
 msgid "Theme deleted."
@@ -8595,9 +8852,11 @@ msgstr "Acció desconeguda."
 msgid "Custom Background"
 msgstr "Fons personalitzat"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/custom-background.php:186
 msgid "Background updated. <a href=\"%s\">Visit your site</a> to see how it looks."
-msgstr "Fons actualitzat. <a href=\"%s\">Visiteu el lloc</a> per veure com queda."
+msgstr "Fons actualitzat. <a href=\"%s\">Visiteu el bloc</a> per veure com queda."
 
 #: wp-admin/custom-background.php:254
 #: wp-admin/custom-header.php:529
@@ -8615,9 +8874,11 @@ msgstr "Desa els canvis"
 msgid "Custom Header"
 msgstr "Capçalera personalitzada"
 
+# XTEC ************ CORREGIT *
+# 2014.07.30 @jmiro227
 #: wp-admin/custom-header.php:466
 msgid "Header updated. <a href=\"%s\">Visit your site</a> to see how it looks."
-msgstr "Capçalera activada. <a href=\"%s\">Visiteu el lloc</a> per veure com queda."
+msgstr "Capçalera activada. <a href=\"%s\">Visiteu el bloc</a> per veure com queda."
 
 #: wp-admin/custom-header.php:722
 #: wp-admin/custom-header.php:846
@@ -8998,10 +9259,12 @@ msgstr "Exemple: <code>http://wordpress.org/</code> &#8212; no oblideu posar <co
 msgid "This will be shown when someone hovers over the link in the blogroll, or optionally below the link."
 msgstr "Això es mostra quan algú passa amb el cursor per sobre de l'enllaç a la llista d'enllaços, o de manera opcional sota l'enllaç."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: wp-admin/edit-tag-form.php:86
 #: wp-admin/edit-tags.php:453
 msgid "The name is how it appears on your site."
-msgstr "El nom és tal com apareix al lloc web."
+msgstr "El nom és tal com apareix al bloc."
 
 #: wp-admin/edit-tag-form.php:110
 #: wp-admin/edit-tags.php:499
