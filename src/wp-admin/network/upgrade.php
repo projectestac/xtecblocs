@@ -61,10 +61,10 @@ switch ( $action ) {
 		foreach ( (array) $blogs as $details ) {
 			switch_to_blog( $details['blog_id'] );
 
-//XTEC ************ AFEGIT - Validates current them and reverts it to default if invalid
+//XTEC ************ AFEGIT - Validates current theme and reverts it to default if invalid (usefull if removing themes)
 //2013.06.04 @jmiro227
-                        wp_get_theme();
-                        validate_current_theme();
+//                        wp_get_theme();
+//                        validate_current_theme();
 //************ FI
 
 			$siteurl = site_url();
