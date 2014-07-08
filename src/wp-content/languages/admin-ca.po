@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2014-07-08 10:46+0100\n"
+"PO-Revision-Date: 2014-07-08 14:00+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2353,7 +2353,7 @@ msgstr "<strong>Editor d'articles</strong> - Introduïu el tex de l'article. Hi 
 # 2014.07.30 @jmiro227
 #: wp-admin/custom-header.php:509
 msgid "You can select an image to be shown at the top of your site by uploading from your computer or choosing from your media library. After selecting an image you will be able to crop it."
-msgstr "Podeu seleccionar una imatge que es mostrarà a la part superior del blocen penjar-la des del vostre ordinador o en triar-la de la mediateca. Després de seleccionar una imatge podreu escapçar-la."
+msgstr "Podeu seleccionar una imatge que es mostrarà a la part superior del bloc, en penjar-la des del vostre ordinador o en triar-la de la mediateca. Després de seleccionar una imatge podreu escapçar-la."
 
 #: wp-admin/admin-header.php:206
 msgid "Main content"

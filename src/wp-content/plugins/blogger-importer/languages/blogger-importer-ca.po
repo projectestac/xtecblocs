@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Blogger Importer 0.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-29 12:10-0000\n"
-"PO-Revision-Date: 2014-07-08 10:40+0100\n"
+"PO-Revision-Date: 2014-07-08 14:02+0100\n"
 "Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -105,7 +105,7 @@ msgstr "Blogger"
 
 #: ../blogger-importer.php:77
 msgid "Import categories, posts, images and comments then maps users from a Blogger blog."
-msgstr "Importa categories, articles, imatges i comentaris d'un blog de Blogger."
+msgstr "Importa categories, articles, imatges i comentaris d'un bloc de Blogger."
 
 #: ../blogger-importer.php:85
 msgid "Nothing was imported. Had you already imported this blog?"
@@ -174,7 +174,7 @@ msgstr "Felicitats!"
 
 #: ../blogger-importer.php:447
 msgid "Now that you have imported your Blogger blog into WordPress, what are you going to do? Here are some suggestions:"
-msgstr "Ara que ha importat el seu blog de ​​Blogger a WordPress, què més pot fer? Heus aquí alguns suggeriments:"
+msgstr "Ara que ha importat el seu bloc de ​​Blogger a WordPress, què més pot fer? Heus aquí alguns suggeriments:"
 
 #: ../blogger-importer.php:451
 msgid "For security, click the link below to reset this importer."
