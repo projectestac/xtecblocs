@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Twenty Twelve package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2014-07-04 10:03+0100\n"
+"PO-Revision-Date: 2014-07-07 11:53+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,9 +37,11 @@ msgctxt "Open Sans font: add new subset (greek, cyrillic, vietnamese)"
 msgid "no-subset"
 msgstr "no-subset"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: functions.php:244
 msgid "Appears on posts and pages except the optional Front Page template, which has its own widgets"
-msgstr "Apareix a les entrades i a les pàgines, excepte a la plantilla opcional de la pàgina inicial, la qual té els seus propis ginys."
+msgstr "Apareix als articles i a les pàgines, excepte a la plantilla opcional de la pàgina inicial, la qual té els seus propis ginys."
 
 #: functions.php:252
 msgid "First Front Page Widget Area"
@@ -86,9 +88,11 @@ msgstr "Plantilla de la pàgina inicial"
 msgid "Full-width Page Template, No Sidebar"
 msgstr "Plantilla de pàgina d'amplada completa, sense barra lateral"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: content.php:16
 msgid "Featured post"
-msgstr "Entrada destacada"
+msgstr "Article destacat"
 
 #: functions.php:213
 msgid "Page %s"
@@ -120,14 +124,18 @@ msgstr "1 resposta"
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr "Sembla que no podem trobar el que esteu cercant. Potser ajudaria si feu una recerca."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: content-none.php:17
 #: index.php:53
 msgid "Apologies, but no results were found. Perhaps searching will help find a related post."
-msgstr "No s'ha trobat cap resultat. Potser la recerca ajuda a trobar una entrada relacionada."
+msgstr "No s'ha trobat cap resultat. Potser la recerca ajuda a trobar una article relacionada."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: functions.php:328
 msgid "Post author"
-msgstr "Autor de l'entrada"
+msgstr "Autor de l'article"
 
 #: functions.php:313
 msgid "(Edit)"
@@ -141,17 +149,23 @@ msgstr "Menú"
 msgid "Skip to content"
 msgstr "Vés al contingut"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: index.php:38
 msgid "No posts to display"
-msgstr "No hi ha entrades per mostrar"
+msgstr "No hi ha articles per mostrar"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: index.php:42
 msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
-msgstr "Preparats per a publicar la primera entrada? <a href=\"%s\">Comenceu aquí</a>."
+msgstr "Preparats per a publicar el primer article? <a href=\"%s\">Comenceu aquí</a>."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: functions.php:384
 msgid "View all posts by %s"
-msgstr "Mostra totes les entrades de %s"
+msgstr "Mostra tots els articles de %s"
 
 #: image.php:41
 msgid "&larr; Previous"
@@ -198,18 +212,24 @@ msgstr "Enllaç permanent a %s"
 msgid "Main Sidebar"
 msgstr "Barra lateral principal"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: functions.php:286
 #: single.php:20
 msgid "Post navigation"
-msgstr "Navegació per les entrades"
+msgstr "Navegació pels articles"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: functions.php:287
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Entrades més antigues"
+msgstr "<span class=\"meta-nav\">&larr;</span> Articles més antics"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: functions.php:288
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Entrades més recents <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Articles més recents <span class=\"meta-nav\">&rarr;</span>"
 
 #: functions.php:313
 msgid "Pingback:"
@@ -339,9 +359,11 @@ msgstr ", "
 msgid "Pages:"
 msgstr "Pàgines:"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: content.php:66
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Mostra totes les entrades de %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Mostra tots els articles de %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: 404.php:17
 msgid "This is somewhat embarrassing, isn&rsquo;t it?"

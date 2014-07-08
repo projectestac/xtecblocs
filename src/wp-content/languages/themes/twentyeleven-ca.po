@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Twenty Eleven package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2014-07-04 10:00+0100\n"
+"PO-Revision-Date: 2014-07-07 11:39+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -48,9 +48,11 @@ msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F \\d\\e Y"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: content-single.php:39
 msgid "This entry was posted by <a href=\"%6$s\">%5$s</a>. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
-msgstr "Aquesta entrada ha estat publicada per <a href=\"%6$s\">%5$s</a>. Afegiu a les adreces d'interès l'<a href=\"%3$s\" title=\"Enllaç permanent a %4$s\" rel=\"bookmark\">enllaç permanent</a>."
+msgstr "Aquest article ha estat publicat per <a href=\"%6$s\">%5$s</a>. Afegiu a les adreces d'interès l'<a href=\"%3$s\" title=\"Enllaç permanent a %4$s\" rel=\"bookmark\">enllaç permanent</a>."
 
 #: functions.php:647
 msgid "Reply <span>&darr;</span>"
@@ -105,13 +107,15 @@ msgstr "%1$s a les %2$s"
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr "%1$s el %2$s <span class=\"says\">ha dit:</span>"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: archive.php:61
 #: author.php:90
 #: category.php:63
 #: index.php:41
 #: tag.php:64
 msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
-msgstr "Disculpeu, però no s'han trobat resultats a l'arxiu sol·licitat.Tal vegada la cerca us ajudarà a trobar una entrada relacionada."
+msgstr "Disculpeu, però no s'han trobat resultats a l'arxiu sol·licitat.Tal vegada la cerca us ajudarà a trobar un article relacionat."
 
 #: inc/theme-options.php:63
 msgid "Default Layout"
@@ -228,8 +232,10 @@ msgstr "Imatge"
 msgid "Aside"
 msgstr "Anotació"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 msgid "The 2011 theme for WordPress is sophisticated, lightweight, and adaptable. Make it yours with a custom menu, header image, and background -- then go further with available theme options for light or dark color scheme, custom link colors, and three layout choices. Twenty Eleven comes equipped with a Showcase page template that transforms your front page into a showcase to show off your best content, widget support galore (sidebar, three footer areas, and a Showcase page widget area), and a custom \"Ephemera\" widget to display your Aside, Link, Quote, or Status posts. Included are styles for print and for the admin editor, support for featured images (as custom header images on posts and pages and as large images on featured \"sticky\" posts), and special styles for six different post formats."
-msgstr "El tema 2011 per al WordPress és sofisticat, lleuger i adaptable. Feu-lo al vostre gust amb un menú, una imatge de capçalera i un fons personalitzats -- aleshores aneu més enllà amb les opcions del tema disponibles per als esquemes de color clar o negre, colors dels enllaços personalitzats, i tres formats a elegir. El Twenty Eleven ve equipat amb una plantilla de pàgina que transforma la pàgina principal en un aparador per a presumir del millor contingut, de l'ampli suport per a ginys (barra lateral, tres àrees al peu de pàgina, i una àrea de giny de pàgina), i un giny \"Efímera\" personalitzat per mostrar les anotacions, enllaços, citacions o entrades d'estat. Estan inclosos estils per a impressió i per la l'editor d'administració, suport per a imatges destacades (con les imatges de capçalera personalitzades en els entrades i pàgines i com les imatges grans en les entrades enganxades destacades), i estils especials per a sis formats d'entrades diferents."
+msgstr "El tema 2011 per al WordPress és sofisticat, lleuger i adaptable. Feu-lo al vostre gust amb un menú, una imatge de capçalera i un fons personalitzats -- aleshores aneu més enllà amb les opcions del tema disponibles per als esquemes de color clar o negre, colors dels enllaços personalitzats, i tres formats a elegir. El Twenty Eleven ve equipat amb una plantilla de pàgina que transforma la pàgina principal en un aparador per a presumir del millor contingut, de l'ampli suport per a ginys (barra lateral, tres àrees al peu de pàgina, i una àrea de giny de pàgina), i un giny \"Efímera\" personalitzat per mostrar les anotacions, enllaços, citacions o entrades d'estat. Estan inclosos estils per a impressió i per la l'editor d'administració, suport per a imatges destacades (con les imatges de capçalera personalitzades en els articles i pàgines i com les imatges grans als articles enganxats destacats), i estils especials per a sis formats d'articles diferents."
 
 #: content.php:16
 msgid "Featured"
@@ -252,9 +258,11 @@ msgstr "Arxiu mensual: %s"
 msgid "Layout"
 msgstr "Format"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: inc/widgets.php:21
 msgid "Use this widget to list your recent Aside, Status, Quote, and Link posts"
-msgstr "Useu aquest giny per llistar les entrades recents d'anotació, d'estat, de citació o d'enllaç."
+msgstr "Useu aquest giny per llistar els articles recents d'anotació, d'estat, de citació o d'enllaç."
 
 #: inc/theme-options.php:298
 msgid "Select a Color"
@@ -370,9 +378,11 @@ msgstr "Comentaris més recents &raquo;"
 msgid "&larr; Older Comments"
 msgstr "&laquo; Comentaris anteriors"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: comments.php:17
 msgid "This post is password protected. Enter the password to view any comments."
-msgstr "Aquesta entrada està protegida amb contrasenya. Introduïu la contrasenya per veure'n els comentaris."
+msgstr "Aquest article està protegit amb contrasenya. Introduïu la contrasenya per veure'n els comentaris."
 
 #: comments.php:74
 msgid "Comments are closed."
@@ -445,13 +455,17 @@ msgstr "No s'ha trobat res"
 msgid "Search"
 msgstr "Cerca"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: showcase.php:78
 msgid "Featured Post"
-msgstr "Entrada destacada"
+msgstr "Article destacat"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: showcase.php:161
 msgid "Recent Posts"
-msgstr "Entrades recents"
+msgstr "Articles recents"
 
 #: sidebar.php:19
 msgid "Archives"
@@ -473,9 +487,11 @@ msgstr "Intenteu cercar en l'arxiu mensual. %1$s"
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help."
 msgstr "Sembla que no podem trobar el que esteu cercant. Potser la cerca, o un dels enllaços següents, poden ajudar."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: inc/widgets.php:170
 msgid "Number of posts to show:"
-msgstr "Nombre d'entrades que cal mostrar:"
+msgstr "Nombre d'articles que cal mostrar:"
 
 msgid "Twenty Eleven"
 msgstr "Twenty Eleven"
@@ -511,10 +527,12 @@ msgstr "Continua llegint <span class=\"meta-nav\">&rarr;</span>"
 msgid "Pages:"
 msgstr "Pàgines:"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: content-image.php:41
 #: functions.php:672
 msgid "View all posts by %s"
-msgstr "Mostra totes les entrades de %s"
+msgstr "Mostra tots els articles de %s"
 
 #: content-aside.php:44
 #: content-gallery.php:85
@@ -555,13 +573,17 @@ msgstr "<b>1</b> resposta"
 msgid "Edit"
 msgstr "Edita"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: content-single.php:37
 msgid "This entry was posted in %1$s by <a href=\"%6$s\">%5$s</a>. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
-msgstr "Aquesta entrada s'ha publicat dins de %1$s per <a href=\"%6$s\">%5$s</a>. Afegeix a les adreces d'interès l'<a href=\"%3$s\" title=\"Enllaç permanent a %4$s\" rel=\"bookmark\">enllaç permanent</a>."
+msgstr "Aquesta article s'ha publicat dins de %1$s per <a href=\"%6$s\">%5$s</a>. Afegeix a les adreces d'interès l'<a href=\"%3$s\" title=\"Enllaç permanent a %4$s\" rel=\"bookmark\">enllaç permanent</a>."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: content-single.php:35
 msgid "This entry was posted in %1$s and tagged %2$s by <a href=\"%6$s\">%5$s</a>. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
-msgstr "Aquesta entrada s'ha publicat dins de %1$s i s'ha etiquetat en %2$s per <a href=\"%6$s\">%5$s</a>. Afegeix a les adreces d'interès l'<a href=\"%3$s\" title=\"Enllaç permanent a %4$s\" rel=\"bookmark\">enllaç permanent</a>."
+msgstr "Aquest article s'ha publicat dins de %1$s i s'ha etiquetat en %2$s per <a href=\"%6$s\">%5$s</a>. Afegeix a les adreces d'interès l'<a href=\"%3$s\" title=\"Enllaç permanent a %4$s\" rel=\"bookmark\">enllaç permanent</a>."
 
 #: content-aside.php:44
 #: content-gallery.php:85
@@ -574,9 +596,11 @@ msgstr "Aquesta entrada s'ha publicat dins de %1$s i s'ha etiquetat en %2$s per 
 msgid "Leave a reply"
 msgstr "Deixa un comentari"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: content-featured.php:33
 msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
-msgstr "Aquesta entrada ha esta publicada en %1$s. Afegeix a les adreces d'interès l'<a href=\"%3$s\" title=\"Enllaç permanent a: %4$s\" rel=\"bookmark\">enllaç permanent</a>."
+msgstr "Aquest article ha esta publicat en %1$s. Afegeix a les adreces d'interès l'<a href=\"%3$s\" title=\"Enllaç permanent a: %4$s\" rel=\"bookmark\">enllaç permanent</a>."
 
 #: content-gallery.php:45
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
@@ -608,18 +632,24 @@ msgstr "Retroenllaç:"
 msgid "Your comment is awaiting moderation."
 msgstr "El comentari està esperant moderació."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: functions.php:508
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Entrades més recents <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Articles més recents <span class=\"meta-nav\">&rarr;</span>"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: functions.php:507
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Entrades més antigues"
+msgstr "<span class=\"meta-nav\">&larr;</span> Articles més antics"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: functions.php:506
 #: single.php:18
 msgid "Post navigation"
-msgstr "Navegació per les entrades"
+msgstr "Navegació pels articles"
 
 #: functions.php:482
 msgid "Footer Area Three"
@@ -657,11 +687,15 @@ msgstr "Barra lateral principal"
 msgid "Primary Menu"
 msgstr "Menú principal"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: content-single.php:67
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Mostra totes les entrades de %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Mostra tots els articles de %s <span class=\"meta-nav\">&rarr;</span>"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: content-featured.php:31
 msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
-msgstr "Aquesta entrada s'ha publicat dins de %1$s i s'ha etiquetat amb %2$s. Afegiu a les adreces d'interès l'<a href=\"%3$s\" title=\"Enllaç permanent a: %4$s\" rel=\"bookmark\">enllaç permanent</a>."
+msgstr "Aquest article s'ha publicat dins de %1$s i s'ha etiquetat amb %2$s. Afegiu a les adreces d'interès l'<a href=\"%3$s\" title=\"Enllaç permanent a: %4$s\" rel=\"bookmark\">enllaç permanent</a>."
 

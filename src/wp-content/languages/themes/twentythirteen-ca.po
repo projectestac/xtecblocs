@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Twenty Thirteen package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2014-07-04 10:06+0100\n"
+"PO-Revision-Date: 2014-07-07 11:49+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,9 +41,11 @@ msgstr "Àrea de ginys principal"
 msgid "Secondary Widget Area"
 msgstr "Àrea de ginys secundària"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: functions.php:243
 msgid "Appears on posts and pages in the sidebar."
-msgstr "Apareix a la barra lateral a les entrades i pàgines."
+msgstr "Apareix a la barra lateral als articles i pàgines."
 
 #: image.php:39
 msgid "Full resolution"
@@ -93,13 +95,17 @@ msgstr "Arxius"
 msgid "About %s"
 msgstr "Quant a %s"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: author-bio.php:30
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Mostra totes les entrades de %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Mostra tots els articles de %s <span class=\"meta-nav\">&rarr;</span>"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: author.php:31
 msgid "All posts by %s"
-msgstr "Mostra totes les entrades de %s"
+msgstr "Mostra tots els articles de %s"
 
 #: category.php:19
 msgid "Category Archives: %s"
@@ -203,9 +209,11 @@ msgstr "Mostra tots els % comentaris"
 msgid "Nothing Found"
 msgstr "No s'ha trobat res"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: content-none.php:18
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "Preparats per a publicar la primera entrada? <a href=\"%s\">Comenceu aquí</a>."
+msgstr "Preparats per a publicar el primer article? <a href=\"%s\">Comenceu aquí</a>."
 
 #: content-none.php:22
 msgid "Sorry, but nothing matched your search terms. Please try again with different keywords."
@@ -245,21 +253,29 @@ msgstr "on"
 msgid "Page %s"
 msgstr "Pàgina %s"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: functions.php:266
 msgid "Posts navigation"
-msgstr "Navegació per les entrades"
+msgstr "Navegació pels articles"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: functions.php:270
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Entrades més antigues"
+msgstr "<span class=\"meta-nav\">&larr;</span> Articles més antics"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: functions.php:274
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Entrades més recents <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Articles més recents <span class=\"meta-nav\">&rarr;</span>"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: functions.php:300
 msgid "Post navigation"
-msgstr "Navegació per l'entrada"
+msgstr "Navegació per l'article"
 
 #: functions.php:303
 msgctxt "Previous post link"
@@ -280,9 +296,11 @@ msgstr "Destacada"
 msgid ", "
 msgstr ", "
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: functions.php:343
 msgid "View all posts by %s"
-msgstr "Mostra totes les entrades de %s"
+msgstr "Mostra tots els articles de %s"
 
 #: functions.php:363
 msgctxt "1: post format name. 2: date"

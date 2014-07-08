@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Twenty Fourteen package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2014-07-04 10:05+0100\n"
+"PO-Revision-Date: 2014-07-07 11:58+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,9 +13,11 @@ msgstr ""
 "Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
 "Language-Team: \n"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: inc/customizer.php:102
 msgid "The home page features your choice of up to 6 posts prominently displayed in a grid or slider, controlled by a <a href=\"%1$s\">tag</a>; you can change the tag and layout in <a href=\"%2$s\">Appearance &rarr; Customize</a>. If no posts match the tag, <a href=\"%3$s\">sticky posts</a> will be displayed instead."
-msgstr "La pàgina principal presenta fins a 6 entrades de la vostra elecció, mostrades de manera prominent en una graella o presentació, controlades per una <a href=\"%1$s\">etiqueta</a>; que podeu canviar i una plantilla a <a href=\"%2$s\">Aparença &rarr; Personalitza</a>. Si no hi ha entrades que concorden amb l'etiqueta, es mostraran <a href=\"%3$s\">entrades fixes</a> en el seu lloc."
+msgstr "La pàgina principal presenta fins a 6 articles de la vostra elecció, mostrades de manera prominent en una graella o presentació, controlats per una <a href=\"%1$s\">etiqueta</a>; que podeu canviar i una plantilla a <a href=\"%2$s\">Aparença &rarr; Personalitza</a>. Si no hi ha articles que concorden amb l'etiqueta, es mostraran <a href=\"%3$s\">articles fixos</a> en el seu lloc."
 
 #: inc/widgets.php:59
 msgid "More videos"
@@ -54,17 +56,21 @@ msgctxt "featured content default tag slug"
 msgid "featured"
 msgstr "destacat"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: inc/widgets.php:36
 msgid "Use this widget to list your recent Aside, Quote, Video, Audio, Image, Gallery, and Link posts."
-msgstr "Utilitzeu aquest giny per llistat notes, cites, vídeos, àudio, imatges, galeries i entrades d'enllaços."
+msgstr "Utilitzeu aquest giny per llistat notes, cites, vídeos, àudio, imatges, galeries i enllaços a articles."
 
 msgid "http://wordpress.org/themes/twentyfourteen"
 msgstr "http://wordpress.org/themes/twentyfourteen"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: inc/customizer.php:36
 #: inc/featured-content.php:409
 msgid "Use a <a href=\"%1$s\">tag</a> to feature your posts. If no posts match the tag, <a href=\"%2$s\">sticky posts</a> will be displayed instead."
-msgstr "Utilitzeu una <a href=\"%1$s\">etiqueta</a> per destacar entrades. Si no hi ha entrades que coincideixin amb l'etiqueta, es mostraran <a href=\"%2$s\">les entrades fixes</a> al seu lloc."
+msgstr "Utilitzeu una <a href=\"%1$s\">etiqueta</a> per destacar articles. Si no hi ha articles que coincideixin amb l'etiqueta, es mostraran <a href=\"%2$s\">els articles fixos</a> al seu lloc."
 
 #: 404.php:17
 msgid "Not Found"
@@ -121,9 +127,11 @@ msgstr "Següent"
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr "Sembla que no s'ha trobat res aquí. Voleu intentar una cerca?"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: author.php:31
 msgid "All posts by %s"
-msgstr "Totes les entrades de %s"
+msgstr "Tots els articles de %s"
 
 #: content-aside.php:17
 #: content-audio.php:17
@@ -198,23 +206,29 @@ msgstr "Presentació"
 # 2014.07.30 @jmiro227
 #: inc/customizer.php:103
 msgid "Enhance your site design by using <a href=\"%s\">Featured Images</a> for posts you&rsquo;d like to stand out (also known as post thumbnails). This allows you to associate an image with your post without inserting it. Twenty Fourteen uses featured images for posts and pages&mdash;above the title&mdash;and in the Featured Content area on the home page."
-msgstr "Milloreu el disseny del bloc en usar <a href=\"%s\">imatges destacades</a> a les entrades que vulgueu destacar (també coneguts com miniatures). Això permet associar una imatge amb l'entrada sense inserir-la. El tema Twenty Fourteen utilitza imatges destacades per a les entrades i pàgines&mdash;damunt del títol&mdash;i a l'àrea de contingut destacat de la pàgina inicial."
+msgstr "Milloreu el disseny del bloc en usar <a href=\"%s\">imatges destacades</a> als articles que vulgueu destacar (també coneguts com miniatures). Això permet associar una imatge amb l'article sense inserir-la. El tema Twenty Fourteen utilitza imatges destacades per als articles i pàgines&mdash;damunt del títol&mdash;i a l'àrea de contingut destacat de la pàgina inicial."
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: inc/template-tags.php:53
 msgid "Posts navigation"
-msgstr "Navegacio d'entrades"
+msgstr "Navegacio d'articles"
 
 #: inc/template-tags.php:84
 msgid "<span class=\"meta-nav\">Published In</span>%title"
 msgstr "<span class=\"meta-nav\">Publicat a</span>%title"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: inc/template-tags.php:86
 msgid "<span class=\"meta-nav\">Previous Post</span>%title"
-msgstr "<span class=\"meta-nav\">Enterior entrada</span>%title"
+msgstr "<span class=\"meta-nav\">Anterior article</span>%title"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: inc/template-tags.php:87
 msgid "<span class=\"meta-nav\">Next Post</span>%title"
-msgstr "<span class=\"meta-nav\">Següent entrada</span>%title"
+msgstr "<span class=\"meta-nav\">Següent article</span>%title"
 
 #: inc/widgets.php:34
 msgid "Twenty Fourteen Ephemera"
@@ -235,13 +249,17 @@ msgstr[1] "Aquesta galeria conté <a href=\"%1$s\" rel=\"bookmark\">%2$s fotos</
 msgid "Title:"
 msgstr "Títol:"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: inc/widgets.php:258
 msgid "Number of posts to show:"
-msgstr "Nombre d'entrades que cal mostrar:"
+msgstr "Nombre d'articles que cal mostrar:"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: inc/widgets.php:261
 msgid "Post format to show:"
-msgstr "Format de l'entrada que cal mostrar:"
+msgstr "Format de l'article que cal mostrar:"
 
 msgid "Contributor Page"
 msgstr "Pàgina de col·laboradors"
@@ -421,9 +439,11 @@ msgstr "Menú principal"
 msgid "Skip to content"
 msgstr "Vés al contingut"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: inc/template-tags.php:80
 msgid "Post navigation"
-msgstr "Navegació per l'entrada"
+msgstr "Navegació per l'article"
 
 #: inc/template-tags.php:45
 msgid "&larr; Previous"
@@ -441,9 +461,11 @@ msgstr "Fixades"
 msgid "Nothing Found"
 msgstr "No s'ha trobat res"
 
+# XTEC ************ CORREGIT
+# 2014.07.30 @jmiro227
 #: content-none.php:18
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "Preparats per a publicar la primera entrada? <a href=\"%s\">Comenceu aquí</a>."
+msgstr "Preparats per a publicar el primer article? <a href=\"%s\">Comenceu aquí</a>."
 
 #: content-none.php:22
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."

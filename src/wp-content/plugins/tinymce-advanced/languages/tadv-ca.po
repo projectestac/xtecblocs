@@ -19,15 +19,15 @@ msgstr ""
 
 #: tadv_admin.php:
 msgid "Export Settings"
-msgstr "Exporteu la configuració"
+msgstr "Exporta la configuració"
 
 #: tadv_admin.php:
 msgid "Import Settings"
-msgstr "Importeu la configuració"
+msgstr "Importa la configuració"
 
 #: tadv_admin.php:
 msgid "Restore Default Settings"
-msgstr "Restaureu la configuració per defecte"
+msgstr "Restaura la configuració per defecte"
 
 #: tadv_admin.php:
 msgid "Administration"
@@ -35,11 +35,11 @@ msgstr "Administració"
 
 #: tadv_admin.php:
 msgid "Stop removing the &lt;p&gt; and &lt;br /&gt; tags when saving and show them in the Text editor"
-msgstr "Deixeu d'eliminar els tags &lt;p&gt; and &lt;br /&gt; i mostreu-los en l'editor"
+msgstr "Deixa d'eliminar els tags &lt;p&gt; and &lt;br /&gt; i mostra'ls en l'editor"
 
 #: tadv_admin.php:
 msgid "Load the CSS classes used in editor-style.css and replace the Formats button and sub-menu."
-msgstr "Carregueu el CSS 'editor-style.css' i reeemplaçeu els botons 'Formats' i 'submenú'."
+msgstr "Carrega el CSS 'editor-style.css' i reeemplaça els botons 'Formats' i 'submenú'."
 
 #: tadv_admin.php:
 msgid "New in TinyMCE 4.0/WordPress 3.9 is the editor menu. When it is enabled, most buttons are also available as menu items."
@@ -47,7 +47,7 @@ msgstr "El menú de l'editor és nou a TinyMCE 4.0/WordPress 3.9. Quan està s'a
 
 #: tadv_admin.php:
 msgid "Enable the editor menu."
-msgstr "Activeu el menú de l'editor."
+msgstr "Activa el menú de l'editor."
 
 #: tadv_admin.php:
 msgid "Drag buttons from the unused buttons below and drop them in the toolbars above, or drag the buttons in the toolbars to rearrange them."
@@ -285,7 +285,7 @@ msgstr "Desconfigurar"
 
 #: tadv_admin.php:
 msgid "Save Changes"
-msgstr "Deseu els canvis"
+msgstr "Desa els canvis"
 
 #: tadv_admin.php:
 msgid "The Kitchen Sink button shows/hides the next toolbar row. It will not work at the current place."
@@ -305,7 +305,7 @@ msgstr "Continuar"
 
 #: tadv_admin.php:
 msgid "Also enable:"
-msgstr "Habiliteu també:"
+msgstr "Habilita també:"
 
 #: tadv_admin.php:
 msgid "Import editor-style.css."
@@ -595,17 +595,17 @@ msgstr "Corrector de l'IE"
 
 #: tadv_admin.php:
 msgid "Font select"
-msgstr " "
+msgstr "Selecciona font"
 
 #: tadv_admin.php:
 msgid "Font size select"
-msgstr "  "
+msgstr "Selecciona la mida de la font"
 
 #: tadv_admin.php:
 msgid "Style select"
-msgstr "   "
+msgstr "Selecciona estil"
 
 #: tadv_admin.php:
 msgid "Format select"
-msgstr "    "
+msgstr "Selecciona format"
 

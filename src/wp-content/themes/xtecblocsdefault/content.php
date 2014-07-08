@@ -105,7 +105,7 @@ else {
 <div id="box">
 	<span class="contentboxheadright"></span>
 	<span class="contentboxheadleft"></span>
-	<h2 class="contentboxheadfons">Darreres entrades als blocs</h2>
+	<h2 class="contentboxheadfons">Darrers articles als blocs</h2>
 	<div class="darreres">
 	<?php
 	$blogs = xtec_lastest_posts_lastest_posts(10,5,0);

@@ -129,7 +129,7 @@ switch ($_REQUEST['a']){
 		$maxPosts=xtec_lastest_posts_num_posts_of_most_active_blog();
 		print '<div style="text-align:right; padding-right:60px;">'.$pager.'</div><br/ >';
 		print '<table>';
-		print '<th align="left" valign="top">T&iacute;tol</th><th align="left" valign="top">Activitat (%)</th><th align="left" valign="top">Darrera entrada</th>';
+		print '<th align="left" valign="top">T&iacute;tol</th><th align="left" valign="top">Activitat (%)</th><th align="left" valign="top">Darrer article</th>';
 			$bgcolor="#e5f2fe";
 			foreach ( $mostActive as $active ){
 				$bgcolor=($bgcolor=='#e5f2fe')?'#ffffff':'#e5f2fe';
