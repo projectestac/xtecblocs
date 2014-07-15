@@ -1,522 +1,376 @@
-<?php
-/**
- * Theme Setup.
- *
- * You can change any of the settings below from a child theme, by simply calling these functions inside the child theme's functions.php file.
- * To override all settings define the ATOM_OVERRIDE_CONFIG constant as "true"
- *
- * @package ATOM
- * @subpackage Template
- */
+<?php /* Mystique/digitalnature */
+
+
+// Theme setup
+add_action('after_setup_theme',   'mystique_setup');
+add_action('widgets_init',        'mystique_widgets_init');
 
 
 
-// theme unique ID, used as theme option name, text domain for translations, and possibly other identifiers
-// make sure there are no spaces in it if you're setting your own ID inside a child theme
-defined('ATOM') or define('ATOM', get_stylesheet());
-
-// enable development mode? (loads local & uncompressed js, disables w3c validation in debug mode)
-// for testing purposes only; always set this to false on a live site
-defined('ATOM_DEV_MODE') or define('ATOM_DEV_MODE', (isset($_SERVER['SERVER_ADDR']) && strpos($_SERVER['SERVER_ADDR'], '127.0.0.1') !== false));
-
-// attempt to automatically create and activate a child theme on 1st install or reset;
-// if succesfull the user-functions field is enabled in the theme settings;
-defined('ATOM_EXTEND') or define('ATOM_EXTEND', false);
-
-// log post views (just like wp-post-views) ?
-// on a very large site this can cause server load issues since the database is updated on each page view...
-defined('ATOM_LOG_VIEWS') or define('ATOM_LOG_VIEWS', false);
-
-// track user online status?
-defined('ATOM_TRACK_USERS') or define('ATOM_TRACK_USERS', true);
-
-// compress and concatenate js with Google's Closure Compiler?
-// seems to fail on certain setups...
-defined('ATOM_CONCATENATE_JS') or define('ATOM_CONCATENATE_JS', false);
-
-// required for compatibility with Mystique < 3.2 child themes and modules
-define('ATOM_COMPAT_MODE', true);
+// Class adjustments (makes the css compatible with the Atom version of the theme)
+add_filter('page_css_class',      'mystique_page_css_classes', 10, 2);
+add_filter('nav_menu_css_class',  'mystique_menu_css_classes', 10, 2);
+add_filter('body_class',          'mystique_body_class');
+add_filter('post_class',          'mystique_post_class');
+add_filter('comment_class',       'mystique_comment_class');
 
 
-// the core; if you're reconfiguring Atom from a child theme, this line must be present as well
-require_once TEMPLATEPATH.'/atom-core.php';
 
-// and this function
-if(!function_exists('atom')){
-  function atom(){
-    static $app;
+// We don't want to confuse old theme users, so we show a notice in the dashboard
+// telling the user that this is the basic version of the theme, and where he can find the official version
+if(is_admin()){
 
-    if(!($app instanceof Atom))
-      $app = Atom::app();
+  if(!get_option('mystique_basic_notice')){
 
-    return $app;
+//XTEC ************ ELIMINAT - Eliminar indo de download
+//2013.09.05 @jmiro227
+/*
+    add_action('admin_notices',                 'mystique_basic_notice');
+    add_action('wp_ajax_mystique_hide_notice',  'mystique_hide_notice');
+*/
+//************ FI
+
+    function mystique_basic_notice(){
+       ?>
+      <div class="basic-notice updated">
+        <p>
+          <?php
+            printf(__('You are using the standard version of Mystique. Starting from version 3.0, Mystique has been also ported to a powerful framework that incorporates extended functionality and advanced customization options. Download and install %1$s from the %2$s, <strong>only if you need its features</strong>!', 'mystique'),
+              sprintf('<a href="http://digitalnature.eu/themes/mystique/">%s</a>', '<strong>Mystique 3+</strong>'),
+              sprintf('<a href="http://digitalnature.eu/">%s</a>', __('official website', 'mystique'))
+            );
+          ?>
+        </p>
+        <p>
+          <a class="button-secondary hide-me"><?php _e('Close and don\'t show this message again', 'mystique'); ?></a>
+          <br clear="all" />
+        </p>
+      </div>
+
+      <script type="text/javascript">
+       jQuery(document).ready(function($){
+         $('#wpbody').delegate('.basic-notice a.hide-me', 'click', function(){
+           $.ajax({
+             url: ajaxurl,
+             type: 'GET',
+             context: this,
+             data: ({
+               action: 'mystique_hide_notice',
+               _ajax_nonce: '<?php echo wp_create_nonce('mystique_hide_notice'); ?>'
+             }),
+             success: function(data){
+               $(this).parents('.basic-notice').remove();
+             }
+           });
+         });
+       });
+
+      </script>
+      <?php
+    }
+
+    function mystique_hide_notice(){
+      check_ajax_referer('mystique_hide_notice');
+      update_option('mystique_basic_notice', true);
+      die();
+    }
+
   }
+
+  // removes the notice status from the db
+  add_action('switch_theme', 'mystique_remove_notice_record');
+
+  function mystique_remove_notice_record(){
+    delete_option('mystique_basic_notice');
+  }
+
+}
+
+
+// Set up widget areas (sidebars)
+function mystique_widgets_init(){
+
+  // one sidebar, even though the theme supports 3 columns (because there's no interface to switch the layout)
+  register_sidebar(array(
+    'name'           => __('Primary Sidebar', 'mystique'),
+    'id'             => 'sidebar-1',
+    'before_widget'  => '<li class="block"><div class="block-content block-%2$s clear-block" id="instance-%1$s">',
+    'after_widget'   => '</div></li>',
+    'before_title'   => '<div class="title"><h3>',
+    'after_title'    => '</h3><div class="bl"></div><div class="br"></div></div>'
+  ));
+
 }
 
 
 
-// any of the settings below can be overridden from a child theme if this constant is present and set to "true"
-if(!defined('ATOM_OVERRIDE_CONFIG') || !ATOM_OVERRIDE_CONFIG){
+// Main theme set up
+function mystique_setup(){
 
-  // available layout types -- @todo: finish this
-  atom()->registerLayoutTypes('c1', 'c2left', 'c2right', 'c3', 'c3left', 'c3right');
+  // match the editor with the theme css
+  add_editor_style();
 
-  // menu locations
-  atom()->registerMenus(array(
-    'top'       => atom()->t('Page Top'),
-    'primary'   => atom()->t('Below Header (Main)'),
-    'footer'    => atom()->t('Above Footer')
-  ));
-
-
+  // thumbnail support
   add_theme_support('post-thumbnails');
+
+  // posts & comments RSS feed links
   add_theme_support('automatic-feed-links');
-  add_theme_support('bbpress');
-  add_theme_support('post-formats', array('aside', 'gallery'));
 
-  // register ad locations for the AdManager plugin;
-  // key names may not match what the label suggests, but they are correct because these are the template action tags
-  // the ":index" prepended to the action tag suggests that this location requires the index field (the ad will be inserted after N action executions)
-  if(class_exists('AdManager') && defined('AdManager::VERSION'))
-    AdManager()->registerAdLocation(array(
-      'atom_before_main'             => atom()->t('After header'),         // all pages
-      'atom_before_primary'          => atom()->t('Before main'),          // all pages
-      'atom_after_primary'           => atom()->t('After main'),           // all pages
-      'atom_before_teaser:index'     => atom()->t('Before post teaser'),   // post listing pages
-      'atom_after_teaser:index'      => atom()->t('After post teaser'),    // post listing pages
-      'atom_before_comment:index'    => atom()->t('Before comment'),       // single pages
-    ));
+  // translations (/lang dir)
+  load_theme_textdomain('mystique', TEMPLATEPATH.'/lang' );
 
-  atom()->registerDefaultOptions(array(
-    'layout'                       => 'c2right',
-    'page_width'                   => 'fixed',
-    'page_width_max'               => 1200,
-    'dimensions_fixed_c2left'      => '320',
-    'dimensions_fixed_c2right'     => '640',
-    'dimensions_fixed_c3'          => '240;720',
-    'dimensions_fixed_c3left'      => '240;480',
-    'dimensions_fixed_c3right'     => '480;720',
-    'dimensions_fluid_c2left'      => '30',
-    'dimensions_fluid_c2right'     => '70',
-    'dimensions_fluid_c3'          => '25;75',
-    'dimensions_fluid_c3left'      => '25;50',
-    'dimensions_fluid_c3right'     => '50;75',
-    'favicon'                      => atom()->getThemeURL().'/favicon.ico',
-    'logo'                         => '',
-    'color_scheme'                 => 'green',
-    'background_image'             => '',
-    'background_color'             => '',
-    'background_image_selector'    => '#page',    // internal (only change if you alter the selector name in the html templates / css)
-    'background_color_selector'    => 'body',     // internal, same...
-    'footer_content'               => '<p> [credit] | [link rss] </p>',
-    'post_title'                   => true,
-    'post_date'                    => true,
-    'post_date_mode'               => 'relative',
-    'post_category'                => true,
-    'post_tags'                    => true,
-    'post_author'                  => true,
-    'post_comments'                => true,
-    'post_content'                 => true,
-    'post_content_mode'            => 'f',
-    'post_content_size'            => 600,
-    'post_thumbs'                  => true,
-    'post_thumbs_mode'             => 'left',
-    'post_thumb_size'              => '90x90',
-    'post_thumb_auto'              => true,
-    'post_navi'                    => 'single',
-    'single_links'                 => true,
-    'single_meta'                  => true,
-    'single_share'                 => true,
-    'single_author'                => false,
-    'single_related'               => true,
-    'comment_karma'                => true,
-    'comment_bury_limit'           => -5,
-    'widget_icon_size'             => '42x38', // internal, each theme should define its own size
-    'css'                          => '',
-    'jquery'                       => true,
-    'effects'                      => true,
-    'optimize'                     => false,
-    'generate_thumbs'              => true,
-    'lightbox'                     => true,
-    'debug'                        => false,
-    'meta_description'             => true,
-    'remove_settings'              => false,
+  $locale = get_locale();
+  $locale_file = TEMPLATEPATH.'/lang/$locale.php';
+
+  if(is_readable($locale_file))
+    require_once($locale_file);
+
+  // custom menus
+  register_nav_menus(array(
+    'top'     => __('Top Navigation',     'mystique'),
+    'primary' => __('Primary Navigation', 'mystique'),
+    'footer'  => __('Footer Navigation',  'mystique'),
   ));
 
+  // yet another useless variable to fill up the WP global space...
+  global $content_width;
 
-  atom()->registerWidgetArea(array(
-    'id'            => 'sidebar1',
-    'name'          => atom()->t('Primary Sidebar'),
-    'description'   => atom()->t('This is the default sidebar, active on 2 or 3 column layouts. If no widgets are visible, the page will fall back to a single column layout.'),
-    'before_widget' => '<li class="block"><div class="block-content block-%2$s clear-block" id="instance-%1$s">',
-    'after_widget'  => '</div></li>',
-    'before_title'  => '<div class="title"><h3>',
-    'after_title'   => '</h3><div class="bl"></div><div class="br"></div></div><div class="i"></div>',
-  ));
-
-  atom()->registerWidgetArea(array(
-    'id'            => 'sidebar2',
-    'name'          => atom()->t('Secondary Sidebar'),
-    'description'   => atom()->t('This sidebar is active only on a 3 column setup, if at least one of its widgets is visible to the current user.'),
-    'before_widget' => '<li class="block"><div class="block-content block-%2$s clear-block" id="instance-%1$s">',
-    'after_widget'  => '</div></li>',
-    'before_title'  => '<div class="title"><h3>',
-    'after_title'   => '</h3><div class="bl"></div><div class="br"></div></div><div class="i"></div>',
-  ));
-
-
-  atom()->registerWidgetArea(array(
-    'id'            => 'footer1',
-    'name'          => atom()->t('Footer'),
-    'description'   => atom()->t('Active only if at least one of its widgets is visible to the current user. You can add between 1 and 6 widgets here (3 or 4 are optimal). They will adjust their size based on the widget count.'),
-    'before_widget' => '<li class="block block-%2$s" id="instance-%1$s"><div class="block-content clear-block">',
-    'after_widget'  => '</div></li>',
-    'before_title'  => '<h4 class="title">',
-    'after_title'   => '</h4>'
-  ));
-
-  atom()->registerWidgetArea(array(
-    'id'            => 'arbitrary',
-    'name'          => atom()->t('Arbitrary Widgets'),
-    'description'   => atom()->t('Widgets from this area can be grouped into tabs, or added into posts/pages using the %1$s or %2$s shortcodes.', array('[widget ID]', '[widget "Name"]')),
-    'before_widget' => '<div class="block"><div class="block-content block-%2$s clear-block" id="instance-%1$s">',
-    'after_widget'  => '</div></div>',
-    'before_title'  => '<h3 class="title"><span>',
-    'after_title'   => '</span></h3>',
-  ));
-
-  // theme settings interface
-  if(is_admin()){
-
-    // tabs and tab sub-sections
-    atom()->interface->addSection('welcome',          atom()->t('Welcome'));
-    atom()->interface->addSection('design',           atom()->t('Design'));
-    atom()->interface->addSection('content',          atom()->t('Content options'));
-    atom()->interface->addSection('content/post',     atom()->t('Post teasers'));
-    atom()->interface->addSection('content/single',   atom()->t('Single pages'));
-    atom()->interface->addSection('content/comment',  atom()->t('Comments'));
-    atom()->interface->addSection('content/footer',   atom()->t('Footer'));
-    atom()->interface->addSection('css',              atom()->t('CSS'));
-    atom()->interface->addSection('advanced',         atom()->t('Advanced'));
-    atom()->interface->addSection('modules',          atom()->t('Modules'));
-
-    // options, as form fields
-    atom()->interface->addControls(array(
-
-      // content options: titles on post teasers
-      'post_title'          => array(
-                                 'location'    => 'content/post',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Title'),
-                               ),
-
-      // content options: content on post teasers
-      'post_content'        => array(
-                                 'location'    => 'content/post',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Content'),
-                               ),
-
-      // content options: content display mode
-      'post_content_mode'   => array(
-                                 'location'    => 'content/post/post_content',
-                                 'depends_on'  => 'post_content',
-                                 'type'        => 'select',
-                                 'values'      => array(
-                                   'user'        => atom()->t('User limit'),
-                                   'f'           => atom()->t('Full post'),
-                                   'ff'          => atom()->t('Full post, filtered'),
-                                   'e'           => atom()->t('Excerpt'),
-                                 ),
-                               ),
-
-      // content options: content limit
-      'post_content_size'   => array(
-                                 'location'    => 'content/post/post_content',
-                                 'depends_on'  => 'post_content_mode:user',
-                                 'type'        => 'text:5',
-                                 'label'       => atom()->t('~ %s characters', '%post_content_size%'),
-                               ),
-
-      // content options: show category links on post teasers
-      'post_category'       => array(
-                                 'location'    => 'content/post',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Category'),
-                               ),
-
-
-      // content options: show date on post teasers
-      'post_date'           => array(
-                                 'location'    => 'content/post',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Date / Time'),
-                               ),
-
-      // content options: date display mode
-      'post_date_mode'      => array(
-                                 'location'    => 'content/post/post_date',
-                                 'depends_on'  => 'post_date',
-                                 'type'        => 'select',
-                                 'values'      => array(
-                                   'relative'    => atom()->t('Relative'),
-                                   'absolute'    => atom()->t('Absolute'),
-                                 ),
-                               ),
-
-      // content options: show author link on post teasers
-      'post_author'         => array(
-                                 'location'    => 'content/post',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Author'),
-                               ),
-
-      // content options: comments link on post teasers
-      'post_comments'       => array(
-                                 'location'    => 'content/post',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Comment Count'),
-                               ),
-
-      // content options: tag links on post teasers
-      'post_tags'           => array(
-                                 'location'    => 'content/post',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Tags'),
-                               ),
-
-      // content options: thumbnails on post teasers
-      'post_thumbs'         => array(
-                                 'location'    => 'content/post',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Thumbnails'),
-                               ),
-
-      // content options: alignment of on post thumbnails
-      'post_thumbs_mode'    => array(
-                                 'location'    => 'content/post/post_thumbs',
-                                 'depends_on'  => 'post_thumbs',
-                                 'type'        => 'select',
-                                 'values'      => array(
-                                   'left'        => atom()->t('Left Aligned'),
-                                   'right'       => atom()->t('Right Aligned'),
-                                 ),
-                               ),
-
-      // content options: size of post thumbnails
-      'post_thumb_size'     => array(
-                                 'location'    => 'content/post',
-                                 'depends_on'  => 'post_thumbs',
-                                 'type'        => 'select',
-                                 'label'       => atom()->t('Thumbnail Size'),
-                                 'description' => atom()->t('Note that for the new sized thumbnails to take effect, all existing images must be resized. See the Advanced page.'),
-                                 'values'      => array(
-                                   '60x60'       => atom()->t('Very Small, 60 x 60'),
-                                   '90x90'       => atom()->t('Small, 90 x 90'),
-                                   '120x120'     => atom()->t('Medium, 120 x 120'),
-                                   '140x140'     => atom()->t('Large, 140 x 140'),
-                                   '180x180'     => atom()->t('Larger, 180 x 180'),
-                                   '210x210'     => atom()->t('Very large, 210 x 210'),
-                                   'media'       => atom()->t('Default media setting: %d x %d', array(get_option('thumbnail_size_w'), get_option('thumbnail_size_h'))),
-                                 ),
-                               ),
-
-      // content options: automatically select thumbnails from first image
-      'post_thumb_auto'     => array(
-                                 'location'    => 'content/post',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Use first attachment as thumbnail, if none is set'),
-                               ),
-
-      // content options: display mode of navigation links
-      'post_navi'           => array(
-                                 'location'    => 'content/post',
-                                 'type'        => 'select',
-                                 'label'       => atom()->t('Navigation'),
-                                 'values'      => array(
-                                   'single'      => atom()->t('Single link for older posts'),
-                                   'prevnext'    => atom()->t('Previous / Next links'),
-                                   'numbers'     => atom()->t('Page numbers'),
-                                 ),
-                               ),
-
-      // comments: enable/disable karma ratings
-      'comment_karma'       => array(
-                                 'location'    => 'content/comment',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Allow Comment Ratings (Karma)'),
-                               ),
-
-      // comments: hide or show low-karma comments
-      'comment_bury_limit'  => array(
-                                 'location'    => 'content/comment',
-                                 'type'        => 'text:5',
-                                 'depends_on'  => 'comment_karma',
-                                 'label'       => atom()->t('Hide comments with %s karma and below', array('%comment_bury_limit%')),
-                               ),
-
-      // single: post navigation for single pages
-      'single_links'        => array(
-                                 'location'    => 'content/single',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Previous / Next links'),
-                               ),
-
-      // single: share links on single pages
-      'single_share'        => array(
-                                 'location'    => 'content/single',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Share Links'),
-                               ),
-
-      // single: meta info on single pages
-      'single_meta'         => array(
-                                 'location'    => 'content/single',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Meta Information'),
-                               ),
-
-      // single: about the author info on single pages
-      'single_author'       => array(
-                                 'location'    => 'content/single',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('About the Author'),
-                               ),
-
-      // single: related posts
-      'single_related'      => array(
-                                 'location'    => 'content/single',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Related Posts'),
-                               ),
-
-      // footer: contents of the footer (last block area)
-      'footer_content'      => array(
-                                 'location'    => 'content/footer',
-                                 'type'        => 'text/code/html',
-                                 'description' => atom()->t('Use %s for convenient adjustments', array(sprintf('<code>[%s]</code>', atom()->t('shortcodes')))),
-                               ),
-
-      // advanced: jquery
-      'jquery'              => array(
-                                 'location'    => 'advanced',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Use jQuery'),
-                                 'description' => atom()->t("Only uncheck if you know what you're doing. Your site will load faster without jQuery, but features that depend on it will be disabled."),
-                               ),
-
-      // advanced: effects
-      'effects'             => array(
-                                 'location'    => 'advanced',
-                                 'type'        => 'checkbox',
-                                 'depends_on'  => 'jquery',
-                                 'label'       => atom()->t('Animate content'),
-                                 'description' => atom()->t('Enable jQuery effects such as fading or sliding. Effects can render the site slightly slower on less powerful PCs'),
-                               ),
-
-      // advanced: optimize
-      'optimize'            => array(
-                                 'location'    => 'advanced',
-                                 'type'        => 'checkbox',
-                                 'cap'         => 'edit_themes', // this option is slightly sensitive, so we only enable editing for users who can access the editor (usually super-admins)
-                                 'label'       => atom()->t('Optimize website for faster loading'),
-                                 'description' => atom()->t("Compresses and concatenates stylesheets and javascript files (using %s). Leave this unchecked if you're experiencing conflicts with other plugins, or if you're using a cache plugin that handles such functions"),
-                               ),
-
-      // advanced: auto (re-)generate missing thumbnails
-      'generate_thumbs'     => array(
-                                 'location'    => 'advanced',
-                                 'type'        => 'checkbox',
-                                 'depends_on'  => 'jquery',
-                                 'label'       => atom()->t('Automatically create missing thumbnail sizes'),
-                                 'description' => atom()->t('Asynchronously update thumbnails if needed. You can also use the %s plugin to process all missing thumbnail sizes manually, in a single pass', array('<a href="http://wordpress.org/extend/plugins/regenerate-thumbnails/" target="_blank">Regenerate Thumbnails</a>')),
-                               ),
-
-      // advanced: use built-in lightbox
-      'lightbox'            => array(
-                                 'location'    => 'advanced',
-                                 'type'        => 'checkbox',
-                                 'depends_on'  => 'jquery',
-                                 'label'       => atom()->t('Use theme built-in lightbox on all image links'),
-                                 'description' => atom()->t('Uncheck if you prefer a lightbox plugin'),
-                               ),
-
-      // advanced: auto-generate meta descriptions
-      'meta_description'    => array(
-                                 'location'    => 'advanced',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Automatically generate meta descriptions'),
-                                 'description' => atom()->t("Uncheck if you're using a SEO plugin, otherwise you'll get duplicate fields! Note that you don't need such plugins, %s is heavily optimized for search engines", array(atom()->getThemeName())),
-                               ),
-
-      // advanced: debug info
-      'debug'               => array(
-                                 'location'    => 'advanced',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Display debug messages (english only)'),
-                                 'description' => atom()->t('Status notifications about the theme setup (only visible to administrators). Only enable this when you need to, because it can significantly slow down page load for admins'),
-                               ),
-
-      // advanced: auto-uninstall
-      'remove_settings'     => array(
-                                 'location'    => 'advanced',
-                                 'type'        => 'checkbox',
-                                 'label'       => atom()->t('Theme auto-uninstall'),
-                                 'description' => atom()->t('Check to remove all %s settings from the database after you switch to a different theme (Featured post records are preserved).', array(atom()->getThemeName())),
-                               ),
-
-
-    ));
-
-  }
-
-
-
-  /*** Mystique-specific settings / hooks ***/
-
-  // append arrow pointers inside primary menu items
-  atom()->addContextArgs('primary_menu', array('link_after' => '<span class="p"></span>'));
-
-
-
-  atom()->add('sync_options', 'mystique_sync_old_options', 10, 3);
-
-  function mystique_sync_old_options($old_version, $defaults, $old_options){
-
-    // completely reset settings from the database if version is older than 3.0,
-    // because almost none of the older settings are relevant in 3+
-    if(version_compare($old_version, '3.0', '<')){
-      atom()->reset();
-
-    // changes in 3.3
-    }elseif(version_compare($old_version, '3.3', '<')){
-
-      // background color option changed in 3.3
-      // black doesn't meant "no color" anymore
-      if($old_options['background_color'] == '000000' || empty($old_options['background_color'])){
-        $old_options['background_color'] = '';
-        atom()->setOptions($old_options);
-      }
-
-    }
-
-    /*
-    // some of the 3.2+ option names are different
-    // we need to safely update them -- not now...
-    elseif(version_compare($old_version, '3.1', '<')){
-      // we're changing the option ID
-      $old_id = get_stylesheet();
-      $old_options = get_option($old_id);
-
-      if($old_id !== 'mystique'){
-        atom()->setOptions($old_options);
-        delete_option($old_id);
-      }
-
-    }
-
-    */
-  }
-
+  if(!isset($content_width))
+    $content_width = 640;
 }
+
+
+
+// Loads the comment template.
+// Used as a callback function for wp_list_comments()
+function mystique_comment($comment, $args, $depth){
+  $GLOBALS['comment'] = $comment;
+  get_template_part('comment');
+}
+
+
+
+// Logo text
+function mystique_logo(){
+  $sitename = get_bloginfo('name');
+
+  // h1 only on the front/home page, for seo reasons
+  $tag = (is_home() || is_front_page()) ? 'h1' : 'div';
+
+  $words = explode(" ", $sitename); // we get a special treat if the logo is made out of 2 or 3 words
+    if(!empty($words[1]) && empty($words[3])):
+      $words[1] = "<span class=\"alt\">{$words[1]}</span>";
+      $sitename = implode(" ", $words); // leave the space here and remove it trough css to avoid seo problems
+    endif;
+
+  echo '<'.$tag.' id="logo"><a href="'.home_url().'">'.$sitename.'</a></'.$tag.'>';
+}
+
+
+
+// Generates semantic classes for <body>
+function mystique_body_class($classes){
+  global $wp_query, $current_user, $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
+
+  // Special classes for BODY element when a single post
+  if(is_single()):
+    $postname = $wp_query->post->post_name;
+
+    the_post();
+
+    // post title
+    $classes[] = "title-{$postname}";
+
+    // Adds category classes for each category on single posts
+    if($cats = get_the_category())
+      foreach($cats as $cat)
+        $classes[] = "category-{$cat->slug}";
+
+    // Adds tag classes for each tags on single posts
+    if($tags = get_the_tags())
+      foreach($tags as $tag)
+        $classes[] = "tag-{$tag->slug}";
+
+    // Adds author class for the post author
+    $classes[] = "author-".sanitize_title_with_dashes(strtolower(get_the_author_meta('user_login')));
+    rewind_posts();
+
+  elseif(is_page()):
+    $pagename = $wp_query->post->post_name;
+    the_post();
+    $classes[] = "page-{$pagename}";
+    $classes[] = "author-".sanitize_title_with_dashes(strtolower(get_the_author_meta('user_login')));
+
+    rewind_posts();
+  endif;
+
+  // wp's "browser detection"
+  if($is_lynx) $browser = 'lynx';
+  elseif($is_gecko) $browser = 'gecko';
+  elseif($is_opera) $browser = 'opera';
+  elseif($is_NS4) $browser = 'ns4';
+  elseif($is_safari) $browser = 'safari';
+  elseif($is_chrome) $browser = 'chrome';
+  elseif($is_IE) $browser = 'ie';
+  else $browser = 'unknown';
+  if($is_iphone) $browser .= '-iphone';
+
+  $classes[] = "browser-{$browser}";
+
+  return $classes;
+}
+
+
+
+// Generates semantic classes for posts
+function mystique_post_class($classes){
+  global $wp_query;
+
+  $current_post = $wp_query->current_post + 1;
+
+  // post alt
+  $classes[] = "count-{$current_post}";
+  $classes[] = ($current_post % 2) ? 'odd' : 'even alt';
+
+  // author
+  $classes[] = 'author-'.sanitize_html_class(get_the_author_meta('user_nicename'), get_the_author_meta('ID'));
+
+  // password-protected?
+  if (post_password_required())
+    $classes[] = 'protected';
+
+  // first/last class ("first" and "count-1" are the same)
+  if($current_post == 1) $classes[] = 'first'; elseif($current_post == $wp_query->post_count) $classes[] = 'last';
+
+  return $classes;
+}
+
+
+
+// Generates semantic classes for comments
+function mystique_comment_class($classes) {
+  global $post, $comment;
+
+  // avatars enabled?
+  if(get_option('show_avatars')) $classes[] = 'with-avatars';
+
+  // user roles
+  if($comment->user_id > 0):
+    $user = new WP_User($comment->user_id);
+
+    if (is_array($user->roles))
+      foreach ($user->roles as $role) $classes[] = "role-{$role}";
+    $classes[] = 'user-'.sanitize_html_class($user->user_nicename, $user->ID);
+  else:
+    $classes[] = 'reader name-'.sanitize_title(get_comment_author());
+  endif;
+
+  // needs moderation?
+  if($comment->comment_approved == '0') $classes[] = 'awaiting-moderation';
+
+  return $classes;
+}
+
+
+
+// Adjust classes added by the page walker to match the ones from custom menus
+function mystique_page_css_classes($classes, $page){
+  // use page (safe) name instead of ID; nobody styles IDs...
+  $new_classes = array("page-{$page->post_name}");
+
+  // adjust active menu classes to match the ones added by wp_nav_menu()
+  foreach($classes as $class)
+    if($class == 'current_page_item') $new_classes[] = 'current-menu-item';
+    elseif($class == 'current_page_parent') $new_classes[] = 'current-menu-parent';
+    elseif($class == 'current_page_ancestor') $new_classes[] = 'current-menu-ancestor';
+
+  // overwrite
+  return $new_classes;
+}
+
+
+
+// Adjust classes added by the menu walker. Removes useless bloat classes like id-xxx
+function mystique_menu_css_classes($classes, $item){
+  $new_classes = array('menu-'.sanitize_title($item->title));
+
+  foreach($classes as $class)
+    if(in_array($class, array('current-menu-item', 'current-menu-parent', 'current-menu-ancestor'))) $new_classes[] = $class;
+
+  return $new_classes;
+}
+
+
+
+// Default page menu. Make the mark-up match the one from custom menus
+function mystique_page_menu($args){
+  $defaults = array(
+    'container'       => 'div',
+    'container_class' => '',
+    'container_id'    => '',
+    'menu_class'      => 'menu',
+    'menu_id'         => '',
+    'echo'            => true,
+    'before'          => '',    // these two are ignored by wp_page_menu; @todo: find a way to use them on the generated menu, regex maybe?
+    'after'           => '',
+    'link_before'     => '',
+    'link_after'      => '',
+    'depth'           => 0,
+    'walker'          => '',
+    'slug'            => 'menu-pages', // extra
+    'include_home'    => true,
+  );
+
+  $args = wp_parse_args($args, $defaults);
+  $args = apply_filters('wp_nav_menu_args', $args);
+  $args = (object)$args;
+
+  $nav_menu = $items = '';
+
+  $show_container = false;
+  if($args->container):
+    $allowed_tags = apply_filters('wp_nav_menu_container_allowedtags', array('div', 'nav'));
+    if(in_array($args->container, $allowed_tags)):
+      $show_container = true;
+      $class = $args->container_class ? ' class="'.$args->container_class.'"' : ' class="menu-'.$args->slug.'-container"';
+      $id = $args->container_id ? ' id="'.$args->container_id.'"' : '';
+      $nav_menu .= '<'.$args->container.$id.$class. '>';
+    endif;
+  endif;
+
+  // add 'home' menu item
+  if($args->include_home)
+    $items .= '<li class="home '.((is_front_page() && !is_paged()) ? 'current-menu-item' : '').'"><a href="'.home_url('/').'" title="'.__('Home Page', 'mystique').'">'.$args->link_before.__('Home', 'mystique').$args->link_after.'</a></li>';
+
+  // pass arguments to wp_list_pages (most of them are ignored)
+  $page_list_args = (array)$args;
+
+  // if the front page is a page, add it to the exclude list
+  if(get_option('show_on_front') == 'page') $page_list_args['exclude'] = get_option('page_on_front');
+
+  // other extra arguments
+  $page_list_args['echo'] = false;
+  $page_list_args['title_li'] = '';
+
+  // get page list
+  $items .= str_replace(array("\r", "\n", "\t"), '', wp_list_pages($page_list_args));
+
+  // attributes
+  $slug = empty($args->menu_id) ? 'menu-'.$args->slug : $args->menu_id;
+
+  $attributes = ' id="'.$slug.'"';
+  $attributes .= $args->menu_class ? ' class="'.$args->menu_class.'"' : '';
+
+  $nav_menu .= '<ul'.$attributes.'>';
+  $nav_menu .= $items;
+  $nav_menu .= '</ul>';
+
+  if($show_container)
+    $nav_menu .= '</'.$args->container.'>';
+
+  $nav_menu = apply_filters('wp_page_menu', $nav_menu, $args);
+
+  if($args->echo) echo $nav_menu; else return $nav_menu;
+}
+
 

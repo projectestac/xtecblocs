@@ -1,3 +1,1 @@
-<?php
-
-// Templates are located in the /templates/ directory
+<?php // Silence is golden? ?>
