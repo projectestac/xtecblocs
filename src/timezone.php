@@ -7,65 +7,56 @@ require_once('./wp-load.php');
 
 set_time_limit (0);
 
-function get_blog_list_all( $start = 0, $num = 10, $deprecated = '' ) {
-	_deprecated_function( __FUNCTION__, '3.0' );
+$blog_timezone_str_n = 'Europe/Brussels';
 
-	global $wpdb;
-	$blogs = $wpdb->get_results( $wpdb->prepare("SELECT blog_id, domain, path FROM $wpdb->blogs WHERE site_id = %d AND archived = '0' AND mature = '0' AND spam = '0' AND deleted = '0' ORDER BY registered DESC", $wpdb->siteid), ARRAY_A );
+if ( ! is_multisite() )
+	wp_die( __( 'Multisite support is not enabled.' ) );
 
-	foreach ( (array) $blogs as $details ) {
-		$blog_list[ $details['blog_id'] ] = $details;
-		$blog_list[ $details['blog_id'] ]['postcount'] = $wpdb->get_var( "SELECT COUNT(ID) FROM " . $wpdb->get_blog_prefix( $details['blog_id'] ). "posts WHERE post_status='publish' AND post_type='post'" );
-	}
-	unset( $blogs );
-	$blogs = $blog_list;
+$n = ( isset($_GET['n']) ) ? intval($_GET['n']) : 0;
 
-	if ( false == is_array( $blogs ) )
-		return array();
+$blogs = $wpdb->get_results( "SELECT * FROM {$wpdb->blogs} WHERE site_id = '{$wpdb->siteid}' AND spam = '0' AND deleted = '0' AND archived = '0' ORDER BY registered DESC LIMIT {$n}, 5", ARRAY_A );
 
-	if ( $num == 'all' )
-		return array_slice( $blogs, $start, count( $blogs ) );
-	else
-		return array_slice( $blogs, $start, $num );
+if ( empty( $blogs ) ) {
+  echo '<p>' . __( 'All done!' ) . '</p>';
+  exit;
 }
 
-$block_size = $_GET['block_size'];
-$block_num = $_GET['block_num'];
-$log_file = $_GET['log_file'];
+echo "<ul>";
 
-$f = fopen($log_file, "w");
+foreach ( (array) $blogs as $details ) {
 
-echo 'Block number: '.$block_num.'<BR>'.'Block_size: '.$block_size.'<BR><BR>';
-$m = 'Block number: '.$block_num."\n".'Block_size: '.$block_size."\n\n";
-fwrite($f, $m); 
+  switch_to_blog( $details['blog_id'] );
 
-$blog_list = get_blog_list_all( $block_size * $block_num , $block_size );
+  $siteurl = site_url();
+  $blog_timezone_str_i = get_option('timezone_string');
+  $blog_gmt_offset_i = get_option('gmt_offset');
 
-foreach ($blog_list AS $blog) {
+  echo "<li>$siteurl : [$blog_timezone_str_i] [$blog_gmt_offset_i]";
 
-switch_to_blog($blog['blog_id']);
+  update_option('timezone_string', $blog_timezone_str_n);
 
-$blog_timezone_str = get_option('timezone_string');
-$blog_gmt_offset = get_option('gmt_offset');
+  $blog_timezone_str_o = get_option('timezone_string');
+  $blog_gmt_offset_o = get_option('gmt_offset');
 
-echo 'Blog '.$blog['blog_id'].': '.$blog['domain'].$blog['path'].'-['.$blog_timezone_str.']-['.$blog_gmt_offset.']';
-$m='Blog '.$blog['blog_id'].': '.$blog['domain'].$blog['path'].'-['.$blog_timezone_str.']-['.$blog_gmt_offset.']';
+  echo " --> [$blog_timezone_str_o] [$blog_gmt_offset_o]</li>";
 
-update_option('timezone_string', 'Europe/Brussels');
+  restore_current_blog();
 
-$blog_timezone_str = get_option('timezone_string');
-$blog_gmt_offset = get_option('gmt_offset');
-
-echo '--->['.$blog_timezone_str.']-['.$blog_gmt_offset.']'.'<BR>';
-$m = $m.'--->['.$blog_timezone_str.']-['.$blog_gmt_offset.']'."\n";
-
-fwrite($f, $m); 
-
+  if ( ( $blog_timezone_str_n != $blog_timezone_str_i ) and ( $blog_timezone_str_n != $blog_timezone_str_o) ) {
+    echo '<p>' . sprintf( __( 'Warning! Problem updating %1$s'), $siteurl ) . " : [$blog_timezone_str_i] --> [$blog_timezone_str_n]" . '</p>';
+    exit;
+  }
 }
 
-echo "<BR>Done<BR>";
-$m="\nDone\n";
-fwrite($f, $m);
-fclose($f); 
+echo "</ul>";
+?><p><?php _e( 'If your browser doesn&#8217;t start loading the next page automatically, click this link:' ); ?> <a class="button" href="timezone.php?n=<?php echo ($n + 5) ?>"><?php _e("Next Sites"); ?></a></p>
+<script type='text/javascript'>
+<!--
+function nextpage() {
+  location.href = "timezone.php?n=<?php echo ($n + 5) ?>";
+}
+setTimeout( "nextpage()", 250 );
+//-->
+</script><?php
 
 ?>
