@@ -1,6 +1,12 @@
 Changes in progress
 ---------------------------------------------------------------------------------------
+- Canvi zona horaria per defecte en crear un bloc nou + procediment per actualitzar els blocs existents a la zona per defecte (AGIN 1068-2014-0014)
+- Salts de línia no es mostren a l'enviament de correu (AGIN 1068-2014-0015) 
 
+14.07.15
+---------------------------------------------------------------------------------------
+- Mystique  2.5.7
+ 
 
 v14.07.14
 ---------------------------------------------------------------------------------------
@@ -11,7 +17,7 @@ v14.07.14
 - Vipers Video Quicktags 6.5.2
 - Mystique 3.3.2
 - Twenty Eleven 1.8
-- xtex-mail (nova versió) 
+- xtec-mail (nova versió) 
 
 v14.06.05
 ---------------------------------------------------------------------------------------
