@@ -327,7 +327,7 @@ if (!function_exists('wp_mail')) {
         // Set Content-Type and charset
         // If we don't have a content-type from the input headers
         if (!isset($content_type)) {
-            $content_type = 'text/html';
+            $content_type = 'text/plain';
         }
 
         $content_type = apply_filters('wp_mail_content_type', $content_type);
