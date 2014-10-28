@@ -24,9 +24,9 @@
 
 
 				<p class="postmetadata"><span class="post_edit"><?php edit_post_link(__('Edit','encurs'), '', ''); ?> </span>
-				<? _e('Categories','encurs'); ?>: <?php the_category(', ') ?><br />
-				<? _e('Comments','encurs'); ?>: <?php comments_popup_link(__('No Comments','encurs').' &#187;', __('1 Comment','encurs').' &#187;', __('% Comments','encurs').' &#187;'); ?><br />
-				<? _e('Author','encurs'); ?>: <strong><?php the_author() ?></strong>
+				<?php _e('Categories','encurs'); ?>: <?php the_category(', ') ?><br />
+				<?php _e('Comments','encurs'); ?>: <?php comments_popup_link(__('No Comments','encurs').' &#187;', __('1 Comment','encurs').' &#187;', __('% Comments','encurs').' &#187;'); ?><br />
+				<?php _e('Author','encurs'); ?>: <strong><?php the_author() ?></strong>
 				</p>
 			</div>
 

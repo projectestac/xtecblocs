@@ -146,4 +146,4 @@
 <!-- footer -->
 <?php get_footer(); ?>
 
-<? ob_end_flush();?>
+<?php ob_end_flush();?>

@@ -3,6 +3,7 @@ Changes in progress
 - Canvi zona horaria per defecte en crear un bloc nou + procediment per actualitzar els blocs existents a la zona per defecte (AGIN 1068-2014-0014)
 - Salts de línia no es mostren a l'enviament de correu (AGIN 1068-2014-0015)
 - Incorporació de l'extensió Google Calendar Events 2.0.6.2
+- Removed PHP short tags
 
 
 
