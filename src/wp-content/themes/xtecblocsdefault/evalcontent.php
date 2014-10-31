@@ -21,8 +21,15 @@ switch ($_REQUEST['a']){
 			<?php
 			// ***** FI
 			?>
-		<?php }else{
-			include('login.php');
+		<?php }else{?>
+<!--XTEC ************ MODIFICAT - Substitució wp-content/themes/xtecblocsdefault/login.php
+2014.10.31 @jmiro227-->
+			<script>window.location = 'wp-signup.php';</script>
+                        <?php
+//************ ORIGINAL
+//                      <?php
+//			include('login.php');
+//************ FI-->
 		}
 		break;
 	case 'newuser':
@@ -31,7 +38,14 @@ switch ($_REQUEST['a']){
 		<?php }
 		break;		
 	case 'login':?>
-		<?php include('login.php');
+<!--XTEC ************ MODIFICAT - Substitució wp-content/themes/xtecblocsdefault/login.php
+2014.10.31 @jmiro227-->
+                <script>window.location = 'wp-login.php?redirect_to=<?php echo site_url() ?>';</script>
+		<?php
+//************ ORIGINAL
+//                      <?php
+//			include('login.php');
+//************ FI-->
 		break;
 	case 'list':
 		print '<h2 style="color: #1C4387; font-size: 1.3em; background-image: none; border: none; margin-bottom: 1em; margin-top: 1em;">Llista de blocs que tenen el descriptor <em>'.$_GET['desc'].'</em>.</h2>';

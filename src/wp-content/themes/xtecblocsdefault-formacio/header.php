@@ -69,7 +69,12 @@
 						<li><a href="index.php?a=terms">Condicions d'ús</a></li>
 						<li><a href="http://sites.google.com/a/xtec.cat/ajudaxtecblocs" target="_blank">Ajuda</a></li>
 				<?php if (!is_user_logged_in()){?>
+<!--XTEC ************ MODIFICAT - Substitució wp-content/themes/xtecblocsdefault/login.php
+2014.10.31 @jmiro227-->
+						<li><a id="surt" href="<?php echo get_option('home');?>/wp-login.php?redirect_to=<?php echo site_url() ?>">Entra</a></li>
+<!--************ ORIGINAL
 						<li><a id="surt" href="<?php echo get_option('home');?>/index.php?a=login">Entra</a></li>
+************ FI-->
 				<?php }else{?>
 						<li><a href="<?php echo wp_logout_url(site_url()) ?>" title="Surt">Surt</a></li>
 				<?php } ?>
