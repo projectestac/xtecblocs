@@ -1,0 +1,15 @@
+/*
+ XTEC custom css
+*/
+
+/* =1px solid gray border tables
+----------------------------------------------- */
+
+table thead tr th,
+table tfoot tr th,
+table tbody tr td,
+table tr td,
+table tfoot tr td {
+	border: 1px solid silver;
+}
+

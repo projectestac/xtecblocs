@@ -371,3 +371,16 @@ if ( is_multisite() ) {
  * @since 3.0.0
  */
 do_action( 'wp_loaded' );
+
+
+//XTEC ************ AFEGIT - It loads an XTEC custom CSS
+//2014.11.06 @jmiro227
+
+add_action( 'wp_enqueue_scripts', 'register_xtec_common_styles' );
+
+function register_xtec_common_styles() {
+wp_register_style( 'xtec_common_styles', get_site_url(1).'/xtec-style.css' );
+wp_enqueue_style( 'xtec_common_styles' );
+}
+
+//************ FI
