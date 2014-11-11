@@ -7,6 +7,7 @@
 - Supressió dels PHP short tags
 - Correcció de l'error "les galetes s'han blocat" (AGIN 1068-2014-0017)
 - Correcció del fet que no es mostren les línies de separació de les taules (AGIN 1068-2014-0019)
+- Incorporació del plugin "Slideshow"
 
 
 14.07.15
