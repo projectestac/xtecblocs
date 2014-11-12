@@ -78,7 +78,7 @@
 				<?php }else{?>
 						<li><a href="<?php echo wp_logout_url(site_url()) ?>" title="Surt">Surt</a></li>
 				<?php } ?>
-						<li><a href="feed" class="rss"></a></li>
+						<li><a href="feed" class="rss"><img src="<?php bloginfo('template_directory'); ?>/css/img/rss.png" alt="RSS"/></a></li>
 					</ul>
 	
 			</div>

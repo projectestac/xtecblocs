@@ -91,7 +91,7 @@
 }
 
 #nav .rss{
-	background: url(img/rss.png) no-repeat;
+	/*background: url(img/rss.png) no-repeat;*/
 	padding-right: 30px;
 	padding-top: 0;
 	height: 20px;
