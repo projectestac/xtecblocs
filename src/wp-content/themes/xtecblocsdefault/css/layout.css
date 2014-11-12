@@ -647,13 +647,13 @@ ul.cloudtags li {
 	display: inline;
 	list-style-image: none;
 }
-ul.cloudtags li#mes, p#mes {
+ul.cloudtags li.mes, p#mes {
 	display: block;
 	font-size: 1em;
 	text-align: right;	
 }
 
-ul.cloudtags li a, ul.cloudtags li#mes a  {
+ul.cloudtags li a, ul.cloudtags li.mes a  {
 	color: #1E4588;
 }
 

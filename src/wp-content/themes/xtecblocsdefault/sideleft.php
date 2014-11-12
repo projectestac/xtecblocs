@@ -36,7 +36,7 @@
 		<?php endwhile; ?><?php endif; ?>
 		</ul>
 		<ul class="cloudtags">
-			<li id="mes"><a href="<?php echo get_option('home');?>/index.php?a=newsList">Més...</a></li>
+			<li class="mes"><a href="<?php echo get_option('home');?>/index.php?a=newsList">Més...</a></li>
 		</ul>
 	</div>
 </div>
@@ -54,7 +54,7 @@
                 <?php echo $cloud['tag'];?>
             </a></li>
         <?php } ?>
-		<li id="mes"><a href="<?php echo get_option('home');?>/index.php?a=allDescriptors">Més...</a></li>
+		<li class="mes"><a href="<?php echo get_option('home');?>/index.php?a=allDescriptors">Més...</a></li>
 		</ul>
 		<!-- 
 		end of els descriptors 
