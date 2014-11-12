@@ -140,12 +140,12 @@ li.login a {
 	text-decoration:underline;
 }
 
-#box {
+.box {
 	margin-right: 12px;
 	border: 1px solid #d0dae2;
 	-moz-border-radius: 8px;
 }
-#box  .contentboxheadfons{
+.box  .contentboxheadfons{
 	background: #fff url(img/boxfons.png) repeat-x;
 	height:14px;
 	margin:0;
@@ -153,20 +153,20 @@ li.login a {
 	padding-left:15px;
 }
 
-#box h2 {
+.box h2 {
 	font-size: .8em;
 	color: #fff;
 
 }
 
-#box .contentboxheadright{
+.box .contentboxheadright{
 	float:right;
 	background: #315f94 url(img/boxright.png) no-repeat right;
 	height:22px;
 	width:49px;
 }
 
-#box .contentboxheadleft{
+.box .contentboxheadleft{
 	float:left;
 	margin-left: -2px;
 	background: #315f94 url(img/boxleft.png) no-repeat left;
