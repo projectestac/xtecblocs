@@ -168,7 +168,7 @@ if(count($mostActive)>0){
 </ul>
 
 
-<ul id="cloudtags">
+<ul class="cloudtags">
 	<li id="mes"><a
 		href="<?php echo get_option('home');?>/index.php?a=mostActive">Més...</a></li>
 </ul>
@@ -213,7 +213,7 @@ if( is_array( $blogs ) ) {?>
 }
 }?>
 </ul>
-<ul id="cloudtags">
+<ul class="cloudtags">
     <li id="mes"><a
         href="<?php echo get_option('home');?>/index.php?a=lastCreated">Més...</a></li>
 </ul>
