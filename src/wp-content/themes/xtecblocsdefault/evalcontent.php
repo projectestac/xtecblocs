@@ -82,6 +82,25 @@ switch ($_REQUEST['a']){
         print "</div>";
 		break;
 	case 'allDescriptors';
+/* XTEC ************ MODIFICAT - Canvi marge pel nuvol de tags
+2014.11.14 @jmiro227*/
+        print  '<div class="box">';
+        print  '	<span class="contentboxheadright"></span>';
+        print  '	<span class="contentboxheadleft"></span>';
+        print  '	<h2 class="contentboxheadfons">Descriptors més rellevants</h2>';
+        print  '	<ul class="cloudtags">';
+
+        $cloudArray = xtec_descriptors_get_descriptors_cloud(256,12,25);
+
+        foreach ($cloudArray as $cloud)
+        {
+            print ("<li><a style='font-size:".$cloud['size']."px; color:#1E4588;' class='tag_cloud' href=".get_option('home')."/index.php?a=list&amp;desc=".$cloud['tag']."> ");
+            print($cloud['tag']);
+            print('</a></li>');
+        }
+        print  '	</ul>';
+        print  '</div>';
+/************ ORIGINAL
 		print '<h2 style="color: #1C4387; font-size: 1.3em; background-image: none; border: none; margin-bottom: 1em; margin-top: 1em;">Llista de tots els descriptors definits</h2>';
 		print '<div class="descriptorsword">';
         $cloudArray = xtec_descriptors_get_descriptors_cloud(1000000,12,30);
@@ -92,6 +111,7 @@ switch ($_REQUEST['a']){
             print('</a></li>');
         }
 		print '</div>';
+************ FI */
 		break;
 	case 'search';
 		include('xtecfunc.php');

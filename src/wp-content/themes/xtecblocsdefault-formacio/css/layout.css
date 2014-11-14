@@ -91,7 +91,7 @@
 }
 
 #nav .rss{
-	background: url(img/rss.png) no-repeat;
+	/*background: url(img/rss.png) no-repeat;*/
 	padding-right: 30px;
 	padding-top: 0;
 	height: 20px;
@@ -140,12 +140,12 @@ li.login a {
 	text-decoration:underline;
 }
 
-#box {
+.box {
 	margin-right: 12px;
 	border: 1px solid #d0dae2;
 	-moz-border-radius: 8px;
 }
-#box  .contentboxheadfons{
+.box  .contentboxheadfons{
 	background: #fff url(img/boxfons.png) repeat-x;
 	height:14px;
 	margin:0;
@@ -153,20 +153,20 @@ li.login a {
 	padding-left:15px;
 }
 
-#box h2 {
+.box h2 {
 	font-size: .8em;
 	color: #fff;
 
 }
 
-#box .contentboxheadright{
+.box .contentboxheadright{
 	float:right;
 	background: #315f94 url(img/boxright.png) no-repeat right;
 	height:22px;
 	width:49px;
 }
 
-#box .contentboxheadleft{
+.box .contentboxheadleft{
 	float:left;
 	margin-left: -2px;
 	background: #315f94 url(img/boxleft.png) no-repeat left;
@@ -639,21 +639,30 @@ div.descriptors li a:hover, div.descriptorsword li a:hover {
 ****** Secció Cloud Tags *******
 ********************************/
 
-ul#cloudtags {
+/* XTEC ************ MODIFICAT - Canvi marge pel nuvol de tags
+2014.11.14 @jmiro227*/
+ul.cloudtags {
+	list-style-type: none;
+	margin-left: 2em;
+}
+/************ ORIGINAL
+ul.cloudtags {
 	list-style-type: none;
 }
-ul#cloudtags li {
+************ FI */
+
+ul.cloudtags li {
 
 	display: inline;
 	list-style-image: none;
 }
-ul#cloudtags li#mes, p#mes {
+ul.cloudtags li.mes, p#mes {
 	display: block;
 	font-size: 1em;
 	text-align: right;	
 }
 
-ul#cloudtags li a, ul#cloudtags li#mes a  {
+ul.cloudtags li a, ul.cloudtags li.mes a  {
 	color: #1E4588;
 }
 

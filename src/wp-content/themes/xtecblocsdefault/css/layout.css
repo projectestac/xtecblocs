@@ -639,9 +639,18 @@ div.descriptors li a:hover, div.descriptorsword li a:hover {
 ****** Secció Cloud Tags *******
 ********************************/
 
+/* XTEC ************ MODIFICAT - Canvi marge pel nuvol de tags
+2014.11.14 @jmiro227*/
+ul.cloudtags {
+	list-style-type: none;
+	margin-left: 2em;
+}
+/************ ORIGINAL
 ul.cloudtags {
 	list-style-type: none;
 }
+************ FI */
+
 ul.cloudtags li {
 
 	display: inline;
