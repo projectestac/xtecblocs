@@ -12,7 +12,7 @@ if(isset($_REQUEST['id'])){
 
 	// notícies	?>
 	<br />
-	<div id="box">
+	<div class="box">
 		<span class="contentboxheadright"></span>
 		<span class="contentboxheadleft"></span>
 		<h2 class="contentboxheadfons">Notícies</h2>
@@ -44,7 +44,7 @@ else {
 	        $wb_blog_title = get_bloginfo('title');
 	        $wb_description = get_post_meta($weekblog->ID, '_xtecweekblog-description', true);
 	        ?>	
-				<div id="box">
+				<div id="weekblog-box" class="box">
 					<span class="contentboxheadright"></span>
 					<span class="contentboxheadleft"></span>
 					<h2 class="contentboxheadfons">Bloc destacat</h2>
@@ -61,7 +61,7 @@ else {
 		}
 		else {
 			?>
-			<div id="box">
+			<div id="weekblog-box" class="box">
 				<span class="contentboxheadright"></span>
 				<span class="contentboxheadleft"></span>
 				<h2 class="contentboxheadfons"><?php _e('WeekBlog', 'xtecweekblog');?></h2>
@@ -83,7 +83,7 @@ else {
 
 		<!-- Inici de notícies -->
 		
-		<div id="box">
+		<div id="news-box" class="box">
 			<span class="contentboxheadright"></span>
 			<span class="contentboxheadleft"></span>
 			<h2 class="contentboxheadfons">Notícies</h2>
@@ -102,7 +102,7 @@ else {
 		</div>
 	<br />
 	
-<div id="box">
+<div id="latestposts-box" class="box">
 	<span class="contentboxheadright"></span>
 	<span class="contentboxheadleft"></span>
 	<h2 class="contentboxheadfons">Darrers articles als blocs</h2>

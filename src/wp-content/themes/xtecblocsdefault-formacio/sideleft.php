@@ -35,8 +35,8 @@
 		<li><a href="index.php?id=<?php the_id();?>"><?php the_title();?></a></li>
 		<?php endwhile; ?><?php endif; ?>
 		</ul>
-		<ul id="cloudtags">
-			<li id="mes"><a href="<?php echo get_option('home');?>/index.php?a=newsList">Més...</a></li>
+		<ul class="cloudtags">
+			<li class="mes"><a href="<?php echo get_option('home');?>/index.php?a=newsList">Més...</a></li>
 		</ul>
 	</div>
 </div>
@@ -47,14 +47,14 @@
 	<span class="sideboxleft">&nbsp;</span>
 	<h3 class="noticies">Descriptors</h3>
 	<div class="sidecontent">
-		<ul id="cloudtags">
+		<ul class="cloudtags">
         <?php $cloudArray = xtec_descriptors_get_descriptors_cloud(25,12,25);
         foreach ($cloudArray as $cloud){?>
             <li><a style="font-size:<?php echo $cloud['size'];?>px; color:#1E4588;" class="tag_cloud" href="<?php echo get_option('home');?>/index.php?a=list&amp;desc=<?php echo $cloud['tag'];?>">
                 <?php echo $cloud['tag'];?>
             </a></li>
         <?php } ?>
-		<li id="mes"><a href="<?php echo get_option('home');?>/index.php?a=allDescriptors">Més...</a></li>
+		<li class="mes"><a href="<?php echo get_option('home');?>/index.php?a=allDescriptors">Més...</a></li>
 		</ul>
 		<!-- 
 		end of els descriptors 
