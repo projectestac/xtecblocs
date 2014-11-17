@@ -19,19 +19,25 @@ global $isAgora, $isBlocs;
 $isAgora = false;
 $isBlocs = true;
 
-// ** MySQL settings - You can get this info from your web host ** //
+// ** DB settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('WP_CACHE', true); //Added by WP-Cache Manager
-define( 'WPCACHEHOME', 'wp-super-cache_plugin_home_filesystem_path_here' ); //Added by WP-Cache Manager
-define('DB_NAME', 'database_name_here');
+define('WPCACHEHOME', '/srv/www/blocs/src/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
+define('DB_NAME', 'xtec_blocs_global');
 
-/** MySQL database username */
-define('DB_USER', 'username_here');
+/**
+ * DES, INT, ACC, PRO, FRM.
+ */
+define('ENVIRONMENT', 'DES');
 
-/** MySQL database password */
-define('DB_PASSWORD', 'password_here');
 
-/** MySQL hostname */
+/** Database username */
+define('DB_USER', 'root');
+
+/** Database password */
+define('DB_PASSWORD', 'agora');
+
+/** Databbase hostname */
 define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
@@ -76,14 +82,14 @@ $table_prefix  = 'wp_';
  * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
  * language support.
  */
-define('WPLANG', '');
+define('WPLANG', 'ca');
 
 //XTEC ************ AFEGIT - Constants de configuració d'XTECBlocs
 
 /** HyperDB settings */
 // HyperDB databases prefix
-define('DB_PREFIX','hyperdb_database_prefix_here');
-define('DB_NUMS','hyperdb_additional_database_number'); /** HyperDB additional databases */
+define('DB_PREFIX','xtec_blocs_');
+define('DB_NUMS',3); /** HyperDB additional databases */
 
 /**
  * For developers: WordPress debugging mode.
@@ -98,15 +104,10 @@ define('WP_ALLOW_MULTISITE', true);
 
 define('MULTISITE', true);
 define('SUBDOMAIN_INSTALL', false);
-define('DOMAIN_CURRENT_SITE','domain_current_site_name_here');
-define('PATH_CURRENT_SITE', 'domain_current_site_path_here');
+define('DOMAIN_CURRENT_SITE','agora');
+define('PATH_CURRENT_SITE', '/blocs/');
 define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);
-
-/**
- * DES, INT, ACC, PRO, FRM.
- */
-define('ENVIRONMENT', 'DES');
 
 /**
  * Default blog creation theme.
@@ -127,4 +128,5 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
 
