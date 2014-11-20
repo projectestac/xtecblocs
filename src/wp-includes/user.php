@@ -745,7 +745,108 @@ class WP_User_Query {
 
 			$r = array();
 			foreach ( $this->results as $userid )
-				$r[ $userid ] = new WP_User( $userid, '', $qv['blog_id'] );
+                                 $r[ $userid ] = new WP_User( $userid, '', $qv['blog_id'] );
+			
+			$all_options = wp_load_alloptions();
+  			$my_options = array();
+
+  			foreach( $all_options as $name => $value ) {
+    				if(stristr($name, 'new_user')) {
+					$u_my_options = unserialize($value);
+					$r[ $u_my_options[user_id] ] = new WP_User( $u_my_options[user_id], '', $qv['blog_id'] );
+					$r[ $u_my_options[user_id] ] -> roles[0] = $u_my_options[role];
+					$r[ $u_my_options[user_id] ] -> allcaps[kk]=0;
+					$r[ $u_my_options[user_id] ] -> caps = array();
+					//print_r ($u_my_options);
+				}
+  			}
+
+
+			//$r[8]->roles[0]='contributor';
+			//$r[8]->allcaps[kk]=0;
+			//$r[8]->caps = array();
+
+
+			//$r[8]->caps=$r[1]->caps;
+			//$r[8]->cap_key=$r[1]->cap_key;
+			//$r[8]->roles=$r[1]->roles;
+
+
+
+/*
+			$r[8]->allcaps[activate_plugins]=0;
+			$r[8]->allcaps[add_users]=0;
+			$r[8]->allcaps[create_users]=0;
+			$r[8]->allcaps[delete_others_pages]=0;
+			$r[8]->allcaps[delete_others_posts]=0;
+			$r[8]->allcaps[delete_pages]=0;
+			$r[8]->allcaps[delete_plugins]=0;
+			$r[8]->allcaps[delete_posts]=0;
+			$r[8]->allcaps[delete_private_pages]=0;
+			$r[8]->allcaps[delete_private_posts]=0;
+			$r[8]->allcaps[delete_published_pages]=0;
+			$r[8]->allcaps[delete_published_posts]=0;
+			$r[8]->allcaps[delete_themes]=0;
+			$r[8]->allcaps[delete_users]=0;
+			$r[8]->allcaps[edit_dashboard]=0;
+			$r[8]->allcaps[edit_files]=0;
+			$r[8]->allcaps[edit_others_pages]=0;
+			$r[8]->allcaps[edit_others_posts]=0;
+			$r[8]->allcaps[edit_pages]=0;
+			$r[8]->allcaps[edit_plugins]=0;
+			$r[8]->allcaps[edit_posts]=0;
+			$r[8]->allcaps[edit_private_pages]=0;
+			$r[8]->allcaps[edit_private_posts]=0;
+			$r[8]->allcaps[edit_published_pages]=0;
+			$r[8]->allcaps[edit_published_posts]=0;
+			$r[8]->allcaps[edit_theme_options]=0;
+			$r[8]->allcaps[edit_themes]=0;
+			$r[8]->allcaps[edit_users]=0;
+			$r[8]->allcaps[export]=0;
+			$r[8]->allcaps[import]=0;
+			$r[8]->allcaps[install_plugins]=0;
+			$r[8]->allcaps[install_themes]=0;
+			$r[8]->allcaps[level_0]=0;
+			$r[8]->allcaps[level_1]=0;
+			$r[8]->allcaps[level_10]=0;
+			$r[8]->allcaps[level_2]=0;
+			$r[8]->allcaps[level_3]=0;
+			$r[8]->allcaps[level_4]=0;
+			$r[8]->allcaps[level_5]=0;
+			$r[8]->allcaps[level_6]=0;
+			$r[8]->allcaps[level_7]=0;
+			$r[8]->allcaps[level_8]=0;
+			$r[8]->allcaps[level_9]=0;
+			$r[8]->allcaps[list_users]=0;
+			$r[8]->allcaps[manage_categories]=0;
+			$r[8]->allcaps[manage_links]=0;
+			$r[8]->allcaps[manage_options]=0;
+			$r[8]->allcaps[moderate_comments]=0;
+			$r[8]->allcaps[promote_users]=0;
+			$r[8]->allcaps[publish_pages]=0;
+			$r[8]->allcaps[publish_posts]=0;
+			$r[8]->allcaps[read]=0;
+			$r[8]->allcaps[read_private_pages]=0;
+			$r[8]->allcaps[read_private_posts]=0;
+			$r[8]->allcaps[remove_users]=0;
+			$r[8]->allcaps[switch_themes]=0;
+			$r[8]->allcaps[unfiltered_html]=0;
+			$r[8]->allcaps[unfiltered_upload]=0;
+			$r[8]->allcaps[update_core]=0;
+			$r[8]->allcaps[update_plugins]=0;
+			$r[8]->allcaps[update_themes]=0;
+			$r[8]->allcaps[upload_files]=0;
+			$r[8]->allcaps['slideshow-jquery-image-gallery-add-slideshows']=0;
+			$r[8]->allcaps['slideshow-jquery-image-gallery-edit-slideshows']=0;
+			$r[8]->allcaps['slideshow-jquery-image-gallery-delete-slideshows']=0;
+			$r[8]->allcaps[administrator]=0;
+
+
+                        print_r ($r[1]->cap_key);
+                        echo "<BR><BR>";	 
+			print_r ($r[8]->cap_key);
+                        echo "<BR><BR>";
+*/
 
 			$this->results = $r;
 		} elseif ( 'all' == $qv['fields'] ) {
