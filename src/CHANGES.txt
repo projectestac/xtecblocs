@@ -2,6 +2,7 @@
 --------------------------------------------------------------------
 - Actualització de Google Calendar Events a la versió 2.1.1
 - Millores a la pàgina de descriptors per fer-la més operativa (AGIN 1068-2013-0024)
+- Millores del plugin "Slideshow"
 
 
 14.11.13
