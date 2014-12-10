@@ -4,9 +4,10 @@
 		<div id="footer">
 
 <!-- XTEC ************ ELIMINAT - To remove copyright notice (also removes the blog name reference) -->
-<!-- 2014.01.09 @jmiro227
+<!-- 2014.01.09 @jmiro227 
+<!-- 2014.12.10 @sarjona - Added // comments to PHP echos to avoid problems
 
-<p>Copyright <?php echo delicacy_copy_date(); ?> <strong><a href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a></strong></p>
+<p>Copyright <?php //echo delicacy_copy_date(); ?> <strong><a href="<?php //echo home_url( '/' ); ?>"><?php //bloginfo( 'name' ); ?></a></strong></p>
 
 ************ -->
 
