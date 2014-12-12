@@ -6,6 +6,8 @@ development home at https://github.com/projectestac/xtecblocs
 Changes in progress
 --------------------------------------------------------------------
 - Reviewed delicacy theme to avoid some errors (which appears in the log)
+- Added extension Multisite Clone Duplicator to clone blocs in multisite system
+
 
 
 14.11.25
