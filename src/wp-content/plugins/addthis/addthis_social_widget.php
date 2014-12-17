@@ -20,16 +20,115 @@
 * +--------------------------------------------------------------------------+
 */
 /**
-* Plugin Name: AddThis Social Bookmarking Widget
+* Plugin Name: AddThis for WordPress
 * Plugin URI: http://www.addthis.com
-* Description: Help your visitor promote your site! The AddThis Social Bookmarking Widget allows any visitor to bookmark your site easily with many popular services. Sign up for an AddThis.com account to see how your visitors are sharing your content--which services they're using for sharing, which content is shared the most, and more. It's all free--even the pretty charts and graphs.
-* Version: 3.5.10
+* Description: Use the AddThis suite of website tools which includes sharing, following, recommended content, and conversion tools to help you make your website smarter. With AddThis, you can see how your users are engaging with your content, provide a personalized experience for each user and encourage them to share, subscribe or follow.
+* Version: 4.0.1
 *
 * Author: The AddThis Team
 * Author URI: http://www.addthis.com/blog
 */
 if (!defined('ADDTHIS_INIT')) define('ADDTHIS_INIT', 1);
 else return;
+
+define( 'addthis_style_default' , 'fb_tw_p1_sc');
+define( 'ADDTHIS_PLUGIN_VERSION' , '4.0');
+define( 'ADDTHIS_PRODUCT_VERSION' , 'wpp-4.0');
+define( 'ADDTHIS_ATVERSION', '300');
+define( 'ADDTHIS_ATVERSION_MANUAL_UPDATE', -1);
+define( 'ADDTHIS_ATVERSION_AUTO_UPDATE', 0);
+define( 'ADDTHIS_ATVERSION_REVERTED', 1);
+define( 'ENABLE_ADDITIONAL_PLACEMENT_OPTION', 0);
+
+$addthis_options = get_option('addthis_settings');
+
+if(isset($_GET['upgrade']) && $_GET['upgrade'] == 'addthis_for_wordpress'){
+    if(isset($addthis_options)){
+        $addthis_options['addthis_for_wordpress'] = true;
+    } else {
+        $addthis_options = array('addthis_for_wordpress' => true);
+    }
+
+    $upgraded = true;
+    $addthis_options['addthis_wordpress_version'] = ADDTHIS_PLUGIN_VERSION;
+    update_option('addthis_settings', $addthis_options);
+
+}
+
+/**
+ * Show Plugin activation notice on first installation*
+ */
+function pluginActivationNotice()
+{
+    $run_once = get_option('addthis_run_once');
+
+    if (!$run_once) {
+        wp_enqueue_style(
+            'addThisStylesheet',
+            plugins_url('css/style.css', __FILE__)
+        );
+        $html = '<div class="addthis_updated wrap">';
+        $html .= '<span>'.
+                    'Congrats! You\'ve Installed Addthis for Wordpress'.
+                  '</span>';
+        $html .= '<span><a class="addthis_configure" href="'
+                . 'options-general.php?page=addthis_social_widget' .
+                '">Configure it now</a> >></span>';
+        $html .= '</div><!-- /.updated -->';
+        echo '<style>div#message.updated{ display: none; }</style>';
+        echo $html;
+        update_option('addthis_run_once', true);
+    }
+}
+
+/**
+ * Make sure the option gets added on registration
+ * @since 2.0.6
+ */
+add_action('admin_notices', 'pluginActivationNotice');
+function addthis_activation_hook(){
+    /* Check if it is an upgrade or new intallation */
+    if ( get_option('addthis_settings') == false) {
+        // Fresh instlallation
+        $option = array('addthis_for_wordpress' => true);
+    } else {
+        $option = get_option('addthis_settings');
+        if(isset($option['addthis_for_wordpress'])) {
+            $option['addthis_for_wordpress'] = true;
+        } else if(isset($option['above']) || isset($option['below'])){
+            //check if any share buttons already included in old plugin
+            $option['addthis_for_wordpress'] = false;
+        } else if(get_option('widget_addthis-widget') == true){
+            //check if button widgets already included in old plugin
+            $option['addthis_for_wordpress'] = false;
+        } else {
+            // Fresh instlallation or old plugin not used
+            $option['addthis_for_wordpress'] = true;
+        }
+    }
+    $option['addthis_wordpress_version'] = ADDTHIS_PLUGIN_VERSION;
+    update_option('addthis_settings', $option );
+    
+}
+
+register_activation_hook( __FILE__, 'addthis_activation_hook' );
+
+if(isset($addthis_options) && isset($addthis_options['addthis_for_wordpress']) && ($addthis_options['addthis_for_wordpress'] == true)){
+    require_once 'addthis-for-wordpress.php';
+    new Addthis_Wordpress(isset($upgraded));
+} else {
+
+ // Show old version of the plugin till upgrade button is clicked
+    
+// Add settings link on plugin page
+function your_plugin_settings_link($links) { 
+  $settings_link = '<a href="options-general.php?page=addthis_social_widget">Settings</a>'; 
+  array_push($links, $settings_link);
+  return $links; 
+}
+ 
+$plugin = plugin_basename(__FILE__); 
+add_filter("plugin_action_links_$plugin", 'your_plugin_settings_link' );
 
 
 // Setup our shared resources early 
@@ -48,15 +147,6 @@ function addthis_early(){
 //2013.05.21 @jmiro227
 load_plugin_textdomain( 'addthis_trans_domain', null, dirname( plugin_basename( __FILE__ )) . '/languages' );
 //************ FI
-
-define( 'addthis_style_default' , 'fb_tw_p1_sc');
-define( 'ADDTHIS_PLUGIN_VERSION' , '3.5.8');
-define( 'ADDTHIS_PRODUCT_VERSION' , 'wpp-3.5.9');
-define( 'ADDTHIS_ATVERSION', '300');
-define( 'ADDTHIS_ATVERSION_MANUAL_UPDATE', -1);
-define( 'ADDTHIS_ATVERSION_AUTO_UPDATE', 0);
-define( 'ADDTHIS_ATVERSION_REVERTED', 1);
-define( 'ENABLE_ADDITIONAL_PLACEMENT_OPTION', 0);
 
 $addthis_settings = array();
 $addthis_settings['isdropdown'] = 'true';
@@ -470,12 +560,12 @@ function addthis_print_script() {
 add_action('admin_notices', 'addthis_admin_notices');
 
 function addthis_admin_notices(){
-    if (! current_user_can('manage_options') ||( defined('ADDTHIS_NO_NOTICES') && ADDTHIS_NO_NOTICES == true ) ) 
+    if (! current_user_can('manage_options') ||( defined('ADDTHIS_NO_NOTICES') && ADDTHIS_NO_NOTICES == true ) )
         return;
-    
+
     global $current_user ;
     $user_id = $current_user->ID;
-    $options = get_option('addthis_settings'); 
+    $options = get_option('addthis_settings');
 
     if ($options == false && ! get_user_meta($user_id, 'addthis_ignore_notices'))
     {
@@ -487,34 +577,27 @@ function addthis_admin_notices(){
 //        printf(__('Configure the AddThis plugin to enable users to share your content around the web.<br /> <a href="%1$s">Configuration options</a> | <a href="%2$s" id="php_below_min_nag-no">Ignore this notice</a>'),
 //************ FI  
             admin_url('options-general.php?page=' .  basename(__FILE__) ),
-            '?addthis_nag_ignore=0'); 
+            '?addthis_nag_ignore=0');
         echo "</p></div>";
     }
-    
+
     elseif ( ( ! isset($options['username']) ||  $options['username'] == false) && ! get_user_meta($user_id, 'addthis_nag_username_ignore'))
     {
-        echo '<div class="updated addthis_setup_nag"><p>';
-
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-        printf( __('Sign up for AddThis and add your username/password to recieve analytics about how people are sharing your content.<br /> <a href="%1$s">Enter username and password</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%2$s" target="_blank">Sign Up</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%3$s">Ignore this notice</a>','addthis_trans_domain'),
-//************ ORIGINAL
+//        echo '<div class="updated addthis_setup_nag"><p>';
 //        printf( __('Sign up for AddThis and add your username/password to receive analytics about how people are sharing your content.<br /> <a href="%1$s">Enter username and password</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%2$s" target="_blank">Sign Up</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%3$s">Ignore this notice</a>'),
-//************ FI 
-
-        admin_url('options-general.php?page=' . basename(__FILE__) ),
-        'https://www.addthis.com/register?profile=wpp',
-        '?addthis_nag_username_ignore=0');
-        echo "</p></div>";
+//        admin_url('options-general.php?page=' . basename(__FILE__) ),
+//        'https://www.addthis.com/register?profile=wpp',
+//        '?addthis_nag_username_ignore=0');
+//        echo "</p></div>";
     }
-    elseif ( (get_user_meta($user_id, 'addthis_nag_updated_options') == true  ) ) 
+    elseif ( (get_user_meta($user_id, 'addthis_nag_updated_options') == true  ) )
     {
         echo '<div class="updated addthis_setup_nag"><p>';
 //XTEC ************ MODIFICAT - Localization support
 //2013.05.21 @jmiro227
         printf( __('We have updated the options for the AddThis plugin.  Check out the <a href="%1$s">AddThis settings page</a> to see the new styles and options.<br /> <a href="%1$s">See New Options</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%2$s">Ignore this notice</a>','addthis_trans_domain'),
 //************ ORIGINAL 
-//        printf( __('We have updated the options for the AddThis plugin.  Check out the <a href="%1$s">AddThis settings page</a> to see the new styles and options.<br /> <a href="%1$s">See New Options</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%2$s">Ignore this notice</a>'),
+//      printf( __('We have updated the options for the AddThis plugin.  Check out the <a href="%1$s">AddThis settings page</a> to see the new styles and options.<br /> <a href="%1$s">See New Options</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%2$s">Ignore this notice</a>'),
 //************ FI 
         admin_url('options-general.php?page=' . basename(__FILE__) ),
         '?addthis_nag_updated_ignore=0');
@@ -2177,21 +2260,16 @@ function addthis_plugin_options_php4() {
         extract($options);        
     ?>
 
-    <p>
-<!--XTEC ************ ELIMINAT - Removing advertisements
-//2014.03.28 @jmiro227
-        <?php if(!at_share_is_pro_user()) { ?>
-            <div class="updated addthis_setup_nag">
-                <p>AddThis Pro now available - start your trial at 
-                    <a href="http://www.addthis.com" target="_blank">www.addthis.com</a> 
-                    and get premium widgets, personalized content recommendations, 
-                    advanced customization options and priority support.
-                </p>
-            </div>
-        <?php } ?>
-        <?php echo $addthis_addjs->getAtPluginPromoText();  ?>
-************ FI -->
-    </p>
+    <?php if(isset($addthis_options) && !isset($addthis_options['addthis_for_wordpress'])) { ?>
+
+        <div class="addthis_upgrade">
+            <b>Now that you've upgraded your plugin you can access even more AddThis tools. </b>
+            &nbsp;Note: Your tool configurations will be reset.
+            &nbsp; <a href="?page=<?php echo basename(__FILE__); ?>&upgrade=addthis_for_wordpress">Get Started</a>
+        </div>
+
+    <?php } ?>
+
     <img alt='addthis' src="//cache.addthis.com/icons/v1/thumbs/32x32/more.png" class="header-img"/>
     <span class="addthis-title">AddThis</span> <span class="addthis-plugin-name">Share</span>
     <div class="page-header" id="tabs">
@@ -2326,7 +2404,7 @@ function addthis_plugin_options_php4() {
 2013.05.21 @jmiro227 -->
                     <th><h2><?php _e("Show AddThis on &hellip;", 'addthis_trans_domain' ); ?></h2></th>
 <!--************ ORIGINAL
-                    <th><h2>Show AddThis on &hellip;</h2></th>
+                    <th><h2>Show AddThis on &hellip;</h2></th> 
 ************ FI --> 
 
                 </tr>
@@ -2364,7 +2442,7 @@ function addthis_plugin_options_php4() {
 2013.05.21 @jmiro227 -->
                     <th><h2><?php _e("Have AddThis track &hellip;", 'addthis_trans_domain' ); ?></h2></th>
 <!--************ ORIGINAL
-                    <th><h2>Have AddThis track &hellip;</h2></th>
+                    <th><h2>Have AddThis track &hellip;</h2></th> 
 ************ FI --> 
                 </tr>
 				<tr>
@@ -2591,20 +2669,6 @@ if (! function_exists('esc_textarea'))
 
 }
 
-
-/**
- * Make sure the option gets added on registration
- * @since 2.0.6
- */
-
-function addthis_activation_hook(){
-    if ( get_option('addthis_settings') == false)
-        add_option('addthis_settings', array() );
-
-}
-
-register_activation_hook( __FILE__, 'addthis_activation_hook' );
-
 /**
  * Parse for the first twitter username in the given string
  * @param String $raw_twitter_username Raw string containing twitter usernames
@@ -2633,13 +2697,13 @@ if (! function_exists('get_first_twitter_username'))
 function at_share_is_pro_user() {
     $isPro = false;
     $options = get_option('addthis_settings');
-    $profile = $options['profile'];
+    $profile = (isset($options['profile'])) ? $options['profile'] : null;
     if ($profile) {
         $request = wp_remote_get( "http://q.addthis.com/feeds/1.0/config.json?pubid=" . $profile );
         $server_output = wp_remote_retrieve_body( $request );
         $array = json_decode($server_output);
         // check for pro user
-        if (array_key_exists('_default',$array)) {
+        if (is_array($array) && array_key_exists('_default',$array)) {
             $isPro = true;
         } else {
             $isPro = false;
@@ -2649,3 +2713,15 @@ function at_share_is_pro_user() {
 }
 
 require_once('addthis_post_metabox.php');
+
+function addthis_deactivation_hook()
+{
+    if (get_option('addthis_run_once')) {
+        delete_option('addthis_run_once');
+    }
+}
+
+// Deactivation
+register_deactivation_hook(__FILE__, 'addthis_deactivation_hook');
+
+}

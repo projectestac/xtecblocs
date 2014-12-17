@@ -281,31 +281,47 @@ class SlideshowPluginSlideshowSettingsHandler
 			$slides = self::$slides[$slideshowId];
 		}
                 
-                // XTEC ************ AFEGIT - get slides from picasa
+                // XTEC ************ AFEGIT - get slides from picasa or google photos
                 // 2014.10.22 @jmeler && @frncesc
                 
                 $picasa_album_rss=get_post_meta($slideshowId,"picasa_album",true);
-                if ($picasa_album_rss){
-                    $extra_params="&imgmax=800";
-                    $picasa_album_rss = str_replace("alt=rss","",$picasa_album_rss).$extra_params;
-                    $picasa_album = fetch_feed($picasa_album_rss);
-                    
-                    if ( !is_wp_error( $picasa_album ) ) {
-                        $picasa_items = $picasa_album->get_items();
-                        $picasa_items = array_reverse($picasa_items);
-                        
-                        foreach($picasa_items as $picasa_item){
-                            $enclosure=$picasa_item->get_enclosure();
-                            $info=$enclosure->get_description();
-                            $url_img=$enclosure->get_link();
-                            $url_target=$url_img;
-                            $slides[]=array("title"=>$info,"url"=>$url_img,"urlTarget"=>$url_target,"type"=>"image");
-                        }
-                    }
-                    else{
-                        echo "<p>No es pot obtenir l'àlbum de picasa. <a target='_blank' href='https://sites.google.com/a/xtec.cat/ajudaxtecblocs/insercio-de-continguts/carrusel-d-imatges'>Ajuda</a>.</p>";
-                    }    
+                $googlephotos_album=get_post_meta($slideshowId,"googlephotos_album",true);
+                
+                $albums_json=array();
+                
+                if ($picasa_album_rss) {
+                    $extra_params = "&alt=json&imgmax=1024&fields=entry(content,media%3Agroup(media%3Adescription),link[%40rel%3D%27alternate%27](%40href))";
+                    $albums_json[] = str_replace("alt=rss","",$picasa_album_rss) . $extra_params;
                 }
+                
+                if ($googlephotos_album) {
+                    preg_match_all('/.*plus.google.com.*photos\/(\d*)\/albums\/(\d*)/i',$googlephotos_album, $result);
+                    $googlephotos_feed="http://photos.googleapis.com/data/feed/api/user/" . $result[1][0] . "/albumid/" . $result[2][0];
+                    $extra_params = "?alt=json&imgmax=1024&fields=entry(content,media%3Agroup(media%3Adescription),link[%40rel%3D%27alternate%27](%40href))";
+                    $albums_json[] = $googlephotos_feed . $extra_params;
+                } 
+                
+                foreach ($albums_json as $album_json) { 
+                    $request = new WP_Http;
+                    $result = $request->request($album_json);
+                    
+                    if (!is_wp_error($result)) {
+                        $album=json_decode($result['body'],true);
+                        if ($album) {                        
+                            foreach($album['feed']['entry'] as $item){
+                                  $slides[]=array(
+                                            "title"     => $item['media$group']['media$description']['$t'],
+                                            "url"       => $item['content']['src'],
+                                            "urlTarget" => $item['link'][0]['href'],
+                                            "type"      => "image",
+                                            );
+                            }
+                        } else
+                              echo "<p style='color:red'>Error al obtenir un àlbum extern</p>Comprovi l'adreça de l'àlbum. <a target='_blank' href='https://sites.google.com/a/xtec.cat/ajudaxtecblocs/insercio-de-continguts/carrusel-d-imatges'>Ajuda</a>.";
+                    } else 
+                          echo "<p style='color:red'>Error al obtenir un àlbum extern (posible error de conexió) </p>" . $result->get_error_message() . " <a target='_blank' href='https://sites.google.com/a/xtec.cat/ajudaxtecblocs/insercio-de-continguts/carrusel-d-imatges'>Ajuda</a>";
+                }
+                
                 //************ FI
 		
                 // Sort slides by order ID
@@ -445,10 +461,12 @@ class SlideshowPluginSlideshowSettingsHandler
 			$newPostStyleSettings
 		);
                 
-                // XTEC ************ AFEGIT - save rss picasa album 
+                // XTEC ************ AFEGIT - save external albums addr 
                 // 2014.10.22 @jmeler
                 $picasa_album=isset($_POST["picasa_album"])?$_POST["picasa_album"]:'';
+                $googlephotos_album=isset($_POST["googlephotos_album"])?$_POST["googlephotos_album"]:'';
                 update_post_meta($postId, "picasa_album", $picasa_album);
+                update_post_meta($postId, "googlephotos_album", $googlephotos_album);
                 //************ FI
                 
 		// Save settings
@@ -712,7 +730,7 @@ class SlideshowPluginSlideshowSettingsHandler
 		$name         = $settingsKey . '[' . $settingsName . ']';
 		$displayValue = (!isset($settings['value']) || (empty($settings['value']) && !is_numeric($settings['value'])) ? $settings['default'] : $settings['value']);
 		$class        = ((isset($settings['dependsOn']) && $hideDependentValues)? 'depends-on-field-value ' . $settings['dependsOn'][0] . ' ' . $settings['dependsOn'][1] . ' ': '') . $settingsKey . '-' . $settingsName;
-                
+
 		switch($settings['type'])
 		{
 			case 'text':

@@ -121,7 +121,10 @@ foreach ( (array) get_post_types( array('show_ui' => true, '_builtin' => false, 
 		$ptype_class = 'post';
 	}
 
-	// if $ptype_menu_position is already populated or will be populated by a hard-coded value below, increment the position.
+	/*
+	 * If $ptype_menu_position is already populated or will be populated
+	 * by a hard-coded value below, increment the position.
+	 */
 	$core_menu_positions = array(59, 60, 65, 70, 75, 80, 85, 99);
 	while ( isset($menu[$ptype_menu_position]) || in_array($ptype_menu_position, $core_menu_positions) )
 		$ptype_menu_position++;
@@ -146,9 +149,13 @@ $appearance_cap = current_user_can( 'switch_themes') ? 'switch_themes' : 'edit_t
 
 $menu[60] = array( __('Appearance'), $appearance_cap, 'themes.php', '', 'menu-top menu-icon-appearance', 'menu-appearance', 'dashicons-admin-appearance' );
 	$submenu['themes.php'][5] = array( __( 'Themes' ), $appearance_cap, 'themes.php' );
-	$submenu['themes.php'][6] = array( __( 'Customize' ), 'edit_theme_options', 'customize.php', 'hide-if-no-customize' );
-	if ( current_theme_supports( 'menus' ) || current_theme_supports( 'widgets' ) )
+
+	$customize_url = add_query_arg( 'return', urlencode( wp_unslash( $_SERVER['REQUEST_URI'] ) ), 'customize.php' );
+	$submenu['themes.php'][6] = array( __( 'Customize' ), 'customize', $customize_url, '', 'hide-if-no-customize' );
+	unset( $customize_url );
+	if ( current_theme_supports( 'menus' ) || current_theme_supports( 'widgets' ) ) {
 		$submenu['themes.php'][10] = array(__( 'Menus' ), 'edit_theme_options', 'nav-menus.php');
+	}
 
 unset( $appearance_cap );
 
@@ -167,6 +174,13 @@ if ( ! is_multisite() && current_user_can( 'update_plugins' ) ) {
 	$count = "<span class='update-plugins count-{$update_data['counts']['plugins']}'><span class='plugin-count'>" . number_format_i18n($update_data['counts']['plugins']) . "</span></span>";
 }
 
+// XTEC ************ AFEGIT - Block access to plugin management to all users but xtecadmin
+// 2014.10.21 @aginard
+global $isAgora;
+
+if ($isAgora && is_xtecadmin()) {
+//************ FI
+
 $menu[65] = array( sprintf( __('Plugins %s'), $count ), 'activate_plugins', 'plugins.php', '', 'menu-top menu-icon-plugins', 'menu-plugins', 'dashicons-admin-plugins' );
 
 $submenu['plugins.php'][5]  = array( __('Installed Plugins'), 'activate_plugins', 'plugins.php' );
@@ -176,6 +190,11 @@ $submenu['plugins.php'][5]  = array( __('Installed Plugins'), 'activate_plugins'
 		$submenu['plugins.php'][10] = array( _x('Add New', 'plugin'), 'install_plugins', 'plugin-install.php' );
 		$submenu['plugins.php'][15] = array( _x('Editor', 'plugin editor'), 'edit_plugins', 'plugin-editor.php' );
 	}
+
+// XTEC ************ AFEGIT - Block access to plugin management to all users but xtecadmin
+// 2014.10.21 @aginard
+}
+//************ FI
 
 unset( $update_data );
 
@@ -217,7 +236,17 @@ $menu[80] = array( __('Settings'), 'manage_options', 'options-general.php', '', 
 	$submenu['options-general.php'][20] = array(__('Reading'), 'manage_options', 'options-reading.php');
 	$submenu['options-general.php'][25] = array(__('Discussion'), 'manage_options', 'options-discussion.php');
 	$submenu['options-general.php'][30] = array(__('Media'), 'manage_options', 'options-media.php');
+// XTEC ************ AFEGIT - Block access to permalink management to all users but xtecadmin
+// 2014.11.03 @sarjona
+global $isAgora;
+
+if ($isAgora && is_xtecadmin()) {
+//************ FI
 	$submenu['options-general.php'][40] = array(__('Permalinks'), 'manage_options', 'options-permalink.php');
+// XTEC ************ AFEGIT - Block access to permalink management to all users but xtecadmin
+// 2014.11.03 @sarjona
+}
+//************ FI
 
 $_wp_last_utility_menu = 80; // The index of the last top-level menu in the utility menu group
 

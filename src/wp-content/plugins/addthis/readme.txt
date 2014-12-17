@@ -1,20 +1,26 @@
-=== Share Buttons by AddThis === 
-Contributors: srijith.v, solchea, _mjk_, addthis_paul
-Tags: share, addthis, social, bookmark, sharing, bookmarking, widget,AddThis, addtoany, aim, bookmark, buzz, del.icio.us, Digg,e-mail, email, Facebook, google bookmarks, google buzz, myspace,network, NewsVine, Reddit, Share, share this, sharethis, social, socialize, stumbleupon, twitter, windows live, yahoo buzz, pintrest, widget
+=== Smart Website Tools by AddThis ===
+Contributors: srijith.v, solchea, _mjk_, addthis_paul, abramsm
+Tags: AddThis, addtoany, bookmark, bookmarking, email, e-mail, sharing buttons, share, share this, facebook, google+, pinterest, instagram, linkedin, whatsapp, social tools, website tools, twitter, content marketing, recommended content, conversion tool, subscription button, conversion tools, email tools, ecommerce tools, social marketing, personalization tools
 Requires at least: 3.0
-Tested up to: 3.8.1
-Stable tag: 3.5.10
+Tested up to: 4.0
+Stable tag: 4.0.1
 
-AddThis Share Buttons help drive traffic to your site by helping visitors share, bookmark and email your content to over 330 services.
+AddThis provides the best sharing, social, recommended content, and conversion tools to help you make 
+your website smarter. 
 
 == Description ==
-Get more traffic back to your site by installing the AddThis WordPress plugin. With AddThis, your users can promote your content by sharing to over 330 of the most popular social networking and bookmarking sites (like Facebook, Twitter, Pinterest, Google+ and LinkedIn). We also support address bar sharing in modern browsers. Our button is small, unobtrusive, quick to load and recognized all over the web. 
 
-Optionally, sign up for a free AddThis.com account to see how your visitors are sharing your content: which services they're using for sharing, which content is shared the most, and more.
+Traditionally known as the “sharing tool”, AddThis has taken website tools to the next level through the creation of recommended content and conversion tools while also streamlining and evolving their suite of social tools, including sharing and following buttons.
 
-We also have plugins available for <a href='http://wordpress.org/extend/plugins/addthis-follow/'>increasing followers on social networks</a>, <a href='http://wordpress.org/extend/plugins/addthis-welcome/'>welcoming users based on social behavior</a>, <a href='http://wordpress.org/extend/plugins/addthis-social-sign-in'>adding social authentication</a> and <a href='http://wordpress.org/extend/plugins/addthis-trending-content/'>showing your trending content</a> to your WordPress blog.
+**Social Tools:**  Promote your content easily by sharing to over 330 of the most popular social networking and bookmarking sites (like Facebook, Twitter, Pinterest, Google+, WhatsApp, LinkedIn and more). Clean, customizable and simple social buttons are unobtrusive, quick to load and recognized all over the web. 
 
-<a href="http://www.addthis.com/blog">AddThis Blog</a> | <a href="http://www.addthis.com/privacy">Privacy Policy</a>
+**Recommended Content Tools:** Keep visitors on your site longer with the use of our recommended content based on what’s trending, giving your user a unique experience and keeps them engaged with your content longer. 
+
+**Conversion Tools:** Reach business goals quickly with the use of our conversion tools, including email subscriptions, event registration and more. 
+
+**Analytics:** Use the AddThis dashboard to find out how your visitors are sharing content, what content is trending, which services visitors for sharing, how many more followers you’ve gotten, and much, much more. 
+
+Many of our tools are free, but Pro users get the benefit of exclusive widgets, including mobile-friendly tools and retina display buttons, priority support and deeper analytics. 
 
 == Installation ==
 
@@ -37,44 +43,51 @@ To upload the plugin through WordPress, instead of FTP:
 
 = Is AddThis free? =
 
-Yep! The features you see today on AddThis will always be free of charge.
+Many of our tools are free, but Pro users get the benefit of exclusive widgets, including mobile­friendly tools 
+and retina icons, priority support and deeper analytics.
 
 = Do I need to create an account? =
 
-No. You only need to create an account if you want to see how your users are sharing your blog; the sharing itself works the same either way.
+Yes. In order to use and manage the AddThis tools you will need to create an account with AddThis. It requires an email address and name, but that's it.
 
 = Is JavaScript required? =
 
 All of the options required through this plugin require javascript.   JavaScript must be enabled. We load the actual interface via JavaScript at run-time, which allows us to upgrade the core functionality of the menu itself automatically everywhere. 
 
 = Why use AddThis? =
-1. Ease of use. AddThis is easy to install, customize and localize. We've worked hard to make it the simplest, most recognized sharing tool on the internet.
+1. Ease of use. AddThis is easy to install, customize and localize. We've worked hard to make a suite of simple and beautiful website tools on the internet.
 1. Performance. The AddThis menu code is tiny and fast. We constantly optimize its behavior and design to make sharing a snap.
 1. Peace of mind. AddThis gathers the best services on the internet so you don't have to, and backs them up with industrial strength analytics, code caching, active tech support and a thriving developer community.
-1. Flexibility. AddThis can be customized via API, and served securely via SSL. You can roll your own sharing toolbars with our toolbox. Share just about anything, anywhere -- your way.
+1. Flexibility. AddThis can be customized via API, and served securely via SSL. You can roll your own sharing toolbars with our toolbox. Share just about anything, anywhere ­­ your way. 
 1. Global reach. AddThis sends content to 295+ sharing services 60+ languages, to over half a billion unique users in countries all over the world.
-1. It's free!
 
 = Who else uses AddThis? =
-Over 14,000,000 sites have installed AddThis. With over a billion unique users, AddThis is helping share content all over the world, in more than sixty languages.
+Over 13,000,000 sites have installed AddThis. With over a billion unique users, AddThis is helping share content all over the world, in more than sixty languages.
 
 = What services does AddThis support? =
-We currently support over 330 services, from email and blogging platforms to social networks and news aggregators, and we add new services every month. Want to know if your favorite service is supported? This list is accurate up to the minute: <a href="http://www.addthis.com/services">http://www.addthis.com/services</a>.
+We currently support over 300 services, from email and blogging platforms to social networks and news aggregators, and we add new services every month. Want to know if your favorite service is supported? This list is accurate up to the minute: <a href="http://www.addthis.com/services">http://www.addthis.com/services</a>.
 
 = How do I remove AddThis from a page =
-In the screen options you can enable the AddThis meta box.  Check the box and save if you've already published that page or post to disable AddThis on that page or post.  
+In the screen options you can enable the AddThis meta box. Check the box and save if you've already published that page or post to disable AddThis on that page or post.
 
 == Screenshots ==
 
-1. The admin dashboard widget
-2. Previewing how your options look
-3. The settings interface.
+1. Analytics
+2. Tool Gallery
+3. Customization options
 
 == PHP Version ==
 
 PHP 5+ is preferred; PHP 4 is supported.
 
 == Changelog ==
+
+= 4.0.1 =
+* Frictionless integration with AddThis Dashboard. 
+
+= 4.0 =
+* Integrated with AddThis Dashboard. 
+
 = 3.5.10 =
 * Minor bug fix
 
@@ -262,6 +275,11 @@ Fixed nondeterministic bug with the_title(), causing the title to occasionally a
 
 
 == Upgrade Notice ==
+= 4.0.1 =
+* Fix for automatically converting profile types to Wordpress type. 
+
+= 4.0 =
+* WordPress Plugin Upgraded with AddThis Dashboard integration and Access To Pro Tools.
 
 = 3.5.10 =
 * Minor bug fix

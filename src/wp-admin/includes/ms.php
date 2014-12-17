@@ -211,7 +211,6 @@ function wpmu_delete_user( $id ) {
 }
 
 function update_option_new_admin_email( $old_value, $value ) {
-	$email = get_option( 'admin_email' );
 	if ( $value == get_option( 'admin_email' ) || !is_email( $value ) )
 		return;
 
@@ -508,6 +507,15 @@ function format_code_lang( $code = '' ) {
 		've' => 'Venda', 'vi' => 'Vietnamese', 'vo' => 'Volapük', 'cy' => 'Welsh','wa' => 'Walloon','wo' => 'Wolof', 'xh' => 'Xhosa', 'yi' => 'Yiddish', 'yo' => 'Yoruba', 'za' => 'Zhuang; Chuang', 'zu' => 'Zulu' );
 */
 //************ FI
+
+	/**
+	 * Filter the language codes.
+	 *
+	 * @since MU
+	 *
+	 * @param array  $lang_codes Key/value pair of language codes where key is the short version.
+	 * @param string $code       A two-letter designation of the language.
+	 */
 	$lang_codes = apply_filters( 'lang_codes', $lang_codes, $code );
 //XTEC ************ MODIFICAT - Localization support
 //2013.05.30 @jmiro227
@@ -684,10 +692,10 @@ function choose_primary_blog() {
 		<tr>
 			<th scope="row" colspan="2" class="th-full">
 				<?php
-				$signup_url = network_site_url( 'wp-signup.php' );
 				/** This filter is documented in wp-login.php */
+				$sign_up_url = apply_filters( 'wp_signup_location', network_site_url( 'wp-signup.php' ) );
 				?>
-				<a href="<?php echo apply_filters( 'wp_signup_location', $signup_url ); ?>"><?php _e( 'Create a New Site' ); ?></a>
+				<a href="<?php echo esc_url( $sign_up_url ); ?>"><?php _e( 'Create a New Site' ); ?></a>
 			</th>
 		</tr>
 	<?php endif; ?>

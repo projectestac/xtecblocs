@@ -318,3 +318,16 @@ div#preview_floater {
 	font-size: 11px;
 	text-decoration: none;
 }
+
+.addthis_upgrade {
+    background-color: #FB765A;
+    padding: 15px;
+    width: 80%;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.addthis_upgrade a,
+.addthis_upgrade a:hover {
+    color: #ffffff;
+}

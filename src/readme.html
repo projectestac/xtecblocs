@@ -1,95 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>WordPress &#8250; Llegeix-me</title>
+	<title>WordPress &#8250; ReadMe</title>
 	<link rel="stylesheet" href="wp-admin/css/install.css?ver=20100228" type="text/css" />
 </head>
 <body>
 <h1 id="logo">
-	<a href="http://wordpress.org/"><img alt="WordPress" src="wp-admin/images/wordpress-logo.png" /></a>
-	<br /> Versi&oacute; 3.6
+	<a href="https://wordpress.org/"><img alt="WordPress" src="wp-admin/images/wordpress-logo.png" /></a>
+	<br /> Version 4.0.1
 </h1>
-<p style="text-align: center">Plataforma de Publicaci&oacute; Personal Sem&agrave;ntica</p>
+<p style="text-align: center">Semantic Personal Publishing Platform</p>
 
-<h1>El primer &eacute;s el primer</h1>
-<p>Benvinguts. El WordPress &eacute;s un projecte molt especial per a mi. Cada desenvolupador i col·laborador afegeix alguna cosa &uacute;nica al resultat final, i tots plegats creem quelcom bonic que em fa sentir orgull&oacute;s de formar-ne part. Milers d&#8217;hores s&#8217;han escolat al WordPress, i estem compromesos a millorar-lo cada dia. Gr&agrave;cies per fer-lo part del vostre m&oacute;n.</p>
+<h1>First Things First</h1>
+<p>Welcome. WordPress is a very special project to me. Every developer and contributor adds something unique to the mix, and together we create something beautiful that I&#8217;m proud to be a part of. Thousands of hours have gone into WordPress, and we&#8217;re dedicated to making it better every day. Thank you for making it part of your world.</p>
 <p style="text-align: right">&#8212; Matt Mullenweg</p>
 
-<h1>Instal&middot;laci&oacute;: La famosa instal&middot;laci&oacute; en 5 minuts</h1>
+<h1>Installation: Famous 5-minute install</h1>
 <ol>
-	<li>Descomprimiu el paquet en un directori buit i pengeu-ho tot al servidor.</li>
-	<li>Obriu <span class="file"><a href="wp-admin/install.php">wp-admin/install.php</a></span> al navegador. Aix&ograve; us dur&agrave; a trav&eacute;s del proc&eacute;s de configuraci&oacute; del fitxer <code>wp-config.php</code> amb els detalls de connexi&oacute; a la base de dades.
+	<li>Unzip the package in an empty directory and upload everything.</li>
+	<li>Open <span class="file"><a href="wp-admin/install.php">wp-admin/install.php</a></span> in your browser. It will take you through the process to set up a <code>wp-config.php</code> file with your database connection details.
 		<ol>
-			<li>Si per alguna ra&oacute; el proc&eacute;s falla, no us preocupeu. No funciona en tots els servidors web. Obriu el fitxer <code>wp-config-sample.php</code> amb un editor com el WordPad o similar i empleneu-lo amb els detalls de connexi&oacute; a la base de dades.</li>
-			<li>Deseu el fitxer amb el nom <code>wp-config.php</code> i pengeu-lo al servidor.</li>
-			<li>Obriu <span class="file"><a href="wp-admin/install.php">wp-admin/install.php</a></span> al navegador.</li>
+			<li>If for some reason this doesn&#8217;t work, don&#8217;t worry. It doesn&#8217;t work on all web hosts. Open up <code>wp-config-sample.php</code> with a text editor like WordPad or similar and fill in your database connection details.</li>
+			<li>Save the file as <code>wp-config.php</code> and upload it.</li>
+			<li>Open <span class="file"><a href="wp-admin/install.php">wp-admin/install.php</a></span> in your browser.</li>
 		</ol>
 	</li>
-	<li>Una vegada el fitxer de configuraci&oacute; s&#8217;ha definit, l&#8217;instal·lador configurar&agrave; les taules que necessiteu al blog. Si es produeix cap error, torneu a comprovar el fitxer <code>wp-config.php</code>, i torneu-ho a provar. Si torna a fallar, aneu als <a href="http://ca.forums.wordpress.org/" title="F&ograve;rums de suport del WordPress">f&ograve;rums de suport</a> amb totes les dades que pugueu.</li>
-	<li><strong>Si no introdu&iuml;u una contrasenya, anoteu la contrasenya que us donen.</strong> Si no proporcioneu un nom d&#8217;usuari, aquest ser&agrave; <code>admin</code> de manera predeterminada.</li>
-	<li>L&#8217;instal&middot;lador us hauria d&#8217;enviar a <a href="wp-login.php">la p&agrave;gina d&#8217;entrada</a>. Entreu amb el nom d&#8217;usuari i contrasenya que tri&agrave;reu durant la instal&middot;laci&oacute;. Si es va generar una contrassenya per a vosaltres, aleshores feu clic a &#8220;Perfil&#8221; per canviar-la.</li>
+	<li>Once the configuration file is set up, the installer will set up the tables needed for your blog. If there is an error, double check your <code>wp-config.php</code> file, and try again. If it fails again, please go to the <a href="https://wordpress.org/support/" title="WordPress support">support forums</a> with as much data as you can gather.</li>
+	<li><strong>If you did not enter a password, note the password given to you.</strong> If you did not provide a username, it will be <code>admin</code>.</li>
+	<li>The installer should then send you to the <a href="wp-login.php">login page</a>. Sign in with the username and password you chose during the installation. If a password was generated for you, you can then click on &#8220;Profile&#8221; to change the password.</li>
 </ol>
 
-<h1>Actualitzaci&oacute;</h1>
-<h2>Fent servir l&#8217;actualitzador autom&agrave;tic</h2>
-<p>Si esteu actualitzant des de la versi&oacute; 2.7 o superior, podeu utilitzar l&#8217;actualitzador autom&agrave;tic:</p>
+<h1>Updating</h1>
+<h2>Using the Automatic Updater</h2>
+<p>If you are updating from version 2.7 or higher, you can use the automatic updater:</p>
 <ol>
-	<li>Obriu <span class="file"><a href="wp-admin/update-core.php">wp-admin/update-core.php</a></span> al navegador i seguiu les instruccions.</li>
-	<li>Que vol&iacute;eu m&eacute;s? aix&ograve; &eacute;s tot!</li>
+	<li>Open <span class="file"><a href="wp-admin/update-core.php">wp-admin/update-core.php</a></span> in your browser and follow the instructions.</li>
+	<li>You wanted more, perhaps? That&#8217;s it!</li>
 </ol>
 
-<h2>Actualitzaci&oacute; manual</h2>
+<h2>Updating Manually</h2>
 <ol>
-	<li>Abans d&#8217;actualitzar res, assegureu-vos de fer c&ograve;pia de seguretat de tots els fitxers que heu modificat com ara l&#8217;<code>index.php</code>.</li>
-	<li>Suprimiu els fitxers antics del WordPress, deixant els que heu modificat.</li>
-	<li>Pengeu els fitxers nous.</li>
-	<li>Aneu a <span class="file"><a href="wp-admin/upgrade.php">/wp-admin/upgrade.php</a> amb el navegador.</span></li>
+	<li>Before you update anything, make sure you have backup copies of any files you may have modified such as <code>index.php</code>.</li>
+	<li>Delete your old WordPress files, saving ones you&#8217;ve modified.</li>
+	<li>Upload the new files.</li>
+	<li>Point your browser to <span class="file"><a href="wp-admin/upgrade.php">/wp-admin/upgrade.php</a>.</span></li>
 </ol>
 
-<h1>Migraci&oacute; des d&#8217;altres sistemes</h1>
-<p>El WordPress pot <a href="http://codex.wordpress.org/Importing_Content">importar des d&#8217;un nombre de sistemes</a>. El primer que necessiteu &eacute;s el Wordpress instal&middot;lat i funcionant tal i com es descriu dalt, abans d&#8217;utilitzar <a href="wp-admin/import.php" title="Importa al WordPress">les nostres eines d&#8217;importaci&oacute;</a>.</p>
+<h1>Migrating from other systems</h1>
+<p>WordPress can <a href="http://codex.wordpress.org/Importing_Content">import from a number of systems</a>. First you need to get WordPress installed and working as described above, before using <a href="wp-admin/import.php" title="Import to WordPress">our import tools</a>.</p>
 
-<h1>Necessitats del sistema</h1>
+<h1>System Requirements</h1>
 <ul>
-	<li><a href="http://php.net/">PHP</a> versi&oacute; <strong>5.2.4</strong> o superior.</li>
-	<li><a href="http://www.mysql.com/">MySQL</a> versi&oacute; <strong>5.0</strong> o superior.</li>
+	<li><a href="http://php.net/">PHP</a> version <strong>5.2.4</strong> or higher.</li>
+	<li><a href="http://www.mysql.com/">MySQL</a> version <strong>5.0</strong> or higher.</li>
 </ul>
 
-<h2>Recomanacions del sistema</h2>
+<h2>System Recommendations</h2>
 <ul>
-	<li>El m&ograve;dul <a href="http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html">mod_rewrite</a> d&#8217;Apache.</li>
-	<li>Un enllaç a <a href="http://wordpress.org/">http://wordpress.org</a> a la web.</li>
+	<li>The <a href="http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html">mod_rewrite</a> Apache module.</li>
+	<li>A link to <a href="https://wordpress.org/">https://wordpress.org</a> on your site.</li>
 </ul>
 
-<h1>Recursos en l&iacute;nia</h1>
-<p>Si teniu qualsevol pregunta que no es tracta en aquest document, aprofiteu-vos dels numerosos recursos en l&iacute;nia que t&eacute; el WordPress:</p>
+<h1>Online Resources</h1>
+<p>If you have any questions that aren&#8217;t addressed in this document, please take advantage of WordPress&#8217; numerous online resources:</p>
 <dl>
-	<dt>El <a href="http://codex.wordpress.org/">c&ograve;dex del WordPress</a> (en angl&egrave;s)</dt>
-		<dd>El c&ograve;dex &eacute;s la enciclop&egrave;dia de totes les coses del WordPress. &Egrave;s la font d&#8217;informaci&oacute; disponible m&eacute;s completa sobre el WordPress.</dd>
-	<dt>El <a href="http://wordpress.org/news/">blog del WordPress</a> (en angl&egrave;s)</dt>
-		<dd>Aqu&iacute; &eacute;s on trobareu les darreres actualitzacions i not&iacute;cies relacionades amb el WordPress. Les not&iacute;cies recents sobre el WordPress apareixen de manera predeterminada al panell d&#8217;administraci&oacute;.</dd>
-	<dt>El <a href="http://planet.wordpress.org/">planeta del WordPress</a> (en angl&egrave;s)</dt>
-		<dd>El planeta del WordPress &eacute;s una agregador de not&iacute;cies que us mostra juntes entrades de blogs de tot arreu.</dd>
-	<dt>Els <a href="http://ca.forums.wordpress.org/">f&ograve;rums de suport del WordPress</a> (en catal&agrave;)</dt>
-		<dd>Si heu cercat a tot arreu i encara no heu trobat una resposta, els f&ograve;rums de suport estan molt actius i tenen una gran comunitat llesta per ajudar. Per ajudar-los en la seva tasca, assegureu-vos d&#8217;utilitzar un t&iacute;tol descriptiu i descriviu la vostra pregunta tant com sigui possible.</dd>
-	<dt>El <a href="http://codex.wordpress.org/IRC">canal <abbr title="Internet Relay Chat">IRC</abbr> del WordPress</a> (en angl&egrave;s)</dt>
-		<dd>Hi ha un xat en l&iacute;nia que s&#8217;utilitza per discusions entre gent que fa servir el WordPress i ocasionalment per solucionar problemes. La p&agrave;gina del wiki anterior us ha de dur en la direcci&oacute; correcta. (<a href="irc://irc.freenode.net/wordpress">irc.freenode.net #wordpress</a>)</dd>
+	<dt><a href="http://codex.wordpress.org/">The WordPress Codex</a></dt>
+		<dd>The Codex is the encyclopedia of all things WordPress. It is the most comprehensive source of information for WordPress available.</dd>
+	<dt><a href="https://wordpress.org/news/">The WordPress Blog</a></dt>
+		<dd>This is where you&#8217;ll find the latest updates and news related to WordPress. Recent WordPress news appears in your administrative dashboard by default.</dd>
+	<dt><a href="http://planet.wordpress.org/">WordPress Planet</a></dt>
+		<dd>The WordPress Planet is a news aggregator that brings together posts from WordPress blogs around the web.</dd>
+	<dt><a href="https://wordpress.org/support/">WordPress Support Forums</a></dt>
+		<dd>If you&#8217;ve looked everywhere and still can&#8217;t find an answer, the support forums are very active and have a large community ready to help. To help them help you be sure to use a descriptive thread title and describe your question in as much detail as possible.</dd>
+	<dt><a href="http://codex.wordpress.org/IRC">WordPress <abbr title="Internet Relay Chat">IRC</abbr> Channel</a></dt>
+		<dd>There is an online chat channel that is used for discussion among people who use WordPress and occasionally support topics. The above wiki page should point you in the right direction. (<a href="irc://irc.freenode.net/wordpress">irc.freenode.net #wordpress</a>)</dd>
 </dl>
 
-<h1>Notes finals</h1>
+<h1>Final Notes</h1>
 <ul>
-	<li>Si teniu qualsevol suggeriment, idea o comentari, o si (merda!) trobeu un error, uniu-vos als <a href="http://ca.forums.wordpress.org/">f&ograve;rums de suport</a>.</li>
-	<li>El WordPress t&eacute; una <abbr title="application programming interface">API</abbr> d&#8217;extensions robusta que fa que estendre el codi sigui ben f&agrave;cil. Si sou un desenvolupador o desenvolupadora interessats en fer-la servir, mireu la <a href="http://codex.wordpress.org/Plugin_API" title="API d&#8217;extensions del WordPress">documentaci&oacute; sobre extensions al C&ograve;dex</a>. No haur&iacute;eu de modificar codi del nucli del WordPress.</li>
+	<li>If you have any suggestions, ideas, or comments, or if you (gasp!) found a bug, join us in the <a href="https://wordpress.org/support/">Support Forums</a>.</li>
+	<li>WordPress has a robust plugin <abbr title="application programming interface">API</abbr> that makes extending the code easy. If you are a developer interested in utilizing this, see the <a href="http://codex.wordpress.org/Plugin_API" title="WordPress plugin API">plugin documentation in the Codex</a>. You shouldn&#8217;t modify any of the core code.</li>
 </ul>
 
-<h1>Comparteix</h1>
-<p>El WordPress no t&eacute; una campanya de m&agrave;rqueting de milions d&#8217;euros o patrocinadors c&egrave;lebres, però tenim una cosa encara millor&#8212;a tu. Si gaudiu fent servir el WordPress, considereu contar-li-ho a un amic, configureu-li el WordPress a alg&uacute; que t&eacute; menys coneixements que v&oacute;s, o escriviu a l&#8217;autor d&#8217;un article de premsa que ens subestima.</p>
+<h1>Share the Love</h1>
+<p>WordPress has no multi-million dollar marketing campaign or celebrity sponsors, but we do have something even better&#8212;you. If you enjoy WordPress please consider telling a friend, setting it up for someone less knowledgable than yourself, or writing the author of a media article that overlooks us.</p>
 
-<p>El WordPress &eacute;s la continuaci&oacute; oficial del <a href="http://cafelog.com/">b2/caf&#233;log</a>, que va fer Michel V. El treball el van continuar els <a href="http://wordpress.org/about/">desenvolupadors del WordPress</a>. Si voldr&iacute;eu donar suport al WordPress, considereu <a href="http://wordpress.org/donate/" title="Dona al WordPress">fer una donaci&oacute;</a>.</p>
+<p>WordPress is the official continuation of <a href="http://cafelog.com/">b2/caf&#233;log</a>, which came from Michel V. The work has been continued by the <a href="https://wordpress.org/about/">WordPress developers</a>. If you would like to support WordPress, please consider <a href="https://wordpress.org/donate/" title="Donate to WordPress">donating</a>.</p>
 
-<h1>Llic&egrave;ncia</h1>
-<p>El WordPress &eacute;s programari lliure, i es publicar sota els termes de la <abbr title="GNU General Public License">GPL</abbr> versi&oacute; 2 o (segons la vostra opci&oacute;) qualsevol versi&oacute; superior. mireu <a href="license.txt">license.txt</a>.</p>
+<h1>License</h1>
+<p>WordPress is free software, and is released under the terms of the <abbr title="GNU General Public License">GPL</abbr> version 2 or (at your option) any later version. See <a href="license.txt">license.txt</a>.</p>
 
 </body>
 </html>

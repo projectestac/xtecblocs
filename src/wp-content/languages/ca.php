@@ -1,6 +1,6 @@
 <?php
 /* wp-config.php modifications */
-$wp_default_secret_key = 'Escriu una frase aquí qualsevol';
+$wp_default_secret_key = '>?n~6]-:pE_8mqe1}lHfs?{xN(++1= f=Aj[@=++<bi,1^8ro-Zobm&ND+Dk;o{w';
 
 /* filters */
 add_filter( 'date_i18n', 'months_with_prep' );
