@@ -1,0 +1,250 @@
+p {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.addthis_header{
+    padding: 5px;
+}
+
+img.header-img {
+    height: 32px;
+    width: 32px;
+}
+
+.addthis-title {
+    color: black;
+    font-family: "HelveticaNeueBold","HelveticaNeue-Bold","Helvetica Neue",Helvetica,"open sans",arial,sans-serif;
+    font-size: 36px;
+    font-weight: normal;
+    padding-left: 3px;
+}
+
+.addthis-name {
+    color: #F4845D;
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,"open sans",arial,sans-serif;
+    font-size: 36px;
+    font-weight: normal;
+    padding-left: 10px;
+}
+
+.addthis-wrap {
+    margin: 20px;
+}
+
+.addthis-title sup{
+    font-size: 20px;
+    color: grey;
+    margin-left: -10px;
+}
+
+.addthis_description{
+    font-size: 14px;
+    width: 50%;
+}
+
+a.addthis_button, a.addthis_button:hover, a.addthis_button:focus {
+    background-color: #279AF9;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    display: block;
+    width: 560px;
+    text-align: center;
+    border-radius: 3px;
+    margin-top: 20px;
+    height:62px;
+    padding-top: 38px;
+}
+
+a.addthis_button.next {
+    width: 200px;
+}
+
+input.addthis_confirm_button,
+input.addthis_confirm_button:hover,
+input.addthis_confirm_button:focus {
+    background-color: #DD4F4C;
+    border-radius: 3px 3px 3px 3px;
+    color: white;
+    display: block;
+    margin-top: 20px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    clear: both;
+    width: 155px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 0;
+    cursor: pointer;
+    border: none;
+    min-height: 30px;
+    float: left;
+}
+
+button.addthis_confirm_button,
+button.addthis_confirm_button:hover,
+button.addthis_confirm_button:focus {
+    background-color: #DD4F4C;
+    border-radius: 3px 3px 3px 3px;
+    color: white;
+    display: block;
+    margin-top: 20px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    width: 155px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 0;
+    cursor: pointer;
+    border: none;
+    min-height: 30px;
+    float: left;
+    margin-left: 15px;
+}
+
+button.addthis_cancel_button,
+button.addthis_cancel_button:hover,
+button.addthis_cancel_button:focus {
+    background-color: #B2B2B2;
+    border-radius: 3px 3px 3px 3px;
+    color: white;
+    display: block;
+    margin-top: 20px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    width: 155px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 0;
+    cursor: pointer;
+    border: none;
+    min-height: 30px;
+    float: left;
+    margin-left: 15px;
+}
+
+.addthis_confirm_button a {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 0;
+    color: white;
+}
+
+.addthis_seperator{
+    width: 100%;
+    height: 1px;
+    background-color: #D9D9D9;
+    margin: 20px 0;
+}
+
+.addthis_pub_id{
+    background-color: #F2EDD9;
+    border: 2px solid #EEE4B5;
+    display: block;
+    float: left;
+    margin: 15px 0;
+    padding: 15px;
+    text-align: center;    
+    font-weight: bold;
+}
+
+.addthis_updated {
+    background-color: #AACE3B;
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.addthis_error {
+    background-color: #CE0000;
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+a.addthis_configure, a.addthis_configure:hover {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-left: 10px;
+}
+
+.addthis_wrap {
+    width: 85%;
+    font-size: 12px;
+}
+
+.icons {
+    float: left;
+}
+
+.wp_div, .addthis_div {
+    width: 160px;
+    text-align: center;
+}
+.wp_div span, .addthis_div span {
+    display: block;
+    margin: 5px;
+}
+.addthis_wrap input[type="text"] {
+    border: 1px solid #EEE4B5;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07) inset;
+    transition: border-color 0.05s ease-in-out 0s;
+    width: 145px;
+    color: #AF6B63;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+}
+.addthis_wrap input[readonly] {
+    background-color: #FFFFFF;
+}
+
+.arrow_div{
+    padding-top: 25px;
+}
+.arrow_div img{
+    display: block;
+}
+
+.addthis_reset_button{
+    border: 1px solid gray;
+    border-radius: 2px 2px 2px 2px;
+    color: #000000;
+    background-color: inherit;
+    display: block;
+    float: left;
+    margin-right: 25px;
+    padding: 3px;
+    text-align: center;
+    width: 155px;
+    text-decoration: none;
+    font-size: inherit;
+    line-height: none;
+    cursor: pointer;
+}
+
+.addthis_confirm_div {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.addthis_confirm_div span{
+    margin-right: 10px;
+}
+
+.addthis_confirm_div input[type="text"] {
+    font-size: 12px;
+}
