@@ -5,9 +5,24 @@ development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
 --------------------------------------------------------------------
-- Reviewed delicacy theme to avoid some errors (which appears in the log)
-- Added extension Multisite Clone Duplicator to clone blocs in multisite system
 
+15.01.07
+--------------------------------------------------------------------
+- Reviewed delicacy theme to avoid some errors (which appears in the log)
+- Wordpress 4.0.1
+- AddThis 4.0.1
+- Anti-spam 3.3
+- Raw HTML 1.4.13
+- SlideShare 1.9.1
+- Google Analyticator 6.4.8
+- Google Calendar Events 2.1.7
+- WP Super Cache 1.4.2
+- TinyMCE Advanced 4.1.1
+- Twenty Eleven 1.9
+- Twenty Ten 1.7
+- Twenty Twelve 1.5
+- Twenty Thirteen 1.3
+- Twenty Fourteen 1.2
 
 
 14.11.25
