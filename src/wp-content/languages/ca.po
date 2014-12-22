@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2014-12-12 12:18+0100\n"
+"PO-Revision-Date: 2014-12-22 14:00+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -48,15 +48,19 @@ msgctxt "add new on admin bar"
 msgid "Post"
 msgstr "Article"
 
+# XTEC ************ CORREGIT
+# 2014.12.22 @jmiro227
 #: wp-includes/post.php:38
 msgctxt "add new on admin bar"
 msgid "Page"
-msgstr "Afegeix"
+msgstr "Pàgina"
 
+# XTEC ************ CORREGIT
+# 2014.12.22 @jmiro227
 #: wp-includes/admin-bar.php:573
 msgctxt "add new from admin bar"
 msgid "Link"
-msgstr "Afegeix"
+msgstr "Enllaç"
 
 #: wp-includes/class-wp-editor.php:794
 msgctxt "list style"
