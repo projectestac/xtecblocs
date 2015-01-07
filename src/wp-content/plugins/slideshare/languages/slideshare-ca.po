@@ -5,12 +5,13 @@ msgstr ""
 "Project-Id-Version: SlideShare 1.8\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/slideshare\n"
 "POT-Creation-Date: 2011-07-21 11:53:04+00:00\n"
+"PO-Revision-Date: 2015-01-07 18:19+0100\n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
+"Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-07-08 13:59+0100\n"
-"Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
-"Language-Team: \n"
 
 #: yst_plugin_tools.php:63
 #: slideshare.php:69
@@ -117,23 +118,18 @@ msgstr "Si no s'introdueix res, es pot canviar l'ample a mà modificant el valor
 msgid "If you <em>do</em> enter a value, it will always replace the width with that value."
 msgstr "Si introduïu un valor, sempre es reemplaçarà l'ample amb aquest mateix valor."
 
-#. Plugin Name of the plugin/theme
-msgid "SlideShare"
-msgstr "SlideShare"
-
-#. Plugin URI of the plugin/theme
-msgid "http://yoast.com/wordpress/slideshare/"
-msgstr "http://yoast.com/wordpress/slideshare/"
-
 #. Description of the plugin/theme
 msgid "A plugin for WordPress to easily display slideshare.net presentations."
 msgstr "Un plugin de WordPress per a visualitzar fàcilment les presentacions slideshare.net."
 
-#. Author of the plugin/theme
-msgid "Joost de Valk"
-msgstr "Joost de Valk"
+#~ msgid "SlideShare"
+#~ msgstr "SlideShare"
 
-#. Author URI of the plugin/theme
-msgid "http://yoast.com/"
-msgstr "http://yoast.com/"
+#~ msgid "http://yoast.com/wordpress/slideshare/"
+#~ msgstr "http://yoast.com/wordpress/slideshare/"
 
+#~ msgid "Joost de Valk"
+#~ msgstr "Joost de Valk"
+
+#~ msgid "http://yoast.com/"
+#~ msgstr "http://yoast.com/"
