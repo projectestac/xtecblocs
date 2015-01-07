@@ -117,7 +117,7 @@ define('WP_DEFAULT_THEME', 'twentythirteen');
 /**
  * HTTPS config.
  */
-//define('FORCE_SSL_LOGIN', true);
+define('FORCE_SSL_LOGIN', true);
 //define('FORCE_SSL_ADMIN', true);
 
 /* That's all, stop editing! Happy blogging. */
