@@ -19,6 +19,11 @@ global $isAgora, $isBlocs;
 $isAgora = false;
 $isBlocs = true;
 
+define('FORCE_SSL_LOGIN', true);
+if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+    $_SERVER['HTTPS'] = 'on';
+}
+
 // ** DB settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('WP_CACHE', true); //Added by WP-Cache Manager
