@@ -3498,12 +3498,6 @@ function is_ssl() {
 	} elseif ( isset($_SERVER['SERVER_PORT']) && ( '443' == $_SERVER['SERVER_PORT'] ) ) {
 		return true;
 	}
-//XTEC ************ AFEGIT - https protocol detection improvement (this solves css loading problem for https pages) 
-//2014.01.28 @jmiro227
-      elseif (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && ( $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')){
-               return true;
-       }
-//************ FI
 	return false;
 }
 
