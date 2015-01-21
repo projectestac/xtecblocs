@@ -5,6 +5,8 @@ development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
 --------------------------------------------------------------------
+- Added extension Multisite Clone Duplicator to clone blocs in multisite system
+
 
 15.01.07
 --------------------------------------------------------------------
