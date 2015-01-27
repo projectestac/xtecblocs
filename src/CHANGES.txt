@@ -3,9 +3,16 @@ Release notes for XTECBlocs (http://blocs.xtec.cat)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/xtecblocs
 
+
 Changes in progress
 --------------------------------------------------------------------
-- Added extension Multisite Clone Duplicator to clone blocs in multisite system
+
+
+15.02.02
+--------------------------------------------------------------------
+- Added the "Multisite Clone Duplicator" plugin to clone blocs in multisite system.
+- Replacement of "es.scribd.com" by "www.scribd.com" when saving an article.
+- "Simpler Ipaper" plugin substitution.
 
 
 15.01.07
