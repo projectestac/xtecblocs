@@ -13,6 +13,7 @@ Changes in progress
 - Added the "Multisite Clone Duplicator" plugin to clone blocs in multisite system.
 - Replacement of "es.scribd.com" by "www.scribd.com" when saving an article.
 - "Simpler Ipaper" plugin substitution.
+- The 'embed' tag is now not being processed while editing. 
 
 
 15.01.07
