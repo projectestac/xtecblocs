@@ -512,6 +512,13 @@ class Tinymce_Advanced {
 				'-table[width],-tr,-td[colspan|rowspan|width],-th,-thead,-tfoot,-tbody,sub,sup,strike,br,del,ins,img[src|alt|title|height|width]';
 		}
 
+//XTEC ************ AFEGIT - It allows the "embed" tag. 
+//2015.28.01 @jmiro227
+
+		$init['extended_valid_elements'] = 'embed[*]';
+
+//************ FI
+
 		return $init;
 	}
 
