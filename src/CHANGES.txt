@@ -6,6 +6,7 @@ development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
 --------------------------------------------------------------------
+- Wordpress Social Login (new plugin)
 
 
 15.02.02
