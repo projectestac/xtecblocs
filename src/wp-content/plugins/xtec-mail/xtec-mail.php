@@ -112,10 +112,10 @@ function xtec_mail_options() {
                         </td>
                     </tr>
                     <tr valign="top"> 
-                        <th scope="row"><?php _e('Environment', 'xtec-mail') ?></th> 
+                        <th scope="row"><?php _e('INT', 'xtec-mail') ?></th> 
                         <td>
                             <?php 
-                                echo ENVIRONMENT . '&nbsp;&nbsp;<span style="font-style:italic;">(' . __('Set in config', 'xtec-mail') . ')</span>';
+                                echo INT . '&nbsp;&nbsp;<span style="font-style:italic;">(' . __('Set in config', 'xtec-mail') . ')</span>';
                             ?>
                         </td>
                     </tr>
@@ -188,7 +188,7 @@ function xtec_mail_options() {
  * @uses apply_filters() Calls 'wp_mail_content_type' hook to get the email content type.
  * @uses apply_filters() Calls 'wp_mail_charset' hook to get the email charset
  * @uses do_action_ref_array() Calls 'phpmailer_init' hook on the reference to
- * 		phpmailer object.
+ *      phpmailer object.
  * @uses PHPMailer
  * @
  *
@@ -213,7 +213,7 @@ if (!function_exists('wp_mail')) {
         $logpath = get_site_option('xtec_mail_logpath');
 
         //load the mailsender
-        $mailsender = new mailsender($idApp, $replyto, $sender, ENVIRONMENT, $log, $debug, $logpath);
+        $mailsender = new mailsender($idApp, $replyto, $sender, INT, $log, $debug, $logpath);
 
         // Compact the input, apply the filters, and extract them back out
         extract(apply_filters('wp_mail', compact('to', 'subject', 'message', 'headers', 'attachments')));

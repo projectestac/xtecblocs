@@ -101,7 +101,9 @@ class WP_List_Table {
 		$this->screen = convert_to_screen( $args['screen'] );
 
 		add_filter( "manage_{$this->screen->id}_columns", array( $this, 'get_columns' ), 0 );
-
+		//XTEC: add at the end of the table the 'State' column, to manage the invitations.
+		add_filter( "manage_users_columns", "manage_users_columns" );
+		
 		if ( !$args['plural'] )
 			$args['plural'] = $this->screen->base;
 

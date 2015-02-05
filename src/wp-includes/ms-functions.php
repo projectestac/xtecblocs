@@ -2474,3 +2474,9 @@ function wp_get_sites( $args = array() ) {
 
 	return $site_results;
 }
+
+// Add column
+function manage_users_columns( $columns ) {
+	$columns['user_status'] = 'Estat';
+	return $columns;
+}
