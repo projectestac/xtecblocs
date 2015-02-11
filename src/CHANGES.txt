@@ -7,6 +7,7 @@ development home at https://github.com/projectestac/xtecblocs
 Changes in progress
 --------------------------------------------------------------------
 - Wordpress Social Login (new plugin)
+- Show users added but not confirmed (AGIN 1068-2014-0002)
 
 
 15.02.02
