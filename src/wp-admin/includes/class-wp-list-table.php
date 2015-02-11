@@ -282,26 +282,35 @@ class WP_List_Table {
 	 * @param string $input_id The search input id
 	 */
 	public function search_box( $text, $input_id ) {
-		if ( empty( $_REQUEST['s'] ) && !$this->has_items() )
-			return;
+		/**
+		 * XTEC ************ AFEGIT - Hide search_box when we want to see unactive users.
+		 * @user vsaavedra
+		 */
+		if( (!isset($_REQUEST['status'])) || ( (isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive') ) ) {
+			if ( empty( $_REQUEST['s'] ) && !$this->has_items() )
+				return;
 
-		$input_id = $input_id . '-search-input';
+			$input_id = $input_id . '-search-input';
 
-		if ( ! empty( $_REQUEST['orderby'] ) )
-			echo '<input type="hidden" name="orderby" value="' . esc_attr( $_REQUEST['orderby'] ) . '" />';
-		if ( ! empty( $_REQUEST['order'] ) )
-			echo '<input type="hidden" name="order" value="' . esc_attr( $_REQUEST['order'] ) . '" />';
-		if ( ! empty( $_REQUEST['post_mime_type'] ) )
-			echo '<input type="hidden" name="post_mime_type" value="' . esc_attr( $_REQUEST['post_mime_type'] ) . '" />';
-		if ( ! empty( $_REQUEST['detached'] ) )
-			echo '<input type="hidden" name="detached" value="' . esc_attr( $_REQUEST['detached'] ) . '" />';
-?>
-<p class="search-box">
-	<label class="screen-reader-text" for="<?php echo $input_id ?>"><?php echo $text; ?>:</label>
-	<input type="search" id="<?php echo $input_id ?>" name="s" value="<?php _admin_search_query(); ?>" />
-	<?php submit_button( $text, 'button', false, false, array('id' => 'search-submit') ); ?>
-</p>
-<?php
+			if ( ! empty( $_REQUEST['orderby'] ) )
+				echo '<input type="hidden" name="orderby" value="' . esc_attr( $_REQUEST['orderby'] ) . '" />';
+			if ( ! empty( $_REQUEST['order'] ) )
+				echo '<input type="hidden" name="order" value="' . esc_attr( $_REQUEST['order'] ) . '" />';
+			if ( ! empty( $_REQUEST['post_mime_type'] ) )
+				echo '<input type="hidden" name="post_mime_type" value="' . esc_attr( $_REQUEST['post_mime_type'] ) . '" />';
+			if ( ! empty( $_REQUEST['detached'] ) )
+				echo '<input type="hidden" name="detached" value="' . esc_attr( $_REQUEST['detached'] ) . '" />';
+			?>
+			<p class="search-box">
+				<label class="screen-reader-text" for="<?php echo $input_id ?>"><?php echo $text; ?>:</label>
+				<input type="search" id="<?php echo $input_id ?>" name="s" value="<?php _admin_search_query(); ?>" />
+				<?php submit_button( $text, 'button', false, false, array('id' => 'search-submit') ); ?>
+			</p>
+			<?php
+		}
+		/**
+		 * END
+		 */
 	}
 
 	/**
@@ -340,34 +349,19 @@ class WP_List_Table {
 		if ( empty( $views ) )
 			return;
 		/**
-		 * XTEC ************ AFEGIT - Hide role filter when we want to see the unactived users.
+		 * XTEC ************ AFEGIT - Hide role filter when we want to see the unactived users. Added unactives users' filter.
 		 * @user vsaavedra
 		 */
-		if(!(isset($_REQUEST['status'])) || ($_REQUEST['status'] != 'unactive')) {
-			echo "<ul class='subsubsub'>\n";
-			foreach ( $views as $class => $view ) {
-				$views[ $class ] = "\t<li class='$class'>$view";
-			}
-			echo implode( " |</li>\n", $views ) . "</li>\n";
-			echo "</ul><br><br>";
+		echo "<ul class='subsubsub'>\n";
+		foreach ( $views as $class => $view ) {
+			$views[ $class ] = "\t<li class='$class'>$view";
 		}
-		/**
-		 * END
-		 */
-		/**
-		 * XTEC ************ AFEGIT - Added active/unactive filter
-		 * @user vsaavedra
-		 */
-		echo "<ul class='subsubsub'\n";
-		if ((!isset($_REQUEST['status'])) || (((isset($_REQUEST['status']))) && ($_REQUEST['status'] == 'active')))
-			echo "<li class='all'> <a href='users.php' class='current'>Actius</a> |</li>\n";
-		else
-			echo "<li class='administrator'><a href='users.php?status=active'> Actius </a>|</li>\n";
+		echo implode( " |</li>\n", $views ) . "</li>\n";
 		if (((isset($_REQUEST['status']))) && ($_REQUEST['status'] == 'unactive'))
-			echo "<li class='all'> <a href='users.php' class='current'>Pendents d'activació</a> </li>\n";
+			echo "<li class='all'> |<a href='users.php' class='current'>".__( 'Unactives' )."</a> </li>\n";
 		else
-			echo "<li class='administrator'><a href='users.php?status=unactive'>Pendents d'activació</a></li>\n";
-		echo "</ul>\n";
+			echo "<li class='all'> |<a href='users.php?status=unactive'>".__( 'Unactives' )."</a></li>\n";
+		echo "</ul>";
 		/**
 		 * END
 		 */
@@ -396,45 +390,54 @@ class WP_List_Table {
 	 *                      This is designated as optional for backwards-compatibility.
 	 */
 	protected function bulk_actions( $which = '' ) {
-		if ( is_null( $this->_actions ) ) {
-			$no_new_actions = $this->_actions = $this->get_bulk_actions();
-			/**
-			 * Filter the list table Bulk Actions drop-down.
-			 *
-			 * The dynamic portion of the hook name, $this->screen->id, refers
-			 * to the ID of the current screen, usually a string.
-			 *
-			 * This filter can currently only be used to remove bulk actions.
-			 *
-			 * @since 3.5.0
-			 *
-			 * @param array $actions An array of the available bulk actions.
-			 */
-			$this->_actions = apply_filters( "bulk_actions-{$this->screen->id}", $this->_actions );
-			$this->_actions = array_intersect_assoc( $this->_actions, $no_new_actions );
-			$two = '';
-		} else {
-			$two = '2';
+		/**
+		 * XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
+		 * @user vsaavedra
+		 */
+		if( (!isset($_REQUEST['status'])) || ( (isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive') ) ) {
+			if ( is_null( $this->_actions ) ) {
+				$no_new_actions = $this->_actions = $this->get_bulk_actions();
+				/**
+				 * Filter the list table Bulk Actions drop-down.
+				 *
+				 * The dynamic portion of the hook name, $this->screen->id, refers
+				 * to the ID of the current screen, usually a string.
+				 *
+				 * This filter can currently only be used to remove bulk actions.
+				 *
+				 * @since 3.5.0
+				 *
+				 * @param array $actions An array of the available bulk actions.
+				 */
+				$this->_actions = apply_filters( "bulk_actions-{$this->screen->id}", $this->_actions );
+				$this->_actions = array_intersect_assoc( $this->_actions, $no_new_actions );
+				$two = '';
+			} else {
+				$two = '2';
+			}
+
+			if ( empty( $this->_actions ) )
+				return;
+
+			echo "<label for='bulk-action-selector-" . esc_attr( $which ) . "' class='screen-reader-text'>" . __( 'Select bulk action' ) . "</label>";
+			echo "<select name='action$two' id='bulk-action-selector-" . esc_attr( $which ) . "'>\n";
+			echo "<option value='-1' selected='selected'>" . __( 'Bulk Actions' ) . "</option>\n";
+
+			foreach ($this->_actions as $name => $title) {
+
+	            $class = 'edit' == $name ? ' class="hide-if-no-js"' : '';
+
+	            echo "\t<option value='$name'$class>$title</option>\n";
+	        }
+
+			echo "</select>\n";
+
+			submit_button( __( 'Apply' ), 'action', false, false, array( 'id' => "doaction$two" ) );
+			echo "\n";
 		}
-
-		if ( empty( $this->_actions ) )
-			return;
-
-		echo "<label for='bulk-action-selector-" . esc_attr( $which ) . "' class='screen-reader-text'>" . __( 'Select bulk action' ) . "</label>";
-		echo "<select name='action$two' id='bulk-action-selector-" . esc_attr( $which ) . "'>\n";
-		echo "<option value='-1' selected='selected'>" . __( 'Bulk Actions' ) . "</option>\n";
-
-		foreach ($this->_actions as $name => $title) {
-
-            $class = 'edit' == $name ? ' class="hide-if-no-js"' : '';
-
-            echo "\t<option value='$name'$class>$title</option>\n";
-        }
-
-		echo "</select>\n";
-
-		submit_button( __( 'Apply' ), 'action', false, false, array( 'id' => "doaction$two" ) );
-		echo "\n";
+		/**
+		 * END
+		 */
 	}
 
 	/**

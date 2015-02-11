@@ -205,28 +205,37 @@ class WP_Users_List_Table extends WP_List_Table {
 	 *                      or below the table ("bottom").
 	 */
 	protected function extra_tablenav( $which ) {
+	/**
+	 * XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
+	 * @user vsaavedra
+	 */
+	if( (!isset($_REQUEST['status'])) || ( (isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive') ) ) {	
 		if ( 'top' != $which )
 			return;
-	?>
-	<div class="alignleft actions">
-		<?php if ( current_user_can( 'promote_users' ) ) : ?>
-		<label class="screen-reader-text" for="new_role"><?php _e( 'Change role to&hellip;' ) ?></label>
-		<select name="new_role" id="new_role">
-			<option value=""><?php _e( 'Change role to&hellip;' ) ?></option>
-			<?php wp_dropdown_roles(); ?>
-		</select>
-	<?php
-			submit_button( __( 'Change' ), 'button', 'changeit', false );
-		endif;
+		?>
+		<div class="alignleft actions">
+			<?php if ( current_user_can( 'promote_users' ) ) : ?>
+			<label class="screen-reader-text" for="new_role"><?php _e( 'Change role to&hellip;' ) ?></label>
+			<select name="new_role" id="new_role">
+				<option value=""><?php _e( 'Change role to&hellip;' ) ?></option>
+				<?php wp_dropdown_roles(); ?>
+			</select>
+		<?php
+				submit_button( __( 'Change' ), 'button', 'changeit', false );
+			endif;
 
+			/**
+			 * Fires just before the closing div containing the bulk role-change controls
+			 * in the Users list table.
+			 *
+			 * @since 3.5.0
+			 */
+			do_action( 'restrict_manage_users' );
+			echo '</div>';
+		}
 		/**
-		 * Fires just before the closing div containing the bulk role-change controls
-		 * in the Users list table.
-		 *
-		 * @since 3.5.0
+		 * END
 		 */
-		do_action( 'restrict_manage_users' );
-		echo '</div>';
 	}
 
 	/**
@@ -312,7 +321,7 @@ class WP_Users_List_Table extends WP_List_Table {
 		 * XTEC ************ AFEGIT - Get the arrays of user that already are active in the blog.
 		 * @user vsaavedra
 		 */
-		$userLogin = array();
+		$usersEmail = array();
 		
 		/**
 		 * FI
@@ -321,7 +330,7 @@ class WP_Users_List_Table extends WP_List_Table {
 		 * XTEC ************ AFEGIT - Hide active users when we want to see unactive users.
 		 * @user vsaavedra
 		 */
-		if ((!isset($_REQUEST['status'])) || ((isset($_REQUEST['status'])) && ($_REQUEST['status'] == 'active'))) {
+		if ((!isset($_REQUEST['status'])) || ((isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive'))) {
 			foreach ( $this->items as $userid => $user_object ) {
 				if ( count( $user_object->roles ) <= 1 ) {
 					$role = reset( $user_object->roles );
@@ -337,38 +346,17 @@ class WP_Users_List_Table extends WP_List_Table {
 				 * XTEC ************ AFEGIT - Get the arrays of user that already are active in the blog.
 				 * @user vsaavedra
 				 */
-				$user_status = 'Actiu';
-				$userLogin[] = $user_object->user_login;
+				$user_status = __( 'Active' );
 				$style = ( ' class="alternate"' == $style ) ? '' : ' class="alternate"';
 				echo "\n\t" . $this->single_row( $user_object, $style, $role, isset( $post_counts ) ? $post_counts[ $userid ] : 0 , $user_status);
 				/**
 				 * FI
 				 */
 			}
-		} else {
-			/**
-			 * XTEC ************ AFEGIT - Add the non-XTEC users who had received an invitation and hasn't already activated it.
-			 * @user vsaavedra
-			 */
-			$currentBlogId = get_current_blog_id();
-			$signup = $wpdb->get_results( "SELECT * FROM $wpdb->signups", OBJECT );
-			foreach ($signup as $id => $user_object) {
-				$meta = unserialize($user_object->meta);
-				if((!in_array($user_object->user_login, $userLogin)) && ($meta['add_to_blog'] == $currentBlogId)) {
-					$userLogin[] = $user_object->user_login;
-					$style = ( ' class="alternate"' == $style ) ? '' : ' class="alternate"';
-					$user_status = 'Pendent Activació (No XTEC)';
-					$user = new WP_User();
-					$data = new StdClass();
-					$data->user_login = $user_object->user_login;
-					$data->user_email = $user_object->user_email;
-					$data->roles = array($meta['new_role']);
-					$user->data = $data;
-					$user->type = 'invitacio';
-					echo "\n\t" . $this->single_row( $user, $style, $role, '-' , $user_status);
-				}
+		} else if ((isset($_REQUEST['status'])) && ($_REQUEST['status'] == 'unactive')) {
+			foreach ( $this->items as $userid => $user_object ) {
+				$usersEmail[] = $user_object->user_email;
 			}
-
 			/**
 			 * XTEC ************ AFEGIT - Add the XTEC users who had received an invitation and hasn't already activated it.
 			 * @user vsaavedra
@@ -379,11 +367,12 @@ class WP_Users_List_Table extends WP_List_Table {
 					list($new,$user,$key) = split('_', $name);
 					$user_options = unserialize($value);
 					$user_info = get_userdata($user_options[user_id]);
-					if((!in_array($user_info->user_login, $userLogin)) && is_a( $user_info, 'WP_User' )) {
-						$userLogin[] = $user_info->user_login;
+					if((!in_array($user_info->user_email, $usersEmail)) && is_a( $user_info, 'WP_User' )) {
+						$role = $user_options['role'];
+						$usersEmail[] = $user_info->user_email;
 						$user_info->type = 'invitacio';
 						$style = ( ' class="alternate"' == $style ) ? '' : ' class="alternate"';
-						$user_status = 'Pendent Activació';
+						$user_status = __( 'Unactive' );
 						echo "\n\t" . $this->single_row( $user_info, $style, $role, '-' , $user_status);
 					}
 				}
@@ -391,7 +380,34 @@ class WP_Users_List_Table extends WP_List_Table {
 			/**
 			 * FI
 			 */
-		}
+
+			/**
+			 * XTEC ************ AFEGIT - Add the non-XTEC users who had received an invitation and hasn't already activated it.
+			 * @user vsaavedra
+			 */
+			$currentBlogId = get_current_blog_id();
+			$signup = $wpdb->get_results( "SELECT * FROM $wpdb->signups", OBJECT );
+			foreach ($signup as $id => $user_object) {
+				$meta = unserialize($user_object->meta);
+				if((!in_array($user_object->user_email, $usersEmail)) && ($meta['add_to_blog'] == $currentBlogId)) {
+					$usersEmail[] = $user_object->user_email;
+					$style = ( ' class="alternate"' == $style ) ? '' : ' class="alternate"';
+					$user_status = __( 'Unactive' );
+					$user = new WP_User();
+					$data = new StdClass();
+					$data->user_login = $user_object->user_login;
+					$data->user_email = $user_object->user_email;
+					$data->roles = array($meta['new_role']);
+					$role = $meta['new_role'];
+					$user->data = $data;
+					$user->type = 'invitacio';
+					echo "\n\t" . $this->single_row( $user, $style, $role, '-' , $user_status);
+				}
+			}
+			/**
+			 * FI
+			 */
+		} 
 	}
 
 	/**
