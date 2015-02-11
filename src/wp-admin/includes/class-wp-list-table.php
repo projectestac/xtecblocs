@@ -339,13 +339,38 @@ class WP_List_Table {
 
 		if ( empty( $views ) )
 			return;
-
-		echo "<ul class='subsubsub'>\n";
-		foreach ( $views as $class => $view ) {
-			$views[ $class ] = "\t<li class='$class'>$view";
+		/**
+		 * XTEC ************ AFEGIT - Hide role filter when we want to see the unactived users.
+		 * @user vsaavedra
+		 */
+		if(!(isset($_REQUEST['status'])) || ($_REQUEST['status'] != 'unactive')) {
+			echo "<ul class='subsubsub'>\n";
+			foreach ( $views as $class => $view ) {
+				$views[ $class ] = "\t<li class='$class'>$view";
+			}
+			echo implode( " |</li>\n", $views ) . "</li>\n";
+			echo "</ul><br><br>";
 		}
-		echo implode( " |</li>\n", $views ) . "</li>\n";
-		echo "</ul>";
+		/**
+		 * END
+		 */
+		/**
+		 * XTEC ************ AFEGIT - Added active/unactive filter
+		 * @user vsaavedra
+		 */
+		echo "<ul class='subsubsub'\n";
+		if ((!isset($_REQUEST['status'])) || (((isset($_REQUEST['status']))) && ($_REQUEST['status'] == 'active')))
+			echo "<li class='all'> <a href='users.php' class='current'>Actius</a> |</li>\n";
+		else
+			echo "<li class='administrator'><a href='users.php?status=active'> Actius </a>|</li>\n";
+		if (((isset($_REQUEST['status']))) && ($_REQUEST['status'] == 'unactive'))
+			echo "<li class='all'> <a href='users.php' class='current'>Pendents d'activació</a> </li>\n";
+		else
+			echo "<li class='administrator'><a href='users.php?status=unactive'>Pendents d'activació</a></li>\n";
+		echo "</ul>\n";
+		/**
+		 * END
+		 */
 	}
 
 	/**
@@ -633,7 +658,16 @@ class WP_List_Table {
 			$infinite_scroll = $this->_pagination_args['infinite_scroll'];
 		}
 
-		$output = '<span class="displaying-num">' . sprintf( _n( '1 item', '%s items', $total_items ), number_format_i18n( $total_items ) ) . '</span>';
+		/**
+		 * XTEC ************ AFEGIT - Hide this element when we want to see the unactived users.
+		 * @user vsaavedra
+		 */
+		if(!(isset($_REQUEST['status'])) || ($_REQUEST['status'] != 'unactive')) {
+			$output = '<span class="displaying-num">' . sprintf( _n( '1 item', '%s items', $total_items ), number_format_i18n( $total_items ) ) . '</span>';
+		}
+		/**
+		 * END
+		 */
 
 		$current = $this->get_pagenum();
 

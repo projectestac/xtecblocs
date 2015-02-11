@@ -317,74 +317,81 @@ class WP_Users_List_Table extends WP_List_Table {
 		/**
 		 * FI
 		 */
-		foreach ( $this->items as $userid => $user_object ) {
-			if ( count( $user_object->roles ) <= 1 ) {
-				$role = reset( $user_object->roles );
-			} elseif ( $roles = array_intersect( array_values( $user_object->roles ), $editable_roles ) ) {
-				$role = reset( $roles );
-			} else {
-				$role = reset( $user_object->roles );
-			}
+		/**
+		 * XTEC ************ AFEGIT - Hide active users when we want to see unactive users.
+		 * @user vsaavedra
+		 */
+		if ((!isset($_REQUEST['status'])) || ((isset($_REQUEST['status'])) && ($_REQUEST['status'] == 'active'))) {
+			foreach ( $this->items as $userid => $user_object ) {
+				if ( count( $user_object->roles ) <= 1 ) {
+					$role = reset( $user_object->roles );
+				} elseif ( $roles = array_intersect( array_values( $user_object->roles ), $editable_roles ) ) {
+					$role = reset( $roles );
+				} else {
+					$role = reset( $user_object->roles );
+				}
 
-			if ( is_multisite() && empty( $user_object->allcaps ) )
-				continue;
+				if ( is_multisite() && empty( $user_object->allcaps ) )
+					continue;
+				/**
+				 * XTEC ************ AFEGIT - Get the arrays of user that already are active in the blog.
+				 * @user vsaavedra
+				 */
+				$user_status = 'Actiu';
+				$userLogin[] = $user_object->user_login;
+				$style = ( ' class="alternate"' == $style ) ? '' : ' class="alternate"';
+				echo "\n\t" . $this->single_row( $user_object, $style, $role, isset( $post_counts ) ? $post_counts[ $userid ] : 0 , $user_status);
+				/**
+				 * FI
+				 */
+			}
+		} else {
 			/**
-			 * XTEC ************ AFEGIT - Get the arrays of user that already are active in the blog.
+			 * XTEC ************ AFEGIT - Add the non-XTEC users who had received an invitation and hasn't already activated it.
 			 * @user vsaavedra
 			 */
-			$user_status = 'Actiu';
-			$userLogin[] = $user_object->user_login;
-			$style = ( ' class="alternate"' == $style ) ? '' : ' class="alternate"';
-			echo "\n\t" . $this->single_row( $user_object, $style, $role, isset( $post_counts ) ? $post_counts[ $userid ] : 0 , $user_status);
+			$currentBlogId = get_current_blog_id();
+			$signup = $wpdb->get_results( "SELECT * FROM $wpdb->signups", OBJECT );
+			foreach ($signup as $id => $user_object) {
+				$meta = unserialize($user_object->meta);
+				if((!in_array($user_object->user_login, $userLogin)) && ($meta['add_to_blog'] == $currentBlogId)) {
+					$userLogin[] = $user_object->user_login;
+					$style = ( ' class="alternate"' == $style ) ? '' : ' class="alternate"';
+					$user_status = 'Pendent Activació (No XTEC)';
+					$user = new WP_User();
+					$data = new StdClass();
+					$data->user_login = $user_object->user_login;
+					$data->user_email = $user_object->user_email;
+					$data->roles = array($meta['new_role']);
+					$user->data = $data;
+					$user->type = 'invitacio';
+					echo "\n\t" . $this->single_row( $user, $style, $role, '-' , $user_status);
+				}
+			}
+
+			/**
+			 * XTEC ************ AFEGIT - Add the XTEC users who had received an invitation and hasn't already activated it.
+			 * @user vsaavedra
+			 */
+			$options = wp_load_alloptions();
+			foreach($options as $name=>$value) {
+				if(stristr($name, 'new_user')) {
+					list($new,$user,$key) = split('_', $name);
+					$user_options = unserialize($value);
+					$user_info = get_userdata($user_options[user_id]);
+					if((!in_array($user_info->user_login, $userLogin)) && is_a( $user_info, 'WP_User' )) {
+						$userLogin[] = $user_info->user_login;
+						$user_info->type = 'invitacio';
+						$style = ( ' class="alternate"' == $style ) ? '' : ' class="alternate"';
+						$user_status = 'Pendent Activació';
+						echo "\n\t" . $this->single_row( $user_info, $style, $role, '-' , $user_status);
+					}
+				}
+			}
 			/**
 			 * FI
 			 */
 		}
-		/**
-		 * XTEC ************ AFEGIT - Add the non-XTEC users who had received an invitation and hasn't already activated it.
-		 * @user vsaavedra
-		 */
-		$currentBlogId = get_current_blog_id();
-		$signup = $wpdb->get_results( "SELECT * FROM $wpdb->signups", OBJECT );
-		foreach ($signup as $id => $user_object) {
-			$meta = unserialize($user_object->meta);
-			if((!in_array($user_object->user_login, $userLogin)) && ($meta['add_to_blog'] == $currentBlogId)) {
-				$userLogin[] = $user_object->user_login;
-				$style = ( ' class="alternate"' == $style ) ? '' : ' class="alternate"';
-				$user_status = 'Pendent Activació (No XTEC)';
-				$user = new WP_User();
-				$data = new StdClass();
-				$data->user_login = $user_object->user_login;
-				$data->user_email = $user_object->user_email;
-				$data->roles = array($meta['new_role']);
-				$user->data = $data;
-				$user->type = 'invitacio';
-				echo "\n\t" . $this->single_row( $user, $style, $role, '-' , $user_status);
-			}
-		}
-
-		/**
-		 * XTEC ************ AFEGIT - Add the XTEC users who had received an invitation and hasn't already activated it.
-		 * @user vsaavedra
-		 */
-		$options = wp_load_alloptions();
-		foreach($options as $name=>$value) {
-			if(stristr($name, 'new_user')) {
-				list($new,$user,$key) = split('_', $name);
-				$user_options = unserialize($value);
-				$user_info = get_userdata($user_options[user_id]);
-				if((!in_array($user_info->user_login, $userLogin)) && is_a( $user_info, 'WP_User' )) {
-					$userLogin[] = $user_info->user_login;
-					$user_info->type = 'invitacio';
-					$style = ( ' class="alternate"' == $style ) ? '' : ' class="alternate"';
-					$user_status = 'Pendent Activació';
-					echo "\n\t" . $this->single_row( $user_info, $style, $role, '-' , $user_status);
-				}
-			}
-		}
-		/**
-		 * FI
-		 */
 	}
 
 	/**
