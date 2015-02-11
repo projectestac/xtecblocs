@@ -345,7 +345,6 @@ class WP_List_Table {
 		 * @param array $views An array of available list table views.
 		 */
 		$views = apply_filters( "views_{$this->screen->id}", $views );
-
 		if ( empty( $views ) )
 			return;
 		/**
