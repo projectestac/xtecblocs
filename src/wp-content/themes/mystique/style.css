@@ -1254,7 +1254,6 @@ h5.title{
 .page-navi .loading{
   width: 16px;
   height: 16px;
-  background:transparent url(images/lc16w.gif) no-repeat center center;
 }
 
 /* align to right on col-3-left layout, looks better */
