@@ -24,8 +24,27 @@ function xtec_api_lastest_blogs($how_many = 10, $days=5, $what='last_updated', $
     if ( $not_new == 1 ) { $not_new = ' and `registered` < `last_updated` - 30 '; } else { $not_new = ''; }
     // get a list of blogs in order of most recent update
     $blogs = $wpdb->get_results("SELECT blog_id,registered FROM $wpdb->blogs WHERE $what >= DATE_SUB(CURRENT_DATE(), INTERVAL $days DAY) and `public`='1' and `deleted` = '0' $not_new ORDER BY $what DESC limit $init,$how_many");
-    if ( $blogs ) {
-        foreach ( $blogs as $blog ) {
+    //get a list with all the ids of the blogs that exist NOW
+    /**
+     * XTEC ************ AFEGIT - get all the blogs' ids.
+     * 2015.02.16 @vsaavedr
+     */
+    $blogsId = $wpdb->get_results(" SELECT blog_id FROM xtec_blocs_global.wp_blogs ");
+    foreach ($blogsId as $key => $object) {
+        $blogsExistents[] = $object->blog_id;
+    }
+    /**
+     * END
+     */
+    foreach ( $blogs as $blog ) {
+        /**
+         * XTEC ************ AFEGIT - Checking whether the blog->blog_id is a valid id of a blog or not.
+         * 2015.02.16 @vsaavedr
+         */
+        if( in_array($blog->blog_id, $blogsExistents) ) {
+        /**
+         * END
+         */
             // we need _posts and _options tables for this to work
             $blogOptionsTable = "wp_".$blog->blog_id."_options";
             $blogPostsTable = "wp_".$blog->blog_id."_posts";        
@@ -53,6 +72,8 @@ function xtec_api_lastest_blogs($how_many = 10, $days=5, $what='last_updated', $
             // don't go over the limit
             if ( $counter >= $how_many ) { 
                 break; 
+            } else {
+                $posts = array();
             }
         }
         return $posts;
