@@ -103,7 +103,7 @@ class WP_List_Table {
 		add_filter( "manage_{$this->screen->id}_columns", array( $this, 'get_columns' ), 0 );
 		//XTEC: add at the end of the table the 'State' column, to manage the invitations.
 		add_filter( "manage_users_columns", "manage_users_columns" );
-		
+
 		if ( !$args['plural'] )
 			$args['plural'] = $this->screen->base;
 
@@ -333,6 +333,8 @@ class WP_List_Table {
 	 * @access public
 	 */
 	public function views() {
+		global $pagenow;
+
 		$views = $this->get_views();
 		/**
 		 * Filter the list of available list table views.
@@ -356,11 +358,13 @@ class WP_List_Table {
 			$views[ $class ] = "\t<li class='$class'>$view";
 		}
 		echo implode( " |</li>\n", $views ) . "</li>\n";
-		if (((isset($_REQUEST['status']))) && ($_REQUEST['status'] == 'unactive'))
-			echo "<li class='all'> |<a href='users.php' class='current'>".__( 'Unactives' )."</a> </li>\n";
-		else
-			echo "<li class='all'> |<a href='users.php?status=unactive'>".__( 'Unactives' )."</a></li>\n";
-		echo "</ul>";
+		if($pagenow == 'users.php') {
+			if (((isset($_REQUEST['status']))) && ($_REQUEST['status'] == 'unactive') )
+				echo "<li class='all'> |<a href='users.php' class='current'>".__( 'Unactives' )."</a> </li>\n";
+			else
+				echo "<li class='all'> |<a href='users.php?status=unactive'>".__( 'Unactives' )."</a></li>\n";
+			echo "</ul>";
+		}
 		/**
 		 * END
 		 */
