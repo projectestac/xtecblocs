@@ -140,6 +140,27 @@ if ( ! CUSTOM_TAGS ) {
 		'dl' => array(),
 		'dt' => array(),
 		'em' => array(),
+		/**
+		 * XTEC ******** Afegit - embed tag
+		 * @date 20/02/2015
+		 * @author vsaavedr
+		 */
+		'embed' => array(
+			'hight' => true,
+			'width' => true,
+			'src' => true,
+			'quality' => true,
+			'allowscriptaccess' => true,
+			'allownetworking' => true,
+			'wmode' => true,
+			'allowfullscreen' => true,
+			'pluginspage' => true,
+			'type' => true,
+			'name' => true
+		),
+		/**
+		 * END
+		*/
 		'fieldset' => array(),
 		'figure' => array(
 			'align' => true,
@@ -250,12 +271,40 @@ if ( ! CUSTOM_TAGS ) {
 			'lang' => true,
 			'xml:lang' => true,
 		),
+		/**
+		 * XTEC ******** Afegit - object tag
+		 * @date 20/02/2015
+		 * @author vsaavedr
+		 */
+		'object' => array(
+			'width' => true,
+			'height' => true,
+			'classid' => true,
+			'codebase' => true
+		),
+		/**
+		 * END
+		 */
 		'p' => array(
 			'align' => true,
 			'dir' => true,
 			'lang' => true,
 			'xml:lang' => true,
 		),
+		/**
+		 * XTEC ******** Afegit - param tag
+		 * @date 20/02/2015
+		 * @author vsaavedr
+		 */
+		'param' => array(
+			'name' => true,
+			'value' => true,
+			'classid' => true,
+			'codebase' => true
+		),
+		/**
+		 * END
+		*/
 		'pre' => array(
 			'width' => true,
 		),

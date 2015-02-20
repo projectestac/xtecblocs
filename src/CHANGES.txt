@@ -9,6 +9,7 @@ Changes in progress
 - Wordpress Social Login (new plugin)
 - Show users added but not confirmed (AGIN 1068-2014-0002)
 - Solved some errors in 'error.log' (ENS/1068/00186)
+- Solved some errors when import from one blog to another (SAU IM192836)
 
 
 15.02.02
