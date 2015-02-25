@@ -11,6 +11,8 @@ Changes in progress
 - Solved some errors in 'error.log' (ENS/1068/00186)
 - Solved some errors when import from one blog to another (SAU IM192836)
 - Disable by default the different providers on WP Social Login (AGIN 1068-2014-0022)
+- New version of plugin MultiSite Clone Duplication 1.2.0 from 1.0.0
+- Added src/wp-content/cache in .gitignore
 
 
 15.02.02

@@ -2,8 +2,8 @@
 Contributors: GLOBALIS media systems
 Tags: duplicate, clone, copy, duplication, duplicator, factory, multisite, site, blog, network, wpmu, new blog
 Requires at least: 3.5.0
-Tested up to: 4.0.0
-Stable tag: 1.0.0
+Tested up to: 4.1.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,7 @@ MultiSite Clone Duplicator adds a "Duplicate Site" functionality to your network
 
 It allows you to clone any site of your network into a new one : all data, files, users and roles can be copied.  
 
-It is useful when you want to create multiple sites from the same template : waste your time copying the same configuration again and again !  
+It is useful when you want to create multiple sites from the same template : Don't waste your time copying the same configuration again and again !  
   
 Simple and user-friendly, this plugin extends WordPress core network's functionalities without polluting the dashboard.  
 
@@ -82,6 +82,15 @@ As of now, MultiSite Clone Duplicator is available in English and in French. If 
 
 == Changelog ==
 
+= 1.2.0 =
+* Bugfix : duplication of tables without primary key / with several primary keys was causing SQL error
+* Bugfix : escape underscore characters ( '_' ) in sql queries
+
+= 1.1.0 =
+* Bugfix : "Keep users and roles" was broken
+* Bugfix : Compatibility with plugins that use reserved mysql words in table names
+* Bugfix : Partial compatibility with HyperDB
+
 = 1.0.0 =
 * Tested on WP 4.0.0
 * Bugfix : Compatibility with PHP 5.2
@@ -102,11 +111,6 @@ As of now, MultiSite Clone Duplicator is available in English and in French. If 
 * Initial version released by Julien Oger
 * Copies all the posts, settings and files from a site to a new one
 * Cannot clone primary site
-
-== Upgrade Notice ==
-
-= 0.2.0 =
-Get advanded features and log functionnality !
 
 == Hooks ==
   

@@ -346,19 +346,26 @@ if( !class_exists( 'MUCD_Admin' ) ) {
          * @since 0.2.0
          */
         public static function save_admin_network_option_page() {
+            if (isset( $_POST['duplicables'])) {
 
-
-            if ( isset( $_POST['duplicables'] ) && $_POST['duplicables']=='all' ){
                 check_admin_referer( 'siteoptions' );
-                update_site_option( 'mucd_duplicables', 'all' );
-            }
 
-            else if ( isset( $_POST['duplicables-list'] ) ){
-                check_admin_referer( 'siteoptions' );
-                update_site_option( 'mucd_duplicables', 'selected' );
-                MUCD_Option::set_duplicable_option($_POST['duplicables-list']);
-            }
+                if($_POST['duplicables']=='all') {
+                    update_site_option( 'mucd_duplicables', 'all' );                   
+                }
 
+                else {
+                    update_site_option( 'mucd_duplicables', 'selected' );
+
+                    if(isset( $_POST['duplicables-list'] )) {
+                        MUCD_Option::set_duplicable_option($_POST['duplicables-list'] );
+                    }
+                    
+                    else {
+                        MUCD_Option::set_duplicable_option(array());
+                    }                    
+                }
+            }
         }
 
         /**
@@ -380,14 +387,11 @@ if( !class_exists( 'MUCD_Admin' ) ) {
 
                 
                 <?php
-                $network_blogs = wp_get_sites();
+                $network_blogs = wp_get_sites(array('limit' => 1000));
                 echo '<div class="multiselect" id="site-select-box">';
-                //echo '<select id="site-select-box" name="site[source]">';
                 foreach( $network_blogs as $blog ) {
-                    //echo '    <option value="'.$blog['blog_id'].'">' . substr($blog['domain'] . $blog['path'], 0, -1) . '</option>';
                     echo '    <label><input ' . checked(get_blog_option( $blog['blog_id'], 'mucd_duplicable', "no"), 'yes', false) . ' class="duplicables-list" type="checkbox" name="duplicables-list[]" value="'.$blog['blog_id'].'" />' . substr($blog['domain'] . $blog['path'], 0, -1) . '</label>';
                 }
-                //echo '</select>';
                 echo '</div>';
                 ?>
                 
