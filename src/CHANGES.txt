@@ -3,8 +3,7 @@ Release notes for XTECBlocs (http://blocs.xtec.cat)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/xtecblocs
 
-
-Changes in progress
+15.02.25
 --------------------------------------------------------------------
 - Wordpress Social Login (new plugin)
 - Show users added but not confirmed (AGIN 1068-2014-0002)
@@ -13,7 +12,6 @@ Changes in progress
 - Disable by default the different providers on WP Social Login (AGIN 1068-2014-0022)
 - New version of plugin MultiSite Clone Duplication 1.2.0 from 1.0.0
 - Added src/wp-content/cache in .gitignore
-
 
 15.02.02
 --------------------------------------------------------------------
