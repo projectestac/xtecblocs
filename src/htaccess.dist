@@ -3,6 +3,7 @@ RewriteBase /
 #necessari per al correcte funcionament de cacti
 RewriteCond %{REQUEST_URI} !=/server-status
 RewriteRule ^index\.php$ - [L]
+RewriteRule ^CHANGES(.*)$ - [L]
 
 # uploaded files
 RewriteRule ^([_0-9a-zA-Z-]+/)?files/(.+) wp-includes/ms-files.php?file=$2 [L]
@@ -10,8 +11,9 @@ RewriteRule ^([_0-9a-zA-Z-]+/)?files/(.+) wp-includes/ms-files.php?file=$2 [L]
 # add a trailing slash to /wp-admin
 RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
 
-#necessari per al correcte funcionament de cacti
 RewriteCond %{ENV:REDIRECT_STATUS} 100
+
+#necessari per al correcte funcionament de cacti
 RewriteCond %{REQUEST_URI} !=/server-status
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
