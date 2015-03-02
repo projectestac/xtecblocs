@@ -65,6 +65,7 @@ if ( ! CUSTOM_TAGS ) {
 			'rev' => true,
 			'name' => true,
 			'target' => true,
+			'style' => true,
 		),
 		'abbr' => array(),
 		'acronym' => array(),
@@ -109,6 +110,17 @@ if ( ! CUSTOM_TAGS ) {
 			'dir' => true,
 			'lang' => true,
 		),
+		/**
+		 * XTEC ******** Afegit - clippath tag
+		 * @date 20/02/2015
+		 * @author vsaavedr
+		 */
+		'clippath' => array(
+			'id' => true,
+		),
+		/**
+		 * END
+		*/
 		'code' => array(),
 		'col' => array(
 			'align' => true,
@@ -136,6 +148,9 @@ if ( ! CUSTOM_TAGS ) {
 			'dir' => true,
 			'lang' => true,
 			'xml:lang' => true,
+			'role' => true,
+			'tabindex' => true,
+			'style' => true,
 		),
 		'dl' => array(),
 		'dt' => array(),
@@ -146,7 +161,7 @@ if ( ! CUSTOM_TAGS ) {
 		 * @author vsaavedr
 		 */
 		'embed' => array(
-			'hight' => true,
+			'height' => true,
 			'width' => true,
 			'src' => true,
 			'quality' => true,
@@ -156,7 +171,22 @@ if ( ! CUSTOM_TAGS ) {
 			'allowfullscreen' => true,
 			'pluginspage' => true,
 			'type' => true,
-			'name' => true
+			'name' => true,
+			'flashvars' => true,
+			'pluginspage' => true,
+			'code' => true,
+			'codebase' => true,
+			'cache_option' => true,
+			'cache_archive' => true,
+			'cache_version' => true,
+			'activitypack' => true,
+			'language' => true,
+			'country' => true,
+			'variant' => true,
+			'skin' => true,
+			'myurl' => true,
+			'scriptable' => true,
+			'title' => true,
 		),
 		/**
 		 * END
@@ -194,6 +224,19 @@ if ( ! CUSTOM_TAGS ) {
 			'name' => true,
 			'target' => true,
 		),
+		/**
+		 * XTEC ******** Afegit - g tag
+		 * @date 20/02/2015
+		 * @author vsaavedr
+		 */
+		'g' => array(
+			'clip-path' => true,
+			'id' => true,
+			'transform' => true,
+		),
+		/**
+		 * END
+		*/
 		'h1' => array(
 			'align' => true,
 		),
@@ -231,6 +274,39 @@ if ( ! CUSTOM_TAGS ) {
 			'width' => true,
 		),
 		'i' => array(),
+		/**
+		 * XTEC ******** Afegit - iframe tag
+		 * @date 20/02/2015
+		 * @author vsaavedr
+		 */
+		'iframe' => array(
+			'src' => true,
+			'width' => true,
+			'height' => true,
+			'frameborder' => true,
+			'scrolling' => true,
+		),
+		/**
+		 * END
+		 */
+		/**
+		 * XTEC ******** Afegit - image tag
+		 * @date 20/02/2015
+		 * @author vsaavedr
+		 */
+		'image' => array(
+			'clip-path' => true,
+			'fill' => true,
+			'width' => true,
+			'height' => true,
+			'x' => true,
+			'y' => true,
+			'preserveAspectRadio' => true,
+			'xlink:href' => true,
+		),
+		/**
+		 * END
+		*/
 		'img' => array(
 			'alt' => true,
 			'align' => true,
@@ -242,6 +318,7 @@ if ( ! CUSTOM_TAGS ) {
 			'src' => true,
 			'usemap' => true,
 			'width' => true,
+			'style' => true,
 		),
 		'ins' => array(
 			'datetime' => true,
@@ -272,6 +349,15 @@ if ( ! CUSTOM_TAGS ) {
 			'xml:lang' => true,
 		),
 		/**
+		 * XTEC ******** Afegit - noembed tag
+		 * @date 20/02/2015
+		 * @author vsaavedr
+		 */
+		'noembed' => array(),
+		/**
+		 * END
+		*/
+		/**
 		 * XTEC ******** Afegit - object tag
 		 * @date 20/02/2015
 		 * @author vsaavedr
@@ -280,7 +366,8 @@ if ( ! CUSTOM_TAGS ) {
 			'width' => true,
 			'height' => true,
 			'classid' => true,
-			'codebase' => true
+			'codebase' => true,
+			'id' => true,
 		),
 		/**
 		 * END
@@ -292,6 +379,25 @@ if ( ! CUSTOM_TAGS ) {
 			'xml:lang' => true,
 		),
 		/**
+		 * XTEC ******** Afegit - path tag
+		 * @date 20/02/2015
+		 * @author vsaavedr
+		 */
+		'path' => array(
+			'd' => true,
+			'clip-rule' => true,
+			'fill' => true,
+			'fill-opacity' => true,
+			'fill-rule' => true,
+			'stroke' => true,
+			'stroke-width' => true,
+			'stroke-miterlimit' => true,
+			'stroke-linecap' => true,
+		),
+		/**
+		 * END
+		*/
+		/**
 		 * XTEC ******** Afegit - param tag
 		 * @date 20/02/2015
 		 * @author vsaavedr
@@ -300,7 +406,7 @@ if ( ! CUSTOM_TAGS ) {
 			'name' => true,
 			'value' => true,
 			'classid' => true,
-			'codebase' => true
+			'codebase' => true,
 		),
 		/**
 		 * END
@@ -313,12 +419,44 @@ if ( ! CUSTOM_TAGS ) {
 		),
 		's' => array(),
 		'samp' => array(),
+		/**
+		 * XTEC ******** Afegit - script tag
+		 * @date 20/02/2015
+		 * @author vsaavedr
+		 */
+		'script' => array(
+				'language' => true,
+				'type' => true,
+				'src' => true,
+				'type' => true,
+		),
+		/**
+		 * END
+		*/
 		'span' => array(
 			'dir' => true,
 			'align' => true,
 			'lang' => true,
 			'xml:lang' => true,
 		),
+		/**
+		 * XTEC ******** Afegit - svg tag
+		 * @date 20/02/2015
+		 * @author vsaavedr
+		 */
+		'svg' => array(
+			'xmlns' => true,
+			'xmlns:xlink' => true,
+			'version' => true,
+			'viewBox' => true,
+			'fill' => true,
+			'stroke' => true,
+			'stroke-linecap' => true,
+			'stroke-miterlimit' => true,
+		),
+		/**
+		 * END
+		*/
 		'section' => array(
 			'align' => true,
 			'dir' => true,
@@ -369,6 +507,7 @@ if ( ! CUSTOM_TAGS ) {
 			'scope' => true,
 			'valign' => true,
 			'width' => true,
+			'style' => true,
 		),
 		'textarea' => array(
 			'cols' => true,
