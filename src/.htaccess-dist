@@ -1,7 +1,5 @@
 RewriteEngine On
-RewriteBase /
-#necessari per al correcte funcionament de cacti
-RewriteCond %{REQUEST_URI} !=/server-status
+RewriteBase /blocs/
 RewriteRule ^index\.php$ - [L]
 
 # uploaded files
@@ -12,11 +10,10 @@ RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
 
 #necessari per al correcte funcionament de cacti
 RewriteCond %{REQUEST_URI} !=/server-status
+
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
-RewriteRule  ^[_0-9a-zA-Z-]+/(wp-(content|admin|includes).*) $1 [L]
-RewriteRule  ^[_0-9a-zA-Z-]+/(.*\.php)$ $1 [L]
-#necessari per al correcte funcionament de cacti
-RewriteCond %{REQUEST_URI} !=/server-status
+RewriteRule ^([_0-9a-zA-Z-]+/)?(wp-(content|admin|includes).*) $2 [L]
+RewriteRule ^([_0-9a-zA-Z-]+/)?(.*\.php)$ $2 [L]
 RewriteRule . index.php [L]
