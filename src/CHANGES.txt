@@ -7,6 +7,7 @@ Changes in progress
 - Hide message in login box when WP Social Plugin is enabled but all OAuths are disabled (ENS/1068/00188)
 - GCE: Added default values for hidden parameters and removed some metaboxes to simplify user experience
 - MU-PLUGIN: Created common-functions.php and blocs-functions.php pluggins to include common functions which affects all themes
+- Added new elements when you are importing a blog into another (ENS/1068/00186)
 
 15.02.25
 --------------------------------------------------------------------
