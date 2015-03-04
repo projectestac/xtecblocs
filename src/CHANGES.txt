@@ -6,6 +6,7 @@ development home at https://github.com/projectestac/xtecblocs
 Changes in progress
 ---------------------------------------------------------------------------------------
 - GCE: Added default values for hidden parameters and removed some metaboxes to simplify user experience
+- MU-PLUGIN: Created common-functions.php and blocs-functions.php pluggins to include common functions which affects all themes
 
 
 15.02.25
