@@ -4,8 +4,8 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
---------------------------------------------------------------------
 - Hide message in login box when WP Social Plugin is enabled but all OAuths are disabled (ENS/1068/00188)
+- GCE: Added default values for hidden parameters and removed some metaboxes to simplify user experience
 
 15.02.25
 --------------------------------------------------------------------
@@ -22,7 +22,7 @@ Changes in progress
 - Added the "Multisite Clone Duplicator" plugin to clone blocs in multisite system.
 - Replacement of "es.scribd.com" by "www.scribd.com" when saving an article.
 - "Simpler Ipaper" plugin substitution.
-- The 'embed' tag is now not being processed while editing. 
+- The 'embed' tag is now not being processed while editing.
 
 
 15.01.07
