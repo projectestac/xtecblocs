@@ -98,20 +98,7 @@ function wp_initial_constants() {
  */
 function wp_plugin_directory_constants() {
 	if ( !defined('WP_CONTENT_URL') )
-		/** XTEC ************ MODIFICAT - Added https support to WP_CONTENT_URL
-		 *  2014.01.23 vsaavedr
-		 */
-		/**
-		 * ORIGINAL
-		 */
-		//define( 'WP_CONTENT_URL', get_option('siteurl') . '/wp-content'); // full url - WP_CONTENT_DIR is defined further up
-		 /**
-		  * NOU
-		  */
-		define( 'WP_CONTENT_URL', site_url() . '/wp-content'); // full url - WP_CONTENT_DIR is defined further up
-		/**
-		 * FI
-		 */
+			define( 'WP_CONTENT_URL', get_option('siteurl') . '/wp-content'); // full url - WP_CONTENT_DIR is defined further up
 	/**
 	 * Allows for the plugins directory to be moved from the default location.
 	 *

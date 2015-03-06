@@ -66,21 +66,6 @@ if ( ! CUSTOM_TAGS ) {
 			'name' => true,
 			'target' => true,
 			'style' => true,
-			/**
-			 * XTEC ******** Afegit - added new tags
-			 * @date 04/03/2015
-			 * @author vsaavedr
-			 */
-			'tabindex' => true,
-			'data-clip-link' => true,
-			'title' => true,
-			'aria-label' => true,
-			'data-original-title' => true,
-			'data-tooltip' => true,
-			'data-tooltip-below' => true,
-			/**
-			 * END
-			 */
 		),
 		'abbr' => array(),
 		'acronym' => array(),
@@ -111,107 +96,20 @@ if ( ! CUSTOM_TAGS ) {
 			'lang' => true,
 			'xml:lang' => true,
 		),
-		/**
-		 * XTEC ******** Afegit - body tag
-		 * @date 04/03/2015
-		 * @author vsaavedr
-		 */
-		'body' => array(
-			'leftmargin' => true,
-			'topmargin' => true,
-			'marginwidth' => true,
-			'marginheight' => true,
-			'onload' => true,
-			'id' => true,
-			'class' => true,
-			'dir' => true,
-		),
-		/**
-		 * END
-		 */
 		'br' => array(),
 		'button' => array(
 			'disabled' => true,
 			'name' => true,
 			'type' => true,
 			'value' => true,
-			/**
-			 * XTEC ******** Afegit - clippath tag
-			 * @date 20/02/2015
-			 * @author vsaavedr
-			 */
-			'tabindex' => true,
-			'class' => true,
-			'aria-label' => true,
-			'data-label-add' => true,
-			'data-label-add-logged-out' => true,
-			'data-label-remove' => true,
-			'data-title-play' => true,
-			'data-title-pause' => true,
-			'title' => true,
-			'data-title-on' => true,
-			'data-title-off' => true,
-			'data-title-full-size' => true,
-			'data-title-actual-size' => true,
-			'data-title-fullscreen' => true,
-			'data-title-unfullscreen' => true,
-			'data-tooltip' => true,
-			'aria-haspopup' => true,
-			'style' => true,
-			'href' => true,
-			'data-target' => true,
-			'data-ssid' => true,
-			/**
-			 * END
-			 */
 		),
-		/**
-		 * XTEC ******** Afegit - canvas tag
-		 * @date 04/03/2015
-		 * @author vsaavedr
-		 */
-		'canvas' => array(
-			'width' => true,
-			'height' => true,
-			'aria-hidden' => true,
-			'class' => true,
-		),
-		/**
-		 * END
-		 */
 		'caption' => array(
 			'align' => true,
 		),
-		/**
-		 * XTEC ******** Afegit - circle tag
-		 * @date 20/02/2015
-		 * @author vsaavedr
-		 */
-		'circle' => array(
-			'class' => true,
-			'cx' => true,
-			'cy' => true,
-			'r' => true,
-			'stroke-width' => true,
-		),
-		/**
-		 * END
-		 */
 		'cite' => array(
 			'dir' => true,
 			'lang' => true,
 		),
-		/**
-		 * XTEC ******** Afegit - clippath tag
-		 * @date 20/02/2015
-		 * @author vsaavedr
-		 */
-		'clippath' => array(
-			'id' => true,
-		),
-		/**
-		 * END
-		*/
 		'code' => array(),
 		'col' => array(
 			'align' => true,
@@ -225,16 +123,6 @@ if ( ! CUSTOM_TAGS ) {
 		'del' => array(
 			'datetime' => true,
 		),
-		/**
-		 * XTEC ******** Afegit - defs tag
-		 * @date 04/03/2015
-		 * @author vsaavedr
-		 */
-		'defs' => array(
-		),
-		/**
-		 * END
-		 */
 		'dd' => array(),
 		'dfn' => array(),
 		'details' => array(
@@ -252,79 +140,10 @@ if ( ! CUSTOM_TAGS ) {
 			'role' => true,
 			'tabindex' => true,
 			'style' => true,
-			/**
-			 * XTEC ******** Afegit - added new tags
-			 * @date 04/03/2015
-			 * @author vsaavedr
-			 */
-			'slidenumber' => true,
-			'data-index' => true,
-			'class' => true,
-			'data-thumb' => true,
-			'hidden' => true,
-			'aria-live' => true,
-			'role' => true,
-			'aria-valuemin' => true,
-			'aria-valuemax' => true,
-			'aria-valuenow' => true,
-			'aria-valuetext' => true,
-			'id' => true,
-			'aria-disabled' => true,
-			'aria-setsize' => true,
-			'aria-expanded' => true,
-			'aria-haspopup' => true,
-			'aria-activedescendant' => true,
-			'aria-posinset' => true,
-			'aria-hidden' => true,
-			'title' => true,
-			'data-version' => true,
-			'aria-labelledby' => true,
-			'aria-checked' => true,
-			'alt' => true,
-			'data-tooltip-below' => true,
-			/**
-			 * END
-			 */
 		),
 		'dl' => array(),
 		'dt' => array(),
 		'em' => array(),
-		/**
-		 * XTEC ******** Afegit - embed tag
-		 * @date 20/02/2015
-		 * @author vsaavedr
-		 */
-		'embed' => array(
-			'height' => true,
-			'width' => true,
-			'src' => true,
-			'quality' => true,
-			'allowscriptaccess' => true,
-			'allownetworking' => true,
-			'wmode' => true,
-			'allowfullscreen' => true,
-			'pluginspage' => true,
-			'type' => true,
-			'name' => true,
-			'flashvars' => true,
-			'pluginspage' => true,
-			'code' => true,
-			'codebase' => true,
-			'cache_option' => true,
-			'cache_archive' => true,
-			'cache_version' => true,
-			'activitypack' => true,
-			'language' => true,
-			'country' => true,
-			'variant' => true,
-			'skin' => true,
-			'myurl' => true,
-			'scriptable' => true,
-			'title' => true,
-		),
-		/**
-		 * END
-		*/
 		'fieldset' => array(),
 		'figure' => array(
 			'align' => true,
@@ -358,19 +177,6 @@ if ( ! CUSTOM_TAGS ) {
 			'name' => true,
 			'target' => true,
 		),
-		/**
-		 * XTEC ******** Afegit - g tag
-		 * @date 20/02/2015
-		 * @author vsaavedr
-		 */
-		'g' => array(
-			'clip-path' => true,
-			'id' => true,
-			'transform' => true,
-		),
-		/**
-		 * END
-		*/
 		'h1' => array(
 			'align' => true,
 		),
@@ -407,57 +213,7 @@ if ( ! CUSTOM_TAGS ) {
 			'size' => true,
 			'width' => true,
 		),
-		/**
-		 * XTEC ******** Afegit - html tag
-		 * @date 04/03/2015
-		 * @author vsaavedr
-		 */
-		'html' => array(
-			'lang' => true,
-			'dir' => true,
-			'data-cast-api-enabled' => true,
-		),
-		/**
-		 * END
-		 */
 		'i' => array(),
-		/**
-		 * XTEC ******** Afegit - iframe tag
-		 * @date 20/02/2015
-		 * @author vsaavedr
-		 */
-		'iframe' => array(
-			'src' => true,
-			'width' => true,
-			'height' => true,
-			'frameborder' => true,
-			'scrolling' => true,
-			'title' => true,
-			'aria-hidden' => true,
-			'hidden' => true,
-			'data-loaded' => true,
-		),
-		/**
-		 * END
-		 */
-		/**
-		 * XTEC ******** Afegit - image tag
-		 * @date 20/02/2015
-		 * @author vsaavedr
-		 */
-		'image' => array(
-			'clip-path' => true,
-			'fill' => true,
-			'width' => true,
-			'height' => true,
-			'x' => true,
-			'y' => true,
-			'preserveAspectRadio' => true,
-			'xlink:href' => true,
-		),
-		/**
-		 * END
-		*/
 		'img' => array(
 			'alt' => true,
 			'align' => true,
@@ -470,102 +226,7 @@ if ( ! CUSTOM_TAGS ) {
 			'usemap' => true,
 			'width' => true,
 			'style' => true,
-			/**
-			 * XTEC ******** Afegit - added new tags
-			 * @date 04/03/2015
-			 * @author vsaavedr
-			 */
-			'id' => true,
-			'class' => true,
-			'data_normal' => true,
-			'data_full' => true,
-			'data_small' => true,
-			'onerror' => true,
-			'slide-thumb-1' => true,
-			'slide-thumb-2' => true,
-			'slide-thumb-3' => true,
-			'slide-thumb-4' => true,
-			'slide-thumb-5' => true,
-			'slide-thumb-6' => true,
-			'slide-thumb-7' => true,
-			'slide-thumb-8' => true,
-			'slide-thumb-9' => true,
-			'slide-thumb-10' => true,
-			'slide-thumb-11' => true,
-			'slide-thumb-12' => true,
-			'slide-thumb-13' => true,
-			'slide-thumb-14' => true,
-			'slide-thumb-15' => true,
-			'slide-thumb-16' => true,
-			'slide-thumb-17' => true,
-			'slide-thumb-18' => true,
-			'slide-thumb-19' => true,
-			'slide-thumb-20' => true,
-			'slide-thumb-21' => true,
-			'slide-thumb-22' => true,
-			'slide-thumb-23' => true,
-			'slide-thumb-24' => true,
-			'slide-thumb-25' => true,
-			'slide-thumb-26' => true,
-			'slide-thumb-27' => true,
-			'slide-thumb-28' => true,
-			'slide-thumb-29' => true,
-			'slide-thumb-30' => true,
-			'slide-thumb-31' => true,
-			'slide-thumb-32' => true,
-			'slide-thumb-33' => true,
-			'slide-thumb-34' => true,
-			'slide-thumb-35' => true,
-			'slide-thumb-36' => true,
-			'slide-thumb-37' => true,
-			'slide-thumb-38' => true,
-			'slide-thumb-39' => true,
-			'slide-thumb-40' => true,
-			'slide-thumb-41' => true,
-			'slide-thumb-42' => true,
-			'slide-thumb-43' => true,
-			'slide-thumb-44' => true,
-			'slide-thumb-45' => true,
-			'slide-thumb-46' => true,
-			'slide-thumb-47' => true,
-			'slide-thumb-48' => true,
-			'slide-thumb-49' => true,
-			'slide-thumb-50' => true,
-			'slide-thumb-51' => true,
-			'slide-thumb-52' => true,
-			'slide-thumb-53' => true,
-			'slide-thumb-54' => true,
-			'slide-thumb-55' => true,
-			'slide-thumb-56' => true,
-			'slide-thumb-57' => true,
-			'slide-thumb-58' => true,
-			'slide-thumb-59' => true,
-			'slide-thumb-60' => true,
-			'slide-thumb-61' => true,
-			'slide-thumb-62' => true,
-			'slide-thumb-63' => true,
-			'slide-thumb-64' => true,
-			'slide-thumb-65' => true,
-			/**
-			 * END
-			 */
 		),
-		/**
-		 * XTEC ******** Afegit - input tag
-		 * @date 04/03/2015
-		 * @author vsaavedr
-		 */
-		'input' => array(
-			'id' => true,
-			'name' => true,
-			'style' => true,
-			'class' => true,
-			'type' => true,
-			'value' => true,
-		),
-		/**
-		 * END
-		 */
 		'ins' => array(
 			'datetime' => true,
 			'cite' => true,
@@ -573,17 +234,6 @@ if ( ! CUSTOM_TAGS ) {
 		'kbd' => array(),
 		'label' => array(
 			'for' => true,
-			/**
-			 * XTEC ******** Afegit - added new tags
-			 * @date 04/03/2015
-			 * @author vsaavedr
-			 */
-			'role' => true,
-			'hidden' => true,
-			'class' => true,
-			/**
-			 * END
-			 */
 		),
 		'legend' => array(
 			'align' => true,
@@ -592,36 +242,6 @@ if ( ! CUSTOM_TAGS ) {
 			'align' => true,
 			'value' => true,
 		),
-		/**
-		 * XTEC ******** Afegit - line tag
-		 * @date 04/03/2015
-		 * @author vsaavedr
-		 */
-		'line' => array(
-			'x1' => true,
-			'y1' => true,
-			'x2' => true,
-			'y2' => true,
-			'stroke-width' => true,
-			'stroke' => true,
-			'stroke-linecap' => true,
-		),
-		/**
-		 * END
-		 */
-		/**
-		 * XTEC ******** Afegit - link tag
-		 * @date 04/03/2015
-		 * @author vsaavedr
-		 */
-		'link' => array(
-			'rel' => true,
-			'href' => true,
-			'type' => true,
-		),
-		/**
-		 * END
-		 */
 		'map' => array(
 			'name' => true,
 		),
@@ -629,242 +249,31 @@ if ( ! CUSTOM_TAGS ) {
 		'menu' => array(
 			'type' => true,
 		),
-		/**
-		 * XTEC ******** Afegit - meta tag
-		 * @date 04/03/2015
-		 * @author vsaavedr
-		 */
-		'meta' => array(
-			'http-equiv' => true,
-			'content' => true,
-		),
-		/**
-		 * END
-		 */
 		'nav' => array(
 			'align' => true,
 			'dir' => true,
 			'lang' => true,
 			'xml:lang' => true,
 		),
-		/**
-		 * XTEC ******** Afegit - noembed tag
-		 * @date 20/02/2015
-		 * @author vsaavedr
-		 */
-		'noembed' => array(),
-		/**
-		 * END
-		*/
-		/**
-		 * XTEC ******** Afegit - object tag
-		 * @date 20/02/2015
-		 * @author vsaavedr
-		 */
-		'object' => array(
-			'width' => true,
-			'height' => true,
-			'classid' => true,
-			'codebase' => true,
-			'id' => true,
-		),
-		/**
-		 * END
-		 */
 		'p' => array(
 			'align' => true,
 			'dir' => true,
 			'lang' => true,
 			'xml:lang' => true,
-			/**
-			 * XTEC ******** Afegit - Added new attributes
-			 * @date 04/03/2015
-			 * @author vsaavedr
-			 */
-			'id' => true,
-			'class' => true,
-			/**
-			 * END
-			 */
 		),
-		/**
-		 * XTEC ******** Afegit - path tag
-		 * @date 20/02/2015
-		 * @author vsaavedr
-		 */
-		'path' => array(
-			'd' => true,
-			'clip-rule' => true,
-			'fill' => true,
-			'fill-opacity' => true,
-			'fill-rule' => true,
-			'class' => true,
-			'stroke' => true,
-			'stroke-width' => true,
-			'stroke-miterlimit' => true,
-			'stroke-linecap' => true,
-		),
-		/**
-		 * END
-		*/
-		/**
-		 * XTEC ******** Afegit - pattern tag
-		 * @date 04/03/2015
-		 * @author vsaavedr
-		 */
-		'pattern' => array(
-			'id' => true,
-			'patternUnits' => true,
-			'x' => true,
-			'y' => true,
-			'width' => true,
-			'height' => true,
-			'viewBox' => true,
-		),
-		/**
-		 * END
-		 */
-		/**
-		 * XTEC ******** Afegit - param tag
-		 * @date 20/02/2015
-		 * @author vsaavedr
-		 */
-		'param' => array(
-			'name' => true,
-			'value' => true,
-			'classid' => true,
-			'codebase' => true,
-		),
-		/**
-		 * END
-		*/
-		'pre' => array(
-			'width' => true,
-		),
-		/**
-		 * XTEC ******** Afegit - polygon tag
-		 * @date 20/02/2015
-		 * @author vsaavedr
-		 */
-		'polygon' => array(
-			'class' => true,
-			'points' => true,
-			'fill-rule' => true,
-			'clip-rule' => true,
-			'fill' => true,
-		),
-		/**
-		 * END
-		 */
-		/**
-		 * XTEC ******** Afegit - polyline tag
-		 * @date 20/02/2015
-		 * @author vsaavedr
-		 */
-		'polyline' => array(
-			'class' => true,
-			'points' => true,
-			'transform' => true,
-		),
-		/**
-		 * END
-		 */
-		'q' => array(
-			'cite' => true,
-		),
-		/**
-		 * XTEC ******** Afegit - rect tag
-		 * @date 04/03/2015
-		 * @author vsaavedr
-		 */
-		'rect' => array(
-			'class' => true,
-			'height' => true,
-			'width' => true,
-			'x' => true,
-			'y' => true,
-			'fill' => true,
-		),
-		/**
-		 * END
-		 */
 		's' => array(),
 		'samp' => array(),
-		/**
-		 * XTEC ******** Afegit - script tag
-		 * @date 20/02/2015
-		 * @author vsaavedr
-		 */
-		'script' => array(
-			'language' => true,
-			'type' => true,
-			'src' => true,
-			'type' => true,
-			/**
-			 * XTEC ******** Afegit - added new tags
-			 * @date 05/03/2015
-			 * @author vsaavedr
-			 */
-			'async' => true,
-			/**
-			 * END
-			 */
-		),
-		/**
-		 * END
-		*/
 		'span' => array(
 			'dir' => true,
 			'align' => true,
 			'lang' => true,
 			'xml:lang' => true,
-			/**
-			 * XTEC ******** Afegit - added new tags attributes
-			 * @date 04/03/2015
-			 * @author vsaavedr
-			 */
-			'tabindex' => true,
-			'class' => true,
-			'style' => true,
-			/**
-			 * END
-			 */
 		),
-		/**
-		 * XTEC ******** Afegit - svg tag
-		 * @date 20/02/2015
-		 * @author vsaavedr
-		 */
-		'svg' => array(
-			'xmlns' => true,
-			'xmlns:xlink' => true,
-			'version' => true,
-			'viewBox' => true,
-			'fill' => true,
-			'stroke' => true,
-			'stroke-linecap' => true,
-			'stroke-miterlimit' => true,
-			'preserveAspectRadio' => true,
-			'role' => true,
-			'aria-label' => true,
-		),
-		/**
-		 * END
-		*/
 		'section' => array(
 			'align' => true,
 			'dir' => true,
 			'lang' => true,
 			'xml:lang' => true,
-			/**
-			 * XTEC ******** Afegit - svg tag
-			 * @date 20/02/2015
-			 * @author vsaavedr
-			 */
-			'class' => true,
-			/**
-			 * END
-			 */
 		),
 		'small' => array(),
 		'strike' => array(),
@@ -887,15 +296,6 @@ if ( ! CUSTOM_TAGS ) {
 			'rules' => true,
 			'summary' => true,
 			'width' => true,
-			/**
-			 * XTEC ******** Afegit - svg tag
-			 * @date 20/02/2015
-			 * @author vsaavedr
-			 */
-			'class' => true,
-			/**
-			 * END
-			 */
 		),
 		'tbody' => array(
 			'align' => true,
@@ -920,6 +320,7 @@ if ( ! CUSTOM_TAGS ) {
 			'valign' => true,
 			'width' => true,
 			'style' => true,
+			'class' => true,
 		),
 		'textarea' => array(
 			'cols' => true,
@@ -963,40 +364,18 @@ if ( ! CUSTOM_TAGS ) {
 			'char' => true,
 			'charoff' => true,
 			'valign' => true,
+			'class' => true,
 		),
 		'tt' => array(),
 		'u' => array(),
 		'ul' => array(
 			'type' => true,
-			/**
-			 * XTEC ******** Afegit - svg tag
-			 * @date 20/02/2015
-			 * @author vsaavedr
-			 */
-			'class' => true,
-			'aria-hidden' => true,
-			'style' => true,
-			/**
-			 * END
-			 */
 		),
 		'ol' => array(
 			'start' => true,
 			'type' => true,
 		),
 		'var' => array(),
-		/**
-		 * XTEC ******** Afegit - video tag
-		 * @date 04/03/2015
-		 * @author vsaavedr
-		 */
-		'video' => array(
-			'class' => true,
-			'style' => true,
-		),
-		/**
-		 * END
-		 */
 	);
 
 	/**

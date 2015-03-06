@@ -178,6 +178,14 @@ class WP_Import extends WP_Importer {
 		echo '<p>' . __( 'All done.', 'wordpress-importer' ) . ' <a href="' . admin_url() . '">' . __( 'Have fun!', 'wordpress-importer' ) . '</a>' . '</p>';
 		echo '<p>' . __( 'Remember to update the passwords and roles of imported users.', 'wordpress-importer' ) . '</p>';
 
+		// XTEC ************ AFEGIT - enable kses filter again.
+		// 2015.03.06 @vsaavedr
+		if (function_exists('kses_init_filters')) {
+			kses_init_filters();
+		}
+		// ************ FI
+
+
 		do_action( 'import_end' );
 	}
 
@@ -439,6 +447,13 @@ class WP_Import extends WP_Importer {
 	 * Doesn't create a tag if its slug already exists
 	 */
 	function process_tags() {
+		// XTEC ************ AFEGIT - disable kses filter when someone want to import other blog's posts.
+		// 2015.03.06 @vsaavedr
+		if (function_exists('kses_remove_filters')) {
+			kses_remove_filters();
+		}
+		// ************ FI
+
 		$this->tags = apply_filters( 'wp_import_tags', $this->tags );
 
 		if ( empty( $this->tags ) )
