@@ -473,7 +473,7 @@ $wpdb->add_table('global', 'wp_term_relationships');
 $wpdb->add_table('global', 'wp_term_taxonomy');
 
 // add the tables of the rest of blogs by callable function
-$wpdb->add_callback(dataset_distribution);
+$wpdb->add_callback('dataset_distribution');
 
 // this function returns the dataset of the table of the query.
 // tables of blogs are distributed in different datasets depending on the blog identifier module.
