@@ -101,9 +101,11 @@ class WP_List_Table {
 		$this->screen = convert_to_screen( $args['screen'] );
 
 		add_filter( "manage_{$this->screen->id}_columns", array( $this, 'get_columns' ), 0 );
-		//XTEC: add at the end of the table the 'State' column, to manage the invitations.
-		add_filter( "manage_users_columns", "manage_users_columns" );
 
+		// XTEC ************ AFEGIT - add at the end of the table the 'State' column, to manage the invitations.
+		// 2015.02.15 @vsaavedr
+		add_filter( "manage_users_columns", "manage_users_columns" );
+		// ************ FI
 		if ( !$args['plural'] )
 			$args['plural'] = $this->screen->base;
 
@@ -282,11 +284,10 @@ class WP_List_Table {
 	 * @param string $input_id The search input id
 	 */
 	public function search_box( $text, $input_id ) {
-		/**
-		 * XTEC ************ AFEGIT - Hide search_box when we want to see unactive users.
-		 * @user vsaavedra
-		 */
+		// XTEC ************ AFEGIT - AFEGIT - Hide search_box when we want to see unactive users.
+		// 2015.02.15 @vsaavedra
 		if( (!isset($_REQUEST['status'])) || ( (isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive') ) ) {
+		// ************ FI
 			if ( empty( $_REQUEST['s'] ) && !$this->has_items() )
 				return;
 
@@ -308,9 +309,6 @@ class WP_List_Table {
 			</p>
 			<?php
 		}
-		/**
-		 * END
-		 */
 	}
 
 	/**
@@ -349,25 +347,21 @@ class WP_List_Table {
 		$views = apply_filters( "views_{$this->screen->id}", $views );
 		if ( empty( $views ) )
 			return;
-		/**
-		 * XTEC ************ AFEGIT - Hide role filter when we want to see the unactived users. Added unactives users' filter.
-		 * @user vsaavedra
-		 */
 		echo "<ul class='subsubsub'>\n";
 		foreach ( $views as $class => $view ) {
 			$views[ $class ] = "\t<li class='$class'>$view";
 		}
 		echo implode( " |</li>\n", $views ) . "</li>\n";
 		if($pagenow == 'users.php') {
+		// XTEC ************ AFEGIT - Hide role filter when we want to see the unactived users. Added unactives users' filter.
+		// 2015.02.25 @vsaavedra
 			if (((isset($_REQUEST['status']))) && ($_REQUEST['status'] == 'unactive') )
 				echo "<li class='all'> |<a href='users.php' class='current'>".__( 'Unactives' )."</a> </li>\n";
 			else
 				echo "<li class='all'> |<a href='users.php?status=unactive'>".__( 'Unactives' )."</a></li>\n";
 			echo "</ul>";
 		}
-		/**
-		 * END
-		 */
+		// ************ FI
 	}
 
 	/**
@@ -393,11 +387,10 @@ class WP_List_Table {
 	 *                      This is designated as optional for backwards-compatibility.
 	 */
 	protected function bulk_actions( $which = '' ) {
-		/**
-		 * XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
-		 * @user vsaavedra
-		 */
+		// XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
+		// 2015.02.15 @vsaavedra
 		if( (!isset($_REQUEST['status'])) || ( (isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive') ) ) {
+		// ************ FI
 			if ( is_null( $this->_actions ) ) {
 				$no_new_actions = $this->_actions = $this->get_bulk_actions();
 				/**
@@ -664,16 +657,12 @@ class WP_List_Table {
 			$infinite_scroll = $this->_pagination_args['infinite_scroll'];
 		}
 
-		/**
-		 * XTEC ************ AFEGIT - Hide this element when we want to see the unactived users.
-		 * @user vsaavedra
-		 */
+		// XTEC ************ AFEGIT - Hide this element when we want to see the unactived users.
+		// 2015.02.15 @vsaavedra
 		if(!(isset($_REQUEST['status'])) || ($_REQUEST['status'] != 'unactive')) {
+		// ************ FI
 			$output = '<span class="displaying-num">' . sprintf( _n( '1 item', '%s items', $total_items ), number_format_i18n( $total_items ) ) . '</span>';
 		}
-		/**
-		 * END
-		 */
 
 		$current = $this->get_pagenum();
 

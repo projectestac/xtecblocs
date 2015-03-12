@@ -6,3 +6,4 @@ src/wp-content/wp-cache-config.php
 nbproject/
 src/wp-content/uploads/
 src/wp-content/cache
+src/wp-content/plugins/multisite-clone-duplicator/logs/

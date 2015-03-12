@@ -205,11 +205,10 @@ class WP_Users_List_Table extends WP_List_Table {
 	 *                      or below the table ("bottom").
 	 */
 	protected function extra_tablenav( $which ) {
-	/**
-	 * XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
-	 * @user vsaavedra
-	 */
-	if( (!isset($_REQUEST['status'])) || ( (isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive') ) ) {	
+	// XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
+	// 2015.02.15 @vsaavedra
+	if( (!isset($_REQUEST['status'])) || ( (isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive') ) ) {
+	// ************ FI
 		if ( 'top' != $which )
 			return;
 		?>
@@ -233,9 +232,6 @@ class WP_Users_List_Table extends WP_List_Table {
 			do_action( 'restrict_manage_users' );
 			echo '</div>';
 		}
-		/**
-		 * END
-		 */
 	}
 
 	/**
@@ -317,20 +313,10 @@ class WP_Users_List_Table extends WP_List_Table {
 		$editable_roles = array_keys( get_editable_roles() );
 
 		$style = '';
-		/**
-		 * XTEC ************ AFEGIT - Get the arrays of user that already are active in the blog.
-		 * @user vsaavedra
-		 */
-		$usersEmail = array();
-		
-		/**
-		 * FI
-		 */
-		/**
-		 * XTEC ************ AFEGIT - Hide active users when we want to see unactive users.
-		 * @user vsaavedra
-		 */
+		// XTEC ************ AFEGIT - Hide active users when we want to see unactive users.
+		// 2015.02.15 @vsaavedra
 		if ((!isset($_REQUEST['status'])) || ((isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive'))) {
+		// ************ FI
 			foreach ( $this->items as $userid => $user_object ) {
 				if ( count( $user_object->roles ) <= 1 ) {
 					$role = reset( $user_object->roles );
@@ -342,25 +328,26 @@ class WP_Users_List_Table extends WP_List_Table {
 
 				if ( is_multisite() && empty( $user_object->allcaps ) )
 					continue;
-				/**
-				 * XTEC ************ AFEGIT - Get the arrays of user that already are active in the blog.
-				 * @user vsaavedra
-				 */
+				// XTEC ************ AFEGIT - Get the arrays of user that already are active in the blog.
+				// 2015.02.15 @vsaavedra
 				$user_status = __( 'Active' );
 				$style = ( ' class="alternate"' == $style ) ? '' : ' class="alternate"';
+				// ************ FI
 				echo "\n\t" . $this->single_row( $user_object, $style, $role, isset( $post_counts ) ? $post_counts[ $userid ] : 0 , $user_status);
-				/**
-				 * FI
-				 */
 			}
+		// XTEC ************ AFEGIT - Hide active users when we want to see unactive users.
+		// 2015.02.15 @vsaavedra
 		} else if ((isset($_REQUEST['status'])) && ($_REQUEST['status'] == 'unactive')) {
+		// ************ FI
+			// XTEC ************ AFEGIT - Get the arrays of user that already are active in the blog.
+			// 2015.02.15 @vsaavedra
+			$usersEmail = array();
 			foreach ( $this->items as $userid => $user_object ) {
 				$usersEmail[] = $user_object->user_email;
 			}
-			/**
-			 * XTEC ************ AFEGIT - Add the XTEC users who had received an invitation and hasn't already activated it.
-			 * @user vsaavedra
-			 */
+			// ************ FI
+			// XTEC ************ AFEGIT - Add the XTEC users who had received an invitation and hasn't already activated it.
+			// 2015.02.15 @vsaavedra
 			$options = wp_load_alloptions();
 			foreach($options as $name=>$value) {
 				if(stristr($name, 'new_user')) {
@@ -377,14 +364,10 @@ class WP_Users_List_Table extends WP_List_Table {
 					}
 				}
 			}
-			/**
-			 * FI
-			 */
+			// ************ FI
 
-			/**
-			 * XTEC ************ AFEGIT - Add the non-XTEC users who had received an invitation and hasn't already activated it.
-			 * @user vsaavedra
-			 */
+			// XTEC ************ AFEGIT - Add the non-XTEC users who had received an invitation and hasn't already activated it.
+			// 2015.02.15 @vsaavedra
 			$currentBlogId = get_current_blog_id();
 			$signup = $wpdb->get_results( "SELECT * FROM $wpdb->signups", OBJECT );
 			foreach ($signup as $id => $user_object) {
@@ -404,10 +387,8 @@ class WP_Users_List_Table extends WP_List_Table {
 					echo "\n\t" . $this->single_row( $user, $style, $role, '-' , $user_status);
 				}
 			}
-			/**
-			 * FI
-			 */
-		} 
+			// ************ FI
+		}
 	}
 
 	/**
@@ -460,14 +441,14 @@ class WP_Users_List_Table extends WP_List_Table {
                     }
                 } else {
                 //************ FI
-                    
+
                 $actions['edit'] = '<a href="' . $edit_link . '">' . __( 'Edit' ) . '</a>';
-                
+
                 // XTEC ************ AFEGIT - Do not show edit link for xtecadmin (closing if)
                 // 2014.09.03 @aginard
                 }
                 //************ FI
-                
+
 			} else {
 				$edit = "<strong>$user_object->user_login</strong><br />";
 			}

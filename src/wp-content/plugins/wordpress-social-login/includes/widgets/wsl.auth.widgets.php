@@ -239,10 +239,9 @@ $provider_icon_markup = apply_filters( 'wsl_render_login_form_alter_provider_ico
 		}
 	}
 
-	/**
-	 * XTEC ************ AFEGIT - Hide search_box when we want to see unactive users.
-	 * @user vsaavedra
-	 */
+	// XTEC ************ AFEGIT - Hide welcome box.
+	// 2015.02.15 @vsaavedra
+	//************ ORIGINAL
 	// no provider enabled?
 	/*if( $no_idp_used )
 	{*/
@@ -253,9 +252,7 @@ $provider_icon_markup = apply_filters( 'wsl_render_login_form_alter_provider_ico
 		<style>#wp-social-login-connect-with{display:none;}</style> -->
 <?php
 	//}
-	/**
-	 * END
-	 */
+	// ************ FI
 ?>
 
 	</div>
