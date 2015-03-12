@@ -40,7 +40,7 @@ function xtec_mail_network_admin_menu() {
  * Displays plugin network options page.
  */
 function xtec_mail_options() {
-    
+
     // If it's MultiSite (XTECBlocs) is not necessary that is_xtecadmin() exists because first condition fails
     if (!is_multisite() && !is_xtecadmin()) {
         ?>
@@ -99,55 +99,55 @@ function xtec_mail_options() {
             <h2><?php _e('XTEC Mail', 'xtec-mail') ?></h2>
             <table class="form-table">
                 <tbody>
-                    <tr valign="top"> 
-                        <th scope="row"><?php _e('idApp', 'xtec-mail') ?></th> 
+                    <tr valign="top">
+                        <th scope="row"><?php _e('idApp', 'xtec-mail') ?></th>
                         <td>
                             <input type="text" name="xtec_mail_idapp" value="<?php echo get_site_option('xtec_mail_idapp') ?>" />
                         </td>
                     </tr>
-                    <tr valign="top"> 
-                        <th scope="row"><?php _e('replyto', 'xtec-mail') ?></th> 
+                    <tr valign="top">
+                        <th scope="row"><?php _e('replyto', 'xtec-mail') ?></th>
                         <td>
                             <input type="text" name="xtec_mail_replyto" value="<?php echo get_site_option('xtec_mail_replyto') ?>" />
                         </td>
                     </tr>
-                    <tr valign="top"> 
-                        <th scope="row"><?php _e('INT', 'xtec-mail') ?></th> 
+                    <tr valign="top">
+                        <th scope="row"><?php _e('ENVIRONMENT', 'xtec-mail') ?></th>
                         <td>
-                            <?php 
-                                echo INT . '&nbsp;&nbsp;<span style="font-style:italic;">(' . __('Set in config', 'xtec-mail') . ')</span>';
+                            <?php
+                                echo ENVIRONMENT . '&nbsp;&nbsp;<span style="font-style:italic;">(' . __('Set in config', 'xtec-mail') . ')</span>';
                             ?>
                         </td>
                     </tr>
-                    <tr valign="top"> 
-                        <th scope="row"><?php _e('Sender', 'xtec-mail') ?></th> 
+                    <tr valign="top">
+                        <th scope="row"><?php _e('Sender', 'xtec-mail') ?></th>
                         <td>
                             <input type="text" name="xtec_mail_sender" value="<?php echo get_site_option('xtec_mail_sender') ?>" />
                         </td>
                     </tr>
-                    <tr valign="top"> 
-                        <th scope="row"><?php _e('Mail Log', 'xtec-mail') ?></th> 
+                    <tr valign="top">
+                        <th scope="row"><?php _e('Mail Log', 'xtec-mail') ?></th>
                         <td>
                             <label>
-                                <input name="xtec_mail_log" type="checkbox" value="1" <?php checked(get_site_option('xtec_mail_log')) ?> /> 
+                                <input name="xtec_mail_log" type="checkbox" value="1" <?php checked(get_site_option('xtec_mail_log')) ?> />
                                 <?php _e('Enable the log for the mail system', 'xtec-mail'); ?>
                             </label>
                         </td>
                     </tr>
                     <tr valign="top">
-                        <th scope="row"><?php _e('Mail Debug', 'xtec-mail') ?></th> 
+                        <th scope="row"><?php _e('Mail Debug', 'xtec-mail') ?></th>
                         <td>
                             <label>
-                                <input name="xtec_mail_debug" type="checkbox" value="1" <?php checked(get_site_option('xtec_mail_debug')) ?> /> 
+                                <input name="xtec_mail_debug" type="checkbox" value="1" <?php checked(get_site_option('xtec_mail_debug')) ?> />
                                 <?php _e('Enable the debug mode for log of the mail system', 'xtec-mail'); ?>
                             </label>
                         </td>
                     </tr>
                     <tr valign="top">
-                        <th scope="row"><?php _e('Log Path', 'xtec-mail') ?></th> 
+                        <th scope="row"><?php _e('Log Path', 'xtec-mail') ?></th>
                         <td>
                             <label>
-                                <input type="text" name="xtec_mail_logpath" size="50" value="<?php echo get_site_option('xtec_mail_logpath') ?>" /> 
+                                <input type="text" name="xtec_mail_logpath" size="50" value="<?php echo get_site_option('xtec_mail_logpath') ?>" />
                                 <?php _e('Absolute path to log file', 'xtec-mail'); ?>
                             </label>
                         </td>
@@ -213,7 +213,7 @@ if (!function_exists('wp_mail')) {
         $logpath = get_site_option('xtec_mail_logpath');
 
         //load the mailsender
-        $mailsender = new mailsender($idApp, $replyto, $sender, INT, $log, $debug, $logpath);
+        $mailsender = new mailsender($idApp, $replyto, $sender, ENVIRONMENT, $log, $debug, $logpath);
 
         // Compact the input, apply the filters, and extract them back out
         extract(apply_filters('wp_mail', compact('to', 'subject', 'message', 'headers', 'attachments')));
