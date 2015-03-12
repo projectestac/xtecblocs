@@ -4,10 +4,17 @@ More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
+--------------------------------------------------------------------
 - Hide message in login box when WP Social Plugin is enabled but all OAuths are disabled (ENS/1068/00188)
 - GCE: Added default values for hidden parameters and removed some metaboxes to simplify user experience
 - MU-PLUGIN: Created common-functions.php and blocs-functions.php pluggins to include common functions which affects all themes
 - Disabled the kses filter on import. Enabled again when the import is finished. (ENS/1068/00186)
+
+
+15.03.13
+--------------------------------------------------------------------
+- Fixed e-mail not being sent
+
 
 15.02.25
 --------------------------------------------------------------------
@@ -18,6 +25,7 @@ Changes in progress
 - Disable by default the different providers on WP Social Login (AGIN 1068-2014-0022)
 - New version of plugin MultiSite Clone Duplication 1.2.0 from 1.0.0
 - Added src/wp-content/cache in .gitignore
+
 
 15.02.02
 --------------------------------------------------------------------
