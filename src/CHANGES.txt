@@ -9,6 +9,7 @@ Changes in progress
 - GCE: Added default values for hidden parameters and removed some metaboxes to simplify user experience
 - MU-PLUGIN: Created common-functions.php and blocs-functions.php pluggins to include common functions which affects all themes
 - Disabled the kses filter on import. Enabled again when the import is finished. (ENS/1068/00186)
+- GCE: Fixed warning message in list of calendars
 
 
 15.03.13
