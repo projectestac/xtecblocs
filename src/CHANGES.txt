@@ -12,7 +12,7 @@ Changes in progress
 - GCE: Fixed warning message in list of calendars
 - MCD: Added https compatibility to multisite clone duplicator.
 - MU-PLUGIN: Reviewed default position, hidden and collapsed meta-boxes for pages and posts, and enable or disable discussion's metabox
-
+- Disabled gravatar.com requests. (AGIN 1068-2015-0002)
 
 15.03.13
 --------------------------------------------------------------------
