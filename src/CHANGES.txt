@@ -11,7 +11,7 @@ Changes in progress
 - Disabled the kses filter on import. Enabled again when the import is finished.
 - GCE: Fixed warning message in list of calendars
 - MCD: Added https compatibility to multisite clone duplicator.
-- MU-PLUGIN: Reviewed default position, hidden and collapsed meta-boxes for pages and posts
+- MU-PLUGIN: Reviewed default position, hidden and collapsed meta-boxes for pages and posts, and enable or disable discussion's metabox
 
 
 15.03.13
