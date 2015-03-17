@@ -86,8 +86,6 @@ $table_prefix  = 'wp_';
  */
 define('WPLANG', 'ca');
 
-//XTEC ************ AFEGIT - Constants de configuració d'XTECBlocs
-
 /** HyperDB settings */
 // HyperDB databases prefix
 define('DB_PREFIX','xtec_blocs_');
