@@ -7,3 +7,6 @@ nbproject/
 src/wp-content/uploads/
 src/wp-content/cache
 src/wp-content/plugins/multisite-clone-duplicator/logs/
+.buildpath
+.project
+.settings/

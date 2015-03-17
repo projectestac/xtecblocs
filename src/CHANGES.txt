@@ -5,11 +5,13 @@ development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
 --------------------------------------------------------------------
-- Hide message in login box when WP Social Plugin is enabled but all OAuths are disabled (ENS/1068/00188)
+- WP Social Plugin: Hide message in login box when the plugin is enabled but all oAuths are disabled (AGIN 1068-2014-0022)
 - GCE: Added default values for hidden parameters and removed some metaboxes to simplify user experience
 - MU-PLUGIN: Created common-functions.php and blocs-functions.php pluggins to include common functions which affects all themes
-- Disabled the kses filter on import. Enabled again when the import is finished. (ENS/1068/00186)
+- Disabled the kses filter on import. Enabled again when the import is finished.
 - GCE: Fixed warning message in list of calendars
+- MCD: Added https compatibility to multisite clone duplicator.
+- MU-PLUGIN: Reviewed default position, hidden and collapsed meta-boxes for pages and posts
 
 
 15.03.13
