@@ -12,7 +12,7 @@
 /**
  * add field to user profiles
  */
- 
+
 class Simple_Local_Avatars {
 	private $user_id_being_edited, $avatar_upload_error, $remove_nonce, $avatar_ratings;
 	public $options;
@@ -34,20 +34,20 @@ class Simple_Local_Avatars {
 		// supplement remote avatars, but not if inside "local only" mode
 		if ( empty( $this->options['only'] ) )
 			add_filter( 'get_avatar', array( $this, 'get_avatar' ), 10, 5 );
-		
+
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 		add_action( 'show_user_profile', array( $this, 'edit_user_profile' ) );
 		add_action( 'edit_user_profile', array( $this, 'edit_user_profile' ) );
-		
+
 		add_action( 'personal_options_update', array( $this, 'edit_user_profile_update' ) );
 		add_action( 'edit_user_profile_update', array( $this, 'edit_user_profile_update' ) );
 		add_action( 'admin_action_remove-simple-local-avatar', array( $this, 'action_remove_simple_local_avatar' ) );
 		add_action( 'wp_ajax_assign_simple_local_avatar_media', array( $this, 'ajax_assign_simple_local_avatar_media' ) );
 		add_action( 'wp_ajax_remove_simple_local_avatar', array( $this, 'action_remove_simple_local_avatar' ) );
 		add_action( 'user_edit_form_tag', array( $this, 'user_edit_form_tag' ) );
-		
+
 		add_filter( 'avatar_defaults', array( $this, 'avatar_defaults' ) );
 	}
 
@@ -68,7 +68,7 @@ class Simple_Local_Avatars {
 			$user_id = $user->ID;
 		elseif ( is_object( $id_or_email ) && ! empty( $id_or_email->user_id ) )
 			$user_id = (int) $id_or_email->user_id;
-		
+
 		if ( empty( $user_id ) )
 			return $avatar;
 
@@ -100,10 +100,10 @@ class Simple_Local_Avatars {
 		}
 
 		$size = (int) $size;
-			
+
 		if ( empty( $alt ) )
 			$alt = get_the_author_meta( 'display_name', $user_id );
-			
+
 		// generate a new size
 		if ( ! array_key_exists( $size, $local_avatars ) ) {
 			$local_avatars[$size] = $local_avatars['full']; // just in case of failure elsewhere
@@ -137,13 +137,13 @@ class Simple_Local_Avatars {
 
 		if ( 'http' != substr( $local_avatars[$size], 0, 4 ) )
 			$local_avatars[$size] = home_url( $local_avatars[$size] );
-		
+
 		$author_class = is_author( $user_id ) ? ' current-author' : '' ;
 		$avatar = "<img alt='" . esc_attr( $alt ) . "' src='" . esc_url( $local_avatars[$size] ) . "' class='avatar avatar-{$size}{$author_class} photo' height='{$size}' width='{$size}' />";
-		
+
 		return apply_filters( 'simple_local_avatar', $avatar );
 	}
-	
+
 	public function admin_init() {
 		// upgrade pre 2.0 option
 		if ( $old_ops = get_option( 'simple_local_avatars_caps' ) ) {
@@ -210,7 +210,7 @@ class Simple_Local_Avatars {
 
 		if ( empty( $this->options[$args['key']] ) )
 			$this->options[$args['key']] = 0;
-		
+
 		echo '
 			<label for="simple-local-avatars-' . $args['key'] . '">
 				<input type="checkbox" name="simple_local_avatars[' . $args['key'] . ']" id="simple-local-avatars-' . $args['key'] . '" value="1" ' . checked( $this->options[$args['key']], 1, false ) . ' />
@@ -227,7 +227,7 @@ class Simple_Local_Avatars {
 	public function edit_user_profile( $profileuser ) {
 	?>
 	<h3><?php _e( 'Avatar','simple-local-avatars' ); ?></h3>
-	
+
 	<table class="form-table">
 		<tr>
 			<th scope="row"><label for="simple-local-avatar"><?php _e('Upload Avatar','simple-local-avatars'); ?></label></th>
@@ -242,9 +242,9 @@ class Simple_Local_Avatars {
 			<?php
 				if ( ! $upload_rights = current_user_can('upload_files') )
 					$upload_rights = empty( $this->options['caps'] );
-			
+
 				if ( $upload_rights ) {
-					do_action( 'simple_local_avatar_notices' ); 
+					do_action( 'simple_local_avatar_notices' );
 					wp_nonce_field( 'simple_local_avatar_nonce', '_simple_local_avatar_nonce', false );
 					$remove_url = add_query_arg(array(
 						'action'	=> 'remove-simple-local-avatar',
@@ -265,28 +265,28 @@ class Simple_Local_Avatars {
 				} else {
 					if ( empty( $profileuser->simple_local_avatar ) )
 						echo '<span class="description">' . __('No local avatar is set. Set up your avatar at Gravatar.com.','simple-local-avatars') . '</span>';
-					else 
+					else
 						echo '<span class="description">' . __('You do not have media management permissions. To change your local avatar, contact the blog administrator.','simple-local-avatars') . '</span>';
 				}
 			?>
 			</td>
 		</tr>
-		<tr>
-			<th scope="row"><?php _e('Rating'); ?></th>
+		<!-- <tr>
+			<th scope="row"><?php //_e('Rating'); ?></th>
 			<td colspan="2">
-				<fieldset id="simple-local-avatar-ratings" <?php disabled( empty( $profileuser->simple_local_avatar ) ); ?>>
-					<legend class="screen-reader-text"><span><?php _e('Rating'); ?></span></legend>
+				<fieldset id="simple-local-avatar-ratings" <?php //disabled( empty( $profileuser->simple_local_avatar ) ); ?>>
+					<legend class="screen-reader-text"><span><?php //_e('Rating'); ?></span></legend>
 					<?php
-						if ( empty( $profileuser->simple_local_avatar_rating ) || ! array_key_exists( $profileuser->simple_local_avatar_rating, $this->avatar_ratings ) )
+						/*if ( empty( $profileuser->simple_local_avatar_rating ) || ! array_key_exists( $profileuser->simple_local_avatar_rating, $this->avatar_ratings ) )
 							$profileuser->simple_local_avatar_rating =  'G';
 
 						foreach ( $this->avatar_ratings as $key => $rating ) :
 							echo "\n\t<label><input type='radio' name='simple_local_avatar_rating' value='" . esc_attr( $key ) . "' " . checked( $profileuser->simple_local_avatar_rating, $key, false ) . "/> $rating</label><br />";
-						endforeach;
+						endforeach;*/
 					?>
-					<p class="description"><?php _e( 'If the local avatar is inappropriate for this site, Gravatar will be attempted.' ); ?></p>
+					<p class="description"><?php //_e( 'If the local avatar is inappropriate for this site, Gravatar will be attempted.' ); ?></p>
 				</fieldset></td>
-		</tr>
+		</tr> -->
 	</table>
 	<?php
 	}
@@ -437,7 +437,7 @@ class Simple_Local_Avatars {
 
 		die;
 	}
-	
+
 	/**
 	 * remove the custom get_avatar hook for the default avatar list output on options-discussion.php
 	 */
@@ -485,7 +485,7 @@ class Simple_Local_Avatars {
 	 * @return string Final filename
 	 */
 	public function unique_filename_callback( $dir, $name, $ext ) {
-		$user = get_user_by( 'id', (int) $this->user_id_being_edited ); 
+		$user = get_user_by( 'id', (int) $this->user_id_being_edited );
 		$name = $base_name = sanitize_file_name( $user->display_name . '_avatar_' . time() );
 
 		// ensure no conflicts with existing file names
@@ -494,7 +494,7 @@ class Simple_Local_Avatars {
 			$name = $base_name . '_' . $number;
 			$number++;
 		}
-				
+
 		return $name . $ext;
 	}
 
@@ -512,7 +512,7 @@ $simple_local_avatars = new Simple_Local_Avatars;
 
 /**
  * more efficient to call simple local avatar directly in theme and avoid gravatar setup
- * 
+ *
  * @param int|string|object $id_or_email A user ID,  email address, or comment object
  * @param int $size Size of the avatar image
  * @param string $default URL to a default image to use if no avatar is available
@@ -522,13 +522,13 @@ $simple_local_avatars = new Simple_Local_Avatars;
 function get_simple_local_avatar( $id_or_email, $size = 96, $default = '', $alt = '' ) {
 	global $simple_local_avatars;
 	$avatar = $simple_local_avatars->get_avatar( '', $id_or_email, $size, $default, $alt );
-	
+
 	if ( empty ( $avatar ) ) {
 		remove_action( 'get_avatar', array( $simple_local_avatars, 'get_avatar' ) );
 		$avatar = get_avatar( $id_or_email, $size, $default, $alt );
 		add_action( 'get_avatar', array( $simple_local_avatars, 'get_avatar' ) );
 	}
-	
+
 	return $avatar;
 }
 
@@ -600,6 +600,6 @@ function simple_local_avatars_uninstall() {
 	foreach ( $users as $user_id ):
 		$simple_local_avatars->avatar_delete( $user_id );
 	endforeach;
-	
+
 	delete_option('simple_local_avatars');
 }

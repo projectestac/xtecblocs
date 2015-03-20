@@ -184,37 +184,42 @@ printf( __('Comments should be displayed with the %s comments at the top of each
 	</label>
 </fieldset></td>
 </tr>
-<tr>
-<th scope="row"><?php _e('Maximum Rating'); ?></th>
-<td><fieldset><legend class="screen-reader-text"><span><?php _e('Maximum Rating'); ?></span></legend>
+<?php
+// XTEC ************ Eliminat - hide default avatars and punctuation.
+// 2015.02.20 @vsaavedr
+?>
+
+<!-- <tr>
+<th scope="row"><?php //_e('Maximum Rating'); ?></th>
+<td><fieldset><legend class="screen-reader-text"><span><?php //_e('Maximum Rating'); ?></span></legend>
 
 <?php
-$ratings = array(
+//$ratings = array(
 	/* translators: Content suitability rating: http://bit.ly/89QxZA */
-	'G' => __('G &#8212; Suitable for all audiences'),
+	//'G' => __('G &#8212; Suitable for all audiences'),
 	/* translators: Content suitability rating: http://bit.ly/89QxZA */
-	'PG' => __('PG &#8212; Possibly offensive, usually for audiences 13 and above'),
+	//'PG' => __('PG &#8212; Possibly offensive, usually for audiences 13 and above'),
 	/* translators: Content suitability rating: http://bit.ly/89QxZA */
-	'R' => __('R &#8212; Intended for adult audiences above 17'),
+	//'R' => __('R &#8212; Intended for adult audiences above 17'),
 	/* translators: Content suitability rating: http://bit.ly/89QxZA */
-	'X' => __('X &#8212; Even more mature than above')
-);
-foreach ($ratings as $key => $rating) :
+	//'X' => __('X &#8212; Even more mature than above')
+//);
+/*foreach ($ratings as $key => $rating) :
 	$selected = (get_option('avatar_rating') == $key) ? 'checked="checked"' : '';
 	echo "\n\t<label><input type='radio' name='avatar_rating' value='" . esc_attr($key) . "' $selected/> $rating</label><br />";
-endforeach;
+endforeach;*/
 ?>
 
 </fieldset></td>
 </tr>
-<tr>
-<th scope="row"><?php _e('Default Avatar'); ?></th>
-<td class="defaultavatarpicker"><fieldset><legend class="screen-reader-text"><span><?php _e('Default Avatar'); ?></span></legend>
+<tr> -->
+<!-- <th scope="row"><?php //_e('Default Avatar'); ?></th>
+<td class="defaultavatarpicker"><fieldset><legend class="screen-reader-text"><span><?php //_e('Default Avatar'); ?></span></legend>
 
-<?php _e('For users without a custom avatar of their own, you can either display a generic logo or a generated one based on their e-mail address.'); ?><br />
+<?php //_e('For users without a custom avatar of their own, you can either display a generic logo or a generated one based on their e-mail address.'); ?><br />
 
 <?php
-$avatar_defaults = array(
+/*$avatar_defaults = array(
 	'mystery' => __('Mystery Man'),
 	'blank' => __('Blank'),
 	'gravatar_default' => __('Gravatar Logo'),
@@ -222,7 +227,7 @@ $avatar_defaults = array(
 	'wavatar' => __('Wavatar (Generated)'),
 	'monsterid' => __('MonsterID (Generated)'),
 	'retro' => __('Retro (Generated)')
-);
+);*/
 /**
  * Filter the default avatars.
  *
@@ -233,7 +238,7 @@ $avatar_defaults = array(
  *
  * @param array $avatar_defaults Array of default avatars.
  */
-$avatar_defaults = apply_filters( 'avatar_defaults', $avatar_defaults );
+/*$avatar_defaults = apply_filters( 'avatar_defaults', $avatar_defaults );
 $default = get_option('avatar_default');
 if ( empty($default) )
 	$default = 'mystery';
@@ -248,7 +253,7 @@ foreach ( $avatar_defaults as $default_key => $default_name ) {
 
 	$avatar_list .= ' ' . $default_name . '</label>';
 	$avatar_list .= '<br />';
-}
+}*/
 /**
  * Filter the HTML output of the default avatar list.
  *
@@ -256,11 +261,11 @@ foreach ( $avatar_defaults as $default_key => $default_name ) {
  *
  * @param string $avatar_list HTML markup of the avatar list.
  */
-echo apply_filters( 'default_avatar_select', $avatar_list );
+//echo apply_filters( 'default_avatar_select', $avatar_list );
 ?>
 
 </fieldset></td>
-</tr>
+</tr> -->
 <?php do_settings_fields('discussion', 'avatars'); ?>
 </table>
 
