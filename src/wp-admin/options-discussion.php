@@ -187,7 +187,8 @@ printf( __('Comments should be displayed with the %s comments at the top of each
 <?php
 // XTEC ************ AFEGIT - hide default avatars and punctuation. It's only showed for xtecadmin.
 // 2015.02.20 @vsaavedr
-if (is_xtecadmin()) {
+global $isAgora, $isBlocs;
+if ( ( ($isAgora) && (is_xtecadmin()) ) || ( ($isBlocs) && (is_network_admin()) ) ) {
 ?>
 
 <tr>
