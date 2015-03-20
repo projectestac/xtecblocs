@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Simple Local Avatars 1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/simple-local-avatars\n"
 "POT-Creation-Date: 2015-03-20 08:35+0100\n"
-"PO-Revision-Date: 2015-03-20 08:36+0100\n"
+"PO-Revision-Date: 2015-03-20 11:25+0100\n"
 "Last-Translator: Sara Arjona Téllez <sarjona@xtec.cat>\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -64,11 +64,11 @@ msgstr "Puja avatar"
 
 #: /home/sara/workspace/blocs_vm/src/wp-content/plugins/simple-local-avatars/simple-local-avatars.php:256
 msgid "Choose an image from your computer:"
-msgstr ""
+msgstr "Seleccioneu una imatge del vostre ordinador"
 
 #: /home/sara/workspace/blocs_vm/src/wp-content/plugins/simple-local-avatars/simple-local-avatars.php:261
 msgid "Choose from Media Library"
-msgstr ""
+msgstr "Seleccioneu de la Mediateca"
 
 #: /home/sara/workspace/blocs_vm/src/wp-content/plugins/simple-local-avatars/simple-local-avatars.php:262
 msgid "Delete local avatar"
@@ -102,18 +102,20 @@ msgstr ""
 msgid ""
 "For security reasons, the extension \".php\" cannot be in your file name."
 msgstr ""
+"Per raons de seguretat, l'extensió \".php\" no pot estar al nom del vostre "
+"fitxer."
 
 #: /home/sara/workspace/blocs_vm/src/wp-content/plugins/simple-local-avatars/simple-local-avatars.php:367
 msgid "Please upload a valid image file for the avatar."
-msgstr ""
+msgstr "Pugeu una imatge vàlida per l'avatar."
 
 #: /home/sara/workspace/blocs_vm/src/wp-content/plugins/simple-local-avatars/simple-local-avatars.php:370
 msgid "There was an error uploading the avatar:"
-msgstr ""
+msgstr "Hi ha hagut un error pujant l'avatar:"
 
 #: /home/sara/workspace/blocs_vm/src/wp-content/plugins/simple-local-avatars/simple-local-avatars.php:409
 msgid "You do not have permission to edit this user."
-msgstr ""
+msgstr "No teniu permís per editar aquest usuari/ària."
 
 #~ msgid ""
 #~ "Only allow users with file upload capabilities to upload local avatars "
