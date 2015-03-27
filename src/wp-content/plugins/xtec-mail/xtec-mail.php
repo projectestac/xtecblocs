@@ -201,19 +201,36 @@ function xtec_mail_options() {
  */
 if (!function_exists('wp_mail')) {
 
+	function get_mailsender() {
+		global $mailsender;
+
+		include_once 'lib/mailsender.class.php';
+		include_once 'lib/message.class.php';
+
+		if (!is_null($mailsender)) {
+			return $mailsender;
+		}
+
+		$log = (get_site_option('xtec_mail_log')) ? true : false;
+		$debug = (get_site_option('xtec_mail_debug')) ? true : false;
+		$idApp = get_site_option('xtec_mail_idapp');
+		$replyto = get_site_option('xtec_mail_replyto');
+		$sender = get_site_option('xtec_mail_sender');
+		$logpath = get_site_option('xtec_mail_logpath');
+		$wsdl = ENVIRONMENT;
+
+		try {
+			$mailsender = new mailsender($idApp, $replyAddress, $sender, $wsdl, $log, $debug, $logpath);
+		} catch (Exception $e) {
+			$mailsender = false;
+		}
+		return $mailsender;
+
+	}
+
+
     function wp_mail($to, $subject, $message, $headers = '', $attachments = array()) {
-        include_once 'lib/mailsender.class.php';
-        include_once 'lib/message.class.php';
-
-        $log = (get_site_option('xtec_mail_log')) ? true : false;
-        $debug = (get_site_option('xtec_mail_debug')) ? true : false;
-        $idApp = get_site_option('xtec_mail_idapp');
-        $replyto = get_site_option('xtec_mail_replyto');
-        $sender = get_site_option('xtec_mail_sender');
-        $logpath = get_site_option('xtec_mail_logpath');
-
-        //load the mailsender
-        $mailsender = new mailsender($idApp, $replyto, $sender, ENVIRONMENT, $log, $debug, $logpath);
+    	$sender = get_mailsender();
 
         // Compact the input, apply the filters, and extract them back out
         extract(apply_filters('wp_mail', compact('to', 'subject', 'message', 'headers', 'attachments')));
@@ -347,12 +364,12 @@ if (!function_exists('wp_mail')) {
         }
 
         //add message to mailsender
-        if (!$mailsender->add($msg)) {
+        if (!$sender->add($msg)) {
             return false;
         }
 
         // Send!
-        $result = $mailsender->send_mail();
+        $result = $sender->send_mail();
 
         return $result;
     }
