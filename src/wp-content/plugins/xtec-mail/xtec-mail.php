@@ -220,7 +220,7 @@ if (!function_exists('wp_mail')) {
 		$wsdl = ENVIRONMENT;
 
 		try {
-			$mailsender = new mailsender($idApp, $replyAddress, $sender, $wsdl, $log, $debug, $logpath);
+			$mailsender = new mailsender($idApp, $replyto, $sender, $wsdl, $log, $debug, $logpath);
 		} catch (Exception $e) {
 			$mailsender = false;
 		}
@@ -230,6 +230,7 @@ if (!function_exists('wp_mail')) {
 
 
     function wp_mail($to, $subject, $message, $headers = '', $attachments = array()) {
+
     	$sender = get_mailsender();
 
         // Compact the input, apply the filters, and extract them back out
