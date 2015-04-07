@@ -160,10 +160,7 @@ function xtec_lastest_posts_most_active_blogs($how_many = 5, $init = 0)
     if ( count($blogs) > 0 ) {
         foreach ( $blogs as $blog ) {
 	        $blog_detail = get_blog_details($blog->blogid, true);
-            // XTEC ***** MODIFICAT - Hide aroga - Espai de monitorització from weekly blogs.
-            // 2015.03.31 @vsaavedr
-            if( $blog_detail->path != '/aroga/' ) {
-            // ************ FI
+            if( !preg_match('/aroga/', $blog_detail->path) ) {
 	            $posts[] = array('blogId'=>$blog->blogid,'blog_title'=>$blog_detail->blogname,'blog_url'=>$blog_detail->siteurl,'last_updated'=>$blog->last_updated,'postNumber'=>$blog->postNumber);
         	}
         }
