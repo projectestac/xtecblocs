@@ -11,7 +11,7 @@ License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 /*  Copyright 2010  Germán Antolin Priotto
 
     This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as 
+    it under the terms of the GNU General Public License, version 2, as
     published by the Free Software Foundation.
 
     This program is distributed in the hope that it will be useful,
@@ -32,8 +32,8 @@ add_action('draft_to_publish', 'xtec_lastest_posts_to_publish');
 add_action('publish_to_publish', 'xtec_lastest_posts_to_publish');
 
 /**
- * Deletes older posts and registers the post publication. 
- * 
+ * Deletes older posts and registers the post publication.
+ *
  * @param int $post Post data
  */
 function xtec_lastest_posts_to_publish($post)
@@ -43,7 +43,7 @@ function xtec_lastest_posts_to_publish($post)
     $timeOld = time() - $days * 24 * 60 * 60;
     //Delete old posts
     $sql = "DELETE FROM wp_globalposts WHERE `time`<'$timeOld'";
-    $wpdb->query($sql);        
+    $wpdb->query($sql);
     //Create a new entry in global posts
     $sql = "INSERT INTO wp_globalposts (blogId,time,postType) VALUES ($wpdb->blogid,'".time()."','1')";
     $wpdb->query($sql);
@@ -51,7 +51,7 @@ function xtec_lastest_posts_to_publish($post)
 
 /**
  * 	Gets the lastest public posts.
- * 
+ *
  * @param int $how_many Number of blogs to get.
  * @param int $days Number of days to consider in the datetime comparation from the current time.
  * @param int $init Number of the first posts to ignore.
@@ -61,7 +61,7 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days=5, $init=0)
 {
     global $wpdb;
     $counter = 0;
-    
+
     // Fix the date in timestamp
     $date = time()-24*60*60*$days;
 
@@ -74,7 +74,7 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days=5, $init=0)
     if ( $blogs ) {
         foreach ( $blogs as $blog ) {
             // we need _posts and _options tables for this to work
-            $blogPostsTable = "wp_".$blog->blogId."_posts";            
+            $blogPostsTable = "wp_".$blog->blogId."_posts";
             // we fetch the title and link for the latest post
             $thispost = $wpdb->get_results("SELECT post_title, guid, post_content, post_date, post_author " .
                                            "FROM $blogPostsTable " .
@@ -82,11 +82,11 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days=5, $init=0)
                                            "AND post_type = 'post' " .
                                            "AND post_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 5 DAY) " .
                                            "ORDER BY $blogPostsTable.id DESC LIMIT 0,1");
-                                           
+
             $thisusername = get_userdata($thispost[0]->post_author)->user_login;
 
             $blog_detail = get_blog_details($blog->blogId);
-            
+
             $posts[] = array('post_date'=>$thispost[0]->post_date,
                              'post_title'=>$thispost[0]->post_title,
                              'user_login'=>$thisusername,
@@ -95,7 +95,7 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days=5, $init=0)
                              'blog_title'=>$blog_detail->blogname,
                              'blog_url'=>$blog_detail->siteurl,
                              'blog_id'=>$blog->blogId);
-        }        
+        }
         arsort($posts);
         // Discard not valid values
         foreach ( $posts as $post ) {
@@ -111,17 +111,17 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days=5, $init=0)
                 $counter++;
             }
             // don't go over the limit
-            if ( $counter >= $how_many ) { 
-                break; 
+            if ( $counter >= $how_many ) {
+                break;
             }
-        }        
+        }
         return $posts_array;
     }
 }
 
 /**
  * Gets the number of public active blogs.
- * 
+ *
  * @return int Number of public active blogs.
  */
 function xtec_lastest_posts_num_active_blogs()
@@ -133,7 +133,7 @@ function xtec_lastest_posts_num_active_blogs()
 
 /**
  * Gets the number of posts of the most active public blog.
- * 
+ *
  * @return int Number of posts of the most active blog.
  */
 function xtec_lastest_posts_num_posts_of_most_active_blog()
@@ -146,7 +146,7 @@ function xtec_lastest_posts_num_posts_of_most_active_blog()
 
 /**
  * Gets most active public blogs.
- * 
+ *
  * @param int $how_many Number of blogs to get.
  * @param int $init Number of the first blogs to ignore.
  * @return array The blog ID, the blog name, the blog url, the last updated date and the number of posts of the blogs.
@@ -159,8 +159,11 @@ function xtec_lastest_posts_most_active_blogs($how_many = 5, $init = 0)
     $blogs = $wpdb->get_results($sql);
     if ( count($blogs) > 0 ) {
         foreach ( $blogs as $blog ) {
-            $blog_detail = get_blog_details($blog->blogid);
-            $posts[] = array('blogId'=>$blog->blogid,'blog_title'=>$blog_detail->blogname,'blog_url'=>$blog_detail->siteurl,'last_updated'=>$blog->last_updated,'postNumber'=>$blog->postNumber);
+	        $blog_detail = get_blog_details($blog->blogid, true);
+	        //Hide bloc 'aroga (Espai de monitorització)' using regular expressions.
+            if( !preg_match('/aroga/', $blog_detail->path) ) {
+	            $posts[] = array('blogId'=>$blog->blogid,'blog_title'=>$blog_detail->blogname,'blog_url'=>$blog_detail->siteurl,'last_updated'=>$blog->last_updated,'postNumber'=>$blog->postNumber);
+        	}
         }
     }
     return $posts;
@@ -185,7 +188,7 @@ function xtec_lastest_posts_activation_hook()
               PRIMARY KEY (id));";
 
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-              
+
         dbDelta($sql);
     }
 
