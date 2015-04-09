@@ -161,7 +161,7 @@ function xtec_lastest_posts_most_active_blogs($how_many = 5, $init = 0)
         foreach ( $blogs as $blog ) {
 	        $blog_detail = get_blog_details($blog->blogid, true);
 	        //Hide bloc 'aroga (Espai de monitorització)' using regular expressions.
-            if( !preg_match('/aroga/', $blog_detail->path) ) {
+            if( (!preg_match('`aroga`', $blog_detail->path)) || (!preg_match('`/`', $blog_detail->path)) ) {
 	            $posts[] = array('blogId'=>$blog->blogid,'blog_title'=>$blog_detail->blogname,'blog_url'=>$blog_detail->siteurl,'last_updated'=>$blog->last_updated,'postNumber'=>$blog->postNumber);
         	}
         }
