@@ -152,18 +152,20 @@ function xtec_lastest_posts_num_posts_of_most_active_blog()
  * @return array The blog ID, the blog name, the blog url, the last updated date and the number of posts of the blogs.
  */
 function xtec_lastest_posts_most_active_blogs($how_many = 5, $init = 0)
-{
+ {
     global $wpdb;
     //Gets the blocs with more entries
     $sql = "SELECT blogid,count(*) AS postNumber,last_updated FROM wp_globalposts,wp_blogs WHERE blogid=blog_id AND `public`='1' AND `deleted` = '0' GROUP BY(blogid) ORDER BY postNumber desc,last_updated LIMIT $init,$how_many";
     $blogs = $wpdb->get_results($sql);
-    if ( count($blogs) > 0 ) {
-        foreach ( $blogs as $blog ) {
-	        $blog_detail = get_blog_details($blog->blogid, true);
-	        //Hide bloc 'aroga (Espai de monitorització)' using regular expressions.
-            if( !preg_match('/aroga/', $blog_detail->path) ) {
-	            $posts[] = array('blogId'=>$blog->blogid,'blog_title'=>$blog_detail->blogname,'blog_url'=>$blog_detail->siteurl,'last_updated'=>$blog->last_updated,'postNumber'=>$blog->postNumber);
-        	}
+    $posts = array();
+    if (is_array($blogs) && count($blogs) > 0) {
+        foreach ($blogs as $blog) {
+            $blog_detail = get_blog_details($blog->blogid, true);
+            $blog_detail->path;
+            // Hide blog 'aroga (Espai de monitorització)' and main site (blog id is 1)
+            if ((!preg_match('/\/aroga\/$/', $blog_detail->path)) && ($blog->blogid != 1)) {
+                $posts[] = array('blogId' => $blog->blogid, 'blog_title' => $blog_detail->blogname, 'blog_url' => $blog_detail->siteurl, 'last_updated' => $blog->last_updated, 'postNumber' => $blog->postNumber);
+            }
         }
     }
     return $posts;
