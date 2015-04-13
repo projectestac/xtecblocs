@@ -7,6 +7,7 @@ Changes in progress
 ---------------------------------------------------------------------------------------
 - Hidded some blocs on lastest-posts plugin.
 - WP-Super Caché updated to 1.4.4.
+- Added plugin WordPress phpinfo().
 
 15.03.19
 --------------------------------------------------------------------
