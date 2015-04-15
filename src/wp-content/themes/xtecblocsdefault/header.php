@@ -7,8 +7,8 @@
 <meta name="generator" content="Bluefish 1.0.7"/> <!-- leave this for stats -->
 <title><?php bloginfo('name'); ?> <?php if ( is_single() ) { ?> &raquo; Blog Archive <?php } ?> <?php wp_title(); ?></title>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/prototype.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/XTECBlocs.js"></script>
-<script>var template_directory = <?php echo bloginfo('template_directory');?></script>
+<!--<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/XTECBlocs.js"></script>-->
+<!--<script>var template_directory = "<?php echo bloginfo('template_directory');?>";</script>-->
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 
 

@@ -25,7 +25,7 @@
 		</div>
 
 		<script>
-		 changeImage();
+		 //changeImage();
 		</script>
 		<!-- start of sideleft -->		
 		<div id="sideleft">
