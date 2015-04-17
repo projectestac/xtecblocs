@@ -26,7 +26,7 @@ function xtec_settings_allow_password_reset($b, $userid)
 {
 	$error = new WP_Error('no_password_reset',"<strong>No és possible reinicialitzar la contrasenya.</strong>");
 	$error->add('no_password_reset',"Si sou un usuari/ària de la XTEC i heu perdut la vostra contrasenya podeu visitar el següent <a href='http://xtec.cat/at_usuari/gestusu/identificacio/'>enllaç</a>.");
-	$error->add('no_password_reset',"En cas que no sigueu un usuari/ària de la XTEC i hagueu perdut la vostra contrasenya, us haureu de posar en contacte amb l'usuari/ària que us va donar d'alta al servei de blocs.");
+	$error->add('no_password_reset',"En cas que no sigueu un usuari/ària de la XTEC i hàgiu perdut la vostra contrasenya, us haureu de posar en contacte amb l'usuari/ària que us va donar d'alta al servei de blocs.");
 	return $error;
 }
 
@@ -35,7 +35,7 @@ function xtec_settings_allow_password_reset($b, $userid)
  *
  * @return bool True if the user can view the password fields.
  */
-function xtec_settings_show_password_fields() 
+function xtec_settings_show_password_fields()
 {
 	if (!is_super_admin()) { return false; }
 	else { return true; }
@@ -47,11 +47,11 @@ function xtec_settings_show_password_fields()
  * @return string The comment author's IP address.
  */
 function xtec_settings_pre_comment_user_ip()
-{    
+{
 	if ( !empty($_SERVER['HTTP_X_FORWARDED_FOR']) )
 	{
 		$X_FORWARDED_FOR=explode(",", $_SERVER['HTTP_X_FORWARDED_FOR']);
-		$REMOTE_ADDR=trim($X_FORWARDED_FOR[0]); //take the first element in the array 
+		$REMOTE_ADDR=trim($X_FORWARDED_FOR[0]); //take the first element in the array
 	} else {
 		$REMOTE_ADDR=$_SERVER['REMOTE_ADDR'];
 	}
@@ -64,14 +64,14 @@ function xtec_settings_pre_comment_user_ip()
 function xtec_settings_wp_head()
 {
 	echo sprintf("<meta name=\"DC.Title\" content=\"%s\"/>\n", get_bloginfo('title'));
-	echo sprintf("<meta name=\"DC.Creator\" content=\"%s\"/>\n", get_user_by_email(get_bloginfo('admin_email'))->user_login);		
+	echo sprintf("<meta name=\"DC.Creator\" content=\"%s\"/>\n", get_user_by_email(get_bloginfo('admin_email'))->user_login);
 	echo sprintf("<meta name=\"DC.Subject\" scheme=\"eo\" content=\"%s\"/>\n", get_bloginfo('description'));
 	echo sprintf("<meta name=\"DC.Language\" content=\"%s\"/>\n", get_bloginfo('language'));
 }
 
 /**
  * Customize default Viper's Video Quicktags settings .
- * 
+ *
  * @param array $defaults Default settings array.
  * @return array Default settings array modified.
  */
