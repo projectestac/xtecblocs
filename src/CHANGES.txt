@@ -5,6 +5,10 @@ development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+- Solved error that made this function returns no data.
+
+15.04.16
+---------------------------------------------------------------------------------------
 - Hidded some blocs on lastest-posts plugin.
 - WP-Super Caché updated to 1.4.4.
 - Added plugin WordPress phpinfo().

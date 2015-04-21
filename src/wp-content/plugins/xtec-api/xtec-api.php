@@ -48,8 +48,8 @@ function xtec_api_lastest_blogs($how_many = 10, $days=5, $what='last_updated', $
                                            "AND post_type = 'post' " .
                                            "AND post_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 5 DAY) ".
                                            "ORDER BY $blogPostsTable.id DESC limit 0,3");
-            $thisusername = get_userdata($thispost[0]->post_author)->user_login;
 
+            $thisusername = get_userdata($thispost[0]->post_author)->user_login;
             $posts[] = array('post_title'=>$thispost[0]->post_title,
                              'post_date'=>$thispost[0]->post_date,
                              'user_login'=>$thisusername,
@@ -63,11 +63,24 @@ function xtec_api_lastest_blogs($how_many = 10, $days=5, $what='last_updated', $
             if ( $thispost ) { $counter++; }
             // don't go over the limit
             if ( $counter >= $how_many ) {
-                break;
-            } else {
-                $posts = array();
+            	break;
+            }
+            // XTEC ************ MODIFICAT - Solved error that made this function returns no data.
+            // 2015.02.16 @vsaavedr
+        }
+    }
+
+    if (is_array($posts)) {
+    	return $posts;
+    } else {
+    	return array();
+    }
+    // ************ ORIGINAL
+            /*else if($counter == 0){
+            	$posts = array();
             }
         }
-        return $posts;
     }
+    return $posts;*/
+    // ************ FI
 }
