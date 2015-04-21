@@ -37,36 +37,42 @@ function xtec_api_lastest_blogs($how_many = 10, $days=5, $what='last_updated', $
         // 2015.02.16 @vsaavedr
         if( in_array($blog->blog_id, $blogsExistents) ) {
         // ************ FI
-            // we need _posts and _options tables for this to work
-            $blogOptionsTable = "wp_".$blog->blog_id."_options";
-            $blogPostsTable = "wp_".$blog->blog_id."_posts";
-            $options = $wpdb->get_results("SELECT option_value FROM $blogOptionsTable WHERE option_name IN ('siteurl','blogname') ORDER BY option_id, option_name DESC");
-            // we fetch the title and link for the latest post
-            $thispost = $wpdb->get_results("SELECT post_title, guid, post_content, post_date, post_author " .
-                                           "FROM $blogPostsTable " .
-                                           "WHERE post_status = 'publish' " .
-                                           "AND post_type = 'post' " .
-                                           "AND post_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 5 DAY) ".
-                                           "ORDER BY $blogPostsTable.id DESC limit 0,3");
+        	// XTEC ************ AFEGIT - Checking whether the blog->blog_id is a valid id of a blog or not.
+        	// 2015.04.21 @vsaavedr
+        	if( ($what = 'registered' ) && ($blog->blog_id != 1) ) {
+        	// ************ FI
+	            // we need _posts and _options tables for this to work
+	            $blogOptionsTable = "wp_".$blog->blog_id."_options";
+	            $blogPostsTable = "wp_".$blog->blog_id."_posts";
+	            $options = $wpdb->get_results("SELECT option_value FROM $blogOptionsTable WHERE option_name IN ('siteurl','blogname') ORDER BY option_id, option_name DESC");
+	            // we fetch the title and link for the latest post
+	            $thispost = $wpdb->get_results("SELECT post_title, guid, post_content, post_date, post_author " .
+	                                           "FROM $blogPostsTable " .
+	                                           "WHERE post_status = 'publish' " .
+	                                           "AND post_type = 'post' " .
+	                                           "AND post_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 5 DAY) ".
+	                                           "ORDER BY $blogPostsTable.id DESC limit 0,3");
 
-            $thisusername = get_userdata($thispost[0]->post_author)->user_login;
-            $posts[] = array('post_title'=>$thispost[0]->post_title,
-                             'post_date'=>$thispost[0]->post_date,
-                             'user_login'=>$thisusername,
-                             'post_content'=>$thispost[0]->post_content,
-                             'guid'=>$thispost[0]->guid,
-                             'blog_title'=>$options[1]->option_value,
-                             'blog_url'=>$options[0]->option_value,
-                             'blog_id'=>$blog->blog_id,
-                             'registered'=>$blog->registered);
-            // if it is found put it to the output
-            if ( $thispost ) { $counter++; }
-            // don't go over the limit
-            if ( $counter >= $how_many ) {
-            	break;
-            }
+	            $thisusername = get_userdata($thispost[0]->post_author)->user_login;
+	            $posts[] = array('post_title'=>$thispost[0]->post_title,
+	                             'post_date'=>$thispost[0]->post_date,
+	                             'user_login'=>$thisusername,
+	                             'post_content'=>$thispost[0]->post_content,
+	                             'guid'=>$thispost[0]->guid,
+	                             'blog_title'=>$options[1]->option_value,
+	                             'blog_url'=>$options[0]->option_value,
+	                             'blog_id'=>$blog->blog_id,
+	                             'registered'=>$blog->registered);
+	            // if it is found put it to the output
+	            if ( $thispost ) { $counter++; }
+	            // don't go over the limit
+	            if ( $counter >= $how_many ) {
+	            	break;
+	            }
+       		}
             // XTEC ************ MODIFICAT - Solved error that made this function returns no data.
-            // 2015.02.16 @vsaavedr
+            // 2015.04.21 @vsaavedr
+
         }
     }
 
