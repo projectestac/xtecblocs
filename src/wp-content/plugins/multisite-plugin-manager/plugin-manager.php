@@ -292,12 +292,17 @@ class PluginManager {
 	//activate on new blog
 	function new_blog($blog_id) {
 	  require_once( ABSPATH.'wp-admin/includes/plugin.php' );
-
-		$auto_activate = (array)get_site_option('pm_auto_activate_list');
-		if (count($auto_activate)) {
-	  	switch_to_blog($blog_id);
-	    activate_plugins($auto_activate, '', false); //silently activate any plugins
-	    restore_current_blog();
+	  	// XTEC ************ AFEGIT - Test if auto_activate is an array in order to avoid errors when creating new site.
+		// 2015.04.22 @vsaavedr
+	  	$auto_activate_list = get_site_option('pm_auto_activate_list');
+    	if (!empty($auto_activate_list) && $auto_activate_list !='EMPTY'){
+	  	// ************ FI
+			$auto_activate = (array)get_site_option('pm_auto_activate_list');
+			if (count($auto_activate)) {
+	  			switch_to_blog($blog_id);
+	    		activate_plugins($auto_activate, '', false); //silently activate any plugins
+	    		restore_current_blog();
+			}
 		}
 	}
 
