@@ -963,12 +963,12 @@ INSERT INTO `wp_sitemeta` (`meta_id`, `site_id`, `meta_key`, `meta_value`) VALUE
 (526, 1, '_site_transient_browser_deb79a96f1d2f69fbb45e6cc7f0b48de', 'a:9:{s:8:"platform";s:5:"Linux";s:4:"name";s:6:"Chrome";s:7:"version";s:13:"41.0.2272.101";s:10:"update_url";s:28:"http://www.google.com/chrome";s:7:"img_src";s:49:"http://s.wordpress.org/images/browsers/chrome.png";s:11:"img_src_ssl";s:48:"https://wordpress.org/images/browsers/chrome.png";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;}'),
 (619, 1, '_site_transient_timeout_browser_4cad572c71c1da92397147b82307c7d2', '1429867534'),
 (620, 1, '_site_transient_browser_4cad572c71c1da92397147b82307c7d2', 'a:9:{s:8:"platform";s:5:"Linux";s:4:"name";s:6:"Chrome";s:7:"version";s:13:"41.0.2272.118";s:10:"update_url";s:28:"http://www.google.com/chrome";s:7:"img_src";s:49:"http://s.wordpress.org/images/browsers/chrome.png";s:11:"img_src_ssl";s:48:"https://wordpress.org/images/browsers/chrome.png";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;}'),
-(600, 1, 'xtec_mail_replyto', ''),
-(601, 1, 'xtec_mail_sender', ''),
+(600, 1, 'xtec_mail_replyto', 'blocs-noreply@xtec.invalid'),
+(601, 1, 'xtec_mail_sender', 'educacio'),
 (602, 1, 'xtec_mail_log', '1'),
 (603, 1, 'xtec_mail_debug', '0'),
 (604, 1, 'xtec_mail_logpath', '/var/log/apache2/correulog.txt'),
-(599, 1, 'xtec_mail_idapp', ''),
+(599, 1, 'xtec_mail_idapp', 'XTECBLOCS'),
 (573, 1, 'xtec_ldap_login_type', 'LDAP'),
 (577, 1, 'bwp_capt_theme', 'a:4:{s:9:"input_tab";s:1:"0";s:10:"enable_css";s:3:"yes";s:11:"select_lang";s:2:"es";s:12:"select_theme";s:3:"red";}');
 
