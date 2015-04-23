@@ -291,24 +291,32 @@ class PluginManager {
 
 	//activate on new blog
 	function new_blog($blog_id) {
-	  require_once( ABSPATH.'wp-admin/includes/plugin.php' );
-
-		$auto_activate = (array)get_site_option('pm_auto_activate_list');
-		if (count($auto_activate)) {
-	  	switch_to_blog($blog_id);
-	    activate_plugins($auto_activate, '', false); //silently activate any plugins
-	    restore_current_blog();
+		require_once( ABSPATH.'wp-admin/includes/plugin.php' );
+		// XTEC ************ AFEGIT - Test if auto_activate is an array in order to avoid errors when creating new site.
+		// 2015.04.22 @vsaavedr
+		$auto_activate_list = get_site_option('pm_auto_activate_list');
+		if ( (!empty($auto_activate_list)) && ($auto_activate_list !='EMPTY') ) {
+		// ************ FI
+			$auto_activate = (array)get_site_option('pm_auto_activate_list');
+			if (count($auto_activate)) {
+				switch_to_blog($blog_id);
+				activate_plugins($auto_activate, '', false); //silently activate any plugins
+				restore_current_blog();
+			}
+		// XTEC ************ AFEGIT - Test if auto_activate is an array in order to avoid errors when creating new site.
+		// 2015.04.22 @vsaavedr
 		}
+		// ************ FI
 	}
 
 	function mass_activate($plugin) {
 		global $wpdb;
-		
+
 		if (wp_is_large_network()) {
 			?><div class="error"><p><?php _e('Failed to mass activate: Your multisite network is too large for this function.', 'pm'); ?></p></div><?php
 			return false;
 		}
-		
+
     set_time_limit(120);
 
 		$blogs = $wpdb->get_col("SELECT blog_id FROM {$wpdb->blogs} WHERE site_id = {$wpdb->siteid} AND spam = 0");
@@ -326,12 +334,12 @@ class PluginManager {
 
 	function mass_deactivate($plugin) {
   	global $wpdb;
-		
+
 		if (wp_is_large_network()) {
 			?><div class="error"><p><?php _e('Failed to mass activate: Your multisite network is too large for this function.', 'pm'); ?></p></div><?php
 			return false;
 		}
-		
+
     set_time_limit(120);
 
 		$blogs = $wpdb->get_col("SELECT blog_id FROM {$wpdb->blogs} WHERE site_id = {$wpdb->siteid} AND spam = 0");
@@ -371,7 +379,7 @@ class PluginManager {
 	//plugin activate links
 	function action_links($action_links, $plugin_file, $plugin_data, $context) {
 		global $psts, $blog_id;
-		
+
 	  if (is_network_admin() || is_super_admin()) //don't filter siteadmin
 	    return $action_links;
 
