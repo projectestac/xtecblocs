@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-04-21 10:10+0100\n"
+"PO-Revision-Date: 2015-04-24 13:02+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -954,13 +954,15 @@ msgstr "j \\d\\e\\/\\d\\' F \\d\\e Y"
 msgid "<span>%1$s, %2$s</span> <a href=\"%3$s\">%4$s</a>"
 msgstr "<span>%1$s, %2$s</span> <a href=\"%3$s\">%4$s</a>"
 
+# MODIFICAT XTEC
 #: wp-admin/includes/dashboard.php:1138
 msgid "%s MB Space Allowed"
-msgstr "%s Mb d'espai permès"
+msgstr "%s MB  d'espai permès"
 
+# MODIFICAT XTEC
 #: wp-admin/includes/dashboard.php:1150
 msgid "%1$s MB (%2$s%%) Space Used"
-msgstr "%1$s Mb (%2$s%%) d'espai utilitzat"
+msgstr "%1$s MB (%2$s%%) d'espai utilitzat"
 
 #: wp-admin/themes.php:203 wp-admin/themes.php:284
 msgid "Theme Details"
@@ -1473,7 +1475,7 @@ msgstr "ERROR: %s"
 # MODIFICAT XTEC
 #: wp-admin/includes/post.php:1436
 msgid "This content is currently locked."
-msgstr "Aquest contingut està sent editat en aquests moments."
+msgstr "Aquest contingut està blocat actualment."
 
 # MODIFICAT XTEC
 #: wp-admin/includes/post.php:1438
@@ -3221,9 +3223,10 @@ msgid ""
 msgstr ""
 "Heu gastat l'espai assignat. Suprimiu alguns fitxers per penjar-ne més."
 
+# MODIFICAT XTEC
 #: wp-admin/includes/media.php:2592
 msgid "Sorry, you have used all of your storage quota of %s MB."
-msgstr "Heu utilitzat tota la quota d'emmagatzematge que teníeu de %s Mb."
+msgstr "Heu utilitzat tota la quota d'emmagatzematge que teníeu de %s MB."
 
 #: wp-admin/includes/class-wp-comments-list-table.php:371
 msgid "Select comment"
@@ -4084,13 +4087,15 @@ msgstr ""
 "L'adreça de correu electrònic no s'ha actualitzat encara. Comproveu si a la "
 "vostra safata d'entrada del compte %s hi ha un correu de confirmació."
 
+# MODIFICAT XTEC
 #: wp-admin/includes/ms.php:383
 msgid "GB"
-msgstr "Gb"
+msgstr "GB"
 
+# MODIFICAT XTEC
 #: wp-admin/includes/ms.php:387
 msgid "MB"
-msgstr "Mb"
+msgstr "MB"
 
 #: wp-admin/includes/ms.php:330
 msgid "[%s] New Email Address"
@@ -4178,9 +4183,10 @@ msgstr ""
 "privilegis en aquest lloc web. Si creieu que hauríeu de poder accedir al "
 "tauler \"%1$s\", contacteu amb l'administrador de la xarxa."
 
+# MODIFICAT XTEC
 #: wp-admin/includes/ms.php:425
 msgid "MB (Leave blank for network default)"
-msgstr "Mb (deixeu en blanc per aplicar el valor per defecte de la xarxa)"
+msgstr "MB (deixeu en blanc per aplicar el valor per defecte de la xarxa)"
 
 #: wp-admin/includes/class-wp-ms-themes-list-table.php:390
 msgid "Visit theme homepage"
@@ -5172,6 +5178,7 @@ msgstr ""
 "podeu actuar amb els comentaris fent servir els enllaços d'acció que es "
 "mostren en passar el cursor per sobre o en accions en massa."
 
+# MODIFICAT XTEC
 #: wp-admin/edit-comments.php:125
 msgid ""
 "In the <strong>Author</strong> column, in addition to the author&#8217;s "
@@ -5180,7 +5187,7 @@ msgid ""
 "IP address."
 msgstr ""
 "A la columna de l'<strong>autor</strong>, a més del nom de l'autor, l'adreça "
-"de correu electrònic i la URL del bloc, es mostra l'adreça IP de qui ha "
+"de correu electrònic i l'URL del bloc, es mostra l'adreça IP de qui ha "
 "comentat. En fer clic a aquest enllaç es mostrarà tots els comentaris fets "
 "des d'aquesta adreça IP."
 
@@ -6066,6 +6073,7 @@ msgstr ""
 "El fitxer penjat excedeix la directiva MAX_FILE_SIZE que estava especificada "
 "al formulari HTML."
 
+# MODIFICAT XTEC
 #: wp-admin/options-writing.php:122 wp-admin/tools.php:47
 msgid ""
 "If your bookmarks toolbar is hidden: copy the code below, open your "
@@ -6075,7 +6083,7 @@ msgstr ""
 "Si la barra d'adreces d'interès està oculta: copieu el codi següent, obriu "
 "el gestor de les adreces d'interès, creeu una adreça d'interès nova, "
 "teclegeu \"Premeu això\" en el camp del nom i enganxeu el codi en el camp de "
-"la URL."
+"l'URL."
 
 #: wp-admin/credits.php:185
 msgid "Core Committer"
@@ -7082,12 +7090,13 @@ msgstr ""
 "en els fitxers del tema es perdran. Considereu l'opció de fer servir <a href="
 "\"%s\">temes fills</a> per a les modificacions."
 
+# MODIFICAT XTEC
 #: wp-admin/includes/class-wp-posts-list-table.php:189
 msgctxt "posts"
 msgid "Sticky <span class=\"count\">(%s)</span>"
 msgid_plural "Sticky <span class=\"count\">(%s)</span>"
-msgstr[0] "Enganxada <span class=\"count\">(%s)</span>"
-msgstr[1] "Enganxades <span class=\"count\">(%s)</span>"
+msgstr[0] "Fixat <span class=\"count\">(%s)</span>"
+msgstr[1] "Fixats <span class=\"count\">(%s)</span>"
 
 #: wp-admin/update-core.php:508
 msgid "Please select one or more plugins to update."
@@ -7610,6 +7619,7 @@ msgstr ""
 "en fer que una sigui &#8220;pare&#8221; de l'altra, creant un grup de "
 "pàgines."
 
+# MODFIICAT XTEC
 #: wp-admin/edit-form-advanced.php:361
 msgid ""
 "<strong>Send Trackbacks</strong> - Trackbacks are a way to notify legacy "
@@ -7619,7 +7629,7 @@ msgid ""
 msgstr ""
 "<strong>Envia retroenllaços</strong> - Els retroenllaços són una manera "
 "d'avisar als sistemes de blocs tradicionals que els heu enllaçat. Introduïu "
-"la o les URL on voleu enviar els retroenllaços. Si enllaceu a altres blocs "
+"la o els  URL on voleu enviar els retroenllaços. Si enllaceu a altres blocs "
 "amb WordPress, se'ls avisarà automàticament a través dels retropings, i "
 "llavors aquest camp no és necessari."
 
@@ -7686,7 +7696,7 @@ msgid ""
 "of the name. It is usually all lowercase and contains only letters, numbers, "
 "and hyphens."
 msgstr ""
-"<strong>Nom curt</strong> - El &#8220;resum&#8221; és la URL amigable del "
+"<strong>Nom curt</strong> - El &#8220;resum&#8221; és l'URL amigable del "
 "nom. Normalment són minúscules i conté solament lletres, noms i guions."
 
 # MODIFICAT XTEC
@@ -8219,7 +8229,7 @@ msgstr ""
 "l'article a la caixa Publica. Per a l'Estat, la Visibilitat i Publica "
 "(immediatament), feu clic a l'enllaç Edita per a mostrar més opcions. La "
 "visibilitat inclou opcions per protegir amb contrasenya un article o fer-lo "
-"romandre a dalt de tot del bloc indefinidament (enganxat). Publica "
+"romandre a dalt de tot del bloc indefinidament (fixat). Publica "
 "(immediatament) us permet definir una data i hora futura o passada per tal "
 "de poder programar un article i que es publiqui en el futur o retrocedir una "
 "araticle."
@@ -9615,7 +9625,7 @@ msgid ""
 "Welcome to WordPress. This is your first post. Edit or delete it, then start "
 "blogging!"
 msgstr ""
-"Us donem la benvinguda al WordPress. Aquest és el vostre primera article. "
+"Us donem la benvinguda al WordPress. Aquest és el vostre primer article. "
 "Editeu-lo o suprimiu-lo, i després comenceu a publicar!"
 
 #: wp-admin/includes/upgrade.php:165
@@ -12417,9 +12427,10 @@ msgstr ""
 msgid "Specified file failed upload test."
 msgstr "El fitxer indicat no compleix els requisits de càrrega."
 
+# MODIFICAT XTEC
 #: wp-admin/includes/file.php:448
 msgid "Invalid URL Provided."
-msgstr "La URL no és vàlida."
+msgstr "L'URL no és vàlida."
 
 #: wp-admin/includes/file.php:452
 msgid "Could not create Temporary file."
@@ -13658,5 +13669,6 @@ msgstr "Comentari de la paperera"
 msgid "You are about to delete the following comment:"
 msgstr "Ara s'eliminarà el comentari següent:"
 
+# AFEGIT XTEC
 msgid "Unactives"
 msgstr "Pendents d'activació"
