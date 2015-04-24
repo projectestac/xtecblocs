@@ -49,7 +49,10 @@ class SlideshowPluginPostType
 					'new_item'           => __('New slideshow', 'slideshow-plugin'),
 					'view_item'          => __('View slideshow', 'slideshow-plugin'),
 					'search_items'       => __('Search slideshows', 'slideshow-plugin'),
+					//XTEC *********** AFEGIT - new literal for all items.
+					//2015.04.24 @vsaavedr
 					'all_items'          => __( 'All Slideshows', 'slideshow-plugin' ),
+					//*********** FI
 					'not_found'          => __('No slideshows found', 'slideshow-plugin'),
 					'not_found_in_trash' => __('No slideshows found', 'slideshow-plugin')
 				),
