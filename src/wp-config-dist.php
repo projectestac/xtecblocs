@@ -48,6 +48,12 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
+/**
+ * Proxy configuration.
+ */
+define('WP_PROXY_HOST', '');
+define('WP_PROXY_PORT', '');
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
@@ -130,5 +136,3 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
-
-
