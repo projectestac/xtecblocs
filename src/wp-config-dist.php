@@ -51,8 +51,8 @@ define('DB_COLLATE', '');
 /**
  * Proxy configuration.
  */
-define('WP_PROXY_HOST', '');
-define('WP_PROXY_PORT', '');
+//define('WP_PROXY_HOST', '');
+//define('WP_PROXY_PORT', '');
 
 /**#@+
  * Authentication Unique Keys and Salts.
