@@ -10,6 +10,7 @@ Changes in progress
 - Added plugin WordPress phpinfo().
 - Added new version of Xtec-Mail.
 - Improved some translations.
+- Added proxy support without autenthication to avoid "Could not open socket" error.
 
 15.03.19
 --------------------------------------------------------------------

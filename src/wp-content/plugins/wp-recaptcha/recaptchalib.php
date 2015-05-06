@@ -76,6 +76,15 @@ function _recaptcha_http_post($host, $path, $data, $port = 80) {
         $http_request .= "\r\n";
         $http_request .= $req;
 
+//XTEC ************ AFEGIT - Added proxy support without autenthication to avoid "Could not open socket" error.
+//2015.05.06 @sarjona
+        if ( defined('WP_PROXY_HOST') ) {
+          // Connection must be done by proxy
+          $host = WP_PROXY_HOST;
+          $port = defined('WP_PROXY_PORT')?WP_PROXY_PORT:$port;
+        }
+//************ FI
+
         $response = '';
         if( false == ( $fs = @fsockopen($host, $port, $errno, $errstr, 10) ) ) {
                 die ('Could not open socket');
