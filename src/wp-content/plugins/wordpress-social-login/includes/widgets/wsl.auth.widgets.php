@@ -239,19 +239,22 @@ $provider_icon_markup = apply_filters( 'wsl_render_login_form_alter_provider_ico
 		}
 	}
 
-	// XTEC ************ AFEGIT - Hide welcome box.
+	// XTEC ************ ELIMINAT - Hide welcome box.
 	// 2015.02.15 @vsaavedra
 	//************ ORIGINAL
+        /*
 	// no provider enabled?
-	/*if( $no_idp_used )
-	{*/
+	if( $no_idp_used )
+	{
 ?>
-		<!-- <p style="background-color: #FFFFE0;border:1px solid #E6DB55;padding:5px;">
-			<?php //_wsl_e( '<strong>WordPress Social Login is not configured yet</strong>.<br />Please navigate to <strong>Settings &gt; WP Social Login</strong> to configure this plugin.<br />For more information, refer to the <a rel="nofollow" href="http://miled.github.io/wordpress-social-login">online user guide</a>.', 'wordpress-social-login') ?>.
+		<p style="background-color: #FFFFE0;border:1px solid #E6DB55;padding:5px;">
+			<?php _wsl_e( '<strong>WordPress Social Login is not configured yet</strong>.<br />Please navigate to <strong>Settings &gt; WP Social Login</strong> to configure this plugin.<br />For more information, refer to the <a rel="nofollow" href="http://miled.github.io/wordpress-social-login">online user guide</a>.', 'wordpress-social-login') ?>.
 		</p>
-		<style>#wp-social-login-connect-with{display:none;}</style> -->
+		<style>#wp-social-login-connect-with{display:none;}</style>
 <?php
-	//}
+	}
+
+        */
 	// ************ FI
 ?>
 

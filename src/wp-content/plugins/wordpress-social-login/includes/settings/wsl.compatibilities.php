@@ -186,15 +186,17 @@ function wsl_update_compatibilities()
 			$provider_id = $item["provider_id"];
 
 			if( isset( $item["default_network"] ) && $item["default_network"] ){
-			/**
-			 * XTEC ************ AFEGIT - Disable by default provider_id
-			 * 2014.11.14 @aginard
-			 */
-				//update_option( 'wsl_settings_' . $provider_id . '_enabled', 1 );
-				update_option( 'wsl_settings_' . $provider_id . '_enabled', 0 );
-			/**
-			 * FI
-			 */
+
+                        // XTEC ************ MODIFICAT - Disable by default provider_id
+                        // 2014.11.14 @vsaavedra
+                        
+                            update_option( 'wsl_settings_' . $provider_id . '_enabled', 0 );
+
+                        //************ ORIGINAL
+                        /*
+                            update_option( 'wsl_settings_' . $provider_id . '_enabled', 1 );
+                        */
+                        //************ FI
 			}
 		}
 	}
