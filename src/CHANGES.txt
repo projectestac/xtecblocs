@@ -5,8 +5,11 @@ development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
 ---------------------------------------------------------------------------------------
-- Solved error that made this function returns no data.
-- Added proxy support without autenthication to avoid "Could not open socket" error.
+- reCaptcha: Added proxy support without autenthication to avoid "Could not open socket" error.
+- Updated Mailer library
+- Fixed list of lastest created blogs being always empty
+- Slideshare: Improved catalan language files
+
 
 15.04.16
 ---------------------------------------------------------------------------------------
