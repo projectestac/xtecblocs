@@ -190,7 +190,6 @@ printf( __('Comments should be displayed with the %s comments at the top of each
 global $isAgora, $isBlocs;
 if ( ( ($isAgora) && (is_xtecadmin()) ) || ( ($isBlocs) && (is_network_admin()) ) ) {
 ?>
-
 <tr>
 <th scope="row"><?php _e('Maximum Rating'); ?></th>
 <td><fieldset><legend class="screen-reader-text"><span><?php _e('Maximum Rating'); ?></span></legend>

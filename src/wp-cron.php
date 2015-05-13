@@ -78,35 +78,33 @@ foreach ( $crons as $timestamp => $cronhooks ) {
 	if ( $timestamp > $gmt_time )
 		break;
 
-	if( is_array($cronhooks) ) {
-		foreach ( $cronhooks as $hook => $keys ) {
+	foreach ( $cronhooks as $hook => $keys ) {
 
-			foreach ( $keys as $k => $v ) {
+		foreach ( $keys as $k => $v ) {
 
-				$schedule = $v['schedule'];
+			$schedule = $v['schedule'];
 
-				if ( $schedule != false ) {
-					$new_args = array($timestamp, $schedule, $hook, $v['args']);
-					call_user_func_array('wp_reschedule_event', $new_args);
-				}
-
-				wp_unschedule_event( $timestamp, $hook, $v['args'] );
-
-				/**
-				 * Fires scheduled events.
-				 *
-				 * @internal
-				 * @since 2.1.0
-				 *
-				 * @param string $hook Name of the hook that was scheduled to be fired.
-				 * @param array  $args The arguments to be passed to the hook.
-				 */
-	 			do_action_ref_array( $hook, $v['args'] );
-
-				// If the hook ran too long and another cron process stole the lock, quit.
-				if ( _get_cron_lock() != $doing_wp_cron )
-					return;
+			if ( $schedule != false ) {
+				$new_args = array($timestamp, $schedule, $hook, $v['args']);
+				call_user_func_array('wp_reschedule_event', $new_args);
 			}
+
+			wp_unschedule_event( $timestamp, $hook, $v['args'] );
+
+			/**
+			 * Fires scheduled events.
+			 *
+			 * @internal
+			 * @since 2.1.0
+			 *
+			 * @param string $hook Name of the hook that was scheduled to be fired.
+			 * @param array  $args The arguments to be passed to the hook.
+			 */
+ 			do_action_ref_array( $hook, $v['args'] );
+
+			// If the hook ran too long and another cron process stole the lock, quit.
+			if ( _get_cron_lock() != $doing_wp_cron )
+				return;
 		}
 	}
 }

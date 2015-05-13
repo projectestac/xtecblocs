@@ -125,12 +125,13 @@ function show_blog_form( $blogname = '', $blog_title = '', $errors = '' ) {
         <p class="privacy-intro">
 	<?php
 	// XTEC ***** MODIFICAT - Changed term privacy for visibility
-	// ***** CODI ORIGINAL
-	/*<label for="blog_public_on"><?php _e('Privacy:') ?></label> */
-	// ***** CODI MODIFICAT
 	?>
             <label for="blog_public_on"><?php _e('Visibility:') ?></label>
 	<?php
+	// ***** ORIGINAL
+	/*
+            <label for="blog_public_on"><?php _e('Privacy:') ?></label>
+    */
 	// ***** FI
 	?>
             <?php _e( 'Allow search engines to index this site.' ); ?>

@@ -231,7 +231,10 @@ class WP_Users_List_Table extends WP_List_Table {
 			 */
 			do_action( 'restrict_manage_users' );
 			echo '</div>';
+	// XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
+	// 2015.02.15 @vsaavedra
 		}
+	// ************ FI
 	}
 
 	/**
@@ -305,7 +308,11 @@ class WP_Users_List_Table extends WP_List_Table {
 	 * @access public
 	 */
 	public function display_rows() {
+		// XTEC ************ AFEGIT - Hide active users when we want to see unactive users.
+		// 2015.02.15 @vsaavedra
 		global $wpdb;
+		// ************ FI
+
 		// Query the post counts for this page
 		if ( ! $this->is_site_users )
 			$post_counts = count_many_users_posts( array_keys( $this->items ) );
@@ -328,12 +335,22 @@ class WP_Users_List_Table extends WP_List_Table {
 
 				if ( is_multisite() && empty( $user_object->allcaps ) )
 					continue;
+
 				// XTEC ************ AFEGIT - Get the arrays of user that already are active in the blog.
 				// 2015.02.15 @vsaavedra
 				$user_status = __( 'Active' );
-				$style = ( ' class="alternate"' == $style ) ? '' : ' class="alternate"';
 				// ************ FI
+
+				$style = ( ' class="alternate"' == $style ) ? '' : ' class="alternate"';
+
+				// XTEC ************ MODIFICAT - Get the arrays of user that already are active in the blog.
+				// 2015.02.15 @vsaavedra
 				echo "\n\t" . $this->single_row( $user_object, $style, $role, isset( $post_counts ) ? $post_counts[ $userid ] : 0 , $user_status);
+				//************ ORIGINAL
+                /*
+				echo "\n\t" . $this->single_row( $user_object, $style, $role, isset( $post_counts ) ? $post_counts[ $userid ] : 0 );
+                */
+				// ************ FI
 			}
 		// XTEC ************ AFEGIT - Hide active users when we want to see unactive users.
 		// 2015.02.15 @vsaavedra
@@ -403,11 +420,9 @@ class WP_Users_List_Table extends WP_List_Table {
 	 * @param string $role        Optional. Key for the $wp_roles array. Default empty.
 	 * @param int    $numposts    Optional. Post count to display for this user. Defaults
 	 *                            to zero, as in, a new user has made zero posts.
-	 * @param string $status      Optional. The status of the user. 'Actiu' when is an admin, subsciptor, col·laborador, autor o Editor.
-	 *                            'Pendent de confirmació' when an invitation had been sent and the user didn't use it.
 	 * @return string Output for a single row.
 	 */
-	public function single_row( $user_object, $style = '', $role = '', $numposts = 0, $status = '' ) {
+	public function single_row( $user_object, $style = '', $role = '', $numposts = 0 ) {
 		global $wp_roles;
 
 		if ( !( is_object( $user_object ) && is_a( $user_object, 'WP_User' ) ) )
@@ -429,7 +444,14 @@ class WP_Users_List_Table extends WP_List_Table {
 			// Set up the hover actions for this user
 			$actions = array();
 
+		    // XTEC ************ MODIFICAT - 
+			// @vsaavedra
 			if ( (current_user_can( 'edit_user',  $user_object->ID )) && ($user_object->type != 'invitacio') ) {
+			//************ ORIGINAL
+            /*
+			if ( current_user_can( 'edit_user',  $user_object->ID ) ) {
+            */
+            //************ FI
 				$edit = "<strong><a href=\"$edit_link\">$user_object->user_login</a></strong><br />";
 
                 // XTEC ************ AFEGIT - Do not show edit link for xtecadmin (opening if)
@@ -441,14 +463,14 @@ class WP_Users_List_Table extends WP_List_Table {
                     }
                 } else {
                 //************ FI
-
+                    
                 $actions['edit'] = '<a href="' . $edit_link . '">' . __( 'Edit' ) . '</a>';
-
+                
                 // XTEC ************ AFEGIT - Do not show edit link for xtecadmin (closing if)
                 // 2014.09.03 @aginard
                 }
                 //************ FI
-
+                
 			} else {
 				$edit = "<strong>$user_object->user_login</strong><br />";
 			}
@@ -470,7 +492,14 @@ class WP_Users_List_Table extends WP_List_Table {
                 }
                 }
                 //************ FI
+		    // XTEC ************ MODIFICAT - 
+			// @vsaavedra
             if ( is_multisite() && get_current_user_id() != $user_object->ID && current_user_can( 'remove_user', $user_object->ID ) && ($user_object->type != 'invitacio'))
+			//************ ORIGINAL
+            /*
+            if ( is_multisite() && get_current_user_id() != $user_object->ID && current_user_can( 'remove_user', $user_object->ID ) )
+            */
+            //************ FI
 				$actions['remove'] = "<a class='submitdelete' href='" . wp_nonce_url( $url."action=remove&amp;user=$user_object->ID", 'bulk-users' ) . "'>" . __( 'Remove' ) . "</a>";
 
 			/**
@@ -537,9 +566,12 @@ class WP_Users_List_Table extends WP_List_Table {
 					}
 					$r .= "</td>";
 					break;
+		        // XTEC ************ AFEGIT - 
+			    // @vsaavedra
 				case 'user_status':
 					$r .= '<td>'.$status.'</td>';
 					break;
+                //************ FI
 				default:
 					$r .= "<td $attributes>";
 

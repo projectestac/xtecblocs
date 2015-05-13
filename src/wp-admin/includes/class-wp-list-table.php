@@ -284,7 +284,7 @@ class WP_List_Table {
 	 * @param string $input_id The search input id
 	 */
 	public function search_box( $text, $input_id ) {
-		// XTEC ************ AFEGIT - AFEGIT - Hide search_box when we want to see unactive users.
+		// XTEC ************ AFEGIT - Hide search_box when we want to see unactive users.
 		// 2015.02.15 @vsaavedra
 		if( (!isset($_REQUEST['status'])) || ( (isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive') ) ) {
 		// ************ FI
@@ -308,7 +308,10 @@ class WP_List_Table {
 				<?php submit_button( $text, 'button', false, false, array('id' => 'search-submit') ); ?>
 			</p>
 			<?php
+		// XTEC ************ AFEGIT - Hide search_box when we want to see unactive users.
+		// 2015.02.15 @vsaavedra
 		}
+		// ************ FI
 	}
 
 	/**
@@ -331,7 +334,10 @@ class WP_List_Table {
 	 * @access public
 	 */
 	public function views() {
+		// XTEC ************ AFEGIT - 
+		// @vsaavedra
 		global $pagenow;
+		// ************ FI
 
 		$views = $this->get_views();
 		/**
@@ -345,22 +351,31 @@ class WP_List_Table {
 		 * @param array $views An array of available list table views.
 		 */
 		$views = apply_filters( "views_{$this->screen->id}", $views );
+
 		if ( empty( $views ) )
 			return;
+
 		echo "<ul class='subsubsub'>\n";
 		foreach ( $views as $class => $view ) {
 			$views[ $class ] = "\t<li class='$class'>$view";
 		}
 		echo implode( " |</li>\n", $views ) . "</li>\n";
-		if($pagenow == 'users.php') {
-		// XTEC ************ AFEGIT - Hide role filter when we want to see the unactived users. Added unactives users' filter.
+
+	    // XTEC ************ MODIFICAT - Hide role filter when we want to see the unactived users. Added unactives users' filter.
 		// 2015.02.25 @vsaavedra
+
+		if($pagenow == 'users.php') {
 			if (((isset($_REQUEST['status']))) && ($_REQUEST['status'] == 'unactive') )
 				echo "<li class='all'> |<a href='users.php' class='current'>".__( 'Unactives' )."</a> </li>\n";
 			else
 				echo "<li class='all'> |<a href='users.php?status=unactive'>".__( 'Unactives' )."</a></li>\n";
 			echo "</ul>";
 		}
+
+		//************ ORIGINAL
+        /*
+		echo "</ul>";
+        */
 		// ************ FI
 	}
 
@@ -430,10 +445,10 @@ class WP_List_Table {
 
 			submit_button( __( 'Apply' ), 'action', false, false, array( 'id' => "doaction$two" ) );
 			echo "\n";
+		// XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
+		// 2015.02.15 @vsaavedra
 		}
-		/**
-		 * END
-		 */
+		// ************ FI
 	}
 
 	/**
@@ -662,7 +677,10 @@ class WP_List_Table {
 		if(!(isset($_REQUEST['status'])) || ($_REQUEST['status'] != 'unactive')) {
 		// ************ FI
 			$output = '<span class="displaying-num">' . sprintf( _n( '1 item', '%s items', $total_items ), number_format_i18n( $total_items ) ) . '</span>';
+		// XTEC ************ AFEGIT - Hide this element when we want to see the unactived users.
+		// 2015.02.15 @vsaavedra
 		}
+		// ************ FI
 
 		$current = $this->get_pagenum();
 

@@ -5,7 +5,9 @@ require_once('agora_script_base.class.php');
 class script_manage_plugins extends agora_script_base{
 
 	public $title = 'Manage plugin';
-	public $info = "Activa / Desactiva un plugin";
+	public $info = "Activa / Desactiva un plugin<br/>
+					activationfile: Exemple invite-anyone/invite-anyone.php<br/>
+					onoff: on per activar / off per desactivar";
 
 
 	public function params() {
@@ -16,6 +18,7 @@ class script_manage_plugins extends agora_script_base{
 	}
 
 	protected function _execute($params = array()) {
+		include_once (ABSPATH . 'wp-admin/includes/plugin.php');
 		switch ($params['onoff']) {
 			case 'on':
 				$result = activate_plugin($params['activationfile']);

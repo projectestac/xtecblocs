@@ -7,6 +7,8 @@ Version: 1.0
 Author: Àrea TAC - Departament d'Ensenyament de Catalunya
 */
 
+load_muplugin_textdomain('common-functions', '/languages');
+wp_enqueue_style('common-functions', WPMU_PLUGIN_URL . '/common-functions.css');
 
 /**
  * Remove screen options from posts to simplify user experience
@@ -15,8 +17,6 @@ Author: Àrea TAC - Departament d'Ensenyament de Catalunya
 function remove_post_meta_boxes() {
 	remove_meta_box('trackbacksdiv', 'post', 'normal');
 	remove_meta_box('trackbacksdiv', 'post', 'side');
-	remove_meta_box('formatdiv', 'post', 'normal');
-	remove_meta_box('formatdiv', 'post', 'side');
 	remove_meta_box('postcustom', 'post', 'normal');
 	remove_meta_box('postcustom', 'post', 'side');
 	remove_meta_box('rawhtml_meta_box', 'post', 'side');
@@ -64,14 +64,14 @@ function set_order_meta_boxes($hidden, $screen) {
 		if ( $post_type == 'post' ) {
 			// Defines position of the meta-boxes
 			$meta_value = array(
-				'side' => 'submitdiv,postimagediv,postexcerpt,metabox1,tagsdiv-post',
+				'side' => 'submitdiv,postimagediv,postexcerpt,formatdiv,metabox1,tagsdiv-post',
 				'normal' => 'categorydiv',
 				'advanced' => '',
 			);
 			update_user_meta($user_id, $meta_key['order'], $meta_value);
 
 			// Defines hidden meta-boxes
-			$meta_value = array('authordiv', 'commentsdiv', 'commentstatusdiv', 'layout_meta', 'revisionsdiv', 'slugdiv', 'ping_status');
+			$meta_value = array('authordiv', 'commentsdiv', 'commentstatusdiv', 'formatdiv', 'layout_meta', 'revisionsdiv', 'slugdiv', 'ping_status');
 			update_user_meta($user_id, $meta_key['hidden'], $meta_value);
 		} elseif ( $post_type == 'page' ) {
 			// Defines position of the meta-boxes
@@ -147,6 +147,27 @@ function users_own_attachments( $wp_query_obj ) {
 add_action('pre_get_posts','users_own_attachments');
 
 /**
+ * Remove the "Dashboard" from the admin menu for contributor user roles
+ * @author Nacho Abejaro
+ */
+function remove_contributor_dashboard() {
+
+    $user_id = get_current_user_id();
+
+    $caps = get_user_meta($user_id, 'wp_capabilities', true);
+    $roles = array_keys((array) $caps);
+    $role = $roles[0];
+
+    if ($role === 'contributor') {
+        remove_menu_page('edit-comments.php');
+        remove_menu_page('edit.php?post_type=gce_feed');
+        remove_menu_page('tools.php');
+    }
+}
+
+add_action('admin_menu', 'remove_contributor_dashboard');
+
+/**
  * Disable gravatar.com calls.
  * @author Víctor Saavedra (vsaavedr@xtec.cat)
  */
@@ -156,3 +177,165 @@ function remove_gravatar ($avatar, $id_or_email, $size, $default, $alt) {
 }
 
 add_filter('get_avatar', 'remove_gravatar', 1, 5);
+
+
+/**
+ * Avoid upload large images (>2MB).
+ * @author Xavier Meler (jmeler@xtec.cat)
+ * Thanks fischi
+ * http://wordpress.stackexchange.com/questions/131066/prevent-large-image-uploads/131076#131076
+ */
+
+function avoid_large_images_upload($file) {
+    $type = $file['type'];
+    $is_image = strpos($type, 'image');
+    
+    if ($is_image!==false){
+        $size = $file['size'];
+        $size = $size / 1024; // KB
+        $limitKB = 2048;      // KB
+        $limitMB = $limitKB/1024;
+        
+        if ( ( $size > $limitKB ) ) {
+            $file['error'] = __('Image files must be smaller than ', 'common-functions').$limitMB.' MB. '. __('Recommended width image:', 'common-functions')." 1024px.";
+        }
+    }
+    return $file;
+}
+
+add_filter('wp_handle_upload_prefilter', 'avoid_large_images_upload');
+
+
+/**
+ * Display extra warning message related to maximum image size
+ * @author Xavier Meler (jmeler@xtec.cat)
+ */
+
+function warning_size_image() {
+    echo  __('Image files must be smaller than ', 'common-functions').' 2 MB. '. __('Recommended width image:', 'common-functions')." 1024px <a target='_blank' href='https://sites.google.com/a/xtec.cat/ajudaxtecblocs/insercio-de-continguts/fitxers-d-audio-i-video#TOC-Qu-cal-fer-si-els-fitxers-d-imatge-s-n-molt-grans-'>Ajuda</a>";
+        
+}
+
+add_filter('post-upload-ui', 'warning_size_image');
+
+
+/**
+ * Hide full size 
+ * @author Xavier Meler (jmeler@xtec.cat)
+ * Thanks wycks
+ * https://gist.github.com/wycks/4949242
+ */
+
+function add_image_insert_override($size_names){
+        $size_names = array(
+                          'thumbnail' => __('Thumbnail'), 
+                          'medium'    => __('Medium'), 
+                          'large'     => __('Large'),
+                        );
+      return $size_names;
+};
+
+add_filter('image_size_names_choose', 'add_image_insert_override' );
+
+
+/**
+ * RSS Shortcode
+ * @author Xavier Meler (jmeler@xtec.cat)
+ */
+function rss_shortcode($atts) {
+
+    include_once(ABSPATH . WPINC . '/feed.php');
+
+    $attributes = shortcode_atts(array(
+        'feeds' => '',
+        'quantity' => 5,
+        'notitle' => '',
+            ), $atts);
+
+    $my_feeds = explode(",", $attributes['feeds']);
+
+    foreach ($my_feeds as $feed) :
+
+        $rss = fetch_feed($feed);
+        if (!is_wp_error($rss)) : // Checks that the object is created correctly 
+            $maxitems = $rss->get_item_quantity($attributes['quantity']);
+            $rss_items = $rss->get_items(0, $maxitems);
+            $rss_title = '<a href="' . $rss->get_permalink() . '" target="_blank">' . strtoupper($rss->get_title()) . '</a>';
+        endif;
+
+        echo '<div class="rss-sc">';
+        if ($attributes['notitle'] === '') {
+            echo '<div class="rss-title">' . $rss_title . '</div>';
+        }
+        echo '<ul>';
+
+        // Check items
+        if ($maxitems == 0) {
+            echo '<li>' . __('No item', 'common-functions') . '.</li>';
+        } else {
+            foreach ($rss_items as $item) :
+                // Get human date (comment if you want to use non human date)
+                $item_date = __('>', 'common-functions') . " " . human_time_diff($item->get_date('U'), current_time('timestamp'));
+                echo '<li>';
+                echo '<a href="' . esc_url($item->get_permalink()) . '" title="' . $item_date . '">';
+                echo esc_html($item->get_title());
+                echo '</a>';
+                echo ' <span class="rss-date">' . $item_date . '</span><br />';
+                echo '<div class="rss-excerpt">';
+                $content = $item->get_content();
+                $content = wp_html_excerpt($content, 150) . ' ...';
+                echo $content;
+                echo '</div>';
+                echo '</li>';
+            endforeach;
+        }
+        echo '</ul></div>';
+
+    endforeach;
+}
+
+add_shortcode('rss', 'rss_shortcode');
+
+/**
+* Add feature image to rss
+* @author Brad Dalton
+* @author Xavier Meler (jmeler@xtec.cat)
+*/
+function add_post_thumbnail_rss($content) {
+    global $post;
+    if ( has_post_thumbnail( $post->ID ) ){
+        $content = '' . get_the_post_thumbnail( $post->ID, 'thumbnail'). '' . $content;
+    }
+    return $content;
+}
+
+add_filter('the_content_feed', 'add_post_thumbnail_rss');
+add_filter('the_excerpt_rss',  'add_post_thumbnail_rss');
+
+/**
+* Add tags to rss
+* @author Xavier Meler (jmeler@xtec.cat)
+*/
+function add_tags_rss() {
+    global $post;
+    $posttags = wp_get_post_tags($post->ID);
+    if (count(array_filter($posttags))>0) {
+      foreach($posttags as $tag) {
+        echo("<tag>$tag->name</tag>");
+      }
+    }   
+ }
+ 
+ add_action('rss2_item', 'add_tags_rss');
+
+/**
+ * Set number of posts per page for search and archive template 
+ * @author Xavier Meler (jmeler@xtec.cat)
+ */
+function posts_per_page() {
+    if ( is_search() || is_archive() || is_author()){
+        set_query_var('posts_per_page', 10);
+    }
+}
+
+add_filter('pre_get_posts', 'posts_per_page');
