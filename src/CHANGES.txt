@@ -9,7 +9,7 @@ Changes in progress
 - Updated Mailer library
 - Fixed list of lastest created blogs being always empty
 - Slideshare: Improved catalan language files
-
+- Activate editting image buttons on freshy 2 theme
 
 15.04.16
 ---------------------------------------------------------------------------------------
