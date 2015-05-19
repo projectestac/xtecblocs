@@ -19,16 +19,25 @@ if ( function_exists('register_sidebar') ) {
 }
 
 add_action('widgets_init', 'freshy_widgets_init');
+//XTEC ********** ELIMINAT - This code calls a function
+//2015.05.19
+/*
 add_filter("mce_css", "freshy_editor_mce_css", 0);
+*/
+//*********FI
 add_filter("mce_buttons", "freshy_editor_mce_buttons", 0);
 
 if (!class_exists('Nice_theme')) add_action('wp_head','freshy_head');
 
+//XTEC ********** ELIMINAT - This code loads CSS that hides buttons when editing images
+//2015.05.19
+/*
 function freshy_editor_mce_css($stylesheets) {
 	$stylesheets = get_bloginfo('stylesheet_directory').'/content.css';
 	return $stylesheets;
 }
-
+*/
+//**********FI
 function freshy_editor_mce_buttons($buttons) {
 	$buttons[] = "styleselect";
 	return $buttons;
