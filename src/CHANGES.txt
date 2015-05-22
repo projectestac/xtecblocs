@@ -5,11 +5,14 @@ development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 4.0.5
 - reCaptcha: Added proxy support without autenthication to avoid "Could not open socket" error.
 - Updated Mailer library
 - Fixed list of lastest created blogs being always empty
 - Slideshare: Improved catalan language files
 - Fixed missing image buttons for edition on freshy 2 theme
+
+
 
 15.04.16
 ---------------------------------------------------------------------------------------
@@ -18,6 +21,7 @@ Changes in progress
 - Added plugin WordPress phpinfo().
 - Added new version of Xtec-Mail.
 - Improved some translations.
+
 
 15.03.19
 --------------------------------------------------------------------
@@ -30,6 +34,7 @@ Changes in progress
 - MU-PLUGIN: Reviewed default position, hidden and collapsed meta-boxes for pages and posts, and enable or disable discussion's metabox
 - Disabled gravatar.com requests. (AGIN 1068-2015-0002)
 - Added plugin Simple-Local-Avatars. (AGIN 1068-2015-0002)
+
 
 15.03.13
 --------------------------------------------------------------------
