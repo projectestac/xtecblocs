@@ -11,7 +11,7 @@ Changes in progress
 - Fixed list of lastest created blogs being always empty
 - Slideshare: Improved catalan language files
 - Fixed missing image buttons for edition on freshy 2 theme
-
+- Mail: Avoid PHP error when messages are not sent
 
 
 15.04.16
