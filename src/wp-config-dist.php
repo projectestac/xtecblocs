@@ -96,6 +96,8 @@ define('DB_NUMS',3); /** HyperDB additional databases */
  */
 define('WP_DEBUG', false);
 
+define('AUTOMATIC_UPDATER_DISABLED', true);
+
 define('WP_ALLOW_MULTISITE', true);
 
 define('MULTISITE', true);
