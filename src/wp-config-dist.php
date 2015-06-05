@@ -24,7 +24,7 @@ $isBlocs = true;
 // ** DB settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('WP_CACHE', true); //Added by WP-Cache Manager
-define('WPCACHEHOME', '/srv/www/blocs/src/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
+define('WPCACHEHOME', '/dades/blocs/src/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
 define('DB_NAME', 'xtec_blocs_global');
 
 /**
@@ -82,16 +82,6 @@ define('NONCE_SALT',       'put your unique phrase here');
  */
 $table_prefix  = 'wp_';
 
-/**
- * WordPress Localized Language, defaults to English.
- *
- * Change this to localize WordPress. A corresponding MO file for the chosen
- * language must be installed to wp-content/languages. For example, install
- * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
- * language support.
- */
-define('WPLANG', 'ca');
-
 /** HyperDB settings */
 // HyperDB databases prefix
 define('DB_PREFIX','xtec_blocs_');
@@ -118,7 +108,7 @@ define('BLOG_ID_CURRENT_SITE', 1);
 /**
  * Default blog creation theme.
  */
-define('WP_DEFAULT_THEME', 'twentythirteen');
+define('WP_DEFAULT_THEME', 'twentyfourteen');
 
 /**
  * HTTPS config.
