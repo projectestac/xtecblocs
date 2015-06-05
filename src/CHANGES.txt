@@ -11,7 +11,9 @@ Changes in progress
 - Fixed list of lastest created blogs being always empty
 - Slideshare: Improved catalan language files
 - Fixed missing image buttons for edition on freshy 2 theme
-- Mail: Avoid PHP error when messages are not sent
+- xtec-mail: Avoid PHP error when messages are not sent
+- Upgraded GCE to version 2.2.5
+
 
 
 15.04.16
