@@ -100,7 +100,8 @@ define('AUTOMATIC_UPDATER_DISABLED', true);
 
 define('WP_ALLOW_MULTISITE', true);
 
-define('MULTISITE', true);
+define('MULTISITE', true);  // If tables wp_1_xxxx are NOT present
+// define('MULTISITE', false);  // If tables wp_1_xxxx ARE present
 define('SUBDOMAIN_INSTALL', false);
 define('DOMAIN_CURRENT_SITE','agora');
 define('PATH_CURRENT_SITE', '/blocs/');
