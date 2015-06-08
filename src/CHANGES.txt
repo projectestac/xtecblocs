@@ -10,14 +10,15 @@ Changes in progress
 
 15.06.08
 ---------------------------------------------------------------------------------------
-- Upgraded WordPress to version 4.0.5
+- Upgraded WordPress to version 4.0.5 (Trello #774)
 - reCaptcha: Added proxy support without autenthication to avoid "Could not open socket" error.
 - Updated Mailer library
-- Fixed list of lastest created blogs being always empty
+- Fixed list of lastest created blogs being always empty (Trello #740)
 - Slideshare: Improved catalan language files
-- Fixed missing image buttons for edition on freshy 2 theme
+- Fixed missing image buttons for edition on freshy 2 theme (Trello #460)
 - xtec-mail: Avoid PHP error when messages are not sent
-- Upgraded GCE to version 2.2.5
+- Upgraded GCE to version 2.2.5 (Trello #800)
+- Forbidden access to admin-tools and edit-comments for Collaborator user roles (Trello #790)
 
 
 15.04.16
