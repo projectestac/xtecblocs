@@ -1,49 +1,40 @@
 === Plugin Name ===
-Contributors: BlaenkDenum
-Tags: comments, registration, recaptcha, antispam, mailhide, captcha
+Contributors: recaptchanet
+Tags: comments, registration, recaptcha, antispam, captcha
 Requires at least: 2.7
 Tested up to: 2.9.1
-Stable tag: 3.1.6
+Stable tag: 4.1
 
-Integrates reCAPTCHA anti-spam methods with WordPress including comment, registration, and email spam protection.
+Integrates reCAPTCHA anti-spam methods with WordPress including comment and registration spam protection.
 
 == Description ==
 
-= Notice =
+What is reCAPTCHA?
 
-If anyone is interested in taking up development of this plugin, please contact me at blaenk@gmail.com. I would be glad to provide access to the plugin repository. Preferably someone who has experience with the WP and WP multisite APIs (primarily their authorization and options APIs).
+reCAPTCHA is a free CAPTCHA service that protects your site against spam, malicious registrations and other forms of attacks where computers try to disguise themselves as a human; a CAPTCHA is a Completely Automated Public Turing test to tell Computers and Human Apart. reCAPTCHA comes in the form of a widget that you can easily add to your blog, forum, registration form, etc.
 
-If you would like to simply contribute patches, you are welcome to do so at the [github repository](https://github.com/blaenk/wp-recaptcha).
-
-Otherwise, if anyone encounters issues with this plugin, you might want to give [this one](http://wordpress.org/extend/plugins/bwp-recaptcha/) a try.
-
-= What is reCAPTCHA? =
-
-[reCAPTCHA](http://recaptcha.net/ "reCAPTCHA") is an anti-spam method originating from [Carnegie Mellon University](http://www.cmu.edu/index.shtml "Carnegie Mellon University"), then acquired by [Google](http://www.google.com/recaptcha) which uses [CAPTCHAs](http://recaptcha.net/captcha.html "CAPTCHA") in a [genius way](http://recaptcha.net/learnmore.html "How Does it Work? - reCAPTCHA"). Instead of randomly generating useless characters which users grow tired of continuosly typing in, risking the possibility that spammers will eventually write sophisticated spam bots which use [OCR](http://en.wikipedia.org/wiki/Optical_character_recognition "Optical Character Recognition - Wikipedia") libraries to read the characters, reCAPTCHA uses a different approach.
-
-The world is in the process of digitizing books by use of automated machines which employ the use of Optical Character Recognition software. Sometimes the certain words cannot be read by the software. reCAPTCHA uses a combination of these words, further distorts them, and then constructs a CAPTCHA image. After a certain percentage of users solve the 'unknown' word the same way, it is assumed that it is the correct spelling of the word. This helps digitize books, giving users a ***reason*** to solve reCAPTCHA forms. Because the industry level scanners and OCR software which are used to digitize the books can't read the words with which the CAPTCHAs are constructed, it is safe to assume that in-house spam-bot OCR techniques will not be able to bypass the resulting CAPTCHA, which is a further distortion of the unreadable word.
-
-reCAPTCHA is probably the most popular and widely accepted CAPTCHA systems by both end-users and site-owners. It is used by such sites prominent sites as [Facebook](http://www.facebook.com), [Twitter](http://www.twitter.com), to the Average Joe's little blog out there on the corner of the Internet.
-
-It is accessible by everyone. If the user has trouble reading the CAPTCHA challenge, he or she has the option of requesting a new one. If this does not help, there is also an audio challenge which users may use.
+In addition to protecting your site, reCAPTCHA also helps us digitize old books and newspapers, transcribe street numbers and solve hard AI problems. [Learn how reCAPTCHA works](http://www.google.com/recaptcha) and join our [forum](https://groups.google.com/forum/#!forum/recaptcha).
 
 == Installation ==
 
 To install in regular WordPress and [WordPress MultiSite](http://codex.wordpress.org/Create_A_Network):
 
 1. Upload the `wp-recaptcha` folder to the `/wp-content/plugins/` directory
-1. Activate the plugin through the `Plugins` menu in WordPress
-1. Get the reCAPTCHA keys [here](http://recaptcha.net/api/getkey?domain=www.blaenkdenum.com&app=wordpress "reCAPTCHA API keys") and/or the MailHide keys [here](http://mailhide.recaptcha.net/apikey "MailHide keys")
+2. Activate the plugin through the `Plugins` menu in WordPress
+3. Get the reCAPTCHA keys [here](https://www.google.com/recaptcha/admin#whyrecaptcha).
 
 == Requirements ==
 
-* You need the reCAPTCHA keys [here](http://recaptcha.net/api/getkey?domain=www.blaenkdenum.com&app=wordpress "reCAPTCHA API keys") and/or the MailHide keys [here](http://mailhide.recaptcha.net/apikey "MailHide keys")
-* If you plan on using MailHide, you will need to have the [mcrypt](http://php.net/mcrypt "mcrypt") PHP module loaded (*Most servers do*)
-* If you turn on XHTML 1.0 Compliance you and your users will need to have Javascript enabled to see and complete the reCAPTCHA form
+* You need the reCAPTCHA keys [here](https://www.google.com/recaptcha/admin#whyrecaptcha).
 * Your theme must have a `do_action('comment_form', $post->ID);` call right before the end of your form (*Right before the closing form tag*). Most themes do.
 
 == ChangeLog ==
 
+= Version 4.0
+* Upgrade to reCAPTCHA V2.
+* Increase supported languages to 40+.
+= Version 3.2
+* Transferred ownership back to Google
 = Version 3.1.6 =
 * WordPress MS fixes. Should now work out of the box at the individual blog level. Thanks to [huyz](http://huyz.us/)
 * NOTICE: If anyone is interested in taking up development of this plugin, please contact me at blaenk@gmail.com.
@@ -132,4 +123,4 @@ CAPTCHAs offer great protection against abuse from automated programs. While it 
 == Screenshots ==
 
 1. The reCAPTCHA Settings
-2. The MailHide Settings
+2. Comments page with reCAPTCHA
