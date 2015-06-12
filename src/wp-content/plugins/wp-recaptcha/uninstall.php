@@ -12,7 +12,4 @@ function uninstall_options($name) {
 // recaptcha
 uninstall_options('recaptcha_options');
 
-// mailhide
-uninstall_options('mailhide_options');
-
 ?>
