@@ -6,6 +6,7 @@ development home at https://github.com/projectestac/xtecblocs
 Changes in progress
 ---------------------------------------------------------------------------------------
 - Show Google Analytics dashboard for superadmins when goes to others admin's blogs (Trello #756)
+- Multisite common functions, styles and languages moved to a new submodule (Trello #787)
 
 
 15.06.08
@@ -108,7 +109,7 @@ Changes in progress
 14.07.15
 ---------------------------------------------------------------------------------------
 - Mystique  2.5.7
- 
+
 
 v14.07.14
 ---------------------------------------------------------------------------------------
@@ -119,7 +120,7 @@ v14.07.14
 - Vipers Video Quicktags 6.5.2
 - Mystique 3.3.2
 - Twenty Eleven 1.8
-- xtec-mail (nova versió) 
+- xtec-mail (nova versió)
 
 
 v14.06.05
@@ -187,12 +188,12 @@ v.13.07.29
 
 v.13.07.09 (No va a producció)
 ---------------------------------------------------------------------------------------
-- Afegits fitxers per refer l'importador de blogs 
+- Afegits fitxers per refer l'importador de blogs
 
 
 v.13.06.03
 ---------------------------------------------------------------------------------------
-- ENS-1068-00015: Modificar enllaç del fòrum per apuntar al grup de la Xarxa Docent 
+- ENS-1068-00015: Modificar enllaç del fòrum per apuntar al grup de la Xarxa Docent
 
 
 v.13.03.11
@@ -291,7 +292,7 @@ Canvis:
 - S'ha afegit l'extensió WordPress Importer que permet importar blocs de WordPress.
 
 Errors solucionats:
-- Les pàgines d'opcions de les aparences havien deixat de ser accessibles des de l'actualització a la versió 3.1.2 de WordPress. 
+- Les pàgines d'opcions de les aparences havien deixat de ser accessibles des de l'actualització a la versió 3.1.2 de WordPress.
 
 
 v11.07.27
@@ -352,10 +353,10 @@ Errors solucionats:
 - El tema Home i Home Hipòlit no portaven a la pàgina principal del lloc quan es clicava al logotip de l'aplicació des d'alguna pàgina que no fos la principal.
 - El widget del tauler de l'extensió Google Analyticator no es tradueix a l'idioma determinat.
 - No es mostrava el botó de YouTube de l'extensió Viper's Video Quicktags.
-- Al modificar les opcions d'un bloc no es desava la informació actualitzada a les taules de cerca degut a un error de sintaxis en la sentència sql que havia d'actualitzar els valors. 
+- Al modificar les opcions d'un bloc no es desava la informació actualitzada a les taules de cerca degut a un error de sintaxis en la sentència sql que havia d'actualitzar els valors.
 - Quan es desava un bloc com a favorit no es comprovava que ja existís i s'inseria a la taula de favorits de nou de forma duplicada.
 - Quan s'esborrava un bloc aquest no s'esborrava de la taula de favorits.
-- Quan s'afegia una entrada des de l'editor ràpid del tauler d'administració del bloc no es desava a la taula de les darreres entrades publicades. 
+- Quan s'afegia una entrada des de l'editor ràpid del tauler d'administració del bloc no es desava a la taula de les darreres entrades publicades.
 - Al llistar els blocs des del portal del lloc, quan el propietari del bloc no tenia correu xtec, es mostrava el seu correu electrònic en comptes del seu nom d'usuari.
 - A l'afegir la meta informació a la capçalera html d'un bloc, quan el propietari del bloc no tenia correu xtec, es mostrava el seu correu electrònic en comptes del seu nom d'usuari.
 - La regeneració dels descriptors no funcionava correctament.
@@ -405,8 +406,8 @@ v11.01.05
 ---------------------------------------------------------------------------------------
 Errors solucionats:
 - S'ha corregit un error en una consulta del fitxer wp-content/themes/home/xtecfunc.php
- 
- 
+
+
 v10.12.02
 ---------------------------------------------------------------------------------------
 Noves funcionalitats:
