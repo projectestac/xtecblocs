@@ -22,12 +22,17 @@ add_filter('vvq_defaultsettings', 'xtec_settings_vvq_defaultsettings');
  * @param int $userid The ID of a user.
  * @return WP_Error.
  */
-function xtec_settings_allow_password_reset($b, $userid)
-{
-	$error = new WP_Error('no_password_reset',"<strong>No és possible reinicialitzar la contrasenya.</strong>");
-	$error->add('no_password_reset',"Si sou un usuari/ària de la XTEC i heu perdut la vostra contrasenya podeu visitar el següent <a href='http://xtec.cat/at_usuari/gestusu/identificacio/'>enllaç</a>.");
-	$error->add('no_password_reset',"En cas que no sigueu un usuari/ària de la XTEC i hàgiu perdut la vostra contrasenya, us haureu de posar en contacte amb l'usuari/ària que us va donar d'alta al servei de blocs.");
-	return $error;
+function xtec_settings_allow_password_reset($b, $userid) {
+    $user = get_user_by('id', $userid);
+
+    if (strlen($user->user_login) < 9) {
+        $error = new WP_Error('no_password_reset',"<strong>No és possible reinicialitzar la contrasenya.</strong>");
+        $error->add('no_password_reset',"Si sou un usuari de la XTEC i heu perdut la vostra contrasenya podeu visitar <a href=\"http://www.xtec.cat/web/at_usuari/at_usuari\">l'enllaç següent</a>.");
+        $error->add('no_password_reset',"En cas que no sigueu un usuari de la XTEC i hàgiu perdut la vostra contrasenya, us haureu de posar en contacte amb l'usuari que us va donar d'alta al servei de blocs.");
+        return $error;
+    } else {
+        return true;
+    }
 }
 
 /**
