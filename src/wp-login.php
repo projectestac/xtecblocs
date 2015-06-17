@@ -329,7 +329,11 @@ function retrieve_password() {
 	 * @param bool true           Whether to allow the password to be reset. Default true.
 	 * @param int  $user_data->ID The ID of the user attempting to reset a password.
 	 */
+         // XTEC ********** Afegit -> Let no ldap users to restore their passwords
+        // 2015.06.17 @jcaballero
+        //NEW
         $user = get_user_by( 'id', $user_data->ID );
+        //************ FI
         
         // XTEC ********** Modificat -> Let no ldap users to restore their passwords
         // 2015.06.17 @jcaballero
@@ -340,6 +344,15 @@ function retrieve_password() {
             else if ( is_wp_error($allow) )
                     return $allow;
         }
+        //************ ORIGINAL
+        /*
+            $allow = apply_filters( 'allow_password_reset', true, $user_data->ID );
+            if ( ! $allow )
+                    return new WP_Error('no_password_reset', __('Password reset is not allowed for this user'));
+            else if ( is_wp_error($allow) )
+                    return $allow;
+        */
+        //************ FI
         
 	// Generate something random for a password reset key.
 	$key = wp_generate_password( 20, false );
