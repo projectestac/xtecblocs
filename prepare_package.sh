@@ -41,7 +41,6 @@ copy_to_new CHANGES.txt
 copy_to_new config-restricted-dist.php
 copy_to_new db-config.php
 copy_to_new opcache.php #apc.php
-copy_to_new site-config.php #Necessari?
 copy_to_new works.php
 copy_to_new wp-config-dist.php
 copy_to_new wp-config.php
@@ -50,6 +49,9 @@ copy_to_new wp-config.php
 copy_to_new xtec-style.css
 
 #Copy directories
+copy_to_new_dir wp-content/advanced-cache.php
+copy_to_new_dir wp-content/db.php
+copy_to_new_dir wp-content/wp-cache-config.php
 copy_to_new_dir wp-content/jw-flv-player
 copy_to_new_dir wp-content/plugins/addthis
 copy_to_new_dir wp-content/plugins/anti-spam
