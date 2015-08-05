@@ -118,7 +118,7 @@ function display_setup_form( $error = null ) {
 				echo '<input name="user_name" type="hidden" value="admin" />';
 			} else {
 				?><input name="user_name" type="text" id="user_login" size="25" value="<?php echo esc_attr( sanitize_user( $user_name, true ) ); ?>" />
-				<p><?php _e( 'Usernames can have only alphanumeric characters, spaces, underscores, hyphens, periods, and the @ symbol.' ); ?></p>
+				<p><?php _e( 'Usernames can have only alphanumeric characters, spaces, underscores, hyphens, periods and the @ symbol.' ); ?></p>
 			<?php
 			} ?>
 			</td>
@@ -133,7 +133,7 @@ function display_setup_form( $error = null ) {
 				<input name="admin_password" type="password" id="pass1" size="25" value="" />
 				<p><input name="admin_password2" type="password" id="pass2" size="25" value="" /></p>
 				<div id="pass-strength-result"><?php _e('Strength indicator'); ?></div>
-				<p><?php echo wp_get_password_hint(); ?></p>
+				<p><?php _e('Hint: The password should be at least seven characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ &amp; ).'); ?></p>
 			</td>
 		</tr>
 		<?php endif; ?>
@@ -143,7 +143,7 @@ function display_setup_form( $error = null ) {
 			<p><?php _e( 'Double-check your email address before continuing.' ); ?></p></td>
 		</tr>
 		<tr>
-			<th scope="row"><?php _e( 'Privacy' ); ?></th>
+			<th scope="row"><label for="blog_public"><?php _e( 'Privacy' ); ?></label></th>
 			<td colspan="2"><label><input type="checkbox" name="blog_public" id="blog_public" value="1" <?php checked( $blog_public ); ?> /> <?php _e( 'Allow search engines to index this site.' ); ?></label></td>
 		</tr>
 	</table>
@@ -157,7 +157,7 @@ function display_setup_form( $error = null ) {
 if ( is_blog_installed() ) {
 	//XTEC ************ MODIFICAT - Block access to install functions. Show "site off" message instead.
 	//2015.08.05 @nacho
-	if ( !isset($agora['server']['enviroment']) || ($agora['server']['enviroment'] != 'LOCAL' && $agora['server']['enviroment'] != 'DES') ) {
+	if ( !ENVIRONMENT || ( ENVIRONMENT != 'LOCAL' && ENVIRONMENT != 'DES') ) {
 		$siteoff_file = '../siteoff.html';
 		if (file_exists($siteoff_file)) {
 			include_once($siteoff_file);
