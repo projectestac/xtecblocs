@@ -44,9 +44,11 @@ copy_to_new opcache.php #apc.php
 copy_to_new works.php
 copy_to_new wp-config-dist.php
 copy_to_new wp-config.php
+copy_to_new wp-content/mu-plugins/xtecblocs-functions.php
 #copy_to_new wp-settings.php
 #copy_to_new wp-signup.php
 copy_to_new xtec-style.css
+
 
 #Copy directories
 copy_to_new_dir wp-content/advanced-cache.php
@@ -109,6 +111,10 @@ copy_to_new_dir wp-includes/xtec
 #Delete files
 delete_new .gitignore
 delete_new .gitmodules
+delete_new wp-content/mu-plugins/agora-functions.php
+delete_new wp-content/mu-plugins/languages/agora-functions.pot
+delete_new wp-content/mu-plugins/languages/agora-functions-ca.mo
+delete_new wp-content/mu-plugins/languages/agora-functions-ca.po
 
 #Delete directories
 delete_new wp-content/plugins/bbpress
