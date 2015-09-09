@@ -207,7 +207,7 @@ class WP_Users_List_Table extends WP_List_Table {
 	protected function extra_tablenav( $which ) {
 	// XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
 	// 2015.02.15 @vsaavedra
-	if( (!isset($_REQUEST['status'])) || ( (isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive') ) ) {
+	if ( !is_xtecblocs() || ( (!isset($_REQUEST['status'])) || ( (isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive') ) ) ) {
 	// ************ FI
 		if ( 'top' != $which )
 			return;

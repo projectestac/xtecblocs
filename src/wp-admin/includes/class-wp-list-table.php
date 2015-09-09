@@ -102,10 +102,6 @@ class WP_List_Table {
 
 		add_filter( "manage_{$this->screen->id}_columns", array( $this, 'get_columns' ), 0 );
 
-		// XTEC ************ AFEGIT - add at the end of the table the 'State' column, to manage the invitations.
-		// 2015.02.15 @vsaavedr
-		add_filter( "manage_users_columns", "manage_users_columns" );
-		// ************ FI
 		if ( !$args['plural'] )
 			$args['plural'] = $this->screen->base;
 

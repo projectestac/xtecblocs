@@ -1,4 +1,7 @@
 <?php
+
+//XTEC ************ FITXER AFEGIT - SuperCache
+
 # WP SUPER CACHE 1.2
 function wpcache_broken_message() {
 	if ( false == strpos( $_SERVER[ 'REQUEST_URI' ], 'wp-admin' ) )

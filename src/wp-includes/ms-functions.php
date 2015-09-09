@@ -2474,19 +2474,3 @@ function wp_get_sites( $args = array() ) {
 
 	return $site_results;
 }
-
-// XTEC ************ AFEGIT - 
-// @vsaavedra
-
-/**
- * Add column 'Estat' on Users table.
- * 
- * @param  array $columns The columns of the table.
- * 
- * @return array $columns The same array with the column 'Estat' added.
- */
-function manage_users_columns( $columns ) {
-	$columns['user_status'] = 'Estat';
-	return $columns;
-}
-//************ FI

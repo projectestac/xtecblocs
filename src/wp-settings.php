@@ -372,34 +372,3 @@ if ( is_multisite() ) {
  * @since 3.0.0
  */
 do_action( 'wp_loaded' );
-
-
-//XTEC ************ AFEGIT - It loads an XTEC custom CSS
-//2014.11.06 @jmiro227
-
-add_action( 'wp_enqueue_scripts', 'register_xtec_common_styles' );
-
-function register_xtec_common_styles() {
-wp_register_style( 'xtec_common_styles', get_site_url(1).'/xtec-style.css' );
-wp_enqueue_style( 'xtec_common_styles' );
-}
-
-//************ FI
-
-
-//XTEC ************ AFEGIT - It replaces "es.scribd.com" by "www.scribd.com" when saving an article.
-//2014.11.06 @jmiro227
-
-/**
-* Replace "es.scribd.com" per "www.scribd.com" cause es.scribd.com doesn't work as a oEmbed provider
-* I try to add as a oEmbed provider via wp_oembed_add_provider but doesn't work
-*
-* @author Xavi Meler
-*/
-add_filter('wp_insert_post_data', 'fix_spanish_scribd_oembed', 10, 2);
-function fix_spanish_scribd_oembed ($filtered_data, $raw_data){
-$filtered_data['post_content'] = str_replace('es.scribd.com', 'www.scribd.com', $filtered_data['post_content']);
-return $filtered_data;
-}
-
-//************ FI
