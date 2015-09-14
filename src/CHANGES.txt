@@ -10,6 +10,7 @@ Changes in progress
 - Allow non ldap users to restore their passwords (Trello #826)
 - GCE: Changed default cache duration to 300 seconds (Trello #875)
 - Updated Mailer library
+- WSL: Hidden some tabs for all users but xtecadmin (GitHub #200)
 
 
 15.06.08
