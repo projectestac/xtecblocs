@@ -9,6 +9,7 @@ Changes in progress
 - Multisite common functions, styles and languages moved to a new submodule (Trello #787)
 - Allow non ldap users to restore their passwords (Trello #826)
 - GCE: Changed default cache duration to 300 seconds (Trello #875)
+- Updated Mailer library
 
 
 15.06.08
