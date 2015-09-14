@@ -43,7 +43,7 @@ copy_to_new db-config.php
 copy_to_new opcache.php #apc.php
 copy_to_new works.php
 copy_to_new wp-config-dist.php
-copy_to_new wp-config.php
+cp wp_old/wp-config-dist.php src/wp-config.php
 copy_to_new wp-content/advanced-cache.php
 copy_to_new wp-content/db.php
 copy_to_new wp-content/mu-plugins/xtecblocs-functions.php
@@ -96,18 +96,18 @@ copy_to_new_dir wp-content/themes/xtec-v1.1
 copy_to_new_dir ws
 
 #Copy submodules
-copy_to_new_dir wp-content/mu-plugins/common
-copy_to_new_dir wp-content/plugins/blogger-importer
-copy_to_new_dir wp-content/plugins/google-analyticator
-copy_to_new_dir wp-content/plugins/google-calendar-events
-copy_to_new_dir wp-content/plugins/raw-html
-copy_to_new_dir wp-content/plugins/slideshow-jquery-image-gallery
-copy_to_new_dir wp-content/plugins/tinymce-advanced
-copy_to_new_dir wp-content/plugins/wordpress-importer
-copy_to_new_dir wp-content/plugins/wordpress-php-info
-copy_to_new_dir wp-content/plugins/wordpress-social-login
-copy_to_new_dir wp-content/plugins/xtec-mail/lib
-copy_to_new_dir wp-includes/xtec 
+#copy_to_new_dir wp-content/mu-plugins/common
+#copy_to_new_dir wp-content/plugins/blogger-importer
+#copy_to_new_dir wp-content/plugins/google-analyticator
+#copy_to_new_dir wp-content/plugins/google-calendar-events
+#copy_to_new_dir wp-content/plugins/raw-html
+#copy_to_new_dir wp-content/plugins/slideshow-jquery-image-gallery
+#copy_to_new_dir wp-content/plugins/tinymce-advanced
+#copy_to_new_dir wp-content/plugins/wordpress-importer
+#copy_to_new_dir wp-content/plugins/wordpress-php-info
+#copy_to_new_dir wp-content/plugins/wordpress-social-login
+#copy_to_new_dir wp-content/plugins/xtec-mail/lib
+#copy_to_new_dir wp-includes/xtec 
 
 #Delete files
 delete_new .gitignore
