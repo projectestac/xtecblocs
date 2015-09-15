@@ -1,4 +1,3 @@
-src/.htaccess
 src/wp-config.php
 src/config-restricted.php
 src/wp-content/blogs.dir

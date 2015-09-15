@@ -36,7 +36,7 @@ mv src wp_old
 mv wp_new src
 
 #Copy files
-copy_to_new .htaccess-dist
+copy_to_new .htaccess
 copy_to_new CHANGES.txt
 copy_to_new config-restricted-dist.php
 copy_to_new db-config.php
@@ -112,6 +112,7 @@ copy_to_new_dir ws
 #Delete files
 delete_new .gitignore
 delete_new .gitmodules
+delete_new site-config.php
 delete_new wp-content/mu-plugins/agora-functions.php
 delete_new wp-content/mu-plugins/languages/agora-functions.pot
 delete_new wp-content/mu-plugins/languages/agora-functions-ca.mo
