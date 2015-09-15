@@ -10,3 +10,4 @@ src/wp-content/plugins/multisite-clone-duplicator/logs/
 .buildpath
 .project
 .settings/
+.idea
