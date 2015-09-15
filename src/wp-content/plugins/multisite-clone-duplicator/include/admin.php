@@ -131,6 +131,22 @@ if( !class_exists( 'MUCD_Admin' ) ) {
             }
 
             // Load template if at least one Site is available
+
+//          XTEC ************ MODIFICAT - Change select to input when the sites list is empty
+//          2015.11.15 @dgras
+
+            if( $site_list ) {
+                $select_site_list = MUCD_Admin::select_site_list($site_list, $data['source']);
+            }
+            else {
+                $select_site_list = MUCD_Admin::input_site_list($data['source']);
+            }
+
+            MUCD_Admin::enqueue_script_network_duplicate();
+            require_once MUCD_COMPLETE_PATH . '/template/network_admin_duplicate_site.php';
+
+//            ************ ORIGINAL
+/*
             if( $site_list ) {
 
                 $select_site_list = MUCD_Admin::select_site_list($site_list, $data['source']);
@@ -141,6 +157,8 @@ if( !class_exists( 'MUCD_Admin' ) ) {
             else {
                 return new WP_Error( 'mucd_error', MUCD_GAL_ERROR_NO_SITE );
             }
+*/
+//            ************ FI
 
             MUCD_Duplicate::close_log();
 
@@ -179,6 +197,15 @@ if( !class_exists( 'MUCD_Admin' ) ) {
             return $output;
         }
 
+//          XTEC ************ AFEGIT - Create a input to put de id of the blog to clone
+//          2015.11.15 @dgras
+        public static function input_site_list($current_blog_id=null) {
+            $value = $current_blog_id ? $current_blog_id : '';
+            $output = '<input name="site[source]" type="text" placeholder="'._("Blog Id").'" value="'.$value .'"/>';
+            $output .= '&emsp;<a href="'. network_admin_url("settings.php#mucd_duplication") .'" title="'.MUCD_NETWORK_PAGE_DUPLICATE_TOOLTIP.'">?</a>';
+            return $output;
+        }
+//            ************ FI
         /**
          * Print log-error box
          * @since 0.2.0
@@ -280,6 +307,16 @@ if( !class_exists( 'MUCD_Admin' ) ) {
                     $error[] = new WP_Error( 'mucd_error', MUCD_NETWORK_PAGE_DUPLICATE_MISSING_FIELDS );
                 }
 
+//          XTEC ************ AFEGIT - Check if the blog allow duplications and if it exists
+//          2015.11.16 @dgras
+                if(!MUCD_Functions::is_duplicable($data['from_site_id'])) {
+                    $error[] = new WP_Error( 'mucd_error', MUCD_NETWORK_PAGE_DUPLICATE_BLOG_ID_DUPLICATION_NOT_ALLOWED );
+                }
+
+                if(!get_blog_details($data['from_site_id'])) {
+                    $error[] = new WP_Error( 'mucd_error', MUCD_NETWORK_PAGE_DUPLICATE_BLOG_ID_NOT_EXISTS );
+                }
+//            ************ FI
                 $domain = '';
                 if ( preg_match( '|^([a-zA-Z0-9-])+$|', $data['domain'] ) )
                     $domain = strtolower( $data['domain'] );
