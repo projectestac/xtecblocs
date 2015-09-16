@@ -120,7 +120,7 @@ class WP_Users_List_Table extends WP_List_Table {
 	 * @access public
 	 */
 	public function no_items() {
-		_e( 'No matching users were found.' );
+		_e( 'No users found.' );
 	}
 
 	/**
@@ -205,36 +205,36 @@ class WP_Users_List_Table extends WP_List_Table {
 	 *                      or below the table ("bottom").
 	 */
 	protected function extra_tablenav( $which ) {
-	// XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
-	// 2015.02.15 @vsaavedra
-	if ( !is_xtecblocs() || ( (!isset($_REQUEST['status'])) || ( (isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive') ) ) ) {
-	// ************ FI
+		// XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
+		// 2015.02.15 @vsaavedra
+		if ( !is_xtecblocs() || ( (!isset($_REQUEST['status'])) || ( (isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive') ) ) ) {
+		// ************ FI
 		if ( 'top' != $which )
 			return;
-		?>
-		<div class="alignleft actions">
-			<?php if ( current_user_can( 'promote_users' ) ) : ?>
-			<label class="screen-reader-text" for="new_role"><?php _e( 'Change role to&hellip;' ) ?></label>
-			<select name="new_role" id="new_role">
-				<option value=""><?php _e( 'Change role to&hellip;' ) ?></option>
-				<?php wp_dropdown_roles(); ?>
-			</select>
-		<?php
-				submit_button( __( 'Change' ), 'button', 'changeit', false );
-			endif;
+	?>
+	<div class="alignleft actions">
+		<?php if ( current_user_can( 'promote_users' ) ) : ?>
+		<label class="screen-reader-text" for="new_role"><?php _e( 'Change role to&hellip;' ) ?></label>
+		<select name="new_role" id="new_role">
+			<option value=""><?php _e( 'Change role to&hellip;' ) ?></option>
+			<?php wp_dropdown_roles(); ?>
+		</select>
+	<?php
+			submit_button( __( 'Change' ), 'button', 'changeit', false );
+		endif;
 
-			/**
-			 * Fires just before the closing div containing the bulk role-change controls
-			 * in the Users list table.
-			 *
-			 * @since 3.5.0
-			 */
-			do_action( 'restrict_manage_users' );
-			echo '</div>';
-	// XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
-	// 2015.02.15 @vsaavedra
-		}
-	// ************ FI
+		/**
+		 * Fires just before the closing div containing the bulk role-change controls
+		 * in the Users list table.
+		 *
+		 * @since 3.5.0
+		 */
+		do_action( 'restrict_manage_users' );
+		echo '</div>';
+		// XTEC ************ AFEGIT - Hide bulk actions because of the unactive role.
+		// 2015.02.15 @vsaavedra
+			}
+		// ************ FI
 	}
 
 	/**
@@ -308,103 +308,25 @@ class WP_Users_List_Table extends WP_List_Table {
 	 * @access public
 	 */
 	public function display_rows() {
-		// XTEC ************ AFEGIT - Hide active users when we want to see unactive users.
-		// 2015.02.15 @vsaavedra
-		global $wpdb;
-		// ************ FI
-
 		// Query the post counts for this page
 		if ( ! $this->is_site_users )
 			$post_counts = count_many_users_posts( array_keys( $this->items ) );
 
 		$editable_roles = array_keys( get_editable_roles() );
 
-		$style = '';
-		// XTEC ************ AFEGIT - Hide active users when we want to see unactive users.
-		// 2015.02.15 @vsaavedra
-		if ((!isset($_REQUEST['status'])) || ((isset($_REQUEST['status'])) && ($_REQUEST['status'] != 'unactive'))) {
-		// ************ FI
-			foreach ( $this->items as $userid => $user_object ) {
-				if ( count( $user_object->roles ) <= 1 ) {
-					$role = reset( $user_object->roles );
-				} elseif ( $roles = array_intersect( array_values( $user_object->roles ), $editable_roles ) ) {
-					$role = reset( $roles );
-				} else {
-					$role = reset( $user_object->roles );
-				}
-
-				if ( is_multisite() && empty( $user_object->allcaps ) )
-					continue;
-
-				// XTEC ************ AFEGIT - Get the arrays of user that already are active in the blog.
-				// 2015.02.15 @vsaavedra
-				$user_status = __( 'Active' );
-				// ************ FI
-
-				$style = ( ' class="alternate"' == $style ) ? '' : ' class="alternate"';
-
-				// XTEC ************ MODIFICAT - Get the arrays of user that already are active in the blog.
-				// 2015.02.15 @vsaavedra
-				echo "\n\t" . $this->single_row( $user_object, $style, $role, isset( $post_counts ) ? $post_counts[ $userid ] : 0 , $user_status);
-				//************ ORIGINAL
-                /*
-				echo "\n\t" . $this->single_row( $user_object, $style, $role, isset( $post_counts ) ? $post_counts[ $userid ] : 0 );
-                */
-				// ************ FI
+		foreach ( $this->items as $userid => $user_object ) {
+			if ( count( $user_object->roles ) <= 1 ) {
+				$role = reset( $user_object->roles );
+			} elseif ( $roles = array_intersect( array_values( $user_object->roles ), $editable_roles ) ) {
+				$role = reset( $roles );
+			} else {
+				$role = reset( $user_object->roles );
 			}
-		// XTEC ************ AFEGIT - Hide active users when we want to see unactive users.
-		// 2015.02.15 @vsaavedra
-		} else if ((isset($_REQUEST['status'])) && ($_REQUEST['status'] == 'unactive')) {
-		// ************ FI
-			// XTEC ************ AFEGIT - Get the arrays of user that already are active in the blog.
-			// 2015.02.15 @vsaavedra
-			$usersEmail = array();
-			foreach ( $this->items as $userid => $user_object ) {
-				$usersEmail[] = $user_object->user_email;
-			}
-			// ************ FI
-			// XTEC ************ AFEGIT - Add the XTEC users who had received an invitation and hasn't already activated it.
-			// 2015.02.15 @vsaavedra
-			$options = wp_load_alloptions();
-			foreach($options as $name=>$value) {
-				if(stristr($name, 'new_user')) {
-					list($new,$user,$key) = split('_', $name);
-					$user_options = unserialize($value);
-					$user_info = get_userdata($user_options[user_id]);
-					if((!in_array($user_info->user_email, $usersEmail)) && is_a( $user_info, 'WP_User' )) {
-						$role = $user_options['role'];
-						$usersEmail[] = $user_info->user_email;
-						$user_info->type = 'invitacio';
-						$style = ( ' class="alternate"' == $style ) ? '' : ' class="alternate"';
-						$user_status = __( 'Unactive' );
-						echo "\n\t" . $this->single_row( $user_info, $style, $role, '-' , $user_status);
-					}
-				}
-			}
-			// ************ FI
 
-			// XTEC ************ AFEGIT - Add the non-XTEC users who had received an invitation and hasn't already activated it.
-			// 2015.02.15 @vsaavedra
-			$currentBlogId = get_current_blog_id();
-			$signup = $wpdb->get_results( "SELECT * FROM $wpdb->signups", OBJECT );
-			foreach ($signup as $id => $user_object) {
-				$meta = unserialize($user_object->meta);
-				if((!in_array($user_object->user_email, $usersEmail)) && ($meta['add_to_blog'] == $currentBlogId)) {
-					$usersEmail[] = $user_object->user_email;
-					$style = ( ' class="alternate"' == $style ) ? '' : ' class="alternate"';
-					$user_status = __( 'Unactive' );
-					$user = new WP_User();
-					$data = new StdClass();
-					$data->user_login = $user_object->user_login;
-					$data->user_email = $user_object->user_email;
-					$data->roles = array($meta['new_role']);
-					$role = $meta['new_role'];
-					$user->data = $data;
-					$user->type = 'invitacio';
-					echo "\n\t" . $this->single_row( $user, $style, $role, '-' , $user_status);
-				}
-			}
-			// ************ FI
+			if ( is_multisite() && empty( $user_object->allcaps ) )
+				continue;
+
+			echo "\n\t" . $this->single_row( $user_object, $style = '', $role, isset( $post_counts ) ? $post_counts[ $userid ] : 0 );
 		}
 	}
 
@@ -412,11 +334,13 @@ class WP_Users_List_Table extends WP_List_Table {
 	 * Generate HTML for a single row on the users.php admin panel.
 	 *
 	 * @since 3.1.0
+	 * @since 4.2.0 The `$style` argument was deprecated.
 	 * @access public
 	 *
+	 * @global WP_Roles $wp_roles User roles object.
+	 *
 	 * @param object $user_object The current user object.
-	 * @param string $style       Optional. Style attributes added to the <tr> element.
-	 *                            Must be sanitized. Default empty.
+	 * @param string $style       Deprecated. Not used.
 	 * @param string $role        Optional. Key for the $wp_roles array. Default empty.
 	 * @param int    $numposts    Optional. Post count to display for this user. Defaults
 	 *                            to zero, as in, a new user has made zero posts.
@@ -425,8 +349,9 @@ class WP_Users_List_Table extends WP_List_Table {
 	public function single_row( $user_object, $style = '', $role = '', $numposts = 0 ) {
 		global $wp_roles;
 
-		if ( !( is_object( $user_object ) && is_a( $user_object, 'WP_User' ) ) )
+		if ( ! ( $user_object instanceof WP_User ) ) {
 			$user_object = get_userdata( (int) $user_object );
+		}
 		$user_object->filter = 'display';
 		$email = $user_object->user_email;
 
@@ -444,43 +369,31 @@ class WP_Users_List_Table extends WP_List_Table {
 			// Set up the hover actions for this user
 			$actions = array();
 
-		    // XTEC ************ MODIFICAT - 
-			// @vsaavedra
-			if ( (current_user_can( 'edit_user',  $user_object->ID )) && ($user_object->type != 'invitacio') ) {
-			//************ ORIGINAL
-            /*
 			if ( current_user_can( 'edit_user',  $user_object->ID ) ) {
-            */
-            //************ FI
 				$edit = "<strong><a href=\"$edit_link\">$user_object->user_login</a></strong><br />";
 
                 // XTEC ************ AFEGIT - Do not show edit link for xtecadmin (opening if)
                 // 2014.09.03 @aginard
-                global $isAgora;
-                if ($isAgora) {
-                    if (($user_object->user_login != get_xtecadmin_username()) || is_xtecadmin()) {
+				// 2015.07.31 @nacho
+                if (!is_xtec_super_admin()){
+                    if ( $user_object->user_login != get_xtecadmin_username() ) {
                         $actions['edit'] = '<a href="' . $edit_link . '">' . __( 'Edit' ) . '</a>';
                     }
                 } else {
                 //************ FI
-                    
-                $actions['edit'] = '<a href="' . $edit_link . '">' . __( 'Edit' ) . '</a>';
-                
+                	$actions['edit'] = '<a href="' . $edit_link . '">' . __( 'Edit' ) . '</a>';
                 // XTEC ************ AFEGIT - Do not show edit link for xtecadmin (closing if)
                 // 2014.09.03 @aginard
                 }
                 //************ FI
-                
 			} else {
 				$edit = "<strong>$user_object->user_login</strong><br />";
 			}
 			if ( !is_multisite() && get_current_user_id() != $user_object->ID && current_user_can( 'delete_user', $user_object->ID ) )
-
                 // XTEC ************ AFEGIT - Do not show delete link for xtecadmin (opening if)
-                // 2014.09.03 @aginard
-                {
-                global $isAgora;
-                if ($isAgora) {
+				// 2015.07.31 @nacho
+				{
+                if (!is_xtec_super_admin()){
                     if ($user_object->user_login != get_xtecadmin_username()) {
         				$actions['delete'] = "<a class='submitdelete' href='" . wp_nonce_url( "users.php?action=delete&amp;user=$user_object->ID", 'bulk-users' ) . "'>" . __( 'Delete' ) . "</a>";
                     }
@@ -492,14 +405,7 @@ class WP_Users_List_Table extends WP_List_Table {
                 }
                 }
                 //************ FI
-		    // XTEC ************ MODIFICAT - 
-			// @vsaavedra
-            if ( is_multisite() && get_current_user_id() != $user_object->ID && current_user_can( 'remove_user', $user_object->ID ) && ($user_object->type != 'invitacio'))
-			//************ ORIGINAL
-            /*
             if ( is_multisite() && get_current_user_id() != $user_object->ID && current_user_can( 'remove_user', $user_object->ID ) )
-            */
-            //************ FI
 				$actions['remove'] = "<a class='submitdelete' href='" . wp_nonce_url( $url."action=remove&amp;user=$user_object->ID", 'bulk-users' ) . "'>" . __( 'Remove' ) . "</a>";
 
 			/**
@@ -516,7 +422,7 @@ class WP_Users_List_Table extends WP_List_Table {
 			$edit .= $this->row_actions( $actions );
 
 			// Set up the checkbox ( because the user is editable, otherwise it's empty )
-			$checkbox = '<label class="screen-reader-text" for="cb-select-' . $user_object->ID . '">' . sprintf( __( 'Select %s' ), $user_object->user_login ) . '</label>'
+			$checkbox = '<label class="screen-reader-text" for="user_' . $user_object->ID . '">' . sprintf( __( 'Select %s' ), $user_object->user_login ) . '</label>'
 						. "<input type='checkbox' name='users[]' id='user_{$user_object->ID}' class='$role' value='{$user_object->ID}' />";
 
 		} else {
@@ -525,7 +431,7 @@ class WP_Users_List_Table extends WP_List_Table {
 		$role_name = isset( $wp_roles->role_names[$role] ) ? translate_user_role( $wp_roles->role_names[$role] ) : __( 'None' );
 		$avatar = get_avatar( $user_object->ID, 32 );
 
-		$r = "<tr id='user-$user_object->ID'$style>";
+		$r = "<tr id='user-$user_object->ID'>";
 
 		list( $columns, $hidden ) = $this->get_column_info();
 
@@ -566,12 +472,6 @@ class WP_Users_List_Table extends WP_List_Table {
 					}
 					$r .= "</td>";
 					break;
-		        // XTEC ************ AFEGIT - 
-			    // @vsaavedra
-				case 'user_status':
-					$r .= '<td>'.$status.'</td>';
-					break;
-                //************ FI
 				default:
 					$r .= "<td $attributes>";
 
