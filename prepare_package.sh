@@ -53,6 +53,8 @@ copy_to_new xtec-style.css
 
 #Copy directories
 copy_to_new_dir wp-content/advanced-cache.php
+copy_to_new_dir wp-content/blogs.dir
+copy_to_new_dir wp-content/cache
 copy_to_new_dir wp-content/db.php
 copy_to_new_dir wp-content/wp-cache-config.php
 copy_to_new_dir wp-content/jw-flv-player
@@ -144,3 +146,5 @@ delete_new wp-content/themes/reactor-primaria-1
 delete_new wp-content/uploads
 
 rm -Rf wp_old
+
+echo "ATTENTION: For major upgradings it's necessary to check manually if there are new themes and new versions of the specific plugins"
