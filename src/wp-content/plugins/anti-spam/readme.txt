@@ -1,10 +1,10 @@
 === Anti-spam ===
 Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
-Tags: spam, spammer, spammers, comment, comments, antispam, anti-spam, block-spam, spamfree, spam-free, spambot, spam-bot, bot
-Requires at least: 3.0
-Tested up to: 4.0
-Stable tag: 3.3
+Tags: spam, spammer, comment, comments, comment-spam, antispam, anti-spam, block-spam, spam-free, spambot, spam-bot, bot
+Requires at least: 3.3
+Tested up to: 4.4
+Stable tag: 3.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -12,9 +12,9 @@ No spam in comments. No captcha.
 
 == Description ==
 
-**[Anti-spam Pro](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly "Upgrade to Pro")** |
-**[Anti-spam](http://web-profile.com.ua/wordpress/plugins/anti-spam/ "Plugin page")** |
-**[Donate](http://web-profile.com.ua/donate/ "Support the development")**
+> **[Anti-spam Pro](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly "Upgrade to Pro")** |
+> **[Anti-spam](http://web-profile.com.ua/wordpress/plugins/anti-spam/ "Plugin page")** |
+> **[Donate](http://web-profile.com.ua/donate/ "Support the development")**
 
 **Why humans should prove that they are humans by filling captchas? Lets bots prove that they are not bots with adding javascript to their user-agents!**
 
@@ -22,7 +22,7 @@ Anti-spam plugin blocks spam in comments automatically, invisibly for users and 
 
 * **no captcha**, because spam is not users' problem
 * **no moderation queues**, because spam is not administrators' problem
-* **no options**, because it is great to forget about spam completely
+* **no settings page**, because it is great to forget about spam completely and keep admin section clean
 
 Plugin is easy to use: just install it and it just works.
 
@@ -32,7 +32,7 @@ After installing the Anti-spam plugin **try to submit a comment on your site bei
 If you get an error - you may check the solution in the [Support section](http://wordpress.org/support/plugin/anti-spam) or submit a new topic with detailed description of your problem.
 
 = Useful: =
-* [Anti-spam Pro - more powerful and extended version with settings page](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly "Upgrade to Pro")
+* [Anti-spam Pro - extended version with settings and manual spam protection](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly "Upgrade to Pro")
 * [Security-protection - blocks brute-force attacks](http://wordpress.org/plugins/security-protection/ "stops brute-force attacks")
 * [WordPress Pro plugins](http://codecanyon.net/popular_item/by_category?category=wordpress&ref=webvitaly)
 
@@ -42,6 +42,12 @@ If you get an error - you may check the solution in the [Support section](http:/
 2. enjoy life without spam in comments
 
 == Frequently Asked Questions ==
+
+= What is the percentage of spam blocked? =
+
+Anti-spam plugin blocks 100% of automatic spam messages (sent by spam-bots via post requests).
+Plugin does not block manual spam (submitted by spammers manually via browser).
+You can use [Anti-spam Pro](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly "Upgrade to Pro") plugin if you need to block manual spam.
 
 = Incompatible with: =
 
@@ -74,17 +80,13 @@ If the spammer will fill this trap-field with anything - the comment will be blo
 
 You may enable sending all rejected spam comments to admin email.
 Edit [anti-spam.php](http://plugins.trac.wordpress.org/browser/anti-spam/trunk/anti-spam.php) file and find "$antispam_send_spam_comment_to_admin" and make it "true".
-And also plugin adds total blocked spam counter to admin comments section.
+You can also find the info block with total spam blocked counter in the admin comments section.
+You can hide or show this info block in the "Screen Options" section. The info block visibility option is saved per user.
 
 = Does plugin block spam from Contact or other forms? =
 
 Plugin blocks spam only in comments form section and does not block spam from any other forms on site.
 If you installed and activated the plugin and you still receiving spam - probably this could be because of some other forms on your site (for example comments forms).
-
-= What is the percentage of spam blocked? =
-
-Plugin blocks about 99.9% of automatic spam messages (sent by spam-bots via post requests).
-Plugin will pass the messages which were submitted by spammers manually via browser. But such messages happens very rarely.
 
 = What about trackback spam? =
 
@@ -111,6 +113,14 @@ The plugin is pretty small and easy to read.
 
 
 == Changelog ==
+= 3.5 - 2015-01-17 =
+* removed function_exists check because each function has unique prefix
+* removed add_option()
+* added autocomplete="off" for inputs (thanks to Feriman)
+
+= 3.4 - 2014-12-20 =
+* added the ability to hide or show info block in the "Screen Options" section
+
 = 3.3 - 2014-12-15 =
 * refactor code structure
 * added blocked spam counter in the comments section
@@ -118,13 +128,13 @@ The plugin is pretty small and easy to read.
 
 = 3.2 - 2014-12-05 =
 * added ANTISPAM_VERSION constant (thanks to jumbo)
-* removed 'spam points' algorithm because it is not needed
+* removed new spam-block algorithm because it is not needed
 
 = 3.1 - 2014-12-04 =
 * remove log notices
 
 = 3.0 - 2014-12-02 =
-* added 'spam points' algorithm
+* added new spam-block algorithm
 * bugfixing
 * enqueue script only for pages with comments form and in the footer (thanks to dougvdotcom)
 * refactor code structure

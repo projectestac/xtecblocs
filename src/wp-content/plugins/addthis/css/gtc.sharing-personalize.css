@@ -1,27 +1,42 @@
+/**
+ * +--------------------------------------------------------------------------+
+ * | Copyright (c) 2008-2015 AddThis, LLC                                     |
+ * +--------------------------------------------------------------------------+
+ * | This program is free software; you can redistribute it and/or modify     |
+ * | it under the terms of the GNU General Public License as published by     |
+ * | the Free Software Foundation; either version 2 of the License, or        |
+ * | (at your option) any later version.                                      |
+ * |                                                                          |
+ * | This program is distributed in the hope that it will be useful,          |
+ * | but WITHOUT ANY WARRANTY; without even the implied warranty of           |
+ * | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the            |
+ * | GNU General Public License for more details.                             |
+ * |                                                                          |
+ * | You should have received a copy of the GNU General Public License        |
+ * | along with this program; if not, write to the Free Software              |
+ * | Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA |
+ * +--------------------------------------------------------------------------+
+ */
+
 .above-smart-sharing-container, .below-smart-sharing-container {
   display: inline-block;
-  width: 550px;
+  width: auto;
 }
+
 .above-smart-sharing-container label:hover, .below-smart-sharing-container label:hover {
   cursor: pointer;
 }
+
 .customize-buttons {
   max-width: 540px;
-}
-#selected-services {
-  float: right;
-}
-#sharing-buttons {
-  float: left;
-  margin-left: 5px;
-}
-.customize-buttons {
   display: none;
 }
+
 .sortable-heading {
   color: #484848;
   padding: 5px 0 0 0;
 }
+
 .sortable {
   width: 230px;
   -webkit-user-select: none;
@@ -41,10 +56,6 @@
 
 .selected-services {
   float: left;
-}
-
-.sortable.grid {
-  overflow: hidden;
 }
 
 .sortable li {
@@ -89,14 +100,6 @@
 margin-top:17px;
 }
 
-.sortable.grid li {
-  line-height: 80px;
-  float: left;
-  width: 80px;
-  height: 80px;
-  text-align: center;
-}
-
 .handle {
   cursor: move;
 }
@@ -118,10 +121,6 @@ li.highlight {
 li.sortable-placeholder {
   border: 1px dashed #CCC;
   background: none;
-}
-
-#atcode {
-  clear: both;
 }
 
 .sharing-buttons .sortable {
@@ -146,23 +145,12 @@ li.sortable-placeholder {
   background-position:190px 10px;
 }
 
- .restore-default-options {
+.restore-default-options {
   float: right;
   display: none;
   text-decoration: none;
   color: #0098F8;
   line-height: 20px;
-}
-
-.previewbox {
-  overflow: auto;
-}
-
-.no-preview-available {
-  width: 300px;
-  font-size: 16px;
-  font-weight: lighter;
-  font-style: italic;
 }
 
 .add-buttons-msg {
@@ -178,19 +166,25 @@ li.sortable-placeholder {
   font-size: 12px !important;
   line-height: 1.4 !important;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  max-width: 250px;
   background: #FFFFFF;
   border: 4px solid #ddd;
   border-radius: 6px 6px 6px 6px;
-  padding: 7px;
+  max-width:200px!important;
+  padding: 8px;
+  position: absolute;
+  z-index: 9999;
+  max-width: 300px;
+  -webkit-box-shadow: 0 0 5px #aaa;
+  box-shadow: 0 0 5px #aaa;
+  border-width: 2px;
+
 }
 
 .selected-services .ui-tooltip {
 	max-width: 40px !important;
 }
+
 .vertical-drag, .horizontal-drag {
-   position: absolute;
-   max-width: 60px;
    display: none;
    left: 255px;
    z-index: 0;
@@ -198,44 +192,8 @@ li.sortable-placeholder {
    bottom: 75px;
 }
 
-.smart-sharing-link {
-  display: none;
-}
-
-.customize-checkbox-paragraph {
-  margin: 10px 0;
-}
-
 .disabled {
   -moz-opacity: 0.60;
   opacity:.60;
   filter: alpha(opacity=60);
-}
-
-.smart-radio-buttons {
-  float: left;
-  clear: both;
-  padding: 5px 0;
-}
-
-.smart-radio-container {
-  padding: 10px 0;
-  margin: 0;
-  display: inline-block;
-}
-
-.ui-tooltip {
-	max-width:200px!important;
-}
-
-.ui-tooltip {
-  padding: 8px;
-  position: absolute;
-  z-index: 9999;
-  max-width: 300px;
-  -webkit-box-shadow: 0 0 5px #aaa;
-  box-shadow: 0 0 5px #aaa;
-}
-body .ui-tooltip {
-  border-width: 2px;
 }

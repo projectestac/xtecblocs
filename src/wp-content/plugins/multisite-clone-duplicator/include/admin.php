@@ -106,7 +106,7 @@ if( !class_exists( 'MUCD_Admin' ) ) {
 
             // Form Data
             $data = array(
-                'source'        => (isset($_GET['id']))?$_GET['id']:0,
+                'source'        => (isset($_GET['id']))?intval($_GET['id']):0,
                 'domain'        => '',
                 'title'         => '',
                 'email'         => '',
@@ -131,6 +131,22 @@ if( !class_exists( 'MUCD_Admin' ) ) {
             }
 
             // Load template if at least one Site is available
+
+//          XTEC ************ MODIFICAT - Change select to input when the sites list is empty
+//          2015.11.15 @dgras
+
+            if( $site_list ) {
+                $select_site_list = MUCD_Admin::select_site_list($site_list, $data['source']);
+            }
+            else {
+                $select_site_list = MUCD_Admin::input_site_list($data['source']);
+            }
+
+            MUCD_Admin::enqueue_script_network_duplicate();
+            require_once MUCD_COMPLETE_PATH . '/template/network_admin_duplicate_site.php';
+
+//            ************ ORIGINAL
+/*
             if( $site_list ) {
 
                 $select_site_list = MUCD_Admin::select_site_list($site_list, $data['source']);
@@ -141,6 +157,8 @@ if( !class_exists( 'MUCD_Admin' ) ) {
             else {
                 return new WP_Error( 'mucd_error', MUCD_GAL_ERROR_NO_SITE );
             }
+*/
+//            ************ FI
 
             MUCD_Duplicate::close_log();
 
@@ -179,6 +197,15 @@ if( !class_exists( 'MUCD_Admin' ) ) {
             return $output;
         }
 
+//          XTEC ************ AFEGIT - Create a input to put de id of the blog to clone
+//          2015.11.15 @dgras
+        public static function input_site_list($current_blog_id=null) {
+            $value = $current_blog_id ? $current_blog_id : '';
+            $output = '<input name="site[source]" type="text" placeholder="'._("Blog Id").'" value="'.$value .'"/>';
+            $output .= '&emsp;<a href="'. network_admin_url("settings.php#mucd_duplication") .'" title="'.MUCD_NETWORK_PAGE_DUPLICATE_TOOLTIP.'">?</a>';
+            return $output;
+        }
+//            ************ FI
         /**
          * Print log-error box
          * @since 0.2.0
@@ -275,11 +302,21 @@ if( !class_exists( 'MUCD_Admin' ) ) {
                 $data = array_merge($data, $_POST['site']);
 
                 // format and check source
-                $data['from_site_id'] = $data['source'];
-                if ( empty( $data['from_site_id'] ) ) {
+                $data['from_site_id'] = intval($data['source']);
+                if ( $data['from_site_id'] < 1 || !get_blog_details( $data['from_site_id'], false ) ) {
                     $error[] = new WP_Error( 'mucd_error', MUCD_NETWORK_PAGE_DUPLICATE_MISSING_FIELDS );
                 }
 
+//          XTEC ************ AFEGIT - Check if the blog allow duplications and if it exists
+//          2015.11.16 @dgras
+                if(!MUCD_Functions::is_duplicable($data['from_site_id'])) {
+                    $error[] = new WP_Error( 'mucd_error', MUCD_NETWORK_PAGE_DUPLICATE_BLOG_ID_DUPLICATION_NOT_ALLOWED );
+                }
+
+                if(!get_blog_details($data['from_site_id'])) {
+                    $error[] = new WP_Error( 'mucd_error', MUCD_NETWORK_PAGE_DUPLICATE_BLOG_ID_NOT_EXISTS );
+                }
+//            ************ FI
                 $domain = '';
                 if ( preg_match( '|^([a-zA-Z0-9-])+$|', $data['domain'] ) )
                     $domain = strtolower( $data['domain'] );
@@ -325,6 +362,11 @@ if( !class_exists( 'MUCD_Admin' ) ) {
                 $data['newdomain'] = $newdomain;
                 $data['path'] = $path;
 
+                $data['public'] = !isset( $data['private'] );
+
+                // Network
+                $data['network_id'] = $current_site->id;
+
                 if(isset($data['log']) && $data['log']=='yes' && (!isset($data['log-path']) || $data['log-path'] == "" || !MUCD_Functions::valid_path($data['log-path']) ) ) {
                     $error[] = new WP_Error( 'mucd_error', MUCD_NETWORK_PAGE_DUPLICATE_VIEW_LOG_PATH_EMPTY );
                 }
@@ -346,26 +388,59 @@ if( !class_exists( 'MUCD_Admin' ) ) {
          * @since 0.2.0
          */
         public static function save_admin_network_option_page() {
-            if (isset( $_POST['duplicables'])) {
 
-                check_admin_referer( 'siteoptions' );
+            if( ! empty( $_POST ) && isset( $_POST[MUCD_SLUG_ACTION_SETTINGS] ) ) {
 
-                if($_POST['duplicables']=='all') {
-                    update_site_option( 'mucd_duplicables', 'all' );                   
-                }
+                if ( check_admin_referer( 'siteoptions' ) ) {
 
-                else {
-                    update_site_option( 'mucd_duplicables', 'selected' );
+                    if (isset( $_POST['duplicables'])) {
 
-                    if(isset( $_POST['duplicables-list'] )) {
-                        MUCD_Option::set_duplicable_option($_POST['duplicables-list'] );
+                        if($_POST['duplicables']=='all') {
+                            update_site_option( 'mucd_duplicables', 'all' );                   
+                        }
+
+                        else {
+                            update_site_option( 'mucd_duplicables', 'selected' );
+
+                            if(isset( $_POST['duplicables-list'] )) {
+                                MUCD_Option::set_duplicable_option($_POST['duplicables-list'] );
+                            }
+                            
+                            else {
+                                MUCD_Option::set_duplicable_option(array());
+                            }                    
+                        }
                     }
-                    
+
+                    if (isset( $_POST['mucd_copy_files']) && $_POST['mucd_copy_files']=='yes') {
+                        update_site_option( 'mucd_copy_files', 'yes' );
+                    }
                     else {
-                        MUCD_Option::set_duplicable_option(array());
-                    }                    
+                        update_site_option( 'mucd_copy_files', 'no' );
+                    }
+
+                    if (isset( $_POST['mucd_keep_users']) && $_POST['mucd_keep_users']=='yes') {
+                        update_site_option( 'mucd_keep_users', 'yes' );
+                    }
+                    else {
+                        update_site_option( 'mucd_keep_users', 'no' );
+                    }
+
+                    if (isset( $_POST['mucd_log']) && $_POST['mucd_log']=='yes') {
+
+                        update_site_option( 'mucd_log', 'yes' );
+
+                        if (isset( $_POST['mucd_log_dir'])) {
+                            update_site_option( 'mucd_log_dir', $_POST['mucd_log_dir'] );
+                        }
+
+                    }
+                    else {
+                        update_site_option( 'mucd_log', 'no' );
+                    }
                 }
             }
+
         }
 
         /**
@@ -373,33 +448,8 @@ if( !class_exists( 'MUCD_Admin' ) ) {
          * @since 0.2.0
          */
         public static function admin_network_option_page() {
-
-        MUCD_Admin::enqueue_script_network_settings();
-
-        ?>
-        <h3><?php echo MUCD_NETWORK_MENU_DUPLICATION; ?></h3>
-                <table id="mucd_duplication" class="form-table">
-                    <tr>
-                        <th scope="row"><?php echo MUCD_NETWORK_SETTINGS_DUPLICABLE_WEBSITES; ?></th>
-                        <td>
-                        <label><input <?php checked( get_site_option( 'mucd_duplicables', 'all' ), 'all' ); ?> type="radio" id="radio-duplicables-all" name="duplicables" value="all"><?php echo MUCD_NETWORK_SETTINGS_DUPLICABLE_ALL; ?></label><br><br>
-                        <label><input <?php checked( get_site_option( 'mucd_duplicables', 'all' ), 'selected' ); ?> type="radio" id="radio-duplicables-selected" name="duplicables" value="selected"><?php echo MUCD_NETWORK_SETTINGS_DUPLICABLE_SELECTED; ?></label><br><br>
-
-                
-                <?php
-                $network_blogs = wp_get_sites(array('limit' => 1000));
-                echo '<div class="multiselect" id="site-select-box">';
-                foreach( $network_blogs as $blog ) {
-                    echo '    <label><input ' . checked(get_blog_option( $blog['blog_id'], 'mucd_duplicable', "no"), 'yes', false) . ' class="duplicables-list" type="checkbox" name="duplicables-list[]" value="'.$blog['blog_id'].'" />' . substr($blog['domain'] . $blog['path'], 0, -1) . '</label>';
-                }
-                echo '</div>';
-                ?>
-                
-
-                        </td>
-                    </tr>
-                </table>
-            <?php
+            MUCD_Admin::enqueue_script_network_settings();
+            require_once MUCD_COMPLETE_PATH . '/template/network_admin_network_settings.php';
         }
 
     }

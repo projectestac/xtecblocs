@@ -2,684 +2,765 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Add This\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:30+0100\n"
-"PO-Revision-Date: 2014-05-06 17:55+0100\n"
-"Last-Translator: Jmiro227 <jmiro227@xtec.cat>\n"
+"POT-Creation-Date: 2015-10-02 08:56+0100\n"
+"PO-Revision-Date: 2015-10-02 11:09+0100\n"
+"Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
 "Language-Team: \n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-Language: Catalan\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-# XTEC ************ AFEGIT
-# 2014.04.01 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Posted in"
-msgstr "Publicat a"
-
-# XTEC ************ AFEGIT
-# 2014.04.01 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Child Category I"
-msgstr "Subcategoria I"
-
-# XTEC ************ AFEGIT
-# 2014.04.01 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Parent Category I"
-msgstr "Supracategoria I"
-
-# XTEC ************ AFEGIT
-# 2014.04.01 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Parent Category II"
-msgstr "Supracategoria II"
-
-# XTEC ************ AFEGIT
-# 2014.04.01 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Edit"
-msgstr "Edita"
-
-# XTEC ************ AFEGIT
-# 2014.04.01 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "2 Responses"
-msgstr "2 Respostes"
-
-# XTEC ************ AFEGIT
-# 2014.04.01 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "on September 17, 2008"
-msgstr "el 17 de setembre de 2008"
-
-# XTEC ************ AFEGIT
-# 2014.04.01 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Published by"
-msgstr "Publicat per"
-
-# XTEC ************ AFEGIT
-# 2014.04.01 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Another Post with Everything in it"
-msgstr "Un article amb totes les opcions"
-
-# XTEC ************ AFEGIT
-# 2014.03.28 @jmiro227
-# 2014.04.01 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Do not show a sharing tool at the"
-msgstr "No mostris l'eina a la"
-
-# XTEC ************ AFEGIT
-# 2014.03.28 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "of posts"
-msgstr "dels articles"
-
-# XTEC ************ AFEGIT
-# 2014.03.28 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "AddThis boosts sharing by automatically showing the right buttons to each user based on their location and activity across the web."
-msgstr "L'AddThis impulsa l'intercanvi mostrant automàticament els botons correctes per a cada usuari/ària en funció de la seva ubicació i l'activitat a través del web."
-
-# XTEC ************ AFEGIT
-# 2014.03.28 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Disable and select your own buttons."
-msgstr "Desactiva i selecciona altres botons personalitzats."
-
-# XTEC ************ AFEGIT
-# 2014.03.28 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Asynchronous Loading:"
-msgstr "Càrrega asíncrona:"
-
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "AddThis Profile ID:"
-msgstr "ID del perfil d'AddThis:"
-
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: addthis_addjs.php:
-msgid "Want to increase your site traffic?  AddThis also has "
-msgstr "Voleu augmentar el trànsit del bloc? AddThis també té les extensions "
-
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: addthis_addjs.php:
-msgid " and "
-msgstr " i "
-
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: addthis_addjs.php:
-msgid " plugins available."
-msgstr " connectors disponibles."
-
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_settings_functions.php:
-msgid "Top Sharing Tool"
-msgstr "Eina de compartició de la part superior"
-
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_settings_functions.php:
-msgid "Bottom Sharing Tool"
-msgstr "Eina de compartició de la part inferior"
-
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_settings_functions.php:
-msgid "Enable the following sharing tool at the "
-msgstr "Activeu l'eina de compartició següent a la "
-
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_settings_functions.php:
-msgid "Top"
-msgstr "part superior"
-
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_settings_functions.php:
-msgid "Bottom"
-msgstr "part inferior"
-
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_settings_functions.php:
-msgid "This text box allows you to enter any AddThis markup that you wish. To see examples of what you can do, visit"
-msgstr "Aquest quadre de text permet introduir qualsevol tipus de codi AddThis que es desitgi. Per veure exemples del que es pot fer, visiteu"
-
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_settings_functions.php:
-msgid "AddThis Support"
-msgstr "el suport d'AddThis"
-
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_settings_functions.php:
-msgid "AddThis.com Sharing Tools"
-msgstr "les Eines de compartició d'AddThis.com"
-
-# XTEC ************ AFEGIT
-# 2014.06.05 @jmiro227
-#: ../addthis_settings_functions.php:
-msgid "Client API"
-msgstr "API client"
-
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_settings_functions.php:
-msgid "and select any sharing tool. You can also check out our"
-msgstr "i trieu-ne qualsevol. També podeu provar el nostre"
-
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_settings_functions.php:
-msgid "For any help you may need, please visit"
-msgstr "Si necessiteu suport, si us plau visiteu"
-
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_settings_functions.php:
-msgid " of posts:"
-msgstr " dels articles:"
-
-#: ../addthis_post_metabox.php:35
+#: ../addthis_post_metabox.php:70
 msgid "Remove AddThis:"
 msgstr "Suprimeix l'AddThis:"
 
-#: ../addthis_settings_functions.php:101
-msgid "Choose the sharing tool to display"
-msgstr "Escolliu l'eina de compartició a visualitzar"
-
-#: ../addthis_settings_functions.php:103
-msgid "above"
-msgstr "per sobre"
-
-#: ../addthis_settings_functions.php:104
-msgid "below"
-msgstr "per sota"
-
-#: ../addthis_settings_functions.php:106
-msgid "the post:"
-msgstr "l'article:"
-
-#: ../addthis_settings_functions.php:128
-msgid "Build your own"
-msgstr "Construïu la vostra pròpia"
-
-#: ../addthis_settings_functions.php:134
-msgid "Size"
-msgstr "Mida"
-
-#: ../addthis_settings_functions.php:134
-msgid "The size of the icons to display"
-msgstr "La mida de la icona a visualitzar"
-
-#: ../addthis_settings_functions.php:135
-msgid "Services to always show:"
-msgstr "Serveis a mostrar sempre:"
-
-#: ../addthis_settings_functions.php:135
-msgid "Enter a comma-separated list of <a href='//addthis.com/services'>service codes</a>"
-msgstr "Inseriu una llista separada per comes de <a href=\"//addthis.com/services/list\">codis de servei</a>"
-
-#: ../addthis_settings_functions.php:136
-msgid "Automatically personalized:"
-msgstr "Personalitzats automàticament:"
-
-#: ../addthis_settings_functions.php:146
-msgid "Enter the number of automatically user-personalized items you want displayed"
-msgstr "Inseriu el nombre d'elements automàtics personalitzats que voleu que es visualitzin"
-
-#: ../addthis_settings_functions.php:149
-msgid "More"
-msgstr "Més"
-
-#: ../addthis_settings_functions.php:149
-msgid "Display our iconic logo that offers sharing to over 330 destinations"
-msgstr "Visualitza el nostre logotip emblemàtic que ofereix la compartició amb més de 330 destinacions."
-
-#: ../addthis_settings_functions.php:160
-msgid "Custom button"
-msgstr "Botó personalitzat"
-
-#: ../addthis_settings_functions.php:165
-msgid "None"
-msgstr "Cap"
-
-#: ../addthis_settings_functions.php:166
-msgid "More options"
-msgstr "Més opcions"
-
-#: ../addthis_sidebar_widget.php:16
+#: ../addthis_sidebar_widget.php:35
 msgid "Make it wasy for your users to share content to over 300 destinations"
-msgstr "Faciliteu als vostres usuaris compartir contingut amb més de 330 destinacions."
+msgstr ""
+"Faciliteu als vostres usuaris compartir el contingut amb més de 300 "
+"destinacions"
 
-#: ../addthis_sidebar_widget.php:84
+#: ../addthis_sidebar_widget.php:112 ../addthis_sidebar_widget.php:116
+#: ../addthis-widget.php:86 ../addthis-widget.php:186
 msgid "Title:"
 msgstr "Títol:"
 
-#: ../addthis_sidebar_widget.php:86
+#: ../addthis_sidebar_widget.php:114 ../addthis_sidebar_widget.php:117
 msgid "Style:"
 msgstr "Estil:"
 
-#: ../addthis_social_widget.php:43
-msgid "AddThis Social Bookmarking Widget"
-msgstr "Giny de marcadors socials AddThis"
+#: ../addthis-for-wordpress.php:98
+msgid "Settings"
+msgstr "Configuració"
 
-#: ../addthis_social_widget.php:44
-msgid "Help your visitor promote your site! The AddThis Social Bookmarking Widget allows any visitor to bookmark your site easily with many popular services. Sign up for an AddThis.com account to see how your visitors are sharing your content--which services they're using for sharing, which content is shared the most, and more. It's all free--even the pretty charts and graphs."
-msgstr "Ajudeu als vostres visitants a promocionar el vostre lloc! El giny de marcadors socials AddThis permet a qualsevol visitant marcar de manera senzilla el vostre lloc a través de molts serveis populars. Registreu-vos amb un compte d'AddThis.com per veure com els vostres visitants comparteixen el vostre contingut--quins serveis utilitzen per compartir, quin és el contingut que es comparteix més, i més. És tot gratuït--fins i tot les impressionants taules i gràfics."
+#: ../addthis-for-wordpress.php:163
+msgid "AddThis Profile Settings updated successfully!!!"
+msgstr "Configuració del perfil d'AddThis actualitzada correctament!"
 
-#: ../addthis_social_widget.php:397
+#: ../addthis-for-wordpress.php:274 ../addthis_social_widget.php:1600
+msgid "<em>AddThis</em> Sharing Buttons"
+msgstr "Botons de compartició d'<em>AddThis</em>"
+
+#: ../addthis-for-wordpress.php:362
+msgid ""
+"To configure sharing tools for your site, use the button below to set up an "
+"AddThis account at addthis.com, create a profile for your site and begin "
+"adding sharing tools. This process will require an email address."
+msgstr ""
+"Per configurar les eines de compartició del vostre lloc, feu servir el botó "
+"de sota per crear un compte d'AddThis a addthis.com, creeu un perfil pel "
+"vostre web i afegiu les eines de compartició. Aquest procés requereix d'una "
+"adreça de correu electrònic. "
+
+#: ../addthis-for-wordpress.php:363 ../addthis_social_widget.php:2063
+msgid "AddThis profile setup"
+msgstr "Configuració del perfil d'AddThis"
+
+#: ../addthis-for-wordpress.php:364 ../addthis_social_widget.php:3303
+msgid "You're almost done!"
+msgstr "Gairebé ho teniu!"
+
+#: ../addthis-for-wordpress.php:366
+msgid ""
+"To configure sharing tools for your site, use the button below. It will take "
+"you to Tools on addthis.com"
+msgstr ""
+"Per configurar les eines de compartició del vostre lloc, feu servir el botó "
+"de sota. Us portarà a Eines d'addthis.com"
+
+#: ../addthis-for-wordpress.php:367
+msgid "Setup AddThis Tools"
+msgstr "Configuració de les eines d'AddThis"
+
+#: ../addthis-for-wordpress.php:368
+msgid "Configure AddThis Tools"
+msgstr "Configuració d'eines de l'AddThis"
+
+#: ../addthis-for-wordpress.php:384
+msgid "Setup"
+msgstr "Instal·lació"
+
+#: ../addthis-for-wordpress.php:385 ../addthis-for-wordpress.php:405
+#: ../addthis_social_widget.php:1640
+msgid "Advanced Options"
+msgstr "Opcions avançades"
+
+#: ../addthis-for-wordpress.php:404 ../addthis_social_widget.php:1639
+msgid "Sharing Tools"
+msgstr "Eines de compartició"
+
+#: ../addthis-for-wordpress.php:443
+msgid ""
+"Beautiful simple website tools designed to help you get likes, get shares, "
+"get follows and get discovered."
+msgstr ""
+"Un web simple i amb eines boniques dissenyades per ajudar-vos a obtenir més "
+"m'agrada, comparticions, seguidors i ser descoberts..."
+
+#: ../addthis-for-wordpress.php:458
+msgid ""
+"If you don't see your tools after configuring them in the dashboard, please "
+"contact"
+msgstr ""
+"Si no veieu les eines després de configurar-les al tauler, si us plau "
+"contacteu"
+
+#: ../addthis-for-wordpress.php:459
+msgid "AddThis Support"
+msgstr "Suport d'AddThis"
+
+#: ../addthis_settings_functions.php:132
+msgid "Revert back to previous version"
+msgstr "Torneu a la versió anterior."
+
+#: ../addthis_settings_functions.php:144
+msgid ""
+"Update AddThis to activate new features that will make sharing even easier."
+msgstr ""
+"Actualitzeu l'AddThis per activar funcionalitats noves que faran encara més "
+"senzill compartir."
+
+#: ../addthis_settings_functions.php:186
+msgid "Above"
+msgstr "A sobre"
+
+#: ../addthis_settings_functions.php:201
+msgid "Below"
+msgstr "A sota"
+
+# MODIFICAT XTEC
+#: ../addthis_settings_functions.php:224
 #, php-format
-msgid "Configure the AddThis plugin to enable users to share your content around the web.<br /> <a href=\"%1$s\">Configuration options</a> | <a href=\"%2$s\" id=\"php_below_min_nag-no\">Ignore this notice</a>"
-msgstr "Configureu l'extensió AddThis per permetre als usuaris compartir el vostre contingut a tota la web.<br /><a href=\"%1$s\">Opcions de configuració</a> | <a href=\"%2$s\" id=\"php_below_min_nag-no\">Ignora aquest avís</a>"
+msgid "Sharing %s Post"
+msgstr "Compartint %s l'article"
 
-#: ../addthis_social_widget.php:406
+# MODIFICAT XTEC
+#: ../addthis_settings_functions.php:228
 #, php-format
-msgid "Sign up for AddThis and add your username/password to recieve analytics about how people are sharing your content.<br /> <a href=\"%1$s\">Enter username and password</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"%2$s\" target=\"_blank\">Sign Up</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"%3$s\">Ignore this notice</a>"
-msgstr "Per rebre estadístiques de com la gent comparteix el vostre contingut, podeu registrar-vos a AddThis i afegir el vostre nom d'usuari/ària i contrasenya al final d'aquesta pàgina<br /> <a href=\"%1$s\">Insereix el nom d'usuari/ària i la contrasenya</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"%2$s\" target=\"_blank\">Registra't</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"%3$s\">Ignora aquest avís</a>"
+msgid "These buttons will appear %s your blog posts."
+msgstr "Aquests botons apareixeran %s dels vostres articles."
 
-#: ../addthis_social_widget.php:415
-#, php-format
-msgid "We have updated the options for the AddThis plugin.  Check out the <a href=\"%1$s\">AddThis settings page</a> to see the new styles and options.<br /> <a href=\"%1$s\">See New Options</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"%2$s\">Ignore this notice</a>"
-msgstr "Hem actualitzat les opcions per l'extensió de l'AddThis. Vegeu la <a href=\"%1$s\">Pàgina d'opcions de l'AddThis</a> per veure els estils i les opcions noves.<br /> <a href=\"%1$s\">Veure les opcions noves</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"%2$s\">Ignoreu aquest avís</a>"
+#: ../addthis_settings_functions.php:285
+msgid "Advanced API button configuration"
+msgstr "Configuració avançada dels botons de l'API "
 
-#: ../addthis_social_widget.php:458
-msgid "Cheatin&#8217; uh?"
-msgstr "Fent trampes, eh?"
+#: ../addthis_settings_functions.php:381
+msgid "Templates"
+msgstr "Plantilles"
 
-#: ../addthis_social_widget.php:554
-msgid "There was an error retrieving your stats from the AddThis servers.  Please wait and try again in a few moments"
-msgstr "Hi ha hagut un error a l'hora de recuperar les vostres estadístiques dels servidors d'AddThis. Espereu i torneu a intentar-ho en uns moments."
+#: ../addthis_settings_functions.php:382
+msgid "These are the page templates on which your buttons will appear."
+msgstr "Aquesta és la pàgina de plantilles on apareixeran els vostres botons."
 
-#: ../addthis_social_widget.php:563
-msgid "The Username / Password / Profile combination you presented is not valid"
-msgstr "La combinació nom d'usuari/ària / contrasenya / perfil que heu presentat no és vàlida."
+#: ../addthis_settings_functions.php:448
+msgid "Services"
+msgstr "Serveis"
 
-# XTEC ************ MODIFICAT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "The Username, password and profile combination you entered is invalid"
-msgstr "La combinació nom d'usuari/ària, contrasenya i perfil que heu usat no és vàlida."
+#: ../addthis_settings_functions.php:449
+msgid ""
+"AddThis boosts sharing by automatically showing the right buttons to each "
+"user based on their location and activity across the web."
+msgstr ""
+"L'AddThis impulsa l'intercanvi mostrant automàticament els botons correctes "
+"per a cada usuari en funció de la seva ubicació i l'activitat a través del "
+"web."
 
-#: ../addthis_social_widget.php:564
-msgid "Please confirm that you have correctly entered your AddThis username, password and profile id"
-msgstr "Confirmeu que heu introduït correctament el vostre nom d'usuari/ària AddThis, contrasenya i ID de perfil."
+#: ../addthis_settings_functions.php:468
+msgid "Auto Personalization"
+msgstr "Automàtic"
 
-# XTEC ************ MODIFICAT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Please confirm that you have correctly entered your AddThis username, password and profile ID."
-msgstr "Confirmeu que heu introduït correctament el vostre nom d'usuari/ària d'AddThis, contrasenya i ID de perfil."
+#: ../addthis_settings_functions.php:469 ../addthis_settings_functions.php:489
+msgid "(recommended)"
+msgstr "(recomanat)"
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "<a href='https://www.addthis.com/register?profile=wpp' target='_blank'>Register</a> for free in-depth analytics reports and better understand your site's social traffic."
-msgstr "<a href='https://www.addthis.com/register?profile=wpp' target='_blank'>Registreu-vos</a> per veure informes d'estadístiques més detallats i comprendre millor el tràfic social del vostre bloc."
+#: ../addthis_settings_functions.php:488
+msgid "Select Your Own"
+msgstr "Personalitzat"
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "homepage:"
-msgstr "Pàgina principal:"
+#: ../addthis_settings_functions.php:499
+msgid "Button Options"
+msgstr "Opcions del botó"
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "AddThis email / username:"
-msgstr "Correu electrònic d'AddThis / nom d'usuari/ària:"
+#: ../addthis_settings_functions.php:500
+msgid "Find a service"
+msgstr "Troba un servei"
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "<a href=\"//codex.wordpress.org/Pages\" target=\"blank\">pages</a>:"
-msgstr "<a href=\"//codex.wordpress.org/Pages\" target=\"blank\">Altres pàgines</a>:"
+#: ../addthis_settings_functions.php:504
+msgid "Selected Buttons"
+msgstr "Botons seleccionats"
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "archives:"
-msgstr "Arxius:"
+#: ../addthis_settings_functions.php:508
+msgid "Restore default options"
+msgstr "Restaura les opcions per defecte"
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "categories:"
-msgstr "Categories:"
+#: ../addthis_settings_functions.php:510
+msgid "Drag up or down to reorder services"
+msgstr "Arrossegueu amunt o avall per reordenar els serveis"
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "<a href=\"//www.addthis.com/blog/2010/03/11/clickback-analytics-measure-traffic-back-to-your-site-from-addthis/\" target=\"_blank\">clickbacks</a>:"
-msgstr "<a href=\"//www.addthis.com/blog/2010/03/11/clickback-analytics-measure-traffic-back-to-your-site-from-addthis/\" target=\"_blank\">Clickbacks</a>:"
+#: ../addthis_settings_functions.php:513
+msgid "Drag across to add service"
+msgstr "Arrossegueu per afegir un servei"
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "address bar shares:"
-msgstr "Compartits per la barra d'adreces:"
+#: ../addthis_social_widget.php:662
+msgid "Loading&#8230;"
+msgstr "Carregant&#8230;"
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "copied text:"
-msgstr "Text copiat:"
+#: ../addthis_social_widget.php:662
+msgid "This widget requires JavaScript."
+msgstr "Aquest giny necessita JavaScript."
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "excerpts:"
-msgstr "Extractes:"
+#: ../addthis_social_widget.php:1681
+msgid "Sharing Buttons Above Content"
+msgstr "Botons de compartició a sobre del contingut"
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "For more details on the following options, see <a href=\"//support.addthis.com/customer/portal/articles/381263-addthis-client-api\">our customization documentation</a>."
-msgstr "Per a més detalls sobre les opcions següents, veure <a href=\"//support.addthis.com/customer/portal/articles/381263-addthis-client-api\"> la documentació sobre personalitzacions</a>."
+#: ../addthis_social_widget.php:1683 ../addthis_social_widget.php:1726
+#: ../addthis_social_widget.php:1768
+msgid "Style"
+msgstr "Estil"
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Twitter via:"
-msgstr "Via twitter:"
+#: ../addthis_social_widget.php:1684 ../addthis_social_widget.php:1727
+#: ../addthis_social_widget.php:1769
+msgid "Options"
+msgstr "Opcions"
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-# 2014.04.01 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Show analytics in admin dashboard:"
-msgstr "Mostra estadístiques al tauler d'administració:"
+#: ../addthis_social_widget.php:1724
+msgid "Sharing Buttons Below Content"
+msgstr "Botons de compartició a sota del contingut"
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-# 2014.04.01 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Enable enhanced accessibility:"
-msgstr "Habilita l'accessibilitat millorada:"
+#: ../addthis_social_widget.php:1766
+msgid "Sharing Sidebar"
+msgstr "Botons de compartició a la barra lateral"
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-# 2014.04.01 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Show AddThis on &hellip;"
-msgstr "Mostra l'AddThis a&hellip;"
+#: ../addthis_social_widget.php:1785
+msgid "These buttons will appear on the side of the page, along the edge."
+msgstr "Aquests botons apareixeran al lateral de la pàgina."
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Have AddThis track &hellip;"
-msgstr "L'AddThis farà el seguiment de&hellip;"
+#: ../addthis_social_widget.php:1795
+msgid "Position"
+msgstr "Posició"
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
+#: ../addthis_social_widget.php:1802
+msgid "Left"
+msgstr "Esquerra"
+
+#: ../addthis_social_widget.php:1810
+msgid "Right"
+msgstr "Dreta"
+
+#: ../addthis_social_widget.php:1843
+msgid "Buttons"
+msgstr "Botons"
+
+#: ../addthis_social_widget.php:1844
+msgid "The number of social sharing buttons to show in the side sharing tool."
+msgstr ""
+"El número de botons de compartició social que es mostraran a la barra "
+"llateral."
+
+#: ../addthis_social_widget.php:1862
+msgid "Theme"
+msgstr "Tema"
+
+#: ../addthis_social_widget.php:1863
+msgid ""
+"You can select the background color that better matches the look of your "
+"site for the expand/minimize arrow on the side sharing tool."
+msgstr ""
+"Podeu seleccionar el color de fons de la fletxa d'expandir/minimitzar de "
+"l'eina de compartició lateral que millor s'ajusti a l'aspecte del vostre "
+"lloc."
+
+#: ../addthis_social_widget.php:2062
+msgid ""
+"To begin tracking analytics on social shares from your site, use the button "
+"below to set up an AddThis account at addthis.com and create a profile for "
+"your site. This process will require an email address."
+msgstr ""
+"Per començar l'anàlisi de seguiment sobre les accions socials del vostre "
+"lloc, feu servir el botó de sota per configurar el compte d'AddThis a "
+"addthis.com, creeu un perfil pel vostre lloc i afegiu eines de compartició. "
+"Aquest procés requereix d'una adreça de correu electrònic."
+
+#: ../addthis_social_widget.php:2064
+msgid ""
+"To see analytics on social shares from your site, use the button below. It "
+"will take you to Analytics on addthis.com."
+msgstr ""
+"Per veure l'anàlisi sobre les accions socials del vostre lloc, feu servir el "
+"botó de sota. Us portarà a Eines a addthis.com"
+
+#: ../addthis_social_widget.php:2065
+msgid "Your analytics on addthis.com"
+msgstr "Els vostres anàlisis a addthis.com"
+
+#: ../addthis_social_widget.php:2078
+msgid "Valid AddThis Profile ID"
+msgstr "ID vàlid de perfil d'AddThis"
+
+#: ../addthis_social_widget.php:2103
+msgid "Alternately, you can input your profile id manually below"
+msgstr ""
+"Alternativament, podeu introduir l'ID del vostre perfil manualment a sota"
+
+#: ../addthis_social_widget.php:2115
+msgid "AddThis Analytics"
+msgstr "Analítics d'AddThis"
+
+#: ../addthis_social_widget.php:2180
+msgid "Sharing buttons above content"
+msgstr "Botons de compartició a sobre del contingut"
+
+#: ../addthis_social_widget.php:2183 ../addthis_social_widget.php:2188
+#: ../addthis_social_widget.php:2196 ../addthis_social_widget.php:2201
+#: ../addthis_social_widget.php:2209 ../addthis_social_widget.php:2214
+#: ../addthis_social_widget.php:2225 ../addthis_social_widget.php:2236
+#: ../addthis_social_widget.php:2247 ../addthis_social_widget.php:2256
+#: ../addthis_social_widget.php:2265 ../addthis_social_widget.php:2274
+#: ../addthis_social_widget.php:2283 ../addthis_social_widget.php:2292
+#: ../addthis_social_widget.php:2301 ../addthis_social_widget.php:2310
+msgid "Has this Feature"
+msgstr "Teniu aquesta Característica"
+
+#: ../addthis_social_widget.php:2193
+msgid "Sharing buttons below content"
+msgstr "Botons de compartició a sota del contingut"
+
+#: ../addthis_social_widget.php:2206
+msgid "Sharing sidebar"
+msgstr "Barra lateral de compartició"
+
+#: ../addthis_social_widget.php:2219
+msgid "Mobile toolbar"
+msgstr "Barra d'eines del mòbil"
+
+#: ../addthis_social_widget.php:2221 ../addthis_social_widget.php:2232
+#: ../addthis_social_widget.php:2243 ../addthis_social_widget.php:2253
+#: ../addthis_social_widget.php:2262 ../addthis_social_widget.php:2271
+#: ../addthis_social_widget.php:2280 ../addthis_social_widget.php:2289
+#: ../addthis_social_widget.php:2298 ../addthis_social_widget.php:2307
+msgid "Does not have this feature"
+msgstr "No teniu aquesta característica"
+
+#: ../addthis_social_widget.php:2230
+msgid "Newsletter sharing buttons"
+msgstr "Botons de compartició per al bulletí"
+
+#: ../addthis_social_widget.php:2241
+msgid "Follow header"
+msgstr "Segueix l'encapçalament"
+
+#: ../addthis_social_widget.php:2252
+msgid "Horizontal follow buttons"
+msgstr "Botons de seguiment horitzontals"
+
+#: ../addthis_social_widget.php:2261
+msgid "Vertical follow buttons"
+msgstr "Botons de seguiment vertical"
+
+#: ../addthis_social_widget.php:2270
+msgid "What's next"
+msgstr "Quin és després"
+
+#: ../addthis_social_widget.php:2279
+msgid "Recommended content footer"
+msgstr "Contingut recomanable per al peu de pàgina"
+
+#: ../addthis_social_widget.php:2288
+msgid "Horizontal recommended content"
+msgstr "Contingut horitzontal recomenat"
+
+#: ../addthis_social_widget.php:2297
+msgid "Vertical recommended content"
+msgstr "Contingut vertical recomanat"
+
+#: ../addthis_social_widget.php:2306
+msgid "Access to additional Pro tools for upgraded accounts"
+msgstr "Accés a eines addicionals de pagament"
+
+#: ../addthis_social_widget.php:2465
+msgid "Environment (test/dev/local)"
+msgstr "Entorn (test/dev/local)"
+
+#: ../addthis_social_widget.php:2493
+msgid "I want to control my plugin from..."
+msgstr "Vull controlar la meva extensió des de..."
+
+#: ../addthis_social_widget.php:2496
+msgid ""
+"Regardless of your choice, analytics for shares of your site will be "
+"available to you on the AddThis website after you set up your AddThis "
+"profile ID."
+msgstr ""
+"Independentment de la seva elecció, l'anàlisi de les accions del seu lloc "
+"estarà disponible en el lloc web AddThis després de configurar el vostre ID "
+"de perfil d'AddThis."
+
+#: ../addthis_social_widget.php:2500
+msgid "Feature List Column"
+msgstr "Columna de característiques"
+
+#: ../addthis_social_widget.php:2517
+msgid "To see your choice reflected on these screens, save your changes."
+msgstr ""
+"Per veure la vostra elecció reflectida en aquestes pantalles, deseu els "
+"canvis."
+
+#: ../addthis_social_widget.php:2580
+msgid "Tracking"
+msgstr "Seguiment"
+
+#: ../addthis_social_widget.php:2594
+msgid "Clickbacks"
+msgstr "Clickbacks"
+
+#: ../addthis_social_widget.php:2595 ../addthis_social_widget.php:2750
+#: ../addthis_social_widget.php:2764
+msgid "(Recommended)"
+msgstr "(Recomanat)"
+
+#: ../addthis_social_widget.php:2598
+msgid ""
+"AddThis will use this to track how many people come back to your content via "
+"links shared with AddThis buttons. This data will be available to you at "
+"addthis.com."
+msgstr ""
+"AddThis farà un seguiment de quantes persones arriben al vostre contingut a "
+"través d'enllaços compartits amb els botons de compartició de l'AddThis. "
+"Aquesta informació estarà disponible a addthis.com."
+
+#: ../addthis_social_widget.php:2608
+msgid "Address bar shares"
+msgstr "Comparticions de la barra d'adreces"
+
+#: ../addthis_social_widget.php:2611
+msgid ""
+"AddThis will append a code to your site’s URLs (except for the homepage) to "
+"track when a visitor comes to your site from a link someone copied out of "
+"their browser's address bar."
+msgstr ""
+"AddThis afegirà un codi als URL del vostre lloc (a excepció de la pàgina "
+"d'inici) per realitzar un seguiment quan un visitant arriba al vostre lloc "
+"des d'un enllaç que algú ha copiat fora de la barra d'adreces del seu "
+"navegador."
+
+#: ../addthis_social_widget.php:2621
+msgid "Bitly URL shortening for Twitter"
+msgstr "Escurçament d'URL amb Bitly per Twitter"
+
+#: ../addthis_social_widget.php:2624
+msgid ""
+"Your Bitly login and key will need to be setup with your profile on addthis."
+"com before Bitly will begin working with WordPress."
+msgstr ""
+"Seran necessàries les vostres dades d'accés Bitly per configurar el vostre "
+"perfil a addthis.com abans que Bitly pugui començar a treballar amb "
+"WordPress."
+
+#: ../addthis_social_widget.php:2630
+msgid "Google Analytics property ID"
+msgstr "ID de Google Analytics"
+
+#: ../addthis_social_widget.php:2735
 msgid "Display Options"
 msgstr "Opcions de visualització"
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
+#: ../addthis_social_widget.php:2749
+msgid "Asynchronous loading"
+msgstr "Càrrega asíncrona"
+
+#: ../addthis_social_widget.php:2753
+msgid ""
+"When checked, your site will load before AddThis sharing buttons are added. "
+"If unchecked, your site will not load until AddThis buttons (and AddThis "
+"JavaScript) have been loaded by your vistors."
+msgstr ""
+"Quan s'activa, el vostre lloc es carregarà abans d'afegir els botons de "
+"compartició d'AddThis. Si no està seleccionat, el seu lloc no es carregarà "
+"fins que els botons de compartició d'AddThis  (i el JavaScript de l'AddThis) "
+"s'hagin carregat."
+
+#: ../addthis_social_widget.php:2763
+msgid "Include an option to turn off sharing tools by post"
+msgstr "Inclou una opció per desactivar les eines de compartició per correu"
+
+# MODIFICAT XTEC
+#: ../addthis_social_widget.php:2767
+msgid ""
+"When checked, on the edit page of posts you will be able to turn off sharing "
+"buttons for that specific post."
+msgstr ""
+"Quan aquesta opció està marcada, a la pàgina d'edició dels articles podreu "
+"desactivar els botons de compartició per a l'article que estigueu editant."
+
+#: ../addthis_social_widget.php:2777
+msgid "Enhanced accessibility"
+msgstr "Accessibilitat millorada"
+
+#: ../addthis_social_widget.php:2780
+msgid ""
+"Also known as 508 compliance. If checked, clicking an AddThis sharing button "
+"will open a new window to a page that is keyboard navigable for people with "
+"disabilities."
+msgstr ""
+"També conegut com 508. Si es marca, fent clic sobre del botó AddThis de "
+"compartir, s'obrirà una nova finestra a una pàgina on es podrà navegar amb "
+"el teclat per a les persones amb discapacitat."
+
+#: ../addthis_social_widget.php:2786
+msgid "Twitter via"
+msgstr "A través de Twitter"
+
+#: ../addthis_social_widget.php:2787
+msgid ""
+"When a visitor uses an AddThis button to send a tweet about your page, this "
+"will be used within Twitter to identify through whom they found your page. "
+"You would usually enter a twitter handle here. For example, Twitter could "
+"show a tweet came from jsmith via AddThis."
+msgstr ""
+"Quan un visitant faci servir el botó d'AddThis per enviar una piulada, "
+"Twitter identificarà com ha arribat el visitant a la vostra pàgina. Podeu "
+"afegir un enllaç de twitter aquí."
+
+#: ../addthis_social_widget.php:2894
 msgid "Additional Options"
-msgstr "Altres opcions"
+msgstr "Opcions adicionals"
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Valid AddThis Credentials"
-msgstr "Credencials vàlides"
+#: ../addthis_social_widget.php:2900
+#, php-format
+msgid ""
+"For more details on the following options, see <a href=\"%s\">our "
+"customization documentation</a>."
+msgstr ""
+"Per obtenir més informació de les següents opcions, veieu <a href=\"%s\">la "
+"nostra  documentació</a>."
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "Valid AddThis Profile ID"
-msgstr "ID vàlid"
+#: ../addthis_social_widget.php:2901
+msgid ""
+"Important: AddThis optimizes displayed services based on popularity and "
+"language, and personalizes the list for each user. You may decrease sharing "
+"by overriding these features."
+msgstr ""
+"Important: AddThis optimitza els serveis que es mostren en base a la seva "
+"popularitat i llenguatge, i personalitza la llista per a cada usuari. Podeu "
+"disminuir la compartició sobreescrivint les característiques següents."
 
-# XTEC ************ AFEGIT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "&#x2716; The username, password, and profile combination you entered is invalid."
-msgstr "&#x2716; La combinació introduïda d'usuari/ària, contrasenya i perfil, és invàlida."
+#: ../addthis_social_widget.php:2906
+msgid "Language"
+msgstr "Idioma"
 
-#: ../addthis_social_widget.php:569
-msgid "Something has gone terribly wrong! This should never happen, but somehow did.  We are working to correct it right now.  We will get everything up again soon"
-msgstr "Alguna cosa ha anat malament. Això no hauria de passar mai, però d'alguna manera ha passat. Estem treballant per corregir-ho des d'ara mateix. Ho posarem tot en marxa molt aviat"
+#: ../addthis_social_widget.php:2913
+msgid "Global Advanced API Configuration"
+msgstr "Configuració avançada de l'API Global"
 
-#: ../addthis_social_widget.php:575
-msgid "There was an error retrieving your analytics. If you wait a momeent and try again, you should be all set "
-msgstr "Hi ha hagut algun error recuperant les vostres estadístiques. Si espereu un moment i ho torneu a provar, hauria d'estar tot apunt"
+#: ../addthis_social_widget.php:2917
+msgid "addthis_config values (json format)"
+msgstr "addthis_config values (json format)"
 
-# XTEC ************ MODIFICAT
-# 2013.05.21 @jmiro227
-#: ../addthis_social_widget.php:
-msgid "There was an error retrieving your analytics. If you wait a moment and try again, you should be all set "
-msgstr "Hi ha hagut algun error recuperant les vostres estadístiques. Si espereu un moment i ho torneu a provar, hauria d'estar tot apunt"
+#: ../addthis_social_widget.php:2921
+#, php-format
+msgid ""
+"For more information, please see the AddThis documentation on <a href=\"%s"
+"\">the addthis_config variable</a>"
+msgstr ""
+"Per obtenir més informació, consulteu la documentació d'AddThis a <a href="
+"\"%s\"> addthis_config variable</a> "
 
-#: ../addthis_social_widget.php:655
-msgid "Yesterday"
-msgstr "Ahir"
+#: ../addthis_social_widget.php:2928 ../addthis_social_widget.php:2943
+#: ../addthis_social_widget.php:2961
+msgid "Invalid JSON format"
+msgstr "Format JSON invàlid"
 
-#: ../addthis_social_widget.php:656
-msgid "Last Week"
-msgstr "Última setmana"
+#: ../addthis_social_widget.php:2932
+msgid "addthis_share values (json format)"
+msgstr "addthis_share values (json format)"
 
-#: ../addthis_social_widget.php:657
-msgid "Last Month"
-msgstr "Últim mes"
+#: ../addthis_social_widget.php:2936
+#, php-format
+msgid ""
+"For more information, please see the AddThis documentation on <a href=\"%s"
+"\">the addthis_share variable</a>"
+msgstr ""
+"Per obtenir més informació, podeu consultar la documentació d'AddThis a <a "
+"href=\"%s\"> addthis_share variable</a> "
 
-#: ../addthis_social_widget.php:671
-msgid "Shares"
-msgstr "Compartits"
+#: ../addthis_social_widget.php:2954
+#, php-format
+msgid ""
+"For more information, please see the AddThis documentation on <a href=\"%s"
+"\">the addthis.layers() paramters</a>"
+msgstr ""
+"Per obtenir més informació, consulteu la documentació d'AddThis a <a href="
+"\"%s\"> addthis.layers() paràmetres </a> "
 
-#: ../addthis_social_widget.php:672
-msgid "Clicks"
-msgstr "Clics"
+#: ../addthis_social_widget.php:3062
+msgid "Did you find this plugin useful?"
+msgstr "Heu trobat aquest connector útil?"
 
-#: ../addthis_social_widget.php:673
-msgid "Viral Lift"
-msgstr "Viral Lift"
+#: ../addthis_social_widget.php:3067
+msgid "Not really "
+msgstr "No massa"
 
-#: ../addthis_social_widget.php:684
-msgid "Most Shared URLs (last month)"
-msgstr "URLs més compartides (últim mes)"
+#: ../addthis_social_widget.php:3068
+msgid "Yes!"
+msgstr "Si!"
 
-#: ../addthis_social_widget.php:694
-msgid "Top Services for shares(last month)"
-msgstr "Serveis destacats per compartir (darrer mes)"
+#: ../addthis_social_widget.php:3081
+#, php-format
+msgid ""
+"Let us know how we can improve our plugin through our support forum or by "
+"emailing <a href=\"%s\">help@addthis.com</a>"
+msgstr ""
+"Feu-nos saber com podem millorar el nostre connector a través del fòrum de "
+"suport o per correu electrònic a <a href=\"%s\">help@addthis.com</a>"
 
-#: ../addthis_social_widget.php:695
-#: ../addthis_social_widget.php:709
-msgid "share stats for the last month"
-msgstr "compartiu les estadístiques pel darrer mes"
+#: ../addthis_social_widget.php:3088
+msgid "Support Forum"
+msgstr "Fòrum de suport"
 
-#: ../addthis_social_widget.php:698
-msgid "Most Clicked URLs (last month)"
-msgstr "URLs més clicades (últim mes)"
+#: ../addthis_social_widget.php:3093
+msgid "Email"
+msgstr "Correu electrònic"
 
-#: ../addthis_social_widget.php:708
-msgid "Top Services for clicks(last month)"
-msgstr "Serveis destacats per clics (últim mes)"
+#: ../addthis_social_widget.php:3101
+msgid "How about rating us?"
+msgstr "Ens puntues?"
 
-#: ../addthis_social_widget.php:712
-msgid "View More Analytics"
-msgstr "Mostra més estadístiques"
+#: ../addthis_social_widget.php:3103
+msgid "Thank you!"
+msgstr "Gràcies!"
 
-#: ../addthis_social_widget.php:716
-msgid "We haven't recorded any sharing events in the last month for this site.  This could be because you just installed addthis."
-msgstr "No hem registrat cap event de compartició en el darrer mes pel vostre lloc. Això pot ser degut a que acabeu d'instal·lar l'AddThis."
+#: ../addthis_social_widget.php:3107
+msgid "No, thanks."
+msgstr "No, gràcies."
 
-#: ../addthis_social_widget.php:717
-msgid "If you want some ideas for increasing your sharing, check out:"
-msgstr "Si voleu algunes idees per incrementar la vostra compartició, consulteu:"
+#: ../addthis_social_widget.php:3112
+msgid " Yes, I will rate this plugin"
+msgstr "Sí, valoraré aquest connector"
 
-#: ../addthis_social_widget.php:718
-msgid "The AddThis Blog"
-msgstr "El bloc de l'AddThis"
-
-#: ../addthis_social_widget.php:719
-msgid "Three tips for getting the most shares"
-msgstr "Tres consells per obtenir més comparticions"
-
-#: ../addthis_social_widget.php:720
-msgid "The AddThis Forum"
-msgstr "Fòrum de l'Addthis"
-
-#: ../addthis_social_widget.php:733
-msgid "I'm sorry, but we seemed to encounter an error. Please ensure that your password, username and pubid are correct"
-msgstr "Sembla que s'ha produït un error. Assegureu-vos que la vostra contrasenya, usuari/ària i pubid són correctes"
-
-#: ../addthis_social_widget.php:738
-msgid "I'm sorry, but we seemed to have encountered an error when requesting your analytics.  Please wait a few moments and try again"
-msgstr "Sembla que s'ha produït un errer quan se sol·licitaven les vostres estadístiques. Espereu una estona i torneu a provar-ho de nou."
-
-#: ../addthis_social_widget.php:754
-msgid "Loading&#8230;"
-msgstr "Llegint&#8230;"
-
-#: ../addthis_social_widget.php:754
-msgid "This widget requires JavaScript."
-msgstr "Aquest widget necessita JavaScript."
-
-#: ../addthis_social_widget.php:1649
-msgid "Basic"
-msgstr "Bàsic"
-
-#: ../addthis_social_widget.php:1650
-msgid "Advanced"
-msgstr "Avançat"
-
-#: ../addthis_social_widget.php:1664
-msgid "<h3><a href='https://www.addthis.com/register?profile=wpp' target='_blank'>Register</a> for free in-depth analytics reports and better understand your site's social traffic.</h3>"
-msgstr "<h3><a href='https://www.addthis.com/register?profile=wpp' target='_blank'>Registreu-vos</a> per veure informes d'estadístiques i comprendre millor el tràfic social del vostre lloc.</h3>"
-
-#: ../addthis_social_widget.php:1669
-msgid "AddThis profile ID:"
-msgstr "ID del perfil de l'AddThis:"
-
-#: ../addthis_social_widget.php:1673
-msgid "AddThis username:"
-msgstr "Nom d'usuari/ària de l'AddThis"
-
-#: ../addthis_social_widget.php:1677
-msgid "AddThis password:"
-msgstr "Contrasenya de l'AddThis"
-
-#: ../addthis_social_widget.php:1677
-msgid "(required for displaying stats)"
-msgstr "(necessari per a visualitzar les estadístiques)"
-
-#: ../addthis_social_widget.php:1689
-msgid "Show stats in admin dashboard:"
-msgstr "Mostra les estadístiques en el tauler d'administració:"
-
-#: ../addthis_social_widget.php:1693
-msgid "Track <a href=\"//www.addthis.com/blog/2010/03/11/clickback-analytics-measure-traffic-back-to-your-site-from-addthis/\" target=\"_blank\">clickbacks</a>:"
-msgstr "Segueix els <a href=\"//www.addthis.com/blog/2010/03/11/clickback-analytics-measure-traffic-back-to-your-site-from-addthis/\" target=\"_blank\">clickbacks</a>:"
-
-#: ../addthis_social_widget.php:1697
-msgid "Track address bar shares:"
-msgstr "Segueix els compartits per la barra d'adreces:"
-
-#: ../addthis_social_widget.php:1701
-msgid "Show on homepage:"
-msgstr "Mostra a la pàgina d'inici:"
-
-#: ../addthis_social_widget.php:1705
-msgid "Show on <a href=\"//codex.wordpress.org/Pages\" target=\"blank\">pages</a>:"
-msgstr "Mostra en les <a href=\"//codex.wordpress.org/Pages\" target=\"blank\">pàgines</a>:"
-
-#: ../addthis_social_widget.php:1709
-msgid "Show in archives:"
-msgstr "Mostra en arxius:"
-
-#: ../addthis_social_widget.php:1713
-msgid "Show in categories:"
-msgstr "Mostra en categories:"
-
-#: ../addthis_social_widget.php:1717
-msgid "Show on excerpts:"
-msgstr "Mostra en extractes:"
-
-#: ../addthis_social_widget.php:1721
-msgid "(Enable enhanced accessibility:)"
-msgstr "(Habilita la millora de l'accessibilitat:)"
-
-#: ../addthis_social_widget.php:1725
-msgid "Google Analytics property ID:"
-msgstr "\"Property ID\" del Google Analytics:"
-
-#: ../addthis_social_widget.php:1733
-msgid "For more details on the following options, see <a href=\"//addthis.com/customization\">our customization documentation</a>"
-msgstr "Per a més detalls sobre les opcions, consulteu <a href=\"//addthis.com/customization\">la documentació sobre la personalització</a>"
-
-#: ../addthis_social_widget.php:1736
-msgid "Custom service list:"
-msgstr "Llista de serveis personalitzada:"
-
-#: ../addthis_social_widget.php:1737
-msgid "Important: AddThis optimizes displayed services based on popularity and language, and personalizes the list for each user. You may decrease sharing by overriding these features."
-msgstr "Important: l'AddThis optimitza la visualització del serveis basats en la popularitat i l'idioma, i personalitza la llista per a cada usuari/ària. Podeu disminuir la compartició sobreescrivint aquestes característiques."
-
-#: ../addthis_social_widget.php:1741
-msgid "Enter a comma-separated list of <a href=\"//addthis.com/services/list\">service codes</a>"
-msgstr "Inseriu una llista separada per comes de <a href=\"//addthis.com/services/list\">codis de servei</a>"
-
-#: ../addthis_social_widget.php:1745
-msgid "Brand:"
-msgstr "Marca:"
-
-#: ../addthis_social_widget.php:1749
-msgid "<a href='http://www.addthis.com/help/client-api#configuration-sharing-templates'>Twitter Template:</a><br/><span class='description'>(not for tweet button)</span>"
-msgstr "<a href='http://www.addthis.com/help/client-api#configuration-sharing-templates'>Plantilla del Twitter:</a><br/><span class='description'>(no pel botó de Twitter)</span>"
-
-#: ../addthis_social_widget.php:1753
-msgid "Bitly login:"
-msgstr "Nom d'usuari/ària del Bitly:"
-
-#: ../addthis_social_widget.php:1757
-msgid "Bitly key:"
-msgstr "Contrasenya del Bitly:"
-
-#: ../addthis_social_widget.php:1761
-msgid "Language:"
-msgstr "Idioma:"
-
-#: ../addthis_social_widget.php:1775
-msgid "Header background:"
-msgstr "Fons de la capçalera"
-
-#: ../addthis_social_widget.php:1779
-msgid "Header color:"
-msgstr "Color de la capçalera:"
-
-#: ../addthis_social_widget.php:1783
-msgid "addthis_config values:<br/><span class=\"description\">(json format)</span>"
-msgstr "Valors \"addthis_config\":<br/><span class=\"description\">(format json)</span>"
-
-#: ../addthis_social_widget.php:1787
-msgid "addthis_share values:<br/><span class=\"description\">(json format)</span>"
-msgstr "Valors \"addthis_share\":<br/><span class=\"description\">(format json)</span>"
-
-#: ../addthis_social_widget.php:1808
-msgid "Save Changes"
-msgstr "Desa els canvis"
-
-#: ../addthis_social_widget.php:1809
+#: ../addthis_social_widget.php:3226
 msgid "Preview"
 msgstr "Previsualitza"
 
+#: ../addthis_social_widget.php:3244
+msgid "Save Changes"
+msgstr "Desa els canvis"
+
+#: ../addthis_social_widget.php:3296
+msgid ""
+"Here you can manually set your AddThis Profile ID - you can get this from "
+"your"
+msgstr ""
+"Aquí podeu posar de forma manual el vostre ID de perfil d'AddThis - el podeu "
+"obtenir de la vostra"
+
+#: ../addthis_social_widget.php:3297
+msgid "Profile Settings"
+msgstr "Configuració del perfil"
+
+#: ../addthis_social_widget.php:3306
+msgid "It's time to connect your AddThis account with Wordpress."
+msgstr "Es hora de connectar el vostre compte d'AddThis amb Wordpress."
+
+#: ../addthis_social_widget.php:3329
+msgid "AddThis Profile ID"
+msgstr "ID de perfil d'AddThis"
+
+#: ../AddThisWordPressConnector.php:327
+msgid "Homepage"
+msgstr "Pàgina d'inici:"
+
+#: ../AddThisWordPressConnector.php:328
+msgid ""
+"Includes both the blog post index page (home.php or index.php) and any "
+"static page set to be your front page under Settings->Reading->Front page "
+"displays."
+msgstr ""
+"Inclou tant la pàgina d'inici del bloc (home.php o index.php) com qualsevol "
+"pàgina estàtica que pugui fer de pàgina d'inici a Paràmetres > Lectura > "
+"Pàgina estàtica."
+
+# MODIFICAT XTEC
+#: ../AddThisWordPressConnector.php:332
+msgid "Posts"
+msgstr "Articles"
+
+# MODIFICAT XTEC
+#: ../AddThisWordPressConnector.php:333
+msgid "Also known as articles or blog posts."
+msgstr "També conegut com articles o entrades del bloc."
+
+#: ../AddThisWordPressConnector.php:337
+msgid "Pages"
+msgstr "Pàgines"
+
+# MODIFICAT XTEC
+#: ../AddThisWordPressConnector.php:338
+msgid ""
+"Often used to present static information about yourself or your site where "
+"the date published is less revelant than with posts."
+msgstr ""
+"Sovint s'utilitza per presentar informació estàtica sobre vosaltres o el "
+"vostre lloc on la data de publicació és menys revelant que els articles."
+
+#: ../AddThisWordPressConnector.php:342
+msgid "Archives"
+msgstr "Arxius"
+
+#: ../AddThisWordPressConnector.php:343
+msgid "A Category, Tag, Author or Date based view."
+msgstr "Una vista basada en una categoria, una etiqueta, un autor o una data."
+
+#: ../AddThisWordPressConnector.php:347
+msgid "Categories"
+msgstr "Categories"
+
+#: ../AddThisWordPressConnector.php:348
+msgid "A view that displays costs filled under a specific category."
+msgstr "Una vista que mostra els costos omplerts en una categoria específica ."
+
+#: ../AddThisWordPressConnector.php:352
+msgid "Excerpts"
+msgstr "Resums"
+
+# MODIFICAT XTEC
+#: ../AddThisWordPressConnector.php:353
+msgid ""
+"A condensed description of your post or page. These are often displayed in "
+"search results, RSS feeds, and sometimes on Archive or Category views. "
+"Important: Excerpts will only work some of the time with some themes, "
+"depending on how that theme retrieves your content."
+msgstr ""
+"Un resum del vostre article o pàgina. Aquest resum sovint es mostra als "
+"resultats de les cerques, als canals RSS i a vegades als arxius o vistes de "
+"categoria del lloc. Important: els resums només funcionen en alguns dels "
+"temes."
+
+#: ../addthis-widget.php:37
+msgid "Addthis Horizontal Recommended Content"
+msgstr "Contingut horitzontal recomanat d'AddThis"
+
+#: ../addthis-widget.php:42
+msgid "An Addthis Widget to add horizontal recommended content"
+msgstr "Un giny d'AddThis per afegir contingut horitzontal recomanat"
+
+#: ../addthis-widget.php:82 ../addthis-widget.php:182
+msgid "Addthis"
+msgstr "Addthis"
+
+#: ../addthis-widget.php:137
+msgid "Addthis Vertical Recommended Content"
+msgstr "Contingut vertical recomanat d'AddThis"
+
+#: ../addthis-widget.php:142
+msgid "An Addthis Widget to add vertical recommended content"
+msgstr "Un giny d'AddThis per afegir contingut vertical recomanat"
+
+#: ../addthis_addjs_new.php:271 ../addthis_addjs_new.php:272
+msgid "AddThis Sharing Buttons"
+msgstr "Botons de compartició d'AddThis.com"

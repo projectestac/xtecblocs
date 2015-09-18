@@ -1,7 +1,7 @@
 <?php
 /**
  * +--------------------------------------------------------------------------+
- * | Copyright (c) 2008-2012 Add This, LLC                                    |
+ * | Copyright (c) 2008-2015 AddThis, LLC                                     |
  * +--------------------------------------------------------------------------+
  * | This program is free software; you can redistribute it and/or modify     |
  * | it under the terms of the GNU General Public License as published by     |
@@ -17,51 +17,21 @@
  * | along with this program; if not, write to the Free Software              |
  * | Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA |
  * +--------------------------------------------------------------------------+
- *
- * PHP version 5.3.6
- * 
- * @category Class
- * @package  Wordpress_Plugin
- * @author   The AddThis Team <srijith@addthis.com>
- * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
- * @version  SVN: 1.0
- * @link     http://www.addthis.com/blog
  */
+
 $pathParts = pathinfo(__FILE__);
 
 $path = $pathParts['dirname'];
 
-if (!defined('ADDTHIS_PLUGIN_VERSION')) {
-    define('ADDTHIS_PLUGIN_VERSION', '4.0.1');
-}
-
-if (!defined('ADDTHIS_ATVERSION')) {
-    define('ADDTHIS_ATVERSION', '300');
-}
-
-define('ADDTHIS_CSS_PATH', 'css/style.css');
-define('ADDTHIS_JS_PATH', 'js/addthis-for-wordpress.js');
-define('ADDTHIS_SETTINGS_PAGE_ID', 'addthis_social_widget');
 define('ADDTHIS_PLUGIN_FILE', $path.'/addthis_social_widget.php');
 define('ADDTHIS_PUBNAME_LIMIT', 255);
 
-/**
- * Class for Addthis wordpress
- *
- * @category Class
- * @package  Wordpress_Plugin
- * @author   The AddThis Team <srijith@addthis.com>
- * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
- * @version  Release: 1.0
- * @link     http://www.addthis.com/blog
- */
+require_once('addthis_settings_functions.php');
+
 class Addthis_Wordpress
 {
-    const ADDTHIS_PROFILE_SETTINGS_PAGE = 'https://www.addthis.com/settings/publisher';
-    const ADDTHIS_SITE_URL = 'https://www.addthis.com/settings/plugin-pubs';
-    const ADDTHIS_SITE_URL_WITH_PUB = 'https://www.addthis.com/dashboard#gallery';
     const ADDTHIS_REFERER  = 'www.addthis.com';
-    
+
     /** PHP $_GET Variables * */
     private $_getVariables;
 
@@ -70,9 +40,14 @@ class Addthis_Wordpress
 
     /** check upgrade or fresh installation **/
     private $_upgrade;
-    
-    /** Addthis Profile id **/
-    private $_pubid;
+
+    /** Addthis Settings **/
+    private $_options;
+
+    private $addThisConfigs;
+    private $cmsConnector;
+
+    public $addThisToolBox;
 
     /**
      * Initializes the plugin.
@@ -81,48 +56,58 @@ class Addthis_Wordpress
      *
      * @return null
      * */
-    public function __construct($upgrade)
+    public function __construct($upgrade, $addThisConfigs, $cmsConnector)
     {
+        $this->addThisConfigs = $addThisConfigs;
+        $this->cmsConnector = $cmsConnector;
+        // Save async load settings via ajax request
+        add_action( 'wp_ajax_at_async_loading', array($this, 'addthisAsyncLoading'));
         $this->_upgrade = $upgrade;
         $this->_getVariables = $_GET;
         $this->_postVariables = $_POST;
-        
-        $this->_pubid = self::getPubid();
+        $this->_options = $this->addThisConfigs->getConfigs();
 
         include_once 'addthis-toolbox.php';
-        new Addthis_ToolBox;
-        
-        add_action('admin_menu', array($this, 'addthisWordpressMenu'));
+        $this->addThisToolBox = new Addthis_ToolBox($addThisConfigs, $cmsConnector);
+
+        add_action('admin_menu', array($this, 'addToWordpressMenu'));
 
         // Deactivation
         register_deactivation_hook(
             ADDTHIS_PLUGIN_FILE,
             array($this, 'pluginDeactivation')
         );
-        
+
         // Settings link in plugins page
         $plugin = 'addthis/addthis_social_widget.php';
         add_filter(
-            "plugin_action_links_$plugin", 
+            "plugin_action_links_$plugin",
             array($this, 'addSettingsLink')
         );
     }
-    
+
     /*
      * Function to add settings link in plugins page
-     * 
+     *
      * @return null
      */
     public function addSettingsLink($links)
     {
-        $settingsLink = '<a href="'.self::getSettingsPageUrl().'">Settings</a>';
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.18 @dgras
+        $settingsLink = '<a href="'.$this->cmsConnector->getSettingsPageUrl().'">'. __("Settings") .'</a>';
+//************ ORIGINAL
+//      $settingsLink = '<a href="'.$this->cmsConnector->getSettingsPageUrl().'">Settings</a>';
+//************ FI
+
+
         array_push($links, $settingsLink);
-        return $links; 
+        return $links;
     }
 
     /**
      * Functions to execute on plugin deactivation
-     * 
+     *
      * @return null
      */
     public function pluginDeactivation()
@@ -134,99 +119,75 @@ class Addthis_Wordpress
 
     /**
      * Adds sub menu page to the WP settings menu
-     * 
+     *
      * @return null
      */
-    public function addthisWordpressMenu()
+    public function addToWordpressMenu()
     {
-        add_options_page(
-            'AddThis for Wordpress', 'AddThis for Wordpress',
-            'manage_options', ADDTHIS_SETTINGS_PAGE_ID,
-            array($this, 'addthisWordpressOptions')
-        );
+        $htmlGeneratingFunction = array($this, 'addthisWordpressOptions');
+        $this->cmsConnector->addSettingsPage($htmlGeneratingFunction);
     }
 
     /**
      * Manages the WP settings page
-     * 
+     *
      * @return null
      */
     public function addthisWordpressOptions()
     {
-        if (!current_user_can('manage_options')) {
-            wp_die(
-                __('You do not have sufficient permissions to access this page.')
-            );
-        }
-
         $updateResult = null;
 
         if ($this->_checkAddPubid()) {
-            $updateResult = $this->updatePubid($this->_postVariables['pubid']);
+            $updateResult = $this->updateSettings($this->_postVariables);
         }
-        wp_enqueue_script(
-            'addThisScript',
-            plugins_url(ADDTHIS_JS_PATH, __FILE__)
-        );
-        wp_enqueue_style(
-            'addThisStylesheet',
-            plugins_url(ADDTHIS_CSS_PATH, __FILE__)
-        );
         echo $this->_getHTML($updateResult);
     }
 
     /**
      *  Updates addthis profile id
-     * 
+     *
      *  @param string $pubId Addthis public id
-     * 
+     *
      *  @return string
      */
-    public function updatePubid($pubId)
+    public function updateSettings($settings)
     {
-        global $addthis_addjs;
-        $addthis_addjs->setProfileId($pubId);
-        $this->_pubid = $pubId;
-        return "<div class='addthis_updated wrap'>".
-                    "AddThis Profile ID updated successfully!!!".
-               "</div>";
-    }
-
-    /**
-     *  Get addthis profile id
-     * 
-     *  @return string
-     */
-    public static function getPubid()
-    {
-        $settings = get_option('addthis_settings');
-        if (isset($settings) && isset($settings['profile'])) {
-            return $settings['profile'];
-        } else {
-            return null;
+        if (!empty($settings['addthis_settings'])) {
+            $this->_options = $this->addThisConfigs->saveSubmittedConfigs($settings['addthis_settings']);
         }
+
+        return '
+            <div class="addthis_updated wrap" style="margin-top:50px;width:95%">
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.18 @dgras
+                        '. __("AddThis Profile Settings updated successfully!!!").'
+//************ ORIGINAL
+//      AddThis Profile Settings updated successfully!!!
+//************ FI
+            </div>
+        ';
     }
 
     /**
      *  Get referer url
-     * 
+     *
      *  @return string
      */
     private function _getReferelUrl()
     {
-        $referer = ''; 
+        $referer = '';
         if (isset($_SERVER['HTTP_REFERER'])) {
             $parse   = parse_url($_SERVER['HTTP_REFERER']);
             $referer = $parse['host'];
         }
-        
+
 //        return $referer;
         return self::ADDTHIS_REFERER;
     }
 
     /**
      *  Check if there is an addthis profile id return from addthis.com
-     * 
+     *
      *  @return boolean
      */
     private function _checkPubidFromAddThis()
@@ -247,10 +208,32 @@ class Addthis_Wordpress
      */
     private function _checkAddPubid()
     {
-        $successReturn = isset ($this->_postVariables['pubid'])
-                         && isset ($this->_postVariables['submit']);
+        $successReturn = isset ($this->_postVariables['addthis_settings']['addthis_profile'])
+                         && isset ($this->_postVariables['submit'])
+                         && isset( $this->_postVariables['pubid_nonce'] )
+                         && wp_verify_nonce( $this->_postVariables['pubid_nonce'], 'update_pubid' );
 
         return $successReturn;
+    }
+
+    /**
+     *  Check if there is request to update async loading
+     *
+     *  @return boolean
+     */
+    private function _checkAsyncLoading()
+    {
+        $successReturn = isset ($this->_postVariables['async_loading']);
+
+        return $successReturn;
+    }
+
+    public function addthisAsyncLoading()
+    {
+        if (current_user_can( 'manage_options' ) && $this->_checkAsyncLoading()) {
+            $updateResult = $this->updateSettings($this->_postVariables);
+        }
+        die; //exit from the ajax request
     }
 
     /**
@@ -271,22 +254,35 @@ class Addthis_Wordpress
 
     /**
      * Get the HTML for addthis settings page
-     * 
+     *
      * @param string $updateResult Updated message
-     * 
+     *
      * @return string
      */
     private function _getHTML($updateResult)
     {
-        $html = '<div class="addthis_wrap">'.
-                '<p>'.
-                    '<img class="header-img" '.
-                    'src="//cache.addthis.com/icons/v1/thumbs/32x32/more.png" '.
-                    'alt="Addthis">'.
-                    '<span class="addthis-title">AddThis <sup>*</sup></span>'.
-                    '<span class="addthis-name">for WordPress</span>'.
-                '</p>';
-        if ($this->_upgrade && !$this->_pubid) {
+        $html = '
+            <div class="wrap">
+                <form
+                    id="addthis-settings"
+                    method="post"
+                    action="'.$this->cmsConnector->getSettingsPageUrl().'"
+                >
+                    <div class="Header">
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.18 @dgras
+                        '. __("<em>AddThis</em> Sharing Buttons",'addthis_trans_domain').';
+//************ ORIGINAL
+//      <h1><em>AddThis</em> Sharing Buttons</h1>';
+//************ FI
+
+        if (!_addthis_is_csr_form()) {
+            $html .= '<span class="preview-save-btns">' . _addthis_settings_buttons(false) . '</span>';
+        }
+
+        $html .= '</div>';
+
+        if ($this->_upgrade && !$this->addThisConfigs->getProfileId()) {
             $html .= $this->_getupdateSuccessMessage();
         }
 
@@ -303,10 +299,17 @@ class Addthis_Wordpress
             && ($this->_getVariables['advanced_settings'] == 'true'))
         ) {
             // Get Confirmation form
-            $html .= $this->_getConfirmationForm();
+            $html .= addthis_profile_id_csr_confirmation();
         } else {
             $html .= $this->_getAddThisLinkButton();
-            $html .= "</div>";
+        }
+
+        if (!_addthis_is_csr_form()) {
+            $html .= '
+                    <div class="Btn-container-end">
+                        ' . _addthis_settings_buttons(false) . '
+                    </div>
+                </form>';
         }
 
         return $html;
@@ -320,7 +323,13 @@ class Addthis_Wordpress
     private static function _getPubIdFromAddthisFailureMessage()
     {
         return "<div class='addthis_error wrap'>".
-                        "Failed to add AddThis Profile ID".
+
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.18 @dgras
+        ". __('Failed to add AddThis Profile ID','addthis_trans_domain').";
+//************ ORIGINAL
+//        "Failed to add AddThis Profile ID".
+//************ FI
                    "</div>";
     }
 
@@ -332,7 +341,12 @@ class Addthis_Wordpress
     private function _getupdateSuccessMessage()
     {
         return "<div class='addthis_updated wrap'>".
-                    "Click on the link below to finish setting up your AddThis tools.".
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.18 @dgras
+        ". __('Click on the link below to finish setting up your AddThis tools.','addthis_trans_domain').";
+//************ ORIGINAL
+//        "Click on the link below to finish setting up your AddThis tools.".
+//************ FI
                "</div>";
     }
 
@@ -343,157 +357,130 @@ class Addthis_Wordpress
      */
     private function _getAddThisLinkButton()
     {
-        $html = '';
-        if (!$this->_pubid) {
-            $html  = "<h2>You're almost done!</h2>";
-        }
-        $html .= "<div class='addthis_description'>".
-                 "Beautiful simple website tools designed to help you get ".
-                 "likes, get shares, get follows and get discovered. </div>";
-        
-        if (!$this->_pubid) {
-            // Get pub name
-            $pubName = self::_getPubName();
-            $html .= "<a class='addthis_button next' ".
-                     "href='".self::ADDTHIS_SITE_URL.
-                     "?cms=wp&pubname=".urlencode($pubName)."&wp_redirect=".
-                     str_replace('.', '%2E', urlencode(self::getSettingsPageUrl())).
-                     "'>Next</a>";
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.18 @dgras
+        $noPubIdDescription = __('To configure sharing tools for your site, use the button below to set up an AddThis account at addthis.com, create a profile for your site and begin adding sharing tools. This process will require an email address.','addthis_trans_domain');
+        $noPubIdButtonText = __("AddThis profile setup",'addthis_trans_domain');
+        $noPubIdCardTitle = __('You\'re almost done!','addthis_trans_domain');
+
+        $pubIdDescription = __('To configure sharing tools for your site, use the button below. It will take you to Tools on addthis.com','addthis_trans_domain');
+        $pubIdCardTitle = __('Setup AddThis Tools','addthis_trans_domain');
+        $pubIdButtonText = __("Configure AddThis Tools",'addthis_trans_domain');
+//************ ORIGINAL
+//        $noPubIdDescription = 'To configure sharing tools for your site, use the button below to set up an AddThis account at addthis.com, create a profile for your site and begin adding sharing tools. This process will require an email address.';
+//        $noPubIdButtonText = "AddThis profile setup";
+//        $noPubIdCardTitle = 'You\'re almost done!';
+//
+//        $pubIdDescription = 'To configure sharing tools for your site, use the button below. It will take you to Tools on addthis.com';
+//        $pubIdCardTitle = 'Setup AddThis Tools';
+//        $pubIdButtonText = "Configure AddThis Tools";
+//************ FI
+
+        if (!$this->addThisConfigs->getProfileId()) {
+            // if they don't have a profile yet, default to setup
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.18 @dgras
+            $tabOrder = array(
+                'tabs-1' => __('Setup','addthis_trans_domain'),
+                'tabs-2' => __('Advanced Options','addthis_trans_domain'),
+            );
+//************ ORIGINAL
+//            $tabOrder = array(
+//                'tabs-1' => 'Setup',
+//                'tabs-2' => 'Advanced Options',
+//            );
+//************ FI
+
+            $sharingToolsCardTitle = $noPubIdCardTitle;
+            $sharingToolsDescription = $noPubIdDescription;
+            $sharingToolsButtonUrl = _addthis_profile_setup_url();
+            $sharingToolsButtonText = $noPubIdButtonText;
+            $target = '';
         } else {
+            // else default to profile
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.18 @dgras
+            $tabOrder = array(
+                'tabs-1' => __('Sharing Tools','addthis_trans_domain'),
+                'tabs-2' => __('Advanced Options','addthis_trans_domain'),
+            );
+//************ ORIGINAL
+//            $tabOrder = array(
+//                'tabs-1' => 'Sharing Tools',
+//                'tabs-2' => 'Advanced Options',
+//            );
+//************ FI
 
-            $html .= "<a class='addthis_button' target='_blank'".
-                     "href='".self::ADDTHIS_SITE_URL."?cms=wp&pubid=".$this->_pubid.
-                     "'>".
-                     "To control your AddThis plugins, click here &#8594;".
-                     "</a>";          
+            $sharingToolsCardTitle = $pubIdCardTitle;
+            $sharingToolsDescription = $pubIdDescription;
+            $sharingToolsButtonUrl = _addthis_tools_url();
+            $sharingToolsButtonText = $pubIdButtonText;
+            $target = 'target="_blank"';
         }
 
-       $html .="<p class='addthis_support'> If you don’t see your tools after configuring them in the dashboard, please contact ".
-		"<a href='http://support.addthis.com/'>AddThis Support</a></p>";
+        $tabsHtml = '';
+        foreach ($tabOrder as $href => $title) {
+            $tabsHtml .= '<li class="Tabbed-nav-item"><a href="#' . $href . '">' . $title . '</a></li>';
+        }
 
+        $html = '
+            <div class="Main-content" id="tabs">
+                <ul class="Tabbed-nav">
+                    ' . $tabsHtml . '
+                </ul>
+                <div id="tabs-1">
+                    <div class="Card" id="Card-side-sharing">
+                        <div>
+                            <h3 class="Card-hd-title">
+                                ' . $sharingToolsCardTitle . '
+                            </h3>
+                        </div>
+                        <div class="addthis_seperator">&nbsp;</div>
+                        <div class="Card-bd">
+                            <div class="addthis_description">
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.18 @dgras
+            '. __ ("Beautiful simple website tools designed to help you get likes, get shares, get follows and get discovered.",'addthis_trans_domain') .'
+//************ ORIGINAL
+//            Beautiful simple website tools designed to help you get likes, get shares, get follows and get discovered.
+//************ FI
 
-        $html .= "<div class='addthis_seperator'>&nbsp;</div>";
-        $html .= "<a href = '".
-                  self::getSettingsPageUrl()."&advanced_settings=true'".
-                  " class='addthis_reset_button'>Edit Profile Settings</a>";
+                            </div>
+                            <p>' . $sharingToolsDescription . '</p>
+                            <a
+                                class="Btn Btn-blue"
+                                ' . $target . '
+                                href="' . $sharingToolsButtonUrl . '">' . $sharingToolsButtonText . ' &#8594;
+                            </a>
+                            <p class="addthis_support">
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.18 @dgras
+            '. __ ("If you don't see your tools after configuring them in the dashboard, please contact") .'
+            <a href="http://support.addthis.com/">'. __ ("AddThis Support") .'</a>
+//************ ORIGINAL
+//            If you don\'t see your tools after configuring them in the dashboard, please contact
+//            <a href="http://support.addthis.com/">AddThis Support</a>
+//************ FI
+                            </p>
+                        </div>
+                    </div>
+                   ' . _addthis_rate_us_card() . '
+                </div>
+                <div id="tabs-2">
+                    ' . _addthis_tracking_card() . '
+                    ' . _addthis_display_options_card() . '
+                    ' . _addthis_additional_options_card() . '
+                    ' . _addthis_profile_id_card() . '
+                    ' . _addthis_mode_card() . '
+                </div>
+            </div>';
 
         return $html;
-    }
-
-    /**
-     * Get the pubname for addthis
-     *
-     * @return string
-     */
-    private static function _getPubName()
-    {
-        $pubName = get_bloginfo('name');
-
-        if (!preg_match('/^[A-Za-z0-9 _\-\(\)]*$/', $pubName)) {
-            // if title not match, get domain
-            $domain  = self::getDomain();
-            if (preg_match(
-                '/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i',
-                $domain, $regs
-            )) {
-                $domainArray = explode(".", $regs['domain']);
-                $pubName     = $domainArray[0];
-            } else {
-                $pubName = '';
-            }
-            $pubName  = str_replace('.', '', $pubName);            
-        }
-
-        if (!preg_match('/^[A-Za-z0-9 _\-\(\)]*$/', $pubName) || $pubName == '') {
-            // if domain not match, get loggedin username
-            $currentUser = wp_get_current_user();
-            $pubName = $currentUser->user_login;
-        }
-
-        $pubName = substr($pubName, 0, ADDTHIS_PUBNAME_LIMIT);
-        return $pubName;
-    }
-
-    /**
-     * Get HTML for new users with confirmation
-     *
-     * @return string
-     */
-    private function _getConfirmationForm()
-    {
-        if (isset($this->_getVariables['advanced_settings'])) {
-            $html  = "<div>";
-            $html .= "Here you can manually set your AddThis Profile ID - ".
-                      "you can get this from your ".
-                      "<a target='_blank' ".
-                        "href='".self::ADDTHIS_PROFILE_SETTINGS_PAGE."'>".
-                      "Profile Settings</a>";
-            $html .= "</div>";
-        } else {
-            $html  = "<h2>You're almost done!</h2>";
-            $html .= "<div>".
-                     "It's time to connect your AddThis account with Wordpress.".
-                     "</div>";
-        }
-        $html .= '<form id="addthis-form" method="post" action="'.
-                    self::getSettingsPageUrl().'">';
-        $html .= "<div class='addthis_pub_id'>".
-                  "<div class='icons wp_div'>".
-                    "<img src='".plugins_url('images/wordpress.png', __FILE__).
-                     "'>".
-                     "<span>Your WordPress Site:</span>".
-                     "<input type='text' value='" . get_bloginfo('name') . "'".
-                     "name='pub_id' readonly=true onfocus='this.blur()'/>".
-                  "</div>".
-                  "<div class='icons arrow_div'>".
-                    "<img src='".plugins_url('images/arrow_right.png', __FILE__).
-                    "'>".
-                    "<img src='".plugins_url('images/arrow_left.png', __FILE__).
-                    "'>".
-                  "</div>".
-                  "<div class='icons addthis_div'>".
-                    "<img src='".plugins_url('images/addthis.png', __FILE__).
-                    "'>".
-                    "<span>AddThis Profile ID:</span>";
-        
-        if (isset($this->_getVariables['pubid'])) {
-            $pubId = $this->_getVariables['pubid'];
-        } else {
-            $pubId = $this->_pubid;
-        }
-        
-        $html .=  "<input type='text' value='".$pubId."' ".
-                      "name='pubid' id='addthis-pubid'/>";
-        $html .=  "</div></div>";
-        $submitButtonValue = "Confirm and Save";
-        
-        if (isset($this->_getVariables['advanced_settings'])) {
-            $submitButtonValue = "Update";
-        }
-        
-        $html .= '<input type="submit" value="'.$submitButtonValue.'"'.
-                     ' name="submit" class="addthis_confirm_button">';
-        $html .= '<button class="addthis_cancel_button" type="button"'
-                . ' onclick="window.location=\''.self::getSettingsPageUrl()
-                .'\';return false;">Cancel</button>';
-        $html .= "</form>";
-
-        return $html;
-    }
-
-    /**
-     * Get the plugin's settings page url
-     * 
-     * @return string
-     */
-    public static function getSettingsPageUrl()
-    {
-        return admin_url("options-general.php?page=" . ADDTHIS_SETTINGS_PAGE_ID);
     }
 
     /**
      * Get the wp domain
-     * 
+     *
      * @return string
      */
     public static function getDomain()
@@ -515,15 +502,17 @@ add_action('init', 'Addthis_Wordpress_early', 0);
 /**
  * Include addthis js widget
  *
- * @global AddThis_addjs $addthis_addjs
+ * @global AddThis_addjs_sharing_button_plugin $AddThis_addjs_sharing_button_plugin
  * @return null
  */
 function Addthis_Wordpress_early()
 {
-    global $addthis_addjs;
-    if (!isset($addthis_addjs)) {
-        include 'includes/addthis_addjs_new.php';
-        $addthis_options = get_option('addthis_settings');
-        $addthis_addjs = new AddThis_addjs($addthis_options);
+    global $AddThis_addjs_sharing_button_plugin;
+    global $addThisConfigs;
+    global $cmsConnector;
+
+    if (!isset($AddThis_addjs_sharing_button_plugin)) {
+        include 'addthis_addjs_new.php';
+        $AddThis_addjs_sharing_button_plugin = new AddThis_addjs_sharing_button_plugin($addThisConfigs, $cmsConnector);
     }
 }

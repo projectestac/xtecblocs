@@ -6,6 +6,7 @@ development home at https://github.com/projectestac/xtecblocs
 Changes in progress
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.2.2 (Trello #794)
+- Added testlib
 - Show Google Analytics dashboard for superadmins when goes to others admin's blogs (Trello #756)
 - Multisite common functions, styles and languages moved to a new submodule (Trello #787)
 - Allow non ldap users to restore their passwords (Trello #826)
@@ -17,7 +18,11 @@ Changes in progress
 - Raw HTML: Upgraded to version 1.4.15 (Trello #793)
 - Wordpress-Importer: Added spanish translation
 - Added theme Fukasawa (Trello #947)
-- Moved wp-recaptcha as submodule (Trello  #926)
+- Moved wp-recaptcha as submodule (Trello #926)
+- Upgraded AddThis to version 5.1.1 (Trello #794)
+- Upgraded Anti-spam to version 3.5 (Trello #794)
+- Updated theme Twentyfifteen (Trello #794)
+- Fix for Multisite Clone Duplicator when there are more than 1.000 blogs (Trello #794)
 
 
 15.06.08
