@@ -4,11 +4,11 @@
  * Plugin URI:          http://wordpress.org/plugins/multisite-clone-duplicator/
  * Description:         Clones an existing site into a new one in a multisite installation : copies all the posts, settings and files
  * Author:              Julien OGER, Pierre DARGHAM, GLOBALIS media systems
- * Author URI:          http://www.globalis-ms.com
+ * Author URI:          https://github.com/pierre-dargham/multisite-clone-duplicator
  *
- * Version:             1.2.0
+ * Version:             1.3.2
  * Requires at least:   3.5.0
- * Tested up to:        4.1.0
+ * Tested up to:        4.1.2
  */
 
 // Block direct requests
@@ -35,6 +35,12 @@ if( !class_exists( 'MUCD' ) ) {
         require_once MUCD_COMPLETE_PATH . '/include/admin.php';
         MUCD_Admin::hooks();
     }
+
+    if ( defined('WP_CLI') && WP_CLI ) {
+        require_once MUCD_COMPLETE_PATH . '/lib/duplicate.php';
+        MUCD_Functions::set_locale_to_en_US();
+        require_once MUCD_COMPLETE_PATH . '/wp-cli/wp-cli-site-duplicate-subcommand.php';
+    }    
 
     /**
      * Main class of the plugin
@@ -70,23 +76,21 @@ if( !class_exists( 'MUCD' ) ) {
          */
         public static function activate() {
             MUCD::check_if_multisite();
-            MUCD_Option::init_duplicable_option();
-            MUCD_Option::init_log_dir_option();               
+            MUCD_Option::init_options();              
         }
 
         /**
          * What to do on plugin deactivation
          */
         public static function deactivate() {
-            MUCD_Option::delete_duplicable_option();
-            MUCD_Option::delete_log_dir_option();
+            // Nothing for now.
         }
 
         /**
          * What to do on plugin uninstallation
          */
         public static function uninstall() {
-            // Nothing for now.
+            MUCD_Option::delete_options();
         }
 
         /**

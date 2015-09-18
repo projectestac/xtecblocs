@@ -84,7 +84,7 @@ if( !class_exists( 'MUCD_Functions' ) ) {
         public static function get_site_list() {
             $site_list = array();
 
-            $network_blogs = wp_get_sites(array('limit' => 1000));
+            $network_blogs = wp_get_sites(array('limit' => MUCD_MAX_NUMBER_OF_SITE));
             foreach( $network_blogs as $blog ){
                 if (MUCD_Functions::is_duplicable($blog['blog_id']) && MUCD_SITE_DUPLICATION_EXCLUDE != $blog['blog_id']) {
                     $site_list[] = $blog;
@@ -124,6 +124,53 @@ if( !class_exists( 'MUCD_Functions' ) ) {
             switch_to_blog($current_blog);
 
             return $wp_upload_info['basedir'];
+        }
+
+        /**
+         * Check if site exists
+         * @since 1.3.0
+         * @param  int $blog_id the blog id
+         * @return boolean true | false
+         */
+        public static function site_exists($blog_id) {
+            return (get_blog_details($blog_id) !== false);
+        }
+
+        /**
+         * Set locale to en_US
+         * @since 1.3.1
+         */
+        public static function set_locale_to_en_US() {
+
+            // Bugfix Pierre Dargham : relocating this declaration outside of the call to add_filter
+            // PHP < 5.3 does not accept anonymous functions
+            function mucd_locale_en_us( $locale ) { return 'en_US'; }
+
+            add_filter( 'locale', 'mucd_locale_en_us' );
+        }
+
+        /**
+         * Get network data for a given id.
+         *
+         * @author wp-cli
+         * @see https://github.com/wp-cli/wp-cli/blob/master/php/commands/site.php
+         *
+         * @param int     $network_id
+         * @return bool|array False if no network found with given id, array otherwise
+         */
+        public static function get_network( $network_id ) {
+            global $wpdb;
+
+            // Load network data
+            $networks = $wpdb->get_results( $wpdb->prepare(
+                "SELECT * FROM $wpdb->site WHERE id = %d", $network_id ) );
+
+            if ( !empty( $networks ) ) {
+                // Only care about domain and path which are set here
+                return $networks[0];
+            }
+
+            return false;
         }
 
     }

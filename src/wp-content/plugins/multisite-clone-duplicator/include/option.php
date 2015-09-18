@@ -13,12 +13,12 @@ if( !class_exists( 'MUCD_Option' ) ) {
          * @since 0.2.0
          */
         public static function init_duplicable_option($blogs_value = "no", $network_value = "all") {
-            $network_blogs = wp_get_sites(array('limit' => 1000));
+            $network_blogs = wp_get_sites(array('limit' => MUCD_MAX_NUMBER_OF_SITE));
             foreach( $network_blogs as $blog ){
                 $blog_id = $blog['blog_id'];
-                update_blog_option( $blog_id, 'mucd_duplicable', $blogs_value);
+                add_blog_option( $blog_id, 'mucd_duplicable', $blogs_value);
             }
-            update_site_option( 'mucd_duplicables', $network_value );
+            add_site_option( 'mucd_duplicables', $network_value );
         }
 
         /**
@@ -26,7 +26,7 @@ if( !class_exists( 'MUCD_Option' ) ) {
          * @since 0.2.0
          */
         public static function delete_duplicable_option() {
-            $network_blogs = wp_get_sites(array('limit' => 1000));
+            $network_blogs = wp_get_sites(array('limit' => MUCD_MAX_NUMBER_OF_SITE));
             foreach( $network_blogs as $blog ){
                 $blog_id = $blog['blog_id'];
                 delete_blog_option( $blog_id, 'mucd_duplicable');
@@ -40,7 +40,7 @@ if( !class_exists( 'MUCD_Option' ) ) {
          * @param array $blogs list of blogs we want the option set to "yes"
          */
         public static function set_duplicable_option($blogs) {
-            $network_blogs = wp_get_sites(array('limit' => 1000));
+            $network_blogs = wp_get_sites(array('limit' => MUCD_MAX_NUMBER_OF_SITE));
             foreach( $network_blogs as $blog ){
                 if(in_array($blog['blog_id'], $blogs)) {
                     update_blog_option( $blog['blog_id'], 'mucd_duplicable', "yes");
@@ -52,19 +52,27 @@ if( !class_exists( 'MUCD_Option' ) ) {
         }
 
         /**
-         * Updates log directory to default option
-         * @since 0.2.0
+         * Add plugin default options
+         * @since 1.3.0
          */
-        public static function init_log_dir_option() {
-            update_site_option('mucd_log_dir', MUCD_COMPLETE_PATH . '/logs/');
+        public static function init_options() {
+            add_site_option('mucd_copy_files', 'yes');
+            add_site_option('mucd_keep_users', 'yes');
+            add_site_option('mucd_log', 'no');
+            add_site_option('mucd_log_dir', MUCD_COMPLETE_PATH . '/logs/');
+            MUCD_Option::init_duplicable_option();
         }
 
         /**
-         * Removes log directory option
-         * @since 0.2.0
+         * Removes plugin options
+         * @since 1.3.0
          */
-        public static function delete_log_dir_option() {
+        public static function delete_options() {
+            delete_site_option('mucd_copy_files');
+            delete_site_option('mucd_keep_users');
+            delete_site_option('mucd_log');
             delete_site_option('mucd_log_dir');
+            MUCD_Option::delete_duplicable_option();
         }
       
         /**

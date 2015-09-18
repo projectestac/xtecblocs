@@ -45,32 +45,32 @@ if( !class_exists( 'MUCD_Data' ) ) {
             }
 
             // Bugfix : escape '_' , '%' and '/' character for mysql 'like' queries
-            $like = $wpdb->esc_like($from_site_prefix);
+            $from_site_prefix_like = $wpdb->esc_like($from_site_prefix);
+
+            // SCHEMA - TO FIX for HyperDB
+            $schema = DB_NAME;
 
             // Get sources Tables
-            $sql_query = $wpdb->prepare('SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME LIKE \'%s\'', $like . '%');
-            $from_site_table =  MUCD_Data::do_sql_query($sql_query, 'col', FALSE); 
-
-            if($from_site_id==MUCD_PRIMARY_SITE_ID) {
-                $from_site_table = MUCD_Data::get_primary_tables($from_site_table, $from_site_prefix);
+            if($from_site_id == MUCD_PRIMARY_SITE_ID) {
+                $from_site_table = MUCD_Data::get_primary_tables($from_site_prefix);
+            }
+            else {
+                $sql_query = $wpdb->prepare('SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = \'%s\' AND TABLE_NAME LIKE \'%s\'', $schema, $from_site_prefix_like . '%');
+                $from_site_table =  MUCD_Data::do_sql_query($sql_query, 'col'); 
             }
 
             foreach ($from_site_table as $table) {
 
                 $table_name = $to_site_prefix . substr( $table, $from_site_prefix_length );
 
-                // Get Schema name (for multibase DB as with HyberDB plugin)
-                $sql_query = $wpdb->prepare('SELECT TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = \'%s\'', $table);
-                $schema = MUCD_Data::do_sql_query($sql_query, 'var');
-
                 // Drop table if exists
                 MUCD_Data::do_sql_query('DROP TABLE IF EXISTS `' . $table_name . '`');
 
                 // Create new table from source table
-                MUCD_Data::do_sql_query('CREATE TABLE IF NOT EXISTS `' . $table_name . '` LIKE ' . $schema . '.' . '`' . $table . '`');
+                MUCD_Data::do_sql_query('CREATE TABLE IF NOT EXISTS `' . $table_name . '` LIKE `' . $schema . '`.`' . $table . '`');
 
                 // Populate database with data from source table
-                MUCD_Data::do_sql_query('INSERT `' . $table_name . '` SELECT * FROM ' . $schema . '.' . '`' . $table . '`');
+                MUCD_Data::do_sql_query('INSERT `' . $table_name . '` SELECT * FROM `' . $schema . '`.`' . $table . '`');
 
             }
 
@@ -90,9 +90,7 @@ if( !class_exists( 'MUCD_Data' ) ) {
          * @param  string $from_site_prefix db prefix of duplicated site
          * @return array of strings : the tables
          */
-       public static function get_primary_tables($from_site_tables, $from_site_prefix) {
-
-            $new_tables = array();
+       public static function get_primary_tables($from_site_prefix) {
 
             $default_tables =  MUCD_Option::get_primary_tables_to_copy();
 
@@ -100,13 +98,7 @@ if( !class_exists( 'MUCD_Data' ) ) {
                 $default_tables[$k] = $from_site_prefix . $default_table;
             }
 
-            foreach($from_site_tables as $k => $from_site_table) {
-                if(in_array($from_site_table, $default_tables)) {
-                    $new_tables[] = $from_site_table;
-                }
-            }
-
-            return $new_tables;
+            return $default_tables;
        }
 
 
@@ -137,9 +129,9 @@ if( !class_exists( 'MUCD_Data' ) ) {
             $tables = array();
 
             // Bugfix : escape '_' , '%' and '/' character for mysql 'like' queries
-            $like = $wpdb->esc_like($to_blog_prefix);
+            $to_blog_prefix_like = $wpdb->esc_like($to_blog_prefix);
 
-            $results = MUCD_Data::do_sql_query('SHOW TABLES LIKE \'' . $like . '%\'', 'col', FALSE);
+            $results = MUCD_Data::do_sql_query('SHOW TABLES LIKE \'' . $to_blog_prefix_like . '%\'', 'col', FALSE);
 
             foreach( $results as $k => $v ) {
                 $tables[str_replace($to_blog_prefix, '', $v)] = array();
@@ -196,9 +188,9 @@ if( !class_exists( 'MUCD_Data' ) ) {
                 foreach($fields as $field) {
 
                     // Bugfix : escape '_' , '%' and '/' character for mysql 'like' queries
-                    $like = $wpdb->esc_like($from_string);
+                    $from_string_like = $wpdb->esc_like($from_string);
 
-                    $sql_query = $wpdb->prepare('SELECT `' .$field. '` FROM `'.$table.'` WHERE `' .$field. '` LIKE "%s" ', '%' . $like . '%');  
+                    $sql_query = $wpdb->prepare('SELECT `' .$field. '` FROM `'.$table.'` WHERE `' .$field. '` LIKE "%s" ', '%' . $from_string_like . '%');  
                     $results = MUCD_Data::do_sql_query($sql_query, 'results', FALSE);
 
                     if($results) {
@@ -338,7 +330,7 @@ if( !class_exists( 'MUCD_Data' ) ) {
 
             if($log) {
                 MUCD_Duplicate::write_log('SQL :' .$sql_query);
-                MUCD_Duplicate::write_log('Result :' .$results);
+                MUCD_Duplicate::write_log('Result :' . var_export($results, true));
             }
 
             if ($wpdb->last_error != "") {

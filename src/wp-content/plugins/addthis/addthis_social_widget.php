@@ -1,59 +1,88 @@
 <?php
-/* vim: set expandtab tabstop=4 shiftwidth=4: */
-/* 
-* +--------------------------------------------------------------------------+
-* | Copyright (c) 2008-2012 Add This, LLC                                    |
-* +--------------------------------------------------------------------------+
-* | This program is free software; you can redistribute it and/or modify     |
-* | it under the terms of the GNU General Public License as published by     |
-* | the Free Software Foundation; either version 2 of the License, or        |
-* | (at your option) any later version.                                      |
-* |                                                                          |
-* | This program is distributed in the hope that it will be useful,          |
-* | but WITHOUT ANY WARRANTY; without even the implied warranty of           |
-* | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the            |
-* | GNU General Public License for more details.                             |
-* |                                                                          |
-* | You should have received a copy of the GNU General Public License        |
-* | along with this program; if not, write to the Free Software              |
-* | Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA |
-* +--------------------------------------------------------------------------+
-*/
 /**
-* Plugin Name: AddThis for WordPress
-* Plugin URI: http://www.addthis.com
-* Description: Use the AddThis suite of website tools which includes sharing, following, recommended content, and conversion tools to help you make your website smarter. With AddThis, you can see how your users are engaging with your content, provide a personalized experience for each user and encourage them to share, subscribe or follow.
-* Version: 4.0.1
-*
-* Author: The AddThis Team
-* Author URI: http://www.addthis.com/blog
-*/
+ * Plugin Name: AddThis Sharing Buttons
+ * Plugin URI: http://www.addthis.com
+ * Description: Use the AddThis suite of website tools which includes sharing, following, recommended content, and conversion tools to help you make your website smarter. With AddThis, you can see how your users are engaging with your content, provide a personalized experience for each user and encourage them to share, subscribe or follow.
+ * Version: 5.1.1
+ * Author: The AddThis Team
+ * Author URI: http://www.addthis.com/
+ * License: GPL2
+ *
+ * +--------------------------------------------------------------------------+
+ * | Copyright (c) 2008-2015 AddThis, LLC                                     |
+ * +--------------------------------------------------------------------------+
+ * | This program is free software; you can redistribute it and/or modify     |
+ * | it under the terms of the GNU General Public License as published by     |
+ * | the Free Software Foundation; either version 2 of the License, or        |
+ * | (at your option) any later version.                                      |
+ * |                                                                          |
+ * | This program is distributed in the hope that it will be useful,          |
+ * | but WITHOUT ANY WARRANTY; without even the implied warranty of           |
+ * | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the            |
+ * | GNU General Public License for more details.                             |
+ * |                                                                          |
+ * | You should have received a copy of the GNU General Public License        |
+ * | along with this program; if not, write to the Free Software              |
+ * | Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA |
+ * +--------------------------------------------------------------------------+
+ */
+
 if (!defined('ADDTHIS_INIT')) define('ADDTHIS_INIT', 1);
 else return;
 
 define( 'addthis_style_default' , 'fb_tw_p1_sc');
-define( 'ADDTHIS_PLUGIN_VERSION' , '4.0');
-define( 'ADDTHIS_PRODUCT_VERSION' , 'wpp-4.0');
-define( 'ADDTHIS_ATVERSION', '300');
-define( 'ADDTHIS_ATVERSION_MANUAL_UPDATE', -1);
-define( 'ADDTHIS_ATVERSION_AUTO_UPDATE', 0);
-define( 'ADDTHIS_ATVERSION_REVERTED', 1);
 define( 'ENABLE_ADDITIONAL_PLACEMENT_OPTION', 0);
 
-$addthis_options = get_option('addthis_settings');
 
-if(isset($_GET['upgrade']) && $_GET['upgrade'] == 'addthis_for_wordpress'){
-    if(isset($addthis_options)){
-        $addthis_options['addthis_for_wordpress'] = true;
-    } else {
-        $addthis_options = array('addthis_for_wordpress' => true);
-    }
+require_once('AddThisWordPressSharingButtonsPlugin.php');
+require_once('AddThisWordPressConnector.php');
+require_once('AddThisConfigs.php');
+require_once('addthis_post_metabox.php');
 
-    $upgraded = true;
-    $addthis_options['addthis_wordpress_version'] = ADDTHIS_PLUGIN_VERSION;
-    update_option('addthis_settings', $addthis_options);
 
-}
+$addThisSharingButtonsPluginObject = new AddThisWordPressSharingButtonsPlugin();
+$cmsConnector = new AddThisWordPressConnector($addThisSharingButtonsPluginObject);
+$addThisConfigs = new AddThisConfigs($cmsConnector);
+$addthis_options = $addThisConfigs->getConfigs();
+
+require_once('addthis_settings_functions.php');
+
+$addthis_languages = array(
+    ''   => 'Automatic',
+    'af' => 'Afrikaaner',
+    'ar' => 'Arabic',
+    'zh' => 'Chinese',
+    'cs' => 'Czech',
+    'da' => 'Danish',
+    'nl' => 'Dutch',
+    'en' => 'English',
+    'fa' => 'Farsi',
+    'fi' => 'Finnish',
+    'fr' => 'French',
+    'ga' => 'Gaelic',
+    'de' => 'German',
+    'el' => 'Greek',
+    'he' => 'Hebrew',
+    'hi' => 'Hindi',
+    'it' => 'Italian',
+    'ja' => 'Japanese',
+    'ko' => 'Korean',
+    'lv' => 'Latvian',
+    'lt' => 'Lithuanian',
+    'no' => 'Norwegian',
+    'pl' => 'Polish',
+    'pt' => 'Portugese',
+    'ro' => 'Romanian',
+    'ru' => 'Russian',
+    'sk' => 'Slovakian',
+    'sl' => 'Slovenian',
+    'es' => 'Spanish',
+    'sv' => 'Swedish',
+    'th' => 'Thai',
+    'ur' => 'Urdu',
+    'cy' => 'Welsh',
+    'vi' => 'Vietnamese',
+);
 
 /**
  * Show Plugin activation notice on first installation*
@@ -61,6 +90,7 @@ if(isset($_GET['upgrade']) && $_GET['upgrade'] == 'addthis_for_wordpress'){
 function pluginActivationNotice()
 {
     $run_once = get_option('addthis_run_once');
+    global $cmsConnector;
 
     if (!$run_once) {
         wp_enqueue_style(
@@ -69,2659 +99,3343 @@ function pluginActivationNotice()
         );
         $html = '<div class="addthis_updated wrap">';
         $html .= '<span>'.
-                    'Congrats! You\'ve Installed Addthis for Wordpress'.
+                    'Congrats! You\'ve Installed AddThis Sharing Buttons'.
                   '</span>';
         $html .= '<span><a class="addthis_configure" href="'
-                . 'options-general.php?page=addthis_social_widget' .
+                . $cmsConnector->getSettingsPageUrl() .
                 '">Configure it now</a> >></span>';
         $html .= '</div><!-- /.updated -->';
         echo '<style>div#message.updated{ display: none; }</style>';
         echo $html;
+
         update_option('addthis_run_once', true);
     }
 }
+
+register_deactivation_hook(__FILE__, array($cmsConnector, 'deactivate'));
 
 /**
  * Make sure the option gets added on registration
  * @since 2.0.6
  */
 add_action('admin_notices', 'pluginActivationNotice');
-function addthis_activation_hook(){
-    /* Check if it is an upgrade or new intallation */
-    if ( get_option('addthis_settings') == false) {
-        // Fresh instlallation
-        $option = array('addthis_for_wordpress' => true);
-    } else {
-        $option = get_option('addthis_settings');
-        if(isset($option['addthis_for_wordpress'])) {
-            $option['addthis_for_wordpress'] = true;
-        } else if(isset($option['above']) || isset($option['below'])){
-            //check if any share buttons already included in old plugin
-            $option['addthis_for_wordpress'] = false;
-        } else if(get_option('widget_addthis-widget') == true){
-            //check if button widgets already included in old plugin
-            $option['addthis_for_wordpress'] = false;
-        } else {
-            // Fresh instlallation or old plugin not used
-            $option['addthis_for_wordpress'] = true;
-        }
-    }
-    $option['addthis_wordpress_version'] = ADDTHIS_PLUGIN_VERSION;
-    update_option('addthis_settings', $option );
-    
+function addthis_activation_hook() {
+    $addThisSharingButtonsPluginObject = new AddThisWordPressSharingButtonsPlugin();
+    $cmsConnector = new AddThisWordPressConnector($addThisSharingButtonsPluginObject);
+    $addThisConfigs = new AddThisConfigs($cmsConnector);
+    $options = $addThisConfigs->getConfigs();
+    $addThisConfigs->saveConfigs($options);
 }
 
 register_activation_hook( __FILE__, 'addthis_activation_hook' );
 
-if(isset($addthis_options) && isset($addthis_options['addthis_for_wordpress']) && ($addthis_options['addthis_for_wordpress'] == true)){
+if (isset($_POST['addthis_plugin_controls'])) {
+    $newModeValue = $_POST['addthis_plugin_controls'];
+} else if (isset($_POST['addthis_settings']['addthis_plugin_controls'])) {
+    $newModeValue = $_POST['addthis_settings']['addthis_plugin_controls'];
+}
+
+if (   isset($newModeValue)
+    && $newModeValue != $addthis_options['addthis_plugin_controls']
+) {
+    if($newModeValue == 'AddThis') {
+        // the WordPress mode magically doesn't need this to switch modes appropriately
+        // probably because it handles settings correctly (registering them and then adding a hook for their sanitization)
+        // $addthis_options['addthis_plugin_controls'] = 'AddThis';
+    } else {
+        $addthis_options['addthis_plugin_controls'] = 'WordPress';
+    }
+    $addthis_options = $addThisConfigs->saveConfigs($addthis_options);
+}
+
+add_action('wp_head', 'addthis_minimal_css');
+function addthis_minimal_css() {
+    global $cmsConnector;
+    wp_enqueue_style( 'addthis_output', $cmsConnector->getPluginCssFolderUrl() . 'output.css' );
+}
+
+if ($addthis_options['addthis_plugin_controls'] == "AddThis") {
     require_once 'addthis-for-wordpress.php';
-    new Addthis_Wordpress(isset($upgraded));
+    $addThisWordPress = new Addthis_Wordpress(isset($upgraded), $addThisConfigs, $cmsConnector);
 } else {
 
- // Show old version of the plugin till upgrade button is clicked
-    
-// Add settings link on plugin page
-function your_plugin_settings_link($links) { 
-  $settings_link = '<a href="options-general.php?page=addthis_social_widget">Settings</a>'; 
-  array_push($links, $settings_link);
-  return $links; 
-}
- 
-$plugin = plugin_basename(__FILE__); 
-add_filter("plugin_action_links_$plugin", 'your_plugin_settings_link' );
+    // Show old version of the plugin till upgrade button is clicked
 
-
-// Setup our shared resources early 
-// addthis_addjs.php is a standard class shared by the various AddThis plugins to make it easy for us to include our bootstrapping JavaScript only once. Priority should be lowest for Share plugin.
-add_action('init', 'addthis_early', 0);
-function addthis_early(){
-    global $addthis_addjs;
-    if (! isset($addthis_addjs)){
-        require('includes/addthis_addjs.php');
-        $addthis_options = get_option('addthis_settings');
-        $addthis_addjs = new AddThis_addjs($addthis_options);
-    }
-}
-
-//XTEC ************ AFEGIT - Localization support
-//2013.05.21 @jmiro227
-load_plugin_textdomain( 'addthis_trans_domain', null, dirname( plugin_basename( __FILE__ )) . '/languages' );
-//************ FI
-
-$addthis_settings = array();
-$addthis_settings['isdropdown'] = 'true';
-$addthis_settings['customization'] = '';
-$addthis_settings['menu_type'] = 'dropdown';
-$addthis_settings['language'] = 'en';
-$addthis_settings['username'] = '';
-$addthis_settings['fallback_username'] = '';
-$addthis_settings['style'] = 'share';
-$addthis_settings['atversion'] = ADDTHIS_ATVERSION;
-$addthis_settings['placement'] = ENABLE_ADDITIONAL_PLACEMENT_OPTION;
-
-$addthis_languages = array(''=>'Automatic','af'=>'Afrikaaner', 'ar'=>'Arabic', 'zh'=>'Chinese', 'cs'=>'Czech', 'da'=>'Danish', 'nl'=>'Dutch', 'en'=>'English', 'fa'=>'Farsi', 'fi'=>'Finnish', 'fr'=>'French', 'ga'=>'Gaelic', 'de'=>'German', 'el'=>'Greek', 'he'=>'Hebrew', 'hi'=>'Hindi', 'it'=>'Italian', 'ja'=>'Japanese', 'ko'=>'Korean', 'lv'=>'Latvian', 'lt'=>'Lithuanian', 'no'=>'Norwegian', 'pl'=>'Polish', 'pt'=>'Portugese', 'ro'=>'Romanian', 'ru'=>'Russian', 'sk'=>'Slovakian', 'sl'=>'Slovenian', 'es'=>'Spanish', 'sv'=>'Swedish', 'th'=>'Thai', 'ur'=>'Urdu', 'cy'=>'Welsh', 'vi'=>'Vietnamese');
-
-$addthis_menu_types = array('static', 'dropdown', 'toolbox');
-
-$addthis_styles = array(
-                      'share' => array('img'=>'lg-share-%lang%.gif', 'w'=>125, 'h'=>16),
-                      'bookmark' => array('img'=>'lg-bookmark-en.gif', 'w'=>125, 'h'=>16),
-                      'addthis' => array('img'=>'lg-addthis-en.gif', 'w'=>125, 'h'=>16),
-                      'share-small' => array('img'=>'sm-share-%lang%.gif', 'w'=>83, 'h'=>16),
-                      'bookmark-small' => array('img'=>'sm-bookmark-en.gif', 'w'=>83, 'h'=>16),
-                      'plus' => array('img'=>'sm-plus.gif', 'w'=>16, 'h'=>16)
-                    );
-
-$addthis_options = get_option('addthis_settings');
-$atversion = is_array($addthis_options) && array_key_exists('atversion_reverted', $addthis_options) && $addthis_options['atversion_reverted'] == 1 ? $addthis_options['atversion'] : ADDTHIS_ATVERSION;
-
-$addthis_new_styles = array(
-
-    'fb_tw_p1_sc' => array( 'src' => '<div class="addthis_toolbox addthis_default_style " %1$s  ><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a><a class="addthis_button_tweet"></a><a class="addthis_button_pinterest_pinit"></a><a class="addthis_counter addthis_pill_style"></a></div>' , 'img' => 'horizontal_share_rect.png' , 'name' => 'Like, Tweet, +1, Share', 'above' => '', 'below' => ''
-    ), // facebook tweet plus 1 share counter
-    'large_toolbox' => array( 'src' =>  '<div class="addthis_toolbox addthis_default_style addthis_32x32_style" %1$s ><a class="addthis_button_facebook"></a><a class="addthis_button_twitter"></a><a class="addthis_button_email"></a><a class="addthis_button_pinterest_share"></a><a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a></div>', 'img' => 'toolbox-large.png', 'name' => 'Large Toolbox', 'above' => 'hidden ', 'below' => 'hidden'
-    ), // 32x32
-    'small_toolbox' => array( 'src' =>  '<div class="addthis_toolbox addthis_default_style addthis_" %1$s ><a class="addthis_button_facebook"></a><a class="addthis_button_twitter"></a><a class="addthis_button_email"></a><a class="addthis_button_pinterest_share"></a><a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a></div>', 'img' => 'toolbox-small.png', 'name' => 'Small Toolbox', 'above' => 'hidden ', 'below' => '' 
-    ), // 32x32
-    'plus_one_share_counter' => array( 'src' => '<div class="addthis_toolbox addthis_default_style" %1$s ><a class="addthis_button_google_plusone" g:plusone:size="medium" ></a><a class="addthis_counter addthis_pill_style"></a></div>', 'img' => 'plusone-share.gif', 'name' => 'Plus One and Share Counter', 'above'=> 'hidden', 'below'=>'hidden' , 'defaultHide' => true 
-    ), // +1
-    'small_toolbox_with_share' => array( 'src' =>  '<div class="addthis_toolbox addthis_default_style " %1$s ><a href="//addthis.com/bookmark.php?v='.$atversion.'&amp;username=xa-4d2b47597ad291fb" class="addthis_button_compact">Share</a><span class="addthis_separator">|</span><a class="addthis_button_preferred_1"></a><a class="addthis_button_preferred_2"></a><a class="addthis_button_preferred_3"></a><a class="addthis_button_preferred_4"></a></div>', 'img' => 'small-toolbox.jpg', 'name' => 'Small Toolbox with Share first', 'above' => '', 'below' => 'hidden' , 'defaultHide' => true
-    ), // Plus sign share | four buttons
-    'fb_tw_sc' => array( 'src' => '<div class="addthis_toolbox addthis_default_style " %1$s  ><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a><a class="addthis_button_tweet"></a><a class="addthis_counter addthis_pill_style"></a></div>' , 'img' => 'fb-tw-sc.jpg' , 'name' => 'Like, Tweet, Counter', 'above' => 'hidden', 'below' => 'hidden', 'defaultHide' => true
-    ), // facebook tweet share counter
-    'simple_button' => array('src' => '<div class="addthis_toolbox addthis_default_style " %1$s><a href="//addthis.com/bookmark.php?v='.$atversion.'&amp;username=xa-4d2b47f81ddfbdce" class="addthis_button_compact">Share</a></div>', 'img' => 'share.jpg', 'name' => 'Share Button', 'above' => 'hidden ', 'below' => 'hidden', 'defaultHide' => true
-    ), // Plus sign share
-    'button' => array( 'src' => '<div><a class="addthis_button" href="//addthis.com/bookmark.php?v='.$atversion.'" %1$s><img src="//cache.addthis.com/cachefly/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a></div>', 'img' => 'horizontal_share.png', 'name' => 'Classic Share Button', 'above' => 'hidden ', 'below' => 'hidden'
-    ), // classic
-    'share_counter' => array( 'src' => '<div class="addthis_toolbox addthis_default_style " %1$s  ><a class="addthis_counter"></a></div>', 'img' => 'share_counter.png', 'name' => 'Share Counter', 'above' => 'hidden ', 'below' => 'hidden' , 'defaultHide' => true
-    ),
-);
-
-
-//add_filter('the_title', 'at_title_check');
-/**
- * @deprecated
- * @todo Add _deprecated_function notice.
- */ 
-function at_title_check($title)
-{
-    
-    global $addthis_did_filters_added;
-    
-    if (!isset ($addthis_did_filters_added) || $addthis_did_filters_added != true)
-    { 
-        addthis_add_content_filters(); 
-        add_filter('the_content', 'addthis_script_to_content');
-    }
-    else
-    {
+    // Add settings link on plugin page
+    function addthis_plugin_settings_link($links) {
+      global $cmsConnector;
+      $settings_link = '<a href="'.$cmsConnector->getSettingsPageUrl().'">Settings</a>';
+      array_push($links, $settings_link);
+      return $links;
     }
 
-    return $title;
-}
+    $plugin = plugin_basename(__FILE__);
+    add_filter("plugin_action_links_$plugin", 'addthis_plugin_settings_link' );
 
 
-/**
- * @deprecated
- * @todo Add _deprecated_function notice.
- */
-function addthis_script_to_content($content)
-{
-    global $addthis_did_script_output;
-
-    if (!isset($addthis_did_script_output) )
-    {
-        $addthis_did_script_output = true;
-        $content .= addthis_output_script(true);
-    }
-    return $content ;
-}
-
-
-add_filter('language_attributes', 'addthis_language_attributes');
-function addthis_language_attributes($input)
-{
-    return $input . ' xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec" ';
-}
-
-
-/**
- * Converts our old many options in to one beautiful array
- *
- */
-
- // Caution:  Using this filter to disable upgrades may have unexpected consequences.  
-if ( apply_filters( 'at_do_options_upgrades', '__return_true') || apply_filters( 'addthis_do_options_upgrades', '__return_true')   )
-{
-    function addthis_options_200()
-    {
-        
-        global $current_user;
-        $user_id = $current_user->ID;
-        $addthis_new_options = array();
-        if ($username = get_option('addthis_username'))
-            $addthis_new_options['username'] = $username;
-
-        if ($password = get_option('addthis_password'))
-            $addthis_new_options['password'] = $password;
-
-        if ($show_stats = get_option('addthis_show_stats'))
-            $addthis_new_options['addthis_show_stats'] = $show_stats;
-        
-        if ($asynchronous_loading = get_option('addthis_asynchronous_loading'))
-            $addthis_new_options['addthis_asynchronous_loading'] = $asynchronous_loading;
-        
-        if ($append_data = get_option('addthis_append_data'))
-            $addthis_new_options['addthis_append_data'] = $append_data;
-        
-        if ($showonhome = get_option('addthis_showonhome'))
-            $addthis_new_options['addthis_showonhome'] = $showonhome;
-        
-        if ($showonpages = get_option('addthis_showonpages'))
-            $addthis_new_options['addthis_showonpages'] = $showonpages;
-        
-        if ($showoncats = get_option('addthis_showoncats'))
-            $addthis_new_options['addthis_showoncats'] = $showoncats;
-       
-        if ($showonarchives = get_option('addthis_showonarchives'))
-            $addthis_new_options['addthis_showonarchives'] = $showonarchives;
-            
-        if ($aftertitle = get_option('addthis_aftertitle'))
-			$addthis_new_options['addthis_aftertitle'] = $aftertitle;
-			
-		if ($beforecomments = get_option('addthis_beforecomments'))
-			$addthis_new_options['addthis_beforecomments'] = $beforecomments;
-			
-			
-        if (get_option('addthis_showonposts') != true)
-            $addthis_new_options['below'] = 'none';
-        elseif (get_option('addthis_sidebar_only') == true)
-            $addthis_new_options['below'] = 'none';
-        else
-        {
-            if ( ($menu_type = get_option('addthis_menu_type')) == 'toolbox' )
-                $addthis_new_options['below'] = 'small_toolbox_with_share';
-            else
-                $addthis_new_options['below'] = 'button'; 
+    // Setup our shared resources early
+    // addthis_addjs.php is a standard class shared by the various AddThis plugins to make it easy for us to include our bootstrapping JavaScript only once. Priority should be lowest for Share plugin.
+    add_action('init', 'addthis_early', 0);
+    function addthis_early(){
+        global $AddThis_addjs_sharing_button_plugin;
+        global $addThisConfigs;
+        global $cmsConnector;
+        if (!isset($AddThis_addjs_sharing_button_plugin)){
+            require('addthis_addjs_new.php');
+            $AddThis_addjs_sharing_button_plugin = new AddThis_addjs_sharing_button_plugin($addThisConfigs, $cmsConnector);
         }
-        if ($header_background = get_option('addthis_header_background'))
-            $addthis_new_options['addthis_header_background'] = $header_background;
-        if ($header_color = get_option('addthis_header_color'))
-            $addthis_new_options['addthis_header_color'] = $header_color;
-        if ($brand = get_option('addthis_brand'))
-            $addthis_new_options['addthis_brand'] = $brand;
-        if ($language = get_option('addthis_language'))
-            $addthis_new_options['addthis_language'] = $language;
-           
-        //version check    
-        if ($atversion = get_option('atversion'))
-            $addthis_new_options['atversion'] = $atversion;
-        
-        
-        // Above is new, set it to none
-        $addthis_new_options['above'] = 'none';
-
-        // Save option
-         add_option('addthis_settings', $addthis_new_options);
-
-        // if the option saved, delete the old options
-        
-        delete_option('addthis_show_stats');
-        delete_option('addthis_asynchronous_loading');
-        delete_option('addthis_password');
-        delete_option('addthis_fallback_username');
-        delete_option('addthis_options'); 
-        delete_option('addthis_product');
-        delete_option('addthis_isdropdown');
-        delete_option('addthis_menu_type');
-        delete_option('addthis_append_data');
-        delete_option('addthis_showonhome');
-        delete_option('addthis_showonposts');
-        delete_option('addthis_showonpages');
-        delete_option('addthis_showoncats');
-        delete_option('addthis_showonarchives');
-        delete_option('addthis_aftertitle');
-        delete_option('addthis_beforecomments');
-        delete_option('addthis_style');
-        delete_option('addthis_header_background');
-        delete_option('addthis_header_color');
-        delete_option('addthis_sidebar_only');
-        delete_option('addthis_brand');
-        delete_option('addthis_language');
-        delete_option('atversion');
-       
-
-        global $current_user;
-        $user_id = $current_user->ID;
-
-        add_user_meta($user_id, 'addthis_nag_updated_options', 'true', true);
     }
 
-    function addthis_options_210()
-    {
-        $options = get_option('addthis_settings'); 
-        if ( isset( $options['username'] ) )
-            $options['profile'] = $options['username'];
+    $addthis_settings = array();
+    $addthis_settings['isdropdown'] = 'true';
+    $addthis_settings['customization'] = '';
+    $addthis_settings['menu_type'] = 'dropdown';
+    $addthis_settings['language'] = 'en';
+    $addthis_settings['fallback_username'] = '';
+    $addthis_settings['style'] = 'share';
+    $addthis_settings['placement'] = ENABLE_ADDITIONAL_PLACEMENT_OPTION;
 
-        update_option( 'addthis_settings', $options); 
-    }
+    $addthis_menu_types = array('static', 'dropdown', 'toolbox');
 
-    function addthis_options_240()
-    {
-        $options = get_option('addthis_settings'); 
-
-        // Add An option for the AT Version
-        $options['atversion'] = ADDTHIS_ATVERSION;
-		
-        //$options['wpfooter'] = false;
-        update_option( 'addthis_settings', $options); 
-    }
-}
-
-function addthis_add_for_check_footer() {
-
-}
-
-function addthis_check_footer() {
-
-}
-
-
-/**
-* Generates unique IDs
-*/
-function cuid()
-{
-    $base = get_option('home');
-    $cuid = hash_hmac('md5', $base, 'addthis'); 
-    return $cuid;
-} 
-
-define('ADDTHIS_FALLBACK_USERNAME', 'wp-'.cuid() );
-
-/**
-* Returns major.minor WordPress version.
-*/
-function addthis_get_wp_version() {
-    return (float)substr(get_bloginfo('version'),0,3); 
-}
-
-/**
-* For templates, we need a wrapper for printing out the code on demand. 
-*/
-function addthis_print_widget($url = null, $title = null, $style = addthis_style_default) {
-    global $addthis_styles, $addthis_new_styles;
-    $styles = array_merge($addthis_styles, $addthis_new_styles);
-
-    if (isset($_GET['preview']) && $_GET['preview'] == 1 && $options = get_transient('addthis_settings'))
-        $preview = true;
-    else
-        $options = get_option('addthis_settings');
-    
-    $identifier = addthis_get_identifier($url, $title);
-
-echo "\n<!-- AddThis Custom -->\n";
-    if (!is_array($style) && isset($addthis_new_styles[$style])) {
-        echo sprintf($addthis_new_styles[$style]['src'], $identifier);
-    } elseif ($style == 'above') {
-        $above = addthis_display_widget_above($styles, $url, $title, $options);
-        echo sprintf($above, $identifier);
-    } elseif ($style == 'below') {
-        $below = addthis_display_widget_below($styles, $url, $title, $options);
-        echo sprintf($below, $identifier);
-    } elseif (is_array($style))
-        echo addthis_custom_toolbox($style, $url, $title);
-echo "\n<!-- End AddThis Custom -->\n";
-}
-
-/*
-* Generates the addthis:url and addthis:title attributes
-*/
-
-function addthis_get_identifier($url = null, $title = null)
-{
-
-    if (! is_null($url) )
-        $identifier =  "addthis:url='$url' ";
-    if (! is_null($title) )
-        $identifier .= "addthis:title='$title'"; 
-   
-    if (! isset($identifier) )
-        $identifier = '';
-
-    return $identifier;
-
-}
-
-/**
-* Options is an array that contains
-* size - either 16 or 32.  Defaults to 16
-* services - comma sepperated list of services
-* preferred - number of Prefered services to be displayed after listed services
-* more - bool to show or not show the more icon at the end
-*
-* @param $options array
-*/
-
-function addthis_custom_toolbox($options, $url, $title)
-{
-    $identifier = addthis_get_identifier($url, $title);
-
-    $outerClasses = 'addthis_toolbox addthis_default_style';
-
-    if (isset($options['size']) && $options['size'] == '32')
-        $outerClasses .= ' addthis_32x32_style';
-
-    if (isset($options['type']) && $options['type'] != 'custom_string') {
-        $button = '<div class="'.$outerClasses.'" '.$identifier.' >'; 
-        
-        if (isset($options['addthis_options']) && $options['addthis_options'] != "") {
-            $addthis_options = split(',', $options['addthis_options']);
-            foreach ($addthis_options as $option) {
-                $option = trim($option);  
-                if ($option != 'more') {
-                    $button .= '<a class="addthis_button_'.$option.'"></a>';
-                }
-            }
-        }
-        else if (isset($options['services']) ) {
-            $services = explode(',', $options['services']);
-            foreach ($services as $service)
-            {
-                $service = trim($service);
-                if ($service == 'more' || $service == 'compact') {
-                    if (isset($options['type']) && $options['type'] != 'fb_tw_p1_sc') {
-                        $button .= '<a class="addthis_button_compact"></a>';
-                    }
-                }
-                else if ($service == 'counter') {
-                    if (isset($options['type']) && $options['type'] == 'fb_tw_p1_sc') {
-                        $button .= '<a class="addthis_counter addthis_pill_style"></a>';
-                    }
-                    else {
-                        $button .= '<a class="addthis_counter addthis_bubble_style"></a>';
-                    }
-                }
-                else if ($service == 'google_plusone') {
-                    $button .= '<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>';
-                }
-                else
-                    $button .= '<a class="addthis_button_'.strtolower($service).'"></a>';
-            }
-        }
-    
-        if (isset($options['preferred']) && is_numeric($options['preferred']))
-        {
-            for ($a = 1; $a <= $options['preferred']; $a++)
-            {
-                $button .= '<a class="addthis_button_preferred_'.$a.'"></a>';
-            }
-        }
-
-        if (isset($options['more']) && $options['more'] == true)
-        {
-                $button .= '<a class="addthis_button_compact"></a>';
-        }
-
-        if (isset($options['counter']) && ($options['counter'] != "") && ($options['counter'] !== false))
-        {
-            if ($options['counter'] === true)
-            {  //no style was specified
-               $button .= '<a class="addthis_counter"></a>';
-            }
-            else
-            {  //a specific style was specified such as pill_style or bubble_style
-                $button .= '<a class="addthis_counter addthis_'.$options['counter'].'"></a>';
-            }
-        }
-        
-        $button .= '</div>';
-    }
-
-    return $button;
-
-}
-
-
-/**
-* Adds AddThis CSS to page. Only used for admin dashboard in WP 2.7 and higher.
-*/
-function addthis_print_style() {
-    wp_enqueue_style( 'addthis' );
-}
-
-/**
-* Adds AddThis script to page. Only used for admin dashboard in WP 2.7 and higher.
-*/
-function addthis_print_script() {
-    wp_enqueue_script( 'addthis' );
-}
-
-add_action('admin_notices', 'addthis_admin_notices');
-
-function addthis_admin_notices(){
-    if (! current_user_can('manage_options') ||( defined('ADDTHIS_NO_NOTICES') && ADDTHIS_NO_NOTICES == true ) )
-        return;
-
-    global $current_user ;
-    $user_id = $current_user->ID;
-    $options = get_option('addthis_settings');
-
-    if ($options == false && ! get_user_meta($user_id, 'addthis_ignore_notices'))
-    {
-        echo '<div class="updated addthis_setup_nag"><p>';
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227 
-        printf(__('Configure the AddThis plugin to enable users to share your content around the web.<br /> <a href="%1$s">Configuration options</a> | <a href="%2$s" id="php_below_min_nag-no">Ignore this notice</a>','addthis_trans_domain'),
-//************ ORIGINAL
-//        printf(__('Configure the AddThis plugin to enable users to share your content around the web.<br /> <a href="%1$s">Configuration options</a> | <a href="%2$s" id="php_below_min_nag-no">Ignore this notice</a>'),
-//************ FI  
-            admin_url('options-general.php?page=' .  basename(__FILE__) ),
-            '?addthis_nag_ignore=0');
-        echo "</p></div>";
-    }
-
-    elseif ( ( ! isset($options['username']) ||  $options['username'] == false) && ! get_user_meta($user_id, 'addthis_nag_username_ignore'))
-    {
-//        echo '<div class="updated addthis_setup_nag"><p>';
-//        printf( __('Sign up for AddThis and add your username/password to receive analytics about how people are sharing your content.<br /> <a href="%1$s">Enter username and password</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%2$s" target="_blank">Sign Up</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%3$s">Ignore this notice</a>'),
-//        admin_url('options-general.php?page=' . basename(__FILE__) ),
-//        'https://www.addthis.com/register?profile=wpp',
-//        '?addthis_nag_username_ignore=0');
-//        echo "</p></div>";
-    }
-    elseif ( (get_user_meta($user_id, 'addthis_nag_updated_options') == true  ) )
-    {
-        echo '<div class="updated addthis_setup_nag"><p>';
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-        printf( __('We have updated the options for the AddThis plugin.  Check out the <a href="%1$s">AddThis settings page</a> to see the new styles and options.<br /> <a href="%1$s">See New Options</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%2$s">Ignore this notice</a>','addthis_trans_domain'),
-//************ ORIGINAL 
-//      printf( __('We have updated the options for the AddThis plugin.  Check out the <a href="%1$s">AddThis settings page</a> to see the new styles and options.<br /> <a href="%1$s">See New Options</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="%2$s">Ignore this notice</a>'),
-//************ FI 
-        admin_url('options-general.php?page=' . basename(__FILE__) ),
-        '?addthis_nag_updated_ignore=0');
-        echo "</p></div>";
-    }
-}
-add_action('admin_init', 'addthis_nag_ignore');
-
-function addthis_nag_ignore()
-{
-    global $current_user;
-    $user_id = $current_user->ID;
-    
-    $options = get_option('addthis_settings'); 
-
-    if (isset($_GET['addthis_nag_ignore']) && '0' == $_GET['addthis_nag_ignore'])
-        add_user_meta($user_id, 'addthis_ignore_notices', 'true', true);
-    if (isset($_GET['addthis_nag_username_ignore']) && '0' == $_GET['addthis_nag_username_ignore'])
-        add_user_meta($user_id, 'addthis_nag_username_ignore', 'true', true);
-    if (isset($_GET['addthis_nag_updated_ignore']) && '0' == $_GET['addthis_nag_updated_ignore'])
-        delete_user_meta($user_id, 'addthis_nag_updated_options', 'true');
-
-
-}
-
-function addthis_plugin_useragent($userAgent)
-{
-    return $userAgent . 'ATV/' . ADDTHIS_PLUGIN_VERSION;
-}
-
-
-add_action('wp_ajax_at_show_dashboard_widget', 'addthis_render_dashboard_widget');
-/**
-* Our admin dashboard widget shows yesterday's top shared content and top shared-to services.
-* Data is fetched via AJAX. We assume jQuery is available on any WP install supporting 
-* dashboard widgets.
-*
-* @see js/addthis.js
-* @see js/addthis.css
-*/
-function addthis_render_dashboard_widget() {
-    if( current_user_can('manage_options') || apply_filters('addthis_show_dashboard', __return_false() ) )
-    {
-        // we're good
-    }
-    else
-    {
-        _e( 'Cheatin&#8217; uh?' );
-        exit;
-    }
-   $_services = array(
-        'netvibes'     => 'Netvibes',
-        'google'       => 'Google Reader',
-        'yahoo'        => 'Yahoo',
-        'rojo'         => 'Rojo',
-        'aol'          => 'AOL',
-        'newsgator-on' => 'Newsgator Online',
-        'pluck-on'     => 'Pluck Online',
-        'bloglines'    => 'Bloglines',
-        'feedlounge'   => 'Feedlounge',
-        'newsburst'    => 'Newsburst',
-        'msn'          => 'MSN',
-        'winlive'      => 'Windows Live',
-        'technorati'   => 'Technorati',
-        'pageflakes'   => 'Pageflakes',
-        'newsalloy'    => 'News Alloy',
-        'feedreader'   => 'FeedReader',
-        'mymsn'        => 'My MSN',
-        'newsisfree'   => 'Newsisfree',
-        'feeddemon'    => 'FeedDemon',
-        'netnewswire'  => 'NetNewWire',
-        'pluck'        => 'Pluck',
-        'newsgator'    => 'NewsGator',
-        'sharpreader'  => 'SharpReader',
-        'awasu'        => 'Awasu',
-        'myearthlink'  => 'myEarthLink',
-        'rss'          => 'Direct Feed Link',
-        'googlebuzz'   => 'Google Buzz',
-        'youtube'      => 'YouTube',
-        'facebook'     => 'Facebook',
-        'flickr'       => 'Flickr',
-        'twitter'      => 'Twitter',
-        'linkedin'     => 'LinkedIn'
-    ); 
-    
-    
-    global $addthis_settings;
-    $options = get_option('addthis_settings');
-    if (isset($options['username']))
-        $username = urlencode($options['username']);
-    else
-    {
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-          echo __('No Username entered','addthis_trans_domain');
-//************ ORIGINAL 
-//        echo 'No Username entered';
-//************ FI
-        return false;
-    }
-    if (isset($options['password']))
-        $password = urlencode($options['password']);
-    else
-    {
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-          echo __('No Password entered','addthis_trans_domain');
-//************ ORIGINAL
-//        echo 'No Password entered';
-//************ FI
-        return false;
-    }
-
-    $domain = str_ireplace('www.', '', parse_url(get_home_url(), PHP_URL_HOST));
-  
-    if (isset($options['profile']))
-        $profile = '&pubid='.urlencode($options['profile']);
-    else
-        $profile = '';
-    
-
-    $requests = array(
-    array('metric' => 'shares', 'dimension' => '',   'domain' => $domain, 'period' => 'day'),
-    array('metric' => 'shares', 'dimension' => '',   'domain' => $domain, 'period' => 'week'),
-    array('metric' => 'shares', 'dimension' => '',    'domain' => $domain, 'period' => 'month'),
-    array('metric' => 'clickbacks', 'dimension' => '', 'domain' => $domain, 'period' => 'day'),
-    array('metric' => 'clickbacks', 'dimension' => '', 'domain' => $domain, 'period' => 'week'),
-    array('metric' => 'clickbacks', 'dimension' => '', 'domain' => $domain, 'period' => 'month'),
-    array('metric' => 'shares', 'dimension' => 'service' , 'domain' => $domain, 'period' => 'month'),
-    array('metric' => 'clickbacks', 'dimension' => 'service', 'domain' => $domain, 'period' => 'month'),
-    array('metric' => 'shares', 'dimension' => 'url' , 'domain' => $domain, 'period' => 'month'),
-    array('metric' => 'clickbacks', 'dimension' => 'url', 'domain' => $domain, 'period' => 'month'),
+    $addthis_styles = array(
+        'share'          => array('img'=>'lg-share-%lang%.gif', 'w'=>125, 'h'=>16),
+        'bookmark'       => array('img'=>'lg-bookmark-en.gif',  'w'=>125, 'h'=>16),
+        'addthis'        => array('img'=>'lg-addthis-en.gif',   'w'=>125, 'h'=>16),
+        'share-small'    => array('img'=>'sm-share-%lang%.gif', 'w'=>83,  'h'=>16),
+        'bookmark-small' => array('img'=>'sm-bookmark-en.gif',  'w'=>83,  'h'=>16),
+        'plus'           => array('img'=>'sm-plus.gif',         'w'=>16,  'h'=>16)
     );
-    
-    if (!  $stats = get_transient('addthis_dashboard_stats') )
+
+    $addthis_options = get_option('addthis_settings');
+    $atversion = $addThisConfigs->getAddThisVersion();
+
+    $addthis_new_styles = array(
+        'large_toolbox' => array(
+            'src' =>  '
+                <div class="addthis_toolbox addthis_default_style addthis_32x32_style" %1$s >
+                    <a class="addthis_button_preferred_1"></a>
+                    <a class="addthis_button_preferred_2"></a>
+                    <a class="addthis_button_preferred_3"></a>
+                    <a class="addthis_button_preferred_4"></a>
+                    <a class="addthis_button_compact"></a>
+                    <a class="addthis_counter addthis_bubble_style"></a>
+                </div>',
+            'img' => 'toolbox-large.png',
+            'name' => 'Large Toolbox',
+            'above' => 'hidden ',
+            'below' => 'hidden'
+        ),
+        'small_toolbox' => array(
+            'src' => '
+                <div class="addthis_toolbox addthis_default_style addthis_" %1$s >
+                    <a class="addthis_button_preferred_1"></a>
+                    <a class="addthis_button_preferred_2"></a>
+                    <a class="addthis_button_preferred_3"></a>
+                    <a class="addthis_button_preferred_4"></a>
+                    <a class="addthis_button_compact"></a>
+                    <a class="addthis_counter addthis_bubble_style"></a>
+                </div>',
+            'img' => 'toolbox-small.png',
+            'name' => 'Small Toolbox',
+            'above' => 'hidden ',
+            'below' => ''
+        ),
+        'fb_tw_p1_sc' => array(
+            'src' => '
+                <div class="addthis_toolbox addthis_default_style " %1$s  >
+                    <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                    <a class="addthis_button_tweet"></a>
+                    <a class="addthis_button_pinterest_pinit"></a>
+                    <a class="addthis_counter addthis_pill_style"></a>
+                </div>',
+            'img' => 'horizontal_share_rect.png',
+            'name' => 'Like, Tweet, +1, Share',
+            'above' => '',
+            'below' => '',
+        ),
+        'button' => array(
+            'src' => '
+                <div>
+                    <a class="addthis_button" href="//addthis.com/bookmark.php?v='.$atversion.'" %1$s>
+                        <img src="//cache.addthis.com/cachefly/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/>
+                    </a>
+                </div>',
+            'img' => 'horizontal_share.png',
+            'name' => 'Classic Share Button',
+            'above' => 'hidden ',
+            'below' => 'hidden'
+        )
+    );
+
+
+    //add_filter('the_title', 'at_title_check');
+    /**
+     * @deprecated
+     * @todo Add _deprecated_function notice.
+     */
+    function at_title_check($title)
     {
-        add_filter('http_headers_useragent', 'addthis_plugin_useragent');
-        foreach ($requests as $request)
+
+        global $addthis_did_filters_added;
+
+        if (!isset ($addthis_did_filters_added) || $addthis_did_filters_added != true)
         {
-            $dimension = $metric = $domain = $period = '';
-            extract($request);
-            $dimension = ($dimension != '') ? '/'.$dimension : '';                                                                
-            $url = 'https://api.addthis.com/analytics/1.0/pub/' . $metric . $dimension . '.json?'.
-            'domain='.$domain.'&period='.$period.
-            '&username='.$username.
-            '&password='.$password.
-            $profile.'&origin=wordpress_plugin';
-            $stats[$metric.$dimension.$period] = wp_remote_get($url, array('period' => $period, 'domain' => $domain, 'password' => $password, 'username' => $username) );
-      
-            if ( is_wp_error( $stats[$metric.$dimension.$period] ) )
-            {
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-                    echo __('There was an error retrieving your stats from the AddThis servers.  Please wait and try again in a few moments','addthis_trans_domain') . "\n";
-//************ ORIGINAL 
-//                    echo "There was an error retrieving your stats from the AddThis servers.  Please wait and try again in a few moments.\n";
-//************ FI
-
-
-                    if (defined(WP_DEBUG) && WP_DEBUG == TRUE)
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-                        echo __("Error Code:",'addthis_trans_domain') .  $stats[$metric.$dimension.$period]->get_error_code();
-//************ ORIGINAL 
-//                        echo "Error Code:" .  $stats[$metric.$dimension.$period]->get_error_code();
-//************ FI      
-                    exit;
-            }
-            
-            else if ($stats[$metric.$dimension.$period]['response']['code'] == 401 )
-            {
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-                    echo __('The Username, password and profile combination you entered is invalid','addthis_trans_domain') . ".<br />";
-                    echo __('Please confirm that you have correctly entered your AddThis username, password and profile ID.','addthis_trans_domain');
-//************ ORIGINAL
-//                    echo "The username, password, and profile combination you entered is invalid.<br />";
-//                    echo "Please confirm that you have correctly entered your AddThis username, password and profile ID.";
-//************ FI 
-                    exit;
-            }
-            else if ( $stats[$metric.$dimension.$period]['response']['code'] == 500)
-            {
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-                    echo __('Something has gone terribly wrong! This should never happen, but somehow did.  We are working to correct it right now.  We will get everything up again soon','addthis_trans_domain');
-//************ ORIGINAL
-//                    echo "Something has gone terribly wrong! This should never happen, but somehow did.  We are working to correct it right now.  We will get everything up again soon.";
-//************ FI
-                    exit;
-            }
-
-            else if ($stats[$metric.$dimension.$period]['response']['code'] == 501 )  
-            {
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-                    echo __('There was an error retrieving your analytics. If you wait a moment and try again, you should be all set ','addthis_trans_domain');
-//************ ORIGINAL 
-//                    echo "There was an error retrieving your analytics. If you wait a momeent and try again, you should be all set.";
-//************ FI
-                    exit;
-            }
-            else if ($stats[$metric.$dimension.$period]['response']['code'] != 201 )
-            {
-            }
+            addthis_add_content_filters();
+            add_filter('the_content', 'addthis_script_to_content');
         }
 
-        if (  $stats['sharesday']['response']['code'] == 200) 
-            set_transient('addthis_dashboard_stats', $stats, '600');
-        
+        return $title;
     }
-    if ($stats['sharesday']['response']['code'] == 200 && $stats['sharesmonth']['body'] != '[]' )
+
+
+    /**
+     * @deprecated
+     * @todo Add _deprecated_function notice.
+     */
+    function addthis_script_to_content($content)
     {
-        $shareurls = json_decode($stats['shares/urlmonth']['body']);
-        $clickbackurls = json_decode($stats['clickbacks/urlmonth']['body']);
-        $yesterday['shares'] = json_decode($stats['sharesday']['body']);
-        $yesterday['shares'] = $yesterday['shares'][0]->shares;
-        $yesterday['clickbacks'] = json_decode($stats['clickbacksday']['body']);
-        $yesterday['clickbacks'] = $yesterday['clickbacks'][0]->clickbacks;
-        $yesterday['viral'] = ($yesterday['shares'] > 0 && $yesterday['clickbacks'] > 0 ) ? $yesterday['clickbacks'] / $yesterday['shares'] * 100 . '%' : 'n/a';
-        
-        if (! $yesterday['clickbacks'] ) $yesterday['clickbacks'] = 0;
-        if (! $yesterday['shares'] ) $yesterday['shares'] = 0;
-     
-        $decodedLastWeek = json_decode($stats['sharesweek']['body']);
-        $lastweek['shares'] = 0;
-        foreach ($decodedLastWeek as $share)
+        global $addthis_did_script_output;
+
+        if (!isset($addthis_did_script_output) )
         {
-            $lastweek['shares'] += $share->shares;
+            $addthis_did_script_output = true;
+            $content .= addthis_output_script(true);
         }
-        $decodedLastWeek = json_decode($stats['clickbacksweek']['body']);
-        $lastweek['clickbacks'] = 0;
-        foreach ($decodedLastWeek as $clickback)
-        {
-            $lastweek['clickbacks'] += $clickback->clickbacks;
-        }
-        $lastweek['viral'] = ($lastweek['shares'] > 0 && $lastweek['clickbacks'] > 0 ) ? $lastweek['clickbacks'] / $lastweek['shares'] * 100 . '%' : 'n/a';
-
-        $decodedLastMonth = json_decode($stats['sharesmonth']['body']);
-        $lastmonth['shares'] = 0;
-        foreach ($decodedLastMonth as $share)
-        {
-            $lastmonth['shares'] += $share->shares;
-        }
-        $decodedLastMonth = json_decode($stats['clickbacksmonth']['body']);
-        $lastmonth['clickbacks'] = 0;
-        foreach ($decodedLastMonth as $clickback)
-        {
-            $lastmonth['clickbacks'] += $clickback->clickbacks;
-        }
-        $lastmonth['viral'] = ($lastmonth['shares'] > 0 && $lastmonth['clickbacks'] ) ? $lastmonth['clickbacks'] / $lastmonth['shares'] * 100 . '%' : 'n/a';
-
-        $services['shares'] = json_decode($stats['shares/servicemonth']['body']);
-        if (is_null($services['shares'])) $services['shares'] = array();
-        $services['clickbacks'] = json_decode($stats['clickbacks/servicemonth']['body']);
-        if (is_null($services['clickbacks'])) $services['shares'] = array();
-
-        foreach (array('shares', 'clickbacks') as $type)
-        {
-            if (is_array($services[$type])) {
-                $topServiceShare = array_shift($services[$type]);
-                $firstLabel = ( isset($_services[$topServiceShare->service])) ? $_services[$topServiceShare->service] : $topServiceShare->service;
-                $firstAmount = $topServiceShare->{$type};
-                $topServiceShare = array_shift($services[$type]);
-                $secondLabel = ( isset($_services[$topServiceShare->service])) ? $_services[$topServiceShare->service] : $topServiceShare->service;
-                $secondAmount = $topServiceShare->{$type};
-                $thirdLabel = 'Others';
-                $thirdAmount = 0;
-                if (is_array($services[$type])) {
-                    foreach($services[$type] as $service )
-                    {
-                        $thirdAmount += $service->{$type};
-                    }
-                }
+        return $content ;
+    }
 
 
-                $servicesCharts[$type] = '//chart.apis.google.com/chart?&chdlp=b&chs=118x145&cht=p3&chco=BA3A1C|F75C39|424242&chf=bg,s,00000000&'.
-                    'chdl='.$firstLabel.'|'.$secondLabel.'|'.$thirdLabel.'&'.
-                    'chd=t:'.$firstAmount.','.$secondAmount.','.$thirdAmount; 
-            } else {
-                $servicesCharts[$type] = '//chart.apis.google.com/chart?&chdlp=b&chs=118x145&cht=p3&chco=BA3A1C|F75C39|424242&chf=bg,s,00000000&';
-            }
-        } 
-
-
-    echo "<div id='at_tabs'>";
-    echo "<ul>";
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-    echo "<li class='at_time_period'><a href='#tab1'>" . __('Yesterday','addthis_trans_domain') . "</a></li>";
-    echo "<li class='at_time_period'><a href='#tab2'>" . __('Last Week','addthis_trans_domain') . "</a></li>";
-    echo "<li class='at_time_period'><a href='#tab3'>" . __('Last Month','addthis_trans_domain') . "</a></li>";
-//************ ORIGINAL 
-//    echo "<li class='at_time_period'><a href='#tab1'>Yesterday</a></li>";
-//    echo "<li class='at_time_period'><a href='#tab2'>Last Week</a></li>";
-//    echo "<li class='at_time_period'><a href='#tab3'>Last Month</a></li>";
-//************ FI
-
-   
-    echo "</ul><div class='clear'>&nbsp;</div>";
-    $tab = 0;
-    foreach (array('yesterday', 'lastweek', 'lastmonth') as $timePeriod )
+    add_filter('language_attributes', 'addthis_language_attributes');
+    function addthis_language_attributes($input)
     {
-        $stats = $$timePeriod;
-        $tab++;
-        $viral = ( $stats['viral'] != 'n/a' ) ? number_format( $stats['viral'],2) .'%' : $stats['viral'];
-        echo '<div id="tab'.$tab.'">';
-
-        echo 
-            '<table class="atw-table">
-                <colgroup><col width="33%"/><col width="33%"/><col width="33%"/></colgroup>
-                <tr>';
-
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-        echo '<td><div class="atw-cell"><h3>'. $stats['shares'].'</h3>' . __('Shares','addthis_trans_domain') . '</div></td>';
-        echo '<td><div class="atw-cell"><h3>'. $stats['clickbacks'].'</h3>' . __('Clicks','addthis_trans_domain') . '</div></td>';
-        echo '<td><div class="atw-cell"><h3>'.  $viral .'</h3>' . __('Viral Lift','addthis_trans_domain') . '</div></td>';
-//************ ORIGINAL 
-//        echo '<td><div class="atw-cell"><h3>'. $stats['shares'].'</h3>Shares</div></td>';
-//        echo '<td><div class="atw-cell"><h3>'. $stats['clickbacks'].'</h3>Clicks</div></td>';
-//        echo '<td><div class="atw-cell"><h3>'.  $viral .'</h3>Viral Lift</div></td>';
-//************ FI        
-        echo '</tr>';
-        echo '</table>';
-        echo '</div>';
-    }
-        echo "</div>";
-
-        echo "<div>";
-        echo "</div>";
-        echo "<div id='tstab1'>";
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-        echo "<h5> " . __('Most Shared URLs (last month)','addthis_trans_domain') ." </h5>";
-//************ ORIGINAL 
-//        echo "<h5> Most Shared URLs (last month) </h5>";
-//************ FI
-
-        echo "<ul>";
-        $count = count($shareurls);
-        for($i = 0; ( $i < 5 && $i < $count ); $i++)
-        {
-            $url = array_shift($shareurls);
-            $displayUrl = str_replace( array('http://', 'https://', $domain), '',$url->url);
-            echo "<li><span class='urlCount'>" .  $url->shares . "</span><span class='urlUrl'>". urldecode($displayUrl) . "</span></li>";
-        }
-        echo "</ul>";
-
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-        echo "<h5>" . __('Top Services for shares(last month)','addthis_trans_domain') . "</h5>";
-        echo "<img src='{$servicesCharts['shares']}' width='118' height='145' alt='" . __('share stats for the last month','addthis_trans_domain') . "' />";
-//************ ORIGINAL 
-//        echo "<h5>Top Services for shares(last month)</h5>";
-//        echo "<img src='{$servicesCharts['shares']}' width='118' height='145' alt='share stats for the last month' />";
-//************ FI
-        echo "</div>";
-        echo '<div id="tstab2">';
-
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-        echo '<h5> ' . __('Most Clicked URLs (last month)','addthis_trans_domain') . ' </h5>';
-//************ ORIGINAL
-//        echo '<h5> Most Clicked URLs (last month) </h5>';
-//************ FI
-        echo "<ul>";
-        $count = count($clickbackurls);
-        for($i = 0; (  $i < 5 && $i < $count ); $i++)
-        {
-            $url = array_shift($clickbackurls);
-            $displayUrl = str_replace( array('http://', 'https://', $domain), '',$url->url);
-            echo "<li><span class='urlCount'>" .  $url->clickbacks . "</span><span class='urlUrl'>". urldecode($displayUrl) . "</span></li>";
-        }
-        echo "</ul>";
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-        echo "<h5>" . __('Top Services for clicks(last month)','addthis_trans_domain') . "</h5>";
-        echo "<img src='{$servicesCharts['clickbacks']}' width='118' height='145' alt='" . __('share stats for the last month','addthis_trans_domain') . "' />";
-//************ ORIGINAL
-//        echo "<h5>Top Services for clicks(last month)</h5>";
-//        echo "<img src='{$servicesCharts['clickbacks']}' width='118' height='145' alt='share stats for the last month' />";
-//************ FI
-
-        echo "</div>";
-        echo '<div class="clear">&nbsp;</div>';
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-        echo '<p><a class="button rbutton" href="//www.addthis.com/analytics/summary?domain='.$domain.'">'. __('View More Analytics','addthis_trans_domain') . '</a></p>';
-//************ ORIGINAL
-//        echo '<p><a class="button rbutton" href="//www.addthis.com/analytics/summary?domain='.$domain.'">View More Analytics</a></p>';
-//************ FI
-    }
-elseif($stats['sharesday']['response']['code'] == 200){
-
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-    echo
-    <<<ENDHTML
-         <p><?php _e('We haven\'t recorded any sharing events in the last month for this site.  This could be because you just installed addthis.'); ?></p>
-         <p><?php _e('If you want some ideas for increasing your sharing, check out:'); ?></p>
-         <ul>
-            <li><span class='b'><a href="//www.addthis.com//blog/"><?php _e('The AddThis Blog'); ?></a></span></li>
-            <li><span class='b'><a href="//www.addthis.com//blog/2010/11/09/3-tips-for-getting-the-most-shares/"><?php _e('Three tips for getting the most shares'); ?></a></span></li>
-            <li><span class='b'><a href="//www.addthis.com/forum/">?php _e('The AddThis Forum'); ?></a></span></li>
-        <ul>
-ENDHTML;
-
-//************ ORIGINAL
-/*
-    echo
-    <<<ENDHTML
-        <p>We haven't recorded any sharing events in the last month for this site.  This could be because you just installed addthis. If you would like to increase your sharing,</p> 
-         <p>If you want some ideas for increasing your sharing, check out:</p>
-         <ul>
-            <li><span class='b'><a href="//www.addthis.com//blog/">The AddThis Blog</a></span></li>
-            <li><span class='b'><a href="//www.addthis.com//blog/2010/11/09/3-tips-for-getting-the-most-shares/">Three tips for getting the most shares</a></span></li>
-            <li><span class='b'><a href="//www.addthis.com/forum/">The AddThis Forum</a></span></li>
-        <ul>
-ENDHTML;
-*/
-//************ FI
-}
-elseif ($stats['sharesday']['response']['code'] == 401){
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-    echo __("I'm sorry, but we seemed to encounter an error. Please ensure that your password, username and pubid are correct",'addthis_trans_domain') . ".";
-//************ ORIGINAL
-//    echo "I'm sorry, but we seemed to encounter an error. Please ensure that your password, username and pubid are correct.";
-//************ FI
-}
-
-else{
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-    echo __("I'm sorry, but we seemed to have encountered an error when requesting your analytics.  Please wait a few moments and try again",'addthis_trans_domain') . ".";
-//************ ORIGINAL
-//    echo "I'm sorry, but we seemed to have encountered an error when requesting your analytics.  Please wait a few moments and try again.";
-//************ FI
-}
-die();
-} 
-
-/**
-* Initialize the dashboard widget.
-*/
-function addthis_dashboard_init() {
-    $options = get_option('addthis_settings');
-    if (isset($options['addthis_show_stats']) && $options['addthis_show_stats'] == true && isset($options['username']) && isset($options['password']) && ! empty($options['username']) && ! empty($options['password']) && (current_user_can('manage_options') || apply_filters('addthis_show_dashboard', __return_false() ) ) )
-        wp_add_dashboard_widget('dashboard_addthis', 'AddThis', 'addthis_render_dashboard_widget_holder');   
-} 
-
-function addthis_render_dashboard_widget_holder()
-{
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-     echo '<p class="widget-loading hide-if-no-js">' . __( 'Loading&#8230;','addthis_trans_domain') . '</p><p class="describe hide-if-js">' . __('This widget requires JavaScript.','addthis_trans_domain') . '</p>';
-//************ ORIGINAL
-//     echo '<p class="widget-loading hide-if-no-js">' . __( 'Loading&#8230;' ) . '</p><p class="describe hide-if-js">' . __('This widget requires JavaScript.') . '</p>';
-//************ FI
-
-}
-
-
-add_action('wp_ajax_at_save_transient', 'addthis_save_transient');
-
-function addthis_save_transient() {
-    global $wpdb; // this is how you get access to the database
-
-
-    parse_str($_POST['value'], $values);
-
-    // verify nonce (or die).
-    $nonce = $values['_wpnonce'];
-    if (! wp_verify_nonce($nonce, 'addthis-options') ) die('Security check'); 
-
-    // Parse Post data
-    $option_array = addthis_parse_options($values);
-    
-    // Set Transient
-    if (false !== get_transient('addthis_settings'))
-        delete_transient('addthis_settings');
-    $eh = set_transient('addthis_settings', $option_array, 120);
-    
-print_r($option_array);
-
-    die();
-}
-
-function addthis_save_settings($input)
-{
-   $options_array = addthis_parse_options($input);
-
-   return $options_array;
-
-
-}
-
-
-
-/**
- * goes through all the options, sanitizing, verifying and returning for storage what needs to be there
- */
-function addthis_parse_options($data)
-{
-    require_once('addthis_settings_functions.php');
-
-global $addthis_styles, $addthis_new_styles;
-
-$styles = array_merge($addthis_styles, $addthis_new_styles);
-
-$below_custom_styles = $above_custom_styles = '';
-
-$options = array();
-
-// Sanitize profile, username and password
-if ( isset($data['addthis_username']) )
- $options['username'] = sanitize_text_field($data['addthis_username']);
-
-if ( isset($data['addthis_profile']) )
- $options['profile'] = sanitize_text_field($data['addthis_profile']);
-
-if ( isset($data['addthis_password']) )
-    $options['password'] = sanitize_text_field($data['addthis_password']);
-
-if ( isset($data['username']) )
- $options['username'] = sanitize_text_field($data['username']);
-
-if ( isset($data['profile']) )
- $options['profile'] = sanitize_text_field($data['profile']);
-
-if ( isset($data['password']) )
-    $options['password'] = sanitize_text_field($data['password']);
-
-if ( isset($data['wpfooter']))
-    $options['wpfooter'] = (bool) $data['wpfooter'];
-
-
-if ( isset ($data['show_above']) )
-    $options['above'] = 'none';
-elseif ( isset($styles[$data['above']]) )
-    $options['above'] = $data['above'];
-elseif ($data['above'] == 'disable')
-	$options['above'] = $data['above'];
-elseif ($data['above'] == 'none')
-{
-    $options['above'] = 'none';
-}
-elseif ($data['above'] == 'custom')
-{
-
-    $options['above_do_custom_services'] = isset($data['above_do_custom_services']) ;
-    $options['above_do_custom_preferred'] = isset($data['above_do_custom_preferred']) ;
-
-    $options['above'] = 'custom';
-    $options['above_custom_size'] =  ( $data['above_custom_size'] == '16' || $data['above_custom_size'] == 32 ) ? $data['above_custom_size'] : '' ;
-    $options['above_custom_services'] = sanitize_text_field( $data['above_custom_services'] );
-    $options['above_custom_preferred'] = (int) $data['above_custom_preferred'] ;
-    $options['above_custom_more'] = isset($data['above_custom_more']);
-}
-elseif ($data['above'] == 'custom_string')
-{
-
-    $options['above'] = 'custom_string';
-    if (strpos($data['above_custom_string'], "style=") != false) {
-    	$custom_style = explode('style=', $data['above_custom_string']);
-    	$custom_style = explode('>', $custom_style[1]);
-    	$custom_style = explode(' ', $custom_style[0]);
-    	$above_custom_styles = " style=$custom_style[0]";
-    }
-    $options['above_custom_string'] = addthis_kses($data['above_custom_string'], $above_custom_styles);
-
-}
-
-if ( isset ($data['show_below']) )
-    $options['below'] = 'none';
-elseif ( isset($styles[$data['below']]) )
-    $options['below'] = $data['below'];
-elseif ($data['below'] == 'disable')
-	$options['below'] = $data['below'];
-elseif ($data['below'] == 'none')
-{
-    $options['below'] = 'none';
-}
-elseif ($data['below'] == 'custom')
-{
-    $options['below_do_custom_services'] = isset($data['below_do_custom_services']) ;
-    $options['below_do_custom_preferred'] = isset($data['below_do_custom_preferred']) ;
-    
-    $options['below'] = 'custom';
-    $options['below_custom_size'] =  ( $data['below_custom_size'] == '16' || $data['below_custom_size'] == 32 ) ? $data['below_custom_size'] : '' ;
-    $options['below_custom_services'] = sanitize_text_field( $data['below_custom_services'] );
-    $options['below_custom_preferred'] = sanitize_text_field( $data['below_custom_preferred'] );
-    $options['below_custom_more'] = isset($data['below_custom_more']); 
-}
-elseif ($data['below'] == 'custom_string')
-{
-    $options['below'] = 'custom_string';
-    if (strpos($data['below_custom_string'], "style=") != false) {
-    	$custom_style = explode('style=', $data['below_custom_string']);
-    	$custom_style = explode('>', $custom_style[1]);
-    	$custom_style = explode(' ', $custom_style[0]);
-    	$below_custom_styles = " style=$custom_style[0]";
-    }
-    $options['below_custom_string'] = addthis_kses($data['below_custom_string'], $below_custom_styles);
-}
-
-if (isset($data['addthis_copytrackingremove']) && $data['addthis_copytrackingremove'] == true)
-    unset($data['addthis_copytracking1']);
-
-// All the checkbox fields
-foreach (array('addthis_show_stats', 'addthis_asynchronous_loading','addthis_append_data', 'addthis_showonhome', 'addthis_showonpages', 'addthis_showonarchives', 'addthis_showoncats', 'addthis_showonexcerpts', 'addthis_aftertitle' , 'addthis_beforecomments', 'addthis_addressbar','addthis_508','addthis_copytracking2' ) as $field)
-{
-    if ( isset($data[$field]) &&  $data[$field] == true)
-        $options[$field] = true; 
-    else
-        $options[$field] = false;
-
-}
-if ( isset ($data['data_ga_property']) && strlen($data['data_ga_property']) != 0)
-    $options['data_ga_property'] = sanitize_text_field($data['data_ga_property']);
-
-//[addthis_twitter_template]
-if ( isset ($data['addthis_twitter_template']) && strlen($data['addthis_twitter_template'])  != 0  ) {
-     //Parse the first twitter username to be used with via
-     $options['addthis_twitter_template'] = get_first_twitter_username(sanitize_text_field($data['addthis_twitter_template']));
-}
-
-if (isset ($data['addthis_bitly_login']) && strlen($data['addthis_bitly_login']) != 0 )
-    $options['addthis_bitly_login'] = sanitize_text_field($data['addthis_bitly_login']);
-
-if (isset ($data['addthis_bitly_key']) && strlen($data['addthis_bitly_key']) != 0 )
-    $options['addthis_bitly_key'] = sanitize_text_field($data['addthis_bitly_key']);
-
-
-//[addthis_brand] => 
-
-if ( isset ($data['addthis_brand']) && strlen($data['addthis_brand'])  != 0  )
-    $options['addthis_brand'] = sanitize_text_field($data['addthis_brand']);
-
-//[addthis_options] => 
-if ( isset ($data['addthis_options']) && strlen($data['addthis_options'])  != 0  )
-    $options['addthis_options'] = str_replace(' ', '', esc_js( strtolower( $data['addthis_options'] )  ));
-
-//[addthis_language] => 
-if ( isset ($data['addthis_language']))
-    $options['addthis_language'] = sanitize_text_field($data['addthis_language']);
-
-
-//[atversion]=> 
-if ( isset ($data['atversion']))
-    $options['atversion'] = sanitize_text_field($data['atversion']);
-
-//[atversion_update_status]=> 
-if ( isset ($data['atversion_update_status']))
-    $options['atversion_update_status'] = sanitize_text_field($data['atversion_update_status']);
-
-if ( isset ($data['credential_validation_status']))
-    $options['credential_validation_status'] = sanitize_text_field($data['credential_validation_status']);
-
-if ( isset ($data['addthis_header_background']) && strlen($data['addthis_header_background']) != 0 )
-{
-    if (! strpos($data['addthis_header_background'], '#') === 0)
-        $options['addthis_header_background'] =  '#' . sanitize_text_field($data['addthis_header_background']);
-    else
-        $options['addthis_header_background'] =  sanitize_text_field($data['addthis_header_background']);
-}
-
-if ( isset ($data['addthis_header_color']) && strlen($data['addthis_header_color']) != 0 )
-{
-    if (! strpos($data['addthis_header_color'], '#') === 0)
-        $options['addthis_header_color'] =  '#' . sanitize_text_field($data['addthis_header_color']);
-    else
-        $options['addthis_header_color'] =  sanitize_text_field($data['addthis_header_color']);
-}
-
-if (isset ($data['addthis_config_json']) && strlen($data['addthis_config_json']) != 0 )
-{
-    $options['addthis_config_json'] = sanitize_text_field($data['addthis_config_json']);
-}
-
-if (isset ($data['addthis_share_json']) && strlen($data['addthis_share_json']) != 0 )
-{
-    $options['addthis_share_json'] = sanitize_text_field($data['addthis_share_json']);
-}
-
-if (isset ($data['above_chosen_list']) && strlen($data['above_chosen_list']) != 0) 
-{
-	$options['above_chosen_list'] = sanitize_text_field($data['above_chosen_list']);
-}
-else {
-	$options['above_chosen_list'] = "";
-}
-
-if (isset ($data['below_chosen_list']) && strlen($data['below_chosen_list']) != 0)
-{
-	$options['below_chosen_list'] = sanitize_text_field($data['below_chosen_list']);
-}
-else {
-	$options['below_chosen_list'] = "";
-}
-
-   return $options;
-
-}
-
-
-/**
-* Formally registers AddThis settings. Only called in WP 2.7+.
-*/
-function register_addthis_settings() {
-    register_setting('addthis', 'addthis_settings', 'addthis_save_settings');
-
-}
-/*
- * Used to make sure excerpts above the head aren't displayed wrong
-*/
-function addthis_add_content_filters()
-{
-
-    global $addthis_did_filters_added;
-    $addthis_did_filters_added = true;
-
-    if ( isset($_GET['preview']) &&  $_GET['preview'] == 1 && $options = get_transient('addthis_settings') )
-        $preview = true;
-    else
-        $options = get_option('addthis_settings');
-   
-    if ( ! empty( $options) ){
-        if ( isset($options['addthis_showonexcerpts']) &&  $options['addthis_showonexcerpts'] == true )
-            add_filter('get_the_excerpt', 'addthis_display_social_widget_excerpt', 11);
-            
-        if ( isset($options['addthis_aftertitle']) && $options['addthis_aftertitle'] == true)
-        	add_filter('the_title', 'addthis_display_after_title', 11);
-
-  		add_filter('the_content', 'addthis_display_social_widget', 15);
-        
-    }
-}
-
-
-/**
-* Adds WP filter so we can append the AddThis button to post content.
-*/
-function addthis_init()
-{
-    global $addthis_settings;
-
-    add_action( 'wp_head', 'addthis_add_content_filters');
-
-    if (addthis_get_wp_version() >= 2.7 || apply_filters('at_assume_latest', __return_false() ) || apply_filters('addthis_assume_latest', __return_false() )   ) {
-        if ( is_admin() ) {
-            add_action( 'admin_init', 'register_addthis_settings' );
-        }
+        return $input . ' xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec" ';
     }
 
-    $options = get_option('addthis_settings');
 
-    
-    $script_location = apply_filters( 'at_files_uri',  plugins_url( '', basename(dirname(__FILE__)) ) ) . '/addthis/js/addthis.js' ;
-    $script_location = apply_filters( 'addthis_files_uri',  plugins_url( '', basename(dirname(__FILE__)) ) ) . '/addthis/js/addthis.js' ;
+    /**
+     * Converts our old many options in to one beautiful array
+     *
+     */
 
-    $style_location = apply_filters( 'at_files_uri',  plugins_url( '', basename(dirname(__FILE__)) ) ) .'/addthis/css/addthis.css'   ;
-    $style_location = apply_filters( 'addthis_files_uri',  plugins_url( '', basename(dirname(__FILE__)) ) ) .'/addthis/css/addthis.css'   ;
-
-
-    wp_register_style( 'addthis', $style_location );
-    wp_register_script( 'addthis', $script_location , array('jquery-ui-tabs') );
-
-    add_action('admin_print_styles-index.php', 'addthis_print_style');
-    add_action('admin_print_scripts-index.php', 'addthis_print_script');
-
-    add_filter('admin_menu', 'addthis_admin_menu');
-
+     // Caution:  Using this filter to disable upgrades may have unexpected consequences.
     if ( apply_filters( 'at_do_options_upgrades', '__return_true') || apply_filters( 'addthis_do_options_upgrades', '__return_true')   )
     {
-        if ( get_option('addthis_product') !== false  && ! is_array( $options ) )
-            addthis_options_200();
-
-        // Upgrade to 210 from 200
-        if ( isset($options['username']) && ! isset($options['profile']) )
-            addthis_options_210();
-
-        // Upgrade to 240 and add at 300
-        if ( ! isset($options['atversion']) )
-            addthis_options_240();
-    }
-    add_action( 'addthis_widget', 'addthis_print_widget', 10, 3);
-    
-
-
-}
-
-/**
- * Places our options into a global associative array. 
- * @refactor
- */
-function addthis_set_addthis_settings()
-{
-    global $addthis_settings;
-    $product = get_option('addthis_product');
-
-
-    $style = get_option('addthis_style');
-    if (strlen($style) == 0) $style = 'share';
-    $addthis_settings['style'] = $style;
-
-    $addthis_settings['menu_type'] = get_option('addthis_menu_type');
-
-    $addthis_settings['username'] = get_option('addthis_username');
-    $addthis_settings['fallback_username'] = get_option('addthis_fallback_username');
-
-    $addthis_settings['password'] = get_option('addthis_password');
-
-    $language = get_option('addthis_language');
-    $addthis_settings['language'] = $language;
-    
-    $atversion = get_option('atversion');
-    $addthis_settings['atversion'] = $atversion;
-
-    $advopts = array('brand', 'append_data', 'language', 'header_background', 'header_color');
-    $addthis_settings['customization'] = '';
-    for ($i = 0; $i < count($advopts); $i++)
-    {
-        $opt = $advopts[$i];
-        $val = get_option("addthis_$opt");
-        if (isset($val) && strlen($val)) $addthis_settings['customization'] .= "var addthis_$opt = '$val';";
-    }
-    $addthis_settings['options'] = get_option('addthis_options');
-}
-
-add_action('wp_dashboard_setup', 'addthis_dashboard_init' );
-
-add_action('widgets_init', 'addthis_widget_init');
-
-function addthis_widget_init()
-{
-    require_once('addthis_settings_functions.php');
-    require_once('addthis_sidebar_widget.php');
-    //require_once('addthis_content_feed_widget.php');
-    register_widget('AddThisSidebarWidget');
-    //register_widget('AddThisContentFeedWidget');
-}
-
-function addthis_sidebar_widget($args) 
-{
-    extract($args);
-    echo $before_widget; 
-    echo $before_title . $after_title . addthis_social_widget('', true);
-    echo $after_widget;
-}
-
-// essentially replace wp_trim_excerpt until we have something better to use here
-function addthis_remove_tag($content, $text = '')
-{
-
-
-    if ( isset($_GET['preview']) &&  $_GET['preview'] == 1 && $options = get_transient('addthis_settings') )
-        $preview = true;
-    else
-        $options = get_option('addthis_settings');
-
-
-    $raw_excerpt = $text;
-    if ( '' == $text ) {
-
-        $text = get_the_content('');
-        $text = strip_shortcodes( $text );
-
-        remove_filter('the_content', 'addthis_display_social_widget', 15); 
-       
-        $text = apply_filters('the_content', $text);
-
-        add_filter('the_content', 'addthis_display_social_widget', 15);
-
-        $text = str_replace(']]>', ']]&gt;', $text);
-       
-        // 3.3 and earlier
-        if (! function_exists('wp_trim_words'))
-            $text = strip_tags($text);
-        $excerpt_length = apply_filters('excerpt_length', 55); 
-        $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
-
-        // 3.3 and later
-        if (function_exists('wp_trim_words'))
+        function addthis_options_200()
         {
-            $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
-        }
-        else
-        {
-            $words = preg_split("/[\n\r\t ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
-            if ( count($words) > $excerpt_length ) {
-                array_pop($words);
-                $text = implode(' ', $words);
-                $text = $text . $excerpt_more;
-            } else {
-                $text = implode(' ', $words);
-            }
-        }
-        if ($options['addthis_showonexcerpts'] == false)
-            return $text;
-        return addthis_display_social_widget($text, false, false);
-    }
-    else
-    {
-        return $content;
-    }
-}
+            global $current_user;
+            global $addThisConfigs;
+            global $cmsConnector;
 
+            $user_id = $current_user->ID;
+            $addthis_new_options = array();
 
-/**
- * so named because it is added "later then the standard filter and all the WP internal filters"
- */
-function addthis_late_widget($link_text)
-{
-    remove_filter('get_the_excerpt', 'addthis_late_widget');
+            if ($asynchronous_loading = get_option('addthis_asynchronous_loading'))
+                $addthis_new_options['addthis_asynchronous_loading'] = $asynchronous_loading;
 
-    if ( isset($_GET['preview']) &&  $_GET['preview'] == 1 && $options = get_transient('addthis_settings') )
-        $preview = true;
-    else
-        $options = get_option('addthis_settings');
-    
-    if ($options['addthis_showonexcerpts'] == false)
-        return $link_text;
-    
-    global $addthis_styles, $addthis_new_styles;
-    $styles = array_merge($addthis_styles, $addthis_new_styles);
-    
-    $url = get_permalink();
-    $title = get_the_title();
-    $url_above = '';
-    $url_below = '';
-    if ( isset($_GET['preview']) &&  $_GET['preview'] == 1 && $options = get_transient('addthis_settings') )
-        $preview = true;
-    else
-        $options = get_option('addthis_settings');
-    
+            if ($addthis_per_post_enabled = get_option('addthis_per_post_enabled'))
+                $addthis_new_options['addthis_per_post_enabled'] = $addthis_per_post_enabled;
 
-    $url_below =  "addthis:url='$url' ";
-    $url_below .=  "addthis:title='". esc_attr( $title) ." '"; 
+            if ($append_data = get_option('addthis_append_data'))
+                $addthis_new_options['addthis_append_data'] = $append_data;
 
-    if (has_excerpt() && ! is_attachment() && isset($options['below']) && $options['below'] == 'custom')
-    {
-        $belowOptions['size'] = $options['below_custom_size'];
-        if ($options['below_do_custom_services'])
-            $belowOptions['services'] = $options['below_custom_services'];
-        if ($options['below_do_custom_preferred'])
-            $belowOptions['preferred'] = $options['below_custom_preferred'];
-        $belowOptions['more'] = $options['below_custom_more'];
-        return $link_text . apply_filters('addthis_below_content',  addthis_custom_toolbox($belowOptions, $url, $title) );
-    }
-    
-    elseif ( isset ($styles[$options['below']]) && has_excerpt() && ! is_attachment()   )
-    {    
-        $below = apply_filters('addthis_below_content', $styles[$options['below']]['src']);
-    }
-    else
-    {
-        $below = apply_filters('addthis_below_content','' );
-    }
-    return  $link_text . sprintf($below, $url_below);
+            // populate variables for share button location template settings
+            $locationTemplateFields = $addThisConfigs->getFieldsForContentTypeSharingLocations();
+            foreach ($locationTemplateFields as $field) {
+                $optionName = $field['fieldName'];
+                $variableName = $field['variableName'];
 
-
-}
-
-
-function addthis_display_social_widget_excerpt($content)
-{
-    if ( isset($_GET['preview']) &&  $_GET['preview'] == 1 && $options = get_transient('addthis_settings') )
-        $preview = true;
-    else
-        $options = get_option('addthis_settings');
-   
-    // I don't think has_excerpt() is always necessarily true when calling "get_the_excerpt()",
-    // but since this function is only as a get_the_excerpt() filter, we should probably
-    // not care whether or not an excerpt is there since the caller obviously wants one.
-    // needs testing/understanding.
-    if ( has_excerpt() && $options['addthis_showonexcerpts'] == true ) {
-        return addthis_display_social_widget($content, true, true);
-    } else
-        return $content;
-}
-
-function addthis_display_widget_above($styles, $url, $title, $options) {
-    $above = '';
-    if (isset($styles[$options['above']])) {
-        if (isset($options['above_chosen_list']) && strlen($options['above_chosen_list']) != 0) {
-            if (isset($options['above']) && $options['above'] == 'large_toolbox') {
-                $aboveOptions['size'] = '32';
-            } elseif (isset($options['above']) && $options['above'] == 'small_toolbox') {
-                $aboveOptions['size'] = '16';
-            }
-            $aboveOptions['type'] = $options['above'];
-            $aboveOptions['services'] = $options['above_chosen_list'];
-            if(isset($options['addthis_options']))
-                $aboveOptions['addthis_options'] = $options['addthis_options'];
-            else
-                $aboveOptions['addthis_options'] = '';
-            $above = apply_filters('addthis_above_content', addthis_custom_toolbox($aboveOptions, $url, $title));
-        } else {
-            $above = apply_filters('addthis_above_content', $styles[$options['above']]['src']);
-        }
-    } elseif ($options['above'] == 'custom') {
-        $aboveOptions['size'] = $options['above_custom_size'];
-        if ($options['above_do_custom_services'])
-            $aboveOptions['services'] = $options['above_custom_services'];
-        if ($options['above_do_custom_preferred'])
-            $aboveOptions['preferred'] = $options['above_custom_preferred'];
-        $aboveOptions['more'] = $options['above_custom_more'];
-        $aboveOptions['addthis_options'] = $options['addthis_options'];
-        $above = apply_filters('addthis_above_content', addthis_custom_toolbox($aboveOptions, $url, $title));
-    } elseif ($options['above'] == 'custom_string') {
-        $custom = preg_replace('/<\s*div\s*/', '<div %1$s ', $options['above_custom_string']);
-        $above = apply_filters('addthis_above_content', $custom);
-    }
-    return $above;
-}
-
-function addthis_display_widget_below($styles, $url, $title, $options) {
-    $below = '';
-    if (isset($styles[$options['below']])) {
-        if (isset($options['below_chosen_list']) && strlen($options['below_chosen_list']) != 0) {
-            if (isset($options['below']) && $options['below'] == 'large_toolbox') {
-                $belowOptions['size'] = '32';
-            } elseif (isset($options['below']) && $options['below'] == 'small_toolbox') {
-                $belowOptions['size'] = '16';
-            }
-            $belowOptions['type'] = $options['below'];
-            $belowOptions['services'] = $options['below_chosen_list'];
-            if(isset($options['addthis_options']))
-                $belowOptions['addthis_options'] = $options['addthis_options'];
-            else
-                $belowOptions['addthis_options'] = '';
-            $below = apply_filters('addthis_above_content', addthis_custom_toolbox($belowOptions, $url, $title));
-        } else {
-            $below = apply_filters('addthis_below_content', $styles[$options['below']]['src']);
-        }
-    } elseif ($options['below'] == 'custom') {
-        $belowOptions['size'] = $options['below_custom_size'];
-        $belowOptions['services'] = $options['below_custom_services'];
-        $belowOptions['preferred'] = $options['below_custom_preferred'];
-        $belowOptions['more'] = $options['below_custom_more'];
-        $belowOptions['addthis_options'] = $options['addthis_options'];
-        $below = apply_filters('addthis_below_content', addthis_custom_toolbox($belowOptions, $url, $title));
-    } elseif ($options['below'] == 'custom_string') {
-        $custom = preg_replace('/<\s*div\s*/', '<div %1$s ', $options['below_custom_string']);
-        $below = apply_filters('addthis_below_content', $custom);
-    }
-    return $below;
-}
-
-function addthis_display_social_widget($content, $filtered = true, $below_excerpt = false)
-{
-
-    global $addthis_styles, $addthis_new_styles, $post;
-    $styles = array_merge($addthis_styles, $addthis_new_styles);
-
-
-    if ( isset($_GET['preview']) &&  $_GET['preview'] == 1 && $options = get_transient('addthis_settings') )
-        $preview = true;
-    else
-        $options = get_option('addthis_settings');
-
-	if ( is_home() || is_front_page() ) {
-    	if (isset($options['addthis_showonhome']) &&  $options['addthis_showonhome'] == true ) {
-	    	if (isset($options['addthis_showonexcerpts']) &&  $options['addthis_showonexcerpts'] == true ) {
-		    		$display = true;
-		    }
-		    else {
-				if( strpos($post->post_content, '<!--more-->') != false) {
-		    		$display = false;
-	    		}
-	    		else {
-	    			$display = true;
-	    		}
-	    	}
-    	}
-    	else {
-	    	if (isset($options['addthis_showonexcerpts']) &&  $options['addthis_showonexcerpts'] == true ) {
-	    		if( strpos($post->post_content, '<!--more-->') != false) {
-			  		$display = true;
-	    		}
-	    		else {
-	    			$display = false;
-	    		}
-		    }
-		    else {
-		    	$display = false;
-	    	}
-    	}
-    }
-    elseif ( is_archive() && ! is_category() )
-        $display = (isset($options['addthis_showonarchives']) && $options['addthis_showonarchives'] == true ) ? true : false;
-    // Cat
-    elseif ( is_category() )
-        $display = (isset($options['addthis_showoncats']) && $options['addthis_showoncats'] == true ) ? true : false;
-    // Pages
-    elseif ( is_page($post->ID) )
-        $display = (isset($options['addthis_showonpages']) && $options['addthis_showonpages'] == true) ? true: false;
-    // Single pages (true by default and design)
-    elseif ( is_single() )
-        $display = true;
-    else
-        $display = false;
-
-    $custom_fields = get_post_custom($post->ID);
-    if (isset ($custom_fields['addthis_exclude']) && $custom_fields['addthis_exclude'][0] ==  'true')
-        $display = false;
-    
-    $display = apply_filters('addthis_post_exclude', $display);
-    
-    remove_filter('wp_trim_excerpt', 'addthis_remove_tag', 9, 2);
-    remove_filter('get_the_excerpt', 'addthis_late_widget');
-    $url = get_permalink();
-    $title = get_the_title();
-    $url_above =  "addthis:url='$url' ";
-    $url_above .= "addthis:title='". esc_attr( $title) ." '";  
-    $url_below =  "addthis:url='$url' ";
-    $url_below .= "addthis:title='". esc_attr( $title) ." '";  
-    $above = '';
-    $below = '';
-
-    // Still here?  Well let's add some social goodness
-    if ( isset( $options['above'] ) &&  $options['above'] != 'none' && $options['above'] != 'disable' && $display  )
-    {
-        $above = addthis_display_widget_above($styles, $url, $title, $options);
-	        	}
-    elseif ($display)
-        $above = apply_filters('addthis_above_content','' );
-    else
-        $above = '';
-
-    if ( isset( $options['below'] ) &&  $options['below'] != 'none'  && $options['below'] != 'disable'  && $display && ! $below_excerpt  )
-    {
-        $below = addthis_display_widget_below($styles, $url, $title, $options);
-	        	}
-    elseif ($below_excerpt && $display && $options['below'] != 'none'  )
-    {
-        $below = apply_filters('addthis_below_content','' );
-        if ($options['addthis_showonexcerpts'] == true )  
-            add_filter('get_the_excerpt', 'addthis_late_widget', 14);
-    }
-    elseif ($display)
-        $below = apply_filters('addthis_below_content','' );
-    else
-        $below = '';
-
-   
-    if ($display) 
-    {
-        if ( isset($above) )
-        {
-
-            $content = sprintf($above, $url_above) . $content;
-        }
-        if ( isset($below) )
-        {
-            $content = $content . sprintf($below, $url_below); 
-        }
-        if ($filtered == true)
-            add_filter('wp_trim_excerpt', 'addthis_remove_tag', 11, 2);
-    }
-    
-    return $content;
-
-}
-
-add_action('init', 'addthis_register_script_in_addjs', 20);
-
-function addthis_register_script_in_addjs(){
-    global $addthis_addjs;
-    $script = addthis_output_script(true, true);
-    $addthis_addjs->addToScript($script);
-}
-
-
-//add_action('wp_footer', 'addthis_output_script');
-
-/**
- * Check to see if our Javascript has been outputted yet.  If it hasn't, return it.  Else, return false.
- *
- * @return mixed
-*/
-function addthis_output_script($return = false, $justConfig = false )
-{
-
-    global $addthis_settings;
-    wp_enqueue_style( 'output', plugins_url('css/output.css', __FILE__) );	
-
-    if ( isset($_GET['preview']) &&  $_GET['preview'] == 1 && $options = get_transient('addthis_settings') )
-        $preview = true;
-    else
-        $options = get_option('addthis_settings');
-    
-    $script = "\n<!-- AddThis Button Begin -->\n"
-             .'<script type="text/javascript">'
-             ."var addthis_product = '".ADDTHIS_PRODUCT_VERSION."';\n";
-
-
-    $pub = (isset($options['profile'])) ? $options['profile'] : false ;
-    if (!$pub) {
-        $pub = 'wp-'.cuid();
-    }
-    $pub = urlencode($pub);
-   
-    $addthis_config = array();
-    $addthis_share = array();
-
-    $addthis_config["data_track_clickback"] = (isset($options['addthis_append_data']) && $options['addthis_append_data'] == true);
-    
-    if ( isset($options['data_ga_property']) ){
-        $addthis_config['data_ga_property'] = $options['data_ga_property'];
-        $addthis_config['data_ga_social'] = true;
-    }
-
-    $addthis_config["data_track_addressbar"] = (isset($options['addthis_addressbar']) && $options['addthis_addressbar'] == true);
-
-    // Opt in
-    $addthis_config['data_track_textcopy'] = (isset($options['addthis_copytracking2']) && $options['addthis_copytracking2'] == true);
-
-    // Old opt out
-    if ( isset($options['addthis_copytracking1']) && $options['addthis_copytracking1'] == true)
-        $addthis_config['data_track_textcopy'] = false;
-    // Opt in
-    else if ( isset($options['addthis_copytracking2']) && $options['addthis_copytracking2'] == true)
-        $addthis_config['data_track_textcopy'] = true;
-    else
-        $addthis_config['data_track_textcopy'] = false;
-
-
-    if ( isset($options['addthis_language']) && strlen($options['addthis_language']) == 2)
-        $addthis_config['ui_language'] = $options['addthis_language'];
-    
-    if ( isset($options['atversion'])) 
-        $addthis_config['ui_atversion'] = isset($options['atversion_update_status']) && $options['atversion_update_status'] == ADDTHIS_ATVERSION_REVERTED ? $options['atversion'] : ADDTHIS_ATVERSION;    
-        
-    if ( isset($options['addthis_header_background']) )
-        $addthis_config['ui_header_background'] = $options['addthis_header_background'];
-
-    if ( isset($options['addthis_header_color']) )
-        $addthis_config['ui_header_color'] = $options['addthis_header_color'];
-
-    if ( isset($options['addthis_brand']) )
-        $addthis_config['ui_cobrand'] = $options['addthis_brand'];
-
-    if (isset($options['addthis_508']) && $options['addthis_508'] == true)
-        $addthis_config['ui_508_compliant'] = true;
-
-    $addthis_config = apply_filters('addthis_config_js_var', $addthis_config);
-    $addthis_config_json = array_key_exists('addthis_config_json', $options) ? $options['addthis_config_json'] : '';
-    $script = merge_config_with_json_config($script, $addthis_config, $addthis_config_json);
-    
-    
-    if (isset($options['addthis_options']) && strlen($options['addthis_options']) != 0)
-        $script .= 'var addthis_options = "'.$options['addthis_options'].'";';
-    
-    if (isset($options['addthis_twitter_template'])){
-        //The following twitter template translation is deprecated and replaced with via
-        //$addthis_share['templates']['twitter'] =  esc_js($options['addthis_twitter_template']);
-        $addthis_share['passthrough']['twitter']['via'] = esc_js(get_first_twitter_username($options['addthis_twitter_template']));
-        
-    }
-    if (isset($options['addthis_bitly_login']) && isset($options['addthis_bitly_key']) ){
-        $addthis_share['url_transforms']['shorten']['twitter'] = 'bitly';
-        $addthis_share['shorteners']['bitly']['login'] = esc_js($options['addthis_bitly_login']);
-        $addthis_share['shorteners']['bitly']['apiKey'] = esc_js($options['addthis_bitly_key']);
-    }
-
-    if ($justConfig)
-    {
-        $return = '';
-    	$share = apply_filters('addthis_share_js_var', $addthis_share );
-        if ( isset( $options['addthis_share_json'] ) && $options['addthis_share_json'] != '') {
-        	$addthis_json_share = array_key_exists('addthis_share_json', $options) ? $options['addthis_share_json'] : '';
-        	$return .= merge_share_with_json_share($addthis_share, $addthis_json_share);
-        }
-        else
-        {
-            if (! empty($share) )
-                $return .= 'if (typeof(addthis_share) == "undefined"){ addthis_share = ' . json_encode( apply_filters('addthis_share_js_var', $addthis_share ) ) .';}';
-        }
-        $return .= "\n";
-
-        if (isset($options['addthis_options']) && strlen($options['addthis_options']) != 0)
-            $return .= 'var addthis_options = "'.$options['addthis_options'].'";';
-
-        $return .= "\n";
-        
-        $return = merge_config_with_json_config($return, $addthis_config, $addthis_config_json);
-
-        $return .= "\n";
-
-        return $return;
-
-    }
-
-
-    if ( isset( $options['addthis_share_json'] ) && $options['addthis_share_json'] != '')
-        $script .= merge_share_with_json_share($addthis_share, $addthis_json_share);
-    else
-        $script .= 'if (typeof(addthis_share) == "undefined"){ addthis_share = ' . json_encode( apply_filters('addthis_share_js_var', $addthis_share ) ) .';}';
-    $script .= '</script>';
-            
-
-    $script .= '<script type="text/javascript" src="//s7.addthis.com/js/'.$atversion.'/addthis_widget.js#pubid='.$pub.'"></script>';
-    
-
-    if ( ! is_admin() && ! is_feed() )
-        echo $script;
-    elseif ($return == true && ! is_admin() && ! is_feed() )
-        return $script;
-}
-
-add_action('wp_ajax_validate_addthis_api_credentials', 'validate_addthis_api_credentials');
-/**
- * AJAX action to test the AddThis credentials
- */
-function validate_addthis_api_credentials()
-{
-    $ajax_response = array('profileerror' => 'true', 'profilemessage' => '',
-                           'credentialerror' => 'true', 'credentialmessage' => '');
-    if ($_POST['addthis_username'] && $_POST['addthis_password'] && $_POST['addthis_profile']) {
-        $url = 'https://api.addthis.com/analytics/1.0/pub/shares.json?'.
-            'username=' . urlencode($_POST['addthis_username']).
-            '&password=' . urlencode($_POST['addthis_password']).
-            '&pubid=' . urlencode($_POST['addthis_profile']);
-        $response = wp_remote_get($url);
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-        $credential_error = __('&#x2716; The username, password, and profile combination you entered is invalid.','addthis_trans_domain');
-//************ ORIGINAL
-//        $credential_error = '&#x2716; The username, password, and profile combination you entered is invalid.';
-//************ FI
-        $profile_error = '&#x2716; Invalid AddThis profile ID';
-
-        if (!is_wp_error($response)) {
-            if ($response['response']['code'] == 200) {
-                $ajax_response['profileerror'] = 'false';
-                $ajax_response['credentialerror'] = 'false';
-            } else {
-                if ($response['response']['code'] != 401) {
-                    $ajax_response['credentialerror'] = 'false';
-                    if (strpos($response['body'], '"invalidParameterName":"pubid"') === FALSE) {
-                        $ajax_response['profileerror'] = 'false';
-                    } else {
-                        $ajax_response['profilemessage'] = $profile_error;
-                    }
-                }   else {
-                    $ajax_response['credentialmessage'] = $credential_error;
+                if ($$variableName = get_option($optionName)) {
+                    $addthis_new_options[$optionName] = $$variableName;
                 }
             }
+
+            if ($aftertitle = get_option('addthis_aftertitle'))
+                $addthis_new_options['addthis_aftertitle'] = $aftertitle;
+
+            if ($beforecomments = get_option('addthis_beforecomments'))
+                $addthis_new_options['addthis_beforecomments'] = $beforecomments;
+
+            $addthis_new_options['below'] = 'none';
+
+            if ($language = get_option('addthis_language'))
+                $addthis_new_options['addthis_language'] = $language;
+
+            //version check
+            if ($atversion = get_option('atversion'))
+                $addthis_new_options['atversion'] = $atversion;
+
+
+            // Above is new, set it to none
+            $addthis_new_options['above'] = 'none';
+
+            // Save option
+            add_option('addthis_settings', $addthis_new_options);
+
+            // if the option saved, delete the old options
+
+            delete_option('addthis_asynchronous_loading');
+            delete_option('addthis_product');
+            delete_option('addthis_isdropdown');
+            delete_option('addthis_menu_type');
+            delete_option('addthis_append_data');
+            delete_option('addthis_aftertitle');
+            delete_option('addthis_beforecomments');
+            delete_option('addthis_style');
+            delete_option('addthis_language');
+            delete_option('atversion');
+
+            // delete each share button location template settings
+            foreach ($locationTemplateFields as $field) {
+                $optionName = $field['fieldName'];
+                delete_option($optionName);
+            }
+
+            // old options that are no longer used, to clean up after ourshelves
+            if (false) {
+                $deprecatedFields = $cmsConnector->getDeprecatedVariables();
+                foreach ($deprecatedFields as $field) {
+                    delete_option($field);
+                }
+            }
+
+            global $current_user;
+            $user_id = $current_user->ID;
+
+            add_user_meta($user_id, 'addthis_nag_updated_options', 'true', true);
+        }
+
+        function addthis_options_240()
+        {
+            global $addThisConfigs;
+            $options = $addThisConfigs->getConfigs();
+
+            //$options['wpfooter'] = false;
+            $addThisConfigs->saveConfigs($options);
+        }
+    }
+
+    function addthis_add_for_check_footer() {
+
+    }
+
+    function addthis_check_footer() {
+
+    }
+
+    /**
+    * For templates, we need a wrapper for printing out the code on demand.
+    */
+    function addthis_print_widget($url = null, $title = null, $style = addthis_style_default) {
+        global $addthis_styles, $addthis_new_styles;
+        global $addThisConfigs;
+        $styles = array_merge($addthis_styles, $addthis_new_styles);
+
+        $options = $addThisConfigs->getConfigs();
+
+        $identifier = addthis_get_identifier($url, $title);
+
+        if (!is_array($style) && isset($addthis_new_styles[$style])) {
+            $template = $addthis_new_styles[$style]['src'];
+        } elseif ($style == 'above') {
+            $template = addthis_display_widget_above($styles, $options);
+        } elseif ($style == 'below') {
+            $template = addthis_display_widget_below($styles, $options);
+        } elseif (is_array($style)) {
+            $template = addthis_custom_toolbox($style);
+        }
+
+        echo "\n<!-- AddThis Custom -->\n";
+        echo sprintf($template, $identifier);
+        echo "\n<!-- End AddThis Custom -->\n";
+    }
+
+    /*
+    * Generates the addthis:url and addthis:title attributes
+    */
+
+    function addthis_get_identifier($url = null, $title = null)
+    {
+
+        if (is_null($url)) {
+            $url = get_permalink();
+        }
+
+        if (is_null($title)) {
+            $title = esc_attr(get_the_title());
+        }
+
+        if (!is_null($url)) {
+            $identifier =  "addthis:url='$url' ";
+        }
+
+        if (!is_null($title)) {
+            $identifier .= "addthis:title='$title'";
+        }
+
+        if (!isset($identifier)) {
+            $identifier = '';
+        }
+
+        return $identifier;
+    }
+
+    /**
+    * Options is an array that contains
+    * size - either 16 or 32.  Defaults to 16
+    * services - comma sepperated list of services
+    * preferred - number of Prefered services to be displayed after listed services
+    * more - bool to show or not show the more icon at the end
+    *
+    * @param $options array
+    */
+
+    function addthis_custom_toolbox($options)
+    {
+        $outerClasses = 'addthis_toolbox addthis_default_style';
+
+        if (isset($options['size']) && $options['size'] == '32')
+            $outerClasses .= ' addthis_32x32_style';
+
+        if (isset($options['type']) && $options['type'] != 'custom_string') {
+            $button = '<div class="'.$outerClasses.'" %1$s>';
+
+            if (isset($options['services']) ) {
+                $services = explode(',', $options['services']);
+                foreach ($services as $service)
+                {
+                    $service = trim($service);
+                    if ($service == 'more' || $service == 'compact') {
+                        if (isset($options['type']) && $options['type'] != 'fb_tw_p1_sc') {
+                            $button .= '<a class="addthis_button_compact"></a>';
+                        }
+                    }
+                    else if ($service == 'counter') {
+                        if (isset($options['type']) && $options['type'] == 'fb_tw_p1_sc') {
+                            $button .= '<a class="addthis_counter addthis_pill_style"></a>';
+                        }
+                        else {
+                            $button .= '<a class="addthis_counter addthis_bubble_style"></a>';
+                        }
+                    }
+                    else if ($service == 'google_plusone') {
+                        $button .= '<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>';
+                    }
+                    else
+                        $button .= '<a class="addthis_button_'.strtolower($service).'"></a>';
+                }
+            }
+
+            if (isset($options['preferred']) && is_numeric($options['preferred']))
+            {
+                for ($a = 1; $a <= $options['preferred']; $a++)
+                {
+                    $button .= '<a class="addthis_button_preferred_'.$a.'"></a>';
+                }
+            }
+
+            if (isset($options['more']) && $options['more'] == true)
+            {
+                    $button .= '<a class="addthis_button_compact"></a>';
+            }
+
+            if (isset($options['counter']) && ($options['counter'] != "") && ($options['counter'] !== false))
+            {
+                if ($options['counter'] === true)
+                {  //no style was specified
+                   $button .= '<a class="addthis_counter"></a>';
+                }
+                else
+                {  //a specific style was specified such as pill_style or bubble_style
+                    $button .= '<a class="addthis_counter addthis_'.$options['counter'].'"></a>';
+                }
+            }
+
+            $button .= '</div>';
+        }
+
+        return $button;
+    }
+
+    /**
+    * Adds AddThis CSS to page. Only used for admin dashboard in WP 2.7 and higher.
+    */
+    function addthis_print_style() {
+        wp_enqueue_style( 'addthis' );
+    }
+
+    /**
+    * Adds AddThis script to page. Only used for admin dashboard in WP 2.7 and higher.
+    */
+    function addthis_print_script() {
+        wp_enqueue_script( 'addthis' );
+    }
+
+    add_action('admin_notices', 'addthis_admin_notices');
+
+    function addthis_admin_notices(){
+        if (   !current_user_can('manage_options')
+            || (   defined('ADDTHIS_NO_NOTICES')
+                && ADDTHIS_NO_NOTICES)
+        ) {
+            return;
+        }
+
+        global $cmsConnector;
+        global $current_user;
+
+        $user_id = $current_user->ID;
+        $options = $cmsConnector->getConfigs();
+        $message = '';
+
+        $setupMessage = '
+            <div class="updated addthis_setup_nag">
+                <p>
+                    Configure the AddThis Sharing Buttons plugin to enable users to share your content around the web.
+                    <br />
+                    <a href="' . $cmsConnector->getSettingsPageUrl() . '">Configuration options</a>
+                    |
+                    <a href="?addthis_nag_ignore=0" id="php_below_min_nag-no">Ignore this notice</a>
+                </p>
+            </div>
+        ';
+
+        $updatedMessage = '
+            <div class="updated addthis_setup_nag">
+                <p>
+                    We have updated the options for the AddThis Sharing Buttons plugin. Check out the
+                    <a href="' . $cmsConnector->getSettingsPageUrl() . '">AddThis settings page</a> to see the new styles and options.
+                    <br />
+                    <a href="' . $cmsConnector->getSettingsPageUrl() . '">See New Options</a>
+                    |
+                    <a href="?addthis_nag_updated_ignore=0">Ignore this notice</a>
+                </p>
+            </div>
+        ';
+
+        if (    !isset($options['addthis_plugin_controls'])
+            && !get_user_meta($user_id, 'addthis_ignore_notices')
+        ) {
+            // nothing set up
+            $message = $setupMessage;
+        } else if(   $options['addthis_plugin_controls'] == "AddThis"
+                  && empty($options['addthis_profile'])
+                  && !get_user_meta($user_id, 'addthis_ignore_notices')
+        ) {
+            // AddThis mode but no pubid
+            $message = $setupMessage;
+        } else if(   $options['addthis_plugin_controls'] != "AddThis"
+                  && empty($options['addthis_above_enabled'])
+                  && empty($options['addthis_below_enabled'])
+                  && empty($options['addthis_sidebar_enabled'])
+                  && !get_user_meta($user_id, 'addthis_ignore_notices')
+        ) {
+            // WordPress mode but no tools enabled
+            $message = $setupMessage;
+        } elseif (get_user_meta($user_id, 'addthis_nag_updated_options')) {
+            // upgrade
+            $message = $updatedMessage;
+        }
+
+        echo $message;
+    }
+    add_action('admin_init', 'addthis_nag_ignore');
+
+    function addthis_nag_ignore()
+    {
+        global $current_user;
+        $user_id = $current_user->ID;
+
+        if (isset($_GET['addthis_nag_ignore']) && '0' == $_GET['addthis_nag_ignore'])
+            add_user_meta($user_id, 'addthis_ignore_notices', 'true', true);
+        if (isset($_GET['addthis_nag_updated_ignore']) && '0' == $_GET['addthis_nag_updated_ignore'])
+            delete_user_meta($user_id, 'addthis_nag_updated_options', 'true');
+    }
+
+    function addthis_plugin_useragent($userAgent)
+    {
+        global $cmsConnector;
+        return $userAgent . 'ATV/' . $cmsConnector->getPluginVersion();
+    }
+
+    function addthis_render_dashboard_widget_holder()
+    {
+         echo '<p class="widget-loading hide-if-no-js">' . __( 'Loading&#8230;','addthis_trans_domain' ) . '</p><p class="describe hide-if-js">' . __('This widget requires JavaScript.','addthis_trans_domain') . '</p>';
+    }
+
+    add_action('wp_ajax_at_save_transient', 'addthis_save_transient');
+
+    function addthis_save_transient() {
+        global $wpdb; // this is how you get access to the database
+
+
+        parse_str($_POST['value'], $values);
+
+        // verify nonce (or die).
+        $nonce = $values['_wpnonce'];
+        if (!wp_verify_nonce($nonce, 'addthis-options')) {
+            die('Security check');
+        }
+
+        // Parse Post data
+        $option_array = addthis_parse_options($values);
+
+        // Set Transient
+        if (get_transient('addthis_settings') !==  false) {
+            delete_transient('addthis_settings');
+        }
+
+        $eh = set_transient('addthis_settings', $option_array, 120);
+
+        print_r($option_array);
+
+        die();
+    }
+
+    function addthis_save_settings($input)
+    {
+        global $addThisConfigs;
+
+        // if special, do special, else
+        if (   isset($input['addthis_csr_confirmation'])
+            && $input['addthis_csr_confirmation'] == 'true'
+        ) {
+            if (   isset($input['addthis_profile'])
+                && wp_verify_nonce($_POST['pubid_nonce'], 'update_pubid')
+            ) {
+                $configs['addthis_profile'] = $input['addthis_profile'];
+            }
+        } elseif(count($input) > 2) {
+            // there should be more than two entires in forms posted from this
+            // plugin
+            $configs = addthis_parse_options($input);
+        }
+
+        if (isset($configs)) {
+            $addThisConfigs->saveConfigs($configs);
+        }
+    }
+
+
+    /**
+     * goes through all the options, sanitizing, verifying and returning for storage what needs to be there
+     */
+    function addthis_parse_options($data)
+    {
+        global $addthis_styles, $addthis_new_styles;
+        global $addThisConfigs;
+
+        $styles = array_merge($addthis_styles, $addthis_new_styles);
+        $below_custom_styles = $above_custom_styles = '';
+        $options = $addThisConfigs->getConfigs();
+
+        if (!is_array($data)) {
+          return $options;
+        }
+
+        if (isset($data['show_below'])) {
+            $options['below'] = 'none';
+        } elseif (isset($data['below'], $styles[$data['below']])) {
+            $options['below'] = $data['below'];
+        } elseif ($data['below'] == 'disable') {
+            $options['below'] = $data['below'];
+        } elseif ($data['below'] == 'none') {
+            $options['below'] = 'none';
+        } elseif ($data['below'] == 'custom') {
+            $options['below_do_custom_services'] = isset($data['below_do_custom_services']);
+            $options['below_do_custom_preferred'] = isset($data['below_do_custom_preferred']);
+
+            $options['below'] = 'custom';
+
+            if (   $data['below_custom_size'] == 16
+                || $data['below_custom_size'] == 32
+            ) {
+                $options['below_custom_size'] = $data['below_custom_size'];
+            } else {
+                $options['below_custom_size'] = '';
+            }
+            $options['below_custom_services'] = sanitize_text_field($data['below_custom_services']);
+            $options['below_custom_preferred'] = sanitize_text_field($data['below_custom_preferred']);
+            $options['below_custom_more'] = isset($data['below_custom_more']);
+        } elseif ($data['below'] == 'custom_string') {
+            $options['below'] = 'custom_string';
+            if (strpos($data['below_custom_string'], "style=") != false) {
+                $custom_style = explode('style=', $data['below_custom_string']);
+                $custom_style = explode('>', $custom_style[1]);
+                $custom_style = explode(' ', $custom_style[0]);
+                $below_custom_styles = " style=$custom_style[0]";
+            }
+            $options['below_custom_string'] = addthis_kses(
+                $data['below_custom_string'],
+                $below_custom_styles
+            );
+        }
+
+        if (isset($data['wpfooter'])) {
+            $options['wpfooter'] = (bool) $data['wpfooter'];
+        }
+
+        if (isset($styles[$data['above']])) {
+            $options['above'] = $data['above'];
+        } elseif ($data['above'] == 'disable') {
+            $options['above'] = $data['above'];
+        } elseif ($data['above'] == 'none') {
+            $options['above'] = 'none';
+        } elseif ($data['above'] == 'custom') {
+            $options['above_do_custom_services'] = isset($data['above_do_custom_services']) ;
+            $options['above_do_custom_preferred'] = isset($data['above_do_custom_preferred']) ;
+            $options['above'] = 'custom';
+
+            if (    $data['above_custom_size'] == 16
+                ||  $data['above_custom_size'] == 32
+            ) {
+                $options['above_custom_size'] = $data['above_custom_size'];
+            } else {
+                $options['above_custom_size'] = '';
+            }
+            $options['above_custom_services'] = sanitize_text_field($data['above_custom_services']);
+            $options['above_custom_preferred'] = (int) $data['above_custom_preferred'] ;
+            $options['above_custom_more'] = isset($data['above_custom_more']);
+        } elseif ($data['above'] == 'custom_string') {
+            //[addthis_twitter_template]
+            if (   isset($data['addthis_twitter_template'])
+                && strlen($data['addthis_twitter_template']) != 0
+            ) {
+                 //Parse the first twitter username to be used with via
+                 $options['addthis_twitter_template'] = sanitize_text_field($data['addthis_twitter_template']);
+            }
+
+            $options['above'] = 'custom_string';
+            if (strpos($data['above_custom_string'], "style=")) {
+                $custom_style = explode('style=', $data['above_custom_string']);
+                $custom_style = explode('>', $custom_style[1]);
+                $custom_style = explode(' ', $custom_style[0]);
+                $above_custom_styles = " style=$custom_style[0]";
+            }
+            $options['above_custom_string'] = addthis_kses(
+                $data['above_custom_string'],
+                $above_custom_styles
+            );
+        }
+
+        if (isset($data['addthis_profile'])) {
+            $options['addthis_profile'] = sanitize_text_field($data['addthis_profile']);
+        }
+
+        if (isset($styles[$data['below']])) {
+            $options['below'] = $data['below'];
+        } elseif ($data['below'] == 'disable') {
+            $options['below'] = $data['below'];
+        } elseif ($data['below'] == 'none') {
+            $options['below'] = 'none';
+        } elseif ($data['below'] == 'custom') {
+            $options['below_do_custom_services'] = isset($data['below_do_custom_services']) ;
+            $options['below_do_custom_preferred'] = isset($data['below_do_custom_preferred']) ;
+
+            $options['below'] = 'custom';
+            if (   $data['below_custom_size'] == 16
+                || $data['below_custom_size'] == 32
+            ) {
+                $options['below_custom_size'] = $data['below_custom_size'];
+            } else {
+                $options['below_custom_size'] = '';
+            }
+            $options['below_custom_services'] = sanitize_text_field($data['below_custom_services']);
+            $options['below_custom_preferred'] = sanitize_text_field($data['below_custom_preferred']);
+            $options['below_custom_more'] = isset($data['below_custom_more']);
+        } elseif ($data['below'] == 'custom_string') {
+            $options['below'] = 'custom_string';
+            if (strpos($data['below_custom_string'], "style=")) {
+                $custom_style = explode('style=', $data['below_custom_string']);
+                $custom_style = explode('>', $custom_style[1]);
+                $custom_style = explode(' ', $custom_style[0]);
+                $below_custom_styles = " style=$custom_style[0]";
+            }
+            $options['below_custom_string'] = addthis_kses(
+                $data['below_custom_string'],
+                $below_custom_styles
+            );
+        }
+
+        // All the checkbox fields
+        $checkboxFields = array(
+            // general
+            'addthis_508',
+            'addthis_addressbar',
+            'addthis_append_data',
+            'addthis_asynchronous_loading',
+            'addthis_bitly',
+            'addthis_per_post_enabled',
+            // WordPress mode only
+            'above_auto_services',
+            'addthis_above_enabled',
+            'addthis_aftertitle' ,
+            'addthis_beforecomments',
+            'addthis_below_enabled',
+            'addthis_sidebar_enabled',
+            'below_auto_services',
+        );
+
+        // add all share button location template settings to list of checkbox fields
+        $locationTemplateFields = $addThisConfigs->getFieldsForContentTypeSharingLocations();
+        foreach ($locationTemplateFields as $field) {
+            $optionName = $field['fieldName'];
+            $checkboxFields[] = $optionName;
+        }
+
+        foreach ($checkboxFields as $field) {
+            if (isset($data[$field]) && $data[$field]) {
+                $options[$field] = true;
+            } else {
+                $options[$field] = false;
+            }
+        }
+
+        $checkAndSanitize = array(
+            // general
+            'addthis_config_json',
+            'addthis_environment',
+            'addthis_language',
+            'addthis_layers_json',
+            'addthis_plugin_controls',
+            'addthis_profile',
+            'addthis_rate_us',
+            'addthis_share_json',
+            'addthis_twitter_template',
+            'atversion',
+            'atversion_update_status',
+            'credential_validation_status',
+            'data_ga_property',
+            // WordPress mode only
+            'addthis_sidebar_count',
+            'addthis_sidebar_position',
+            'addthis_sidebar_theme',
+        );
+
+        foreach ($checkAndSanitize as $field) {
+            if (isset($data[$field])) {
+                $options[$field] = sanitize_text_field($data[$field]);
+            }
+        }
+
+        if (!empty($data['above_chosen_list'])) {
+            $options['above_chosen_list'] = sanitize_text_field($data['above_chosen_list']);
         } else {
-            $ajax_response['credentialmessage'] = 'error';
-        }     
+            $options['above_chosen_list'] = "";
+        }
+
+        if (!empty($data['below_chosen_list'])) {
+            $options['below_chosen_list'] = sanitize_text_field($data['below_chosen_list']);
+        } else {
+            $options['below_chosen_list'] = "";
+        }
+
+        if (isset($data['addthis_rate_us'])
+            && $options['addthis_rate_us'] != $data['addthis_rate_us']
+        ) {
+                $options['addthis_rate_us_timestamp'] = time();
+        }
+
+        return $options;
     }
-    die('{"profileerror":"' . $ajax_response['profileerror'] . '","profilemessage":"' . $ajax_response['profilemessage'] . '",
-        "credentialerror":"' . $ajax_response['credentialerror'] . '","credentialmessage":"' . $ajax_response['credentialmessage'] . '"}');
-}
-/*
- * Merge the Add this settings with that given using JSON format
- * @param String $appendString - The string to build and return the script
- * @param array $addthis_config - The setting array for add this config
- * @param String $addthis_json_config - The JSON String
- * @return String $appendString - The string to build and return the script
- */
-function merge_config_with_json_config($append_string, $addthis_config, $addthis_json_config) {
-    if ( isset( $addthis_json_config ) &&   trim($addthis_json_config) != '') {
-        $addthis_config_json_list = json_decode($addthis_json_config, true);
-        if (! empty ($addthis_config_json_list) && ! empty ($addthis_config)) {
-            foreach($addthis_config_json_list as $key_json => $json_config_value) {
-                    $addthis_config[$key_json] = $json_config_value;
+
+
+    /**
+    * Formally registers AddThis settings. Only called in WP 2.7+.
+    */
+    function register_addthis_settings() {
+        register_setting('addthis', 'addthis_settings', 'addthis_save_settings');
+    }
+
+    /*
+     * Used to make sure excerpts above the head aren't displayed wrong
+    */
+    function addthis_add_content_filters()
+    {
+        global $addthis_did_filters_added;
+        global $addThisConfigs;
+        $addthis_did_filters_added = true;
+
+        $options = $addThisConfigs->getConfigs();
+
+        if ( ! empty( $options) ){
+            if (_addthis_excerpt_buttons_enabled()) {
+                add_filter('get_the_excerpt', 'addthis_display_social_widget_excerpt', 11);
             }
+
+            if (!empty($options['addthis_aftertitle'])) {
+                add_filter('the_title', 'addthis_display_after_title', 11);
+            }
+
+            add_filter('the_content', 'addthis_display_social_widget', 15);
+
         }
     }
-    if (! empty ($addthis_config) )
-        $append_string .= 'var addthis_config = '. json_encode($addthis_config) .';';
-    return $append_string;
-}
-/*
- * Merge the Add this settings with that given using JSON format
-* @param String $appendString - The string to build and return the script
-* @param array $addthis_share - The setting array for add this share
-* @param String $addthis_json_share - The JSON String
-* @return String $appendString - The string to build and return the script
-*/
-function merge_share_with_json_share($addthis_share, $addthis_json_share) {
-	$append_string = '';
-	if ( isset( $addthis_json_share ) &&   trim($addthis_json_share) != '') {
-		$addthis_share_json_list = json_decode($addthis_json_share, true);
-		if (! empty ($addthis_share_json_list) && ! empty ($addthis_share)) {
-			foreach($addthis_share_json_list as $key_json => $json_share_value) {
-				$addthis_share[$key_json] = $json_share_value;
-			}
-		}
-	}
-	if (! empty ($addthis_share) )
-		$append_string = 'if (typeof(addthis_share) == "undefined"){ addthis_share = '. json_encode($addthis_share) .';}';
-	return $append_string;
-}
-/**
-* Appends AddThis button to post content.
-*/
-function addthis_social_widget($content, $onSidebar = false, $url = null, $title = null)
-{
-    addthis_set_addthis_settings();
-    global $addthis_settings;
 
-    // add nothing to RSS feed or search results; control adding to static/archive/category pages
-    if (!$onSidebar) 
+   /**
+    * Adds WP filter so we can append the AddThis button to post content.
+    */
+    function addthis_init()
     {
-        if ($addthis_settings['sidebar_only'] == 'true') return $content;
-        else if (is_feed()) return $content;
-        else if (is_search()) return $content;
-        else if (is_home() && !$addthis_settings['showonhome']) return $content;
-        else if (is_page() && !$addthis_settings['showonpages']) return $content;
-        else if (is_archive() && !$addthis_settings['showonarchives']) return $content;
-        else if (is_category() && !$addthis_settings['showoncats']) return $content;
+        global $addThisConfigs;
+        global $cmsConnector;
+
+        $options = $addThisConfigs->getConfigs();
+        load_plugin_textdomain( 'addthis_trans_domain', null, dirname( plugin_basename( __FILE__ )) . '/languages' );
+        add_action('wp_head', 'addthis_add_content_filters');
+
+        if (   (   $cmsConnector->getCmsMinorVersion() >= 2.7
+                || $cmsConnector->assumeLatest())
+            && is_admin()
+        ) {
+            add_action('admin_init', 'register_addthis_settings');
+        }
+
+        add_action('admin_print_styles-index.php', 'addthis_print_style');
+        add_action('admin_print_scripts-index.php', 'addthis_print_script');
+
+        add_filter('admin_menu', 'addToWordpressMenu');
+
+        if ( apply_filters( 'at_do_options_upgrades', '__return_true') || apply_filters( 'addthis_do_options_upgrades', '__return_true')   )
+        {
+            if (   get_option('addthis_product') !== false
+                && !is_array($options)
+            ) {
+                addthis_options_200();
+            }
+
+            // Upgrade to 240 and add at 300
+            if (!isset($options['atversion']) || empty($options['atversion'])) {
+                addthis_options_240();
+            }
+        }
+        add_action( 'addthis_widget', 'addthis_print_widget', 10, 3);
     }
 
-    $pub = ($addthis_settings['username']);
-    if (!$pub) {
-        $pub = 'wp-'.cuid();
+    /**
+     * Places our options into a global associative array.
+     * @refactor
+     */
+    function addthis_set_addthis_settings()
+    {
+        global $addthis_settings;
+        $product = get_option('addthis_product');
+
+
+        $style = get_option('addthis_style');
+        if (strlen($style) == 0) $style = 'share';
+        $addthis_settings['style'] = $style;
+
+        $addthis_settings['menu_type'] = get_option('addthis_menu_type');
+
+        $language = get_option('addthis_language');
+        $addthis_settings['language'] = $language;
+
+        $atversion = get_option('atversion');
+        $addthis_settings['atversion'] = $atversion;
+
+        $advopts = array('brand', 'append_data', 'language', 'header_background', 'header_color');
+        $addthis_settings['customization'] = '';
+        for ($i = 0; $i < count($advopts); $i++)
+        {
+            $opt = $advopts[$i];
+            $val = get_option("addthis_$opt");
+            if (isset($val) && strlen($val)) $addthis_settings['customization'] .= "var addthis_$opt = '$val';";
+        }
     }
-    $pub = urlencode($pub);
 
-    $link  = !is_null($url) ? $url : ($onSidebar ? get_bloginfo('url') : get_permalink());
-    $title = !is_null($title) ? $title : ($onSidebar ? get_bloginfo('title') : the_title('', '', false));
-    $addthis_options = $addthis_settings['options'];
+    add_action('widgets_init', 'addthis_widget_init');
 
-    $content .= "\n<!-- AddThis Button BEGIN -->\n"
-                .'<script type="text/javascript">'
+    function addthis_widget_init()
+    {
+        require_once('addthis_sidebar_widget.php');
+        //require_once('addthis_content_feed_widget.php');
+        register_widget('AddThisSidebarWidget');
+        //register_widget('AddThisContentFeedWidget');
+    }
+
+    function addthis_sidebar_widget($args)
+    {
+        extract($args);
+        echo $before_widget;
+        echo $before_title . $after_title . addthis_social_widget('', true);
+        echo $after_widget;
+    }
+
+    // if there are suppose to be sharing buttons and they're not there, add them.
+    function addthis_remove_tag($content)
+    {
+        global $addThisConfigs;
+
+        if (!is_object($addThisConfigs)) {
+            $addThisSharingButtonsPluginObject = new AddThisWordPressSharingButtonsPlugin();
+            $cmsConnector = new AddThisWordPressConnector($addThisSharingButtonsPluginObject);
+            $addThisConfigs = new AddThisConfigs($cmsConnector);
+        }
+
+        if(   !is_object($addThisConfigs)
+           || !method_exists($addThisConfigs, 'getConfigs')
+        ) {
+            return $content;
+        }
+
+        $options = $addThisConfigs->getConfigs();
+
+        $checkForToolbox = "addthis_toolbox";
+        $checkForButton = "addthis_button";
+
+        if (   _addthis_excerpt_buttons_enabled()
+            && strpos($content, $checkForToolbox) === false
+            && strpos($content, $checkForButton) === false
+        ) {
+          $content = addthis_display_social_widget($content, false, false);
+        }
+
+        return $content;
+    }
+
+    /**
+     * so named because it is added "later then the standard filter and all the WP internal filters"
+     */
+    function addthis_late_widget($link_text)
+    {
+        global $addThisConfigs;
+        global $addthis_styles;
+        global $addthis_new_styles;
+
+        remove_filter('get_the_excerpt', 'addthis_late_widget');
+        if (!_addthis_excerpt_buttons_enabled()) {
+            return $link_text;
+        }
+
+        $options = $addThisConfigs->getConfigs();
+        $styles = array_merge($addthis_styles, $addthis_new_styles);
+
+        if (   has_excerpt()
+            && !is_attachment()
+            && isset($options['below'])
+            && $options['below'] == 'custom'
+        ) {
+            $parsedOptions['size'] = $options['below_custom_size'];
+            $newOptions['more'] = $options['below_custom_more'];
+
+            if ($options['below_do_custom_services']) {
+                $parsedOptions['services'] = $options['below_custom_services'];
+            }
+
+            if ($options['below_do_custom_preferred']) {
+                $parsedOptions['preferred'] = $options['below_custom_preferred'];
+            }
+
+            $template = addthis_custom_toolbox($parsedOptions);
+        } elseif (   isset($styles[$options['below']])
+                  && has_excerpt()
+                  && !is_attachment()
+        ) {
+            $template = $styles[$options['below']]['src'];
+        } else {
+            $template = '';
+        }
+
+        $buttons = sprintf($template, addthis_get_identifier());
+
+        return  $link_text . $buttons;
+    }
+
+
+    function addthis_display_social_widget_excerpt($content)
+    {
+        // I don't think has_excerpt() is always necessarily true when calling "get_the_excerpt()",
+        // but since this function is only as a get_the_excerpt() filter, we should probably
+        // not care whether or not an excerpt is there since the caller obviously wants one.
+        // needs testing/understanding.
+
+        if (has_excerpt() && _addthis_excerpt_buttons_enabled()) {
+            return addthis_display_social_widget($content, true, true);
+        } else {
+            return $content;
+        }
+    }
+
+    function addthis_display_widget_above($styles, $options) {
+        $above = '';
+        if ($options['addthis_above_enabled'] == true){
+            if (isset($styles[$options['above']])) {
+                if (   isset($options['above_chosen_list'], $options['above_auto_services'])
+                    && !$options['above_auto_services']
+                    && strlen($options['above_chosen_list']) != 0
+                ) {
+                    if (isset($options['above']) && $options['above'] == 'large_toolbox') {
+                        $aboveOptions['size'] = '32';
+                    } elseif (isset($options['above']) && $options['above'] == 'small_toolbox') {
+                        $aboveOptions['size'] = '16';
+                    }
+                    $aboveOptions['type'] = $options['above'];
+                    $aboveOptions['services'] = $options['above_chosen_list'];
+                    $above = addthis_custom_toolbox($aboveOptions);
+                } else {
+                    $above = $styles[$options['above']]['src'];
+                }
+            } elseif ($options['above'] == 'custom') {
+                $aboveOptions['size'] = $options['above_custom_size'];
+                if ($options['above_do_custom_services'])
+                    $aboveOptions['services'] = $options['above_custom_services'];
+                if ($options['above_do_custom_preferred'])
+                    $aboveOptions['preferred'] = $options['above_custom_preferred'];
+                $aboveOptions['more'] = $options['above_custom_more'];
+                $above = addthis_custom_toolbox($aboveOptions);
+            } elseif ($options['above'] == 'custom_string') {
+                $custom = preg_replace('/<\s*div\s*/', '<div %1$s ', $options['above_custom_string']);
+                $above = $custom;
+            }
+        }
+        return $above;
+    }
+
+    function addthis_display_widget_below($styles, $options) {
+        $below = '';
+        if ($options['addthis_below_enabled'] == true){
+            if (isset($styles[$options['below']])) {
+                if (   isset($options['below_chosen_list'], $options['below_auto_services'])
+                    && !$options['below_auto_services']
+                    && strlen($options['below_chosen_list']) != 0
+                ) {
+                    if (isset($options['below']) && $options['below'] == 'large_toolbox') {
+                        $belowOptions['size'] = '32';
+                    } elseif (isset($options['below']) && $options['below'] == 'small_toolbox') {
+                        $belowOptions['size'] = '16';
+                    }
+                    $belowOptions['type'] = $options['below'];
+                    $belowOptions['services'] = $options['below_chosen_list'];
+                    $below = addthis_custom_toolbox($belowOptions);
+                } else {
+                    $below = $styles[$options['below']]['src'];
+                }
+            } elseif ($options['below'] == 'custom') {
+                $belowOptions['size'] = $options['below_custom_size'];
+                $belowOptions['services'] = $options['below_custom_services'];
+                $belowOptions['preferred'] = $options['below_custom_preferred'];
+                $belowOptions['more'] = $options['below_custom_more'];
+                $below = addthis_custom_toolbox($belowOptions);
+            } elseif ($options['below'] == 'custom_string') {
+                $custom = preg_replace('/<\s*div\s*/', '<div %1$s ', $options['below_custom_string']);
+                $below = $custom;
+            }
+        }
+        return $below;
+    }
+
+    function addthis_display_social_widget($content, $filtered = true, $below_excerpt = false)
+    {
+        global $addthis_styles, $addthis_new_styles, $post;
+        global $addThisConfigs;
+
+        $styles = array_merge($addthis_styles, $addthis_new_styles);
+        $options = $addThisConfigs->getConfigs();
+
+        $templateType = _addthis_determine_template_type();
+
+        // get configs for this template type
+        if (is_string($templateType)) {
+            $fieldList = $addThisConfigs->getFieldsForContentTypeSharingLocations($templateType);
+            foreach ($fieldList as $key => $field) {
+                $fieldList[$field['location']] = $field;
+                unset($fieldList[$key]);
+            }
+
+            $aboveFieldName = $fieldList['above']['fieldName'];
+            $belowFieldName = $fieldList['below']['fieldName'];
+            $displayAbove = (isset($options[$aboveFieldName]) && $options[$aboveFieldName] == true ) ? true : false;
+            $displayBelow = (isset($options[$belowFieldName]) && $options[$belowFieldName] == true ) ? true : false;
+        } else {
+            $displayAbove = false;
+            $displayBelow = false;
+        }
+
+        if ( $templateType === 'home' ) {
+            $templateIsAnExcerpt = (boolean)(strpos($post->post_content, '<!--more-->') != false);
+            if ($templateIsAnExcerpt) {
+                if ($displayAbove && !_addthis_excerpt_buttons_enabled_above()) {
+                    $displayAbove = false;
+                }
+
+                if ($displayBelow && !_addthis_excerpt_buttons_enabled_below()) {
+                    $displayBelow = false;
+                }
+            }
+        }
+
+        $custom_fields = get_post_custom($post->ID);
+        if (   isset($custom_fields['addthis_exclude'])
+            && $custom_fields['addthis_exclude'][0] ==  'true'
+        ) {
+            $displayAbove = false;
+            $displayBelow = false;
+        }
+
+        remove_filter('wp_trim_excerpt', 'addthis_remove_tag', 9, 1);
+        remove_filter('get_the_excerpt', 'addthis_late_widget');
+        $identifier =  addthis_get_identifier();
+
+        // Still here?  Well let's add some social goodness
+        if (   isset($options['above'])
+            && $options['above'] != 'none'
+            && $options['above'] != 'disable'
+            && $displayAbove
+        ) {
+            $above = addthis_display_widget_above($styles, $options);
+        } elseif ($displayAbove) {
+            $above = '';
+        } else {
+            $above = '';
+        }
+
+        if (   isset($options['below'])
+            && $options['below'] != 'none'
+            && $options['below'] != 'disable'
+            && $displayBelow
+            && ! $below_excerpt
+        ) {
+            $below = addthis_display_widget_below($styles, $options);
+        } elseif (   $below_excerpt
+                  && $displayBelow
+                  && $options['below'] != 'none'
+        ) {
+            $below = '';
+
+            if (_addthis_excerpt_buttons_enabled()) {
+                add_filter('get_the_excerpt', 'addthis_late_widget', 14);
+            }
+        } else {
+            $below = '';
+        }
+
+        $at_flag = get_post_meta( $post->ID, '_at_widget', TRUE );
+        if (!$options['addthis_per_post_enabled']) {
+            $at_flag = '1';
+        }
+
+        if ($at_flag !== '0') {
+            if ($displayAbove && isset($above)) {
+                $content = sprintf($above, $identifier) . $content;
+            }
+            if ($displayBelow && isset($below)) {
+                $content = $content . sprintf($below, $identifier);
+            }
+        }
+
+        if (($displayAbove || $displayBelow) && $filtered) {
+            add_filter('wp_trim_excerpt', 'addthis_remove_tag', 11, 1);
+        }
+
+        return $content;
+    }
+
+    add_action('wp_head', 'addthis_register_script_in_addjs', 20);
+
+    function addthis_register_script_in_addjs(){
+        global $AddThis_addjs_sharing_button_plugin;
+        $script = addthis_output_script(true, true);
+        $AddThis_addjs_sharing_button_plugin->addToScript($script);
+    }
+
+    /**
+     * Check to see if our Javascript has been outputted yet.  If it hasn't, return it.  Else, return false.
+     *
+     * @return mixed
+    */
+    function addthis_output_script($return = false, $justConfig = false )
+    {
+        global $addThisConfigs;
+        global $cmsConnector;
+        $options = $addThisConfigs->getConfigs();
+
+        $addthis_config = $addThisConfigs->createAddThisConfigVariable();
+        $addthis_config_js = 'var addthis_config = '. json_encode($addthis_config) .';';
+
+        $addthis_share = $addThisConfigs->createAddThisShareVariable();
+        $addthis_share_js = 'var addthis_share = '. json_encode($addthis_share) .';';
+
+        $addthis_layers = $addThisConfigs->createAddThisLayersVariable();
+        $addthis_layers_js = 'var addthis_layers = '. json_encode($addthis_layers) .';';
+
+        if ($justConfig) {
+            $script = "\n" . $addthis_config_js . "\n" . $addthis_share_js . "\n";
+            return $script;
+        }
+
+        $async = '';
+        if (!empty($addthis_config['addthis_asynchronous_loading'])) {
+            $async = 'async="async"';
+        }
+
+        /**
+         * Load client script based on the enviornment variable
+         * Admin can enable debug mode in adv settings by adding url param debug=true
+         */
+        $script_domain = '//s7.addthis.com/js/';
+        if (!empty($addthis_config['addthis_environment'])) {
+            $at_env = $addthis_config['addthis_environment'];
+            $script_domain = '//cache-'.$at_env.'.addthis.com/cachefly/js/';
+        }
+
+        $url = $script_domain .
+            $addthis_config['atversion'] .
+            '/addthis_widget.js#pubid=' .
+            urlencode($addThisConfigs->getUsableProfileId());
+
+        $script = '
+            <!-- AddThis Settings Begin -->
+            <script data-cfasync="false" type="text/javascript">
+                var addthis_product = "'. $cmsConnector->getProductVersion() . ';
+                var wp_product_version = "' . $this->cmsConnector->getProductVersion() . ';
+                var wp_blog_version = "' . $this->cmsConnector->getCmsVersion() . ';
+                var addthis_plugin_info = ' . $addThisConfigs->getAddThisPluginInfoJson() . ';
+                if (typeof(addthis_config) == "undefined") {
+                    ' . $addthis_config_js . '
+                }
+                if (typeof(addthis_share) == "undefined") {
+                    ' . $addthis_share_js . '
+                }
+                if (typeof(addthis_layers) == "undefined") {
+                    ' . $addthis_layers_js . '
+                }
+            </script>
+            <script
+                data-cfasync="false"
+                type="text/javascript"
+                src="' . $url . '"
+                ' . $async . '
+            >
+            </script>
+            <script data-cfasync="false" type="text/javascript">
+                (function() {
+                    var at_interval = setInterval(function () {
+                        if(window.addthis) {
+                            clearInterval(at_interval);
+                            addthis.layers(addthis_layers);
+                        }
+                    },1000)
+                }());
+            </script>
+            ';
+
+        if (!is_admin() && !is_feed()) {
+            echo $script;
+        } elseif ($return && !is_admin() && !is_feed()) {
+            return $script;
+        }
+    }
+
+    /**
+    * Appends AddThis button to post content.
+    */
+    function addthis_social_widget($content, $onSidebar = false, $url = null, $title = null)
+    {
+        addthis_set_addthis_settings();
+        global $addthis_settings;
+        global $addThisConfigs;
+        global $cmsConnector;
+
+        // add nothing to RSS feed or search results; control adding to static/archive/category pages
+        if (!$onSidebar)
+        {
+            if (   $addthis_settings['sidebar_only']
+                || is_feed()
+                || is_search()
+                || is_home()
+                || is_page()
+                || is_archive()
+                || is_category()
+            ) {
+                return $content;
+            }
+        }
+
+        $pub = urlencode($addThisConfigs->getUsableProfileId());
+
+        $link  = !is_null($url) ? $url : ($onSidebar ? get_bloginfo('url') : get_permalink());
+        $title = !is_null($title) ? $title : ($onSidebar ? get_bloginfo('title') : the_title('', '', false));
+
+        $content .= '
+            <!-- AddThis Button BEGIN -->
+            <script data-cfasync="false" type="text/javascript">'
                 ."\n//<!--\n"
-                ."var addthis_product = '".ADDTHIS_PRODUCT_VERSION."';\n";
+                    ."var addthis_product = '". $cmsConnector->getProductVersion() ."';\n";
 
 
-    if (strlen($addthis_settings['customization'])) 
-    {
-        $content .= ($addthis_settings['customization']) . "\n";
+        if (strlen($addthis_settings['customization']))
+        {
+            $content .= ($addthis_settings['customization']) . "\n";
+        }
+
+        if ($addthis_settings['menu_type'] === 'dropdown') {
+            $content .= '
+                </script>
+                    <div class="addthis_container">
+                        <a
+                            href="//www.addthis.com/bookmark.php?v='.$atversion.'&amp;username='.$pub.'"
+                            class="addthis_button"
+                            ' . addthis_get_identifier($link, $title) . '
+                        >
+                ';
+
+            $content .= ($addthis_settings['language'] == '' ? '' /* no hardcoded image -- we'll choose the language automatically */ : addthis_get_button_img()) . '</a><script data-cfasync="false" type="text/javascript" src="//s7.addthis.com/js/'.$atversion.'/addthis_widget.js#username='.$pub.'"></script></div>';
+        } else if ($addthis_settings['menu_type'] === 'toolbox') {
+            $content .= "\n//-->\n</script>\n";
+            $content .= '
+                <div
+                    class="addthis_container addthis_toolbox addthis_default_style"
+                    ' . addthis_get_identifier($link, $title) . '
+                >
+                    <a
+                        href="//www.addthis.com/bookmark.php?v='.$atversion.'&amp;username=$pub"
+                        class="addthis_button_compact">
+                        Share
+                    </a>
+                    <span class="addthis_separator">|</span>
+                    <script data-cfasync="false" type="text/javascript" src="//s7.addthis.com/js/'.$atversion.'/addthis_widget.js#username='.$pub.'">
+                    </script>
+                </div>';
+        } else {
+            $link = urlencode($link);
+            $title = urlencode($title);
+            $content .= '//-->
+                </script>
+                <div class="addthis_container">
+                <a
+                    href="//www.addthis.com/bookmark.php?v='.$atversion.'&amp;username=$pub"
+                    onclick="window.open(\'//www.addthis.com/bookmark.php?v='.$atversion.'&amp;username='.$pub.'&amp;url='.$link.'&amp;title='.$title.'\', \'ext_addthis\', \'scrollbars=yes,menubar=no,width=620,height=520,resizable=yes,toolbar=no,location=no,status=no\'); return false;"
+                    title="Bookmark using any bookmark manager!"
+                    target="_blank"
+                >
+            ';
+            $content .= addthis_get_button_img() . '</a></div>';
+        }
+        $content .= "\n<!-- AddThis Button END -->";
+
+        return $content;
     }
 
-    if ($addthis_settings['menu_type'] === 'dropdown')
+    /**
+    * Generates img tag for share/bookmark button.
+    */
+    function addthis_get_button_img( $btnStyle = false )
     {
-        if (strlen($addthis_options)) $content .= "var addthis_options = '$addthis_options';\n";
-        $content .= <<<EOF
-//-->
-</script>
-<div class="addthis_container"><a href="//www.addthis.com/bookmark.php?v='.$atversion.'&amp;username=$pub" class="addthis_button" addthis:url="$link" addthis:title="$title">
-EOF;
-        $content .= ($addthis_settings['language'] == '' ? '' /* no hardcoded image -- we'll choose the language automatically */ : addthis_get_button_img()) . '</a><script type="text/javascript" src="//s7.addthis.com/js/'.$atversion.'/addthis_widget.js#username='.$pub.'"></script></div>';
-    }
-    else if ($addthis_settings['menu_type'] === 'toolbox')
-    {
-        $content .= "\n//-->\n</script>\n";
-        $content .= <<<EOF
-<div class="addthis_container addthis_toolbox addthis_default_style" addthis:url="$link" addthis:title="$title"><a href="//www.addthis.com/bookmark.php?v='.$atversion.'&amp;username=$pub" class="addthis_button_compact">Share</a><span class="addthis_separator">|</span>
-EOF;
-        if (!strlen($addthis_options)) $addthis_options = 'email,favorites,print,facebook,twitter';
-        $addthis_options = split(',', $addthis_options);
-        foreach ($addthis_options as $option) {
-            $option = trim($option);  
-            if ($option != 'more') {
-                $content .= '<a class="addthis_button_'.$option.'"></a>';
+        global $addthis_settings;
+        global $addthis_styles;
+        global $addThisConfigs;
+        $options = $addThisConfigs->getConfigs();
+
+        $language = $options['language'];
+
+        if ($btnStyle == false)
+            $btnStyle = $addthis_settings['style'];
+        if ($addthis_settings['language'] != 'en')
+        {
+            // We use a translation of the word 'share' for all verbal buttons
+            switch ($btnStyle)
+            {
+                case 'bookmark':
+                case 'addthis':
+                case 'bookmark-sm':
+                    $btnStyle = 'share';
             }
         }
-        $content .= '<script type="text/javascript" src="//s7.addthis.com/js/'.$atversion.'/addthis_widget.js#username='.$pub.'"></script></div>';
-    }
-    else
-    {
-        $link = urlencode($link);
-        $title = urlencode($title);
-        $content .= <<<EOF
-//-->
-</script>
-<div class="addthis_container"><a href="//www.addthis.com/bookmark.php?v='.$atversion.'&amp;username=$pub" onclick="window.open('//www.addthis.com/bookmark.php?v='.$atversion.'&amp;username=$pub&amp;url=$link&amp;title=$title', 'ext_addthis', 'scrollbars=yes,menubar=no,width=620,height=520,resizable=yes,toolbar=no,location=no,status=no'); return false;" title="Bookmark using any bookmark manager!" target="_blank">
-EOF;
-        $content .= addthis_get_button_img() . '</a></div>';
-    }
-    $content .= "\n<!-- AddThis Button END -->";
 
-    return $content;
-}
+        if (!isset($addthis_styles[$btnStyle])) $btnStyle = 'share';
+        $btnRecord = $addthis_styles[$btnStyle];
+        $btnUrl = (strpos(trim($btnRecord['img']), '//') !== 0 ? "//s7.addthis.com/static/btn/v2/" : "") . $btnRecord['img'];
 
-/**
-* Generates img tag for share/bookmark button.
-*/
-function addthis_get_button_img( $btnStyle = false )
-{
-    global $addthis_settings;
-    global $addthis_styles;
-    global $addthis_default_options;
-    
-    $addthis_options = get_option('addthis_settings');
-    $options = wp_parse_args($addthis_options, $addthis_default_options);
-    
-    $language = $options['language'];
-
-    if ($btnStyle == false)
-        $btnStyle = $addthis_settings['style'];
-    if ($addthis_settings['language'] != 'en')
-    {
-        // We use a translation of the word 'share' for all verbal buttons
-        switch ($btnStyle)
-        {   
-            case 'bookmark':
-            case 'addthis':
-            case 'bookmark-sm':
-                $btnStyle = 'share';
+        if (strpos($btnUrl, '%lang%') !== false)
+        {
+            $btnUrl = str_replace('%lang%', strlen($language) ? $language : 'en', $btnUrl);
         }
-    }
-
-    if (!isset($addthis_styles[$btnStyle])) $btnStyle = 'share';
-    $btnRecord = $addthis_styles[$btnStyle];
-    $btnUrl = (strpos(trim($btnRecord['img']), '//') !== 0 ? "//s7.addthis.com/static/btn/v2/" : "") . $btnRecord['img'];
-        
-    if (strpos($btnUrl, '%lang%') !== false)
-    {
-        $btnUrl = str_replace('%lang%', strlen($language) ? $language : 'en', $btnUrl);
-    }
-    $btnWidth = $btnRecord['w'];
-    $btnHeight = $btnRecord['h'];
-    return <<<EOF
+        $btnWidth = $btnRecord['w'];
+        $btnHeight = $btnRecord['h'];
+        return <<<EOF
 <img src="$btnUrl" width="$btnWidth" height="$btnHeight" style="border:0" alt="Bookmark and Share"/>
 EOF;
-}
+    }
 
-function addthis_options_page_scripts()
-{
-	$script = (addthis_get_wp_version() >= 3.2 || apply_filters('at_assume_latest', __return_false() ) || apply_filters('addthis_assume_latest', __return_false() ) ) ? 'options-page.32.js' : 'options-page.js';
+    function addToWordpressMenu()
+    {
+        global $cmsConnector;
+        $htmlGeneratingFunction = 'addthis_plugin_options_php4';
+        $cmsConnector->addSettingsPage($htmlGeneratingFunction);
+    }
 
-    $script_location = apply_filters( 'at_files_uri',  plugins_url( '', basename(dirname(__FILE__)) ) ) . '/addthis/js/'.$script ;
-    $script_location = apply_filters( 'addthis_files_uri',  plugins_url( '', basename(dirname(__FILE__)) ) ) . '/addthis/js/'.$script ;
-    $imgLocationBase = apply_filters( 'at_files_uri',  plugins_url( '' , basename(dirname(__FILE__)))) . '/addthis/img/'  ;
-	$imgLocationBase = apply_filters( 'addthis_files_uri',  plugins_url( '' , basename(dirname(__FILE__)))) . '/addthis/img/'  ;
-    wp_enqueue_script( 'addthis_options_page_script',  $script_location , array('jquery-ui-tabs', 'thickbox'  ));  
-    wp_enqueue_script( 'addthis_core',plugins_url( '', basename(dirname(__FILE__)) ) . '/addthis/js/core-1.1.1.js');
-    wp_enqueue_script( 'addthis_lr', plugins_url( '', basename(dirname(__FILE__)) ) .'/addthis/js/lr.js');
-    wp_enqueue_script('addthis_qtip_script', plugins_url( '', basename(dirname(__FILE__)) ) .'/addthis/js/jquery.qtip.min.js');
-    wp_enqueue_script('addthis_ui_script', plugins_url( '', basename(dirname(__FILE__)) ) .'/addthis/js/jqueryui.sortable.js');
-    wp_enqueue_script( 'addthis_selectbox',plugins_url( '', basename(dirname(__FILE__)) ) . '/addthis/js/jquery.selectBoxIt.min.js');
-    wp_enqueue_script( '', plugins_url( '', basename(dirname(__FILE__)) ) .'/addthis/js/jquery.messagebox.js');
-    wp_enqueue_script( '', plugins_url( '', basename(dirname(__FILE__)) ) .'/addthis/js/jquery.atjax.js');
-    wp_enqueue_script( 'addthis_lodash_script', plugins_url( '', basename(dirname(__FILE__)) ) .'/addthis/js/lodash-0.10.0.js');
-	wp_enqueue_script('addthis_services_script', plugins_url( '', basename(dirname(__FILE__)) ) . '/addthis/js/gtc-sharing-personalize.js');
-    wp_enqueue_script('addthis_service_script', plugins_url( '', basename(dirname(__FILE__)) ) . '/addthis/js/gtc.cover.js');
-    wp_localize_script( 'addthis_options_page_script', 'addthis_option_params', array('wp_ajax_url'=> admin_url('admin-ajax.php'), 'addthis_validate_action' => 'validate_addthis_api_credentials', 'img_base' => $imgLocationBase) );
-    wp_localize_script( 'addthis_services_script', 'addthis_params', array('img_base' => $imgLocationBase) );
+    function addthis_plugin_options_php4() {
+        global $current_user;
+        $user_id = $current_user->ID;
+        global $addThisConfigs;
+        $options = $addThisConfigs->getConfigs();
+        global $cmsConnector;
 
-}
+        if (get_user_meta($user_id, 'addthis_nag_updated_options') )
+            delete_user_meta($user_id, 'addthis_nag_updated_options', 'true');
 
-function addthis_options_page_style()
-{
-    $style_location = apply_filters( 'at_files_uri' ,  plugins_url('', basename(dirname(__FILE__))  )  ) . '/addthis/css/options-page.css' ;
-    $style_location = apply_filters( 'addthis_files_uri' ,  plugins_url('', basename(dirname(__FILE__))  )  ) . '/addthis/css/options-page.css' ;
-    wp_enqueue_style( 'addthis_options_page_style', $style_location);
-    wp_enqueue_style( 'thickbox' );
-    wp_enqueue_style( 'addthis_services_style', plugins_url( '', basename(dirname(__FILE__)) ) . '/addthis/css/gtc.sharing-personalize.css' );
-    wp_enqueue_style('addthis_bootstrap_style', plugins_url( '', basename(dirname(__FILE__)) ) . '/addthis/css/bootstrap.css');
-    wp_enqueue_style( 'addthis_widget', 'https://ct1.addthis.com/static/r07/widget114.css');
-    wp_enqueue_style( 'addthis_widget_big', 'https://ct1.addthis.com/static/r07/widgetbig056.css');
-}
+        ?>
+        <div class="wrap">
+            <h2 class='placeholder'>&nbsp;</h2>
 
-function addthis_admin_menu()
-{
-    $addthis = add_options_page('AddThis Plugin Options', 'AddThis Share', 'manage_options', basename(__FILE__), 'addthis_plugin_options_php4');
-    add_action('admin_print_scripts-' . $addthis, 'addthis_options_page_scripts');
-    add_action('admin_print_styles-' . $addthis, 'addthis_options_page_style');
-}
+            <form
+                id="addthis-settings"
+                method="post"
+                action="options.php"
+            >
+                <?php
+                    // use the old-school settings style in older versions of wordpress
+                    if (   $cmsConnector->getCmsMinorVersion() >= 2.7
+                        || $cmsConnector->assumeLatest()
+                    ) {
+                        settings_fields('addthis');
+                    } else {
+                        wp_nonce_field('update-options');
+                    }
+                ?>
 
-    $addthis_default_options = array(
-        'profile'   => '',
-        'username'  => '',
-        'password'  => '',
-        'style'     => addthis_style_default ,
-        'location'  => 'below',
-        'below'     => 'fb_tw_p1_sc',
-        'above'     => 'large_toolbox',
-        'addthis_show_stats' => true,
-        'addthis_asynchronous_loading' => true,
-        'addthis_append_data'=> true,
-        'addthis_showonhome'  => true,
-        'addthis_showonpages'   => true,
-        'addthis_showonarchives'  => true,
-        'addthis_showoncats' => true,
-    	'addthis_aftertitle'  => false,
-        'addthis_beforecomments' => false,
-        'addthis_addressbar' => false,
-        'addthis_copytracking1' => false,
-        'addthis_copytracking2' => false,
-        'addthis_brand'     => '',
-        'toolbox'   => '',
-        'addthis_language'  => '',
-        'addthis_header_background' => '',
-        'addthis_header_color' => '',
-        'addthis_options' => '',
-        'addthis_showonexcerpts' => true,
-        'above_custom_size' => '',
-        'above_custom_services' => '',
-        'above_custom_preferred' => '',
-        'above_custom_more' => '',
-    	'above_custom_string' => '',
-        'below_custom_size' => '',
-        'below_custom_services' => '',
-        'below_custom_preferred' => '',
-        'below_custom_more' => '',
-    	'below_custom_string' => '',
-        'addthis_twitter_template' => '',
-        'addthis_508' => '',
-        'data_ga_property' => '',
-        'addthis_bitly_login' => '',
-        'addthis_bitly_key' => '',
-        'addthis_config_json' => '',
-        'addthis_share_json' => '',
-        'atversion' => ADDTHIS_ATVERSION,
-        'atversion_update_status' => 0,
-        'credential_validation_status' => 0
-    );
-
-function addthis_plugin_options_php4() {
-    
-    require_once('addthis_settings_functions.php');
-    global $addthis_styles;
-    global $addthis_languages;
-    global $addthis_settings;
-    global $addthis_menu_types;
-    global $addthis_new_styles;
-    global $addthis_default_options;
-    global $addthis_addjs;
-
-
-
-    global $current_user;
-    $user_id = $current_user->ID;
-    
-    if (get_user_meta($user_id, 'addthis_nag_updated_options') )
-        delete_user_meta($user_id, 'addthis_nag_updated_options', 'true');
-    
-?>
-    <div class="wrap">
-    <h2 class='placeholder'>&nbsp;</h2>
-    
-    <form  id="addthis_settings" method="post" action="options.php">
-    <?php 
-        // use the old-school settings style in older versions of wordpress
-        if (addthis_get_wp_version() >= 2.7 || apply_filters('at_assume_latest', __return_false() ) || apply_filters('addthis_assume_latest', __return_false() )   ) {
-            settings_fields('addthis'); 
-        } else {
-            wp_nonce_field('update-options');
-        }
-        
-        $addthis_options = get_option('addthis_settings');
-        if ($addthis_options == false)
-            add_option('addthis_settings', array() );
-
-        foreach ( array( 'addthis_show_stats', 'addthis_asynchronous_loading','addthis_append_data', 'addthis_showonhome', 'addthis_showonpages', 'addthis_showonarchives', 'addthis_showoncats' ) as $option)
-        {                                                                                                                                                                                                                                                               
-            if ( $addthis_options && ! isset($addthis_options[$option]) )
-                $addthis_options[$option] = false;
-        }
-        $options = wp_parse_args($addthis_options, $addthis_default_options);        
-        extract($options);        
-    ?>
-
-    <?php if(isset($addthis_options) && !isset($addthis_options['addthis_for_wordpress'])) { ?>
-
-        <div class="addthis_upgrade">
-            <b>Now that you've upgraded your plugin you can access even more AddThis tools. </b>
-            &nbsp;Note: Your tool configurations will be reset.
-            &nbsp; <a href="?page=<?php echo basename(__FILE__); ?>&upgrade=addthis_for_wordpress">Get Started</a>
-        </div>
-
-    <?php } ?>
-
-    <img alt='addthis' src="//cache.addthis.com/icons/v1/thumbs/32x32/more.png" class="header-img"/>
-    <span class="addthis-title">AddThis</span> <span class="addthis-plugin-name">Share</span>
-    <div class="page-header" id="tabs">
-        <ul class="nav-tab-wrapper">
-<!--XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227 -->
-            <li><h2 class="nav-tab-wrapper"><a href="#tabs-1"><?php _e('Basic', 'addthis_trans_domain' ); ?></a></h2></li>
-            <li><h2 class="nav-tab-wrapper"><a href="#tabs-2"><?php _e('Advanced', 'addthis_trans_domain' ); ?></a></h2></li>
-<!--************ ORIGINAL
-            <li><h2 class="nav-tab-wrapper"><a href="#tabs-1">Basic</a></h2></li>
-            <li><h2 class="nav-tab-wrapper"><a href="#tabs-2">Advanced</a></h2></li>
-************ FI -->
-
-            <li style="float: right; border: none;padding-right:0px;"> 
-            <strong><?php _e("AddThis Profile ID:", 'addthis_trans_domain' ); ?></strong>
-            <input id="addthis_profile"  type="text" name="addthis_settings[addthis_profile]" value="<?php echo $profile; ?>" autofill='off' autocomplete='off'  />
-            <br />
-            <span id="addthis-profile-validation-message" style="float: right;color:red;font-size:10px"></span>
-                                                <?php
-                                                if ($credential_validation_status == 1) {
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-                                                    echo '<span style="float: right;color:green;font-size:10px;">&#10004; ' . __('Valid AddThis Profile ID','addthis_trans_domain') . '</span>';
-
-//************ ORIGINAL
-//                                                    echo '<span style="float: right;color:green;font-size:10px;">&#10004; Valid AddThis Profile ID</span>';
-//************ FI
-                                                }
-                                                ?>
-            </li>
-        </ul>
-        <div class='clear'>&nbsp;</div> 
-        
-        <div id="tabs-1">
-        	<div style="float: left;width: 620px; margin-right: 10px;">
-                        <?php echo $version_notification_content = _addthis_version_notification($atversion_update_status, $atversion);?>
-                        <input type="hidden" value="<?php echo $atversion?>"  name="addthis_settings[atversion]" id="addthis_atversion_hidden" />
-                        <input type="hidden" value="<?php echo $atversion_update_status?>"  name="addthis_settings[atversion_update_status]" id="addthis_atversion_update_status" />
-                        <input type="hidden" value="<?php echo $credential_validation_status?>"  name="addthis_settings[credential_validation_status]" id="addthis_credential_validation_status" />
-			<table class="form-table">
-				<tbody>
-				<?php _addthis_choose_icons('above', $options ); ?>
-				<?php _addthis_choose_icons('below', $options ); ?>
-				</tbody>
-			</table>
-			
-			<br/>
-			
-			<div style="margin-left:5px;font-weight:bold">
-				<?php _e("<a href='https://www.addthis.com/register?profile=wpp' target='_blank'>Register</a> for free in-depth analytics reports and better understand your site's social traffic.", 'addthis_trans_domain');?>
-			</div>
-			<table class="form-table" style="width:600px;">
-				<tbody>
-					<tr valign="top">
-						<td width="200"><?php _e("AddThis email / username:", 'addthis_trans_domain' ); ?></td>
-						<td><input id="addthis_username"  type="text" name="addthis_settings[addthis_username]" value="<?php echo $username; ?>" autofill='off' autocomplete='off'  /></td>
-					</tr>
-					<tr id="password_row" >
-<!--XTEC ************ MODIFICAT - Localization support
-2013.05.21 @jmiro227 -->
-						<td><?php _e("AddThis password:", 'addthis_trans_domain' ); ?><br/><span style="font-size:10px"><?php _e("(required for displaying stats)", 'addthis_trans_domain' ); ?></span></td>
-<!--************ ORIGINAL
-						<td><?php _e("AddThis password:", 'addthis_trans_domain' ); ?><br/><span style="font-size:10px">(required for displaying stats)</span></td>
-************ FI -->
-						<td><input id="addthis_password" type="password" name="addthis_settings[addthis_password]" value="<?php echo $password; ?>" autocomplete='off' autofill='off'  /></td>
-					</tr>
-                                        <tr>
-                                            <td style="height:32px">
-                                                
-                                            </td>
-                                            <td style="vertical-align:top;margin-top:0;padding-top:0;line-height:5px;font-size:10px">
-                                                <img class="addthis-admin-loader" style="display:none" src="<?php echo plugins_url('img/loader.gif', __FILE__)?>" />
-<!--XTEC ************ MODIFICAT - Localization support
-2013.05.21 @jmiro227 -->
-                                                <span class="addthis-admin-loader" style="display:none;color:gray"><?php _e("Connecting to AddThis profile", 'addthis_trans_domain' ); ?> <?php echo $profile; ?>..</span>
-<!--************ ORIGINAL
-                                                <span class="addthis-admin-loader" style="display:none;color:gray">Connecting to AddThis profile <?php echo $profile; ?>..</span>
-************ FI -->
-                                                <span id="addthis-credential-validation-message" style="color:red"></span>
-                                                <?php
-                                                if ($credential_validation_status == 1) {
-//XTEC ************ MODIFICAT - Localization support
-//2013.05.21 @jmiro227
-                                                    echo '<span style="color:green">&#10004; ' . __('Valid AddThis Credentials','addthis_trans_domain') . '</span>';
-//************ ORIGINAL
-//                                                    echo '<span style="color:green">&#10004; Valid AddThis Credentials</span>';
-//************ FI
-                                                }
-                                                ?>
-                                            </td>
-                                        </tr>
-				</tbody>
-			</table>
-			<div class='clear'>&nbsp;</div>  
-			<br/>
-			</div>
-			
-			<div style="display:block; float:left; width:470px;">
-                <div id="preview_floater">
-        			<table class="form-table">
-            			<tbody>
-                			<tr>
-                                <td id="below" colspan="2">
-                                    <fieldset>  
-                        				<legend id="previewHeader">&nbsp;<strong>Preview</strong> &nbsp;</legend>
-                        	            <div id="previewBox" class="previewbox">
-                        			    	<div id="addthis_share_demo" class="addthis_tshare_demo" >
-                                                <div class="addthis-share-list">
-                                                    <h3 style="margin-top:0;">Another Post with Everything in it</h3>
-                                                    <div id="above_previewContainer" style="float: left; width: 100%;"></div>
-                                                    <p style="float: left; width: 100%;">Published by <a href="#">admin</a> on September 17, 2008 | <a href="#">2 Responses</a> | <a href="#">Edit</a></p> 
-                                                    <div id="preview_post"><p style="float: left; width: 100%;">Lorem dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p></div>
-                                                    <div id="below_previewContainer" style="float: left; width: 100%;"></div>
-                                                    <p style="float:left;">Posted in <a href="#">Child Category I</a>, <a href="#">Parent Category I</a>, <a href="#">Parent Category II</a></p>
-                                                  </div>
-                        			          </div>                    
-                        			    </div>      				
-                        			</fieldset>	
-                    	        </td>
-                            </tr>
-                        </tbody>
-        			</table>
+                <div class="Header">
+<!--XTEC ************ MODIFICAT - Localization support-->
+<!--2015.09.22 @dgras                    -->
+                    <h1><?php echo __("<em>AddThis</em> Sharing Buttons",'addthis_trans_domain') ?></h1>
+<!--************ ORIGINAL-->
+<!--                    <h1><em>AddThis</em> Sharing Buttons</h1>-->
+<!--************ FI-->
+                    <span class="preview-save-btns">
+                        <?php echo _addthis_settings_buttons(); ?>
+                    </span>
                 </div>
-		    </div>
-		</div>
 
-        <div id="tabs-2">
-            <?php echo $version_notification_content?>
-			<table class="form-table">
-                <tr>
-<!--XTEC ************ MODIFICAT - Localization support
-2013.05.21 @jmiro227 -->
-                    <th><h2><?php _e("Show AddThis on &hellip;", 'addthis_trans_domain' ); ?></h2></th>
-<!--************ ORIGINAL
-                    <th><h2>Show AddThis on &hellip;</h2></th> 
-************ FI --> 
+                <?php
+                        if (_addthis_is_csr_form()) {
+                            // Get Confirmation form
+                            echo addthis_profile_id_csr_confirmation();
+                        } else {
+                            addthis_wordpress_mode_tabs();
+                        }
+                ?>
 
-                </tr>
-					<th scope="row"><?php _e("homepage:", 'addthis_trans_domain' ); ?></th>
-					<td><input type="checkbox" name="addthis_settings[addthis_showonhome]" value="true" <?php echo ($addthis_showonhome  == true ? 'checked="checked"' : ''); ?>/></td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e("<a href=\"//codex.wordpress.org/Pages\" target=\"blank\">pages</a>:", 'addthis_trans_domain' ); ?></th>
-					<td><input type="checkbox" name="addthis_settings[addthis_showonpages]" value="true" <?php echo ( $addthis_showonpages  == true ? 'checked="checked"' : ''); ?>/></td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e("archives:", 'addthis_trans_domain' ); ?></th>
-					<td><input type="checkbox" name="addthis_settings[addthis_showonarchives]" value="true" <?php echo ($addthis_showonarchives  == true ? 'checked="checked"' : ''); ?>/></td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e("categories:", 'addthis_trans_domain' ); ?></th>
-					<td><input type="checkbox" name="addthis_settings[addthis_showoncats]" value="true" <?php echo ( $addthis_showoncats == true ? 'checked="checked"' : ''); ?>/></td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e("excerpts:", 'addthis_trans_domain' ); ?></th>
-					<td><input type="checkbox" name="addthis_settings[addthis_showonexcerpts]" value="true" <?php echo ( $addthis_showonexcerpts == true ? 'checked="checked"' : ''); ?>/></td>
-				</tr>
-				<?php if($addthis_settings['placement'] != "0") { ?>
-					<tr>
-						<th scope="row"><?php _e("after title:", 'addthis_trans_domain' ); ?></th>
-						<td><input type="checkbox" name="addthis_settings[addthis_aftertitle]" value="true" <?php echo ( $addthis_aftertitle == true ? 'checked="checked"' : ''); ?>/></td>
-					</tr>
-					<tr>
-						<th scope="row"><?php _e("before comments:", 'addthis_trans_domain' ); ?></th>
-						<td><input type="checkbox" name="addthis_settings[addthis_beforecomments]" value="true" <?php echo ( $addthis_beforecomments == true ? 'checked="checked"' : ''); ?>/></td>
-					</tr>
-				<?php } ?>
-                <tr>
-<!--XTEC ************ MODIFICAT - Localization support
-2013.05.21 @jmiro227 -->
-                    <th><h2><?php _e("Have AddThis track &hellip;", 'addthis_trans_domain' ); ?></h2></th>
-<!--************ ORIGINAL
-                    <th><h2>Have AddThis track &hellip;</h2></th> 
-************ FI --> 
-                </tr>
-				<tr>
-					<th scope="row"><?php _e("<a href=\"//www.addthis.com/blog/2010/03/11/clickback-analytics-measure-traffic-back-to-your-site-from-addthis/\" target=\"_blank\">clickbacks</a>:", 'addthis_trans_domain' ); ?></th>
-					<td><input type="checkbox" name="addthis_settings[addthis_append_data]" value="true" <?php echo $addthis_append_data == true ? 'checked="checked"' : ''; ?>/></td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e("address bar shares:", 'addthis_trans_domain' ); ?></th>
-					<td><input type="checkbox" name="addthis_settings[addthis_addressbar]" value="true" <?php echo ($addthis_addressbar  == true ? 'checked="checked"' : ''); ?>/></td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e("copied text:", 'addthis_trans_domain' ); ?></th>
-                    <?php  if (isset( $addthis_copytracking1 ) &&  $addthis_copytracking1 == true){
-                            echo "<input type='hidden' name='addthis_settings[addthis_copytrackingremove' value='true'/>";   
-                             $addthis_copytracking2 = false;
-                    }?>
-<!--					<td><input type="checkbox" name="addthis_settings[addthis_copytracking1]" value="true" <?php echo ( $addthis_copytracking1 == true ? 'checked="checked"' : ''); ?>/></td> -->
-					<td><input type="checkbox" name="addthis_settings[addthis_copytracking2]" value="true" <?php echo ( $addthis_copytracking2 == true ? 'checked="checked"' : ''); ?>/></td>
-				</tr>
-                <tr>
-<!--XTEC ************ MODIFICAT - Localization support
-2013.05.21 @jmiro227 -->
-                    <th><h2><?php _e("Display Options", 'addthis_trans_domain' ); ?></h2></th>
-<!--************ ORIGINAL
-                    <th><h2>Display Options</h2></th>
-************ FI -->
-                </tr>
-				<tr valign="top">
-<!--XTEC ************ MODIFICAT - Localization support
-2013.05.21 @jmiro227 -->
-					<td colspan="2"><?php _e("For more details on the following options, see <a href=\"//support.addthis.com/customer/portal/articles/381263-addthis-client-api\">our customization documentation</a>.", 'addthis_trans_domain' ); ?></td>
-<!--************ ORIGINAL
-					<td colspan="2">For more details on the following options, see <a href="//support.addthis.com/customer/portal/articles/381263-addthis-client-api">our customization documentation</a>.</td>
-************ FI -->
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e("Custom service list:", 'addthis_trans_domain' ); ?><br /><span class='description'><?php _e(
-					'Important: AddThis optimizes displayed services based on popularity and language, and personalizes the list for each user. You may decrease sharing by overriding these features.'
-					, 'addthis_trans_domain') ?>
-					</span></th>
-					  <td><input size='60' type="text" name="addthis_settings[addthis_options]" value="<?php echo $addthis_options; ?>" /><br />
-					  <span class='description'><?php _e('Enter a comma-separated list of <a href="//addthis.com/services/list">service codes</a>', 'addthis_trans_domain' ); ?></span>
-					  </td>  
-				</tr>
-				<tr valign="top" class="classicFeature">
-					<th scope="row"><?php _e("Brand:", 'addthis_trans_domain' ); ?></th>
-					<td><input type="text" name="addthis_settings[addthis_brand]" value="<?php echo $addthis_brand; ?>" /></td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e("Twitter via:", 'addthis_trans_domain' ); ?></th>
-                                        <td><input type="text" name="addthis_settings[addthis_twitter_template]" value="<?php echo get_first_twitter_username($addthis_twitter_template) ; ?>" /></td>
-				</tr>
+                <div class="Btn-container-end">
+                    <?php echo _addthis_settings_buttons(); ?>
+                </div>
 
-				<tr valign="top">
-					<th scope="row"><?php _e("Language:", 'addthis_trans_domain' ); ?></th>
-					<td>
-						<select name="addthis_settings[addthis_language]">
-						<?php
-							$curlng = $addthis_language;
-							foreach ($addthis_languages as $lng=>$name)
-							{
-								echo "<option value=\"$lng\"". ($lng == $curlng ? " selected='selected'":""). ">$name</option>";
-							}
-						?>
-						</select>
-					</td>
-				</tr>
-				<tr valign="top" class="classicFeature">
-					<th scope="row"><?php _e("Header background:", 'addthis_trans_domain' ); ?></th>
-					<td><input type="text" name="addthis_settings[addthis_header_background]" value="<?php echo $addthis_header_background; ?>" /></td>
-				</tr>
-				<tr valign="top" class="classicFeature">
-					<th scope="row"><?php _e("Header color:", 'addthis_trans_domain' ); ?></th>
-					<td><input type="text" name="addthis_settings[addthis_header_color]" value="<?php echo $addthis_header_color; ?>" /></td>
-				</tr>
-
-                <tr>
-<!--XTEC ************ MODIFICAT - Localization support
-2013.05.21 @jmiro227 -->
-                    <th><h2><?php _e("Additional Options", 'addthis_trans_domain' ); ?></h2></th>
-<!--************ ORIGINAL
-                    <th><h2>Additional Options</h2></th>
-************ FI -->
-                </tr>
-				<tr>
-					<th scope="row"><?php _e("Show analytics in admin dashboard:", 'addthis_trans_domain' ); ?></th>
-					<td><input type="checkbox" name="addthis_settings[addthis_show_stats]" value="true" <?php echo ($addthis_show_stats == true ? 'checked="checked"' : ''); ?>/></td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e("Asynchronous Loading:", 'addthis_trans_domain' ); ?></th>
-					<td><input type="checkbox" name="addthis_settings[addthis_asynchronous_loading]" value="true" <?php echo ($addthis_asynchronous_loading == true ? 'checked="checked"' : ''); ?>/></td>
-				</tr>
-				<tr>
-				<tr>
-					<th scope="row"><?php _e("Enable enhanced accessibility:", 'addthis_trans_domain' ); ?></th>
-					<td><input type="checkbox" name="addthis_settings[addthis_508]" value="true" <?php echo ( $addthis_508 == true ? 'checked="checked"' : ''); ?>/></td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e("Google Analytics property ID:", 'addthis_trans_domain' ); ?></th>
-					<td><input type="text" name="addthis_settings[data_ga_property]" value="<?php echo $data_ga_property ?>"/></td>
-				</tr>
-
-				<tr valign="top">
-					<td colspan="2"></td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e("Bitly login:", 'addthis_trans_domain' ); ?></th>
-					<td><input type="text" name="addthis_settings[addthis_bitly_login]" value="<?php echo $addthis_bitly_login; ?>" /></td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e("Bitly key:", 'addthis_trans_domain' ); ?></th>
-					<td><input type="text" name="addthis_settings[addthis_bitly_key]" value="<?php echo $addthis_bitly_key; ?>" /></td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e("addthis_config values:<br/><span class=\"description\">(json format)</span>", 'addthis_trans_domain' ); ?></th>
-					<td><textarea rows='3' cols='40' type="text" name="addthis_settings[addthis_config_json]" id="addthis-config-json"/><?php echo $addthis_config_json; ?></textarea></td>
-<!--XTEC ************ MODIFICAT - Localization support
-2013.05.21 @jmiro227 -->
-					<td id="config-error" style="display: none;color: red;float: left;margin-top: 25px;width: 150px;"><?php _e("Invalid JSON format", 'addthis_trans_domain' ); ?></td>
-<!--************ ORIGINAL
-					<td id="config-error" style="display: none;color: red;float: left;margin-top: 25px;width: 150px;">Invalid JSON format</td>
-************ FI -->
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e("addthis_share values:<br/><span class=\"description\">(json format)</span>", 'addthis_trans_domain' ); ?></th>
-					<td><textarea rows='3' cols='40' type="text" name="addthis_settings[addthis_share_json]" id="addthis-share-json" /><?php echo $addthis_share_json; ?></textarea></td>
-					<td id="share-error" style="display: none;color: red;float: left;margin-top: 25px;width: 150px;">Invalid JSON format</td>
-                </tr>               
-			</table>
-			<div class='clear'>&nbsp;</div>
-		</div>
-    </div>
-    <div class="clear">&nbsp;</div>
-	
-    <p class="submit">
+            </form>
+        </div>
     <?php
-    // Build Preview Link
-         $preview_link = esc_url( get_option( 'home' ) . '/' );
-         if ( is_ssl() )
-              $preview_link = str_replace( 'http://', 'https://', $preview_link );
-         $stylesheet = get_option('stylesheet');
-         $template = get_option('template');
-         $preview_link = htmlspecialchars( add_query_arg( array( 'preview' => 1, 'template' => $template, 'stylesheet' => $stylesheet, 'preview_iframe' => true, 'TB_iframe' => 'true' ), $preview_link ) );
+    }
+    add_action('init', 'addthis_init');
+
+    function addthis_wordpress_mode_tabs() {
+        global $addThisConfigs;
+        global $cmsConnector;
+
+        $options = $addThisConfigs->getConfigs();
+
+        ?>
+        <div class="Main-content" id="tabs">
+            <ul class="Tabbed-nav">
+<!--XTEC ************ MODIFICAT - Localization support-->
+<!--2015.09.22 @dgras                    -->
+                                <li class="Tabbed-nav-item"><a href="#tabs-1"><?php echo __("Sharing Tools",'addthis_trans_domain')?></a></li>
+                                <li class="Tabbed-nav-item"><a href="#tabs-2"><?php echo __("Advanced Options",'addthis_trans_domain') ?></a></li>
+<!--************ ORIGINAL-->
+<!--                <li class="Tabbed-nav-item"><a href="#tabs-1">Sharing Tools</a></li>-->
+<!--                <li class="Tabbed-nav-item"><a href="#tabs-2">Advanced Options</a></li>-->
+<!--************ FI-->
+            </ul>
+
+            <div id="tabs-1">
+                <input
+                    type="hidden"
+                    value="<?php echo $options['atversion']?>"
+                    name="addthis_settings[atversion]"
+                    id="addthis_atversion_hidden" />
+                <input
+                    type="hidden"
+                    value="<?php echo $options['atversion_update_status']?>"
+                    name="addthis_settings[atversion_update_status]"
+                    id="addthis_atversion_update_status" />
+                <input
+                    type="hidden"
+                    value="<?php echo $options['credential_validation_status']?>"
+                    name="addthis_settings[credential_validation_status]"
+                    id="addthis_credential_validation_status" />
+
+                <div class="Card" id="Card-above-post">
+                    <div class="Card-hd">
+                        <div class="at-tool-toggle">
+                            <input
+                                type="checkbox"
+                                value="true"
+                                name="addthis_settings[addthis_above_enabled]"
+                                class="addthis-toggle-cb"
+                                id="addthis_above_enabled"
+                                style="display:none;" <?php echo ( $options['addthis_above_enabled']  != false ? 'checked="checked"' : ''); ?>/>
+                            <div
+                                id="addthis_above_enabled_switch"
+                                class="addthis-switch <?php echo ( $options['addthis_above_enabled']  != false ? 'addthis-switchOn' : ''); ?>">
+                            </div>
+                        </div>
+<!--XTEC ************ MODIFICAT - Localization support-->
+<!--2015.09.22 @dgras                    -->
+                        <h3 class="Card-hd-title"><?php echo __("Sharing Buttons Above Content",'addthis_trans_domain') ?></h3>
+                        <ul class="Tabbed-nav">
+                            <li class="Tabbed-nav-item"><a href="#top-1"><?php echo __("Style",'addthis_trans_domain')?></a></li>
+                            <li class="Tabbed-nav-item"><a href="#top-2"><?php echo __("Options",'addthis_trans_domain')?></a></li>
+                        </ul>
+<!--************ ORIGINAL-->
+<!--                        <h3 class="Card-hd-title">Sharing Buttons Above Content</h3>-->
+<!--                        <ul class="Tabbed-nav">-->
+<!--                            <li class="Tabbed-nav-item"><a href="#top-1">Style</a></li>-->
+<!--                            <li class="Tabbed-nav-item"><a href="#top-2">Options</a></li>-->
+<!--                        </ul>-->
+<!--************ FI-->
+                    </div>
+                    <div class="addthis_above_enabled_overlay" >
+                        <div  class="Card-bd">
+                            <div id="top-1">
+                                <?php _addthis_choose_icons('above', $options ); ?>
+                            </div>
+                            <div id="top-2">
+                                <?php _addthis_print_template_checkboxes('above') ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
-    ?>    
-<!--XTEC ************ MODIFICAT - Localization support
-2013.05.21 @jmiro227 -->
-		<input type="submit" name="Submit" value="<?php _e('Save Changes', 'addthis_trans_domain') ?>"  id="submit-button"/>
-		<a href="<?php echo $preview_link; ?>" class="thickbox thickbox-preview" id="preview" ><?php _e('Preview', 'addthis_trans_domain'); ?></a>
-<!--************ ORIGINAL
-		<input type="submit" name="Submit" value="<?php _e('Save Changes') ?>"  id="submit-button"/>
-		<a href="<?php echo $preview_link; ?>" class="thickbox thickbox-preview" id="preview" ><?php _e('Preview'); ?></a>
-************ FI -->
-    </p>
+                <div class="Card" id="Card-below-post">
+                    <div class="Card-hd">
+                        <div class="at-tool-toggle">
+                            <input
+                                type="checkbox"
+                                value="true"
+                                name="addthis_settings[addthis_below_enabled]"
+                                class="addthis-toggle-cb"
+                                id="addthis_below_enabled"
+                                style="display:none;" <?php echo ( $options['addthis_below_enabled'] != false ? 'checked="checked"' : ''); ?>/>
+                            <div
+                                id="addthis_below_enabled_switch"
+                                class="addthis-switch <?php echo ( $options['addthis_below_enabled'] != false ? 'addthis-switchOn' : ''); ?>">
+                            </div>
+                        </div>
+<!--XTEC ************ MODIFICAT - Localization support-->
+<!--2015.09.22 @dgras                    -->
+                        <h3 class="Card-hd-title"><?php echo __("Sharing Buttons Below Content",'addthis_trans_domain') ?></h3>
+                        <ul class="Tabbed-nav">
+                            <li class="Tabbed-nav-item"><a href="#bottom-1"><?php echo __("Style",'addthis_trans_domain')?></a></li>
+                            <li class="Tabbed-nav-item"><a href="#bottom-2"><?php echo __("Options",'addthis_trans_domain')?></a></li>
+                        </ul>
+<!--************ ORIGINAL-->
+<!--                       <h3 class="Card-hd-title">Sharing Buttons Below Content</h3>-->
+<!--                        <ul class="Tabbed-nav">-->
+<!--                            <li class="Tabbed-nav-item"><a href="#bottom-1">Style</a></li>-->
+<!--                            <li class="Tabbed-nav-item"><a href="#bottom-2">Options</a></li>-->
+<!--                        </ul>-->
+<!--************ FI-->
+                    </div>
+                    <div class="addthis_below_enabled_overlay">
+                        <div class="Card-bd">
+                            <div id="bottom-1">
+                                <?php _addthis_choose_icons('below', $options ); ?>
+                            </div>
+                            <div id="bottom-2">
+                                <?php _addthis_print_template_checkboxes('below') ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    </form>
-    </div>
-<?php
-}
-add_action('init', 'addthis_init');
 
-/* 2.9 compatability functions
- */
+                <div class="Card"  id="Card-side-sharing">
+                    <div class="Card-hd">
+                        <div class="at-tool-toggle">
+                            <input
+                                type="checkbox"
+                                value="true"
+                                name="addthis_settings[addthis_sidebar_enabled]"
+                                class="addthis-toggle-cb" id="addthis_sidebar_enabled"
+                                style="display:none;" <?php echo ( $options['addthis_sidebar_enabled'] != false ? 'checked="checked"' : ''); ?>/>
+                            <div
+                                id="addthis_sidebar_enabled_switch"
+                                class="addthis-switch <?php echo ( $options['addthis_sidebar_enabled']  != false ? 'addthis-switchOn' : ''); ?>">
+                            </div>
+                        </div>
+<!--XTEC ************ MODIFICAT - Localization support-->
+<!--2015.09.22 @dgras                    -->
+                            <h3 class="Card-hd-title"><?php echo __("Sharing Sidebar",'addthis_trans_domain') ?></h3>
+                            <ul class="Tabbed-nav">
+                                <li class="Tabbed-nav-item"><a href="#side-1"><?php echo __("Style",'addthis_trans_domain')?></a></li>
+                                <li class="Tabbed-nav-item"><a href="#side-2"><?php echo __("Options",'addthis_trans_domain')?></a></li>
+                            </ul>
+<!--************ ORIGINAL-->
+<!--                        <h3 class="Card-hd-title">Sharing Sidebar</h3>-->
+<!--                        <ul class="Tabbed-nav">-->
+<!--                            <li class="Tabbed-nav-item"><a href="#side-1">Style</a></li>-->
+<!--                            <li class="Tabbed-nav-item"><a href="#side-2">Options</a></li>-->
+<!--                        </ul>-->
+<!--************ FI-->
+                    </div>
+                    <div class="addthis_sidebar_enabled_overlay">
+                        <div class="Card-bd">
+                            <div id="side-1">
 
-if (! function_exists('get_user_meta'))
-{
-    function get_user_meta($userid, $metakey, $ignored='')
+<!--XTEC ************ MODIFICAT - Localization support-->
+<!--2015.09.22 @dgras                    -->
+                                <p><?php echo __("These buttons will appear on the side of the page, along the edge.",'addthis_trans_domain') ?></p>
+<!--************ ORIGINAL-->
+<!--                                <p>These buttons will appear on the side of the page, along the edge.</p>-->
+<!--************ FI-->
+
+                                <img src="<?php echo $cmsConnector->getPluginImageFolderUrl() . 'sidebar_theme_light.png'; ?>" />
+                                <ul>
+<!--XTEC ************ MODIFICAT - Localization support-->
+<!--2015.09.22 @dgras                    -->
+                                    <li>
+                                        <strong><?php echo __("Position",'addthis_trans_domain') ?></strong>
+                                        <label for="addthis_sidebar_position_left" class="addthis-sidebar-position-label">
+                                            <input
+                                                type="radio"
+                                                id="addthis_sidebar_position_left"
+                                                name="addthis_settings[addthis_sidebar_position]"
+                                                value="left" <?php echo ( $options['addthis_sidebar_position'] == 'left' ? 'checked="checked"' : ''); ?>/>
+                                            <span class="addthis-checkbox-label"><?php echo __("Left") ?></span>
+                                        </label>
+                                        <label for="addthis_sidebar_position_right" class="addthis-sidebar-position-label">
+                                            <input
+                                                type="radio"
+                                                id="addthis_sidebar_position_right"
+                                                name="addthis_settings[addthis_sidebar_position]"
+                                                value="right" <?php echo ( $options['addthis_sidebar_position']  == 'right' ? 'checked="checked"' : ''); ?>/>
+                                            <span class="addthis-checkbox-label"><?php echo __("Right") ?></span>
+                                        </label>
+                                    </li>
+<!--************ ORIGINAL-->
+<!--                                    <li>-->
+<!--                                        <strong>Position</strong>-->
+<!--                                        <label for="addthis_sidebar_position_left" class="addthis-sidebar-position-label">-->
+<!--                                            <input-->
+<!--                                                type="radio"-->
+<!--                                                id="addthis_sidebar_position_left"-->
+<!--                                                name="addthis_settings[addthis_sidebar_position]"-->
+<!--                                                value="left" --><?php //echo ( $options['addthis_sidebar_position'] == 'left' ? 'checked="checked"' : ''); ?><!--/>-->
+<!--                                            <span class="addthis-checkbox-label">Left</span>-->
+<!--                                        </label>-->
+<!--                                        <label for="addthis_sidebar_position_right" class="addthis-sidebar-position-label">-->
+<!--                                            <input-->
+<!--                                                type="radio"-->
+<!--                                                id="addthis_sidebar_position_right"-->
+<!--                                                name="addthis_settings[addthis_sidebar_position]"-->
+<!--                                                value="right" --><?php //echo ( $options['addthis_sidebar_position']  == 'right' ? 'checked="checked"' : ''); ?><!--/>-->
+<!--                                            <span class="addthis-checkbox-label">Right</span>-->
+<!--                                        </label>-->
+<!--                                    </li>-->
+<!--************ FI-->
+                                </ul>
+                            </div>
+                            <div id="side-2">
+                                <?php _addthis_print_template_checkboxes('sidebar') ?>
+                                <ul>
+                                    <li>
+                                        <label for="addthis_sidebar_count">
+<!--XTEC ************ MODIFICAT - Localization support-->
+<!--2015.09.22 @dgras                    -->
+                                            <strong><?php echo __("Buttons",'addthis_trans_domain') ?></strong>
+                                            <span class="at-wp-tooltip" tooltip="<?php echo __("The number of social sharing buttons to show in the side sharing tool.",'addthis_trans_domain')?>">?</span>
+<!--************ ORIGINAL-->
+<!--                                            <strong>Buttons</strong>-->
+<!--                                            <span class="at-wp-tooltip" tooltip="The number of social sharing buttons to show in the side sharing tool.">?</span>-->
+<!--************ FI-->
+                                        </label>
+                                        <select id="addthis_sidebar_count" name="addthis_settings[addthis_sidebar_count]">
+                                            <?php
+                                                for($i=1;$i<7;$i++){
+                                                    echo '<option value="'.$i.'"'.($options['addthis_sidebar_count'] == $i? " selected='selected'":"").'>'.$i.'</option>';
+                                                }
+                                            ?>
+                                        </select>
+                                    </li>
+                                    <li>
+<!--XTEC ************ MODIFICAT - Localization support-->
+<!--2015.09.22 @dgras                    -->
+                                        <label for="addthis_sidebar_theme">
+                                            <strong><?php echo __("Theme",'addthis_trans_domain') ?></strong>
+                                            <span class="at-wp-tooltip" tooltip="<?php echo __("You can select the background color that better matches the look of your site for the expand/minimize arrow on the side sharing tool.",'addthis_trans_domain')?>">?</span>
+                                        </label>
+<!--************ ORIGINAL-->
+<!--                                        <label for="addthis_sidebar_theme">-->
+<!--                                            <strong>Theme</strong>-->
+<!--                                            <span class="at-wp-tooltip" tooltip="You can select the background color that better matches the look of your site for the expand/minimize arrow on the side sharing tool.">?</span>-->
+<!--                                        </label>-->
+<!--************ FI-->
+                                        <select id="addthis_sidebar_theme" name="addthis_settings[addthis_sidebar_theme]">
+                                            <?php
+                                                $themes = array("Transparent","Light","Gray","Dark");
+                                                foreach ($themes as $theme) {
+                                                    echo '<option value="'.$theme.'"'.($options['addthis_sidebar_theme'] == $theme ? " selected='selected'":"").'>'.$theme.'</option>';
+                                                }
+                                            ?>
+                                        </select>
+                                        <br />
+                                        <img src="<?php echo $cmsConnector->getPluginImageFolderUrl() . 'sidebar_theme_light.png'; ?>" id="sbpreview_Light"/>
+                                        <img src="<?php echo $cmsConnector->getPluginImageFolderUrl() . 'sidebar_theme_gray.png'; ?>" id="sbpreview_Gray"/>
+                                        <img src="<?php echo $cmsConnector->getPluginImageFolderUrl() . 'sidebar_theme_dark.png'; ?>" id="sbpreview_Dark"/>
+                                        <img src="<?php echo $cmsConnector->getPluginImageFolderUrl() . 'sidebar_theme_light.png'; ?>" id="sbpreview_Transparent"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php echo _addthis_rate_us_card(); ?>
+            </div>
+            <div id="tabs-2">
+                <?php echo _addthis_tracking_card(); ?>
+
+                <?php echo _addthis_display_options_card(); ?>
+
+                <?php echo _addthis_additional_options_card(); ?>
+
+                <?php echo _addthis_profile_id_card($options['credential_validation_status']); ?>
+
+                <?php echo _addthis_mode_card(); ?>
+            </div>
+        </div>
+        <?php
+    }
+
+    /* 2.9 compatability functions
+     */
+
+    if (! function_exists('get_user_meta'))
     {
-        $userdata = get_userdata($userid);
-        if (isset($userdata->{$metakey}) )
-            return $userdata->{$metakey};
-        else 
+        function get_user_meta($userid, $metakey, $ignored='')
+        {
+            $userdata = get_userdata($userid);
+            if (isset($userdata->{$metakey}) )
+                return $userdata->{$metakey};
+            else
+                return false;
+        }
+
+    }
+    if (! function_exists('delete_user_meta'))
+    {
+        function delete_user_meta($userid, $metakey, $ignored = '')
+        {
+            return delete_usermeta($userid, $metakey);
+        }
+    }
+
+    if (! function_exists('add_user_meta'))
+    {
+        function add_user_meta($userid, $metakey, $metavalue)
+        {
+            return update_usermeta($userid, $metakey, $metavalue);
+        }
+    }
+    if (! function_exists('get_home_url'))
+    {
+        function get_home_url()
+        {
+            return get_option( 'home' );
+        }
+    }
+
+    if (! function_exists('__return_false'))
+    {
+        function __return_false()
+        {
             return false;
+        }
     }
 
-}
-if (! function_exists('delete_user_meta'))
-{
-    function delete_user_meta($userid, $metakey, $ignored = '')
+    if (! function_exists('__return_true'))
     {
-        return delete_usermeta($userid, $metakey);
+        function __return_true()
+        {
+            return true;
+        }
     }
+
+    if (! function_exists('esc_textarea'))
+    {
+        function esc_textarea($text)
+        {
+             $safe_text = htmlspecialchars( $text, ENT_QUOTES );
+             return $safe_text;
+        }
+
+    }
+
+    // check for pro user
+    function at_share_is_pro_user() {
+        global $addThisConfigs;
+        $isPro = false;
+
+        if ($addThisConfigs->getProfileId()) {
+            $request = wp_remote_get( "http://q.addthis.com/feeds/1.0/config.json?pubid=" . $addThisConfigs->getProfileId() );
+            $server_output = wp_remote_retrieve_body( $request );
+            $array = json_decode($server_output);
+            // check for pro user
+            if (is_array($array) && array_key_exists('_default',$array)) {
+                $isPro = true;
+            } else {
+                $isPro = false;
+            }
+        }
+        return $isPro;
+    }
+
+    function addthis_deactivation_hook()
+    {
+        if (get_option('addthis_run_once')) {
+            delete_option('addthis_run_once');
+        }
+    }
+
+    // Deactivation
+    register_deactivation_hook(__FILE__, 'addthis_deactivation_hook');
 }
 
-if (! function_exists('add_user_meta'))
-{
-    function add_user_meta($userid, $metakey, $metavalue)
-    {
-        return update_usermeta($userid, $metakey, $metavalue);
+function _addthis_profile_setup_url() {
+    $pubName = get_bloginfo('name');
+    global $cmsConnector;
+
+    if (!preg_match('/^[A-Za-z0-9 _\-\(\)]*$/', $pubName)) {
+        // if title not match, get domain
+        $url     = get_option('siteurl');
+        $urlobj  = parse_url($url);
+        $domain  = $urlobj['host'];
+
+        if (preg_match(
+            '/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i',
+            $domain, $regs
+        )) {
+            $domainArray = explode(".", $regs['domain']);
+            $pubName     = $domainArray[0];
+        } else {
+            $pubName = '';
+        }
+        $pubName  = str_replace('.', '', $pubName);
     }
-}
-if (! function_exists('get_home_url'))
-{
-    function get_home_url()
-    {
-        return get_option( 'home' );
+
+    if (!preg_match('/^[A-Za-z0-9 _\-\(\)]*$/', $pubName) || $pubName == '') {
+        // if domain not match, get loggedin username
+        $currentUser = wp_get_current_user();
+        $pubName = $currentUser->user_login;
     }
+
+    $profileSetupUrl = 'https://www.addthis.com/settings/plugin-pubs'
+        . '?cms=wp&pubname='
+        . urlencode($pubName)
+        . '&wp_redirect='
+        . str_replace(
+            '.',
+            '%2E',
+            urlencode($cmsConnector->getSettingsPageUrl())
+        );
+
+    return $profileSetupUrl;
 }
 
-if (! function_exists('__return_false'))
-{
-    function __return_false()
-    {
-        return false;
-    }
+function _addthis_analytics_url() {
+    global $addThisConfigs;
+    $analyticsUrl = 'https://www.addthis.com/dashboard#analytics/' . $addThisConfigs->getProfileId();
+    return $analyticsUrl;
 }
 
-if (! function_exists('__return_true'))
-{
-    function __return_true()
+function _addthis_tools_url() {
+    global $addThisConfigs;
+    $addthis_options = $addThisConfigs->getConfigs();
+    $toolsUrl = 'https://www.addthis.com/settings/plugin-pubs?cms=wp&pubid=' . $addThisConfigs->getProfileId();
+    return $toolsUrl;
+}
+
+function _addthis_profile_id_card($credential_validation_status = false) {
+    global $addThisConfigs;
+    $addthis_options = $addThisConfigs->getConfigs();
+
+    $fieldId = 'addthis_profile';
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.22 @dgras
+    $noPubIdDescription = __('To begin tracking analytics on social shares from your site, use the button below to set up an AddThis account at addthis.com and create a profile for your site. This process will require an email address.','addthis_trans_domain');
+    $noPubIdButtonText = __("AddThis profile setup",'addthis_trans_domain');
+    $pubIdDescription = __('To see analytics on social shares from your site, use the button below. It will take you to Analytics on addthis.com.','addthis_trans_domain');
+    $pubIdButtonText = __("Your analytics on addthis.com",'addthis_trans_domain');
+//************ ORIGINAL
+//    $noPubIdDescription = 'To begin tracking analytics on social shares from your site, use the button below to set up an AddThis account at addthis.com and create a profile for your site. This process will require an email address.';
+//    $noPubIdButtonText = "AddThis profile setup";
+//    $pubIdDescription = 'To see analytics on social shares from your site, use the button below. It will take you to Analytics on addthis.com.';
+//    $pubIdButtonText = "Your analytics on addthis.com";
+//************ FI
+    $fieldName = 'addthis_settings[addthis_profile]';
+
+    $securitySnippet = '';
+    if ($credential_validation_status == 1) {
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.22 @dgras
+        $securitySnippet = '<span class="success_text">&#10004; '. __("Valid AddThis Profile ID",'addthis_trans_domain').'</span>';
+//************ ORIGINAL
+//        $securitySnippet = '<span class="success_text">&#10004; Valid AddThis Profile ID</span>';
+//************ FI
+    }
+
+    // because i can't figure out how to bring these two in line... :-(
+    if ($addthis_options['addthis_plugin_controls'] != "AddThis") {
+        $security = '';
+    } else {
+        $security = wp_nonce_field('update_pubid', 'pubid_nonce');
+    }
+
+    if ($addThisConfigs->getProfileId()) {
+        $description = $pubIdDescription;
+        $buttonUrl = _addthis_analytics_url();
+        $buttonText = $pubIdButtonText;
+        $alternatePath = '';
+        $target = 'target="_blank"';
+    } else {
+        $description = $noPubIdDescription;
+        $buttonUrl = _addthis_profile_setup_url();
+        $buttonText = $noPubIdButtonText;
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.22 @dgras
+                $alternatePath = '<p>'. __("Alternately, you can input your profile id manually below",'addthis_trans_domain').'</p>';
+//************ ORIGINAL
+//        $alternatePath = '<p>Alternately, you can input your profile id manually below.</p>';
+//************ FI
+        $target = '';
+    }
+
+    $html = '
+        <div class="Card">
+            <div class="Card-hd">
+<!--XTEC ************ MODIFICAT - Localization support -->
+<!-- 2015.09.22 @dgras -->
+                <h3 class="Card-hd-title">'. __("AddThis Analytics",'addthis_trans_domain').'</h3>
+<!-- ************ ORIGINAL -->
+<!--               <h3 class="Card-hd-title">AddThis Analytics</h3> -->
+<!-- ************ FI -->
+            </div>
+            <div class="Card-bd">
+                <div class="addthis_description">
+                    ' . $description . '
+                </div>
+                <div class="Btn-container-card">
+                    <a
+                        class="Btn Btn-blue"
+                        ' . $target . '
+                        href="' . $buttonUrl . '"> ' . $buttonText . ' &#8594;
+                    </a>
+                </div>
+                ' . $alternatePath . '
+                <label for="' . $fieldId . '">
+<!--XTEC ************ MODIFICAT - Localization support -->
+<!-- 2015.10.02 @dgras -->
+                <strong>'.__("AddThis Profile ID",'addthis_trans_domain').'</strong>
+<!-- ************ ORIGINAL -->
+                    <!-- <strong>AddThis Profile ID</strong> -->
+<!-- ************ FI -->
+                </label>
+                <ul class="Profile-widget">
+                    <li>
+                        <input
+                            id="' . $fieldId . '"
+                            type="text"
+                            name="' . $fieldName . '"
+                            value="' . $addThisConfigs->getProfileId() . '"
+                            autofill="off"
+                            autocomplete="off"
+                        />
+                        '
+                        . $security
+                        . '
+                    </li>
+                    <li>
+                        ' . $securitySnippet . '
+                    </li>
+                </ul>
+            </div>
+        </div>
+    ';
+
+    return $html;
+}
+
+function _addthis_mode_card() {
+    global $addThisConfigs;
+    $addthis_options = $addThisConfigs->getConfigs();
+
+    $wordPressChecked = '';
+    $addThisChecked = '';
+    $fieldName = 'addthis_settings[addthis_plugin_controls]';
+    $fieldId = 'addthis_plugin_controls';
+
+    $checked = 'checked="checked"';
+    if ($addthis_options['addthis_plugin_controls'] != 'AddThis') {
+        $wordPressChecked = $checked;
+        $tbody = '<tbody></tbody>';
+    } else {
+        $addThisChecked = $checked;
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.22 @dgras
+        $tbody = '
+            <tbody>
+                <tr>
+                    <th role="rowheader" scope="row">'. __("Sharing buttons above content",'addthis_trans_domain').'</td>
+                    <td>
+                        <span class="at-icon-check">
+                            <span class="at-icon-fallback-text">'. __("Has this Feature",'addthis_trans_domain').'</span>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="at-icon-check">
+                            <span class="at-icon-fallback-text">'. __("Has this Feature",'addthis_trans_domain').'</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th role="rowheader" scope="row">'. __("Sharing buttons below content",'addthis_trans_domain').'</td>
+                     <td>
+                        <span class="at-icon-check">
+                            <span class="at-icon-fallback-text">'. __("Has this Feature",'addthis_trans_domain').'</span>
+                        </span>
+                    </td>
+                     <td>
+                        <span class="at-icon-check">
+                            <span class="at-icon-fallback-text">'. __("Has this Feature",'addthis_trans_domain').'</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th role="rowheader" scope="row">'. __("Sharing sidebar",'addthis_trans_domain').'</td>
+                     <td>
+                        <span class="at-icon-check">
+                            <span class="at-icon-fallback-text">'. __("Has this Feature",'addthis_trans_domain').'</span>
+                        </span>
+                    </td>
+                     <td>
+                        <span class="at-icon-check">
+                            <span class="at-icon-fallback-text">'. __("Has this Feature",'addthis_trans_domain').'</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th role="rowheader" scope="row">'. __("Mobile toolbar",'addthis_trans_domain').'</td>
+                    <td>
+                        <span class="at-hidden-cell-content">'. __("Does not have this feature",'addthis_trans_domain').'</span>
+                    </td>
+                    <td>
+                        <span class="at-icon-check">
+                            <span class="at-icon-fallback-text">'. __("Has this Feature",'addthis_trans_domain').'</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th role="rowheader" scope="row">'. __("Newsletter sharing buttons",'addthis_trans_domain').'</td>
+                    <td>
+                        <span class="at-hidden-cell-content">'. __("Does not have this feature",'addthis_trans_domain').'</span>
+                    </td>
+                    <td>
+                        <span class="at-icon-check">
+                            <span class="at-icon-fallback-text">'. __("Has this Feature",'addthis_trans_domain').'</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th role="rowheader" scope="row">'. __("Follow header",'addthis_trans_domain').'</td>
+                    <td>
+                        <span class="at-hidden-cell-content">'. __("Does not have this feature",'addthis_trans_domain').'</span>
+                    </td>
+                    <td>
+                        <span class="at-icon-check">
+                            <span class="at-icon-fallback-text">'. __("Has this Feature",'addthis_trans_domain').'</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th role="rowheader" scope="row">'. __("Horizontal follow buttons",'addthis_trans_domain').'</td>
+                    <td><span class="at-hidden-cell-content">'. __("Does not have this feature",'addthis_trans_domain').'</span></td>
+                    <td>
+                        <span class="at-icon-check">
+                            <span class="at-icon-fallback-text">'. __("Has this Feature",'addthis_trans_domain').'</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th role="rowheader" scope="row">'. __("Vertical follow buttons",'addthis_trans_domain').'</td>
+                    <td><span class="at-hidden-cell-content">'. __("Does not have this feature",'addthis_trans_domain').'</span></td>
+                    <td>
+                        <span class="at-icon-check">
+                            <span class="at-icon-fallback-text">'. __("Has this Feature",'addthis_trans_domain').'</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th role="rowheader" scope="row">'. __("What's next",'addthis_trans_domain').'</td>
+                    <td><span class="at-hidden-cell-content">'. __("Does not have this feature",'addthis_trans_domain').'</span></td>
+                    <td>
+                        <span class="at-icon-check">
+                            <span class="at-icon-fallback-text">'. __("Has this Feature",'addthis_trans_domain').'</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th role="rowheader" scope="row">'. __("Recommended content footer",'addthis_trans_domain').'</td>
+                    <td><span class="at-hidden-cell-content">'. __("Does not have this feature",'addthis_trans_domain').'</span></td>
+                    <td>
+                        <span class="at-icon-check">
+                            <span class="at-icon-fallback-text">'. __("Has this Feature",'addthis_trans_domain').'</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th role="rowheader" scope="row">'. __("Horizontal recommended content",'addthis_trans_domain').'</td>
+                    <td><span class="at-hidden-cell-content">'. __("Does not have this feature",'addthis_trans_domain').'</span></td>
+                    <td>
+                        <span class="at-icon-check">
+                            <span class="at-icon-fallback-text">'. __("Has this Feature",'addthis_trans_domain').'</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th role="rowheader" scope="row">'. __("Vertical recommended content",'addthis_trans_domain').'</td>
+                    <td><span class="at-hidden-cell-content">'. __("Does not have this feature",'addthis_trans_domain').'</span></td>
+                    <td>
+                        <span class="at-icon-check">
+                            <span class="at-icon-fallback-text">'. __("Has this Feature",'addthis_trans_domain').'</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th role="rowheader" scope="row">'. __("Access to additional Pro tools for upgraded accounts",'addthis_trans_domain').'</td>
+                    <td><span class="at-hidden-cell-content">'. __("Does not have this feature",'addthis_trans_domain').'</span></td>
+                    <td>
+                        <span class="at-icon-check">
+                            <span class="at-icon-fallback-text">'. __("Has this Feature",'addthis_trans_domain').'</span>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        ';
+//************ ORIGINAL
+//        $tbody = '
+//            <tbody>
+//                <tr>
+//                    <th role="rowheader" scope="row">Sharing buttons above content</td>
+//                    <td>
+//                        <span class="at-icon-check">
+//                            <span class="at-icon-fallback-text">Has this Feature</span>
+//                        </span>
+//                    </td>
+//                    <td>
+//                        <span class="at-icon-check">
+//                            <span class="at-icon-fallback-text">Has this Feature</span>
+//                        </span>
+//                    </td>
+//                </tr>
+//                <tr>
+//                    <th role="rowheader" scope="row">Sharing buttons below content</td>
+//                     <td>
+//                        <span class="at-icon-check">
+//                            <span class="at-icon-fallback-text">Has this Feature</span>
+//                        </span>
+//                    </td>
+//                     <td>
+//                        <span class="at-icon-check">
+//                            <span class="at-icon-fallback-text">Has this Feature</span>
+//                        </span>
+//                    </td>
+//                </tr>
+//                <tr>
+//                    <th role="rowheader" scope="row">Sharing sidebar</td>
+//                     <td>
+//                        <span class="at-icon-check">
+//                            <span class="at-icon-fallback-text">Has this Feature</span>
+//                        </span>
+//                    </td>
+//                     <td>
+//                        <span class="at-icon-check">
+//                            <span class="at-icon-fallback-text">Has this Feature</span>
+//                        </span>
+//                    </td>
+//                </tr>
+//                <tr>
+//                    <th role="rowheader" scope="row">Mobile toolbar</td>
+//                    <td>
+//                        <span class="at-hidden-cell-content">Does not have this feature</span>
+//                    </td>
+//                    <td>
+//                        <span class="at-icon-check">
+//                            <span class="at-icon-fallback-text">Has this Feature</span>
+//                        </span>
+//                    </td>
+//                </tr>
+//                <tr>
+//                    <th role="rowheader" scope="row">Newsletter sharing buttons</td>
+//                    <td>
+//                        <span class="at-hidden-cell-content">Does not have this feature</span>
+//                    </td>
+//                    <td>
+//                        <span class="at-icon-check">
+//                            <span class="at-icon-fallback-text">Has this Feature</span>
+//                        </span>
+//                    </td>
+//                </tr>
+//                <tr>
+//                    <th role="rowheader" scope="row">Follow header</td>
+//                    <td>
+//                        <span class="at-hidden-cell-content">Does not have this feature</span>
+//                    </td>
+//                    <td>
+//                        <span class="at-icon-check">
+//                            <span class="at-icon-fallback-text">Has this Feature</span>
+//                        </span>
+//                    </td>
+//                </tr>
+//                <tr>
+//                    <th role="rowheader" scope="row">Horizontal follow buttons</td>
+//                    <td><span class="at-hidden-cell-content">Does not have this feature</span></td>
+//                    <td>
+//                        <span class="at-icon-check">
+//                            <span class="at-icon-fallback-text">Has this Feature</span>
+//                        </span>
+//                    </td>
+//                </tr>
+//                <tr>
+//                    <th role="rowheader" scope="row">Vertical follow buttons</td>
+//                    <td><span class="at-hidden-cell-content">Does not have this feature</span></td>
+//                    <td>
+//                        <span class="at-icon-check">
+//                            <span class="at-icon-fallback-text">Has this Feature</span>
+//                        </span>
+//                    </td>
+//                </tr>
+//                <tr>
+//                    <th role="rowheader" scope="row">What\'s next</td>
+//                    <td><span class="at-hidden-cell-content">Does not have this feature</span></td>
+//                    <td>
+//                        <span class="at-icon-check">
+//                            <span class="at-icon-fallback-text">Has this Feature</span>
+//                        </span>
+//                    </td>
+//                </tr>
+//                <tr>
+//                    <th role="rowheader" scope="row">Recommended content footer</td>
+//                    <td><span class="at-hidden-cell-content">Does not have this feature</span></td>
+//                    <td>
+//                        <span class="at-icon-check">
+//                            <span class="at-icon-fallback-text">Has this Feature</span>
+//                        </span>
+//                    </td>
+//                </tr>
+//                <tr>
+//                    <th role="rowheader" scope="row">Horizontal recommended content</td>
+//                    <td><span class="at-hidden-cell-content">Does not have this feature</span></td>
+//                    <td>
+//                        <span class="at-icon-check">
+//                            <span class="at-icon-fallback-text">Has this Feature</span>
+//                        </span>
+//                    </td>
+//                </tr>
+//                <tr>
+//                    <th role="rowheader" scope="row">Vertical recommended content</td>
+//                    <td><span class="at-hidden-cell-content">Does not have this feature</span></td>
+//                    <td>
+//                        <span class="at-icon-check">
+//                            <span class="at-icon-fallback-text">Has this Feature</span>
+//                        </span>
+//                    </td>
+//                </tr>
+//                <tr>
+//                    <th role="rowheader" scope="row">Access to additional Pro tools for upgraded accounts</td>
+//                    <td><span class="at-hidden-cell-content">Does not have this feature</span></td>
+//                    <td>
+//                        <span class="at-icon-check">
+//                            <span class="at-icon-fallback-text">Has this Feature</span>
+//                        </span>
+//                    </td>
+//                </tr>
+//            </tbody>
+//        ';
+//************ FI
+
+    }
+
+    $debugHtml = '';
+    if (isset($_GET['debug']) || !empty($addthis_options["addthis_environment"])) {
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.22 @dgras
+        $debugHtml = '
+            <label for="addthis_environment"><strong>'.__("Environment (test/dev/local)",'addthis_trans_domain').'</strong></label>
+            <input
+                type="textbox"
+                id="addthis_environment"
+                name="addthis_settings[addthis_environment]"
+                value="' . $addthis_options["addthis_environment"] . '"
+            />
+        ';
+//************ ORIGINAL
+//        $debugHtml = '
+//            <label for="addthis_environment">
+//                <strong>Environment (test/dev/local)</strong>
+//            </label>
+//            <input
+//                type="textbox"
+//                id="addthis_environment"
+//                name="addthis_settings[addthis_environment]"
+//                value="' . $addthis_options["addthis_environment"] . '"
+//            />
+//        ';
+//************ FI
+    }
+
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.22 @dgras
+    $html =  '
+        <div class="Card">
+            <div class="Card-hd">
+                <h3 class="Card-hd-title">'. __("I want to control my plugin from...",'addthis_trans_domain').'</h3>
+            </div>
+            <div class="Card-bd">
+                <p class="Card-description">'. __("Regardless of your choice, analytics for shares of your site will be available to you on the AddThis website after you set up your AddThis profile ID.",'addthis_trans_domain').'</p>
+                <table class="at-comparison-table">
+                    <thead>
+                        <th role="columnheader" scope="col">
+                            <span class="at-hidden-cell-content">'. __("Feature List Column",'addthis_trans_domain').'</span>
+                        </th>
+                        <th role="columnheader" scope="col">
+                            <input type="radio" id="wordpress-option" name="' . $fieldName . '"  value="WordPress" ' . $wordPressChecked . ' />
+                            <label for="wordpress-option">
+                                <strong>WordPress</strong>
+                            </label>
+                        </th>
+                        <th role="columnheader" scope="col">
+                            <input type="radio" id="addthis-option" name="' . $fieldName . '" value="AddThis"' . $addThisChecked . '/>
+                            <label for="addthis-option">
+                                <strong>AddThis.com</strong>
+                            </label>
+                        </th>
+                    </thead>
+                    ' . $tbody . '
+                </table>
+                <p>'. __("To see your choice reflected on these screens, save your changes.",'addthis_trans_domain').'</p>
+                ' . $debugHtml . '
+            </div>
+        </div>';
+//************ ORIGINAL
+//    $html =  '
+//        <div class="Card">
+//            <div class="Card-hd">
+//                <h3 class="Card-hd-title">I want to control my plugin from...</h3>
+//            </div>
+//            <div class="Card-bd">
+//                <p class="Card-description">Regardless of your choice, analytics for shares of your site will be available to you on the AddThis website after you set up your AddThis profile ID.</p>
+//                <table class="at-comparison-table">
+//                    <thead>
+//                        <th role="columnheader" scope="col">
+//                            <span class="at-hidden-cell-content">Feature List Column</span>
+//                        </th>
+//                        <th role="columnheader" scope="col">
+//                            <input type="radio" id="wordpress-option" name="' . $fieldName . '"  value="WordPress" ' . $wordPressChecked . ' />
+//                            <label for="wordpress-option">
+//                                <strong>WordPress</strong>
+//                            </label>
+//                        </th>
+//                        <th role="columnheader" scope="col">
+//                            <input type="radio" id="addthis-option" name="' . $fieldName . '" value="AddThis"' . $addThisChecked . '/>
+//                            <label for="addthis-option">
+//                                <strong>AddThis.com</strong>
+//                            </label>
+//                        </th>
+//                    </thead>
+//                    ' . $tbody . '
+//                </table>
+//                <p>To see your choice reflected on these screens, save your changes.</p>
+//                ' . $debugHtml . '
+//            </div>
+//        </div>';
+//************ FI
+
+    return $html;
+}
+
+function _addthis_tracking_card() {
+    global $addThisConfigs;
+    $options = $addThisConfigs->getConfigs();
+
+    $checkedString = 'checked="checked"';
+    $clickbacksChecked = "";
+    $addressBarChecked = "";
+    $bitlyChecked = "";
+    if (!empty($options['addthis_append_data'])) {
+        $clickbacksChecked = $checkedString;
+    }
+    if (!empty($options['addthis_addressbar'])) {
+        $addressBarChecked = $checkedString;
+    }
+    if (!empty($options['addthis_bitly'])) {
+        $bitlyChecked = $checkedString;
+    }
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.22 @dgras
+    $html = '
+        <div class="Card">
+            <div class="Card-hd">
+                <h3 class="Card-hd-title">'.__("Tracking",'addthis_trans_domain').'</h3>
+            </div>
+            <div class="Card-bd">
+                <ul class="Card-option-list">
+                    <li>
+                        <ul>
+                            <li>
+                                <input
+                                    id="addthis_append_data"
+                                    type="checkbox"
+                                    name="addthis_settings[addthis_append_data]"
+                                    value="true"' . $clickbacksChecked . '/>
+                                <label for="addthis_append_data">
+                                    <span class="addthis-checkbox-label">
+                                        <strong>' . __("Clickbacks", 'addthis_trans_domain') . '</strong>
+                                        '.__("(Recommended)",'addthis_trans_domain').'
+                                    </span>
+                                </label>
+                                <span class="at-wp-tooltip" tooltip="'.__("AddThis will use this to track how many people come back to your content via links shared with AddThis buttons. This data will be available to you at addthis.com.",'addthis_trans_domain').'">?</span>
+                            </li>
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    id="addthis_addressbar"
+                                    name="addthis_settings[addthis_addressbar]"
+                                    value="true"' . $addressBarChecked . '/>
+                                <label for="addthis_addressbar">
+                                    <span class="addthis-checkbox-label">
+                                        <strong>' . __("Address bar shares", 'addthis_trans_domain') . '</strong>
+                                    </span>
+                                </label>
+                                <span class="at-wp-tooltip" tooltip="'.__("AddThis will append a code to your site’s URLs (except for the homepage) to track when a visitor comes to your site from a link someone copied out of their browser's address bar.",'addthis_trans_domain').'">?</span>
+                            </li>
+                            <li>
+                                <input
+                                    id="addthis_bitly"
+                                    type="checkbox"
+                                    name="addthis_settings[addthis_bitly]"
+                                    value="true" ' . $bitlyChecked . '/>
+                                <label for="addthis_bitly">
+                                    <span class="addthis-checkbox-label">
+                                        <strong>' . __("Bitly URL shortening for Twitter", 'addthis_trans_domain','addthis_trans_domain') . '</strong>
+                                    </span>
+                                </label>
+                                <span class="at-wp-tooltip" tooltip="'. __("Your Bitly login and key will need to be setup with your profile on addthis.com before Bitly will begin working with WordPress.",'addthis_trans_domain').'">?</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label for="data_ga_property">
+                            <strong>' . __("Google Analytics property ID", 'addthis_trans_domain','addthis_trans_domain') . '</strong>
+                        </label>
+                        <input
+                            id="data_ga_property"
+                            type="text"
+                            name="addthis_settings[data_ga_property]"
+                            value="' . $options['data_ga_property'] . '"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    ';
+//************ ORIGINAL
+//    $html = '
+//        <div class="Card">
+//            <div class="Card-hd">
+//                <h3 class="Card-hd-title">Tracking</h3>
+//            </div>
+//            <div class="Card-bd">
+//                <ul class="Card-option-list">
+//                    <li>
+//                        <ul>
+//                            <li>
+//                                <input
+//                                    id="addthis_append_data"
+//                                    type="checkbox"
+//                                    name="addthis_settings[addthis_append_data]"
+//                                    value="true"' . $clickbacksChecked . '/>
+//                                <label for="addthis_append_data">
+//                                    <span class="addthis-checkbox-label">
+//                                        <strong>' . translate("Clickbacks", 'addthis_trans_domain') . '</strong>
+//                                        (Recommended)
+//                                    </span>
+//                                </label>
+//                                <span class="at-wp-tooltip" tooltip="AddThis will use this to track how many people come back to your content via links shared with AddThis buttons. This data will be available to you at addthis.com.">?</span>
+//                            </li>
+//                            <li>
+//                                <input
+//                                    type="checkbox"
+//                                    id="addthis_addressbar"
+//                                    name="addthis_settings[addthis_addressbar]"
+//                                    value="true"' . $addressBarChecked . '/>
+//                                <label for="addthis_addressbar">
+//                                    <span class="addthis-checkbox-label">
+//                                        <strong>' . translate("Address bar shares", 'addthis_trans_domain') . '</strong>
+//                                    </span>
+//                                </label>
+//                                <span class="at-wp-tooltip" tooltip="AddThis will append a code to your site’s URLs (except for the homepage) to track when a visitor comes to your site from a link someone copied out of their browser\'s address bar.">?</span>
+//                            </li>
+//                            <li>
+//                                <input
+//                                    id="addthis_bitly"
+//                                    type="checkbox"
+//                                    name="addthis_settings[addthis_bitly]"
+//                                    value="true" ' . $bitlyChecked . '/>
+//                                <label for="addthis_bitly">
+//                                    <span class="addthis-checkbox-label">
+//                                        <strong>' . translate("Bitly URL shortening for Twitter", 'addthis_trans_domain') . '</strong>
+//                                    </span>
+//                                </label>
+//                                <span class="at-wp-tooltip" tooltip="Your Bitly login and key will need to be setup with your profile on addthis.com before Bitly will begin working with WordPress.">?</span>
+//                            </li>
+//                        </ul>
+//                    </li>
+//                    <li>
+//                        <label for="data_ga_property">
+//                            <strong>' . translate("Google Analytics property ID", 'addthis_trans_domain') . '</strong>
+//                        </label>
+//                        <input
+//                            id="data_ga_property"
+//                            type="text"
+//                            name="addthis_settings[data_ga_property]"
+//                            value="' . $options['data_ga_property'] . '"/>
+//                    </li>
+//                </ul>
+//            </div>
+//        </div>
+//    ';
+//************ FI
+    return $html;
+}
+
+function _addthis_display_options_card() {
+    global $addThisConfigs;
+    $options = $addThisConfigs->getConfigs();
+
+    $checkedString = 'checked="checked"';
+    $asyncChecked = "";
+    $perPostEnableChecked = "";
+    $a508Checked = "";
+    if (!empty($options['addthis_asynchronous_loading'])) {
+        $asyncChecked = $checkedString;
+    }
+    if (!empty($options['addthis_per_post_enabled'])) {
+        $perPostEnableChecked = $checkedString;
+    }
+    if (!empty($options['addthis_508'])) {
+        $a508Checked = $checkedString;
+    }
+
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.22 @dgras
+    $html = '
+        <div class="Card">
+            <div class="Card-hd">
+                <h3 class="Card-hd-title">'. __("Display Options",'addthis_trans_domain') .'</h3>
+            </div>
+            <div class="Card-bd">
+                <ul class="Card-option-list">
+                    <li>
+                        <ul>
+                            <li>
+                                <input
+                                    id="addthis_asynchronous_loading"
+                                    type="checkbox"
+                                    name="addthis_settings[addthis_asynchronous_loading]"
+                                    value="true" ' . $asyncChecked . ' />
+                                <label for="addthis_asynchronous_loading">
+                                    <span class="addthis-checkbox-label">
+                                        <strong>' . __("Asynchronous loading", 'addthis_trans_domain') . '</strong>
+                                        '. __("(Recommended)",'addthis_trans_domain') .'
+                                    </span>
+                                </label>
+                                <span class="at-wp-tooltip" tooltip="'.__("When checked, your site will load before AddThis sharing buttons are added. If unchecked, your site will not load until AddThis buttons (and AddThis JavaScript) have been loaded by your vistors.",'addthis_trans_domain').'">?</span>
+                            </li>
+                            <li>
+                                <input
+                                    id="addthis_per_post_enabled"
+                                    type="checkbox"
+                                    name="addthis_settings[addthis_per_post_enabled]"
+                                    value="true" ' . $perPostEnableChecked . ' />
+                                <label for="addthis_per_post_enabled">
+                                    <span class="addthis-checkbox-label">
+                                        <strong>' . __("Include an option to turn off sharing tools by post", 'addthis_trans_domain') . '</strong>
+                                        '. __("(Recommended)",'addthis_trans_domain') .'
+                                    </span>
+                                </label>
+                                <span class="at-wp-tooltip" tooltip="'.__("When checked, on the edit page of posts you will be able to turn off sharing buttons for that specific post.",'addthis_trans_domain').'">?</span>
+                            </li>
+                            <li>
+                                <input
+                                    id="addthis_508"
+                                    type="checkbox"
+                                    name="addthis_settings[addthis_508]"
+                                    value="true" ' . $a508Checked . ' />
+                                <label for="addthis_508">
+                                    <span class="addthis-checkbox-label">
+                                        <strong>' . __("Enhanced accessibility", 'addthis_trans_domain') . '</strong>
+                                    </span>
+                                </label>
+                                <span class="at-wp-tooltip" tooltip="'.__("Also known as 508 compliance. If checked, clicking an AddThis sharing button will open a new window to a page that is keyboard navigable for people with disabilities.", 'addthis_trans_domain').'">?</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label id="addthis_twitter_template">
+                            <strong>' . __("Twitter via", 'addthis_trans_domain','addthis_trans_domain') . '</strong>
+                            <span class="at-wp-tooltip" tooltip="'.__("When a visitor uses an AddThis button to send a tweet about your page, this will be used within Twitter to identify through whom they found your page. You would usually enter a twitter handle here. For example, Twitter could show a tweet came from jsmith via AddThis.",'addthis_trans_domain').'">?</span>
+                        </label>
+                        <input
+                            id="addthis_twitter_template"
+                            type="text"
+                            name="addthis_settings[addthis_twitter_template]"
+                            value="' . $options['addthis_twitter_template'] . '" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    ';
+//************ ORIGINAL
+//    $html = '
+//        <div class="Card">
+//            <div class="Card-hd">
+//                <h3 class="Card-hd-title">Display Options</h3>
+//            </div>
+//            <div class="Card-bd">
+//                <ul class="Card-option-list">
+//                    <li>
+//                        <ul>
+//                            <li>
+//                                <input
+//                                    id="addthis_asynchronous_loading"
+//                                    type="checkbox"
+//                                    name="addthis_settings[addthis_asynchronous_loading]"
+//                                    value="true" ' . $asyncChecked . ' />
+//                                <label for="addthis_asynchronous_loading">
+//                                    <span class="addthis-checkbox-label">
+//                                        <strong>' . translate("Asynchronous loading", 'addthis_trans_domain') . '</strong>
+//                                        (Recommended)
+//                                    </span>
+//                                </label>
+//                                <span class="at-wp-tooltip" tooltip="When checked, your site will load before AddThis sharing buttons are added. If unchecked, your site will not load until AddThis buttons (and AddThis JavaScript) have been loaded by your vistors.">?</span>
+//                            </li>
+//                            <li>
+//                                <input
+//                                    id="addthis_per_post_enabled"
+//                                    type="checkbox"
+//                                    name="addthis_settings[addthis_per_post_enabled]"
+//                                    value="true" ' . $perPostEnableChecked . ' />
+//                                <label for="addthis_per_post_enabled">
+//                                    <span class="addthis-checkbox-label">
+//                                        <strong>' . translate("Include an option to turn off sharing tools by post", 'addthis_trans_domain') . '</strong>
+//                                        (Recommended)
+//                                    </span>
+//                                </label>
+//                                <span class="at-wp-tooltip" tooltip="When checked, on the edit page of posts you will be able to turn off sharing buttons for that specific post.">?</span>
+//                            </li>
+//                            <li>
+//                                <input
+//                                    id="addthis_508"
+//                                    type="checkbox"
+//                                    name="addthis_settings[addthis_508]"
+//                                    value="true" ' . $a508Checked . ' />
+//                                <label for="addthis_508">
+//                                    <span class="addthis-checkbox-label">
+//                                        <strong>' . translate("Enhanced accessibility", 'addthis_trans_domain') . '</strong>
+//                                    </span>
+//                                </label>
+//                                <span class="at-wp-tooltip" tooltip="Also known as 508 compliance. If checked, clicking an AddThis sharing button will open a new window to a page that is keyboard navigable for people with disabilities.">?</span>
+//                            </li>
+//                        </ul>
+//                    </li>
+//                    <li>
+//                        <label id="addthis_twitter_template">
+//                            <strong>' . translate("Twitter via", 'addthis_trans_domain') . '</strong>
+//                            <span class="at-wp-tooltip" tooltip="When a visitor uses an AddThis button to send a tweet about your page, this will be used within Twitter to identify through whom they found your page. You would usually enter a twitter handle here. For example, Twitter could show a tweet came from jsmith via AddThis.">?</span>
+//                        </label>
+//                        <input
+//                            id="addthis_twitter_template"
+//                            type="text"
+//                            name="addthis_settings[addthis_twitter_template]"
+//                            value="' . $options['addthis_twitter_template'] . '" />
+//                    </li>
+//                </ul>
+//            </div>
+//        </div>
+//    ';
+//************ FI
+    return $html;
+}
+
+function _addthis_additional_options_card() {
+    global $addthis_languages;
+    global $addThisConfigs;
+    $options = $addThisConfigs->getConfigs();
+
+    $curlng = $options['addthis_language'];
+    $languageDropdown = '';
+    foreach ($addthis_languages as $lng=>$name)
     {
+        $languageDropdown .= '
+            <option
+                value="'. $lng . '"'
+                . ($lng == $curlng ? ' selected="selected"':'') . '"
+            >
+            '.$name.'
+            </option>'."\n";
+    }
+
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.22 @dgras
+    $html = '
+        <div class="Card">
+            <div class="Card-hd">
+                <h3 class="Card-hd-title">'.__("Additional Options",'addthis_trans_domain').'</h3>
+            </div>
+            <div class="Card-bd">
+                <ul class="Card-option-list">
+                    <li>
+                        <p class="Card-description">
+                            '.sprintf(__("For more details on the following options, see <a href=\"%s\">our customization documentation</a>.",'addthis_trans_domain'),'//support.addthis.com/customer/portal/articles/381263-addthis-client-api').'
+                            '.__("Important: AddThis optimizes displayed services based on popularity and language, and personalizes the list for each user. You may decrease sharing by overriding these features.",'addthis_trans_domain').'
+                        </p>
+                    </li>
+                    <li>
+                        <label for="addthis_language">
+                            <strong>' . __("Language", 'addthis_trans_domain') . '</strong>
+                        </label>
+                        <select id="addthis_language" name="addthis_settings[addthis_language]">
+                            ' . $languageDropdown . '
+                        </select>
+                    </li>
+                    <li>
+                        <h4><strong>'.__("Global Advanced API Configuration",'addthis_trans_domain').'</strong></h4>
+                        <ul>
+                            <li>
+                                <label for="addthis_config_json">
+                                    <?php ' . __("addthis_config values (json format)", 'addthis_trans_domain','addthis_trans_domain') . '
+                                </label>
+                                <br/>
+                                <small>ex:- <i>{ "services_exclude": "print" }</i></small>
+                                <div><p>'.sprintf(__("For more information, please see the AddThis documentation on <a href=\"%s\">the addthis_config variable</a>",'addthis_trans_domain'),"http://support.addthis.com/customer/portal/articles/1337994-the-addthis_config-variable").'.</p></div>
+                                <textarea
+                                    id="addthis_config_json"
+                                    rows="3"
+                                    type="text"
+                                    name="addthis_settings[addthis_config_json]"
+                                    id="addthis-config-json"/>' . $options['addthis_config_json'] . '</textarea>
+                                <span id="config-error" class="hidden error_text">'.__("Invalid JSON format",'addthis_trans_domain','addthis_trans_domain','addthis_trans_domain').'</span>
+                            </li>
+                            <li>
+                                <label for="addthis_share_json">
+                                    ' . __("addthis_share values (json format)", 'addthis_trans_domain','addthis_trans_domain') . '
+                                </label>
+                                <br/>
+                                <small>ex:- <i>{ "url" : "http://www.yourdomain.com", "title" : "Custom Title" }</i></small>
+                                <div><p>'.sprintf(__("For more information, please see the AddThis documentation on <a href=\"%s\">the addthis_share variable</a>",'addthis_trans_domain'),"http://support.addthis.com/customer/portal/articles/1337996-the-addthis_share-variable").'.</p></div>
+                                <textarea
+                                    id="addthis_share_json"
+                                    rows="3"
+                                    type="text"
+                                    name="addthis_settings[addthis_share_json]"
+                                    id="addthis-share-json"/>' . $options['addthis_share_json'] . '</textarea>
+                                <span id="share-error" class="hidden error_text">'.__("Invalid JSON format",'addthis_trans_domain').'</span>
+                            </li>';
+
+    if ($options['addthis_plugin_controls'] != 'AddThis') {
+        $html .= '
+                            <li>
+                                <label for="addthis_layers_json">
+                                    ' . translate("addthis.layers() initial paramater (json format)", 'addthis_trans_domain','addthis_trans_domain') . '
+                                </label>
+                                <br/>
+                                <small>ex:- <i>{ "share": { "services": "facebook,twitter,google_plusone_share,pinterest_share,print,more" } }</i></small>
+                                <div><p>'.sprintf(__("For more information, please see the AddThis documentation on <a href=\"%s\">the addthis.layers() paramters</a>",'addthis_trans_domain'),"http://support.addthis.com/customer/portal/articles/1200473-smart-layers-api").'.</p></div>
+                                <textarea
+                                    id="addthis_layers_json"
+                                    rows="3"
+                                    type="text"
+                                    name="addthis_settings[addthis_layers_json]"
+                                    id="addthis-layers-json"/>' . $options['addthis_layers_json'] . '</textarea>
+                                <span id="layers-error" class="hidden error_text">'.__("Invalid JSON format",'addthis_trans_domain').'</span>
+                            </li>
+        ';
+    }
+//************ ORIGINAL
+//    $html = '
+//        <div class="Card">
+//            <div class="Card-hd">
+//                <h3 class="Card-hd-title">Additional Options</h3>
+//            </div>
+//            <div class="Card-bd">
+//                <ul class="Card-option-list">
+//                    <li>
+//                        <p class="Card-description">
+//                            For more details on the following options, see <a href="//support.addthis.com/customer/portal/articles/381263-addthis-client-api">our customization documentation</a>.
+//                            Important: AddThis optimizes displayed services based on popularity and language, and personalizes the list for
+//                            each user. You may decrease sharing by overriding these features.
+//                        </p>
+//                    </li>
+//                    <li>
+//                        <label for="addthis_language">
+//                            <strong>' . translate("Language", 'addthis_trans_domain') . '</strong>
+//                        </label>
+//                        <select id="addthis_language" name="addthis_settings[addthis_language]">
+//                            ' . $languageDropdown . '
+//                        </select>
+//                    </li>
+//                    <li>
+//                        <h4><strong>Global Advanced API Configuration</strong></h4>
+//                        <ul>
+//                            <li>
+//                                <label for="addthis_config_json">
+//                                    <?php ' . translate("addthis_config values (json format)", 'addthis_trans_domain') . '
+//                                </label>
+//                                <br/>
+//                                <small>ex:- <i>{ "services_exclude": "print" }</i></small>
+//                                <div><p>For more information, please see the AddThis documentation on <a href="http://support.addthis.com/customer/portal/articles/1337994-the-addthis_config-variable">the addthis_config variable</a>.</p></div>
+//                                <textarea
+//                                    id="addthis_config_json"
+//                                    rows="3"
+//                                    type="text"
+//                                    name="addthis_settings[addthis_config_json]"
+//                                    id="addthis-config-json"/>' . $options['addthis_config_json'] . '</textarea>
+//                                <span id="config-error" class="hidden error_text">Invalid JSON format</span>
+//                            </li>
+//                            <li>
+//                                <label for="addthis_share_json">
+//                                    ' . translate("addthis_share values (json format)", 'addthis_trans_domain') . '
+//                                </label>
+//                                <br/>
+//                                <small>ex:- <i>{ "url" : "http://www.yourdomain.com", "title" : "Custom Title" }</i></small>
+//                                <div><p>For more information, please see the AddThis documentation on <a href="http://support.addthis.com/customer/portal/articles/1337996-the-addthis_share-variable">the addthis_share variable</a>.</p></div>
+//                                <textarea
+//                                    id="addthis_share_json"
+//                                    rows="3"
+//                                    type="text"
+//                                    name="addthis_settings[addthis_share_json]"
+//                                    id="addthis-share-json"/>' . $options['addthis_share_json'] . '</textarea>
+//                                <span id="share-error" class="hidden error_text">Invalid JSON format</span>
+//                            </li>';
+//
+//    if ($options['addthis_plugin_controls'] != 'AddThis') {
+//        $html .= '
+//                            <li>
+//                                <label for="addthis_layers_json">
+//                                    ' . translate("addthis.layers() initial paramater (json format)", 'addthis_trans_domain') . '
+//                                </label>
+//                                <br/>
+//                                <small>ex:- <i>{ "share": { "services": "facebook,twitter,google_plusone_share,pinterest_share,print,more" } }</i></small>
+//                                <div><p>For more information, please see the AddThis documentation on <a href="http://support.addthis.com/customer/portal/articles/1200473-smart-layers-api">the addthis.layers() paramters</a>.</p></div>
+//                                <textarea
+//                                    id="addthis_layers_json"
+//                                    rows="3"
+//                                    type="text"
+//                                    name="addthis_settings[addthis_layers_json]"
+//                                    id="addthis-layers-json"/>' . $options['addthis_layers_json'] . '</textarea>
+//                                <span id="layers-error" class="hidden error_text">Invalid JSON format</span>
+//                            </li>
+//        ';
+//    }
+//************ FI
+    $html .= '
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    ';
+
+    return $html;
+}
+
+function _addthis_rate_us_card() {
+    global $addThisConfigs;
+    $options = $addThisConfigs->getConfigs();
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.23 @dgras
+    $html = '
+        <div class="Card" id="addthis_do_you_like_us">
+            <div class="Card-hd">
+                <h3 class="Card-hd-title">'.__("Did you find this plugin useful?",'addthis_trans_domain'). '</h3>
+            </div>
+
+            <div class="Card-bd" id="addthis_like_us_answers">
+                <div class="Btn-container-card">
+                    <a class="Btn Btn-blue" id="addthis_dislike_confirm">'.__("Not really ",'addthis_trans_domain'). ' </a>
+                    <a class="Btn Btn-blue" id="addthis_like_confirm"> '.__("Yes!",'addthis_trans_domain'). ' </a>
+                </div>
+
+                <input
+                    type="hidden"
+                    value="' . $options['addthis_rate_us'] . '"
+                    id="addthis_rate_us"
+                    name="addthis_settings[addthis_rate_us]" >
+            </div>
+
+            <div class="Card-bd" id="addthis_dislike">
+                <div class="addthis_description">
+                    <p class="Card-description">
+                        '.sprintf(__("Let us know how we can improve our plugin through our support forum or by emailing <a href=\"%s\">help@addthis.com</a>"),"mailto:help@addthis.com").'
+                    </p>
+                </div>
+                <div class="Btn-container-card">
+                    <a
+                        class="Btn Btn-blue"
+                        target="_blank"
+                        href="https://wordpress.org/support/plugin/addthis"> '.__("Support Forum",'addthis_trans_domain' ).' &#8594;
+                    </a>
+                    <a
+                        class="Btn Btn-blue"
+                        target="_blank"
+                        href="mailto:help@addthis.com"> '.__("Email",'addthis_trans_domain' ).' &#8594;
+                    </a>
+                </div>
+            </div>
+
+            <div class="Card-bd" id="addthis_like">
+                <div class="addthis_description">
+                    <p class="Card-description">
+                        '.__("How about rating us?",'addthis_trans_domain' ).'
+                    </p>
+                    <h3 id="addthis_rating_thank_you">'.__("Thank you!" ,'addthis_trans_domain').'</h3>
+                </div>
+                <div class="Btn-container-card">
+                    <a
+                        class="Btn Btn-blue" id="addthis_not_rating"> '.__("No, thanks.",'addthis_trans_domain' ).'
+                    </a>
+                    <a
+                        class="Btn Btn-blue" id="addthis_rating"
+                        target="_blank"
+                        href="https://wordpress.org/support/view/plugin-reviews/addthis#postform">'.__(" Yes, I will rate this plugin" ,'addthis_trans_domain').' &#8594;
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    ';
+//************ ORIGINAL
+//    $html = '
+//        <div class="Card" id="addthis_do_you_like_us">
+//            <div class="Card-hd">
+//                <h3 class="Card-hd-title">Did you find this plugin useful?</h3>
+//            </div>
+//
+//            <div class="Card-bd" id="addthis_like_us_answers">
+//                <div class="Btn-container-card">
+//                    <a class="Btn Btn-blue" id="addthis_dislike_confirm"> Not really </a>
+//                    <a class="Btn Btn-blue" id="addthis_like_confirm"> Yes! </a>
+//                </div>
+//
+//                <input
+//                    type="hidden"
+//                    value="' . $options['addthis_rate_us'] . '"
+//                    id="addthis_rate_us"
+//                    name="addthis_settings[addthis_rate_us]" >
+//            </div>
+//
+//            <div class="Card-bd" id="addthis_dislike">
+//                <div class="addthis_description">
+//                    <p class="Card-description">
+//                        Let us know how we can improve our plugin through our support forum or by emailing <a href="mailto:help@addthis.com">help@addthis.com</a>.
+//                    </p>
+//                </div>
+//                <div class="Btn-container-card">
+//                    <a
+//                        class="Btn Btn-blue"
+//                        target="_blank"
+//                        href="https://wordpress.org/support/plugin/addthis"> Support Forum &#8594;
+//                    </a>
+//                    <a
+//                        class="Btn Btn-blue"
+//                        target="_blank"
+//                        href="mailto:help@addthis.com"> Email &#8594;
+//                    </a>
+//                </div>
+//            </div>
+//
+//            <div class="Card-bd" id="addthis_like">
+//                <div class="addthis_description">
+//                    <p class="Card-description">
+//                        How about rating us?
+//                    </p>
+//                    <h3 id="addthis_rating_thank_you">Thank you!</h3>
+//                </div>
+//                <div class="Btn-container-card">
+//                    <a
+//                        class="Btn Btn-blue" id="addthis_not_rating"> No, thanks.
+//                    </a>
+//                    <a
+//                        class="Btn Btn-blue" id="addthis_rating"
+//                        target="_blank"
+//                        href="https://wordpress.org/support/view/plugin-reviews/addthis#postform"> Yes, I will rate this plugin &#8594;
+//                    </a>
+//                </div>
+//            </div>
+//
+//        </div>
+//    ';
+//************ FI
+
+
+    return $html;
+}
+
+function _addthis_is_csr_form() {
+    global $addThisConfigs;
+
+    if (   isset($_GET['complete'], $_GET['pubid'])
+        && $_GET['complete'] == 'true'
+        && $_GET['pubid'] != $addThisConfigs->getProfileId()
+    ) {
         return true;
     }
+
+    return false;
 }
 
-if (! function_exists('esc_textarea'))
-{
-    function esc_textarea($text)
-    {
-         $safe_text = htmlspecialchars( $text, ENT_QUOTES );
-         return $safe_text;
+function _addthis_settings_buttons($includePreview = true) {
+    $html = '';
+    if (_addthis_is_csr_form()) {
+        return $html;
     }
 
+    if($includePreview) {
+        $stylesheet = get_option('stylesheet');
+        $template = get_option('template');
+        $previewLink = esc_url(get_option('home') . '/');
+        if (is_ssl()) {
+            $previewLink = str_replace('http://', 'https://', $previewLink);
+        }
+        $queryArgs = array(
+            'preview' => 1,
+            'template' => $template,
+            'stylesheet' => $stylesheet,
+            'preview_iframe' => true,
+            'TB_iframe' => 'true'
+        );
+        $previewLink = htmlspecialchars(add_query_arg($queryArgs, $previewLink));
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.18 @dgras
+        $previewHtml = '
+        <a
+            href="'.$previewLink.'"
+            class="Btn thickbox thickbox-preview" >
+                '.__("Preview",'addthis_trans_domain').'
+        </a>';
+//************ ORIGINAL
+//        $previewHtml = '
+//        <a
+//            href="'.$previewLink.'"
+//            class="Btn thickbox thickbox-preview" >
+//                Preview
+//        </a>';
+//************ FI
+        $html .= $previewHtml;
+    }
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.18 @dgras
+    $saveHtml = '
+    <input
+        type="submit"
+        name="submit"
+        value="'.__("Save Changes",'addthis_trans_domain').'"
+        class="Btn Btn-blue addthis-submit-button"
+    />';
+
+//************ ORIGINAL
+//    $previewHtml = '
+//        <a
+//            href="'.$previewLink.'"
+//            class="Btn thickbox thickbox-preview" >
+//                Preview
+//        </a>';
+//    $html .= $previewHtml;
+//    $saveHtml = '
+//    <input
+//        type="submit"
+//        name="submit"
+//        value="Save Changes"
+//        class="Btn Btn-blue addthis-submit-button"
+//    />';
+//************ FI
+
+    $html .= $saveHtml;
+
+    return $html;
 }
 
 /**
- * Parse for the first twitter username in the given string
- * @param String $raw_twitter_username Raw string containing twitter usernames
- * @return String twitter username
+ * Get HTML for new users with confirmation
+ *
+ * @return string
  */
-if (! function_exists('get_first_twitter_username'))
+function addthis_profile_id_csr_confirmation()
 {
-    function get_first_twitter_username($raw_twitter_username)
-    {
-        $twitter_username = '';
-        preg_match_all('/@(\w+)\b/i', $raw_twitter_username, $twitter_via_matches);
-        if (count($twitter_via_matches[1]) == 0) {
-            //To handle strings without @
-            preg_match_all('/(\w+)\b/i', $raw_twitter_username, $twitter_via_refined_matches);
-            if (count($twitter_via_refined_matches[1]) > 0) {
-               $twitter_username = $twitter_via_refined_matches[1][0];
-            }
-        } else {
-            $twitter_username = $twitter_via_matches[1][0];
-        }
-        return $twitter_username;
+    global $cmsConnector;
+    global $addThisConfigs;
+    if (isset($_GET['pubid'])) {
+        $pubId = $_GET['pubid'];
+    } else {
+        $pubId = $addThisConfigs->getProfileId();
     }
-}
 
-// check for pro user
-function at_share_is_pro_user() {
-    $isPro = false;
-    $options = get_option('addthis_settings');
-    $profile = (isset($options['profile'])) ? $options['profile'] : null;
-    if ($profile) {
-        $request = wp_remote_get( "http://q.addthis.com/feeds/1.0/config.json?pubid=" . $profile );
-        $server_output = wp_remote_retrieve_body( $request );
-        $array = json_decode($server_output);
-        // check for pro user
-        if (is_array($array) && array_key_exists('_default',$array)) {
-            $isPro = true;
-        } else {
-            $isPro = false;
-        }
+    $submitButtonValue = "Confirm and Save Changes";
+    $fieldName = 'addthis_settings[addthis_profile]';
+
+    $html  = '<div class="Card">';
+
+    if (isset($_GET['advanced_settings'])) {
+//XTEC ************ MODIFICAT - Localization support
+//2015.09.18 @dgras
+        $html  .= '
+                <div  class="Card-bd">
+                    <p>
+                        '. __("Here you can manually set your AddThis Profile ID - you can get this from your",'addthis_trans_domain') .'
+                        <a target="_blank" href="https://www.addthis.com/settings/publisher">'. __("Profile Settings",'addthis_trans_domain'). '</a>
+                    </p>
+            ';
+    } else {
+        $html  .= '
+                <div class="Card-hd">
+                    <h3 class="Card-hd-title"> '.__("You're almost done!",'addthis_trans_domain').'</h3>
+                </div>
+                <div  class="Card-bd">
+                    <p> '. __("It's time to connect your AddThis account with Wordpress.").'</p>';
     }
-    return $isPro;
-}
 
-require_once('addthis_post_metabox.php');
+    $html .= '
+        <form id="addthis-settings" method="post" action="'.$cmsConnector->getSettingsPageUrl().'">
+            <div class="addthis_pub_id">
+                <ul class="addthis-csr-confirm-list">
+                    <li class="addthis-csr-item wp_div">
+                        <img src="'.$cmsConnector->getPluginImageFolderUrl().'wordpress.png">
+                        <span>Your WordPress Site:</span>
+                        <input
+                            type="text"
+                            value="' . get_bloginfo('name') . '"
+                            name="pub_id"
+                            readonly=true
+                            onfocus="this.blur()"/>
+                    </li>
+                    <li class="addthis-csr-item arrow_div">
+                        <img src="'.$cmsConnector->getPluginImageFolderUrl().'arrow_right.png">
+                        <img src="'.$cmsConnector->getPluginImageFolderUrl().'arrow_left.png">
+                    </li>
+                    <li class="addthis-csr-item addthis_div">
+                        <img src="'.$cmsConnector->getPluginImageFolderUrl().'addthis.png">
+                        <span>'. __("AddThis Profile ID",'addthis_trans_domain').':</span>
+                        <input
+                            type="text"
+                            value="'.esc_html($pubId).'"
+                            name="'.$fieldName.'"
+                            id="addthis_profile" >
+                        <input
+                            type="hidden"
+                            value="true"
+                            name="addthis_settings[addthis_csr_confirmation]" >
+                    </li>
+                </ul>
+                <ul class="addthis-csr-button-list">
+                    <li class="addthis-csr-button-item">
+                        <button
+                            class="Btn Btn-cancel"
+                            type="button"
+                            onclick="window.location=\''.$cmsConnector->getSettingsPageUrl().'\';return false;">
+                            Cancel
+                        </button>
+                        ' . wp_nonce_field( 'update_pubid', 'pubid_nonce' ) . '
+                    </li>
+                    <li class="addthis-csr-button-item">
+                        <input
+                            type="submit"
+                            value="'.$submitButtonValue.'"
+                            name="submit"
+                            class="Btn Btn-blue addthis-submit-button">
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>';
 
-function addthis_deactivation_hook()
-{
-    if (get_option('addthis_run_once')) {
-        delete_option('addthis_run_once');
-    }
-}
+//************ ORIGINAL
+//        $html  .= '
+//                <div  class="Card-bd">
+//                    <p>
+//                        Here you can manually set your AddThis Profile ID - you can get this from your
+//                        <a target="_blank" href="https://www.addthis.com/settings/publisher">Profile Settings</a>
+//                    </p>
+//            ';
+//    } else {
+//        $html  .= '
+//                <div class="Card-hd">
+//                    <h3 class="Card-hd-title">You\'re almost done!</h3>
+//                </div>
+//                <div  class="Card-bd">
+//                    <p>It\'s time to connect your AddThis account with Wordpress.</p>
+//                ';
+//    }
+//    $html .= '
+//        <form id="addthis-settings" method="post" action="'.$cmsConnector->getSettingsPageUrl().'">
+//            <div class="addthis_pub_id">
+//                <ul class="addthis-csr-confirm-list">
+//                    <li class="addthis-csr-item wp_div">
+//                        <img src="'.$cmsConnector->getPluginImageFolderUrl().'wordpress.png">
+//                        <span>Your WordPress Site:</span>
+//                        <input
+//                            type="text"
+//                            value="' . get_bloginfo('name') . '"
+//                            name="pub_id"
+//                            readonly=true
+//                            onfocus="this.blur()"/>
+//                    </li>
+//                    <li class="addthis-csr-item arrow_div">
+//                        <img src="'.$cmsConnector->getPluginImageFolderUrl().'arrow_right.png">
+//                        <img src="'.$cmsConnector->getPluginImageFolderUrl().'arrow_left.png">
+//                    </li>
+//                    <li class="addthis-csr-item addthis_div">
+//                        <img src="'.$cmsConnector->getPluginImageFolderUrl().'addthis.png">
+//                        <span>AddThis Profile ID:</span>
+//                        <input
+//                            type="text"
+//                            value="'.esc_html($pubId).'"
+//                            name="'.$fieldName.'"
+//                            id="addthis_profile" >
+//                        <input
+//                            type="hidden"
+//                            value="true"
+//                            name="addthis_settings[addthis_csr_confirmation]" >
+//                    </li>
+//                </ul>
+//                <ul class="addthis-csr-button-list">
+//                    <li class="addthis-csr-button-item">
+//                        <button
+//                            class="Btn Btn-cancel"
+//                            type="button"
+//                            onclick="window.location=\''.$cmsConnector->getSettingsPageUrl().'\';return false;">
+//                            Cancel
+//                        </button>
+//                        ' . wp_nonce_field( 'update_pubid', 'pubid_nonce' ) . '
+//                    </li>
+//                    <li class="addthis-csr-button-item">
+//                        <input
+//                            type="submit"
+//                            value="'.$submitButtonValue.'"
+//                            name="submit"
+//                            class="Btn Btn-blue addthis-submit-button">
+//                    </li>
+//                </ul>
+//            </div>
+//        </form>
+//    </div>';
+//************ FI
 
-// Deactivation
-register_deactivation_hook(__FILE__, 'addthis_deactivation_hook');
-
+    return $html;
 }

@@ -36,6 +36,12 @@ define( 'MUCD_NETWORK_PAGE_DUPLICATE_NOTICE_CREATED', __( 'New site was created'
 define( 'MUCD_NETWORK_PAGE_DUPLICATE_ADMIN_ERROR_CREATE_USER', __( 'There was an error creating the user.', MUCD_DOMAIN ) );
 define( 'MUCD_NETWORK_PAGE_DUPLICATE_COPY_FILE_ERROR', __( 'Failed to copy files : check permissions on <strong>%s</strong>', MUCD_DOMAIN ) );
 
+//          XTEC ************ AFEGIT - Add error messages
+//          2015.11.16 @dgras
+define( 'MUCD_NETWORK_PAGE_DUPLICATE_BLOG_ID_DUPLICATION_NOT_ALLOWED', __( 'The blog does not allow duplication', MUCD_DOMAIN ) );
+define( 'MUCD_NETWORK_PAGE_DUPLICATE_BLOG_ID_NOT_EXISTS', __( 'The id of the blog does not exists', MUCD_DOMAIN ) );
+//            ************ FI
+
 /** 
  * Admin Page Duplicate FORM
  */
