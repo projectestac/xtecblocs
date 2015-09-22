@@ -118,7 +118,7 @@ function display_setup_form( $error = null ) {
 				echo '<input name="user_name" type="hidden" value="admin" />';
 			} else {
 				?><input name="user_name" type="text" id="user_login" size="25" value="<?php echo esc_attr( sanitize_user( $user_name, true ) ); ?>" />
-				<p><?php _e( 'Usernames can have only alphanumeric characters, spaces, underscores, hyphens, periods and the @ symbol.' ); ?></p>
+				<p><?php _e( 'Usernames can have only alphanumeric characters, spaces, underscores, hyphens, periods, and the @ symbol.' ); ?></p>
 			<?php
 			} ?>
 			</td>
@@ -133,7 +133,7 @@ function display_setup_form( $error = null ) {
 				<input name="admin_password" type="password" id="pass1" size="25" value="" />
 				<p><input name="admin_password2" type="password" id="pass2" size="25" value="" /></p>
 				<div id="pass-strength-result"><?php _e('Strength indicator'); ?></div>
-				<p><?php _e('Hint: The password should be at least seven characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ &amp; ).'); ?></p>
+				<p><?php echo wp_get_password_hint(); ?></p>
 			</td>
 		</tr>
 		<?php endif; ?>
@@ -143,7 +143,7 @@ function display_setup_form( $error = null ) {
 			<p><?php _e( 'Double-check your email address before continuing.' ); ?></p></td>
 		</tr>
 		<tr>
-			<th scope="row"><label for="blog_public"><?php _e( 'Privacy' ); ?></label></th>
+			<th scope="row"><?php _e( 'Privacy' ); ?></th>
 			<td colspan="2"><label><input type="checkbox" name="blog_public" id="blog_public" value="1" <?php checked( $blog_public ); ?> /> <?php _e( 'Allow search engines to index this site.' ); ?></label></td>
 		</tr>
 	</table>
@@ -155,9 +155,36 @@ function display_setup_form( $error = null ) {
 
 // Let's check to make sure WP isn't already installed.
 if ( is_blog_installed() ) {
+	//XTEC ************ MODIFICAT - Block access to install functions. Show "site off" message instead.
+	//2015.08.05 @nacho
+	if ( !isset($agora['server']['enviroment']) || ($agora['server']['enviroment'] != 'LOCAL' && $agora['server']['enviroment'] != 'DES') ) {
+		$siteoff_file = '../siteoff.html';
+		if (file_exists($siteoff_file)) {
+			include_once($siteoff_file);
+		} else {
+			echo '<html><body>';
+			echo '<div style="text-align:center; font-size:large; border-width:1px; '.
+					'    border-color:#CCC; border-style:solid; border-radius: 20px; border-collapse: collapse; '.
+					'    -moz-border-radius:20px; padding:15px; margin: 200px 100px 0px 100px;">';
+			echo '<h2>Servei no disponible</h2>';
+			echo '<p>El servei a qu&egrave; intenteu accedir est&agrave; temporalment fora de servei. Estem treballant per solucionar el problema al m&eacute;s aviat possible. Si us plau proveu d\'accedir-hi m&eacute;s tard.</p>';
+			echo '<p style="font-size:medium">Disculpeu les mol&egrave;sties.</p>';
+			echo '</div></body></html>';
+		}
+		exit(0);
+	}else {
+		display_header();
+		die( '<h1>' . __( 'Already Installed' ) . '</h1><p>' . __( 'You appear to have already installed WordPress. To reinstall please clear your old database tables first.' ) . '</p><p class="step"><a href="../wp-login.php" class="button button-large">' . __( 'Log In' ) . '</a></p></body></html>' );
+	}
+	//************ ORIGINAL
+	/*
 	display_header();
 	die( '<h1>' . __( 'Already Installed' ) . '</h1><p>' . __( 'You appear to have already installed WordPress. To reinstall please clear your old database tables first.' ) . '</p><p class="step"><a href="../wp-login.php" class="button button-large">' . __( 'Log In' ) . '</a></p></body></html>' );
+	*/
+	//************ FI
 }
+
+global $wp_version, $required_php_version, $required_mysql_version;
 
 $php_version    = phpversion();
 $mysql_version  = $wpdb->db_version();
@@ -165,11 +192,11 @@ $php_compat     = version_compare( $php_version, $required_php_version, '>=' );
 $mysql_compat   = version_compare( $mysql_version, $required_mysql_version, '>=' ) || file_exists( WP_CONTENT_DIR . '/db.php' );
 
 if ( !$mysql_compat && !$php_compat )
-	$compat = sprintf( __( 'You cannot install because <a href="http://codex.wordpress.org/Version_%1$s">WordPress %1$s</a> requires PHP version %2$s or higher and MySQL version %3$s or higher. You are running PHP version %4$s and MySQL version %5$s.' ), $wp_version, $required_php_version, $required_mysql_version, $php_version, $mysql_version );
+	$compat = sprintf( __( 'You cannot install because <a href="https://codex.wordpress.org/Version_%1$s">WordPress %1$s</a> requires PHP version %2$s or higher and MySQL version %3$s or higher. You are running PHP version %4$s and MySQL version %5$s.' ), $wp_version, $required_php_version, $required_mysql_version, $php_version, $mysql_version );
 elseif ( !$php_compat )
-	$compat = sprintf( __( 'You cannot install because <a href="http://codex.wordpress.org/Version_%1$s">WordPress %1$s</a> requires PHP version %2$s or higher. You are running version %3$s.' ), $wp_version, $required_php_version, $php_version );
+	$compat = sprintf( __( 'You cannot install because <a href="https://codex.wordpress.org/Version_%1$s">WordPress %1$s</a> requires PHP version %2$s or higher. You are running version %3$s.' ), $wp_version, $required_php_version, $php_version );
 elseif ( !$mysql_compat )
-	$compat = sprintf( __( 'You cannot install because <a href="http://codex.wordpress.org/Version_%1$s">WordPress %1$s</a> requires MySQL version %2$s or higher. You are running version %3$s.' ), $wp_version, $required_mysql_version, $mysql_version );
+	$compat = sprintf( __( 'You cannot install because <a href="https://codex.wordpress.org/Version_%1$s">WordPress %1$s</a> requires MySQL version %2$s or higher. You are running version %3$s.' ), $wp_version, $required_mysql_version, $mysql_version );
 
 if ( !$mysql_compat || !$php_compat ) {
 	display_header();
@@ -254,7 +281,7 @@ switch($step) {
 			// TODO: poka-yoke
 			display_setup_form( __( 'Your passwords do not match. Please try again.' ) );
 			$error = true;
-		} else if ( empty( $admin_email ) ) {
+		} elseif ( empty( $admin_email ) ) {
 			// TODO: poka-yoke
 			display_setup_form( __( 'You must provide an email address.' ) );
 			$error = true;

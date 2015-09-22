@@ -23,7 +23,6 @@ $parent_file = 'options-general.php';
 function options_reading_add_js() {
 ?>
 <script type="text/javascript">
-//<![CDATA[
 	jQuery(document).ready(function($){
 		var section = $('#front-static-pages'),
 			staticPage = section.find('input:radio[value="page"]'),
@@ -34,7 +33,6 @@ function options_reading_add_js() {
 		check_disabled();
  		section.find('input:radio').change(check_disabled);
 	});
-//]]>
 </script>
 <?php
 }
@@ -47,7 +45,7 @@ add_action('admin_head', 'options_reading_add_js');
  */
 function options_reading_blog_charset() {
 	echo '<input name="blog_charset" type="text" id="blog_charset" value="' . esc_attr( get_option( 'blog_charset' ) ) . '" class="regular-text" />';
-	echo '<p class="description">' . __( 'The <a href="http://codex.wordpress.org/Glossary#Character_set">character encoding</a> of your site (UTF-8 is recommended)' ) . '</p>';
+	echo '<p class="description">' . __( 'The <a href="https://codex.wordpress.org/Glossary#Character_set">character encoding</a> of your site (UTF-8 is recommended)' ) . '</p>';
 }
 
 get_current_screen()->add_help_tab( array(
@@ -68,7 +66,7 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-	'<p>' . __('<a href="http://codex.wordpress.org/Settings_Reading_Screen" target="_blank">Documentation on Reading Settings</a>') . '</p>' .
+	'<p>' . __('<a href="https://codex.wordpress.org/Settings_Reading_Screen" target="_blank">Documentation on Reading Settings</a>') . '</p>' .
 	'<p>' . __('<a href="https://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>'
 );
 
@@ -102,8 +100,9 @@ else :
 
 <!-- XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
 <!-- 2014.09.09 @aginard: Added code is just this if. Cannot add FI tag -->
-<?php if ($isAgora && !is_xtecadmin()) { ?>
-<!--  
+<!-- 2015.07.11 @nacho -->
+<?php if (!is_xtec_super_admin()) { ?>
+<!--
 <?php } ?>
 
 <tr>
@@ -138,8 +137,9 @@ else :
 
 <!--// XTEC ************ AFEGIT - Hidden reading options. Some parameters are configured in theme. Others may confuse users -->
 <!--// 2014.09.09 @aginard
-<?php if ($isAgora && !is_xtecadmin()) { ?>
---> 
+	// 2015.07.31 @nacho
+<?php if (!is_xtec_super_admin()) { ?>
+-->
 <?php } ?>
 <!-- ************ FI -->
 
@@ -149,9 +149,11 @@ else :
 </tr>
 
 <!-- XTEC ************ AFEGIT - Hidden reading options to simplify configuration -->
-<!-- 2014.09.09 @aginard: Added code is just this if. Cannot add FI tag -->
-<?php if ($isAgora && !is_xtecadmin()) { ?>
-<!--  
+<!-- 2014.09.09 @aginard: Added code is just this if. Cannot add FI tag
+	 2015.07.11 @nacho
+-->
+<?php if (!is_xtec_super_admin()) { ?>
+<!--
 <?php } ?>
 
 <tr>
@@ -197,11 +199,12 @@ else :
 
 <!-- XTEC ************ AFEGIT - Hidden reading options to simplify configuration
 <!-- 2014.09.09 @aginard
-<?php if ($isAgora && !is_xtecadmin()) { ?>
---> 
+	 2015.07.11 @nacho
+<?php if (!is_xtec_super_admin()) { ?>
+-->
 <?php } ?>
 <!-- ************ FI -->
-    
+
 <?php do_settings_fields( 'reading', 'default' ); ?>
 </table>
 

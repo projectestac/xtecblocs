@@ -15,7 +15,7 @@ if ( !defined( 'IFRAME_REQUEST' ) && isset( $_GET['tab'] ) && ( 'plugin-informat
 require_once( dirname( __FILE__ ) . '/admin.php' );
 
 if ( ! current_user_can('install_plugins') )
-    wp_die(__('You do not have sufficient permissions to install plugins on this site.'));
+	wp_die(__('You do not have sufficient permissions to install plugins on this site.'));
 
 if ( is_multisite() && ! is_network_admin() ) {
 	wp_redirect( network_admin_url( 'plugin-install.php' ) );
@@ -54,10 +54,12 @@ if ( 'plugin-information' != $tab )
 
 $body_id = $tab;
 
+wp_enqueue_script( 'updates' );
+
 /**
  * Fires before each tab on the Install Plugins screen is loaded.
  *
- * The dynamic portion of the action hook, $tab, allows for targeting
+ * The dynamic portion of the action hook, `$tab`, allows for targeting
  * individual tabs, for instance 'install_plugins_pre_plugin-information'.
  *
  * @since 2.7.0
@@ -82,7 +84,7 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-	'<p>' . __('<a href="http://codex.wordpress.org/Plugins_Add_New_Screen" target="_blank">Documentation on Installing Plugins</a>') . '</p>' .
+	'<p>' . __('<a href="https://codex.wordpress.org/Plugins_Add_New_Screen" target="_blank">Documentation on Installing Plugins</a>') . '</p>' .
 	'<p>' . __('<a href="https://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>'
 );
 
@@ -117,17 +119,19 @@ if ( $tab !== 'upload' ) {
 /**
  * Fires after the plugins list table in each tab of the Install Plugins screen.
  *
- * The dynamic portion of the action hook, $tab, allows for targeting
+ * The dynamic portion of the action hook, `$tab`, allows for targeting
  * individual tabs, for instance 'install_plugins_plugin-information'.
  *
  * @since 2.7.0
  *
  * @param int $paged The current page number of the plugins list table.
  */
-?>
-<?php do_action( "install_plugins_$tab", $paged ); ?>
+do_action( "install_plugins_$tab", $paged ); ?>
 </div>
+
 <?php
+wp_print_request_filesystem_credentials_modal();
+
 /**
  * WordPress Administration Template Footer.
  */

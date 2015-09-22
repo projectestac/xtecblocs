@@ -233,12 +233,6 @@ if (!function_exists('wp_mail')) {
 
     	$sender = get_mailsender();
 
-        // Could not send the e-mail. Unfortunately, there is no way to warn the admin gracefully,
-        // so this check is just to avoid PHP errors.
-        if ($sender === false) {
-            return false;
-        }
-
         // Compact the input, apply the filters, and extract them back out
         extract(apply_filters('wp_mail', compact('to', 'subject', 'message', 'headers', 'attachments')));
 
