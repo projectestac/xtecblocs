@@ -16,6 +16,7 @@ Changes in progress
 - Set default selected image size to large on page and article creation
 - Raw HTML: Upgraded to version 1.4.15 (Trello #793)
 - Wordpress-Importer: Added spanish translation
+- Added theme Fukasawa (Trello #947)
 
 
 15.06.08
