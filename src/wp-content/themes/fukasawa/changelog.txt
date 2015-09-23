@@ -1,0 +1,43 @@
+*** Fukasawa Changelog ***
+
+
+Version 1.05 (2015-08-25)
+-------------------------
+- Fixed an issue with overflowing images
+- Added the .screen-reader-text class
+
+
+Version 1.04 (2015-08-11)
+-------------------------
+- Removed a superfluous closing <p> tag
+- Replaced a custom title function with support for title-tag
+- Added comment-reply to enqueued js files
+- Removed the custom post meta boxes for content-video from functions.php
+- Added sanitize callback for custom accent color
+- Removed do_shortcode() function from functions.php
+- Modified theme widgets to use __construct() in prep for WP 4.3
+- Removed superfluous code from single.php (leftovers from previously supported post formats)
+- Changed post title elements on singular from h2 to h1 for SEO reasons
+- Updated the Swedish translation
+
+
+Version 1.03 (2014-09-22)
+-------------------------
+- Fixed an issue with the read more image in the post editor being too big
+
+
+Version 1.02 (2014-09-13)
+-------------------------
+- Added missing function prefix in functions.php
+- Added esc_url to the video urls
+- Fixed a bug in the flexslider function
+
+
+Version 1.01 (2014-09-10)
+-------------------------
+- Added missing function prefixes in functions.php
+- Globalized $content_width and moved it to the theme initialization
+
+
+Version 1.0 (2014-08-04)
+------------------------- 

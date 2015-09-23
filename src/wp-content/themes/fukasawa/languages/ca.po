@@ -1,0 +1,378 @@
+# Translation of Fukasawa in Catalan
+# This file is distributed under the same license as the Fukasawa package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-09-30 17:40+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.4\n"
+"Project-Id-Version: Fukasawa\n"
+"POT-Creation-Date: \n"
+"Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
+"Language-Team: \n"
+"Language: ca\n"
+
+#. Theme Name of the plugin/theme
+msgid "Fukasawa"
+msgstr "Fukasawa"
+
+# MODIFICAT XTEC
+#. Description of the plugin/theme
+msgid ""
+"Fukasawa is a minimal masonry style blog theme for photographers and "
+"collectors. It features responsive & retina-ready design, support for the "
+"image, gallery and video post formats, five custom widgets, an archive page "
+"template, a gallery slideshow, custom accent color support, custom logo "
+"support, editor styles and translation ready code. Included translations: "
+"Swedish/svenska."
+msgstr ""
+"Fukasawa és una aparença de blogs que mostra els articles amb caixes ideal "
+"per fotògrafs i col·leccionistes. Compta amb un disseny responsiu, suport a "
+"imatges, galeria i post vídeo formats, cinc ginys personalitzats, una "
+"plantilla per la pàgina d'arxiu, una galeria de diapositives, "
+"personalització del color, el logotip els estils d'edició i la traducció. \n"
+"Traduccions incloses: Suec/Svenska."
+
+#: widgets/video-widget.php:7
+msgid "Video Widget"
+msgstr "Giny de vídeo"
+
+# MODIFICAT XTEC
+#: widgets/recent-posts.php:7
+msgid "Recent Posts"
+msgstr "Articles recents"
+
+#: widgets/recent-comments.php:7
+msgid "Recent Comments"
+msgstr "Comentaris recents"
+
+#: widgets/flickr-widget.php:7
+msgid "Flickr Widget"
+msgstr "Giny de Flickr"
+
+#: widgets/dribbble-widget.php:9
+msgid "Dribbble Widget"
+msgstr "Giny Dribbble"
+
+#: widgets/recent-comments.php:102
+msgid "Number of comments to display:"
+msgstr "Nombre de comentaris a mostrar:"
+
+#: widgets/recent-comments.php:104 widgets/recent-posts.php:143
+msgid "Defaults to 5 if empty"
+msgstr "Predeterminat a 5 si es deixa buit"
+
+# MODIFICAT XTEC
+#: widgets/recent-posts.php:6
+msgid "Displays recent blog entries."
+msgstr "Mostra articles recents."
+
+# MODIFICAT XTEC
+#: widgets/recent-posts.php:141
+msgid "Number of posts to display:"
+msgstr "Nombre d'articles a mostrar:"
+
+#: widgets/video-widget.php:6
+msgid "Displays a video of your choosing."
+msgstr "Mostra el vídeo especificat."
+
+#: widgets/video-widget.php:69
+msgid "Video URL:"
+msgstr "URL del vídeo:"
+
+#. Template Name of the plugin/theme
+msgid "Archive Template"
+msgstr "Plantilla arxiu"
+
+#: widgets/dribbble-widget.php:82
+msgid "Dribbble username:"
+msgstr "Nom d'usuari Dribbble:"
+
+#: widgets/dribbble-widget.php:88 widgets/flickr-widget.php:67
+msgid "Number of images to display:"
+msgstr "Nombre d'imatges a mostrar:"
+
+#: widgets/flickr-widget.php:6
+msgid "Displays your latest Flickr photos."
+msgstr "Mostra les darreres fotos de Flickr d'un usuari."
+
+#: widgets/flickr-widget.php:61
+msgid ""
+"Flickr ID (use <a target=\"_blank\" href=\"http://www.idgettr.com\">idGettr</"
+"a>):"
+msgstr ""
+"Flickr ID (consulteu <a target=\"_blank\" href=\"http://www.idgettr.com"
+"\">idGettr</a>):"
+
+#: widgets/recent-comments.php:6
+msgid "Displays recent comments with user avatars."
+msgstr "Mostra comentaris recents amb els avatars dels usuaris."
+
+#: widgets/recent-comments.php:51
+msgid "Comment to"
+msgstr "Comentari fet a"
+
+#: widgets/recent-comments.php:51
+msgid "posted"
+msgstr "publicada"
+
+#: template-archive.php:75
+msgid "Archives by Year"
+msgstr "Arxius per any"
+
+#: template-archive.php:81
+msgid "Archives by Month"
+msgstr "Arxius per mes"
+
+#: template-archive.php:87
+msgid "Archives by Day"
+msgstr "Arxius per dia"
+
+#: widgets/dribbble-widget.php:8
+msgid "Displays your latest Dribbble photos."
+msgstr "Mostra les darreres fotos Dribbble d'un usuari."
+
+#: widgets/dribbble-widget.php:76 widgets/flickr-widget.php:55
+#: widgets/recent-comments.php:97 widgets/recent-posts.php:136
+#: widgets/video-widget.php:63
+msgid "Title:"
+msgstr "Títol:"
+
+#: template-archive.php:69
+msgid "Contributors"
+msgstr "Col·laboradors"
+
+# MODIFICAT XTEC
+#: template-archive.php:62
+msgid "View all posts in %s"
+msgstr "Mostra tots els articles a %s"
+
+#: template-archive.php:55
+msgid "Tags"
+msgstr "Etiquetes"
+
+#: template-archive.php:49
+msgid "Categories"
+msgstr "Categories"
+
+# MODIFICAT XTEC
+#: template-archive.php:33
+msgid "Posts"
+msgstr "Articles"
+
+# MODIFICAT XTEC
+#: single.php:131 single.php:132
+msgid "Next post"
+msgstr "Article següent"
+
+# MODIFICAT XTEC
+#: single.php:123 single.php:124
+msgid "Previous post"
+msgstr "Article previ"
+
+#: single.php:99
+msgid "In"
+msgstr "A"
+
+#: search.php:9 search.php:57
+msgid "Search results:"
+msgstr "Resultats de la cerca"
+
+#: search.php:68
+msgid "No results. Try again, would you kindly?"
+msgstr "No s'ha trobat res. Intenteu-ho de nou."
+
+#: searchform.php:2
+msgid "Search form"
+msgstr "Cerca"
+
+#: image.php:40
+msgid "Resolution:"
+msgstr "Resolució:"
+
+# MODIFICAT XTEC
+#: image.php:53 page.php:49 single.php:147 template-archive.php:107
+msgid "We couldn't find any posts that matched your query. Please try again."
+msgstr ""
+"No s'ha trobat cap article amb aquests criteris de cerca. Intenteu-ho de nou "
+"amb altres paraules claus diferents."
+
+#: page.php:33 single.php:84
+msgid "Pages:"
+msgstr "Pàgines:"
+
+#: image.php:36
+msgid "Uploaded by"
+msgstr "Penjat per"
+
+#: header.php:115
+msgid "Theme by"
+msgstr "Autor"
+
+#: header.php:114
+msgid "Powered by"
+msgstr "Gràcies al "
+
+#: header.php:77
+msgid "Close"
+msgstr "Tanca"
+
+#: header.php:63
+msgid "Click to view the navigation"
+msgstr "Feu clic per veure la barra de navegació"
+
+#: header.php:76
+msgid "Menu"
+msgstr "Menú"
+
+#: functions.php:343
+msgid "Upload a logo to replace the default site title in the sidebar/header"
+msgstr ""
+"Puja una imatge per reemplaçar el títol del lloc per defecte a la barra "
+"lateral/capçalera"
+
+#: functions.php:369
+msgid "Accent Color"
+msgstr "Color a accentuar"
+
+#: functions.php:333
+msgid "Options for Fukasawa"
+msgstr "Opcions per Fukasawa"
+
+#: functions.php:336
+msgid "Allows you to customize theme settings for Fukasawa."
+msgstr "Permet personalitzar la configuració del tema Fukasawa."
+
+#: functions.php:341 functions.php:377
+msgid "Logo"
+msgstr "Imatge de la capçalera"
+
+#: functions.php:300
+msgid "Reply"
+msgstr "Respon"
+
+#: functions.php:292
+msgid "Your comment is awaiting moderation."
+msgstr "El comentari està esperant moderació."
+
+#: functions.php:254 functions.php:307
+msgid "Edit"
+msgstr "Edita"
+
+#: functions.php:254
+msgid "Pingback:"
+msgstr "Retroenllaç:"
+
+#: functions.php:91
+msgid "Widgets in this area will be shown in the sidebar."
+msgstr "Aquests ginys es mostraran a la barra lateral."
+
+#: functions.php:89
+msgid "Sidebar"
+msgstr "Barra lateral"
+
+#: functions.php:36
+msgid "Primary Menu"
+msgstr "Menú principal"
+
+#: content-image.php:13
+msgid "View"
+msgstr "Visualitza"
+
+#: comments.php:117
+msgid "Website"
+msgstr "Lloc web"
+
+#: comments.php:111
+msgid "Email"
+msgstr "Correu electrònic"
+
+#: comments.php:105
+msgid "Name"
+msgstr "Nom"
+
+#: comments.php:79
+msgid "Comments are closed."
+msgstr "Els comentaris estan tancats."
+
+#: comments.php:55
+msgid "Newer"
+msgstr "Més nous"
+
+#: comments.php:49 comments.php:55
+msgid "Comments"
+msgstr "Comentaris"
+
+#: comments.php:31
+msgid "Pingback"
+msgid_plural "Pingbacks"
+msgstr[0] "Retroenllaç"
+msgstr[1] "Retroenllaços"
+
+#: comments.php:49
+msgid "Older"
+msgstr "Més antics"
+
+#: comments.php:14 comments.php:97
+msgid "Comment"
+msgid_plural "Comments"
+msgstr[0] "Comentari"
+msgstr[1] "Comentaris"
+
+# MODIFICAT XTEC
+#: archive.php:63 index.php:43 search.php:40
+msgid "Newer posts"
+msgstr "Articles més recents"
+
+#: archive.php:31 index.php:17 search.php:16
+msgid "Page %s of %s"
+msgstr "Pàgina %s de %s"
+
+# MODIFICAT XTEC
+#: archive.php:61 index.php:41 search.php:38
+msgid "Older posts"
+msgstr "Articles anteriors"
+
+#: archive.php:23
+msgid "Archive"
+msgstr "Arxiu"
+
+#: archive.php:21
+msgid "Author: %s"
+msgstr "Autor: %s"
+
+#: archive.php:18
+msgid "Tag: %s"
+msgstr "Etiqueta: %s"
+
+#: 404.php:17
+msgid ""
+"It seems like you have tried to open a page that doesn't exist. It could "
+"have been deleted, moved, or it never existed at all. You are welcome to "
+"search for what you are looking for with the form below."
+msgstr ""
+"La pàgina que heu sol·licitat no existeix. Pot haver estat eliminada, moguda "
+"o que mai hagi existit. Podeu fer una cerca amb el formulari següent per "
+"intentar-la localitzar."
+
+#: archive.php:16
+msgid "Category: %s"
+msgstr "Categoria: %s"
+
+#: 404.php:11
+msgid "Error 404"
+msgstr "Error 404 "
+
+#. Theme URI of the plugin/theme
+msgid "http://www.andersnoren.se/teman/fukasawa-wordpress-theme/"
+msgstr "http://www.andersnoren.se/teman/fukasawa-wordpress-theme/"
+
+#. Author of the plugin/theme
+msgid "Anders Norén"
+msgstr "Anders Norén"
+
+#. Author URI of the plugin/theme
+msgid "http://www.andersnoren.se"
+msgstr "http://www.andersnoren.se"
