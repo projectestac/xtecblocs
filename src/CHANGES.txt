@@ -13,6 +13,7 @@ Changes in progress
 - WSL: Hidden some tabs for all users but xtecadmin (GitHub #200)
 - WSL: Added access control using black and white lists (GitHub #62)
 - Set default selected image size to large on page and article creation
+- Raw HTML: Upgraded to version 1.4.15 (Trello #793)
 
 
 15.06.08
