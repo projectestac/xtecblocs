@@ -87,6 +87,7 @@ then
 fi
 
 #El tercer paràmetre només es posa si el repositori és nostre per poder-hi escriure
+gitcheckout "src/testlib" "master" "git@github.com:projectestac/testlib_PHP.git"
 gitcheckout "src/wp-content/mu-plugins/common" "master" "git@github.com:projectestac/wordpress-mu-common.git"
 gitcheckout "src/wp-content/plugins/blogger-importer" "master" "git@github.com:projectestac/wordpress-blogger-importer.git"
 gitcheckout "src/wp-content/plugins/google-analyticator" "master" "git@github.com:projectestac/wordpress-google-analyticator.git"

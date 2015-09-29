@@ -34,3 +34,6 @@
 [submodule "src/wp-content/mu-plugins/common"]
 	path = src/wp-content/mu-plugins/common
 	url = https://github.com/projectestac/wordpress-mu-common.git
+[submodule "src/testlib"]
+	path = src/testlib
+	url = https://github.com/projectestac/testlib_PHP.git
