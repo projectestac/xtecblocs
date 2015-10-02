@@ -73,13 +73,27 @@ class fukasawa_dribbble_widget extends WP_Widget {
 		?>
 		
 		<p>
+<!--// XTEC ************ MODIFICAT - Avoid double colon (::)
+// 2015.10.02 @sarjona -->
+			<label for="<?php echo $this->get_field_id('widget_title'); ?>"><?php  _e('Title:', 'fukasawa'); ?>
+<!--//************ ORIGINAL
+/*
 			<label for="<?php echo $this->get_field_id('widget_title'); ?>"><?php  _e('Title:', 'fukasawa'); ?>:
+*/
+//************ FI -->
 			<input id="<?php echo $this->get_field_id('widget_title'); ?>" name="<?php echo $this->get_field_name('widget_title'); ?>" type="text" class="widefat" value="<?php echo $widget_title; ?>" /></label>
 		</p>
 				
 		
 		<p>
+<!--// XTEC ************ MODIFICAT - Avoid double colon (::)
+// 2015.10.02 @sarjona -->
+			<label for="<?php echo $this->get_field_id('dribbble_username'); ?>"><?php  _e('Dribbble username:', 'fukasawa'); ?>
+<!--//************ ORIGINAL
+/*
 			<label for="<?php echo $this->get_field_id('dribbble_username'); ?>"><?php  _e('Dribbble username:', 'fukasawa'); ?>:
+*/
+//************ FI -->
 			<input id="<?php echo $this->get_field_id('dribbble_username'); ?>" name="<?php echo $this->get_field_name('dribbble_username'); ?>" type="text" class="widefat" value="<?php echo $dribbble_username; ?>" /></label>
 		</p>
 		

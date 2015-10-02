@@ -133,7 +133,14 @@ class fukasawa_recent_posts extends WP_Widget {
 		?>
 		
 		<p>
+<!--// XTEC ************ MODIFICAT - Avoid double colon (::)
+// 2015.10.02 @sarjona -->
+			<label for="<?php echo $this->get_field_id('widget_title'); ?>"><?php  _e('Title:', 'fukasawa'); ?>
+<!--//************ ORIGINAL
+/*
 			<label for="<?php echo $this->get_field_id('widget_title'); ?>"><?php  _e('Title:', 'fukasawa'); ?>:
+*/
+//************ FI -->
 			<input id="<?php echo $this->get_field_id('widget_title'); ?>" name="<?php echo $this->get_field_name('widget_title'); ?>" type="text" class="widefat" value="<?php echo $widget_title; ?>" /></label>
 		</p>
 						
