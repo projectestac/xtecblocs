@@ -5,6 +5,7 @@ development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 4.2.5 (Trello #794)
 - Show Google Analytics dashboard for superadmins when goes to others admin's blogs (Trello #756)
 - Multisite common functions, styles and languages moved to a new submodule (Trello #787)
 - Allow non ldap users to restore their passwords (Trello #826)
@@ -14,6 +15,7 @@ Changes in progress
 - WSL: Added access control using black and white lists (GitHub #62)
 - Set default selected image size to large on page and article creation
 - Raw HTML: Upgraded to version 1.4.15 (Trello #793)
+- Wordpress-Importer: Added spanish translation
 
 
 15.06.08
