@@ -5,7 +5,7 @@ development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
 ---------------------------------------------------------------------------------------
-- Upgraded WordPress to version 4.2.5 (Trello #794)
+- Upgraded WordPress to version 4.2.2 (Trello #794)
 - Show Google Analytics dashboard for superadmins when goes to others admin's blogs (Trello #756)
 - Multisite common functions, styles and languages moved to a new submodule (Trello #787)
 - Allow non ldap users to restore their passwords (Trello #826)
