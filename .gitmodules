@@ -37,3 +37,6 @@
 [submodule "src/testlib"]
 	path = src/testlib
 	url = https://github.com/projectestac/testlib_PHP.git
+[submodule "src/wp-content/plugins/wp-recaptcha"]
+	path = src/wp-content/plugins/wp-recaptcha
+	url = https://github.com/projectestac/wordpress-recaptcha.git

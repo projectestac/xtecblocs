@@ -98,6 +98,7 @@ gitcheckout "src/wp-content/plugins/tinymce-advanced" "master" "git@github.com:p
 gitcheckout "src/wp-content/plugins/wordpress-importer" "master" "git@github.com:projectestac/wordpress-importer.git"
 gitcheckout "src/wp-content/plugins/wordpress-php-info" "master" "git@github.com:projectestac/wordpress-php-info.git"
 gitcheckout "src/wp-content/plugins/wordpress-social-login" "master" "git@github.com:projectestac/wordpress-social-login.git"
+gitcheckout "src/wp-content/plugins/wp-recaptcha" "master" "git@github.com:projectestac/wordpress-recaptcha.git"
 gitcheckout "src/wp-content/plugins/xtec-mail/lib" "master" "git@github.com:projectestac/mailer.git"
 gitcheckout "src/wp-includes/xtec" "master" "git@github.com:projectestac/wordpress-xtec.git"
 

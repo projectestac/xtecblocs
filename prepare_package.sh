@@ -68,7 +68,6 @@ copy_to_new_dir wp-content/plugins/scribd-doc-embedder
 copy_to_new_dir wp-content/plugins/simple-local-avatars
 copy_to_new_dir wp-content/plugins/simpler-ipaper
 copy_to_new_dir wp-content/plugins/vipers-video-quicktags
-copy_to_new_dir wp-content/plugins/wp-recaptcha
 copy_to_new_dir wp-content/plugins/wp-super-cache
 copy_to_new_dir wp-content/plugins/xtec-api
 copy_to_new_dir wp-content/plugins/xtec-descriptors
@@ -96,20 +95,6 @@ copy_to_new_dir wp-content/themes/xtecblocsdefault
 copy_to_new_dir wp-content/themes/xtecblocsdefault-formacio
 copy_to_new_dir wp-content/themes/xtec-v1.1
 copy_to_new_dir ws
-
-#Copy submodules
-#copy_to_new_dir wp-content/mu-plugins/common
-#copy_to_new_dir wp-content/plugins/blogger-importer
-#copy_to_new_dir wp-content/plugins/google-analyticator
-#copy_to_new_dir wp-content/plugins/google-calendar-events
-#copy_to_new_dir wp-content/plugins/raw-html
-#copy_to_new_dir wp-content/plugins/slideshow-jquery-image-gallery
-#copy_to_new_dir wp-content/plugins/tinymce-advanced
-#copy_to_new_dir wp-content/plugins/wordpress-importer
-#copy_to_new_dir wp-content/plugins/wordpress-php-info
-#copy_to_new_dir wp-content/plugins/wordpress-social-login
-#copy_to_new_dir wp-content/plugins/xtec-mail/lib
-#copy_to_new_dir wp-includes/xtec 
 
 #Delete files
 delete_new .gitignore

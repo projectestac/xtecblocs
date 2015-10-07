@@ -17,6 +17,7 @@ Changes in progress
 - Raw HTML: Upgraded to version 1.4.15 (Trello #793)
 - Wordpress-Importer: Added spanish translation
 - Added theme Fukasawa (Trello #947)
+- Moved wp-recaptcha as submodule (Trello  #926)
 
 
 15.06.08
