@@ -157,7 +157,7 @@ function display_setup_form( $error = null ) {
 if ( is_blog_installed() ) {
 	//XTEC ************ MODIFICAT - Block access to install functions. Show "site off" message instead.
 	//2015.08.05 @nacho
-	if ( !isset($agora['server']['enviroment']) || ($agora['server']['enviroment'] != 'LOCAL' && $agora['server']['enviroment'] != 'DES') ) {
+	if ( !ENVIRONMENT || ( ENVIRONMENT != 'LOCAL' && ENVIRONMENT != 'DES') ) {
 		$siteoff_file = '../siteoff.html';
 		if (file_exists($siteoff_file)) {
 			include_once($siteoff_file);
