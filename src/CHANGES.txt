@@ -7,21 +7,22 @@ Changes in progress
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.2.2 (Trello #794)
 - Added testlib
+- Updated Mailer library
 - Show Google Analytics dashboard for superadmins when goes to others admin's blogs (Trello #756)
 - Multisite common functions, styles and languages moved to a new submodule (Trello #787)
 - Allow non ldap users to restore their passwords (Trello #826)
 - GCE: Changed default cache duration to 300 seconds (Trello #875)
-- Updated Mailer library
 - WSL: Hidden some tabs for all users but xtecadmin (GitHub #200)
 - WSL: Added access control using black and white lists (GitHub #62)
 - Set default selected image size to large on page and article creation
-- Raw HTML: Upgraded to version 1.4.15 (Trello #793)
 - Wordpress-Importer: Added spanish translation
 - Added theme Fukasawa (Trello #947)
-- Moved wp-recaptcha as submodule (Trello #926)
-- Upgraded AddThis to version 5.1.1 (Trello #794)
-- Upgraded Anti-spam to version 3.5 (Trello #794)
 - Updated theme Twentyfifteen (Trello #794)
+- Moved wp-recaptcha as submodule (Trello #926)
+- Raw HTML: Upgraded to version 1.4.15 (Trello #793)
+- AddThis: Upgraded to version 5.1.1 (Trello #794)
+- Anti-spam: Upgraded to version 3.5 (Trello #794)
+- Blogger Importer: Upgraded to version 0.9 (Trello #936)
 - Fix for Multisite Clone Duplicator when there are more than 1.000 blogs (Trello #794)
 
 
