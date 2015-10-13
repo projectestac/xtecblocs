@@ -5,6 +5,11 @@ development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+
+
+
+15.10.16
+---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.2.2 (Trello #794)
 - Added testlib
 - Updated Mailer library
