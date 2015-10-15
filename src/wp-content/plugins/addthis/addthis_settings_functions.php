@@ -286,6 +286,9 @@ function _addthis_swap_first_two_elements (&$array, $key)
                             </span>
                         </label>
                     </div>";
+                printf("<div style='max-width: 555px;margin-left:20px' class='%s_custom_string_input'>", $name );
+                _e("This text box allows you to enter any AddThis markup that you wish. To see examples of what you can do, visit <a href='https://www.addthis.com/get/sharing'>AddThis.com Sharing Tools</a> and select any sharing tool. You can also check out our <a href='http://support.addthis.com/customer/portal/articles/1365467-preferred-services-personalization'>Client API</a>. For any help you may need, please visit <a href='http://support.addthis.com'>AddThis Support</a>",'addthis_trans_domain');
+                echo "</div>";
 //************ ORIGINAL
 //                echo "
 //                    <div class='$name"."_option select_row'>
@@ -304,9 +307,9 @@ function _addthis_swap_first_two_elements (&$array, $key)
 //                            </span>
 //                        </label>
 //                    </div>";
+//                _e( sprintf("<div style='max-width: 555px;margin-left:20px' class='%s_custom_string_input'> This text box allows you to enter any AddThis markup that you wish. To see examples of what you can do, visit <a href='https://www.addthis.com/get/sharing'>AddThis.com Sharing Tools</a> and select any sharing tool. You can also check out our <a href='http://support.addthis.com/customer/portal/articles/1365467-preferred-services-personalization'>Client API</a>. For any help you may need, please visit <a href='http://support.addthis.com'>AddThis Support</a></div>", $name ),'addthis_trans_domain');
 //************ FI
 
-                _e( sprintf("<div style='max-width: 555px;margin-left:20px' class='%s_custom_string_input'> This text box allows you to enter any AddThis markup that you wish. To see examples of what you can do, visit <a href='https://www.addthis.com/get/sharing'>AddThis.com Sharing Tools</a> and select any sharing tool. You can also check out our <a href='http://support.addthis.com/customer/portal/articles/1365467-preferred-services-personalization'>Client API</a>. For any help you may need, please visit <a href='http://support.addthis.com'>AddThis Support</a></div>", $name ),'addthis_trans_domain');
                 echo "<textarea rows='5' name='addthis_settings[$name"."_custom_string]' class='$name"."_custom_string_input' />".esc_textarea($custom_string)."</textarea>";
 
                 $class = 'hidden';
