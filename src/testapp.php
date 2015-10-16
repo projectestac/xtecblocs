@@ -4,7 +4,7 @@ require_once('wp-config.php');
 require_once('testlib/testlib.php');
 
 // Get DB_NAME
-if (MULTISITE) $dbname = DB_NAME;
+if (MULTISITE === true) $dbname = DB_NAME;
 else $dbname = DB_NAME.'_global';
 
 // Get DB_HOST and DB_PORT
