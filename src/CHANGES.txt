@@ -8,6 +8,7 @@ Changes in progress
 - Synced code with Nodes that have no effect in XTECBlocs
 - wp-recaptcha: Added default configuration for Nodes when activating plugin (Trello #926)
 - Blocked access to install.php (Trello #521)
+- Clone Duplicator: Fixed incorrect selection of data base (Trello #609) 
 
 
 
