@@ -95,7 +95,7 @@ class Addthis_Wordpress
     {
 //XTEC ************ MODIFICAT - Localization support
 //2015.09.18 @dgras
-        $settingsLink = '<a href="'.$this->cmsConnector->getSettingsPageUrl().'">'. __("Settings") .'</a>';
+        $settingsLink = '<a href="'.$this->cmsConnector->getSettingsPageUrl().'">'. __("Settings",'addthis_trans_domain') .'</a>';
 //************ ORIGINAL
 //      $settingsLink = '<a href="'.$this->cmsConnector->getSettingsPageUrl().'">Settings</a>';
 //************ FI
@@ -158,12 +158,12 @@ class Addthis_Wordpress
 
         return '
             <div class="addthis_updated wrap" style="margin-top:50px;width:95%">
-//XTEC ************ MODIFICAT - Localization support
-//2015.09.18 @dgras
-                        '. __("AddThis Profile Settings updated successfully!!!").'
-//************ ORIGINAL
-//      AddThis Profile Settings updated successfully!!!
-//************ FI
+<!-- XTEC ************ MODIFICAT - Localization support -->
+<!-- 2015.09.18 @dgras -->
+                        '. __("AddThis Profile Settings updated successfully!!!",'addthis_trans_domain').'
+<!-- ************ ORIGINAL -->
+<!--      AddThis Profile Settings updated successfully!!! -->
+<!-- ************ FI -->
             </div>
         ';
     }
@@ -269,11 +269,11 @@ class Addthis_Wordpress
                     action="'.$this->cmsConnector->getSettingsPageUrl().'"
                 >
                     <div class="Header">
-//XTEC ************ MODIFICAT - Localization support
-//2015.09.18 @dgras
-                        '. __("<em>AddThis</em> Sharing Buttons",'addthis_trans_domain').';
-//************ ORIGINAL
-//      <h1><em>AddThis</em> Sharing Buttons</h1>';
+<!-- XTEC ************ MODIFICAT - Localization support -->
+<!-- 2015.09.18 @dgras -->
+                        <h1>'. __("<em>AddThis</em> Sharing Buttons",'addthis_trans_domain').'</h1>
+<!-- ************ ORIGINAL -->
+<!--       <h1><em>AddThis</em> Sharing Buttons</h1> -->';
 //************ FI
 
         if (!_addthis_is_csr_form()) {
@@ -438,12 +438,12 @@ class Addthis_Wordpress
                         <div class="addthis_seperator">&nbsp;</div>
                         <div class="Card-bd">
                             <div class="addthis_description">
-//XTEC ************ MODIFICAT - Localization support
-//2015.09.18 @dgras
+<!--XTEC ************ MODIFICAT - Localization support -->
+<!--2015.09.18 @dgras -->
             '. __ ("Beautiful simple website tools designed to help you get likes, get shares, get follows and get discovered.",'addthis_trans_domain') .'
-//************ ORIGINAL
-//            Beautiful simple website tools designed to help you get likes, get shares, get follows and get discovered.
-//************ FI
+<!--************ ORIGINAL -->
+<!--            Beautiful simple website tools designed to help you get likes, get shares, get follows and get discovered. -->
+<!--************ FI -->
 
                             </div>
                             <p>' . $sharingToolsDescription . '</p>
@@ -453,14 +453,14 @@ class Addthis_Wordpress
                                 href="' . $sharingToolsButtonUrl . '">' . $sharingToolsButtonText . ' &#8594;
                             </a>
                             <p class="addthis_support">
-//XTEC ************ MODIFICAT - Localization support
-//2015.09.18 @dgras
-            '. __ ("If you don't see your tools after configuring them in the dashboard, please contact") .'
+<!--XTEC ************ MODIFICAT - Localization support -->
+<!--2015.09.18 @dgras -->
+            '. __ ("If you don't see your tools after configuring them in the dashboard, please contact",'addthis_trans_domain') .'
             <a href="http://support.addthis.com/">'. __ ("AddThis Support") .'</a>
-//************ ORIGINAL
-//            If you don\'t see your tools after configuring them in the dashboard, please contact
-//            <a href="http://support.addthis.com/">AddThis Support</a>
-//************ FI
+<!--************ ORIGINAL -->
+<!--            If you don\'t see your tools after configuring them in the dashboard, please contact -->
+<!--            <a href="http://support.addthis.com/">AddThis Support</a> -->
+<!--************ FI -->
                             </p>
                         </div>
                     </div>
