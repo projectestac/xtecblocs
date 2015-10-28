@@ -47,6 +47,11 @@ $addthis_options = $addThisConfigs->getConfigs();
 
 require_once('addthis_settings_functions.php');
 
+//XTEC ************ AFEGIT - Localization support
+//2015.10.29 @dgras
+load_plugin_textdomain( 'addthis_trans_domain', null, dirname( plugin_basename( __FILE__ )) . '/languages' );
+//************ FI
+
 $addthis_languages = array(
     ''   => 'Automatic',
     'af' => 'Afrikaaner',
@@ -3286,8 +3291,12 @@ function addthis_profile_id_csr_confirmation()
     } else {
         $pubId = $addThisConfigs->getProfileId();
     }
-
-    $submitButtonValue = "Confirm and Save Changes";
+//XTEC ************ MODIFICAT - Localization support
+    $submitButtonValue = __("Confirm and Save Changes",'addthis_trans_domain');
+//2015.09.18 @dgras
+//************ ORIGINAL
+//    $submitButtonValue = "Confirm and Save Changes";
+//************ FI
     $fieldName = 'addthis_settings[addthis_profile]';
 
     $html  = '<div class="Card">';
@@ -3308,7 +3317,7 @@ function addthis_profile_id_csr_confirmation()
                     <h3 class="Card-hd-title"> '.__("You're almost done!",'addthis_trans_domain').'</h3>
                 </div>
                 <div  class="Card-bd">
-                    <p> '. __("It's time to connect your AddThis account with Wordpress.").'</p>';
+                    <p> '. __("It's time to connect your AddThis account with Wordpress.",'addthis_trans_domain').'</p>';
     }
 
     $html .= '
@@ -3317,7 +3326,7 @@ function addthis_profile_id_csr_confirmation()
                 <ul class="addthis-csr-confirm-list">
                     <li class="addthis-csr-item wp_div">
                         <img src="'.$cmsConnector->getPluginImageFolderUrl().'wordpress.png">
-                        <span>Your WordPress Site:</span>
+                        <span>'.__("Your WordPress Site",'addthis_trans_domain').':</span>
                         <input
                             type="text"
                             value="' . get_bloginfo('name') . '"
@@ -3349,7 +3358,7 @@ function addthis_profile_id_csr_confirmation()
                             class="Btn Btn-cancel"
                             type="button"
                             onclick="window.location=\''.$cmsConnector->getSettingsPageUrl().'\';return false;">
-                            Cancel
+                            '.__("Cancel",'addthis_trans_domain').'
                         </button>
                         ' . wp_nonce_field( 'update_pubid', 'pubid_nonce' ) . '
                     </li>
