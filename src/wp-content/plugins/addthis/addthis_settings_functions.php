@@ -607,6 +607,18 @@ function _addthis_excerpt_buttons_enabled() {
     return $enabled;
 }
 
+// XTEC ************ AFEGIT - Support when somebody try to login by OAuth and addThis plugin is activated
+// 2015.10.30 @dgras
+function getAddThisConfigs()
+{
+    global $cmsConnector;
+
+    $addThisSharingButtonsPluginObject = new AddThisWordPressSharingButtonsPlugin();
+    $cmsConnector = new AddThisWordPressConnector($addThisSharingButtonsPluginObject);
+    return new AddThisConfigs($cmsConnector);
+}
+//************ FI
+
 if (!function_exists('array_replace_recursive')) {
   function array_replace_recursive($array, $array1) {
     if (!function_exists('addthis_recurse')) {
@@ -642,3 +654,4 @@ if (!function_exists('array_replace_recursive')) {
     return $array;
   }
 }
+
