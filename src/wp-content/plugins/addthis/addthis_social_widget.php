@@ -185,6 +185,14 @@ if ($addthis_options['addthis_plugin_controls'] == "AddThis") {
         global $AddThis_addjs_sharing_button_plugin;
         global $addThisConfigs;
         global $cmsConnector;
+
+        // XTEC ************ AFEGIT - Support when somebody try to login by OAuth and addThis plugin is activated
+        // 2015.10.30 @dgras
+        if (!is_object($addThisConfigs)) {
+            $addThisConfigs = getAddThisConfigs();
+        }
+        //************ FI
+
         if (!isset($AddThis_addjs_sharing_button_plugin)){
             require('addthis_addjs_new.php');
             $AddThis_addjs_sharing_button_plugin = new AddThis_addjs_sharing_button_plugin($addThisConfigs, $cmsConnector);
