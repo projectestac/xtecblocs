@@ -5,6 +5,7 @@ development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+- wp-recaptcha: Added default configuration for Nodes when activating plugin (Trello #926)
 
 
 
