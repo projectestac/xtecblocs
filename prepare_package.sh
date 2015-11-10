@@ -41,6 +41,7 @@ copy_to_new CHANGES.txt
 copy_to_new config-restricted-dist.php
 copy_to_new db-config.php
 copy_to_new opcache.php #apc.php
+copy_to_new testapp.php
 copy_to_new works.php
 copy_to_new wp-config-dist.php
 cp wp_old/wp-config-dist.php src/wp-config.php
@@ -52,6 +53,7 @@ copy_to_new wp-content/mu-plugins/xtecblocs-functions.php
 copy_to_new xtec-style.css
 
 #Copy directories
+copy_to_new_dir testlib
 copy_to_new_dir wp-content/advanced-cache.php
 copy_to_new_dir wp-content/blogs.dir
 copy_to_new_dir wp-content/cache
@@ -83,9 +85,11 @@ copy_to_new_dir wp-content/plugins/xtec-weekblog2
 copy_to_new_dir wp-content/themes/classic-chalkboard
 copy_to_new_dir wp-content/themes/delicacy
 copy_to_new_dir wp-content/themes/freshy2
+copy_to_new_dir wp-content/themes/fukasawa
 copy_to_new_dir wp-content/themes/mystique
 copy_to_new_dir wp-content/themes/reddle
 copy_to_new_dir wp-content/themes/twentyeleven
+copy_to_new_dir wp-content/themes/twentyfifteen
 copy_to_new_dir wp-content/themes/twentyfourteen
 copy_to_new_dir wp-content/themes/twentyten
 copy_to_new_dir wp-content/themes/twentythirteen
@@ -129,6 +133,7 @@ delete_new wp-content/plugins/AFEGIT_XTEC
 delete_new wp-content/plugins/ELIMINAT_XTEC
 delete_new wp-content/themes/reactor
 delete_new wp-content/themes/reactor-primaria-1
+delete_new wp-content/themes/reactor-serveis-educatius
 delete_new wp-content/uploads
 
 rm -Rf wp_old
