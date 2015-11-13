@@ -11,6 +11,7 @@ Changes in progress
 - Clone Duplicator: Fixed incorrect selection of data base (Trello #609)
 - AddThis: Fixed login using WSL (Trello #1001)
 - AddThis: Fixed code comments appearing in "Opcions avançades" (Trello #1001)
+- Mailer: Reversed WSDL to CMO
 
 
 15.10.16
