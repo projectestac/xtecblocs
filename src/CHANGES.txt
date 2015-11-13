@@ -13,7 +13,6 @@ Changes in progress
 - AddThis: Fixed code comments appearing in "Opcions avançades" (Trello #1001)
 
 
-
 15.10.16
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.2.2 (Trello #794)
