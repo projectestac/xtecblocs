@@ -200,13 +200,8 @@ function xtec_delblogs_page()
 					// Inactivity check
 					$date_limit = date("Y-m-d H:i:s",mktime()-($inactivity_days*86400));
 					$blogs = $wpdb->get_results( "SELECT `blog_id`, `path`, `registered`, UNIX_TIMESTAMP(`last_updated`) as last_updated FROM $wpdb->blogs WHERE last_updated<'$date_limit' AND deleted=0 AND blog_id!=1", ARRAY_A );
-					$counter = 0;
-					$blogs_to_list = 25;
-			
-					foreach ($blogs as $blog) {
 
-						if ($counter == $blogs_to_list) break;
-						
+					foreach ($blogs as $blog) {
 						$blog_id      = $blog["blog_id"];
 						$path         = $blog["path"];
 						$registered   = $blog["registered"];
@@ -238,8 +233,7 @@ function xtec_delblogs_page()
 						}
 						
 						// Check the rules
-						if ( $posts_pages_check && $upload_check) {							
-							$counter ++;
+						if ( $posts_pages_check && $upload_check) {
 							$path = $wpdb->get_var("SELECT `path` FROM `$wpdb->blogs` WHERE `blog_id`='{$blog_id}'");
 							?>
 							<tr class="alternate">
