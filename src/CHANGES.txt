@@ -16,6 +16,7 @@ Changes in progress
 - Clone Duplicator: Fixed incorrect selection of data base (Trello #609)
 - AddThis: Fixed login using WSL (Trello #1001)
 - AddThis: Fixed code comments appearing in "Opcions avançades" (Trello #1001)
+- WSL: Allow admin blogs who are not superadmins to activate tab "Users" (Trello #955)
 - Mailer: Reversed WSDL to CMO
 - XTEC-maintenance: Removed limit of blogs to be shown in list of inactive blogs (Trello #952)
 - XTEC lib: Changed replace_url to support only a single URL (Trello #1027)
