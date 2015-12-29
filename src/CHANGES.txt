@@ -5,7 +5,8 @@ development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
 ---------------------------------------------------------------------------------------
-- IMPORTER (blogger and wordpress): Added hook to avoid force filtering when importing (Trello #936)
+- Importer (blogger and wordpress): Added hook to avoid force filtering when importing (Trello #936)
+- Carrusel: Allow loading picasa albums from URL (Trello #1056)
 
 
 15.12.04
