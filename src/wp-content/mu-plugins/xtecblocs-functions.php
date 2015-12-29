@@ -51,3 +51,10 @@ function fix_spanish_scribd_oembed ($filtered_data, $raw_data){
 	return $filtered_data;
 }
 add_filter('wp_insert_post_data', 'fix_spanish_scribd_oembed', 10, 2);
+
+/**
+* To avoid problems with BloggerImporter pluggin when the blog contains embed objects (like Picasa albums)
+*
+* @author sarjona
+*/
+remove_filter('force_filtered_html_on_import', '__return_true');
