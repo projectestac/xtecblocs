@@ -7,6 +7,7 @@ Changes in progress
 ---------------------------------------------------------------------------------------
 - Importer (blogger and wordpress): Added hook to avoid force filtering when importing (Trello #936)
 - Carrusel: Allow loading picasa albums from URL (Trello #1056)
+- Blogger Importer: Reworked code in repository. Version 0.9 not changed (Trello #936)
 
 
 15.12.04
