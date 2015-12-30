@@ -10,11 +10,12 @@ Changes in progress
 - Blogger Importer: Reworked code in repository. Version 0.9 not changed (Trello #936)
 - Added first version of the monitor in testlib
 - Mailer lib: Added latest changes
+- XTEC lib: Synced code from Àgora-Nodes (It has no impact in XTECBlocs)
 
 
 15.12.04
 ---------------------------------------------------------------------------------------
-- Synced code with Nodes that have no effect in XTECBlocs
+- Synced code with Nodes that have no impact in XTECBlocs
 - wp-recaptcha: Added default configuration for Nodes when activating plugin (Trello #926)
 - Blocked access to install.php (Trello #521)
 - Clone Duplicator: Fixed incorrect selection of data base (Trello #609)
