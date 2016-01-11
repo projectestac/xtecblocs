@@ -11,6 +11,7 @@ Changes in progress
 - Added first version of the monitor in testlib
 - Mailer lib: Added latest changes
 - XTEC lib: Synced code from Àgora-Nodes (It has no impact in XTECBlocs)
+- Google Analyticator: Upgraded to version 6.4.9.6 (Trello #994)
 
 
 15.12.04
