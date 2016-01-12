@@ -32,6 +32,8 @@ define('DB_NAME', 'xtec_blocs_global');
  */
 define('ENVIRONMENT', 'DES');
 
+// Used in e-mail web service extension
+define('XTEC_MAIL_IDAPP', 'XTECBLOCS');
 
 /** Database username */
 define('DB_USER', 'root');
