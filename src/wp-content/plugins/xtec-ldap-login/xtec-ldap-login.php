@@ -1,5 +1,4 @@
 <?php
-
 /*
 Plugin Name: XTEC LDAP Login
 Plugin URI:
@@ -146,39 +145,29 @@ function xtec_ldap_authenticate($user, $username, $password)
 		or die("Can't connect to LDAP server.");
 		ldap_set_option($ldap, LDAP_OPT_PROTOCOL_VERSION, get_site_option('xtec_ldap_version'));
 		
-// XTEC *********** MODIFICAT -> Addaptation to the new ldap server
-// 2012.06.13 @mmartinez
 		$ldapbind = @ldap_bind($ldap, 'cn=' . $username . ',' . get_site_option('xtec_ldap_base_dn'), $password);
-// ************* ORIGINAL
-		//$ldapbind = @ldap_bind($ldap, 'uid=' . $username . ',' . get_site_option('xtec_ldap_base_dn'), $password);
-// ************* FI
 
 		if ($ldapbind == true) {
-// XTEC *********** MODIFICAT -> Addaptation to the new ldap server
-// 2012.06.13 @mmartinez
-			$result = ldap_search($ldap, get_site_option('xtec_ldap_base_dn'), '(cn=' . $username . ')', array(LOGIN, 'sn', 'givenname', 'mail'));
-// ************ ORIGINAL
-			//$result = ldap_search($ldap, get_site_option('xtec_ldap_base_dn'), '(uid=' . $username . ')', array(LOGIN, 'sn', 'givenname', 'mail'));
-// ************ FI
-			$ldapuser = ldap_get_entries($ldap, $result);
-			if ($ldapuser['count'] == 1) {
-			//Create user using wp standard include
-			$userData = array(
-				'user_pass'     => $password,
-				'user_login'    => $username,
-				'user_nicename' => $ldapuser[0]['givenname'][0].' '.$ldapuser[0]['sn'][0],
-				'user_email'    => $ldapuser[0]['mail'][0],
-				'display_name'  => $ldapuser[0]['givenname'][0].' '.$ldapuser[0]['sn'][0],
-				'first_name'    => $ldapuser[0]['givenname'][0],
-				'last_name'     => $ldapuser[0]['sn'][0],
-				'role'		=> strtolower('subscriber')
-				);
-					
-				//Get ID of new user
-				wp_insert_user($userData);
-			}
-		}
-		else {
+            $result = ldap_search($ldap, get_site_option('xtec_ldap_base_dn'), '(cn=' . $username . ')', array(LOGIN, 'sn', 'givenname', 'mail'));
+            $ldapuser = ldap_get_entries($ldap, $result);
+
+            if ($ldapuser['count'] == 1) {
+                //Create user using wp standard include
+                $userData = array(
+                    'user_pass' => $password,
+                    'user_login' => $username,
+                    'user_nicename' => $ldapuser[0]['givenname'][0] . ' ' . $ldapuser[0]['sn'][0],
+                    'user_email' => $ldapuser[0]['mail'][0],
+                    'display_name' => $ldapuser[0]['givenname'][0] . ' ' . $ldapuser[0]['sn'][0],
+                    'first_name' => $ldapuser[0]['givenname'][0],
+                    'last_name' => $ldapuser[0]['sn'][0],
+                    'role' => strtolower('subscriber')
+                );
+
+                //Get ID of new user
+                wp_insert_user($userData);
+            }
+        } else {
 			do_action( 'wp_login_failed', $username );				
 			return new WP_Error('invalid_username', '<strong>ERROR</strong>: Aquest nom d\'usuari i contrasenya no corresponen a cap usuari XTEC.');
 		}
@@ -208,74 +197,50 @@ function xtec_ldap_authenticate($user, $username, $password)
 		$ldap = ldap_connect(get_site_option('xtec_ldap_host'), get_site_option('xtec_ldap_port')) 
 		or die("Can't connect to LDAP server.");
 		ldap_set_option($ldap, LDAP_OPT_PROTOCOL_VERSION, get_site_option('xtec_ldap_version'));
-// XTEC *********** MODIFICAT -> Addaptation to the new ldap server
-// 2012.06.13 @mmartinez
 		$ldapbind = @ldap_bind($ldap, 'cn=' . $username . ',' . get_site_option('xtec_ldap_base_dn'), $password);
-// ************ ORIGINAL
-		//$ldapbind = @ldap_bind($ldap, 'uid=' . $username . ',' . get_site_option('xtec_ldap_base_dn'), $password);
-// ************ FI
-		if ($ldapbind == false) {
-			// LDAP validation fails, check if it is an administrator who wants to validate
-			//$admins = get_site_option('site_admins');
-			//foreach ($admins as $admin){
-			//	if ($admin == $username) {
-			//		if ( !wp_check_password($password, $user->user_pass, $user->ID) ) {
-			//			do_action( 'wp_login_failed', $username );
-			//			return new WP_Error('incorrect_password', __('<strong>ERROR</strong>: Incorrect password.'));
-			//		}					
-			//		return new WP_User($user->ID);					
-			//	}
-			//}
-			// LDAP validation fails, check if it is a user of the application
+
+        if ($ldapbind == false) {
+			// If LDAP validation fails, check if it is a user of the application
 			if ( !wp_check_password($password, $userdata->user_pass, $userdata->ID) ) {
 				do_action( 'wp_login_failed', $username );
 				return new WP_Error('incorrect_password', __('<strong>ERROR</strong>: Incorrect password.'));
 			}
 
-// XTEC *********** MODIFICAT -> Els usuaris xtec (<=8) que no hagin validat per LDAP no poden entrar (excepte 'admin' i @edu365.cat)
-// 2013.02.26 @jmiro227
+            // XTEC users (<=8 chars) can only log in through LDAP (exceptions: 'admin' and @edu365.cat)
+            $user_info = get_userdatabylogin($username);
 
-                        $user_info = get_userdatabylogin($username);
-
-			if ( ( strlen($username) > 8 ) || ( $username == 'admin' ) || preg_match( "/^.+@edu365\.cat$/", $user_info -> user_email ) )  {return new WP_User($userdata->ID);}
-                        else {return new WP_Error('incorrect_password', __('<strong>ERROR</strong>: Incorrect password.'));}
-
-// *********** ORIGINAL
-			//return new WP_User($userdata->ID);
-// *********** FI
-		}
-		else { // $ldapbind == true
-			// Check if the password has changed
+            if ((strlen($username) > 8) || ($username == 'admin') || preg_match("/^.+@edu365\.cat$/", $user_info->user_email)) {
+                return new WP_User($userdata->ID);
+            } else {
+                return new WP_Error('incorrect_password', __('<strong>ERROR</strong>: Incorrect password.'));
+            }
+        } else { // $ldapbind == true
+            // Check if the password has changed
 			if ( !wp_check_password($password, $userdata->user_pass, $userdata->ID) ) {
 				wp_update_user(array("ID" => $userdata->ID,"user_pass" => $password));
 			}
-// XTEC *********** MODIFICAT -> Addaptation to the new ldap server
-// 2012.06.13 @mmartinez
+            
 			$result = ldap_search($ldap, get_site_option('xtec_ldap_base_dn'), '(cn=' . $username . ')', array('mail'));
-// *********** ORIGINAL
-			//$result = ldap_search($ldap, get_site_option('xtec_ldap_base_dn'), '(uid=' . $username . ')', array('mail'));
-// *********** FI
-			$ldapuser = ldap_get_entries($ldap, $result);
-			if ($ldapuser['count'] == 1) {
-				$domain = strstr($ldapuser[0]['mail'][0], '@');
-				if ($domain == '@xtec.cat') {
-					// it's an XTEC user
-					update_user_meta($userdata->ID,'xtec_user_creator','LDAP_XTEC');			
-				}
-			}
-			
-			return new WP_User($userdata->ID);			
-		}
+            $ldapuser = ldap_get_entries($ldap, $result);
+
+            if ($ldapuser['count'] == 1) {
+                $domain = strstr($ldapuser[0]['mail'][0], '@');
+                if ($domain == '@xtec.cat') {
+                    // it's an XTEC user
+                    update_user_meta($userdata->ID, 'xtec_user_creator', 'LDAP_XTEC');
+                }
+            }
+
+            return new WP_User($userdata->ID);
+        }
 	}
-	
 	else { // get_site_option('xtec_ldap_login_type') == "Application Data Base")
-		if ( !wp_check_password($password, $userdata->user_pass, $userdata->ID) )
-			return new WP_Error( 'incorrect_password', sprintf( __( '<strong>ERROR</strong>: The password you entered for the username <strong>%1$s</strong> is incorrect. <a href="%2$s" title="Password Lost and Found">Lost your password</a>?' ),
-			$username, site_url( 'wp-login.php?action=lostpassword', 'login' ) ) );
-	
-		$user =  new WP_User($userdata->ID);
-		return $user;
-	}
+        if (!wp_check_password($password, $userdata->user_pass, $userdata->ID)) {
+            return new WP_Error('incorrect_password', sprintf(__('<strong>ERROR</strong>: The password you entered for the username <strong>%1$s</strong> is incorrect. <a href="%2$s" title="Password Lost and Found">Lost your password</a>?'), $username, site_url('wp-login.php?action=lostpassword', 'login')));
+        }
+        $user = new WP_User($userdata->ID);
+        return $user;
+    }
 }
 
 /**
