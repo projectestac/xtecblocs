@@ -135,15 +135,20 @@ function xtec_ldap_authenticate($user, $username, $password)
 
 		return $error;
 	}
-	
+
+    // Filter username to remove trailing '@xtec.cat' in case it exists
+    if (strpos($username, '@xtec.cat')) {
+        $username = substr($username, 0, -strlen('@xtec.cat'));
+    }
+
 	$userdata = get_user_by('login', $username);
 
-	if ( !$userdata || (strtolower($userdata->user_login) != strtolower($username)) ) 
-	{
-		//No user, we attempt to create one
+	if ( !$userdata || (strtolower($userdata->user_login) != strtolower($username)) ) {
+		// No user, we attempt to create one
 		$ldap = ldap_connect(get_site_option('xtec_ldap_host'), get_site_option('xtec_ldap_port')) 
 		or die("Can't connect to LDAP server.");
-		ldap_set_option($ldap, LDAP_OPT_PROTOCOL_VERSION, get_site_option('xtec_ldap_version'));
+		
+        ldap_set_option($ldap, LDAP_OPT_PROTOCOL_VERSION, get_site_option('xtec_ldap_version'));
 		
 		$ldapbind = @ldap_bind($ldap, 'cn=' . $username . ',' . get_site_option('xtec_ldap_base_dn'), $password);
 
@@ -152,7 +157,7 @@ function xtec_ldap_authenticate($user, $username, $password)
             $ldapuser = ldap_get_entries($ldap, $result);
 
             if ($ldapuser['count'] == 1) {
-                //Create user using wp standard include
+                // Create user using wp standard include
                 $userData = array(
                     'user_pass' => $password,
                     'user_login' => $username,
@@ -164,7 +169,7 @@ function xtec_ldap_authenticate($user, $username, $password)
                     'role' => strtolower('subscriber')
                 );
 
-                //Get ID of new user
+                // Get ID of new user
                 wp_insert_user($userData);
             }
         } else {
