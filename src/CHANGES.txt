@@ -14,6 +14,7 @@ Changes in progress
 - XTEC lib: Synced code from Àgora-Nodes (It has no impact in XTECBlocs)
 - Google Analyticator: Upgraded to version 6.4.9.6 (Trello #994)
 - XTEC-mailer: Moved idApp from database to code (Trello #894)
+- works: Checked data files connection to avoid problems if blogs.dir is not accessible or writeable (Trello #1109)
 
 
 15.12.04
