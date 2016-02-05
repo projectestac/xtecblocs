@@ -43,3 +43,6 @@
 [submodule "src/wp-content/plugins/xtec-ldap-login"]
 	path = src/wp-content/plugins/xtec-ldap-login
 	url = https://github.com/projectestac/wordpress-xtec-ldap-login.git
+[submodule "src/wp-content/themes/fukasawa"]
+	path = src/wp-content/themes/fukasawa
+	url = https://github.com/projectestac/wordpress-theme-fukasawa.git
