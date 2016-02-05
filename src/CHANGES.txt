@@ -17,6 +17,7 @@ Changes in progress
 - works: Checked data files connection to avoid problems if blogs.dir is not accessible or writeable (Trello #1109)
 - xtec-ldap-login: Converted plugin in a submodule (Trello #1104)
 - xtec-ldap-login: Remove the trailing string '@xtec.cat' in username in case it exists (Trello #1104)
+- Fukasawa: Added tags/categories information and their description (Trello #1129)
 
 
 15.12.04
