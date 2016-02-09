@@ -20,6 +20,7 @@ Changes in progress
 - Fukasawa: Added tags/categories information and their description (Trello #1129)
 - Google Analyticator: Added missing </div> that breaks view in mobile devices (Trello #1134)
 - GCE: Added default gce_feed_[start/end] default values for admin (Trello #1071)
+- xtec-ldap-login: Updated to version 2.0. Synced code from Àgora-Nodes (Trello #1105)
 
 
 15.12.04
