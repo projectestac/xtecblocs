@@ -9,7 +9,7 @@ Changes in progress
 - Blogger Importer: Reworked code in repository. Version 0.9 not changed (Trello #936)
 - Carrusel: Allow loading picasa albums from URL (Trello #1056)
 - Carrusel: Fixed bug with new Google+ albums (were not working) (Trello #1055)
-- Added first version of the monitor in testlib
+- Testlib: Added monitor
 - Mailer lib: Added latest changes
 - XTEC-mailer: Moved idApp from database to code (Trello #894)
 - XTEC lib: Synced code from Àgora-Nodes (It has no impact in XTECBlocs)
