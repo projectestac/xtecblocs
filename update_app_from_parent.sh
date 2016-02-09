@@ -37,6 +37,7 @@ mv wp_new src
 
 #Copy files
 copy_to_new .htaccess
+copy_to_new .htaccess-dist
 copy_to_new CHANGES.txt
 copy_to_new config-restricted-dist.php
 copy_to_new db-config.php
@@ -119,6 +120,7 @@ delete_new wp-content/plugins/buddypress-activity-plus
 delete_new wp-content/plugins/buddypress-docs
 delete_new wp-content/plugins/buddypress-group-email-subscription
 delete_new wp-content/plugins/buddypress-like
+delete_new wp-content/plugins/email-subscribers
 delete_new wp-content/plugins/enllacos-educatius
 delete_new wp-content/plugins/grup-classe
 delete_new wp-content/plugins/import-users-from-csv-with-meta
