@@ -18,6 +18,7 @@ Changes in progress
 - xtec-ldap-login: Converted plugin in a submodule (Trello #1104)
 - xtec-ldap-login: Remove the trailing string '@xtec.cat' in username in case it exists (Trello #1104)
 - Fukasawa: Added tags/categories information and their description (Trello #1129)
+- Google Analyticator: Added missing </div> that breaks view in mobile devices (Trello #1134)
 
 
 15.12.04
