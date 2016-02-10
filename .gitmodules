@@ -49,3 +49,6 @@
 [submodule "src/wp-content/plugins/anti-spam"]
 	path = src/wp-content/plugins/anti-spam
 	url = https://github.com/projectestac/wordpress-anti-spam.git
+[submodule "src/wp-content/plugins/wp-super-cache"]
+	path = src/wp-content/plugins/wp-super-cache
+	url = https://github.com/projectestac/wordpress-super-cache.git
