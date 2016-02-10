@@ -55,3 +55,6 @@
 [submodule "src/wp-content/themes/reddle"]
 	path = src/wp-content/themes/reddle
 	url = https://github.com/projectestac/wordpress-theme-reddle.git
+[submodule "src/wp-content/themes/twentyten"]
+	path = src/wp-content/themes/twentyten
+	url = https://github.com/projectestac/wordpress-theme-twentyten.git
