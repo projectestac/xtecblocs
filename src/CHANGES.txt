@@ -24,6 +24,7 @@ Changes in progress
 - Added again some Reading options for XTECBlocs administrators which are hidden in Nodes (Trello #1028)
 - Anti-spam: upgraded from 3.5 to 4.2 (Trello #1032)
 - mu-common: Added filter to remove content of attribute onerror in images (Trello #1050)
+- SuperCache: upgraded from 1.4.4 to 1.4.7 (Trello #1036)
 
 
 15.12.04
