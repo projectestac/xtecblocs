@@ -52,3 +52,6 @@
 [submodule "src/wp-content/plugins/wp-super-cache"]
 	path = src/wp-content/plugins/wp-super-cache
 	url = https://github.com/projectestac/wordpress-super-cache.git
+[submodule "src/wp-content/themes/reddle"]
+	path = src/wp-content/themes/reddle
+	url = https://github.com/projectestac/wordpress-theme-reddle.git

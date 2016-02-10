@@ -20,5 +20,6 @@ gitcheckout "src/wp-content/plugins/wp-super-cache" "master" "git@github.com:pro
 gitcheckout "src/wp-content/plugins/xtec-ldap-login" "master" "git@github.com:projectestac/wordpress-xtec-ldap-login.git"
 gitcheckout "src/wp-content/plugins/xtec-mail/lib" "master" "git@github.com:projectestac/mailer.git"
 gitcheckout "src/wp-content/themes/fukasawa" "master" "git@github.com:projectestac/wordpress-theme-fukasawa.git"
+gitcheckout "src/wp-content/themes/reddle" "master" "git@github.com:projectestac/wordpress-theme-reddle.git"
 gitcheckout "src/wp-includes/xtec" "master" "git@github.com:projectestac/wordpress-xtec.git"
 
