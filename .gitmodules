@@ -58,3 +58,6 @@
 [submodule "src/wp-content/themes/twentyten"]
 	path = src/wp-content/themes/twentyten
 	url = https://github.com/projectestac/wordpress-theme-twentyten.git
+[submodule "src/wp-content/themes/twentyeleven"]
+	path = src/wp-content/themes/twentyeleven
+	url = https://github.com/projectestac/wordpress-theme-twentyeleven.git

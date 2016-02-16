@@ -21,6 +21,7 @@ gitcheckout "src/wp-content/plugins/xtec-ldap-login" "master" "git@github.com:pr
 gitcheckout "src/wp-content/plugins/xtec-mail/lib" "master" "git@github.com:projectestac/mailer.git"
 gitcheckout "src/wp-content/themes/fukasawa" "master" "git@github.com:projectestac/wordpress-theme-fukasawa.git"
 gitcheckout "src/wp-content/themes/reddle" "master" "git@github.com:projectestac/wordpress-theme-reddle.git"
+gitcheckout "src/wp-content/themes/twentyeleven" "master" "git@github.com:projectestac/wordpress-theme-twentyeleven.git"
 gitcheckout "src/wp-content/themes/twentyten" "master" "git@github.com:projectestac/wordpress-theme-twentyten.git"
 gitcheckout "src/wp-includes/xtec" "master" "git@github.com:projectestac/wordpress-xtec.git"
 
