@@ -6,6 +6,7 @@ development home at https://github.com/projectestac/xtecblocs
 Changes in progress
 ---------------------------------------------------------------------------------------
 - xtec-ldap-login: Ensure the user metadata is set, as it is required to create blogs in XTECBlocs
+- mu-common: Get multiple categories and filter posts from URL (Trello #1142)
 
 
 16.02.17
