@@ -8,6 +8,7 @@ Changes in progress
 - xtec-ldap-login: Ensure the user metadata is set, as it is required to create blogs in XTECBlocs (Trello #1105)
 - mu-common: Get multiple categories and filter posts from URL (Trello #1142)
 - XTEC lib: Synced code from Àgora-Nodes (It has no impact in XTECBlocs)
+- GCE: Added meta fields to calendars created by non-superadmin users
 
 
 16.02.17
