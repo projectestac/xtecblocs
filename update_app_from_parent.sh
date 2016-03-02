@@ -61,7 +61,6 @@ copy_to_new_dir wp-content/cache
 copy_to_new_dir wp-content/db.php
 copy_to_new_dir wp-content/wp-cache-config.php
 copy_to_new_dir wp-content/jw-flv-player
-copy_to_new_dir wp-content/plugins/addthis
 copy_to_new_dir wp-content/plugins/anti-spam
 copy_to_new_dir wp-content/plugins/hyperdb
 copy_to_new_dir wp-content/plugins/link-manager
