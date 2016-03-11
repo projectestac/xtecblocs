@@ -399,4 +399,4 @@ function kubrick_theme_page() {
 		</div>
 	</div>
 </div>
-<?php } ?>
+<?php }

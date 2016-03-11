@@ -4,7 +4,7 @@
  *   @autor Xavier Belanche <xbelanch at xtec dot cat>
  *
  */
- 
+
 /************************
 **** Elements de bloc ***
 *************************/
@@ -26,7 +26,6 @@ pre  { display: block; font-family: monospace; white-space: pre; margin: 1em; fo
 ************************/
 em { font-style: italic;}
 strong { font-weight: bold;}
-abbr { speak: spell-out; }
 acronym { speak: normal; }
 abbr, acronym {  border-bottom: 1px dotted; cursor: help; text-transform: uppercase; font-weight: bold;}
 code, kbd, samp {font-family: monospace;}
@@ -40,8 +39,6 @@ sup {vertical-align: 0.5em; font-size: smaller; line-height: normal;}
 /************************
 ** Elements de llista **
 *************************/
-/* XTEC ************ MODIFICAT - Fixed lists font size inside articles
-2014.01.23 Marc Espinosa Zamora <marc.espinosa.zamora@upcnet.es> */
 dl { margin: 20px }
 dt { padding-left: 1em; font-weight: bold;  }
 dd { padding-bottom: 1em; text-indent: 1em; }
@@ -53,20 +50,6 @@ ol ul, ul ul { list-style-type: circle; }
 ol ol ul, ol ul ul, ul ol ul, ul ul ul { list-style-type: square; }
 .article ul, .article ol { font-size: 0.9em; line-height:15pt; }
 
-/************ ORIGINAL
-
-dl { margin: 20px }
-dt { padding-left: 1em; font-weight: bold;  }
-dd { padding-bottom: 1em; text-indent: 1em; }
-ul { list-style: disc; margin: 1em 0; margin-left: 4.5em; padding-left: 0; }
-ol { list-style: decimal;  margin: 1em 0; margin-left: 4.5em; padding-left: 0; }
-ul ul, ul ol, ul dl, ol ul, ol ol, ol dl, dl ul, dl ol, dl dl 
-{ margin-top: 0; margin-bottom: 0; }
-ol ul, ul ul { list-style-type: circle; }
-ol ol ul, ol ul ul, ul ol ul, ul ul ul { list-style-type: square; }
-
-************ FI */
-
 /**************************
 ****** Element imatge *****
 ***************************/
@@ -74,47 +57,47 @@ img {border: 0;}
 
 /* Begin Images */
 p img {
-	padding: 0;
-	max-width: 100%;
-	}
+    padding: 0;
+    max-width: 100%;
+}
 
 /*	Using 'class="alignright"' on an image will (who would've
-	thought?!) align the image to the right. And using 'class="centered',
-	will of course center the image. This is much better than using
-	align="center", being much more futureproof (and valid) */
+    thought?!) align the image to the right. And using 'class="centered',
+    will of course center the image. This is much better than using
+    align="center", being much more futureproof (and valid) */
 
 img.centered {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	}
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 img.alignright {
-	padding: 4px;
-	margin: 0 0 2px 7px;
-	display: inline;
-	}
+    padding: 4px;
+    margin: 0 0 2px 7px;
+    display: inline;
+}
 
 img.alignleft {
-	padding: 4px;
-	margin: 0 7px 2px 0;
-	display: inline;
-	}
+    padding: 4px;
+    margin: 0 7px 2px 0;
+    display: inline;
+}
 
 .alignright {
-	float: right;
-	}
+    float: right;
+}
 
 .alignleft {
-	float: left
-	}
+    float: left
+}
 /* End Images */
 
 /************************
 ** Comentaris ***
 *************************/
 p.comentari {
-	clear:both;
+    clear:both;
 }
 
 /************************

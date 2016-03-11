@@ -11,6 +11,7 @@ Changes in progress
 - XTEC lib: Synced code from Àgora-Nodes (It has no impact in XTECBlocs)
 - GCE: Added meta fields to calendars created by non-superadmin users
 - Replaced AddThis plugin for AddToAny plugin
+- Theme xtecblocsdefault: Cleaned up the code. No functional changes.
 
 
 16.02.17

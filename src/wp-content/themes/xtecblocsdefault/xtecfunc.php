@@ -29,7 +29,6 @@ function getBlogsNumber(){
 }
 
 
-
 function getWeekBlog(){
 	global $wpdb;
 	$counter = 0;
@@ -68,8 +67,6 @@ function getWeekBlog(){
 	return $posts;
 }
 
-
-
 function getNewsList(){
 	global $wpdb;	
 	$sql="SELECT id,post_date,post_title FROM $wpdb->posts WHERE `post_type`='post' and `post_status`='publish' ORDER BY ID DESC";
@@ -80,8 +77,6 @@ function getNewsList(){
 	}	
 	return $posts;	
 }
-
-
 
 
 /**
@@ -155,4 +150,3 @@ function Pager($startnum, $total, $urltemplate, $perpage = 20)
 	}
 	return $sortida;
 }
-?>

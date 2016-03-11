@@ -25,7 +25,6 @@ body {
 
 /* Holly hack for IE \*/
 * html #expander { height: 0; }
-/* */
 
 /* helps IE get the child percentages right. */
 #wrapper { width: 100%; } 

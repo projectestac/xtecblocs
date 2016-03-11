@@ -15,10 +15,9 @@
 
 		/* This variable is for alternating comment background */
 		$oddcomment = 'alt';
-		//******** AFEGIT XTEC *******
-		//Allow see the comments in main page
+
+        // Allow to see the comments in main page
 		$comments = get_approved_comments($id);
-		//******** FINAL *******
 ?>
 
 <!-- You can start editing here. -->
@@ -91,12 +90,7 @@
 <label for="url"><small>Website</small></label></p>
 
 <?php endif; ?>
-<!--******* ELIMINAT XTEC *******-->
-<!--<p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>-->
-<!--******* FINAL *******-->
-<!--******* AFEGIT XTEC *******-->
 <p><textarea name="comment" id="comment" cols="40%" rows="10" tabindex="4"></textarea></p>
-<!--******* FINAL *******-->
 <p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
 <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
 <input type="hidden" name="redirect_to" value="index.php?msg=newComment" />
@@ -105,6 +99,8 @@
 
 </form>
 
-<?php endif; // If registration required and not logged in ?>
+<?php 
 
-<?php endif; // if you delete this the sky will fall on your head ?>
+endif; // If registration required and not logged in
+
+endif; // if you delete this the sky will fall on your head
