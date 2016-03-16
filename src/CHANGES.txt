@@ -12,6 +12,7 @@ Changes in progress
 - GCE: Added meta fields to calendars created by non-superadmin users
 - Replaced AddThis plugin for AddToAny plugin
 - Theme xtecblocsdefault: Cleaned up the code. No functional changes.
+- CloneDuplicator: If user doesn't exist and is XTEC, use email prefix instead of domain (Trello #1164)
 
 
 16.02.17
