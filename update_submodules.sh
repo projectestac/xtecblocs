@@ -20,6 +20,7 @@ gitcheckout "src/wp-content/plugins/wp-recaptcha" "master" "git@github.com:proje
 gitcheckout "src/wp-content/plugins/wp-super-cache" "master" "git@github.com:projectestac/wordpress-super-cache.git"
 gitcheckout "src/wp-content/plugins/xtec-ldap-login" "master" "git@github.com:projectestac/wordpress-xtec-ldap-login.git"
 gitcheckout "src/wp-content/plugins/xtec-mail/lib" "master" "git@github.com:projectestac/mailer.git"
+gitcheckout "src/wp-content/plugins/xtec-ms-manager" "master" "git@github.com:projectestac/wordpress-xtec-ms-manager.git"
 gitcheckout "src/wp-content/themes/fukasawa" "master" "git@github.com:projectestac/wordpress-theme-fukasawa.git"
 gitcheckout "src/wp-content/themes/reddle" "master" "git@github.com:projectestac/wordpress-theme-reddle.git"
 gitcheckout "src/wp-content/themes/twentyeleven" "master" "git@github.com:projectestac/wordpress-theme-twentyeleven.git"
