@@ -67,3 +67,6 @@
 [submodule "src/wp-content/plugins/add-to-any"]
 	path = src/wp-content/plugins/add-to-any
 	url = https://github.com/projectestac/wordpress-add-to-any.git
+[submodule "src/wp-content/plugins/xtec-ms-manager"]
+	path = src/wp-content/plugins/xtec-ms-manager
+	url = https://github.com/projectestac/wordpress-xtec-ms-manager.git

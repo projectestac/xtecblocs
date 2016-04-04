@@ -79,6 +79,7 @@ copy_to_new_dir wp-content/plugins/xtec-lastest-posts
 copy_to_new_dir wp-content/plugins/xtec-ldap-login
 copy_to_new_dir wp-content/plugins/xtec-link-player
 copy_to_new_dir wp-content/plugins/xtec-maintenance
+copy_to_new_dir wp-content/plugins/xtec-ms-manager
 copy_to_new_dir wp-content/plugins/xtec-settings
 copy_to_new_dir wp-content/plugins/xtec-signup
 copy_to_new_dir wp-content/plugins/xtec-users
