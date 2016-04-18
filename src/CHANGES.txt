@@ -22,6 +22,7 @@ Changes in progress
 - TwentyFifteen: upgraded theme from 1.4 to 1.5
 - Raw-HTML: Upgraded to version 1.4.16
 - SuperCache: upgraded from 1.4.7 to 1.4.8
+- Google-Analyticator: Upgraded from 6.4.9.6 to 6.4.9.7
 
 
 16.02.17
