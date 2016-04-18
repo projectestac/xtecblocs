@@ -14,7 +14,7 @@ Changes in progress
 - Theme xtecblocsdefault: Cleaned up the code. No functional changes.
 - CloneDuplicator: If user doesn't exist and is XTEC, use email prefix instead of domain (Trello #1164)
 - xtec-ldap-login: Any existing user whose e-mail is XTEC, will always log in through LDAP if it is activated (Trello #1105)
-
+- Fukasawa: upgraded theme from 1.05 to 1.09
 
 
 16.02.17
