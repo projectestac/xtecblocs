@@ -21,6 +21,7 @@ Changes in progress
 - TwentyFourteen: upgraded theme from 1.6 to 1.7
 - TwentyFifteen: upgraded theme from 1.4 to 1.5
 - Raw-HTML: Upgraded to version 1.4.16
+- SuperCache: upgraded from 1.4.7 to 1.4.8
 
 
 16.02.17
