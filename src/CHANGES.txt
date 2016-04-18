@@ -17,6 +17,7 @@ Changes in progress
 - Fukasawa: upgraded theme from 1.05 to 1.09
 - TwentyEleven: upgraded theme from 2.3 to 2.4
 - TwentyTwelve: upgraded theme from 1.9 to 2.0
+- TwentyThirteen: upgraded theme from 1.7 to 1.9
 
 
 16.02.17
