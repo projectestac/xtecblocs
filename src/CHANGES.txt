@@ -15,6 +15,7 @@ Changes in progress
 - CloneDuplicator: If user doesn't exist and is XTEC, use email prefix instead of domain (Trello #1164)
 - xtec-ldap-login: Any existing user whose e-mail is XTEC, will always log in through LDAP if it is activated (Trello #1105)
 - Fukasawa: upgraded theme from 1.05 to 1.09
+- TwentyEleven: upgraded theme from 2.3 to 2.4
 
 
 16.02.17
