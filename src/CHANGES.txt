@@ -3,7 +3,7 @@ Release notes for XTECBlocs (http://blocs.xtec.cat)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/xtecblocs
 
-Changes in progress
+16.04.25
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.2.7
 - xtec-ldap-login: Ensure the user metadata is set, as it is required to create blogs in XTECBlocs (Trello #1105)
