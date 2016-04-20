@@ -110,7 +110,6 @@ delete_new wp-content/mu-plugins/languages/agora-functions-ca.mo
 delete_new wp-content/mu-plugins/languages/agora-functions-ca.po
 
 #Delete directories
-delete_new wp-content/plugins/add-to-any
 delete_new wp-content/plugins/bbpress
 delete_new wp-content/plugins/bbpress-enable-tinymce-visual-tab
 delete_new wp-content/plugins/bp-moderation
