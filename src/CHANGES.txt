@@ -23,6 +23,9 @@ Changes in progress
 - Raw-HTML: Upgraded to version 1.4.16
 - SuperCache: upgraded from 1.4.7 to 1.4.8
 - Google-Analyticator: Upgraded from 6.4.9.6 to 6.4.9.7
+- Added embed and iframe support in kses
+- xtec-mailer: Displayed reply-to parameter for admins to allow them to change it (Trello #1206)
+- xtec-mailer: Taken Reply-to from headers if specified (Trello #1206)
 
 
 16.02.17
