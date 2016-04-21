@@ -26,6 +26,7 @@ development home at https://github.com/projectestac/xtecblocs
 - Added embed and iframe support in kses
 - xtec-mailer: Displayed reply-to parameter for admins to allow them to change it (Trello #1206)
 - xtec-mailer: Taken Reply-to from headers if specified (Trello #1206)
+- Updated default theme to twentyfifteen
 
 
 16.02.17
