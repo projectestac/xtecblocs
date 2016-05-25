@@ -38,10 +38,12 @@ mv wp_new src
 #Copy files
 copy_to_new .htaccess
 copy_to_new .htaccess-dist
+copy_to_new AFEGIT_XTEC
 copy_to_new CHANGES.txt
 copy_to_new config-restricted-dist.php
 copy_to_new db-config.php
 copy_to_new opcache.php #apc.php
+copy_to_new siteoff.html
 copy_to_new testapp.php
 copy_to_new works.php
 copy_to_new wp-config-dist.php
