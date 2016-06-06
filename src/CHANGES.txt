@@ -19,7 +19,8 @@ Changes in progress
 - tinymce-advanced: Upgraded plugin to version 4.2.8 (Trello #985)
 - google-calendar-events: Fixed warning for non-superadmin users
 - AddThis: Removed plugin
-- wordpress-php-info: Upgraded to version 15
+- wordpress-php-info: Upgraded from 14.12 to 15
+- wordpress-add-to-any: Upgraded from 1.6.16 to 1.6.17
 
 
 16.04.25
