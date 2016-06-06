@@ -1,5 +1,6 @@
 src/wp-config.php
 src/config-restricted.php
+src/wp-content/wp-cache-config.php
 src/wp-content/blogs.dir
 .Trash-1000/
 nbproject/
