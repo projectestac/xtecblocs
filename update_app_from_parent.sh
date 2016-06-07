@@ -49,6 +49,8 @@ copy_to_new works.php
 copy_to_new wp-config-dist.php
 cp wp_old/wp-config-dist.php src/wp-config.php
 copy_to_new wp-content/advanced-cache.php
+copy_to_new wp-content/wp-cache-config.php
+copy_to_new wp-content/wp-cache-config-dist.php
 copy_to_new wp-content/db.php
 copy_to_new wp-content/mu-plugins/xtecblocs-functions.php
 #copy_to_new wp-settings.php
@@ -57,11 +59,8 @@ copy_to_new xtec-style.css
 
 #Copy directories
 copy_to_new_dir testlib
-copy_to_new_dir wp-content/advanced-cache.php
 copy_to_new_dir wp-content/blogs.dir
 copy_to_new_dir wp-content/cache
-copy_to_new_dir wp-content/db.php
-copy_to_new_dir wp-content/wp-cache-config.php
 copy_to_new_dir wp-content/jw-flv-player
 copy_to_new_dir wp-content/plugins/anti-spam
 copy_to_new_dir wp-content/plugins/hyperdb
