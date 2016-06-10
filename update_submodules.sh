@@ -26,5 +26,6 @@ gitcheckout "src/wp-content/themes/reddle" "master" "git@github.com:projectestac
 gitcheckout "src/wp-content/themes/twentyeleven" "master" "git@github.com:projectestac/wordpress-theme-twentyeleven.git"
 gitcheckout "src/wp-content/themes/twentyten" "master" "git@github.com:projectestac/wordpress-theme-twentyten.git"
 gitcheckout "src/wp-content/themes/twentytwelve" "master" "git@github.com:projectestac/wordpress-theme-twentytwelve.git"
+gitcheckout "src/wp-content/themes/twentysixteen" "master" "git@github.com:projectestac/wordpress-theme-twentysixteen.git"
 gitcheckout "src/wp-includes/xtec" "master" "git@github.com:projectestac/wordpress-xtec.git"
 
