@@ -1,5 +1,11 @@
 <?php
 
+// Remove admin bar in signup page because it is empty and its space is empty
+function xtec_remove_admin_bar() {
+	add_filter('show_admin_bar', '__return_false');
+}
+add_action( 'before_signup_header', 'xtec_remove_admin_bar' );
+
 if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'post-thumbnails', array( 'xtecweekblog' ) );
     add_image_size( 'xtecweekblog', 363, 98, true );
