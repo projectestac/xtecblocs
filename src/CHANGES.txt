@@ -32,6 +32,7 @@ Changes in progress
 - xtec-ms-manager: Added first version of the plugin (Trello #1176)
 - multisite-plugin-manager: Removed wp_is_large_network restriction
 - Theme Twenty Sixteen: Added version 1.2
+- Changed default theme to twentysixteen
 
 
 16.04.25

@@ -113,7 +113,7 @@ define('BLOG_ID_CURRENT_SITE', 1);
 /**
  * Default blog creation theme.
  */
-define('WP_DEFAULT_THEME', 'twentyfifteen');
+define('WP_DEFAULT_THEME', 'twentysixteen');
 
 /**
  * HTTPS config.
