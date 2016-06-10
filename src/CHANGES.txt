@@ -31,6 +31,7 @@ Changes in progress
 - xtec-mailer: Compress log files to zip
 - xtec-ms-manager: Added first version of the plugin (Trello #1176)
 - multisite-plugin-manager: Removed wp_is_large_network restriction
+- Theme Twenty Sixteen: Added version 1.2
 
 
 16.04.25

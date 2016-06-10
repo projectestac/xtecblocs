@@ -93,6 +93,7 @@ copy_to_new_dir wp-content/themes/reddle
 copy_to_new_dir wp-content/themes/twentyeleven
 copy_to_new_dir wp-content/themes/twentyfifteen
 copy_to_new_dir wp-content/themes/twentyfourteen
+copy_to_new_dir wp-content/themes/twentysixteen
 copy_to_new_dir wp-content/themes/twentyten
 copy_to_new_dir wp-content/themes/twentythirteen
 copy_to_new_dir wp-content/themes/twentytwelve
