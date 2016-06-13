@@ -4,7 +4,7 @@
 function xtec_remove_admin_bar() {
 	add_filter('show_admin_bar', '__return_false');
 }
-add_action( 'before_signup_header', 'xtec_remove_admin_bar' );
+add_action( 'before_signup_header', 'xtec_remove_admin_bar', 1 );
 
 if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'post-thumbnails', array( 'xtecweekblog' ) );
