@@ -3,7 +3,7 @@
 /*
 Plugin Name: XTEC Maintenance
 Plugin URI:
-Description: 
+Description:
 Version: 1.1
 Author: Francesc Bassas i Bullich
 Author URI:
@@ -15,13 +15,13 @@ $xtec_maintenance_db_version = '1.0';
 add_action('network_admin_menu', 'xtec_maintenance_menu');
 
 function xtec_maintenance_menu()
-{   
+{
 	if( is_super_admin() ) {
 		add_menu_page('Manteniment','Manteniment','manage_network','xtec-maintenance','xtec_maintenance_page');
 		add_submenu_page('xtec-maintenance','Eliminació de blocs','Eliminació de blocs','manage_network','xtec-delblogs','xtec_delblogs_page');
 		add_submenu_page('xtec-maintenance','Blocs eliminats per inactivitat','Blocs eliminats per inactivitat','manage_network','xtec-inactivity-deleted-blogs','xtec_inactivity_deleted_blogs_page');
 		add_submenu_page('xtec-maintenance','Blocs eliminats pels usuaris','Blocs eliminats pels usuaris','manage_network','xtec-user-deleted-blogs','xtec_user_deleted_blogs_page');
-	}	
+	}
 }
 
 function xtec_maintenance_page()
@@ -46,31 +46,31 @@ function xtec_maintenance_page()
 }
 
 function xtec_delblogs_page()
-{	
+{
 	if (isset($_POST['inactivity_days'])) { $inactivity_days = $_POST['inactivity_days']; }
 	else { $inactivity_days = get_site_option('xtec_maintenance_inactivity_days',90); }
-	
+
 	if (isset($_POST['posts_pages'])) { $posts_pages = $_POST['posts_pages']; }
 	else { $posts_pages = get_site_option('xtec_maintenance_posts_pages',2); }
-	
+
 	if (get_site_option('xtec_maintenance_never_upload_file',1) == 1) { $never_upload_file = true; }
 	else { $never_upload_file = false; }
-	
+
 	if (isset($_POST['never_upload_file'])) { $never_upload_file = true; }
 	else {
 		if (isset($_POST['submit']) || isset($_POST['set_as_default']) || isset($_POST['touch'])) {
 			$never_upload_file = false;
 		}
-	}	
+	}
 	?>
-	
+
 	<div class="wrap">
-	
+
 	<h2>Eliminació de blocs</h2>
-	
-	<?php	
+
+	<?php
 	global $wpdb;
-	
+
 	if (isset($_POST['delete'])) {
 		if (!isset($_POST['idblogs'])) {
 			?><div class="error below-h2"><p>No has seleccionat cap bloc.</p></div><?php
@@ -81,22 +81,22 @@ function xtec_delblogs_page()
 				$blogname = get_blog_option($idblog,'blogname');
 				$path = $wpdb->get_var("SELECT `path` FROM `$wpdb->blogs` WHERE `blog_id`='{$idblog}'");
 				$del_date = date("Y-m-d H:i:s");
-				
+
 				$sql = "INSERT INTO `wp_delblocs` SET `site_id` = '$idblog', `site_path` = '".$path."', `blogname` = '".$blogname."', `del_date` = '$del_date', `status` = '2';";
 				$wpdb->get_results($sql);
-				
+
 				$users = get_users_of_blog($idblog);
 				foreach ($users as $user) {
 					$sql = "INSERT INTO `wp_delblocs_users` SET `blog_id` = '$idblog', `user_id` = '".$user->user_id."', `user_login` = '".$user->user_login."', `display_name` = '".$user->display_name."', `user_email` = '".$user->user_email."', `meta_value` = '".$user->meta_value."';";
 					$wpdb->get_results($sql);
 				}
-				
+
 				// drops data of the blog when deleted
 				wpmu_delete_blog($idblog, true);
 				echo "El bloc $blogname amb ID $idblog s'ha eliminat correctament.<br />";
 			}
 		}
-		echo "<p><a href=\"?page=xtec-delblogs\">Torna al formulari d'eliminació de blocs</a></p>";		
+		echo "<p><a href=\"?page=xtec-delblogs\">Torna al formulari d'eliminació de blocs</a></p>";
 	}
 	else if (isset($_POST['touch'])){
 		if (!isset($_POST['idblogs'])) {
@@ -111,9 +111,9 @@ function xtec_delblogs_page()
 				echo "La data de la darrera actualització del bloc <strong>$blogname</strong> amb ID <strong>$idblog</strong> ha estat actualitzada a la data actual.<br>";
 			}
 		}
-		echo "<p><a href=\"?page=xtec-delblogs\">Torna al formulari d'eliminació de blocs</a></p>";		
+		echo "<p><a href=\"?page=xtec-delblogs\">Torna al formulari d'eliminació de blocs</a></p>";
 	}
-	else {		
+	else {
 		if (isset($_POST['set_as_default'])) {
 			update_site_option( 'xtec_maintenance_inactivity_days', $_POST['inactivity_days'] );
 			update_site_option( 'xtec_maintenance_posts_pages', $_POST['posts_pages'] );
@@ -121,7 +121,7 @@ function xtec_delblogs_page()
 			update_site_option( 'xtec_maintenance_never_upload_file', $value );
 		}
 		?>
-		
+
 		<form action="?page=xtec-delblogs" method="post">
 			<table class="form-table">
 				<tbody>
@@ -170,20 +170,20 @@ function xtec_delblogs_page()
 				<?php } else { ?> - S'hi ha pujat <strong>alguna vegada</strong> algun fitxer.<br>
 				<?php }?>
 			</div>
-			
+
 			<div class="tablenav">
 				<div class="alignleft">
 						<input class="button-secondary" type="submit" value="Refresca la llista" name="submit"/>
 						<input class="button-secondary" type="submit" value="Elimina els blocs seleccionats" name="delete"/>
 						<input class="button-secondary" type="submit" value="Actualitza la data dels blocs seleccionats" name="touch"/>
 						<input class="button-secondary" type="submit" value="Desa els valors actuals com a predeterminats" name="set_as_default"/>
-						<br class="clear" />				
+						<br class="clear" />
 				</div>
 			</div>
 			<br class="clear" />
-			
+
 			<?php $blogname_columns = ( constant( "VHOST" ) == 'yes' ) ? __('Domain') : __('Path');	?>
-						
+
 			<table cellspacing="3" cellpadding="3" width="100%" class="widefat">
 				<thead>
 					<tr>
@@ -206,13 +206,13 @@ function xtec_delblogs_page()
 						$path         = $blog["path"];
 						$registered   = $blog["registered"];
 						$last_updated = $blog["last_updated"];
-						
+
 						$posts_pages_check = false;
-						$upload_check = false;						
-						
+						$upload_check = false;
+
 						$now = mktime();
 						$elapsed_days = (int)(($now-$last_updated)/86400);
-						
+
 						// Posts and Pages check
 						$posts_table = $wpdb->get_results( "SELECT post_type FROM `wp_".$blog_id."_posts`", ARRAY_A );
 						$posts = 0; $pages = 0;
@@ -231,7 +231,7 @@ function xtec_delblogs_page()
 						else {
 							if (!$never_upload_file) { $upload_check = true; }
 						}
-						
+
 						// Check the rules
 						if ( $posts_pages_check && $upload_check) {
 							$path = $wpdb->get_var("SELECT `path` FROM `$wpdb->blogs` WHERE `blog_id`='{$blog_id}'");
@@ -240,7 +240,7 @@ function xtec_delblogs_page()
 								<th class="check-column" scope="row">
 									<input type="checkbox" value="<?php echo $blog_id?>" name="idblogs[]" id="blog_<?php echo $blog_id?>"/>
 								</th>
-								
+
 								<th scope="row"><?php echo $blog_id?></th>
 								<td valign="top">
 									<a rel="permalink" href="<?php echo $path?>"><?php echo $path?></a>
@@ -256,38 +256,38 @@ function xtec_delblogs_page()
 								</td>
 							</tr>
 							<?php
-						}						
+						}
 					}
 					?>
 				</tbody>
 			</table>
-		</form>		
+		</form>
 		<?php
 	}
 	?>
 	</div>
-	<?php 
+	<?php
 }
 
 function xtec_inactivity_deleted_blogs_page()
 {
-	?>	
+	?>
 	<div class="wrap">
 		<h2>Blocs eliminats per inactivitat</h2>
-		
+
 		<?php
 		global $wpdb;
 
 		$apage = isset( $_GET['apage'] ) ? intval( $_GET['apage'] ) : 1;
 		$num = isset( $_GET['num'] ) ? intval( $_GET['num'] ) : 25;
-		
+
 		$query = 'SELECT id, site_id, site_path, blogname, del_date, status FROM wp_delblocs WHERE status=2';
-		
+
 		$total = $wpdb->get_var( "SELECT COUNT(id) FROM wp_delblocs WHERE status=2");
-		
+
 		$query .= " LIMIT " . intval( ( $apage - 1 ) * $num) . ", " . intval( $num );
 		$blog_list = $wpdb->get_results( $query, ARRAY_A );
-		
+
 		$blog_navigation = paginate_links( array(
 			'base' => add_query_arg( 'apage', '%#%' ),
 			'format' => '',
@@ -295,16 +295,16 @@ function xtec_inactivity_deleted_blogs_page()
 			'current' => $apage
 		));
 		?>
-		
+
 		<p>Número de blocs eliminats per inactivitat fins al dia d'avui: <strong><?php echo $total; ?></strong></p>
-		<p><a href="?page=xtec-user-deleted-blogs">Llista els blocs eliminats pels usuaris</a></p>		
-		
+		<p><a href="?page=xtec-user-deleted-blogs">Llista els blocs eliminats pels usuaris</a></p>
+
 		<div class="tablenav">
 			<?php if ( $blog_navigation ) echo "<div class='tablenav-pages'>$blog_navigation</div>"; ?>
 		</div>
-		
+
 		<?php $blogname_columns = ( constant( "VHOST" ) == 'yes' ) ? __('Domain') : __('Path');	?>
-				
+
 		<table cellspacing="3" cellpadding="3" width="100%" class="widefat">
 			<thead>
 				<tr>
@@ -317,7 +317,7 @@ function xtec_inactivity_deleted_blogs_page()
 				</tr>
 			</thead>
 			<tbody>
-					
+
 			<?php
 			foreach ($blog_list as $blog) {
 				$site_id = $blog["site_id"];
@@ -330,7 +330,7 @@ function xtec_inactivity_deleted_blogs_page()
 				<tr style='background:#f55' class='alternate'>
 					<th scope="row"><?php echo $site_id?></th>
 					<td valign="top">
-						<?php echo $blogname ?> 
+						<?php echo $blogname ?>
 					</td>
 					<td valign="top">
 						<?php echo $site_path ?>
@@ -353,9 +353,9 @@ function xtec_inactivity_deleted_blogs_page()
 			}
 			?>
 			</tbody>
-		</table>		
+		</table>
 	</div>
-	<?php 
+	<?php
 }
 
 function xtec_user_deleted_blogs_page()
@@ -373,7 +373,7 @@ function xtec_user_deleted_blogs_page()
 			</div>
 			<?php
 		}
-	}	
+	}
 	?>
 
 	<div class="wrap" style="position:relative;">
@@ -384,27 +384,27 @@ function xtec_user_deleted_blogs_page()
 
 			<?php
 			global $wpdb;
-			
+
 			$apage = isset( $_GET['apage'] ) ? intval( $_GET['apage'] ) : 1;
 			$num = isset( $_GET['num'] ) ? intval( $_GET['num'] ) : 25;
-			
+
 			$query = "SELECT * FROM {$wpdb->blogs} WHERE deleted=1";
-			
+
 			$total = $wpdb->get_var( "SELECT COUNT(blog_id) FROM {$wpdb->blogs} WHERE deleted=1");
-			
+
 			$query .= " LIMIT " . intval( ( $apage - 1 ) * $num) . ", " . intval( $num );
 			$blog_list = $wpdb->get_results( $query, ARRAY_A );
-			
+
 			$blog_navigation = paginate_links( array(
 				'base' => add_query_arg( 'apage', '%#%' ),
 				'format' => '',
 				'total' => ceil($total / $num),
 				'current' => $apage
-			));			
+			));
 			?>
 
 			<p>Número de blocs eliminats pels usuaris: <strong><?php echo $total; ?></strong></p>
-			<p><a href="?page=xtec-inactivity-deleted-blogs">Llista els blocs eliminats per inactivitat</a></p>	
+			<p><a href="?page=xtec-inactivity-deleted-blogs">Llista els blocs eliminats per inactivitat</a></p>
 
 			<div class="tablenav">
 				<?php if ( $blog_navigation ) echo "<div class='tablenav-pages'>$blog_navigation</div>"; ?>
@@ -413,13 +413,13 @@ function xtec_user_deleted_blogs_page()
 					<br class="clear" />
 				</div>
 			</div>
-	
+
 			<br class="clear" />
 
 			<?php $blogname_columns = ( constant( "VHOST" ) == 'yes' ) ? __('Domain') : __('Path');	?>
-						
+
 			<table width="100%" cellpadding="3" cellspacing="3" class="widefat">
-	
+
 				<thead>
 					<tr>
 						<th class="check-column" scope="col"><input type="checkbox"/></th>
@@ -458,14 +458,14 @@ function xtec_user_deleted_blogs_page()
 							<?php
 						}
 					}
-					?>		
+					?>
 				</tbody>
 			</table>
 		</form>
 	</div>
 	<?php
 }
-	
+
 /**
  * Creates XTEC Maintenance database tables.
  */
@@ -494,8 +494,8 @@ function xtec_maintenance_activation_hook() {
                 user_email varchar(50) NOT NULL,
                 meta_value varchar(255) NOT NULL,
                 PRIMARY KEY (id));";
-        
-        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');              
+
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql);
     }
     add_option('$xtec_maintenance_db_version', $xtec_maintenance_db_version);
