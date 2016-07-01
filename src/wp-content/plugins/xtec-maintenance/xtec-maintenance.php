@@ -47,21 +47,24 @@ function xtec_maintenance_page()
 
 function xtec_delblogs_page()
 {	
-	if (isset($_POST['inactivity_days'])) { $inactivity_days = $_POST['inactivity_days']; }
-	else { $inactivity_days = get_site_option('xtec_maintenance_inactivity_days',90); }
+	$inactivity_days = isset($_REQUEST['inactivity_days']) ? $_REQUEST['inactivity_days']: get_site_option('xtec_maintenance_inactivity_days',90);
+
+	/*if (isset($_POST['inactivity_days'])) { $inactivity_days = $_POST['inactivity_days']; }
+	else { $inactivity_days = get_site_option('xtec_maintenance_inactivity_days',90); }*/
 	
-	if (isset($_POST['posts_pages'])) { $posts_pages = $_POST['posts_pages']; }
-	else { $posts_pages = get_site_option('xtec_maintenance_posts_pages',2); }
-	
+	$posts_pages = isset($_REQUEST['posts_pages']) ? $_REQUEST['posts_pages']: get_site_option('xtec_maintenance_posts_pages',2);
+
+
 	if (get_site_option('xtec_maintenance_never_upload_file',1) == 1) { $never_upload_file = true; }
 	else { $never_upload_file = false; }
 	
-	if (isset($_POST['never_upload_file'])) { $never_upload_file = true; }
+
+	if (isset($_REQUEST['never_upload_file'])) { $never_upload_file = $_REQUEST['never_upload_file']; }
 	else {
 		if (isset($_POST['submit']) || isset($_POST['set_as_default']) || isset($_POST['touch'])) {
 			$never_upload_file = false;
 		}
-	}	
+	}
 	?>
 	
 	<div class="wrap">
@@ -113,7 +116,7 @@ function xtec_delblogs_page()
 		}
 		echo "<p><a href=\"?page=xtec-delblogs\">Torna al formulari d'eliminació de blocs</a></p>";		
 	}
-	else {		
+	else {
 		if (isset($_POST['set_as_default'])) {
 			update_site_option( 'xtec_maintenance_inactivity_days', $_POST['inactivity_days'] );
 			update_site_option( 'xtec_maintenance_posts_pages', $_POST['posts_pages'] );
@@ -121,7 +124,7 @@ function xtec_delblogs_page()
 			update_site_option( 'xtec_maintenance_never_upload_file', $value );
 		}
 		?>
-		
+
 		<form action="?page=xtec-delblogs" method="post">
 			<table class="form-table">
 				<tbody>
@@ -170,20 +173,36 @@ function xtec_delblogs_page()
 				<?php } else { ?> - S'hi ha pujat <strong>alguna vegada</strong> algun fitxer.<br>
 				<?php }?>
 			</div>
-			
+
 			<div class="tablenav">
 				<div class="alignleft">
 						<input class="button-secondary" type="submit" value="Refresca la llista" name="submit"/>
 						<input class="button-secondary" type="submit" value="Elimina els blocs seleccionats" name="delete"/>
 						<input class="button-secondary" type="submit" value="Actualitza la data dels blocs seleccionats" name="touch"/>
 						<input class="button-secondary" type="submit" value="Desa els valors actuals com a predeterminats" name="set_as_default"/>
-						<br class="clear" />				
+						<br class="clear" />
 				</div>
 			</div>
 			<br class="clear" />
-			
+
 			<?php $blogname_columns = ( constant( "VHOST" ) == 'yes' ) ? __('Domain') : __('Path');	?>
-						
+
+			<?php
+
+			// Inactivity check
+			$date_limit = date("Y-m-d H:i:s",mktime()-($inactivity_days*86400));
+
+			$apage = isset( $_GET['apage'] ) ? intval( $_GET['apage'] ) : 1;
+			$num = isset( $_GET['num'] ) ? intval( $_GET['num'] ) : 25;
+
+			$query = 'SELECT `blog_id`, `path`, `registered`, UNIX_TIMESTAMP(`last_updated`) as last_updated FROM '.$wpdb->blogs.' WHERE last_updated<"'.$date_limit.'" AND deleted=0 AND blog_id!=1';
+
+			$total = $wpdb->get_var( 'SELECT count(`blog_id`) FROM '.$wpdb->blogs.' WHERE last_updated<"'.$date_limit.'" AND deleted=0 AND blog_id!=1' );
+
+			//$query .= " LIMIT " . intval( ( $apage - 1 ) * $num) . ", " . intval( $num );
+
+			$blogs = $wpdb->get_results( $query, ARRAY_A );
+			?>
 			<table cellspacing="3" cellpadding="3" width="100%" class="widefat">
 				<thead>
 					<tr>
@@ -197,30 +216,28 @@ function xtec_delblogs_page()
 				</thead>
 				<tbody id="the-list">
 					<?php
-					// Inactivity check
-					$date_limit = date("Y-m-d H:i:s",mktime()-($inactivity_days*86400));
-					$blogs = $wpdb->get_results( "SELECT `blog_id`, `path`, `registered`, UNIX_TIMESTAMP(`last_updated`) as last_updated FROM $wpdb->blogs WHERE last_updated<'$date_limit' AND deleted=0 AND blog_id!=1", ARRAY_A );
+					$show_pagination = 0;
+					$items = ($apage-1)*25;
+					$cont = 0;
 
-					foreach ($blogs as $blog) {
-						$blog_id      = $blog["blog_id"];
-						$path         = $blog["path"];
-						$registered   = $blog["registered"];
-						$last_updated = $blog["last_updated"];
-						
+					for($i=0;$i<count($blogs);$i++){
+
+						$blog_id      = $blogs[$i]["blog_id"];
+						$path         = $blogs[$i]["path"];
+						$registered   = $blogs[$i]["registered"];
+						$last_updated = $blogs[$i]["last_updated"];
+
 						$posts_pages_check = false;
-						$upload_check = false;						
-						
+						$upload_check = false;
+
 						$now = mktime();
 						$elapsed_days = (int)(($now-$last_updated)/86400);
-						
+
 						// Posts and Pages check
-						$posts_table = $wpdb->get_results( "SELECT post_type FROM `wp_".$blog_id."_posts`", ARRAY_A );
-						$posts = 0; $pages = 0;
-						foreach ($posts_table as $post_row) {
-							if ($post_row['post_type'] == 'post') { $posts++; }
-							else if ($post_row['post_type'] == 'page') { $pages++; }
-						}
-						if ($posts+$pages <= $posts_pages) {
+						$posts = $wpdb->get_results( "SELECT count(ID) as posts FROM `wp_".$blog_id."_posts` WHERE post_type='post'", ARRAY_A );
+						$pages = $wpdb->get_results( "SELECT count(ID) as pages FROM `wp_".$blog_id."_posts` WHERE post_type='page'", ARRAY_A );
+
+						if ($posts[0]['posts']+$pages[0]['pages'] <= $posts_pages) {
 							$posts_pages_check = true;
 						}
 
@@ -231,37 +248,66 @@ function xtec_delblogs_page()
 						else {
 							if (!$never_upload_file) { $upload_check = true; }
 						}
-						
+
 						// Check the rules
 						if ( $posts_pages_check && $upload_check) {
-							$path = $wpdb->get_var("SELECT `path` FROM `$wpdb->blogs` WHERE `blog_id`='{$blog_id}'");
-							?>
-							<tr class="alternate">
-								<th class="check-column" scope="row">
-									<input type="checkbox" value="<?php echo $blog_id?>" name="idblogs[]" id="blog_<?php echo $blog_id?>"/>
-								</th>
-								
-								<th scope="row"><?php echo $blog_id?></th>
-								<td valign="top">
-									<a rel="permalink" href="<?php echo $path?>"><?php echo $path?></a>
-								</td>
-								<td valign="top">
-									<?php echo '<strong>' . $elapsed_days . '</strong>'?>
-								</td>
-								<td valign="top">
-									<?php echo '<strong>' . ($posts+$pages) . '</strong>' . ' ('. $posts . '+' . $pages . ')'?>
-								</td>
-								<td valign="top">
-									<strong><?php if($never_upload_file) { ?>NO<?php } else { ?>SI<?php }?></strong>
-								</td>
-							</tr>
-							<?php
-						}						
+							$show_pagination = 1;
+							$cont++;
+
+							if( $cont > $items and $cont <= ($items+25)){
+								?>
+								<tr class="alternate">
+									<th class="check-column" scope="row">
+										<input type="checkbox" value="<?php echo $blog_id?>" name="idblogs[]" id="blog_<?php echo $blog_id?>"/>
+									</th>
+
+									<th scope="row"><?php echo $blog_id?></th>
+									<td valign="top">
+										<a rel="permalink" href="<?php echo $path?>"><?php echo $path?></a>
+									</td>
+									<td valign="top">
+										<?php echo '<strong>' . $elapsed_days . '</strong>'?>
+									</td>
+									<td valign="top">
+										<?php echo '<strong>' . ($posts[0]['posts']+$pages[0]['pages']) . '</strong>' . ' ('. $posts[0]['posts'] . '+' . $pages[0]['pages'] . ')'?>
+									</td>
+									<td valign="top">
+										<strong><?php if($never_upload_file) { ?>NO<?php } else { ?>SI<?php }?></strong>
+									</td>
+								</tr>
+								<?php
+							}
+						}
 					}
 					?>
 				</tbody>
 			</table>
-		</form>		
+			<?php
+
+			//Add pagination
+			$blog_navigation = paginate_links( array(
+				'base' => add_query_arg( 'apage', '%#%'),
+				'format' => '',
+				'total' => ceil($cont / $num),
+				'current' => $apage,
+				'add_args' => array('posts_pages'=>$posts_pages,'inactivity_days'=>$inactivity_days,'never_upload_file'=>$never_upload_file),
+			));
+
+			?>
+
+			<div class="tablenav">
+				<?php if ( $blog_navigation ) echo "<div class='tablenav-pages'>".$blog_navigation."</div>"; ?>
+			</div>
+		</form>
+		<script>
+			var show_pagination = <?php echo $show_pagination ?>;
+			if(show_pagination == 0){
+				var elements = document.getElementsByClassName('tablenav-pages');
+			    for(var i = 0, length = elements.length; i < length; i++) {
+					elements[i].style.display = 'none';
+			    }
+			}
+		</script>
 		<?php
 	}
 	?>
@@ -320,6 +366,7 @@ function xtec_inactivity_deleted_blogs_page()
 					
 			<?php
 			foreach ($blog_list as $blog) {
+
 				$site_id = $blog["site_id"];
 				$site_path = $blog["site_path"];
 				$blogname = $blog["blogname"];
