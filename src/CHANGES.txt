@@ -5,6 +5,7 @@ development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+- mu-common: Allow shortcodes into taxonomy description, like categories or tags (Trello #1263)
 
 
 
