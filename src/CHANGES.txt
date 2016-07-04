@@ -15,6 +15,7 @@ development home at https://github.com/projectestac/xtecblocs
 - mu-common: Allow shortcodes into taxonomy description, like categories or tags (Trello #1263)
 - raw-html: Removed plugin (Trello #568)
 - xtec-ms-manager: Improved usage of memory in SQL execution (Trello #1176)
+- xtec-maintenance: Add pager to the list of inactive blogs (Trello #1096)
 
 
 16.06.15
