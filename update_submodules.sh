@@ -10,7 +10,6 @@ gitcheckout "src/wp-content/plugins/anti-spam" "master" "git@github.com:projecte
 gitcheckout "src/wp-content/plugins/blogger-importer" "master" "git@github.com:projectestac/wordpress-blogger-importer.git"
 gitcheckout "src/wp-content/plugins/google-analyticator" "master" "git@github.com:projectestac/wordpress-google-analyticator.git"
 gitcheckout "src/wp-content/plugins/google-calendar-events" "master" "git@github.com:projectestac/wordpress-gce.git"
-gitcheckout "src/wp-content/plugins/raw-html" "master" "git@github.com:projectestac/wordpress-raw-html.git"
 gitcheckout "src/wp-content/plugins/slideshow-jquery-image-gallery" "master" "git@github.com:projectestac/wordpress-slideshow-jig.git"
 gitcheckout "src/wp-content/plugins/tinymce-advanced" "master" "git@github.com:projectestac/wordpress-tinymce-advanced.git"
 gitcheckout "src/wp-content/plugins/wordpress-importer" "master" "git@github.com:projectestac/wordpress-importer.git"
@@ -28,4 +27,3 @@ gitcheckout "src/wp-content/themes/twentyten" "master" "git@github.com:projectes
 gitcheckout "src/wp-content/themes/twentytwelve" "master" "git@github.com:projectestac/wordpress-theme-twentytwelve.git"
 gitcheckout "src/wp-content/themes/twentysixteen" "master" "git@github.com:projectestac/wordpress-theme-twentysixteen.git"
 gitcheckout "src/wp-includes/xtec" "master" "git@github.com:projectestac/wordpress-xtec.git"
-
