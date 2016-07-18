@@ -171,7 +171,14 @@ case 'dodelete':
 
 	foreach ( $userids as $id ) {
 
-        if ( ! current_user_can( 'delete_user', $id ) )
+		// XTEC ************ AFEGIT - Xtecadmin cannot be deleted (actual remove step)
+		// 2014.09.03 @aginard
+		if ($isAgora && ($id == get_xtecadmin_id())) {
+			wp_die(__('You do not have permission to do that.'));
+		}
+		//************ FI
+
+		if ( ! current_user_can( 'delete_user', $id ) )
 			wp_die(__( 'You can&#8217;t delete that user.' ) );
 
 		if ( $id == $current_user->ID ) {
@@ -249,26 +256,20 @@ case 'delete':
 	foreach ( $userids as $id ) {
 		$user = get_userdata( $id );
 
-        // XTEC ************ MODIFICAT - Xtecadmin and admin users cannot be deleted (confirmation step)
-        // 2015.11.05 @nacho
-
-        $username = $user->user_login;
+		// XTEC ************ MODIFICAT - Xtecadmin and admin users cannot be deleted (confirmation step)
+		// 2015.11.05 @nacho
+		$username = $user->user_login;
 		if ( $id == $current_user->ID || $username == ADMIN_USERNAME || $username == XTECADMIN_USERNAME ) {
+		//************ ORIGINAL
+		/*
+		if ( $id == $current_user->ID ) {
+		*/
+		//************ FI
 
-        //************ ORIGINAL
-        /*
-        if ( $id == $current_user->ID ) {
-        */
-        //************ FI
-
-                echo "<li>" . sprintf(__('ID #%1$s: %2$s <strong>The current user will not be deleted.</strong>'), $id, $user->user_login) . "</li>\n";
-
-            // XTEC ************ AFEGIT - Xtecadmin and admin user cannot be deleted (confirmation step)
-            // 2015.11.05 @nacho
-			exit;
-            //************ FI
-
+			/* translators: 1: user id, 2: user login */
+			echo "<li>" . sprintf(__('ID #%1$s: %2$s <strong>The current user will not be deleted.</strong>'), $id, $user->user_login) . "</li>\n";
 		} else {
+			/* translators: 1: user id, 2: user login */
 			echo "<li><input type=\"hidden\" name=\"users[]\" value=\"" . esc_attr($id) . "\" />" . sprintf(__('ID #%1$s: %2$s'), $id, $user->user_login) . "</li>\n";
 			$go_delete++;
 		}
@@ -290,17 +291,23 @@ case 'delete':
 			<?php _e('Delete all content.'); ?></label></li>
 			<li><input type="radio" id="delete_option1" name="delete_option" value="reassign" />
 			<?php echo '<label for="delete_option1">' . __( 'Attribute all content to:' ) . '</label> ';
-			wp_dropdown_users( array( 'name' => 'reassign_user', 'exclude' => array_diff( $userids, array($current_user->ID) ) ) ); ?></li>
+			wp_dropdown_users( array(
+				'name' => 'reassign_user',
+				'exclude' => array_diff( $userids, array( $current_user->ID ) ),
+				'show' => 'display_name_with_login',
+			) ); ?></li>
 		</ul></fieldset>
 	<?php endif;
 	/**
 	 * Fires at the end of the delete users form prior to the confirm button.
 	 *
 	 * @since 4.0.0
+	 * @since 4.5.0 The `$userids` parameter was added.
 	 *
-	 * @param WP_User $current_user WP_User object for the user being deleted.
+	 * @param WP_User $current_user WP_User object for the current user.
+	 * @param array   $userids      Array of IDs for users being deleted.
 	 */
-	do_action( 'delete_user_form', $current_user );
+	do_action( 'delete_user_form', $current_user, $userids );
 	?>
 	<input type="hidden" name="action" value="dodelete" />
 	<?php submit_button( __('Confirm Deletion'), 'primary' ); ?>
@@ -389,10 +396,13 @@ case 'remove':
 		$id = (int) $id;
  		$user = get_userdata( $id );
 		if ( $id == $current_user->ID && !is_super_admin() ) {
+			/* translators: 1: user id, 2: user login */
 			echo "<li>" . sprintf(__('ID #%1$s: %2$s <strong>The current user will not be removed.</strong>'), $id, $user->user_login) . "</li>\n";
 		} elseif ( !current_user_can('remove_user', $id) ) {
-			echo "<li>" . sprintf(__('ID #%1$s: %2$s <strong>You don\'t have permission to remove this user.</strong>'), $id, $user->user_login) . "</li>\n";
+			/* translators: 1: user id, 2: user login */
+			echo "<li>" . sprintf(__('ID #%1$s: %2$s <strong>You don&#8217;t have permission to remove this user.</strong>'), $id, $user->user_login) . "</li>\n";
 		} else {
+			/* translators: 1: user id, 2: user login */
 			echo "<li><input type=\"hidden\" name=\"users[]\" value=\"{$id}\" />" . sprintf(__('ID #%1$s: %2$s'), $id, $user->user_login) . "</li>\n";
 			$go_remove = true;
 		}
@@ -442,6 +452,7 @@ default:
 			break;
 		case 'add':
 			if ( isset( $_GET['id'] ) && ( $user_id = $_GET['id'] ) && current_user_can( 'edit_user', $user_id ) ) {
+				/* translators: %s: edit page url */
 				$messages[] = '<div id="message" class="updated notice is-dismissible"><p>' . sprintf( __( 'New user created. <a href="%s">Edit user</a>' ),
 					esc_url( add_query_arg( 'wp_http_referer', urlencode( wp_unslash( $_SERVER['REQUEST_URI'] ) ),
 						self_admin_url( 'user-edit.php?user_id=' . $user_id ) ) ) ) . '</p></div>';
@@ -491,13 +502,16 @@ if ( ! empty($messages) ) {
 <?php
 echo esc_html( $title );
 if ( current_user_can( 'create_users' ) ) { ?>
-	<a href="user-new.php" class="page-title-action"><?php echo esc_html_x( 'Add New', 'user' ); ?></a>
+	<a href="<?php echo admin_url( 'user-new.php' ); ?>" class="page-title-action"><?php echo esc_html_x( 'Add New', 'user' ); ?></a>
 <?php } elseif ( is_multisite() && current_user_can( 'promote_users' ) ) { ?>
-	<a href="user-new.php" class="page-title-action"><?php echo esc_html_x( 'Add Existing', 'user' ); ?></a>
+	<a href="<?php echo admin_url( 'user-new.php' ); ?>" class="page-title-action"><?php echo esc_html_x( 'Add Existing', 'user' ); ?></a>
 <?php }
 
-if ( $usersearch )
-	printf( '<span class="subtitle">' . __('Search results for &#8220;%s&#8221;') . '</span>', esc_html( $usersearch ) ); ?>
+if ( strlen( $usersearch ) ) {
+	/* translators: %s: search keywords */
+	printf( '<span class="subtitle">' . __( 'Search results for &#8220;%s&#8221;' ) . '</span>', esc_html( $usersearch ) );
+}
+?>
 </h1>
 
 <?php $wp_list_table->views(); ?>
