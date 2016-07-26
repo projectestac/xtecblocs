@@ -441,12 +441,10 @@ $wpdb->add_table('global', 'wp_delblocs_users');
 $wpdb->add_table('global', 'wp_descriptors');
 $wpdb->add_table('global', 'wp_descriptors_pre');
 $wpdb->add_table('global', 'wp_globalposts');
+$wpdb->add_table('global', 'wp_request_types');
+$wpdb->add_table('global', 'wp_requests');
 $wpdb->add_table('global', 'wp_search');
 $wpdb->add_table('global', 'wp_user_blogs');
-
-// add Peter's Custom Anti Spam tables in global database
-$wpdb->add_table('global', 'wp_cas_image');
-$wpdb->add_table('global', 'wp_cas_count');
 
 // tables from an upgrade of WPMU
 // add the tables for the first blog (created during wpmu installation) in global database
