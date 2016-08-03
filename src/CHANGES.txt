@@ -17,6 +17,7 @@ development home at https://github.com/projectestac/xtecblocs
 - xtec-ms-manager: Improved usage of memory in SQL execution (Trello #1176)
 - xtec-maintenance: Add pager to the list of inactive blogs (Trello #1096)
 - xtec-signup: Changed text that appears when a logged user tries to create a blog, but they can't because are not an XTEC user (Trello #1306)
+- add-to-any: Show the same options to admins in Nodes and in XTECBlocs (Trello #1031)
 
 
 16.06.15
