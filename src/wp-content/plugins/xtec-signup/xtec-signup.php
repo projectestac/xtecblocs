@@ -82,7 +82,7 @@ function xtec_signup()
 				foreach ( $blogs as $idblog ) {
 					$siteurl = get_blog_option($idblog,'siteurl');
 					$blogname = get_blog_option($idblog,'blogname');		
-					echo "<li><a href='$siteurl'\>$blogname</a></li>";
+					echo "<li><a href=\"$siteurl\">$blogname</a></li>";
 				}
 				?>
 			</ul>
@@ -93,7 +93,7 @@ function xtec_signup()
 		}
 	}
 	else {
-		echo "<p class=\"notAllowed\">No teniu autorització per crear blocs nous.</p>\n";
+		echo "<p class=\"notAllowed\">Només poden crear blogs els usuaris XTEC.</p>\n";
 	}
 	?>
 	

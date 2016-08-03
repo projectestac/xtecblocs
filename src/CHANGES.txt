@@ -6,9 +6,9 @@ development home at https://github.com/projectestac/xtecblocs
 16.08.08
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.5.3 (Trello #1272)
-- mu-common: Allow shortcodes into taxonomy description, like categories or tags (Trello #1263)
 - Reviewed embed support in kses to let contributors add Picasa web albums (Trello #1182)
 - Translated menu option "Add Media" to catalan (Trello #1254)
+- mu-common: Allow shortcodes into taxonomy description, like categories or tags (Trello #1263)
 - mu-common: Deactivate pingback to avoid attacks to other sites (Trello #1275)
 - mu-common: Removed fix for post thumbnails broken due to upgrading to WP 4.4. No longer necessary in WP 4.5
 - mu-common: Check script label to only allow Gallery.io scripts to contributor users rol (Trello #1182)
@@ -16,6 +16,7 @@ development home at https://github.com/projectestac/xtecblocs
 - raw-html: Removed plugin (Trello #568)
 - xtec-ms-manager: Improved usage of memory in SQL execution (Trello #1176)
 - xtec-maintenance: Add pager to the list of inactive blogs (Trello #1096)
+- xtec-signup: Changed text that appears when a logged user tries to create a blog, but they can't because are not an XTEC user (Trello #1306)
 
 
 16.06.15
