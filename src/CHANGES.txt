@@ -12,7 +12,6 @@ development home at https://github.com/projectestac/xtecblocs
 - mu-common: Deactivate pingback to avoid attacks to other sites (Trello #1275)
 - mu-common: Removed fix for post thumbnails broken due to upgrading to WP 4.4. No longer necessary in WP 4.5
 - mu-common: Check script label to only allow Gallery.io scripts to contributor users rol (Trello #1182)
-- mu-common: Allow shortcodes into taxonomy description, like categories or tags (Trello #1263)
 - raw-html: Removed plugin (Trello #568)
 - xtec-ms-manager: Improved usage of memory in SQL execution (Trello #1176)
 - xtec-maintenance: Add pager to the list of inactive blogs (Trello #1096)
