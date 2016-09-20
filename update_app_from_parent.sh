@@ -131,6 +131,7 @@ delete_new wp-content/plugins/pending-submission-notifications
 delete_new wp-content/plugins/private-bp-pages
 delete_new wp-content/plugins/socialmedia
 delete_new wp-content/plugins/widget-visibility-without-jetpack
+delete_new wp-content/plugins/xtec-booking
 delete_new wp-content/plugins/xtec-stats
 delete_new wp-content/plugins/AFEGIT_XTEC
 delete_new wp-content/plugins/ELIMINAT_XTEC
