@@ -3,6 +3,16 @@ Release notes for XTECBlocs (http://blocs.xtec.cat)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/xtecblocs
 
+Changes in progress
+---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 4.5.4 (Trello #1345)
+- add-to-any: Show the same options to admins in Nodes and in XTECBlocs (Trello #1031)
+- blogger-importer: Fixed import of images (Trello #1340)
+- xtec lib: Synced code with Nodes
+- New users: Fixed URL to change password, which was not being shown in email sent to new users
+
+
+
 16.08.08
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.5.3 (Trello #1272)
