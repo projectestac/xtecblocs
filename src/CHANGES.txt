@@ -13,6 +13,7 @@ Changes in progress
 - multisite-plugin-manager: Added optional parameter "extramem" to increase available memory
 - xtec-ms-manager: Implemented request system (Trello #1176)
 - xtec-widget-data-users: Added plugin to show a widget with basic information of the author (Trello #1366)
+- Fukasawa: upgraded theme from 1.09 to 1.10
 
 
 16.08.08
