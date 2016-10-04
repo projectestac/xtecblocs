@@ -10,7 +10,7 @@ Changes in progress
 - blogger-importer: Fixed import of images (Trello #1340)
 - xtec lib: Synced code with Nodes
 - New users: Fixed URL to change password, which was not being shown in email sent to new users
-
+- multisite-plugin-manager: Added optional parameter "extramem" to increase available memory
 
 
 16.08.08

@@ -291,18 +291,21 @@ class PluginManager {
 
 	//activate on new blog
 	function new_blog($blog_id) {
-		require_once( ABSPATH.'wp-admin/includes/plugin.php' );
+	  require_once( ABSPATH.'wp-admin/includes/plugin.php' );
+
 		// XTEC ************ AFEGIT - Test if auto_activate is an array in order to avoid errors when creating new site.
 		// 2015.04.22 @vsaavedr
 		$auto_activate_list = get_site_option('pm_auto_activate_list');
 		if ( (!empty($auto_activate_list)) && ($auto_activate_list !='EMPTY') ) {
 		// ************ FI
+
 			$auto_activate = (array)get_site_option('pm_auto_activate_list');
 			if (count($auto_activate)) {
-				switch_to_blog($blog_id);
-				activate_plugins($auto_activate, '', false); //silently activate any plugins
-				restore_current_blog();
+		    switch_to_blog($blog_id);
+		    activate_plugins($auto_activate, '', false); //silently activate any plugins
+		    restore_current_blog();
 			}
+
 		// XTEC ************ AFEGIT - Test if auto_activate is an array in order to avoid errors when creating new site.
 		// 2015.04.22 @vsaavedr
 		}
@@ -327,8 +330,15 @@ class PluginManager {
         set_time_limit(3600); // 1 hour
         //************ ORIGINAL
         /*
-    set_time_limit(120);
+        set_time_limit(120);
         */
+        // ************ FI
+
+		// XTEC ************ AFEGIT - In case it is requested via URL, try to increase memory limit
+		// 2016.10.04 @aginard
+		if ( isset( $_GET['extramem'] )) {
+			ini_set('memory_limit','500M');
+		}
         // ************ FI
 
 		$blogs = $wpdb->get_col("SELECT blog_id FROM {$wpdb->blogs} WHERE site_id = {$wpdb->siteid} AND spam = 0");
@@ -339,13 +349,13 @@ class PluginManager {
 		    restore_current_blog();
 			}
 			?><div id="message" class="updated fade"><p><span style="color:#FF3300;"><?php echo esc_html($plugin); ?></span><?php _e(' has been MASS ACTIVATED.', 'pm'); ?></p></div><?php
-  	} else {
-      ?><div class="error"><p><?php _e('Failed to mass activate: error selecting blogs', 'pm'); ?></p></div><?php
+	    } else {
+            ?><div class="error"><p><?php _e('Failed to mass activate: error selecting blogs', 'pm'); ?></p></div><?php
 		}
 	}
 
 	function mass_deactivate($plugin) {
-  	global $wpdb;
+  	    global $wpdb;
 
 		// XTEC ************ AFEGIT - Deactivate large network restriction
 		// 2016.06.08 @aginard
@@ -362,8 +372,15 @@ class PluginManager {
         set_time_limit(3600); // 1 hour
         //************ ORIGINAL
         /*
-    set_time_limit(120);
+        set_time_limit(120);
         */
+        // ************ FI
+
+		// XTEC ************ AFEGIT - In case it is requested via URL, try to increase memory limit
+		// 2016.10.04 @aginard
+		if ( isset( $_GET['extramem'] )) {
+			ini_set('memory_limit','500M');
+		}
         // ************ FI
 
 		$blogs = $wpdb->get_col("SELECT blog_id FROM {$wpdb->blogs} WHERE site_id = {$wpdb->siteid} AND spam = 0");
@@ -375,7 +392,7 @@ class PluginManager {
 			}
 			?><div id="message" class="updated fade"><p><span style="color:#FF3300;"><?php echo esc_html($plugin); ?></span><?php _e(' has been MASS DEACTIVATED.', 'pm'); ?></p></div><?php
 		} else {
-      ?><div class="error"><p><?php _e('Failed to mass deactivate: error selecting blogs', 'pm'); ?></p></div><?php
+            ?><div class="error"><p><?php _e('Failed to mass deactivate: error selecting blogs', 'pm'); ?></p></div><?php
 		}
 	}
 
