@@ -11,6 +11,7 @@ Changes in progress
 - xtec lib: Synced code with Nodes
 - New users: Fixed URL to change password, which was not being shown in email sent to new users
 - multisite-plugin-manager: Added optional parameter "extramem" to increase available memory
+- xtec-ms-manager: Implemented request system (Trello #1176)
 
 
 16.08.08
