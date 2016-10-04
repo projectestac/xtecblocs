@@ -14,6 +14,7 @@ Changes in progress
 - xtec-ms-manager: Implemented request system (Trello #1176)
 - xtec-widget-data-users: Added plugin to show a widget with basic information of the author (Trello #1366)
 - Fukasawa: upgraded theme from 1.09 to 1.10
+- TwentyEleven: upgraded theme from 2.4 to 2.5
 
 
 16.08.08
