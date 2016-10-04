@@ -8,13 +8,14 @@ Changes in progress
 - Upgraded WordPress to version 4.5.4 (Trello #1345)
 - add-to-any: Show the same options to admins in Nodes and in XTECBlocs (Trello #1031)
 - blogger-importer: Fixed import of images (Trello #1340)
+- wordpress-importer: Upgraded plugin from 0.6.1 to 0.6.3
 - xtec lib: Synced code with Nodes
 - New users: Fixed URL to change password, which was not being shown in email sent to new users
 - multisite-plugin-manager: Added optional parameter "extramem" to increase available memory
 - xtec-ms-manager: Implemented request system (Trello #1176)
 - xtec-widget-data-users: Added plugin to show a widget with basic information of the author (Trello #1366)
-- Fukasawa: upgraded theme from 1.09 to 1.10
-- TwentyEleven: upgraded theme from 2.4 to 2.5
+- Fukasawa: Upgraded theme from 1.09 to 1.10
+- TwentyEleven: Upgraded theme from 2.4 to 2.5
 
 
 16.08.08
