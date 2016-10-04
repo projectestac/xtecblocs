@@ -1,0 +1,67 @@
+# WordPress Blank Pot
+# Copyright (C) 2014 ...
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Xtec Widget Users Data\n"
+"Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
+"POT-Creation-Date: 2016-09-29 11:34+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;"
+"_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;"
+"__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: xtec-class-data-user.php:33
+msgid "Widget to add data users"
+msgstr "Giny per afegir informació personal sobre l'autor del lloc"
+
+#: xtec-class-data-user.php:35
+msgid "Users information"
+msgstr "Dades d'usuari"
+
+#: xtec-class-data-user.php:73
+msgid "Image"
+msgstr "Imatge"
+
+#: xtec-class-data-user.php:78
+msgid "Upload Image"
+msgstr "Afegeix una imatge"
+
+#: xtec-class-data-user.php:82
+msgid "Name and surnames"
+msgstr "Nom i cognoms"
+
+#: xtec-class-data-user.php:86
+msgid "About user"
+msgstr "Informació de perfil"
+
+#: xtec-class-data-user.php:90
+msgid "E-mail"
+msgstr "Correu electrònic"
+
+#: xtec-class-data-user.php:94
+msgid "Web"
+msgstr "Pàgina web"
+
+#: xtec-class-data-user.php:98
+msgid "Twitter"
+msgstr "Twitter"
+
+#~ msgid "Name"
+#~ msgstr "Nom"
+
+#~ msgid "First name"
+#~ msgstr "Cognoms"
