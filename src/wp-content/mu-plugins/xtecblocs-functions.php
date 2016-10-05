@@ -58,3 +58,17 @@ add_filter('wp_insert_post_data', 'fix_spanish_scribd_oembed', 10, 2);
 * @author sarjona
 */
 remove_filter('force_filtered_html_on_import', '__return_true');
+
+/**
+* When create a new post, we check default comment status value and assign it.
+*
+* @author xaviernietosanchez
+*/
+function my_project_updated_send_email( $data, $postarr ) {
+	if( $data['post_status'] == 'auto-draft' && $data['post_title'] == 'Esborrany automàtic' ){
+		$data['comment_status'] = get_default_comment_status();
+	}
+
+	return $data;
+}
+add_action( 'wp_insert_post_data', 'my_project_updated_send_email', 10, 2 );
