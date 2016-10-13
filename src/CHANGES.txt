@@ -11,6 +11,7 @@ Changes in progress
 - mu-common: Fixed default comment status. Restored default action about comment status parameter (Trello #1365)
 - mu-common: Added Automatic creation of featured image (Imatge resum) (Trello #1284)
 - TwentyFifteen: Upgraded theme from 1.5 to 1.6 and converted in a submodule
+- xtec-widget-data-users: Fixed icons not shown when logged out, changed icons to Genericicons, checked for an @ in twitter (Trello #1366)
 
 
 16.10.07

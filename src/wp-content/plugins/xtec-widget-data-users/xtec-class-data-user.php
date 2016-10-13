@@ -113,6 +113,7 @@ class users_data_widget extends WP_Widget {
 		$twitter = str_replace('http//','',$twitter);
 		$twitter = str_replace('twitter.com/','',$twitter);
 		$twitter = str_replace('twitter.com','',$twitter);
+		$twitter = str_replace('@','',$twitter);
 
         // Con sanitize_text_field eliminamos HTML de los campos
         $instance['image_uri'] = sanitize_text_field($new_instance['image_uri']);
@@ -138,6 +139,9 @@ class users_data_widget extends WP_Widget {
         $twitter = $instance['twitter'];
 
         $imageDefault = plugins_url() . '/xtec-widget-data-users/assets/images/user_default.png';
+        $imageTwitter = plugins_url() . '/xtec-widget-data-users/assets/images/twitter.png';
+        $imageUrl = plugins_url() . '/xtec-widget-data-users/assets/images/url.png';
+        $imageMail = plugins_url() . '/xtec-widget-data-users/assets/images/mail.png';
 
         // Crop mail
         $emailComplete = $email;
@@ -162,7 +166,9 @@ class users_data_widget extends WP_Widget {
         }
 
 
+        $twitter = str_replace('@','',$twitter);
         $twitterComplete = 'https://twitter.com/'.$twitter;
+
 		// Crop twitter
         if( strlen($twitter) > 28 ){
         	$twitter = substr($twitter,0,25).'...';
@@ -205,7 +211,8 @@ class users_data_widget extends WP_Widget {
 				if ( $instance['email'] != '' ){
 			?>
 					<p id="widget_mail_info" class="widget-text-list widget-email-info">
-						<span class="dashicons dashicons-email widget-icons-list"></span><span class="widget-mail-content email-info" data-small="<?php echo $email; ?>" data-large="<?php echo $emailComplete ?>"><?php echo $email; ?></span>
+						<span class="genericon genericon-mail iconMail"></span>
+						<span class="widget-mail-content email-info" data-small="<?php echo $email; ?>" data-large="<?php echo $emailComplete ?>"><?php echo $email; ?></span>
 					</p>
 			<?php
 				}
@@ -213,7 +220,7 @@ class users_data_widget extends WP_Widget {
 				if ( $instance['web'] != '' ){
 			?>
 					<p class="widget-text-list">
-						<span class="dashicons dashicons-admin-site widget-icons-list"></span>
+						<span class="genericon genericon-website iconUrl"></span>
 						<a class="widget-link" target="_blank" href="<?php echo $webComplete; ?>">
 							<?php echo $web; ?>
 						</a>
@@ -224,7 +231,7 @@ class users_data_widget extends WP_Widget {
 				if ( $instance['twitter'] != '' ){
 			?>
 					<p class="widget-text-list">
-						<span class="dashicons dashicons-twitter widget-icons-list"></span>
+						<span class="genericon genericon-twitter iconTwitter"></span>
 						<a class="widget-link" target="_blank" href="<?php echo $twitterComplete; ?>">
 							@<?php echo $twitter; ?>
 						</a>
@@ -243,6 +250,7 @@ class users_data_widget extends WP_Widget {
 	    wp_register_script( 'widget-users-data-js', plugins_url() . '/xtec-widget-data-users/assets/js/widget-js.js', array('jquery'),'1.1', true );
 		wp_enqueue_script( 'widget-users-data-js' );
 		wp_enqueue_style( 'widget-users-data-css', plugins_url() . '/xtec-widget-data-users/assets/css/widget-style.css' );
+		wp_enqueue_style( 'fukasawa_genericons', plugins_url() . '/xtec-widget-data-users/assets/genericons/genericons.css' );
 
 	}
 }
