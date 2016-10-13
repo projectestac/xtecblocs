@@ -26,7 +26,7 @@ div.widget-global-content p{
 div.widget-global-content p.widget-text-list{
 	margin-bottom: 5px;
 	font-size: 14px;
-	line-height: 1.0em !important;
+	line-height: 1em !important;
 }
 
 div.widget-global-content strong{
@@ -36,7 +36,6 @@ div.widget-global-content strong{
 .widget-content-image{
 	max-width: 225px;
 	max-height: 150px;
-	background-color: white;
 	overflow:  hidden;
 }
 
@@ -59,17 +58,18 @@ a.widget-link{
 .widget-icons-list{
 	display: inline;
 	font-size: 13px;
-	margin-right: 4px;
 	vertical-align: middle !important;
 	color: #676767;
 }
 
 .widget-email-info{
 	overflow: hidden;
+	min-width: 230px;
 }
 
 .widget-email-info:hover{
 	overflow: visible;
+	min-width: 300px;
 }
 
 .widget-image-url{
@@ -91,4 +91,20 @@ a.widget-link{
 
 .widget-name{
 	margin-bottom: 5px !important;
+}
+
+.genericon{
+	color: #858585;
+}
+
+.iconMail{
+	margin-right: 3px;
+}
+
+.iconUrl{
+	margin-right: 5px;
+}
+
+.iconTwitter{
+	margin-right: 5px;
 }
