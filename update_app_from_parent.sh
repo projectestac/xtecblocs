@@ -84,6 +84,7 @@ copy_to_new_dir wp-content/plugins/xtec-settings
 copy_to_new_dir wp-content/plugins/xtec-signup
 copy_to_new_dir wp-content/plugins/xtec-users
 copy_to_new_dir wp-content/plugins/xtec-weekblog2
+copy_to_new_dir wp-content/plugins/xtec-widget-data-users
 copy_to_new_dir wp-content/themes/classic-chalkboard
 copy_to_new_dir wp-content/themes/delicacy
 copy_to_new_dir wp-content/themes/freshy2
