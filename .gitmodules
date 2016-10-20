@@ -73,3 +73,6 @@
 [submodule "src/wp-content/themes/twentysixteen"]
 	path = src/wp-content/themes/twentysixteen
 	url = https://github.com/projectestac/wordpress-theme-twentysixteen.git
+[submodule "src/wp-content/themes/twentyfifteen"]
+	path = src/wp-content/themes/twentyfifteen
+	url = https://github.com/projectestac/wordpress-theme-twentyfifteen.git

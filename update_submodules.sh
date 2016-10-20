@@ -23,6 +23,7 @@ gitcheckout "src/wp-content/plugins/xtec-ms-manager" "master" "git@github.com:pr
 gitcheckout "src/wp-content/themes/fukasawa" "master" "git@github.com:projectestac/wordpress-theme-fukasawa.git"
 gitcheckout "src/wp-content/themes/reddle" "master" "git@github.com:projectestac/wordpress-theme-reddle.git"
 gitcheckout "src/wp-content/themes/twentyeleven" "master" "git@github.com:projectestac/wordpress-theme-twentyeleven.git"
+gitcheckout "src/wp-content/themes/twentyfifteen" "master" "git@github.com:projectestac/wordpress-theme-twentyfifteen.git"
 gitcheckout "src/wp-content/themes/twentyten" "master" "git@github.com:projectestac/wordpress-theme-twentyten.git"
 gitcheckout "src/wp-content/themes/twentytwelve" "master" "git@github.com:projectestac/wordpress-theme-twentytwelve.git"
 gitcheckout "src/wp-content/themes/twentysixteen" "master" "git@github.com:projectestac/wordpress-theme-twentysixteen.git"
