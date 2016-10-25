@@ -12,6 +12,8 @@ Changes in progress
 - mu-common: Added Automatic creation of featured image (Imatge resum) (Trello #1284)
 - TwentyFifteen: Upgraded theme from 1.5 to 1.6 and converted in a submodule
 - xtec-widget-data-users: Fixed icons not shown when logged out, changed icons to Genericicons, checked for an @ in twitter (Trello #1366)
+- xtec-ms-manager: Request system: Added notification of state changes by email (Trello #1176)
+- xtec-ms-manager: sql-exec: Added summary of results and minor code improvements (Trello #1176)
 
 
 16.10.07
