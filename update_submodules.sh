@@ -10,6 +10,7 @@ gitcheckout "src/wp-content/plugins/anti-spam" "master" "git@github.com:projecte
 gitcheckout "src/wp-content/plugins/blogger-importer" "master" "git@github.com:projectestac/wordpress-blogger-importer.git"
 gitcheckout "src/wp-content/plugins/google-analyticator" "master" "git@github.com:projectestac/wordpress-google-analyticator.git"
 gitcheckout "src/wp-content/plugins/google-calendar-events" "master" "git@github.com:projectestac/wordpress-gce.git"
+gitcheckout "src/wp-content/plugins/multisite-plugin-manager" "master" "git@github.com:projectestac/wordpress-multisite-plugin-manager.git"
 gitcheckout "src/wp-content/plugins/slideshow-jquery-image-gallery" "master" "git@github.com:projectestac/wordpress-slideshow-jig.git"
 gitcheckout "src/wp-content/plugins/tinymce-advanced" "master" "git@github.com:projectestac/wordpress-tinymce-advanced.git"
 gitcheckout "src/wp-content/plugins/wordpress-importer" "master" "git@github.com:projectestac/wordpress-importer.git"

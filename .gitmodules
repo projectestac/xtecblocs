@@ -76,3 +76,6 @@
 [submodule "src/wp-content/themes/twentyfifteen"]
 	path = src/wp-content/themes/twentyfifteen
 	url = https://github.com/projectestac/wordpress-theme-twentyfifteen.git
+[submodule "src/wp-content/plugins/multisite-plugin-manager"]
+	path = src/wp-content/plugins/multisite-plugin-manager
+	url = https://github.com/projectestac/wordpress-multisite-plugin-manager.git
