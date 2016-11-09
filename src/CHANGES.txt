@@ -3,7 +3,7 @@ Release notes for XTECBlocs (http://blocs.xtec.cat)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/xtecblocs
 
-Changes in progress
+16.11.14
 ---------------------------------------------------------------------------------------
 - Dashboard: Reviewed access to menu options in dashboard for roles xtec_teacher and contributor (Trello #1354)
 - add-to-any: Upgraded plugin from 1.6.17 to 1.7 (Trello #1283)
