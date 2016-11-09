@@ -17,6 +17,8 @@ Changes in progress
 - xtec-ms-manager: sql-exec: Added execution of SQL in main database (Trello #1176)
 - add-to-any: Upgraded plugin from version 1.7 to 1.7.1 (Trello #1441)
 - add-to-any: Added support for featured image (imatge resum) when sharing to facebook (Trello #1283)
+- multisite-plugin-manager: Converted into a submodule and grouped commits
+- multisite-plugin-manager: Upgraded plugin from 3.1.4 to 3.1.5
 
 
 16.10.07
