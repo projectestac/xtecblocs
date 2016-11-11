@@ -19,6 +19,7 @@ development home at https://github.com/projectestac/xtecblocs
 - add-to-any: Added support for featured image (imatge resum) when sharing to facebook (Trello #1283)
 - multisite-plugin-manager: Converted into a submodule and grouped commits
 - multisite-plugin-manager: Upgraded plugin from 3.1.4 to 3.1.5
+- xtec-ldap-login: Don't send e-mail when user password is updated
 
 
 16.10.07
