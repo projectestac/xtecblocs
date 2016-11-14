@@ -6,16 +6,14 @@ development home at https://github.com/projectestac/xtecblocs
 16.11.14
 ---------------------------------------------------------------------------------------
 - Dashboard: Reviewed access to menu options in dashboard for roles xtec_teacher and contributor (Trello #1354)
-- add-to-any: Upgraded plugin from 1.6.17 to 1.7 (Trello #1283)
 - mu-common: Allow more attributes in embed tag in visual editor (Trello #1297)
 - mu-common: Fixed default comment status. Restored default action about comment status parameter (Trello #1365)
-- mu-common: Added Automatic creation of featured image (Imatge resum) (Trello #1284)
 - TwentyFifteen: Upgraded theme from 1.5 to 1.6 and converted in a submodule
 - xtec-widget-data-users: Fixed icons not shown when logged out, changed icons to Genericicons, checked for an @ in twitter (Trello #1366)
 - xtec-ms-manager: Request system: Added notification of state changes by email (Trello #1176)
 - xtec-ms-manager: sql-exec: Added summary of results and minor code improvements (Trello #1176)
 - xtec-ms-manager: sql-exec: Added execution of SQL in main database (Trello #1176)
-- add-to-any: Upgraded plugin from version 1.7 to 1.7.1 (Trello #1441)
+- add-to-any: Upgraded plugin from 1.6.17 to 1.7.1 (Trello #1283 #1441)
 - add-to-any: Added support for featured image (imatge resum) when sharing to facebook (Trello #1283)
 - multisite-plugin-manager: Converted into a submodule and grouped commits
 - multisite-plugin-manager: Upgraded plugin from 3.1.4 to 3.1.5
