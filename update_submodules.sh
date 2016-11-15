@@ -3,6 +3,8 @@
 source "update_functions.sh"
 
 #El tercer paràmetre només es posa si el repositori és nostre per poder-hi escriure
+gitcheckout "src/dossier" "master" "git@github.com:projectestac/dossier.git"
+gitcheckout "src/dossier/wp-content/themes/travelify" "master" "git@github.com:puikinsh/Travelify.git"
 gitcheckout "src/testlib" "master" "git@github.com:projectestac/testlib_PHP.git"
 gitcheckout "src/wp-content/mu-plugins/common" "master" "git@github.com:projectestac/wordpress-mu-common.git"
 gitcheckout "src/wp-content/plugins/add-to-any" "master" "git@github.com:projectestac/wordpress-add-to-any.git"
