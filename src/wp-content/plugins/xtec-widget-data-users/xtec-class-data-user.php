@@ -32,7 +32,7 @@ class users_data_widget extends WP_Widget {
 			'classname' => 'xtec_user_data_widget',
 		    'description' => __('Widget to add data users','xtec-widget-users-data')
 		);
-		$this->WP_Widget('users_data_widget', __('Users information','xtec-widget-users-data'), $options);
+		$this->__construct('users_data_widget', __('Users information','xtec-widget-users-data'), $options);
 
 		add_action('admin_enqueue_scripts', array($this, 'upload_scripts'));
 	}
@@ -51,12 +51,11 @@ class users_data_widget extends WP_Widget {
 
 		// Default image
 		$imageBase64 = plugins_url() . '/xtec-widget-data-users/assets/images/user_default.png';
-		$defaults = array( 'image_uri' => $imageBase64 );
+		$defaults = array( 'name' => '', 'description' => '', 'email' => '', 'web' => '', 'twitter'=> '', 'image_uri' => $imageBase64 );
 
 		$instance = wp_parse_args( ( array ) $instance, $defaults);
 		$image_uri = $instance['image_uri'];
         $name = $instance['name'];
-        //$firstname = $instance['firstname'];
         $description = $instance['description'];
         $email = $instance['email'];
         $web = $instance['web'];
@@ -77,7 +76,7 @@ class users_data_widget extends WP_Widget {
         	</div>
         	<div style="clear:both"></div>
         	<input type="hidden" class="widefat custom_media_url widget-image-url" name="<?php echo $this->get_field_name('image_uri'); ?>" value="<?php echo $instance['image_uri']; ?>" >
-	        <input type="button" class="button button-primary custom_media_button" id="custom_media_button_<?php echo $random; ?>" name="button_<?php echo $this->get_field_name('image_uri'); ?>" value="<?php _e('Upload Image','xtec-widget-users-data'); ?>" style="margin-top:5px;" />
+	        <input type="button" class="button button-primary custom_media_button" id="custom_media_button_<?php echo rand(); ?>" name="button_<?php echo $this->get_field_name('image_uri'); ?>" value="<?php _e('Upload Image','xtec-widget-users-data'); ?>" style="margin-top:5px;" />
 	    </p>
         <p>
             <?php _e('Name and surnames','xtec-widget-users-data'); ?>:

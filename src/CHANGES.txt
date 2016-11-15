@@ -3,6 +3,11 @@ Release notes for XTECBlocs (http://blocs.xtec.cat)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/xtecblocs
 
+Changes in progress
+---------------------------------------------------------------------------------------
+- xtec-widget-data-users: Fixed some warnings (they appear enabling debug)
+
+
 16.11.14
 ---------------------------------------------------------------------------------------
 - Dashboard: Reviewed access to menu options in dashboard for roles xtec_teacher and contributor (Trello #1354)
