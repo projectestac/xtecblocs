@@ -27,10 +27,11 @@ define('WP_CACHE', true); //Added by WP-Cache Manager
 define('WPCACHEHOME', '/dades/blocs/src/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
 define('DB_NAME', 'xtec_blocs_global');
 
-/**
- * DES, INT, ACC, PRO, FRM.
- */
+/** DES, INT, ACC, PRO, FRM */
 define('ENVIRONMENT', 'DES');
+
+/** Google API key */
+define('WP_GOOGLE_API_KEY', 'AIzaSyAHsmoXdhAn8l3Z96Ks_CQpmrRFpLVgMDg');
 
 // Used in e-mail web service extension
 define('XTEC_MAIL_IDAPP', 'XTECBLOCS');
