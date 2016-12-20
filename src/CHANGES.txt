@@ -8,6 +8,8 @@ Changes in progress
 - xtec-widget-data-users: Fixed some warnings (they appear enabling debug)
 - mu-common: Allow external requests to gencat.cat from RSS
 - google-analyticator: Upgraded plugin from 6.4.9.7 to 6.5.0.0 (Trello #1372)
+- slideshare: Converted into a submodule (Trello #1453)
+- slideshare: Upgraded from version 1.9.1 to 1.9.2 (Trello #1453)
 
 
 16.11.14

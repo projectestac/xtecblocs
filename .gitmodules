@@ -79,3 +79,6 @@
 [submodule "src/wp-content/plugins/multisite-plugin-manager"]
 	path = src/wp-content/plugins/multisite-plugin-manager
 	url = https://github.com/projectestac/wordpress-multisite-plugin-manager.git
+[submodule "src/wp-content/plugins/slideshare"]
+	path = src/wp-content/plugins/slideshare
+	url = https://github.com/projectestac/wordpress-slideshare.git
