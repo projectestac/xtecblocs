@@ -57,7 +57,8 @@ function xtec_descriptors_network_options()
         /** @todo Update action not implemented. */
     }
 
-    switch( $_GET['action'] ) {
+    $action = isset($_GET['action'])?$_GET['action']:'';
+    switch( $action ) {
         case "delete":
             xtec_descriptors_delete_descriptor($_REQUEST['id']);
             break;
@@ -130,7 +131,7 @@ function xtec_descriptors_network_options()
             break;        
     }
 
-    if ($_GET['action'] != 'descriptors')
+    if (isset($_GET['action']) && $_GET['action'] != 'descriptors')
     {	    
 	    $sortida = '<div class="wrap">';
 	    $sortida .= '<p>'. __("Des d'aquí pots regenerar la taula de cerca dels blocs fent de manera automàtica una crida de cada bloc. Feu clic al següent enllaç per a realitzar l'actualització.") . '</p>';
@@ -157,7 +158,11 @@ function xtec_descriptors_network_options()
 function xtec_descriptors_admin_menu()
 {    
 	$page = add_options_page('Descriptors', 'Descriptors', 'manage_options', 'descriptors', 'xtec_descriptors_options');
-	add_contextual_help( $page, '<p>' . __('This screen helps you manage the descriptors of your blog.') . '</p>');
+    $screen = get_current_screen();
+    if( !method_exists( $screen, 'add_help_tab' ) )
+        return;
+    $screen->add_help_tab(array( 'title' => '', 'id' => 'id1', 'content' => __('This screen helps you manage the descriptors of your blog.')));
+	//add_contextual_help( $page, '<p>' . __('This screen helps you manage the descriptors of your blog.') . '</p>');
 }
 
 /**
@@ -279,6 +284,7 @@ function xtec_descriptors_update_blog_options()
 function xtec_descriptors_head()
 {
 	global $wpdb;
+    $descriptors = '';
 	$descript = $wpdb->get_results( "SELECT descriptor FROM wp_descriptors where blogs like '%$" . $wpdb->blogid . "-1$%' or blogs like '%$" . $wpdb->blogid . "-0$%'" );
 	foreach ( $descript as $d ) {
 		$descriptors .= $d->descriptor.',';

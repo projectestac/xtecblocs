@@ -298,7 +298,15 @@ class VipersVideoQuicktags {
 		add_shortcode( 'metacafe', array(&$this, 'shortcode_metacafe') );
 		add_shortcode( 'blip.tv', array(&$this, 'shortcode_bliptv') );
 		add_shortcode( 'bliptv', array(&$this, 'shortcode_bliptv') ); // Not the preferred format
+		// XTEC ************ AFEGIT - Avoid show debug error warning
+		// 2016.12.28 @sarjona
+		if (XTEC_DEBUG_SHOW_ALL_MESSAGES) {
+		//************ FI
 		add_shortcode( 'flickr video', array(&$this, 'shortcode_flickrvideo') ); // WordPress.com
+		// XTEC ************ AFEGIT - Avoid show debug error warning
+		// 2016.12.28 @sarjona
+		}
+		//************ FI
 		add_shortcode( 'flickrvideo', array(&$this, 'shortcode_flickrvideo') ); // Normal format
 		add_shortcode( 'ifilm', array(&$this, 'shortcode_ifilm') );
 		add_shortcode( 'spike', array(&$this, 'shortcode_ifilm') );

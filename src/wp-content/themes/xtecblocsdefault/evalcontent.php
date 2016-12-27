@@ -1,6 +1,7 @@
-<?php 
-$referer = $_SERVER['HTTP_REFERER'];
-switch ($_REQUEST['a']) {
+<?php
+$referer = isset($_SERVER['HTTP_REFERER'])?$_SERVER['HTTP_REFERER']:'';
+$action = isset($_REQUEST['a'])?$_REQUEST['a']:'';
+switch ($action) {
     case "terms":
         include('terms.htm');
         break;

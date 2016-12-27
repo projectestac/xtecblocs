@@ -69,7 +69,7 @@ function xtec_settings_pre_comment_user_ip()
 function xtec_settings_wp_head()
 {
 	echo sprintf("<meta name=\"DC.Title\" content=\"%s\"/>\n", get_bloginfo('title'));
-	echo sprintf("<meta name=\"DC.Creator\" content=\"%s\"/>\n", get_user_by_email(get_bloginfo('admin_email'))->user_login);
+	echo sprintf("<meta name=\"DC.Creator\" content=\"%s\"/>\n", get_user_by('email', get_bloginfo('admin_email'))->user_login);
 	echo sprintf("<meta name=\"DC.Subject\" scheme=\"eo\" content=\"%s\"/>\n", get_bloginfo('description'));
 	echo sprintf("<meta name=\"DC.Language\" content=\"%s\"/>\n", get_bloginfo('language'));
 }

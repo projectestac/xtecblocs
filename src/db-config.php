@@ -480,11 +480,13 @@ $wpdb->add_callback('dataset_distribution');
 // Be careful with queries that combines records from two or more tables in a database.
 function dataset_distribution($query,$wpdb){
 	preg_match("/^{$wpdb->base_prefix}(\d+)_/i", $wpdb->table, $matches);
-	$blog_id = $matches[1];
-	if ( $blog_id != 1 ){
-		// ex. if $blog_id=2 and DB_NUMS=3 then $dataset=s((2%3)+1)=s((2)+1)=s3
-		$dataset = 's'.(($blog_id % DB_NUMS)+1);
-		return $dataset;
+	if (isset ($matches[1])){
+		$blog_id = $matches[1];
+		if ( $blog_id != 1 ){
+			// ex. if $blog_id=2 and DB_NUMS=3 then $dataset=s((2%3)+1)=s((2)+1)=s3
+			$dataset = 's'.(($blog_id % DB_NUMS)+1);
+			return $dataset;
+		}
 	}
 }
 

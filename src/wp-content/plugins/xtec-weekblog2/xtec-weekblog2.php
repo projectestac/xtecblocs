@@ -381,7 +381,7 @@ function xtecweekblog_current_weekblog () {
 		//Check if there is a blog scheduled for this week
 		$weekblog = query_posts('post_type=xtecweekblog&post_status=future&posts_per_page=1&orderby=date&order=ASC&year=' . $year . '&w=' . $week);
 	}
-	return $weekblog[0];
+	return array_shift($weekblog);
 }
 
 /**
@@ -452,14 +452,19 @@ add_action('admin_menu', 'xtecweekblog_admin_menu');
  */
 function xtecweekblog_admin_menu() {
 	$page = add_submenu_page('options-general.php', __('WeekBlog', 'xtecweekblog'), __('WeekBlog', 'xtecweekblog'), 'manage_options', 'ms-weekblog', 'xtecweekblog_options' );
-	add_contextual_help( $page, '<p>' . __('This screen helps you manage the blog of the week.', 'xtecweekblog') . '</p>');
+  $screen = get_current_screen();
+  if( !method_exists( $screen, 'add_help_tab' ) )
+      return;
+  $screen->add_help_tab(array( 'title' => '', 'id' => 'id1', 'content' => __('This screen helps you manage the blog of the week.', 'xtecweekblog')));
+	//add_contextual_help( $page, '<p>' . __('This screen helps you manage the blog of the week.', 'xtecweekblog') . '</p>');
 }
 
 /**
  * Output HTML for plugin options page.
  */
-function xtecweekblog_options() {	
-	switch ($_GET['action']) {
+function xtecweekblog_options() {
+  $action = isset($_GET['action'])?$_GET['action']:'';
+	switch ($action) {
 		case 'blogoptions':
 			if ($_POST['xtecweekblog_default_msg']) {
 				$xtecweekblog_default_msg = stripslashes($_POST['xtecweekblog_default_msg']);

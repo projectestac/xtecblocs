@@ -82,6 +82,7 @@ function xtec_favorites_get_user_preferred_blogs()
 {
     global $wpdb;
     global $userdata;
+    $blogsArray = array();
     $blogs = $wpdb->get_results("SELECT userId, blogId FROM {$wpdb->base_prefix}user_blogs WHERE userId = $userdata->ID");
     foreach ( $blogs as $blog ) {
         $blogsArray[] = $blog->blogId;

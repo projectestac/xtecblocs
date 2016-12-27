@@ -72,6 +72,7 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days=5, $init=0)
     $blogs = $wpdb->get_results("SELECT DISTINCT blogId FROM wp_globalposts,$wpdb->blogs WHERE time>$date AND `public` = '1' AND `deleted` = '0' AND `blogId` = `blog_id` AND blogId<> 1 ORDER BY id DESC LIMIT $init,$how_many_2");
 
     if ( $blogs ) {
+        $posts = array();
         foreach ( $blogs as $blog ) {
             // we need _posts and _options tables for this to work
             $blogPostsTable = "wp_".$blog->blogId."_posts";
@@ -83,21 +84,24 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days=5, $init=0)
                                            "AND post_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 5 DAY) " .
                                            "ORDER BY $blogPostsTable.id DESC LIMIT 0,1");
 
-            $thisusername = get_userdata($thispost[0]->post_author)->user_login;
+            if ( isset($thispost[0]) ){
+              $thisusername = get_userdata($thispost[0]->post_author)->user_login;
 
-            $blog_detail = get_blog_details($blog->blogId);
+              $blog_detail = get_blog_details($blog->blogId);
 
-            $posts[] = array('post_date'=>$thispost[0]->post_date,
-                             'post_title'=>$thispost[0]->post_title,
-                             'user_login'=>$thisusername,
-                             'post_content'=>$thispost[0]->post_content,
-                             'guid'=>$thispost[0]->guid,
-                             'blog_title'=>$blog_detail->blogname,
-                             'blog_url'=>$blog_detail->siteurl,
-                             'blog_id'=>$blog->blogId);
+              $posts[] = array('post_date'=>$thispost[0]->post_date,
+                               'post_title'=>$thispost[0]->post_title,
+                               'user_login'=>$thisusername,
+                               'post_content'=>$thispost[0]->post_content,
+                               'guid'=>$thispost[0]->guid,
+                               'blog_title'=>$blog_detail->blogname,
+                               'blog_url'=>$blog_detail->siteurl,
+                               'blog_id'=>$blog->blogId);
+            }
         }
         arsort($posts);
         // Discard not valid values
+        $posts_array = array();
         foreach ( $posts as $post ) {
             if ( $post['post_date'] != 0 ) {
                 $posts_array[] = array('post_date'=>$post['post_date'],

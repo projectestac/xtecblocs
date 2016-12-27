@@ -96,7 +96,7 @@ function xtec_add_users()
 				}
 				
 				if ( empty($errors_step_2) ) {					
-					$user_id = get_userdatabylogin($username)->ID;
+					$user_id = get_user_by('login', $username)->ID;
 					if ( is_user_member_of_blog($user_id, $blog_id) ) {
 						$info = "<p>L'usuari/ària <strong>$username</strong> ja és membre d'aquest bloc.</p>";
 					}
@@ -121,7 +121,7 @@ function xtec_add_users()
 				
 				if ( empty($errors_step_2) ) {
 					
-					$userdata = get_userdatabylogin($username);
+					$userdata = get_user_by('login', $username);
 					
 					if ( !$userdata ) {
 						// L'usuari no existeix
@@ -132,7 +132,7 @@ function xtec_add_users()
 					}
 					else {
 						// L'usuari existeix
-						$user_id = get_userdatabylogin($username)->ID;
+						$user_id = get_user_by('login', $username)->ID;
 
 						if ( is_user_member_of_blog($userdata->ID, $blog_id) ) { // OK
 							$info = "<p>L'usuari/ària <strong>$username</strong> ja és membre d'aquest bloc.</p>";
@@ -193,7 +193,7 @@ function xtec_add_users()
 				break;
 		}
 		
-		$user_data = get_userdatabylogin($username);		
+		$user_data = get_user_by('login', $username);		
 		
 		if ( $user_type == 'xtec' ) {
 			$newuser_key = substr(md5($user_data->ID),0,5);
@@ -343,13 +343,13 @@ function xtec_add_users()
 								onchange="display_step_2('xtec')"
 								name='User_Type'
 								value='xtec'
-								<?php if ($user_type=='xtec') { echo 'checked'; } ?>
+								<?php if (isset($user_type) && $user_type == 'xtec') { echo 'checked'; } ?>
 						>Usuari/ària XTEC</input>
 						<input	type='radio'
 								onchange="display_step_2('other')"
 								name='User_Type'
 								value='other'
-								<?php if ($user_type=='other') { echo 'checked'; } ?>
+								<?php if ( isset($user_type) && $user_type=='other') { echo 'checked'; } ?>
 						>Altre Usuari/ària</input>
 					</p>
 				</div>
@@ -371,7 +371,7 @@ function xtec_add_users()
 										size='30'
 										maxlength='30'
 										name='user[username]'
-										value="<?php echo $username; ?>"
+										value="<?php echo isset($username)?$username:''; ?>"
 										<?php echo $username_readonly; ?> />
 									<span id='check_user' <?php if ($display_check_user) { ?>style="display:''"<?php } else { ?>style="display:none"<?php } ?>><input type="image" src='<?php echo plugin_dir_url(__FILE__);?>check.png' name="Check user"/><small>Comprova'n la disponibilitat</small></span>
 									<br>								
@@ -435,14 +435,14 @@ function xtec_add_users()
 							<tr id='row_password' >
 								<th><label for='password'><?php _e('Password')?>:</label></th>
 								<td>
-									<input id='password' type='text' size='30' maxlength='20' name='user[password]' value="<?php echo $password; ?>" />
+									<input id='password' type='text' size='30' maxlength='20' name='user[password]' value="<?php echo isset($password)?$password:''; ?>" />
 								</td>
 							</tr>
 							
 							<tr id='row_email' >
 								<th><label for='email'><?php _e('Email') ?> (opcional):</label></th>
 								<td>
-									<input id='email' type='text' size='50' maxlength='100' name='user[email]' value="<?php echo $email; ?>" />
+									<input id='email' type='text' size='50' maxlength='100' name='user[email]' value="<?php echo isset($email)?$email:''; ?>" />
 									<br>
 									<small>Si l'usuari/ària no disposa de correu electrònic deixeu aquest camp en blanc.</small>
 								</td>
@@ -452,10 +452,10 @@ function xtec_add_users()
 								<th><label for='role'><?php _e('Role'); ?>:</label></th>
 								<td>
 									<select id='role' name="user[role]">
-										<option <?php if ($role=='editor') { echo "selected='selected'";} ?>value='editor'><?php echo $editor_tag ?></option>
-										<option <?php if ($role=='author') { echo "selected='selected'";} ?>value='author'><?php echo $author_tag ?></option>
-										<option <?php if ($role=='contributor' || $role == '') { echo "selected='selected'";} ?> value='contributor'><?php echo $contributor_tag ?></option>
-										<option <?php if ($role=='subscriber') { echo "selected='selected'";} ?>value='subscriber'><?php echo $subscriber_tag ?></option>
+										<option <?php if ( isset($role) && $role == 'editor') { echo "selected='selected'";} ?>value='editor'><?php echo $editor_tag ?></option>
+										<option <?php if ( isset($role) && $role == 'author') { echo "selected='selected'";} ?>value='author'><?php echo $author_tag ?></option>
+										<option <?php if ( !isset($role) || $role == 'contributor' || $role == '') { echo "selected='selected'";} ?> value='contributor'><?php echo $contributor_tag ?></option>
+										<option <?php if ( isset($role) && $role == 'subscriber') { echo "selected='selected'";} ?>value='subscriber'><?php echo $subscriber_tag ?></option>
 									</select>
 								</td>
 							</tr>
@@ -519,7 +519,9 @@ function xtec_manage_users()
 		}
 		?>
 
-		<?php if ( isset($_REQUEST['action']) ) {
+		<?php
+		$doaction = '';
+		if ( isset($_REQUEST['action']) ) {
 			$doaction = $_REQUEST['action'];
 		}
 		

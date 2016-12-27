@@ -54,7 +54,7 @@
 						   <li style="display: none;">Usuari anònim</li>			
 						<?php }else{
 							global $userdata;
-							get_currentuserinfo();	
+							wp_get_current_user();	
 							?>
 							<li class="login">T'has identificat com a [ <a href="<?php echo get_option('siteurl');?>/wp-admin/profile.php"><?php echo $userdata->user_login; ?></a> ]</li>  
 						<?php } ?>

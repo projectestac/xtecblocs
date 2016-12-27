@@ -52,17 +52,19 @@ function xtec_api_lastest_blogs($how_many = 10, $days=5, $what='last_updated', $
 	                                           "AND post_type = 'post' " .
 	                                           "AND post_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 5 DAY) ".
 	                                           "ORDER BY $blogPostsTable.id DESC limit 0,3");
-
-	            $thisusername = get_userdata($thispost[0]->post_author)->user_login;
-	            $posts[] = array('post_title'=>$thispost[0]->post_title,
-	                             'post_date'=>$thispost[0]->post_date,
-	                             'user_login'=>$thisusername,
-	                             'post_content'=>$thispost[0]->post_content,
-	                             'guid'=>$thispost[0]->guid,
-	                             'blog_title'=>$options[1]->option_value,
-	                             'blog_url'=>$options[0]->option_value,
-	                             'blog_id'=>$blog->blog_id,
-	                             'registered'=>$blog->registered);
+	            $thispost_current = array_shift($thispost);
+                if ( isset($thispost_current) ) {
+                    $thisusername = get_userdata($thispost_current->post_author)->user_login;
+    	            $posts[] = array('post_title'=>$thispost_current->post_title,
+    	                             'post_date'=>$thispost_current->post_date,
+    	                             'user_login'=>$thisusername,
+    	                             'post_content'=>$thispost_current->post_content,
+    	                             'guid'=>$thispost_current->guid,
+    	                             'blog_title'=>$options[1]->option_value,
+    	                             'blog_url'=>$options[0]->option_value,
+    	                             'blog_id'=>$blog->blog_id,
+    	                             'registered'=>$blog->registered);
+                }
 	            // if it is found put it to the output
 	            if ( $thispost ) { $counter++; }
 	            // don't go over the limit
@@ -76,7 +78,7 @@ function xtec_api_lastest_blogs($how_many = 10, $days=5, $what='last_updated', $
         }
     }
 
-    if (is_array($posts)) {
+    if ( isset($posts) && is_array($posts) ) {
     	return $posts;
     } else {
     	return array();

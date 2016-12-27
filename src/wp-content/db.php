@@ -158,9 +158,9 @@ class hyperdb extends wpdb {
 	/**
 	 * Triggers __construct() for backwards compatibility with PHP4
 	 */
-	function hyperdb( $args = null ) {
+	/*function hyperdb( $args = null ) {
 		return $this->__construct($args);
-	}
+	}*/
 
 	/**
 	 * Gets ready to make database connections
@@ -361,7 +361,7 @@ class hyperdb extends wpdb {
 			$this->dataset = $dataset;
 
 		// Determine whether the query must be sent to the master (a writable server)
-		if ( $use_master || $this->srtm === true || isset($this->srtm[$this->table]) ) {
+		if ( (!empty($use_master) && $use_master) || $this->srtm === true || isset($this->srtm[$this->table]) ) {
 			$use_master = true;
 		} elseif ( $is_write = $this->is_write_query($query) ) {
 			$use_master = true;
@@ -387,7 +387,14 @@ class hyperdb extends wpdb {
 		}
 
 		// Try to reuse an existing connection
+		// XTEC ************ MODIFICAT - Added to avoid some debug warnings
+		// 2016.12.28 @sarjona
+		while ( isset($this->dbhs[$dbhname]) && is_resource($this->dbhs[$dbhname]) ) {
+		//************ ORIGINAL
+		/*
 		while ( is_resource($this->dbhs[$dbhname]) ) {
+		*/
+		//************ FI
 			// Find the connection for incrementing counters
 			foreach ( array_keys($this->db_connections) as $i )
 				if ( $this->db_connections[$i]['dbhname'] == $dbhname )
@@ -431,7 +438,7 @@ class hyperdb extends wpdb {
 			return $this->dbhs[$dbhname];
 		}
 
-		if ( $this->write && defined( "MASTER_DB_DEAD" ) ) {
+		if ( isset($this->write) && $this->write && defined( "MASTER_DB_DEAD" ) ) {
 			return $this->bail("We're updating the database, please try back in 5 minutes. If you are posting to your blog please hit the refresh button on your browser in a few minutes to post the data again. It will be posted as soon as the database is back online again.");
 		}
 
@@ -475,6 +482,8 @@ class hyperdb extends wpdb {
 			// Overlay $server if it was extracted from a callback
 			if ( isset($server) && is_array($server) )
 				extract($server, EXTR_OVERWRITE);
+			else
+				$server = '';
 
 			// Split again in case $server had host:port
 			if ( strpos($host, ':') )
@@ -503,6 +512,9 @@ class hyperdb extends wpdb {
 			if ( is_resource($this->dbhs[$dbhname]) && mysql_select_db( $name, $this->dbhs[$dbhname] ) ) {
 				$success = true;
 				$this->current_host = "$host:$port";
+				if (empty($this->dbh2host)) {
+					$this->dbh2host = array();
+				}
 				$this->dbh2host[$dbhname] = "$host:$port";
 				$queries = 1;
 				$this->last_connection = compact('dbhname', 'host', 'port', 'user', 'name', 'tcp', 'elapsed', 'success', 'queries');
@@ -528,10 +540,13 @@ class hyperdb extends wpdb {
 			}
 		}
 
-		if ( ! is_resource( $this->dbhs[$dbhname] ) )
+		if ( ! is_resource( $this->dbhs[$dbhname] ) ) {
 			return $this->bail("Unable to connect to $host:$port to $operation table '$this->table' ($dataset)");
+			//TODO: Review return (only reference allowed)
+		}
 
-		$this->set_charset($this->dbhs[$dbhname], $charset, $collate);
+
+		$this->set_charset($this->dbhs[$dbhname], $this->charset, $this->collate);
 
 		$this->dbh = $this->dbhs[$dbhname]; // needed by $wpdb->_real_escape()
 
