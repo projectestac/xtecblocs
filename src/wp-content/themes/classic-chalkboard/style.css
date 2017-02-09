@@ -1164,3 +1164,27 @@ ul.children .comment-author cite.fn {
 		padding-left: 50px;
 	}
 }
+
+/* XTEC ************ AFEGIT - Custom style to google calendar */
+/* 2017.02.09 @xaviernietosanchez */
+.simcal-week-day{
+	background-color: transparent !important;
+}
+
+.simcal-event-details{
+	color: #666666 !important;
+}
+
+.simcal-event-details a{
+	color: #1E73BE !important;
+}
+
+.simcal-events-dots b{
+	color: #ffffff !important;
+}
+
+.widget-area .simcal-week-day{
+	white-space: nowrap !important;
+	font-size: 0.8em;
+}
+/* *********** FI */
