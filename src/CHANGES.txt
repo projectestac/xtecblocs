@@ -15,6 +15,7 @@ Changes in progress
 - slideshare: Converted into a submodule (Trello #1453)
 - slideshare: Upgraded from version 1.9.1 to 1.9.2 (Trello #1453)
 - add-to-any: Fixed construction of HTML metatag attribute (Trello #1283)
+- Fukasawa: Change appearance of secondary menu to look like primary menu (Trello #1532)
 
 
 16.11.14
