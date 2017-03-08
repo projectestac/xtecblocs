@@ -4320,3 +4320,18 @@ a.post-thumbnail:hover {
 		line-height: 36px;
 	}
 }
+
+/* XTEC ************ AFEGIT - Custom style to google calendar */
+/* 2017.02.09 @xaviernietosanchez */
+.simcal-nav-button, .simcal-events-dots b{
+	color: #AFAF8F !important;
+}
+
+.simcal-day-label{
+	white-space: nowrap !important;
+}
+
+.simcal-week-day{
+	background-color: transparent !important;
+}
+/* ************ FI */
