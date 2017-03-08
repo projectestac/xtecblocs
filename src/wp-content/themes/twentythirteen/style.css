@@ -3226,3 +3226,18 @@ footer.entry-meta {
 		color: #333;
 	}
 }
+
+/* XTEC ************ AFEGIT - Custom style to google calendar */
+/* 2017.03.08 @xaviernietosanchez */
+.simcal-week-day{
+	background-color: transparent !important;
+}
+
+.simcal-events-dots b{
+	color: #fff !important;
+}
+
+.simcal-icon-right, .simcal-icon-left{
+	color: #fff !important;
+}
+/* ************ FI */
