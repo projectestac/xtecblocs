@@ -112,6 +112,39 @@ delete_new wp-content/mu-plugins/agora-functions.php
 delete_new wp-content/mu-plugins/languages/agora-functions.pot
 delete_new wp-content/mu-plugins/languages/agora-functions-ca.mo
 delete_new wp-content/mu-plugins/languages/agora-functions-ca.po
+delete_new src/wp-content/languages/admin-eu.mo
+delete_new src/wp-content/languages/admin-eu.po
+delete_new src/wp-content/languages/admin-fr_FR.mo
+delete_new src/wp-content/languages/admin-fr_FR.po
+delete_new src/wp-content/languages/admin-gl_ES.mo
+delete_new src/wp-content/languages/admin-gl_ES.po
+delete_new src/wp-content/languages/admin-network-eu.mo
+delete_new src/wp-content/languages/admin-network-eu.po
+delete_new src/wp-content/languages/admin-network-fr_FR.mo
+delete_new src/wp-content/languages/admin-network-fr_FR.po
+delete_new src/wp-content/languages/admin-network-gl_ES.mo
+delete_new src/wp-content/languages/admin-network-gl_ES.po
+delete_new src/wp-content/languages/admin-network-oci.mo
+delete_new src/wp-content/languages/admin-network-oci.po
+delete_new src/wp-content/languages/admin-oci.mo
+delete_new src/wp-content/languages/admin-oci.po
+delete_new src/wp-content/languages/continents-cities-eu.mo
+delete_new src/wp-content/languages/continents-cities-eu.po
+delete_new src/wp-content/languages/continents-cities-fr_FR.mo
+delete_new src/wp-content/languages/continents-cities-fr_FR.po
+delete_new src/wp-content/languages/continents-cities-gl_ES.mo
+delete_new src/wp-content/languages/continents-cities-gl_ES.po
+delete_new src/wp-content/languages/continents-cities-oci.mo
+delete_new src/wp-content/languages/continents-cities-oci.po
+delete_new src/wp-content/languages/eu.mo
+delete_new src/wp-content/languages/eu.po
+delete_new src/wp-content/languages/fr_FR.mo
+delete_new src/wp-content/languages/fr_FR.po
+delete_new src/wp-content/languages/gl_ES.mo
+delete_new src/wp-content/languages/gl_ES.po
+delete_new src/wp-content/languages/oci.mo
+delete_new src/wp-content/languages/oci.po
+
 
 #Delete directories
 delete_new wp-content/plugins/bbpress
@@ -139,6 +172,7 @@ delete_new wp-content/plugins/ELIMINAT_XTEC
 delete_new wp-content/themes/reactor
 delete_new wp-content/themes/reactor-primaria-1
 delete_new wp-content/themes/reactor-serveis-educatius
+delete_new wp-content/themes/reactor-projectes
 delete_new wp-content/uploads
 
 rm -Rf wp_old
