@@ -5,6 +5,7 @@ development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 4.5.7 (Trello #1543)
 - xtec-widget-data-users: Fixed some warnings (they appear enabling debug)
 - mu-common: Allow external requests to gencat.cat from RSS
 - mu-common: Removed code related to uninstalled plugin (raw_html) (Trello #1435)
