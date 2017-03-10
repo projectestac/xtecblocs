@@ -20,6 +20,8 @@ Changes in progress
 - Fukasawa: Change appearance of secondary menu to look like primary menu (Trello #1532)
 - add-to-any: Upgraded plugin from version 1.7.1 to 1.7.7 (Trello #1487)
 - add-to-any: Fixed strings that could not be translated in widgets administration (Trello #1504)
+- carrusel: Translate roles in configuration tab (Trello #1504)
+- carrusel: Fixed catalan translation not being loaded in some cases (Trello #1504)
 
 
 16.11.14
