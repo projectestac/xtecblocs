@@ -23,6 +23,7 @@ Changes in progress
 - carrusel: Translate roles in configuration tab (Trello #1504)
 - carrusel: Fixed catalan translation not being loaded in some cases (Trello #1504)
 - TwentyTen, TwentyThirteen, TwentyFourteen, TwentyFifteen, TwentySixteen, classic-chalkboard: Customized styles for Simple Calendar (Trello #1034)
+- GCE: Upgraded from Google Calendar Events 2.2.5 to Simple Calendar 3.1.9 (Trello #1034)
 
 
 16.11.14
