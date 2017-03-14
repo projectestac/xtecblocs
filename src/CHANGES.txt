@@ -3,7 +3,7 @@ Release notes for XTECBlocs (http://blocs.xtec.cat)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/xtecblocs
 
-Changes in progress
+17.03.20
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 4.5.7 (Trello #1543)
 - xtec-widget-data-users: Fixed some warnings (they appear enabling debug)
