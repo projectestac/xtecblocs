@@ -21,11 +21,8 @@ global $isAgora, $isBlocs;
 $isAgora = false;
 $isBlocs = true;
 
-// ** DB settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('WP_CACHE', true); //Added by WP-Cache Manager
-define('WPCACHEHOME', '/dades/blocs/src/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
-define('DB_NAME', 'xtec_blocs_global');
+define('WP_CACHE', true); // Added by WP-Cache Manager
+define('WPCACHEHOME', '/dades/blocs/src/wp-content/plugins/wp-super-cache/' ); // Added by WP-Cache Manager
 
 /** DES, INT, ACC, PRO, FRM */
 define('ENVIRONMENT', 'DES');
@@ -33,8 +30,11 @@ define('ENVIRONMENT', 'DES');
 /** Google API key */
 define('WP_GOOGLE_API_KEY', 'AIzaSyAHsmoXdhAn8l3Z96Ks_CQpmrRFpLVgMDg');
 
-// Used in e-mail web service extension
+/** Used in xtec-mail extension */
 define('XTEC_MAIL_IDAPP', 'XTECBLOCS');
+
+/** The name of the database for WordPress */
+define('DB_NAME', 'xtec_blocs_global');
 
 /** Database username */
 define('DB_USER', 'root');
@@ -51,9 +51,7 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
-/**
- * Proxy configuration.
- */
+/** Proxy configuration */
 //define('WP_PROXY_HOST', '');
 //define('WP_PROXY_PORT', '');
 
@@ -86,9 +84,8 @@ define('NONCE_SALT',       'put your unique phrase here');
 $table_prefix  = 'wp_';
 
 /** HyperDB settings */
-// HyperDB databases prefix
-define('DB_PREFIX','xtec_blocs_');
-define('DB_NUMS',3); /** HyperDB additional databases */
+define('DB_PREFIX', 'xtec_blocs_'); // HyperDB databases prefix
+define('DB_NUMS', 3); // HyperDB additional databases
 
 /**
  * For developers: WordPress debugging mode.
@@ -97,7 +94,7 @@ define('DB_NUMS',3); /** HyperDB additional databases */
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
 define('XTEC_DEBUG_HYPERDB', false);
 define('XTEC_DEBUG_SHOW_ALL_MESSAGES', false);
 
