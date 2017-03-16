@@ -87,6 +87,9 @@ $table_prefix  = 'wp_';
 define('DB_PREFIX', 'xtec_blocs_'); // HyperDB databases prefix
 define('DB_NUMS', 3); // HyperDB additional databases
 
+/** Sets RSS fetch time out */
+define('MAGPIE_FETCH_TIME_OUT', 10); // WordPress default value is 2
+
 /**
  * For developers: WordPress debugging mode.
  *
