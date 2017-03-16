@@ -18,6 +18,7 @@ development home at https://github.com/projectestac/xtecblocs
 - slideshare: Upgraded from version 1.9.1 to 1.9.2 (Trello #1453)
 - add-to-any: Fixed construction of HTML metatag attribute (Trello #1283)
 - Fukasawa: Change appearance of secondary menu to look like primary menu (Trello #1532)
+- Fukasawa: Hidden theme widgets (Trello #1555)
 - add-to-any: Upgraded plugin from version 1.7.1 to 1.7.7 (Trello #1487)
 - add-to-any: Fixed strings that could not be translated in widgets administration (Trello #1504)
 - carrusel: Translate roles in configuration tab (Trello #1504)
