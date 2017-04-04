@@ -47,7 +47,7 @@ copy_to_new siteoff.html
 copy_to_new testapp.php
 copy_to_new works.php
 copy_to_new wp-config-dist.php
-cp wp_old/wp-config-dist.php src/wp-config.php
+copy_to_new wp-config.php
 copy_to_new wp-content/advanced-cache.php
 copy_to_new wp-content/wp-cache-config.php
 copy_to_new wp-content/wp-cache-config-dist.php
