@@ -82,3 +82,6 @@
 [submodule "src/wp-content/plugins/slideshare"]
 	path = src/wp-content/plugins/slideshare
 	url = https://github.com/projectestac/wordpress-slideshare.git
+[submodule "src/dossier"]
+	path = src/dossier
+	url = https://github.com/projectestac/dossier.git
