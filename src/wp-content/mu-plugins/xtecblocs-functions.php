@@ -58,3 +58,17 @@ add_filter('wp_insert_post_data', 'fix_spanish_scribd_oembed', 10, 2);
 * @author sarjona
 */
 remove_filter('force_filtered_html_on_import', '__return_true');
+
+/**
+* Change url redirection button add bloc into dashboard to "http://blocs.xtec.cat/wp-signup.php"
+*
+* @author xavinieto (2016-08-03)
+*/
+function xtec_change_redirect_button_dashboard( $location ) {
+	if ( $location == 'https://agora/blocs/wp-signup.php' ){
+		$location = 'https://blocs.xtec.cat/wp-signup.php';
+	}
+
+	return $location;
+}
+add_filter( 'wp_signup_location', 'xtec_change_redirect_button_dashboard' );
