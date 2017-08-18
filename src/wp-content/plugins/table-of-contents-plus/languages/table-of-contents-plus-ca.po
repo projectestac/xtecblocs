@@ -1,0 +1,499 @@
+# Translation of Plugins - Table of Contents Plus - Stable (latest release) in Catalan
+# This file is distributed under the same license as the Plugins - Table of Contents Plus - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-05-17 15:46+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Language: ca\n"
+"Project-Id-Version: Plugins - Table of Contents Plus - Stable (latest release)\n"
+"POT-Creation-Date: \n"
+"Last-Translator: Mònica Grau <mgrau226@xtec.cat>\n"
+"Language-Team: \n"
+
+#. Author URI of the plugin/theme
+msgid "http://dublue.com/"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Michael Tran"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "A powerful yet user friendly plugin that automatically creates a table of contents. Can also output a sitemap listing all pages and categories."
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://dublue.com/plugins/toc/"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Table of Contents Plus"
+msgstr ""
+
+#: toc.php:1688
+msgid "For the following content types:"
+msgstr ""
+
+#: toc.php:1684
+msgid "Show the table of contents only in the sidebar"
+msgstr ""
+
+#: toc.php:1584
+msgid "Display the table of contents in the sidebar with this widget"
+msgstr ""
+
+#: toc.php:1078
+msgid "Update Options"
+msgstr "Actualitza les opcions"
+
+#: toc.php:1069
+msgid "Uses h6 to display %s on a page listing excluding pages with IDs 1 and 15"
+msgstr ""
+
+#: toc.php:1068
+msgid "hides the heading from a category listing"
+msgstr ""
+
+#: toc.php:1066
+msgid "Examples"
+msgstr ""
+
+#: toc.php:1065
+msgid "lets you print out a listing of only pages. Similarly %s can be used to print out a category listing. They both can accept a number of attributes so visit the help tab for more information."
+msgstr ""
+
+#: toc.php:1063
+msgid "Advanced usage"
+msgstr "Ús avançat"
+
+#: toc.php:1057
+msgid "Eg: Categories, Category List"
+msgstr ""
+
+#: toc.php:1055
+msgid "Categories label"
+msgstr ""
+
+#: toc.php:1051
+msgid "Eg: Pages, Page List"
+msgstr ""
+
+#: toc.php:1049
+msgid "Pages label"
+msgstr ""
+
+#. translators: the full line is supposed to read - Use [h1-h6 drop down list]
+#. to print out the titles
+#: toc.php:1045
+msgid "to print out the titles"
+msgstr ""
+
+#. translators: the full line is supposed to read - Use [1-6 drop down list] to
+#. print out the titles
+#: toc.php:1034
+msgid "Use"
+msgstr ""
+
+#: toc.php:1031
+msgid "Heading type"
+msgstr "Tipus de capçalera"
+
+#: toc.php:1027
+msgid "Show category listing"
+msgstr ""
+
+#: toc.php:1023
+msgid "Show page listing"
+msgstr ""
+
+#: toc.php:1019
+msgid "At its simplest, placing %s into a page will automatically create a sitemap of all pages and categories. This also works in a text widget."
+msgstr ""
+
+#: toc.php:1011
+msgid "If you would like to fully customise the position of the table of contents, you can use the %s shortcode by placing it at the desired position of your post, page or custom post type. This method allows you to generate the table of contents despite having auto insertion disabled for its content type. Please visit the help tab for further information about this shortcode."
+msgstr "Si voleu personalitzar al màxim la posició de la taula de continguts, podeu fer servir el codi %s col·locant-lo a la posició que vulgueu de vostre article, pàgina o entrada personalitzada. Aquest mètode us permetrà generar la taula de continguts tot i tenir l'auto inserció deshabilitada per al tipus de contingut. Aneu a la pestanya d'ajuda per a més informació sobre aquest codi curt."
+
+#. translators: advanced usage
+#: toc.php:1010
+msgid "Usage"
+msgstr "Ús"
+
+#. translators: example anchor prefixes when no ascii characters match
+#: toc.php:1002
+msgid "Eg: i, toc_index, index, _"
+msgstr ""
+
+#: toc.php:999
+msgid "This option normally applies to content written in character sets other than ASCII."
+msgstr ""
+
+#: toc.php:998
+msgid "Anchor targets are restricted to alphanumeric characters as per HTML specification (see readme for more detail). The default anchor prefix will be used when no characters qualify. When left blank, a number will be used instead."
+msgstr ""
+
+#: toc.php:995
+msgid "Default anchor prefix"
+msgstr ""
+
+#. translators: example URL path restriction
+#: toc.php:991
+msgid "Eg: /wiki/, /corporate/annual-reports/"
+msgstr "Exemple: /wiki/, /corporate/annual-reports/"
+
+#: toc.php:988
+msgid "Restrict generation of the table of contents to pages that match the required path. This path is from the root of your site and always begins with a forward slash."
+msgstr "Restringeix la generació de la taula de continguts per a pàgines que concorden amb el camí requerit. Aquest camí és de l'arrel lloc i sempre comença amb una barra inclinada."
+
+#: toc.php:985
+msgid "Restrict path"
+msgstr "Restringeix el camí"
+
+#: toc.php:981
+msgid "If you have a consistent menu across the top of your site, you can adjust the top offset to stop the headings from appearing underneath the top menu. A setting of 30 accommodates the WordPress admin bar. This setting appears after you have enabled smooth scrolling from above."
+msgstr ""
+
+#: toc.php:978
+msgid "Smooth scroll top offset"
+msgstr ""
+
+#: toc.php:973
+msgid "<code>Apple Tree|Oranges|Yellow Bananas</code> ignore headings that are exactly \"Apple Tree\", \"Oranges\" or \"Yellow Bananas\""
+msgstr "<code>Apple Tree|Oranges|Yellow Bananas</code> ignora les capçaleres que són exactament \"Apple Tree\", \"Oranges\" o \"Yellow Bananas\""
+
+#: toc.php:972
+msgid "<code>*Fruit Diet*</code> ignore headings with \"Fruit Diet\" somewhere in the heading"
+msgstr "<code>*Fruit Diet*</code> ignora les capçaleres amb \"Fruit Diet\" en algun lloc de la capçalera"
+
+#: toc.php:971
+msgid "<code>Fruit*</code> ignore headings starting with \"Fruit\""
+msgstr "<code>Fruit*</code> ignora les capçaleres que comencen per \"Fruit\""
+
+#: toc.php:969
+msgid "Specify headings to be excluded from appearing in the table of contents.  Separate multiple headings with a pipe <code>|</code>.  Use an asterisk <code>*</code> as a wildcard to match other text.  Note that this is not case sensitive. Some examples:"
+msgstr "Especifiqueu les capçaleres que s'han d'excloure per tal que no apareguin a la taula de continguts. Separeu les diferents capçaleres amb una barra vertical <code>|</code>.  Feu servir un asterisc <code>*</code> com a comodí per a que coincideixi amb un altre text. Tingueu en compte que no és sensible a les majúcules. Alguns exemples:"
+
+#: toc.php:966
+msgid "Exclude headings"
+msgstr "Capçaleres excloses"
+
+#: toc.php:960
+msgid "heading "
+msgstr "capçalera"
+
+#: toc.php:954
+msgid "Include the following heading levels. Deselecting a heading will exclude it."
+msgstr "Inclou els nivells de capçalera següents. Si desmarqueu una capçalera quedarà exclosa."
+
+#: toc.php:952
+msgid "Heading levels"
+msgstr "Nivells de capçalera"
+
+#: toc.php:949
+msgid "If your theme includes background images for unordered list elements, enable this to support them"
+msgstr ""
+
+#: toc.php:948
+msgid "Preserve theme bullets"
+msgstr ""
+
+#: toc.php:945
+msgid "Prevent the loading of this plugin's CSS styles. When selected, the appearance options from above will also be ignored."
+msgstr ""
+
+#: toc.php:944
+msgid "Exclude CSS file"
+msgstr ""
+
+#: toc.php:941
+msgid "Show the table of contents for qualifying items on the homepage"
+msgstr ""
+
+#: toc.php:940
+msgid "Include homepage"
+msgstr ""
+
+#: toc.php:937
+msgid "Use - rather than _ in anchors"
+msgstr ""
+
+#: toc.php:936
+msgid "Hyphenate"
+msgstr ""
+
+#: toc.php:933
+msgid "Ensure anchors are in lowercase"
+msgstr ""
+
+#: toc.php:932
+msgid "Lowercase"
+msgstr ""
+
+#: toc.php:928
+msgid "Power options"
+msgstr "Opcions d'alimentació"
+
+#: toc.php:926 toc.php:1063
+msgid "show"
+msgstr "mostra"
+
+#: toc.php:926
+msgid "Advanced"
+msgstr "Avançat"
+
+#: toc.php:919
+msgid "Leaving the value as %s will inherit your theme's styles"
+msgstr ""
+
+#: toc.php:912
+msgid "Links (visited)"
+msgstr ""
+
+#: toc.php:908
+msgid "Links (hover)"
+msgstr ""
+
+#: toc.php:904
+msgid "Links"
+msgstr ""
+
+#: toc.php:900 toc.php:1678
+msgid "Title"
+msgstr "Títol"
+
+#: toc.php:896
+msgid "Border"
+msgstr ""
+
+#: toc.php:892
+msgid "Background"
+msgstr ""
+
+#: toc.php:882
+msgid "Custom"
+msgstr "Personalitzat"
+
+#: toc.php:877
+msgid "Transparent"
+msgstr ""
+
+#: toc.php:872
+msgid "Black"
+msgstr ""
+
+#: toc.php:867
+msgid "White"
+msgstr ""
+
+#: toc.php:862
+msgid "Light blue"
+msgstr ""
+
+#: toc.php:857
+msgid "Grey (default)"
+msgstr ""
+
+#. translators: appearance / colour / look and feel options
+#: toc.php:854
+msgid "Presentation"
+msgstr ""
+
+#: toc.php:841
+msgid "Font size"
+msgstr "Mida de la lletra"
+
+#: toc.php:836
+msgid "Right"
+msgstr "Dreta"
+
+#: toc.php:835
+msgid "Left"
+msgstr "Esquerra"
+
+#: toc.php:834
+msgid "None (default)"
+msgstr "Cap (per defecte)"
+
+#: toc.php:831
+msgid "Wrapping"
+msgstr "Ajustament"
+
+#. translators: ignore %s as it's some HTML label tags
+#: toc.php:820
+msgid "Please enter a number and %s select its units, eg: 100px, 10em"
+msgstr "Afegiu un número %s i seleccioneu les unitats, p. ex. 100px, 10em"
+
+#: toc.php:814
+msgid "User defined"
+msgstr "Definida per l'usuari"
+
+#. translators: other width
+#: toc.php:813
+msgid "Other"
+msgstr "Altres"
+
+#: toc.php:803
+msgid "Auto (default)"
+msgstr "Automàtica (per defecte)"
+
+#: toc.php:802
+msgid "Relative"
+msgstr "Relativa"
+
+#: toc.php:791
+msgid "Fixed width"
+msgstr "Amplada fixa"
+
+#: toc.php:788
+msgid "Width"
+msgstr "Amplada"
+
+#: toc.php:784
+msgid "Appearance"
+msgstr "Aparença"
+
+#: toc.php:779
+msgid "Scroll rather than jump to the anchor link"
+msgstr "Fes un desplaçament suau en comptes d'anar directament a l'enllaç"
+
+#: toc.php:778
+msgid "Enable smooth scroll effect"
+msgstr "Habilita l'efecte de desplaçament suau"
+
+#: toc.php:774
+msgid "Number list items"
+msgstr "Llista d'elements numerada"
+
+#: toc.php:770
+msgid "Show hierarchy"
+msgstr "Mostra la jerarquia"
+
+#: toc.php:764
+msgid "Hide the table of contents initially"
+msgstr "Inicialment, la taula de continguts està oculta"
+
+#. translators: example text to display when you want to collapse the table of
+#. contents
+#: toc.php:760
+msgid "Eg: hide"
+msgstr "Exemple: Oculta"
+
+#: toc.php:756
+msgid "Hide text"
+msgstr "Oculta el text"
+
+#. translators: example text to display when you want to expand the table of
+#. contents
+#: toc.php:753
+msgid "Eg: show"
+msgstr "Exemple: Mostra"
+
+#: toc.php:749
+msgid "Show text"
+msgstr "Mostra el text"
+
+#: toc.php:744
+msgid "Allow the user to toggle the visibility of the table of contents"
+msgstr "Permet a l'usuari canviar la visibilitat de la taula de continguts"
+
+#: toc.php:742
+msgid "Eg: Contents, Table of Contents, Page Contents"
+msgstr "Exemple: Continguts, Taula de continguts, Pàgina de continguts"
+
+#: toc.php:739
+msgid "Show title on top of the table of contents"
+msgstr "Mostra el títol a dalt de tot de la taula de continguts"
+
+#. translators: this is the title of the table of contents
+#: toc.php:737
+msgid "Heading text"
+msgstr "Text de capçalera"
+
+#: toc.php:722
+msgid "Auto insert for the following content types"
+msgstr "Inserció automàtica per als tipus de continguts següents"
+
+#. translators: text follows drop down list of numbers
+#: toc.php:718
+msgid "or more headings are present"
+msgstr "capçaleres o més es mostrin"
+
+#: toc.php:706
+msgid "Show when"
+msgstr "Mostra quan"
+
+#: toc.php:701
+msgid "Bottom"
+msgstr "Inferior"
+
+#: toc.php:700
+msgid "Top"
+msgstr "Superior"
+
+#: toc.php:699
+msgid "After first heading"
+msgstr "Després de la primera capçalera"
+
+#: toc.php:698
+msgid "Before first heading (default)"
+msgstr "Abans de la primera capçalera (per defecte)"
+
+#: toc.php:695
+msgid "Position"
+msgstr "Posició"
+
+#: toc.php:687
+msgid "Help"
+msgstr "Ajuda"
+
+#: toc.php:686
+msgid "Sitemap"
+msgstr ""
+
+#: toc.php:685
+msgid "Main Options"
+msgstr "Opcions generals"
+
+#: toc.php:673
+msgid "Save failed."
+msgstr ""
+
+#: toc.php:671
+msgid "Options saved."
+msgstr "S'han desat les opcions"
+
+#: toc.php:500 toc.php:501
+msgid "TOC"
+msgstr ""
+
+#: toc.php:221
+msgid "Settings"
+msgstr "Configuració"
+
+# XTEC ************ AFEGIT - Add localization support to strings
+# 2017.05.16 @xaviernietosanchez
+#: toc.php:802
+msgid "post"
+msgstr "Articles"
+
+# XTEC ************ AFEGIT - Add localization support to strings
+# 2017.05.16 @xaviernietosanchez
+#: toc.php:802
+msgid "page"
+msgstr "Pàgines"
+
+# XTEC ************ AFEGIT - Add localization support to strings
+# 2017.05.16 @xaviernietosanchez
+#: toc.php:834
+msgid "Contents"
+msgstr "Continguts"
+
+# XTEC ************ AFEGIT - Add localization support to strings
+# 2017.05.16 @xaviernietosanchez
+#: toc.php:543
+msgid "hide"
+msgstr "oculta"
