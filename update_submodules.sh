@@ -30,3 +30,6 @@ gitcheckout "src/wp-content/themes/twentyten" "master" "git@github.com:projectes
 gitcheckout "src/wp-content/themes/twentytwelve" "master" "git@github.com:projectestac/wordpress-theme-twentytwelve.git"
 gitcheckout "src/wp-content/themes/twentysixteen" "master" "git@github.com:projectestac/wordpress-theme-twentysixteen.git"
 gitcheckout "src/wp-includes/xtec" "master" "git@github.com:projectestac/wordpress-xtec.git"
+gitcheckout "src/wp-content/plugins/widget-options" "master" "https://github.com/phpbits/widget-options.git"
+gitcheckout "src/wp-content/plugins/xtec-eduhack" "master" "https://github.com/projectestac/xtec-eduhack.git"
+gitcheckout "src/wp-content/plugins/eduhack" "master" "https://github.com/Artesans/Edu_Hack.git"

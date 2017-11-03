@@ -82,3 +82,12 @@
 [submodule "src/wp-content/plugins/slideshare"]
 	path = src/wp-content/plugins/slideshare
 	url = https://github.com/projectestac/wordpress-slideshare.git
+[submodule "src/wp-content/plugins/widget-options"]
+	path = src/wp-content/plugins/widget-options
+	url = https://github.com/phpbits/widget-options
+[submodule "src/wp-content/plugins/xtec-eduhack"]
+	path = src/wp-content/plugins/xtec-eduhack
+	url = https://github.com/projectestac/xtec-eduhack.git
+[submodule "src/wp-content/plugins/eduhack"]
+	path = src/wp-content/plugins/eduhack
+	url = https://github.com/Artesans/Edu_Hack.git
