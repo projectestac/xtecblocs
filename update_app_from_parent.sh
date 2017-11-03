@@ -167,6 +167,8 @@ delete_new wp-content/plugins/socialmedia
 delete_new wp-content/plugins/widget-visibility-without-jetpack
 delete_new wp-content/plugins/xtec-booking
 delete_new wp-content/plugins/xtec-stats
+delete_new wp-content/plugins/tabs-responsive
+delete_new wp-content/plugins/h5p
 delete_new wp-content/plugins/AFEGIT_XTEC
 delete_new wp-content/plugins/ELIMINAT_XTEC
 delete_new wp-content/themes/reactor
