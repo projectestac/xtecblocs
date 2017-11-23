@@ -26,8 +26,7 @@ add_action('plugins_loaded', 'xtec_widget_load_language_file');
 class users_data_widget extends WP_Widget {
 
 	// Widget Constructor
-	function users_data_widget() {
-
+	function __construct() {
 		$options = array(
 			'classname' => 'xtec_user_data_widget',
 		    'description' => __('Widget to add data users','xtec-widget-users-data')
