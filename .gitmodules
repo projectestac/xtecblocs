@@ -10,9 +10,6 @@
 [submodule "src/wp-content/plugins/google-analyticator"]
 	path = src/wp-content/plugins/google-analyticator
 	url = https://github.com/projectestac/wordpress-google-analyticator
-[submodule "src/wp-content/plugins/raw-html"]
-	path = src/wp-content/plugins/raw-html
-	url = https://github.com/projectestac/wordpress-raw-html
 [submodule "src/wp-content/plugins/slideshow-jquery-image-gallery"]
 	path = src/wp-content/plugins/slideshow-jquery-image-gallery
 	url = https://github.com/projectestac/wordpress-slideshow-jig
