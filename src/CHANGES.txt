@@ -3,6 +3,20 @@ Release notes for XTECBlocs (http://blocs.xtec.cat)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/xtecblocs
 
+18.10.01
+---------------------------------------------------------------------------------------
+- Add compatibility to php 7.0
+- Super Cache
+- Analyticator
+- Recapcha
+- Social login
+- Blogger importer
+- Slideshow jquery image gallery
+- xtec mail module
+- Widget Data Users
+- Wordpress Importer
+- Wordpress Hyperdb
+
 17.05.05
 ---------------------------------------------------------------------------------------
 - Hidden options to allow admins to activate pingbacks and trackbacks
