@@ -58,6 +58,7 @@ if( !class_exists( 'MUCD_Duplicate' ) ) {
             }
 
             // Create new site
+            switch_to_blog(1);
             $to_site_id = wpmu_create_blog( $newdomain, $path, $title, $user_id , array( 'public' => $public ), $network_id );
             $wpdb->show_errors();
 
@@ -117,27 +118,6 @@ if( !class_exists( 'MUCD_Duplicate' ) ) {
             $user_id = email_exists($email);
             if ( !$user_id ) { // Create a new user with a random password
                 $password = wp_generate_password( 12, false );
-//          XTEC ************ MODIFICAT - If user doesn't exist and is XTEC, use email prefix instead of domain
-//          2016.03.16 @sarjona
-                $pos = strrpos($email, '@xtec.cat');
-                if ($pos > 0) {
-                    // Is XTEC user
-                    $xtecusername = substr($email, 0, $pos);
-                    $user_id = wpmu_create_user( $xtecusername, $password, $email );
-                } else {
-                    $user_id = wpmu_create_user( $domain, $password, $email );
-                }
-                if ( false == $user_id ) {
-                    return new WP_Error( 'file_copy', MUCD_NETWORK_PAGE_DUPLICATE_ADMIN_ERROR_CREATE_USER);
-                }
-                else {
-                    if ($pos === FALSE ) {
-                        // Only send notification for non XTEC users
-                        wp_new_user_notification( $user_id, $password );
-                    }
-                }
-//            ************ ORIGINAL
-/*
                 $user_id = wpmu_create_user( $domain, $password, $email );
                 if ( false == $user_id ) {
                     return new WP_Error( 'file_copy', MUCD_NETWORK_PAGE_DUPLICATE_ADMIN_ERROR_CREATE_USER);
@@ -145,8 +125,6 @@ if( !class_exists( 'MUCD_Duplicate' ) ) {
                 else {
                     wp_new_user_notification( $user_id, $password );
                 }
-*/
-//            ************ FI
             }
 
             return $user_id;

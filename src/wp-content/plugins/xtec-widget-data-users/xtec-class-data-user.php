@@ -24,14 +24,20 @@ add_action('plugins_loaded', 'xtec_widget_load_language_file');
 
 // Widget class
 class users_data_widget extends WP_Widget {
-
 	// Widget Constructor
+// XTEC ************ MODIFICAT - Use of deprecated PHP4 style class constructor is not supported since PHP 7.
+// 2017.11.23 @nacho
+//************ ORIGINAL
+/*
+	function users_data_widget() {
+ */
+//************ FI
 	function __construct() {
 		$options = array(
 			'classname' => 'xtec_user_data_widget',
 		    'description' => __('Widget to add data users','xtec-widget-users-data')
 		);
-		$this->__construct('users_data_widget', __('Users information','xtec-widget-users-data'), $options);
+		parent::__construct('users_data_widget', __('Users information','xtec-widget-users-data'), $options);
 
 		add_action('admin_enqueue_scripts', array($this, 'upload_scripts'));
 	}

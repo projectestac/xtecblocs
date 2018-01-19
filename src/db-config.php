@@ -406,6 +406,8 @@ function add_additional_databases($db_id,$wpdb){
 		'user'     => DB_USER,
 		'password' => DB_PASSWORD,
 		'name'     => DB_PREFIX.($db_id-1),
+		'write'    => 1,
+        'read'     => 1,
 		'dataset'  => 's'.$db_id
 	));
 }
@@ -415,6 +417,8 @@ $wpdb->add_database(array(
 	'host'     => DB_HOST,
 	'user'     => DB_USER,
 	'password' => DB_PASSWORD,
+	'write'    => 1,
+    'read'     => 1,
 	'name'     => DB_PREFIX.'global',
 	'dataset'  => 'global'
 ));
@@ -424,7 +428,7 @@ for($db_id=1; $db_id<=DB_NUMS; $db_id++){
 	add_additional_databases($db_id,$wpdb);
 }
 
-// add global tables which are in global database (9)
+// add global  in glob   al database (9)
 $wpdb->add_table('global', 'wp_blogs');
 $wpdb->add_table('global', 'wp_blog_versions');
 $wpdb->add_table('global', 'wp_registration_log');
