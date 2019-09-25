@@ -48,7 +48,16 @@ if( !class_exists( 'MUCD_Data' ) ) {
             $from_site_prefix_like = $wpdb->esc_like($from_site_prefix);
 
             // SCHEMA - TO FIX for HyperDB
+            // XTEC ************ MODIFICAT - Add support for HyperDB
+            // 2015.10.28 @dgras
+            $sql_query = $wpdb->prepare('SELECT DISTINCT TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME LIKE \'%s\'', $from_site_prefix_like."%");
+            $schema = MUCD_Data::do_sql_query($sql_query, 'var');
+            //************ ORIGINAL
+            /*
+            // SCHEMA - TO FIX for HyperDB
             $schema = DB_NAME;
+            */
+            //************ FI
 
             // Get sources Tables
             if($from_site_id == MUCD_PRIMARY_SITE_ID) {
