@@ -186,7 +186,7 @@ function xtec_delblogs_page()
 			<?php
 
 			// Inactivity check
-			$date_limit = date("Y-m-d H:i:s",mktime()-($inactivity_days*86400));
+			$date_limit = date("Y-m-d H:i:s",time()-($inactivity_days*86400));
 
 			$apage = isset( $_GET['apage'] ) ? intval( $_GET['apage'] ) : 1;
 			$num = isset( $_GET['num'] ) ? intval( $_GET['num'] ) : 25;
@@ -226,7 +226,7 @@ function xtec_delblogs_page()
 						$posts_pages_check = false;
 						$upload_check = false;
 
-						$now = mktime();
+						$now = time();
 						$elapsed_days = (int)(($now-$last_updated)/86400);
 
 						// Posts and Pages check
