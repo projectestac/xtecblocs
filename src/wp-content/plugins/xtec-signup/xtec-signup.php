@@ -27,7 +27,7 @@ function xtec_signup_network_admin_menu()
  */
 function xtec_signup_network_options()
 {
-	switch ( $_GET['action'] ) {
+	switch ( isset($_GET['action']) ) {
 		case 'siteoptions':
 			if ( $_POST['xtec_signup_maxblogsday'] ) {
 				$xtec_signup_maxblogsday = $_POST['xtec_signup_maxblogsday'];

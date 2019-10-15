@@ -1,0 +1,65 @@
+/* Base styles */
+
+html,
+body,
+.content-wrapper {
+  height: 100%;
+  margin: 0;
+  background-color: rgb(234, 234, 234);
+}
+
+header h1,
+header .motto {
+  text-transform: uppercase;
+}
+
+.header-wrapper,
+.form-wrapper {
+  padding: 10%;
+}
+
+.header-wrapper {
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+}
+
+.form-wrapper {
+  background-color: white;
+  overflow-y: auto;
+}
+
+.clone-form {
+  width: 100%;
+}
+
+
+/* Wide screen */
+
+@media screen and (min-width: 992px) {
+
+  .content-wrapper {
+    display: flex;
+    align-items: stretch;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+  }
+
+  .content-wrapper > div {
+    flex: 1;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+  }
+
+  .header-wrapper, .form-wrapper {
+    width: 50%;
+  }
+
+  .header-wrapper {
+    background-size: contain;
+  }
+
+}

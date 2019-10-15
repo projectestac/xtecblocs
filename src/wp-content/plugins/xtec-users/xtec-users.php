@@ -306,8 +306,6 @@ function xtec_add_users()
 	
 	<div class="wrap">
 	
-		<?php screen_icon(); ?>
-	
 		<h2>Afegeix un nou usuari/ària</h2>
 
 		<?php
@@ -406,10 +404,10 @@ function xtec_add_users()
 											if ($role=='administrator') { $selected = "selected='selected'";}
 											echo "<option value='administrator' $selected>$administrator_tag</option>"; 
 										} ?> 
-										<option <?php if ($role=='editor') { echo "selected='selected'";} ?>value='editor'><?php echo $editor_tag ?></option>
-										<option <?php if ($role=='author') { echo "selected='selected'";} ?>value='author'><?php echo $author_tag ?></option>
-										<option <?php if ($role=='contributor' || $role == '') { echo "selected='selected'";} ?> value='contributor'><?php echo $contributor_tag ?></option>
-										<option <?php if ($role=='subscriber') { echo "selected='selected'";} ?>value='subscriber'><?php echo $subscriber_tag ?></option>
+										<option <?php if (isset($role) && ($role=='editor')) { echo "selected='selected'";} ?>value='editor'><?php echo $editor_tag ?></option>
+										<option <?php if (isset($role) && ($role=='author')) { echo "selected='selected'";} ?>value='author'><?php echo $author_tag ?></option>
+										<option <?php if (isset($role) && ($role=='contributor' || $role == '')) { echo "selected='selected'";} ?> value='contributor'><?php echo $contributor_tag ?></option>
+										<option <?php if (isset($role) && ($role=='subscriber')) { echo "selected='selected'";} ?>value='subscriber'><?php echo $subscriber_tag ?></option>
 									</select>
 								</td>
 							</tr>						
@@ -487,8 +485,6 @@ function xtec_manage_users()
 
 	<div class="wrap">
 		
-		<?php screen_icon(); ?>
-		
 		<h2>Gestió d'usuaris</h2>
 
 		<?php
@@ -497,7 +493,7 @@ function xtec_manage_users()
 			$password = $_POST['password'];
 			$user_id = $_POST['user_id'];
 			$username = get_userdata($user_id)->user_login;
-			if ( !xtec_current_user_can('change_user_password',$user_id) ) {
+            if ( !xtec_current_user_can('change_user_password',$user_id) ) {
 				wp_die(__('Cheatin&#8217; uh?'));
 			}
 			if ( empty($password) ) {
@@ -520,7 +516,7 @@ function xtec_manage_users()
 		?>
 
 		<?php
-		$doaction = '';
+        $doaction = '';
 		if ( isset($_REQUEST['action']) ) {
 			$doaction = $_REQUEST['action'];
 		}
@@ -542,7 +538,7 @@ function xtec_manage_users()
 						<tr id='row_password' >
 							<th><label for='password'>Nova contrasenya:</label></th>
 							<td>
-								<input id='password' type='text' size='30' maxlength='20' name='password' value="<?php echo $password; ?>" />
+								<input id='password' type='text' size='30' maxlength='20' name='password' value="<?php isset($password)?$password:''; ?>" />
 							</td>
 						</tr>
 						
@@ -667,6 +663,7 @@ function xtec_manage_users()
 function xtec_current_user_can($action,$param = '')
 {	
 	// Site admins can do it all except delete users who are still members of some blog
+    $user = wp_get_current_user();
 	if ( is_super_admin() ) { 
 		if ( $action == 'delete_user' ) {
 			if ( get_blogs_of_user($user->user_id,true) ) { return false; }

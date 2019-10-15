@@ -57,7 +57,7 @@ jQuery( document ).ready(function( $ ) {
 	// fills the fields based on the language dropdown list choice
 	$( '#lang_list' ).change(function() {
 		var value = $( this ).val().split( ':' );
-		var selected = $( "select option:selected" ).text().split( ' - ' );
+		var selected = $( "option:selected", this ).text().split( ' - ' );
 		$( '#lang_slug' ).val( value[0] );
 		$( '#lang_locale' ).val( value[1] );
 		$( 'input[name="rtl"]' ).val( [value[2]] );
@@ -171,6 +171,7 @@ jQuery( document ).ready(function( $ ) {
 		pll_toggle( $( '#pll-domains-table' ), 3 == value );
 		pll_toggle( $( "#pll-hide-default" ), 3 > value );
 		pll_toggle( $( "#pll-rewrite" ), 2 > value );
+		pll_toggle( $( "#pll-redirect-lang" ), 2 > value );
 	});
 
 	// settings license

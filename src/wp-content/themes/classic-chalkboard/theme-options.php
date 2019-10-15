@@ -19,7 +19,7 @@ function classicchalkboard_theme_options_page() {
 	if ( ! isset( $_REQUEST['updated'] ) )
 		$_REQUEST['updated'] = false; // This checks whether the form has just been submitted. ?>
 	<div class="wrap">
-	<?php screen_icon(); echo "<h2>" . __( 'classicchalkboard Theme Options', 'classicchalkboard' ) . "</h2>";
+	<?php echo "<h2>" . __( 'classicchalkboard Theme Options', 'classicchalkboard' ) . "</h2>";
 	// This shows the page's name and an icon if one has been provided ?>
 	<?php if ( false !== $_REQUEST['updated'] ) : ?>
 	<div class="updated fade"><p><strong><?php esc_attr_e( 'Options saved' , 'classicchalkboard' ); ?></strong></p></div>

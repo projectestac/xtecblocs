@@ -1,0 +1,63 @@
+.projects-config{
+    font-size: 16px !important;
+    color: #0073aa;
+    padding: 15px 0px !important;
+}
+
+#projects_meta section{
+    padding-bottom: 25px;
+}
+
+.choosen-tag .color-tag{
+    width: 10px;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+}
+
+.choosen-tag{
+    width: auto;
+    min-width: 80px;
+    display: inline-block;
+    margin: 2px;
+    border: 1px solid #777;
+    border-radius: 3px;
+    line-height: 25px;
+    position: relative;
+    padding-right: 5px;
+    max-width: 200px;
+}
+
+.choosen-tag input{
+    padding: 0 15px;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.choosen-tag .tag-image-url{
+    width: 100px;
+    height: auto;
+    float: left;
+    display: inline-block;
+}
+
+.delete{
+    font-size:16px;
+    font-weight:bold;
+    text-decoration: none;
+}
+
+.team-img{
+    width: 100px;
+    height: auto;
+}
+.facilitador-img{
+    width: 100px;
+    height: auto;
+}
+.project-img{
+    width: 100px;
+    height: auto;
+}

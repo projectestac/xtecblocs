@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Modified version with 'polylang' text domain and comments for translators
  *
  * @author Easy Digital Downloads
- * @version 1.6.10
+ * @version 1.6.16
  */
 class PLL_Plugin_Updater {
 
@@ -43,9 +43,18 @@ class PLL_Plugin_Updater {
 		$this->version     = $_api_data['version'];
 		$this->wp_override = isset( $_api_data['wp_override'] ) ? (bool) $_api_data['wp_override'] : false;
 		$this->beta        = ! empty( $this->api_data['beta'] ) ? true : false;
-		$this->cache_key   = md5( serialize( $this->slug . $this->api_data['license'] . $this->beta ) );
+		$this->cache_key   = 'edd_sl_' . md5( serialize( $this->slug . $this->api_data['license'] . $this->beta ) );
 
 		$edd_plugin_data[ $this->slug ] = $this->api_data;
+
+		/**
+		 * Fires after the $edd_plugin_data is setup.
+		 *
+		 * @since x.x.x
+		 *
+		 * @param array $edd_plugin_data Array of EDD SL plugin data.
+		 */
+		do_action( 'post_edd_sl_plugin_updater_setup', $edd_plugin_data );
 
 		// Set up hooks.
 		$this->init();
@@ -115,7 +124,7 @@ class PLL_Plugin_Updater {
 
 			}
 
-			$_transient_data->last_checked           = current_time( 'timestamp' );
+			$_transient_data->last_checked           = time();
 			$_transient_data->checked[ $this->name ] = $this->version;
 
 		}
@@ -174,7 +183,7 @@ class PLL_Plugin_Updater {
 
 			}
 
-			$update_cache->last_checked = current_time( 'timestamp' );
+			$update_cache->last_checked = time();
 			$update_cache->checked[ $this->name ] = $this->version;
 
 			set_site_transient( 'update_plugins', $update_cache );
@@ -201,8 +210,8 @@ class PLL_Plugin_Updater {
 
 			if ( empty( $version_info->download_link ) ) {
 				printf(
-					/* translators: %1$s plugin name, %3$s plugin version, %2$s and %4$s are html tags */
-					esc_html__( 'There is a new version of %1$s available. %2$sView version %3$s details%4$s.', 'polylang' ),
+					/* translators: %1$s plugin name, %3$s plugin version, %2$s is link start tag, %4$s is link end tag. */
+					__( 'There is a new version of %1$s available. %2$sView version %3$s details%4$s.', 'polylang' ),
 					esc_html( $version_info->name ),
 					'<a target="_blank" class="thickbox" href="' . esc_url( $changelog_link ) . '">',
 					esc_html( $version_info->new_version ),
@@ -210,8 +219,8 @@ class PLL_Plugin_Updater {
 				);
 			} else {
 				printf(
-					/* translators: %1$s plugin name, %3$s plugin version, %2$s, %4$s, %5$s and %6$s are html tags */
-					esc_html__( 'There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s.', 'polylang' ),
+					/* translators: %1$s plugin name, %3$s plugin version, %2$s and %5$s are link start tags, %4$s and %6$s are link end tags. */
+					__( 'There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s.', 'polylang' ),
 					esc_html( $version_info->name ),
 					'<a target="_blank" class="thickbox" href="' . esc_url( $changelog_link ) . '">',
 					esc_html( $version_info->new_version ),
@@ -284,8 +293,8 @@ class PLL_Plugin_Updater {
 		// Convert sections into an associative array, since we're getting an object, but Core expects an array.
 		if ( isset( $_data->sections ) && ! is_array( $_data->sections ) ) {
 			$new_sections = array();
-			foreach ( $_data->sections as $key => $key ) {
-				$new_sections[ $key ] = $key;
+			foreach ( $_data->sections as $key => $value ) {
+				$new_sections[ $key ] = $value;
 			}
 
 			$_data->sections = $new_sections;
@@ -294,8 +303,8 @@ class PLL_Plugin_Updater {
 		// Convert banners into an associative array, since we're getting an object, but Core expects an array.
 		if ( isset( $_data->banners ) && ! is_array( $_data->banners ) ) {
 			$new_banners = array();
-			foreach ( $_data->banners as $key => $key ) {
-				$new_banners[ $key ] = $key;
+			foreach ( $_data->banners as $key => $value ) {
+				$new_banners[ $key ] = $value;
 			}
 
 			$_data->banners = $new_banners;
@@ -312,11 +321,13 @@ class PLL_Plugin_Updater {
 	 * @return object $array
 	 */
 	public function http_request_args( $args, $url ) {
-		// If it is an https request and we are performing a package download, disable ssl verification
+
+		$verify_ssl = $this->verify_ssl();
 		if ( strpos( $url, 'https://' ) !== false && strpos( $url, 'edd_action=package_download' ) ) {
-			$args['sslverify'] = false;
+			$args['sslverify'] = $verify_ssl;
 		}
 		return $args;
+
 	}
 
 	/**
@@ -356,7 +367,8 @@ class PLL_Plugin_Updater {
 			'beta'       => ! empty( $data['beta'] ),
 		);
 
-		$request = wp_remote_post( $this->api_url, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
+		$verify_ssl = $this->verify_ssl();
+		$request    = wp_remote_post( $this->api_url, array( 'timeout' => 15, 'sslverify' => $verify_ssl, 'body' => $api_params ) );
 
 		if ( ! is_wp_error( $request ) ) {
 			$request = json_decode( wp_remote_retrieve_body( $request ) );
@@ -372,7 +384,7 @@ class PLL_Plugin_Updater {
 			$request->banners = maybe_unserialize( $request->banners );
 		}
 
-		if( ! empty( $request ) ) {
+		if( ! empty( $request->sections ) ) {
 			foreach( $request->sections as $key => $section ) {
 				$request->$key = (array) $section;
 			}
@@ -418,7 +430,8 @@ class PLL_Plugin_Updater {
 				'beta'       => ! empty( $data['beta'] )
 			);
 
-			$request = wp_remote_post( $this->api_url, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
+			$verify_ssl = $this->verify_ssl();
+			$request    = wp_remote_post( $this->api_url, array( 'timeout' => 15, 'sslverify' => $verify_ssl, 'body' => $api_params ) );
 
 			if ( ! is_wp_error( $request ) ) {
 				$version_info = json_decode( wp_remote_retrieve_body( $request ) );
@@ -456,7 +469,7 @@ class PLL_Plugin_Updater {
 
 		$cache = get_option( $cache_key );
 
-		if( empty( $cache['timeout'] ) || current_time( 'timestamp' ) > $cache['timeout'] ) {
+		if( empty( $cache['timeout'] ) || time() > $cache['timeout'] ) {
 			return false; // Cache is expired
 		}
 
@@ -471,12 +484,22 @@ class PLL_Plugin_Updater {
 		}
 
 		$data = array(
-			'timeout' => strtotime( '+3 hours', current_time( 'timestamp' ) ),
+			'timeout' => strtotime( '+3 hours', time() ),
 			'value'   => json_encode( $value )
 		);
 
-		update_option( $cache_key, $data );
+		update_option( $cache_key, $data, 'no' );
 
+	}
+
+	/**
+	 * Returns if the SSL of the store should be verified.
+	 *
+	 * @since  1.6.13
+	 * @return bool
+	 */
+	private function verify_ssl() {
+		return (bool) apply_filters( 'edd_sl_api_request_verify_ssl', true, $this );
 	}
 
 }

@@ -84,59 +84,61 @@ function kubrick_header_display_string() {
 add_action('admin_menu', 'kubrick_add_theme_page');
 
 function kubrick_add_theme_page() {
-	if ( $_GET['page'] == basename(__FILE__) ) {
-		if ( 'save' == $_REQUEST['action'] ) {
-			if ( isset($_REQUEST['njform']) ) {
-				if ( isset($_REQUEST['defaults']) ) {
-					delete_option('kubrick_header_image');
-					delete_option('kubrick_header_color');
-					delete_option('kubrick_header_display');
-				} else {
-					if ( '' == $_REQUEST['njfontcolor'] )
-						delete_option('kubrick_header_color');
-					else
-						update_option('kubrick_header_color', $_REQUEST['njfontcolor']);
-
-					if ( preg_match('/[0-9A-F]{6}|[0-9A-F]{3}/i', $_REQUEST['njuppercolor'], $uc) && preg_match('/[0-9A-F]{6}|[0-9A-F]{3}/i', $_REQUEST['njlowercolor'], $lc) ) {
-						$uc = ( strlen($uc[0]) == 3 ) ? $uc[0]{0}.$uc[0]{0}.$uc[0]{1}.$uc[0]{1}.$uc[0]{2}.$uc[0]{2} : $uc[0];
-						$lc = ( strlen($lc[0]) == 3 ) ? $lc[0]{0}.$lc[0]{0}.$lc[0]{1}.$lc[0]{1}.$lc[0]{2}.$lc[0]{2} : $lc[0];
-						update_option('kubrick_header_image', "header-img.php?upper=$uc&amp;lower=$lc");
-					}
-
-					if ( isset($_REQUEST['toggledisplay']) ) {
-						if ( false === get_option('kubrick_header_display') )
-							update_option('kubrick_header_display', 'none');
-						else
-							delete_option('kubrick_header_display');
-					}
-				}
-			} else {
-
-				if ( isset($_REQUEST['headerimage']) ) {
-					if ( '' == $_REQUEST['headerimage'] )
-						delete_option('kubrick_header_image');
-					else
-						update_option('kubrick_header_image', $_REQUEST['headerimage']);
-				}
-
-				if ( isset($_REQUEST['fontcolor']) ) {
-					if ( '' == $_REQUEST['fontcolor'] )
-						delete_option('kubrick_header_color');
-					else
-						update_option('kubrick_header_color', $_REQUEST['fontcolor']);
-				}
-
-				if ( isset($_REQUEST['fontdisplay']) ) {
-					if ( '' == $_REQUEST['fontdisplay'] || 'inline' == $_REQUEST['fontdisplay'] )
-						delete_option('kubrick_header_display');
-					else
-						update_option('kubrick_header_display', 'none');
-				}
-			}
-			//print_r($_REQUEST);
-			wp_redirect("themes.php?page=functions.php&saved=true");
-			die;
-		}
+	if ( isset($_GET['page']) == basename(__FILE__) ) {
+	    if (isset ($_REQUEST['action'])) {
+            if ('save' == $_REQUEST['action']) {
+                if (isset($_REQUEST['njform'])) {
+                    if (isset($_REQUEST['defaults'])) {
+                        delete_option('kubrick_header_image');
+                        delete_option('kubrick_header_color');
+                        delete_option('kubrick_header_display');
+                    } else {
+                        if ('' == $_REQUEST['njfontcolor'])
+                            delete_option('kubrick_header_color');
+                        else
+                            update_option('kubrick_header_color', $_REQUEST['njfontcolor']);
+                    
+                        if (preg_match('/[0-9A-F]{6}|[0-9A-F]{3}/i', $_REQUEST['njuppercolor'], $uc) && preg_match('/[0-9A-F]{6}|[0-9A-F]{3}/i', $_REQUEST['njlowercolor'], $lc)) {
+                            $uc = (strlen($uc[0]) == 3) ? $uc[0]{0} . $uc[0]{0} . $uc[0]{1} . $uc[0]{1} . $uc[0]{2} . $uc[0]{2} : $uc[0];
+                            $lc = (strlen($lc[0]) == 3) ? $lc[0]{0} . $lc[0]{0} . $lc[0]{1} . $lc[0]{1} . $lc[0]{2} . $lc[0]{2} : $lc[0];
+                            update_option('kubrick_header_image', "header-img.php?upper=$uc&amp;lower=$lc");
+                        }
+                    
+                        if (isset($_REQUEST['toggledisplay'])) {
+                            if (false === get_option('kubrick_header_display'))
+                                update_option('kubrick_header_display', 'none');
+                            else
+                                delete_option('kubrick_header_display');
+                        }
+                    }
+                } else {
+                
+                    if (isset($_REQUEST['headerimage'])) {
+                        if ('' == $_REQUEST['headerimage'])
+                            delete_option('kubrick_header_image');
+                        else
+                            update_option('kubrick_header_image', $_REQUEST['headerimage']);
+                    }
+                
+                    if (isset($_REQUEST['fontcolor'])) {
+                        if ('' == $_REQUEST['fontcolor'])
+                            delete_option('kubrick_header_color');
+                        else
+                            update_option('kubrick_header_color', $_REQUEST['fontcolor']);
+                    }
+                
+                    if (isset($_REQUEST['fontdisplay'])) {
+                        if ('' == $_REQUEST['fontdisplay'] || 'inline' == $_REQUEST['fontdisplay'])
+                            delete_option('kubrick_header_display');
+                        else
+                            update_option('kubrick_header_display', 'none');
+                    }
+                }
+                //print_r($_REQUEST);
+                wp_redirect("themes.php?page=functions.php&saved=true");
+                die;
+            }
+        }
 		add_action('admin_head', 'kubrick_theme_page_head');
 	}
 	add_theme_page('Customize Header', 'Header Image and Color', 'edit_theme_options', basename(__FILE__), 'kubrick_theme_page');

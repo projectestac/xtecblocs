@@ -1,0 +1,427 @@
+/*
+ Theme Name:   Eduhack
+ Author:       Joan Sala Soler
+ Author URI:   http://xtec.gencat.cat
+ Template:     fukasawa
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         eduhack, xtec
+ Text Domain:  xtec-eduhack
+*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i');
+
+
+/* == Compatibility with older browsers ===================================== */
+
+.posts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  -ms-flex-wrap: wrap;
+}
+
+.posts .post-container > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+}
+
+.posts .post-excerpt {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+}
+
+.widget_nav_menu .menu-item > a {
+  -webkit-transition: all .3s ease-out;
+}
+
+
+/* == Increase sidebar width on wide-screens ================================ */
+
+@media (min-width: 1001px) {
+
+  .sidebar,
+  .sidebar:before {
+    width: 340px;
+  }
+  
+  .wrapper {
+    margin-left: 340px;
+  }
+
+}
+
+
+/* == Base styles =========================================================== */
+
+body {
+  font-size: 14px;
+}
+
+.sidebar {
+	font-size: .9em;
+}
+
+.home-post {
+  padding: 0 10px;
+}
+
+.posts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.posts .post-container > div {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  padding: 16px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.posts .post-excerpt {
+  flex: 1;
+}
+
+.post-terms {
+  text-transform: uppercase;
+  margin-top: 16px;
+}
+
+.post-terms a {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.post-terms span {
+  color: rgba(0, 0, 0, .5);
+}
+
+.post-terms span:before {
+  display: inline;
+  color: rgba(0, 0, 0, .6);
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+
+.post-title a {
+  color: rgba(0, 0, 0, .8);
+}
+
+.post-inner {
+  width: auto;
+  font-size: 15px;
+}
+
+.page-title h4 {
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, .7);
+  font-size: .86em;
+}
+
+.page-title h4 {
+  padding-bottom: 5px;
+  border-bottom: 8px solid rgba(0, 0, 0, .2);
+}
+
+.category .posts a {
+  color: rgb(0, 124, 176);
+}
+
+.category .posts a:hover {
+  color: inherit;
+  opacity: .8;
+}
+
+.category-description > p {
+  padding-bottom: 1em;
+}
+
+.category-description > p:last-child {
+  padding-bottom: 0;
+}
+
+.widget_links h3 {
+  display: none;
+}
+
+.widget_links a {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgb(0, 124, 176);
+}
+
+.main-menu::before,
+.widgets::before,
+.widget + .widget::before,
+.menu::before,
+.credits::before {
+  width: 100%;
+}
+
+
+/* == Custom menu widtget =================================================== */
+
+.widget_nav_menu {
+  position: relative;
+  margin: 20px 0;
+}
+
+.widget_nav_menu + .widget_nav_menu::before {
+  content: none;
+  background: none;
+  margin: 0;
+}
+
+.widget_nav_menu h3 {
+  color: rgba(0, 0, 0, .7);
+  font-size: .8em;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin: 8px 0;
+}
+
+.widget_nav_menu .menu-item {
+  margin-bottom: 0;
+  margin-top: -5px !important;
+}
+
+.widget_nav_menu .menu-item a {
+  display: inline-block;
+  color: rgb(255, 255, 255);
+  border: 5px solid rgba(230, 230, 230, .6);
+  background: rgba(0, 0, 0, .6);
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: none;
+  font-size: 1.1em;
+  padding: 10px;
+}
+
+.widget_nav_menu .menu-item a:focus {
+  text-decoration: underline !important;
+}
+
+.widget_nav_menu .menu-item > a {
+  transition: all .3s ease-out;
+}
+
+.widget_nav_menu .sub-menu {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.widget_nav_menu .sub-menu li:first-child {
+  margin: 0 !important;
+}
+
+.widget_nav_menu .menu-item > a:hover {
+  opacity: .8;
+}
+
+.widget_nav_menu .current-menu-item:before {
+  color: rgba(0, 0, 0, .5);
+  font-size: 12px;
+  top: 15px;
+  left: -12px
+}
+
+
+/* == Predefined custom menu widget colors ================================== */
+
+.widget_nav_menu .menu-item a {
+  background-color: rgb(0, 124, 176);
+}
+
+.menu-primera-fase .menu-item a {
+  background-color: rgb(46, 54, 144);
+}
+
+.menu-segona-fase .menu-item a {
+  background-color: rgb(44, 136, 199);
+}
+
+.menu-tercera-fase .menu-item a {
+  background-color: rgb(22, 147, 76);
+}
+
+.menu-quarta-fase .menu-item a {
+  background-color: rgb(107, 59, 147);
+}
+
+.menu-cinquena-fase .menu-item a {
+  background-color: rgb(230, 100, 20);
+}
+
+.menu-sisena-fase .menu-item a {
+  background-color: rgb(173, 54, 48);
+}
+
+.menu-setena-fase .menu-item a {
+  background-color: rgb(20, 124, 92);
+}
+
+/*
+ * You can easely set a custom color for each category
+ * to match its menu color.
+ *
+ 
+ .menu-primera-fase .menu-item a {
+   background-color: rgb(0, 124, 176);
+ }
+
+ .category-primera-fase .posts a {
+   color: rgb(0, 124, 176);
+ }
+
+ */
+
+
+/* == Exercise template ===================================================== */
+
+.eduhack-exercise .post-meta-bottom:before {
+  display: none;
+}
+
+.eduhack-exercise .post-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3% 0;
+}
+
+.eduhack-exercise .post-navigation a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  height: auto;
+  min-height: 120px;
+  overflow: visible;
+}
+
+.eduhack-exercise .post-navigation p {
+  position: relative;
+  font-weight: 500;
+  top: inherit;
+  margin-top: 0;
+}
+
+.eduhack-exercise .post-navigation p:first-child {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.eduhack-exercise .post-navigation .post-nav-next,
+.eduhack-exercise .post-navigation .post-nav-prev {
+  float: none;
+}
+
+.eduhack-exercise .post-navigation .post-nav-next:only-child {
+  margin-left: auto;
+}
+
+.exercise-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.exercise-categories {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: .2rem;
+}
+
+.exercise-categories img {
+  width: auto;
+  height: 32px;
+  margin-right: 1rem;
+  border-radius: 100%;
+}
+
+.exercise-categories a {
+  color: #333;
+}
+
+.category-pages li {
+  display: inline-block;
+  margin-left: .5rem;
+}
+
+.category-pages a {
+  color: #333;
+  padding: .5rem;
+  background: #ddd;
+  border-radius: 100%;
+  width: 2rem;
+  height: 2rem;
+  display: block;
+  text-align: center;
+  line-height: 1.1rem;
+  font-weight: 700;
+}
+
+.category-pages .active a {
+  color: #fff;
+  background: #019EBD;
+}
+
+.category-pages a:hover {
+  color: #fff;
+  background: #333;
+}
+
+
+@media (max-width: 600px) {
+  .home-post {
+    padding: 0;
+  }
+  
+  .exercise-header {
+    flex-direction: column;
+    max-width: 85%;
+    margin: 0 auto;
+  }
+  
+  .exercise-pagination {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 1rem 0 0 0;
+    border-top: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .exercise-pagination .category-pages {
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .eduhack-exercise .post-navigation {
+    flex-direction: column;
+  }
+  
+  .eduhack-exercise .post-navigation .post-nav-prev:not(:only-child) {
+    display: none;
+  }
+}

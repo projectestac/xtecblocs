@@ -1,0 +1,70 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Eduhack Projects Widget\n"
+"Last-Translator: Mireia Chaler <mchaler@omitsis.com>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "Projectes"
+msgstr "Projects"
+
+msgid "Projecte"
+msgstr "Project"
+
+msgid "Equip"
+msgstr "Team"
+
+msgid "Descripció"
+msgstr "Description"
+
+msgid "Estat"
+msgstr "Status"
+
+msgid "Pujar imatge"
+msgstr "Upload image"
+
+msgid "Canviar imatge"
+msgstr "Change image"
+
+msgid "Nom"
+msgstr "Name"
+
+msgid "Centre"
+msgstr "Center"
+
+msgid "Imatge"
+msgstr "Image"
+
+msgid "Facilitadors"
+msgstr ""
+
+msgid "Imatge del projecte"
+msgstr "Project image"
+
+msgid "Etiquetes"
+msgstr "Tags"
+
+msgid "Etiquetes destacades"
+msgstr "Main tags"
+
+msgid "Seleccionar etiquetes"
+msgstr "Select tags"
+
+msgid "Botons"
+msgstr "Buttons"
+
+msgid "Fase"
+msgstr "Phase"
+
+msgid "Afegir-ne més"
+msgstr "Add new"

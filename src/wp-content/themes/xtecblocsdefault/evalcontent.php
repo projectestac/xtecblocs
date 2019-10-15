@@ -32,16 +32,20 @@ switch ($action) {
         print '<table width="100%">';
         print '<th align="left" valign="top">T&iacute;tol</th><th align="left" valign="top">Propietari</th><th align="left" valign="top">Altres descriptors</th>';
         $blogs = xtec_descriptors_get_blogs_by_descriptor($_GET['desc'], true);
-        foreach ($blogs as $blog) {
+        foreach ($blogs as $blog)
+        {
             $blogname = get_blog_option($blog, 'blogname');
             $siteurl = get_blog_option($blog, 'siteurl');
             $admin_email = get_blog_option($blog, 'admin_email');
-            $admin_name = get_user_by_email($admin_email)->user_login;
+            $user = get_user_by('email', $admin_email);
+    
+            $bgcolor = '';
             $bgcolor = ( $bgcolor == '#ffffff' ) ? '#e5f2fe' : '#ffffff';
+            
             ?>
             <tr bgcolor="<?php echo $bgcolor ?>">
                 <td class="blogByDescriptor" valign="top" width="300"><a href="<?php echo $siteurl; ?>" target="_blank"><?php echo stripslashes($blogname); ?></a><?php if (is_user_logged_in()) { ?> <a href="index.php?a=addPrefer&blogId=<?php echo $blog ?>" title="Preferit"><img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif" border="0" alt="Preferit"/></a><?php }; ?></td>
-                <td valign="top" width="100"><?php echo $admin_name; ?></td>
+                <td valign="top" width="100"><?php echo $user->display_name; ?></td>
                 <td valign="top" width="200">
                     <?php
                     $other_descriptors = xtec_descriptors_get_descriptors_by_blog($blog);

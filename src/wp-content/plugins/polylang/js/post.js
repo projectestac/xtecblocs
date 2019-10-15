@@ -26,7 +26,7 @@
 				r = wpAjax.broken;
 			}
 
-			r = $( '<p id="tagcloud-' + tax + '" class="the-tagcloud">' + r + '</p>' );
+			r = $( '<div id="tagcloud-' + tax + '" class="the-tagcloud">' + r + '</div>' );
 			$( 'a', r ).click(function(){
 				tagBox.flushTags( $( this ).closest( '.inside' ).children( '.tagsdiv' ), this );
 				return false;
@@ -131,9 +131,11 @@
 			});
 		}
 
-		var data = wpAjax.unserialize( settings.data ); // what were the data sent by the ajax request?
-		if ( 'undefined' != typeof( data['action'] ) && 'inline-save' == data['action'] ) {
-			update_rows( data['post_ID'] );
+		if ( 'string' == typeof( settings.data ) ) { // Need to check the type due to Gutenberg sometime sending FormData objects
+			var data = wpAjax.unserialize( settings.data ); // what were the data sent by the ajax request?
+			if ( 'undefined' != typeof( data['action'] ) && 'inline-save' == data['action'] ) {
+				update_rows( data['post_ID'] );
+			}
 		}
 	});
 })( jQuery );
@@ -161,9 +163,13 @@ jQuery( document ).ready(function( $ ) {
 
 	// ajax for changing the post's language in the languages metabox
 	$( '.post_lang_choice' ).change(function() {
+		var value = $( this ).val();
+		var lang  = $( this ).children( 'option[value="' + value + '"]' ).attr( 'lang' );
+		var dir   = $( '.pll-translation-column > span[lang="' + lang + '"]' ).attr( 'dir' );
+
 		var data = {
 			action:     'post_lang_choice',
-			lang:       $( this ).val(),
+			lang:       value,
 			post_type:  $( '#post_type' ).val(),
 			taxonomies: taxonomies,
 			post_id:    $( '#post_ID' ).val(),
@@ -205,6 +211,11 @@ jQuery( document ).ready(function( $ ) {
 				var id = $( this ).attr( 'id' );
 				tagBox.get( id );
 			});
+
+			// Modifies the text direction
+			$( 'body' ).removeClass( 'pll-dir-rtl' ).removeClass( 'pll-dir-ltr' ).addClass( 'pll-dir-' + dir );
+			$( '#content_ifr' ).contents().find( 'html' ).attr( 'lang', lang ).attr( 'dir', dir );
+			$( '#content_ifr' ).contents().find( 'body' ).attr( 'dir', dir );
 		});
 	});
 
@@ -212,7 +223,7 @@ jQuery( document ).ready(function( $ ) {
 	function init_translations() {
 		$( '.tr_lang' ).each(function(){
 			var tr_lang = $( this ).attr( 'id' ).substring( 8 );
-			var td = $( this ).parent().siblings( '.pll-edit-column' );
+			var td = $( this ).parent().parent().siblings( '.pll-edit-column' );
 
 			$( this ).autocomplete({
 				minLength: 0,

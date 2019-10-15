@@ -22,7 +22,7 @@ License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA    
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
 global $xtec_descriptors_db_version;
@@ -43,12 +43,12 @@ function xtec_descriptors_network_admin_menu()
 }
 
 /**
- * Displays the network options page of the plugin. 
+ * Displays the network options page of the plugin.
  */
 function xtec_descriptors_network_options()
 {
     global $wpdb;
-   
+    
     if (isset($_GET['action']) && $_GET['action']=='delete') {
         ?><div id="message" class="updated fade"><p><?php echo "S'ha suprimit el descriptor de tot el lloc." ?></p></div><?php
     }
@@ -56,14 +56,14 @@ function xtec_descriptors_network_options()
     if (isset($_GET['action']) && $_GET['action']=='update') {
         /** @todo Update action not implemented. */
     }
-
+    
     $action = isset($_GET['action'])?$_GET['action']:'';
     switch( $action ) {
         case "delete":
             xtec_descriptors_delete_descriptor($_REQUEST['id']);
             break;
         case "update":
-        	/** @todo Update action not implemented. */
+            /** @todo Update action not implemented. */
             break;
         case "descriptors":
             if( isset( $_GET[ 'n' ] ) == false ) {
@@ -71,51 +71,51 @@ function xtec_descriptors_network_options()
             } else {
                 $n = intval( $_GET[ 'n' ] );
             }
-
+            
             $descriptors = $wpdb->get_results("SELECT id,descriptor,blogs FROM wp_descriptors ORDER BY descriptor DESC LIMIT $n, 5", ARRAY_A);
-
-            if ( empty( $descriptors ) == false ) {                
-    			print '<table border="1" cellspacing="0" width="100%">';
+            
+            if ( empty( $descriptors ) == false ) {
+                print '<table border="1" cellspacing="0" width="100%">';
                 foreach ( $descriptors as $details ) {
                     print "<tr>";
-                        print '<td valign="top" width="150">'.$details['descriptor'].'</td>';
-                        $details['blogs']=substr($details['blogs'],0,'-1');
-                        if ( $details['blogs']=='' ) {
-                            print_r("1<br>");
-                            $wpdb->get_results("DELETE FROM wp_descriptors WHERE id={$details['id']}");
-                            $actionmade = __('Deleted');
-                        } else {
-                            print_r("2<br>");
-                            $blogs=explode('$$',$details['blogs']);
-                            array_shift($blogs);
-                            $descriptorsrow='$';
-                            foreach ( $blogs as $blog )
-                            {
-                                $blog1=explode('-',$blog);
-                                $public = get_blog_details($blog1[0])->public;
-
-                                if ($public!='' ) {
-                                    $descriptorsrow.='$'.$blog1[0].'-'.$public.'$';
-                                }
-                            }
-                            print '<td valign="top"><span style="background: #00ff00;">'.$descriptorsrow.'</span><br/><span style="background: #ff0000;">'.$details['blogs'].'$</span></td>';
-                            $number = substr_count($descriptorsrow, '-1');
-                        }
-                        if ( $descriptorsrow=='$' ) {
-                            print_r("3<br>");
-                            $wpdb->get_results("DELETE FROM wp_descriptors WHERE id={$details['id']}");
-                            $actionmade = __('Deleted');
-                        } else {
-                            print_r("4<br>");
-                            if ( $descriptorsrow!=$details['blogs'].'$' ) {
-                                $wpdb->get_results("UPDATE wp_descriptors set number=$number, blogs='$descriptorsrow' WHERE id={$details['id']}");
-                                $actionmade = __('Updated');
-                            } else {
-                                $actionmade = __('Not action');
+                    print '<td valign="top" width="150">'.$details['descriptor'].'</td>';
+                    $details['blogs']=substr($details['blogs'],0,'-1');
+                    if ( $details['blogs']=='' ) {
+                        print_r("1<br>");
+                        $wpdb->get_results("DELETE FROM wp_descriptors WHERE id={$details['id']}");
+                        $actionmade = __('Deleted');
+                    } else {
+                        print_r("2<br>");
+                        $blogs=explode('$$',$details['blogs']);
+                        array_shift($blogs);
+                        $descriptorsrow='$';
+                        foreach ( $blogs as $blog )
+                        {
+                            $blog1=explode('-',$blog);
+                            $public = get_blog_details($blog1[0])->public;
+                            
+                            if ($public!='' ) {
+                                $descriptorsrow.='$'.$blog1[0].'-'.$public.'$';
                             }
                         }
-                        print '<td valign="top" width="10">'.$number.'</td>';
-                        print '<td valign="top" width="80">'.$actionmade.'</td>';
+                        print '<td valign="top"><span style="background: #00ff00;">'.$descriptorsrow.'</span><br/><span style="background: #ff0000;">'.$details['blogs'].'$</span></td>';
+                        $number = substr_count($descriptorsrow, '-1');
+                    }
+                    if ( $descriptorsrow=='$' ) {
+                        print_r("3<br>");
+                        $wpdb->get_results("DELETE FROM wp_descriptors WHERE id={$details['id']}");
+                        $actionmade = __('Deleted');
+                    } else {
+                        print_r("4<br>");
+                        if ( $descriptorsrow!=$details['blogs'].'$' ) {
+                            $wpdb->get_results("UPDATE wp_descriptors set number=$number, blogs='$descriptorsrow' WHERE id={$details['id']}");
+                            $actionmade = __('Updated');
+                        } else {
+                            $actionmade = __('Not action');
+                        }
+                    }
+                    print '<td valign="top" width="10">'.$number.'</td>';
+                    print '<td valign="top" width="80">'.$actionmade.'</td>';
                     print "</tr>";
                 }
                 print '<tr><td colspan="10"><span style="background: #00ff00;">Ara</span><br/><span style="background: #ff0000;">Abans</span></td></tr>';
@@ -128,27 +128,27 @@ function xtec_descriptors_network_options()
             } else {
                 _e("All Done!");
             }
-            break;        
+            break;
     }
-
+    
     if (isset($_GET['action']) && $_GET['action'] != 'descriptors')
-    {	    
-	    $sortida = '<div class="wrap">';
-	    $sortida .= '<p>'. __("Des d'aquí pots regenerar la taula de cerca dels blocs fent de manera automàtica una crida de cada bloc. Feu clic al següent enllaç per a realitzar l'actualització.") . '</p>';
-	    $sortida .= "<p><a href=?page=ms-descriptor&action=descriptors>" . __('Regenera la taula de descriptors') . '</a></p>';
-	    $sortida .= '</div>';
-	    echo $sortida;
-	
-	    $descripts = $wpdb->get_results("SELECT id,descriptor,blogs,number FROM wp_descriptors order by descriptor");
-	    if ( $descripts ) {
-		    print '<div class="wrap">';
-		        print '<table border="1" cellpadding="10" cellspacing="10">';
-		            foreach ( $descripts as $descriptor ) {
-		                print '<tr><td>' . $descriptor->descriptor . '</td><td><strong>' . $descriptor->number . '</strong></td><td>' . $descriptor->blogs . '</td><td><a href=?page=ms-descriptor&action=delete&id=' . $descriptor->id . '>' . __('Delete') . '</a></td><td><a href=?page=ms-descriptor&action=update&id=' . $descriptor->id . '>' . __('Update') . '</a></td></tr>';
-		            }
-		        print '</table>';
-		    print "</div>";
-	    }
+    {
+        $sortida = '<div class="wrap">';
+        $sortida .= '<p>'. __("Des d'aquí pots regenerar la taula de cerca dels blocs fent de manera automàtica una crida de cada bloc. Feu clic al següent enllaç per a realitzar l'actualització.") . '</p>';
+        $sortida .= "<p><a href=?page=ms-descriptor&action=descriptors>" . __('Regenera la taula de descriptors') . '</a></p>';
+        $sortida .= '</div>';
+        echo $sortida;
+        
+        $descripts = $wpdb->get_results("SELECT id,descriptor,blogs,number FROM wp_descriptors order by descriptor");
+        if ( $descripts ) {
+            print '<div class="wrap">';
+            print '<table border="1" cellpadding="10" cellspacing="10">';
+            foreach ( $descripts as $descriptor ) {
+                print '<tr><td>' . $descriptor->descriptor . '</td><td><strong>' . $descriptor->number . '</strong></td><td>' . $descriptor->blogs . '</td><td><a href=?page=ms-descriptor&action=delete&id=' . $descriptor->id . '>' . __('Delete') . '</a></td><td><a href=?page=ms-descriptor&action=update&id=' . $descriptor->id . '>' . __('Update') . '</a></td></tr>';
+            }
+            print '</table>';
+            print "</div>";
+        }
     }
 }
 
@@ -156,25 +156,25 @@ function xtec_descriptors_network_options()
  * Adds plugin admin menu.
  */
 function xtec_descriptors_admin_menu()
-{    
-	$page = add_options_page('Descriptors', 'Descriptors', 'manage_options', 'descriptors', 'xtec_descriptors_options');
+{
+    $page = add_options_page('Descriptors', 'Descriptors', 'manage_options', 'descriptors', 'xtec_descriptors_options');
     $screen = get_current_screen();
     if( !method_exists( $screen, 'add_help_tab' ) )
         return;
     $screen->add_help_tab(array( 'title' => '', 'id' => 'id1', 'content' => __('This screen helps you manage the descriptors of your blog.')));
-	//add_contextual_help( $page, '<p>' . __('This screen helps you manage the descriptors of your blog.') . '</p>');
+    //add_contextual_help( $page, '<p>' . __('This screen helps you manage the descriptors of your blog.') . '</p>');
 }
 
 /**
- * Displays the options page of the plugin. 
+ * Displays the options page of the plugin.
  */
 function xtec_descriptors_options()
 {
-	global $wpdb;
-	/** @todo Enque script with WordPress API. */
-	?>
+    global $wpdb;
+    /** @todo Enque script with WordPress API. */
+    ?>
     <script language='javascript' src='../wp-content/plugins/xtec-descriptors/js/xtec-descriptors-autocomp.js'></script>
-	<?php    
+    <?php
     
     //Admin menu in Opcions blogs
     if ( isset($_REQUEST['del']) && $_REQUEST['del']!='' ) {
@@ -183,33 +183,33 @@ function xtec_descriptors_options()
         $descriptorBlogs = $wpdb->get_results("SELECT id,blogs,number,descriptor FROM wp_descriptors where `id` = ".$_REQUEST['del']);
         $newblogs = str_replace('$'.$wpdb->blogid.'-1$','',$descriptorBlogs[0]->blogs);
         $newblogs = str_replace('$'.$wpdb->blogid.'-0$','',$newblogs);
-
+        
         $public = (get_blog_details($wpdb->blogid)->public)? 1 : 0;
         $number = xtec_descriptors_count_descriptors(utf8_decode($descriptorBlogs[0]->descriptor))-$public;
-
+        
         $sql = "UPDATE wp_descriptors SET `blogs`='$newblogs', `number`=$number WHERE id=".$descriptorBlogs[0]->id;
         //If is the last blog that have this descriptor delete the descriptor
         if ( $number==0 && $newblogs=='$' ) {
             $sql = "DELETE FROM wp_descriptors WHERE id=".$descriptorBlogs[0]->id;
         }
         //Execute the SQL sentence
-        $wpdb->query($sql);    
+        $wpdb->query($sql);
     }
-
+    
     if( isset($_REQUEST['descriptor']) && $_REQUEST['descriptor']!='' ){
         $descript = strtolower(utf8_decode($_POST['descriptor']));
         // \p{L} Any kind of letter from any language
         // \p{N} Any kind of numeric character in any script
-        // \P is the negated version of \p    
+        // \P is the negated version of \p
         $descript=preg_replace('/\P{L}\P{N}/','',$descript);
         
         //Add the descriptor in descriptors table
         //Try if descriptor exists
         $descriptorId = $wpdb->get_results("SELECT id,blogs FROM wp_descriptors where `descriptor` like '".utf8_encode($descript)."'");
         //If exists add the blog in blogs list if it isn't
-
+        
         $public = (get_blog_details($wpdb->blogid)->public)? 1 : 0;
-        if ( $descriptorId[0]->id=='' ) {
+        if ( empty($descriptorId) ) {
             //Create descriptor
             $sql="INSERT INTO wp_descriptors (descriptor,number,blogs) VALUES ('".utf8_encode($descript)."',".$public.",'$$".$wpdb->blogid."-".$public."$')";
             $wpdb->query($sql);
@@ -219,35 +219,35 @@ function xtec_descriptors_options()
                 $newblogs = $descriptorId[0]->blogs.'$'.$wpdb->blogid.'-'.$public.'$';
                 $number = xtec_descriptors_count_descriptors($descript)+$public;
                 $sql="UPDATE wp_descriptors SET `blogs`='$newblogs', `number`=$number WHERE id=".$descriptorId[0]->id;
-                $wpdb->query($sql);            
+                $wpdb->query($sql);
             }
         }
     }
     
-	?>
-	<div class="wrap">
-		<h2>Llista de descriptors del bloc</h2>
-		<?php
+    ?>
+    <div class="wrap">
+        <h2>Llista de descriptors del bloc</h2>
+        <?php
         $descripts = $wpdb->get_results("SELECT id,descriptor FROM wp_descriptors WHERE blogs LIKE '%$".$wpdb->blogid."-1$%' OR blogs LIKE '%$".$wpdb->blogid."-0$%'");
-		$have = false;
-		print "<table>";
-		foreach ( $descripts as $descript ) {
-			if ( $descript!='' ) {
-				print "<tr><td width=\"150\">".$descript->descriptor."</td><td><a href=\"?del=".$descript->id."&page=descriptors\">Esborra</a></td></tr>";
-				$have = true;
-			}
-		}
-		if ( !$have ) { print "<tr><td width=\"100\"><strong>No hi ha descriptors definits.</strong></td></tr>"; }
-		print "</table>";
-		?>
-		<p>Afegeix un descriptor nou</p>
-		<form action="#" method="post" autocomplete="on">
-			<input id="descriptor" type="text" name="descriptor" maxlength="20" size="20" onKeyPress="autocomplete(this.value,event)" />
-			<input type="submit" value="Crea el descriptor" />
-			<div id="autocompletediv"></div>
-		</form>
-	</div>
-	<?php
+        $have = false;
+        print "<table>";
+        foreach ( $descripts as $descript ) {
+            if ( $descript!='' ) {
+                print "<tr><td width=\"150\">".$descript->descriptor."</td><td><a href=\"?del=".$descript->id."&page=descriptors\">Esborra</a></td></tr>";
+                $have = true;
+            }
+        }
+        if ( !$have ) { print "<tr><td width=\"100\"><strong>No hi ha descriptors definits.</strong></td></tr>"; }
+        print "</table>";
+        ?>
+        <p>Afegeix un descriptor nou</p>
+        <form action="#" method="post" autocomplete="on">
+            <input id="descriptor" type="text" name="descriptor" maxlength="20" size="20" onKeyPress="autocomplete(this.value,event)" />
+            <input type="submit" value="Crea el descriptor" />
+            <div id="autocompletediv"></div>
+        </form>
+    </div>
+    <?php
 }
 
 /**
@@ -255,27 +255,27 @@ function xtec_descriptors_options()
  */
 function xtec_descriptors_update_blog_options()
 {
-	global $wpdb;
-	$blogId = $wpdb->blogid;
-	$blogs = $wpdb->get_results("SELECT blogs,descriptor,id from wp_descriptors where `blogs` like '%$".$blogId."-1$%' or `blogs` like '%$".$blogId."-0$%'");
-
-	foreach ( $blogs as $blog ) {
-		$newString = '';
-		if ( get_blog_details($blogId)->public ) {
-			$newString = str_replace('$'.$blogId.'-0$','$'.$blogId.'-1$',$blog->blogs);
-			/** @todo Verify that it's necessary to use utf8_decode. */
-			$number = xtec_descriptors_count_descriptors(utf8_decode($blog->descriptor))+1;
-		} else {
-			$newString = str_replace('$'.$blogId.'-1$','$'.$blogId.'-0$',$blog->blogs);
-			/** @todo Verify that it's necessary to use utf8_decode. */
-			$number = xtec_descriptors_count_descriptors(utf8_decode($blog->descriptor))-1;
-			if( $number < 0 ) { $number = 0; }
-		}
-		
-		$sql="UPDATE wp_descriptors SET `blogs`='$newString', `number`=$number WHERE id=".$blog->id;
-
-		$wpdb->query($sql);	
-	}
+    global $wpdb;
+    $blogId = $wpdb->blogid;
+    $blogs = $wpdb->get_results("SELECT blogs,descriptor,id from wp_descriptors where `blogs` like '%$".$blogId."-1$%' or `blogs` like '%$".$blogId."-0$%'");
+    
+    foreach ( $blogs as $blog ) {
+        $newString = '';
+        if ( get_blog_details($blogId)->public ) {
+            $newString = str_replace('$'.$blogId.'-0$','$'.$blogId.'-1$',$blog->blogs);
+            /** @todo Verify that it's necessary to use utf8_decode. */
+            $number = xtec_descriptors_count_descriptors(utf8_decode($blog->descriptor))+1;
+        } else {
+            $newString = str_replace('$'.$blogId.'-1$','$'.$blogId.'-0$',$blog->blogs);
+            /** @todo Verify that it's necessary to use utf8_decode. */
+            $number = xtec_descriptors_count_descriptors(utf8_decode($blog->descriptor))-1;
+            if( $number < 0 ) { $number = 0; }
+        }
+        
+        $sql="UPDATE wp_descriptors SET `blogs`='$newString', `number`=$number WHERE id=".$blog->id;
+        
+        $wpdb->query($sql);
+    }
 }
 
 /**
@@ -283,31 +283,31 @@ function xtec_descriptors_update_blog_options()
  */
 function xtec_descriptors_head()
 {
-	global $wpdb;
+    global $wpdb;
     $descriptors = '';
-	$descript = $wpdb->get_results( "SELECT descriptor FROM wp_descriptors where blogs like '%$" . $wpdb->blogid . "-1$%' or blogs like '%$" . $wpdb->blogid . "-0$%'" );
-	foreach ( $descript as $d ) {
-		$descriptors .= $d->descriptor.',';
-	}
-	$descriptors = substr( $descriptors, 0, '-1');	
-	if ( $descriptors ) {
-		$meta_string = sprintf( "<meta name=\"DC.Subject\" content=\"%s\"/>", $descriptors );
-		echo $meta_string . "\n";
-	}	
+    $descript = $wpdb->get_results( "SELECT descriptor FROM wp_descriptors where blogs like '%$" . $wpdb->blogid . "-1$%' or blogs like '%$" . $wpdb->blogid . "-0$%'" );
+    foreach ( $descript as $d ) {
+        $descriptors .= $d->descriptor.',';
+    }
+    $descriptors = substr( $descriptors, 0, '-1');
+    if ( $descriptors ) {
+        $meta_string = sprintf( "<meta name=\"DC.Subject\" content=\"%s\"/>", $descriptors );
+        echo $meta_string . "\n";
+    }
 }
 
 /**
  * Deletes a blog of all the descriptors.
- * 
+ *
  * @param int $blog_id Blog ID
  * @param bool $drop True if blog's table should be dropped. Default is false.
  */
 function xtec_descriptors_delete_blog($blog_id, $drop)
 {
     global $wpdb;
-
+    
     $descriptorId = $wpdb->get_results( "SELECT id FROM wp_descriptors where `blogs` like '%$" . $blog_id . "-%'" );
-
+    
     foreach ( $descriptorId as $id ) {
         $descriptorBlogs = $wpdb->get_results( "SELECT id,blogs,number FROM wp_descriptors where `id` = " . $id->id );
         
@@ -331,26 +331,26 @@ function xtec_descriptors_activation_hook()
 {
     global $wpdb;
     global $xtec_descriptors_db_version;
-
+    
     $table_name = $wpdb->base_prefix . 'descriptors';
-
+    
     if ( $wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name ) {
-    	$sql = "CREATE TABLE $table_name (
+        $sql = "CREATE TABLE $table_name (
                 id int(11) NOT NULL AUTO_INCREMENT,
                 descriptor varchar(50) NOT NULL DEFAULT '',
                 number int(11) NOT NULL DEFAULT '0',
                 blogs text NOT NULL,
                 PRIMARY KEY (id),
                 UNIQUE KEY descriptor (descriptor));";
-    	$sql .= "CREATE TABLE {$table_name}_pre (
+        $sql .= "CREATE TABLE {$table_name}_pre (
     	         id int(10) NOT NULL AUTO_INCREMENT,
                  descriptor varchar(20) NOT NULL DEFAULT '',
                  PRIMARY KEY (id),
                  UNIQUE KEY descriptor (descriptor));";
-		
-		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+        
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql);
-
+        
         //insert default values
         $sql = "INSERT INTO `wp_descriptors_pre` VALUES(1, 'matemàtiques');
                 INSERT INTO `wp_descriptors_pre` VALUES(2, 'socials');
@@ -398,7 +398,7 @@ function xtec_descriptors_activation_hook()
                 INSERT INTO `wp_descriptors_pre` VALUES(44, 'batxillerat');
                 INSERT INTO `wp_descriptors_pre` VALUES(45, 'secundària');
                 INSERT INTO `wp_descriptors_pre` VALUES(46, 'cicles');";
-        dbDelta($sql);        
+        dbDelta($sql);
     }
     add_option('$xtec_descriptors_db_version', $xtec_descriptors_db_version);
 }
@@ -418,91 +418,91 @@ register_activation_hook(__FILE__,'xtec_descriptors_activation_hook');
  */
 function xtec_descriptors_get_descriptors_cloud($number,$min_font_size,$max_font_size)
 {
-	global $wpdb;
-	$cloudArray = array(); // create an array to hold tag code		
-	// Pull in tag data		
-	$tags = $wpdb->get_results("SELECT descriptor,number FROM wp_descriptors where blogs like '%-1$%' ORDER BY number DESC limit 0,$number");
-
-	$arr=array();
-	for($i=0;$i<count($tags);$i++){
-    	$arr[$tags[$i]->descriptor] = $tags[$i]->number;
-	}	
-	ksort($arr);
-	
-	if(count($arr)>0){
-		$minimum_count = min(array_values($arr));
-		$maximum_count = max(array_values($arr));			
-		$spread = $maximum_count - $minimum_count;
-		if($spread == 0) {
-			$spread = 1;
-		}
+    global $wpdb;
+    $cloudArray = array(); // create an array to hold tag code
+    // Pull in tag data
+    $tags = $wpdb->get_results("SELECT descriptor,number FROM wp_descriptors where blogs like '%-1$%' ORDER BY number DESC limit 0,$number");
+    
+    $arr=array();
+    for($i=0;$i<count($tags);$i++){
+        $arr[$tags[$i]->descriptor] = $tags[$i]->number;
+    }
+    ksort($arr);
+    
+    if(count($arr)>0){
+        $minimum_count = min(array_values($arr));
+        $maximum_count = max(array_values($arr));
+        $spread = $maximum_count - $minimum_count;
+        if($spread == 0) {
+            $spread = 1;
+        }
         
-		//Finally we start the HTML building process to display our tags. For this demo the tag simply searches Google using the provided tag.
-		foreach ($arr as $tag => $count) {
-			$size = $min_font_size + ($count - $minimum_count) * ($max_font_size - $min_font_size) / $spread;
-			$cloudArray[]=array('size'=>floor($size),'tag'=>htmlspecialchars(stripslashes($tag)),'count'=>$count);
-		}
-	}
+        //Finally we start the HTML building process to display our tags. For this demo the tag simply searches Google using the provided tag.
+        foreach ($arr as $tag => $count) {
+            $size = $min_font_size + ($count - $minimum_count) * ($max_font_size - $min_font_size) / $spread;
+            $cloudArray[]=array('size'=>floor($size),'tag'=>htmlspecialchars(stripslashes($tag)),'count'=>$count);
+        }
+    }
     return  $cloudArray;
 }
 
 /**
  * Gets the blogs with a specific descriptor.
- * 
+ *
  * @param string $descriptor The descriptor to search.
  * @param bool $public True if the search must returns only the public blogs, false if it must returns all the blogs.
  * @return array The IDs of the blogs found.
  */
 function xtec_descriptors_get_blogs_by_descriptor($descriptor, $public=true)
 {
-	global $wpdb;
-	$sql = "SELECT blogs from wp_descriptors where `descriptor` = '".$descriptor."'";
-	$blogs = $wpdb->get_col($sql);
-	$blogs = explode('$$',substr($blogs[0],0,-1));
-	array_shift($blogs);
+    global $wpdb;
+    $sql = "SELECT blogs from wp_descriptors where `descriptor` = '".$descriptor."'";
+    $blogs = $wpdb->get_col($sql);
+    $blogs = explode('$$',substr($blogs[0],0,-1));
+    array_shift($blogs);
     
-	$bbd = array();
-	
-	foreach ( $blogs as $blog ) {
-		$blogInit = $blog;
-		$blog = str_replace('-1','',$blog);
-		$blog = str_replace('-0','',$blog);
-		if ( get_blog_details($blog)->public || $public ) {
-			array_push($bbd, $blog);
-		}
-	}
-	return $bbd;
+    $bbd = array();
+    
+    foreach ( $blogs as $blog ) {
+        $blogInit = $blog;
+        $blog = str_replace('-1','',$blog);
+        $blog = str_replace('-0','',$blog);
+        if ( get_blog_details($blog)->public || $public ) {
+            array_push($bbd, $blog);
+        }
+    }
+    return $bbd;
 }
 
 /**
  * Gets the descriptors of a blog.
- * 
+ *
  * @param int $blog_id ID of the blog.
  * @return array The descriptors of the blog.
  */
 function xtec_descriptors_get_descriptors_by_blog($blog_id)
 {
-	global $wpdb;
-	$descriptors = $wpdb->get_results("SELECT descriptor FROM wp_descriptors WHERE blogs LIKE '%$".$blog_id."-1$%'");
-	
-	$dbb = array();
-	foreach ( $descriptors as $descriptor ) {
-		array_push($dbb, $descriptor->descriptor);
-	}
-	return $dbb;
+    global $wpdb;
+    $descriptors = $wpdb->get_results("SELECT descriptor FROM wp_descriptors WHERE blogs LIKE '%$".$blog_id."-1$%'");
+    
+    $dbb = array();
+    foreach ( $descriptors as $descriptor ) {
+        array_push($dbb, $descriptor->descriptor);
+    }
+    return $dbb;
 }
 
 /**
  * Counts the number of descriptors of a blog.
- * 
+ *
  * @param int $blogId Id of the blog.
  * @return int The number of descriptors of the blog.
  */
 function xtec_descriptors_count_bloc_descriptors($blogId)
 {
-	global $wpdb;
-	$descripts = $wpdb->get_results( "SELECT count(*) as number FROM wp_descriptors where blogs like '%$".$blogId."-1$%' or blogs like '%$".$blogId."-0$%'" );
-	return $descripts[0]->number;
+    global $wpdb;
+    $descripts = $wpdb->get_results( "SELECT count(*) as number FROM wp_descriptors where blogs like '%$".$blogId."-1$%' or blogs like '%$".$blogId."-0$%'" );
+    return $descripts[0]->number;
 }
 
 /**
@@ -513,16 +513,16 @@ function xtec_descriptors_count_bloc_descriptors($blogId)
  */
 function xtec_descriptors_count_descriptors($descriptor)
 {
-	global $wpdb;
-	$sql="SELECT blogs FROM wp_descriptors where `descriptor` like '".utf8_encode($descriptor)."'";
-	$descriptorId = $wpdb->get_results($sql);
-	$number = count(explode('-1$',$descriptorId[0]->blogs))-1;
-	return $number;
+    global $wpdb;
+    $sql="SELECT blogs FROM wp_descriptors where `descriptor` like '".utf8_encode($descriptor)."'";
+    $descriptorId = $wpdb->get_results($sql);
+    $number = count(explode('-1$',$descriptorId[0]->blogs))-1;
+    return $number;
 }
 
 /**
  * Deletes a descriptor.
- * 
+ *
  * @param int $id Id of the descriptor.
  */
 function xtec_descriptors_delete_descriptor($id)
