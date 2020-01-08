@@ -7,6 +7,7 @@ Changes in progress
 ---------------------------------------------------------------------------------------
 - anti-spam: Upgraded to version 5.5
 - GCE: Upgraded to version 3.1.22
+- widget-options: Upgraded to version 3.6.1
 - mu-common: Disable XML-RPC methods that require authentication
 
 
