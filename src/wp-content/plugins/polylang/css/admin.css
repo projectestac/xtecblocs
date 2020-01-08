@@ -148,6 +148,21 @@ td[class*='column-language_'] {
 	width: 1.5em;
 }
 
+/* Text direction in post.php and edit-tags.php */
+.pll-dir-rtl textarea,
+.pll-dir-rtl input[type="text"] {
+	direction: rtl;
+}
+
+.pll-dir-ltr textarea,
+.pll-dir-ltr input[type="text"] {
+	direction: ltr;
+}
+
+.pll-dir-ltr .tr_lang,
+.pll-dir-rtl .tr_lang {
+	direction: inherit;
+}
 
 /* languages metabox in post.php */
 #post-translations p {
@@ -251,9 +266,11 @@ td[class*='column-language_'] {
 .pll_icon_tick:before {
 	content: "\f147";
 }
+
 .pll_icon_add:before {
 	content: "\f132";
 }
+
 .pll_icon_edit:before {
 	content: "\f464";
 }
@@ -276,6 +293,16 @@ td[class*='column-language_'] {
 #wpadminbar #wp-admin-bar-languages .ab-icon:before {
 	content: "\f326";
 	top: 1px;
+}
+
+/* Notices */
+.pll-notice.notice {
+	padding-right: 38px;
+	position: relative;
+}
+
+.pll-notice a.notice-dismiss {
+	text-decoration: none;
 }
 
 @media screen and ( max-width: 782px ) {

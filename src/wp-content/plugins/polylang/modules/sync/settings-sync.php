@@ -8,7 +8,7 @@
 class PLL_Settings_Sync extends PLL_Settings_Module {
 
 	/**
-	 * constructor
+	 * Constructor
 	 *
 	 * @since 1.8
 	 *
@@ -23,7 +23,7 @@ class PLL_Settings_Sync extends PLL_Settings_Module {
 	}
 
 	/**
-	 * deactivates the module
+	 * Deactivates the module
 	 *
 	 * @since 1.8
 	 */
@@ -33,12 +33,14 @@ class PLL_Settings_Sync extends PLL_Settings_Module {
 	}
 
 	/**
-	 * displays the settings form
+	 * Displays the settings form
 	 *
 	 * @since 1.8
 	 */
-	protected function form() {?>
-		<ul class="pll-inline-block-list"><?php
+	protected function form() {
+		?>
+		<ul class="pll-inline-block-list">
+			<?php
 			foreach ( self::list_metas_to_sync() as $key => $str ) {
 				printf(
 					'<li><label><input name="sync[%s]" type="checkbox" value="1" %s /> %s</label></li>',
@@ -46,12 +48,14 @@ class PLL_Settings_Sync extends PLL_Settings_Module {
 					in_array( $key, $this->options['sync'] ) ? 'checked="checked"' : '',
 					esc_html( $str )
 				);
-			} ?>
-		</ul><?php
+			}
+			?>
+		</ul>
+		<?php
 	}
 
 	/**
-	 * sanitizes the settings before saving
+	 * Sanitizes the settings before saving
 	 *
 	 * @since 1.8
 	 *
@@ -63,7 +67,7 @@ class PLL_Settings_Sync extends PLL_Settings_Module {
 	}
 
 	/**
-	 * get the row actions
+	 * Get the row actions
 	 *
 	 * @since 1.8
 	 *
@@ -74,7 +78,7 @@ class PLL_Settings_Sync extends PLL_Settings_Module {
 	}
 
 	/**
-	 * list the post metas to synchronize
+	 * List the post metas to synchronize
 	 *
 	 * @since 1.0
 	 *

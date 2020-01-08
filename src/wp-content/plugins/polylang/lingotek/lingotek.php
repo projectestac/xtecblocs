@@ -28,42 +28,29 @@ class PLL_Lingotek {
 			add_action( 'admin_print_styles', array( $this, 'print_css' ) );
 		}
 
-		// The pointer
-		$content = __( 'You’ve just upgraded to the latest version of Polylang! Would you like to automatically translate your website for free?', 'polylang' );
+		// The admin notice
+		// Honor old dismissed pointers
+		if ( ! in_array( 'pll_lgt', explode( ',', get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) ) ) ) {
+			$content = __( 'You’ve just upgraded to the latest version of Polylang! Would you like to automatically translate your website for free?', 'polylang' );
 
-		$buttons = array(
-			array(
-				'label' => __( 'Close' ),
-			),
-			array(
-				'label' => __( 'Learn more', 'polylang' ),
-				'link' => admin_url( 'admin.php?page=mlang&tab=lingotek' ),
-			),
-		);
-
-		if ( $link = $this->get_activate_link() ) {
-			$content .= ' ' . __( 'Click on Activate Lingotek to start translating.', 'polylang' );
-
-			$buttons[] = array(
-				'label' => __( 'Activate Lingotek', 'polylang' ),
-				'link' => str_replace( '&amp;', '&', $link ), // wp_nonce_url escapes the url for html display. Here we want it for js
+			$buttons = sprintf(
+				'<a href="%s" class="button button-primary" style="margin-right: 10px">%s</a>',
+				admin_url( 'admin.php?page=mlang_lingotek' ),
+				__( 'Learn more', 'polylang' )
 			);
+
+			if ( $link = $this->get_activate_link() ) {
+				$content .= ' ' . __( 'Click on Activate Lingotek to start translating.', 'polylang' );
+
+				$buttons = sprintf(
+					'<a href="%s" class="button button-primary" style="margin-right: 10px">%s</a>',
+					$link,
+					__( 'Activate Lingotek', 'polylang' )
+				) . $buttons;
+			}
+
+			PLL_Admin_Notices::add_notice( 'lingotek', '<p>' . $content . '</p><p>' . $buttons . '</p>' );
 		}
-
-		$args = array(
-			'pointer' => 'pll_lgt',
-			'id' => empty( $options['previous_version'] ) ? 'nav-tab-lingotek' : 'wp-admin-bar-languages',
-			'position' => array(
-				'edge' => 'top',
-				'align' => 'left',
-			),
-			'width' => 400,
-			'title' => __( 'Congratulations!', 'polylang' ),
-			'content' => $content,
-			'buttons' => $buttons,
-		);
-
-		new PLL_Pointer( $args );
 	}
 
 	/**
@@ -104,7 +91,7 @@ class PLL_Lingotek {
 				'link'    => 'http://www.lingotek.com/wordpress/extra_services',
 				'new_tab' => true,
 				'classes' => 'button button-primary',
-			)
+			),
 		);
 
 		printf( '<p>%s</p>', esc_html__( 'Polylang is now fully integrated with Lingotek, a professional translation management system!', 'polylang' ) );
@@ -158,7 +145,6 @@ class PLL_Lingotek {
 			array_intersect_key( $links, array_flip( array( 'activate', 'services' ) ) ),
 			'image04.png'
 		);
-
 	}
 
 	/**
@@ -166,7 +152,8 @@ class PLL_Lingotek {
 	 *
 	 * @since 1.7.7
 	 */
-	public function print_css() { ?>
+	public function print_css() {
+		?>
 		<style type="text/css">
 		.ltk-feature {
 			text-align: left;
@@ -178,6 +165,10 @@ class PLL_Lingotek {
 			margin-bottom: 3px;
 			height: 630px;
 			background: #fafafa;
+		}
+		.rtl .ltk-feature {
+			text-align: right;
+			float: right;
 		}
 		.ltk-feature h3 {
 			height: 1em;
@@ -194,10 +185,16 @@ class PLL_Lingotek {
 		.ltk-feature ul {
 			margin-left: 10px;
 		}
+		.rtl .ltk-feature ul {
+			margin-right: 10px;
+		}
 		.ltk-feature ul li {
 			list-style: inside disc;
 			list-style-position: outside;
-    		padding-left: 0;
+			padding-left: 0;
+		}
+		.rtl .ltk-feature ul li {
+			padding-right: 0;
 		}
 		.ltk-feature .ltk-desc {
 			height: 3em;
@@ -210,8 +207,6 @@ class PLL_Lingotek {
 		.ltk-feature .ltk-lower {
 			padding: 5px 20px 0px 20px;
 			border-top: 1px solid #eee;
-
-			text-align: left;
 			font-size: 95%;
 		}
 
@@ -221,7 +216,8 @@ class PLL_Lingotek {
 				padding-bottom: 20px;
 			}
 		}
-		</style><?php
+		</style>
+		<?php
 	}
 
 	/**
@@ -235,34 +231,40 @@ class PLL_Lingotek {
 	 * @param array  $links
 	 * @param string $img
 	 */
-	protected function box( $title, $desc, $list, $links, $img ) {?>
+	protected function box( $title, $desc, $list, $links, $img ) {
+		?>
 		<div class="ltk-feature">
 			<div class="ltk-upper">
 				<div class="ltk-image">
-					<img src="<?php echo esc_url( plugins_url( $img, __FILE__ ) );?> " width="220" height="220"/>
+					<img src="<?php echo esc_url( plugins_url( $img, __FILE__ ) ); ?> " width="220" height="220"/>
 				</div>
 				<h3><?php echo esc_html( $title ); ?></h3>
-				<p class="ltk-desc"><?php echo esc_html( $desc ); ?></p><?php
+				<p class="ltk-desc"><?php echo esc_html( $desc ); ?></p>
+				<?php
 				foreach ( $links as $link_details ) {
 					printf(
 						'<a class = "%s" href = "%s"%s>%s</a> ',
 						esc_attr( $link_details['classes'] ),
 						esc_url( $link_details['link'] ),
-						empty( $link_details['new_tab'] ) ? '' :  ' target = "_blank"',
+						empty( $link_details['new_tab'] ) ? '' : ' target = "_blank"',
 						esc_html( $link_details['label'] )
 					);
-				} ?>
+				}
+				?>
 			</div>
 			<div class="ltk-lower">
-				<ul><?php
+				<ul>
+					<?php
 					foreach ( $list as $item ) {
 						printf( '<li>%s</li>', esc_html( $item ) );
-					} ?>
+					}
+					?>
 				</ul>
-				<a href="http://www.lingotek.com/wordpress" target = "_blank"><?php esc_html_e( 'Learn more...', 'polylang' ) ?></a>
+				<a href="http://www.lingotek.com/wordpress" target = "_blank"><?php esc_html_e( 'Learn more...', 'polylang' ); ?></a>
 			</div>
 
-		</div><?php
+		</div>
+		<?php
 	}
 
 	/**
@@ -274,7 +276,7 @@ class PLL_Lingotek {
 	 * @return string
 	 */
 	protected function get_activate_link() {
-		require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+		require_once ABSPATH . '/wp-admin/includes/plugin.php';
 
 		if ( ! array_key_exists( self::LINGOTEK, get_plugins() ) ) {
 			if ( current_user_can( 'install_plugins' ) ) {
