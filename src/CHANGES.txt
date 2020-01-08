@@ -5,6 +5,7 @@ development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+- anti-spam: Upgraded to version 5.5
 - mu-common: Disable XML-RPC methods that require authentication
 
 
