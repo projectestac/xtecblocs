@@ -10,6 +10,7 @@ Changes in progress
 - widget-options: Upgraded to version 3.6.1
 - WordPress Social Login: Upgraded to version 3.0.1
 - mu-common: Disable XML-RPC methods that require authentication
+- xtec-mail: Fixed warning in PHP 7.3
 
 
 18.10.01
