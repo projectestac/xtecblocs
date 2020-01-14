@@ -16,6 +16,7 @@ Changes in progress
 - WordPress Social Login: Upgraded to version 3.0.1
 - xtec-mail: Fixed warning in PHP 7.3
 - xtec lib: Synchronized code with Nodes
+- Updated logos for Departament d'Educació
 
 
 18.10.01
