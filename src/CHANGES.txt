@@ -5,11 +5,15 @@ development home at https://github.com/projectestac/xtecblocs
 
 Changes in progress
 ---------------------------------------------------------------------------------------
+- Upgraded WordPress to version 5.1.4
 - anti-spam: Upgraded to version 5.5
+- HyperDB: Upgraded to version 1.6
+- MUCD: Upgraded to version 1.5.3
+- mu-common: Disable XML-RPC methods that require authentication
+- mu-common: Fixed several PHP warnings in PHP 7.3
 - Simple Calendar: Upgraded to version 3.1.22
 - widget-options: Upgraded to version 3.6.1
 - WordPress Social Login: Upgraded to version 3.0.1
-- mu-common: Disable XML-RPC methods that require authentication
 - xtec-mail: Fixed warning in PHP 7.3
 - xtec lib: Synchronized code with Nodes
 - Updated logos for Departament d'Educació

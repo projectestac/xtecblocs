@@ -37,7 +37,7 @@ else {
 	if (function_exists('xtecweekblog_current_weekblog')){
 		global $post;
 		$weekblog = xtecweekblog_current_weekblog();
-		if((count($weekblog)>0) && xtecweekblog_validate($weekblog->ID)) {
+		if(is_array($weekblog) && (count($weekblog)>0) && xtecweekblog_validate($weekblog->ID)) {
 	        $wb_name = get_post_meta($weekblog->ID, '_xtecweekblog-name', true);
 	        $wb_url = get_blogaddress_by_name($wb_name);
 	        $wb_id = get_id_from_blogname($wb_name);

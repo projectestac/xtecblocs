@@ -174,7 +174,7 @@ if ( !class_exists( 'toc' ) ) :
 				'exclude_css' => false,
 				'exclude' => '',
 				'heading_levels' => array('1', '2', '3', '4', '5', '6'),
-				'restrict_path' => '',
+				'restrict_path' => '/docs/',
 				'css_container_class' => '',
 				'sitemap_show_page_listing' => true,
 				'sitemap_show_category_listing' => true,
@@ -1674,8 +1674,47 @@ if ( is_xtecadmin() ){
 					return false;
 			}
 		}
-		
-		
+
+        // XTEC ************ AFEGIT - This function returns the number of total headings from the html formatted $content.
+        // 2019.06.25 @nacho
+        public function total_headings(&$find, &$replace, $content = '') {
+            $matches = [];
+
+            // reset the internal collision collection as the_content may have been triggered elsewhere
+            // eg by themes or other plugins that need to read in content such as metadata fields in
+            // the head html tag, or to provide descriptions to twitter/facebook
+            $this->collision_collector = [];
+
+            if ( is_array($find) && is_array($replace) && $content ) {
+                // get all headings
+                // the html spec allows for a maximum of 6 heading depths
+                if ( preg_match_all('/(<h([1-6]{1})[^>]*>).*<\/h\2>/msuU', $content, $matches, PREG_SET_ORDER) ) {
+
+                    // remove undesired headings (if any) as defined by heading_levels
+                    if ( count($this->options['heading_levels']) != 6 ) {
+                        $new_matches = array();
+                        for ($i = 0; $i < count($matches); $i++) {
+                            if ( in_array($matches[$i][2], $this->options['heading_levels']) )
+                                $new_matches[] = $matches[$i];
+                        }
+                        $matches = $new_matches;
+                    }
+                }
+
+                // remove empty headings
+                $new_matches = [];
+                for ($i = 0; $i < count($matches); $i++) {
+                    if ( trim( strip_tags($matches[$i][0]) ) != false )
+                        $new_matches[] = $matches[$i];
+                }
+                if ( count($matches) != count($new_matches) )
+                    $matches = $new_matches;
+            }
+
+            return count($matches);
+        }
+        //************ FI
+
 		function the_content( $content )
 		{
 			global $post;
@@ -1683,8 +1722,22 @@ if ( is_xtecadmin() ){
 			$custom_toc_position = strpos($content, '<!--TOC-->');
 			$find = $replace = array();
 
+            // XTEC ************ AFEGIT -Get defined headers configurated in TOC+ module
+            // 2019.06.25 @nacho
+            $defined_headers = $this->options['start'];
+            $total_headers = $this->total_headings($find, $replace, $content);
+            //************ FI
+
+            // XTEC ************ MODIFICAT -Check if we display the content with toc
+            // 2019.06.25 @nacho
+            if ($this->is_eligible($custom_toc_position) || ($total_headers >= $defined_headers)) {
+
+                //************ ORIGINAL
+                /*
 			if ( $this->is_eligible($custom_toc_position) ) {
-				
+                */
+                //************ FI
+
 				$items = $this->extract_headings($find, $replace, $content);
 
 				if ( $items ) {
