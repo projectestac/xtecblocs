@@ -133,7 +133,12 @@ if ( isset( $_GET['action'] ) ) {
 
 			$updated_action = 'not_deleted';
 			if ( $id != '0' && $id != get_network()->site_id && current_user_can( 'delete_site', $id ) ) {
-				wpmu_delete_blog( $id, true );
+                // XTEC ************ MODIFICAT - Deprecated delete_bloc
+                // 2020.01.28 @nacho
+                wp_uninitialize_site($id. true);
+                //************ ORIGINAL
+			    //wpmu_delete_blog( $id, true );
+                //************ FI
 				$updated_action = 'delete';
 			}
 			break;
@@ -156,7 +161,12 @@ if ( isset( $_GET['action'] ) ) {
 				}
 
 				$updated_action = 'all_delete';
-				wpmu_delete_blog( $site_id, true );
+                // XTEC ************ MODIFICAT - Deprecated delete_bloc
+                // 2020.01.28 @nacho
+                wp_uninitialize_site( $site_id, true );
+                //************ ORIGINAL
+                //wpmu_delete_blog( $id, true );
+                //************ FI
 			}
 			break;
 
