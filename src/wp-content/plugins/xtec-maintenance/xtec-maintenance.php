@@ -84,7 +84,7 @@ function xtec_delblogs_page()
 				$sql = "INSERT INTO `wp_delblocs` SET `site_id` = '$idblog', `site_path` = '".$path."', `blogname` = '".$blogname."', `del_date` = '$del_date', `status` = '2';";
 				$wpdb->get_results($sql);
 
-				$users = get_users_of_blog($idblog);
+				$users = get_users(['blog_id' => $idblog]);
 				foreach ($users as $user) {
 					$sql = "INSERT INTO `wp_delblocs_users` SET `blog_id` = '$idblog', `user_id` = '".$user->user_id."', `user_login` = '".$user->user_login."', `display_name` = '".$user->display_name."', `user_email` = '".$user->user_email."', `meta_value` = '".$user->meta_value."';";
 					$wpdb->get_results($sql);
@@ -233,7 +233,10 @@ function xtec_delblogs_page()
 						$posts = $wpdb->get_results( "SELECT count(ID) as posts FROM `wp_".$blog_id."_posts` WHERE post_type='post'", ARRAY_A );
 						$pages = $wpdb->get_results( "SELECT count(ID) as pages FROM `wp_".$blog_id."_posts` WHERE post_type='page'", ARRAY_A );
 
-						if ($posts[0]['posts']+$pages[0]['pages'] <= $posts_pages) {
+						$post_num = (isset($posts[0]['posts'])) ? $posts[0]['posts'] : 0;
+						$pages_num = (isset($pages[0]['pages'])) ? $pages[0]['pages'] : 0;
+
+						if ($post_num+$pages_num <= $posts_pages) {
 							$posts_pages_check = true;
 						}
 
@@ -265,7 +268,7 @@ function xtec_delblogs_page()
 										<?php echo '<strong>' . $elapsed_days . '</strong>'?>
 									</td>
 									<td valign="top">
-										<?php echo '<strong>' . ($posts[0]['posts']+$pages[0]['pages']) . '</strong>' . ' ('. $posts[0]['posts'] . '+' . $pages[0]['pages'] . ')'?>
+									<?php echo '<strong>' . ($post_num+$pages_num) . '</strong>' . ' ('. $post_num . '+' . $pages_num . ')' ?>
 									</td>
 									<td valign="top">
 										<strong><?php if($never_upload_file) { ?>NO<?php } else { ?>SI<?php }?></strong>
