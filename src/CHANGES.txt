@@ -3,7 +3,7 @@ Release notes for XTECBlocs (http://blocs.xtec.cat)
 More information on each of the fixes can be found in the project
 development home at https://github.com/projectestac/xtecblocs
 
-Changes in progress
+20.02.03
 ---------------------------------------------------------------------------------------
 - Upgraded WordPress to version 5.1.4
 - anti-spam: Upgraded to version 5.5
@@ -17,7 +17,7 @@ Changes in progress
 - xtec-mail: Fixed warning in PHP 7.3
 - xtec lib: Synchronized code with Nodes
 - Updated logos for Departament d'Educació
-
+- xtec-maintenance: Resolve deprecated functions
 
 18.10.01
 ---------------------------------------------------------------------------------------
