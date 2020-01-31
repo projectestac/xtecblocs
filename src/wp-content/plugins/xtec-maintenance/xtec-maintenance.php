@@ -91,7 +91,7 @@ function xtec_delblogs_page()
 				}
 
 				// drops data of the blog when deleted
-				wpmu_delete_blog($idblog, true);
+				wp_delete_site($idblog, true);
 				echo "El bloc $blogname amb ID $idblog s'ha eliminat correctament.<br />";
 			}
 		}
@@ -409,7 +409,7 @@ function xtec_user_deleted_blogs_page()
 		if (isset($_POST['idblogs'])) {
 			foreach ( (array) $_POST['idblogs'] as $key => $val ) {
 				if( $val != '0' && $val != '1' ) {
-					wpmu_delete_blog( $val, true );
+                    wp_delete_site( $val, true );
 				}
 			}
 			?>
