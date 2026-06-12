@@ -14,7 +14,7 @@
  * @package WordPress
  */
 
-include_once dirname(__FILE__) . '/wp-includes/xtec/lib.php';
+include_once __DIR__ . '/wp-includes/xtec/lib.php';
 
 global $isAgora, $isBlocs;
 
@@ -43,7 +43,7 @@ define('DB_USER', 'root');
 define('DB_PASSWORD', 'agora');
 
 /** Databbase hostname */
-define('DB_HOST', 'localhost:3306');
+define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -97,7 +97,8 @@ define('MAGPIE_FETCH_TIME_OUT', 10); // WordPress default value is 2
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', false);
+define('WP_DEBUG_DISPLAY', false);
 define('XTEC_DEBUG_HYPERDB', false);
 define('XTEC_DEBUG_SHOW_ALL_MESSAGES', false);
 
@@ -108,8 +109,8 @@ define('WP_ALLOW_MULTISITE', true);
 define('MULTISITE', true);  // If tables wp_1_xxxx are NOT present
 // define('MULTISITE', false);  // If tables wp_1_xxxx ARE present
 define('SUBDOMAIN_INSTALL', false);
-define('DOMAIN_CURRENT_SITE','agora');
-define('PATH_CURRENT_SITE', '/blocs/');
+define('DOMAIN_CURRENT_SITE','blocs-aws.xtec.cat');
+define('PATH_CURRENT_SITE', '/');
 define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);
 
@@ -129,8 +130,9 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && ( $_SERVER['HTTP_X_FORWARDED_PR
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+if ( !defined('ABSPATH') ) {
+    define('ABSPATH', __DIR__ . '/');
+}
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
