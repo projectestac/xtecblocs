@@ -803,7 +803,8 @@ function xtec_user_can($user_id,$action)
  */
 function xtec_is_xtec_user($user_id)
 {
-	return ( 'LDAP_XTEC' == get_user_meta($user_id,'xtec_user_creator',true) );
+    $creator = get_user_meta($user_id, 'xtec_user_creator', true);
+    return ($creator === 'LDAP_XTEC' || $creator === 'OAUTH_XTEC');
 }
 
 
