@@ -1,90 +1,9 @@
-[submodule "src/wp-content/plugins/xtec-mail/lib"]
-	path = src/wp-content/plugins/xtec-mail/lib
-	url = https://github.com/projectestac/mailer.git
-[submodule "src/wp-content/plugins/google-calendar-events"]
-	path = src/wp-content/plugins/google-calendar-events
-	url = https://github.com/projectestac/wordpress-gce.git
-[submodule "src/wp-content/plugins/blogger-importer"]
-	path = src/wp-content/plugins/blogger-importer
-	url = https://github.com/projectestac/wordpress-blogger-importer
-[submodule "src/wp-content/plugins/google-analyticator"]
-	path = src/wp-content/plugins/google-analyticator
-	url = https://github.com/projectestac/wordpress-google-analyticator
-[submodule "src/wp-content/plugins/slideshow-jquery-image-gallery"]
-	path = src/wp-content/plugins/slideshow-jquery-image-gallery
-	url = https://github.com/projectestac/wordpress-slideshow-jig
-[submodule "src/wp-content/plugins/tinymce-advanced"]
-	path = src/wp-content/plugins/tinymce-advanced
-	url = https://github.com/projectestac/wordpress-tinymce-advanced
-[submodule "src/wp-content/plugins/wordpress-importer"]
-	path = src/wp-content/plugins/wordpress-importer
-	url = https://github.com/projectestac/wordpress-importer
-[submodule "src/wp-content/plugins/wordpress-php-info"]
-	path = src/wp-content/plugins/wordpress-php-info
-	url = https://github.com/projectestac/wordpress-php-info
-[submodule "src/wp-content/plugins/wordpress-social-login"]
-	path = src/wp-content/plugins/wordpress-social-login
-	url = https://github.com/projectestac/wordpress-social-login
-[submodule "src/wp-includes/xtec"]
-	path = src/wp-includes/xtec
-	url = https://github.com/projectestac/wordpress-xtec
 [submodule "src/wp-content/mu-plugins/common"]
 	path = src/wp-content/mu-plugins/common
 	url = https://github.com/projectestac/wordpress-mu-common.git
 [submodule "src/testlib"]
 	path = src/testlib
 	url = https://github.com/projectestac/testlib_PHP.git
-[submodule "src/wp-content/plugins/wp-recaptcha"]
-	path = src/wp-content/plugins/wp-recaptcha
-	url = https://github.com/projectestac/wordpress-recaptcha.git
-[submodule "src/wp-content/plugins/xtec-ldap-login"]
-	path = src/wp-content/plugins/xtec-ldap-login
-	url = https://github.com/projectestac/wordpress-xtec-ldap-login.git
-[submodule "src/wp-content/themes/fukasawa"]
-	path = src/wp-content/themes/fukasawa
-	url = https://github.com/projectestac/wordpress-theme-fukasawa.git
-[submodule "src/wp-content/plugins/anti-spam"]
-	path = src/wp-content/plugins/anti-spam
-	url = https://github.com/projectestac/wordpress-anti-spam.git
-[submodule "src/wp-content/plugins/wp-super-cache"]
-	path = src/wp-content/plugins/wp-super-cache
-	url = https://github.com/projectestac/wordpress-super-cache.git
-[submodule "src/wp-content/themes/reddle"]
-	path = src/wp-content/themes/reddle
-	url = https://github.com/projectestac/wordpress-theme-reddle.git
-[submodule "src/wp-content/themes/twentyten"]
-	path = src/wp-content/themes/twentyten
-	url = https://github.com/projectestac/wordpress-theme-twentyten.git
-[submodule "src/wp-content/themes/twentyeleven"]
-	path = src/wp-content/themes/twentyeleven
-	url = https://github.com/projectestac/wordpress-theme-twentyeleven.git
-[submodule "src/wp-content/themes/twentytwelve"]
-	path = src/wp-content/themes/twentytwelve
-	url = https://github.com/projectestac/wordpress-theme-twentytwelve.git
 [submodule "src/wp-content/plugins/add-to-any"]
 	path = src/wp-content/plugins/add-to-any
 	url = https://github.com/projectestac/wordpress-add-to-any.git
-[submodule "src/wp-content/plugins/xtec-ms-manager"]
-	path = src/wp-content/plugins/xtec-ms-manager
-	url = https://github.com/projectestac/wordpress-xtec-ms-manager.git
-[submodule "src/wp-content/themes/twentysixteen"]
-	path = src/wp-content/themes/twentysixteen
-	url = https://github.com/projectestac/wordpress-theme-twentysixteen.git
-[submodule "src/wp-content/themes/twentyfifteen"]
-	path = src/wp-content/themes/twentyfifteen
-	url = https://github.com/projectestac/wordpress-theme-twentyfifteen.git
-[submodule "src/wp-content/plugins/multisite-plugin-manager"]
-	path = src/wp-content/plugins/multisite-plugin-manager
-	url = https://github.com/projectestac/wordpress-multisite-plugin-manager.git
-[submodule "src/wp-content/plugins/slideshare"]
-	path = src/wp-content/plugins/slideshare
-	url = https://github.com/projectestac/wordpress-slideshare.git
-[submodule "src/wp-content/plugins/widget-options"]
-	path = src/wp-content/plugins/widget-options
-	url = https://github.com/phpbits/widget-options
-[submodule "src/wp-content/plugins/xtec-eduhack"]
-	path = src/wp-content/plugins/xtec-eduhack
-	url = https://github.com/projectestac/xtec-eduhack.git
-[submodule "src/wp-content/plugins/eduhack"]
-	path = src/wp-content/plugins/eduhack
-	url = https://github.com/Artesans/Edu_Hack.git
