@@ -91,7 +91,7 @@ function xtec_delblogs_page()
 				}
 
 				// drops data of the blog when deleted
-				wpmu_delete_blog($idblog, true);
+				wp_delete_site($idblog, true);
 				echo "El bloc $blogname amb ID $idblog s'ha eliminat correctament.<br />";
 			}
 		}
@@ -199,6 +199,7 @@ function xtec_delblogs_page()
 
 			$blogs = $wpdb->get_results( $query, ARRAY_A );
 			?>
+
 			<table cellspacing="3" cellpadding="3" width="100%" class="widefat">
 				<thead>
 					<tr>
@@ -216,15 +217,13 @@ function xtec_delblogs_page()
 					$items = ($apage-1)*25;
 					$cont = 0;
 
-					for($i=0;$i<count($blogs);$i++){
+					foreach ($blogs as $blog) {
 
-						$blog_id      = $blogs[$i]["blog_id"];
-						$path         = $blogs[$i]["path"];
-						$registered   = $blogs[$i]["registered"];
-						$last_updated = $blogs[$i]["last_updated"];
+						$blog_id      = $blog["blog_id"];
+						$path         = $blog["path"];
+						$last_updated = $blog["last_updated"];
 
 						$posts_pages_check = false;
-						$upload_check = false;
 
 						$now = time();
 						$elapsed_days = (int)(($now-$last_updated)/86400);
@@ -241,15 +240,17 @@ function xtec_delblogs_page()
 						}
 
 						// Upload check
-						if (!file_exists(ABSPATH . "wp-content/blogs.dir/$blog_id")) {
-							if ($never_upload_file) { $upload_check = true; }
-						}
-						else {
-							if (!$never_upload_file) { $upload_check = true; }
-						}
+                        $files = list_files(ABSPATH . "wp-content/blogs.dir/$blog_id");
+						$no_files = true;
+						foreach ($files as $file) {
+						    if (substr($file, -1) != '/') {
+						        $no_files = false;
+						        break;
+                            }
+                        }
 
 						// Check the rules
-						if ( $posts_pages_check && $upload_check) {
+						if ( $posts_pages_check && ($never_upload_file == $no_files)){
 							$show_pagination = 1;
 							$cont++;
 
@@ -271,7 +272,7 @@ function xtec_delblogs_page()
 									<?php echo '<strong>' . ($post_num+$pages_num) . '</strong>' . ' ('. $post_num . '+' . $pages_num . ')' ?>
 									</td>
 									<td valign="top">
-										<strong><?php if($never_upload_file) { ?>NO<?php } else { ?>SI<?php }?></strong>
+										<strong><?php if($no_files) { ?>NO<?php } else { ?>SI<?php }?></strong>
 									</td>
 								</tr>
 								<?php
@@ -409,7 +410,7 @@ function xtec_user_deleted_blogs_page()
 		if (isset($_POST['idblogs'])) {
 			foreach ( (array) $_POST['idblogs'] as $key => $val ) {
 				if( $val != '0' && $val != '1' ) {
-					wpmu_delete_blog( $val, true );
+                    wp_delete_site( $val, true );
 				}
 			}
 			?>
