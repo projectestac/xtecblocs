@@ -1,0 +1,8 @@
+/html/.htaccess
+html/wp-config.php
+html/config-restricted.php
+html/wp-content/wp-cache-config.php
+html/wp-content/blogs.dir
+html/wp-content/uploads/
+html/wp-content/cache
+.idea
