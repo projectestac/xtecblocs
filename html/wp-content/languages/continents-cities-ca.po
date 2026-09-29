@@ -1,5 +1,5 @@
-# Translation of WordPress - 7.0.x - Development - Continents & Cities in Catalan
-# This file is distributed under the same license as the WordPress - 7.0.x - Development - Continents & Cities package.
+# Translation of WordPress - 7.1.x - Development - Continents & Cities in Catalan
+# This file is distributed under the same license as the WordPress - 7.1.x - Development - Continents & Cities package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2024-02-19 20:52:54+0000\n"
@@ -7,9 +7,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/4.0.3\n"
+"X-Generator: GlotPress/4.1.0\n"
 "Language: ca\n"
-"Project-Id-Version: WordPress - 7.0.x - Development - Continents & Cities\n"
+"Project-Id-Version: WordPress - 7.1.x - Development - Continents & Cities\n"
 
 #: wp-admin/includes/continents-cities.php:451
 msgid "Kyiv"

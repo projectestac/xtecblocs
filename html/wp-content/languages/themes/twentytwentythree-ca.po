@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/4.0.3\n"
+"X-Generator: GlotPress/4.1.0\n"
 "Language: ca\n"
 "Project-Id-Version: Themes - Twenty Twenty-Three\n"
 
@@ -58,37 +58,37 @@ msgctxt "Custom template name"
 msgid "Blank"
 msgstr "Buit"
 
-#: styles/aubergine.json styles/block-out.json styles/canary.json
+#: theme.json styles/aubergine.json styles/block-out.json styles/canary.json
 #: styles/electric.json styles/grapes.json styles/marigold.json
 #: styles/pilgrimage.json styles/pitch.json styles/sherbet.json
-#: styles/whisper.json theme.json
+#: styles/whisper.json
 msgctxt "Color name"
 msgid "Secondary"
 msgstr "Secundari"
 
-#: styles/aubergine.json styles/block-out.json styles/canary.json
+#: theme.json styles/aubergine.json styles/block-out.json styles/canary.json
 #: styles/electric.json styles/grapes.json styles/marigold.json
 #: styles/pilgrimage.json styles/pitch.json styles/sherbet.json
-#: styles/whisper.json theme.json
+#: styles/whisper.json
 msgctxt "Color name"
 msgid "Primary"
 msgstr "Principal"
 
-#: patterns/hidden-404.php:13
+#: patterns/hidden-404.php:19
 msgctxt "Error code for a webpage that is not found."
 msgid "404"
 msgstr "404"
 
 #. Translators: WordPress link.
-#: patterns/footer-default.php:20
+#: patterns/footer-default.php:26
 msgid "Proudly powered by %s"
 msgstr "Gràcies al %s"
 
-#: patterns/hidden-404.php:22 patterns/hidden-no-results.php:14
+#: patterns/hidden-404.php:28 patterns/hidden-no-results.php:20
 msgid "Search"
 msgstr "Cerca"
 
-#: patterns/hidden-404.php:22 patterns/hidden-no-results.php:14
+#: patterns/hidden-404.php:28 patterns/hidden-no-results.php:20
 msgctxt "label"
 msgid "Search"
 msgstr "Cerca"
@@ -103,10 +103,10 @@ msgctxt "Font family name"
 msgid "System Font"
 msgstr "Tipus de lletra del sistema"
 
-#: styles/aubergine.json styles/block-out.json styles/canary.json
+#: theme.json styles/aubergine.json styles/block-out.json styles/canary.json
 #: styles/electric.json styles/grapes.json styles/marigold.json
 #: styles/pilgrimage.json styles/pitch.json styles/sherbet.json
-#: styles/whisper.json theme.json
+#: styles/whisper.json
 msgctxt "Color name"
 msgid "Tertiary"
 msgstr "Terciari"
@@ -137,32 +137,32 @@ msgctxt "Custom template name"
 msgid "404"
 msgstr "404"
 
-#: styles/marigold.json styles/pitch.json theme.json
+#: theme.json styles/marigold.json styles/pitch.json
 msgctxt "Space size name"
 msgid "1"
 msgstr "1"
 
-#: styles/marigold.json styles/pitch.json theme.json
+#: theme.json styles/marigold.json styles/pitch.json
 msgctxt "Space size name"
 msgid "2"
 msgstr "2"
 
-#: styles/marigold.json styles/pitch.json theme.json
+#: theme.json styles/marigold.json styles/pitch.json
 msgctxt "Space size name"
 msgid "3"
 msgstr "3"
 
-#: styles/marigold.json styles/pitch.json theme.json
+#: theme.json styles/marigold.json styles/pitch.json
 msgctxt "Space size name"
 msgid "4"
 msgstr "4"
 
-#: styles/marigold.json styles/pitch.json theme.json
+#: theme.json styles/marigold.json styles/pitch.json
 msgctxt "Space size name"
 msgid "5"
 msgstr "5"
 
-#: styles/marigold.json styles/pitch.json theme.json
+#: theme.json styles/marigold.json styles/pitch.json
 msgctxt "Space size name"
 msgid "6"
 msgstr "6"
@@ -172,7 +172,7 @@ msgctxt "Space size name"
 msgid "7"
 msgstr "7"
 
-#: patterns/post-meta.php:49
+#: patterns/post-meta.php:55
 msgctxt "Preposition to show the relationship between the post and its author"
 msgid "by"
 msgstr "per"
@@ -182,20 +182,20 @@ msgctxt "Pattern title"
 msgid "Call to action"
 msgstr "Crida a l'acció"
 
-#: patterns/hidden-comments.php:13
+#: patterns/hidden-comments.php:19
 msgctxt "Title of comments section"
 msgid "Comments"
 msgstr "Comentaris"
 
-#: styles/aubergine.json styles/block-out.json styles/canary.json
+#: theme.json styles/aubergine.json styles/block-out.json styles/canary.json
 #: styles/electric.json styles/grapes.json styles/marigold.json
 #: styles/pilgrimage.json styles/pitch.json styles/sherbet.json
-#: styles/whisper.json theme.json
+#: styles/whisper.json
 msgctxt "Color name"
 msgid "Contrast"
 msgstr "Contrast"
 
-#: patterns/call-to-action.php:16
+#: patterns/call-to-action.php:22
 msgctxt "sample content for call to action"
 msgid "Got any book recommendations?"
 msgstr "Teniu alguna recomanació de llibres?"
@@ -230,12 +230,12 @@ msgctxt "Template part name"
 msgid "Post Meta"
 msgstr "Metadades de l'entrada"
 
-#: patterns/post-meta.php:29
+#: patterns/post-meta.php:35
 msgctxt "Verb to explain the publication status of a post"
 msgid "Posted"
 msgstr "Publicada"
 
-#: patterns/hidden-404.php:22 patterns/hidden-no-results.php:14
+#: patterns/hidden-404.php:28 patterns/hidden-no-results.php:20
 msgctxt "placeholder for search field"
 msgid "Search..."
 msgstr "Cerca..."
@@ -245,12 +245,12 @@ msgctxt "Font size name"
 msgid "small"
 msgstr "petita"
 
-#: patterns/post-meta.php:65
+#: patterns/post-meta.php:71
 msgctxt "Label for a list of post tags"
 msgid "Tags:"
 msgstr "Etiquetes:"
 
-#: patterns/hidden-404.php:19
+#: patterns/hidden-404.php:25
 msgctxt "Message to convey that a webpage could not be found"
 msgid "This page could not be found."
 msgstr "No s'ha pogut trobar aquesta pàgina."
@@ -260,10 +260,10 @@ msgctxt "Font size name"
 msgid "Tiny"
 msgstr "Minúscula"
 
-#: styles/aubergine.json styles/block-out.json styles/canary.json
+#: theme.json styles/aubergine.json styles/block-out.json styles/canary.json
 #: styles/electric.json styles/grapes.json styles/marigold.json
 #: styles/pilgrimage.json styles/pitch.json styles/sherbet.json
-#: styles/whisper.json theme.json
+#: styles/whisper.json
 msgctxt "Color name"
 msgid "Base"
 msgstr "Base"
@@ -293,7 +293,7 @@ msgctxt "Font size name"
 msgid "Extra Large"
 msgstr "Extra gran"
 
-#: patterns/call-to-action.php:25
+#: patterns/call-to-action.php:31
 msgctxt "sample content for call to action button"
 msgid "Get In Touch"
 msgstr "Contacteu-nos"
@@ -303,7 +303,7 @@ msgctxt "Font size name"
 msgid "Gigantic"
 msgstr "Gegant"
 
-#: patterns/post-meta.php:37
+#: patterns/post-meta.php:43
 msgctxt "Preposition to show the relationship between the post and its categories"
 msgid "in"
 msgstr "a"
@@ -318,7 +318,7 @@ msgctxt "Style variation name"
 msgid "Pilgrimage"
 msgstr "Pelegrinatge"
 
-#: patterns/hidden-no-results.php:10
+#: patterns/hidden-no-results.php:16
 msgctxt "Message explaining that there are no results returned from a search"
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr "Res no coincideix amb els termes de cerca. Torneu-ho a provar amb algunes paraules claus diferents."
@@ -440,7 +440,7 @@ msgid "the WordPress team"
 msgstr "L'equip del WordPress"
 
 #. Author URI of the theme
-#: style.css patterns/footer-default.php:21
+#: style.css patterns/footer-default.php:27
 #, gp-priority: low
 msgid "https://wordpress.org"
 msgstr "https://ca.wordpress.org"

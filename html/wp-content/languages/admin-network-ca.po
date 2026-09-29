@@ -1,15 +1,19 @@
-# Translation of WordPress - 7.0.x - Development - Administration - Network Admin in Catalan
-# This file is distributed under the same license as the WordPress - 7.0.x - Development - Administration - Network Admin package.
+# Translation of WordPress - 7.1.x - Development - Administration - Network Admin in Catalan
+# This file is distributed under the same license as the WordPress - 7.1.x - Development - Administration - Network Admin package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-10 17:37:23+0000\n"
+"PO-Revision-Date: 2026-08-13 20:39:57+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/4.0.3\n"
+"X-Generator: GlotPress/4.1.0\n"
 "Language: ca\n"
-"Project-Id-Version: WordPress - 7.0.x - Development - Administration - Network Admin\n"
+"Project-Id-Version: WordPress - 7.1.x - Development - Administration - Network Admin\n"
+
+#: wp-admin/network/users.php:343
+msgid "No users were deleted because no user was selected for content reassignment."
+msgstr "No s'ha suprimit cap usuari perquè no se n'ha seleccionat cap per a la reassignació de contingut."
 
 #: wp-admin/network/sites.php:361
 msgid "Site flagged for deletion."
@@ -675,7 +679,7 @@ msgstr "Camí"
 msgid "Domain"
 msgstr "domini"
 
-#: wp-admin/network/user-new.php:29 wp-admin/network/users.php:270
+#: wp-admin/network/user-new.php:29 wp-admin/network/users.php:297
 msgid "<a href=\"https://codex.wordpress.org/Network_Admin_Users_Screen\">Documentation on Network Users</a>"
 msgstr "<a href=\"https://codex.wordpress.org/Network_Admin_Users_Screen\">Documentació sobre els usuaris de la xarxa</a> (en anglès)"
 
@@ -743,7 +747,7 @@ msgstr "Afegiu el següent al fitxer %1$s a %2$s, <strong>reemplaçant</strong> 
 msgid "Confirm your action"
 msgstr "Confirmeu l'acció"
 
-#: wp-admin/network/users.php:260
+#: wp-admin/network/users.php:287
 msgid "Hover over any user on the list to make the edit links appear. The Edit link on the left will take you to their Edit User profile page; the Edit link on the right by any site name goes to an Edit Site screen for that site."
 msgstr "Passeu el cursor per sobre de la llista perquè apareguin els enllaços d'edició. L'enllaç Edita que hi ha a l'esquerra us durà a la pàgina d'edició del perfil de l'usuari; l'enllaç Edita de la dreta de qualsevol pàgina web us durà a la pantalla d'edició del lloc d'aquesta pàgina web."
 
@@ -1098,8 +1102,8 @@ msgid "The choice of subdirectory sites is disabled if this setup is more than a
 msgstr "L'opció de llocs web en subdirectoris està inhabilitada si aquesta configuració té més d'un mes d'antiguitat a causa dels problemes amb els enllaços permanents a &#8220;/blog/&#8221; des del lloc web principal. Aquest problema s'abordarà en una futura versió."
 
 #: wp-admin/network.php:65
-msgid "Once you add this code and refresh your browser, multisite should be enabled. This screen, now in the Network Admin navigation menu, will keep an archive of the added code. You can toggle between Network Admin and Site Admin by clicking on the Network Admin or an individual site name under the My Sites dropdown in the Toolbar."
-msgstr "Una vegada afegiu aquest codi i refresqueu el navegador, l'opció multilloc hauria d'estar habilitada. Aquesta pantalla, ara al menú de navegació de l'administrador de la xarxa, mantindrà un arxiu del codi que s'ha afegit. Podeu commutar entre administrador de la xarxa i administrador del lloc si feu clic a Administrador de la xarxa o a un nom individual d'un lloc web al desplegable Els meus llocs de la barra d'eines."
+msgid "Once you add this code and refresh your browser, multisite should be enabled. This screen, now in the Network Admin navigation menu, will keep an archive of the added code. You can switch between Network Admin and Site Admin by clicking on the Network Admin or an individual site name under the My Sites dropdown in the Toolbar."
+msgstr "Un cop afegit aquest codi i actualitzat el navegador, el multilloc hauria d'estar activat. Aquesta pantalla, ara al menú de navegació de l'administració de la xarxa, mantindrà un arxiu del codi afegit. Podeu alternar entre l'administració de la xarxa i l'administració del lloc web fent clic a «Administració de la xarxa» o al nom d'un lloc individual al menú desplegable «Els meus llocs» de la barra d'eines."
 
 #: wp-admin/network.php:63
 msgid "The next screen for Network Setup will give you individually-generated lines of code to add to your wp-config.php and .htaccess files. Make sure the settings of your FTP client make files starting with a dot visible, so that you can find .htaccess; you may have to create this file if it really is not there. Make backup copies of those two files."
@@ -1122,7 +1126,7 @@ msgid "The Network creation panel is not for WordPress MU networks."
 msgstr "El panell de creació de la xarxa no és per a xarxes del WordPress MU."
 
 #. translators: %s: User login.
-#: wp-admin/network/users.php:87 wp-admin/network/users.php:126
+#: wp-admin/network/users.php:88 wp-admin/network/users.php:127
 msgid "Warning! User cannot be modified. The user %s is a network administrator."
 msgstr "Avís! No es pot modificar aquest usuari. L'usuari %s és un administrador de la xarxa."
 
@@ -1142,11 +1146,11 @@ msgstr "En passar el cursor per sobre de cada lloc es mostren set opcions (tres 
 msgid "Operational settings has fields for the network&#8217;s name and admin email."
 msgstr "La configuració operacional té camps per al nom de la xarxa i el correu electrònic de l'administrador."
 
-#: wp-admin/network/users.php:263
+#: wp-admin/network/users.php:290
 msgid "The bulk action will permanently delete selected users, or mark/unmark those selected as spam. Spam users will have posts removed and will be unable to sign up again with the same email addresses."
 msgstr "Les accions en massa suprimiran els usuaris seleccionats permanentment, o marcaran/desmarcaran els seleccionats com a brossa. Als usuaris brossa se'ls suprimiran les entrades i no podran registrar-se una altra vegada amb la mateixa adreça electrònica."
 
-#: wp-admin/network/users.php:261
+#: wp-admin/network/users.php:288
 msgid "You can also go to the user&#8217;s profile page by clicking on the individual username."
 msgstr "També podeu anar a la pàgina del perfil de l'usuari si feu clic al nom d'un usuari en concret."
 
@@ -1154,7 +1158,7 @@ msgstr "També podeu anar a la pàgina del perfil de l'usuari si feu clic al nom
 msgid "Upload settings control the size of the uploaded files and the amount of available upload space for each site. You can change the default value for specific sites when you edit a particular site. Allowed file types are also listed (space separated only)."
 msgstr "Les opcions de càrrega controlen la mida dels fitxers a carregar i la quantitat d'espai disponible per a cada lloc web. Podeu canviar el valor predeterminat per a llocs específics quan editeu un lloc web en particular. Els tipus de fitxers permesos estan també llistats (separats per espais solament)."
 
-#: wp-admin/network/users.php:264
+#: wp-admin/network/users.php:291
 msgid "You can make an existing user an additional super admin by going to the Edit User profile page and checking the box to grant that privilege."
 msgstr "Podeu convertir un usuari existent en superadministrador anant a la pàgina d'edició del perfil de l'usuari i marcar la casella que garanteix aquest privilegi."
 
@@ -1162,11 +1166,11 @@ msgstr "Podeu convertir un usuari existent en superadministrador anant a la pàg
 msgid "Users who are signed up to the network without a site are added as subscribers to the main or primary dashboard site, giving them profile pages to manage their accounts. These users will only see Dashboard and My Sites in the main navigation until a site is created for them."
 msgstr "Els usuaris que es registren a la xarxa sense cap lloc web, s'afegeixen com a subscriptors al tauler principal del lloc web, i se'ls dona les pàgines del seu perfil perquè puguin gestionar els seus comptes. Aquests usuaris només veuran el Tauler i Els meus llocs fins que es creï un lloc web per a ells."
 
-#: wp-admin/network/users.php:262
+#: wp-admin/network/users.php:289
 msgid "You can sort the table by clicking on any of the table headings and switch between list and excerpt views by using the icons above the users list."
 msgstr "Podeu ordenar la taula fent clic a qualsevol capçalera de la taula i canviar entre la vista de llista i extracte fent servir les icones de la part superior de la llista d'usuaris."
 
-#: wp-admin/network/users.php:259
+#: wp-admin/network/users.php:286
 msgid "This table shows all users across the network and the sites to which they are assigned."
 msgstr "Aquesta taula mostra tots els usuaris de la xarxa i a quins llocs estan assignats."
 
@@ -1223,7 +1227,7 @@ msgstr "Si voleu prohibir dominis des del registre de llocs web. Entreu un domin
 msgid "If you want to limit site registrations to certain domains. One domain per line."
 msgstr "Si voleu limitar el registre de llocs web a certs dominis. Entreu un domini per línia."
 
-#: wp-admin/network/users.php:294
+#: wp-admin/network/users.php:321
 msgid "Users removed from spam."
 msgstr "Usuaris suprimits de la brossa."
 
@@ -1243,11 +1247,11 @@ msgstr "Llocs web marcats com a brossa."
 msgid "Sites removed from spam."
 msgstr "Llocs web suprimits de la brossa."
 
-#: wp-admin/network/users.php:297
+#: wp-admin/network/users.php:324
 msgid "Users deleted."
 msgstr "Els usuaris s'han suprimit."
 
-#: wp-admin/network/users.php:291
+#: wp-admin/network/users.php:318
 msgid "Users marked as spam."
 msgstr "Usuaris marcats com a brossa."
 
