@@ -1,0 +1,950 @@
+# Translation of Plugins - Akismet Anti-spam: Spam Protection - Stable (latest release) in Catalan
+# This file is distributed under the same license as the Plugins - Akismet Anti-spam: Spam Protection - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2026-07-15 11:51:06+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: ca\n"
+"Project-Id-Version: Plugins - Akismet Anti-spam: Spam Protection - Stable (latest release)\n"
+
+#: class.akismet-admin.php:803
+msgid "This comment was not sent to Akismet when it was submitted because it was caught by the comment disallowed list."
+msgstr "Aquest comentari no es va enviar a l'Akismet quan es va crear perquè va ser capturat per la llista de comentaris no autoritzats."
+
+#: class.akismet-admin.php:800
+msgid "This comment was not sent to Akismet when it was submitted because it was caught by something else."
+msgstr "Aquest comentari no es va enviar a l'Akismet quan es va crear perquè va ser capturat per una altra cosa."
+
+#: class.akismet-rest-api.php:516
+msgid "Multiple comments matched request."
+msgstr "Múltiples comentaris coincideixen amb la sol·licitud."
+
+#: class.akismet-rest-api.php:506
+msgid "Could not find matching comment."
+msgstr "No s'ha pogut trobar el comentari coincident."
+
+#: class.akismet-rest-api.php:464
+msgid "The 'comments' parameter must be an array."
+msgstr "El paràmetre 'comments' ha de ser una matriu."
+
+#: class.akismet-admin.php:797
+msgid "Akismet cleared this comment during a recheck. It did not update the comment status because it had already been modified by another user or plugin."
+msgstr "L'Akismet ha suprimit aquest comentari durant una revisió. No s'ha actualitzat l'estat del comentari perquè ja havia estat modificat per un altre usuari o extensió."
+
+#: class.akismet-admin.php:794
+msgid "Akismet determined this comment was spam during a recheck. It did not update the comment status because it had already been modified by another user or plugin."
+msgstr "L'Akismet ha determinat que aquest comentari és brossa durant una revisió. No s'ha actualitzat l'estat del comentari perquè ja havia estat modificat per un altre usuari o extensió."
+
+#: class.akismet-admin.php:791
+msgid "Akismet cleared this comment and updated its status via webhook."
+msgstr "L'Akismet ha suprimit aquest comentari i n'ha actualitzat l'estat a través del webhook."
+
+#: class.akismet-admin.php:788
+msgid "Akismet caught this comment as spam and updated its status via webhook."
+msgstr "L'Akismet ha capturat aquest comentari com a brossa i n'ha actualitzat l'estat a través del webhook."
+
+#: views/config.php:331
+msgid "Account overview"
+msgstr "Resum del compte"
+
+#. translators: %1$s: spam folder link, %2$d: delete interval in days
+#: views/config.php:202
+msgid "Spam in the %1$s older than %2$d day is deleted automatically."
+msgid_plural "Spam in the %1$s older than %2$d days is deleted automatically."
+msgstr[0] "La brossa de %1$s anterior a %2$d dia se suprimeix automàticament."
+msgstr[1] "La brossa de %1$s anterior a %2$d dies se suprimeix automàticament."
+
+#: views/config.php:197
+msgid "spam folder"
+msgstr "carpeta de brossa"
+
+#: views/notice.php:206
+msgid "Akismet is now protecting your site from spam."
+msgstr "L'Akismet ara protegeix el lloc web de la brossa."
+
+#: views/stats.php:15
+msgid "Akismet detailed stats"
+msgstr "Estadístiques detallades de l'Akismet"
+
+#: views/stats.php:9
+msgid "Back to settings"
+msgstr "Torna a la configuració"
+
+#: views/config.php:303
+msgid "Subscription type"
+msgstr "Tipus de subscripció"
+
+#: views/config.php:242
+msgid "To help your site with transparency under privacy laws like the GDPR, Akismet can display a notice to your users under your comment forms."
+msgstr "Per a ajudar el lloc web a complir amb la transparència sota les lleis de privadesa com el RGPD, l'Akismet pot mostrar un avís als usuaris a la part de sota dels formularis de comentaris."
+
+#: views/config.php:164
+msgid "Spam filtering"
+msgstr "Filtratge de brossa"
+
+#: views/config.php:99 views/enter.php:9
+msgid "API key"
+msgstr "Clau API"
+
+#: views/config.php:42
+msgid "Akismet stats"
+msgstr "Estadístiques de l'Akismet"
+
+#. Author of the plugin
+#: akismet.php
+msgid "Automattic - Anti-spam Team"
+msgstr "Automattic - Equip anti correu brossa"
+
+#. Plugin Name of the plugin
+#: akismet.php
+msgid "Akismet Anti-spam: Spam Protection"
+msgstr "Akismet Anti-Spam: protecció contra el correu brossa"
+
+#: views/notice.php:47
+msgid "WP-Cron has been disabled using the DISABLE_WP_CRON constant. Comment rechecks may not work properly."
+msgstr "WP-Cron ha estat desactivat mitjançant la constant DISABLE_WP_CRON. Pot ser que les comprovacions de comentaris no funcionin correctament."
+
+#. translators: %1$s is a human-readable time difference, like "3 hours ago",
+#. and %2$s is an already-translated phrase describing how a comment's status
+#. changed, like "This comment was reported as spam."
+#: class.akismet-admin.php:835
+msgid "%1$s - %2$s"
+msgstr "%1$s - %2$s"
+
+#: views/get.php:31
+msgid "(opens in a new tab)"
+msgstr "(s'obre en una pestanya nova)"
+
+#. translators: The placeholder is the name of a subscription level, like
+#. "Akismet Business" or "Akismet Enterprise" .
+#: views/notice.php:359
+msgid "Upgrade to %s"
+msgstr "Actualitza a %s"
+
+#. translators: The first placeholder is a date, the second is a (formatted)
+#. number, the third is another formatted number.
+#: views/notice.php:293
+msgid "Since %1$s, your account made %2$s API calls, compared to your plan&#8217;s limit of %3$s."
+msgstr "Des del %1$s, s'han fet %2$s crides a l'API des del vostre compte, comparat amb el límit de %3$s crides del vostre pla."
+
+#: views/notice.php:301 views/notice.php:309 views/notice.php:317
+#: views/notice.php:326
+msgid "Learn more about usage limits"
+msgstr "Més informació sobre els límits d'ús"
+
+#: views/notice.php:323
+msgid "Your Akismet usage has been over your plan&#8217;s limit for three consecutive months. We have restricted your account for the rest of the month. Increase your limit to make sure your site stays protected from spam."
+msgstr "Durant tres mesos seguits, heu superat el límit de crides que el vostre pla d’Akismet permet. Hem restringit l’accés del vostre compte durant el que resta de mes. Incrementeu el límit si voleu continuar estant protegits contra la brossa."
+
+#: views/notice.php:314
+msgid "Your Akismet usage is nearing your plan&#8217;s limit for the third consecutive month. We will restrict your account after you reach the limit. Increase your limit to make sure your site stays protected from spam."
+msgstr "L’ús que feu de l’Akismet s’està acostant per tercer mes consecutiu al límit que us permet el vostre pla. Si el supereu, restringirem el vostre compte. Incrementeu el límit si voleu continuar estant protegits contra la brossa."
+
+#: views/notice.php:280
+msgid "Your account has been restricted"
+msgstr "S’ha restringit el vostre compte"
+
+#: views/notice.php:276
+msgid "Your Akismet account usage is approaching your plan&#8217;s limit"
+msgstr "El compte d’Akismet s’està acostant al límit del vostre pla"
+
+#: views/notice.php:273
+msgid "Your Akismet account usage is over your plan&#8217;s limit"
+msgstr "El compte d’Akismet ha superat els límits d’ús del vostre pla"
+
+#: views/notice.php:230
+msgid "Your API key is no longer valid."
+msgstr "La vostra clau API ja no és vàlida."
+
+#. translators: The placeholder is for showing how much of the process has
+#. completed, as a percent. e.g., "Checking for Spam (40%)"
+#: class.akismet-admin.php:520
+msgid "Checking for Spam (%1$s%)"
+msgstr "S'està comprovant la brossa (%1$s%)"
+
+#: class.akismet-admin.php:851
+msgid "No comment history."
+msgstr "No hi ha historial de comentaris."
+
+#. translators: The placeholder is a WordPress PHP function name.
+#: class.akismet-admin.php:745
+msgid "Comment was caught by %s."
+msgstr "El comentari ha estat detectat per %s."
+
+#: class.akismet-admin.php:784
+msgid "Akismet was unable to recheck this comment."
+msgstr "L'Akismet no ha pogut tornar a comprovar aquest comentari."
+
+#: abilities/class-akismet-ability-comment-check.php:185 class.akismet.php:1120
+msgid "Akismet is not configured. Please enter an API key."
+msgstr "L'Akismet no està configurat. Introduïu una clau d’API."
+
+#: class.akismet-admin.php:776
+msgid "Akismet was unable to check this comment but will automatically retry later."
+msgstr "L'Akismet no ha pogut comprovar aquest comentari però ho tornarà a provar automàticament més tard."
+
+#: class.akismet-admin.php:1396
+msgid "Akismet could not recheck your comments for spam."
+msgstr "Akismet no ha pogut verificar els comentaris per a la brossa."
+
+#: views/enter.php:7
+msgid "Enter your API key"
+msgstr "Introduïu la clau API"
+
+#: class.akismet-admin.php:553
+msgid "You don&#8217;t have permission to do that."
+msgstr "No teniu permisos per fer això."
+
+#: class.akismet-cli.php:161
+msgid "Currently unable to fetch stats. Please try again."
+msgstr "Actualment no es poden obtenir estadístiques. Torneu-ho a intentar."
+
+#: class.akismet-cli.php:135
+msgid "API key must be set to fetch stats."
+msgstr "La clau de l'API ha de ser configurada per obtenir estadístiques."
+
+#: class.akismet-cli.php:167
+msgid "Stats response could not be decoded."
+msgstr "La resposta de les estadístiques no s'ha pogut descodificar."
+
+#: views/config.php:221
+msgid "Akismet privacy notice"
+msgstr "Avís de privadesa d'Akismet"
+
+#: views/config.php:227
+msgid "Display a privacy notice under your comment forms."
+msgstr "Mostra l'avís de privadesa a continuació dels formularis per comentar."
+
+#: views/config.php:235
+msgid "Do not display privacy notice."
+msgstr "No mostris l'avís de privadesa."
+
+#: views/config.php:216
+msgid "Privacy"
+msgstr "Privadesa"
+
+#: class.akismet-admin.php:108
+msgid "We collect information about visitors who comment on Sites that use our Akismet Anti-spam service. The information we collect depends on how the User sets up Akismet for the Site, but typically includes the commenter's IP address, user agent, referrer, and Site URL (along with other information directly provided by the commenter such as their name, username, email address, and the comment itself)."
+msgstr "Recopilem informació sobre els visitants que comenten en els llocs que utilitzen el nostre servei Akismet Anti-spam. La informació que recopilem depèn de com l'usuari configura l'Akismet per al lloc web, però normalment inclou l'adreça IP del comentarista, l'agent d'usuari, el referent i l'URL del lloc (juntament amb altres informacions proporcionades directament pel comentarista com el seu nom, nom d'usuari, adreça electrònica i el propi comentari)."
+
+#. translators: %s: Akismet privacy URL
+#: class.akismet.php:2280
+msgid "This site uses Akismet to reduce spam. <a href=\"%s\" target=\"_blank\" rel=\"nofollow noopener\">Learn how your comment data is processed.</a>"
+msgstr "Aquest lloc utilitza Akismet per reduir els comentaris brossa. <a href=\"%s\" target=\"_blank\" rel=\"nofollow noopener\">Apreneu com es processen les dades dels comentaris</a>."
+
+#: class.akismet.php:621
+msgid "Comment discarded."
+msgstr "S'ha descartat el comentari."
+
+#: class.akismet-rest-api.php:65
+msgid "If true, show the number of approved comments beside each comment author in the comments list page."
+msgstr "Si cert, mostra el número dels comentaris aprovats al costat de l'autor a la pàgina de la llista de comentaris."
+
+#: class.akismet-rest-api.php:89 class.akismet-rest-api.php:102
+msgid "The time period for which to retrieve stats. Options: 60-days, 6-months, all"
+msgstr "El període de temps pel qual recuperar estadístiques. Opcions: 60 dies, 6 mesos, sempre."
+
+#: class.akismet-rest-api.php:189
+msgid "This site's API key is hardcoded and cannot be changed via the API."
+msgstr "La clau de l'API d'aquest lloc està al codi i no es pot canviar via l'API."
+
+#: class.akismet-rest-api.php:211
+msgid "This site's API key is hardcoded and cannot be deleted."
+msgstr "La clau de l'API d'aquest lloc està al codi i no es pot suprimir."
+
+#: class.akismet-rest-api.php:60
+msgid "If true, Akismet will automatically discard the worst spam automatically rather than putting it in the spam folder."
+msgstr "Si és cert, l'Akismet descartarà automàticament els pitjors comentaris brossa abans de posar-los a la carpeta dels comentaris brossa."
+
+#: class.akismet-rest-api.php:195
+msgid "The value provided is not a valid and registered API key."
+msgstr "El valor introduït no és una clau API vàlida i registrada."
+
+#: class.akismet-rest-api.php:31 class.akismet-rest-api.php:127
+#: class.akismet-rest-api.php:140 class.akismet-rest-api.php:153
+msgid "A 12-character Akismet API key. Available at akismet.com/account"
+msgstr "Una clau d'API de 12 caràcters d'Akismet. Disponible a akismet.com/account"
+
+#: views/notice.php:128
+msgid "Your site can&#8217;t connect to the Akismet servers."
+msgstr "El vostre web no pot connectar amb els servidors d'Akismet."
+
+#. translators: %s is the wp-config.php file
+#: views/predefined.php:7
+msgid "An Akismet API key has been defined in the %s file for this site."
+msgstr "S'ha definit una clau de l'API d'Akismet per aquest web al fitxer %s."
+
+#: views/predefined.php:2
+msgid "Manual configuration"
+msgstr "Configuració manual"
+
+#: class.akismet-admin.php:300
+msgid "On this page, you are able to update your Akismet settings and view spam stats."
+msgstr "En aquesta pàgina podeu actualitzar la configuració de l'Akismet i veure estadístiques sobre els comentaris brossa."
+
+#: views/enter.php:10
+msgid "Connect with API key"
+msgstr "Connecteu amb la clau API"
+
+#. Description of the plugin
+#: akismet.php
+msgid "Used by millions, Akismet is quite possibly the best way in the world to <strong>protect your blog from spam</strong>. Akismet Anti-spam keeps your site protected even while you sleep. To get started: activate the Akismet plugin and then go to your Akismet Settings page to set up your API key."
+msgstr "Utilitzat per milions de persones, l'Akismet és possiblement la millor manera de <strong>protegir el blog de la brossa</strong>. Manté el lloc web protegit fins i tot mentre dormiu. Per a començar: activeu l'extensió i després aneu a la pàgina configuració d'Akismet per a configurar la clau API."
+
+#: class-akismet-connector.php:129 class.akismet-admin.php:159
+#: class.akismet-admin.php:161
+msgid "Akismet Anti-spam"
+msgstr "Akismet Anti-spam"
+
+#: views/notice.php:26
+msgid "Set up your Akismet account"
+msgstr "Configureu el compte d'Akismet"
+
+#: views/config.php:35
+msgid "Statistics"
+msgstr "Estadístiques"
+
+#: class.akismet-admin.php:1387
+msgid "No comments were caught as spam."
+msgstr "No s'ha detectat cap comentari com a brossa."
+
+#. translators: %s: Number of comments.
+#: class.akismet-admin.php:1383
+msgid "Akismet checked %s comment."
+msgid_plural "Akismet checked %s comments."
+msgstr[0] "Akismet ha comprovat %s comentari."
+msgstr[1] "Akismet ha comprovat %s comentaris."
+
+#: class.akismet-admin.php:1525
+msgid "Used by millions, Akismet is quite possibly the best way in the world to <strong>protect your blog from spam</strong>. It keeps your site protected even while you sleep. To get started, just go to <a href=\"admin.php?page=akismet-key-config\">your Akismet Settings page</a> to set up your API key."
+msgstr "Utilitzat per milions, Akismet és possiblement la millor manera en el món de  <strong>protegir el vostre blog de comentaris brossa</strong>. Manté el vostre lloc protegit fins i tot mentre dormiu. Per començar: 1) activeu l'extensió Akismet, i 2) aneu a <a href=\"admin.php?page=akismet-key-config\">la pàgina de configuració d'Akismet</a> per a definir la clau API."
+
+#: views/setup-jetpack.php:69
+msgid "Connect with Jetpack"
+msgstr "Connecteu amb Jetpack"
+
+#: views/setup.php:13
+msgid "Eliminate spam from your site"
+msgstr "Elimineu la brossa del vostre lloc web"
+
+#: class.akismet-admin.php:1523
+msgid "Used by millions, Akismet is quite possibly the best way in the world to <strong>protect your blog from spam</strong>. Your site is fully configured and being protected, even while you sleep."
+msgstr "Utilitzat per milions de persones, Akismet és possiblement la millor manera del món de <strong>protegir el vostre blog de la brossa</strong>. El vostre lloc web està configurat i està sent protegit, fins i tot mentre dormiu."
+
+#. translators: %s: Number of comments.
+#: class.akismet-admin.php:1390
+msgid "%s comment was caught as spam."
+msgid_plural "%s comments were caught as spam."
+msgstr[0] "%s comentari ha estat detectat com a brossa."
+msgstr[1] "%s comentaris han estat detectats com a brossa."
+
+#: class.akismet-admin.php:1380
+msgid "There were no comments to check. Akismet will only check comments awaiting moderation."
+msgstr "No hi ha comentaris per comprovar. Akismet només comprovarà comentaris pendents de moderar."
+
+#: class.akismet.php:1126
+msgid "Comment not found."
+msgstr "No s'ha trobat el comentari."
+
+#. translators: %d: Comment ID.
+#: class.akismet-cli.php:42
+msgid "Failed to connect to Akismet."
+msgstr "Ha fallat la connexió amb Akismet."
+
+#. translators: %d: Number of comments.
+#: class.akismet-cli.php:89
+msgid "%d comment could not be checked."
+msgid_plural "%d comments could not be checked."
+msgstr[0] "No s'ha pogut comprovar %d comentari."
+msgstr[1] "No s'han pogut comprovar %d comentaris."
+
+#. translators: %d: Number of comments.
+#: class.akismet-cli.php:85
+msgid "%d comment moved to Spam."
+msgid_plural "%d comments moved to Spam."
+msgstr[0] "S'ha mogut %d comentari a brossa."
+msgstr[1] "S'han mogut %d comentaris a brossa."
+
+#. translators: %d: Number of comments.
+#: class.akismet-cli.php:82
+msgid "Processed %d comment."
+msgid_plural "Processed %d comments."
+msgstr[0] "S'ha processat %d comentari."
+msgstr[1] "S'han processat %d comentaris."
+
+#. translators: %d: Comment ID.
+#: class.akismet-cli.php:45
+msgid "Comment #%d could not be checked."
+msgstr "El comentari #%d no s'ha pogut comprovar."
+
+#. translators: %d: Comment ID.
+#: class.akismet-cli.php:39
+msgid "Comment #%d is not spam."
+msgstr "El comentari #%d no és brossa."
+
+#. translators: %d: Comment ID.
+#: class.akismet-cli.php:36
+msgid "Comment #%d is spam."
+msgstr "El comentari #%d és brossa."
+
+#. translators: %s: number of false positive spam flagged by Akismet
+#: views/config.php:64
+msgid "%s false positive"
+msgid_plural "%s false positives"
+msgstr[0] "%s fals positiu"
+msgstr[1] "%s falsos positius"
+
+#. translators: %s: number of spam missed by Akismet
+#: views/config.php:62
+msgid "%s missed spam"
+msgid_plural "%s missed spam"
+msgstr[0] "%s comentari brossa no detectat"
+msgstr[1] "%s comentaris brossa no detectats"
+
+#: views/notice.php:139
+msgid "Your Akismet plan has been cancelled."
+msgstr "El seu pla d'Akismet ha estat cancel·lat."
+
+#: views/notice.php:183
+msgid "You don&#8217;t have an Akismet plan."
+msgstr "No teniu un pla d'Akismet."
+
+#: views/notice.php:150
+msgid "Your Akismet subscription is suspended."
+msgstr "La vostra subscripció d'Akismet està suspesa."
+
+#: class.akismet-admin.php:249 class.akismet-admin.php:287
+#: class.akismet-admin.php:299
+msgid "Akismet filters out spam, so you can focus on more important things."
+msgstr "Akismet filtra el correu no desitjat, perquè pugueu centrar-vos en coses més importants."
+
+#. translators: %s: Number of hours.
+#: class.akismet-admin.php:1283
+msgid "Akismet has saved you %d hour!"
+msgid_plural "Akismet has saved you %d hours!"
+msgstr[0] "Akismet us ha estalviat %d hora!"
+msgstr[1] "Akismet us ha estalviat %d hores!"
+
+#. translators: %s: Number of minutes.
+#: class.akismet-admin.php:1286
+msgid "Akismet has saved you %d minute!"
+msgid_plural "Akismet has saved you %d minutes!"
+msgstr[0] "Akismet us ha estalviat %d minut!"
+msgstr[1] "Akismet us ha estalviat %d minuts!"
+
+#. translators: %s: Number of days.
+#: class.akismet-admin.php:1280
+msgid "Akismet has saved you %s day!"
+msgid_plural "Akismet has saved you %s days!"
+msgstr[0] "Akismet us ha estalviat %s dia!"
+msgstr[1] "Akismet us ha estalviat %s dies!"
+
+#: views/notice.php:247
+msgid "The API key you entered could not be verified."
+msgstr "La clau que heu introduït no s'ha pogut verificar."
+
+#. translators: The placeholder is a URL.
+#: views/notice.php:253
+msgid "The connection to akismet.com could not be established. Please refer to <a class=\"akismet-external-link\" href=\"%s\" target=\"_blank\">our guide about firewalls</a> and check your server configuration."
+msgstr "No es pot establir una connexió amb akismet.com. Llegiu la <a class=\"akismet-external-link\" href=\"%s\" target=\"_blank\">guia sobre tallafocs</a> i comproveu la configuració del vostre servidor."
+
+#: class.akismet-admin.php:762
+msgid "This comment was reported as not spam."
+msgstr "Aquest comentari no ha estat identificat com a brossa."
+
+#: views/config.php:128
+msgid "Akismet encountered a problem with a previous SSL request and disabled it temporarily. It will begin using SSL for requests again shortly."
+msgstr "Akismet ha trobat un problema amb una petició SSL anterior i l'ha deshabilitat temporalment. Tornarà a utilitzar SSL per a noves peticions en poc de temps."
+
+#: views/config.php:122
+msgid "Your Web server cannot make SSL requests; contact your Web host and ask them to add support for SSL requests."
+msgstr "El vostre servidor web no pot fer peticions SSL; contacteu amb el proveïdor d'allotjament i demaneu-los que habilitin les peticions SSL."
+
+#: views/config.php:130
+msgid "Enabled."
+msgstr "Habilitat"
+
+#: views/config.php:127
+msgid "Temporarily disabled."
+msgstr "Temporalment deshabilitat."
+
+#: views/config.php:121
+msgid "Disabled."
+msgstr "Deshabilitat."
+
+#: views/config.php:131
+msgid "All systems functional."
+msgstr "Tots els sistemes estan funcionant."
+
+#: views/config.php:118
+msgid "SSL status"
+msgstr "Estat del SSL"
+
+#: class.akismet-admin.php:754
+msgid "This comment was reported as spam."
+msgstr "Aquest comentari ha estat identificat com a brossa."
+
+#. translators: %s: Comments page URL.
+#: class.akismet-admin.php:474
+msgid "There&#8217;s nothing in your <a href='%s'>spam queue</a> at the moment."
+msgstr "No hi ha res a la <a href='%s'>cua de brossa</a> en aquest moment."
+
+#: views/enter.php:2
+msgid "Manually enter an API key"
+msgstr "Introduïu una clau API manualment"
+
+#: class.akismet-admin.php:269
+msgid "Enter an API Key"
+msgstr "Introduïu una clau API"
+
+#. translators: The placeholder is an error response returned by the API
+#. server.
+#: class.akismet-admin.php:774
+msgid "Akismet was unable to check this comment (response: %s) but will automatically retry later."
+msgstr "L'Akismet no ha pogut comprovar aquest comentari (resposta: %s), però ho tornarà a provar automàticament més tard."
+
+#: class.akismet-admin.php:727
+msgid "Akismet re-checked and caught this comment as spam."
+msgstr "L'Akismet ha tornat a comprovar aquest comentari i l'ha marcat com a brossa."
+
+#. translators: The placeholder is an error response returned by the API
+#. server.
+#: class.akismet-admin.php:782
+msgid "Akismet was unable to recheck this comment (response: %s)."
+msgstr "L'Akismet no ha pogut tornar a comprovar aquest comentari (resposta: %s)."
+
+#. translators: The placeholder is a username.
+#: class.akismet-admin.php:752
+msgid "%s reported this comment as spam."
+msgstr "%s ha informat que aquest comentari és brossa."
+
+#. translators: The placeholder is a username.
+#: class.akismet-admin.php:760
+msgid "%s reported this comment as not spam."
+msgstr "%s ha informat que aquest comentari no és brossa."
+
+#. translators: %1$s is a username; %2$s is a short string (like 'spam' or
+#. 'approved') denoting the new comment status.
+#: class.akismet-admin.php:817
+msgid "%1$s changed the comment status to %2$s."
+msgstr "%1$s ha canviat l'estat del comentari a %2$s."
+
+#: class.akismet-admin.php:736
+msgid "Akismet cleared this comment."
+msgstr "L'Akismet ha netejat aquest comentari."
+
+#: class.akismet-admin.php:733
+msgid "Akismet re-checked and cleared this comment."
+msgstr "Akismet ha tornat a comprovar aquest comentari i l'ha marcat com a net."
+
+#: class.akismet-admin.php:730
+msgid "Akismet caught this comment as spam."
+msgstr "Akismet ha detectat aquest comentari com a brossa."
+
+#. translators: The Akismet configuration page URL.
+#: class.akismet-admin.php:1148
+msgid "Please check your <a href=\"%s\">Akismet configuration</a> and contact your web host if problems persist."
+msgstr "Comproveu <a href=\"%s\">la configuració de l'Akismet</a> i contacteu amb l'allotjament web si persisteix el problema."
+
+#: views/notice.php:37
+msgid "Some comments have not yet been checked for spam by Akismet. They have been temporarily held for moderation and will automatically be rechecked later."
+msgstr "Alguns comentaris no han estat comprovats encara per l'Akismet. Han estat blocats temporalment en la cua de moderació i es tornaran a comprovar automàticament més tard."
+
+#: views/config.php:310
+msgid "Cancelled"
+msgstr "Cancel·lat"
+
+#: views/config.php:312
+msgid "Suspended"
+msgstr "Suspès"
+
+#: views/config.php:314
+msgid "Missing"
+msgstr "Perdut"
+
+#: views/config.php:318
+msgid "Active"
+msgstr "Activa"
+
+#: views/config.php:183
+msgid "Always put spam in the Spam folder for review."
+msgstr "Posa sempre la brossa en la carpeta Brossa per revisar-la."
+
+#: class.akismet-admin.php:312
+msgid "Choose to either discard the worst spam automatically or to always put all spam in spam folder."
+msgstr "Trieu o descartar la brossa automàticament o bé posar-la sempre a la carpeta de la brossa."
+
+#: views/config.php:175
+msgid "Silently discard the worst and most pervasive spam so I never see it."
+msgstr "Descarta la pitjor i més agressiva brossa de manera transparent per no veure-la."
+
+#: class.akismet-admin.php:311 views/config.php:141
+msgid "Comments"
+msgstr "Comentaris"
+
+#: views/notice.php:225
+msgid "The key you entered is invalid. Please double-check it."
+msgstr "La vostra clau no és vàlida. Comproveu-la."
+
+#: views/notice.php:112
+msgid "Network functions are disabled."
+msgstr "Les funcions de xarxa estan desactivades."
+
+#: views/notice.php:36 views/notice.php:46
+msgid "Akismet has detected a problem."
+msgstr "Akismet ha detectat un problema."
+
+#. translators: The placeholder is an error code returned by Akismet.
+#: views/notice.php:86
+msgid "Akismet error code: %s"
+msgstr "Codi d'error de l'Akismet: %s"
+
+#: views/config.php:286
+msgid "Save changes"
+msgstr "Desa els canvis"
+
+#: class.akismet-admin.php:649
+msgid "Awaiting spam check"
+msgstr "S'està esperant la comprovació de la brossa"
+
+#: class.akismet-widget.php:20
+msgid "Akismet Widget"
+msgstr "Giny de l'Akismet"
+
+#: class.akismet-widget.php:21
+msgid "Display the number of spam comments Akismet has caught"
+msgstr "Mostra el nombre de comentaris brossa que l'Akismet ha capturat"
+
+#. translators: The placeholder is the number of pieces of spam blocked by
+#. Akismet.
+#: class.akismet-widget.php:146
+msgid "<strong class=\"count\">%1$s spam</strong> blocked by <strong>Akismet</strong>"
+msgid_plural "<strong class=\"count\">%1$s spam</strong> blocked by <strong>Akismet</strong>"
+msgstr[0] "<strong class=\"count\">%1$s brossa</strong> blocat per l'<strong>Akismet</strong>"
+msgstr[1] "<strong class=\"count\">%1$s brosses</strong> blocats per l'<strong>Akismet</strong>"
+
+#: class.akismet-admin.php:152 class.akismet-admin.php:307
+#: class.akismet-admin.php:858 views/config.php:88
+msgid "Settings"
+msgstr "Configuració"
+
+#: class.akismet-admin.php:342
+msgid "Cheatin&#8217; uh?"
+msgstr "Fent trampes, eh?"
+
+#: class.akismet-admin.php:653
+msgid "Flagged as spam by Akismet"
+msgstr "Marcat com a brossa per l'Akismet"
+
+#: class.akismet-admin.php:677
+msgid "History"
+msgstr "Historial"
+
+#: class.akismet-admin.php:655
+msgid "Cleared by Akismet"
+msgstr "Netejat per l'Akismet"
+
+#. translators: %s: Number of comments.
+#: class.akismet-admin.php:703
+msgid "%s approved"
+msgid_plural "%s approved"
+msgstr[0] "%s aprovat"
+msgstr[1] "%s aprovats"
+
+#: class.akismet-admin.php:766
+msgid "Akismet caught this comment as spam during an automatic retry."
+msgstr "L'Akismet ha capturat aquest comentari com a brossa en un reintent automàtic."
+
+#. translators: The placeholder is a short string (like 'spam' or 'approved')
+#. denoting the new comment status.
+#: class.akismet-admin.php:811
+msgid "Comment status was changed to %s"
+msgstr "S'ha canviat l'estat del comentari a %s"
+
+#: class.akismet-admin.php:769
+msgid "Akismet cleared this comment during an automatic retry."
+msgstr "L'Akismet ha netejat aquest comentari durant un reintent automàtic."
+
+#: class.akismet-admin.php:677 class.akismet-admin.php:685
+msgid "View comment history"
+msgstr "Visualitza l'historial dels comentaris"
+
+#: class.akismet-admin.php:107 class.akismet-admin.php:1540
+msgid "Akismet"
+msgstr "Akismet"
+
+#. translators: %s: Username.
+#: class.akismet-admin.php:661
+msgid "Flagged as spam by %s"
+msgstr "Marcat com a brossa per %s"
+
+#. translators: %s: Username.
+#: class.akismet-admin.php:664
+msgid "Un-spammed by %s"
+msgstr "Marcat com a no brossa per %s"
+
+#: class.akismet-widget.php:34 class.akismet-widget.php:69
+msgid "Spam Blocked"
+msgstr "S'han blocat els comentaris brossa"
+
+#: class.akismet-admin.php:333
+msgid "For more information:"
+msgstr "Per a més informació:"
+
+#: class.akismet-widget.php:39
+msgid "Title:"
+msgstr "Títol:"
+
+#: class.akismet-admin.php:298 class.akismet-admin.php:309
+#: class.akismet-admin.php:322
+msgid "Akismet Configuration"
+msgstr "Configuració de l'Akismet"
+
+#: class.akismet-admin.php:286
+msgid "Akismet Stats"
+msgstr "Estadístiques de l'Akismet"
+
+#: class.akismet-admin.php:537
+msgid "Check for Spam"
+msgstr "Comprova la brossa"
+
+#. translators: The placeholder is an amount of time, like "7 seconds" or "3
+#. days" returned by the function human_time_diff().
+#: class.akismet-admin.php:831
+msgid "%s ago"
+msgstr "fa %s"
+
+#: class.akismet-admin.php:213
+msgid "(undo)"
+msgstr "(desfés)"
+
+#: class.akismet-admin.php:248 class.akismet-admin.php:259
+#: class.akismet-admin.php:271
+msgid "Akismet Setup"
+msgstr "Configuració de l'Akismet"
+
+#: class.akismet-admin.php:257
+msgid "New to Akismet"
+msgstr "Nou en l'Akismet"
+
+#: class.akismet-admin.php:214
+msgid "Re-adding..."
+msgstr "S'està tornant a afegir..."
+
+#: class.akismet-admin.php:260
+msgid "You need to enter an API key to activate the Akismet service on your site."
+msgstr "Necessiteu introduir una clau API per activar el servei de l'Akismet al lloc web."
+
+#: class.akismet-admin.php:246 class.akismet-admin.php:284
+#: class.akismet-admin.php:296
+msgid "Overview"
+msgstr "Resum"
+
+#: class.akismet-admin.php:272
+msgid "If you already have an API key"
+msgstr "Si ja teniu una clau API"
+
+#: class.akismet-admin.php:310
+msgid "API Key"
+msgstr "Clau API"
+
+#: class.akismet-admin.php:320 views/config.php:297
+msgid "Account"
+msgstr "Compte"
+
+#: class.akismet-admin.php:323
+msgid "Subscription Type"
+msgstr "Tipus de subscripció"
+
+#: class.akismet-admin.php:323
+msgid "The Akismet subscription plan"
+msgstr "El pla de subscripció de l'Akismet"
+
+#: class.akismet-admin.php:324 views/config.php:306
+msgid "Status"
+msgstr "Estat"
+
+#: class.akismet-admin.php:335
+msgid "Akismet FAQ"
+msgstr "PMF de l'Akismet"
+
+#: class.akismet-admin.php:336
+msgid "Akismet Support"
+msgstr "Suport de l'Akismet"
+
+#: views/config.php:52
+msgid "All time"
+msgstr "Tot el temps"
+
+#: views/config.php:190
+msgid "Note:"
+msgstr "Nota:"
+
+#: views/config.php:278
+msgid "Disconnect this account"
+msgstr "Desconnecta aquest compte"
+
+#: views/config.php:339
+msgid "Upgrade"
+msgstr "Actualitza"
+
+#: views/config.php:339
+msgid "Change"
+msgstr "Canvia"
+
+#: class.akismet-admin.php:274
+msgid "Copy and paste the API key into the text field."
+msgstr "Copieu i enganxeu la clau API en el quadre de text."
+
+#: class.akismet-admin.php:288
+msgid "On this page, you are able to view stats on spam filtered on your site."
+msgstr "En aquesta pàgina podeu veure les estadístiques de la brossa filtrada del lloc web."
+
+#: class.akismet-admin.php:311
+msgid "Show the number of approved comments beside each comment author in the comments list page."
+msgstr "Mostra el nombre de comentaris aprovats a més a més del comentari de l'autor a la pàgina de la llista de comentaris."
+
+#: class.akismet-admin.php:324
+msgid "The subscription status - active, cancelled or suspended"
+msgstr "L'estat de la subscripció - activa, cancel·lada o suspesa"
+
+#. translators: 1: Akismet website URL, 2: Comments page URL, 3: Number of spam
+#. comments.
+#: class.akismet-admin.php:427
+msgid "<a href=\"%1$s\">Akismet</a> has protected your site from <a href=\"%2$s\">%3$s spam comment</a>."
+msgid_plural "<a href=\"%1$s\">Akismet</a> has protected your site from <a href=\"%2$s\">%3$s spam comments</a>."
+msgstr[0] "<a href=\"%1$s\">L'Akismet</a> ha protegit la web de <a href=\"%2$s\">%3$s comentari brossa</a>."
+msgstr[1] "<a href=\"%1$s\">L'Akismet</a> ha protegit la web de <a href=\"%2$s\">%3$s comentaris brossa</a>."
+
+#. translators: %s: Akismet website URL.
+#: class.akismet-admin.php:455
+msgid "<a href=\"%s\">Akismet</a> blocks spam from getting to your blog. "
+msgstr "<a href=\"%s\">L'Akismet</a> bloca la brossa perquè no arribi al blog."
+
+#: class.akismet-admin.php:1276
+msgid "Cleaning up spam takes time."
+msgstr "La neteja de la brossa duu el seu temps."
+
+#. translators: 1: WordPress documentation URL, 2: Akismet download URL.
+#: class.akismet.php:2095
+msgid "Please <a href=\"%1$s\">upgrade WordPress</a> to a current version, or <a href=\"%2$s\">downgrade to version 2.4 of the Akismet plugin</a>."
+msgstr "<a href=\"%1$s\">Actualitzeu el WordPress</a> a la versió actual, o <a href=\"%2$s\">desactualitzeu l'extensió de l'Akismet a la versió 2.4</a>."
+
+#: views/config.php:47
+msgid "Past six months"
+msgstr "Els últims sis mesos"
+
+#: views/config.php:57
+msgid "Accuracy"
+msgstr "Precisió"
+
+#: class.akismet-admin.php:275
+msgid "Click the Use this Key button."
+msgstr "Feu clic al botó Usa aquesta clau."
+
+#: views/notice.php:172
+msgid "There is a problem with your API key."
+msgstr "Hi ha un problema amb la clau API."
+
+#. translators: %s: a link to the signup page with the text 'Akismet.com'.
+#: class.akismet-admin.php:262
+msgid "Sign up for an account on %s to get an API Key."
+msgstr "Inicieu sessió per crear un compte en %s i aconseguir una clau API."
+
+#: class.akismet-admin.php:310
+msgid "Enter/remove an API key."
+msgstr "Introduïu/suprimiu una clau API."
+
+#. Plugin URI of the plugin
+#: akismet.php
+msgid "https://akismet.com/"
+msgstr "http://akismet.com/"
+
+#. Author URI of the plugin
+#: akismet.php
+msgid "https://automattic.com/wordpress-plugins/"
+msgstr "http://automattic.com/wordpress-plugins/"
+
+#: class.akismet-admin.php:250
+msgid "On this page, you are able to set up the Akismet plugin."
+msgstr "Podeu configurar l'Akismet en aquesta pàgina."
+
+#. translators: 1: Number of comments, 2: Comments page URL.
+#: class.akismet-admin.php:463
+msgid "There&#8217;s <a href=\"%2$s\">%1$s comment</a> in your spam queue right now."
+msgid_plural "There are <a href=\"%2$s\">%1$s comments</a> in your spam queue right now."
+msgstr[0] "Hi ha <a href=\"%2$s\">%1$s comentari</a> a la cua de la brossa ara mateix."
+msgstr[1] "Hi ha <a href=\"%2$s\">%1$s comentaris</a> a la cua de la brossa ara mateix."
+
+#. translators: 1: Akismet website URL, 2: Number of spam comments.
+#: class.akismet-admin.php:444
+msgid "<a href=\"%1$s\">Akismet</a> has protected your site from %2$s spam comment already. "
+msgid_plural "<a href=\"%1$s\">Akismet</a> has protected your site from %2$s spam comments already. "
+msgstr[0] "<a href=\"%1$s\">L'Akismet</a> ja ha protegit el vostre web d'%2$s comentari brossa."
+msgstr[1] "<a href=\"%1$s\">L'Akismet</a> ja ha protegit el vostre web de %2$s comentaris brossa."
+
+#: views/notice.php:341
+msgid "Contact Akismet support"
+msgstr "Contacteu amb el suport de l'Akismet"
+
+#: class.akismet-admin.php:210
+msgid "Remove this URL"
+msgstr "Suprimeix aquest URL"
+
+#: class.akismet-admin.php:211
+msgid "Removing..."
+msgstr "S'està suprimint..."
+
+#: views/config.php:49 views/config.php:54
+msgid "Spam blocked"
+msgid_plural "Spam blocked"
+msgstr[0] "S'ha blocat la brossa"
+msgstr[1] "S'ha blocat la brossa"
+
+#: class.akismet-admin.php:312
+msgid "Strictness"
+msgstr "Rigorositat"
+
+#: class.akismet-admin.php:212
+msgid "URL removed"
+msgstr "URL suprimit"
+
+#: views/config.php:316
+msgid "No subscription found"
+msgstr "No s'ha trobat cap subscripció"
+
+#: views/config.php:324
+msgid "Next billing date"
+msgstr "Data de facturació següent"
+
+#: views/config.php:156
+msgid "Show the number of approved comments beside each comment author."
+msgstr "Mostra el nombre de comentaris aprovats al costat de cada autor de comentaris."
+
+#: views/config.php:169
+msgid "Akismet Anti-spam strictness"
+msgstr "Severitat de l'Akismet Anti-spam"
+
+#: class.akismet-admin.php:423
+msgctxt "comments"
+msgid "Spam"
+msgstr "Brossa"
+
+#. translators: 1: Current Akismet version number, 2: Minimum WordPress version
+#. number required.
+#: class.akismet.php:2093
+msgid "Akismet %1$s requires WordPress %2$s or higher."
+msgstr "L'Akismet %1$s requereix el WordPress %2$s o superior."
+
+#. translators: The placeholder is a URL.
+#: views/notice.php:132
+msgid "Your firewall may be blocking Akismet from connecting to its API. Please contact your host and refer to <a class=\"akismet-external-link\" href=\"%s\" target=\"_blank\">our guide about firewalls</a>"
+msgstr "El tallafocs pot estar impedint que l'Akismet es connecti amb la seva API. Contacteu amb el vostre proveïdor d'allotjament i feu-los referència a la <a class=\"akismet-external-link\" href=\"%s\" target=\"_blank\">nostra guia sobre tallafocs</a>."
+
+#: class.akismet-admin.php:103
+msgid "Comment History"
+msgstr "Historial dels comentaris"
