@@ -89,9 +89,9 @@ else {
 			<?php $news_query = new WP_Query(array('posts_per_page' => 2));
 			while ($news_query->have_posts()) : $news_query->the_post();?>
 				<div class="article">
-					<h3><?php echo the_title();?></h3>
+					<h3><?php the_title(); ?></h3>
 					<p class="data">Publicat <?php echo dateText(strtotime($post->post_date));?></p>
-					<p><?php echo nl2br(the_content()); ?></p>
+					<p><?php the_content(); ?></p>
 					<div class="clear"></div>
 				</div> <!--end of article -->	
 			<?php endwhile; wp_reset_postdata(); ?>

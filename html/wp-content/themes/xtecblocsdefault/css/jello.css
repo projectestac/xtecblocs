@@ -13,7 +13,7 @@ body {
 	margin: 0 auto 0 auto;
 	padding: 0;
 	width: 100%;
-	max-width: 290px;  /* version for IE is at the bottom of this style block */
+	max-width: 290px;
 }
 
 #expander {
@@ -23,14 +23,10 @@ body {
 	position: relative;
 }
 
-/* Holly hack for IE \*/
-* html #expander { height: 0; }
-
-/* helps IE get the child percentages right. */
 #wrapper { width: 100%; } 
 
 
-/* * --- stop copying, but be sure to grab IE's max-width, just above the body-tag --- * * * * * * * * * * * * * * */
+/* Jello -- stop copying here * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 #sidefooter { clear:both; text-align: center; margin: 1em; }
 #footer { display: none; clear: both; padding: 0.5em 0 0.5em 0; margin: 1em 5% 1em 5%; border-top: 3px solid black; }
 
@@ -45,9 +41,4 @@ body {
     visibility: hidden;
 }
 
-.clearfix {display: inline-table;}
-
-/* Hides from IE-mac \*/
-* html .clearfix {height: 1%;}
 .clearfix {display: block;}
-/* End hide from IE-mac */

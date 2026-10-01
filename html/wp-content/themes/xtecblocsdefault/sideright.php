@@ -4,6 +4,7 @@
 global $current_user;
 if (is_user_logged_in()) {
     $blogs = get_blogs_of_user($current_user->ID);
+    $notHave = false;
     ?>
 
     <div class="sidebox"><span class="sideboxright">&nbsp;</span> <span
@@ -112,7 +113,6 @@ if (is_user_logged_in()) {
 
                             // If blog's titles is empty, compose title from url (Ex: http://agora/blocs/elspinguins/ --> elspinguins)
                             $titolBlog = trim(get_blog_option($blog, 'blogname'));
-                            $urlBlog = trim($urlBlog, "/");
 
                             if (empty($titolBlog)) {
                                 $urlBlog = get_blog_option($blog, 'siteurl');

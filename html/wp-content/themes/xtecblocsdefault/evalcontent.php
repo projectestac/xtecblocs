@@ -32,6 +32,7 @@ switch ($action) {
         print '<table width="100%">';
         print '<th align="left" valign="top">T&iacute;tol</th><th align="left" valign="top">Propietari</th><th align="left" valign="top">Altres descriptors</th>';
         $blogs = xtec_descriptors_get_blogs_by_descriptor($_GET['desc'], true);
+        $bgcolor = '';
         foreach ($blogs as $blog) {
             $blogname = get_blog_option($blog, 'blogname');
             $siteurl = get_blog_option($blog, 'siteurl');
@@ -61,7 +62,7 @@ switch ($action) {
         print "</table>";
         print "</div>";
         break;
-    case 'allDescriptors';
+    case 'allDescriptors':
         print '<div class="box">';
         print '	<span class="contentboxheadright"></span>';
         print '	<span class="contentboxheadleft"></span>';
@@ -76,34 +77,6 @@ switch ($action) {
             print('</a></li>');
         }
         print '	</ul>';
-        print '</div>';
-        break;
-    case 'search';
-        include('xtecfunc.php');
-        print '<h2 style="color: #1C4387; font-size: 1.3em; background-image: none; border: none; margin-bottom: 1em; margin-top: 1em;">Llista de bloc que en el t&iacute;tol o a la descripci&oacute; hi tenen la paraula <em>' . $_REQUEST['word'] . '</em>.</h2>';
-        print '<div class="descriptors">';
-        $resultSearch = xtec_search_search($_REQUEST['word']);
-
-        $pager = pager($resultSearch->pager[0], $resultSearch->pager[1], 'index.php?a=search&amp;word=' . $resultSearch->pager[2] . '&amp;init=%%', $resultSearch->pager[3]);
-
-        print '<div style="text-align:right; padding-right:60px;">' . $pager . '</div><br />';
-
-        //no matches found
-        if ($resultSearch->blogs_count == 0) {
-            print 'No s\'ha trobat cap resultat!';
-        } else {
-            if ($resultSearch->blogs_count == 1)
-                print 'S\'ha trobat 1 bloc';
-            else
-                print 'S\'han trobat ' . $resultSearch->blogs_count . ' blogs';
-
-            print '<ul>';
-            //prints blogs
-            foreach ($resultSearch->blogs as $blog) {
-                print '<a href="http://' . $blog->domain . $blog->path . '" target="_blank"><li>' . $blog->name . '</li></a>';
-            }
-            print '</ul>';
-        }
         print '</div>';
         break;
     case 'addPrefer':
@@ -168,7 +141,7 @@ switch ($action) {
         print '<h2 style="color: #1C4387; font-size: 1.3em; background-image: none; border: none; margin-bottom: 1em; margin-top: 1em;">Llista de not&iacute;cies publicades</h2>';
         $init = (isset($_REQUEST['init']) && $_REQUEST['init'] != '') ? $_REQUEST['init'] : 1;
         $newsList = getNewsList();
-        print '<div style="text-align:right; padding-right:60px;">' . $pager . '</div><br/ >';
+        print '<div style="text-align:right; padding-right:60px;"></div><br/ >';
         print '<table>';
         print '<th align="left" valign="top">T&iacute;tol</th><th align="left" valign="top">Data de publicaci&oacute;</th>';
         $bgcolor = "#e5f2fe";
