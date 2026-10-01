@@ -1,0 +1,264 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC WeekBlog\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-24 09:57+0100\n"
+"PO-Revision-Date: 2011-10-24 09:57+0100\n"
+"Last-Translator: Francesc Bassas i Bullich\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Catalan\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../xtec-weekblog2.php:28
+msgid "Allows network admins to manage WeekBlogs, a new custom post type."
+msgstr "Permet als administradors de xarxa gestionar els blocs de la setmana, un nou tipus d'entrada personalitzada."
+
+#: ../xtec-weekblog2.php:48
+msgid "WeekBlogs"
+msgstr "Blocs de la setmana"
+
+#: ../xtec-weekblog2.php:49
+#: ../xtec-weekblog2.php:454
+msgid "WeekBlog"
+msgstr "Bloc de la setmana"
+
+#: ../xtec-weekblog2.php:50
+msgid "Add new WeekBlog"
+msgstr "Afegeix un nou bloc de la setmana"
+
+#: ../xtec-weekblog2.php:51
+msgid "Edit WeekBlog"
+msgstr "Edita el bloc de la setmana"
+
+#: ../xtec-weekblog2.php:52
+msgid "New WeekBlog"
+msgstr "Nou bloc de la setmana"
+
+#: ../xtec-weekblog2.php:53
+msgid "View WeekBlog"
+msgstr "Mostra el bloc de la setmana"
+
+#: ../xtec-weekblog2.php:54
+msgid "Search WeekBlogs"
+msgstr "Cerca blocs de la setmana"
+
+#: ../xtec-weekblog2.php:55
+msgid "No WeekBlogs found in Trash"
+msgstr "No s'han trobat blocs de la setmana a la paperera."
+
+#: ../xtec-weekblog2.php:57
+msgid "The outstanding blog of the week."
+msgstr "El bloc destacat de la setmana."
+
+#: ../xtec-weekblog2.php:80
+msgid "Params"
+msgstr "Paràmetres"
+
+#: ../xtec-weekblog2.php:82
+msgid "Custom Image"
+msgstr "Imatge personalitzada"
+
+#: ../xtec-weekblog2.php:96
+#: ../xtec-weekblog2.php:247
+msgid "WeekBlog URL"
+msgstr "URL del bloc de la setmana"
+
+#: ../xtec-weekblog2.php:103
+#: ../xtec-weekblog2.php:106
+msgid "WeekBlog URL is wrong."
+msgstr "L'URL del bloc de la setmana és erroni"
+
+#: ../xtec-weekblog2.php:113
+#: ../xtec-weekblog2.php:249
+msgid "Description"
+msgstr "Descripció"
+
+#: ../xtec-weekblog2.php:116
+msgid "Description max length: 175 chars"
+msgstr "Màxima longitud de la descripció: 175 caràcters"
+
+#: ../xtec-weekblog2.php:120
+#: ../xtec-weekblog2.php:123
+msgid "WeekBlog description is not defined."
+msgstr "No s'ha definit la descripció del bloc de la setmana."
+
+#: ../xtec-weekblog2.php:181
+#, php-format
+msgid "Weekblog updated. <a href=\"%s\">View weekblog</a>"
+msgstr "S'ha actualitzat el bloc de la setmana. <a href=\"%s\">Mostra el bloc de la setmana</a>"
+
+#: ../xtec-weekblog2.php:182
+msgid "Custom field updated."
+msgstr "S'ha actualitzat el camp personalitzat."
+
+#: ../xtec-weekblog2.php:183
+msgid "Custom field deleted."
+msgstr "S'ha esborrat el camp personalitzat."
+
+#: ../xtec-weekblog2.php:184
+msgid "Weekblog updated."
+msgstr "Bloc de la setmana actualitzat."
+
+#: ../xtec-weekblog2.php:185
+#, php-format
+msgid "Weekblog restored to revision from %s"
+msgstr "S'ha restaurat el bloc de la setmana a la revisió del %s"
+
+#: ../xtec-weekblog2.php:186
+#, php-format
+msgid "Weekblog published. <a href=\"%s\">View weekblog</a>"
+msgstr "S'ha publicat el bloc de la setmana. <a href=\"%s\"> Mostra el bloc de la setmana</a>"
+
+#: ../xtec-weekblog2.php:187
+msgid "Weekblog saved."
+msgstr "S'ha desat el bloc de la setmana."
+
+#: ../xtec-weekblog2.php:188
+#, php-format
+msgid "Weekblog submitted. <a target=\"_blank\" href=\"%s\">Preview weekblog</a>"
+msgstr "S'ha enviat el bloc de la setmana. <a target=\"_blank\" href=\"%s\">Previsualitza el bloc de la setmana</a>"
+
+#: ../xtec-weekblog2.php:189
+#, php-format
+msgid "Weekblog scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview weekblog</a>"
+msgstr "Bloc de la setmana programat per al: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Previsualitza el bloc de la setmana</a>"
+
+#: ../xtec-weekblog2.php:190
+msgid "M j, Y @ G:i"
+msgstr "d-m-Y a les G:i"
+
+#: ../xtec-weekblog2.php:191
+#, php-format
+msgid "Weekblog draft updated. <a target=\"_blank\" href=\"%s\">Preview weekblog</a>"
+msgstr "S'ha actualitzat el bloc de la setmana. <a target=\"_blank\" href=\"%s\">Previsualitza el bloc de la setmana</a>"
+
+#: ../xtec-weekblog2.php:210
+msgid "Image size must be at least of 363 x 98 px. If the image is bigger than the minimum size then, when it be displayed, it will be automatically cropped."
+msgstr "La mida de la imatge ha de ser almenys de 363 x 98 px. Si la imatge és més gran que la mida mínima després, quan es mostri, serà escapçada automàticament."
+
+#: ../xtec-weekblog2.php:216
+msgid "Custom Image is not defined."
+msgstr "No s'ha definit la imatge personalitzada."
+
+#: ../xtec-weekblog2.php:225
+msgid "Cropped Image:"
+msgstr "Imatge escapçada:"
+
+#: ../xtec-weekblog2.php:230
+#: ../xtec-weekblog2.php:319
+msgid "Image size is too small"
+msgstr "La mida de la imatge és massa petita"
+
+#: ../xtec-weekblog2.php:248
+msgid "Image"
+msgstr "Imatge"
+
+#: ../xtec-weekblog2.php:250
+msgid "Week"
+msgstr "Setmana"
+
+#: ../xtec-weekblog2.php:251
+msgid "Date"
+msgstr "Data"
+
+#: ../xtec-weekblog2.php:281
+msgid "Invalid name"
+msgstr "Nom invàlid"
+
+#: ../xtec-weekblog2.php:288
+msgid "Edit this item"
+msgstr "Edita aquest element"
+
+#: ../xtec-weekblog2.php:288
+msgid "Edit"
+msgstr "Edita"
+
+#: ../xtec-weekblog2.php:289
+msgid "Edit this item inline"
+msgstr "Edita aquest element en línia"
+
+#: ../xtec-weekblog2.php:289
+msgid "Quick&nbsp;Edit"
+msgstr "Edició&nbsp;ràpida"
+
+#: ../xtec-weekblog2.php:293
+msgid "Restore this item from the Trash"
+msgstr "Restaura aquest element de la paperera"
+
+#: ../xtec-weekblog2.php:293
+msgid "Restore"
+msgstr "Restaura"
+
+#: ../xtec-weekblog2.php:295
+msgid "Move this item to the Trash"
+msgstr "Mou aquest element a la paperera"
+
+#: ../xtec-weekblog2.php:295
+msgid "Trash"
+msgstr "Paperera"
+
+#: ../xtec-weekblog2.php:297
+msgid "Delete this item permanently"
+msgstr "Elimina aquest element permanentment"
+
+#: ../xtec-weekblog2.php:297
+msgid "Delete Permanently"
+msgstr "Suprimeix definitivament"
+
+#: ../xtec-weekblog2.php:301
+#, php-format
+msgid "Preview &#8220;%s&#8221;"
+msgstr "Previsualitza &#8220;%s&#8221;"
+
+#: ../xtec-weekblog2.php:301
+msgid "Preview"
+msgstr "Previsualitza"
+
+#: ../xtec-weekblog2.php:303
+#, php-format
+msgid "View &#8220;%s&#8221;"
+msgstr "Mostra &#8220;%s&#8221;"
+
+#: ../xtec-weekblog2.php:303
+msgid "View"
+msgstr "Mostra"
+
+#: ../xtec-weekblog2.php:313
+msgid "Description is not defined"
+msgstr "No s'ha definit la descripció"
+
+#: ../xtec-weekblog2.php:323
+msgid "Custom Image is not defined"
+msgstr "No s'ha definit la imatge personalitzada"
+
+#: ../xtec-weekblog2.php:455
+msgid "This screen helps you manage the blog of the week."
+msgstr "Aquesta finestra us ajuda a gestionar el bloc de la setmana."
+
+#: ../xtec-weekblog2.php:469
+msgid "Options saved."
+msgstr "S'han desat les opcions."
+
+#: ../xtec-weekblog2.php:476
+msgid "Weekblog Settings"
+msgstr "Opcions del bloc de la setmana"
+
+#: ../xtec-weekblog2.php:480
+msgid "Default Message"
+msgstr "Missatge per defecte"
+
+#: ../xtec-weekblog2.php:487
+msgid "Save Changes"
+msgstr "Desa els canvis"
+
+#~ msgid "Image is not defined"
+#~ msgstr "No s'ha definit la imatge"
+
+#~ msgid "Image size must be of 300 x 98 px"
+#~ msgstr "La mida de la imatge ha de ser de 300 x 98 px"

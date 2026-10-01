@@ -1,0 +1,259 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC WeekBlog\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-24 09:56+0100\n"
+"PO-Revision-Date: 2011-10-24 09:56+0100\n"
+"Last-Translator: Francesc Bassas i Bullich\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../xtec-weekblog2.php:28
+msgid "Allows network admins to manage WeekBlogs, a new custom post type."
+msgstr ""
+
+#: ../xtec-weekblog2.php:48
+msgid "WeekBlogs"
+msgstr ""
+
+#: ../xtec-weekblog2.php:49
+#: ../xtec-weekblog2.php:454
+msgid "WeekBlog"
+msgstr ""
+
+#: ../xtec-weekblog2.php:50
+msgid "Add new WeekBlog"
+msgstr ""
+
+#: ../xtec-weekblog2.php:51
+msgid "Edit WeekBlog"
+msgstr ""
+
+#: ../xtec-weekblog2.php:52
+msgid "New WeekBlog"
+msgstr ""
+
+#: ../xtec-weekblog2.php:53
+msgid "View WeekBlog"
+msgstr ""
+
+#: ../xtec-weekblog2.php:54
+msgid "Search WeekBlogs"
+msgstr ""
+
+#: ../xtec-weekblog2.php:55
+msgid "No WeekBlogs found in Trash"
+msgstr ""
+
+#: ../xtec-weekblog2.php:57
+msgid "The outstanding blog of the week."
+msgstr ""
+
+#: ../xtec-weekblog2.php:80
+msgid "Params"
+msgstr ""
+
+#: ../xtec-weekblog2.php:82
+msgid "Custom Image"
+msgstr ""
+
+#: ../xtec-weekblog2.php:96
+#: ../xtec-weekblog2.php:247
+msgid "WeekBlog URL"
+msgstr ""
+
+#: ../xtec-weekblog2.php:103
+#: ../xtec-weekblog2.php:106
+msgid "WeekBlog URL is wrong."
+msgstr ""
+
+#: ../xtec-weekblog2.php:113
+#: ../xtec-weekblog2.php:249
+msgid "Description"
+msgstr ""
+
+#: ../xtec-weekblog2.php:116
+msgid "Description max length: 175 chars"
+msgstr ""
+
+#: ../xtec-weekblog2.php:120
+#: ../xtec-weekblog2.php:123
+msgid "WeekBlog description is not defined."
+msgstr ""
+
+#: ../xtec-weekblog2.php:181
+#, php-format
+msgid "Weekblog updated. <a href=\"%s\">View weekblog</a>"
+msgstr ""
+
+#: ../xtec-weekblog2.php:182
+msgid "Custom field updated."
+msgstr ""
+
+#: ../xtec-weekblog2.php:183
+msgid "Custom field deleted."
+msgstr ""
+
+#: ../xtec-weekblog2.php:184
+msgid "Weekblog updated."
+msgstr ""
+
+#: ../xtec-weekblog2.php:185
+#, php-format
+msgid "Weekblog restored to revision from %s"
+msgstr ""
+
+#: ../xtec-weekblog2.php:186
+#, php-format
+msgid "Weekblog published. <a href=\"%s\">View weekblog</a>"
+msgstr ""
+
+#: ../xtec-weekblog2.php:187
+msgid "Weekblog saved."
+msgstr ""
+
+#: ../xtec-weekblog2.php:188
+#, php-format
+msgid "Weekblog submitted. <a target=\"_blank\" href=\"%s\">Preview weekblog</a>"
+msgstr ""
+
+#: ../xtec-weekblog2.php:189
+#, php-format
+msgid "Weekblog scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview weekblog</a>"
+msgstr ""
+
+#: ../xtec-weekblog2.php:190
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: ../xtec-weekblog2.php:191
+#, php-format
+msgid "Weekblog draft updated. <a target=\"_blank\" href=\"%s\">Preview weekblog</a>"
+msgstr ""
+
+#: ../xtec-weekblog2.php:210
+msgid "Image size must be at least of 363 x 98 px. If the image is bigger than the minimum size then, when it be displayed, it will be automatically cropped."
+msgstr ""
+
+#: ../xtec-weekblog2.php:216
+msgid "Custom Image is not defined."
+msgstr ""
+
+#: ../xtec-weekblog2.php:225
+msgid "Cropped Image:"
+msgstr ""
+
+#: ../xtec-weekblog2.php:230
+#: ../xtec-weekblog2.php:319
+msgid "Image size is too small"
+msgstr ""
+
+#: ../xtec-weekblog2.php:248
+msgid "Image"
+msgstr ""
+
+#: ../xtec-weekblog2.php:250
+msgid "Week"
+msgstr ""
+
+#: ../xtec-weekblog2.php:251
+msgid "Date"
+msgstr ""
+
+#: ../xtec-weekblog2.php:281
+msgid "Invalid name"
+msgstr ""
+
+#: ../xtec-weekblog2.php:288
+msgid "Edit this item"
+msgstr ""
+
+#: ../xtec-weekblog2.php:288
+msgid "Edit"
+msgstr ""
+
+#: ../xtec-weekblog2.php:289
+msgid "Edit this item inline"
+msgstr ""
+
+#: ../xtec-weekblog2.php:289
+msgid "Quick&nbsp;Edit"
+msgstr ""
+
+#: ../xtec-weekblog2.php:293
+msgid "Restore this item from the Trash"
+msgstr ""
+
+#: ../xtec-weekblog2.php:293
+msgid "Restore"
+msgstr ""
+
+#: ../xtec-weekblog2.php:295
+msgid "Move this item to the Trash"
+msgstr ""
+
+#: ../xtec-weekblog2.php:295
+msgid "Trash"
+msgstr ""
+
+#: ../xtec-weekblog2.php:297
+msgid "Delete this item permanently"
+msgstr ""
+
+#: ../xtec-weekblog2.php:297
+msgid "Delete Permanently"
+msgstr ""
+
+#: ../xtec-weekblog2.php:301
+#, php-format
+msgid "Preview &#8220;%s&#8221;"
+msgstr ""
+
+#: ../xtec-weekblog2.php:301
+msgid "Preview"
+msgstr ""
+
+#: ../xtec-weekblog2.php:303
+#, php-format
+msgid "View &#8220;%s&#8221;"
+msgstr ""
+
+#: ../xtec-weekblog2.php:303
+msgid "View"
+msgstr ""
+
+#: ../xtec-weekblog2.php:313
+msgid "Description is not defined"
+msgstr ""
+
+#: ../xtec-weekblog2.php:323
+msgid "Custom Image is not defined"
+msgstr ""
+
+#: ../xtec-weekblog2.php:455
+msgid "This screen helps you manage the blog of the week."
+msgstr ""
+
+#: ../xtec-weekblog2.php:469
+msgid "Options saved."
+msgstr ""
+
+#: ../xtec-weekblog2.php:476
+msgid "Weekblog Settings"
+msgstr ""
+
+#: ../xtec-weekblog2.php:480
+msgid "Default Message"
+msgstr ""
+
+#: ../xtec-weekblog2.php:487
+msgid "Save Changes"
+msgstr ""
+
