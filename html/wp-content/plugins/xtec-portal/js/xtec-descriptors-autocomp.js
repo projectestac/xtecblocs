@@ -12,7 +12,7 @@ if(!xmlhttp && typeof XMLHttpRequest != 'undefined'){
     xmlhttp = new XMLHttpRequest();
 }
 
-function autocomplete(thevalue,e){
+function xtecDescriptorsAutocomplete(thevalue,e){
     theObject=document.getElementById("autocompletediv");
     theObject.style.visibility="visible";
     

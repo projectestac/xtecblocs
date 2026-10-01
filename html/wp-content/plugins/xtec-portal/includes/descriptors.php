@@ -292,7 +292,7 @@ function xtec_descriptors_options(): void
             <?php
             wp_nonce_field('xtec_descriptors_add'); ?>
             <input id="descriptor" type="text" name="descriptor" maxlength="20" size="20"
-                   onKeyPress="autocomplete(this.value,event)"/>
+                   onKeyPress="xtecDescriptorsAutocomplete(this.value,event)"/>
             <input type="submit" value="Crea el descriptor"/>
             <div id="autocompletediv"></div>
         </form>
