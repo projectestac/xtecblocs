@@ -24,10 +24,6 @@ Text Domain: xtecweekblog
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-$plugin_header_translate = array(
-    __("Allows network admins to manage WeekBlogs, a new custom post type.", 'xtecweekblog')
-);
-
 add_action( 'init', 'xtecweekblog_create_post_type' );
 
 register_activation_hook( __FILE__, 'xtecweekblog_activation_hook' );
@@ -168,9 +164,9 @@ function xtecweekblog_save($post_id): void {
 	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
 	
 	// check capabilities
-	if ('post' == $_POST['post_type']) {
-		if (!current_user_can('edit_post', $post_id)) return;
-	} elseif (!current_user_can('edit_page', $post_id)) return;
+	if (!current_user_can('edit_post', $post_id)) {
+		return;
+	}
 
 	// save weekblog name
 	if(isset($_POST['_xtecweekblog-name'])) {
@@ -226,7 +222,7 @@ function xtecweekblog_thumbnail_html ($content): string {
 	global $post;
 	
 	// shows info message
-	if ($post->post_type == 'xtecweekblog') {
+	if ($post !== null && $post->post_type === 'xtecweekblog') {
 		$content .=  '<p class="howto">' . __('Image size must be at least of 363 x 98 px. If the image is bigger than the minimum size then, when it be displayed, it will be automatically cropped.', 'xtecweekblog') . '</p>';
 	}
 	
@@ -241,7 +237,7 @@ function xtecweekblog_thumbnail_html ($content): string {
 			$image_attributes = wp_get_attachment_image_src($thumbnail_id, 'full');
 			
 			// shows cropped image
-			if ($image_attributes[1] > 300 || $image_attributes[2] > 98 ) {
+			if ($image_attributes && ($image_attributes[1] > 300 || $image_attributes[2] > 98)) {
 				$content .= '<p>' . __('Cropped Image:','xtecweekblog') . '</p><p>' . get_the_post_thumbnail($post->ID,'xtecweekblog') . '</p>';
 			}
 			
@@ -288,13 +284,14 @@ function xtecweekblog_custom_columns($column, $post_id): void {
     	
         case "_xtecweekblog-name":
             $custom = get_post_custom($post_id);
+            $name = $custom['_xtecweekblog-name'][0] ?? '';
             echo '<strong>';
-            echo '<span class="row-title" style="color:#21759B">' . $custom["_xtecweekblog-name"][0] . '</span>';
+            echo '<span class="row-title" style="color:#21759B">' . $name . '</span>';
             _post_states( $post );
             echo '</strong>';
             if (xtecweekblog_validate_name($post_id)) {
             	// valid weekblog, print name and URL
-                echo "<p><a href='" . network_site_url() . $custom["_xtecweekblog-name"][0] . "'>" . network_site_url() . $custom["_xtecweekblog-name"][0] . "</a></p>";
+                echo "<p><a href='" . network_site_url() . $name . "'>" . network_site_url() . $name . "</a></p>";
             }
             else {
             	// invalid weekblog, print invalid name and notify
@@ -318,9 +315,9 @@ function xtecweekblog_custom_columns($column, $post_id): void {
             }
             if ( in_array( $post->post_status, array( 'pending', 'draft' ) ) ) {
                 if ( $can_edit_post )
-                    $actions['view'] = '<a href="' . esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_id ) ) ) . '" title="' . esc_attr( sprintf( __( 'Preview &#8220;%s&#8221;' ), $title ) ) . '" rel="permalink">' . __( 'Preview', 'xtecweekblog' ) . '</a>';
+                    $actions['view'] = '<a href="' . esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_id ) ) ) . '" title="' . esc_attr( sprintf( __( 'Preview &#8220;%s&#8221;' ), '' ) ) . '" rel="permalink">' . __( 'Preview', 'xtecweekblog' ) . '</a>';
                 } elseif ( 'trash' != $post->post_status ) {
-                    $actions['view'] = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( sprintf( __( 'View &#8220;%s&#8221;', 'xtecweekblog' ), $custom["_xtecweekblog-name"][0] ) ) . '" rel="permalink">' . __( 'View', 'xtecweekblog' ) . '</a>';
+                    $actions['view'] = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( sprintf( __( 'View &#8220;%s&#8221;', 'xtecweekblog' ), $name ) ) . '" rel="permalink">' . __( 'View', 'xtecweekblog' ) . '</a>';
             }
             $actions = apply_filters( is_post_type_hierarchical( $post->post_type ) ? 'page_row_actions' : 'post_row_actions', $actions, $post );
             echo xtecweekblog_row_actions( $actions );
@@ -461,8 +458,11 @@ function xtecweekblog_validate_image($post_id): bool {
 function xtecweekblog_validate_image_size($post_id): bool {
 	$thumbnail_id = get_post_meta($post_id, '_thumbnail_id', true);
 	$image_attributes = wp_get_attachment_image_src($thumbnail_id, 'full');
-	if ( $image_attributes[1] < 363 || $image_attributes[2] < 98) return false;
-	else return true;
+	if (!$image_attributes || $image_attributes[1] < 363 || $image_attributes[2] < 98) {
+		return false;
+	}
+
+	return true;
 }
 
 add_action('admin_menu', 'xtecweekblog_admin_menu');
@@ -491,7 +491,8 @@ function xtecweekblog_options(): void {
   $action = isset($_GET['action'])?$_GET['action']:'';
 	switch ($action) {
 		case 'blogoptions':
-			if ($_POST['xtecweekblog_default_msg']) {
+			if (!empty($_POST['xtecweekblog_default_msg'])) {
+				check_admin_referer('xtecweekblog_options');
 				$xtecweekblog_default_msg = stripslashes($_POST['xtecweekblog_default_msg']);
 				update_option("xtecweekblog_default_msg", $xtecweekblog_default_msg);
 			}
@@ -503,13 +504,14 @@ function xtecweekblog_options(): void {
     ?>
     <div class='wrap'>	
 	    <form method="post" action="?page=ms-weekblog&action=blogoptions">
+		    <?php wp_nonce_field('xtecweekblog_options'); ?>
 		    <h2><?php _e('Weekblog Settings','xtecweekblog')?></h2>
 			<table class="form-table">
                 <tbody>
                         <tr valign="top"> 
                         <th scope="row"><label for="xtecweekblog_default_msg"><?php _e('Default Message', 'xtecweekblog')?></label></th> 
                         <td>
-                            <textarea name="xtecweekblog_default_msg" id="xtecweekblog_default_msg" cols="45" rows="4"><?php echo get_option('xtecweekblog_default_msg') ?></textarea>
+                            <textarea name="xtecweekblog_default_msg" id="xtecweekblog_default_msg" cols="45" rows="4"><?php echo esc_textarea(get_option('xtecweekblog_default_msg')); ?></textarea>
                         </td>
                     </tr>
 			    </tbody>
