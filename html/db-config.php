@@ -115,8 +115,9 @@ function add_additional_databases($db_id, $wpdb): void
     ]);
 }
 
-// add global in global database (9)
+// add global in global database (10)
 $wpdb->add_table('global', 'wp_blogs');
+$wpdb->add_table('global', 'wp_blogmeta');
 $wpdb->add_table('global', 'wp_blog_versions');
 $wpdb->add_table('global', 'wp_registration_log');
 $wpdb->add_table('global', 'wp_signups');
