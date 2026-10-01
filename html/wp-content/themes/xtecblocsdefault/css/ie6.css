@@ -1,0 +1,85 @@
+/**
+*
+* CSS for IExploiter 6
+*
+*/
+
+/************************
+**** Elements de bloc ***
+*************************/
+
+p, dl         { display: block; font-size: 0.8em; line-height:1.4em;}
+address       { display: block; font-style: italic; }
+dd            { display: block; margin-left: 2em; }
+blockquote    { display: block; margin: 1em 1.5em; }
+h1   { display: block; font-size: 2em;  margin: 0.5625em 0; }
+h2   { display: block; font-size: 1.4em;  margin: 0.75em 0; }
+h3   { display: block; font-size: 1.3em;  margin: 1.2em 0;   }
+h4   { display: block; font-size: 1.2em;  margin: 1.35em 0;   }
+h5   { display: block; font-size: 1.1em;  margin: 1.5em 0; }
+h6   { display: block; font-size: 1em;  margin: 2em 0; }
+pre  { display: block; font-family: monospace; white-space: pre; margin: 1em; font-size: 1.2em }
+
+
+/************************
+**** Correcció header ***
+*************************/
+
+#header h1{ top: -3px; }
+#header h1 span { top: -3px; }
+#header #nav ul.list { margin-top: -60px; }
+#header #nav ul.list li a#xtec span { top: -63px; }
+
+#nav { margin : -20px 10px; }
+
+#nav .navleftcorner {
+	float:left;
+	background: url(img/navleftcorner.png) no-repeat;
+	margin-right: -3px;
+	margin-top: 16px
+}
+
+#nav .navrightcorner {
+	float: right;
+	background: url(img/navrightcorner.png) no-repeat;
+	margin-left: -3px;
+	margin-top: 16px;
+}
+#blau {  margin-top:0px;
+
+
+
+ }
+#cel { margin-top: 0px; background-color: #fff;
+
+margin-bottom: 20px;
+}
+
+#blau .blauleftcorner {
+	display:none;
+}
+
+#blau .blaurightcorner {
+	display:none;
+}
+
+#cel .celleftcorner {
+	display:none;
+}
+
+#cel .celrightcorner {
+	display:none;
+}
+
+#sidebar p.creabloc a span { top: -36px; }
+#sidebar p.espaicursos a span { top: -36px; }
+div.article p.data { font-size: 0.7em; }
+div.article p.comentari {font-size: 0.68em;}
+#sideleft { margin-left: 0.2%;}
+#sideright { margin-right: 0.2%;  }
+#bloc_destacat p { font-size: 0.7em; }
+h3.noticies{margin-top:0px}
+.sideboxleft { margin-right: -3px;}
+.sideboxright { margin-left: -3px;}
+.contentboxheadright {margin-left: -3px;}
+.contentboxheadleft { margin-right: -3px;}
