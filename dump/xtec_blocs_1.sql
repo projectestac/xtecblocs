@@ -30,7 +30,7 @@ CREATE TABLE `wp_4_commentmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `comment_id` (`comment_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,7 +71,7 @@ CREATE TABLE `wp_4_comments` (
   KEY `comment_date_gmt` (`comment_date_gmt`),
   KEY `comment_parent` (`comment_parent`),
   KEY `comment_author_email` (`comment_author_email`(10))
-) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,7 +163,7 @@ CREATE TABLE `wp_4_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=MyISAM AUTO_INCREMENT=512 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=446 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -213,7 +213,7 @@ CREATE TABLE `wp_4_posts` (
   KEY `post_author` (`post_author`),
   KEY `post_name` (`post_name`(191)),
   KEY `type_status_author` (`post_type`,`post_status`,`post_author`)
-) ENGINE=MyISAM AUTO_INCREMENT=194 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
