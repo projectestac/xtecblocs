@@ -1,16 +1,14 @@
 <?php
-include('xtecfunc.php');
-
 if(isset($_REQUEST['id'])){
-	$id = $_REQUEST['id'];
-	$post = get_post($id,'');
+	$post = get_post($_REQUEST['id']);
 
 	if(isset($_REQUEST['msg']) && $_REQUEST['msg']=='newComment'){?>
 		<p class="thanks">Gràcies per enviar un comentari nou. No estar&agrave; disponible fins que no sigui validat per un administrador/a del portal.</p>
 	<?php
 	} 
 
-	// notícies	?>
+	// notícies
+	if ($post !== null) { ?>
 	<br />
 	<div class="box">
 		<span class="contentboxheadright"></span>
@@ -21,15 +19,16 @@ if(isset($_REQUEST['id'])){
 			<p class="data">Publicat <?php echo dateText(strtotime($post->post_date));?></p>
 			<p><?php echo nl2br($post->post_content); ?></p>
 			<?php if($post->comment_count>0){?>
-				<p class="comentari">Aquesta notícia té <a href="index.php?id=<?php echo $id;?>"><?php echo nl2br($post->comment_count);?> Comentari/s</a></p>
+				<p class="comentari">Aquesta notícia té <a href="index.php?id=<?php echo $post->ID;?>"><?php echo nl2br($post->comment_count);?> Comentari/s</a></p>
 			<?php }else{ ?>	
-				<p class="comentari">Aquesta notícia <a href="index.php?id=<?php echo $id;?>">no té comentaris</a></p>
+				<p class="comentari">Aquesta notícia <a href="index.php?id=<?php echo $post->ID;?>">no té comentaris</a></p>
 			<?php } ?>
 		</div> <!--end of article -->	
 	</div>
 	<?php
-	// comments	
+	// comments
 	include_once(get_template_directory().'/comments.php');
+	}
 }
 
 else {

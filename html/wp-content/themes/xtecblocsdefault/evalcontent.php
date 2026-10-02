@@ -1,13 +1,8 @@
 <?php
-$referer = isset($_SERVER['HTTP_REFERER'])?$_SERVER['HTTP_REFERER']:'';
 $action = isset($_REQUEST['a'])?$_REQUEST['a']:'';
 switch ($action) {
     case "terms":
         include('terms.htm');
-        break;
-    case 'help':
-        header("Location: http://sites.google.com/a/xtec.cat/ajudaxtecblocs/");
-        exit;
         break;
     case 'new':
         ?>
@@ -27,11 +22,12 @@ switch ($action) {
         <?php
         break;
     case 'list':
-        print '<h2 style="color: #1C4387; font-size: 1.3em; background-image: none; border: none; margin-bottom: 1em; margin-top: 1em;">Llista de blocs que tenen el descriptor <em>' . $_GET['desc'] . '</em>.</h2>';
+        $desc = is_string($_GET['desc'] ?? null) ? $_GET['desc'] : '';
+        print '<h2 style="color: #1C4387; font-size: 1.3em; background-image: none; border: none; margin-bottom: 1em; margin-top: 1em;">Llista de blocs que tenen el descriptor <em>' . $desc . '</em>.</h2>';
         print '<div class="descriptorsById">';
         print '<table width="100%">';
         print '<th align="left" valign="top">T&iacute;tol</th><th align="left" valign="top">Propietari</th><th align="left" valign="top">Altres descriptors</th>';
-        $blogs = xtec_descriptors_get_blogs_by_descriptor($_GET['desc'], true);
+        $blogs = xtec_descriptors_get_blogs_by_descriptor($desc, true);
         $bgcolor = '';
         foreach ($blogs as $blog) {
             $blogname = get_blog_option($blog, 'blogname');
@@ -48,7 +44,7 @@ switch ($action) {
                     <?php
                     $other_descriptors = xtec_descriptors_get_descriptors_by_blog($blog);
                     foreach ($other_descriptors as $other_descriptor) {
-                        if ($other_descriptor != $_GET['desc']) {
+                        if ($other_descriptor !== $desc) {
                             ?>
                             <a style="font-size:12 px; color:#0000EE; text-decoration:none;" href="<?php echo get_option('home'); ?>/index.php?a=list&desc=<?php echo $other_descriptor; ?>" title=""><?php echo $other_descriptor; ?></a>
                             <?php
@@ -79,24 +75,10 @@ switch ($action) {
         print '	</ul>';
         print '</div>';
         break;
-    case 'addPrefer':
-    case 'delPrefer':
-        $blog_id = isset($_REQUEST['blogId']) ? (int) $_REQUEST['blogId'] : 0;
-        $nonce = isset($_REQUEST['_wpnonce']) ? $_REQUEST['_wpnonce'] : '';
-        if ( is_user_logged_in() && wp_verify_nonce($nonce, 'xtec_favorites_' . $action . '_' . $blog_id) ) {
-            if ( $action == 'addPrefer' ) {
-                xtec_favorites_add_preferred($blog_id);
-            } else {
-                xtec_favorites_delete_preferred($blog_id);
-            }
-        }
-        header('location:' . $referer);
-        break;
     case 'mostActive':
-        include('xtecfunc.php');
         $ipp = 20;
         print '<h2 style="color: #1C4387; font-size: 1.3em; background-image: none; border: none; margin-bottom: 1em; margin-top: 1em;">Llista dels blocs m&eacute;s actius els darrers 60 dies.</h2>';
-        $init = (isset($_REQUEST['init']) && $_REQUEST['init'] != '') ? $_REQUEST['init'] : 1;
+        $init = max(1, (int)($_REQUEST['init'] ?? 1));
         $mostActive = xtec_lastest_posts_most_active_blogs($ipp, $init - 1);
         $blogsNumber = xtec_lastest_posts_num_active_blogs();
         $pager = pager($init, $blogsNumber, 'index.php?a=mostActive&amp;init=%%', $ipp);
@@ -108,17 +90,16 @@ switch ($action) {
         foreach ($mostActive as $active) {
             $bgcolor = ($bgcolor == '#e5f2fe') ? '#ffffff' : '#e5f2fe';
             ?>
-            <tr bgcolor="<?php echo $bgcolor; ?>"><td width="250"><a href='<?php echo $active['blog_url']; ?>' target="_blank" title="Entra al bloc"><?php echo stripslashes($active['blog_title']); ?></a><?php if (is_user_logged_in()) { ?> <a href="<?php echo xtec_favorites_url('addPrefer', $active['blogId']); ?>" title="Preferit"><img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif" border="0" alt="Preferit"/></a><?php }; ?></td><td align="right" width="100"><?php echo $active['postNumber'] / $maxPosts * 100; ?></td><td width="150"><?php echo date('d/m/Y - H.i', strtotime($active['last_updated'])); ?></td></tr>
+            <tr bgcolor="<?php echo $bgcolor; ?>"><td width="250"><a href='<?php echo $active['blog_url']; ?>' target="_blank" title="Entra al bloc"><?php echo stripslashes($active['blog_title']); ?></a><?php if (is_user_logged_in()) { ?> <a href="<?php echo xtec_favorites_url('addPrefer', $active['blogId']); ?>" title="Preferit"><img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif" border="0" alt="Preferit"/></a><?php }; ?></td><td align="right" width="100"><?php echo $maxPosts > 0 ? $active['postNumber'] / $maxPosts * 100 : 0; ?></td><td width="150"><?php echo date('d/m/Y - H.i', strtotime($active['last_updated'])); ?></td></tr>
             <?php // print_r($active);?>
         <?php
         }
         print '</table>';
         break;
     case 'lastCreated':
-        include('xtecfunc.php');
         $ipp = 20;
         print '<h2 style="color: #1C4387; font-size: 1.3em; background-image: none; border: none; margin-bottom: 1em; margin-top: 1em;">Llista dels darrers blocs creats.</h2>';
-        $init = (isset($_REQUEST['init']) && $_REQUEST['init'] != '') ? $_REQUEST['init'] : 1;
+        $init = max(1, (int)($_REQUEST['init'] ?? 1));
         $blogs = xtec_api_lastest_blogs($ipp, 3000, 'registered', $init - 1);
         $blogsNumber = getBlogsNumber();
         $totalBlogs = $blogsNumber['blogs'] - $blogsNumber['blogsPrivate'];
@@ -136,10 +117,7 @@ switch ($action) {
         print '</table>';
         break;
     case 'newsList':
-        include('xtecfunc.php');
-        $ipp = 20;
         print '<h2 style="color: #1C4387; font-size: 1.3em; background-image: none; border: none; margin-bottom: 1em; margin-top: 1em;">Llista de not&iacute;cies publicades</h2>';
-        $init = (isset($_REQUEST['init']) && $_REQUEST['init'] != '') ? $_REQUEST['init'] : 1;
         $newsList = getNewsList();
         print '<div style="text-align:right; padding-right:60px;"></div><br/ >';
         print '<table>';

@@ -19,6 +19,7 @@
                     <a href="<?php echo get_option('home'); ?>">
                         <acronym title="Xarxa Educativa Telemàtica Educativa de Catalunya">XTEC</acronym>Blocs
                     </a>
+                    <span></span><!-- Contains logo of the Departament d'Educació de la Generalitat de Catalunya -->
                 </h1>
             </div> <!-- end of header -->
             <div id="nav">

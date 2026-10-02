@@ -1,6 +1,5 @@
 <!-- Els meus blocs -->
-<?php include_once('xtecfunc.php');
-
+<?php
 global $current_user;
 if (is_user_logged_in()) {
     $blogs = get_blogs_of_user($current_user->ID);

@@ -2,7 +2,7 @@
 
 function dateText($timestamp): string{
 	$monthName=array('de gener','de febrer','de mar&ccedil;','d\'abril','de maig','de juny','de juliol','d\'agost','de setembre','d\'octubre','de novembre','de desembre');
-	$dateText = 'el dia ' . date('d',$timestamp).' '.$monthName[floor(date('m',$timestamp))-1].' de '.date('Y',$timestamp);
+	$dateText = 'el dia ' . date('d',$timestamp).' '.$monthName[(int)date('n', $timestamp) - 1].' de '.date('Y',$timestamp);
 	
 	$today = strtotime(date('M j, Y'));
 	
@@ -28,44 +28,6 @@ function getBlogsNumber(): array{
 	return $number;
 }
 
-
-function getWeekBlog(): array{
-	global $wpdb;
-	$counter = 0;
-	$posts=array();
-	$blog = $wpdb->get_col("SELECT blogName FROM wp_weekblog WHERE endPublish >= CURRENT_DATE() AND initPublish <= CURRENT_DATE() AND active=1 ORDER BY endPublish limit 0,1");
-	$blogd = $wpdb->get_col("SELECT description FROM wp_weekblog WHERE endPublish >= CURRENT_DATE() AND initPublish <= CURRENT_DATE() AND active=1 ORDER BY endPublish limit 0,1");
-	if($blog[0]==''){return $posts;}
-
-	if(!file_exists(bloginfo('template_directory') . '/images/weekblog/'.$blog[0].'.png')){
-		return $posts;
-	}
-
-	$blogId = $wpdb->get_results("SELECT blog_id,domain,path from $wpdb->blogs WHERE path like '". PATH_CURRENT_SITE ."$blog[0]/'");
-
-	$blogOptionsTable = "wp_".$blogId[0]->blog_id."_options";
-	$blogPostsTable = "wp_".$blogId[0]->blog_id."_posts";
-	$options = $wpdb->get_results("SELECT option_value FROM $blogOptionsTable WHERE option_name IN ('siteurl','blogname') ORDER BY option_id, option_name DESC");	
-	$thispost = $wpdb->get_results("SELECT post_title, guid, post_content, post_date, post_author " .
-	                               "FROM $blogPostsTable " .
-	                               "WHERE post_status = 'publish' " .
-	                               "AND post_title<>'' " .
-	                               "AND post_type = 'post' " .
-	                               "ORDER BY $blogPostsTable.id DESC limit 0,3");
-	
-	$thisusername = get_userdata($thispost[0]->post_author)->user_login;
-	
-	if($thispost[1]->post_title == ''){return $posts;}
-	$posts=array('title0'=>$thispost[0]->post_title,
-			'title1'=>$thispost[1]->post_title,
-			'guid0'=>$thispost[0]->guid,
-			'guid1'=>$thispost[1]->guid,
-			'blogTitle'=>$options[1]->option_value,
-			'blogUrl'=>$options[0]->option_value,
-			'imgName'=>$blog[0],
-			'description'=>$blogd[0]);
-	return $posts;
-}
 
 function getNewsList(): array{
 	global $wpdb;	
