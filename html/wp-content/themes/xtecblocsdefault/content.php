@@ -48,7 +48,7 @@ else {
 					<h2 class="contentboxheadfons">Bloc destacat</h2>
 					<div id="bloc_destacat">
 						<a href="<?php echo $wb_url;?>" target="_blank" title="<?php echo esc_attr($wb_blog_title);?>"><?php echo get_the_post_thumbnail($weekblog->ID, 'xtecweekblog', array('alt' => 'Accedeix al bloc'));?></a>
-						<p><?php echo $wb_description?></p>
+						<p><?php echo wp_kses_post($wb_description); ?></p>
 						<ul>
 							<li><a href="<?php echo $wb_url;?>" target="_blank">Accedeix al bloc</a></li>		
 						</ul>
@@ -65,7 +65,7 @@ else {
 				<h2 class="contentboxheadfons"><?php _e('WeekBlog', 'xtecweekblog');?></h2>
 				<div id="bloc_destacat">
 					<img src="<?php bloginfo('template_directory'); ?>/images/weekblog/banner.jpg" alt="XTECBlocs" title="XTECBlocs" />
-					<p><?php echo get_option('xtecweekblog_default_msg')?></p>
+					<p><?php echo wp_kses_post(get_option('xtecweekblog_default_msg')); ?></p>
 					<div class="clear"></div>
 				</div>
 			</div>

@@ -353,7 +353,7 @@ function xtecweekblog_custom_columns($column, $post_id): void
         case '_xtecweekblog-description':
             $custom = get_post_custom($post_id);
             if (xtecweekblog_validate_description($post_id)) {
-                echo $custom['_xtecweekblog-description'][0];
+                echo wp_kses_post($custom['_xtecweekblog-description'][0]);
             } else {
                 echo '<p style="color:#FF0000">' . __('Description is not defined', 'xtecweekblog') . '</p>';
             }

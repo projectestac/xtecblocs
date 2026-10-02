@@ -23,7 +23,7 @@ switch ($action) {
         break;
     case 'list':
         $desc = is_string($_GET['desc'] ?? null) ? $_GET['desc'] : '';
-        print '<h2 style="color: #1C4387; font-size: 1.3em; background-image: none; border: none; margin-bottom: 1em; margin-top: 1em;">Llista de blocs que tenen el descriptor <em>' . $desc . '</em>.</h2>';
+        print '<h2 style="color: #1C4387; font-size: 1.3em; background-image: none; border: none; margin-bottom: 1em; margin-top: 1em;">Llista de blocs que tenen el descriptor <em>' . esc_html($desc) . '</em>.</h2>';
         print '<div class="descriptorsById">';
         print '<table width="100%">';
         print '<th align="left" valign="top">T&iacute;tol</th><th align="left" valign="top">Propietari</th><th align="left" valign="top">Altres descriptors</th>';
