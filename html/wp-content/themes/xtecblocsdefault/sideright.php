@@ -43,14 +43,14 @@ if (is_user_logged_in()) {
 
                         if ($number > 0 || $level != 10) {
                             ?>
-                            <li><a href='http://<?php echo $blog->domain . $blog->path; ?>'
-                                   target="_blank" title="Entra al bloc"><?php echo stripslashes($blog->blogname); ?></a><a
-                                   href='http://<?php echo $blog->domain . $blog->path; ?>wp-admin/'
+                            <li><a href='<?php echo esc_url(get_home_url($blog->userblog_id, '/')); ?>'
+                                   target="_blank" title="Entra al bloc"><?php echo esc_html(stripslashes($blog->blogname)); ?></a><a
+                                   href='<?php echo esc_url(get_admin_url($blog->userblog_id)); ?>'
                                    target="_blank" title="<?php echo $text; ?>"><img
                                         src="<?php bloginfo('template_directory'); ?>/images/<?php echo $image; ?>.gif"
                                         border="0" alt="<?php echo $text; ?>" class="myicon" /> </a> <?php if ($image == 'admin' && $blog->userblog_id != 1) { ?>
                                     <a
-                                        href='http://<?php echo $blog->domain . $blog->path; ?>wp-admin/ms-delete-site.php'
+                                        href='<?php echo esc_url(get_admin_url($blog->userblog_id, 'ms-delete-site.php')); ?>'
                                         target="_blank" title="Elimina el bloc"> <img
                                             src="<?php bloginfo('template_directory'); ?>/images/delete.gif" border="0"
                                             alt="Elimina el Bloc" class="myicon" /> 
@@ -62,18 +62,18 @@ if (is_user_logged_in()) {
                             $notHave = true;
                             ?>
                             <li><a style="color: red;"
-                                   href='http://<?php echo $blog->domain . $blog->path; ?>'
+                                   href='<?php echo esc_url(get_home_url($blog->userblog_id, '/')); ?>'
                                    target="_blank" title="Entra al bloc">
-                <?php echo stripslashes($blog->blogname); ?>
+                <?php echo esc_html(stripslashes($blog->blogname)); ?>
                                 </a>
-                                <a href='http://<?php echo $blog->domain . $blog->path; ?>wp-admin/'
+                                <a href='<?php echo esc_url(get_admin_url($blog->userblog_id)); ?>'
                                    target="_blank" title="<?php echo $text; ?>">
                                     <img src="<?php bloginfo('template_directory'); ?>/images/<?php echo $image; ?>.gif"
                                          border="0" alt="<?php echo $text; ?>" class="myicon" /> 
                                 </a>
                 <?php if ($image == 'admin' && $blog->userblog_id != 1) { ?>
                                     <a
-                                        href='http://<?php echo $blog->domain . $blog->path; ?>wp-admin/ms-delete-site.php'
+                                        href='<?php echo esc_url(get_admin_url($blog->userblog_id, 'ms-delete-site.php')); ?>'
                                         target="_blank" title="Elimina el bloc">
                                         <img src="<?php bloginfo('template_directory'); ?>/images/delete.gif" border="0"
                                              alt="Elimina el Bloc" class="myicon" />
@@ -119,8 +119,8 @@ if (is_user_logged_in()) {
                             } else
                                 $titolBlog = stripslashes(get_blog_option($blog, 'blogname'));
                             ?>
-                            <li><a href='<?php echo get_blogaddress_by_id($blog); ?>'
-                                   target="_blank" title="Entra al bloc"><?php echo $titolBlog; ?></a>&nbsp;<a
+                            <li><a href='<?php echo esc_url(get_blogaddress_by_id($blog)); ?>'
+                                   target="_blank" title="Entra al bloc"><?php echo esc_html($titolBlog); ?></a>&nbsp;<a
                                    href="<?php echo xtec_favorites_url('delPrefer', $blog); ?>"
                                    title="Esborra"><img src="<?php bloginfo('template_directory'); ?>/images/delete.gif"
                                                      border="0" alt="Esborra" /></a></li>
@@ -156,8 +156,8 @@ if (is_user_logged_in()) {
                     }
                     ?>
 
-                    <li><a href='<?php echo $active['blog_url']; ?>' target="_blank"
-                           title="Entra al blog"><?php echo $titolBlog; ?></a><?php if (is_user_logged_in()) { ?>
+                    <li><a href='<?php echo esc_url($active['blog_url']); ?>' target="_blank"
+                           title="Entra al blog"><?php echo esc_html($titolBlog); ?></a><?php if (is_user_logged_in()) { ?>
                             <a href="<?php echo xtec_favorites_url('addPrefer', $active['blogId']); ?>"
                                title="Preferit">
                                 <img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif"
@@ -200,7 +200,7 @@ if (is_user_logged_in()) {
                             $titolBlog = "Bloc " . substr($urlBlog, strrpos($urlBlog, '/') + 1);
                         }
                         ?>
-                        <li><a href="<?php echo $blog['blog_url']; ?>" target="_blank"><?php echo $titolBlog; ?></a><?php if (is_user_logged_in()) { ?>
+                        <li><a href="<?php echo esc_url($blog['blog_url']); ?>" target="_blank"><?php echo esc_html($titolBlog); ?></a><?php if (is_user_logged_in()) { ?>
                                 <a href="<?php echo xtec_favorites_url('addPrefer', $blog['blog_id']); ?>"
                                    title="Preferit">
                                     <img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif"

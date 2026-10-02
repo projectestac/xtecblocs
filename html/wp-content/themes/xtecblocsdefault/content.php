@@ -20,7 +20,7 @@ if(isset($_REQUEST['id'])){
 		<span class="contentboxheadleft"></span>
 		<h2 class="contentboxheadfons">Notícies</h2>
 		<div class="article">
-			<h3><?php echo $post->post_title;?></h3>
+			<h3><?php echo esc_html($post->post_title); ?></h3>
 			<p class="data">Publicat <?php echo dateText(strtotime($post->post_date));?></p>
 			<p><?php echo nl2br($post->post_content); ?></p>
 			<?php if($post->comment_count>0){?>
@@ -52,10 +52,10 @@ else {
 					<span class="contentboxheadleft"></span>
 					<h2 class="contentboxheadfons">Bloc destacat</h2>
 					<div id="bloc_destacat">
-						<a href="<?php echo $wb_url;?>" target="_blank" title="<?php echo esc_attr($wb_blog_title);?>"><?php echo get_the_post_thumbnail($weekblog->ID, 'xtecweekblog', array('alt' => 'Accedeix al bloc'));?></a>
+						<a href="<?php echo esc_url($wb_url); ?>" target="_blank" title="<?php echo esc_attr($wb_blog_title);?>"><?php echo get_the_post_thumbnail($weekblog->ID, 'xtecweekblog', array('alt' => 'Accedeix al bloc'));?></a>
 						<p><?php echo wp_kses_post($wb_description); ?></p>
 						<ul>
-							<li><a href="<?php echo $wb_url;?>" target="_blank">Accedeix al bloc</a></li>		
+							<li><a href="<?php echo esc_url($wb_url); ?>" target="_blank">Accedeix al bloc</a></li>
 						</ul>
 						<div class="clear"></div>
 					</div>
@@ -127,7 +127,7 @@ else {
 			$shortDesc = apply_filters('the_content', $shortDesc);
 			$shortDesc = str_replace(']]>', ']]&gt;', $shortDesc);
 			//Show the content
-			echo "<h3><a href=\"".$blog['blog_url']."\" style=\"color:#408DD4;\" >".stripslashes($blog['blog_title'])."</a>";
+			echo "<h3><a href=\"" . esc_url($blog['blog_url']) . "\" style=\"color:#408DD4;\" >" . esc_html(stripslashes($blog['blog_title'])) . "</a>";
 			//si el user se ha autentificado, mostrará el icono de favoritos
 			//pasar a css si es posible! 
 			if(is_user_logged_in()){
@@ -138,10 +138,10 @@ else {
 			echo "</h3>"; 
 			//dibuixem la caixa del darrer article	
 			echo "<div class=\"darrerArticle\">";
-			echo "<h4><a href=\"".$blog['guid']."\" style=\"color:#91beec;\">".$blog['post_title']."</a></h4>";
+			echo "<h4><a href=\"" . esc_url($blog['guid']) . "\" style=\"color:#91beec;\">" . esc_html($blog['post_title']) . "</a></h4>";
 			//echo "<p>".nl2br($shortDesc);
 			//if(strlen($desc)>strlen($shortDesc)){echo "<span class=\"allContentLink\">... <a href=\"".$blog['guid']."\" target=\"_blank\">[ Article complet ]</a></span>";}
-			echo "<p class=\"data\">Publicat ".$date." per ".$blog['user_login']."</p>";
+			echo "<p class=\"data\">Publicat " . $date . " per " . esc_html($blog['user_login']) . "</p>";
 			echo "</div>";
 			//end of caixa de darrer article					
 		} //end of foreach
