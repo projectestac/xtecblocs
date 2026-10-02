@@ -38,8 +38,8 @@ switch ($action) {
             $bgcolor = ( $bgcolor == '#ffffff' ) ? '#e5f2fe' : '#ffffff';
             ?>
             <tr bgcolor="<?php echo $bgcolor ?>">
-                <td class="blogByDescriptor" valign="top" width="300"><a href="<?php echo $siteurl; ?>" target="_blank"><?php echo stripslashes($blogname); ?></a><?php if (is_user_logged_in()) { ?> <a href="<?php echo xtec_favorites_url('addPrefer', $blog); ?>" title="Preferit"><img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif" border="0" alt="Preferit"/></a><?php }; ?></td>
-                <td valign="top" width="100"><?php echo $admin_name; ?></td>
+                <td class="blogByDescriptor" valign="top" width="300"><a href="<?php echo esc_url($siteurl); ?>" target="_blank"><?php echo esc_html(stripslashes($blogname)); ?></a><?php if (is_user_logged_in()) { ?> <a href="<?php echo xtec_favorites_url('addPrefer', $blog); ?>" title="Preferit"><img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif" border="0" alt="Preferit"/></a><?php }; ?></td>
+                <td valign="top" width="100"><?php echo esc_html($admin_name); ?></td>
                 <td valign="top" width="200">
                     <?php
                     $other_descriptors = xtec_descriptors_get_descriptors_by_blog($blog);
@@ -90,7 +90,7 @@ switch ($action) {
         foreach ($mostActive as $active) {
             $bgcolor = ($bgcolor == '#e5f2fe') ? '#ffffff' : '#e5f2fe';
             ?>
-            <tr bgcolor="<?php echo $bgcolor; ?>"><td width="250"><a href='<?php echo $active['blog_url']; ?>' target="_blank" title="Entra al bloc"><?php echo stripslashes($active['blog_title']); ?></a><?php if (is_user_logged_in()) { ?> <a href="<?php echo xtec_favorites_url('addPrefer', $active['blogId']); ?>" title="Preferit"><img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif" border="0" alt="Preferit"/></a><?php }; ?></td><td align="right" width="100"><?php echo $maxPosts > 0 ? $active['postNumber'] / $maxPosts * 100 : 0; ?></td><td width="150"><?php echo date('d/m/Y - H.i', strtotime($active['last_updated'])); ?></td></tr>
+            <tr bgcolor="<?php echo $bgcolor; ?>"><td width="250"><a href='<?php echo esc_url($active['blog_url']); ?>' target="_blank" title="Entra al bloc"><?php echo esc_html(stripslashes($active['blog_title'])); ?></a><?php if (is_user_logged_in()) { ?> <a href="<?php echo xtec_favorites_url('addPrefer', $active['blogId']); ?>" title="Preferit"><img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif" border="0" alt="Preferit"/></a><?php }; ?></td><td align="right" width="100"><?php echo $maxPosts > 0 ? $active['postNumber'] / $maxPosts * 100 : 0; ?></td><td width="150"><?php echo date('d/m/Y - H.i', strtotime($active['last_updated'])); ?></td></tr>
             <?php // print_r($active);?>
         <?php
         }
@@ -111,7 +111,7 @@ switch ($action) {
         foreach ($blogs as $blog) {
             $bgcolor = ($bgcolor == '#e5f2fe') ? '#ffffff' : '#e5f2fe';
             ?>		
-            <tr bgcolor="<?php echo $bgcolor; ?>"><td width="300"><a href='<?php echo $blog['blog_url']; ?>' target="_blank" title="Entra al bloc"><?php echo stripslashes($blog['blog_title']); ?></a><?php if (is_user_logged_in()) { ?> <a href="<?php echo xtec_favorites_url('addPrefer', $blog['blog_id']); ?>" title="Preferit"><img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif" border="0" alt="Preferit"/></a><?php }; ?></td><td width="150"><?php echo date('d/m/Y - H.i', strtotime($blog['registered'])); ?></td></tr>
+            <tr bgcolor="<?php echo $bgcolor; ?>"><td width="300"><a href='<?php echo esc_url($blog['blog_url']); ?>' target="_blank" title="Entra al bloc"><?php echo esc_html(stripslashes($blog['blog_title'])); ?></a><?php if (is_user_logged_in()) { ?> <a href="<?php echo xtec_favorites_url('addPrefer', $blog['blog_id']); ?>" title="Preferit"><img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif" border="0" alt="Preferit"/></a><?php }; ?></td><td width="150"><?php echo date('d/m/Y - H.i', strtotime($blog['registered'])); ?></td></tr>
         <?php
         }
         print '</table>';
@@ -127,7 +127,7 @@ switch ($action) {
             $bgcolor = ($bgcolor == '#e5f2fe') ? '#ffffff' : '#e5f2fe';
             ?>
             <tr bgcolor="<?php echo $bgcolor; ?>">
-                <td width="250"><a href=index.php?id=<?php echo $new['newId'] ?> title="V&eacute;s a la notícia"><?php echo stripslashes($new['new_title']); ?></a></td><td width="150"><?php echo date('d/m/Y', strtotime($new['post_date'])); ?></td></tr>
+                <td width="250"><a href=index.php?id=<?php echo $new['newId'] ?> title="V&eacute;s a la notícia"><?php echo esc_html(stripslashes($new['new_title'])); ?></a></td><td width="150"><?php echo date('d/m/Y', strtotime($new['post_date'])); ?></td></tr>
             <?php // print_r($new);?>
         <?php
         }

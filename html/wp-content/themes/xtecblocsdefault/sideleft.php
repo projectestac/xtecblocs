@@ -5,7 +5,7 @@
 	<div class="sidecontent">
 		<form method="POST">
 			<input type="text" id="paraulaCerca" name="paraulaCerca" style="width:117px;float:left;" onkeydown="if (event.keyCode == 13) {document.getElementById('botoCerca').focus();document.getElementById('botoCerca').click();event.returnValue=false}"/>
-			<button type="button" id="botoCerca" onclick="open('https://www.google.com/search?q=site:'+'<?php echo DOMAIN_CURRENT_SITE ?>'+'+'+document.getElementById('paraulaCerca').value,'','');" value="Cerca">Cerca</button>
+			<button type="button" id="botoCerca" onclick="open('https://www.google.com/search?q=site:'+'<?php echo DOMAIN_CURRENT_SITE ?>'+'+'+encodeURIComponent(document.getElementById('paraulaCerca').value),'','');" value="Cerca">Cerca</button>
 		</form>
 	</div>
 </div>
