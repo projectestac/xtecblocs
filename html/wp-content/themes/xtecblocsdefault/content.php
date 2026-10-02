@@ -2,6 +2,11 @@
 if(isset($_REQUEST['id'])){
 	$post = get_post($_REQUEST['id']);
 
+	// Only published news can be shown
+	if ($post !== null && ($post->post_type !== 'post' || $post->post_status !== 'publish' || post_password_required($post))) {
+		$post = null;
+	}
+
 	if(isset($_REQUEST['msg']) && $_REQUEST['msg']=='newComment'){?>
 		<p class="thanks">Gràcies per enviar un comentari nou. No estar&agrave; disponible fins que no sigui validat per un administrador/a del portal.</p>
 	<?php
