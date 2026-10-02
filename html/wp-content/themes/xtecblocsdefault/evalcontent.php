@@ -46,7 +46,7 @@ switch ($action) {
                     foreach ($other_descriptors as $other_descriptor) {
                         if ($other_descriptor !== $desc) {
                             ?>
-                            <a style="font-size:12 px; color:#0000EE; text-decoration:none;" href="<?php echo get_option('home'); ?>/index.php?a=list&desc=<?php echo $other_descriptor; ?>" title=""><?php echo $other_descriptor; ?></a>
+                            <a style="font-size:12 px; color:#0000EE; text-decoration:none;" href="<?php echo esc_url(get_option('home') . '/index.php?a=list&desc=' . rawurlencode($other_descriptor)); ?>" title=""><?php echo esc_html($other_descriptor); ?></a>
                             <?php
                         }
                     }
@@ -68,7 +68,7 @@ switch ($action) {
         $cloudArray = xtec_descriptors_get_descriptors_cloud(256, 12, 25);
 
         foreach ($cloudArray as $cloud) {
-            print ("<li><a style='font-size:" . $cloud['size'] . "px; color:#1E4588;' class='tag_cloud' href=" . get_option('home') . "/index.php?a=list&amp;desc=" . $cloud['tag'] . "> ");
+            print ("<li><a style='font-size:" . $cloud['size'] . "px; color:#1E4588;' class='tag_cloud' href='" . esc_url(get_option('home') . '/index.php?a=list&desc=' . rawurlencode(htmlspecialchars_decode($cloud['tag'], ENT_QUOTES))) . "'> ");
             print($cloud['tag']);
             print('</a></li>');
         }
