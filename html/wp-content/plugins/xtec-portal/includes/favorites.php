@@ -20,15 +20,19 @@ defined('ABSPATH') || exit;
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-global $xtec_favorites_db_version;
-$xtec_favorites_db_version = '1.0';
+const XTEC_FAVORITES_DB_VERSION = '1.0';
 
-add_action('delete_blog', 'xtec_favorites_delete_blog', 10, 2);
+add_action('delete_blog', 'xtec_favorites_delete_blog');
 
-function xtec_favorites_delete_blog($blogId, $drop): void
+/**
+ * Deletes a blog of the preferred blogs of all the users.
+ *
+ * @param int $blogId The ID of the blog.
+ */
+function xtec_favorites_delete_blog($blogId): void
 {
     global $wpdb;
-    $wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->base_prefix}user_blogs WHERE blogId = %d", $blogId));
+    $wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->user_blogs} WHERE blogId = %d", $blogId));
 }
 
 /**
@@ -48,7 +52,7 @@ function xtec_favorites_add_preferred($blogId): bool
     // verify that not exists
     $exists = $wpdb->get_var(
         $wpdb->prepare(
-            "SELECT count(ubid) FROM {$wpdb->base_prefix}user_blogs WHERE userId = %d and blogId = %d",
+            "SELECT count(ubid) FROM {$wpdb->user_blogs} WHERE userId = %d and blogId = %d",
             $user_id,
             $blogId
         )
@@ -58,7 +62,7 @@ function xtec_favorites_add_preferred($blogId): bool
     if (!$exists) {
         $wpdb->query(
             $wpdb->prepare(
-                "INSERT INTO {$wpdb->base_prefix}user_blogs (userId,blogId) VALUES (%d, %d)",
+                "INSERT INTO {$wpdb->user_blogs} (userId,blogId) VALUES (%d, %d)",
                 $user_id,
                 $blogId
             )
@@ -77,7 +81,7 @@ function xtec_favorites_delete_preferred($blogId): void
     global $wpdb;
     $wpdb->query(
         $wpdb->prepare(
-            "DELETE FROM {$wpdb->base_prefix}user_blogs WHERE blogId = %d AND userId = %d",
+            "DELETE FROM {$wpdb->user_blogs} WHERE blogId = %d AND userId = %d",
             $blogId,
             get_current_user_id()
         )
@@ -96,7 +100,7 @@ function xtec_favorites_get_user_preferred_blogs(): array
     $blogsArray = [];
     $blogs = $wpdb->get_results(
         $wpdb->prepare(
-            "SELECT userId, blogId FROM {$wpdb->base_prefix}user_blogs WHERE userId = %d",
+            "SELECT userId, blogId FROM {$wpdb->user_blogs} WHERE userId = %d",
             get_current_user_id()
         )
     );
@@ -114,11 +118,10 @@ function xtec_favorites_get_user_preferred_blogs(): array
 function xtec_favorites_activation_hook(): void
 {
     global $wpdb;
-    global $xtec_favorites_db_version;
 
-    $table_name = $wpdb->base_prefix . 'user_blogs';
+    $table_name = $wpdb->user_blogs;
 
-    if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+    if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") !== $table_name) {
         $sql = "CREATE TABLE $table_name (
                 ubid int(11) NOT NULL AUTO_INCREMENT,
                 userId int(11) NOT NULL DEFAULT '0',
@@ -129,5 +132,5 @@ function xtec_favorites_activation_hook(): void
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql);
     }
-    add_option('$xtec_favorites_db_version', $xtec_favorites_db_version);
+    add_option('xtec_favorites_db_version', XTEC_FAVORITES_DB_VERSION);
 }

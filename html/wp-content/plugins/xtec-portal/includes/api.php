@@ -17,9 +17,10 @@ function xtec_api_lastest_blogs(int $how_many = 10, int $days = 5, string $what 
 {
     global $wpdb;
     $counter = 0;
+    $posts = [];
 
     // $what is a column name, so it can't be passed to prepare()
-    if (!in_array($what, array('last_updated', 'registered'), true)) {
+    if (!in_array($what, ['last_updated', 'registered'], true)) {
         $what = 'last_updated';
     }
 
@@ -39,59 +40,44 @@ function xtec_api_lastest_blogs(int $how_many = 10, int $days = 5, string $what 
             $how_many
         )
     );
-    //get a list with all the ids of the blogs that exist NOW
-    $blogsId = $wpdb->get_results(" SELECT blog_id FROM xtec_blocs_global.wp_blogs ");
-
-    foreach ($blogsId as $object) {
-        $blogsExistents[] = $object->blog_id;
-    }
 
     foreach ($blogs as $blog) {
-        if (in_array($blog->blog_id, $blogsExistents, true)) {
-            if (($what = 'registered') && ((int)$blog->blog_id !== 1)) {
-                // we need _posts and _options tables for this to work
-                $blogOptionsTable = 'wp_' . (int)$blog->blog_id . '_options';
-                $blogPostsTable = 'wp_' . (int)$blog->blog_id . '_posts';
-                $options = $wpdb->get_results(
-                    "SELECT option_value FROM $blogOptionsTable WHERE option_name IN ('siteurl','blogname') " .
-                    "ORDER BY option_id, option_name DESC"
-                );
-                // we fetch the title and link for the latest post
-                $thispost = $wpdb->get_results('SELECT post_title, guid, post_content, post_date, post_author ' .
-                    "FROM $blogPostsTable " .
-                    "WHERE post_status = 'publish' " .
-                    "AND post_type = 'post' " .
-                    "AND post_password = '' " .
-                    "AND post_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 5 DAY) " .
-                    "ORDER BY $blogPostsTable.id DESC limit 0,3");
-                $thispost_current = array_shift($thispost);
-                if (isset($thispost_current)) {
-                    $author = get_userdata($thispost_current->post_author);
-                    $posts[] = array('post_title' => $thispost_current->post_title,
-                        'post_date' => $thispost_current->post_date,
-                        'author_name' => $author ? $author->display_name : '',
-                        'post_content' => $thispost_current->post_content,
-                        'guid' => $thispost_current->guid,
-                        'blog_title' => $options[1]->option_value,
-                        'blog_url' => $options[0]->option_value,
-                        'blog_id' => $blog->blog_id,
-                        'registered' => $blog->registered);
-                }
-                // if it is found put it to the output
-                if ($thispost) {
-                    $counter++;
-                }
-                // don't go over the limit
-                if ($counter >= $how_many) {
-                    break;
-                }
+        if ((int)$blog->blog_id !== 1) {
+            $blogPostsTable = $wpdb->get_blog_prefix($blog->blog_id) . 'posts';
+            $blogDetails = get_blog_details($blog->blog_id);
+            // we fetch the title and link for the latest post
+            $thispost = $wpdb->get_results('SELECT post_title, guid, post_content, post_date, post_author ' .
+                "FROM $blogPostsTable " .
+                "WHERE post_status = 'publish' " .
+                "AND post_type = 'post' " .
+                "AND post_password = '' " .
+                "AND post_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 5 DAY) " .
+                "ORDER BY $blogPostsTable.id DESC limit 0,3");
+            $thispost_current = array_shift($thispost);
+            if (isset($thispost_current)) {
+                $author = get_userdata($thispost_current->post_author);
+                $posts[] = [
+                    'post_title' => $thispost_current->post_title,
+                    'post_date' => $thispost_current->post_date,
+                    'author_name' => $author ? $author->display_name : '',
+                    'post_content' => $thispost_current->post_content,
+                    'guid' => $thispost_current->guid,
+                    'blog_title' => $blogDetails->blogname,
+                    'blog_url' => $blogDetails->siteurl,
+                    'blog_id' => $blog->blog_id,
+                    'registered' => $blog->registered,
+                ];
+            }
+            // if it is found put it to the output
+            if ($thispost) {
+                $counter++;
+            }
+            // don't go over the limit
+            if ($counter >= $how_many) {
+                break;
             }
         }
     }
 
-    if (isset($posts) && is_array($posts)) {
-        return $posts;
-    }
-
-    return [];
+    return $posts;
 }
