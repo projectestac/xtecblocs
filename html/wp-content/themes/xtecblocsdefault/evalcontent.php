@@ -34,7 +34,7 @@ switch ($action) {
             $siteurl = get_blog_option($blog, 'siteurl');
             $admin_email = get_blog_option($blog, 'admin_email');
             $admin_user = get_user_by('email', $admin_email);
-            $admin_name = $admin_user ? $admin_user->user_login : '';
+            $admin_name = $admin_user ? $admin_user->display_name : '';
             $bgcolor = ( $bgcolor == '#ffffff' ) ? '#e5f2fe' : '#ffffff';
             ?>
             <tr bgcolor="<?php echo $bgcolor ?>">

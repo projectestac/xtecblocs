@@ -141,7 +141,7 @@ else {
 			echo "<h4><a href=\"" . esc_url($blog['guid']) . "\" style=\"color:#91beec;\">" . esc_html($blog['post_title']) . "</a></h4>";
 			//echo "<p>".nl2br($shortDesc);
 			//if(strlen($desc)>strlen($shortDesc)){echo "<span class=\"allContentLink\">... <a href=\"".$blog['guid']."\" target=\"_blank\">[ Article complet ]</a></span>";}
-			echo "<p class=\"data\">Publicat " . $date . " per " . esc_html($blog['user_login']) . "</p>";
+			echo "<p class=\"data\">Publicat " . $date . " per " . esc_html($blog['author_name']) . "</p>";
 			echo "</div>";
 			//end of caixa de darrer article					
 		} //end of foreach

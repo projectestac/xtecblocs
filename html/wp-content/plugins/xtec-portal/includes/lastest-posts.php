@@ -51,7 +51,7 @@ function xtec_lastest_posts_to_publish($post): void
  * @param int $how_many Number of blogs to get.
  * @param int $days Number of days to consider in the datetime comparation from the current time.
  * @param int $init Number of the first posts to ignore.
- * @return array The date, the title, the user login, the content, the guid value, the blog title, the blog url and the blog ID of
+ * @return array The date, the title, the author name, the content, the guid value, the blog title, the blog url and the blog ID of
  *     the posts.
  */
 function xtec_lastest_posts_lastest_posts($how_many = 10, $days = 5, $init = 0): array
@@ -66,7 +66,7 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days = 5, $init = 0):
     $how_many_2 = $how_many * 2;
 
     // get a list of blogs in order of most recent update
-    $blogs = $wpdb->get_results($wpdb->prepare("SELECT DISTINCT blogId FROM wp_globalposts,$wpdb->blogs WHERE time > %d AND `public` = '1' AND `deleted` = '0' AND `blogId` = `blog_id` AND blogId<> 1 ORDER BY id DESC LIMIT %d, %d", $date, $init, $how_many_2));
+    $blogs = $wpdb->get_results($wpdb->prepare("SELECT DISTINCT blogId FROM wp_globalposts,$wpdb->blogs WHERE time > %d AND `public` = '1' AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0' AND `blogId` = `blog_id` AND blogId<> 1 ORDER BY id DESC LIMIT %d, %d", $date, $init, $how_many_2));
 
     if ($blogs) {
         $posts = [];
@@ -78,18 +78,19 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days = 5, $init = 0):
                 "FROM $blogPostsTable " .
                 "WHERE post_status = 'publish' " .
                 "AND post_type = 'post' " .
+                "AND post_password = '' " .
                 "AND post_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 5 DAY) " .
                 "ORDER BY $blogPostsTable.id DESC LIMIT 0,1");
 
             if (isset($thispost[0])) {
-                $thisusername = get_userdata($thispost[0]->post_author)->user_login;
+                $author = get_userdata($thispost[0]->post_author);
 
                 $blog_detail = get_blog_details($blog->blogId);
 
                 $posts[] = [
                     'post_date' => $thispost[0]->post_date,
                     'post_title' => $thispost[0]->post_title,
-                    'user_login' => $thisusername,
+                    'author_name' => $author ? $author->display_name : '',
                     'post_content' => $thispost[0]->post_content,
                     'guid' => $thispost[0]->guid,
                     'blog_title' => $blog_detail->blogname,
@@ -106,7 +107,7 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days = 5, $init = 0):
             if ($post['post_date'] !== 0) {
                 $posts_array[] = array('post_date' => $post['post_date'],
                     'post_title' => $post['post_title'],
-                    'user_login' => $post['user_login'],
+                    'author_name' => $post['author_name'],
                     'post_content' => $post['post_content'],
                     'guid' => $post['guid'],
                     'blog_title' => $post['blog_title'],
@@ -132,7 +133,7 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days = 5, $init = 0):
 function xtec_lastest_posts_num_active_blogs(): int
 {
     global $wpdb;
-    $blogs = $wpdb->get_col("SELECT DISTINCT blogId FROM wp_globalposts, $wpdb->blogs WHERE blogId=blog_id AND `public`='1'");
+    $blogs = $wpdb->get_col("SELECT DISTINCT blogId FROM wp_globalposts, $wpdb->blogs WHERE blogId=blog_id AND `public`='1' AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0'");
     return count($blogs);
 }
 
@@ -145,7 +146,7 @@ function xtec_lastest_posts_num_posts_of_most_active_blog(): int
 {
     global $wpdb;
 
-    $sql = "SELECT count(*) AS postNumber FROM wp_globalposts,wp_blogs WHERE blogid=blog_id AND `public`='1' AND `deleted` = '0' GROUP BY(blogid) ORDER BY postNumber DESC LIMIT 0,1";
+    $sql = "SELECT count(*) AS postNumber FROM wp_globalposts,wp_blogs WHERE blogid=blog_id AND `public`='1' AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0' GROUP BY(blogid) ORDER BY postNumber DESC LIMIT 0,1";
     $blogs = $wpdb->get_results($sql);
 
     return isset($blogs[0]) ? $blogs[0]->postNumber : 0;
@@ -163,7 +164,7 @@ function xtec_lastest_posts_most_active_blogs($how_many = 5, $init = 0): array
     global $wpdb;
 
     //Gets the blocs with more entries
-    $sql = "SELECT blogid,count(*) AS postNumber,last_updated FROM wp_globalposts,wp_blogs WHERE blogid=blog_id AND `public`='1' AND `deleted` = '0' GROUP BY(blogid) ORDER BY postNumber desc,last_updated LIMIT %d, %d";
+    $sql = "SELECT blogid,count(*) AS postNumber,last_updated FROM wp_globalposts,wp_blogs WHERE blogid=blog_id AND `public`='1' AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0' GROUP BY(blogid) ORDER BY postNumber desc,last_updated LIMIT %d, %d";
     $blogs = $wpdb->get_results($wpdb->prepare($sql, $init, $how_many));
     $posts = [];
     if (is_array($blogs) && count($blogs) > 0) {

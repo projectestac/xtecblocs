@@ -10,24 +10,26 @@ defined('ABSPATH') || exit;
  * @param string $what Datetime to compare: 'last_updated' or 'registered'.
  * @param int $init Number of the first blogs to ignore.
  * @param int $not_new Set as '1' to ignore the last updates of the new blogs.
- * @return array The post title, the post date, the user login, the post content, the post guid value, the blog title, the blog
+ * @return array The post title, the post date, the author name, the post content, the post guid value, the blog title, the blog
  *     url, the blog id and the blog registered date of the blogs.
  */
-function xtec_api_lastest_blogs($how_many = 10, $days = 5, $what = 'last_updated', $init = 0, $not_new = 0): array
+function xtec_api_lastest_blogs(int $how_many = 10, int $days = 5, string $what = 'last_updated', int $init = 0, int $not_new = 0): array
 {
     global $wpdb;
     $counter = 0;
+
     // $what is a column name, so it can't be passed to prepare()
     if (!in_array($what, array('last_updated', 'registered'), true)) {
         $what = 'last_updated';
     }
-    if ($not_new == 1) {
-        $not_new = ' and `registered` < `last_updated` - 30 ';
-    } else {
-        $not_new = '';
+
+    $condition = '';
+    if ($not_new === 1) {
+        $condition = ' and `registered` < `last_updated` - 30 ';
     }
-    // get a list of blogs in order of most recent update
-    $blogs = $wpdb->get_results($wpdb->prepare("SELECT blog_id,registered FROM $wpdb->blogs WHERE $what >= DATE_SUB(CURRENT_DATE(), INTERVAL %d DAY) and `public`='1' and `deleted` = '0' $not_new ORDER BY $what DESC limit %d, %d", $days, $init, $how_many));
+
+    // Get a list of blogs in order of most recent update.
+    $blogs = $wpdb->get_results($wpdb->prepare("SELECT blog_id,registered FROM $wpdb->blogs WHERE $what >= DATE_SUB(CURRENT_DATE(), INTERVAL %d DAY) and `public`='1' and `archived` = '0' and `spam` = '0' and `deleted` = '0' $condition ORDER BY $what DESC limit %d, %d", $days, $init, $how_many));
     //get a list with all the ids of the blogs that exist NOW
     $blogsId = $wpdb->get_results(" SELECT blog_id FROM xtec_blocs_global.wp_blogs ");
 
@@ -47,14 +49,15 @@ function xtec_api_lastest_blogs($how_many = 10, $days = 5, $what = 'last_updated
                     "FROM $blogPostsTable " .
                     "WHERE post_status = 'publish' " .
                     "AND post_type = 'post' " .
+                    "AND post_password = '' " .
                     "AND post_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 5 DAY) " .
                     "ORDER BY $blogPostsTable.id DESC limit 0,3");
                 $thispost_current = array_shift($thispost);
                 if (isset($thispost_current)) {
-                    $thisusername = get_userdata($thispost_current->post_author)->user_login;
+                    $author = get_userdata($thispost_current->post_author);
                     $posts[] = array('post_title' => $thispost_current->post_title,
                         'post_date' => $thispost_current->post_date,
-                        'user_login' => $thisusername,
+                        'author_name' => $author ? $author->display_name : '',
                         'post_content' => $thispost_current->post_content,
                         'guid' => $thispost_current->guid,
                         'blog_title' => $options[1]->option_value,
