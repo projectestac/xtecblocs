@@ -4,11 +4,8 @@
 <?php
     global $post;
     $weekblog = $post;
-    $wb_name = get_post_meta($weekblog->ID, '_xtecweekblog-name', true);
-    $wb_url = get_blogaddress_by_name($wb_name);
-    $wb_id = get_id_from_blogname($wb_name);
-    $wb_blog_title = $wb_id ? get_blog_option($wb_id, 'blogname') : '';
-    $wb_description = get_post_meta($weekblog->ID, '_xtecweekblog-description', true);
+    ['url' => $wb_url, 'blog_title' => $wb_blog_title, 'description' => $wb_description] =
+        xtecweekblog_get_data($weekblog);
     $wb_image = get_the_post_thumbnail($weekblog->ID, 'xtecweekblog', array('alt' => 'Accedeix al bloc'));
 ?>  
     <div id="box">
