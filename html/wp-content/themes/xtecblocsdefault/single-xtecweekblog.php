@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div id="content">
-<?php 
+<?php
     global $post;
     $weekblog = $post;
     $wb_name = get_post_meta($weekblog->ID, '_xtecweekblog-name', true);
@@ -9,7 +9,7 @@
     $wb_id = get_id_from_blogname($wb_name);
     $wb_blog_title = $wb_id ? get_blog_option($wb_id, 'blogname') : '';
     $wb_description = get_post_meta($weekblog->ID, '_xtecweekblog-description', true);
-    ?>	
+?>  
     <div id="box">
         <span class="contentboxheadright"></span>
         <span class="contentboxheadleft"></span>

@@ -1,5 +1,5 @@
 <?php
-$action = isset($_REQUEST['a'])?$_REQUEST['a']:'';
+$action = isset($_REQUEST['a']) ? $_REQUEST['a'] : '';
 switch ($action) {
     case "terms":
         include('terms.htm');
@@ -12,8 +12,8 @@ switch ($action) {
     case 'newuser':
         if (!is_user_logged_in()) {
             ?>
-            <iframe src="wp-signup.php" width="100%" height="700" scrolling="auto" frameborder="0"></iframe>			
-        <?php
+            <iframe src="wp-signup.php" width="100%" height="700" scrolling="auto" frameborder="0"></iframe>            
+            <?php
         }
         break;
     case 'login':
@@ -38,7 +38,13 @@ switch ($action) {
             $bgcolor = ( $bgcolor == '#ffffff' ) ? '#e5f2fe' : '#ffffff';
             ?>
             <tr bgcolor="<?php echo $bgcolor ?>">
-                <td class="blogByDescriptor" valign="top" width="300"><a href="<?php echo esc_url($siteurl); ?>" target="_blank"><?php echo esc_html(stripslashes($blogname)); ?></a><?php if (is_user_logged_in()) { ?> <a href="<?php echo xtec_favorites_url('addPrefer', $blog); ?>" title="Preferit"><img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif" border="0" alt="Preferit"/></a><?php }; ?></td>
+                <td class="blogByDescriptor" valign="top" width="300">
+                    <a href="<?php echo esc_url($siteurl); ?>" target="_blank"><?php echo esc_html(stripslashes($blogname)); ?></a>
+                    <?php if (is_user_logged_in()) : ?>
+                        <a href="<?php echo xtec_favorites_url('addPrefer', $blog); ?>" title="Preferit"><img
+                                src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif" border="0" alt="Preferit"/></a>
+                    <?php endif; ?>
+                </td>
                 <td valign="top" width="100"><?php echo esc_html($admin_name); ?></td>
                 <td valign="top" width="200">
                     <?php
@@ -53,7 +59,7 @@ switch ($action) {
                     ?>
                 </td>
             </tr>
-        <?php
+            <?php
         }
         print "</table>";
         print "</div>";
@@ -90,9 +96,20 @@ switch ($action) {
         foreach ($mostActive as $active) {
             $bgcolor = ($bgcolor == '#e5f2fe') ? '#ffffff' : '#e5f2fe';
             ?>
-            <tr bgcolor="<?php echo $bgcolor; ?>"><td width="250"><a href='<?php echo esc_url($active['blog_url']); ?>' target="_blank" title="Entra al bloc"><?php echo esc_html(stripslashes($active['blog_title'])); ?></a><?php if (is_user_logged_in()) { ?> <a href="<?php echo xtec_favorites_url('addPrefer', $active['blogId']); ?>" title="Preferit"><img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif" border="0" alt="Preferit"/></a><?php }; ?></td><td align="right" width="100"><?php echo $maxPosts > 0 ? $active['postNumber'] / $maxPosts * 100 : 0; ?></td><td width="150"><?php echo date('d/m/Y - H.i', strtotime($active['last_updated'])); ?></td></tr>
+            <tr bgcolor="<?php echo $bgcolor; ?>">
+                <td width="250">
+                    <a href='<?php echo esc_url($active['blog_url']); ?>' target="_blank"
+                       title="Entra al bloc"><?php echo esc_html(stripslashes($active['blog_title'])); ?></a>
+                    <?php if (is_user_logged_in()) : ?>
+                        <a href="<?php echo xtec_favorites_url('addPrefer', $active['blogId']); ?>" title="Preferit"><img
+                                src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif" border="0" alt="Preferit"/></a>
+                    <?php endif; ?>
+                </td>
+                <td align="right" width="100"><?php echo $maxPosts > 0 ? $active['postNumber'] / $maxPosts * 100 : 0; ?></td>
+                <td width="150"><?php echo date('d/m/Y - H.i', strtotime($active['last_updated'])); ?></td>
+            </tr>
             <?php // print_r($active);?>
-        <?php
+            <?php
         }
         print '</table>';
         break;
@@ -110,9 +127,19 @@ switch ($action) {
         $bgcolor = "#e5f2fe";
         foreach ($blogs as $blog) {
             $bgcolor = ($bgcolor == '#e5f2fe') ? '#ffffff' : '#e5f2fe';
-            ?>		
-            <tr bgcolor="<?php echo $bgcolor; ?>"><td width="300"><a href='<?php echo esc_url($blog['blog_url']); ?>' target="_blank" title="Entra al bloc"><?php echo esc_html(stripslashes($blog['blog_title'])); ?></a><?php if (is_user_logged_in()) { ?> <a href="<?php echo xtec_favorites_url('addPrefer', $blog['blog_id']); ?>" title="Preferit"><img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif" border="0" alt="Preferit"/></a><?php }; ?></td><td width="150"><?php echo date('d/m/Y - H.i', strtotime($blog['registered'])); ?></td></tr>
-        <?php
+            ?>      
+            <tr bgcolor="<?php echo $bgcolor; ?>">
+                <td width="300">
+                    <a href='<?php echo esc_url($blog['blog_url']); ?>' target="_blank"
+                       title="Entra al bloc"><?php echo esc_html(stripslashes($blog['blog_title'])); ?></a>
+                    <?php if (is_user_logged_in()) : ?>
+                        <a href="<?php echo xtec_favorites_url('addPrefer', $blog['blog_id']); ?>" title="Preferit"><img
+                                src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif" border="0" alt="Preferit"/></a>
+                    <?php endif; ?>
+                </td>
+                <td width="150"><?php echo date('d/m/Y - H.i', strtotime($blog['registered'])); ?></td>
+            </tr>
+            <?php
         }
         print '</table>';
         break;
@@ -129,11 +156,11 @@ switch ($action) {
             <tr bgcolor="<?php echo $bgcolor; ?>">
                 <td width="250"><a href=index.php?id=<?php echo $new['newId'] ?> title="V&eacute;s a la notícia"><?php echo esc_html(stripslashes($new['new_title'])); ?></a></td><td width="150"><?php echo date('d/m/Y', strtotime($new['post_date'])); ?></td></tr>
             <?php // print_r($new);?>
-        <?php
+            <?php
         }
         print '</table>';
         break;
     default:
         include('content.php');
         break;
-} 
+}

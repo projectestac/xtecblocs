@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
-	<div id="content" class="narrowcolumn">
+    <div id="content" class="narrowcolumn">
 
-		<h2 class="center">No s'ha trobat la pàgina</h2>
+        <h2 class="center">No s'ha trobat la pàgina</h2>
 
-	</div>
+    </div>
 
 <?php get_sidebar(); ?>
 
