@@ -10,6 +10,17 @@ function xtec_remove_admin_bar(): void
 add_action('before_signup_header', 'xtec_remove_admin_bar', 1);
 
 /**
+ * Loads the stylesheet of the theme, with the date of the file as version so that browsers load it again when it
+ * changes. It is enqueued with priority 1 so that, as before, it is printed before the styles of WordPress.
+ */
+function xtec_enqueue_style(): void
+{
+    $version = (string)filemtime(get_stylesheet_directory() . '/style.css');
+    wp_enqueue_style('xtecblocsdefault', get_stylesheet_uri(), [], $version);
+}
+add_action('wp_enqueue_scripts', 'xtec_enqueue_style', 1);
+
+/**
  * Returns the URL to add or delete a blog from the favorites of the current user, protected with a nonce.
  *
  * @param string $action 'addPrefer' or 'delPrefer'.
