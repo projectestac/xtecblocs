@@ -66,7 +66,7 @@
                     } ?>
                     <li>
                         <a href="feed" class="rss">
-                            <img src="<?php bloginfo('template_directory'); ?>/css/img/rss.png" alt="RSS"/>
+                            <img src="<?php bloginfo('template_directory'); ?>/images/css/rss.png" alt="RSS"/>
                         </a>
                     </li>
                 </ul>
