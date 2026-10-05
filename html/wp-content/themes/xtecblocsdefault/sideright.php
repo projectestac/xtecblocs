@@ -14,7 +14,6 @@ if (is_user_logged_in()) {
                 <?php
                 if (!empty($blogs)) {
                     foreach ($blogs as $blog) {
-
                         $value = 'wp_' . $blog->userblog_id . '_user_level';
                         $level = $current_user->$value;
                         switch ($level) {
@@ -37,8 +36,9 @@ if (is_user_logged_in()) {
                         $blog->blogname = trim($blog->blogname);
                         $pathBlog = trim($blog->path, "/");
 
-                        if (empty($blog->blogname))
+                        if (empty($blog->blogname)) {
                             $blog->blogname = "Bloc " . substr($pathBlog, strpos($pathBlog, "/") + 1);
+                        }
 
 
                         if ($number > 0 || $level != 10) {
@@ -48,36 +48,39 @@ if (is_user_logged_in()) {
                                    href='<?php echo esc_url(get_admin_url($blog->userblog_id)); ?>'
                                    target="_blank" title="<?php echo $text; ?>"><img
                                         src="<?php bloginfo('template_directory'); ?>/images/<?php echo $image; ?>.gif"
-                                        border="0" alt="<?php echo $text; ?>" class="myicon" /> </a> <?php if ($image == 'admin' && $blog->userblog_id != 1) { ?>
+                                        border="0" alt="<?php echo $text; ?>" class="myicon" /> </a>
+                                <?php if ($image == 'admin' && $blog->userblog_id != 1) : ?>
                                     <a
                                         href='<?php echo esc_url(get_admin_url($blog->userblog_id, 'ms-delete-site.php')); ?>'
                                         target="_blank" title="Elimina el bloc"> <img
                                             src="<?php bloginfo('template_directory'); ?>/images/delete.gif" border="0"
-                                            alt="Elimina el Bloc" class="myicon" /> 
-                                    </a> <?php } ?>
+                                            alt="Elimina el Bloc" class="myicon" />
+                                    </a>
+                                <?php endif; ?>
                             </li>
 
-                        <?php
+                            <?php
                         } else {
                             $notHave = true;
                             ?>
                             <li><a style="color: red;"
                                    href='<?php echo esc_url(get_home_url($blog->userblog_id, '/')); ?>'
                                    target="_blank" title="Entra al bloc">
-                <?php echo esc_html(stripslashes($blog->blogname)); ?>
+                            <?php echo esc_html(stripslashes($blog->blogname)); ?>
                                 </a>
                                 <a href='<?php echo esc_url(get_admin_url($blog->userblog_id)); ?>'
                                    target="_blank" title="<?php echo $text; ?>">
                                     <img src="<?php bloginfo('template_directory'); ?>/images/<?php echo $image; ?>.gif"
-                                         border="0" alt="<?php echo $text; ?>" class="myicon" /> 
+                                         border="0" alt="<?php echo $text; ?>" class="myicon" />
                                 </a>
-                <?php if ($image == 'admin' && $blog->userblog_id != 1) { ?>
+                                <?php if ($image == 'admin' && $blog->userblog_id != 1) : ?>
                                     <a
                                         href='<?php echo esc_url(get_admin_url($blog->userblog_id, 'ms-delete-site.php')); ?>'
                                         target="_blank" title="Elimina el bloc">
                                         <img src="<?php bloginfo('template_directory'); ?>/images/delete.gif" border="0"
                                              alt="Elimina el Bloc" class="myicon" />
-                                    </a> <?php } ?>
+                                    </a>
+                                <?php endif; ?>
                             </li>
                             <?php
                         }
@@ -98,7 +101,6 @@ if (is_user_logged_in()) {
 
     <?php $blogs = xtec_favorites_get_user_preferred_blogs(); ?>
     <?php if (count($blogs) > 0) { ?>
-
         <div class="sidebox"><span class="sideboxright">&nbsp;</span> <span
                 class="sideboxleft">&nbsp;</span>
             <h3 class="noticies">El meus preferits</h3>
@@ -107,17 +109,16 @@ if (is_user_logged_in()) {
 
                     <?php
                     if (!empty($blogs)) {
-
                         foreach ($blogs as $blog) {
-
                             // If blog's titles is empty, compose title from url (Ex: http://agora/blocs/elspinguins/ --> elspinguins)
                             $titolBlog = trim(get_blog_option($blog, 'blogname'));
 
                             if (empty($titolBlog)) {
                                 $urlBlog = get_blog_option($blog, 'siteurl');
                                 $titolBlog = "Bloc " . substr($urlBlog, strrpos($urlBlog, '/') + 1);
-                            } else
+                            } else {
                                 $titolBlog = stripslashes(get_blog_option($blog, 'blogname'));
+                            }
                             ?>
                             <li><a href='<?php echo esc_url(get_blogaddress_by_id($blog)); ?>'
                                    target="_blank" title="Entra al bloc"><?php echo esc_html($titolBlog); ?></a>&nbsp;<a
@@ -125,7 +126,7 @@ if (is_user_logged_in()) {
                                    title="Esborra"><img src="<?php bloginfo('template_directory'); ?>/images/delete.gif"
                                                      border="0" alt="Esborra" /></a></li>
 
-                        <?php
+                            <?php
                         }
                     }
                     ?>
@@ -145,7 +146,6 @@ if (is_user_logged_in()) {
             <?php
             $mostActive = xtec_lastest_posts_most_active_blogs();
             if (count($mostActive) > 0) {
-
                 foreach ($mostActive as $active) {
                     // If blog's title is empty, get URL
                     $titolBlog = trim(stripslashes($active['blog_title']));
@@ -157,12 +157,14 @@ if (is_user_logged_in()) {
                     ?>
 
                     <li><a href='<?php echo esc_url($active['blog_url']); ?>' target="_blank"
-                           title="Entra al blog"><?php echo esc_html($titolBlog); ?></a><?php if (is_user_logged_in()) { ?>
+                           title="Entra al blog"><?php echo esc_html($titolBlog); ?></a>
+                        <?php if (is_user_logged_in()) : ?>
                             <a href="<?php echo xtec_favorites_url('addPrefer', $active['blogId']); ?>"
                                title="Preferit">
                                 <img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif"
                                      border="0" alt="Preferit" />
-                            </a><?php }; ?>
+                            </a>
+                        <?php endif; ?>
                     </li>
                     <?php
                 }
@@ -185,38 +187,39 @@ if (is_user_logged_in()) {
     <h3 class="noticies">Els darrers blocs creats</h3>
     <div class="sidecontent"><?php
         $blogs = xtec_api_lastest_blogs(5, 3000, 'registered');
-        if (is_array($blogs)) {
-            ?>
+    if (is_array($blogs)) {
+        ?>
             <ul>
-                <?php
-                foreach ($blogs as $blog) {
+            <?php
+            foreach ($blogs as $blog) {
+                // If blog's titles is empty, compose title from url (Ex: http://agora/blocs/elspinguins/ --> elspinguins)
+                $titolBlog = trim(stripslashes($blog['blog_title']));
+                $urlBlog = trim($blog['blog_url'], "/");
 
-                    // If blog's titles is empty, compose title from url (Ex: http://agora/blocs/elspinguins/ --> elspinguins)
-                    $titolBlog = trim(stripslashes($blog['blog_title']));
-                    $urlBlog = trim($blog['blog_url'], "/");
-
-                    if (!empty($blog['blog_url'])) {
-                        if (empty($titolBlog)) {
-                            $titolBlog = "Bloc " . substr($urlBlog, strrpos($urlBlog, '/') + 1);
-                        }
-                        ?>
-                        <li><a href="<?php echo esc_url($blog['blog_url']); ?>" target="_blank"><?php echo esc_html($titolBlog); ?></a><?php if (is_user_logged_in()) { ?>
+                if (!empty($blog['blog_url'])) {
+                    if (empty($titolBlog)) {
+                        $titolBlog = "Bloc " . substr($urlBlog, strrpos($urlBlog, '/') + 1);
+                    }
+                    ?>
+                        <li><a href="<?php echo esc_url($blog['blog_url']); ?>" target="_blank"><?php echo esc_html($titolBlog); ?></a>
+                            <?php if (is_user_logged_in()) : ?>
                                 <a href="<?php echo xtec_favorites_url('addPrefer', $blog['blog_id']); ?>"
                                    title="Preferit">
                                     <img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif"
-                                                      border="0" alt="Preferit" />
-                                </a><?php }; ?>
+                                         border="0" alt="Preferit" />
+                                </a>
+                            <?php endif; ?>
                         </li>
                         <?php
-                    }
                 }
-                ?>
+            }
+            ?>
             </ul>
             <ul class="cloudtags">
                 <li class="mes">
                     <a href="<?php echo get_option('home'); ?>/index.php?a=lastCreated">Més...</a>
                 </li>
             </ul>
-<?php } ?>
+    <?php } ?>
     </div>
 </div>

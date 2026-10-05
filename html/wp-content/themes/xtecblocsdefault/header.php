@@ -2,7 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ca" lang="ca">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title><?php bloginfo('name'); ?> <?php if (is_single()) { ?> &raquo; Blog Archive <?php } ?> <?php wp_title(); ?></title>
+    <title>
+        <?php bloginfo('name'); ?>
+        <?php if (is_single()) : ?>
+            &raquo; Blog Archive
+        <?php endif; ?>
+        <?php wp_title(); ?>
+    </title>
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>"/>
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>"/>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
@@ -31,7 +37,7 @@
                     if (!is_user_logged_in()) {
                         ?>
                         <li style="display: none;">Usuari anònim</li>
-                    <?php
+                        <?php
                     } else {
                         $current_user = wp_get_current_user();
                         ?>
@@ -39,7 +45,7 @@
                             T'has identificat com a [ <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php">
                                 <?php echo esc_html($current_user->user_login); ?></a> ]
                         </li>
-                    <?php
+                        <?php
                     } ?>
                     <!-- end of check user -->
 
@@ -50,10 +56,10 @@
                     if (!is_user_logged_in()) { ?>
                         <li><a id="surt"
                                href="<?php echo get_option('home'); ?>/wp-login.php?redirect_to=<?php echo site_url() ?>">Entra</a></li>
-                    <?php
+                        <?php
                     } else { ?>
                         <li><a href="<?php echo wp_logout_url(site_url()) ?>" title="Surt">Surt</a></li>
-                    <?php
+                        <?php
                     } ?>
                     <li>
                         <a href="feed" class="rss">

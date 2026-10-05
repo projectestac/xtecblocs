@@ -10,10 +10,10 @@
     <div id="cel">
         <span class="celrightcorner">&nbsp;</span>
         <span class="celleftcorner">&nbsp;</span>
-        <p class="espaicursos"><a id="espaicursoslink" target="_blank" href="http://blocs.xtec.cat/blocs_formacio">Espai de proves<span id="espaicursos"></span></a></p>		
+        <p class="espaicursos"><a id="espaicursoslink" target="_blank" href="http://blocs.xtec.cat/blocs_formacio">Espai de proves<span id="espaicursos"></span></a></p>        
     </div>
 
-    <!-- start of sideleft -->		
+    <!-- start of sideleft -->      
     <div id="sideleft">
         <?php include("sideleft.php"); ?> 
     </div>
@@ -33,7 +33,7 @@
         ?>
         <h3>Avís legal</h3>
         <p>XTECBlocs ha estat desenvolupat amb <a href="http://wordpress.org/" target="_blank">WordPress</a>. Articles (<a href="feed">RSS</a>) i Comentaris (<a href="comments/feed">RSS</a>).</p>
-			<p class="logogencat">Logo <acronym title="Generalitat de Catalunya"><a href="http://www.gencat.cat/educacio">GENCAT<span></span></a></acronym></p>
+            <p class="logogencat">Logo <acronym title="Generalitat de Catalunya"><a href="http://www.gencat.cat/educacio">GENCAT<span></span></a></acronym></p>
     </div>
 </div>
 <!-- end of sidebar -->
