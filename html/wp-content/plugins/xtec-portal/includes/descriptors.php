@@ -243,6 +243,7 @@ function xtec_descriptors_options(): void
         $descript = mb_strtolower(wp_unslash($_POST['descriptor']), 'UTF-8');
         // Keep only letters (\p{L}) and numbers (\p{N}) of any language
         $descript = preg_replace('/[^\p{L}\p{N}]+/u', '', $descript);
+        $descript = mb_substr($descript, 0, 20, 'UTF-8');
     }
 
     if (!empty($descript)) {
