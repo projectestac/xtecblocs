@@ -2,8 +2,12 @@
 
 function dateText($timestamp): string
 {
-    $monthName = array('de gener','de febrer','de mar&ccedil;','d\'abril','de maig','de juny','de juliol','d\'agost','de setembre','d\'octubre','de novembre','de desembre');
-    $dateText = 'el dia ' . date('d', $timestamp) . ' ' . $monthName[(int)date('n', $timestamp) - 1] . ' de ' . date('Y', $timestamp);
+    $monthName = array(
+        'de gener', 'de febrer', 'de mar&ccedil;', 'd\'abril', 'de maig', 'de juny', 'de juliol', 'd\'agost',
+        'de setembre', 'd\'octubre', 'de novembre', 'de desembre',
+    );
+    $dateText = 'el dia ' . date('d', $timestamp) . ' ' . $monthName[(int)date('n', $timestamp) - 1] . ' de ' .
+        date('Y', $timestamp);
 
     $today = strtotime(date('M j, Y'));
 
@@ -24,7 +28,9 @@ function getBlogsNumber(): array
     $counter = 0;
     // get a list of blogs in order of most recent update
     $blogs = $wpdb->get_col("SELECT count(*) as number FROM $wpdb->blogs WHERE `deleted` = '0'");
-    $blogsPrivate = $wpdb->get_col("SELECT count(*) as number FROM $wpdb->blogs WHERE `public`='0' AND `deleted` = '0'");
+    $blogsPrivate = $wpdb->get_col(
+        "SELECT count(*) as number FROM $wpdb->blogs WHERE `public`='0' AND `deleted` = '0'"
+    );
 
     $number = array('blogs' => $blogs[0],'blogsPrivate' => $blogsPrivate[0]);
     return $number;
@@ -34,7 +40,8 @@ function getBlogsNumber(): array
 function getNewsList(): array
 {
     global $wpdb;
-    $sql = "SELECT id,post_date,post_title FROM $wpdb->posts WHERE `post_type`='post' and `post_status`='publish' ORDER BY ID DESC";
+    $sql = "SELECT id,post_date,post_title FROM $wpdb->posts " .
+        "WHERE `post_type`='post' and `post_status`='publish' ORDER BY ID DESC";
     $news = $wpdb->get_results($sql);
     $posts = array();
 

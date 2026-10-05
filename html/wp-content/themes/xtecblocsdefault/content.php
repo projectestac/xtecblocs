@@ -3,12 +3,16 @@ if (isset($_REQUEST['id'])) {
     $post = get_post($_REQUEST['id']);
 
     // Only published news can be shown
-    if ($post !== null && ($post->post_type !== 'post' || $post->post_status !== 'publish' || post_password_required($post))) {
+    if (
+        $post !== null
+        && ($post->post_type !== 'post' || $post->post_status !== 'publish' || post_password_required($post))
+    ) {
         $post = null;
     }
 
     if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == 'newComment') {?>
-        <p class="thanks">Gràcies per enviar un comentari nou. No estar&agrave; disponible fins que no sigui validat per un administrador/a del portal.</p>
+        <p class="thanks">Gràcies per enviar un comentari nou. No estar&agrave; disponible fins que no sigui validat per
+            un administrador/a del portal.</p>
         <?php
     }
 
@@ -24,9 +28,12 @@ if (isset($_REQUEST['id'])) {
             <p class="data">Publicat <?php echo dateText(strtotime($post->post_date));?></p>
             <p><?php echo nl2br($post->post_content); ?></p>
             <?php if ($post->comment_count > 0) {?>
-                <p class="comentari">Aquesta notícia té <a href="index.php?id=<?php echo $post->ID;?>"><?php echo nl2br($post->comment_count);?> Comentari/s</a></p>
+                <p class="comentari">Aquesta notícia té <a
+                    href="index.php?id=<?php echo $post->ID;?>"><?php echo nl2br($post->comment_count);?>
+                    Comentari/s</a></p>
             <?php } else { ?> 
-                <p class="comentari">Aquesta notícia <a href="index.php?id=<?php echo $post->ID;?>">no té comentaris</a></p>
+                <p class="comentari">Aquesta notícia <a href="index.php?id=<?php echo $post->ID;?>">no té
+                    comentaris</a></p>
             <?php } ?>
         </div> <!--end of article -->   
     </div>
@@ -43,13 +50,15 @@ if (isset($_REQUEST['id'])) {
             $wb_id = get_id_from_blogname($wb_name);
             $wb_blog_title = get_blog_option($wb_id, 'blogname');
             $wb_description = get_post_meta($weekblog->ID, '_xtecweekblog-description', true);
+            $wb_image = get_the_post_thumbnail($weekblog->ID, 'xtecweekblog', array('alt' => 'Accedeix al bloc'));
             ?>  
                 <div id="weekblog-box" class="box">
                     <span class="contentboxheadright"></span>
                     <span class="contentboxheadleft"></span>
                     <h2 class="contentboxheadfons">Bloc destacat</h2>
                     <div id="bloc_destacat">
-                        <a href="<?php echo esc_url($wb_url); ?>" target="_blank" title="<?php echo esc_attr($wb_blog_title);?>"><?php echo get_the_post_thumbnail($weekblog->ID, 'xtecweekblog', array('alt' => 'Accedeix al bloc'));?></a>
+                        <a href="<?php echo esc_url($wb_url); ?>" target="_blank"
+                            title="<?php echo esc_attr($wb_blog_title);?>"><?php echo $wb_image; ?></a>
                         <?php echo wpautop(wp_kses_post($wb_description)); ?>
                         <ul>
                             <li><a href="<?php echo esc_url($wb_url); ?>" target="_blank">Accedeix al bloc</a></li>
@@ -65,7 +74,8 @@ if (isset($_REQUEST['id'])) {
                 <span class="contentboxheadleft"></span>
                 <h2 class="contentboxheadfons"><?php _e('WeekBlog', 'xtecweekblog');?></h2>
                 <div id="bloc_destacat">
-                    <img src="<?php bloginfo('template_directory'); ?>/images/weekblog/banner.jpg" alt="XTECBlocs" title="XTECBlocs" />
+                    <img src="<?php bloginfo('template_directory'); ?>/images/weekblog/banner.jpg" alt="XTECBlocs"
+                        title="XTECBlocs" />
                     <p><?php echo wp_kses_post(get_option('xtecweekblog_default_msg')); ?></p>
                     <div class="clear"></div>
                 </div>
@@ -75,7 +85,8 @@ if (isset($_REQUEST['id'])) {
         ?> <br /> <?php
     }
     if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == 'newComment') {?>
-        <p class="thanks">Gràcies per enviar un comentari nou. No estar&agrave; disponible fins que no sigui validat per un administrador/a del portal.</p>
+        <p class="thanks">Gràcies per enviar un comentari nou. No estar&agrave; disponible fins que no sigui validat per
+            un administrador/a del portal.</p>
         <?php
     }
     ?>
@@ -125,20 +136,21 @@ if (isset($_REQUEST['id'])) {
             $shortDesc = apply_filters('the_content', $shortDesc);
             $shortDesc = str_replace(']]>', ']]&gt;', $shortDesc);
             //Show the content
-            echo "<h3><a href=\"" . esc_url($blog['blog_url']) . "\" style=\"color:#408DD4;\" >" . esc_html(stripslashes($blog['blog_title'])) . "</a>";
+            echo "<h3><a href=\"" . esc_url($blog['blog_url']) . "\" style=\"color:#408DD4;\" >" .
+                esc_html(stripslashes($blog['blog_title'])) . "</a>";
             //si el user se ha autentificado, mostrará el icono de favoritos
             //pasar a css si es posible!
             if (is_user_logged_in()) {
-                echo "&nbsp;&nbsp;<a href='" . xtec_favorites_url('addPrefer', $blog['blog_id']) . "' title='Preferit'><img src='";
+                echo "&nbsp;&nbsp;<a href='" . xtec_favorites_url('addPrefer', $blog['blog_id']) .
+                    "' title='Preferit'><img src='";
                 echo  bloginfo('template_directory');
                 echo "/images/myblogs.gif' border='0' alt='Preferit'/></a>";
             }
             echo "</h3>";
             //dibuixem la caixa del darrer article
             echo "<div class=\"darrerArticle\">";
-            echo "<h4><a href=\"" . esc_url($blog['guid']) . "\" style=\"color:#91beec;\">" . esc_html($blog['post_title']) . "</a></h4>";
-            //echo "<p>".nl2br($shortDesc);
-            //if(strlen($desc)>strlen($shortDesc)){echo "<span class=\"allContentLink\">... <a href=\"".$blog['guid']."\" target=\"_blank\">[ Article complet ]</a></span>";}
+            echo "<h4><a href=\"" . esc_url($blog['guid']) . "\" style=\"color:#91beec;\">" .
+                esc_html($blog['post_title']) . "</a></h4>";
             echo "<p class=\"data\">Publicat " . $date . " per " . esc_html($blog['author_name']) . "</p>";
             echo "</div>";
             //end of caixa de darrer article

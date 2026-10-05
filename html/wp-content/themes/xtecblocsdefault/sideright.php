@@ -32,7 +32,8 @@ if (is_user_logged_in()) {
 
                         $number = xtec_descriptors_count_bloc_descriptors($blog->userblog_id);
 
-                        // If blog's titles is empty, compose title from url (Ex: http://agora/blocs/elspinguins/ --> elspinguins)
+                        // If blog's titles is empty, compose title from url
+                        // (Ex: http://agora/blocs/elspinguins/ --> elspinguins)
                         $blog->blogname = trim($blog->blogname);
                         $pathBlog = trim($blog->path, "/");
 
@@ -44,14 +45,17 @@ if (is_user_logged_in()) {
                         if ($number > 0 || $level != 10) {
                             ?>
                             <li><a href='<?php echo esc_url(get_home_url($blog->userblog_id, '/')); ?>'
-                                   target="_blank" title="Entra al bloc"><?php echo esc_html(stripslashes($blog->blogname)); ?></a><a
+                                   target="_blank" title="Entra al
+                                       bloc"><?php echo esc_html(stripslashes($blog->blogname)); ?></a><a
                                    href='<?php echo esc_url(get_admin_url($blog->userblog_id)); ?>'
                                    target="_blank" title="<?php echo $text; ?>"><img
                                         src="<?php bloginfo('template_directory'); ?>/images/<?php echo $image; ?>.gif"
                                         border="0" alt="<?php echo $text; ?>" class="myicon" /> </a>
                                 <?php if ($image == 'admin' && $blog->userblog_id != 1) : ?>
                                     <a
-                                        href='<?php echo esc_url(get_admin_url($blog->userblog_id, 'ms-delete-site.php')); ?>'
+                                        href='<?php
+                                            echo esc_url(get_admin_url($blog->userblog_id, 'ms-delete-site.php'));
+                                        ?>'
                                         target="_blank" title="Elimina el bloc"> <img
                                             src="<?php bloginfo('template_directory'); ?>/images/delete.gif" border="0"
                                             alt="Elimina el Bloc" class="myicon" />
@@ -75,7 +79,9 @@ if (is_user_logged_in()) {
                                 </a>
                                 <?php if ($image == 'admin' && $blog->userblog_id != 1) : ?>
                                     <a
-                                        href='<?php echo esc_url(get_admin_url($blog->userblog_id, 'ms-delete-site.php')); ?>'
+                                        href='<?php
+                                            echo esc_url(get_admin_url($blog->userblog_id, 'ms-delete-site.php'));
+                                        ?>'
                                         target="_blank" title="Elimina el bloc">
                                         <img src="<?php bloginfo('template_directory'); ?>/images/delete.gif" border="0"
                                              alt="Elimina el Bloc" class="myicon" />
@@ -110,7 +116,8 @@ if (is_user_logged_in()) {
                     <?php
                     if (!empty($blogs)) {
                         foreach ($blogs as $blog) {
-                            // If blog's titles is empty, compose title from url (Ex: http://agora/blocs/elspinguins/ --> elspinguins)
+                            // If blog's titles is empty, compose title from url
+                            // (Ex: http://agora/blocs/elspinguins/ --> elspinguins)
                             $titolBlog = trim(get_blog_option($blog, 'blogname'));
 
                             if (empty($titolBlog)) {
@@ -192,7 +199,8 @@ if (is_user_logged_in()) {
             <ul>
             <?php
             foreach ($blogs as $blog) {
-                // If blog's titles is empty, compose title from url (Ex: http://agora/blocs/elspinguins/ --> elspinguins)
+                // If blog's titles is empty, compose title from url
+                // (Ex: http://agora/blocs/elspinguins/ --> elspinguins)
                 $titolBlog = trim(stripslashes($blog['blog_title']));
                 $urlBlog = trim($blog['blog_url'], "/");
 
@@ -201,7 +209,8 @@ if (is_user_logged_in()) {
                         $titolBlog = "Bloc " . substr($urlBlog, strrpos($urlBlog, '/') + 1);
                     }
                     ?>
-                        <li><a href="<?php echo esc_url($blog['blog_url']); ?>" target="_blank"><?php echo esc_html($titolBlog); ?></a>
+                        <li><a href="<?php echo esc_url($blog['blog_url']); ?>"
+                            target="_blank"><?php echo esc_html($titolBlog); ?></a>
                             <?php if (is_user_logged_in()) : ?>
                                 <a href="<?php echo xtec_favorites_url('addPrefer', $blog['blog_id']); ?>"
                                    title="Preferit">

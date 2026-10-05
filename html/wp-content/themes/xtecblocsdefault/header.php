@@ -10,7 +10,8 @@
         <?php wp_title(); ?>
     </title>
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>"/>
-    <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>"/>
+    <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed"
+        href="<?php bloginfo('rss2_url'); ?>"/>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
     <?php wp_head(); ?>
 </head>
@@ -42,7 +43,8 @@
                         $current_user = wp_get_current_user();
                         ?>
                         <li class="login">
-                            T'has identificat com a [ <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php">
+                            T'has identificat com a [ <a
+                                href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php">
                                 <?php echo esc_html($current_user->user_login); ?></a> ]
                         </li>
                         <?php
@@ -53,9 +55,10 @@
                     <li><a href="index.php?a=terms">Condicions d'ús</a></li>
                     <li><a href="https://sites.google.com/a/xtec.cat/ajudaxtecblocs" target="_blank">Ajuda</a></li>
                     <?php
-                    if (!is_user_logged_in()) { ?>
-                        <li><a id="surt"
-                               href="<?php echo get_option('home'); ?>/wp-login.php?redirect_to=<?php echo site_url() ?>">Entra</a></li>
+                    if (!is_user_logged_in()) {
+                        $loginUrl = get_option('home') . '/wp-login.php?redirect_to=' . site_url();
+                        ?>
+                        <li><a id="surt" href="<?php echo $loginUrl; ?>">Entra</a></li>
                         <?php
                     } else { ?>
                         <li><a href="<?php echo wp_logout_url(site_url()) ?>" title="Surt">Surt</a></li>
