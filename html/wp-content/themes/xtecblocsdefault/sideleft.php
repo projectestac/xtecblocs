@@ -4,8 +4,16 @@
     <h3 class="noticies">Cerca</h3>
     <div class="sidecontent">
         <form method="POST">
-            <input type="text" id="paraulaCerca" name="paraulaCerca" style="width:117px;float:left;" onkeydown="if (event.keyCode == 13) {document.getElementById('botoCerca').focus();document.getElementById('botoCerca').click();event.returnValue=false}"/>
-            <button type="button" id="botoCerca" onclick="open('https://www.google.com/search?q=site:'+'<?php echo DOMAIN_CURRENT_SITE ?>'+'+'+encodeURIComponent(document.getElementById('paraulaCerca').value),'','');" value="Cerca">Cerca</button>
+            <input type="text" id="paraulaCerca" name="paraulaCerca" style="width:117px;float:left;"
+                onkeydown="if (event.keyCode == 13) {
+                    document.getElementById('botoCerca').focus();
+                    document.getElementById('botoCerca').click();
+                    event.returnValue=false
+                }"/>
+            <button type="button" id="botoCerca"
+                onclick="open('https://www.google.com/search?q=site:'+'<?php echo DOMAIN_CURRENT_SITE ?>'+'+'+
+                    encodeURIComponent(document.getElementById('paraulaCerca').value),'','');"
+                value="Cerca">Cerca</button>
         </form>
     </div>
 </div>
@@ -34,7 +42,8 @@
         <ul class="cloudtags">
         <?php $cloudArray = xtec_descriptors_get_descriptors_cloud(25, 12, 25);
         foreach ($cloudArray as $cloud) {?>
-            <li><a style="font-size:<?php echo $cloud['size'];?>px; color:#1E4588;" class="tag_cloud" href="<?php echo get_option('home');?>/index.php?a=list&amp;desc=<?php echo $cloud['tag'];?>">
+            <li><a style="font-size:<?php echo $cloud['size'];?>px; color:#1E4588;" class="tag_cloud"
+                href="<?php echo get_option('home');?>/index.php?a=list&amp;desc=<?php echo $cloud['tag'];?>">
                 <?php echo $cloud['tag'];?>
             </a></li>
         <?php } ?>

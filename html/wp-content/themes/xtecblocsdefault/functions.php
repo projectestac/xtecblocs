@@ -18,7 +18,10 @@ add_action('before_signup_header', 'xtec_remove_admin_bar', 1);
  */
 function xtec_favorites_url($action, $blog_id): string
 {
-    return esc_url(wp_nonce_url('index.php?a=' . $action . '&blogId=' . (int) $blog_id, 'xtec_favorites_' . $action . '_' . (int) $blog_id));
+    return esc_url(wp_nonce_url(
+        'index.php?a=' . $action . '&blogId=' . (int) $blog_id,
+        'xtec_favorites_' . $action . '_' . (int) $blog_id
+    ));
 }
 
 /**
