@@ -23,8 +23,6 @@ defined('ABSPATH') || exit;
 global $xtec_favorites_db_version;
 $xtec_favorites_db_version = '1.0';
 
-/** @todo Delete ubid field of database 'wp_user_blogs' table. */
-
 add_action('delete_blog', 'xtec_favorites_delete_blog', 10, 2);
 
 function xtec_favorites_delete_blog($blogId, $drop): void
