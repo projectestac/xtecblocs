@@ -19,8 +19,7 @@ defined('ABSPATH') || exit;
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-global $xtec_lastest_posts_db_version;
-$xtec_lastest_posts_db_version = '1.0';
+const XTEC_LASTEST_POSTS_DB_VERSION = '1.0';
 
 add_action('auto-draft_to_publish', 'xtec_lastest_posts_to_publish');
 add_action('draft_to_publish', 'xtec_lastest_posts_to_publish');
@@ -28,10 +27,8 @@ add_action('publish_to_publish', 'xtec_lastest_posts_to_publish');
 
 /**
  * Deletes older posts and registers the post publication.
- *
- * @param int $post Post data
  */
-function xtec_lastest_posts_to_publish($post): void
+function xtec_lastest_posts_to_publish(): void
 {
     global $wpdb;
 
@@ -39,12 +36,12 @@ function xtec_lastest_posts_to_publish($post): void
     $timeOld = time() - $days * 24 * 60 * 60;
 
     // Delete old posts
-    $wpdb->query($wpdb->prepare("DELETE FROM wp_globalposts WHERE `time` < %s", (string)$timeOld));
+    $wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->globalposts} WHERE `time` < %s", (string)$timeOld));
 
     // Create a new entry in global posts
     $wpdb->query(
         $wpdb->prepare(
-            "INSERT INTO wp_globalposts (blogId,time,postType) VALUES (%d, %s, '1')",
+            "INSERT INTO {$wpdb->globalposts} (blogId,time,postType) VALUES (%d, %s, '1')",
             $wpdb->blogid,
             (string)time()
         )
@@ -74,7 +71,7 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days = 5, $init = 0):
     // get a list of blogs in order of most recent update
     $blogs = $wpdb->get_results(
         $wpdb->prepare(
-            "SELECT DISTINCT blogId FROM wp_globalposts,$wpdb->blogs WHERE time > %d AND `public` = '1' " .
+            "SELECT DISTINCT blogId FROM {$wpdb->globalposts},$wpdb->blogs WHERE time > %d AND `public` = '1' " .
             "AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0' AND `blogId` = `blog_id` AND blogId<> 1 " .
             "ORDER BY id DESC LIMIT %d, %d",
             $date,
@@ -86,8 +83,7 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days = 5, $init = 0):
     if ($blogs) {
         $posts = [];
         foreach ($blogs as $blog) {
-            // we need _posts and _options tables for this to work
-            $blogPostsTable = "wp_" . (int)$blog->blogId . "_posts";
+            $blogPostsTable = $wpdb->get_blog_prefix($blog->blogId) . 'posts';
             // we fetch the title and link for the latest post
             $thispost = $wpdb->get_results("SELECT post_title, guid, post_content, post_date, post_author " .
                 "FROM $blogPostsTable " .
@@ -120,14 +116,16 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days = 5, $init = 0):
         $posts_array = [];
         foreach ($posts as $post) {
             if ($post['post_date'] !== 0) {
-                $posts_array[] = array('post_date' => $post['post_date'],
+                $posts_array[] = [
+                    'post_date' => $post['post_date'],
                     'post_title' => $post['post_title'],
                     'author_name' => $post['author_name'],
                     'post_content' => $post['post_content'],
                     'guid' => $post['guid'],
                     'blog_title' => $post['blog_title'],
                     'blog_url' => $post['blog_url'],
-                    'blog_id' => $post['blog_id']);
+                    'blog_id' => $post['blog_id'],
+                ];
                 $counter++;
             }
             // don't go over the limit
@@ -137,7 +135,7 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days = 5, $init = 0):
         }
         return $posts_array;
     }
-    return array();
+    return [];
 }
 
 /**
@@ -149,7 +147,7 @@ function xtec_lastest_posts_num_active_blogs(): int
 {
     global $wpdb;
     $blogs = $wpdb->get_col(
-        "SELECT DISTINCT blogId FROM wp_globalposts, $wpdb->blogs WHERE blogId=blog_id AND `public`='1' " .
+        "SELECT DISTINCT blogId FROM {$wpdb->globalposts}, $wpdb->blogs WHERE blogId=blog_id AND `public`='1' " .
         "AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0'"
     );
     return count($blogs);
@@ -164,9 +162,9 @@ function xtec_lastest_posts_num_posts_of_most_active_blog(): int
 {
     global $wpdb;
 
-    $sql = "SELECT count(*) AS postNumber FROM wp_globalposts,wp_blogs WHERE blogid=blog_id AND `public`='1' " .
-        "AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0' GROUP BY(blogid) ORDER BY postNumber DESC " .
-        "LIMIT 0,1";
+    $sql = "SELECT count(*) AS postNumber FROM {$wpdb->globalposts},{$wpdb->blogs} WHERE blogid=blog_id " .
+        "AND `public`='1' AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0' GROUP BY(blogid) " .
+        "ORDER BY postNumber DESC LIMIT 0,1";
     $blogs = $wpdb->get_results($sql);
 
     return isset($blogs[0]) ? $blogs[0]->postNumber : 0;
@@ -184,16 +182,16 @@ function xtec_lastest_posts_most_active_blogs($how_many = 5, $init = 0): array
     global $wpdb;
 
     //Gets the blocs with more entries
-    $sql = "SELECT blogid,count(*) AS postNumber,last_updated FROM wp_globalposts,wp_blogs WHERE blogid=blog_id " .
-        "AND `public`='1' AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0' GROUP BY(blogid) " .
-        "ORDER BY postNumber desc,last_updated LIMIT %d, %d";
+    $sql = "SELECT blogid,count(*) AS postNumber,last_updated FROM {$wpdb->globalposts},{$wpdb->blogs} " .
+        "WHERE blogid=blog_id AND `public`='1' AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0' " .
+        "GROUP BY(blogid) ORDER BY postNumber desc,last_updated LIMIT %d, %d";
     $blogs = $wpdb->get_results($wpdb->prepare($sql, $init, $how_many));
     $posts = [];
     if (is_array($blogs) && count($blogs) > 0) {
         foreach ($blogs as $blog) {
             $blog_detail = get_blog_details($blog->blogid, true);
             // Hide blog 'aroga (Espai de monitorització)' and main site (blog id is 1)
-            if ((!preg_match('/\/aroga\/$/', $blog_detail->path)) && ($blog->blogid != 1)) {
+            if ((!preg_match('/\/aroga\/$/', $blog_detail->path)) && ((int)$blog->blogid !== 1)) {
                 $posts[] = [
                     'blogId' => $blog->blogid,
                     'blog_title' => $blog_detail->blogname,
@@ -214,11 +212,10 @@ function xtec_lastest_posts_most_active_blogs($how_many = 5, $init = 0): array
 function xtec_lastest_posts_activation_hook(): void
 {
     global $wpdb;
-    global $xtec_lastest_posts_db_version;
 
-    $table_name = $wpdb->base_prefix . 'globalposts';
+    $table_name = $wpdb->globalposts;
 
-    if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+    if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") !== $table_name) {
         $sql = "CREATE TABLE $table_name (
               id int(10) NOT NULL AUTO_INCREMENT,
               blogId int(10) NOT NULL DEFAULT '0',
@@ -231,5 +228,5 @@ function xtec_lastest_posts_activation_hook(): void
         dbDelta($sql);
     }
 
-    add_option('$xtec_descriptors_db_version', $xtec_lastest_posts_db_version);
+    add_option('xtec_lastest_posts_db_version', XTEC_LASTEST_POSTS_DB_VERSION);
 }

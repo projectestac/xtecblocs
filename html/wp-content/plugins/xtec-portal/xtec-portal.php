@@ -13,6 +13,13 @@ defined('ABSPATH') || exit;
 
 const XTEC_PORTAL_FILE = __FILE__;
 
+// Network tables of the plugin, named like the tables of WordPress core (e.g. $wpdb->blogs)
+global $wpdb;
+$wpdb->descriptors = $wpdb->base_prefix . 'descriptors';
+$wpdb->descriptors_pre = $wpdb->base_prefix . 'descriptors_pre';
+$wpdb->globalposts = $wpdb->base_prefix . 'globalposts';
+$wpdb->user_blogs = $wpdb->base_prefix . 'user_blogs';
+
 require_once __DIR__ . '/includes/api.php';
 require_once __DIR__ . '/includes/descriptors.php';
 require_once __DIR__ . '/includes/favorites.php';
