@@ -48,11 +48,23 @@ function xtec_favorites_add_preferred($blogId): bool
     }
 
     // verify that not exists
-    $exists = $wpdb->get_var($wpdb->prepare("SELECT count(ubid) FROM {$wpdb->base_prefix}user_blogs WHERE userId = %d and blogId = %d", $user_id, $blogId));
+    $exists = $wpdb->get_var(
+        $wpdb->prepare(
+            "SELECT count(ubid) FROM {$wpdb->base_prefix}user_blogs WHERE userId = %d and blogId = %d",
+            $user_id,
+            $blogId
+        )
+    );
 
     //Create a new entry in user prefered blogs
     if (!$exists) {
-        $wpdb->query($wpdb->prepare("INSERT INTO {$wpdb->base_prefix}user_blogs (userId,blogId) VALUES (%d, %d)", $user_id, $blogId));
+        $wpdb->query(
+            $wpdb->prepare(
+                "INSERT INTO {$wpdb->base_prefix}user_blogs (userId,blogId) VALUES (%d, %d)",
+                $user_id,
+                $blogId
+            )
+        );
     }
     return true;
 }
@@ -65,7 +77,13 @@ function xtec_favorites_add_preferred($blogId): bool
 function xtec_favorites_delete_preferred($blogId): void
 {
     global $wpdb;
-    $wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->base_prefix}user_blogs WHERE blogId = %d AND userId = %d", $blogId, get_current_user_id()));
+    $wpdb->query(
+        $wpdb->prepare(
+            "DELETE FROM {$wpdb->base_prefix}user_blogs WHERE blogId = %d AND userId = %d",
+            $blogId,
+            get_current_user_id()
+        )
+    );
 }
 
 /**
@@ -78,7 +96,12 @@ function xtec_favorites_get_user_preferred_blogs(): array
     global $wpdb;
 
     $blogsArray = [];
-    $blogs = $wpdb->get_results($wpdb->prepare("SELECT userId, blogId FROM {$wpdb->base_prefix}user_blogs WHERE userId = %d", get_current_user_id()));
+    $blogs = $wpdb->get_results(
+        $wpdb->prepare(
+            "SELECT userId, blogId FROM {$wpdb->base_prefix}user_blogs WHERE userId = %d",
+            get_current_user_id()
+        )
+    );
 
     foreach ($blogs as $blog) {
         $blogsArray[] = $blog->blogId;
@@ -107,7 +130,6 @@ function xtec_favorites_activation_hook(): void
 
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql);
-
     }
     add_option('$xtec_favorites_db_version', $xtec_favorites_db_version);
 }
