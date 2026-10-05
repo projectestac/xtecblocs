@@ -134,7 +134,7 @@ switch ($action) {
             'margin-bottom: 1em; margin-top: 1em;">Llista dels darrers blocs creats.</h2>';
         $init = max(1, (int)($_REQUEST['init'] ?? 1));
         $blogs = xtec_api_lastest_blogs($ipp, 3000, 'registered', $init - 1);
-        $blogsNumber = getBlogsNumber();
+        $blogsNumber = xtec_api_blogs_number();
         $totalBlogs = $blogsNumber['blogs'] - $blogsNumber['blogsPrivate'];
         $pager = pager($init, $totalBlogs, 'index.php?a=lastCreated&amp;init=%%', $ipp);
         print '<div style="text-align:right; padding-right:60px;">' . $pager . '</div><br />';

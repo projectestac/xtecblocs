@@ -22,6 +22,51 @@ defined('ABSPATH') || exit;
 const XTEC_FAVORITES_DB_VERSION = '1.0';
 
 add_action('wp_delete_site', 'xtec_favorites_delete_site');
+add_action('template_redirect', 'xtec_favorites_template_redirect');
+
+/**
+ * Returns the URL to add or delete a blog from the favorites of the current user, protected with a nonce.
+ *
+ * @param string $action 'addPrefer' or 'delPrefer'.
+ * @param int $blog_id The ID of the blog.
+ * @return string The escaped URL.
+ */
+function xtec_favorites_url($action, $blog_id): string
+{
+    return esc_url(wp_nonce_url(
+        'index.php?a=' . $action . '&blogId=' . (int) $blog_id,
+        'xtec_favorites_' . $action . '_' . (int) $blog_id
+    ));
+}
+
+/**
+ * Adds or deletes a favorite blog of the current user from the links of the portal and goes back to the page where the
+ * link was clicked. It must be done before any output is sent, so it can't be in the templates.
+ */
+function xtec_favorites_template_redirect(): void
+{
+    $action = $_REQUEST['a'] ?? '';
+
+    if (!is_home() || ($action !== 'addPrefer' && $action !== 'delPrefer')) {
+        return;
+    }
+
+    $blog_id = (int)($_REQUEST['blogId'] ?? 0);
+    $nonce = is_string($_REQUEST['_wpnonce'] ?? null) ? $_REQUEST['_wpnonce'] : '';
+
+    if (is_user_logged_in() && wp_verify_nonce($nonce, 'xtec_favorites_' . $action . '_' . $blog_id)) {
+        if ($action === 'addPrefer') {
+            xtec_favorites_add_preferred($blog_id);
+        } else {
+            xtec_favorites_delete_preferred($blog_id);
+        }
+    }
+
+    // Back to the page where the link was clicked
+    $referer = $_SERVER['HTTP_REFERER'] ?? '';
+    wp_redirect($referer !== '' ? wp_validate_redirect($referer, home_url('/')) : home_url('/'));
+    exit;
+}
 
 /**
  * Deletes a deleted blog of the preferred blogs of all the users.

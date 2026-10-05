@@ -22,21 +22,6 @@ function dateText($timestamp): string
     return $dateText;
 }
 
-function getBlogsNumber(): array
-{
-    global $wpdb;
-    $counter = 0;
-    // get a list of blogs in order of most recent update
-    $blogs = $wpdb->get_col("SELECT count(*) as number FROM $wpdb->blogs WHERE `deleted` = '0'");
-    $blogsPrivate = $wpdb->get_col(
-        "SELECT count(*) as number FROM $wpdb->blogs WHERE `public`='0' AND `deleted` = '0'"
-    );
-
-    $number = array('blogs' => $blogs[0],'blogsPrivate' => $blogsPrivate[0]);
-    return $number;
-}
-
-
 function getNewsList(): array
 {
     global $wpdb;

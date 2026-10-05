@@ -98,3 +98,20 @@ function xtec_api_lastest_blogs(int $how_many = 10, int $days = 5, string $what 
 
     return $posts;
 }
+
+/**
+ * Counts the blogs of the network that are not deleted.
+ *
+ * @return array The number of blogs ('blogs') and of private blogs ('blogsPrivate').
+ */
+function xtec_api_blogs_number(): array
+{
+    global $wpdb;
+
+    return [
+        'blogs' => (int)$wpdb->get_var("SELECT count(*) FROM $wpdb->blogs WHERE `deleted` = '0'"),
+        'blogsPrivate' => (int)$wpdb->get_var(
+            "SELECT count(*) FROM $wpdb->blogs WHERE `public` = '0' AND `deleted` = '0'"
+        ),
+    ];
+}
