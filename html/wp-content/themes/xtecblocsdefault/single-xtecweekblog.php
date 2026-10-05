@@ -16,7 +16,7 @@
         <h2 class="contentboxheadfons">Bloc destacat</h2>
         <div id="bloc_destacat">
             <a href="<?php echo $wb_url;?>" target="_blank" title="<?php echo esc_attr($wb_blog_title);?>"><?php echo get_the_post_thumbnail($weekblog->ID, 'xtecweekblog', array('alt' => 'Accedeix al bloc'));?></a>
-            <p><?php echo wp_kses_post($wb_description); ?></p>
+            <?php echo wpautop(wp_kses_post($wb_description)); ?>
             <ul>
                 <li><a href="<?php echo $wb_url;?>" target="_blank">Accedeix al bloc</a></li>		
             </ul>
