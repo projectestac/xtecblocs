@@ -61,17 +61,10 @@ function xtec_descriptors_network_options(): void
         <?php
     }
 
-    if (isset($_GET['action']) && $_GET['action'] === 'update') {
-        /** @todo Update action not implemented. */
-    }
-
     $action = $_GET['action'] ?? '';
     switch ($action) {
         case 'delete':
             xtec_descriptors_delete_descriptor($_GET['id']);
-            break;
-        case 'update':
-            /** @todo Update action not implemented. */
             break;
         case 'descriptors':
             if (isset($_GET['n']) === false) {
@@ -153,11 +146,12 @@ function xtec_descriptors_network_options(): void
                         <?php _e("Next Blogs"); ?>
                     </a>
                 </p>
-                <?php /* @todo Enque script with WordPress API. */ ?>
-                <script>var xtecDescriptorsRegenerateNonce = <?php echo wp_json_encode(wp_create_nonce('xtec_descriptors_regenerate')); ?>;</script>
-                <script language='javascript' src='<?php
-                echo esc_url(plugins_url('js/xtec-descriptors-regenerate.js', XTEC_PORTAL_FILE)); ?>'></script>
                 <?php
+                xtec_descriptors_enqueue_script(
+                    'xtec-descriptors-regenerate',
+                    'xtecDescriptorsRegenerateNonce',
+                    wp_create_nonce('xtec_descriptors_regenerate')
+                );
             } else {
                 _e('All Done!');
             }
@@ -181,13 +175,28 @@ function xtec_descriptors_network_options(): void
                         <td><strong>' . esc_html($descriptor->number) . '</strong></td>
                         <td>' . esc_html($descriptor->blogs) . '</td>
                         <td><a href="' . esc_url(wp_nonce_url('?page=ms-descriptor&action=delete&id=' . $descriptor->id, 'xtec_descriptors_delete_' . $descriptor->id)) . '">' . __('Delete') . '</a></td>
-                        <td><a href=?page=ms-descriptor&action=update&id=' . $descriptor->id . '>' . __('Update') . '</a></td>
                     </tr>';
             }
             print '</table>';
             print '</div>';
         }
     }
+}
+
+/**
+ * Enqueues a script of the plugin in the footer, preceded by the definition of the JavaScript variable that it uses.
+ *
+ * @param string $handle Name of the script, which is also the name of its file in the js directory.
+ * @param string $variable Name of the JavaScript variable.
+ * @param string $value Value of the JavaScript variable.
+ */
+function xtec_descriptors_enqueue_script(string $handle, string $variable, string $value): void
+{
+    $path = 'js/' . $handle . '.js';
+    $version = (string)filemtime(plugin_dir_path(XTEC_PORTAL_FILE) . $path);
+
+    wp_enqueue_script($handle, plugins_url($path, XTEC_PORTAL_FILE), [], $version, true);
+    wp_add_inline_script($handle, 'var ' . $variable . ' = ' . wp_json_encode($value) . ';', 'before');
 }
 
 /**
@@ -223,11 +232,12 @@ function xtec_descriptors_options(): void
     if (isset($_POST['descriptor']) && $_POST['descriptor'] !== '') {
         check_admin_referer('xtec_descriptors_add');
     }
-    /** @todo Enque script with WordPress API. */
-    ?>
-    <script>var xtecDescriptorsAutocompUrl = <?php echo wp_json_encode(admin_url('admin-ajax.php?action=xtec_descriptors_autocomp')); ?>;</script>
-    <script language='javascript' src='<?php echo esc_url(plugins_url('js/xtec-descriptors-autocomp.js', XTEC_PORTAL_FILE)); ?>'></script>
-    <?php
+
+    xtec_descriptors_enqueue_script(
+        'xtec-descriptors-autocomp',
+        'xtecDescriptorsAutocompUrl',
+        admin_url('admin-ajax.php?action=xtec_descriptors_autocomp')
+    );
 
     //Admin menu in Opcions blogs
     if (isset($_REQUEST['del']) && $_REQUEST['del'] !== '') {
