@@ -456,6 +456,16 @@ function xtecweekblog_sortable_columns($columns): array
 }
 
 /**
+ * Gets the URL of the banner to show when there isn't a weekblog for the current week.
+ *
+ * @return string URL of the banner.
+ */
+function xtecweekblog_default_banner_url(): string
+{
+    return plugins_url('images/banner.jpg', __FILE__);
+}
+
+/**
  * Gets the current weekblog.
  *
  * @return WP_Post|null Current weekblog post.

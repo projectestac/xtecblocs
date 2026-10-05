@@ -74,7 +74,7 @@ if (isset($_REQUEST['id'])) {
                 <span class="contentboxheadleft"></span>
                 <h2 class="contentboxheadfons"><?php _e('WeekBlog', 'xtecweekblog');?></h2>
                 <div id="bloc_destacat">
-                    <img src="<?php bloginfo('template_directory'); ?>/images/weekblog/banner.jpg" alt="XTECBlocs"
+                    <img src="<?php echo esc_url(xtecweekblog_default_banner_url()); ?>" alt="XTECBlocs"
                         title="XTECBlocs" />
                     <p><?php echo wp_kses_post(get_option('xtecweekblog_default_msg')); ?></p>
                     <div class="clear"></div>
