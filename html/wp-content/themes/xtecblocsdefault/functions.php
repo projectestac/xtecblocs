@@ -8,12 +8,6 @@ function xtec_remove_admin_bar(): void {
 }
 add_action( 'before_signup_header', 'xtec_remove_admin_bar', 1 );
 
-function xtec_theme_setup(): void {
-	add_theme_support( 'post-thumbnails', array( 'xtecweekblog' ) );
-	add_image_size( 'xtecweekblog', 363, 98, true );
-}
-add_action( 'after_setup_theme', 'xtec_theme_setup' );
-
 /**
  * Returns the URL to add or delete a blog from the favorites of the current user, protected with a nonce.
  *
