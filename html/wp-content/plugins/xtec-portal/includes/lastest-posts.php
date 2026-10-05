@@ -42,7 +42,13 @@ function xtec_lastest_posts_to_publish($post): void
     $wpdb->query($wpdb->prepare("DELETE FROM wp_globalposts WHERE `time` < %s", (string)$timeOld));
 
     // Create a new entry in global posts
-    $wpdb->query($wpdb->prepare("INSERT INTO wp_globalposts (blogId,time,postType) VALUES (%d, %s, '1')", $wpdb->blogid, (string)time()));
+    $wpdb->query(
+        $wpdb->prepare(
+            "INSERT INTO wp_globalposts (blogId,time,postType) VALUES (%d, %s, '1')",
+            $wpdb->blogid,
+            (string)time()
+        )
+    );
 }
 
 /**
@@ -66,7 +72,16 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days = 5, $init = 0):
     $how_many_2 = $how_many * 2;
 
     // get a list of blogs in order of most recent update
-    $blogs = $wpdb->get_results($wpdb->prepare("SELECT DISTINCT blogId FROM wp_globalposts,$wpdb->blogs WHERE time > %d AND `public` = '1' AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0' AND `blogId` = `blog_id` AND blogId<> 1 ORDER BY id DESC LIMIT %d, %d", $date, $init, $how_many_2));
+    $blogs = $wpdb->get_results(
+        $wpdb->prepare(
+            "SELECT DISTINCT blogId FROM wp_globalposts,$wpdb->blogs WHERE time > %d AND `public` = '1' " .
+            "AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0' AND `blogId` = `blog_id` AND blogId<> 1 " .
+            "ORDER BY id DESC LIMIT %d, %d",
+            $date,
+            $init,
+            $how_many_2
+        )
+    );
 
     if ($blogs) {
         $posts = [];
@@ -133,7 +148,10 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days = 5, $init = 0):
 function xtec_lastest_posts_num_active_blogs(): int
 {
     global $wpdb;
-    $blogs = $wpdb->get_col("SELECT DISTINCT blogId FROM wp_globalposts, $wpdb->blogs WHERE blogId=blog_id AND `public`='1' AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0'");
+    $blogs = $wpdb->get_col(
+        "SELECT DISTINCT blogId FROM wp_globalposts, $wpdb->blogs WHERE blogId=blog_id AND `public`='1' " .
+        "AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0'"
+    );
     return count($blogs);
 }
 
@@ -146,7 +164,9 @@ function xtec_lastest_posts_num_posts_of_most_active_blog(): int
 {
     global $wpdb;
 
-    $sql = "SELECT count(*) AS postNumber FROM wp_globalposts,wp_blogs WHERE blogid=blog_id AND `public`='1' AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0' GROUP BY(blogid) ORDER BY postNumber DESC LIMIT 0,1";
+    $sql = "SELECT count(*) AS postNumber FROM wp_globalposts,wp_blogs WHERE blogid=blog_id AND `public`='1' " .
+        "AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0' GROUP BY(blogid) ORDER BY postNumber DESC " .
+        "LIMIT 0,1";
     $blogs = $wpdb->get_results($sql);
 
     return isset($blogs[0]) ? $blogs[0]->postNumber : 0;
@@ -164,7 +184,9 @@ function xtec_lastest_posts_most_active_blogs($how_many = 5, $init = 0): array
     global $wpdb;
 
     //Gets the blocs with more entries
-    $sql = "SELECT blogid,count(*) AS postNumber,last_updated FROM wp_globalposts,wp_blogs WHERE blogid=blog_id AND `public`='1' AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0' GROUP BY(blogid) ORDER BY postNumber desc,last_updated LIMIT %d, %d";
+    $sql = "SELECT blogid,count(*) AS postNumber,last_updated FROM wp_globalposts,wp_blogs WHERE blogid=blog_id " .
+        "AND `public`='1' AND `archived` = '0' AND `spam` = '0' AND `deleted` = '0' GROUP BY(blogid) " .
+        "ORDER BY postNumber desc,last_updated LIMIT %d, %d";
     $blogs = $wpdb->get_results($wpdb->prepare($sql, $init, $how_many));
     $posts = [];
     if (is_array($blogs) && count($blogs) > 0) {

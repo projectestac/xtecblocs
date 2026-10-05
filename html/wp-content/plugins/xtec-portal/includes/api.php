@@ -29,7 +29,16 @@ function xtec_api_lastest_blogs(int $how_many = 10, int $days = 5, string $what 
     }
 
     // Get a list of blogs in order of most recent update.
-    $blogs = $wpdb->get_results($wpdb->prepare("SELECT blog_id,registered FROM $wpdb->blogs WHERE $what >= DATE_SUB(CURRENT_DATE(), INTERVAL %d DAY) and `public`='1' and `archived` = '0' and `spam` = '0' and `deleted` = '0' $condition ORDER BY $what DESC limit %d, %d", $days, $init, $how_many));
+    $blogs = $wpdb->get_results(
+        $wpdb->prepare(
+            "SELECT blog_id,registered FROM $wpdb->blogs WHERE $what >= DATE_SUB(CURRENT_DATE(), INTERVAL %d DAY) " .
+            "and `public`='1' and `archived` = '0' and `spam` = '0' and `deleted` = '0' $condition " .
+            "ORDER BY $what DESC limit %d, %d",
+            $days,
+            $init,
+            $how_many
+        )
+    );
     //get a list with all the ids of the blogs that exist NOW
     $blogsId = $wpdb->get_results(" SELECT blog_id FROM xtec_blocs_global.wp_blogs ");
 
@@ -43,7 +52,10 @@ function xtec_api_lastest_blogs(int $how_many = 10, int $days = 5, string $what 
                 // we need _posts and _options tables for this to work
                 $blogOptionsTable = 'wp_' . (int)$blog->blog_id . '_options';
                 $blogPostsTable = 'wp_' . (int)$blog->blog_id . '_posts';
-                $options = $wpdb->get_results("SELECT option_value FROM $blogOptionsTable WHERE option_name IN ('siteurl','blogname') ORDER BY option_id, option_name DESC");
+                $options = $wpdb->get_results(
+                    "SELECT option_value FROM $blogOptionsTable WHERE option_name IN ('siteurl','blogname') " .
+                    "ORDER BY option_id, option_name DESC"
+                );
                 // we fetch the title and link for the latest post
                 $thispost = $wpdb->get_results('SELECT post_title, guid, post_content, post_date, post_author ' .
                     "FROM $blogPostsTable " .
@@ -74,7 +86,6 @@ function xtec_api_lastest_blogs(int $how_many = 10, int $days = 5, string $what 
                     break;
                 }
             }
-
         }
     }
 
@@ -83,5 +94,4 @@ function xtec_api_lastest_blogs(int $how_many = 10, int $days = 5, string $what 
     }
 
     return [];
-
 }
