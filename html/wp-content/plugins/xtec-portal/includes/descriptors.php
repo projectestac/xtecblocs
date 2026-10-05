@@ -86,14 +86,12 @@ function xtec_descriptors_network_options(): void
                 print '<table border="1" cellspacing="0" width="100%">';
                 foreach ($descriptors as $details) {
                     print "<tr>";
-                    print '<td valign="top" width="150">' . $details['descriptor'] . '</td>';
+                    print '<td valign="top" width="150">' . esc_html($details['descriptor']) . '</td>';
                     $details['blogs'] = substr($details['blogs'], 0, '-1');
                     if ($details['blogs'] === '') {
-                        print_r("1<br>");
                         $wpdb->query($wpdb->prepare("DELETE FROM wp_descriptors WHERE id = %d", $details['id']));
                         $actionmade = __('Deleted');
                     } else {
-                        print_r("2<br>");
                         $blogs = explode('$$', $details['blogs']);
                         array_shift($blogs);
                         $descriptorsrow = '$';
@@ -106,18 +104,16 @@ function xtec_descriptors_network_options(): void
                             }
                         }
                         print   '<td valign="top">
-                                    <span style="background: #00ff00;">' . $descriptorsrow . '</span>
+                                    <span style="background: #00ff00;">' . esc_html($descriptorsrow) . '</span>
                                     <br/>
-                                    <span style="background: #ff0000;">' . $details['blogs'] . '$</span>
+                                    <span style="background: #ff0000;">' . esc_html($details['blogs']) . '$</span>
                                 </td>';
                         $number = substr_count($descriptorsrow, '-1');
                     }
                     if ($descriptorsrow === '$') {
-                        print_r("3<br>");
                         $wpdb->query($wpdb->prepare("DELETE FROM wp_descriptors WHERE id = %d", $details['id']));
                         $actionmade = __('Deleted');
                     } else {
-                        print_r("4<br>");
                         if ($descriptorsrow !== $details['blogs'] . '$') {
                             $wpdb->query($wpdb->prepare("UPDATE wp_descriptors set number = %d, blogs = %s WHERE id = %d", $number, $descriptorsrow, $details['id']));
                             $actionmade = __('Updated');
@@ -169,9 +165,9 @@ function xtec_descriptors_network_options(): void
             print '<table border="1" cellpadding="10" cellspacing="10">';
             foreach ($descripts as $descriptor) {
                 print '<tr>
-                        <td>' . $descriptor->descriptor . '</td>
-                        <td><strong>' . $descriptor->number . '</strong></td>
-                        <td>' . $descriptor->blogs . '</td>
+                        <td>' . esc_html($descriptor->descriptor) . '</td>
+                        <td><strong>' . esc_html($descriptor->number) . '</strong></td>
+                        <td>' . esc_html($descriptor->blogs) . '</td>
                         <td><a href="' . esc_url(wp_nonce_url('?page=ms-descriptor&action=delete&id=' . $descriptor->id, 'xtec_descriptors_delete_' . $descriptor->id)) . '">' . __('Delete') . '</a></td>
                         <td><a href=?page=ms-descriptor&action=update&id=' . $descriptor->id . '>' . __('Update') . '</a></td>
                     </tr>';
@@ -278,7 +274,7 @@ function xtec_descriptors_options(): void
         print '<table>';
         foreach ($descripts as $descript) {
             if ($descript != '') {
-                print "<tr><td width=\"150\">" . $descript->descriptor . "</td><td><a href=\"" . esc_url(wp_nonce_url('?del=' . $descript->id . '&page=descriptors', 'xtec_descriptors_del_' . $descript->id)) . "\">Esborra</a></td></tr>";
+                print "<tr><td width=\"150\">" . esc_html($descript->descriptor) . "</td><td><a href=\"" . esc_url(wp_nonce_url('?del=' . $descript->id . '&page=descriptors', 'xtec_descriptors_del_' . $descript->id)) . "\">Esborra</a></td></tr>";
                 $have = true;
             }
         }
@@ -326,20 +322,23 @@ function xtec_descriptors_update_blog_options(): void
 }
 
 /**
- * Prints meta info.
+ * Prints the descriptors of the blog as Dublin Core subjects, following the DCMI recommendation to express Dublin Core
+ * metadata in HTML: the schema is declared and there is one meta element for each subject.
+ *
+ * @link https://www.dublincore.org/specifications/dublin-core/dc-html/
  */
 function xtec_descriptors_head(): void
 {
     global $wpdb;
-    $descriptors = '';
-    $descript = $wpdb->get_results($wpdb->prepare("SELECT descriptor FROM wp_descriptors where blogs like %s or blogs like %s", '%$' . $wpdb->blogid . '-1$%', '%$' . $wpdb->blogid . '-0$%'));
-    foreach ($descript as $d) {
-        $descriptors .= $d->descriptor . ',';
+    $descriptors = $wpdb->get_col($wpdb->prepare("SELECT descriptor FROM wp_descriptors where blogs like %s or blogs like %s", '%$' . $wpdb->blogid . '-1$%', '%$' . $wpdb->blogid . '-0$%'));
+
+    if (empty($descriptors)) {
+        return;
     }
-    $descriptors = substr($descriptors, 0, '-1');
-    if ($descriptors) {
-        $meta_string = sprintf("<meta name=\"DC.Subject\" content=\"%s\"/>", $descriptors);
-        echo $meta_string . "\n";
+
+    echo '<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/>' . "\n";
+    foreach ($descriptors as $descriptor) {
+        echo '<meta name="DC.subject" content="' . esc_attr($descriptor) . '"/>' . "\n";
     }
 }
 
@@ -519,7 +518,8 @@ function xtec_descriptors_get_blogs_by_descriptor($descriptor, $public = true): 
 
     foreach ($blogs as $blog) {
         $blog = str_replace(['-1', '-0'], '', $blog);
-        if (get_blog_details($blog)->public || $public) {
+        $blogDetails = get_blog_details($blog);
+        if ($blogDetails !== false && (!$public || (int)$blogDetails->public === 1)) {
             $bbd[] = $blog;
         }
     }
