@@ -22,17 +22,17 @@ defined('ABSPATH') || exit;
 
 const XTEC_FAVORITES_DB_VERSION = '1.0';
 
-add_action('delete_blog', 'xtec_favorites_delete_blog');
+add_action('wp_delete_site', 'xtec_favorites_delete_site');
 
 /**
- * Deletes a blog of the preferred blogs of all the users.
+ * Deletes a deleted blog of the preferred blogs of all the users.
  *
- * @param int $blogId The ID of the blog.
+ * @param WP_Site $site The deleted blog.
  */
-function xtec_favorites_delete_blog($blogId): void
+function xtec_favorites_delete_site(WP_Site $site): void
 {
     global $wpdb;
-    $wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->user_blogs} WHERE blogId = %d", $blogId));
+    $wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->user_blogs} WHERE blogId = %d", $site->id));
 }
 
 /**
@@ -89,7 +89,8 @@ function xtec_favorites_delete_preferred($blogId): void
 }
 
 /**
- * Gets the preferred blogs of the current user.
+ * Gets the preferred blogs of the current user. The deactivated, archived and spam blogs are skipped, but they are
+ * kept as preferred in case they are restored.
  *
  * @return array The IDs of the blogs.
  */
@@ -100,7 +101,8 @@ function xtec_favorites_get_user_preferred_blogs(): array
     $blogsArray = [];
     $blogs = $wpdb->get_results(
         $wpdb->prepare(
-            "SELECT userId, blogId FROM {$wpdb->user_blogs} WHERE userId = %d",
+            "SELECT ub.userId, ub.blogId FROM {$wpdb->user_blogs} ub JOIN {$wpdb->blogs} b ON b.blog_id = ub.blogId " .
+            "WHERE ub.userId = %d AND b.`deleted` = '0' AND b.`archived` = '0' AND b.`spam` = '0'",
             get_current_user_id()
         )
     );

@@ -26,7 +26,7 @@ add_action('network_admin_menu', 'xtec_descriptors_network_admin_menu');
 add_action('admin_menu', 'xtec_descriptors_admin_menu');
 add_action('update_option_blog_public', 'xtec_descriptors_update_blog_options');
 add_action('wp_head', 'xtec_descriptors_head');
-add_action('delete_blog', 'xtec_descriptors_delete_blog');
+add_action('wp_delete_site', 'xtec_descriptors_delete_site');
 add_action('wp_ajax_xtec_descriptors_autocomp', 'xtec_descriptors_autocomp');
 
 /**
@@ -416,13 +416,14 @@ function xtec_descriptors_head(): void
 }
 
 /**
- * Deletes a blog of all the descriptors.
+ * Deletes a deleted blog of all the descriptors.
  *
- * @param int $blog_id Blog ID
+ * @param WP_Site $site The deleted blog.
  */
-function xtec_descriptors_delete_blog($blog_id): void
+function xtec_descriptors_delete_site(WP_Site $site): void
 {
     global $wpdb;
+    $blog_id = $site->id;
 
     $descriptorId = $wpdb->get_results(
         $wpdb->prepare("SELECT id FROM {$wpdb->descriptors} where `blogs` like %s", '%$' . $blog_id . '-%')
@@ -551,6 +552,7 @@ function xtec_descriptors_get_descriptors_cloud($number, $min_font_size, $max_fo
  *
  * @param string $descriptor The descriptor to search.
  * @param bool $public True if the search must returns only the public blogs, false if it must returns all the blogs.
+ *     The deactivated, archived and spam blogs are always skipped.
  * @return array The IDs of the blogs found.
  */
 function xtec_descriptors_get_blogs_by_descriptor($descriptor, $public = true): array
@@ -570,7 +572,13 @@ function xtec_descriptors_get_blogs_by_descriptor($descriptor, $public = true): 
     foreach ($blogs as $blog) {
         $blog = str_replace(['-1', '-0'], '', $blog);
         $blogDetails = get_blog_details($blog);
-        if ($blogDetails !== false && (!$public || (int)$blogDetails->public === 1)) {
+        if (
+            $blogDetails !== false
+            && (int)$blogDetails->deleted === 0
+            && (int)$blogDetails->archived === 0
+            && (int)$blogDetails->spam === 0
+            && (!$public || (int)$blogDetails->public === 1)
+        ) {
             $bbd[] = $blog;
         }
     }
