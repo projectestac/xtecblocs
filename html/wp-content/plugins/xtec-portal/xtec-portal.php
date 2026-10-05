@@ -1,13 +1,18 @@
 <?php
 
-/*
-Plugin Name: XTEC Portal
-Description: Functions used by the XTECBlocs portal theme: descriptors of the blogs, favorite blogs of the users, lastest posts and lastest blogs. Combines the former XTEC API, XTEC Descriptors, XTEC Favorites and XTEC Lastest Posts plugins.
-Version: 1.0
-Network: true
-Author: Albert Pérez Monfort, Francesc Bassas i Bullich & Germán Antolin Priotto
-License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
-*/
+/**
+ * Plugin Name:       XTEC Portal
+ * Description:       Descriptors, favorite blogs, lastest posts and lastest blogs for the XTECBlocs portal theme.
+ * Version:           1.0
+ * Requires at least: 5.1
+ * Requires PHP:      7.4
+ * Network:           true
+ * Author:            Albert Pérez Monfort, Francesc Bassas i Bullich, Germán Antolin Priotto, Toni Ginard
+ * License:           GPL v2
+ * License URI:       https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ *
+ * Combines the former XTEC API, XTEC Descriptors, XTEC Favorites and XTEC Lastest Posts plugins.
+ */
 
 defined('ABSPATH') || exit;
 
