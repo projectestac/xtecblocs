@@ -456,6 +456,35 @@ function xtecweekblog_sortable_columns($columns): array
 }
 
 /**
+ * Gets the data of a weekblog to show it.
+ *
+ * @param WP_Post $weekblog The weekblog.
+ * @return array The URL and the title of the blog of the week ('url' and 'blog_title') and the description of the
+ *     weekblog ('description').
+ */
+function xtecweekblog_get_data(WP_Post $weekblog): array
+{
+    $name = get_post_meta($weekblog->ID, '_xtecweekblog-name', true);
+    $blogId = get_id_from_blogname($name);
+
+    return [
+        'url' => get_blogaddress_by_name($name),
+        'blog_title' => $blogId ? get_blog_option($blogId, 'blogname') : '',
+        'description' => get_post_meta($weekblog->ID, '_xtecweekblog-description', true),
+    ];
+}
+
+/**
+ * Gets the message to show when there isn't a weekblog for the current week.
+ *
+ * @return string The message, which can contain HTML.
+ */
+function xtecweekblog_default_message(): string
+{
+    return (string)get_option('xtecweekblog_default_msg');
+}
+
+/**
  * Gets the URL of the banner to show when there isn't a weekblog for the current week.
  *
  * @return string URL of the banner.

@@ -45,11 +45,8 @@ if (isset($_REQUEST['id'])) {
     if (function_exists('xtecweekblog_current_weekblog')) {
         $weekblog = xtecweekblog_current_weekblog();
         if (($weekblog instanceof WP_Post) && xtecweekblog_validate($weekblog->ID)) {
-            $wb_name = get_post_meta($weekblog->ID, '_xtecweekblog-name', true);
-            $wb_url = get_blogaddress_by_name($wb_name);
-            $wb_id = get_id_from_blogname($wb_name);
-            $wb_blog_title = get_blog_option($wb_id, 'blogname');
-            $wb_description = get_post_meta($weekblog->ID, '_xtecweekblog-description', true);
+            ['url' => $wb_url, 'blog_title' => $wb_blog_title, 'description' => $wb_description] =
+                xtecweekblog_get_data($weekblog);
             $wb_image = get_the_post_thumbnail($weekblog->ID, 'xtecweekblog', array('alt' => 'Accedeix al bloc'));
             ?>  
                 <div id="weekblog-box" class="box">
@@ -72,11 +69,11 @@ if (isset($_REQUEST['id'])) {
             <div id="weekblog-box" class="box">
                 <span class="contentboxheadright"></span>
                 <span class="contentboxheadleft"></span>
-                <h2 class="contentboxheadfons"><?php _e('WeekBlog', 'xtecweekblog');?></h2>
+                <h2 class="contentboxheadfons">Bloc destacat</h2>
                 <div id="bloc_destacat">
                     <img src="<?php echo esc_url(xtecweekblog_default_banner_url()); ?>" alt="XTECBlocs"
                         title="XTECBlocs" />
-                    <p><?php echo wp_kses_post(get_option('xtecweekblog_default_msg')); ?></p>
+                    <p><?php echo wp_kses_post(xtecweekblog_default_message()); ?></p>
                     <div class="clear"></div>
                 </div>
             </div>
