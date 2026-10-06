@@ -122,19 +122,19 @@ if (isset($_GET['id'])) {
         foreach ($blogs as $blog) {
             $date = xtec_date_text(strtotime($blog['post_date']));
             //Show the content
-            echo "<h3><a href=\"" . esc_url($blog['blog_url']) . "\" style=\"color:#408DD4;\" >" .
+            echo "<h3><a href=\"" . esc_url($blog['blog_url']) . "\">" .
                 esc_html(stripslashes($blog['blog_title'])) . "</a>";
             //si el user se ha autentificado, mostrará el icono de favoritos
             //pasar a css si es posible!
             if (is_user_logged_in()) {
                 echo "&nbsp;&nbsp;<a href='" . xtec_favorites_url('addPrefer', $blog['blog_id']) .
                     "' title='Preferit'><img src='" . esc_url(get_template_directory_uri() . '/images/myblogs.gif') .
-                    "' border='0' alt='Preferit'/></a>";
+                    "' alt='Preferit'/></a>";
             }
             echo "</h3>";
             //dibuixem la caixa del darrer article
             echo "<div class=\"darrerArticle\">";
-            echo "<h4><a href=\"" . esc_url($blog['guid']) . "\" style=\"color:#91beec;\">" .
+            echo "<h4><a href=\"" . esc_url($blog['guid']) . "\">" .
                 esc_html($blog['post_title']) . "</a></h4>";
             echo "<p class=\"data\">Publicat " . $date . " per " . esc_html($blog['author_name']) . "</p>";
             echo "</div>";

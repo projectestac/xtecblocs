@@ -692,7 +692,7 @@ strong {
     font-weight: bold;
 }
 
-abbr, acronym {
+abbr {
     border-bottom: 1px dotted;
     cursor: help;
     text-transform: uppercase;
@@ -849,6 +849,11 @@ tbody, thead, tfoot {
     vertical-align: middle;
 }
 
+.terms {
+    margin: 10px 20px 10px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .terms .title {
     padding: 10px 10px 5px 0;
     font-size: 16px;
@@ -865,4 +870,108 @@ tbody, thead, tfoot {
 
 .terms .maintitle {
     font-size: 20px;
+}
+
+.signup-frame {
+    width: 100%;
+    height: 700px;
+    border: 0;
+}
+
+#paraulaCerca {
+    width: 117px;
+    float: left;
+}
+
+#content .listtitle {
+    color: #1C4387;
+    font-size: 1.3em;
+    background-image: none;
+    border: none;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#content .pager {
+    text-align: right;
+    padding-right: 60px;
+}
+
+#content .pager a,
+#content .pager a:hover {
+    text-decoration: none;
+    color: #1E4588;
+}
+
+#content table.llistat th {
+    text-align: left;
+    vertical-align: top;
+}
+
+#content table.llistat tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+#content table.llistat tbody tr:nth-child(even) {
+    background-color: #e5f2fe;
+}
+
+#content .blocs-descriptor td {
+    vertical-align: top;
+}
+
+#content .blocs-descriptor .titol,
+#content .blocs-nous .titol {
+    width: 300px;
+}
+
+#content .blocs-actius .titol,
+#content .noticies .titol {
+    width: 250px;
+}
+
+#content .blocs-descriptor .propietari,
+#content .blocs-actius .activitat {
+    width: 100px;
+}
+
+#content .blocs-actius .activitat {
+    text-align: right;
+}
+
+#content .blocs-descriptor .altres-descriptors {
+    width: 200px;
+}
+
+#content .blocs-actius .data,
+#content .blocs-nous .data,
+#content .noticies .data {
+    width: 150px;
+}
+
+#content .altres-descriptors a,
+#content .altres-descriptors a:hover {
+    color: #0000EE;
+    text-decoration: none;
+}
+
+#content a.tag_cloud,
+#sidebar ul li a.tag_cloud,
+#sidebar ul li a.tag_cloud:hover {
+    color: #1E4588;
+}
+
+#content div.darreres h3 a,
+#content div.darreres h3 a:hover {
+    color: #408DD4;
+}
+
+#content div.darrerArticle h4 a,
+#content div.darrerArticle h4 a:hover {
+    color: #91beec;
+}
+
+#sidebar ul li a.sense-descriptors,
+#sidebar ul li a.sense-descriptors:hover {
+    color: red;
 }

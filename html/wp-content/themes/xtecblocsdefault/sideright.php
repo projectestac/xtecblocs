@@ -46,14 +46,14 @@ if (is_user_logged_in()) {
                                    href='<?php echo esc_url(get_admin_url($blog->userblog_id)); ?>'
                                    target="_blank" title="<?php echo $text; ?>"><img
                                         src="<?php bloginfo('template_directory'); ?>/images/<?php echo $image; ?>.gif"
-                                        border="0" alt="<?php echo $text; ?>" class="myicon" /> </a>
+                                        alt="<?php echo $text; ?>" class="myicon" /> </a>
                                 <?php if ($image === 'admin' && (int)$blog->userblog_id !== 1) : ?>
                                     <a
                                         href='<?php
                                             echo esc_url(get_admin_url($blog->userblog_id, 'ms-delete-site.php'));
                                         ?>'
                                         target="_blank" title="Elimina el bloc"> <img
-                                            src="<?php bloginfo('template_directory'); ?>/images/delete.gif" border="0"
+                                            src="<?php bloginfo('template_directory'); ?>/images/delete.gif"
                                             alt="Elimina el Bloc" class="myicon" />
                                     </a>
                                 <?php endif; ?>
@@ -63,7 +63,7 @@ if (is_user_logged_in()) {
                         } else {
                             $notHave = true;
                             ?>
-                            <li><a style="color: red;"
+                            <li><a class="sense-descriptors"
                                    href='<?php echo esc_url(get_home_url($blog->userblog_id, '/')); ?>'
                                    target="_blank" title="Entra al bloc">
                             <?php echo esc_html(stripslashes($blog->blogname)); ?>
@@ -71,7 +71,7 @@ if (is_user_logged_in()) {
                                 <a href='<?php echo esc_url(get_admin_url($blog->userblog_id)); ?>'
                                    target="_blank" title="<?php echo $text; ?>">
                                     <img src="<?php bloginfo('template_directory'); ?>/images/<?php echo $image; ?>.gif"
-                                         border="0" alt="<?php echo $text; ?>" class="myicon" />
+                                         alt="<?php echo $text; ?>" class="myicon" />
                                 </a>
                                 <?php if ($image === 'admin' && (int)$blog->userblog_id !== 1) : ?>
                                     <a
@@ -79,7 +79,7 @@ if (is_user_logged_in()) {
                                             echo esc_url(get_admin_url($blog->userblog_id, 'ms-delete-site.php'));
                                         ?>'
                                         target="_blank" title="Elimina el bloc">
-                                        <img src="<?php bloginfo('template_directory'); ?>/images/delete.gif" border="0"
+                                        <img src="<?php bloginfo('template_directory'); ?>/images/delete.gif"
                                              alt="Elimina el Bloc" class="myicon" />
                                     </a>
                                 <?php endif; ?>
@@ -127,7 +127,7 @@ if (is_user_logged_in()) {
                                    target="_blank" title="Entra al bloc"><?php echo esc_html($titolBlog); ?></a>&nbsp;<a
                                    href="<?php echo xtec_favorites_url('delPrefer', $blog); ?>"
                                    title="Esborra"><img src="<?php bloginfo('template_directory'); ?>/images/delete.gif"
-                                                     border="0" alt="Esborra" /></a></li>
+                                                     alt="Esborra" /></a></li>
 
                             <?php
                         }
@@ -165,7 +165,7 @@ if (is_user_logged_in()) {
                             <a href="<?php echo xtec_favorites_url('addPrefer', $active['blogId']); ?>"
                                title="Preferit">
                                 <img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif"
-                                     border="0" alt="Preferit" />
+                                     alt="Preferit" />
                             </a>
                         <?php endif; ?>
                     </li>
@@ -211,7 +211,7 @@ if (is_user_logged_in()) {
                                 <a href="<?php echo xtec_favorites_url('addPrefer', $blog['blog_id']); ?>"
                                    title="Preferit">
                                     <img src="<?php bloginfo('template_directory'); ?>/images/myblogs.gif"
-                                         border="0" alt="Preferit" />
+                                         alt="Preferit" />
                                 </a>
                             <?php endif; ?>
                         </li>

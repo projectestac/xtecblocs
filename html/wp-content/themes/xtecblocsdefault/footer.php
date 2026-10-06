@@ -1,6 +1,6 @@
 
                 <div id="footer">
-                    <h2 style="display: none">Footer</h2>           
+                    <h2>Footer</h2>           
                 </div> <!-- end of footer -->
             </div> <!-- end of wrapper -->
         </div> <!-- end of expander -->
