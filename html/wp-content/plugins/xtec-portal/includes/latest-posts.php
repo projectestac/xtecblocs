@@ -19,16 +19,16 @@ defined('ABSPATH') || exit;
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-const XTEC_LASTEST_POSTS_DB_VERSION = '1.0';
+const XTEC_LATEST_POSTS_DB_VERSION = '1.0';
 
-add_action('auto-draft_to_publish', 'xtec_lastest_posts_to_publish');
-add_action('draft_to_publish', 'xtec_lastest_posts_to_publish');
-add_action('publish_to_publish', 'xtec_lastest_posts_to_publish');
+add_action('auto-draft_to_publish', 'xtec_latest_posts_to_publish');
+add_action('draft_to_publish', 'xtec_latest_posts_to_publish');
+add_action('publish_to_publish', 'xtec_latest_posts_to_publish');
 
 /**
  * Deletes older posts and registers the post publication.
  */
-function xtec_lastest_posts_to_publish(): void
+function xtec_latest_posts_to_publish(): void
 {
     global $wpdb;
 
@@ -49,7 +49,7 @@ function xtec_lastest_posts_to_publish(): void
 }
 
 /**
- *    Gets the lastest public posts.
+ *    Gets the latest public posts.
  *
  * @param int $how_many Number of blogs to get.
  * @param int $days Number of days to consider in the datetime comparation from the current time.
@@ -57,7 +57,7 @@ function xtec_lastest_posts_to_publish(): void
  * @return array The date, the title, the author name, the content, the guid value, the blog title, the blog url and the blog ID of
  *     the posts.
  */
-function xtec_lastest_posts_lastest_posts($how_many = 10, $days = 5, $init = 0): array
+function xtec_latest_posts_latest_posts($how_many = 10, $days = 5, $init = 0): array
 {
     global $wpdb;
     $counter = 0;
@@ -143,7 +143,7 @@ function xtec_lastest_posts_lastest_posts($how_many = 10, $days = 5, $init = 0):
  *
  * @return int Number of public active blogs.
  */
-function xtec_lastest_posts_num_active_blogs(): int
+function xtec_latest_posts_num_active_blogs(): int
 {
     global $wpdb;
     $blogs = $wpdb->get_col(
@@ -158,7 +158,7 @@ function xtec_lastest_posts_num_active_blogs(): int
  *
  * @return int Number of posts of the most active blog.
  */
-function xtec_lastest_posts_num_posts_of_most_active_blog(): int
+function xtec_latest_posts_num_posts_of_most_active_blog(): int
 {
     global $wpdb;
 
@@ -177,7 +177,7 @@ function xtec_lastest_posts_num_posts_of_most_active_blog(): int
  * @param int $init Number of the first blogs to ignore.
  * @return array The blog ID, the blog name, the blog url, the last updated date and the number of posts of the blogs.
  */
-function xtec_lastest_posts_most_active_blogs($how_many = 5, $init = 0): array
+function xtec_latest_posts_most_active_blogs($how_many = 5, $init = 0): array
 {
     global $wpdb;
 
@@ -207,9 +207,9 @@ function xtec_lastest_posts_most_active_blogs($how_many = 5, $init = 0): array
 }
 
 /**
- * Creates XTEC Lastest Posts database table.
+ * Creates XTEC Latest Posts database table.
  */
-function xtec_lastest_posts_activation_hook(): void
+function xtec_latest_posts_activation_hook(): void
 {
     global $wpdb;
 
@@ -228,5 +228,5 @@ function xtec_lastest_posts_activation_hook(): void
         dbDelta($sql);
     }
 
-    add_option('xtec_lastest_posts_db_version', XTEC_LASTEST_POSTS_DB_VERSION);
+    add_option('xtec_latest_posts_db_version', XTEC_LATEST_POSTS_DB_VERSION);
 }

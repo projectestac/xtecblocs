@@ -151,7 +151,7 @@ if (is_user_logged_in()) {
     <div class="sidecontent">
         <ul>
             <?php
-            $mostActive = xtec_lastest_posts_most_active_blogs();
+            $mostActive = xtec_latest_posts_most_active_blogs();
             if (count($mostActive) > 0) {
                 foreach ($mostActive as $active) {
                     // If blog's title is empty, get URL
@@ -193,7 +193,7 @@ if (is_user_logged_in()) {
         class="sideboxleft">&nbsp;</span>
     <h3 class="noticies">Els darrers blocs creats</h3>
     <div class="sidecontent"><?php
-        $blogs = xtec_api_lastest_blogs(5, 3000, 'registered');
+        $blogs = xtec_api_latest_blogs(5, 3000, 'registered');
     if (is_array($blogs)) {
         ?>
             <ul>

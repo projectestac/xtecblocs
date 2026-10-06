@@ -20,7 +20,7 @@ defined('ABSPATH') || exit;
  */
 
 /**
- * Gets the lastest public blogs updated or registered sorted from newest to oldest.
+ * Gets the latest public blogs updated or registered sorted from newest to oldest.
  *
  * @param int $how_many Number of blogs to get.
  * @param int $days Number of days to consider in the datetime comparation from the current time.
@@ -30,7 +30,7 @@ defined('ABSPATH') || exit;
  * @return array The post title, the post date, the author name, the post content, the post guid value, the blog title, the blog
  *     url, the blog id and the blog registered date of the blogs.
  */
-function xtec_api_lastest_blogs(int $how_many = 10, int $days = 5, string $what = 'last_updated', int $init = 0, int $not_new = 0): array
+function xtec_api_latest_blogs(int $how_many = 10, int $days = 5, string $what = 'last_updated', int $init = 0, int $not_new = 0): array
 {
     global $wpdb;
     $counter = 0;

@@ -96,10 +96,10 @@ switch ($action) {
         print '<h2 style="color: #1C4387; font-size: 1.3em; background-image: none; border: none; ' .
             'margin-bottom: 1em; margin-top: 1em;">Llista dels blocs m&eacute;s actius els darrers 60 dies.</h2>';
         $init = max(1, (int)($_REQUEST['init'] ?? 1));
-        $mostActive = xtec_lastest_posts_most_active_blogs($ipp, $init - 1);
-        $blogsNumber = xtec_lastest_posts_num_active_blogs();
+        $mostActive = xtec_latest_posts_most_active_blogs($ipp, $init - 1);
+        $blogsNumber = xtec_latest_posts_num_active_blogs();
         $pager = pager($init, $blogsNumber, 'index.php?a=mostActive&amp;init=%%', $ipp);
-        $maxPosts = xtec_lastest_posts_num_posts_of_most_active_blog();
+        $maxPosts = xtec_latest_posts_num_posts_of_most_active_blog();
         print '<div style="text-align:right; padding-right:60px;">' . $pager . '</div><br/ >';
         print '<table>';
         print '<th align="left" valign="top">T&iacute;tol</th><th align="left" valign="top">Activitat (%)</th>' .
@@ -133,7 +133,7 @@ switch ($action) {
         print '<h2 style="color: #1C4387; font-size: 1.3em; background-image: none; border: none; ' .
             'margin-bottom: 1em; margin-top: 1em;">Llista dels darrers blocs creats.</h2>';
         $init = max(1, (int)($_REQUEST['init'] ?? 1));
-        $blogs = xtec_api_lastest_blogs($ipp, 3000, 'registered', $init - 1);
+        $blogs = xtec_api_latest_blogs($ipp, 3000, 'registered', $init - 1);
         $blogsNumber = xtec_api_blogs_number();
         $totalBlogs = $blogsNumber['blogs'] - $blogsNumber['blogsPrivate'];
         $pager = pager($init, $totalBlogs, 'index.php?a=lastCreated&amp;init=%%', $ipp);
