@@ -18,42 +18,42 @@
             <h2><a href="<?php echo get_permalink($post->post_parent); ?>"
                 rev="attachment"><?php echo get_the_title($post->post_parent); ?></a> &raquo; <a
                 href="<?php echo get_permalink() ?>" rel="bookmark"
-                title="Permanent Link: <?php the_title(); ?>"><?php the_title(); ?></a></h2>
+                title="Enllaç permanent a <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
             <div class="entry">
                 <p class="<?php echo $classname; ?>"><?php echo $attachment_link; ?><br
                     /><?php echo basename($post->guid); ?></p>
 
-                        <?php the_content('<p class="serif">Read the rest of this entry &raquo;</p>'); ?>
+                        <?php the_content('<p class="serif">Llegeix la resta de l\'entrada &raquo;</p>'); ?>
 
-                        <?php wp_link_pages(['before' => '<p><strong>Pages:</strong> ', 'after' => '</p>']); ?>
+                        <?php wp_link_pages(['before' => '<p><strong>Pàgines:</strong> ', 'after' => '</p>']); ?>
 
                 <p class="postmetadata alt">
                     <small>
-                        This entry was posted
-                        on <?php the_time('l, F jS, Y') ?> at <?php the_time() ?>
-                        and is filed under <?php the_category(', ') ?>.
-                        You can follow any responses to this entry through the
-                            <?php post_comments_feed_link('RSS 2.0'); ?> feed. 
+                        Aquesta entrada es va publicar el <?php echo get_the_date(); ?> a les <?php the_time() ?>
+                        i està classificada a <?php the_category(', ') ?>.
+                        Pots seguir les respostes a aquesta entrada a través del canal
+                            <?php post_comments_feed_link('RSS 2.0'); ?>.
 
                                 <?php if ('open' === $post->comment_status && 'open' === $post->ping_status) {
                             // Both Comments and Pings are open ?>
-                            You can <a href="#respond">leave a response</a>, or <a href="<?php trackback_url(true); ?>"
-                                rel="trackback">trackback</a> from your own site.
+                            Pots <a href="#respond">deixar una resposta</a> o fer un
+                                <a href="<?php trackback_url(true); ?>" rel="trackback">retroenllaç</a>
+                                des del teu lloc.
 
                                 <?php } elseif ('open' !== $post->comment_status && 'open' === $post->ping_status) {
                             // Only Pings are Open ?>
-                            Responses are currently closed, but you can <a href="<?php trackback_url(true); ?> "
-                                rel="trackback">trackback</a> from your own site.
+                            Les respostes estan tancades, però pots fer un <a href="<?php trackback_url(true); ?> "
+                                rel="trackback">retroenllaç</a> des del teu lloc.
 
                                 <?php } elseif ('open' === $post->comment_status && 'open' !== $post->ping_status) {
                             // Comments are open, Pings are not ?>
-                            You can skip to the end and leave a response. Pinging is currently not allowed.
+                            Pots anar al final i deixar una resposta. Els retroenllaços estan desactivats.
 
                                 <?php } elseif ('open' !== $post->comment_status && 'open' !== $post->ping_status) {
                             // Neither Comments, nor Pings are open ?>
-                            Both comments and pings are currently closed.
+                            Els comentaris i els retroenllaços estan tancats.
 
-                                <?php } edit_post_link('Edit this entry.', '', ''); ?>
+                                <?php } edit_post_link('Edita aquesta entrada.', '', ''); ?>
 
                     </small>
                 </p>
@@ -65,7 +65,7 @@
 
         <?php endwhile;
   else : ?>
-        <p>Sorry, no attachments matched your criteria.</p>
+        <p>No hi ha cap fitxer adjunt que coincideixi amb la cerca.</p>
 
   <?php endif; ?>
 

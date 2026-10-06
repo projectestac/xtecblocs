@@ -8,15 +8,15 @@
         <div class="post" id="post-<?php the_ID(); ?>">
         <h2><?php the_title(); ?></h2>
             <div class="entry">
-                <?php the_content('<p class="serif">Read the rest of this page &raquo;</p>'); ?>
+                <?php the_content('<p class="serif">Llegeix la resta de la pàgina &raquo;</p>'); ?>
 
-                <?php wp_link_pages(['before' => '<p><strong>Pages:</strong> ', 'after' => '</p>']); ?>
+                <?php wp_link_pages(['before' => '<p><strong>Pàgines:</strong> ', 'after' => '</p>']); ?>
 
             </div>
         </div>
         <?php endwhile;
     endif; ?>
-    <?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
+    <?php edit_post_link('Edita aquesta pàgina.', '<p>', '</p>'); ?>
     </div>
 
 <?php get_sidebar(); ?>
