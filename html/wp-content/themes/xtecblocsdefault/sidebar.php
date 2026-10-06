@@ -10,7 +10,8 @@
     <div id="cel">
         <span class="celrightcorner">&nbsp;</span>
         <span class="celleftcorner">&nbsp;</span>
-        <p class="espaicursos"><a id="espaicursoslink" target="_blank" href="http://blocs.xtec.cat/blocs_formacio">Espai
+        <p class="espaicursos"><a id="espaicursoslink" target="_blank"
+            href="<?php echo esc_url(XTEC_TRAINING_URL); ?>">Espai
             de proves<span id="espaicursos"></span></a></p>        
     </div>
 
@@ -28,10 +29,10 @@
 
     <div id="sidefooter">
         <h3>Avís legal</h3>
-        <p>XTECBlocs ha estat desenvolupat amb <a href="http://wordpress.org/" target="_blank">WordPress</a>. Articles
+        <p>XTECBlocs ha estat desenvolupat amb <a href="https://wordpress.org/" target="_blank">WordPress</a>. Articles
             (<a href="feed">RSS</a>) i Comentaris (<a href="comments/feed">RSS</a>).</p>
             <p class="logogencat">Logo <abbr title="Generalitat de Catalunya"><a
-                href="http://www.gencat.cat/educacio">GENCAT<span></span></a></abbr></p>
+                href="https://www.gencat.cat/educacio/">GENCAT<span></span></a></abbr></p>
     </div>
 </div>
 <!-- end of sidebar -->

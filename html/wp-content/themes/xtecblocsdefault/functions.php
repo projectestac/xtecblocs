@@ -2,6 +2,10 @@
 
 require_once __DIR__ . '/xtecfunc.php';
 
+// External URLs of the portal. They can be defined in wp-config.php to change them in other environments.
+defined('XTEC_HELP_URL') || define('XTEC_HELP_URL', 'https://sites.google.com/a/xtec.cat/ajudaxtecblocs/');
+defined('XTEC_TRAINING_URL') || define('XTEC_TRAINING_URL', 'https://blocs.xtec.cat/blocs_formacio/');
+
 // Remove admin bar in signup page because it is empty and its space is empty
 function xtec_remove_admin_bar(): void
 {
@@ -40,7 +44,7 @@ function xtec_portal_redirect(): void
     }
 
     $urls = [
-        'help' => 'http://sites.google.com/a/xtec.cat/ajudaxtecblocs/',
+        'help' => XTEC_HELP_URL,
         'new' => network_site_url('wp-signup.php'),
         'login' => wp_login_url(site_url()),
     ];
