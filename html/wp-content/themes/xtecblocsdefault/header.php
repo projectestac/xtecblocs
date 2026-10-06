@@ -1,7 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ca" lang="ca">
+<!DOCTYPE html>
+<html lang="ca">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8"/>
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed"
         href="<?php bloginfo('rss2_url'); ?>"/>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
@@ -16,7 +16,7 @@
                 <span class="logoDepartament">&nbsp;</span>
                 <h1 title="<?php echo esc_attr(home_url()); ?>">
                     <a href="<?php echo esc_url(home_url()); ?>">
-                        <acronym title="Xarxa Educativa Telemàtica Educativa de Catalunya">XTEC</acronym>Blocs
+                        <abbr title="Xarxa Educativa Telemàtica Educativa de Catalunya">XTEC</abbr>Blocs
                     </a>
                     <span></span><!-- Contains logo of the Departament d'Educació de la Generalitat de Catalunya -->
                 </h1>
@@ -27,11 +27,7 @@
                 <ul class="list">
                     <!-- check if user is login -->
                     <?php
-                    if (!is_user_logged_in()) {
-                        ?>
-                        <li style="display: none;">Usuari anònim</li>
-                        <?php
-                    } else {
+                    if (is_user_logged_in()) {
                         $current_user = wp_get_current_user();
                         ?>
                         <li class="login">

@@ -30,8 +30,8 @@
         <h3>Avís legal</h3>
         <p>XTECBlocs ha estat desenvolupat amb <a href="http://wordpress.org/" target="_blank">WordPress</a>. Articles
             (<a href="feed">RSS</a>) i Comentaris (<a href="comments/feed">RSS</a>).</p>
-            <p class="logogencat">Logo <acronym title="Generalitat de Catalunya"><a
-                href="http://www.gencat.cat/educacio">GENCAT<span></span></a></acronym></p>
+            <p class="logogencat">Logo <abbr title="Generalitat de Catalunya"><a
+                href="http://www.gencat.cat/educacio">GENCAT<span></span></a></abbr></p>
     </div>
 </div>
 <!-- end of sidebar -->

@@ -5,7 +5,7 @@
     <div class="sidecontent">
         <form method="get" action="https://www.google.com/search" target="_blank">
             <input type="hidden" name="as_sitesearch" value="<?php echo esc_attr(DOMAIN_CURRENT_SITE); ?>"/>
-            <input type="text" id="paraulaCerca" name="q" style="width:117px;float:left;"/>
+            <input type="text" id="paraulaCerca" name="q"/>
             <button type="submit" id="botoCerca">Cerca</button>
         </form>
     </div>
@@ -38,7 +38,7 @@
             $tag = htmlspecialchars_decode($cloud['tag'], ENT_QUOTES);
             $url = home_url('/index.php?a=list&desc=' . rawurlencode($tag));
             ?>
-            <li><a style="font-size:<?php echo $cloud['size'];?>px; color:#1E4588;" class="tag_cloud"
+            <li><a style="font-size:<?php echo $cloud['size'];?>px;" class="tag_cloud"
                 href="<?php echo esc_url($url); ?>">
                 <?php echo $cloud['tag'];?>
             </a></li>

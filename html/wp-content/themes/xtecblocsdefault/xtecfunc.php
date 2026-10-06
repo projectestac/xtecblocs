@@ -79,7 +79,7 @@ function xtec_pager($startnum, $total, $urltemplate, $perpage = 20): ?string
     // Show startnum link
     if ((int)$startnum !== 1) {
         $url = preg_replace('/%%/', 1, $urltemplate);
-        $sortida .= 'P&agrave;gina <a href="' . $url . '"  style="text-decoration:none; color:#1E4588;"><<</a>';
+        $sortida .= 'P&agrave;gina <a href="' . $url . '"><<</a>';
     } else {
         $sortida .= 'P&agrave;gina <<';
     }
@@ -99,7 +99,7 @@ function xtec_pager($startnum, $total, $urltemplate, $perpage = 20): ?string
                 && ($curnum < ($startnum + 4 * $perpage)))
             ) {
                 $url = preg_replace('/%%/', $curnum, $urltemplate);
-                $sortida .= '<a href="' . $url . '" style="text-decoration:none; color:#1E4588;">' . $pagenum . '</a>';
+                $sortida .= '<a href="' . $url . '">' . $pagenum . '</a>';
                 $sortida .= ' | ';
             }
         } else {
@@ -109,7 +109,7 @@ function xtec_pager($startnum, $total, $urltemplate, $perpage = 20): ?string
     }
     if (($curnum >= $perpage + 1) && ($startnum < $curnum - $perpage)) {
         $url = preg_replace('/%%/', $curnum - $perpage, $urltemplate);
-        $sortida .= '<a href="' . $url . '" style="text-decoration:none; color:#1E4588;">>></a>';
+        $sortida .= '<a href="' . $url . '">>></a>';
     } else {
         $sortida .= '>>';
     }
