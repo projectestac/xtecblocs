@@ -1,8 +1,7 @@
 <!-- Els meus blocs -->
 <?php
-global $current_user;
 if (is_user_logged_in()) {
-    $blogs = get_blogs_of_user($current_user->ID);
+    $blogs = get_blogs_of_user(get_current_user_id());
     $notHave = false;
     ?>
 
@@ -14,21 +13,18 @@ if (is_user_logged_in()) {
                 <?php
                 if (!empty($blogs)) {
                     foreach ($blogs as $blog) {
-                        $value = 'wp_' . $blog->userblog_id . '_user_level';
-                        $level = (string)$current_user->$value;
-                        switch ($level) {
-                            case '':
-                                $image = 'subscrip';
-                                $text = 'Entra';
-                                break;
-                            case '10':
-                                $image = 'admin';
-                                $text = 'Administra';
-                                break;
-                            default:
-                                $image = 'edit';
-                                $text = 'Escriu';
+                        if (current_user_can_for_site($blog->userblog_id, 'manage_options')) {
+                            $image = 'admin';
+                            $text = 'Administra';
+                        } elseif (current_user_can_for_site($blog->userblog_id, 'edit_posts')) {
+                            $image = 'edit';
+                            $text = 'Escriu';
+                        } else {
+                            $image = 'subscrip';
+                            $text = 'Entra';
                         }
+                        // The administrators must define the descriptors of their blogs, except of the portal
+                        $needsDescriptors = $image === 'admin' && (int)$blog->userblog_id !== 1;
 
                         $number = xtec_descriptors_count_bloc_descriptors($blog->userblog_id);
 
@@ -42,7 +38,7 @@ if (is_user_logged_in()) {
                         }
 
 
-                        if ($number > 0 || $level !== '10') {
+                        if ($number > 0 || !$needsDescriptors) {
                             ?>
                             <li><a href='<?php echo esc_url(get_home_url($blog->userblog_id, '/')); ?>'
                                    target="_blank" title="Entra al
