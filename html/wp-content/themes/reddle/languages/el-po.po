@@ -1,0 +1,299 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress.com - Themes - Reddle\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-12-03T03:57:44+00:00\n"
+"PO-Revision-Date: 2022-08-19 13:24:07+0000\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+
+#: image.php:35
+msgid "Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a>"
+msgstr "Δημοσιεύθηκε στὶς <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> στὸ <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a>"
+
+#: searchform.php:10
+#: searchform.php:11
+#: searchform.php:12
+msgid "Search"
+msgstr "Ἀναζήτηση"
+
+#: search.php:39
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Λυπούμεθα, ἀλλὰ τίποτε δὲν ταιριάζει μὲ τὶς λέξεις ἀναζήτησης. Παρακαλοῦμε ξαναδοκιμάστε μὲ διαφορετικὲς λέξεις-κλειδιά."
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr "Ἀναζήτηση ἀποτελεσμάτων γιά: %s"
+
+#: image.php:51
+msgid "Next &rarr;"
+msgstr "Ἑπόμενο &rarr;"
+
+#: image.php:50
+msgid "&larr; Previous"
+msgstr "&larr; Προηγούμενα"
+
+#: image.php:24
+msgid "Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+msgstr "<span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> δημοσιεύθηκε σὲ διαστάσεις <a href=\"%3$s\" title=\"Link to full-size image\">%4$s Χ %5$s</a> στὴν συλλογὴ <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+
+#: header.php:45
+msgid "Skip to content"
+msgstr "Πηγαίνετε στὸ περιεχόμενο τοῦ ἱστολογίου"
+
+#: header.php:47
+msgid "Main menu"
+msgstr "Κύριο μενού"
+
+#: functions.php:571
+msgid "Page %s"
+msgstr "Σελίδα %s"
+
+#: functions.php:337
+msgid "View all posts by %s"
+msgstr "Δεῖτε ὅλες τὶς καταχωρίσεις τοῦ/τῆς %s"
+
+#: functions.php:335
+msgid "<span class=\"byline\">Posted by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a></span></span>"
+msgstr "<span class=\"byline\">Ἀναρτήθηκε ἀπὸ τὸν/τὴν <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a></span></span>"
+
+#: functions.php:309
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s στὶς %2$s"
+
+#: functions.php:303
+msgid "Your comment is awaiting moderation."
+msgstr "Τὸ σχόλιό σας περιμένει ἔλεγχο γιὰ ἐνδεχόμενες ἀκρότητες."
+
+#: functions.php:288
+msgid "Pingback:"
+msgstr "Αὐτόματη εἰδοποίηση σύνδεσης:"
+
+#: functions.php:260
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Νεώτερα ἄρθρα <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:256
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Παλαιότερα ἄρθρα"
+
+#: functions.php:251
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: functions.php:250
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: functions.php:246
+msgid "Post navigation"
+msgstr "Περιήγηση ἄρθρων"
+
+#: functions.php:219
+msgid "Info"
+msgstr "Πληροφορίες"
+
+#: functions.php:218
+msgid "Topics"
+msgstr "Θέματα"
+
+#: functions.php:217
+msgid "Pages"
+msgstr "Σελίδες"
+
+#: functions.php:196
+msgid "Third Footer Area"
+msgstr "Τρίτη περιοχὴ ὑποσελίδου"
+
+#: functions.php:186
+msgid "Second Footer Area"
+msgstr "Δεύτερη περιοχὴ ὑποσελίδου"
+
+#: functions.php:178
+#: functions.php:188
+#: functions.php:198
+msgid "An optional widget area for your site footer"
+msgstr "Προαιρετικὴ περιοχὴ προσθηκῶν περιεχομένου στὸ ὑποσέλιδο τοῦ ἱστολογίου σας"
+
+#: functions.php:176
+msgid "First Footer Area"
+msgstr "Πρώτη περιοχὴ ὑποσελίδου"
+
+#: functions.php:168
+msgid "An optional second sidebar area"
+msgstr "Μιὰ προαιρετικὴ δεύτερη περιοχὴ στὴν πλαϊνὴ στήλη"
+
+#: functions.php:166
+msgid "Sidebar 2"
+msgstr "Πλαϊνὴ στήλη 2"
+
+#: functions.php:157
+msgid "Sidebar 1"
+msgstr "Πλαϊνὴ στήλη 1"
+
+#: functions.php:76
+msgid "Primary Menu"
+msgstr "Πρωτεῦον μενού"
+
+#: footer.php:26
+msgid "Theme: %1$s by %2$s."
+msgstr "Θέμα: %1$s ἀπὸ τὸν/τὴν %2$s."
+
+#: footer.php:24
+msgid "Proudly powered by %s"
+msgstr "Λειτουργεῖ μὲ τὴν βοήθεια τοῦ %s"
+
+#: footer.php:24
+msgid "A Semantic Personal Publishing Platform"
+msgstr "Μιὰ πλατφόρμα σημασιολογικῶν προσωπικῶν ἐκδόσεων"
+
+#: footer.php:24
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: content-single.php:37
+#: content.php:39
+#: functions.php:127
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Συνέχεια <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-page.php:23
+#: content-single.php:38
+#: content.php:40
+#: image.php:71
+msgid "Pages:"
+msgstr "Σελίδες:"
+
+#: content-image.php:91
+#: content-page.php:26
+#: content-single.php:76
+#: content.php:78
+#: functions.php:288
+#: functions.php:311
+#: image.php:44
+msgid "Edit"
+msgstr "Ἐπεξεργασία"
+
+#: content-image.php:77
+#: content-single.php:62
+#: content.php:64
+msgid "Tagged %1$s"
+msgstr "Σημειώθηκε ὡς %1$s"
+
+#: content-image.php:67
+#: content-single.php:56
+#: content.php:58
+msgid "Posted in %1$s"
+msgstr "Ἀναρτήθηκε στὸ '%1$s'"
+
+#. translators: used between list items, there is a space after the comma
+#: content-image.php:63
+#: content-image.php:73
+#: content-single.php:44
+#: content-single.php:47
+#: content.php:46
+#: content.php:49
+msgid ", "
+msgstr ","
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "%"
+msgstr "%"
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "0"
+msgstr "0"
+
+#: content-image.php:23
+#: content-image.php:31
+#: content-image.php:82
+#: content-single.php:67
+#: content.php:13
+#: content.php:69
+msgid "Permalink to %s"
+msgstr "Μόνιμος σύνδεσμος πρὸς %s"
+
+#: content-404.php:14
+msgid "It looks like nothing was found at this location. Perhaps it <em>was</em> there but now it&rsquo;s gone. Maybe try one of the links below or a search?"
+msgstr "Σ' αὐτὴν τὴν τοποθεσία δὲν βρέθηκε τίποτε. Ἴσως <em>ὑπῆρχε</em> κάτι προηγουμένως, ἀλλὰ τώρα ἔχει μετακινηθεῖ. Γιατὶ δὲν δοκιμάζετε μιὰν ἀναζήτηση ἢ ἔστω ἕναν ἀπὸ τοὺς κατωτέρω συνδέσμους;"
+
+#: content-404.php:10
+msgid "Hi there. You seem to be lost."
+msgstr "Μᾶλλον ἔχετε χαθεῖ..."
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "Ἡ ὑποβολὴ σχολίων ἔχει κλείσει."
+
+#: comments.php:32
+#: comments.php:52
+msgid "Newer Comments &rarr;"
+msgstr "Νεότερα σχόλια &rarr;"
+
+#: comments.php:31
+#: comments.php:51
+msgid "&larr; Older Comments"
+msgstr "&larr; Παλαιότερα σχόλια"
+
+#: comments.php:30
+#: comments.php:50
+msgid "Comment navigation"
+msgstr "Πλοήγηση στὰ σχόλια"
+
+#: archive.php:106
+#: index.php:47
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Μᾶλλον δὲν μποροῦμε νὰ βροῦμε αὐτὸ ποὺ ψάχνετε. Ἴσως βοηθήσει μιὰ ἀναζήτηση."
+
+#: archive.php:102
+#: index.php:43
+#: search.php:35
+msgid "Nothing Found"
+msgstr "Οὑδὲν εὑρέθη!"
+
+#: archive.php:67
+#: functions.php:216
+msgid "Archives"
+msgstr "Ἀρχεῖα"
+
+#: archive.php:64
+#: inc/wpcom-colors.php:53
+msgid "Links"
+msgstr "Σύνδεσμοι"
+
+#: archive.php:58
+msgid "Videos"
+msgstr "Βίντεο"
+
+#: archive.php:55
+msgid "Images"
+msgstr "Εἰκόνες"
+
+#: archive.php:49
+msgid "Year: %s"
+msgstr "Ἔτος: %s"
+
+#: archive.php:46
+msgid "Month: %s"
+msgstr "Μῆνας: %s"
+
+#: archive.php:43
+msgid "Day: %s"
+msgstr "Ἡμέρα: %s"
+
+#: archive.php:35
+msgid "Author: %s"
+msgstr "Συγγραφέας: %s"

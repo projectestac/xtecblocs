@@ -1,0 +1,319 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress.com - Themes - Reddle\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-06-14T05:09:00+00:00\n"
+"PO-Revision-Date: 2024-06-13 09:12:53+0000\n"
+"Language: is\n"
+"Plural-Forms: nplurals=2; plural=(n % 100 != 1 && n % 100 != 21 && n % 100 != 31 && n % 100 != 41 && n % 100 != 51 && n % 100 != 61 && n % 100 != 71 && n % 100 != 81 && n % 100 != 91);\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+
+#. Description of the theme
+msgid "Everything about Reddle's minimal design elegantly adapts to how you want to use your blog and what you want to use it for. Want to use your blog for a simple one-column link blog? A two-column business site with a custom header and no posts? Reddle can do that too &mdash; and look good doing it too."
+msgstr "Allt við minimalíska hönnun Reddle aðlagar sig á smekkvísan hátt að því hvernig þú vilt nota bloggið þitt og í hvað. Viltu nota bloggið fyrir tenglasafn í einum dálk? Sem tveggja-dálka vefur fyrirtækis með sérsniðnum haus og engar færslur? Reddle getur gert það líka &mdash; og lítur vel út á meðan."
+
+#: searchform.php:10
+#: searchform.php:11
+#: searchform.php:12
+msgid "Search"
+msgstr "Leita"
+
+#: search.php:39
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Því miður, ekkert fannst sem passaði við leitarskilyrðin. Vinsamlega reyndu aftur með öðrum leitarorðum."
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr "Leitarniðurstöður fyrir: %s"
+
+#: image.php:51
+msgid "Next &rarr;"
+msgstr "Næsta &rarr;"
+
+#: image.php:50
+msgid "&larr; Previous"
+msgstr "&larr; Fyrri"
+
+#: image.php:24
+msgid "Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+msgstr "Birt <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> kl <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> í <a href=\"%6$s\" title=\"Aftur í %7$s\" rel=\"gallery\">%8$s</a>"
+
+#: header.php:45
+msgid "Skip to content"
+msgstr "Hoppa yfir í efni"
+
+#: header.php:47
+msgid "Main menu"
+msgstr "Aðalvalmynd\t"
+
+#: functions.php:570
+msgid "Page %s"
+msgstr "Síða %s"
+
+#: functions.php:337
+msgid "View all posts by %s"
+msgstr "Skoða allar færslur eftir %s"
+
+#: functions.php:335
+msgid "<span class=\"byline\">Posted by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a></span></span>"
+msgstr "<span class=\"byline\">Birt af <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a></span></span>"
+
+#: functions.php:309
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s kl %2$s"
+
+#: functions.php:303
+msgid "Your comment is awaiting moderation."
+msgstr "Ummæli þín bíða samþykkis."
+
+#: functions.php:288
+msgid "Pingback:"
+msgstr "Bakvísun:"
+
+#: functions.php:260
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Nýrri færslur <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:256
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Eldri færslur"
+
+#: functions.php:251
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: functions.php:250
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: functions.php:246
+msgid "Post navigation"
+msgstr "Færslu leiðarstýring"
+
+#: functions.php:219
+msgid "Info"
+msgstr "Upplýsingar"
+
+#: functions.php:218
+msgid "Topics"
+msgstr "Umræður"
+
+#: functions.php:217
+msgid "Pages"
+msgstr "Síður"
+
+#: functions.php:196
+msgid "Third Footer Area"
+msgstr "Þriðja svæði í fæti"
+
+#: functions.php:186
+msgid "Second Footer Area"
+msgstr "Annað svæði í fæti"
+
+#: functions.php:178
+#: functions.php:188
+#: functions.php:198
+msgid "An optional widget area for your site footer"
+msgstr "Valkvæmur aukahlutur í síðufæti"
+
+#: functions.php:176
+msgid "First Footer Area"
+msgstr "Fyrsta svæði í fæti"
+
+#: functions.php:168
+msgid "An optional second sidebar area"
+msgstr "Annað valkvæmt síðuhlutasvæði"
+
+#: functions.php:166
+msgid "Sidebar 2"
+msgstr "Hliðarslá 2"
+
+#: functions.php:157
+msgid "Sidebar 1"
+msgstr "Hliðarslá 1"
+
+#: functions.php:76
+msgid "Primary Menu"
+msgstr "Aðalvalmynd"
+
+#: footer.php:26
+msgid "Theme: %1$s by %2$s."
+msgstr "Þema: %1$s eftir %2$s."
+
+#: footer.php:24
+msgid "Proudly powered by %s"
+msgstr "Drifið áfram af %s"
+
+#: footer.php:24
+msgid "A Semantic Personal Publishing Platform"
+msgstr "Merkingarfræðilegt útgáfukerfi"
+
+#: footer.php:24
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: content-single.php:37
+#: content.php:39
+#: functions.php:127
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Lesa meira <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-page.php:23
+#: content-single.php:38
+#: content.php:40
+#: image.php:71
+msgid "Pages:"
+msgstr "Síður:"
+
+#: content-image.php:91
+#: content-page.php:26
+#: content-single.php:76
+#: content.php:78
+#: functions.php:288
+#: functions.php:311
+#: image.php:44
+msgid "Edit"
+msgstr "Breyta"
+
+#: content-image.php:77
+#: content-single.php:62
+#: content.php:64
+msgid "Tagged %1$s"
+msgstr "Merkt %1$s"
+
+#: content-image.php:67
+#: content-single.php:56
+#: content.php:58
+msgid "Posted in %1$s"
+msgstr "Birt í %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: content-image.php:63
+#: content-image.php:73
+#: content-single.php:44
+#: content-single.php:47
+#: content.php:46
+#: content.php:49
+msgid ", "
+msgstr ", "
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "%"
+msgstr "%"
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "0"
+msgstr "0"
+
+#: content-image.php:23
+#: content-image.php:31
+#: content-image.php:82
+#: content-single.php:67
+#: content.php:13
+#: content.php:69
+msgid "Permalink to %s"
+msgstr "Vefslóð á %s"
+
+#: content-404.php:14
+msgid "It looks like nothing was found at this location. Perhaps it <em>was</em> there but now it&rsquo;s gone. Maybe try one of the links below or a search?"
+msgstr "Svo virðist sem ekkert hafi fundist á þessari slóð. Kannski <em>var</em> það hér en er nú horfið. Má bjóða þér að reyna einhverja af tenglunum hér að neðan eða kannski leit?"
+
+#: content-404.php:10
+msgid "Hi there. You seem to be lost."
+msgstr "Hæ þarna. Þú lítur út fyrir að vera týnd(ur)."
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "Ummæli eru ekki leyfð."
+
+#: comments.php:32
+#: comments.php:52
+msgid "Newer Comments &rarr;"
+msgstr "Nýrri athugasemdir &raquo;"
+
+#: comments.php:31
+#: comments.php:51
+msgid "&larr; Older Comments"
+msgstr "&laquo; Eldri athugasemdir"
+
+#: comments.php:30
+#: comments.php:50
+msgid "Comment navigation"
+msgstr "Leiðastýring athugasemda"
+
+#: comments.php:23
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s hugrenning um &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s hugrenningar um  &ldquo;%2$s&rdquo;"
+
+#: archive.php:106
+#: index.php:47
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Það lítur út fyrir að við finnum ekki það sem þú sækist eftir. Hugsanlega hjálpar til að nota leitina."
+
+#: archive.php:102
+#: index.php:43
+#: search.php:35
+msgid "Nothing Found"
+msgstr "Ekkert fannst"
+
+#: archive.php:67
+#: functions.php:216
+msgid "Archives"
+msgstr "Sarpur"
+
+#: archive.php:64
+#: inc/wpcom-colors.php:53
+msgid "Links"
+msgstr "Tenglar"
+
+#: archive.php:61
+msgid "Quotes"
+msgstr "Tilvitnanir"
+
+#: archive.php:58
+msgid "Videos"
+msgstr "Myndbönd"
+
+#: archive.php:55
+msgid "Images"
+msgstr "Myndir"
+
+#: archive.php:52
+msgid "Asides"
+msgstr "Innskot"
+
+#: archive.php:49
+msgid "Year: %s"
+msgstr "Ár: %s"
+
+#: archive.php:46
+msgid "Month: %s"
+msgstr "Mánuður: %s"
+
+#: archive.php:43
+msgid "Day: %s"
+msgstr "Dagur: %s"
+
+#: archive.php:35
+msgid "Author: %s"
+msgstr "Höfundur: %s"
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "1"
+msgstr "1"

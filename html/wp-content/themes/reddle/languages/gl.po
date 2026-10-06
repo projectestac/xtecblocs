@@ -1,0 +1,284 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress.com - Themes - Reddle\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-04-28T01:37:43+00:00\n"
+"PO-Revision-Date: 2016-09-15 14:02:27+0000\n"
+"Language: gl_ES\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.2.0-alpha\n"
+
+#: searchform.php:10
+#: searchform.php:11
+#: searchform.php:12
+msgid "Search"
+msgstr "Procura"
+
+#: search.php:39
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Sentímolo, non hai nada que coincida cos termos de busca. Podes tentar de novo con palabras diferentes."
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr "Resultados da procura de: %s"
+
+#: image.php:40
+msgid "Next &rarr;"
+msgstr "Seguinte &rarr;"
+
+#: image.php:39
+msgid "&larr; Previous"
+msgstr "&larr; Anterior"
+
+#: header.php:45
+msgid "Skip to content"
+msgstr "Saltar ao contido"
+
+#: header.php:47
+msgid "Main menu"
+msgstr "Menú principal"
+
+#: functions.php:568
+msgid "Page %s"
+msgstr "Páxina %s"
+
+#: functions.php:337
+msgid "View all posts by %s"
+msgstr "Ver todos os artigos de %s"
+
+#: functions.php:309
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s ás %2$s"
+
+#: functions.php:303
+msgid "Your comment is awaiting moderation."
+msgstr "O teu comentario está á espera de moderación."
+
+#: functions.php:288
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: functions.php:260
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Artigos máis recentes <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:256
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Artigos anteriores"
+
+#: functions.php:251
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: functions.php:250
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: functions.php:246
+msgid "Post navigation"
+msgstr "Navegación de artigos"
+
+#: functions.php:219
+msgid "Info"
+msgstr "Información"
+
+#: functions.php:218
+msgid "Topics"
+msgstr "Asuntos"
+
+#: functions.php:217
+msgid "Pages"
+msgstr "Páxinas"
+
+#: functions.php:186
+msgid "Second Footer Area"
+msgstr "Segunda área do rodapé"
+
+#: functions.php:178
+#: functions.php:188
+#: functions.php:198
+msgid "An optional widget area for your site footer"
+msgstr "Un área de widget opcional para o rodapé"
+
+#: functions.php:176
+msgid "First Footer Area"
+msgstr "Primeira área do rodapé"
+
+#: functions.php:168
+msgid "An optional second sidebar area"
+msgstr "Unha segunda barra lateral optativa"
+
+#: functions.php:166
+msgid "Sidebar 2"
+msgstr "Barra lateral 2"
+
+#: functions.php:157
+msgid "Sidebar 1"
+msgstr "Barra lateral 1"
+
+#: functions.php:76
+msgid "Primary Menu"
+msgstr "Menú primario"
+
+#: footer.php:26
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s por %2$s."
+
+#: footer.php:24
+msgid "Proudly powered by %s"
+msgstr "Fornecido con orgullo por %s"
+
+#: footer.php:24
+msgid "http://wordpress.org/"
+msgstr "http://gl.wordpress.org/"
+
+#: content-single.php:37
+#: content.php:39
+#: functions.php:127
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Seguir lendo <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-page.php:23
+#: content-single.php:38
+#: content.php:40
+#: image.php:59
+msgid "Pages:"
+msgstr "Páxinas:"
+
+#: content-image.php:84
+#: content-page.php:26
+#: content-single.php:69
+#: content.php:71
+#: functions.php:288
+#: functions.php:311
+#: image.php:34
+msgid "Edit"
+msgstr "Editar"
+
+#: content-image.php:77
+#: content-single.php:62
+#: content.php:64
+msgid "Tagged %1$s"
+msgstr "Etiquetado %1$s"
+
+#: content-image.php:67
+#: content-single.php:56
+#: content.php:58
+msgid "Posted in %1$s"
+msgstr "Publicado en %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: content-image.php:63
+#: content-image.php:73
+#: content-single.php:44
+#: content-single.php:47
+#: content.php:46
+#: content.php:49
+msgid ", "
+msgstr ","
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "%"
+msgstr "%"
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "0"
+msgstr "0"
+
+#: content-image.php:23
+#: content-image.php:31
+#: content-image.php:82
+#: content-single.php:67
+#: content.php:13
+#: content.php:69
+msgid "Permalink to %s"
+msgstr "Ligazón permanente a %s"
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "Os comentarios están pechados."
+
+#: comments.php:32
+#: comments.php:52
+msgid "Newer Comments &rarr;"
+msgstr "Comentarios máis recentes &rarr;"
+
+#: comments.php:31
+#: comments.php:51
+msgid "&larr; Older Comments"
+msgstr "&larr; Comentarios máis antigos"
+
+#: comments.php:30
+#: comments.php:50
+msgid "Comment navigation"
+msgstr "Navegación de comentarios"
+
+#: archive.php:106
+#: index.php:47
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Parece que non atopamos o que estás a buscar. Quizais unha procura axude. "
+
+#: archive.php:102
+#: index.php:43
+#: search.php:35
+msgid "Nothing Found"
+msgstr "Non se atopou nada"
+
+#: archive.php:67
+#: functions.php:216
+msgid "Archives"
+msgstr "Arquivo"
+
+#: archive.php:64
+msgid "Links"
+msgstr "Ligazóns"
+
+#: archive.php:61
+msgid "Quotes"
+msgstr "Citas"
+
+#: archive.php:58
+msgid "Videos"
+msgstr "Videos"
+
+#: archive.php:55
+msgid "Images"
+msgstr "Imaxes"
+
+#: archive.php:52
+msgid "Asides"
+msgstr "Minientradas"
+
+#: archive.php:49
+msgid "Year: %s"
+msgstr "Ano: %s"
+
+#: archive.php:46
+msgid "Month: %s"
+msgstr "Mes: %s"
+
+#: archive.php:43
+msgid "Day: %s"
+msgstr "Día: %s"
+
+#: archive.php:35
+msgid "Author: %s"
+msgstr "Autor/a: %s"
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "1"
+msgstr "1"

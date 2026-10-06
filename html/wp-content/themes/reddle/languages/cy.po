@@ -1,0 +1,283 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress.com - Themes - Reddle\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-04-28T01:37:43+00:00\n"
+"PO-Revision-Date: 2016-12-06 11:22:44+0000\n"
+"Language: cy_GB\n"
+"Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n==2) ? 1 : (n != 8 && n != 11) ? 2 : 3;\n"
+"X-Generator: GlotPress/2.3.0-alpha\n"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/reddle/style.css
+msgid "Everything about Reddle's minimal design elegantly adapts to how you want to use your blog and what you want to use it for. Want to use your blog for a simple one-column link blog? A two-column business site with a custom header and no posts? Reddle can do that too &mdash; and look good doing it too."
+msgstr "Mae cynllun syml Reddle yn addasu'n ddestlus i'r ffordd rydych chi am ddefnyddio eich blog ac i ba ddiben. Ydych chi am ddefnyddio eich blog i greu blog cysylltu un golofn? Neu wefan busnes dwy golofn gyda phennawd cyfaddas heb gofnodion? Gall Reddle wneud hynny hefyd  &mdash; ac edrych yn dda wrth wneud hynny."
+
+#: searchform.php:10
+#: searchform.php:11
+#: searchform.php:12
+msgid "Search"
+msgstr "Chwilio"
+
+#: search.php:39
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Ymddiheuriadau does dim yn cydweddu a'ch chwilio. Ceisiwch eto gydag allweddeiriau gwahanol"
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr "Canlyniadau Chwilio: %s"
+
+#: image.php:40
+msgid "Next &rarr;"
+msgstr "Nesaf &rarr;"
+
+#: image.php:39
+msgid "&larr; Previous"
+msgstr "&larr; Blaenorol"
+
+#: header.php:45
+msgid "Skip to content"
+msgstr "Neidio i'r cynnwys"
+
+#: header.php:47
+msgid "Main menu"
+msgstr "Prif ddewislen"
+
+#: functions.php:568
+msgid "Page %s"
+msgstr "Tudalen %s"
+
+#: functions.php:337
+msgid "View all posts by %s"
+msgstr "Gweld pob cofnod gan %s"
+
+#: functions.php:335
+msgid "<span class=\"byline\">Posted by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a></span></span>"
+msgstr "<span class=\"byline\">Cofnodwyd gan <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a></span></span>"
+
+#: functions.php:309
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s am %2$s"
+
+#: functions.php:303
+msgid "Your comment is awaiting moderation."
+msgstr "Mae eich sylw'n disgwyl ei gymedroli."
+
+#: functions.php:288
+msgid "Pingback:"
+msgstr "Hysbysiad Cyfeirio:"
+
+#: functions.php:260
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Cofnodion mwy diweddar <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:256
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Cofnodion hŷn"
+
+#: functions.php:251
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: functions.php:250
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: functions.php:246
+msgid "Post navigation"
+msgstr "Llywio cofnod"
+
+#: functions.php:219
+msgid "Info"
+msgstr "Gwybodaeth"
+
+#: functions.php:218
+msgid "Topics"
+msgstr "Pynciau"
+
+#: functions.php:217
+msgid "Pages"
+msgstr "Tudalennau"
+
+#: functions.php:178
+#: functions.php:188
+#: functions.php:198
+msgid "An optional widget area for your site footer"
+msgstr "Maes teclyn ychwanegol ar gyfer troedyn eich gwefan"
+
+#: functions.php:76
+msgid "Primary Menu"
+msgstr "Dewislen Cynradd"
+
+#: footer.php:26
+msgid "Theme: %1$s by %2$s."
+msgstr "Thema: %1$s gan %2$s."
+
+#: footer.php:24
+msgid "Proudly powered by %s"
+msgstr "Yn falch o gael ei bweru gan %s"
+
+#: footer.php:24
+msgid "A Semantic Personal Publishing Platform"
+msgstr "Platfform Cyhoeddi Personol Semantig"
+
+#: footer.php:24
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: content-single.php:37
+#: content.php:39
+#: functions.php:127
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Parhau i ddarllen <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-page.php:23
+#: content-single.php:38
+#: content.php:40
+#: image.php:59
+msgid "Pages:"
+msgstr "Tudalennau:"
+
+#: content-image.php:84
+#: content-page.php:26
+#: content-single.php:69
+#: content.php:71
+#: functions.php:288
+#: functions.php:311
+#: image.php:34
+msgid "Edit"
+msgstr "Golygu"
+
+#: content-image.php:77
+#: content-single.php:62
+#: content.php:64
+msgid "Tagged %1$s"
+msgstr "Tagiwyd %1$s"
+
+#: content-image.php:67
+#: content-single.php:56
+#: content.php:58
+msgid "Posted in %1$s"
+msgstr "Cofnodwyd yn %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: content-image.php:63
+#: content-image.php:73
+#: content-single.php:44
+#: content-single.php:47
+#: content.php:46
+#: content.php:49
+msgid ", "
+msgstr ", "
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "%"
+msgstr "%"
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "0"
+msgstr "0"
+
+#: content-image.php:23
+#: content-image.php:31
+#: content-image.php:82
+#: content-single.php:67
+#: content.php:13
+#: content.php:69
+msgid "Permalink to %s"
+msgstr "Dolen barhaol i %s"
+
+#: content-404.php:14
+msgid "It looks like nothing was found at this location. Perhaps it <em>was</em> there but now it&rsquo;s gone. Maybe try one of the links below or a search?"
+msgstr "Mae'n edrych fel bod dim i'w gael yn fan hyn. Efallai  <em>roedd</em> yno ond nawr mae wedi mynd. Beth am ddilyn un o'r dolenni isod neu chwilio?"
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "Sylwadau ar gau."
+
+#: comments.php:32
+#: comments.php:52
+msgid "Newer Comments &rarr;"
+msgstr "Cofnodion Diweddarach &raquo;"
+
+#: comments.php:31
+#: comments.php:51
+msgid "&larr; Older Comments"
+msgstr "&laquo; Cofnodion Hŷn"
+
+#: comments.php:30
+#: comments.php:50
+msgid "Comment navigation"
+msgstr "Llywio Sylwadau"
+
+#: comments.php:23
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Un sylw ar &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s sylw ar &ldquo;%2$s&rdquo;"
+msgstr[2] "%1$s sylw ar &ldquo;%2$s&rdquo;"
+msgstr[3] "%1$s sylw ar &ldquo;%2$s&rdquo;"
+
+#: archive.php:106
+#: index.php:47
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Mae'n ymddangos nad ydych yn gallu canfod yr hyn rydych yn chwilio amdano. Efallai y gall chwilio fod o gymorth."
+
+#: archive.php:102
+#: index.php:43
+#: search.php:35
+msgid "Nothing Found"
+msgstr "Heb Ganfod Dim"
+
+#: archive.php:67
+#: functions.php:216
+msgid "Archives"
+msgstr "Archif"
+
+#: archive.php:64
+msgid "Links"
+msgstr "Dolenni"
+
+#: archive.php:61
+msgid "Quotes"
+msgstr "Dyfyniadau"
+
+#: archive.php:58
+msgid "Videos"
+msgstr "Fideo"
+
+#: archive.php:55
+msgid "Images"
+msgstr "Delweddau"
+
+#: archive.php:52
+msgid "Asides"
+msgstr "Sylwadau"
+
+#: archive.php:49
+msgid "Year: %s"
+msgstr "Blwyddyn: %s"
+
+#: archive.php:46
+msgid "Month: %s"
+msgstr "Mis: %s"
+
+#: archive.php:43
+msgid "Day: %s"
+msgstr "Diwrnod: %s"
+
+#: archive.php:35
+msgid "Author: %s"
+msgstr "Awdur: %s"

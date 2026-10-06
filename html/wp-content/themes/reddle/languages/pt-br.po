@@ -1,0 +1,332 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress.com - Themes - Reddle\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-07-01T01:58:35+00:00\n"
+"PO-Revision-Date: 2026-06-30 10:53:20+0000\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+
+#: image.php:35
+msgid "Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a>"
+msgstr "Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a>"
+
+#: inc/wpcom-colors.php:32
+msgid "Navigation and Footer Sidebars"
+msgstr "Barras Laterais de Navegação e Rodapé"
+
+#: inc/wpcom-colors.php:62
+msgid "Navigation and Link Hover"
+msgstr "Navegação e Link ao Mover"
+
+#. Description of the theme
+#: style.css
+msgid "Everything about Reddle's minimal design elegantly adapts to how you want to use your blog and what you want to use it for. Want to use your blog for a simple one-column link blog? A two-column business site with a custom header and no posts? Reddle can do that too &mdash; and look good doing it too."
+msgstr "O tema minimalista Reddle se adapta elegantemente a todos os tipos de blog. Quer usar um layout simples com coluna única para um diário? Um site de negócios com duas colunas, nenhum post, e cabeçalho personalizado? Reddle pode fazer isso e muito mais. "
+
+#: searchform.php:10
+#: searchform.php:11
+#: searchform.php:12
+msgid "Search"
+msgstr "Pesquisa"
+
+#: search.php:39
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Nada foi encontrado com os termos da sua pesquisa. Tente novamente com algumas palavras-chaves diferentes."
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr "Resultados da pesquisa por: %s"
+
+#: image.php:51
+msgid "Next &rarr;"
+msgstr "Próximo &rarr;"
+
+#: image.php:50
+msgid "&larr; Previous"
+msgstr "&larr; Anterior"
+
+#: image.php:24
+msgid "Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+msgstr "Publicado <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> em <a href=\"%3$s\" title=\"Link para a imagem em tamanho original\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Voltar para %7$s\" rel=\"gallery\">%8$s</a>"
+
+#: header.php:45
+msgid "Skip to content"
+msgstr "Pular para o conteúdo"
+
+#: header.php:47
+msgid "Main menu"
+msgstr "Menu principal"
+
+#: functions.php:571
+msgid "Page %s"
+msgstr "Página %s"
+
+#: functions.php:335
+msgid "<span class=\"byline\">Posted by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a></span></span>"
+msgstr "<span class=\"byline\">Publicado por <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a></span></span>"
+
+#: functions.php:337
+msgid "View all posts by %s"
+msgstr "Ver todos os artigos de %s"
+
+#: functions.php:309
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s às %2$s"
+
+#: functions.php:303
+msgid "Your comment is awaiting moderation."
+msgstr "O seu comentário aguarda moderação."
+
+#: functions.php:288
+msgid "Pingback:"
+msgstr "Pingback: "
+
+#: functions.php:260
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Posts Recentes <span class=\"meta-nav\"> → </span>"
+
+#: functions.php:256
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\"> ← </span> Posts Anteriores"
+
+#: functions.php:251
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: functions.php:250
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: functions.php:246
+msgid "Post navigation"
+msgstr "Navegação de Posts"
+
+#: functions.php:219
+msgid "Info"
+msgstr "Info"
+
+#: functions.php:218
+msgid "Topics"
+msgstr "Tópicos"
+
+#: functions.php:217
+msgid "Pages"
+msgstr "Páginas"
+
+#: functions.php:178
+#: functions.php:188
+#: functions.php:198
+msgid "An optional widget area for your site footer"
+msgstr "Uma área de widget opcional para rodapé do seu site"
+
+#: functions.php:186
+msgid "Second Footer Area"
+msgstr "Segunda Área do Rodapé"
+
+#: functions.php:196
+msgid "Third Footer Area"
+msgstr "Área do Terceiro Rodapé"
+
+#: functions.php:168
+msgid "An optional second sidebar area"
+msgstr "Uma segunda área de barra lateral opcional"
+
+#: functions.php:176
+msgid "First Footer Area"
+msgstr "Área do Primeiro Rodapé"
+
+#: functions.php:157
+msgid "Sidebar 1"
+msgstr "Barra Lateral 1"
+
+#: functions.php:166
+msgid "Sidebar 2"
+msgstr "Barra lateral 2"
+
+#: functions.php:76
+msgid "Primary Menu"
+msgstr "Menu Principal"
+
+#: footer.php:26
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s por %2$s. "
+
+#: footer.php:24
+msgid "Proudly powered by %s"
+msgstr "Orgulhosamente mantido com %s"
+
+#: footer.php:24
+msgid "A Semantic Personal Publishing Platform"
+msgstr "Plataforma de publicação pessoal semântica"
+
+#: footer.php:24
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: content-single.php:37
+#: content.php:39
+#: functions.php:127
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continuar lendo <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-page.php:23
+#: content-single.php:38
+#: content.php:40
+#: image.php:71
+msgid "Pages:"
+msgstr "Páginas"
+
+#: content-image.php:91
+#: content-page.php:26
+#: content-single.php:76
+#: content.php:78
+#: functions.php:288
+#: functions.php:311
+#: image.php:44
+msgid "Edit"
+msgstr "Editar"
+
+#: content-image.php:77
+#: content-single.php:62
+#: content.php:64
+msgid "Tagged %1$s"
+msgstr "Marcado %1$s"
+
+#: content-image.php:67
+#: content-single.php:56
+#: content.php:58
+msgid "Posted in %1$s"
+msgstr "Postado em %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: content-image.php:63
+#: content-image.php:73
+#: content-single.php:44
+#: content-single.php:47
+#: content.php:46
+#: content.php:49
+msgid ", "
+msgstr ", "
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "%"
+msgstr "%"
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "0"
+msgstr "0"
+
+#: content-404.php:10
+msgid "Hi there. You seem to be lost."
+msgstr "Oi! Você parece estar perdido."
+
+#: content-404.php:14
+msgid "It looks like nothing was found at this location. Perhaps it <em>was</em> there but now it&rsquo;s gone. Maybe try one of the links below or a search?"
+msgstr "Parece que nada foi encontrado neste local. Talvez <em>estava</em> lá, mas agora se foi. Talvez tentar um dos links abaixo ou pesquisar?"
+
+#: content-image.php:23
+#: content-image.php:31
+#: content-image.php:82
+#: content-single.php:67
+#: content.php:13
+#: content.php:69
+msgid "Permalink to %s"
+msgstr "Ligação permanente para %s"
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "Os comentários estão desativados."
+
+#: comments.php:32
+#: comments.php:52
+msgid "Newer Comments &rarr;"
+msgstr "Comentários mais recentes &rarr;"
+
+#: comments.php:31
+#: comments.php:51
+msgid "&larr; Older Comments"
+msgstr "&larr; Comentários mais antigos"
+
+#: comments.php:30
+#: comments.php:50
+msgid "Comment navigation"
+msgstr "Navegação de Comentários"
+
+#: comments.php:23
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Um pensamento sobre &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s pensamentos sobre &ldquo;%2$s&rdquo;"
+
+#: archive.php:106
+#: index.php:47
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Parece que não podemos encontrar o que você está procurando. Talvez pesquisar pode ajudar."
+
+#: archive.php:102
+#: index.php:43
+#: search.php:35
+msgid "Nothing Found"
+msgstr "Nada Encontrado"
+
+#: archive.php:67
+#: functions.php:216
+msgid "Archives"
+msgstr "Arquivos"
+
+#: archive.php:64
+#: inc/wpcom-colors.php:53
+msgid "Links"
+msgstr "Links"
+
+#: archive.php:61
+msgid "Quotes"
+msgstr "Citações"
+
+#: archive.php:58
+msgid "Videos"
+msgstr "Vídeos"
+
+#: archive.php:55
+msgid "Images"
+msgstr "Imagens"
+
+#: archive.php:52
+msgid "Asides"
+msgstr "Notas"
+
+#: archive.php:49
+msgid "Year: %s"
+msgstr "Ano: %s"
+
+#: archive.php:46
+msgid "Month: %s"
+msgstr "Mês: %s"
+
+#: archive.php:43
+msgid "Day: %s"
+msgstr "Dia: %s"
+
+#: archive.php:35
+msgid "Author: %s"
+msgstr "Autor: %s"
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "1"
+msgstr "1"

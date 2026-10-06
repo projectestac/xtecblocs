@@ -1,0 +1,308 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress.com - Themes - Reddle\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-04-28T01:37:43+00:00\n"
+"PO-Revision-Date: 2020-04-14 18:44:05+0000\n"
+"Language: ko_KR\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+
+#: inc/wpcom-colors.php:32
+msgid "Navigation and Footer Sidebars"
+msgstr "탐색 및 푸터 사이드바"
+
+#: inc/wpcom-colors.php:62
+msgid "Navigation and Link Hover"
+msgstr "탐색 및 링크 마우스 오버"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/reddle/style.css
+msgid "Everything about Reddle's minimal design elegantly adapts to how you want to use your blog and what you want to use it for. Want to use your blog for a simple one-column link blog? A two-column business site with a custom header and no posts? Reddle can do that too &mdash; and look good doing it too."
+msgstr "Reddle의 미니멀한 디자인의 모든 요소는 블로그 사용 방식과 용도에 맞게 우아하게 적응합니다. 간단한 1열 링크 블로그로 활용하려고 하세요? 사용자 정의 헤더만 있고 글이 없는 2열 비즈니스 사이트인가요? Reddle로 모두 가능합니다. 그리고 보기도 좋습니다."
+
+#: searchform.php:10
+#: searchform.php:11
+#: searchform.php:12
+msgid "Search"
+msgstr "검색"
+
+#: search.php:39
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "죄송합니다. 검색어와 일치하는 결과가 없습니다. 다른 키워드로 다시 시도해보세요."
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr "검색 결과: %s"
+
+#: image.php:51
+msgid "Next &rarr;"
+msgstr "다음 &rarr;"
+
+#: image.php:50
+msgid "&larr; Previous"
+msgstr "&larr; 이전"
+
+#: header.php:45
+msgid "Skip to content"
+msgstr "컨텐츠로 건너뛰기"
+
+#: header.php:47
+msgid "Main menu"
+msgstr "메인 메뉴"
+
+#: functions.php:570
+msgid "Page %s"
+msgstr "페이지 %s"
+
+#: functions.php:337
+msgid "View all posts by %s"
+msgstr "%s의 모든 글 보기"
+
+#: functions.php:309
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s %2$s"
+
+#: functions.php:303
+msgid "Your comment is awaiting moderation."
+msgstr "입력한 댓글이 검토를 기다리고 있습니다."
+
+#: functions.php:288
+msgid "Pingback:"
+msgstr "핑백:"
+
+#: functions.php:260
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "최신 글 <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:256
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> 예전 글"
+
+#: functions.php:251
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: functions.php:250
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: functions.php:246
+msgid "Post navigation"
+msgstr "글 네비게이션"
+
+#: functions.php:219
+msgid "Info"
+msgstr "정보"
+
+#: functions.php:218
+msgid "Topics"
+msgstr "토픽"
+
+#: functions.php:217
+msgid "Pages"
+msgstr "페이지"
+
+#: functions.php:178
+#: functions.php:188
+#: functions.php:198
+msgid "An optional widget area for your site footer"
+msgstr "당신의 사이트 푸터를 위한 추가적인 위젯 영역"
+
+#: functions.php:186
+msgid "Second Footer Area"
+msgstr "두 번째 푸터 영역"
+
+#: functions.php:196
+msgid "Third Footer Area"
+msgstr "세 번째 푸터 영역"
+
+#: functions.php:168
+msgid "An optional second sidebar area"
+msgstr "선택적인 두 번째 사이드바 영역"
+
+#: functions.php:176
+msgid "First Footer Area"
+msgstr "첫 번째 푸터 영역"
+
+#: functions.php:157
+msgid "Sidebar 1"
+msgstr "사이드바 1"
+
+#: functions.php:166
+msgid "Sidebar 2"
+msgstr "사이드바 2"
+
+#: functions.php:76
+msgid "Primary Menu"
+msgstr "기본 메뉴"
+
+#: footer.php:26
+msgid "Theme: %1$s by %2$s."
+msgstr "테마: %1$s(%2$s 제작)."
+
+#: footer.php:24
+msgid "Proudly powered by %s"
+msgstr "Proudly powered by %s"
+
+#: footer.php:24
+msgid "A Semantic Personal Publishing Platform"
+msgstr "의미론적 개인 출판 플랫폼"
+
+#: footer.php:24
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: content-single.php:37
+#: content.php:39
+#: functions.php:127
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "계속 읽기 <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-page.php:23
+#: content-single.php:38
+#: content.php:40
+#: image.php:71
+msgid "Pages:"
+msgstr "페이지:"
+
+#: content-image.php:91
+#: content-page.php:26
+#: content-single.php:76
+#: content.php:78
+#: functions.php:288
+#: functions.php:311
+#: image.php:44
+msgid "Edit"
+msgstr "편집"
+
+#: content-image.php:77
+#: content-single.php:62
+#: content.php:64
+msgid "Tagged %1$s"
+msgstr "%1$s 태그 지정"
+
+#: content-image.php:67
+#: content-single.php:56
+#: content.php:58
+msgid "Posted in %1$s"
+msgstr "%1$s에 게시됨"
+
+#. translators: used between list items, there is a space after the comma
+#: content-image.php:63
+#: content-image.php:73
+#: content-single.php:44
+#: content-single.php:47
+#: content.php:46
+#: content.php:49
+msgid ", "
+msgstr ", "
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "%"
+msgstr "%"
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "0"
+msgstr "0"
+
+#: content-404.php:10
+msgid "Hi there. You seem to be lost."
+msgstr "안녕하세요. 길을 잃으신 것 같네요."
+
+#: content-404.php:14
+msgid "It looks like nothing was found at this location. Perhaps it <em>was</em> there but now it&rsquo;s gone. Maybe try one of the links below or a search?"
+msgstr "이 위치에서 아무것도 검색되지 않은 것 같습니다. 아마 <em>있었지만</em> 지금은 사라진 것 같습니다. 아래 링크 중 하나로 시도하거나 검색하시겠습니까?"
+
+#: content-image.php:23
+#: content-image.php:31
+#: content-image.php:82
+#: content-single.php:67
+#: content.php:13
+#: content.php:69
+msgid "Permalink to %s"
+msgstr "%s 의 고유링크"
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "댓글은 닫혔습니다."
+
+#: comments.php:32
+#: comments.php:52
+msgid "Newer Comments &rarr;"
+msgstr "새로운 댓글 &rarr;"
+
+#: comments.php:31
+#: comments.php:51
+msgid "&larr; Older Comments"
+msgstr "&larr; 예전 댓글"
+
+#: comments.php:30
+#: comments.php:50
+msgid "Comment navigation"
+msgstr "댓글 네비게이션"
+
+#: archive.php:106
+#: index.php:47
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "찾고 계신 것을 찾을 수 없습니다. 검색이 도움이 될 수 있습니다."
+
+#: archive.php:102
+#: index.php:43
+#: search.php:35
+msgid "Nothing Found"
+msgstr "찾지 못함"
+
+#: archive.php:67
+#: functions.php:216
+msgid "Archives"
+msgstr "글목록"
+
+#: archive.php:64
+#: inc/wpcom-colors.php:53
+msgid "Links"
+msgstr "링크"
+
+#: archive.php:61
+msgid "Quotes"
+msgstr "인용"
+
+#: archive.php:58
+msgid "Videos"
+msgstr "비디오"
+
+#: archive.php:55
+msgid "Images"
+msgstr "이미지"
+
+#: archive.php:52
+msgid "Asides"
+msgstr "추가정보"
+
+#: archive.php:49
+msgid "Year: %s"
+msgstr "년도: %s"
+
+#: archive.php:46
+msgid "Month: %s"
+msgstr "월: %s"
+
+#: archive.php:43
+msgid "Day: %s"
+msgstr "날짜: %s"
+
+#: archive.php:35
+msgid "Author: %s"
+msgstr "글쓴이: %s"

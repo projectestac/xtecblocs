@@ -1,0 +1,334 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress.com - Themes - Reddle\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-12-14T02:36:33+00:00\n"
+"PO-Revision-Date: 2021-04-27 15:33:56+0000\n"
+"Language: sv_SE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+
+#. translators: use day_month to reverse the sequence of day and month
+#: content-image.php:84
+#: content-single.php:69
+#: content.php:71
+msgid "month_day"
+msgstr "day_month"
+
+#: image.php:35
+msgid "Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a>"
+msgstr "Publicerat <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> kl. <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a>"
+
+#: inc/wpcom-colors.php:62
+msgid "Navigation and Link Hover"
+msgstr "Navigering och länkhovring"
+
+#: inc/wpcom-colors.php:32
+msgid "Navigation and Footer Sidebars"
+msgstr "Navigering och sidfotens sidopaneler"
+
+#: searchform.php:10
+#: searchform.php:11
+#: searchform.php:12
+msgid "Search"
+msgstr "Sök"
+
+#: search.php:39
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Inget matchade dina söktermer. Försök igen med några andra nyckelord."
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr "Sökresultat för: %s"
+
+#: image.php:51
+msgid "Next &rarr;"
+msgstr "Nästa &rarr;"
+
+#: image.php:50
+msgid "&larr; Previous"
+msgstr "&larr; Föregående"
+
+#: image.php:24
+msgid "Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+msgstr "Publicerat <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> kl. <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> i <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+
+#: header.php:45
+msgid "Skip to content"
+msgstr "Hoppa till innehåll"
+
+#: header.php:47
+msgid "Main menu"
+msgstr "Huvudmeny"
+
+#: functions.php:570
+msgid "Page %s"
+msgstr "Sida %s"
+
+#: functions.php:337
+msgid "View all posts by %s"
+msgstr "Visa alla inlägg av %s"
+
+#: functions.php:335
+msgid "<span class=\"byline\">Posted by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a></span></span>"
+msgstr "<span class=\"byline\">Publicerad av <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a></span></span>"
+
+#: functions.php:309
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s kl. %2$s"
+
+#: functions.php:303
+msgid "Your comment is awaiting moderation."
+msgstr "Din kommentar inväntar granskning."
+
+#: functions.php:288
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: functions.php:260
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Nyare inlägg <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:256
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Äldre inlägg"
+
+#: functions.php:251
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: functions.php:250
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: functions.php:246
+msgid "Post navigation"
+msgstr "Inläggsnavigering"
+
+#: functions.php:219
+msgid "Info"
+msgstr "Info"
+
+#: functions.php:218
+msgid "Topics"
+msgstr "Ämnen"
+
+#: functions.php:217
+msgid "Pages"
+msgstr "Sidor"
+
+#: functions.php:196
+msgid "Third Footer Area"
+msgstr "Tredje sidfotsområdet"
+
+#: functions.php:186
+msgid "Second Footer Area"
+msgstr "Andra sidfotsområdet"
+
+#: functions.php:178
+#: functions.php:188
+#: functions.php:198
+msgid "An optional widget area for your site footer"
+msgstr "Ett valfritt widgetområde för din webbplats sidfot"
+
+#: functions.php:176
+msgid "First Footer Area"
+msgstr "Första sidfotsområdet"
+
+#: functions.php:168
+msgid "An optional second sidebar area"
+msgstr "Ett valfritt andra sidopanelsområde"
+
+#: functions.php:166
+msgid "Sidebar 2"
+msgstr "Sidopanel 2"
+
+#: functions.php:157
+msgid "Sidebar 1"
+msgstr "Sidopanel 1"
+
+#: functions.php:76
+msgid "Primary Menu"
+msgstr "Primär meny"
+
+#: footer.php:26
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s av %2$s."
+
+#: footer.php:24
+msgid "Proudly powered by %s"
+msgstr "Drivs med %s"
+
+#: footer.php:24
+msgid "A Semantic Personal Publishing Platform"
+msgstr "En semantisk plattform för personlig publicering"
+
+#: footer.php:24
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: content-single.php:37
+#: content.php:39
+#: functions.php:127
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Fortsätt läsa <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-page.php:23
+#: content-single.php:38
+#: content.php:40
+#: image.php:71
+msgid "Pages:"
+msgstr "Sidor:"
+
+#: content-image.php:91
+#: content-page.php:26
+#: content-single.php:76
+#: content.php:78
+#: functions.php:288
+#: functions.php:311
+#: image.php:44
+msgid "Edit"
+msgstr "Redigera"
+
+#: content-image.php:77
+#: content-single.php:62
+#: content.php:64
+msgid "Tagged %1$s"
+msgstr "Märkt %1$s"
+
+#: content-image.php:67
+#: content-single.php:56
+#: content.php:58
+msgid "Posted in %1$s"
+msgstr "Publicerat i %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: content-image.php:63
+#: content-image.php:73
+#: content-single.php:44
+#: content-single.php:47
+#: content.php:46
+#: content.php:49
+msgid ", "
+msgstr ", "
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "%"
+msgstr "%"
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "0"
+msgstr "0"
+
+#: content-image.php:23
+#: content-image.php:31
+#: content-image.php:82
+#: content-single.php:67
+#: content.php:13
+#: content.php:69
+msgid "Permalink to %s"
+msgstr "Permalänk till %s"
+
+#: content-404.php:14
+msgid "It looks like nothing was found at this location. Perhaps it <em>was</em> there but now it&rsquo;s gone. Maybe try one of the links below or a search?"
+msgstr "Det verkar inte finnas någonting här. Det kanske <em>fanns</em> här men gör inte det längre. Testa en av länkarna nedan eller gör en sökning."
+
+#: content-404.php:10
+msgid "Hi there. You seem to be lost."
+msgstr "Hejsan. Du verkar lite vilsen."
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "Kommentarer är stängda."
+
+#: comments.php:32
+#: comments.php:52
+msgid "Newer Comments &rarr;"
+msgstr "Nyare kommentarer &rarr;"
+
+#: comments.php:31
+#: comments.php:51
+msgid "&larr; Older Comments"
+msgstr "&larr; Äldre kommentarer"
+
+#: comments.php:30
+#: comments.php:50
+msgid "Comment navigation"
+msgstr "Kommentarsnavigering"
+
+#: comments.php:23
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "En tanke på &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s tankar om &ldquo;%2$s&rdquo;"
+
+#: archive.php:106
+#: index.php:47
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Det verkar som att vi inte kan hitta det du letar efter. Prova att göra en sökning."
+
+#: archive.php:102
+#: index.php:43
+#: search.php:35
+msgid "Nothing Found"
+msgstr "Inget hittades"
+
+#: archive.php:67
+#: functions.php:216
+msgid "Archives"
+msgstr "Arkiv"
+
+#: archive.php:64
+#: inc/wpcom-colors.php:53
+msgid "Links"
+msgstr "Länkar"
+
+#: archive.php:61
+msgid "Quotes"
+msgstr "Citat"
+
+#: archive.php:58
+msgid "Videos"
+msgstr "Videoklipp"
+
+#: archive.php:55
+msgid "Images"
+msgstr "Bilder"
+
+#: archive.php:52
+msgid "Asides"
+msgstr "Notiser"
+
+#: archive.php:49
+msgid "Year: %s"
+msgstr "År: %s"
+
+#: archive.php:46
+msgid "Month: %s"
+msgstr "Månad: %s"
+
+#: archive.php:43
+msgid "Day: %s"
+msgstr "Dag: %s"
+
+#: archive.php:35
+msgid "Author: %s"
+msgstr "Författare: %s"
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "1"
+msgstr "1"

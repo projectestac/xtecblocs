@@ -1,0 +1,270 @@
+/*
+Theme Name: Reddle
+*/
+
+
+/* =Reset
+-------------------------------------------------------------- */
+
+caption, th, td {
+	text-align: right;
+}
+
+
+/* =Structure
+----------------------------------------------- */
+
+/* Two columns, content on the left */
+.secondary #primary {
+	float: right;
+	margin: 0 0 0 -51.25%;
+}
+.secondary #content {
+	margin: 0 9.464285714286% 0 51.25%;
+}
+#main .widget-area {
+	float: left;
+	margin-left: 9.464285714286%;
+	margin-right: auto;
+}
+#main .widget-area .widget {
+	margin: 0 24.202127659574% 0 0;
+}
+
+
+/* =Global
+----------------------------------------------- */
+
+/* Text elements */
+ul, ol {
+	margin: 0 3.23em 1.615em 0;
+}
+ul ul, ol ol, ul ol, ol ul {
+	margin-right: 1.615em;
+	margin-left: auto;
+}
+textarea {
+	padding-right: 3px;
+	padding-left: 0;
+}
+
+
+/* =Menu
+----------------------------------------------- */
+
+#access {
+	float: right;
+}
+#access ul {
+	padding-right: 0;
+	padding-left: 0;
+}
+#access li {
+	float: right;
+}
+#access a {
+	margin: 0 0 0 1px;
+}
+#access ul ul {
+	float: right;
+	right: 0;
+	left: auto;
+}
+#access ul ul ul {
+	right: 100%;
+	left: auto;
+}
+
+
+/* =Content
+----------------------------------------------- */
+
+.entry-title {
+	margin: 0 0 0 50px;
+}
+.entry-content blockquote:before {
+	right: -.67em;
+	left: auto;
+}
+.comments-link {
+	left: 0;
+	right: auto;
+}
+.comments-link a:before {
+	right: .3em;
+	left: auto;
+}
+
+/* Datestamps */
+footer .permalink,
+.post-edit-link,
+.image-attachment #content footer .permalink,
+.image-attachment #content .post-edit-link {
+	margin: 0 -27px 0 0;
+	right: -11.674008810573%;
+	left: auto;
+}
+.secondary footer .permalink,
+.secondary .post-edit-link {
+	right: -24.090909090909%;
+	left: auto;
+}
+
+
+/* =Attachments
+----------------------------------------------- */
+
+.image-attachment div.entry-meta {
+	float: right;
+}
+.image-attachment nav {
+	float: left;
+}
+
+
+/* =Navigation
+-------------------------------------------------------------- */
+
+#content nav .nav-previous {
+	float: right;
+}
+#content nav .nav-next {
+	float: left;
+	text-align: left;
+}
+
+
+/* =Widgets
+----------------------------------------------- */
+
+.widget > ul {
+	margin: 0 1.1em 0 0;
+}
+
+/* Primary Sidebar */
+#secondary {
+	border-right: 1px solid #ddd;
+	border-left: none;
+}
+
+/* Secondary Sidebar */
+#tertiary {
+	border-right: 1px solid transparent;
+	border-left: none;
+}
+
+#wp-calendar tfoot #next {
+	text-align: left;
+}
+
+
+/* =Comments
+----------------------------------------------- */
+
+.comment .avatar,
+.image-attachment .commentlist > .comment .avatar {
+	margin: 4px -23px 0 0;
+	right: -11.674008810573%;
+	left: auto;
+}
+.comment .comment-author:before,
+.image-attachment .commentlist > .comment .comment-author:before {
+	margin: 0 -27px 0 0;
+	right: -11.674008810573%;
+	left: auto;
+}
+.secondary .comment .avatar,
+.secondary .comment-author:before {
+	right: -24.090909090909%;
+	left: auto;
+}
+
+/* Child comments */
+.commentlist .children .children {
+	padding-right: 37px;
+	padding-left: 0;
+}
+#content .children .comment .avatar {
+	margin: 2px 2px 0 0;
+	right: 0;
+	left: auto;
+}
+#content .children .comment-author:before {
+	right: 0;
+	left: auto;
+}
+.commentlist .children .comment > footer,
+.commentlist .children .comment-content,
+.commentlist .children .reply {
+	margin-right: 52px;
+	margin-left: auto;
+}
+
+/* Comment form */
+#respond input[type="text"] {
+	float: right;
+	margin-left: 1em;
+	margin-right: auto;
+}
+
+
+/* =Footer
+----------------------------------------------- */
+
+/* Two Footer Widget Areas */
+#supplementary.two .widget-area {
+	float: right;
+	margin-left: 3.083700440529%;
+	margin-right: auto;
+}
+#supplementary.two .widget-area + .widget-area {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+/* Three Footer Widget Areas */
+#supplementary.three .widget-area {
+	float: right;
+	margin-left: 3.083700440529%;
+	margin-right: auto;
+}
+#supplementary.three .widget-area + .widget-area + .widget-area {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+
+/* =Responsive Layout
+----------------------------------------------- */
+
+@media (max-width: 900px) {
+	#page footer .permalink,
+	#page .post-edit-link,
+	.secondary .comment .avatar,
+	.secondary .comment-author:before {
+	    right: -12.114537444934%;
+		left: auto;
+	}
+	#page #main .widget-area {
+		float: right;
+		margin-left: 0 !important;
+		margin: 0;
+	}
+	#page #supplementary .widget-area {
+		float: right;
+		margin-left: 0;
+		margin: 0;
+	}
+}
+@media (max-width: 450px) {
+	.comment footer {
+		margin-right: 42px;
+		margin-left: 0;
+	}
+	#page .comment .avatar,
+	#page .comment-author:before {
+		right: 0;
+		left: auto;
+	}
+}
+
