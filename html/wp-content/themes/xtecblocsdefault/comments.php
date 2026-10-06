@@ -2,7 +2,8 @@
 // This file is loaded by comments_template() and also included directly from content.php to show the comments of
 // the news
 if (post_password_required($post)) { ?>
-    <p class="nocomments">This post is password protected. Enter the password to view comments.</p>
+    <p class="nocomments">Aquesta entrada està protegida amb contrasenya. Introdueix la contrasenya per veure'n els
+        comentaris.</p>
     <?php
     return;
 }
@@ -20,7 +21,7 @@ $comments = get_comments(['post_id' => $post->ID, 'status' => 'approve', 'order'
     </ol>
 
 <?php elseif (!comments_open($post)) : ?>
-    <p class="nocomments">Comments are closed.</p>
+    <p class="nocomments">Els comentaris estan tancats.</p>
 <?php endif; ?>
 
 <?php if (comments_open($post)) : ?>
@@ -34,7 +35,7 @@ $comments = get_comments(['post_id' => $post->ID, 'status' => 'approve', 'order'
             'logged_in_as' => '<p>T\'has identificat com a <strong>' .
                 esc_html(wp_get_current_user()->display_name) . '</strong>.</p>',
             'comment_notes_after' => '<input type="hidden" name="redirect_to" value="index.php?msg=newComment" />',
-            'label_submit' => 'Submit Comment',
+            'label_submit' => 'Envia el comentari',
         ], $post->ID);
     endif; ?>
 
