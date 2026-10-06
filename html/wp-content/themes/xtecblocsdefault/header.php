@@ -41,7 +41,7 @@
 
                     <li><a href="<?php echo esc_url(home_url()); ?>">Inici</a></li>
                     <li><a href="index.php?a=terms">Condicions d'ús</a></li>
-                    <li><a href="https://sites.google.com/a/xtec.cat/ajudaxtecblocs" target="_blank">Ajuda</a></li>
+                    <li><a href="<?php echo esc_url(XTEC_HELP_URL); ?>" target="_blank">Ajuda</a></li>
                     <?php
                     if (!is_user_logged_in()) {
                         $loginUrl = home_url('/wp-login.php?redirect_to=' . site_url());
