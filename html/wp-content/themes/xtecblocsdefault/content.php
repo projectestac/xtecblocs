@@ -117,7 +117,7 @@ if (isset($_REQUEST['id'])) {
     <h2 class="contentboxheadfons">Darrers articles als blocs</h2>
     <div class="darreres">
     <?php
-    $blogs = xtec_lastest_posts_lastest_posts(10, 5, 0);
+    $blogs = xtec_latest_posts_latest_posts(10, 5, 0);
     if (is_array($blogs)) {
         foreach ($blogs as $blog) {
             $desc = trim($blog['post_content']);
