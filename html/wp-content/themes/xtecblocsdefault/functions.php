@@ -21,12 +21,24 @@ function xtec_enqueue_style(): void
 add_action('wp_enqueue_scripts', 'xtec_enqueue_style', 1);
 
 /**
- * Redirects to the help of the portal. It must be done before any output is sent, so it can't be in the templates.
+ * Redirects to the help, to the creation of a blog and to the login of the portal. It must be done before any output
+ * is sent, so it can't be in the templates.
  */
 function xtec_portal_redirect(): void
 {
-    if (is_home() && ($_REQUEST['a'] ?? '') === 'help') {
-        wp_redirect('http://sites.google.com/a/xtec.cat/ajudaxtecblocs/');
+    if (!is_home()) {
+        return;
+    }
+
+    $urls = [
+        'help' => 'http://sites.google.com/a/xtec.cat/ajudaxtecblocs/',
+        'new' => network_site_url('wp-signup.php'),
+        'login' => wp_login_url(site_url()),
+    ];
+    $action = $_GET['a'] ?? '';
+
+    if (is_string($action) && isset($urls[$action])) {
+        wp_redirect($urls[$action]);
         exit;
     }
 }

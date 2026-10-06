@@ -8,7 +8,7 @@ if (post_password_required($post)) { ?>
 }
 
 // Allow to see the comments in main page
-$comments = get_comments(array('post_id' => $post->ID, 'status' => 'approve', 'order' => 'ASC'));
+$comments = get_comments(['post_id' => $post->ID, 'status' => 'approve', 'order' => 'ASC']);
 ?>
 
 <?php if ($comments) : ?>
@@ -16,7 +16,7 @@ $comments = get_comments(array('post_id' => $post->ID, 'status' => 'approve', 'o
         &#8220;<?php echo get_the_title($post); ?>&#8221;</h3>
 
     <ol class="commentlist">
-        <?php wp_list_comments(array('style' => 'ol'), $comments); ?>
+        <?php wp_list_comments(['style' => 'ol'], $comments); ?>
     </ol>
 
 <?php elseif (!comments_open($post)) : ?>
@@ -29,13 +29,13 @@ $comments = get_comments(array('post_id' => $post->ID, 'status' => 'approve', 'o
         <p>Has d'estar <a href="<?php echo esc_url(site_url('index.php?a=login')); ?>">validat</a> per enviar
             comentaris.</p>
     <?php else :
-        comment_form(array(
+        comment_form([
             'title_reply' => 'Envia un comentari',
             'logged_in_as' => '<p>T\'has identificat com a <strong>' .
                 esc_html(wp_get_current_user()->display_name) . '</strong>.</p>',
             'comment_notes_after' => '<input type="hidden" name="redirect_to" value="index.php?msg=newComment" />',
             'label_submit' => 'Submit Comment',
-        ), $post->ID);
+        ], $post->ID);
     endif; ?>
 
 <?php endif; ?>

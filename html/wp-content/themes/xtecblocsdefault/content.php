@@ -1,6 +1,6 @@
 <?php
-if (isset($_REQUEST['id'])) {
-    $post = get_post($_REQUEST['id']);
+if (isset($_GET['id'])) {
+    $post = get_post((int)$_GET['id']);
 
     // Only published news can be shown
     if (
@@ -10,7 +10,7 @@ if (isset($_REQUEST['id'])) {
         $post = null;
     }
 
-    if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == 'newComment') {?>
+    if (($_GET['msg'] ?? '') === 'newComment') {?>
         <p class="thanks">Gràcies per enviar un comentari nou. No estar&agrave; disponible fins que no sigui validat per
             un administrador/a del portal.</p>
         <?php
@@ -26,10 +26,10 @@ if (isset($_REQUEST['id'])) {
         <div class="article">
             <h3><?php echo esc_html($post->post_title); ?></h3>
             <p class="data">Publicat <?php echo dateText(strtotime($post->post_date));?></p>
-            <p><?php echo nl2br($post->post_content); ?></p>
+            <?php echo apply_filters('the_content', $post->post_content); ?>
             <?php if ($post->comment_count > 0) {?>
                 <p class="comentari">Aquesta notícia té <a
-                    href="index.php?id=<?php echo $post->ID;?>"><?php echo nl2br($post->comment_count);?>
+                    href="index.php?id=<?php echo $post->ID;?>"><?php echo (int)$post->comment_count;?>
                     Comentari/s</a></p>
             <?php } else { ?> 
                 <p class="comentari">Aquesta notícia <a href="index.php?id=<?php echo $post->ID;?>">no té
@@ -47,7 +47,7 @@ if (isset($_REQUEST['id'])) {
         if (($weekblog instanceof WP_Post) && xtecweekblog_validate($weekblog->ID)) {
             ['url' => $wb_url, 'blog_title' => $wb_blog_title, 'description' => $wb_description] =
                 xtecweekblog_get_data($weekblog);
-            $wb_image = get_the_post_thumbnail($weekblog->ID, 'xtecweekblog', array('alt' => 'Accedeix al bloc'));
+            $wb_image = get_the_post_thumbnail($weekblog->ID, 'xtecweekblog', ['alt' => 'Accedeix al bloc']);
             ?>  
                 <div id="weekblog-box" class="box">
                     <span class="contentboxheadright"></span>
@@ -81,7 +81,7 @@ if (isset($_REQUEST['id'])) {
         }
         ?> <br /> <?php
     }
-    if (isset($_REQUEST['msg']) && $_REQUEST['msg'] == 'newComment') {?>
+    if (($_GET['msg'] ?? '') === 'newComment') {?>
         <p class="thanks">Gràcies per enviar un comentari nou. No estar&agrave; disponible fins que no sigui validat per
             un administrador/a del portal.</p>
         <?php
@@ -94,19 +94,19 @@ if (isset($_REQUEST['id'])) {
             <span class="contentboxheadright"></span>
             <span class="contentboxheadleft"></span>
             <h2 class="contentboxheadfons">Notícies</h2>
-            <?php $news_query = new WP_Query(array('posts_per_page' => 2));
+            <?php $news_query = new WP_Query(['posts_per_page' => 2]);
             while ($news_query->have_posts()) :
                 $news_query->the_post();?>
                 <div class="article">
                     <h3><?php the_title(); ?></h3>
-                    <p class="data">Publicat <?php echo dateText(strtotime($post->post_date));?></p>
-                    <p><?php the_content(); ?></p>
+                    <p class="data">Publicat <?php echo dateText(strtotime(get_the_date('Y-m-d H:i:s')));?></p>
+                    <?php the_content(); ?>
                     <div class="clear"></div>
                 </div> <!--end of article -->   
             <?php endwhile;
             wp_reset_postdata(); ?>
             <div class="article">
-            <p class="comentari"><a href="<?php echo get_option('home');?>/index.php?a=newsList">Més...</a></p>
+            <p class="comentari"><a href="<?php echo esc_url(home_url('/index.php?a=newsList'));?>">Més...</a></p>
             </div> 
         </div>
     <br />
@@ -120,18 +120,7 @@ if (isset($_REQUEST['id'])) {
     $blogs = xtec_latest_posts_latest_posts(10, 5, 0);
     if (is_array($blogs)) {
         foreach ($blogs as $blog) {
-            $desc = trim($blog['post_content']);
-            // save the post date to a var
             $date = dateText(strtotime($blog['post_date']));
-            // strip out html characters to allow for truncating
-            $strippedDesc = strip_tags($desc);
-            // truncate post content to 120 words
-            $numwords = 40;
-            preg_match("/([\S]+\s*){0,$numwords}/", $strippedDesc, $regs);
-            $shortDesc = trim($regs[0]);
-            //$shortDesc = get_the_content($more_link_text, $stripteaser, $more_file);
-            $shortDesc = apply_filters('the_content', $shortDesc);
-            $shortDesc = str_replace(']]>', ']]&gt;', $shortDesc);
             //Show the content
             echo "<h3><a href=\"" . esc_url($blog['blog_url']) . "\" style=\"color:#408DD4;\" >" .
                 esc_html(stripslashes($blog['blog_title'])) . "</a>";
@@ -139,9 +128,8 @@ if (isset($_REQUEST['id'])) {
             //pasar a css si es posible!
             if (is_user_logged_in()) {
                 echo "&nbsp;&nbsp;<a href='" . xtec_favorites_url('addPrefer', $blog['blog_id']) .
-                    "' title='Preferit'><img src='";
-                echo  bloginfo('template_directory');
-                echo "/images/myblogs.gif' border='0' alt='Preferit'/></a>";
+                    "' title='Preferit'><img src='" . esc_url(get_template_directory_uri() . '/images/myblogs.gif') .
+                    "' border='0' alt='Preferit'/></a>";
             }
             echo "</h3>";
             //dibuixem la caixa del darrer article
