@@ -847,3 +847,21 @@ th, td {
 tbody, thead, tfoot {
     vertical-align: middle;
 }
+
+.terms .title {
+    padding: 10px 10px 5px 0;
+    font-size: 16px;
+}
+
+.terms p {
+    padding: 0 5px 5px 0;
+    text-align: justify;
+}
+
+.terms p a {
+    text-decoration: none;
+}
+
+.terms .maintitle {
+    font-size: 20px;
+}

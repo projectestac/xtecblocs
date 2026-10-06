@@ -10,8 +10,8 @@
             <div class="alignleft">&nbsp;</div>
             <div class="alignright">&nbsp;</div>
         </div>
-            <?php $attachment_link = wp_get_attachment_link($post->ID, array(450, 800), false, true); ?>
-            <?php $attachment_image = wp_get_attachment_image_src($post->ID, array(450, 800), true);
+            <?php $attachment_link = wp_get_attachment_link($post->ID, [450, 800], false, true); ?>
+            <?php $attachment_image = wp_get_attachment_image_src($post->ID, [450, 800], true);
             // This lets us style narrow icons specially
             $classname = (($attachment_image && $attachment_image[1] <= 128) ? 'small' : '') . 'attachment'; ?>
         <div class="post" id="post-<?php the_ID(); ?>">
@@ -25,7 +25,7 @@
 
                         <?php the_content('<p class="serif">Read the rest of this entry &raquo;</p>'); ?>
 
-                        <?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>')); ?>
+                        <?php wp_link_pages(['before' => '<p><strong>Pages:</strong> ', 'after' => '</p>']); ?>
 
                 <p class="postmetadata alt">
                     <small>
@@ -35,17 +35,17 @@
                         You can follow any responses to this entry through the
                             <?php post_comments_feed_link('RSS 2.0'); ?> feed. 
 
-                                <?php if (('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
+                                <?php if ('open' === $post->comment_status && 'open' === $post->ping_status) {
                             // Both Comments and Pings are open ?>
                             You can <a href="#respond">leave a response</a>, or <a href="<?php trackback_url(true); ?>"
                                 rel="trackback">trackback</a> from your own site.
 
-                                <?php } elseif (!('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
+                                <?php } elseif ('open' !== $post->comment_status && 'open' === $post->ping_status) {
                             // Only Pings are Open ?>
                             Responses are currently closed, but you can <a href="<?php trackback_url(true); ?> "
                                 rel="trackback">trackback</a> from your own site.
 
-                                <?php } elseif (('open' == $post-> comment_status) && !('open' == $post->ping_status)) {
+                                <?php } elseif ('open' === $post->comment_status && 'open' !== $post->ping_status) {
                             // Comments are open, Pings are not ?>
                             You can skip to the end and leave a response. Pinging is currently not allowed.
 

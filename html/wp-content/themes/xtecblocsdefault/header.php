@@ -21,8 +21,8 @@
         <div id="wrapper" class="clearfix">
             <div id="header">
                 <span class="logoDepartament">&nbsp;</span>
-                <h1 title="<?php echo get_option('home'); ?>">
-                    <a href="<?php echo get_option('home'); ?>">
+                <h1 title="<?php echo esc_attr(home_url()); ?>">
+                    <a href="<?php echo esc_url(home_url()); ?>">
                         <acronym title="Xarxa Educativa Telemàtica Educativa de Catalunya">XTEC</acronym>Blocs
                     </a>
                     <span></span><!-- Contains logo of the Departament d'Educació de la Generalitat de Catalunya -->
@@ -43,21 +43,21 @@
                         ?>
                         <li class="login">
                             T'has identificat com a [ <a
-                                href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php">
+                                href="<?php echo esc_url(admin_url('profile.php')); ?>">
                                 <?php echo esc_html($current_user->user_login); ?></a> ]
                         </li>
                         <?php
                     } ?>
                     <!-- end of check user -->
 
-                    <li><a href="<?php echo get_option('home'); ?>">Inici</a></li>
+                    <li><a href="<?php echo esc_url(home_url()); ?>">Inici</a></li>
                     <li><a href="index.php?a=terms">Condicions d'ús</a></li>
                     <li><a href="https://sites.google.com/a/xtec.cat/ajudaxtecblocs" target="_blank">Ajuda</a></li>
                     <?php
                     if (!is_user_logged_in()) {
-                        $loginUrl = get_option('home') . '/wp-login.php?redirect_to=' . site_url();
+                        $loginUrl = home_url('/wp-login.php?redirect_to=' . site_url());
                         ?>
-                        <li><a id="surt" href="<?php echo $loginUrl; ?>">Entra</a></li>
+                        <li><a id="surt" href="<?php echo esc_url($loginUrl); ?>">Entra</a></li>
                         <?php
                     } else { ?>
                         <li><a href="<?php echo wp_logout_url(site_url()) ?>" title="Surt">Surt</a></li>

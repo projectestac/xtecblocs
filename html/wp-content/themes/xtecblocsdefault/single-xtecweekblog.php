@@ -6,7 +6,7 @@
     $weekblog = $post;
     ['url' => $wb_url, 'blog_title' => $wb_blog_title, 'description' => $wb_description] =
         xtecweekblog_get_data($weekblog);
-    $wb_image = get_the_post_thumbnail($weekblog->ID, 'xtecweekblog', array('alt' => 'Accedeix al bloc'));
+    $wb_image = get_the_post_thumbnail($weekblog->ID, 'xtecweekblog', ['alt' => 'Accedeix al bloc']);
 ?>  
     <div id="box">
         <span class="contentboxheadright"></span>

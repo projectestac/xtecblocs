@@ -1,13 +1,8 @@
 <?php
-$action = isset($_REQUEST['a']) ? $_REQUEST['a'] : '';
+$action = $_GET['a'] ?? '';
 switch ($action) {
-    case "terms":
-        include('terms.htm');
-        break;
-    case 'new':
-        ?>
-            <script>window.location = 'wp-signup.php';</script>
-        <?php
+    case 'terms':
+        include __DIR__ . '/terms.htm';
         break;
     case 'newuser':
         if (!is_user_logged_in()) {
@@ -15,11 +10,6 @@ switch ($action) {
             <iframe src="wp-signup.php" width="100%" height="700" scrolling="auto" frameborder="0"></iframe>            
             <?php
         }
-        break;
-    case 'login':
-        ?>
-        <script>window.location = 'wp-login.php?redirect_to=<?php echo site_url() ?>';</script>
-        <?php
         break;
     case 'list':
         $desc = is_string($_GET['desc'] ?? null) ? $_GET['desc'] : '';
@@ -38,7 +28,7 @@ switch ($action) {
             $admin_email = get_blog_option($blog, 'admin_email');
             $admin_user = get_user_by('email', $admin_email);
             $admin_name = $admin_user ? $admin_user->display_name : '';
-            $bgcolor = ( $bgcolor == '#ffffff' ) ? '#e5f2fe' : '#ffffff';
+            $bgcolor = ($bgcolor === '#ffffff') ? '#e5f2fe' : '#ffffff';
             ?>
             <tr bgcolor="<?php echo $bgcolor ?>">
                 <td class="blogByDescriptor" valign="top" width="300">
@@ -56,7 +46,7 @@ switch ($action) {
                     $other_descriptors = xtec_descriptors_get_descriptors_by_blog($blog);
                     foreach ($other_descriptors as $other_descriptor) {
                         if ($other_descriptor !== $desc) {
-                            $url = get_option('home') . '/index.php?a=list&desc=' . rawurlencode($other_descriptor);
+                            $url = home_url('/index.php?a=list&desc=' . rawurlencode($other_descriptor));
                             ?>
                             <a style="font-size:12 px; color:#0000EE; text-decoration:none;"
                                 href="<?php echo esc_url($url); ?>"
@@ -83,7 +73,7 @@ switch ($action) {
 
         foreach ($cloudArray as $cloud) {
             print ("<li><a style='font-size:" . $cloud['size'] . "px; color:#1E4588;' class='tag_cloud' href='" .
-                esc_url(get_option('home') . '/index.php?a=list&desc=' .
+                esc_url(home_url('/index.php?a=list&desc=') .
                 rawurlencode(htmlspecialchars_decode($cloud['tag'], ENT_QUOTES))) . "'> ");
             print($cloud['tag']);
             print('</a></li>');
@@ -95,7 +85,7 @@ switch ($action) {
         $ipp = 20;
         print '<h2 style="color: #1C4387; font-size: 1.3em; background-image: none; border: none; ' .
             'margin-bottom: 1em; margin-top: 1em;">Llista dels blocs m&eacute;s actius els darrers 60 dies.</h2>';
-        $init = max(1, (int)($_REQUEST['init'] ?? 1));
+        $init = max(1, (int)($_GET['init'] ?? 1));
         $mostActive = xtec_latest_posts_most_active_blogs($ipp, $init - 1);
         $blogsNumber = xtec_latest_posts_num_active_blogs();
         $pager = pager($init, $blogsNumber, 'index.php?a=mostActive&amp;init=%%', $ipp);
@@ -106,7 +96,7 @@ switch ($action) {
             '<th align="left" valign="top">Darrer article</th>';
         $bgcolor = "#e5f2fe";
         foreach ($mostActive as $active) {
-            $bgcolor = ($bgcolor == '#e5f2fe') ? '#ffffff' : '#e5f2fe';
+            $bgcolor = ($bgcolor === '#e5f2fe') ? '#ffffff' : '#e5f2fe';
             ?>
             <tr bgcolor="<?php echo $bgcolor; ?>">
                 <td width="250">
@@ -123,7 +113,6 @@ switch ($action) {
                     width="100"><?php echo $maxPosts > 0 ? $active['postNumber'] / $maxPosts * 100 : 0; ?></td>
                 <td width="150"><?php echo date('d/m/Y - H.i', strtotime($active['last_updated'])); ?></td>
             </tr>
-            <?php // print_r($active);?>
             <?php
         }
         print '</table>';
@@ -132,7 +121,7 @@ switch ($action) {
         $ipp = 20;
         print '<h2 style="color: #1C4387; font-size: 1.3em; background-image: none; border: none; ' .
             'margin-bottom: 1em; margin-top: 1em;">Llista dels darrers blocs creats.</h2>';
-        $init = max(1, (int)($_REQUEST['init'] ?? 1));
+        $init = max(1, (int)($_GET['init'] ?? 1));
         $blogs = xtec_api_latest_blogs($ipp, 3000, 'registered', $init - 1);
         $blogsNumber = xtec_api_blogs_number();
         $totalBlogs = $blogsNumber['blogs'] - $blogsNumber['blogsPrivate'];
@@ -143,7 +132,7 @@ switch ($action) {
             '<th align="left" valign="top">Data de creaci&oacute;</th>';
         $bgcolor = "#e5f2fe";
         foreach ($blogs as $blog) {
-            $bgcolor = ($bgcolor == '#e5f2fe') ? '#ffffff' : '#e5f2fe';
+            $bgcolor = ($bgcolor === '#e5f2fe') ? '#ffffff' : '#e5f2fe';
             ?>      
             <tr bgcolor="<?php echo $bgcolor; ?>">
                 <td width="300">
@@ -171,18 +160,17 @@ switch ($action) {
             '<th align="left" valign="top">Data de publicaci&oacute;</th>';
         $bgcolor = "#e5f2fe";
         foreach ($newsList as $new) {
-            $bgcolor = ($bgcolor == '#e5f2fe') ? '#ffffff' : '#e5f2fe';
+            $bgcolor = ($bgcolor === '#e5f2fe') ? '#ffffff' : '#e5f2fe';
             ?>
             <tr bgcolor="<?php echo $bgcolor; ?>">
-                <td width="250"><a href=index.php?id=<?php echo $new['newId'] ?>
+                <td width="250"><a href="index.php?id=<?php echo (int)$new['newId'] ?>"
                     title="V&eacute;s a la notícia"><?php echo esc_html(stripslashes($new['new_title'])); ?></a></td><td
                     width="150"><?php echo date('d/m/Y', strtotime($new['post_date'])); ?></td></tr>
-            <?php // print_r($new);?>
             <?php
         }
         print '</table>';
         break;
     default:
-        include('content.php');
+        include __DIR__ . '/content.php';
         break;
 }

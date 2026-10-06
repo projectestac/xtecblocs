@@ -10,7 +10,7 @@
             <div class="entry">
                 <?php the_content('<p class="serif">Read the rest of this page &raquo;</p>'); ?>
 
-                <?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>')); ?>
+                <?php wp_link_pages(['before' => '<p><strong>Pages:</strong> ', 'after' => '</p>']); ?>
 
             </div>
         </div>

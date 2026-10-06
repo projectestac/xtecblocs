@@ -2,14 +2,15 @@
 
 function dateText($timestamp): string
 {
-    $monthName = array(
+    $monthName = [
         'de gener', 'de febrer', 'de mar&ccedil;', 'd\'abril', 'de maig', 'de juny', 'de juliol', 'd\'agost',
         'de setembre', 'd\'octubre', 'de novembre', 'de desembre',
-    );
+    ];
     $dateText = 'el dia ' . date('d', $timestamp) . ' ' . $monthName[(int)date('n', $timestamp) - 1] . ' de ' .
         date('Y', $timestamp);
 
-    $today = strtotime(date('M j, Y'));
+    // The timestamps of the posts are their local date read as UTC, so today is computed the same way
+    $today = strtotime(current_time('Y-m-d'));
 
     $reldays = ($timestamp - $today) / 86400;
 
@@ -28,10 +29,10 @@ function getNewsList(): array
     $sql = "SELECT id,post_date,post_title FROM $wpdb->posts " .
         "WHERE `post_type`='post' and `post_status`='publish' ORDER BY ID DESC";
     $news = $wpdb->get_results($sql);
-    $posts = array();
+    $posts = [];
 
     foreach ($news as $new) {
-        $posts[] = array('newId' => $new->id,'new_title' => $new->post_title,'post_date' => $new->post_date);
+        $posts[] = ['newId' => $new->id, 'new_title' => $new->post_title, 'post_date' => $new->post_date];
     }
     return $posts;
 }
@@ -49,11 +50,6 @@ function getNewsList(): array
  */
 function Pager($startnum, $total, $urltemplate, $perpage = 20): ?string
 {
-    // Quick check to ensure that we have work to do
-    if ($total <= $perpage) {
-        return null;
-    }
-
     if (empty($startnum)) {
         $startnum = 1;
     }
@@ -70,7 +66,7 @@ function Pager($startnum, $total, $urltemplate, $perpage = 20): ?string
     $sortida = '';
 
     // Show startnum link
-    if ($startnum != 1) {
+    if ((int)$startnum !== 1) {
         $url = preg_replace('/%%/', 1, $urltemplate);
         $sortida .= 'P&agrave;gina <a href="' . $url . '"  style="text-decoration:none; color:#1E4588;"><<</a>';
     } else {
@@ -86,8 +82,8 @@ function Pager($startnum, $total, $urltemplate, $perpage = 20): ?string
     for ($curnum = 1; $curnum <= $total; $curnum += $perpage) {
         if (($startnum < $curnum - 1) || ($startnum + 1 > ($curnum + $perpage - 1))) {
             if (
-                (($pagenum % 10) == 0) // link if page is multiple of 10
-                || ($pagenum == 1) // link first page
+                (($pagenum % 10) === 0) // link if page is multiple of 10
+                || ($pagenum === 1) // link first page
                 || (($curnum > ($startnum - 4 * $perpage)) //link -3 and +3 pages
                 && ($curnum < ($startnum + 4 * $perpage)))
             ) {
@@ -102,7 +98,6 @@ function Pager($startnum, $total, $urltemplate, $perpage = 20): ?string
     }
     if (($curnum >= $perpage + 1) && ($startnum < $curnum - $perpage)) {
         $url = preg_replace('/%%/', $curnum - $perpage, $urltemplate);
-        $curnum = $curnum - $perpage;
         $sortida .= '<a href="' . $url . '" style="text-decoration:none; color:#1E4588;">>></a>';
     } else {
         $sortida .= '>>';

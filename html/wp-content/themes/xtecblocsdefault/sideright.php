@@ -15,13 +15,13 @@ if (is_user_logged_in()) {
                 if (!empty($blogs)) {
                     foreach ($blogs as $blog) {
                         $value = 'wp_' . $blog->userblog_id . '_user_level';
-                        $level = $current_user->$value;
+                        $level = (string)$current_user->$value;
                         switch ($level) {
                             case '':
                                 $image = 'subscrip';
                                 $text = 'Entra';
                                 break;
-                            case 10:
+                            case '10':
                                 $image = 'admin';
                                 $text = 'Administra';
                                 break;
@@ -42,7 +42,7 @@ if (is_user_logged_in()) {
                         }
 
 
-                        if ($number > 0 || $level != 10) {
+                        if ($number > 0 || $level !== '10') {
                             ?>
                             <li><a href='<?php echo esc_url(get_home_url($blog->userblog_id, '/')); ?>'
                                    target="_blank" title="Entra al
@@ -51,7 +51,7 @@ if (is_user_logged_in()) {
                                    target="_blank" title="<?php echo $text; ?>"><img
                                         src="<?php bloginfo('template_directory'); ?>/images/<?php echo $image; ?>.gif"
                                         border="0" alt="<?php echo $text; ?>" class="myicon" /> </a>
-                                <?php if ($image == 'admin' && $blog->userblog_id != 1) : ?>
+                                <?php if ($image === 'admin' && (int)$blog->userblog_id !== 1) : ?>
                                     <a
                                         href='<?php
                                             echo esc_url(get_admin_url($blog->userblog_id, 'ms-delete-site.php'));
@@ -77,7 +77,7 @@ if (is_user_logged_in()) {
                                     <img src="<?php bloginfo('template_directory'); ?>/images/<?php echo $image; ?>.gif"
                                          border="0" alt="<?php echo $text; ?>" class="myicon" />
                                 </a>
-                                <?php if ($image == 'admin' && $blog->userblog_id != 1) : ?>
+                                <?php if ($image === 'admin' && (int)$blog->userblog_id !== 1) : ?>
                                     <a
                                         href='<?php
                                             echo esc_url(get_admin_url($blog->userblog_id, 'ms-delete-site.php'));
@@ -181,7 +181,7 @@ if (is_user_logged_in()) {
 
         <ul class="cloudtags">
             <li class="mes">
-                <a href="<?php echo get_option('home'); ?>/index.php?a=mostActive">Més...</a>
+                <a href="<?php echo esc_url(home_url('/index.php?a=mostActive')); ?>">Més...</a>
             </li>
         </ul>
     </div>
@@ -226,7 +226,7 @@ if (is_user_logged_in()) {
             </ul>
             <ul class="cloudtags">
                 <li class="mes">
-                    <a href="<?php echo get_option('home'); ?>/index.php?a=lastCreated">Més...</a>
+                    <a href="<?php echo esc_url(home_url('/index.php?a=lastCreated')); ?>">Més...</a>
                 </li>
             </ul>
     <?php } ?>
