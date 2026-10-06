@@ -1,6 +1,6 @@
 <?php get_header();?>
     <div id="content">
-        <?php include("evalcontent.php");?>
+        <?php get_template_part('evalcontent'); ?>
     </div> <!-- end of content -->
 <?php get_sidebar(); ?>
 

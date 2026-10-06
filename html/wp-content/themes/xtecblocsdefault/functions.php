@@ -10,6 +10,15 @@ function xtec_remove_admin_bar(): void
 add_action('before_signup_header', 'xtec_remove_admin_bar', 1);
 
 /**
+ * Lets WordPress generate the title of the pages.
+ */
+function xtec_theme_setup(): void
+{
+    add_theme_support('title-tag');
+}
+add_action('after_setup_theme', 'xtec_theme_setup');
+
+/**
  * Loads the stylesheet of the theme, with the date of the file as version so that browsers load it again when it
  * changes. It is enqueued with priority 1 so that, as before, it is printed before the styles of WordPress.
  */

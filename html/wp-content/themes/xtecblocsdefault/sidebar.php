@@ -16,13 +16,13 @@
 
     <!-- start of sideleft -->      
     <div id="sideleft">
-        <?php include("sideleft.php"); ?> 
+        <?php get_template_part('sideleft'); ?>
     </div>
     <!-- end of sideleft -->
 
     <!-- start of sideright -->
     <div id="sideright">
-        <?php include("sideright.php"); ?> 
+        <?php get_template_part('sideright'); ?>
     </div>
     <!-- end of sideright -->
 

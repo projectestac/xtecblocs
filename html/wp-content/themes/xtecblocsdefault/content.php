@@ -25,7 +25,7 @@ if (isset($_GET['id'])) {
         <h2 class="contentboxheadfons">Notícies</h2>
         <div class="article">
             <h3><?php echo esc_html($post->post_title); ?></h3>
-            <p class="data">Publicat <?php echo dateText(strtotime($post->post_date));?></p>
+            <p class="data">Publicat <?php echo xtec_date_text(strtotime($post->post_date));?></p>
             <?php echo apply_filters('the_content', $post->post_content); ?>
             <?php if ($post->comment_count > 0) {?>
                 <p class="comentari">Aquesta notícia té <a
@@ -39,7 +39,7 @@ if (isset($_GET['id'])) {
     </div>
         <?php
     // comments
-        include_once(get_template_directory() . '/comments.php');
+        get_template_part('comments');
     }
 } else {
     if (function_exists('xtecweekblog_current_weekblog')) {
@@ -99,7 +99,7 @@ if (isset($_GET['id'])) {
                 $news_query->the_post();?>
                 <div class="article">
                     <h3><?php the_title(); ?></h3>
-                    <p class="data">Publicat <?php echo dateText(strtotime(get_the_date('Y-m-d H:i:s')));?></p>
+                    <p class="data">Publicat <?php echo xtec_date_text(strtotime(get_the_date('Y-m-d H:i:s')));?></p>
                     <?php the_content(); ?>
                     <div class="clear"></div>
                 </div> <!--end of article -->   
@@ -120,7 +120,7 @@ if (isset($_GET['id'])) {
     $blogs = xtec_latest_posts_latest_posts(10, 5, 0);
     if (is_array($blogs)) {
         foreach ($blogs as $blog) {
-            $date = dateText(strtotime($blog['post_date']));
+            $date = xtec_date_text(strtotime($blog['post_date']));
             //Show the content
             echo "<h3><a href=\"" . esc_url($blog['blog_url']) . "\" style=\"color:#408DD4;\" >" .
                 esc_html(stripslashes($blog['blog_title'])) . "</a>";

@@ -88,7 +88,7 @@ switch ($action) {
         $init = max(1, (int)($_GET['init'] ?? 1));
         $mostActive = xtec_latest_posts_most_active_blogs($ipp, $init - 1);
         $blogsNumber = xtec_latest_posts_num_active_blogs();
-        $pager = pager($init, $blogsNumber, 'index.php?a=mostActive&amp;init=%%', $ipp);
+        $pager = xtec_pager($init, $blogsNumber, 'index.php?a=mostActive&amp;init=%%', $ipp);
         $maxPosts = xtec_latest_posts_num_posts_of_most_active_blog();
         print '<div style="text-align:right; padding-right:60px;">' . $pager . '</div><br/ >';
         print '<table>';
@@ -125,7 +125,7 @@ switch ($action) {
         $blogs = xtec_api_latest_blogs($ipp, 3000, 'registered', $init - 1);
         $blogsNumber = xtec_api_blogs_number();
         $totalBlogs = $blogsNumber['blogs'] - $blogsNumber['blogsPrivate'];
-        $pager = pager($init, $totalBlogs, 'index.php?a=lastCreated&amp;init=%%', $ipp);
+        $pager = xtec_pager($init, $totalBlogs, 'index.php?a=lastCreated&amp;init=%%', $ipp);
         print '<div style="text-align:right; padding-right:60px;">' . $pager . '</div><br />';
         print '<table>';
         print '<th align="left" valign="top">T&iacute;tol</th>' .
@@ -153,8 +153,12 @@ switch ($action) {
     case 'newsList':
         print '<h2 style="color: #1C4387; font-size: 1.3em; background-image: none; border: none; ' .
             'margin-bottom: 1em; margin-top: 1em;">Llista de not&iacute;cies publicades</h2>';
-        $newsList = getNewsList();
-        print '<div style="text-align:right; padding-right:60px;"></div><br/ >';
+        $ipp = 5;
+        $init = max(1, (int)($_GET['init'] ?? 1));
+        $newsList = xtec_get_news($init - 1, $ipp);
+        $totalNews = (int)wp_count_posts('post')->publish;
+        $pager = xtec_pager($init, $totalNews, 'index.php?a=newsList&amp;init=%%', $ipp);
+        print '<div style="text-align:right; padding-right:60px;">' . $pager . '</div><br/ >';
         print '<table>';
         print '<th align="left" valign="top">T&iacute;tol</th>' .
             '<th align="left" valign="top">Data de publicaci&oacute;</th>';
@@ -163,14 +167,14 @@ switch ($action) {
             $bgcolor = ($bgcolor === '#e5f2fe') ? '#ffffff' : '#e5f2fe';
             ?>
             <tr bgcolor="<?php echo $bgcolor; ?>">
-                <td width="250"><a href="index.php?id=<?php echo (int)$new['newId'] ?>"
-                    title="V&eacute;s a la notícia"><?php echo esc_html(stripslashes($new['new_title'])); ?></a></td><td
-                    width="150"><?php echo date('d/m/Y', strtotime($new['post_date'])); ?></td></tr>
+                <td width="250"><a href="index.php?id=<?php echo $new->ID ?>"
+                    title="V&eacute;s a la notícia"><?php echo esc_html(stripslashes($new->post_title)); ?></a></td><td
+                    width="150"><?php echo date('d/m/Y', strtotime($new->post_date)); ?></td></tr>
             <?php
         }
         print '</table>';
         break;
     default:
-        include __DIR__ . '/content.php';
+        get_template_part('content');
         break;
 }

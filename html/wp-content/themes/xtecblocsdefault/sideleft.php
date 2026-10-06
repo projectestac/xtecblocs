@@ -3,17 +3,10 @@
     <span class="sideboxleft">&nbsp;</span>
     <h3 class="noticies">Cerca</h3>
     <div class="sidecontent">
-        <form method="POST">
-            <input type="text" id="paraulaCerca" name="paraulaCerca" style="width:117px;float:left;"
-                onkeydown="if (event.keyCode === 13) {
-                    document.getElementById('botoCerca').focus();
-                    document.getElementById('botoCerca').click();
-                    event.returnValue=false
-                }"/>
-            <button type="button" id="botoCerca"
-                onclick="open('https://www.google.com/search?q=site:'+'<?php echo DOMAIN_CURRENT_SITE ?>'+'+'+
-                    encodeURIComponent(document.getElementById('paraulaCerca').value),'','');"
-                value="Cerca">Cerca</button>
+        <form method="get" action="https://www.google.com/search" target="_blank">
+            <input type="hidden" name="as_sitesearch" value="<?php echo esc_attr(DOMAIN_CURRENT_SITE); ?>"/>
+            <input type="text" id="paraulaCerca" name="q" style="width:117px;float:left;"/>
+            <button type="submit" id="botoCerca">Cerca</button>
         </form>
     </div>
 </div>

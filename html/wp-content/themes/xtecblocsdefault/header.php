@@ -2,13 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ca" lang="ca">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>
-        <?php bloginfo('name'); ?>
-        <?php if (is_single()) : ?>
-            &raquo; Blog Archive
-        <?php endif; ?>
-        <?php wp_title(); ?>
-    </title>
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed"
         href="<?php bloginfo('rss2_url'); ?>"/>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>

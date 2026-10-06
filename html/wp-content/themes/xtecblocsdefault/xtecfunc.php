@@ -1,6 +1,12 @@
 <?php
 
-function dateText($timestamp): string
+/**
+ * Formats the date of a post: 'avui', 'ahir' or 'el dia DD de MES de AAAA'.
+ *
+ * @param int $timestamp The local date of the post read as UTC, as strtotime() returns it.
+ * @return string The formatted date.
+ */
+function xtec_date_text(int $timestamp): string
 {
     $monthName = [
         'de gener', 'de febrer', 'de mar&ccedil;', 'd\'abril', 'de maig', 'de juny', 'de juliol', 'd\'agost',
@@ -23,18 +29,23 @@ function dateText($timestamp): string
     return $dateText;
 }
 
-function getNewsList(): array
+/**
+ * Gets a page of the published news of the portal, from newest to oldest.
+ *
+ * @param int $offset Number of news to skip.
+ * @param int $number Number of news to get.
+ * @return WP_Post[] The news.
+ */
+function xtec_get_news(int $offset, int $number): array
 {
-    global $wpdb;
-    $sql = "SELECT id,post_date,post_title FROM $wpdb->posts " .
-        "WHERE `post_type`='post' and `post_status`='publish' ORDER BY ID DESC";
-    $news = $wpdb->get_results($sql);
-    $posts = [];
-
-    foreach ($news as $new) {
-        $posts[] = ['newId' => $new->id, 'new_title' => $new->post_title, 'post_date' => $new->post_date];
-    }
-    return $posts;
+    return get_posts([
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'orderby' => 'ID',
+        'order' => 'DESC',
+        'offset' => $offset,
+        'numberposts' => $number,
+    ]);
 }
 
 
@@ -48,7 +59,7 @@ function getNewsList(): array
  * @param string $urltemplate template for url, will replace '%%' with item number
  * @param integer $perpage number of links to display (default=10)
  */
-function Pager($startnum, $total, $urltemplate, $perpage = 20): ?string
+function xtec_pager($startnum, $total, $urltemplate, $perpage = 20): ?string
 {
     if (empty($startnum)) {
         $startnum = 1;
