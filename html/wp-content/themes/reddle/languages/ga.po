@@ -1,0 +1,309 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress.com - Themes - Reddle\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-04-28T01:37:43+00:00\n"
+"PO-Revision-Date: 2017-03-23 08:29:50+0000\n"
+"Language: ga_IE\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+
+#: inc/wpcom-colors.php:32
+msgid "Navigation and Footer Sidebars"
+msgstr "Treoraíocht <span style=\"font-family: 'Segoe UI Symbol', helvetica, 'DejaVu Sans', sans-serif;\">⁊</span> Taobh-Bharraí Buntáisc"
+
+#: inc/wpcom-colors.php:62
+msgid "Navigation and Link Hover"
+msgstr "Treoraíocht <span style=\"font-family: 'Segoe UI Symbol', helvetica, 'DejaVu Sans';\">⁊</span> Corraí Nasc"
+
+#: searchform.php:10
+#: searchform.php:11
+#: searchform.php:12
+msgid "Search"
+msgstr "Cuartaigh"
+
+#: search.php:39
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Sén chaoi nár frítheadh na téarmaí a chuartaigh tú. D’fhéadfá focla eile a chuartú."
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr "Torthaí ar: %s"
+
+#: image.php:51
+msgid "Next &rarr;"
+msgstr "Ar aghaidh &rarr;"
+
+#: image.php:50
+msgid "&larr; Previous"
+msgstr "&larr; Chun Deiridh"
+
+#: header.php:45
+msgid "Skip to content"
+msgstr "Beir go dtí an t-alt féin mé"
+
+#: header.php:47
+msgid "Main menu"
+msgstr "Príomhroghchlár"
+
+#: functions.php:570
+msgid "Page %s"
+msgstr "Leathanach %s"
+
+#: functions.php:335
+msgid "<span class=\"byline\">Posted by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a></span></span>"
+msgstr "<span class=\"byline\">Údar: <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a></span></span>"
+
+#: functions.php:337
+msgid "View all posts by %s"
+msgstr "Gach a bhfuil foilsithe ag %s"
+
+#: functions.php:309
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s ag %2$s"
+
+#: functions.php:303
+msgid "Your comment is awaiting moderation."
+msgstr "Tá do fhreagra fós le ceadú."
+
+#: functions.php:288
+msgid "Pingback:"
+msgstr "Ping:"
+
+#: functions.php:260
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Chun tosaigh <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:256
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Chun deiridh"
+
+#: functions.php:251
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: functions.php:250
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: functions.php:246
+msgid "Post navigation"
+msgstr "Treoraíocht alt"
+
+#: functions.php:219
+msgid "Info"
+msgstr "Eolas"
+
+#: functions.php:218
+msgid "Topics"
+msgstr "Ábhair"
+
+#: functions.php:217
+msgid "Pages"
+msgstr "Leathanaigh"
+
+#: functions.php:178
+#: functions.php:188
+#: functions.php:198
+msgid "An optional widget area for your site footer"
+msgstr "Limistéar giúirléidí roghnach i mbuntásc do shuímh"
+
+#: functions.php:186
+msgid "Second Footer Area"
+msgstr "An Dara Réimse sa mBuntásc"
+
+#: functions.php:196
+msgid "Third Footer Area"
+msgstr "An Tríú Réimse Buntáisc"
+
+#: functions.php:168
+msgid "An optional second sidebar area"
+msgstr "Limistéar eile (roghnach) taobh-bharra"
+
+#: functions.php:176
+msgid "First Footer Area"
+msgstr "An Chéad Réimse sa mBuntásc"
+
+#: functions.php:157
+msgid "Sidebar 1"
+msgstr "Taobh-Bharra 1"
+
+#: functions.php:166
+msgid "Sidebar 2"
+msgstr "Taobh-Bharra 2"
+
+#: functions.php:76
+msgid "Primary Menu"
+msgstr "Príomhroghchlár"
+
+#: footer.php:26
+msgid "Theme: %1$s by %2$s."
+msgstr "Téama: %1$s le %2$s."
+
+#: footer.php:24
+msgid "Proudly powered by %s"
+msgstr "Le cumhacht %s"
+
+#: footer.php:24
+msgid "http://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+#: content-single.php:37
+#: content.php:39
+#: functions.php:127
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Tuilleadh <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-page.php:23
+#: content-single.php:38
+#: content.php:40
+#: image.php:71
+msgid "Pages:"
+msgstr "Leathanaigh:"
+
+#: content-image.php:91
+#: content-page.php:26
+#: content-single.php:76
+#: content.php:78
+#: functions.php:288
+#: functions.php:311
+#: image.php:44
+msgid "Edit"
+msgstr "Eagar"
+
+#: content-image.php:77
+#: content-single.php:62
+#: content.php:64
+msgid "Tagged %1$s"
+msgstr "Clibeanna: %1$s"
+
+#: content-image.php:67
+#: content-single.php:56
+#: content.php:58
+msgid "Posted in %1$s"
+msgstr "Ranganna: %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: content-image.php:63
+#: content-image.php:73
+#: content-single.php:44
+#: content-single.php:47
+#: content.php:46
+#: content.php:49
+msgid ", "
+msgstr ", "
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "%"
+msgstr "%"
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "0"
+msgstr "0"
+
+#: content-404.php:10
+msgid "Hi there. You seem to be lost."
+msgstr "Hóigh. Shílfeá go bhfuil tú amú."
+
+#: content-404.php:14
+msgid "It looks like nothing was found at this location. Perhaps it <em>was</em> there but now it&rsquo;s gone. Maybe try one of the links below or a search?"
+msgstr "Níor frítheadh tada anseo. Meas tú an raibh sé anseo tráth den tsaol ach go bhfuil sé imithe anois… D’fhéadfá nasc a thraíáil thíos nó é a chuartú."
+
+#: content-image.php:23
+#: content-image.php:31
+#: content-image.php:82
+#: content-single.php:67
+#: content.php:13
+#: content.php:69
+msgid "Permalink to %s"
+msgstr "Buan-nasc le %s"
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "Freagraí dúnta."
+
+#: comments.php:32
+#: comments.php:52
+msgid "Newer Comments &rarr;"
+msgstr "Freagraí Nua &rarr;"
+
+#: comments.php:31
+#: comments.php:51
+msgid "&larr; Older Comments"
+msgstr "&larr; Seanfhreagraí"
+
+#: comments.php:30
+#: comments.php:50
+msgid "Comment navigation"
+msgstr "Treoraíocht freagartha"
+
+#: archive.php:106
+#: index.php:47
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Sén chaoi nár frítheadh an rud a bhí tú a iarraidh. B’fhéidir go gcuartófá é."
+
+#: archive.php:102
+#: index.php:43
+#: search.php:35
+msgid "Nothing Found"
+msgstr "Gan Toradh"
+
+#: archive.php:67
+#: functions.php:216
+msgid "Archives"
+msgstr "Cartlanna"
+
+#: archive.php:64
+#: inc/wpcom-colors.php:53
+msgid "Links"
+msgstr "Naisc"
+
+#: archive.php:61
+msgid "Quotes"
+msgstr "Athfhriotail"
+
+#: archive.php:58
+msgid "Videos"
+msgstr "Físeáin"
+
+#: archive.php:55
+msgid "Images"
+msgstr "Íomhánna"
+
+#: archive.php:52
+msgid "Asides"
+msgstr "Seachfhocla"
+
+#: archive.php:49
+msgid "Year: %s"
+msgstr "Bliain: %s"
+
+#: archive.php:46
+msgid "Month: %s"
+msgstr "Mí: %s"
+
+#: archive.php:43
+msgid "Day: %s"
+msgstr "Lá: %s"
+
+#: archive.php:35
+msgid "Author: %s"
+msgstr "Údar: %s"
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "1"
+msgstr "1"

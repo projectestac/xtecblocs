@@ -1,0 +1,337 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress.com - Themes - Reddle\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-06-14T05:09:12+00:00\n"
+"PO-Revision-Date: 2024-06-13 12:27:33+0000\n"
+"Language: fa\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+
+#. translators: use day_month to reverse the sequence of day and month
+#: content-image.php:84
+#: content-single.php:69
+#: content.php:71
+msgid "month_day"
+msgstr "day_month"
+
+#: image.php:35
+msgid "Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a>"
+msgstr "منتشرشده در <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"پیوند به تصویر تمام‌اندازه\">%4$s &times; %5$s</a>"
+
+#: inc/wpcom-colors.php:62
+msgid "Navigation and Link Hover"
+msgstr "ناوبری و رفتن روی پیوندها"
+
+#: inc/wpcom-colors.php:32
+msgid "Navigation and Footer Sidebars"
+msgstr "ناوبری و نوارهای کناری پسایند"
+
+#. Description of the theme
+msgid "Everything about Reddle's minimal design elegantly adapts to how you want to use your blog and what you want to use it for. Want to use your blog for a simple one-column link blog? A two-column business site with a custom header and no posts? Reddle can do that too &mdash; and look good doing it too."
+msgstr "همه‌چیز در مورد طراحی مینیمال Reddle به گونه‌ای است که با روش و مقصود استفادهٔ شما از وب‌نوشت هم‌خوانی پیدا می‌کند. می‌خواهید از وب‌نوشتتان به عنوان یک وب‌نوشت سادهٔ تک‌ستونه استفاده کنید؟ یک وب‌گاه تجاری با سرایند سفارشی و بدون نوشته؟ Reddle این می‌تواند این کارها را انجام دهد، و خوب هم انجام می‌دهد."
+
+#: searchform.php:10
+#: searchform.php:11
+#: searchform.php:12
+msgid "Search"
+msgstr "جست‌وجو"
+
+#: search.php:39
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "متأسفیم، موردی مطابق با جستجوی شما پیدا نشد. لطفا برای جستجو از کلیدواژه‌های دیگری استفاده کنید."
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr "نتایج جست‌وجو برای: %s"
+
+#: image.php:51
+msgid "Next &rarr;"
+msgstr "بعدی &rarr; "
+
+#: image.php:50
+msgid "&larr; Previous"
+msgstr "&larr; پیشین"
+
+#: image.php:24
+msgid "Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+msgstr "منتشرشده در <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> در <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> در <a href=\"%6$s\" title=\"بازگشت به %7$s\" rel=\"gallery\">%8$s</a>"
+
+#: header.php:45
+msgid "Skip to content"
+msgstr "پرش به محتوا"
+
+#: header.php:47
+msgid "Main menu"
+msgstr "گزینگان اصلی"
+
+#: functions.php:570
+msgid "Page %s"
+msgstr "صفحهٔ %s"
+
+#: functions.php:337
+msgid "View all posts by %s"
+msgstr "مشاهدهٔ همهٔ نوشته‌ها بر اساس %s"
+
+#: functions.php:335
+msgid "<span class=\"byline\">Posted by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a></span></span>"
+msgstr "<span class=\"byline\">نوشته‌شده به دست <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a></span></span>"
+
+#: functions.php:309
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s در %2$s"
+
+#: functions.php:303
+msgid "Your comment is awaiting moderation."
+msgstr "دیدگاه شما چشم به راه بررسی است."
+
+#: functions.php:288
+msgid "Pingback:"
+msgstr "بازتاب: "
+
+#: functions.php:260
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "نوشته‌های تازه‌تر <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:256
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> نوشته‌های پیشین"
+
+#: functions.php:251
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: functions.php:250
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: functions.php:246
+msgid "Post navigation"
+msgstr "ناوبری نوشته"
+
+#: functions.php:219
+msgid "Info"
+msgstr "اطلاعات"
+
+#: functions.php:218
+msgid "Topics"
+msgstr "موضوعات"
+
+#: functions.php:217
+msgid "Pages"
+msgstr "صفحه‌ها"
+
+#: functions.php:196
+msgid "Third Footer Area"
+msgstr "پهنهٔ پسایند سوم"
+
+#: functions.php:186
+msgid "Second Footer Area"
+msgstr "پهنهٔ پسایند دوم"
+
+#: functions.php:178
+#: functions.php:188
+#: functions.php:198
+msgid "An optional widget area for your site footer"
+msgstr "یک ابزارک دلبخواه برای پسایند وب‌گاه شما"
+
+#: functions.php:176
+msgid "First Footer Area"
+msgstr "پهنهٔ پسایند نخست"
+
+#: functions.php:168
+msgid "An optional second sidebar area"
+msgstr "یک پهنهٔ ابزارک دوم دلبخواه"
+
+#: functions.php:166
+msgid "Sidebar 2"
+msgstr "نوار کناری ۲"
+
+#: functions.php:157
+msgid "Sidebar 1"
+msgstr "نوار کناری ۱"
+
+#: functions.php:76
+msgid "Primary Menu"
+msgstr "گزینگان اصلی"
+
+#: footer.php:26
+msgid "Theme: %1$s by %2$s."
+msgstr "پوسته: %1$s کاری از %2$s."
+
+#: footer.php:24
+msgid "Proudly powered by %s"
+msgstr "با افتخار، نیرو گرفته از %s"
+
+#: footer.php:24
+msgid "A Semantic Personal Publishing Platform"
+msgstr "بستر نشر شخصی معنایی"
+
+#: footer.php:24
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: content-single.php:37
+#: content.php:39
+#: functions.php:127
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "به خواندن ادامه دهید <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-page.php:23
+#: content-single.php:38
+#: content.php:40
+#: image.php:71
+msgid "Pages:"
+msgstr "صفحه‌ها:"
+
+#: content-image.php:91
+#: content-page.php:26
+#: content-single.php:76
+#: content.php:78
+#: functions.php:288
+#: functions.php:311
+#: image.php:44
+msgid "Edit"
+msgstr "ویرایش"
+
+#: content-image.php:77
+#: content-single.php:62
+#: content.php:64
+msgid "Tagged %1$s"
+msgstr "برچسب‌خورده با %1$s"
+
+#: content-image.php:67
+#: content-single.php:56
+#: content.php:58
+msgid "Posted in %1$s"
+msgstr "فرستاده‌شده در %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: content-image.php:63
+#: content-image.php:73
+#: content-single.php:44
+#: content-single.php:47
+#: content.php:46
+#: content.php:49
+msgid ", "
+msgstr "، "
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "%"
+msgstr "%"
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "0"
+msgstr "۰"
+
+#: content-image.php:23
+#: content-image.php:31
+#: content-image.php:82
+#: content-single.php:67
+#: content.php:13
+#: content.php:69
+msgid "Permalink to %s"
+msgstr "پایاپیوند به %s"
+
+#: content-404.php:14
+msgid "It looks like nothing was found at this location. Perhaps it <em>was</em> there but now it&rsquo;s gone. Maybe try one of the links below or a search?"
+msgstr "به نظر می‌رسد چیزی اینجا پیدا نشد. شاید <em>بوده</em> اما حالا دیگر نیست. ممکن است بخواهید یکی از پیوندهای زیر را بیازمایید یا جستجو کنید؟"
+
+#: content-404.php:10
+msgid "Hi there. You seem to be lost."
+msgstr "درود بر شما. به نظر می‌رسد گم شده باشید."
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "دیدگاه‌ها بسته شده‌اند."
+
+#: comments.php:32
+#: comments.php:52
+msgid "Newer Comments &rarr;"
+msgstr "دیدگاه‌های تازه‌تر &rarr;"
+
+#: comments.php:31
+#: comments.php:51
+msgid "&larr; Older Comments"
+msgstr "&larr; دیدگاه‌های پیشین"
+
+#: comments.php:30
+#: comments.php:50
+msgid "Comment navigation"
+msgstr "ناوبری دیدگاه"
+
+#: comments.php:23
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s نظر برای “%2$s”"
+
+#: archive.php:106
+#: index.php:47
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "به نظر می‌آید ما نمی‌توانیم آنچه به دنبالش هستید بیابیم. احتمالا جست‌وجو می‌تواند کمک کند."
+
+#: archive.php:102
+#: index.php:43
+#: search.php:35
+msgid "Nothing Found"
+msgstr "چیزی پیدا نشد"
+
+#: archive.php:67
+#: functions.php:216
+msgid "Archives"
+msgstr "بایگانی"
+
+#: archive.php:64
+#: inc/wpcom-colors.php:53
+msgid "Links"
+msgstr "پیوندها"
+
+#: archive.php:61
+msgid "Quotes"
+msgstr "گفتاورد"
+
+#: archive.php:58
+msgid "Videos"
+msgstr "ویدئوها"
+
+#: archive.php:55
+msgid "Images"
+msgstr "تصویرها"
+
+#: archive.php:52
+msgid "Asides"
+msgstr "کلمات قصار"
+
+#: archive.php:49
+msgid "Year: %s"
+msgstr "سال: %s"
+
+#: archive.php:46
+msgid "Month: %s"
+msgstr "ماه: %s"
+
+#: archive.php:43
+msgid "Day: %s"
+msgstr "روز: %s"
+
+#: archive.php:35
+msgid "Author: %s"
+msgstr "نویسنده: %s"
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "1"
+msgstr "۱"

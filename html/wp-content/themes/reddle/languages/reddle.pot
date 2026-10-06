@@ -1,0 +1,376 @@
+# Copyright (C) 2026 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Reddle 1.3.7-wpcom\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/reddle\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-08-22T02:04:21+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+
+#. Theme Name of the theme
+#: style.css
+msgid "Reddle"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://wordpress.com/themes/reddle/"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Everything about Reddle's minimal design elegantly adapts to how you want to use your blog and what you want to use it for. Want to use your blog for a simple one-column link blog? A two-column business site with a custom header and no posts? Reddle can do that too &mdash; and look good doing it too."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Automattic"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://wordpress.com/themes/"
+msgstr ""
+
+#: archive.php:35
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: archive.php:43
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: archive.php:46
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: archive.php:49
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: archive.php:52
+msgid "Asides"
+msgstr ""
+
+#: archive.php:55
+msgid "Images"
+msgstr ""
+
+#: archive.php:58
+msgid "Videos"
+msgstr ""
+
+#: archive.php:61
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:64
+#: inc/wpcom-colors.php:53
+msgid "Links"
+msgstr ""
+
+#: archive.php:67
+#: functions.php:218
+msgid "Archives"
+msgstr ""
+
+#: archive.php:102
+#: index.php:43
+#: search.php:35
+msgid "Nothing Found"
+msgstr ""
+
+#: archive.php:106
+#: index.php:47
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: comments.php:23
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:30
+#: comments.php:50
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:31
+#: comments.php:51
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:32
+#: comments.php:52
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr ""
+
+#: content-404.php:10
+msgid "Hi there. You seem to be lost."
+msgstr ""
+
+#: content-404.php:14
+msgid "It looks like nothing was found at this location. Perhaps it <em>was</em> there but now it&rsquo;s gone. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: content-image.php:23
+#: content-image.php:31
+#: content-image.php:82
+#: content-single.php:67
+#: content.php:13
+#: content.php:69
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "0"
+msgstr ""
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "1"
+msgstr ""
+
+#: content-image.php:51
+#: content-single.php:27
+#: content.php:29
+msgid "%"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: content-image.php:63
+#: content-image.php:73
+#: content-single.php:44
+#: content-single.php:47
+#: content.php:46
+#: content.php:49
+msgid ", "
+msgstr ""
+
+#: content-image.php:67
+#: content-single.php:56
+#: content.php:58
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: content-image.php:77
+#: content-single.php:62
+#: content.php:64
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#. translators: use day_month to reverse the sequence of day and month
+#: content-image.php:84
+#: content-single.php:69
+#: content.php:71
+msgid "month_day"
+msgstr ""
+
+#: content-image.php:91
+#: content-page.php:26
+#: content-single.php:76
+#: content.php:78
+#: functions.php:290
+#: functions.php:313
+#: image.php:44
+msgid "Edit"
+msgstr ""
+
+#: content-page.php:23
+#: content-single.php:38
+#: content.php:40
+#: image.php:71
+msgid "Pages:"
+msgstr ""
+
+#: content-single.php:37
+#: content.php:39
+#: functions.php:127
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: footer.php:24
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: footer.php:24
+msgid "A Semantic Personal Publishing Platform"
+msgstr ""
+
+#: footer.php:24
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: footer.php:26
+#, php-format
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: functions.php:76
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:157
+msgid "Sidebar 1"
+msgstr ""
+
+#: functions.php:166
+msgid "Sidebar 2"
+msgstr ""
+
+#: functions.php:168
+msgid "An optional second sidebar area"
+msgstr ""
+
+#: functions.php:176
+msgid "First Footer Area"
+msgstr ""
+
+#: functions.php:178
+#: functions.php:188
+#: functions.php:198
+msgid "An optional widget area for your site footer"
+msgstr ""
+
+#: functions.php:186
+msgid "Second Footer Area"
+msgstr ""
+
+#: functions.php:196
+msgid "Third Footer Area"
+msgstr ""
+
+#: functions.php:219
+msgid "Pages"
+msgstr ""
+
+#: functions.php:220
+msgid "Topics"
+msgstr ""
+
+#: functions.php:221
+msgid "Info"
+msgstr ""
+
+#: functions.php:248
+msgid "Post navigation"
+msgstr ""
+
+#: functions.php:252
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: functions.php:253
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
+#: functions.php:258
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: functions.php:262
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: functions.php:290
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:305
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:311
+#, php-format
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions.php:337
+#, php-format
+msgid "<span class=\"byline\">Posted by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a></span></span>"
+msgstr ""
+
+#: functions.php:339
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: functions.php:573
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: header.php:45
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:47
+msgid "Main menu"
+msgstr ""
+
+#: image.php:24
+#, php-format
+msgid "Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+msgstr ""
+
+#: image.php:35
+#, php-format
+msgid "Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a>"
+msgstr ""
+
+#: image.php:50
+msgid "&larr; Previous"
+msgstr ""
+
+#: image.php:51
+msgid "Next &rarr;"
+msgstr ""
+
+#: inc/wpcom-colors.php:32
+msgid "Navigation and Footer Sidebars"
+msgstr ""
+
+#: inc/wpcom-colors.php:62
+msgid "Navigation and Link Hover"
+msgstr ""
+
+#: search.php:17
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php:39
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: searchform.php:10
+#: searchform.php:11
+#: searchform.php:12
+msgid "Search"
+msgstr ""
