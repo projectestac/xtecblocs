@@ -1,4 +1,4 @@
 [submodule "html/wp-content/plugins/xtec-ldap-login"]
 	path = html/wp-content/plugins/xtec-ldap-login
 	url = https://github.com/projectestac/wordpress-xtec-ldap-login.git
-	branch = WIP-oauth
+	branch = WIP-WordPress-7.1
