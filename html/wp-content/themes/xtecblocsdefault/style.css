@@ -9,7 +9,7 @@ License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 
 body {
-    padding: 0 495px 0 495px;
+    padding: 0;
     margin: 0;
     text-align: left;
     background: #fff;
@@ -18,22 +18,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#sizer {
-    margin: 0 auto 0 auto;
-    padding: 0;
-    width: 100%;
-    max-width: 290px;
-}
-
-#expander {
-    background: white;
-    margin: 0 -495px 0 -495px;
-    min-width: 990px;
-    position: relative;
-}
-
 #wrapper {
-    width: 100%;
+    min-width: 800px;
 }
 
 #sidefooter {
@@ -66,7 +52,6 @@ body {
     display: block;
     height: 72px;
     background: #fff url(images/css/fons.png) repeat-x top left;
-    width: 98%;
     margin: -6px 12px 0 12px;
     text-align: left;
 }
@@ -218,6 +203,8 @@ li.login a {
 
 #bloc_destacat img {
     float: left;
+    max-width: 50%;
+    height: auto;
     padding-right: 0.8em;
 }
 
@@ -225,7 +212,8 @@ li.login a {
     font-size: 0.9em;
     padding-top: 0.5em;
     padding-right: 0.8em;
-    margin: 0 0 5px 320px;
+    margin: 0 0 5px 0;
+    overflow: hidden;
 }
 
 #bloc_destacat div.clear {
@@ -250,7 +238,8 @@ li.login a {
 }
 
 #bloc_destacat ul {
-    margin: 0 0 0 390px;
+    margin: 0;
+    overflow: hidden;
     list-style-image:url(images/css/fletxa.gif);
 }
 
@@ -339,51 +328,36 @@ div.darrerArticle p.data {
     display: none;
 }
 
-#sidebar p.creabloc  {
-    width: 346px;
+/* The banners shrink when the sidebar is narrower than them */
+#sidebar p.creabloc,
+#sidebar p.espaicursos {
+    position: relative;
+    width: calc(100% - 24px);
+    max-width: 346px;
     margin: 35px auto 10px;
 }
 
-#sidebar p.creabloc a{
+#sidebar p.creabloc a,
+#sidebar p.espaicursos a {
     font-size: 10px;
-    position: relative;
     padding: 0;
-    width: 400px;
-    height: 67px;
-    overflow: hidden;
 }
 
-#sidebar p.creabloc a span {
+#sidebar p.creabloc a span,
+#sidebar p.espaicursos a span {
     position: absolute;
-    width: 346px;
+    width: 100%;
     height: 65px;
-    top: -3px;
+    top: 3px;
     left: 0;
     margin: 0;
     background: url(images/css/creablog.png) no-repeat;
-}
-
-#sidebar p.espaicursos  {
-    width: 346px;
-    margin: 35px auto 10px;
-}
-
-#sidebar p.espaicursos a{
-    font-size: 10px;
-    position: relative;
-    padding: 0;
-    width: 400px;
-    height: 65px;
-    overflow: hidden;
+    background-size: contain;
 }
 
 #sidebar p.espaicursos a span {
-    position: absolute;
-    width: 346px;
     height: 64px;
-    top: -3px;
-    left: 0;
-    background: url(images/css/cursos-i-proves.png) no-repeat;
+    background-image: url(images/css/cursos-i-proves.png);
 }
 
 #blau {
@@ -552,7 +526,7 @@ ul.cloudtags li a, ul.cloudtags li.mes a  {
 
 #sidebar #sidefooter {
     padding-top: 1em;
-    width: 320px;
+    max-width: 320px;
     margin: 0 auto;
 }
 
@@ -974,4 +948,15 @@ tbody, thead, tfoot {
 #sidebar ul li a.sense-descriptors,
 #sidebar ul li a.sense-descriptors:hover {
     color: red;
+}
+
+/* The two columns of the sidebar are stacked when they are too narrow */
+@media (max-width: 1100px) {
+    #sideleft,
+    #sideright {
+        float: none;
+        width: auto;
+        margin: 0;
+        padding: 0;
+    }
 }
