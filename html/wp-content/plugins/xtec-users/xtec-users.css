@@ -1,0 +1,14 @@
+span.num {
+	color:#EF6503;
+	font-size:2em;
+}
+
+input[type='radio']{
+	margin-right:20px;
+	margin-left:20px;
+}
+
+input[type='image']{
+	vertical-align:middle;
+	border-style:none;
+}
