@@ -5,7 +5,7 @@
  * Description:       Adds XTECBlocs user system with two types of users: LDAP users from XTEC and the others.
  * Version:           1.2
  * Requires at least: 5.5
- * Requires PHP:      7.4
+ * Requires PHP:      8.0
  * Network:           true
  * Author:            Francesc Bassas i Bullich, Toni Ginard
  * License:           GPL v2
@@ -22,7 +22,7 @@ add_action('wp_ajax_xtec_users_check', 'xtec_users_ajax_check');
 /**
  * Adds plugin menu.
  */
-function xtec_users_menu()
+function xtec_users_menu(): void
 {
     if (xtec_current_user_can('add_users')) {
         $add_users = add_submenu_page(
@@ -51,7 +51,7 @@ function xtec_users_menu()
 /**
  * Includes JavaScript file and CSS stylesheet.
  */
-function xtec_users_enqueue_assets()
+function xtec_users_enqueue_assets(): void
 {
     $plugindir = plugin_dir_url(__FILE__);
     // The date of the files is used as version so that browsers load them again when they change
@@ -77,7 +77,7 @@ function xtec_users_enqueue_assets()
  * @param string $key The name of the field.
  * @return string The value of the field.
  */
-function xtec_users_field($data, $key)
+function xtec_users_field(array $data, string $key): string
 {
     return (isset($data[$key]) && is_string($data[$key])) ? $data[$key] : '';
 }
@@ -89,7 +89,7 @@ function xtec_users_field($data, $key)
  * @param bool $xtec True if the user is a XTEC user.
  * @return array The names of the roles, indexed by role.
  */
-function xtec_users_roles($xtec)
+function xtec_users_roles(bool $xtec): array
 {
     $roles = [
         'editor' => _x('Editor', 'User role'),
@@ -110,7 +110,7 @@ function xtec_users_roles($xtec)
  * @return array The status (empty, invalid, xtec_not_found, not_xtec, member, xtec, local or new) and the user, if it
  *               exists.
  */
-function xtec_users_classify($username)
+function xtec_users_classify(string $username): array
 {
     if ($username === '') {
         return ['status' => 'empty', 'user' => null];
@@ -146,7 +146,7 @@ function xtec_users_classify($username)
  * @param string $email The e-mail address.
  * @return string The masked address, for example a••••••@xtec.cat.
  */
-function xtec_users_mask_email($email)
+function xtec_users_mask_email(string $email): string
 {
     $at = strpos($email, '@');
     if ($at === false) {
@@ -163,7 +163,7 @@ function xtec_users_mask_email($email)
  * @param string $html The content of the notice, already escaped.
  * @return string The HTML of the notice.
  */
-function xtec_users_notice($type, $html)
+function xtec_users_notice(string $type, string $html): string
 {
     return "<div class='notice notice-$type inline'>$html</div>";
 }
@@ -175,7 +175,7 @@ function xtec_users_notice($type, $html)
  * @param string $selected The selected role. The default is contributor.
  * @return string The HTML of the row of the table of the form.
  */
-function xtec_users_role_row($roles, $selected)
+function xtec_users_role_row(array $roles, string $selected): string
 {
     if (!isset($roles[$selected])) {
         $selected = 'contributor';
@@ -200,7 +200,7 @@ function xtec_users_role_row($roles, $selected)
  * @param string $errors The HTML of the errors of the form, if any.
  * @return string The HTML of the result.
  */
-function xtec_users_render_check($username, $values = [], $errors = '')
+function xtec_users_render_check(string $username, array $values = [], string $errors = ''): string
 {
     $check = xtec_users_classify($username);
     $user = $check['user'];
@@ -289,7 +289,7 @@ function xtec_users_render_check($username, $values = [], $errors = '')
 /**
  * Checks a username through AJAX and returns the HTML of the result.
  */
-function xtec_users_ajax_check()
+function xtec_users_ajax_check(): void
 {
     check_ajax_referer('xtec-add-users');
 
@@ -314,7 +314,7 @@ function xtec_users_ajax_check()
  * @return array The HTML of the notice of success, or the HTML of the errors. Both are empty if the user can't be
  *               added any more in this way, so that the new result of the check is shown.
  */
-function xtec_users_do_action($action, $username, $data)
+function xtec_users_do_action(string $action, string $username, array $data): array
 {
     $statuses = ['invite' => 'xtec', 'add' => 'local', 'create' => 'new'];
     if (!isset($statuses[$action])) {
@@ -418,7 +418,7 @@ Please click the following link to confirm the invite:
  * Shows the page to add users to the blog. The username is checked through AJAX while it is typed, and the result
  * shows the fields to add the user. Without JavaScript, the button to check the username does the same.
  */
-function xtec_add_users()
+function xtec_add_users(): void
 {
     $username = '';
     $values = [];
@@ -478,7 +478,7 @@ function xtec_add_users()
                     <td>
                         <input type="text" id="xtec-users-username" name="user[username]" class="regular-text"
                                value="<?php
-                               echo esc_attr($username); ?>" maxlength="60" autocomplete="off"
+                                echo esc_attr($username); ?>" maxlength="60" autocomplete="off"
                                autocapitalize="none" spellcheck="false"/>
                         <button type="submit" name="xtec_users_check" value="1" class="button">Comprova</button>
                     </td>
@@ -493,7 +493,7 @@ function xtec_add_users()
     <?php
 }
 
-function xtec_manage_users()
+function xtec_manage_users(): void
 {
     ?>
 
@@ -605,10 +605,10 @@ function xtec_manage_users()
                 if ($is_super_admin) { ?>
                     <p>En aquesta pàgina es llisten tots els usuaris locals, qui els ha creat i els blocs als quals
                         pertanyen.</p>
-                <?php
+                    <?php
                 } else { ?>
                     <p>En aquesta pàgina es llisten tots els usuaris que heu creat i els blocs als quals pertanyen.</p>
-                <?php
+                    <?php
                 } ?>
                 <p>Des d'aquí podeu canviar la contrasenya d'aquests usuaris i en el cas que no pertanyin a cap bloc
                     també podeu eliminar-los definitivament.</p>
@@ -679,7 +679,7 @@ function xtec_manage_users()
                         <?php
                         if ($is_super_admin) { ?>
                             <th scope="col" class="manage-column">Creat per</th>
-                        <?php
+                            <?php
                         } ?>
                         <th scope="col" class="manage-column">És membre de ...</th>
                     </tr>
@@ -700,7 +700,7 @@ function xtec_manage_users()
                                     if (xtec_current_user_can('delete_user', $user->ID)) { ?>
                                         | <a href="?page=xtec-manage-users&amp;action=delete_user&amp;user_id=<?php
                                         echo $user->ID; ?>">Elimina l'usuari</a>
-                                    <?php
+                                        <?php
                                     } ?>
                                 </div>
                             </td>
@@ -710,7 +710,7 @@ function xtec_manage_users()
                                     <?php
                                     echo esc_html(get_user_meta($user->ID, 'xtec_user_creator', true) ?: '—'); ?>
                                 </td>
-                            <?php
+                                <?php
                             } ?>
                             <td>
                                 <?php
@@ -748,7 +748,7 @@ function xtec_manage_users()
  *
  * @param WP_User_Query $query The query of users.
  */
-function xtec_users_exclude_xtec_emails($query)
+function xtec_users_exclude_xtec_emails(WP_User_Query $query): void
 {
     global $wpdb;
 
@@ -766,13 +766,13 @@ function xtec_users_exclude_xtec_emails($query)
  * @param int $paged The current page.
  * @return string The HTML of the pagination.
  */
-function xtec_users_pagination($total, $per_page, $paged)
+function xtec_users_pagination(int $total, int $per_page, int $paged): string
 {
     $pages = max(1, (int)ceil($total / $per_page));
     $paged = min($paged, $pages);
 
     // Same markup as WP_List_Table::pagination()
-    $link = function ($page, $class, $label, $symbol) use ($paged, $pages) {
+    $link = function (int $page, string $class, string $label, string $symbol) use ($paged, $pages): string {
         $disabled = ($class === 'first-page' || $class === 'prev-page') ? $paged <= 1 : $paged >= $pages;
         if ($disabled) {
             return "<span class='tablenav-pages-navspan button disabled' aria-hidden='true'>$symbol</span>";
@@ -807,15 +807,17 @@ function xtec_users_pagination($total, $per_page, $paged)
  * Checks if the current user can do an specific action.
  *
  * @param string $action The action to check.
- * @param string $param Extra arguments.
- * @return bool True if the user can do the action false otherwise.
+ * @param mixed $param Extra argument: the limit of blogs per day (create_blogs and create_blog_today) or the user ID
+ *                     (delete_user and change_user_password).
+ * @return bool|array True if the user can do the action false otherwise. For create_blog_today, an empty array if the
+ *                    user can create a blog today, or the IDs of the blogs created today otherwise.
  */
-function xtec_current_user_can($action, $param = '')
+function xtec_current_user_can(string $action, mixed $param = ''): bool|array
 {
     // Site admins can do it all except delete users who are still members of some blog
     if (is_super_admin()) {
         if ($action === 'delete_user') {
-            return !xtec_users_is_member_of_blogs($param);
+            return !xtec_users_is_member_of_blogs((int)$param);
         }
 
         if ($action === 'create_blog_today') {
@@ -839,8 +841,6 @@ function xtec_current_user_can($action, $param = '')
             global $current_user;
             wp_get_current_user();
             return xtec_is_xtec_user($current_user->ID);
-
-            break;
 
         case 'create_blogs':
             // Can create blogs: XTEC users from LDAP.
@@ -883,13 +883,11 @@ function xtec_current_user_can($action, $param = '')
 
             return $today_created_blogs;
 
-            break;
-
         case 'delete_user':
             // Can delete user: user who have created whenever the user to delete is not member of any bloc other than
             // the portal
             // $param -> user_id
-            $user_id = $param;
+            $user_id = (int)$param;
             global $current_user;
             if ($current_user->user_login === get_user_meta($user_id, 'xtec_user_creator', true)) {
                 return !xtec_users_is_member_of_blogs($user_id);
@@ -900,13 +898,13 @@ function xtec_current_user_can($action, $param = '')
         case 'change_user_password':
             // Can change user password: user who have created
             // $param -> user_id
-            $user_id = $param;
+            $user_id = (int)$param;
             global $current_user;
 
             return $current_user->user_login === get_user_meta($user_id, 'xtec_user_creator', true);
-
-            break;
     }
+
+    return false;
 }
 
 /**
@@ -915,7 +913,7 @@ function xtec_current_user_can($action, $param = '')
  * @param int $user_id The user ID.
  * @return bool True if the user is member of any blog other than the portal.
  */
-function xtec_users_is_member_of_blogs($user_id)
+function xtec_users_is_member_of_blogs(int $user_id): bool
 {
     foreach (get_blogs_of_user($user_id, true) as $blog) {
         if (!is_main_site($blog->userblog_id)) {
@@ -928,10 +926,10 @@ function xtec_users_is_member_of_blogs($user_id)
 /**
  * Checks if is a XTEC user.
  *
- * @param string $user_id The user ID.
+ * @param int $user_id The user ID.
  * @return bool True if is a XTEC user.
  */
-function xtec_is_xtec_user($user_id)
+function xtec_is_xtec_user(int $user_id): bool
 {
     $creator = get_user_meta($user_id, 'xtec_user_creator', true);
     return ($creator === 'LDAP_XTEC' || $creator === 'OAUTH_XTEC');
@@ -944,7 +942,7 @@ function xtec_is_xtec_user($user_id)
  * @param string $username The username.
  * @return bool True if is a valid username false otherwise.
  */
-function xtec_is_valid_username($username)
+function xtec_is_valid_username(string $username): bool
 {
     return !preg_match('/[^a-z0-9_.\-]/', $username);
 }
