@@ -220,3 +220,15 @@ msgstr "Nombre de blocs que cada usuari XTEC pot crear en 24 hores. Amb 0, nomé
 
 msgid "The username %s is not allowed."
 msgstr "El nom d'usuari %s no està permès."
+
+msgid "It is not possible to reset the password."
+msgstr "No és possible reinicialitzar la contrasenya."
+
+msgid "The password of XTEC users cannot be managed from XTECBlocs. If you have lost it, visit the %s."
+msgstr "La contrasenya dels usuaris de la XTEC no es pot gestionar des d'XTECBlocs. Si l'heu perduda, visiteu el %s."
+
+msgid "user support service of XTEC"
+msgstr "servei d'atenció a l'usuari de la XTEC"
+
+msgid "If you have lost your password, contact the user who registered you in the blog service."
+msgstr "Si heu perdut la contrasenya, poseu-vos en contacte amb l'usuari que us va donar d'alta al servei de blocs."
