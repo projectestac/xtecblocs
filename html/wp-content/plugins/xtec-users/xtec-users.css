@@ -1,14 +1,17 @@
-span.num {
-	color:#EF6503;
-	font-size:2em;
+/* Strength of the password of new users, with the colors of WordPress */
+#xtec-users-strength {
+    font-weight: 600;
 }
 
-input[type='radio']{
-	margin-right:20px;
-	margin-left:20px;
+#xtec-users-strength.short,
+#xtec-users-strength.bad {
+    color: #d63638;
 }
 
-input[type='image']{
-	vertical-align:middle;
-	border-style:none;
+#xtec-users-strength.good {
+    color: #996800;
+}
+
+#xtec-users-strength.strong {
+    color: #008a20;
 }
