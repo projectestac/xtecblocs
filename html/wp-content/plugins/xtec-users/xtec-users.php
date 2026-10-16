@@ -20,6 +20,9 @@ defined('ABSPATH') || exit;
 // Minimum length of the passwords of the local users
 const XTEC_USERS_MIN_PASSWORD_LENGTH = 8;
 
+// Minimum length of the usernames of the local users. Shorter usernames belong to XTEC users.
+const XTEC_USERS_MIN_LOCAL_USERNAME_LENGTH = 9;
+
 add_action('admin_menu', 'xtec_users_menu');
 add_action('wp_ajax_xtec_users_check', 'xtec_users_ajax_check');
 add_action('load-user-new.php', 'xtec_users_redirect_user_new');
@@ -182,7 +185,9 @@ function xtec_users_classify(string $username): array
 
     $user = get_user_by('login', $username) ?: null;
 
-    if (strlen($username) < 9) {
+    $is_xtec_username = strlen($username) < XTEC_USERS_MIN_LOCAL_USERNAME_LENGTH;
+
+    if ($is_xtec_username) {
         if (!$user) {
             return ['status' => 'xtec_not_found', 'user' => null];
         }
@@ -197,7 +202,7 @@ function xtec_users_classify(string $username): array
         return ['status' => 'member', 'user' => $user];
     }
 
-    return ['status' => (strlen($username) < 9) ? 'xtec' : 'local', 'user' => $user];
+    return ['status' => $is_xtec_username ? 'xtec' : 'local', 'user' => $user];
 }
 
 /**
@@ -313,13 +318,14 @@ function xtec_users_render_check(string $username, array $values = [], string $e
                 'error',
                 "<p>No s'ha trobat cap usuari XTEC amb el nom $name. Recordeu que l'usuari ha d'haver entrat a "
                 . 'XTECBlocs almenys una vegada.</p>'
-                . "<p>Si no és un usuari XTEC, el nom d'usuari ha de tenir un mínim de 9 caràcters.</p>"
+                . "<p>Si no és un usuari XTEC, el nom d'usuari ha de tenir un mínim de "
+                . XTEC_USERS_MIN_LOCAL_USERNAME_LENGTH . ' caràcters.</p>'
             );
         case 'not_xtec':
             return xtec_users_notice(
                 'error',
                 "<p>L'usuari $name no és un usuari XTEC i no es pot afegir al bloc. Els noms dels usuaris que no són "
-                . 'XTEC han de tenir un mínim de 9 caràcters.</p>'
+                . 'XTEC han de tenir un mínim de ' . XTEC_USERS_MIN_LOCAL_USERNAME_LENGTH . ' caràcters.</p>'
             );
         case 'member':
             return xtec_users_notice('info', "<p>L'usuari $name ja és membre d'aquest bloc.</p>");
@@ -624,7 +630,8 @@ function xtec_users_add_users_page(): void
                 <li><strong>Usuaris XTEC</strong>: el seu nom d'usuari de la XTEC. Rebran una invitació per correu
                     electrònic. Han d'haver entrat a XTECBlocs almenys una vegada.
                 </li>
-                <li><strong>Altres usuaris</strong>: un nom d'usuari d'un mínim de 9 caràcters. Si ja existeix,
+                <li><strong>Altres usuaris</strong>: un nom d'usuari d'un mínim de
+                    <?php echo XTEC_USERS_MIN_LOCAL_USERNAME_LENGTH; ?> caràcters. Si ja existeix,
                     s'afegirà al bloc. Si no existeix, el podreu crear.
                 </li>
             </ul>
@@ -884,7 +891,7 @@ function xtec_users_manage_users_page(): void
                                     <a href="?page=xtec-manage-users&amp;action=change_user_password&amp;<?php
                                     echo 'user_id=' . $user->ID; ?>">Canvia la contrasenya</a>
                                     <?php
-                                    if (xtec_users_current_user_can('delete_user', $user->ID)) { ?>
+                                    if (xtec_users_can_delete_user($user->ID, $blogs)) { ?>
                                         | <a href="?page=xtec-manage-users&amp;action=delete_user&amp;user_id=<?php
                                         echo $user->ID; ?>">Elimina l'usuari</a>
                                         <?php
@@ -1001,19 +1008,44 @@ function xtec_users_max_blogs_per_day(): int
 }
 
 /**
+ * Returns the blogs of a user that have been created in the last 24 hours.
+ *
+ * @param int $user_id The user ID.
+ * @return int[] The IDs of the blogs.
+ */
+function xtec_users_blogs_created_today(int $user_id): array
+{
+    // The date of registration of the blogs is in UTC
+    $since = gmdate('Y-m-d H:i:s', time() - DAY_IN_SECONDS);
+    $blogs = [];
+
+    // get_blogs_of_user() leaves the blogs in the cache, so get_site() doesn't query the database
+    foreach (get_blogs_of_user($user_id, true) as $blog) {
+        if (get_site($blog->userblog_id)->registered > $since) {
+            $blogs[] = (int)$blog->userblog_id;
+        }
+    }
+
+    return $blogs;
+}
+
+/**
  * Checks if the current user can create a blog. Only XTEC users can, and only up to a maximum of blogs per day.
  *
- * @return string The reason why the user can't create a blog: not_xtec or limit. Empty if the user can create it.
+ * @return array The reason why the user can't create a blog (not_xtec or limit, or empty if the user can create it)
+ *               and, if the limit has been reached, the IDs of the blogs created in the last 24 hours.
  */
-function xtec_users_signup_restriction(): string
+function xtec_users_signup_restriction(): array
 {
     $limit = xtec_users_max_blogs_per_day();
 
     if (!is_user_logged_in() || !xtec_users_current_user_can('create_blogs', $limit)) {
-        return 'not_xtec';
+        return ['reason' => 'not_xtec', 'blogs' => []];
     }
 
-    return xtec_users_current_user_can('create_blog_today', $limit) ? 'limit' : '';
+    $blogs = xtec_users_current_user_can('create_blog_today', $limit);
+
+    return ['reason' => $blogs ? 'limit' : '', 'blogs' => $blogs];
 }
 
 /**
@@ -1022,11 +1054,11 @@ function xtec_users_signup_restriction(): string
 function xtec_users_preprocess_signup_form(): void
 {
     $restriction = xtec_users_signup_restriction();
-    if ($restriction === '') {
+    if ($restriction['reason'] === '') {
         return;
     }
 
-    if ($restriction === 'not_xtec') {
+    if ($restriction['reason'] === 'not_xtec') {
         echo '<p class="mu_alert">Només poden crear blocs els usuaris XTEC.</p>';
     } else {
         $limit = xtec_users_max_blogs_per_day();
@@ -1034,7 +1066,7 @@ function xtec_users_preprocess_signup_form(): void
         echo '<p>El límit de creació de blocs diari és <strong>' . $limit . '</strong>. Si voleu crear-ne més avui, '
             . "abans n'haureu d'eliminar algun.</p>";
         echo '<p>Blocs creats en les darreres 24 hores:</p><ul>';
-        foreach (xtec_users_current_user_can('create_blog_today', $limit) as $blog_id) {
+        foreach ($restriction['blogs'] as $blog_id) {
             echo "<li><a href='" . esc_url(get_blog_option($blog_id, 'siteurl')) . "'>"
                 . esc_html(get_blog_option($blog_id, 'blogname')) . '</a></li>';
         }
@@ -1058,7 +1090,7 @@ function xtec_users_preprocess_signup_form(): void
  */
 function xtec_users_validate_blog_signup(array $result): array
 {
-    $restriction = xtec_users_signup_restriction();
+    $restriction = xtec_users_signup_restriction()['reason'];
 
     if ($restriction === 'not_xtec') {
         $result['errors']->add('blogname', 'Només poden crear blocs els usuaris XTEC.');
@@ -1119,113 +1151,65 @@ function xtec_users_update_network_options(): void
  */
 function xtec_users_current_user_can(string $action, mixed $param = ''): bool|array
 {
-    // Site admins can do it all except delete users who are still members of some blog
+    // Super admins can do it all except delete users who are still members of some blog
     if (is_super_admin()) {
         if ($action === 'delete_user') {
-            return !xtec_users_is_member_of_blogs((int)$param);
+            return xtec_users_can_delete_user((int)$param);
         }
 
-        if ($action === 'create_blog_today') {
-            return array();
-        }
-
-        return true;
+        return ($action === 'create_blog_today') ? [] : true;
     }
+
+    $user = wp_get_current_user();
 
     switch ($action) {
         case 'add_users':
-            // Can add users: XTEC users from LDAP who can edit users
-
-            global $current_user;
-            wp_get_current_user();
-            return current_user_can('add_users') && xtec_users_is_xtec_user($current_user->ID);
+            // XTEC users who can add users to the blog
+            return current_user_can('add_users') && xtec_users_is_xtec_user($user->ID);
 
         case 'manage_users':
-            // Can manage users: XTEC users from LDAP
-
-            global $current_user;
-            wp_get_current_user();
-            return xtec_users_is_xtec_user($current_user->ID);
+            return xtec_users_is_xtec_user($user->ID);
 
         case 'create_blogs':
-            // Can create blogs: XTEC users from LDAP.
-            // $param -> limit per day blogs creation
-
-            $limit = $param;
-            if ((int)$limit === 0) {
-                return false;
-            }
-
-
-            global $current_user;
-            wp_get_current_user();
-            return xtec_users_is_xtec_user($current_user->ID);
+            // XTEC users, unless the limit of blogs per day ($param) is 0
+            return (int)$param !== 0 && xtec_users_is_xtec_user($user->ID);
 
         case 'create_blog_today':
-            // Can create blog today: users who have not exceeded the maximum blog daily creation.
-            // Returns: empty array, if user can create blog today.
-            //          array with blogs created today for user, if user exceeds the maximum blog daily creation.
-            // $param -> limit per day blogs creation
+            // Empty if the user hasn't reached the limit of blogs per day ($param), or the blogs created in the last
+            // 24 hours otherwise
+            $blogs = xtec_users_blogs_created_today($user->ID);
 
-            $limit = $param;
-            $today_created_blogs = array();
-
-            global $current_user;
-            wp_get_current_user();
-            $blogs = get_blogs_of_user($current_user->ID, true);
-
-            foreach ($blogs as $blog) {
-                $ahir = date("Y-m-d H:i:s", time() - 86400);
-                $registered = get_blog_details($blog->userblog_id)->registered;
-                if ($ahir < $registered) {
-                    array_push($today_created_blogs, $blog->userblog_id);
-                }
-            }
-
-            if (count($today_created_blogs) < $limit) {
-                return array();
-            }
-
-            return $today_created_blogs;
+            return (count($blogs) < (int)$param) ? [] : $blogs;
 
         case 'delete_user':
-            // Can delete user: user who have created whenever the user to delete is not member of any bloc other than
-            // the portal
-            // $param -> user_id
-            $user_id = (int)$param;
-            global $current_user;
-            if ($current_user->user_login === get_user_meta($user_id, 'xtec_user_creator', true)) {
-                return !xtec_users_is_member_of_blogs($user_id);
-            }
-
-            return false;
+            return xtec_users_can_delete_user((int)$param);
 
         case 'change_user_password':
-            // Can change user password: user who have created
-            // $param -> user_id
-            $user_id = (int)$param;
-            global $current_user;
-
-            return $current_user->user_login === get_user_meta($user_id, 'xtec_user_creator', true);
+            // Only the user who created the user ($param)
+            return $user->user_login === get_user_meta((int)$param, 'xtec_user_creator', true);
     }
 
     return false;
 }
 
 /**
- * Checks if a user is member of any blog other than the portal, which is the main site.
+ * Checks if the current user can delete a user from XTECBlocs. Super admins can delete any user, and the rest only
+ * the users that they have created. In both cases, the user can't be member of any blog other than the portal, which
+ * is the main site.
  *
- * @param int $user_id The user ID.
- * @return bool True if the user is member of any blog other than the portal.
+ * @param int $user_id The ID of the user to delete.
+ * @param array|null $blogs The blogs of the user, if they have already been obtained.
+ * @return bool True if the current user can delete the user.
  */
-function xtec_users_is_member_of_blogs(int $user_id): bool
+function xtec_users_can_delete_user(int $user_id, ?array $blogs = null): bool
 {
-    foreach (get_blogs_of_user($user_id, true) as $blog) {
+    foreach ($blogs ?? get_blogs_of_user($user_id, true) as $blog) {
         if (!is_main_site($blog->userblog_id)) {
-            return true;
+            return false;
         }
     }
-    return false;
+
+    return is_super_admin() || wp_get_current_user()->user_login === get_user_meta($user_id, 'xtec_user_creator', true);
 }
 
 /**
