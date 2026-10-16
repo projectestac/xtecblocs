@@ -95,10 +95,15 @@ function xtec_users_manage_users_page(): void
     $done = isset($_GET['done']) && is_string($_GET['done']) ? $_GET['done'] : '';
     $done_user = isset($_GET['user']) && is_string($_GET['user']) ? wp_unslash($_GET['user']) : '';
     $message = '';
+    $done_name = '<strong>' . esc_html($done_user) . '</strong>';
     if ($done === 'password') {
-        $message = "<p>S'ha canviat la contrasenya de l'usuari <strong>" . esc_html($done_user) . '</strong>.</p>';
+        /* translators: %s: Username. */
+        $text = esc_html__('The password of the user %s has been changed.', 'xtec-users');
+        $message = '<p>' . sprintf($text, $done_name) . '</p>';
     } elseif ($done === 'deleted') {
-        $message = "<p>S'ha eliminat l'usuari <strong>" . esc_html($done_user) . "</strong> d'XTECBlocs.</p>";
+        /* translators: %s: Username. */
+        $text = esc_html__('The user %s has been deleted from XTECBlocs.', 'xtec-users');
+        $message = '<p>' . sprintf($text, $done_name) . '</p>';
     }
     $list_url = admin_url('users.php?page=xtec-manage-users');
     $doaction = isset($_GET['action']) && is_string($_GET['action']) ? $_GET['action'] : '';
@@ -109,19 +114,22 @@ function xtec_users_manage_users_page(): void
     }
     ?>
     <div class="wrap">
-        <h1>Gestió d'usuaris</h1>
+        <h1><?php esc_html_e('User management', 'xtec-users'); ?></h1>
 
         <?php
         if ($doaction === 'change_user_password') {
             ?>
-            <h2>Canvia la contrasenya</h2>
-            <p>Escriviu la nova contrasenya de l'usuari <?php echo $name; ?>.</p>
+            <h2><?php esc_html_e('Change the password', 'xtec-users'); ?></h2>
+            <p>
+                <?php
+                /* translators: %s: Username. */
+                printf(esc_html__('Enter the new password of the user %s.', 'xtec-users'), $name);
+                ?>
+            </p>
             <?php
             if (isset($_GET['error'])) {
-                echo xtec_users_notice(
-                    'error',
-                    '<p>La contrasenya ha de tenir un mínim de ' . XTEC_USERS_MIN_PASSWORD_LENGTH . ' caràcters.</p>'
-                );
+                // The password is too short or empty
+                echo xtec_users_notice('error', xtec_users_password_error('-'));
             }
             ?>
             <form action="<?php echo esc_url($list_url); ?>" method="post">
@@ -129,28 +137,40 @@ function xtec_users_manage_users_page(): void
                 <input type="hidden" name="user_id" value="<?php echo esc_attr((string)$user_id); ?>" />
                 <table class="form-table" role="presentation">
                     <tr>
-                        <th scope="row"><label for="xtec-users-password">Nova contrasenya</label></th>
+                        <th scope="row">
+                            <label for="xtec-users-password"><?php esc_html_e('New password', 'xtec-users'); ?></label>
+                        </th>
                         <td><?php echo xtec_users_password_field(wp_generate_password(12, false)); ?></td>
                     </tr>
                 </table>
                 <p class="submit">
                     <button type="submit" name="xtec_users_action" value="change_password"
-                        class="button button-primary">Canvia la contrasenya</button>
-                    <a href="<?php echo esc_url($list_url); ?>" class="button">Cancel·la</a>
+                        class="button button-primary"><?php esc_html_e('Change the password', 'xtec-users'); ?></button>
+                    <a href="<?php echo esc_url($list_url); ?>" class="button">
+                        <?php esc_html_e('Cancel', 'xtec-users'); ?>
+                    </a>
                 </p>
             </form>
             <?php
         } elseif ($doaction === 'delete_user') {
             ?>
-            <h2>Elimina l'usuari</h2>
-            <p>Esteu segur que voleu eliminar l'usuari <?php echo $name; ?> d'XTECBlocs?</p>
+            <h2><?php esc_html_e('Delete the user', 'xtec-users'); ?></h2>
+            <p>
+                <?php
+                /* translators: %s: Username. */
+                printf(esc_html__('Are you sure you want to delete the user %s from XTECBlocs?', 'xtec-users'), $name);
+                ?>
+            </p>
             <form action="<?php echo esc_url($list_url); ?>" method="post">
                 <?php wp_nonce_field('xtec-manage-users'); ?>
                 <input type="hidden" name="user_id" value="<?php echo esc_attr((string)$user_id); ?>" />
                 <p class="submit">
-                    <button type="submit" name="xtec_users_action" value="delete"
-                        class="button button-primary">Sí, vull eliminar-lo</button>
-                    <a href="<?php echo esc_url($list_url); ?>" class="button">No, deixa-ho córrer</a>
+                    <button type="submit" name="xtec_users_action" value="delete" class="button button-primary">
+                        <?php esc_html_e('Yes, I want to delete it', 'xtec-users'); ?>
+                    </button>
+                    <a href="<?php echo esc_url($list_url); ?>" class="button">
+                        <?php esc_html_e('No, never mind', 'xtec-users'); ?>
+                    </a>
                 </p>
             </form>
             <?php
@@ -162,15 +182,34 @@ function xtec_users_manage_users_page(): void
             <div class="notice notice-info inline">
                 <?php
                 if ($is_super_admin) { ?>
-                    <p>En aquesta pàgina es llisten tots els usuaris locals, qui els ha creat i els blocs als quals
-                        pertanyen.</p>
+                    <p>
+                        <?php
+                        esc_html_e(
+                            'This page lists all the local users, who created them and the blogs they belong to.',
+                            'xtec-users'
+                        );
+                        ?>
+                    </p>
                     <?php
                 } else { ?>
-                    <p>En aquesta pàgina es llisten tots els usuaris que heu creat i els blocs als quals pertanyen.</p>
+                    <p>
+                        <?php
+                        esc_html_e(
+                            'This page lists all the users that you have created and the blogs they belong to.',
+                            'xtec-users'
+                        );
+                        ?>
+                    </p>
                     <?php
                 } ?>
-                <p>Des d'aquí podeu canviar la contrasenya d'aquests usuaris i en el cas que no pertanyin a cap bloc
-                    també podeu eliminar-los definitivament.</p>
+                <p>
+                    <?php
+                    esc_html_e(
+                        'From here you can change the password of these users and, if they do not belong to any blog, you can also delete them permanently.',
+                        'xtec-users'
+                    );
+                    ?>
+                </p>
             </div>
 
             <?php
@@ -230,10 +269,10 @@ function xtec_users_manage_users_page(): void
                         </th>
                         <?php
                         if ($is_super_admin) { ?>
-                            <th scope="col" class="manage-column">Creat per</th>
+                            <th scope="col" class="manage-column"><?php esc_html_e('Created by', 'xtec-users'); ?></th>
                             <?php
                         } ?>
-                        <th scope="col" class="manage-column">És membre de ...</th>
+                        <th scope="col" class="manage-column"><?php esc_html_e('Member of...', 'xtec-users'); ?></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -246,14 +285,26 @@ function xtec_users_manage_users_page(): void
                                 <strong><?php
                                     echo esc_html($user->user_login) ?></strong>
                                 <div class="row-actions">
-                                    <a href="?page=xtec-manage-users&amp;action=change_user_password&amp;<?php
-                                    echo 'user_id=' . $user->ID; ?>">Canvia la contrasenya</a>
                                     <?php
-                                    if (xtec_users_can_delete_user($user->ID, $blogs)) { ?>
-                                        | <a href="?page=xtec-manage-users&amp;action=delete_user&amp;user_id=<?php
-                                        echo $user->ID; ?>">Elimina l'usuari</a>
-                                        <?php
-                                    } ?>
+                                    printf(
+                                        '<a href="%s">%s</a>',
+                                        esc_url(add_query_arg(
+                                            ['action' => 'change_user_password', 'user_id' => $user->ID],
+                                            $list_url
+                                        )),
+                                        esc_html__('Change the password', 'xtec-users')
+                                    );
+                                    if (xtec_users_can_delete_user($user->ID, $blogs)) {
+                                        printf(
+                                            ' | <a href="%s">%s</a>',
+                                            esc_url(add_query_arg(
+                                                ['action' => 'delete_user', 'user_id' => $user->ID],
+                                                $list_url
+                                            )),
+                                            esc_html__('Delete the user', 'xtec-users')
+                                        );
+                                    }
+                                    ?>
                                 </div>
                             </td>
                             <?php
@@ -282,9 +333,9 @@ function xtec_users_manage_users_page(): void
                 echo str_replace('tablenav top', 'tablenav bottom', $pagination);
             } else {
                 echo "<div class='notice notice-info inline'>";
-                echo $is_super_admin
-                    ? '<p>Actualment no existeix cap usuari local.</p>'
-                    : '<p>Actualment no existeix cap usuari creat per vós.</p>';
+                echo '<p>' . ($is_super_admin
+                    ? esc_html__('There are currently no local users.', 'xtec-users')
+                    : esc_html__('There are currently no users created by you.', 'xtec-users')) . '</p>';
                 echo "</div>";
             }
         }

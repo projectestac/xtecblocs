@@ -1,0 +1,341 @@
+# Copyright (C) 2026 Francesc Bassas i Bullich, Toni Ginard
+# This file is distributed under the GPL v2.
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC Users 1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-16T13:00:08+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: xtec-users\n"
+
+#. Plugin Name of the plugin
+#: xtec-users.php
+msgid "XTEC Users"
+msgstr ""
+
+#. Description of the plugin
+#: xtec-users.php
+msgid "XTEC users and local users in XTECBlocs, and limits of the creation of blogs."
+msgstr ""
+
+#. Author of the plugin
+#: xtec-users.php
+msgid "Francesc Bassas i Bullich, Toni Ginard"
+msgstr ""
+
+#. translators: %s: Username.
+#: includes/add-users.php:142
+#, php-format
+msgid "The username %s is not valid. Only lowercase letters, numbers, dots, hyphens and underscores are allowed."
+msgstr ""
+
+#. translators: %s: Username.
+#: includes/add-users.php:150
+#, php-format
+msgid "No XTEC user has been found with the name %s. Remember that the user must have logged in to XTECBlocs at least once."
+msgstr ""
+
+#. translators: %d: Minimum number of characters.
+#: includes/add-users.php:155
+#, php-format
+msgid "If it is not a XTEC user, the username must have at least %d characters."
+msgstr ""
+
+#. translators: 1: Username, 2: Minimum number of characters.
+#: includes/add-users.php:166
+#, php-format
+msgid "The user %1$s is not a XTEC user and cannot be added to the blog. The usernames of the users who are not XTEC users must have at least %2$d characters."
+msgstr ""
+
+#. translators: %s: Username.
+#: includes/add-users.php:177
+#, php-format
+msgid "The user %s is already a member of this blog."
+msgstr ""
+
+#. translators: 1: Username, 2: Name of the user, 3: E-mail of the user, partially hidden.
+#: includes/add-users.php:182
+#, php-format
+msgid "XTEC user: %1$s (%2$s, %3$s)."
+msgstr ""
+
+#: includes/add-users.php:191
+msgid "The user will receive an e-mail to confirm the invitation. When the user confirms it, the user will be added as a member of the blog."
+msgstr ""
+
+#: includes/add-users.php:198
+msgid "Send the invitation"
+msgstr ""
+
+#. translators: 1: Username, 2: Name of the user.
+#: includes/add-users.php:202
+#, php-format
+msgid "Existing user: %1$s (%2$s)."
+msgstr ""
+
+#: includes/add-users.php:206
+msgid "The user will be added directly as a member of the blog."
+msgstr ""
+
+#: includes/add-users.php:209
+msgid "Add to the blog"
+msgstr ""
+
+#. translators: %s: Username.
+#: includes/add-users.php:216
+#, php-format
+msgid "The user %s does not exist. You can create it and add it to the blog."
+msgstr ""
+
+#: includes/add-users.php:221
+msgid "Give the username and the password to the user so that the user can log in to XTECBlocs."
+msgstr ""
+
+#: includes/add-users.php:227
+msgid "Email (optional)"
+msgstr ""
+
+#: includes/add-users.php:231
+msgid "If the user does not have an e-mail address, leave this field blank. Addresses @xtec.cat cannot be used."
+msgstr ""
+
+#: includes/add-users.php:237
+msgid "Create the user and add it to the blog"
+msgstr ""
+
+#. translators: 1: Username, 2: Role.
+#: includes/add-users.php:291
+#, php-format
+msgid "An invitation has been sent to the e-mail of the user %1$s to join this blog as %2$s."
+msgstr ""
+
+#: includes/add-users.php:297
+msgid "When the user confirms the invitation, the user will be added as a member of the blog."
+msgstr ""
+
+#. translators: 1: Username, 2: Role.
+#: includes/add-users.php:304
+#, php-format
+msgid "You have added the user %1$s as %2$s of this blog."
+msgstr ""
+
+#: includes/add-users.php:387
+msgid "The e-mail address you have entered is not valid."
+msgstr ""
+
+#: includes/add-users.php:390
+msgid "The e-mail address you have entered is not valid. Only XTEC users can use e-mail addresses @xtec.cat."
+msgstr ""
+
+#: includes/add-users.php:395
+msgid "The e-mail address you have entered is already in use."
+msgstr ""
+
+#: includes/add-users.php:403
+msgid "The user could not be created. Please try again."
+msgstr ""
+
+#. translators: 1: Username, 2: Password.
+#: includes/add-users.php:412
+#, php-format
+msgid "You have registered the user %1$s in the blog service with the password %2$s. Give the username and the password to the user so that the user can access the blog service."
+msgstr ""
+
+#: includes/add-users.php:505
+msgid "Add a new user"
+msgstr ""
+
+#: includes/add-users.php:514
+msgid "Enter the username of the person you want to add to your blog:"
+msgstr ""
+
+#: includes/add-users.php:517
+msgid "XTEC users"
+msgstr ""
+
+#: includes/add-users.php:519
+msgid "their XTEC username. They will receive an invitation by e-mail. They must have logged in to XTECBlocs at least once."
+msgstr ""
+
+#: includes/add-users.php:526
+msgid "Other users"
+msgstr ""
+
+#. translators: %d: Minimum number of characters.
+#: includes/add-users.php:529
+#, php-format
+msgid "a username of at least %d characters. If it already exists, it will be added to the blog. If it does not exist, you will be able to create it."
+msgstr ""
+
+#: includes/add-users.php:545
+msgid "Username"
+msgstr ""
+
+#: includes/add-users.php:553
+msgid "Check"
+msgstr ""
+
+#: includes/admin.php:43
+#: includes/admin.php:44
+msgid "Add"
+msgstr ""
+
+#: includes/admin.php:56
+#: includes/admin.php:57
+#: includes/manage-users.php:117
+msgid "User management"
+msgstr ""
+
+#: includes/admin.php:83
+msgid "Only XTEC users can add users to the blogs."
+msgstr ""
+
+#: includes/admin.php:123
+msgid "The username could not be checked. Please try again."
+msgstr ""
+
+#: includes/admin.php:139
+msgid "The request is not valid."
+msgstr ""
+
+#: includes/admin.php:181
+msgid "Generate another one"
+msgstr ""
+
+#. translators: %d: Minimum number of characters.
+#: includes/admin.php:184
+#, php-format
+msgid "It must have at least %d characters."
+msgstr ""
+
+#: includes/admin.php:197
+msgid "You must enter a password."
+msgstr ""
+
+#. translators: %d: Minimum number of characters.
+#: includes/admin.php:201
+#, php-format
+msgid "The password must have at least %d characters."
+msgstr ""
+
+#. translators: %s: Username.
+#: includes/manage-users.php:101
+#, php-format
+msgid "The password of the user %s has been changed."
+msgstr ""
+
+#. translators: %s: Username.
+#: includes/manage-users.php:105
+#, php-format
+msgid "The user %s has been deleted from XTECBlocs."
+msgstr ""
+
+#: includes/manage-users.php:122
+#: includes/manage-users.php:148
+#: includes/manage-users.php:295
+msgid "Change the password"
+msgstr ""
+
+#. translators: %s: Username.
+#: includes/manage-users.php:126
+#, php-format
+msgid "Enter the new password of the user %s."
+msgstr ""
+
+#: includes/manage-users.php:141
+msgid "New password"
+msgstr ""
+
+#: includes/manage-users.php:150
+msgid "Cancel"
+msgstr ""
+
+#: includes/manage-users.php:157
+#: includes/manage-users.php:304
+msgid "Delete the user"
+msgstr ""
+
+#. translators: %s: Username.
+#: includes/manage-users.php:161
+#, php-format
+msgid "Are you sure you want to delete the user %s from XTECBlocs?"
+msgstr ""
+
+#: includes/manage-users.php:169
+msgid "Yes, I want to delete it"
+msgstr ""
+
+#: includes/manage-users.php:172
+msgid "No, never mind"
+msgstr ""
+
+#: includes/manage-users.php:187
+msgid "This page lists all the local users, who created them and the blogs they belong to."
+msgstr ""
+
+#: includes/manage-users.php:197
+msgid "This page lists all the users that you have created and the blogs they belong to."
+msgstr ""
+
+#: includes/manage-users.php:207
+msgid "From here you can change the password of these users and, if they do not belong to any blog, you can also delete them permanently."
+msgstr ""
+
+#: includes/manage-users.php:272
+msgid "Created by"
+msgstr ""
+
+#: includes/manage-users.php:275
+msgid "Member of..."
+msgstr ""
+
+#: includes/manage-users.php:337
+msgid "There are currently no local users."
+msgstr ""
+
+#: includes/manage-users.php:338
+msgid "There are currently no users created by you."
+msgstr ""
+
+#: includes/signup.php:90
+#: includes/signup.php:128
+msgid "Only XTEC users can create blogs."
+msgstr ""
+
+#: includes/signup.php:93
+msgid "Creation limit exceeded"
+msgstr ""
+
+#. translators: %s: Maximum number of blogs per day.
+#: includes/signup.php:95
+#, php-format
+msgid "The daily limit of creation of blogs is %s. If you want to create more today, you will have to delete some first."
+msgstr ""
+
+#: includes/signup.php:100
+msgid "Blogs created in the last 24 hours:"
+msgstr ""
+
+#. translators: %d: Maximum number of blogs per day.
+#: includes/signup.php:134
+#, php-format
+msgid "You have reached the limit of blogs that you can create in 24 hours (%d). You will have to delete some first."
+msgstr ""
+
+#: includes/signup.php:152
+msgid "Creation of blogs"
+msgstr ""
+
+#: includes/signup.php:157
+msgid "Maximum number of blogs per day"
+msgstr ""
+
+#: includes/signup.php:165
+msgid "Number of blogs that each XTEC user can create in 24 hours. With 0, only super admins can create blogs."
+msgstr ""

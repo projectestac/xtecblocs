@@ -87,13 +87,17 @@ function xtec_users_preprocess_signup_form(): void
     }
 
     if ($restriction['reason'] === 'not_xtec') {
-        echo '<p class="mu_alert">Només poden crear blocs els usuaris XTEC.</p>';
+        echo '<p class="mu_alert">' . esc_html__('Only XTEC users can create blogs.', 'xtec-users') . '</p>';
     } else {
         $limit = xtec_users_max_blogs_per_day();
-        echo '<h2>Límit de creació excedit</h2>';
-        echo '<p>El límit de creació de blocs diari és <strong>' . $limit . '</strong>. Si voleu crear-ne més avui, '
-            . "abans n'haureu d'eliminar algun.</p>";
-        echo '<p>Blocs creats en les darreres 24 hores:</p><ul>';
+        echo '<h2>' . esc_html__('Creation limit exceeded', 'xtec-users') . '</h2>';
+        /* translators: %s: Maximum number of blogs per day. */
+        $text = esc_html__(
+            'The daily limit of creation of blogs is %s. If you want to create more today, you will have to delete some first.',
+            'xtec-users'
+        );
+        echo '<p>' . sprintf($text, '<strong>' . $limit . '</strong>') . '</p>';
+        echo '<p>' . esc_html__('Blogs created in the last 24 hours:', 'xtec-users') . '</p><ul>';
         foreach ($restriction['blogs'] as $blog_id) {
             echo "<li><a href='" . esc_url(get_blog_option($blog_id, 'siteurl')) . "'>"
                 . esc_html(get_blog_option($blog_id, 'blogname')) . '</a></li>';
@@ -121,12 +125,16 @@ function xtec_users_validate_blog_signup(array $result): array
     $restriction = xtec_users_signup_restriction()['reason'];
 
     if ($restriction === 'not_xtec') {
-        $result['errors']->add('blogname', 'Només poden crear blocs els usuaris XTEC.');
+        $result['errors']->add('blogname', esc_html__('Only XTEC users can create blogs.', 'xtec-users'));
     } elseif ($restriction === 'limit') {
         $result['errors']->add(
             'blogname',
             sprintf(
-                "Heu arribat al límit de blocs que podeu crear en 24 hores (%d). Abans n'haureu d'eliminar algun.",
+                /* translators: %d: Maximum number of blogs per day. */
+                esc_html__(
+                    'You have reached the limit of blogs that you can create in 24 hours (%d). You will have to delete some first.',
+                    'xtec-users'
+                ),
                 xtec_users_max_blogs_per_day()
             )
         );
@@ -141,16 +149,24 @@ function xtec_users_validate_blog_signup(array $result): array
 function xtec_users_network_options(): void
 {
     ?>
-    <h2>Creació de blocs</h2>
+    <h2><?php esc_html_e('Creation of blogs', 'xtec-users'); ?></h2>
     <table class="form-table" role="presentation">
         <tr>
-            <th scope="row"><label for="xtec_signup_maxblogsday">Nombre màxim de blocs per dia</label></th>
+            <th scope="row">
+                <label for="xtec_signup_maxblogsday">
+                    <?php esc_html_e('Maximum number of blogs per day', 'xtec-users'); ?>
+                </label>
+            </th>
             <td>
                 <input type="number" id="xtec_signup_maxblogsday" name="xtec_signup_maxblogsday" class="small-text"
                     min="0" value="<?php echo esc_attr((string)xtec_users_max_blogs_per_day()); ?>" />
                 <p class="description">
-                    Nombre de blocs que cada usuari XTEC pot crear en 24 hores. Amb 0, només els superadministradors
-                    poden crear blocs.
+                    <?php
+                    esc_html_e(
+                        'Number of blogs that each XTEC user can create in 24 hours. With 0, only super admins can create blogs.',
+                        'xtec-users'
+                    );
+                    ?>
                 </p>
             </td>
         </tr>

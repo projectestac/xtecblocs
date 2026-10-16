@@ -1,0 +1,219 @@
+# Catalan translation of XTEC Users.
+# Copyright 2026 Departament d'Educació i Formació Professional
+# This file is distributed under the same license as the XTEC Users plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC Users\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: xtec-users\n"
+
+msgid "XTEC Users"
+msgstr "XTEC Users"
+
+msgid "XTEC users and local users in XTECBlocs, and limits of the creation of blogs."
+msgstr "Usuaris XTEC i usuaris locals a XTECBlocs, i límits de creació de blocs."
+
+msgid "Francesc Bassas i Bullich, Toni Ginard"
+msgstr "Francesc Bassas i Bullich, Toni Ginard"
+
+msgid "Add"
+msgstr "Afegeix"
+
+msgid "User management"
+msgstr "Gestió d'usuaris"
+
+msgid "Only XTEC users can add users to the blogs."
+msgstr "Només els usuaris XTEC poden afegir usuaris als blocs."
+
+msgid "The request is not valid."
+msgstr "La petició no és vàlida."
+
+msgid "The username could not be checked. Please try again."
+msgstr "No s'ha pogut comprovar el nom d'usuari. Torneu-ho a provar."
+
+msgid "Generate another one"
+msgstr "Genera'n una altra"
+
+msgid "It must have at least %d characters."
+msgstr "Ha de tenir un mínim de %d caràcters."
+
+msgid "You must enter a password."
+msgstr "Heu d'introduir una contrasenya."
+
+msgid "The password must have at least %d characters."
+msgstr "La contrasenya ha de tenir un mínim de %d caràcters."
+
+msgid "The username %s is not valid. Only lowercase letters, numbers, dots, hyphens and underscores are allowed."
+msgstr "El nom d'usuari %s no és vàlid. Només s'admeten lletres minúscules, números, punts, guions i guions baixos."
+
+msgid "No XTEC user has been found with the name %s. Remember that the user must have logged in to XTECBlocs at least once."
+msgstr "No s'ha trobat cap usuari XTEC amb el nom %s. Recordeu que l'usuari ha d'haver entrat a XTECBlocs almenys una vegada."
+
+msgid "If it is not a XTEC user, the username must have at least %d characters."
+msgstr "Si no és un usuari XTEC, el nom d'usuari ha de tenir un mínim de %d caràcters."
+
+msgid "The user %1$s is not a XTEC user and cannot be added to the blog. The usernames of the users who are not XTEC users must have at least %2$d characters."
+msgstr "L'usuari %1$s no és un usuari XTEC i no es pot afegir al bloc. Els noms dels usuaris que no són XTEC han de tenir un mínim de %2$d caràcters."
+
+msgid "The user %s is already a member of this blog."
+msgstr "L'usuari %s ja és membre d'aquest bloc."
+
+msgid "XTEC user: %1$s (%2$s, %3$s)."
+msgstr "Usuari XTEC: %1$s (%2$s, %3$s)."
+
+msgid "The user will receive an e-mail to confirm the invitation. When the user confirms it, the user will be added as a member of the blog."
+msgstr "Rebrà un correu electrònic per confirmar la invitació. Quan la confirmi, s'afegirà com a membre del bloc."
+
+msgid "Send the invitation"
+msgstr "Envia la invitació"
+
+msgid "Existing user: %1$s (%2$s)."
+msgstr "Usuari existent: %1$s (%2$s)."
+
+msgid "The user will be added directly as a member of the blog."
+msgstr "S'afegirà directament com a membre del bloc."
+
+msgid "Add to the blog"
+msgstr "Afegeix al bloc"
+
+msgid "The user %s does not exist. You can create it and add it to the blog."
+msgstr "L'usuari %s no existeix. Podeu crear-lo i afegir-lo al bloc."
+
+msgid "Give the username and the password to the user so that the user can log in to XTECBlocs."
+msgstr "Feu arribar el nom d'usuari i la contrasenya a l'usuari perquè pugui entrar a XTECBlocs."
+
+msgid "Email (optional)"
+msgstr "Correu electrònic (opcional)"
+
+msgid "If the user does not have an e-mail address, leave this field blank. Addresses @xtec.cat cannot be used."
+msgstr "Si l'usuari no disposa de correu electrònic, deixeu aquest camp en blanc. No es poden fer servir adreces @xtec.cat."
+
+msgid "Create the user and add it to the blog"
+msgstr "Crea l'usuari i afegeix-lo al bloc"
+
+msgid "An invitation has been sent to the e-mail of the user %1$s to join this blog as %2$s."
+msgstr "S'ha enviat una invitació al correu electrònic de l'usuari %1$s per afegir-se com a %2$s d'aquest bloc."
+
+msgid "When the user confirms the invitation, the user will be added as a member of the blog."
+msgstr "Quan l'usuari confirmi la invitació s'afegirà com a membre del bloc."
+
+msgid "You have added the user %1$s as %2$s of this blog."
+msgstr "Heu afegit l'usuari %1$s com a %2$s d'aquest bloc."
+
+msgid "The e-mail address you have entered is not valid."
+msgstr "L'adreça de correu electrònic que heu introduït no és vàlida."
+
+msgid "The e-mail address you have entered is not valid. Only XTEC users can use e-mail addresses @xtec.cat."
+msgstr "L'adreça de correu electrònic que heu introduït no és vàlida. Només els usuaris XTEC poden fer servir adreces de correu electrònic @xtec.cat."
+
+msgid "The e-mail address you have entered is already in use."
+msgstr "L'adreça de correu electrònic que heu introduït ja s'utilitza."
+
+msgid "The user could not be created. Please try again."
+msgstr "No s'ha pogut crear l'usuari. Torneu-ho a provar."
+
+msgid "You have registered the user %1$s in the blog service with the password %2$s. Give the username and the password to the user so that the user can access the blog service."
+msgstr "Heu donat d'alta al servei de blocs l'usuari %1$s amb contrasenya %2$s. Feu arribar a l'usuari el nom d'usuari i la contrasenya perquè pugui accedir al servei de blocs."
+
+msgid "Add a new user"
+msgstr "Afegeix un nou usuari"
+
+msgid "Enter the username of the person you want to add to your blog:"
+msgstr "Escriviu el nom d'usuari de la persona que voleu afegir al vostre bloc:"
+
+msgid "XTEC users"
+msgstr "Usuaris XTEC"
+
+msgid "their XTEC username. They will receive an invitation by e-mail. They must have logged in to XTECBlocs at least once."
+msgstr "el seu nom d'usuari de la XTEC. Rebran una invitació per correu electrònic. Han d'haver entrat a XTECBlocs almenys una vegada."
+
+msgid "Other users"
+msgstr "Altres usuaris"
+
+msgid "a username of at least %d characters. If it already exists, it will be added to the blog. If it does not exist, you will be able to create it."
+msgstr "un nom d'usuari d'un mínim de %d caràcters. Si ja existeix, s'afegirà al bloc. Si no existeix, el podreu crear."
+
+msgid "Username"
+msgstr "Nom d'usuari"
+
+msgid "Check"
+msgstr "Comprova"
+
+msgid "The password of the user %s has been changed."
+msgstr "S'ha canviat la contrasenya de l'usuari %s."
+
+msgid "The user %s has been deleted from XTECBlocs."
+msgstr "S'ha eliminat l'usuari %s d'XTECBlocs."
+
+msgid "Change the password"
+msgstr "Canvia la contrasenya"
+
+msgid "Enter the new password of the user %s."
+msgstr "Escriviu la nova contrasenya de l'usuari %s."
+
+msgid "New password"
+msgstr "Nova contrasenya"
+
+msgid "Cancel"
+msgstr "Cancel·la"
+
+msgid "Delete the user"
+msgstr "Elimina l'usuari"
+
+msgid "Are you sure you want to delete the user %s from XTECBlocs?"
+msgstr "Esteu segur que voleu eliminar l'usuari %s d'XTECBlocs?"
+
+msgid "Yes, I want to delete it"
+msgstr "Sí, vull eliminar-lo"
+
+msgid "No, never mind"
+msgstr "No, deixa-ho córrer"
+
+msgid "This page lists all the local users, who created them and the blogs they belong to."
+msgstr "En aquesta pàgina es llisten tots els usuaris locals, qui els ha creat i els blocs als quals pertanyen."
+
+msgid "This page lists all the users that you have created and the blogs they belong to."
+msgstr "En aquesta pàgina es llisten tots els usuaris que heu creat i els blocs als quals pertanyen."
+
+msgid "From here you can change the password of these users and, if they do not belong to any blog, you can also delete them permanently."
+msgstr "Des d'aquí podeu canviar la contrasenya d'aquests usuaris i en el cas que no pertanyin a cap bloc també podeu eliminar-los definitivament."
+
+msgid "Created by"
+msgstr "Creat per"
+
+msgid "Member of..."
+msgstr "És membre de ..."
+
+msgid "There are currently no local users."
+msgstr "Actualment no existeix cap usuari local."
+
+msgid "There are currently no users created by you."
+msgstr "Actualment no existeix cap usuari creat per vós."
+
+msgid "Only XTEC users can create blogs."
+msgstr "Només poden crear blocs els usuaris XTEC."
+
+msgid "Creation limit exceeded"
+msgstr "Límit de creació excedit"
+
+msgid "The daily limit of creation of blogs is %s. If you want to create more today, you will have to delete some first."
+msgstr "El límit de creació de blocs diari és %s. Si voleu crear-ne més avui, abans n'haureu d'eliminar algun."
+
+msgid "Blogs created in the last 24 hours:"
+msgstr "Blocs creats en les darreres 24 hores:"
+
+msgid "You have reached the limit of blogs that you can create in 24 hours (%d). You will have to delete some first."
+msgstr "Heu arribat al límit de blocs que podeu crear en 24 hores (%d). Abans n'haureu d'eliminar algun."
+
+msgid "Creation of blogs"
+msgstr "Creació de blocs"
+
+msgid "Maximum number of blogs per day"
+msgstr "Nombre màxim de blocs per dia"
+
+msgid "Number of blogs that each XTEC user can create in 24 hours. With 0, only super admins can create blogs."
+msgstr "Nombre de blocs que cada usuari XTEC pot crear en 24 hores. Amb 0, només els superadministradors poden crear blocs."
