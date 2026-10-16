@@ -36,27 +36,27 @@ add_action('update_wpmu_options', 'xtec_users_update_network_options');
  */
 function xtec_users_menu(): void
 {
-    if (xtec_current_user_can('add_users')) {
+    if (xtec_users_current_user_can('add_users')) {
         $add_users = add_submenu_page(
             'users.php',
             'Afegeix',
             'Afegeix',
-            'administrator',
+            'promote_users',
             'xtec-add-users',
-            'xtec_add_users'
+            'xtec_users_add_users_page'
         );
         remove_submenu_page('users.php', 'user-new.php');
         add_action("load-$add_users", 'xtec_users_add_users_actions');
         add_action("load-$add_users", 'xtec_users_enqueue_assets');
     }
-    if (xtec_current_user_can('manage_users')) {
+    if (xtec_users_current_user_can('manage_users')) {
         $manage_users = add_submenu_page(
             'users.php',
             'Gestió d\'usuaris',
             'Gestió d\'usuaris',
-            'administrator',
+            'promote_users',
             'xtec-manage-users',
-            'xtec_manage_users'
+            'xtec_users_manage_users_page'
         );
         add_action("load-$manage_users", 'xtec_users_manage_users_actions');
         add_action("load-$manage_users", 'xtec_users_enqueue_assets');
@@ -73,7 +73,7 @@ function xtec_users_redirect_user_new(): void
         return;
     }
 
-    if (xtec_current_user_can('add_users')) {
+    if (xtec_users_current_user_can('add_users')) {
         wp_safe_redirect(admin_url('users.php?page=xtec-add-users'));
         exit;
     }
@@ -93,7 +93,7 @@ function xtec_users_admin_bar_new_user(WP_Admin_Bar $wp_admin_bar): void
         return;
     }
 
-    if (xtec_current_user_can('add_users')) {
+    if (xtec_users_current_user_can('add_users')) {
         $wp_admin_bar->add_node(['id' => 'new-user', 'href' => admin_url('users.php?page=xtec-add-users')]);
     } else {
         $wp_admin_bar->remove_node('new-user');
@@ -120,6 +120,14 @@ function xtec_users_enqueue_assets(): void
         [],
         (string)filemtime(__DIR__ . '/xtec-users.css')
     );
+}
+
+/**
+ * Stops a request that isn't valid, for example with data that has been manipulated or a user that doesn't exist.
+ */
+function xtec_users_invalid_request(): void
+{
+    wp_die('La petició no és vàlida.', '', ['response' => 403, 'back_link' => true]);
 }
 
 /**
@@ -168,7 +176,7 @@ function xtec_users_classify(string $username): array
         return ['status' => 'empty', 'user' => null];
     }
 
-    if (!xtec_is_valid_username($username)) {
+    if (!xtec_users_is_valid_username($username)) {
         return ['status' => 'invalid', 'user' => null];
     }
 
@@ -178,7 +186,7 @@ function xtec_users_classify(string $username): array
         if (!$user) {
             return ['status' => 'xtec_not_found', 'user' => null];
         }
-        if (!xtec_is_xtec_user($user->ID)) {
+        if (!xtec_users_is_xtec_user($user->ID)) {
             return ['status' => 'not_xtec', 'user' => $user];
         }
     } elseif (!$user) {
@@ -377,7 +385,7 @@ function xtec_users_ajax_check(): void
     check_ajax_referer('xtec-add-users');
 
     // The same permissions as the page
-    if (!current_user_can('administrator') || !xtec_current_user_can('add_users')) {
+    if (!current_user_can('promote_users') || !xtec_users_current_user_can('add_users')) {
         wp_send_json_error(null, 403);
     }
 
@@ -430,7 +438,7 @@ function xtec_users_do_action(string $action, string $username, array $data): ar
 {
     $statuses = ['invite' => 'xtec', 'add' => 'local', 'create' => 'new'];
     if (!isset($statuses[$action])) {
-        wp_die('La petició no és vàlida.');
+        xtec_users_invalid_request();
     }
 
     $check = xtec_users_classify($username);
@@ -444,7 +452,7 @@ function xtec_users_do_action(string $action, string $username, array $data): ar
     $roles = xtec_users_roles($action === 'invite');
     $role = xtec_users_field($data, 'role');
     if (!isset($roles[$role])) {
-        wp_die('La petició no és vàlida.');
+        xtec_users_invalid_request();
     }
 
     $name = '<strong>' . esc_html($username) . '</strong>';
@@ -559,7 +567,7 @@ function xtec_users_add_users_actions(): void
  * Shows the page to add users to the blog. The username is checked through AJAX while it is typed, and the result
  * shows the fields to add the user. Without JavaScript, the button to check the username does the same.
  */
-function xtec_add_users(): void
+function xtec_users_add_users_page(): void
 {
     $username = '';
     $values = [];
@@ -647,29 +655,53 @@ function xtec_add_users(): void
 }
 
 /**
+ * Returns the user of the forms to change the password or delete a user of the page to manage users, after checking
+ * that the current user can do the action. The request is stopped otherwise.
+ *
+ * @param string $action The action: change_user_password or delete_user.
+ * @param int $user_id The ID of the user.
+ * @return WP_User The user.
+ */
+function xtec_users_manage_users_target(string $action, int $user_id): WP_User
+{
+    $user = get_userdata($user_id);
+    if (!$user || !xtec_users_current_user_can($action, $user_id)) {
+        xtec_users_invalid_request();
+    }
+
+    return $user;
+}
+
+/**
  * Changes the password of a user or deletes a user, when the forms of the page to manage users are sent. It is done
  * before the page is shown, so that the browser can be redirected afterwards and reloading the page doesn't send the
  * form again. The result is shown from the parameters of the URL, which never contain the password.
  */
 function xtec_users_manage_users_actions(): void
 {
-    if (!isset($_POST['Change_user_password']) && !isset($_POST['Delete_user'])) {
+    // The forms are checked before the page is shown, so that an invalid request gets the right status code
+    $form = (isset($_GET['action']) && is_string($_GET['action'])) ? $_GET['action'] : '';
+    if ($form === 'change_user_password' || $form === 'delete_user') {
+        xtec_users_manage_users_target($form, isset($_GET['user_id']) ? absint($_GET['user_id']) : 0);
+    }
+
+    $action = (isset($_POST['xtec_users_action']) && is_string($_POST['xtec_users_action']))
+        ? $_POST['xtec_users_action']
+        : '';
+    if ($action !== 'change_password' && $action !== 'delete') {
         return;
     }
 
     check_admin_referer('xtec-manage-users');
     $user_id = isset($_POST['user_id']) ? absint($_POST['user_id']) : 0;
-    $userdata = get_userdata($user_id);
-    if (!$userdata) {
-        wp_die('La petició no és vàlida.');
-    }
+    $userdata = xtec_users_manage_users_target(
+        ($action === 'change_password') ? 'change_user_password' : 'delete_user',
+        $user_id
+    );
 
     $url = admin_url('users.php?page=xtec-manage-users');
 
-    if (isset($_POST['Change_user_password'])) {
-        if (!xtec_current_user_can('change_user_password', $user_id)) {
-            wp_die('La petició no és vàlida.');
-        }
+    if ($action === 'change_password') {
         $password = (isset($_POST['user']['password']) && is_string($_POST['user']['password']))
             ? wp_unslash($_POST['user']['password'])
             : '';
@@ -681,9 +713,6 @@ function xtec_users_manage_users_actions(): void
             $args = ['done' => 'password', 'user' => $userdata->user_login];
         }
     } else {
-        if (!xtec_current_user_can('delete_user', $user_id)) {
-            wp_die('La petició no és vàlida.');
-        }
         wpmu_delete_user($user_id);
         $args = ['done' => 'deleted', 'user' => $userdata->user_login];
     }
@@ -695,7 +724,7 @@ function xtec_users_manage_users_actions(): void
 /**
  * Shows the page to manage the local users: the list of users and the forms to change their password or delete them.
  */
-function xtec_manage_users(): void
+function xtec_users_manage_users_page(): void
 {
     // Result of an action, after the redirection of xtec_users_manage_users_actions()
     $done = isset($_GET['done']) && is_string($_GET['done']) ? $_GET['done'] : '';
@@ -706,84 +735,66 @@ function xtec_manage_users(): void
     } elseif ($done === 'deleted') {
         $message = "<p>S'ha eliminat l'usuari <strong>" . esc_html($done_user) . "</strong> d'XTECBlocs.</p>";
     }
+    $list_url = admin_url('users.php?page=xtec-manage-users');
+    $doaction = isset($_GET['action']) && is_string($_GET['action']) ? $_GET['action'] : '';
+    if ($doaction === 'change_user_password' || $doaction === 'delete_user') {
+        // Already checked in xtec_users_manage_users_actions()
+        $user_id = isset($_GET['user_id']) ? absint($_GET['user_id']) : 0;
+        $name = '<strong>' . esc_html(xtec_users_manage_users_target($doaction, $user_id)->user_login) . '</strong>';
+    }
     ?>
-
     <div class="wrap">
-
-        <h2>Gestió d'usuaris</h2>
+        <h1>Gestió d'usuaris</h1>
 
         <?php
-        $doaction = '';
-        if (isset($_GET['action'])) {
-            $doaction = $_GET['action'];
-            $user_id = isset($_GET['user_id']) ? absint($_GET['user_id']) : 0;
-            if (!get_userdata($user_id)) {
-                wp_die('La petició no és vàlida.');
-            }
-        }
-
         if ($doaction === 'change_user_password') {
-            if (!xtec_current_user_can('change_user_password', $user_id)) {
-                wp_die('La petició no és vàlida.');
-            } else {
-                echo "<p>Heu seleccionat canviar la contrasenya de l'usuari <strong>"
-                    . esc_html(get_userdata($user_id)->user_login) . '</strong>. Escriviu a continuació la nova '
-                    . 'contrasenya que li assignareu.</p>';
-                if (isset($_GET['error'])) {
-                    echo xtec_users_notice(
-                        'error',
-                        '<p>La contrasenya ha de tenir un mínim de ' . XTEC_USERS_MIN_PASSWORD_LENGTH
-                        . ' caràcters.</p>'
-                    );
-                }
-                ?>
-                <form action="?page=xtec-manage-users" method="post">
-                    <?php
-                    wp_nonce_field('xtec-manage-users'); ?>
-                    <input type="hidden" name='user_id' value='<?php
-                    echo $user_id ?>'/>
-                    <table class='form-table'>
-                        <tr>
-                            <th scope="row"><label for="xtec-users-password">Nova contrasenya</label></th>
-                            <td>
-                                <?php
-                                echo xtec_users_password_field(wp_generate_password(12, false)); ?>
-                            </td>
-                        </tr>
-
-                    </table>
-                    <p class="submit">
-                        <input class="button" type="submit" name="Change_user_password" value="Canvia la contrasenya"/>
-                        <input class='button' type='submit' name='Discard' value='Cancel·la'/>
-                    </p>
-                </form>
-                <?php
+            ?>
+            <h2>Canvia la contrasenya</h2>
+            <p>Escriviu la nova contrasenya de l'usuari <?php echo $name; ?>.</p>
+            <?php
+            if (isset($_GET['error'])) {
+                echo xtec_users_notice(
+                    'error',
+                    '<p>La contrasenya ha de tenir un mínim de ' . XTEC_USERS_MIN_PASSWORD_LENGTH . ' caràcters.</p>'
+                );
             }
+            ?>
+            <form action="<?php echo esc_url($list_url); ?>" method="post">
+                <?php wp_nonce_field('xtec-manage-users'); ?>
+                <input type="hidden" name="user_id" value="<?php echo esc_attr((string)$user_id); ?>" />
+                <table class="form-table" role="presentation">
+                    <tr>
+                        <th scope="row"><label for="xtec-users-password">Nova contrasenya</label></th>
+                        <td><?php echo xtec_users_password_field(wp_generate_password(12, false)); ?></td>
+                    </tr>
+                </table>
+                <p class="submit">
+                    <button type="submit" name="xtec_users_action" value="change_password"
+                        class="button button-primary">Canvia la contrasenya</button>
+                    <a href="<?php echo esc_url($list_url); ?>" class="button">Cancel·la</a>
+                </p>
+            </form>
+            <?php
         } elseif ($doaction === 'delete_user') {
-            if (!xtec_current_user_can('delete_user', $user_id)) {
-                wp_die('La petició no és vàlida.');
-            } else {
-                echo "<p>Heu seleccionat eliminar l'usuari <strong>" . esc_html(get_userdata($user_id)->user_login)
-                    . "</strong>. Esteu segur que voleu eliminar-lo d'XTECBlocs?</p>";
-                ?>
-                <form action="?page=xtec-manage-users" method="post">
-                    <?php
-                    wp_nonce_field('xtec-manage-users'); ?>
-                    <input type="hidden" name='user_id' value='<?php
-                    echo $user_id ?>'/>
-                    <p class="submit">
-                        <input class="button" type="submit" name="Delete_user" value="Si, vull eliminar-lo"/>
-                        <input class='button' type='submit' name='Discard' value="No, deixa-ho córrer"/>
-                    </p>
-                </form>
-                <?php
-            }
+            ?>
+            <h2>Elimina l'usuari</h2>
+            <p>Esteu segur que voleu eliminar l'usuari <?php echo $name; ?> d'XTECBlocs?</p>
+            <form action="<?php echo esc_url($list_url); ?>" method="post">
+                <?php wp_nonce_field('xtec-manage-users'); ?>
+                <input type="hidden" name="user_id" value="<?php echo esc_attr((string)$user_id); ?>" />
+                <p class="submit">
+                    <button type="submit" name="xtec_users_action" value="delete"
+                        class="button button-primary">Sí, vull eliminar-lo</button>
+                    <a href="<?php echo esc_url($list_url); ?>" class="button">No, deixa-ho córrer</a>
+                </p>
+            </form>
+            <?php
         } else { ?>
             <?php
             // Super admins can manage all the local users. The rest, only the users that they have created.
             $is_super_admin = is_super_admin();
             ?>
-            <div id='about' class='notice notice-info inline'>
+            <div class="notice notice-info inline">
                 <?php
                 if ($is_super_admin) { ?>
                     <p>En aquesta pàgina es llisten tots els usuaris locals, qui els ha creat i els blocs als quals
@@ -873,7 +884,7 @@ function xtec_manage_users(): void
                                     <a href="?page=xtec-manage-users&amp;action=change_user_password&amp;<?php
                                     echo 'user_id=' . $user->ID; ?>">Canvia la contrasenya</a>
                                     <?php
-                                    if (xtec_current_user_can('delete_user', $user->ID)) { ?>
+                                    if (xtec_users_current_user_can('delete_user', $user->ID)) { ?>
                                         | <a href="?page=xtec-manage-users&amp;action=delete_user&amp;user_id=<?php
                                         echo $user->ID; ?>">Elimina l'usuari</a>
                                         <?php
@@ -998,11 +1009,11 @@ function xtec_users_signup_restriction(): string
 {
     $limit = xtec_users_max_blogs_per_day();
 
-    if (!is_user_logged_in() || !xtec_current_user_can('create_blogs', $limit)) {
+    if (!is_user_logged_in() || !xtec_users_current_user_can('create_blogs', $limit)) {
         return 'not_xtec';
     }
 
-    return xtec_current_user_can('create_blog_today', $limit) ? 'limit' : '';
+    return xtec_users_current_user_can('create_blog_today', $limit) ? 'limit' : '';
 }
 
 /**
@@ -1023,7 +1034,7 @@ function xtec_users_preprocess_signup_form(): void
         echo '<p>El límit de creació de blocs diari és <strong>' . $limit . '</strong>. Si voleu crear-ne més avui, '
             . "abans n'haureu d'eliminar algun.</p>";
         echo '<p>Blocs creats en les darreres 24 hores:</p><ul>';
-        foreach (xtec_current_user_can('create_blog_today', $limit) as $blog_id) {
+        foreach (xtec_users_current_user_can('create_blog_today', $limit) as $blog_id) {
             echo "<li><a href='" . esc_url(get_blog_option($blog_id, 'siteurl')) . "'>"
                 . esc_html(get_blog_option($blog_id, 'blogname')) . '</a></li>';
         }
@@ -1106,7 +1117,7 @@ function xtec_users_update_network_options(): void
  * @return bool|array True if the user can do the action false otherwise. For create_blog_today, an empty array if the
  *                    user can create a blog today, or the IDs of the blogs created today otherwise.
  */
-function xtec_current_user_can(string $action, mixed $param = ''): bool|array
+function xtec_users_current_user_can(string $action, mixed $param = ''): bool|array
 {
     // Site admins can do it all except delete users who are still members of some blog
     if (is_super_admin()) {
@@ -1127,14 +1138,14 @@ function xtec_current_user_can(string $action, mixed $param = ''): bool|array
 
             global $current_user;
             wp_get_current_user();
-            return current_user_can('add_users') && xtec_is_xtec_user($current_user->ID);
+            return current_user_can('add_users') && xtec_users_is_xtec_user($current_user->ID);
 
         case 'manage_users':
             // Can manage users: XTEC users from LDAP
 
             global $current_user;
             wp_get_current_user();
-            return xtec_is_xtec_user($current_user->ID);
+            return xtec_users_is_xtec_user($current_user->ID);
 
         case 'create_blogs':
             // Can create blogs: XTEC users from LDAP.
@@ -1148,7 +1159,7 @@ function xtec_current_user_can(string $action, mixed $param = ''): bool|array
 
             global $current_user;
             wp_get_current_user();
-            return xtec_is_xtec_user($current_user->ID);
+            return xtec_users_is_xtec_user($current_user->ID);
 
         case 'create_blog_today':
             // Can create blog today: users who have not exceeded the maximum blog daily creation.
@@ -1224,7 +1235,7 @@ function xtec_users_is_member_of_blogs(int $user_id): bool
  * @param int $user_id The user ID.
  * @return bool True if is a XTEC user.
  */
-function xtec_is_xtec_user(int $user_id): bool
+function xtec_users_is_xtec_user(int $user_id): bool
 {
     $creator = get_user_meta($user_id, 'xtec_user_creator', true);
     if ($creator === 'LDAP_XTEC' || $creator === 'OAUTH_XTEC') {
@@ -1236,14 +1247,13 @@ function xtec_is_xtec_user(int $user_id): bool
     return $user && str_ends_with(strtolower($user->user_email), '@xtec.cat');
 }
 
-
 /**
  * Checks if is a valid username.
  *
  * @param string $username The username.
  * @return bool True if is a valid username false otherwise.
  */
-function xtec_is_valid_username(string $username): bool
+function xtec_users_is_valid_username(string $username): bool
 {
     return !preg_match('/[^a-z0-9_.\-]/', $username);
 }
