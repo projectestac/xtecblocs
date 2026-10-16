@@ -11,6 +11,7 @@ Author URI:
 */
 
 add_action('admin_menu', 'xtec_users_menu');
+add_action('wp_ajax_xtec_users_check', 'xtec_users_ajax_check');
 
 /**
  * Adds plugin menu.
@@ -34,7 +35,7 @@ function xtec_users_enqueue_assets()
 {
 	$plugindir = plugin_dir_url(__FILE__);
 	// The date of the files is used as version so that browsers load them again when they change
-	wp_enqueue_script('xtec-users_js', $plugindir . 'xtec-users.js', [], (string)filemtime(__DIR__ . '/xtec-users.js'));
+	wp_enqueue_script('xtec-users_js', $plugindir . 'xtec-users.js', ['password-strength-meter'], (string)filemtime(__DIR__ . '/xtec-users.js'), true);
 	wp_enqueue_style('xtec-users_css', $plugindir . 'xtec-users.css', [], (string)filemtime(__DIR__ . '/xtec-users.css'));
 }
 
@@ -50,445 +51,365 @@ function xtec_users_field($data, $key)
 	return (isset($data[$key]) && is_string($data[$key])) ? $data[$key] : '';
 }
 
-function xtec_add_users()
+/**
+ * Returns the roles that can be given to a user in the blog, with their translated names. Only XTEC users can be
+ * administrators.
+ *
+ * @param bool $xtec True if the user is a XTEC user.
+ * @return array The names of the roles, indexed by role.
+ */
+function xtec_users_roles($xtec)
 {
-	global $blog_id;
-	
-	$errors_step_2=$errors_step_3=$info='';
-	// Type of the notice of the result: info, success or error
-	$info_type='info';
-	$confirm_user_addition=false;
-	$username_readonly='';
-	
-	$display_step_2="style='display:none'";
-	$display_check_user=true;
-	$display_username_info=true;
-	
-	$display_step_3_add=false;
-	$display_step_3_create_add=false;
-	
-	$username_info='';
-	$username_info_xtec='<small>Introdueix el nom d\'usuari/ària de la XTEC.</small>';
-	$username_info_other='<small>El nom d\'usuari/ària ha de tenir un mínim de 9 caràcters.</small>';
-	
-	$administrator_tag=_x('Administrator', 'User role');
-	$editor_tag=_x('Editor', 'User role');
-	$author_tag=_x('Author', 'User role');
-	$contributor_tag=_x('Contributor', 'User role');
-	$subscriber_tag=_x('Subscriber', 'User role');
+	$roles = [
+		'editor' => _x('Editor', 'User role'),
+		'author' => _x('Author', 'User role'),
+		'contributor' => _x('Contributor', 'User role'),
+		'subscriber' => _x('Subscriber', 'User role'),
+	];
 
-	// Roles that can be given to each type of user. Only XTEC users can be administrators.
-	$role_tags = array(
-		'editor' => $editor_tag,
-		'author' => $author_tag,
-		'contributor' => $contributor_tag,
-		'subscriber' => $subscriber_tag,
-	);
-	$role_tags_xtec = array('administrator' => $administrator_tag) + $role_tags;
+	return $xtec ? ['administrator' => _x('Administrator', 'User role')] + $roles : $roles;
+}
 
-	$user_type = '';
-	$user = array();
-
-	if ( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
-		check_admin_referer('xtec-add-users');
-
-		$user_type = isset($_POST['User_Type']) ? $_POST['User_Type'] : '';
-		if ( !in_array($user_type, array('xtec', 'other'), true) ) {
-			wp_die('La petició no és vàlida.');
-		}
-
-		$display_step_2='';
-
-		if ( $user_type == 'xtec' ) { $username_info=$username_info_xtec; }
-		else if ( $user_type == 'other' ) {	$username_info=$username_info_other; }
-
-		if ( isset($_POST['user']) && is_array($_POST['user']) ) {
-			$user = wp_unslash($_POST['user']);
-		}
+/**
+ * Checks if a user can be added to the current blog and how. Usernames shorter than 9 characters belong to XTEC users,
+ * who must exist and are invited. Longer usernames belong to local users, who are added directly if they exist or
+ * created otherwise.
+ *
+ * @param string $username The username, in lowercase.
+ * @return array The status (empty, invalid, xtec_not_found, not_xtec, member, xtec, local or new) and the user, if it
+ *               exists.
+ */
+function xtec_users_classify($username)
+{
+	if ($username === '') {
+		return ['status' => 'empty', 'user' => null];
 	}
 
-	$role = xtec_users_field($user, 'role');
-	
-	// Action - Check user
-	if ( isset($_POST['Check_user_x']) ) {
-		
-		if ( xtec_users_field($user, 'username') === '' ) {
-			$errors_step_2 .= "<p>El nom d'usuari/ària està buit. Cal que introduïu un nom d'usuari/ària per poder afegir-lo al vostre bloc.</p>";
-		}
-		
-		else {
-			
-			$username = strtolower(xtec_users_field($user, 'username'));
-			
-			if ( $user_type == 'xtec' ) {
-				
-				if ( strlen($username) >= 9 || !xtec_is_valid_username($username) ) {
-					$errors_step_2 .= "<p>El nom d'usuari/ària de la XTEC que heu introduit no és vàlid.</p>";
-				}
-				else if ( !username_exists($username) ) {
-					$errors_step_2 .= "<p>No s'ha trobat cap usuari/ària XTEC amb aquest nom d'usuari/ària. Recordeu que l'usuari/ària ha d'haver entrat a XTECBlocs almenys una vegada.</p>";
-				}
-				else if ( !xtec_is_xtec_user(get_user_by('login', $username)->ID) ) {
-					$errors_step_2 .= "<p>L'usuari/ària <strong>" . esc_html($username) . "</strong> no és un usuari/ària XTEC.</p>";
-				}
-				
-				if ( empty($errors_step_2) ) {					
-					$user_id = get_user_by('login', $username)->ID;
-					if ( is_user_member_of_blog($user_id, $blog_id) ) {
-						$info = "<p>L'usuari/ària <strong>" . esc_html($username) . "</strong> ja és membre d'aquest bloc.</p>";
-					}
-					else {
-						$username_readonly='readonly';
-						$display_check_user=false;
-						$display_username_info=false;						
-						$display_step_3_add=true;
-					}
-				}
-			}
-			
-			else if ( $user_type == 'other' ) {
-				
-				if ( strlen($username) < 9 ) {
-					$errors_step_2 .= "<p>El nom d'usuari/ària que heu introduit no és vàlid. El nom d'usuari/ària ha de tenir un mínim de 9 caràcters.</p>";
-				}
-				
-				if ( !xtec_is_valid_username($username) ) {
-					$errors_step_2 .= "<p>Només s'admeten els caràcters següents: lletres, números, punts, guions i barres baixes.</p>";
-				}
-				
-				if ( empty($errors_step_2) ) {
-					
-					$userdata = get_user_by('login', $username);
-					
-					if ( !$userdata ) {
-						// L'usuari no existeix
-						$username_readonly='readonly';
-						$display_check_user=false;
-						$display_username_info=false;
-						$display_step_3_create_add=true;
-					}
-					else {
-						// L'usuari existeix
-						if ( is_user_member_of_blog($userdata->ID, $blog_id) ) { // OK
-							$info = "<p>L'usuari/ària <strong>" . esc_html($username) . "</strong> ja és membre d'aquest bloc.</p>";
-						}
-						else {
-							// l'usuari no pertany a aquest blog i cal confirmar que vulgui afegir-lo
-							$username_readonly='readonly';
-							$display_check_user=false;
-							$display_username_info=false;
-							$confirm_user_addition=true;
-						}
-					}
-				}
-			}
-		}
+	if (!xtec_is_valid_username($username)) {
+		return ['status' => 'invalid', 'user' => null];
 	}
-	
-	// Action - Confirm user addition
-	if ( isset($_POST['Confirm_user_addition']) ) {
-		
-		$username = xtec_users_field($user, 'username');
-		
-		if ( $user_type != 'other' || !xtec_is_valid_username($username) || !username_exists($username) ) {
-			wp_die('La petició no és vàlida.');
-		}
-		
-		$username_readonly='readonly';
-		$display_check_user=false;
-		$display_username_info=false;		
-		$display_step_3_add=true;
-	}
-	
-	// Action - Add user
-	if ( isset($_POST['Add_user']) ) {
-		
-		$username = xtec_users_field($user, 'username');
-		$user_data = get_user_by('login', $username);
-		$allowed_roles = ( $user_type == 'xtec' ) ? $role_tags_xtec : $role_tags;
-		
-		if ( !xtec_is_valid_username($username) || !$user_data || !isset($allowed_roles[$role])
-			|| ( $user_type == 'xtec' && !xtec_is_xtec_user($user_data->ID) ) ) {
-			wp_die('La petició no és vàlida.');
-		}
 
-		$role_tag = $allowed_roles[$role];
-		
-		if ( $user_type == 'xtec' ) {
-			// The user is added to the blog when the invitation is accepted (see maybe_add_existing_user_to_blog())
-			$newuser_key = wp_generate_password(20, false);
-			add_option( 'new_user_' . $newuser_key, array( 'user_id' => $user_data->ID, 'email' => $user_data->user_email, 'role' => $role ) );
-			/* translators: 1: Site title, 2: Site URL, 3: User role, 4: Activation URL. */
-			$invitation = __(
-				'Hi,
+	$user = get_user_by('login', $username) ?: null;
+
+	if (strlen($username) < 9) {
+		if (!$user) {
+			return ['status' => 'xtec_not_found', 'user' => null];
+		}
+		if (!xtec_is_xtec_user($user->ID)) {
+			return ['status' => 'not_xtec', 'user' => $user];
+		}
+	} elseif (!$user) {
+		return ['status' => 'new', 'user' => null];
+	}
+
+	if (is_user_member_of_blog($user->ID, get_current_blog_id())) {
+		return ['status' => 'member', 'user' => $user];
+	}
+
+	return ['status' => (strlen($username) < 9) ? 'xtec' : 'local', 'user' => $user];
+}
+
+/**
+ * Hides most of an e-mail address, so that the check of a username doesn't reveal the e-mail of the user.
+ *
+ * @param string $email The e-mail address.
+ * @return string The masked address, for example a••••••@xtec.cat.
+ */
+function xtec_users_mask_email($email)
+{
+	$at = strpos($email, '@');
+	if ($at === false) {
+		return '';
+	}
+
+	return $email[0] . str_repeat('•', max($at - 1, 3)) . substr($email, $at);
+}
+
+/**
+ * Returns the HTML of a notice of WordPress shown inside the content of the page.
+ *
+ * @param string $type The type of notice: info, success, warning or error.
+ * @param string $html The content of the notice, already escaped.
+ * @return string The HTML of the notice.
+ */
+function xtec_users_notice($type, $html)
+{
+	return "<div class='notice notice-$type inline'>$html</div>";
+}
+
+/**
+ * Returns the HTML of the selector of the role.
+ *
+ * @param array $roles The roles that can be selected, as returned by xtec_users_roles().
+ * @param string $selected The selected role. The default is contributor.
+ * @return string The HTML of the row of the table of the form.
+ */
+function xtec_users_role_row($roles, $selected)
+{
+	if (!isset($roles[$selected])) {
+		$selected = 'contributor';
+	}
+
+	$html = "<tr><th scope='row'><label for='xtec-users-role'>" . esc_html__('Role') . "</label></th><td><select id='xtec-users-role' name='user[role]'>";
+	foreach ($roles as $role => $name) {
+		$html .= "<option value='" . esc_attr($role) . "'" . selected($role, $selected, false) . '>' . esc_html($name) . '</option>';
+	}
+
+	return $html . '</select></td></tr>';
+}
+
+/**
+ * Returns the HTML of the result of checking a username: a notice and, if the user can be added to the blog, the
+ * fields and the button to do it. It is used both in the page and in the check through AJAX.
+ *
+ * @param string $username The username, in lowercase.
+ * @param array $values The values of the fields of the form, to keep them after an error.
+ * @param string $errors The HTML of the errors of the form, if any.
+ * @return string The HTML of the result.
+ */
+function xtec_users_render_check($username, $values = [], $errors = '')
+{
+	$check = xtec_users_classify($username);
+	$user = $check['user'];
+	$name = '<strong>' . esc_html($username) . '</strong>';
+	$role = xtec_users_field($values, 'role');
+
+	switch ($check['status']) {
+        case 'invalid':
+			return xtec_users_notice('error', "<p>El nom d'usuari $name no és vàlid. Només s'admeten lletres minúscules, números, punts, guions i guions baixos.</p>");
+		case 'xtec_not_found':
+			return xtec_users_notice('error', "<p>No s'ha trobat cap usuari XTEC amb el nom $name. Recordeu que l'usuari ha d'haver entrat a XTECBlocs almenys una vegada.</p>"
+				. "<p>Si no és un usuari XTEC, el nom d'usuari ha de tenir un mínim de 9 caràcters.</p>");
+		case 'not_xtec':
+			return xtec_users_notice('error', "<p>L'usuari $name no és un usuari XTEC i no es pot afegir al bloc. Els noms dels usuaris que no són XTEC han de tenir un mínim de 9 caràcters.</p>");
+		case 'member':
+			return xtec_users_notice('info', "<p>L'usuari $name ja és membre d'aquest bloc.</p>");
+		case 'xtec':
+			$html = xtec_users_notice('info', "<p>Usuari XTEC: $name (" . esc_html($user->display_name) . ', ' . esc_html(xtec_users_mask_email($user->user_email)) . ").</p>"
+				. "<p>Rebrà un correu electrònic per confirmar la invitació. Quan la confirmi, s'afegirà com a membre del bloc.</p>");
+			$rows = xtec_users_role_row(xtec_users_roles(true), $role);
+			$button = ['invite', "Envia la invitació"];
+			break;
+		case 'local':
+			$html = xtec_users_notice('info', "<p>Usuari existent: $name (" . esc_html($user->display_name) . ").</p><p>S'afegirà directament com a membre del bloc.</p>");
+			$rows = xtec_users_role_row(xtec_users_roles(false), $role);
+			$button = ['add', 'Afegeix al bloc'];
+			break;
+		case 'new':
+			$password = array_key_exists('password', $values) ? xtec_users_field($values, 'password') : wp_generate_password(12, false);
+			$html = xtec_users_notice('info', "<p>L'usuari $name no existeix. Podeu crear-lo i afegir-lo al bloc.</p>");
+			$rows = "<tr><th scope='row'><label for='xtec-users-password'>" . esc_html__('Password') . "</label></th><td>"
+				. "<input type='text' id='xtec-users-password' name='user[password]' class='regular-text' value='" . esc_attr($password) . "' autocomplete='off' spellcheck='false' /> "
+				. "<button type='button' id='xtec-users-generate' class='button hide-if-no-js'>Genera'n una altra</button>"
+				. "<p class='description'><span id='xtec-users-strength' aria-live='polite'></span> Feu arribar el nom d'usuari i la contrasenya a l'usuari perquè pugui entrar a XTECBlocs.</p></td></tr>"
+				. "<tr><th scope='row'><label for='xtec-users-email'>" . esc_html__('Email') . " (opcional)</label></th><td>"
+				. "<input type='text' id='xtec-users-email' name='user[email]' class='regular-text' value='" . esc_attr(xtec_users_field($values, 'email')) . "' />"
+				. "<p class='description'>Si l'usuari no disposa de correu electrònic, deixeu aquest camp en blanc. No es poden fer servir adreces @xtec.cat.</p></td></tr>"
+				. xtec_users_role_row(xtec_users_roles(false), $role);
+			$button = ['create', "Crea l'usuari i afegeix-lo al bloc"];
+			break;
+		default:
+			return '';
+	}
+
+	if ($errors !== '') {
+		$html .= xtec_users_notice('error', $errors);
+	}
+
+	return $html . "<table class='form-table' role='presentation'>$rows</table>"
+		. "<p class='submit'><button type='submit' name='xtec_users_action' value='$button[0]' class='button button-primary'>" . esc_html($button[1]) . '</button></p>';
+}
+
+/**
+ * Checks a username through AJAX and returns the HTML of the result.
+ */
+function xtec_users_ajax_check()
+{
+	check_ajax_referer('xtec-add-users');
+
+	// The same permissions as the page
+	if (!current_user_can('administrator') || !xtec_current_user_can('add_users')) {
+		wp_send_json_error(null, 403);
+	}
+
+	$username = (isset($_POST['username']) && is_string($_POST['username'])) ? strtolower(trim(wp_unslash($_POST['username']))) : '';
+
+	wp_send_json_success(['html' => xtec_users_render_check($username)]);
+}
+
+/**
+ * Invites, adds or creates a user, after checking again that it can be done.
+ *
+ * @param string $action The action: invite, add or create.
+ * @param string $username The username, in lowercase.
+ * @param array $data The data of the form, already unslashed.
+ * @return array The HTML of the notice of success, or the HTML of the errors. Both are empty if the user can't be
+ *               added any more in this way, so that the new result of the check is shown.
+ */
+function xtec_users_do_action($action, $username, $data)
+{
+	$statuses = ['invite' => 'xtec', 'add' => 'local', 'create' => 'new'];
+	if (!isset($statuses[$action])) {
+		wp_die('La petició no és vàlida.');
+	}
+
+	$check = xtec_users_classify($username);
+	$user = $check['user'];
+
+	// The situation may have changed since the check, for example if another administrator has added the user
+	if ($check['status'] !== $statuses[$action]) {
+		return ['success' => '', 'errors' => ''];
+	}
+
+	$roles = xtec_users_roles($action === 'invite');
+	$role = xtec_users_field($data, 'role');
+	if (!isset($roles[$role])) {
+		wp_die('La petició no és vàlida.');
+	}
+
+	$name = '<strong>' . esc_html($username) . '</strong>';
+	$role_name = '<strong>' . esc_html($roles[$role]) . '</strong>';
+
+	if ($action === 'invite') {
+		// The user is added to the blog when the invitation is accepted (see maybe_add_existing_user_to_blog())
+		$newuser_key = wp_generate_password(20, false);
+		add_option('new_user_' . $newuser_key, ['user_id' => $user->ID, 'email' => $user->user_email, 'role' => $role]);
+		/* translators: 1: Site title, 2: Site URL, 3: User role, 4: Activation URL. */
+		$invitation = __(
+			'Hi,
 
 You\'ve been invited to join \'%1$s\' at
 %2$s with the role of %3$s.
 
 Please click the following link to confirm the invite:
 %4$s'
-			);
-			$blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
-			wp_mail( $user_data->user_email, sprintf( __( '[%s] Joining Confirmation' ), $blogname ),  sprintf($invitation, $blogname, home_url(), $role_tag, home_url("/newbloguser/$newuser_key/")));
-			$info_type = 'success';
-			$info .= "<p>S'ha enviat una invitació al correu electrònic de l'usuari/ària <strong>" . esc_html($username) . "</strong> per afegir-se com a <strong>" . esc_html($role_tag) . "</strong> d'aquest bloc.</p>";
-			$info .= "<p>Quan l'usuari/ària confirmi la invitació s'afegirà com a membre del bloc.</p>";
-		}
-		
-		else if ( $user_type == 'other' ) {			
-			add_user_to_blog($blog_id,$user_data->ID,$role);
-			$info_type = 'success';
-			$info .= "<p>Heu afegit l'usuari/ària <strong>" . esc_html($username) . "</strong> com a <strong>" . esc_html($role_tag) . "</strong> d'aquest bloc.</p>";			
-		}
+		);
+		$blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
+		wp_mail($user->user_email, sprintf(__('[%s] Joining Confirmation'), $blogname), sprintf($invitation, $blogname, home_url(), $roles[$role], home_url("/newbloguser/$newuser_key/")));
+
+		return [
+			'success' => "<p>S'ha enviat una invitació al correu electrònic de l'usuari $name per afegir-se com a $role_name d'aquest bloc.</p>"
+				. "<p>Quan l'usuari confirmi la invitació s'afegirà com a membre del bloc.</p>",
+			'errors' => '',
+		];
 	}
 
-	// Action - Create add user
-	if ( isset($_POST['Create_add_user']) ) {
-		
-		$username = xtec_users_field($user, 'username');
-		
-		if ( $user_type != 'other' || strlen($username) < 9 || !xtec_is_valid_username($username) || !isset($role_tags[$role]) ) {
-			wp_die('La petició no és vàlida.');
-		}
-		
-		$password = xtec_users_field($user, 'password');
-		$email = trim(xtec_users_field($user, 'email'));
+	if ($action === 'add') {
+		add_user_to_blog(get_current_blog_id(), $user->ID, $role);
+
+		return ['success' => "<p>Heu afegit l'usuari $name com a $role_name d'aquest bloc.</p>", 'errors' => ''];
+	}
+
+	$password = xtec_users_field($data, 'password');
+	$email = trim(xtec_users_field($data, 'email'));
+	if ($email === '') {
 		// WordPress requires an e-mail. The domain .invalid is reserved and can never receive mail (RFC 2606).
-		if ($email === '') { $email = $username . '@xtec.invalid'; }
-		$role_tag = $role_tags[$role];
-
-		$username_readonly='readonly';
-		$display_check_user=false;
-		$display_username_info=false;	
-		$display_step_3_create_add=true;		
-		
-		if ( $password === '' ) {
-			// Check if password is empty
-			$errors_step_3 .= "<p>Heu d'introduir la contrasenya per afegir un nou usuari/ària.</p>";
-		}
-		
-		if ( !is_email($email) ) { 
-			// Check if the email address is valid
-			$errors_step_3 .= '<p>El correu electrònic que heu introduit no és vàlid.</p>';
-		}
-
-		// Only XTEC users can use addresses of the domain xtec.cat
-		else if ( preg_match("/^.+@xtec\.cat$/i",$email) ) {
-			$errors_step_3 .= '<p>El correu electrònic que heu introduït no és vàlid. Només els usuaris XTEC poden fer servir adreces de correu electrònic @xtec.cat.</p>';
-		}
-
-		else if ( email_exists($email) ) {			
-			// Check if the email address has been used already
-			$errors_step_3 .= "<p>El correu electrònic que heu introduit ja s'està utilitzant.</p>";
-		}
-
-		
-		if ( empty($errors_step_3) ) {
-			// Create user
-			$user_id = wpmu_create_user($username,$password,$email);
-
-			if( !$user_id ) {
-				// User already exist
-				$info_type = 'error';
-				$info = "<p>Mentre intentàveu crear l'usuari/ària algú us ha passat al davant.</p>";
-			}
-			else {
-				// User created, add creator
-				global $current_user;
-				wp_get_current_user();
-				update_user_meta($user_id,'xtec_user_creator',$current_user->user_login);
-				$info_type = 'success';
-				$info = "<p>Heu donat d'alta al servei de blocs l'usuari/ària <strong>" . esc_html($username) . "</strong> amb contrasenya <strong>" . esc_html($password) . "</strong>. Feu arribar a l'usuari/ària el nom d'usuari/ària i la contrasenya per a què pugui accedir al servei de blocs.</p>";
-				// Add user to blog
-				add_user_to_blog($blog_id,$user_id,$role);
-				$info .= "<p>Heu afegit l'usuari/ària <strong>" . esc_html($username) . "</strong> com a <strong>" . esc_html($role_tag) . "</strong> d'aquest bloc.</p>";
-			}
-		}
-		else {
-			if (trim(xtec_users_field($user, 'email')) === '') { $email = ''; }
-		}
+		$email = $username . '@xtec.invalid';
 	}
 
-	// Action - Discard
-	if (isset($_POST['Discard']) ) {}
-	
+	$errors = '';
+	if ($password === '') {
+		$errors .= "<p>Heu d'introduir la contrasenya per afegir un usuari nou.</p>";
+	}
+	if (!is_email($email)) {
+		$errors .= '<p>L\'adreça de correu electrònic que heu introduït no és vàlida.</p>';
+	} elseif (preg_match('/^.+@xtec\.cat$/i', $email)) {
+		// Only XTEC users can use addresses of the domain xtec.cat
+		$errors .= '<p>L\'adreça de correu electrònic que heu introduït no és vàlida. Només els usuaris XTEC poden fer servir adreces de correu electrònic @xtec.cat.</p>';
+	} elseif (email_exists($email)) {
+		$errors .= "<p>L'adreça de correu electrònic que heu introduït ja s'utilitza.</p>";
+	}
+	if ($errors !== '') {
+		return ['success' => '', 'errors' => $errors];
+	}
+
+	$user_id = wpmu_create_user($username, $password, $email);
+	if (!$user_id) {
+		return ['success' => '', 'errors' => "<p>No s'ha pogut crear l'usuari. Torneu-ho a provar.</p>"];
+	}
+
+	update_user_meta($user_id, 'xtec_user_creator', wp_get_current_user()->user_login);
+	add_user_to_blog(get_current_blog_id(), $user_id, $role);
+
+	return [
+		'success' => "<p>Heu donat d'alta al servei de blocs l'usuari $name amb contrasenya <strong>" . esc_html($password) . "</strong>. Feu arribar a l'usuari el nom d'usuari i la contrasenya perquè pugui accedir al servei de blocs.</p>"
+			. "<p>Heu afegit l'usuari $name com a $role_name d'aquest bloc.</p>",
+		'errors' => '',
+	];
+}
+
+/**
+ * Shows the page to add users to the blog. The username is checked through AJAX while it is typed, and the result
+ * shows the fields to add the user. Without JavaScript, the button to check the username does the same.
+ */
+function xtec_add_users()
+{
+	$username = '';
+	$values = [];
+	$success = '';
+	$errors = '';
+
+	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+		check_admin_referer('xtec-add-users');
+
+		$values = (isset($_POST['user']) && is_array($_POST['user'])) ? wp_unslash($_POST['user']) : [];
+		$username = strtolower(trim(xtec_users_field($values, 'username')));
+		$action = (isset($_POST['xtec_users_action']) && is_string($_POST['xtec_users_action'])) ? $_POST['xtec_users_action'] : '';
+
+		if ($action !== '') {
+			$result = xtec_users_do_action($action, $username, $values);
+			$success = $result['success'];
+			$errors = $result['errors'];
+			if ($errors === '') {
+				// After an action, the fields are shown again from scratch
+				$values = [];
+			}
+			if ($success !== '') {
+				$username = '';
+			}
+		}
+	}
 	?>
-	
 	<div class="wrap">
-	
-		<h2>Afegeix un nou usuari/ària</h2>
+		<h1>Afegeix un nou usuari</h1>
 
 		<?php
-		if (!empty($info)) {
-			echo "<div id='info' class='notice notice-$info_type inline'>";
-				$info .= "<p><a href='?page=xtec-add-users'>Torna a Afegeix un nou usuari/ària</a></p>";
-				echo $info ;
-			echo "</div>";
-		}
-		else {
-			?>
-		
-			<div id='about' class='notice notice-info inline'>
-				<p>Podeu afegir dos tipus d'usuaris al vostre bloc:</p>
-				<ul>
-					<li>1. Usuaris XTEC
-						<br><i>Podeu afegir usuaris de la XTEC al vostre bloc. Per fer-ho hauran d'haver-se validat almenys una vegada al Portal d'XTECBlocs.</i>
-					</li>
-					<li>2. Altres usuaris
-						<br><i>Podeu crear i afegir nous usuaris, o bé afegir usuaris existents al vostre bloc.</i>
-					</li>
-				</ul>				
-			</div>
-	
-			<form action="?page=xtec-add-users" method="post">
-				<?php wp_nonce_field('xtec-add-users'); ?>
-				
-				<br/>
-				
-				<div id='step_1'>
-					<p><span class=num>1.</span> <strong>Quin tipus d'usuari/ària voleu afegir?</strong></p>
-					<p>
-						<input	type='radio' 
-								onchange="display_step_2('xtec')"
-								name='User_Type'
-								value='xtec'
-								<?php if (isset($user_type) && $user_type == 'xtec') { echo 'checked'; } ?>
-						>Usuari/ària XTEC</input>
-						<input	type='radio'
-								onchange="display_step_2('other')"
-								name='User_Type'
-								value='other'
-								<?php if ( isset($user_type) && $user_type=='other') { echo 'checked'; } ?>
-						>Altre Usuari/ària</input>
-					</p>
-				</div>
-				
-				<br/>
-				
-				<div id='step_2' <?php echo $display_step_2; ?>>
-					<p><span class=num>2.</span> <strong>Inseriu el nom de l'usuari/ària que voleu afegir.</strong></p>
-					
-					<?php if (!empty($errors_step_2)) { echo "<div id='errors' class='notice notice-error inline'>$errors_step_2</div>"; }?>
-					
-					<table class='form-table'>
-						<tr id='row_username'>
-							<th><label for='username'>Nom d'usuari/ària:</label></th>
-							<td>
-								<input	type='text'
-										id='username'
-										size='30'
-										maxlength='30'
-										name='user[username]'
-										value="<?php echo isset($username) ? esc_attr($username) : ''; ?>"
-										<?php echo $username_readonly; ?> />
-									<span id='check_user' <?php if ($display_check_user) { ?>style="display:''"<?php } else { ?>style="display:none"<?php } ?>><input type="image" src='<?php echo plugin_dir_url(__FILE__);?>check.png' name="Check user"/><small>Comprova'n la disponibilitat</small></span>
-									<br>								
-									<span id='username_info'><?php if ($display_username_info) { echo $username_info; } ?></span>
-							</td>
-						</tr>					
-					</table>
-					
-					<?php if ( $confirm_user_addition ) { ?>
-					<div id='confirm_user' class='notice notice-warning inline'>
-						<p>Aquest nom d'usuari/ària ja existeix. Esteu segur que voleu afegir l'usuari/ària <strong><?php echo esc_html($username) ?></strong> al vostre bloc?</p>
-						<p>
-							<input class="button" type="submit" name='Confirm user addition' value="Sí, vull afegir aquest usuari/ària" />
-							<input class="button" type="submit" name='Discard' value="No, no conec aquest usuari/ària" />
-						</p>
-					</div>
-					<?php } ?>					
-				</div>
-				
-				<?php if ($display_step_3_add) { ?>
-					<br/>
-					<div id='step_3_add' >
-						<p><span class=num>3.</span> <strong>Escolliu el rol de l'usuari/ària per a aquest bloc.</strong></p>
-						
-						<table class='form-table'>					
-							<tr id='select_role'>
-								<th><label for='role'><?php _e('Role'); ?>:</label></th>
-								<td>
-									<select id='role' name="user[role]">
-										<?php if ($user_type == 'xtec') { 
-											$selected='';
-											if ($role == 'administrator') { $selected = "selected='selected'";}
-											echo "<option value='administrator' $selected>$administrator_tag</option>"; 
-										} ?> 
-										<option <?php if (isset($role) && ($role=='editor')) { echo "selected='selected'";} ?>value='editor'><?php echo $editor_tag ?></option>
-										<option <?php if (isset($role) && ($role=='author')) { echo "selected='selected'";} ?>value='author'><?php echo $author_tag ?></option>
-										<option <?php if (isset($role) && ($role=='contributor' || $role == '')) { echo "selected='selected'";} ?> value='contributor'><?php echo $contributor_tag ?></option>
-										<option <?php if (isset($role) && ($role=='subscriber')) { echo "selected='selected'";} ?>value='subscriber'><?php echo $subscriber_tag ?></option>
-									</select>
-								</td>
-							</tr>						
-						</table>
-						
-						<p id='add_user' class="submit">
-							<input class="button" type="submit" name="Add user" value="Afegeix l'usuari/ària" />
-							<input class='button' type='submit' name='Discard' value='Cancel·la' />
-						</p>
-					</div>
-				<?php } ?>
-				
-				<?php if ($display_step_3_create_add) { ?>	
-					<br/>
-					<div id='step_3_create_add' >
-						<p><span class=num>3.</span> <strong>Assigneu una contrasenya i un correu electrònic per al nou usuari/ària i escolliu el rol de l'usuari/ària per a aquest bloc.</strong></p>
-						
-						<?php if (!empty($errors_step_3)) { echo "<div id='errors' class='notice notice-error inline'>$errors_step_3</div>"; }?>
-						
-						<table class='form-table'>
-						
-							<tr id='row_password' >
-								<th><label for='password'><?php _e('Password')?>:</label></th>
-								<td>
-									<input id='password' type='text' size='30' maxlength='20' name='user[password]' value="<?php echo isset($password) ? esc_attr($password) : ''; ?>" />
-								</td>
-							</tr>
-							
-							<tr id='row_email' >
-								<th><label for='email'><?php _e('Email') ?> (opcional):</label></th>
-								<td>
-									<input id='email' type='text' size='50' maxlength='100' name='user[email]' value="<?php echo isset($email) ? esc_attr($email) : ''; ?>" />
-									<br>
-									<small>Si l'usuari/ària no disposa de correu electrònic deixeu aquest camp en blanc.</small>
-								</td>
-							</tr>
-							
-							<tr id='select_role'>
-								<th><label for='role'><?php _e('Role'); ?>:</label></th>
-								<td>
-									<select id='role' name="user[role]">
-										<option <?php if ( isset($role) && $role == 'editor') { echo "selected='selected'";} ?>value='editor'><?php echo $editor_tag ?></option>
-										<option <?php if ( isset($role) && $role == 'author') { echo "selected='selected'";} ?>value='author'><?php echo $author_tag ?></option>
-										<option <?php if ( $role == 'contributor' || $role == '') { echo "selected='selected'";} ?> value='contributor'><?php echo $contributor_tag ?></option>
-										<option <?php if ( isset($role) && $role == 'subscriber') { echo "selected='selected'";} ?>value='subscriber'><?php echo $subscriber_tag ?></option>
-									</select>
-								</td>
-							</tr>
-							
-						</table>
-						
-						<p id='create_add_user' class="submit">
-							<input class="button" type="submit" name="Create add user" value="Crea i afegeix l'usuari/ària" />
-							<input class='button' type='submit' name='Discard' value='Cancel·la' />
-						</p>
-					</div>
-				<?php } ?>
-				
-			</form>
-			<?php
+		if ($success !== '') {
+			echo xtec_users_notice('success', $success);
 		}
 		?>
+
+		<div class="notice notice-info inline">
+			<p>Escriviu el nom d'usuari de la persona que voleu afegir al vostre bloc:</p>
+			<ul>
+				<li><strong>Usuaris XTEC</strong>: el seu nom d'usuari de la XTEC. Rebran una invitació per correu electrònic. Han d'haver entrat a XTECBlocs almenys una vegada.</li>
+				<li><strong>Altres usuaris</strong>: un nom d'usuari d'un mínim de 9 caràcters. Si ja existeix, s'afegirà al bloc. Si no existeix, el podreu crear.</li>
+			</ul>
+		</div>
+
+		<form id="xtec-users-form" action="?page=xtec-add-users" method="post">
+			<?php wp_nonce_field('xtec-add-users'); ?>
+			<table class="form-table" role="presentation">
+				<tr>
+					<th scope="row"><label for="xtec-users-username">Nom d'usuari</label></th>
+					<td>
+						<input type="text" id="xtec-users-username" name="user[username]" class="regular-text"
+							value="<?php echo esc_attr($username); ?>" maxlength="60" autocomplete="off"
+							autocapitalize="none" spellcheck="false" />
+						<button type="submit" name="xtec_users_check" value="1" class="button">Comprova</button>
+					</td>
+				</tr>
+			</table>
+			<div id="xtec-users-result" aria-live="polite">
+				<?php echo xtec_users_render_check($username, $values, $errors); ?>
+			</div>
+		</form>
 	</div>
 	<?php
 }
 
-
 function xtec_manage_users()
 {
-	global $wpdb;
-	
 	?>	
 
 	<div class="wrap">
@@ -513,11 +434,11 @@ function xtec_manage_users()
 				wp_die('La petició no és vàlida.');
 			}
 			if ( $password === '' ) {
-				$error = "<p>S'ha produit un error a l'intentar fer el canvi de contrasenya. No heu introduit cap contrasenya.</p>";
+				$error = "<p>S'ha produït un error en intentar fer el canvi de contrasenya. No heu introduït cap contrasenya.</p>";
 			}
 			else {
 				wp_set_password($password,$user_id);
-				$message = "<p>S'ha canviat la contrasenya de l'usuari/ària <strong>" . esc_html($username) . "</strong>. La nova contrasenya és <strong>" . esc_html($password) . "</strong>.</p>";
+				$message = "<p>S'ha canviat la contrasenya de l'usuari <strong>" . esc_html($username) . "</strong>. La nova contrasenya és <strong>" . esc_html($password) . "</strong>.</p>";
 			}
 		}
 		else if ( isset($_POST['Delete_user']) ) {
@@ -525,7 +446,7 @@ function xtec_manage_users()
 				wp_die('La petició no és vàlida.');
 			}
 			wpmu_delete_user($user_id);
-			$message = "<p>S'ha eliminat l'usuari/ària <strong>" . esc_html($username) . "</strong> d'XTECBlocs.</p>";
+			$message = "<p>S'ha eliminat l'usuari <strong>" . esc_html($username) . "</strong> d'XTECBlocs.</p>";
 		}
 		?>
 
@@ -539,12 +460,12 @@ function xtec_manage_users()
 			}
 		}
 		
-		if ( $doaction == 'change_user_password' ) {
+		if ( $doaction === 'change_user_password' ) {
 			if ( !xtec_current_user_can('change_user_password',$user_id) ) {
 				wp_die('La petició no és vàlida.');
 			}
 			else {
-				echo "<p>Heu seleccionat canviar la contrasenya de l'usuari/ària <strong>". esc_html(get_userdata($user_id)->user_login) . "</strong>. Escriviu a continuació la nova contrasenya que li assignareu.</p>";
+				echo "<p>Heu seleccionat canviar la contrasenya de l'usuari <strong>". esc_html(get_userdata($user_id)->user_login) . "</strong>. Escriviu a continuació la nova contrasenya que li assignareu.</p>";
 				?>
 				<form action="?page=xtec-manage-users" method="post">
 					<?php wp_nonce_field('xtec-manage-users'); ?>
@@ -566,12 +487,12 @@ function xtec_manage_users()
 				<?php
 			}
 		}
-		else if ( $doaction == 'delete_user' ) {
+		else if ( $doaction === 'delete_user' ) {
 			if ( !xtec_current_user_can('delete_user',$user_id) ) {
 				wp_die('La petició no és vàlida.');
 			}
 			else {
-				echo "<p>Heu seleccionat eliminar l'usuari/ària <strong>". esc_html(get_userdata($user_id)->user_login) . "</strong>. Esteu segur que voleu eliminar-lo d'XTECBlocs?</p>";
+				echo "<p>Heu seleccionat eliminar l'usuari <strong>". esc_html(get_userdata($user_id)->user_login) . "</strong>. Esteu segur que voleu eliminar-lo d'XTECBlocs?</p>";
 				?>
 				<form action="?page=xtec-manage-users" method="post">
 					<?php wp_nonce_field('xtec-manage-users'); ?>
@@ -586,8 +507,16 @@ function xtec_manage_users()
 		}
 		else { ?>
 		
+			<?php
+			// Super admins can manage all the local users. The rest, only the users that they have created.
+			$is_super_admin = is_super_admin();
+			?>
 			<div id='about' class='notice notice-info inline'>
-				<p>En aquesta pàgina es llisten tots els usuaris que heu creat i els blocs als que pertanyen.</p>
+				<?php if ( $is_super_admin ) { ?>
+				<p>En aquesta pàgina es llisten tots els usuaris locals, qui els ha creat i els blocs als quals pertanyen.</p>
+				<?php } else { ?>
+				<p>En aquesta pàgina es llisten tots els usuaris que heu creat i els blocs als quals pertanyen.</p>
+				<?php } ?>
 				<p>Des d'aquí podeu canviar la contrasenya d'aquests usuaris i en el cas que no pertanyin a cap bloc també podeu eliminar-los definitivament.</p>
 			</div>
 			
@@ -603,40 +532,73 @@ function xtec_manage_users()
 				echo $error;
 				echo "</div>";
 			}
-			
-			// Select users created by current user
-			global $current_user;
-			$sql = $wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key = 'xtec_user_creator' AND meta_value = %s", $current_user->user_login);
-			
-			$users = $wpdb->get_results($sql);
-			if ( !empty($users) ) {
+
+			// Local users created with this plugin have the login of their creator in xtec_user_creator
+			$per_page = 20;
+			$paged = isset($_GET['paged']) ? max(1, absint($_GET['paged'])) : 1;
+			$args = [
+				'blog_id' => 0, // All the users of the network, not only the members of the current blog
+				'orderby' => 'login',
+				'number' => $per_page,
+				'paged' => $paged,
+				'count_total' => true,
+			];
+			if ( $is_super_admin ) {
+				// All the users that aren't XTEC users nor super admins, also the ones created by other means
+				$args['meta_query'] = [
+					'relation' => 'OR',
+					['key' => 'xtec_user_creator', 'compare' => 'NOT EXISTS'],
+					['key' => 'xtec_user_creator', 'value' => ['LDAP_XTEC', 'OAUTH_XTEC'], 'compare' => 'NOT IN'],
+				];
+				$args['login__not_in'] = get_super_admins();
+				add_action('pre_user_query', 'xtec_users_exclude_xtec_emails');
+			} else {
+				$args['meta_query'] = [['key' => 'xtec_user_creator', 'value' => wp_get_current_user()->user_login]];
+			}
+
+			$query = new WP_User_Query($args);
+			$total = $query->get_total();
+
+			// A page beyond the last one, for example after deleting users, shows the last page
+			if ( $paged > 1 && $paged > ceil($total / $per_page) ) {
+				$paged = max(1, (int)ceil($total / $per_page));
+				$query = new WP_User_Query(['paged' => $paged] + $args);
+			}
+			$users = $query->get_results();
+			remove_action('pre_user_query', 'xtec_users_exclude_xtec_emails');
+
+			if ( $total > 0 ) {
+				$pagination = xtec_users_pagination($total, $per_page, $paged);
+				echo $pagination;
 				?>
-				<br>
-				
-				<table class="widefat fixed" cellspacing="0">
-				
-					<thead>				
-						<tr class="thead">
-							<th scope="col" id="username" class="manage-column column-username" style=""><?php echo __('Username') ?></th>
-							<th scope="col" id="blogs" class="manage-column column-name" style="">És membre de ...</th>
+				<table class="wp-list-table widefat fixed striped">
+					<thead>
+						<tr>
+							<th scope="col" class="manage-column column-username column-primary"><?php echo esc_html__('Username') ?></th>
+							<?php if ( $is_super_admin ) { ?>
+							<th scope="col" class="manage-column">Creat per</th>
+							<?php } ?>
+							<th scope="col" class="manage-column">És membre de ...</th>
 						</tr>
 					</thead>
-				
 					<tbody>
 						<?php
 						foreach ( $users as $user ) {
-							$blogs = get_blogs_of_user($user->user_id,true);
+							$blogs = get_blogs_of_user($user->ID, true);
 							?>
-							<tr class="alternate">
-								<td>
-									<strong><?php echo esc_html(get_userdata($user->user_id)->user_login) ?></strong>
+							<tr>
+								<td class="column-username column-primary">
+									<strong><?php echo esc_html($user->user_login) ?></strong>
 									<div class="row-actions">
-										<a href="?page=xtec-manage-users&amp;action=change_user_password&amp;user_id=<?php echo $user->user_id; ?>">Canvia la contrasenya</a>
-										<?php if ( xtec_current_user_can('delete_user',$user->user_id) ) { ?>
-										 | <a href="?page=xtec-manage-users&amp;action=delete_user&amp;user_id=<?php echo $user->user_id; ?>">Elimina l'usuari/ària</a>
+										<a href="?page=xtec-manage-users&amp;action=change_user_password&amp;user_id=<?php echo $user->ID; ?>">Canvia la contrasenya</a>
+										<?php if ( xtec_current_user_can('delete_user', $user->ID) ) { ?>
+										 | <a href="?page=xtec-manage-users&amp;action=delete_user&amp;user_id=<?php echo $user->ID; ?>">Elimina l'usuari</a>
 										<?php } ?>
 									</div>
 								</td>
+								<?php if ( $is_super_admin ) { ?>
+								<td><?php echo esc_html(get_user_meta($user->ID, 'xtec_user_creator', true) ?: '—'); ?></td>
+								<?php } ?>
 								<td>
 									<?php
 									foreach ( $blogs as $blog ) {
@@ -650,17 +612,72 @@ function xtec_manage_users()
 						?>
 					</tbody>
 				</table>
-			<?php 
+				<?php
+				echo str_replace('tablenav top', 'tablenav bottom', $pagination);
 			}
 			else {
 				echo "<div class='notice notice-info inline'>";
-					echo "<p>Actualment no existeix cap usuari creat per vos.</p>";
+				echo $is_super_admin ? '<p>Actualment no existeix cap usuari local.</p>' : '<p>Actualment no existeix cap usuari creat per vos.</p>';
 				echo "</div>";
 			}
 		}
 		?>
 	</div>
-	<?php	
+	<?php
+}
+
+/**
+ * Excludes the users with an e-mail of XTEC from a query of users. Together with the value of xtec_user_creator, it
+ * identifies XTEC users in the same way as the plugin XTEC LDAP Login, which also considers XTEC users the ones
+ * registered before that value existed.
+ *
+ * @param WP_User_Query $query The query of users.
+ */
+function xtec_users_exclude_xtec_emails($query)
+{
+	global $wpdb;
+
+	$query->query_where .= $wpdb->prepare(" AND $wpdb->users.user_email NOT LIKE %s", '%' . $wpdb->esc_like('@xtec.cat'));
+}
+
+/**
+ * Returns the HTML of the pagination of the list of users, with the same appearance as the lists of WordPress.
+ *
+ * @param int $total The number of users.
+ * @param int $per_page The number of users per page.
+ * @param int $paged The current page.
+ * @return string The HTML of the pagination.
+ */
+function xtec_users_pagination($total, $per_page, $paged)
+{
+	$pages = max(1, (int)ceil($total / $per_page));
+	$paged = min($paged, $pages);
+
+	// Same markup as WP_List_Table::pagination()
+	$link = function ($page, $class, $label, $symbol) use ($paged, $pages) {
+		$disabled = ($class === 'first-page' || $class === 'prev-page') ? $paged <= 1 : $paged >= $pages;
+		if ($disabled) {
+			return "<span class='tablenav-pages-navspan button disabled' aria-hidden='true'>$symbol</span>";
+		}
+		$url = esc_url(add_query_arg('paged', $page, admin_url('users.php?page=xtec-manage-users')));
+
+		return "<a class='$class button' href='$url'><span class='screen-reader-text'>" . esc_html($label) . "</span><span aria-hidden='true'>$symbol</span></a>";
+	};
+
+	/* translators: %s: Number of items. */
+	$items = sprintf(_n('%s item', '%s items', $total), number_format_i18n($total));
+	/* translators: 1: Current page, 2: Total pages. */
+	$paging = sprintf(_x('%1$s of %2$s', 'paging'), number_format_i18n($paged), "<span class='total-pages'>" . number_format_i18n($pages) . '</span>');
+
+	return "<div class='tablenav top'><div class='tablenav-pages" . ($pages === 1 ? ' one-page' : '') . "'>"
+		. "<span class='displaying-num'>" . esc_html($items) . '</span> '
+		. "<span class='pagination-links'>"
+		. $link(1, 'first-page', __('First page'), '&laquo;') . ' '
+		. $link(max(1, $paged - 1), 'prev-page', __('Previous page'), '&lsaquo;') . ' '
+		. "<span class='paging-input'><span class='tablenav-paging-text'>$paging</span></span> "
+		. $link(min($pages, $paged + 1), 'next-page', __('Next page'), '&rsaquo;') . ' '
+		. $link($pages, 'last-page', __('Last page'), '&raquo;')
+		. "</span></div><br class='clear' /></div>";
 }
 
 /**
@@ -674,16 +691,16 @@ function xtec_current_user_can($action,$param = '')
 {	
 	// Site admins can do it all except delete users who are still members of some blog
 	if ( is_super_admin() ) { 
-		if ( $action == 'delete_user' ) {
+		if ( $action === 'delete_user' ) {
 			return !xtec_users_is_member_of_blogs($param);
 		}
-		else if ( $action == 'create_blog_today' ) {
-			return array();
-		}
-		else {
-			return true;
-		}
-	}
+
+        if ( $action === 'create_blog_today' ) {
+            return array();
+        }
+
+        return true;
+    }
 	
 	switch ( $action ) {
 		
@@ -692,12 +709,9 @@ function xtec_current_user_can($action,$param = '')
 			
 			global $current_user;
 			wp_get_current_user();
-			if ( current_user_can('add_users') && xtec_is_xtec_user($current_user->ID) ) { return true; }
-			else { return false; }			
-			
-			break;
-		
-		case 'manage_users':
+            return current_user_can('add_users') && xtec_is_xtec_user($current_user->ID);
+
+        case 'manage_users':
 			// Can manage users: XTEC users from LDAP
 			
 			global $current_user;
@@ -711,17 +725,14 @@ function xtec_current_user_can($action,$param = '')
 			// $param -> limit per day blogs creation 
 			
 			$limit = $param;
-			if ( $limit == 0 ) { return false; }
+			if ( (int)$limit === 0 ) { return false; }
 			
-			// ESTARIA BÉ TENIR A LES OPCIONS DEL SITE UNA OPCIÓ PER DIR QUINS USUARIS PODEN CREAR BLOCS //
 			
 			global $current_user;
 			wp_get_current_user();
 			return xtec_is_xtec_user($current_user->ID);
-			
-			break;
-			
-		case 'create_blog_today':
+
+        case 'create_blog_today':
 			// Can create blog today: users who have not exceeded the maximum blog daily creation.
 			// Returns: empty array, if user can create blog today.
 			//			array with blogs created today for user, if user exceeds the maximum blog daily creation.
@@ -745,30 +756,29 @@ function xtec_current_user_can($action,$param = '')
 			if ( count($today_created_blogs) < $limit ) {
 				return array();
 			}
-			else { return $today_created_blogs; }
 
-			break;
+            return $today_created_blogs;
+
+            break;
 		
 		case 'delete_user':
 			// Can delete user: user who have created whenever the user to delete is not member of any bloc other than the portal
 			// $param -> user_id
 			$user_id = $param;
 			global $current_user;
-			if ( $current_user->user_login == get_user_meta($user_id,'xtec_user_creator',true) ) {
+			if ( $current_user->user_login === get_user_meta($user_id,'xtec_user_creator',true) ) {
 				return !xtec_users_is_member_of_blogs($user_id);
 			}
-			else { return false; }
-			
-			break;
-		
-		case 'change_user_password':
+
+            return false;
+
+        case 'change_user_password':
 			// Can change user password: user who have created
 			// $param -> user_id
 			$user_id = $param;
 			global $current_user;
-			
-			if ( $current_user->user_login == get_user_meta($user_id,'xtec_user_creator',true) ) { return true; }
-			else { return false; }
+
+            return $current_user->user_login === get_user_meta($user_id, 'xtec_user_creator', true);
 			
 			break;
 	}
@@ -809,5 +819,5 @@ function xtec_is_xtec_user($user_id)
  */
 function xtec_is_valid_username($username)
 {
-	return !preg_match('/[^a-z0-9\_\.\-]/',$username);
+	return !preg_match('/[^a-z0-9_.\-]/',$username);
 }
