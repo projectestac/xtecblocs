@@ -3,9 +3,6 @@ function display_step_2(x)
 	if (document.getElementById("errors")) {
 		document.getElementById("errors").style.display='none';
 	}
-	if (document.getElementById("message")) {
-			document.getElementById("message").style.display='none';
-	}
 	
 	document.getElementById("step_2").style.display='';
 	document.getElementById("username").readOnly=false;

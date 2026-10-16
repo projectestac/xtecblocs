@@ -33,8 +33,9 @@ function xtec_users_menu()
 function xtec_users_enqueue_assets()
 {
 	$plugindir = plugin_dir_url(__FILE__);
-	wp_enqueue_script('xtec-users_js', $plugindir . 'xtec-users.js', [], '1.1');
-	wp_enqueue_style('xtec-users_css', $plugindir . 'xtec-users.css', [], '1.1');
+	// The date of the files is used as version so that browsers load them again when they change
+	wp_enqueue_script('xtec-users_js', $plugindir . 'xtec-users.js', [], (string)filemtime(__DIR__ . '/xtec-users.js'));
+	wp_enqueue_style('xtec-users_css', $plugindir . 'xtec-users.css', [], (string)filemtime(__DIR__ . '/xtec-users.css'));
 }
 
 /**
@@ -53,7 +54,9 @@ function xtec_add_users()
 {
 	global $blog_id;
 	
-	$errors_step_2=$errors_step_3=$message=$info='';
+	$errors_step_2=$errors_step_3=$info='';
+	// Type of the notice of the result: info, success or error
+	$info_type='info';
 	$confirm_user_addition=false;
 	$username_readonly='';
 	
@@ -227,12 +230,14 @@ Please click the following link to confirm the invite:
 			);
 			$blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
 			wp_mail( $user_data->user_email, sprintf( __( '[%s] Joining Confirmation' ), $blogname ),  sprintf($invitation, $blogname, home_url(), $role_tag, home_url("/newbloguser/$newuser_key/")));
+			$info_type = 'success';
 			$info .= "<p>S'ha enviat una invitació al correu electrònic de l'usuari/ària <strong>" . esc_html($username) . "</strong> per afegir-se com a <strong>" . esc_html($role_tag) . "</strong> d'aquest bloc.</p>";
 			$info .= "<p>Quan l'usuari/ària confirmi la invitació s'afegirà com a membre del bloc.</p>";
 		}
 		
 		else if ( $user_type == 'other' ) {			
 			add_user_to_blog($blog_id,$user_data->ID,$role);
+			$info_type = 'success';
 			$info .= "<p>Heu afegit l'usuari/ària <strong>" . esc_html($username) . "</strong> com a <strong>" . esc_html($role_tag) . "</strong> d'aquest bloc.</p>";			
 		}
 	}
@@ -248,7 +253,8 @@ Please click the following link to confirm the invite:
 		
 		$password = xtec_users_field($user, 'password');
 		$email = trim(xtec_users_field($user, 'email'));
-		if ($email === '') { $email = $username . '@' . $username . '.blocs'; }
+		// WordPress requires an e-mail. The domain .invalid is reserved and can never receive mail (RFC 2606).
+		if ($email === '') { $email = $username . '@xtec.invalid'; }
 		$role_tag = $role_tags[$role];
 
 		$username_readonly='readonly';
@@ -283,6 +289,7 @@ Please click the following link to confirm the invite:
 
 			if( !$user_id ) {
 				// User already exist
+				$info_type = 'error';
 				$info = "<p>Mentre intentàveu crear l'usuari/ària algú us ha passat al davant.</p>";
 			}
 			else {
@@ -290,6 +297,7 @@ Please click the following link to confirm the invite:
 				global $current_user;
 				wp_get_current_user();
 				update_user_meta($user_id,'xtec_user_creator',$current_user->user_login);
+				$info_type = 'success';
 				$info = "<p>Heu donat d'alta al servei de blocs l'usuari/ària <strong>" . esc_html($username) . "</strong> amb contrasenya <strong>" . esc_html($password) . "</strong>. Feu arribar a l'usuari/ària el nom d'usuari/ària i la contrasenya per a què pugui accedir al servei de blocs.</p>";
 				// Add user to blog
 				add_user_to_blog($blog_id,$user_id,$role);
@@ -312,7 +320,7 @@ Please click the following link to confirm the invite:
 
 		<?php
 		if (!empty($info)) {
-			echo "<div id='info' class='updated fade' style='background-color: rgb(255, 251, 204); '>";
+			echo "<div id='info' class='notice notice-$info_type inline'>";
 				$info .= "<p><a href='?page=xtec-add-users'>Torna a Afegeix un nou usuari/ària</a></p>";
 				echo $info ;
 			echo "</div>";
@@ -320,7 +328,7 @@ Please click the following link to confirm the invite:
 		else {
 			?>
 		
-			<div id='about' class='updated fade' style='background-color: rgb(255, 251, 204); '>
+			<div id='about' class='notice notice-info inline'>
 				<p>Podeu afegir dos tipus d'usuaris al vostre bloc:</p>
 				<ul>
 					<li>1. Usuaris XTEC
@@ -360,8 +368,7 @@ Please click the following link to confirm the invite:
 				<div id='step_2' <?php echo $display_step_2; ?>>
 					<p><span class=num>2.</span> <strong>Inseriu el nom de l'usuari/ària que voleu afegir.</strong></p>
 					
-					<?php if (!empty($errors_step_2)) { echo "<div id='errors' class='error below-h2'>$errors_step_2</div>"; }?>
-					<?php if (!empty($message)) { echo "<div id='message' class='updated fade below-h2'>$message</div>"; }?>
+					<?php if (!empty($errors_step_2)) { echo "<div id='errors' class='notice notice-error inline'>$errors_step_2</div>"; }?>
 					
 					<table class='form-table'>
 						<tr id='row_username'>
@@ -382,7 +389,7 @@ Please click the following link to confirm the invite:
 					</table>
 					
 					<?php if ( $confirm_user_addition ) { ?>
-					<div id='confirm_user' class='updated fade below-h2' style='background-color: rgb(255, 251, 204); '>
+					<div id='confirm_user' class='notice notice-warning inline'>
 						<p>Aquest nom d'usuari/ària ja existeix. Esteu segur que voleu afegir l'usuari/ària <strong><?php echo esc_html($username) ?></strong> al vostre bloc?</p>
 						<p>
 							<input class="button" type="submit" name='Confirm user addition' value="Sí, vull afegir aquest usuari/ària" />
@@ -428,7 +435,7 @@ Please click the following link to confirm the invite:
 					<div id='step_3_create_add' >
 						<p><span class=num>3.</span> <strong>Assigneu una contrasenya i un correu electrònic per al nou usuari/ària i escolliu el rol de l'usuari/ària per a aquest bloc.</strong></p>
 						
-						<?php if (!empty($errors_step_3)) { echo "<div id='errors' class='error below-h2'>$errors_step_3</div>"; }?>
+						<?php if (!empty($errors_step_3)) { echo "<div id='errors' class='notice notice-error inline'>$errors_step_3</div>"; }?>
 						
 						<table class='form-table'>
 						
@@ -579,7 +586,7 @@ function xtec_manage_users()
 		}
 		else { ?>
 		
-			<div id='about' class='updated fade' style='background-color: rgb(255, 251, 204); '>	
+			<div id='about' class='notice notice-info inline'>
 				<p>En aquesta pàgina es llisten tots els usuaris que heu creat i els blocs als que pertanyen.</p>
 				<p>Des d'aquí podeu canviar la contrasenya d'aquests usuaris i en el cas que no pertanyin a cap bloc també podeu eliminar-los definitivament.</p>
 			</div>
@@ -587,12 +594,12 @@ function xtec_manage_users()
 			<?php
 
 			if ( !empty($message) ) {
-				echo "<div id='about' class='updated fade' style='background-color: rgb(255, 251, 204); '>";
+				echo "<div id='message' class='notice notice-success inline'>";
 				echo $message;
 				echo "</div>";
 			}
 			if ( !empty($error) ) {
-				echo "<div class='error below-h2'>";
+				echo "<div class='notice notice-error inline'>";
 				echo $error;
 				echo "</div>";
 			}
@@ -633,9 +640,7 @@ function xtec_manage_users()
 								<td>
 									<?php
 									foreach ( $blogs as $blog ) {
-										if ( !is_main_site($blog->userblog_id) ) {
-											echo "<a href='" . esc_url($blog->siteurl) . "'>" . esc_html($blog->blogname) . "</a><br>";
-										}							
+										echo "<a href='" . esc_url($blog->siteurl) . "'>" . esc_html($blog->blogname) . "</a><br>";
 									}
 									?>
 								</td>
@@ -648,7 +653,7 @@ function xtec_manage_users()
 			<?php 
 			}
 			else {
-				echo "<div class='updated fade' style='background-color: rgb(255, 251, 204); '>";
+				echo "<div class='notice notice-info inline'>";
 					echo "<p>Actualment no existeix cap usuari creat per vos.</p>";
 				echo "</div>";
 			}
