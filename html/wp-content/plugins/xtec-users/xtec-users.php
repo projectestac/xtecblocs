@@ -17,6 +17,9 @@
 
 defined('ABSPATH') || exit;
 
+// Minimum length of the passwords of the local users
+const XTEC_USERS_MIN_PASSWORD_LENGTH = 8;
+
 add_action('admin_menu', 'xtec_users_menu');
 add_action('wp_ajax_xtec_users_check', 'xtec_users_ajax_check');
 add_action('load-user-new.php', 'xtec_users_redirect_user_new');
@@ -43,10 +46,11 @@ function xtec_users_menu(): void
             'xtec_add_users'
         );
         remove_submenu_page('users.php', 'user-new.php');
+        add_action("load-$add_users", 'xtec_users_add_users_actions');
         add_action("load-$add_users", 'xtec_users_enqueue_assets');
     }
     if (xtec_current_user_can('manage_users')) {
-        add_submenu_page(
+        $manage_users = add_submenu_page(
             'users.php',
             'Gestió d\'usuaris',
             'Gestió d\'usuaris',
@@ -54,6 +58,8 @@ function xtec_users_menu(): void
             'xtec-manage-users',
             'xtec_manage_users'
         );
+        add_action("load-$manage_users", 'xtec_users_manage_users_actions');
+        add_action("load-$manage_users", 'xtec_users_enqueue_assets');
     }
 }
 
@@ -238,6 +244,40 @@ function xtec_users_role_row(array $roles, string $selected): string
 }
 
 /**
+ * Returns the HTML of the field of a password, with a button to generate another one and the strength of the password.
+ * The password is shown, as it has to be given to the user.
+ *
+ * @param string $password The password shown in the field.
+ * @return string The HTML of the field and its description.
+ */
+function xtec_users_password_field(string $password): string
+{
+    return "<input type='text' id='xtec-users-password' name='user[password]' class='regular-text' value='"
+        . esc_attr($password) . "' autocomplete='off' spellcheck='false' /> "
+        . "<button type='button' id='xtec-users-generate' class='button hide-if-no-js'>Genera'n una altra</button>"
+        . "<p class='description'><span id='xtec-users-strength' aria-live='polite'></span> Ha de tenir un mínim de "
+        . XTEC_USERS_MIN_PASSWORD_LENGTH . ' caràcters.</p>';
+}
+
+/**
+ * Checks the length of a password.
+ *
+ * @param string $password The password.
+ * @return string The HTML of the error, or an empty string if the password is valid.
+ */
+function xtec_users_password_error(string $password): string
+{
+    if ($password === '') {
+        return "<p>Heu d'introduir una contrasenya.</p>";
+    }
+    if (mb_strlen($password) < XTEC_USERS_MIN_PASSWORD_LENGTH) {
+        return '<p>La contrasenya ha de tenir un mínim de ' . XTEC_USERS_MIN_PASSWORD_LENGTH . ' caràcters.</p>';
+    }
+
+    return '';
+}
+
+/**
  * Returns the HTML of the result of checking a username: a notice and, if the user can be added to the blog, the
  * fields and the button to do it. It is used both in the page and in the check through AJAX.
  *
@@ -304,12 +344,9 @@ function xtec_users_render_check(string $username, array $values = [], string $e
                 "<p>L'usuari $name no existeix. Podeu crear-lo i afegir-lo al bloc.</p>"
             );
             $rows = "<tr><th scope='row'><label for='xtec-users-password'>" . esc_html__('Password') . '</label></th>'
-                . "<td><input type='text' id='xtec-users-password' name='user[password]' class='regular-text' value='"
-                . esc_attr($password) . "' autocomplete='off' spellcheck='false' /> "
-                . "<button type='button' id='xtec-users-generate' class='button hide-if-no-js'>"
-                . "Genera'n una altra</button>"
-                . "<p class='description'><span id='xtec-users-strength' aria-live='polite'></span> Feu arribar el nom "
-                . "d'usuari i la contrasenya a l'usuari perquè pugui entrar a XTECBlocs.</p></td></tr>"
+                . '<td>' . xtec_users_password_field($password)
+                . "<p class='description'>Feu arribar el nom d'usuari i la contrasenya a l'usuari perquè pugui entrar "
+                . 'a XTECBlocs.</p></td></tr>'
                 . "<tr><th scope='row'><label for='xtec-users-email'>" . esc_html__('Email')
                 . ' (opcional)</label></th>'
                 . "<td><input type='text' id='xtec-users-email' name='user[email]' class='regular-text' value='"
@@ -349,6 +386,35 @@ function xtec_users_ajax_check(): void
         : '';
 
     wp_send_json_success(['html' => xtec_users_render_check($username)]);
+}
+
+/**
+ * Returns the message shown after inviting or adding a user to the blog.
+ *
+ * @param string $done The action done: invited or added.
+ * @param string $username The username.
+ * @param string $role The role of the user in the blog.
+ * @return string The HTML of the message, or an empty string if the action or the role are unknown.
+ */
+function xtec_users_done_message(string $done, string $username, string $role): string
+{
+    $roles = xtec_users_roles(true);
+    if (!isset($roles[$role])) {
+        return '';
+    }
+
+    $name = '<strong>' . esc_html($username) . '</strong>';
+    $role_name = '<strong>' . esc_html($roles[$role]) . '</strong>';
+
+    if ($done === 'invited') {
+        return "<p>S'ha enviat una invitació al correu electrònic de l'usuari $name per afegir-se com a $role_name "
+            . "d'aquest bloc.</p><p>Quan l'usuari confirmi la invitació s'afegirà com a membre del bloc.</p>";
+    }
+    if ($done === 'added') {
+        return "<p>Heu afegit l'usuari $name com a $role_name d'aquest bloc.</p>";
+    }
+
+    return '';
 }
 
 /**
@@ -411,18 +477,13 @@ Please click the following link to confirm the invite:
             sprintf($invitation, $blogname, home_url(), $roles[$role], home_url("/newbloguser/$newuser_key/"))
         );
 
-        return [
-            'success' => "<p>S'ha enviat una invitació al correu electrònic de l'usuari $name per afegir-se com a "
-                . "$role_name d'aquest bloc.</p>"
-                . "<p>Quan l'usuari confirmi la invitació s'afegirà com a membre del bloc.</p>",
-            'errors' => '',
-        ];
+        return ['success' => xtec_users_done_message('invited', $username, $role), 'errors' => ''];
     }
 
     if ($action === 'add') {
         add_user_to_blog(get_current_blog_id(), $user->ID, $role);
 
-        return ['success' => "<p>Heu afegit l'usuari $name com a $role_name d'aquest bloc.</p>", 'errors' => ''];
+        return ['success' => xtec_users_done_message('added', $username, $role), 'errors' => ''];
     }
 
     $password = xtec_users_field($data, 'password');
@@ -432,10 +493,7 @@ Please click the following link to confirm the invite:
         $email = $username . '@xtec.invalid';
     }
 
-    $errors = '';
-    if ($password === '') {
-        $errors .= "<p>Heu d'introduir la contrasenya per afegir un usuari nou.</p>";
-    }
+    $errors = xtec_users_password_error($password);
     if (!is_email($email)) {
         $errors .= '<p>L\'adreça de correu electrònic que heu introduït no és vàlida.</p>';
     } elseif (preg_match('/^.+@xtec\.cat$/i', $email)) {
@@ -467,6 +525,37 @@ Please click the following link to confirm the invite:
 }
 
 /**
+ * Invites or adds a user when the form of the page to add users is sent. It is done before the page is shown, so that
+ * the browser can be redirected afterwards and reloading the page doesn't send another invitation. Creating a user is
+ * done when the page is shown, as the message of the result contains the password, which can't be kept for after the
+ * redirection. Reloading the page then doesn't create the user again, as it already exists.
+ */
+function xtec_users_add_users_actions(): void
+{
+    $action = (isset($_POST['xtec_users_action']) && is_string($_POST['xtec_users_action']))
+        ? $_POST['xtec_users_action']
+        : '';
+    if ($action !== 'invite' && $action !== 'add') {
+        return;
+    }
+
+    check_admin_referer('xtec-add-users');
+    $values = (isset($_POST['user']) && is_array($_POST['user'])) ? wp_unslash($_POST['user']) : [];
+    $username = strtolower(trim(xtec_users_field($values, 'username')));
+
+    // If the user can't be invited or added any more, the page shows the new result of the check
+    if (xtec_users_do_action($action, $username, $values)['success'] !== '') {
+        $args = [
+            'done' => ($action === 'invite') ? 'invited' : 'added',
+            'user' => $username,
+            'role' => xtec_users_field($values, 'role'),
+        ];
+        wp_safe_redirect(add_query_arg($args, admin_url('users.php?page=xtec-add-users')));
+        exit;
+    }
+}
+
+/**
  * Shows the page to add users to the blog. The username is checked through AJAX while it is typed, and the result
  * shows the fields to add the user. Without JavaScript, the button to check the username does the same.
  */
@@ -477,6 +566,14 @@ function xtec_add_users(): void
     $success = '';
     $errors = '';
 
+    // Result of an invitation or an addition, after the redirection of xtec_users_add_users_actions()
+    if (
+        isset($_GET['done'], $_GET['user'], $_GET['role'])
+        && is_string($_GET['done']) && is_string($_GET['user']) && is_string($_GET['role'])
+    ) {
+        $success = xtec_users_done_message($_GET['done'], wp_unslash($_GET['user']), $_GET['role']);
+    }
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         check_admin_referer('xtec-add-users');
 
@@ -486,7 +583,11 @@ function xtec_add_users(): void
             ? $_POST['xtec_users_action']
             : '';
 
-        if ($action !== '') {
+        // Invitations and additions are done in xtec_users_add_users_actions(). If one gets here, the user can't be
+        // invited or added any more, and the new result of the check is shown.
+        if ($action === 'invite' || $action === 'add') {
+            $values = [];
+        } elseif ($action !== '') {
             $result = xtec_users_do_action($action, $username, $values);
             $success = $result['success'];
             $errors = $result['errors'];
@@ -545,49 +646,71 @@ function xtec_add_users(): void
     <?php
 }
 
+/**
+ * Changes the password of a user or deletes a user, when the forms of the page to manage users are sent. It is done
+ * before the page is shown, so that the browser can be redirected afterwards and reloading the page doesn't send the
+ * form again. The result is shown from the parameters of the URL, which never contain the password.
+ */
+function xtec_users_manage_users_actions(): void
+{
+    if (!isset($_POST['Change_user_password']) && !isset($_POST['Delete_user'])) {
+        return;
+    }
+
+    check_admin_referer('xtec-manage-users');
+    $user_id = isset($_POST['user_id']) ? absint($_POST['user_id']) : 0;
+    $userdata = get_userdata($user_id);
+    if (!$userdata) {
+        wp_die('La petició no és vàlida.');
+    }
+
+    $url = admin_url('users.php?page=xtec-manage-users');
+
+    if (isset($_POST['Change_user_password'])) {
+        if (!xtec_current_user_can('change_user_password', $user_id)) {
+            wp_die('La petició no és vàlida.');
+        }
+        $password = (isset($_POST['user']['password']) && is_string($_POST['user']['password']))
+            ? wp_unslash($_POST['user']['password'])
+            : '';
+        if (xtec_users_password_error($password) !== '') {
+            // The form is shown again with the error
+            $args = ['action' => 'change_user_password', 'user_id' => $user_id, 'error' => 'password'];
+        } else {
+            wp_set_password($password, $user_id);
+            $args = ['done' => 'password', 'user' => $userdata->user_login];
+        }
+    } else {
+        if (!xtec_current_user_can('delete_user', $user_id)) {
+            wp_die('La petició no és vàlida.');
+        }
+        wpmu_delete_user($user_id);
+        $args = ['done' => 'deleted', 'user' => $userdata->user_login];
+    }
+
+    wp_safe_redirect(add_query_arg($args, $url));
+    exit;
+}
+
+/**
+ * Shows the page to manage the local users: the list of users and the forms to change their password or delete them.
+ */
 function xtec_manage_users(): void
 {
+    // Result of an action, after the redirection of xtec_users_manage_users_actions()
+    $done = isset($_GET['done']) && is_string($_GET['done']) ? $_GET['done'] : '';
+    $done_user = isset($_GET['user']) && is_string($_GET['user']) ? wp_unslash($_GET['user']) : '';
+    $message = '';
+    if ($done === 'password') {
+        $message = "<p>S'ha canviat la contrasenya de l'usuari <strong>" . esc_html($done_user) . '</strong>.</p>';
+    } elseif ($done === 'deleted') {
+        $message = "<p>S'ha eliminat l'usuari <strong>" . esc_html($done_user) . "</strong> d'XTECBlocs.</p>";
+    }
     ?>
 
     <div class="wrap">
 
         <h2>Gestió d'usuaris</h2>
-
-        <?php
-
-        if (isset($_POST['Change_user_password']) || isset($_POST['Delete_user'])) {
-            check_admin_referer('xtec-manage-users');
-            $user_id = isset($_POST['user_id']) ? absint($_POST['user_id']) : 0;
-            $userdata = get_userdata($user_id);
-            if (!$userdata) {
-                wp_die('La petició no és vàlida.');
-            }
-            $username = $userdata->user_login;
-        }
-
-        if (isset($_POST['Change_user_password'])) {
-            $password = (isset($_POST['password']) && is_string($_POST['password']))
-                ? wp_unslash($_POST['password'])
-                : '';
-            if (!xtec_current_user_can('change_user_password', $user_id)) {
-                wp_die('La petició no és vàlida.');
-            }
-            if ($password === '') {
-                $error = "<p>S'ha produït un error en intentar fer el canvi de contrasenya. No heu introduït cap "
-                    . 'contrasenya.</p>';
-            } else {
-                wp_set_password($password, $user_id);
-                $message = "<p>S'ha canviat la contrasenya de l'usuari <strong>" . esc_html($username) . '</strong>. '
-                    . 'La nova contrasenya és <strong>' . esc_html($password) . '</strong>.</p>';
-            }
-        } elseif (isset($_POST['Delete_user'])) {
-            if (!xtec_current_user_can('delete_user', $user_id)) {
-                wp_die('La petició no és vàlida.');
-            }
-            wpmu_delete_user($user_id);
-            $message = "<p>S'ha eliminat l'usuari <strong>" . esc_html($username) . "</strong> d'XTECBlocs.</p>";
-        }
-        ?>
 
         <?php
         $doaction = '';
@@ -606,6 +729,13 @@ function xtec_manage_users(): void
                 echo "<p>Heu seleccionat canviar la contrasenya de l'usuari <strong>"
                     . esc_html(get_userdata($user_id)->user_login) . '</strong>. Escriviu a continuació la nova '
                     . 'contrasenya que li assignareu.</p>';
+                if (isset($_GET['error'])) {
+                    echo xtec_users_notice(
+                        'error',
+                        '<p>La contrasenya ha de tenir un mínim de ' . XTEC_USERS_MIN_PASSWORD_LENGTH
+                        . ' caràcters.</p>'
+                    );
+                }
                 ?>
                 <form action="?page=xtec-manage-users" method="post">
                     <?php
@@ -613,10 +743,11 @@ function xtec_manage_users(): void
                     <input type="hidden" name='user_id' value='<?php
                     echo $user_id ?>'/>
                     <table class='form-table'>
-                        <tr id='row_password'>
-                            <th><label for='password'>Nova contrasenya:</label></th>
+                        <tr>
+                            <th scope="row"><label for="xtec-users-password">Nova contrasenya</label></th>
                             <td>
-                                <input id='password' type='text' size='30' maxlength='20' name='password' value=""/>
+                                <?php
+                                echo xtec_users_password_field(wp_generate_password(12, false)); ?>
                             </td>
                         </tr>
 
@@ -668,15 +799,8 @@ function xtec_manage_users(): void
 
             <?php
 
-            if (!empty($message)) {
-                echo "<div id='message' class='notice notice-success inline'>";
-                echo $message;
-                echo "</div>";
-            }
-            if (!empty($error)) {
-                echo "<div class='notice notice-error inline'>";
-                echo $error;
-                echo "</div>";
+            if ($message !== '') {
+                echo xtec_users_notice('success', $message);
             }
 
             // Local users created with this plugin have the login of their creator in xtec_user_creator
