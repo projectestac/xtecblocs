@@ -46,8 +46,8 @@ function xtec_users_roles(bool $xtec): array
  * usernames belong to local users, who are added directly if they exist or created otherwise.
  *
  * @param string $username The username, in lowercase.
- * @return array The status (empty, invalid, xtec_not_found, not_xtec, member, xtec, local or new) and the user, if it
- *               exists.
+ * @return array The status (empty, invalid, xtec_not_found, not_xtec, member, xtec, local, illegal or new) and the
+ *               user, if it exists.
  */
 function xtec_users_classify(string $username): array
 {
@@ -71,7 +71,7 @@ function xtec_users_classify(string $username): array
             return ['status' => 'not_xtec', 'user' => $user];
         }
     } elseif (!$user) {
-        return ['status' => 'new', 'user' => null];
+        return ['status' => xtec_users_is_illegal_username($username) ? 'illegal' : 'new', 'user' => null];
     }
 
     if (is_user_member_of_blog($user->ID, get_current_blog_id())) {
@@ -79,6 +79,23 @@ function xtec_users_classify(string $username): array
     }
 
     return ['status' => $is_xtec_username ? 'xtec' : 'local', 'user' => $user];
+}
+
+/**
+ * Checks if a username can't be used in the network: the names banned in the settings of the network (illegal_names)
+ * and the ones of the filter illegal_user_logins, as the signup of WordPress does.
+ *
+ * @param string $username The username, in lowercase.
+ * @return bool True if the username can't be used.
+ */
+function xtec_users_is_illegal_username(string $username): bool
+{
+    $illegal = array_merge(
+        (array)get_site_option('illegal_names', []),
+        (array)apply_filters('illegal_user_logins', [])
+    );
+
+    return in_array($username, array_map('strtolower', $illegal), true);
 }
 
 /**
@@ -172,6 +189,11 @@ function xtec_users_render_check(string $username, array $values = [], string $e
                 'error',
                 '<p>' . sprintf($text, $name, XTEC_USERS_MIN_LOCAL_USERNAME_LENGTH) . '</p>'
             );
+        case 'illegal':
+            /* translators: %s: Username. */
+            $text = esc_html__('The username %s is not allowed.', 'xtec-users');
+
+            return xtec_users_notice('error', '<p>' . sprintf($text, $name) . '</p>');
         case 'member':
             /* translators: %s: Username. */
             $text = esc_html__('The user %s is already a member of this blog.', 'xtec-users');

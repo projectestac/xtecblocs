@@ -31,6 +31,13 @@ defined('ABSPATH') || exit;
  */
 function xtec_users_current_user_can(string $action, mixed $param = ''): bool|array
 {
+    // The page to manage users is for local users. XTEC users are managed in the administration of the network, and
+    // their creator isn't a user, so they can't be changed even if a user had the login LDAP_XTEC or OAUTH_XTEC.
+    $actions_on_users = ['change_user_password', 'delete_user'];
+    if (in_array($action, $actions_on_users, true) && xtec_users_is_xtec_user((int)$param)) {
+        return false;
+    }
+
     // Super admins can do it all except delete users who are still members of any blog other than the portal
     if (is_super_admin()) {
         if ($action === 'delete_user') {

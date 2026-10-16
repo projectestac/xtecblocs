@@ -75,6 +75,8 @@ function xtec_users_manage_users_actions(): void
             $args = ['action' => 'change_user_password', 'user_id' => $user_id, 'error' => 'password'];
         } else {
             wp_set_password($password, $user_id);
+            // Whoever had logged in with the old password can't go on using the user
+            WP_Session_Tokens::get_instance($user_id)->destroy_all();
             $args = ['done' => 'password', 'user' => $userdata->user_login];
         }
     } else {
