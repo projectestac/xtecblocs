@@ -19,6 +19,8 @@ defined('ABSPATH') || exit;
 
 add_action('admin_menu', 'xtec_users_menu');
 add_action('wp_ajax_xtec_users_check', 'xtec_users_ajax_check');
+add_action('load-user-new.php', 'xtec_users_redirect_user_new');
+add_action('admin_bar_menu', 'xtec_users_admin_bar_new_user', 100);
 
 // Creation of blogs in wp-signup.php
 add_action('preprocess_signup_form', 'xtec_users_preprocess_signup_form');
@@ -52,6 +54,43 @@ function xtec_users_menu(): void
             'xtec-manage-users',
             'xtec_manage_users'
         );
+    }
+}
+
+/**
+ * Replaces the page of WordPress to add users (user-new.php) with the page of the plugin, so that its rules can't be
+ * skipped. Only super admins can still use the page of WordPress.
+ */
+function xtec_users_redirect_user_new(): void
+{
+    if (is_super_admin()) {
+        return;
+    }
+
+    if (xtec_current_user_can('add_users')) {
+        wp_safe_redirect(admin_url('users.php?page=xtec-add-users'));
+        exit;
+    }
+
+    wp_die('Només els usuaris XTEC poden afegir usuaris als blocs.', '', ['response' => 403, 'back_link' => true]);
+}
+
+/**
+ * Makes the link to add a user of the toolbar point to the page of the plugin, or removes it if the user can't use
+ * that page. Super admins keep the link of WordPress.
+ *
+ * @param WP_Admin_Bar $wp_admin_bar The toolbar.
+ */
+function xtec_users_admin_bar_new_user(WP_Admin_Bar $wp_admin_bar): void
+{
+    if (is_super_admin() || !$wp_admin_bar->get_node('new-user')) {
+        return;
+    }
+
+    if (xtec_current_user_can('add_users')) {
+        $wp_admin_bar->add_node(['id' => 'new-user', 'href' => admin_url('users.php?page=xtec-add-users')]);
+    } else {
+        $wp_admin_bar->remove_node('new-user');
     }
 }
 
