@@ -385,9 +385,15 @@ function xtec_users_do_action(string $action, string $username, array $data): ar
     $role_name = '<strong>' . esc_html($roles[$role]) . '</strong>';
 
     if ($action === 'invite') {
-        // The user is added to the blog when the invitation is accepted (see maybe_add_existing_user_to_blog())
+        // The user is added to the blog when the invitation is accepted (see maybe_add_existing_user_to_blog()). The
+        // invitation is only read then, so it isn't loaded with the rest of the options in every request.
         $newuser_key = wp_generate_password(20, false);
-        add_option('new_user_' . $newuser_key, ['user_id' => $user->ID, 'email' => $user->user_email, 'role' => $role]);
+        add_option(
+            'new_user_' . $newuser_key,
+            ['user_id' => $user->ID, 'email' => $user->user_email, 'role' => $role],
+            '',
+            false
+        );
         /* translators: 1: Site title, 2: Site URL, 3: User role, 4: Activation URL. */
         $invitation = __(
             'Hi,
@@ -1088,7 +1094,8 @@ function xtec_users_is_member_of_blogs(int $user_id): bool
 }
 
 /**
- * Checks if is a XTEC user.
+ * Checks if is a XTEC user: registered through LDAP or OAuth, or with an e-mail of XTEC. It is the same criterion as
+ * the plugin XTEC LDAP Login, which also considers XTEC users the ones registered before xtec_user_creator existed.
  *
  * @param int $user_id The user ID.
  * @return bool True if is a XTEC user.
@@ -1096,7 +1103,13 @@ function xtec_users_is_member_of_blogs(int $user_id): bool
 function xtec_is_xtec_user(int $user_id): bool
 {
     $creator = get_user_meta($user_id, 'xtec_user_creator', true);
-    return ($creator === 'LDAP_XTEC' || $creator === 'OAUTH_XTEC');
+    if ($creator === 'LDAP_XTEC' || $creator === 'OAUTH_XTEC') {
+        return true;
+    }
+
+    $user = get_userdata($user_id);
+
+    return $user && str_ends_with(strtolower($user->user_email), '@xtec.cat');
 }
 
 
