@@ -103,8 +103,9 @@
             })
             .catch(function () {
                 if (current === sequence) {
-                    result.innerHTML = '<div class="notice notice-error inline"><p>No s\'ha pogut comprovar el nom ' +
-                        'd\'usuari. Torneu-ho a provar.</p></div>';
+                    // The text is translated in PHP (wp_localize_script())
+                    result.innerHTML = '<div class="notice notice-error inline"><p></p></div>';
+                    result.querySelector('p').textContent = window.xtecUsersL10n.checkError;
                     lastUsername = null;
                 }
             });

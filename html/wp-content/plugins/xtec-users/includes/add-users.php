@@ -138,67 +138,103 @@ function xtec_users_render_check(string $username, array $values = [], string $e
 
     switch ($check['status']) {
         case 'invalid':
-            return xtec_users_notice(
-                'error',
-                "<p>El nom d'usuari $name no és vàlid. Només s'admeten lletres minúscules, números, punts, guions i "
-                . 'guions baixos.</p>'
+            /* translators: %s: Username. */
+            $text = esc_html__(
+                'The username %s is not valid. Only lowercase letters, numbers, dots, hyphens and underscores are allowed.',
+                'xtec-users'
             );
+
+            return xtec_users_notice('error', '<p>' . sprintf($text, $name) . '</p>');
         case 'xtec_not_found':
+            /* translators: %s: Username. */
+            $text = esc_html__(
+                'No XTEC user has been found with the name %s. Remember that the user must have logged in to XTECBlocs at least once.',
+                'xtec-users'
+            );
+            /* translators: %d: Minimum number of characters. */
+            $length = esc_html__(
+                'If it is not a XTEC user, the username must have at least %d characters.',
+                'xtec-users'
+            );
+
             return xtec_users_notice(
                 'error',
-                "<p>No s'ha trobat cap usuari XTEC amb el nom $name. Recordeu que l'usuari ha d'haver entrat a "
-                . 'XTECBlocs almenys una vegada.</p>'
-                . "<p>Si no és un usuari XTEC, el nom d'usuari ha de tenir un mínim de "
-                . XTEC_USERS_MIN_LOCAL_USERNAME_LENGTH . ' caràcters.</p>'
+                '<p>' . sprintf($text, $name) . '</p><p>' . sprintf($length, XTEC_USERS_MIN_LOCAL_USERNAME_LENGTH) . '</p>'
             );
         case 'not_xtec':
+            /* translators: 1: Username, 2: Minimum number of characters. */
+            $text = esc_html__(
+                'The user %1$s is not a XTEC user and cannot be added to the blog. The usernames of the users who are not XTEC users must have at least %2$d characters.',
+                'xtec-users'
+            );
+
             return xtec_users_notice(
                 'error',
-                "<p>L'usuari $name no és un usuari XTEC i no es pot afegir al bloc. Els noms dels usuaris que no són "
-                . 'XTEC han de tenir un mínim de ' . XTEC_USERS_MIN_LOCAL_USERNAME_LENGTH . ' caràcters.</p>'
+                '<p>' . sprintf($text, $name, XTEC_USERS_MIN_LOCAL_USERNAME_LENGTH) . '</p>'
             );
         case 'member':
-            return xtec_users_notice('info', "<p>L'usuari $name ja és membre d'aquest bloc.</p>");
+            /* translators: %s: Username. */
+            $text = esc_html__('The user %s is already a member of this blog.', 'xtec-users');
+
+            return xtec_users_notice('info', '<p>' . sprintf($text, $name) . '</p>');
         case 'xtec':
+            /* translators: 1: Username, 2: Name of the user, 3: E-mail of the user, partially hidden. */
+            $text = esc_html__('XTEC user: %1$s (%2$s, %3$s).', 'xtec-users');
             $html = xtec_users_notice(
                 'info',
-                "<p>Usuari XTEC: $name (" . esc_html($user->display_name) . ', '
-                . esc_html(xtec_users_mask_email($user->user_email)) . ').</p>'
-                . '<p>Rebrà un correu electrònic per confirmar la invitació. Quan la confirmi, '
-                . "s'afegirà com a membre del bloc.</p>"
+                '<p>' . sprintf(
+                    $text,
+                    $name,
+                    esc_html($user->display_name),
+                    esc_html(xtec_users_mask_email($user->user_email))
+                ) . '</p><p>'
+                . esc_html__(
+                    'The user will receive an e-mail to confirm the invitation. When the user confirms it, the user will be added as a member of the blog.',
+                    'xtec-users'
+                )
+                . '</p>'
             );
             $rows = xtec_users_role_row(xtec_users_roles(true), $role);
-            $button = ['invite', "Envia la invitació"];
+            $button = ['invite', __('Send the invitation', 'xtec-users')];
             break;
         case 'local':
+            /* translators: 1: Username, 2: Name of the user. */
+            $text = esc_html__('Existing user: %1$s (%2$s).', 'xtec-users');
             $html = xtec_users_notice(
                 'info',
-                "<p>Usuari existent: $name (" . esc_html($user->display_name) . ').</p>'
-                . "<p>S'afegirà directament com a membre del bloc.</p>"
+                '<p>' . sprintf($text, $name, esc_html($user->display_name)) . '</p><p>'
+                . esc_html__('The user will be added directly as a member of the blog.', 'xtec-users') . '</p>'
             );
             $rows = xtec_users_role_row(xtec_users_roles(false), $role);
-            $button = ['add', 'Afegeix al bloc'];
+            $button = ['add', __('Add to the blog', 'xtec-users')];
             break;
         case 'new':
             $password = array_key_exists('password', $values)
                 ? xtec_users_field($values, 'password')
                 : wp_generate_password(12, false);
-            $html = xtec_users_notice(
-                'info',
-                "<p>L'usuari $name no existeix. Podeu crear-lo i afegir-lo al bloc.</p>"
-            );
+            /* translators: %s: Username. */
+            $text = esc_html__('The user %s does not exist. You can create it and add it to the blog.', 'xtec-users');
+            $html = xtec_users_notice('info', '<p>' . sprintf($text, $name) . '</p>');
             $rows = "<tr><th scope='row'><label for='xtec-users-password'>" . esc_html__('Password') . '</label></th>'
                 . '<td>' . xtec_users_password_field($password)
-                . "<p class='description'>Feu arribar el nom d'usuari i la contrasenya a l'usuari perquè pugui entrar "
-                . 'a XTECBlocs.</p></td></tr>'
-                . "<tr><th scope='row'><label for='xtec-users-email'>" . esc_html__('Email')
-                . ' (opcional)</label></th>'
+                . "<p class='description'>"
+                . esc_html__(
+                    'Give the username and the password to the user so that the user can log in to XTECBlocs.',
+                    'xtec-users'
+                )
+                . '</p></td></tr>'
+                . "<tr><th scope='row'><label for='xtec-users-email'>"
+                . esc_html__('Email (optional)', 'xtec-users') . '</label></th>'
                 . "<td><input type='text' id='xtec-users-email' name='user[email]' class='regular-text' value='"
                 . esc_attr(xtec_users_field($values, 'email')) . "' />"
-                . "<p class='description'>Si l'usuari no disposa de correu electrònic, deixeu aquest camp en blanc. "
-                . 'No es poden fer servir adreces @xtec.cat.</p></td></tr>'
+                . "<p class='description'>"
+                . esc_html__(
+                    'If the user does not have an e-mail address, leave this field blank. Addresses @xtec.cat cannot be used.',
+                    'xtec-users'
+                )
+                . '</p></td></tr>'
                 . xtec_users_role_row(xtec_users_roles(false), $role);
-            $button = ['create', "Crea l'usuari i afegeix-lo al bloc"];
+            $button = ['create', __('Create the user and add it to the blog', 'xtec-users')];
             break;
         default:
             return '';
@@ -251,11 +287,23 @@ function xtec_users_done_message(string $done, string $username, string $role): 
     $role_name = '<strong>' . esc_html($roles[$role]) . '</strong>';
 
     if ($done === 'invited') {
-        return "<p>S'ha enviat una invitació al correu electrònic de l'usuari $name per afegir-se com a $role_name "
-            . "d'aquest bloc.</p><p>Quan l'usuari confirmi la invitació s'afegirà com a membre del bloc.</p>";
+        /* translators: 1: Username, 2: Role. */
+        $text = esc_html__(
+            'An invitation has been sent to the e-mail of the user %1$s to join this blog as %2$s.',
+            'xtec-users'
+        );
+
+        return '<p>' . sprintf($text, $name, $role_name) . '</p><p>'
+            . esc_html__(
+                'When the user confirms the invitation, the user will be added as a member of the blog.',
+                'xtec-users'
+            ) . '</p>';
     }
     if ($done === 'added') {
-        return "<p>Heu afegit l'usuari $name com a $role_name d'aquest bloc.</p>";
+        /* translators: 1: Username, 2: Role. */
+        $text = esc_html__('You have added the user %1$s as %2$s of this blog.', 'xtec-users');
+
+        return '<p>' . sprintf($text, $name, $role_name) . '</p>';
     }
 
     return '';
@@ -290,9 +338,6 @@ function xtec_users_do_action(string $action, string $username, array $data): ar
     if (!isset($roles[$role])) {
         xtec_users_invalid_request();
     }
-
-    $name = '<strong>' . esc_html($username) . '</strong>';
-    $role_name = '<strong>' . esc_html($roles[$role]) . '</strong>';
 
     if ($action === 'invite') {
         // The user is added to the blog when the invitation is accepted (see maybe_add_existing_user_to_blog()). The
@@ -339,13 +384,15 @@ Please click the following link to confirm the invite:
 
     $errors = xtec_users_password_error($password);
     if (!is_email($email)) {
-        $errors .= '<p>L\'adreça de correu electrònic que heu introduït no és vàlida.</p>';
+        $errors .= '<p>' . esc_html__('The e-mail address you have entered is not valid.', 'xtec-users') . '</p>';
     } elseif (preg_match('/^.+@xtec\.cat$/i', $email)) {
         // Only XTEC users can use addresses of the domain xtec.cat
-        $errors .= '<p>L\'adreça de correu electrònic que heu introduït no és vàlida. Només els usuaris XTEC poden '
-            . 'fer servir adreces de correu electrònic @xtec.cat.</p>';
+        $errors .= '<p>' . esc_html__(
+            'The e-mail address you have entered is not valid. Only XTEC users can use e-mail addresses @xtec.cat.',
+            'xtec-users'
+        ) . '</p>';
     } elseif (email_exists($email)) {
-        $errors .= "<p>L'adreça de correu electrònic que heu introduït ja s'utilitza.</p>";
+        $errors .= '<p>' . esc_html__('The e-mail address you have entered is already in use.', 'xtec-users') . '</p>';
     }
     if ($errors !== '') {
         return ['success' => '', 'errors' => $errors];
@@ -353,17 +400,26 @@ Please click the following link to confirm the invite:
 
     $user_id = wpmu_create_user($username, $password, $email);
     if (!$user_id) {
-        return ['success' => '', 'errors' => "<p>No s'ha pogut crear l'usuari. Torneu-ho a provar.</p>"];
+        $error = esc_html__('The user could not be created. Please try again.', 'xtec-users');
+
+        return ['success' => '', 'errors' => '<p>' . $error . '</p>'];
     }
 
     update_user_meta($user_id, 'xtec_user_creator', wp_get_current_user()->user_login);
     add_user_to_blog(get_current_blog_id(), $user_id, $role);
 
+    /* translators: 1: Username, 2: Password. */
+    $text = esc_html__(
+        'You have registered the user %1$s in the blog service with the password %2$s. Give the username and the password to the user so that the user can access the blog service.',
+        'xtec-users'
+    );
+
     return [
-        'success' => "<p>Heu donat d'alta al servei de blocs l'usuari $name amb contrasenya <strong>"
-            . esc_html($password) . "</strong>. Feu arribar a l'usuari el nom d'usuari i la contrasenya perquè pugui "
-            . 'accedir al servei de blocs.</p>'
-            . "<p>Heu afegit l'usuari $name com a $role_name d'aquest bloc.</p>",
+        'success' => '<p>' . sprintf(
+            $text,
+            '<strong>' . esc_html($username) . '</strong>',
+            '<strong>' . esc_html($password) . '</strong>'
+        ) . '</p>' . xtec_users_done_message('added', $username, $role),
         'errors' => '',
     ];
 }
@@ -446,7 +502,7 @@ function xtec_users_add_users_page(): void
     }
     ?>
     <div class="wrap">
-        <h1>Afegeix un nou usuari</h1>
+        <h1><?php esc_html_e('Add a new user', 'xtec-users'); ?></h1>
 
         <?php
         if ($success !== '') {
@@ -455,14 +511,27 @@ function xtec_users_add_users_page(): void
         ?>
 
         <div class="notice notice-info inline">
-            <p>Escriviu el nom d'usuari de la persona que voleu afegir al vostre bloc:</p>
+            <p><?php esc_html_e('Enter the username of the person you want to add to your blog:', 'xtec-users'); ?></p>
             <ul>
-                <li><strong>Usuaris XTEC</strong>: el seu nom d'usuari de la XTEC. Rebran una invitació per correu
-                    electrònic. Han d'haver entrat a XTECBlocs almenys una vegada.
+                <li>
+                    <strong><?php esc_html_e('XTEC users', 'xtec-users'); ?></strong>:
+                    <?php
+                    esc_html_e(
+                        'their XTEC username. They will receive an invitation by e-mail. They must have logged in to XTECBlocs at least once.',
+                        'xtec-users'
+                    );
+                    ?>
                 </li>
-                <li><strong>Altres usuaris</strong>: un nom d'usuari d'un mínim de
-                    <?php echo XTEC_USERS_MIN_LOCAL_USERNAME_LENGTH; ?> caràcters. Si ja existeix,
-                    s'afegirà al bloc. Si no existeix, el podreu crear.
+                <li>
+                    <strong><?php esc_html_e('Other users', 'xtec-users'); ?></strong>:
+                    <?php
+                    /* translators: %d: Minimum number of characters. */
+                    $text = esc_html__(
+                        'a username of at least %d characters. If it already exists, it will be added to the blog. If it does not exist, you will be able to create it.',
+                        'xtec-users'
+                    );
+                    printf($text, XTEC_USERS_MIN_LOCAL_USERNAME_LENGTH);
+                    ?>
                 </li>
             </ul>
         </div>
@@ -472,13 +541,17 @@ function xtec_users_add_users_page(): void
             wp_nonce_field('xtec-add-users'); ?>
             <table class="form-table" role="presentation">
                 <tr>
-                    <th scope="row"><label for="xtec-users-username">Nom d'usuari</label></th>
+                    <th scope="row">
+                        <label for="xtec-users-username"><?php esc_html_e('Username', 'xtec-users'); ?></label>
+                    </th>
                     <td>
                         <input type="text" id="xtec-users-username" name="user[username]" class="regular-text"
                                value="<?php
                                 echo esc_attr($username); ?>" maxlength="60" autocomplete="off"
                                autocapitalize="none" spellcheck="false"/>
-                        <button type="submit" name="xtec_users_check" value="1" class="button">Comprova</button>
+                        <button type="submit" name="xtec_users_check" value="1" class="button">
+                            <?php esc_html_e('Check', 'xtec-users'); ?>
+                        </button>
                     </td>
                 </tr>
             </table>

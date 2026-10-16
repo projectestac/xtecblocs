@@ -2,12 +2,13 @@
 
 /**
  * Plugin Name:       XTEC Users
- * Description:       Adds XTECBlocs user system with two types of users: XTEC users, validated through LDAP or OAuth,
- *                    and local users. It also limits the creation of blogs to XTEC users and to a maximum per day.
+ * Description:       XTEC users and local users in XTECBlocs, and limits of the creation of blogs.
  * Version:           1.2
  * Requires at least: 5.5
  * Requires PHP:      8.0
  * Network:           true
+ * Text Domain:       xtec-users
+ * Domain Path:       /languages
  * Author:            Francesc Bassas i Bullich, Toni Ginard
  * License:           GPL v2
  * License URI:       https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
