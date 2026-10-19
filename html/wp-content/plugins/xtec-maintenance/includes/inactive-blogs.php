@@ -57,34 +57,29 @@ function xtec_maintenance_inactive_url(array $criteria, array $args = []): strin
 }
 
 /**
- * Checks if files have been uploaded to a blog. Older blogs keep their files in blogs.dir and newer ones in
- * uploads/sites. The folder is created the first time that a file is uploaded.
- *
- * @param int $blog_id The ID of the blog.
- * @return bool True if files have been uploaded.
- */
-function xtec_maintenance_has_uploads(int $blog_id): bool
-{
-    return is_dir(WP_CONTENT_DIR . "/blogs.dir/$blog_id") || is_dir(WP_CONTENT_DIR . "/uploads/sites/$blog_id");
-}
-
-/**
- * Counts the posts and pages of some blogs, in any status. Each blog is counted with a query of its own, as the tables
- * of the blogs are in different databases (LudicrousDB), so a single query can't join them.
+ * Counts the content of some blogs: the posts and pages, without the automatic drafts that WordPress creates when the
+ * editor is opened and the ones in the trash, and the files of the media library. Each blog is counted with a query
+ * of its own, as the tables of the blogs are in different databases (LudicrousDB), so a single query can't join them.
  *
  * @param int[] $blog_ids The IDs of the blogs.
- * @return int[] The number of posts and pages, indexed by the ID of the blog.
+ * @return array The number of posts and pages (posts) and of files (files), indexed by the ID of the blog.
  */
-function xtec_maintenance_count_posts(array $blog_ids): array
+function xtec_maintenance_count_content(array $blog_ids): array
 {
     global $wpdb;
 
     $counts = [];
-    // A blog without the table of posts has no posts
+    // A blog without the table of posts has no content
     $suppress = $wpdb->suppress_errors(true);
     foreach ($blog_ids as $blog_id) {
         $table = $wpdb->get_blog_prefix($blog_id) . 'posts';
-        $counts[$blog_id] = (int)$wpdb->get_var("SELECT COUNT(*) FROM `$table` WHERE post_type IN ('post', 'page')");
+        $row = $wpdb->get_row(
+            "SELECT
+                SUM(post_type IN ('post', 'page') AND post_status NOT IN ('auto-draft', 'trash')) AS posts,
+                SUM(post_type = 'attachment') AS files
+            FROM `$table` WHERE post_type IN ('post', 'page', 'attachment')"
+        );
+        $counts[$blog_id] = ['posts' => (int)($row->posts ?? 0), 'files' => (int)($row->files ?? 0)];
     }
     $wpdb->suppress_errors($suppress);
 
@@ -118,16 +113,11 @@ function xtec_maintenance_find_inactive_blogs(array $criteria): array
         gmdate('Y-m-d H:i:s', time() - $criteria['days'] * DAY_IN_SECONDS)
     )));
 
-    // Checking the files is faster than counting the posts, so it is done first
-    $with_uploads = $criteria['uploads'] === 'some';
-    $candidates = array_values(array_filter(
-        $candidates,
-        static fn(int $blog_id): bool => xtec_maintenance_has_uploads($blog_id) === $with_uploads
-    ));
-
+    // Files have been uploaded to a blog if its media library has some file
+    $with_files = $criteria['uploads'] === 'some';
     $blogs = [];
-    foreach (xtec_maintenance_count_posts($candidates) as $blog_id => $posts) {
-        if ($posts <= $criteria['posts']) {
+    foreach (xtec_maintenance_count_content($candidates) as $blog_id => $content) {
+        if ($content['posts'] <= $criteria['posts'] && ($content['files'] > 0) === $with_files) {
             $blogs[] = $blog_id;
         }
     }
@@ -369,7 +359,7 @@ function xtec_maintenance_inactive_blogs_page(): void
                         <p class="description">
                             <?php
                             esc_html_e(
-                                'Posts and pages in any status are counted, also the drafts and the ones in the trash.',
+                                'The automatic drafts that WordPress creates when the editor is opened and the posts and pages in the trash are not counted.',
                                 'xtec-maintenance'
                             );
                             ?>
@@ -391,6 +381,14 @@ function xtec_maintenance_inactive_blogs_page(): void
                                 <?php esc_html_e('Some file has been uploaded', 'xtec-maintenance'); ?>
                             </option>
                         </select>
+                        <p class="description">
+                            <?php
+                            esc_html_e(
+                                'The files that have been uploaded to the blog are the ones of its media library.',
+                                'xtec-maintenance'
+                            );
+                            ?>
+                        </p>
                     </td>
                 </tr>
             </table>

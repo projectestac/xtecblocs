@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-16T14:51:48+02:00\n"
+"POT-Creation-Date: 2026-10-19T20:24:08+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: xtec-maintenance\n"
@@ -42,7 +42,7 @@ msgstr ""
 
 #: includes/admin.php:56
 #: includes/admin.php:57
-#: includes/inactive-blogs.php:324
+#: includes/inactive-blogs.php:314
 msgid "Inactive blogs"
 msgstr ""
 
@@ -115,8 +115,7 @@ msgid "Posts and pages"
 msgstr ""
 
 #: includes/class-inactive-blogs-table.php:48
-#: includes/inactive-blogs.php:382
-msgid "Uploaded files"
+msgid "Files in the media library"
 msgstr ""
 
 #: includes/class-inactive-blogs-table.php:55
@@ -131,28 +130,20 @@ msgstr ""
 msgid "No blog meets the criteria."
 msgstr ""
 
-#: includes/class-inactive-blogs-table.php:107
-msgid "Yes"
-msgstr ""
-
-#: includes/class-inactive-blogs-table.php:107
-msgid "No"
-msgstr ""
-
 #: includes/deleted-blogs.php:34
 msgid "History of the blogs deleted for inactivity, with the users that they had when they were deleted."
 msgstr ""
 
-#: includes/inactive-blogs.php:240
+#: includes/inactive-blogs.php:230
 msgid "The criteria have been saved as default."
 msgstr ""
 
-#: includes/inactive-blogs.php:245
+#: includes/inactive-blogs.php:235
 msgid "You have not selected any blog."
 msgstr ""
 
 #. translators: %s: Number of blogs.
-#: includes/inactive-blogs.php:249
+#: includes/inactive-blogs.php:239
 #, php-format
 msgid "The date of the last update of %s blog has been changed to today."
 msgid_plural "The date of the last update of %s blogs has been changed to today."
@@ -160,57 +151,65 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: Number of blogs.
-#: includes/inactive-blogs.php:258
+#: includes/inactive-blogs.php:248
 #, php-format
 msgid "%s blog has been deleted."
 msgid_plural "%s blogs have been deleted."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/inactive-blogs.php:276
+#: includes/inactive-blogs.php:266
 msgid "Delete the blogs permanently"
 msgstr ""
 
-#: includes/inactive-blogs.php:280
+#: includes/inactive-blogs.php:270
 msgid "The following blogs will be deleted permanently, with all their contents and files. This action cannot be undone."
 msgstr ""
 
-#: includes/inactive-blogs.php:304
+#: includes/inactive-blogs.php:294
 msgid "Yes, delete them permanently"
 msgstr ""
 
-#: includes/inactive-blogs.php:307
+#: includes/inactive-blogs.php:297
 msgid "Cancel"
 msgstr ""
 
-#: includes/inactive-blogs.php:344
+#: includes/inactive-blogs.php:334
 msgid "Days without updates"
 msgstr ""
 
-#: includes/inactive-blogs.php:352
+#: includes/inactive-blogs.php:342
 msgid "Minimum number of days since the last update of the blog. With 0, the date is not taken into account."
 msgstr ""
 
-#: includes/inactive-blogs.php:363
+#: includes/inactive-blogs.php:353
 msgid "Maximum of posts and pages"
 msgstr ""
 
-#: includes/inactive-blogs.php:371
-msgid "Posts and pages in any status are counted, also the drafts and the ones in the trash."
+#: includes/inactive-blogs.php:361
+msgid "The automatic drafts that WordPress creates when the editor is opened and the posts and pages in the trash are not counted."
 msgstr ""
 
-#: includes/inactive-blogs.php:388
+#: includes/inactive-blogs.php:372
+msgid "Uploaded files"
+msgstr ""
+
+#: includes/inactive-blogs.php:378
 msgid "No file has ever been uploaded"
 msgstr ""
 
-#: includes/inactive-blogs.php:391
+#: includes/inactive-blogs.php:381
 msgid "Some file has been uploaded"
 msgstr ""
 
-#: includes/inactive-blogs.php:399
+#: includes/inactive-blogs.php:386
+msgid "The files that have been uploaded to the blog are the ones of its media library."
+msgstr ""
+
+#: includes/inactive-blogs.php:397
 msgid "Search"
 msgstr ""
 
-#: includes/inactive-blogs.php:413
+#: includes/inactive-blogs.php:411
 msgid "Save these criteria as default"
 msgstr ""

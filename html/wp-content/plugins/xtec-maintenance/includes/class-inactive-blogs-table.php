@@ -45,7 +45,7 @@ class InactiveBlogsTable extends \WP_List_Table
             'name' => __('Blog', 'xtec-maintenance'),
             'days' => __('Days since the last update', 'xtec-maintenance'),
             'posts' => __('Posts and pages', 'xtec-maintenance'),
-            'uploads' => __('Uploaded files', 'xtec-maintenance'),
+            'files' => __('Files in the media library', 'xtec-maintenance'),
         ];
     }
 
@@ -61,7 +61,7 @@ class InactiveBlogsTable extends \WP_List_Table
     {
         $blog_ids = xtec_maintenance_find_inactive_blogs($this->criteria);
         $page_ids = array_slice($blog_ids, ($this->get_pagenum() - 1) * self::PER_PAGE, self::PER_PAGE);
-        $posts = xtec_maintenance_count_posts($page_ids);
+        $content = xtec_maintenance_count_content($page_ids);
 
         $this->items = [];
         foreach ($page_ids as $blog_id) {
@@ -76,8 +76,8 @@ class InactiveBlogsTable extends \WP_List_Table
                 'address' => $site->domain . $site->path,
                 // The date of the last update is in UTC
                 'days' => (int)floor((time() - strtotime($site->last_updated . ' UTC')) / DAY_IN_SECONDS),
-                'posts' => $posts[$blog_id],
-                'uploads' => xtec_maintenance_has_uploads($blog_id),
+                'posts' => $content[$blog_id]['posts'],
+                'files' => $content[$blog_id]['files'],
             ];
         }
 
@@ -103,10 +103,6 @@ class InactiveBlogsTable extends \WP_List_Table
 
     protected function column_default($item, $column_name): string
     {
-        if ($column_name === 'uploads') {
-            return $item['uploads'] ? esc_html__('Yes', 'xtec-maintenance') : esc_html__('No', 'xtec-maintenance');
-        }
-
         return esc_html(number_format_i18n($item[$column_name]));
     }
 }
