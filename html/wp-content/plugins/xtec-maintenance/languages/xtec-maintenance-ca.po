@@ -86,11 +86,7 @@ msgstr "Elimina definitivament"
 msgid "No blog meets the criteria."
 msgstr "Cap bloc no compleix els criteris."
 
-msgid "Yes"
-msgstr "Sí"
 
-msgid "No"
-msgstr "No"
 
 msgid "History of the blogs deleted for inactivity, with the users that they had when they were deleted."
 msgstr "Historial dels blocs eliminats per inactivitat, amb els usuaris que tenien quan es van eliminar."
@@ -132,8 +128,6 @@ msgstr "Nombre mínim de dies des de la darrera actualització del bloc. Amb 0, 
 msgid "Maximum of posts and pages"
 msgstr "Màxim d'articles i pàgines"
 
-msgid "Posts and pages in any status are counted, also the drafts and the ones in the trash."
-msgstr "Es compten els articles i les pàgines en qualsevol estat, també els esborranys i els que són a la paperera."
 
 msgid "No file has ever been uploaded"
 msgstr "No s'hi ha pujat mai cap fitxer"
@@ -149,3 +143,12 @@ msgstr "Desa aquests criteris com a predeterminats"
 
 msgid "Blogs deleted by users"
 msgstr "Blocs eliminats pels usuaris"
+
+msgid "The automatic drafts that WordPress creates when the editor is opened and the posts and pages in the trash are not counted."
+msgstr "No es compten els esborranys automàtics que crea el WordPress en obrir l'editor ni els articles i les pàgines que són a la paperera."
+
+msgid "The files that have been uploaded to the blog are the ones of its media library."
+msgstr "Els fitxers que s'han pujat al bloc són els de la seva mediateca."
+
+msgid "Files in the media library"
+msgstr "Fitxers a la mediateca"
