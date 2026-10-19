@@ -1,0 +1,216 @@
+# Copyright (C) 2026 Francesc Bassas i Bullich, Toni Ginard
+# This file is distributed under the GPL v2.
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC Maintenance 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-16T14:51:48+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: xtec-maintenance\n"
+
+#. Plugin Name of the plugin
+#: xtec-maintenance.php
+msgid "XTEC Maintenance"
+msgstr ""
+
+#. Description of the plugin
+#: xtec-maintenance.php
+msgid "Deletion of inactive blogs of XTECBlocs and history of the deleted blogs."
+msgstr ""
+
+#. Author of the plugin
+#: xtec-maintenance.php
+msgid "Francesc Bassas i Bullich, Toni Ginard"
+msgstr ""
+
+#: includes/admin.php:39
+#: includes/admin.php:40
+#: includes/admin.php:48
+#: includes/admin.php:144
+msgid "Maintenance"
+msgstr ""
+
+#: includes/admin.php:49
+msgid "Summary"
+msgstr ""
+
+#: includes/admin.php:56
+#: includes/admin.php:57
+#: includes/inactive-blogs.php:324
+msgid "Inactive blogs"
+msgstr ""
+
+#: includes/admin.php:65
+#: includes/admin.php:66
+#: includes/deleted-blogs.php:31
+msgid "Deleted blogs"
+msgstr ""
+
+#: includes/admin.php:76
+#: includes/admin.php:77
+msgid "Blogs deleted by users"
+msgstr ""
+
+#: includes/admin.php:99
+msgid "The request is not valid."
+msgstr ""
+
+#: includes/admin.php:130
+msgid "Blogs of the network"
+msgstr ""
+
+#: includes/admin.php:132
+msgid "Blogs flagged for deletion by their administrators"
+msgstr ""
+
+#: includes/admin.php:137
+msgid "Blogs deleted for inactivity"
+msgstr ""
+
+#: includes/admin.php:153
+msgid "Show"
+msgstr ""
+
+#: includes/admin.php:163
+msgid "Search inactive blogs"
+msgstr ""
+
+#: includes/admin.php:167
+msgid "The blogs flagged for deletion by their administrators are kept until a super admin deletes them permanently from the list of sites."
+msgstr ""
+
+#: includes/class-deleted-blogs-table.php:40
+msgid "ID"
+msgstr ""
+
+#: includes/class-deleted-blogs-table.php:41
+#: includes/class-inactive-blogs-table.php:45
+msgid "Blog"
+msgstr ""
+
+#: includes/class-deleted-blogs-table.php:42
+msgid "Users"
+msgstr ""
+
+#: includes/class-deleted-blogs-table.php:43
+msgid "Date of deletion"
+msgstr ""
+
+#: includes/class-deleted-blogs-table.php:90
+msgid "No blog has been deleted for inactivity."
+msgstr ""
+
+#: includes/class-inactive-blogs-table.php:46
+msgid "Days since the last update"
+msgstr ""
+
+#: includes/class-inactive-blogs-table.php:47
+msgid "Posts and pages"
+msgstr ""
+
+#: includes/class-inactive-blogs-table.php:48
+#: includes/inactive-blogs.php:382
+msgid "Uploaded files"
+msgstr ""
+
+#: includes/class-inactive-blogs-table.php:55
+msgid "Change the date of the last update to today"
+msgstr ""
+
+#: includes/class-inactive-blogs-table.php:56
+msgid "Delete permanently"
+msgstr ""
+
+#: includes/class-inactive-blogs-table.php:90
+msgid "No blog meets the criteria."
+msgstr ""
+
+#: includes/class-inactive-blogs-table.php:107
+msgid "Yes"
+msgstr ""
+
+#: includes/class-inactive-blogs-table.php:107
+msgid "No"
+msgstr ""
+
+#: includes/deleted-blogs.php:34
+msgid "History of the blogs deleted for inactivity, with the users that they had when they were deleted."
+msgstr ""
+
+#: includes/inactive-blogs.php:240
+msgid "The criteria have been saved as default."
+msgstr ""
+
+#: includes/inactive-blogs.php:245
+msgid "You have not selected any blog."
+msgstr ""
+
+#. translators: %s: Number of blogs.
+#: includes/inactive-blogs.php:249
+#, php-format
+msgid "The date of the last update of %s blog has been changed to today."
+msgid_plural "The date of the last update of %s blogs has been changed to today."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: Number of blogs.
+#: includes/inactive-blogs.php:258
+#, php-format
+msgid "%s blog has been deleted."
+msgid_plural "%s blogs have been deleted."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/inactive-blogs.php:276
+msgid "Delete the blogs permanently"
+msgstr ""
+
+#: includes/inactive-blogs.php:280
+msgid "The following blogs will be deleted permanently, with all their contents and files. This action cannot be undone."
+msgstr ""
+
+#: includes/inactive-blogs.php:304
+msgid "Yes, delete them permanently"
+msgstr ""
+
+#: includes/inactive-blogs.php:307
+msgid "Cancel"
+msgstr ""
+
+#: includes/inactive-blogs.php:344
+msgid "Days without updates"
+msgstr ""
+
+#: includes/inactive-blogs.php:352
+msgid "Minimum number of days since the last update of the blog. With 0, the date is not taken into account."
+msgstr ""
+
+#: includes/inactive-blogs.php:363
+msgid "Maximum of posts and pages"
+msgstr ""
+
+#: includes/inactive-blogs.php:371
+msgid "Posts and pages in any status are counted, also the drafts and the ones in the trash."
+msgstr ""
+
+#: includes/inactive-blogs.php:388
+msgid "No file has ever been uploaded"
+msgstr ""
+
+#: includes/inactive-blogs.php:391
+msgid "Some file has been uploaded"
+msgstr ""
+
+#: includes/inactive-blogs.php:399
+msgid "Search"
+msgstr ""
+
+#: includes/inactive-blogs.php:413
+msgid "Save these criteria as default"
+msgstr ""

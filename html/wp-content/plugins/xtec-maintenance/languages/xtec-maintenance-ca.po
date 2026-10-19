@@ -1,0 +1,151 @@
+# Catalan translation of XTEC Maintenance.
+# Copyright 2026 Departament d'Educació i Formació Professional
+# This file is distributed under the same license as the XTEC Maintenance plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC Maintenance\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: xtec-maintenance\n"
+
+msgid "XTEC Maintenance"
+msgstr "XTEC Maintenance"
+
+msgid "Deletion of inactive blogs of XTECBlocs and history of the deleted blogs."
+msgstr "Eliminació dels blocs inactius d'XTECBlocs i historial dels blocs eliminats."
+
+msgid "Francesc Bassas i Bullich, Toni Ginard"
+msgstr "Francesc Bassas i Bullich, Toni Ginard"
+
+msgid "Maintenance"
+msgstr "Manteniment"
+
+msgid "Summary"
+msgstr "Resum"
+
+msgid "Inactive blogs"
+msgstr "Blocs inactius"
+
+msgid "Deleted blogs"
+msgstr "Blocs eliminats"
+
+msgid "The request is not valid."
+msgstr "La petició no és vàlida."
+
+msgid "Blogs of the network"
+msgstr "Blocs de la xarxa"
+
+msgid "Blogs flagged for deletion by their administrators"
+msgstr "Blocs marcats per eliminar pels seus administradors"
+
+msgid "Blogs deleted for inactivity"
+msgstr "Blocs eliminats per inactivitat"
+
+msgid "Show"
+msgstr "Mostra"
+
+msgid "Search inactive blogs"
+msgstr "Cerca blocs inactius"
+
+msgid "The blogs flagged for deletion by their administrators are kept until a super admin deletes them permanently from the list of sites."
+msgstr "Els blocs marcats per eliminar pels seus administradors es conserven fins que un superadministrador els elimina definitivament des de la llista de llocs."
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Blog"
+msgstr "Bloc"
+
+msgid "Users"
+msgstr "Usuaris"
+
+msgid "Date of deletion"
+msgstr "Data d'eliminació"
+
+msgid "No blog has been deleted for inactivity."
+msgstr "No s'ha eliminat cap bloc per inactivitat."
+
+msgid "Days since the last update"
+msgstr "Dies des de la darrera actualització"
+
+msgid "Posts and pages"
+msgstr "Articles i pàgines"
+
+msgid "Uploaded files"
+msgstr "Fitxers pujats"
+
+msgid "Change the date of the last update to today"
+msgstr "Canvia la data de la darrera actualització a avui"
+
+msgid "Delete permanently"
+msgstr "Elimina definitivament"
+
+msgid "No blog meets the criteria."
+msgstr "Cap bloc no compleix els criteris."
+
+msgid "Yes"
+msgstr "Sí"
+
+msgid "No"
+msgstr "No"
+
+msgid "History of the blogs deleted for inactivity, with the users that they had when they were deleted."
+msgstr "Historial dels blocs eliminats per inactivitat, amb els usuaris que tenien quan es van eliminar."
+
+msgid "The criteria have been saved as default."
+msgstr "S'han desat els criteris com a predeterminats."
+
+msgid "You have not selected any blog."
+msgstr "No heu seleccionat cap bloc."
+
+msgid "The date of the last update of %s blog has been changed to today."
+msgid_plural "The date of the last update of %s blogs has been changed to today."
+msgstr[0] "S'ha canviat a avui la data de la darrera actualització d'un bloc."
+msgstr[1] "S'ha canviat a avui la data de la darrera actualització de %s blocs."
+
+msgid "%s blog has been deleted."
+msgid_plural "%s blogs have been deleted."
+msgstr[0] "S'ha eliminat %s bloc."
+msgstr[1] "S'han eliminat %s blocs."
+
+msgid "Delete the blogs permanently"
+msgstr "Elimina els blocs definitivament"
+
+msgid "The following blogs will be deleted permanently, with all their contents and files. This action cannot be undone."
+msgstr "S'eliminaran definitivament els blocs següents, amb tots els seus continguts i fitxers. Aquesta acció no es pot desfer."
+
+msgid "Yes, delete them permanently"
+msgstr "Sí, elimina'ls definitivament"
+
+msgid "Cancel"
+msgstr "Cancel·la"
+
+msgid "Days without updates"
+msgstr "Dies sense actualitzacions"
+
+msgid "Minimum number of days since the last update of the blog. With 0, the date is not taken into account."
+msgstr "Nombre mínim de dies des de la darrera actualització del bloc. Amb 0, no es té en compte la data."
+
+msgid "Maximum of posts and pages"
+msgstr "Màxim d'articles i pàgines"
+
+msgid "Posts and pages in any status are counted, also the drafts and the ones in the trash."
+msgstr "Es compten els articles i les pàgines en qualsevol estat, també els esborranys i els que són a la paperera."
+
+msgid "No file has ever been uploaded"
+msgstr "No s'hi ha pujat mai cap fitxer"
+
+msgid "Some file has been uploaded"
+msgstr "S'hi ha pujat algun fitxer"
+
+msgid "Search"
+msgstr "Cerca"
+
+msgid "Save these criteria as default"
+msgstr "Desa aquests criteris com a predeterminats"
+
+msgid "Blogs deleted by users"
+msgstr "Blocs eliminats pels usuaris"
