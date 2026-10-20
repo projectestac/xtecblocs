@@ -21,7 +21,7 @@ defined('ABSPATH') || exit;
 
 /**
  * Returns the file of the log of the mails. The file is checked again, as the options could have been set without
- * the settings of the network.
+ * the page of the options.
  *
  * @return string The path of the file, or empty if the log is disabled or can't be written in the file.
  */
@@ -65,6 +65,19 @@ function xtec_mail_log_file_error(string $path): string
 }
 
 /**
+ * Returns the current date in the local time of the server. WordPress sets the time zone of PHP to UTC, so the one of
+ * the configuration of PHP is used. PHP already sets it to UTC if it isn't set or isn't valid.
+ *
+ * @return string The date, with its time zone.
+ */
+function xtec_mail_log_date(): string
+{
+    $timezone = new DateTimeZone(ini_get('date.timezone') ?: 'UTC');
+
+    return (new DateTimeImmutable('now', $timezone))->format('Y-m-d H:i:s T');
+}
+
+/**
  * Logs a mail sent through the service. If the log is enabled, it writes the whole mail and the answer of the
  * service. Otherwise, it only writes the errors in the log of PHP.
  *
@@ -91,7 +104,7 @@ function xtec_mail_log(string $environment, array $mail, array $result, string $
     }
 
     $lines = [
-        '==== ' . gmdate('Y-m-d H:i:s') . ' UTC ====',
+        '==== ' . xtec_mail_log_date() . ' ====',
         'Environment: ' . $environment,
         'Sender: ' . $mail['sender'] . ' (' . XtecMail\EnviaCorreu::SENDERS[$mail['sender']] . ')',
         'Reply-To: ' . implode(', ', $mail['reply_to']),

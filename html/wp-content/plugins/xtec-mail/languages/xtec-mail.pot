@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-20T14:01:36+02:00\n"
+"POT-Creation-Date: 2026-10-20T15:00:57+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: xtec-mail\n"
@@ -29,78 +29,86 @@ msgstr ""
 msgid "Francesc Bassas i Bullich, Toni Ginard"
 msgstr ""
 
+#: includes/admin.php:43
 #: includes/admin.php:44
+#: includes/admin.php:70
 msgid "Mail"
 msgstr ""
 
-#: includes/admin.php:47
+#: includes/admin.php:76
 msgid "Service EnviaCorreu"
 msgstr ""
 
-#. translators: 1: The environment of the service (INT, PRE or PRO). 2: The application.
-#: includes/admin.php:53
+#. translators: 1: The environment (INT, PRE or PRO). 2: The application.
+#: includes/admin.php:82
 #, php-format
 msgid "The mails are sent through the environment %1$s as the application %2$s."
 msgstr ""
 
 #. translators: 1: XTEC_MAIL_ENVIRONMENT. 2: XTEC_MAIL_IDAPP. 3: wp-config.php.
-#: includes/admin.php:60
+#: includes/admin.php:89
 #, php-format
 msgid "The service is not configured, so WordPress sends the mails itself. To use it, set the constants %1$s (INT, PRE or PRO) and %2$s in %3$s. PHP needs the extension SOAP."
 msgstr ""
 
-#: includes/admin.php:70
+#: includes/admin.php:100
 msgid "Sender"
 msgstr ""
 
-#: includes/admin.php:82
+#: includes/admin.php:115
 msgid "Reply to"
 msgstr ""
 
-#: includes/admin.php:87
+#: includes/admin.php:121
 msgid "Address to reply to the mails that do not set one."
 msgstr ""
 
-#: includes/admin.php:92
+#: includes/admin.php:126
 msgid "Log"
 msgstr ""
 
-#: includes/admin.php:97
+#: includes/admin.php:131
 msgid "Write all the mails sent through the service in a file"
 msgstr ""
 
-#: includes/admin.php:100
+#: includes/admin.php:134
 msgid "File"
 msgstr ""
 
-#: includes/admin.php:106
+#: includes/admin.php:140
 msgid "The file must be outside the folder of WordPress. The log keeps the whole content of the mails, including the links to reset the passwords, so enable it only while needed. When it is disabled, only the errors are written in the log of PHP."
 msgstr ""
 
-#: includes/admin.php:115
-msgid "Test"
+#: includes/admin.php:152
+msgid "Check of the sending of mails"
 msgstr ""
 
-#: includes/admin.php:122
-msgid "Send a test mail"
-msgstr ""
-
-#. translators: %s: The e-mail address of the current user.
-#: includes/admin.php:128
-#, php-format
-msgid "Sends a mail to %s with the saved settings."
+#: includes/admin.php:160
+msgid "Address"
 msgstr ""
 
 #: includes/admin.php:167
+msgid "Address where the test mail is sent, with the saved settings."
+msgstr ""
+
+#: includes/admin.php:173
+msgid "Send a test mail"
+msgstr ""
+
+#: includes/admin.php:212
 msgid "The log has not been enabled."
 msgstr ""
 
-#: includes/admin.php:210
+#: includes/admin.php:238
+msgid "The address of the test mail is not valid."
+msgstr ""
+
+#: includes/admin.php:264
 msgid "Test mail"
 msgstr ""
 
 #. translators: 1: The name of the network. 2: The environment of the service, or "none".
-#: includes/admin.php:213
+#: includes/admin.php:267
 #, php-format
 msgid ""
 "This mail has been sent from the settings of %1$s to check that the mails are sent.\n"
@@ -108,18 +116,18 @@ msgid ""
 "Environment of the service EnviaCorreu: %2$s"
 msgstr ""
 
-#: includes/admin.php:215
+#: includes/admin.php:269
 msgid "none"
 msgstr ""
 
 #. translators: %s: The e-mail address.
-#: includes/admin.php:223
+#: includes/admin.php:277
 #, php-format
 msgid "The test mail has been sent to %s."
 msgstr ""
 
 #. translators: 1: The e-mail address. 2: The error.
-#: includes/admin.php:227
+#: includes/admin.php:281
 #, php-format
 msgid "The test mail has not been sent to %1$s: %2$s"
 msgstr ""
