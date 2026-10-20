@@ -22,6 +22,9 @@ defined('ABSPATH') || exit;
 add_filter('all_plugins', 'xtec_plugin_manager_hide_plugins');
 add_filter('map_meta_cap', 'xtec_plugin_manager_map_meta_cap', 10, 4);
 add_filter('plugin_row_meta', 'xtec_plugin_manager_hide_plugin_meta');
+// The REST API lists the plugins without the filter all_plugins
+add_filter('rest_request_before_callbacks', 'xtec_plugin_manager_rest_hide_plugin', 10, 3);
+add_filter('rest_post_dispatch', 'xtec_plugin_manager_rest_hide_plugins', 10, 3);
 // After WordPress has created the tables of the new blog
 add_action('wp_initialize_site', 'xtec_plugin_manager_activate_in_new_blog', 100);
 
@@ -118,6 +121,72 @@ function xtec_plugin_manager_map_meta_cap(array $caps, string $cap, int $user_id
 function xtec_plugin_manager_hide_plugin_meta(array $meta): array
 {
     return is_super_admin() ? $meta : [];
+}
+
+/**
+ * Checks if the current user can see a plugin in the REST API. The lists name the plugins by their file without the
+ * extension, while the parameter of the routes of a plugin already has it.
+ *
+ * @param string $plugin The name of the plugin in the REST API.
+ * @return bool True if the user can see it.
+ */
+function xtec_plugin_manager_rest_can_see(string $plugin): bool
+{
+    $file = str_ends_with($plugin, '.php') ? $plugin : $plugin . '.php';
+
+    return is_super_admin() || xtec_plugin_manager_access($file) !== XTEC_PLUGIN_MANAGER_NONE;
+}
+
+/**
+ * Answers that a plugin doesn't exist when the administrator of a blog asks for one that is hidden in the REST API,
+ * before it is read, activated or deactivated.
+ *
+ * @param mixed $response The response, or null to go on with the request.
+ * @param array $handler The handler of the route.
+ * @param WP_REST_Request $request The request.
+ * @return mixed The same response, or the error if the plugin is hidden.
+ */
+function xtec_plugin_manager_rest_hide_plugin(mixed $response, array $handler, WP_REST_Request $request): mixed
+{
+    $plugin = $request['plugin'];
+    if (
+        str_starts_with($request->get_route(), '/wp/v2/plugins/')
+        && is_string($plugin) && !xtec_plugin_manager_rest_can_see($plugin)
+    ) {
+        return new WP_Error('rest_plugin_not_found', __('Plugin not found.'), ['status' => 404]);
+    }
+
+    return $response;
+}
+
+/**
+ * Removes the hidden plugins from the list of plugins of the REST API.
+ *
+ * @param WP_HTTP_Response $response The response.
+ * @param WP_REST_Server $server The server.
+ * @param WP_REST_Request $request The request.
+ * @return WP_HTTP_Response The response without the hidden plugins.
+ */
+function xtec_plugin_manager_rest_hide_plugins(
+    WP_HTTP_Response $response,
+    WP_REST_Server $server,
+    WP_REST_Request $request
+): WP_HTTP_Response {
+    $plugins = $response->get_data();
+    if (
+        $request->get_route() !== '/wp/v2/plugins' || is_super_admin()
+        || $response->get_status() >= 400 || !is_array($plugins)
+    ) {
+        return $response;
+    }
+
+    $response->set_data(array_values(array_filter(
+        $plugins,
+        static fn(mixed $plugin): bool => is_array($plugin) && is_string($plugin['plugin'] ?? null)
+            && xtec_plugin_manager_rest_can_see($plugin['plugin'])
+    )));
+
+    return $response;
 }
 
 /**
