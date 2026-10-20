@@ -55,15 +55,20 @@ msgstr "Fitxer"
 msgid "The file must be outside the folder of WordPress. The log keeps the whole content of the mails, including the links to reset the passwords, so enable it only while needed. When it is disabled, only the errors are written in the log of PHP."
 msgstr "El fitxer ha de ser fora de la carpeta del WordPress. El registre desa el contingut complet dels correus, inclosos els enllaços per restablir les contrasenyes, així que activeu-lo només mentre calgui. Quan està desactivat, només s'escriuen els errors al registre del PHP."
 
-msgid "Test"
-msgstr "Prova"
+msgid "Check of the sending of mails"
+msgstr "Comprovació de l'enviament de correu"
 
 msgid "Send a test mail"
 msgstr "Envia un correu de prova"
 
-#, php-format
-msgid "Sends a mail to %s with the saved settings."
-msgstr "Envia un correu a %s amb la configuració desada."
+msgid "Address"
+msgstr "Adreça"
+
+msgid "Address where the test mail is sent, with the saved settings."
+msgstr "Adreça on s'envia el correu de prova, amb la configuració desada."
+
+msgid "The address of the test mail is not valid."
+msgstr "L'adreça del correu de prova no és vàlida."
 
 msgid "The log has not been enabled."
 msgstr "No s'ha activat el registre."
