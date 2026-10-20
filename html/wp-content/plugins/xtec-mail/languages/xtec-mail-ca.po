@@ -17,8 +17,8 @@ msgstr "XTEC Mail"
 msgid "Sends the mails of WordPress through the service EnviaCorreu of the Departament d'Educació."
 msgstr "Envia els correus del WordPress a través del servei EnviaCorreu del Departament d'Educació."
 
-msgid "Francesc Bassas i Bullich, Toni Ginard"
-msgstr "Francesc Bassas i Bullich, Toni Ginard"
+msgid "Toni Ginard"
+msgstr "Toni Ginard"
 
 msgid "Mail"
 msgstr "Correu"
@@ -103,6 +103,9 @@ msgstr "No s'ha enviat el correu a través d'EnviaCorreu: %s"
 
 msgid "The file of the log must have an absolute path."
 msgstr "El fitxer del registre ha de tenir una ruta absoluta."
+
+msgid "The file of the log must have the extension .log or .txt."
+msgstr "El fitxer del registre ha de tenir l'extensió .log o .txt."
 
 msgid "The folder of the file of the log does not exist."
 msgstr "La carpeta del fitxer del registre no existeix."

@@ -38,9 +38,8 @@ function xtec_mail_config(): ?array
     $id_app = defined('XTEC_MAIL_IDAPP') ? XTEC_MAIL_IDAPP : '';
 
     if (
-        !in_array($environment, XtecMail\EnviaCorreu::ENVIRONMENTS, true)
-        || !is_string($id_app) || $id_app === ''
-        || !class_exists('SoapClient')
+        $id_app === '' || !class_exists('SoapClient')
+        || !in_array($environment, XtecMail\EnviaCorreu::ENVIRONMENTS, true)
     ) {
         return null;
     }
