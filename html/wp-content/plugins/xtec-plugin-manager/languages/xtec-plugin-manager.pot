@@ -1,0 +1,134 @@
+# Copyright (C) 2026 Toni Ginard
+# This file is distributed under the GPL v2.
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC Plugin Manager 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-20T18:12:40+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: xtec-plugin-manager\n"
+
+#. Plugin Name of the plugin
+#: xtec-plugin-manager.php
+msgid "XTEC Plugin Manager"
+msgstr ""
+
+#. Description of the plugin
+#: xtec-plugin-manager.php
+msgid "Chooses the plugins that blog administrators can activate and the ones of the new blogs."
+msgstr ""
+
+#. Author of the plugin
+#: xtec-plugin-manager.php
+msgid "Toni Ginard"
+msgstr ""
+
+#: includes/admin.php:49
+#: includes/admin.php:50
+#: includes/admin.php:117
+msgid "Plugin management"
+msgstr ""
+
+#. translators: %s: Name of the plugin.
+#: includes/admin.php:76
+#, php-format
+msgid "Activate %s in all the blogs?"
+msgstr ""
+
+#. translators: %s: Name of the plugin.
+#: includes/admin.php:78
+#, php-format
+msgid "Deactivate %s in all the blogs?"
+msgstr ""
+
+#. translators: 1: Number of blogs processed, 2: Total number of blogs.
+#: includes/admin.php:80
+#, php-format
+msgid "Processed %1$d of %2$d blogs..."
+msgstr ""
+
+#. translators: 1: Name of the plugin, 2: Number of blogs.
+#: includes/admin.php:82
+#, php-format
+msgid "%1$s has been activated in %2$d blogs."
+msgstr ""
+
+#. translators: 1: Name of the plugin, 2: Number of blogs.
+#: includes/admin.php:84
+#, php-format
+msgid "%1$s has been deactivated in %2$d blogs."
+msgstr ""
+
+#. translators: %d: Number of blogs.
+#: includes/admin.php:86
+#, php-format
+msgid "It could not be done in %d blogs."
+msgstr ""
+
+#: includes/admin.php:87
+msgid "The process has stopped because of an error. Please try again."
+msgstr ""
+
+#: includes/admin.php:111
+msgid "None"
+msgstr ""
+
+#: includes/admin.php:112
+msgid "Administrators of the blogs"
+msgstr ""
+
+#: includes/admin.php:113
+msgid "Automatic activation"
+msgstr ""
+
+#: includes/admin.php:129
+msgid "The plugins activated in the network work in all the blogs, and the administrators of the blogs cannot see them. For the other plugins, choose who can activate them:"
+msgstr ""
+
+#: includes/admin.php:139
+msgid "the administrators of the blogs cannot see the plugin nor activate it. Only super admins can activate it in a blog."
+msgstr ""
+
+#: includes/admin.php:148
+msgid "the administrators of the blogs can activate and deactivate the plugin in their blogs."
+msgstr ""
+
+#: includes/admin.php:157
+msgid "the same, and the plugin is also activated in the new blogs."
+msgstr ""
+
+#: includes/admin.php:166
+msgid "The blogs where a plugin is active keep it when the access changes. The mass activation and deactivation change the plugin in all the blogs, whatever its access."
+msgstr ""
+
+#: includes/admin.php:179
+msgid "Plugin"
+msgstr ""
+
+#: includes/admin.php:180
+msgid "Who can activate it"
+msgstr ""
+
+#: includes/admin.php:181
+msgid "All the blogs"
+msgstr ""
+
+#. translators: 1: Version of the plugin, 2: Author of the plugin.
+#: includes/admin.php:194
+#, php-format
+msgid "Version %1$s by %2$s"
+msgstr ""
+
+#: includes/admin.php:217
+msgid "Activate in all"
+msgstr ""
+
+#: includes/admin.php:219
+msgid "Deactivate in all"
+msgstr ""

@@ -1,0 +1,94 @@
+# Catalan translation of XTEC Plugin Manager.
+# Copyright 2026 Departament d'Educació i Formació Professional
+# This file is distributed under the same license as the XTEC Plugin Manager plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC Plugin Manager\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: xtec-plugin-manager\n"
+
+msgid "XTEC Plugin Manager"
+msgstr "XTEC Plugin Manager"
+
+msgid "Chooses the plugins that blog administrators can activate and the ones of the new blogs."
+msgstr "Tria les extensions que poden activar els administradors dels blocs i les dels blocs nous."
+
+msgid "Toni Ginard"
+msgstr "Toni Ginard"
+
+msgid "Plugin management"
+msgstr "Gestió d'extensions"
+
+#, php-format
+msgid "Activate %s in all the blogs?"
+msgstr "Voleu activar %s a tots els blocs?"
+
+#, php-format
+msgid "Deactivate %s in all the blogs?"
+msgstr "Voleu desactivar %s a tots els blocs?"
+
+#, php-format
+msgid "Processed %1$d of %2$d blogs..."
+msgstr "S'han processat %1$d de %2$d blocs..."
+
+#, php-format
+msgid "%1$s has been activated in %2$d blogs."
+msgstr "S'ha activat %1$s a %2$d blocs."
+
+#, php-format
+msgid "%1$s has been deactivated in %2$d blogs."
+msgstr "S'ha desactivat %1$s a %2$d blocs."
+
+#, php-format
+msgid "It could not be done in %d blogs."
+msgstr "No s'ha pogut fer a %d blocs."
+
+msgid "The process has stopped because of an error. Please try again."
+msgstr "El procés s'ha aturat per un error. Torneu-ho a provar."
+
+msgid "None"
+msgstr "Ningú"
+
+msgid "Administrators of the blogs"
+msgstr "Administradors dels blocs"
+
+msgid "Automatic activation"
+msgstr "Activació automàtica"
+
+msgid "The plugins activated in the network work in all the blogs, and the administrators of the blogs cannot see them. For the other plugins, choose who can activate them:"
+msgstr "Les extensions activades a la xarxa funcionen a tots els blocs, i els administradors dels blocs no les veuen. Per a la resta d'extensions, trieu qui les pot activar:"
+
+msgid "the administrators of the blogs cannot see the plugin nor activate it. Only super admins can activate it in a blog."
+msgstr "els administradors dels blocs no veuen l'extensió ni la poden activar. Només els superadministradors la poden activar en un bloc."
+
+msgid "the administrators of the blogs can activate and deactivate the plugin in their blogs."
+msgstr "els administradors dels blocs poden activar i desactivar l'extensió als seus blocs."
+
+msgid "the same, and the plugin is also activated in the new blogs."
+msgstr "el mateix, i a més l'extensió s'activa als blocs nous."
+
+msgid "The blogs where a plugin is active keep it when the access changes. The mass activation and deactivation change the plugin in all the blogs, whatever its access."
+msgstr "Els blocs on una extensió és activa la conserven quan es canvia qui la pot activar. L'activació i la desactivació massives canvien l'extensió a tots els blocs, sigui quina sigui l'opció triada."
+
+msgid "Plugin"
+msgstr "Extensió"
+
+msgid "Who can activate it"
+msgstr "Qui la pot activar"
+
+msgid "All the blogs"
+msgstr "Tots els blocs"
+
+#, php-format
+msgid "Version %1$s by %2$s"
+msgstr "Versió %1$s per %2$s"
+
+msgid "Activate in all"
+msgstr "Activa-la a tots"
+
+msgid "Deactivate in all"
+msgstr "Desactiva-la a tots"
