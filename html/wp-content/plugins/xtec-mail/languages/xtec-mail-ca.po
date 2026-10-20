@@ -1,0 +1,109 @@
+# Catalan translation of XTEC Mail.
+# Copyright 2026 Departament d'Educació i Formació Professional
+# This file is distributed under the same license as the XTEC Mail plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC Mail\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: xtec-mail\n"
+
+msgid "XTEC Mail"
+msgstr "XTEC Mail"
+
+msgid "Sends the mails of WordPress through the service EnviaCorreu of the Departament d'Educació."
+msgstr "Envia els correus del WordPress a través del servei EnviaCorreu del Departament d'Educació."
+
+msgid "Francesc Bassas i Bullich, Toni Ginard"
+msgstr "Francesc Bassas i Bullich, Toni Ginard"
+
+msgid "Mail"
+msgstr "Correu"
+
+msgid "Service EnviaCorreu"
+msgstr "Servei EnviaCorreu"
+
+#, php-format
+msgid "The mails are sent through the environment %1$s as the application %2$s."
+msgstr "Els correus s'envien a través de l'entorn %1$s com a l'aplicació %2$s."
+
+#, php-format
+msgid "The service is not configured, so WordPress sends the mails itself. To use it, set the constants %1$s (INT, PRE or PRO) and %2$s in %3$s. PHP needs the extension SOAP."
+msgstr "El servei no està configurat, de manera que el WordPress envia els correus directament. Per utilitzar-lo, definiu les constants %1$s (INT, PRE o PRO) i %2$s al fitxer %3$s. El PHP necessita l'extensió SOAP."
+
+msgid "Sender"
+msgstr "Remitent"
+
+msgid "Reply to"
+msgstr "Adreça de resposta"
+
+msgid "Address to reply to the mails that do not set one."
+msgstr "Adreça on es responen els correus que no n'indiquen cap."
+
+msgid "Log"
+msgstr "Registre"
+
+msgid "Write all the mails sent through the service in a file"
+msgstr "Desa en un fitxer tots els correus enviats a través del servei"
+
+msgid "File"
+msgstr "Fitxer"
+
+msgid "The file must be outside the folder of WordPress. The log keeps the whole content of the mails, including the links to reset the passwords, so enable it only while needed. When it is disabled, only the errors are written in the log of PHP."
+msgstr "El fitxer ha de ser fora de la carpeta del WordPress. El registre desa el contingut complet dels correus, inclosos els enllaços per restablir les contrasenyes, així que activeu-lo només mentre calgui. Quan està desactivat, només s'escriuen els errors al registre del PHP."
+
+msgid "Test"
+msgstr "Prova"
+
+msgid "Save and send a test mail"
+msgstr "Desa i envia un correu de prova"
+
+#, php-format
+msgid "Saves the settings and sends a mail to %s."
+msgstr "Desa la configuració i envia un correu a %s."
+
+msgid "The log has not been enabled."
+msgstr "No s'ha activat el registre."
+
+msgid "Test mail"
+msgstr "Correu de prova"
+
+#, php-format
+msgid ""
+"This mail has been sent from the settings of %1$s to check that the mails are sent.\n"
+"\n"
+"Environment of the service EnviaCorreu: %2$s"
+msgstr ""
+"Aquest correu s'ha enviat des de la configuració de %1$s per comprovar que els correus s'envien.\n"
+"\n"
+"Entorn del servei EnviaCorreu: %2$s"
+
+msgid "none"
+msgstr "cap"
+
+#, php-format
+msgid "The test mail has been sent to %s."
+msgstr "S'ha enviat el correu de prova a %s."
+
+#, php-format
+msgid "The test mail has not been sent to %1$s: %2$s"
+msgstr "No s'ha enviat el correu de prova a %1$s: %2$s"
+
+#, php-format
+msgid "The mail has not been sent through EnviaCorreu: %s"
+msgstr "No s'ha enviat el correu a través d'EnviaCorreu: %s"
+
+msgid "The file of the log must have an absolute path."
+msgstr "El fitxer del registre ha de tenir una ruta absoluta."
+
+msgid "The folder of the file of the log does not exist."
+msgstr "La carpeta del fitxer del registre no existeix."
+
+msgid "The file of the log must be outside the folder of WordPress."
+msgstr "El fitxer del registre ha de ser fora de la carpeta del WordPress."
+
+msgid "The web server cannot write the file of the log."
+msgstr "El servidor web no pot escriure al fitxer del registre."

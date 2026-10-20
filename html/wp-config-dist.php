@@ -19,8 +19,12 @@ const WP_ENVIRONMENT_TYPE = 'local';
 /** Google API key */
 const WP_GOOGLE_API_KEY = '';
 
-/** Used in xtec-mail extension */
+/**
+ * Used in xtec-mail extension. The mails are sent through the service EnviaCorreu in the environment INT, PRE or PRO,
+ * which is only reachable from the network of the Departament. Without the environment, WordPress sends the mails.
+ */
 const XTEC_MAIL_IDAPP = 'XTECBLOCS';
+// const XTEC_MAIL_ENVIRONMENT = 'PRO';
 
 /** The name of the database for WordPress */
 const DB_NAME = 'xtec_blocs_global';
