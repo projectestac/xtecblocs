@@ -148,11 +148,13 @@ function xtec_plugin_manager_rest_can_see(string $plugin): bool
  */
 function xtec_plugin_manager_rest_hide_plugin(mixed $response, array $handler, WP_REST_Request $request): mixed
 {
+    // The route is checked first, as the filter runs in all the requests to the REST API
+    if (!str_starts_with($request->get_route(), '/wp/v2/plugins/')) {
+        return $response;
+    }
+
     $plugin = $request['plugin'];
-    if (
-        str_starts_with($request->get_route(), '/wp/v2/plugins/')
-        && is_string($plugin) && !xtec_plugin_manager_rest_can_see($plugin)
-    ) {
+    if (is_string($plugin) && !xtec_plugin_manager_rest_can_see($plugin)) {
         return new WP_Error('rest_plugin_not_found', __('Plugin not found.'), ['status' => 404]);
     }
 

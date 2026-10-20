@@ -95,10 +95,11 @@ function xtec_plugin_manager_enqueue(): void
  */
 function xtec_plugin_manager_plugins(): array
 {
+    // The data of the plugins already says if they are network only, so their files aren't read again
     return array_filter(
         get_plugins(),
-        static fn(string $plugin): bool => !is_network_only_plugin($plugin) && !is_plugin_active_for_network($plugin),
-        ARRAY_FILTER_USE_KEY
+        static fn(array $data, string $plugin): bool => !$data['Network'] && !is_plugin_active_for_network($plugin),
+        ARRAY_FILTER_USE_BOTH
     );
 }
 
