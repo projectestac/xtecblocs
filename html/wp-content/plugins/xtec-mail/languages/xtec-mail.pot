@@ -1,0 +1,147 @@
+# Copyright (C) 2026 Francesc Bassas i Bullich, Toni Ginard
+# This file is distributed under the GPL v2.
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC Mail 4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-20T12:52:41+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: xtec-mail\n"
+
+#. Plugin Name of the plugin
+#: xtec-mail.php
+msgid "XTEC Mail"
+msgstr ""
+
+#. Description of the plugin
+#: xtec-mail.php
+msgid "Sends the mails of WordPress through the service EnviaCorreu of the Departament d'Educació."
+msgstr ""
+
+#. Author of the plugin
+#: xtec-mail.php
+msgid "Francesc Bassas i Bullich, Toni Ginard"
+msgstr ""
+
+#: includes/admin.php:43
+msgid "Mail"
+msgstr ""
+
+#: includes/admin.php:46
+msgid "Service EnviaCorreu"
+msgstr ""
+
+#. translators: 1: The environment of the service (INT, PRE or PRO). 2: The application.
+#: includes/admin.php:52
+#, php-format
+msgid "The mails are sent through the environment %1$s as the application %2$s."
+msgstr ""
+
+#. translators: 1: XTEC_MAIL_ENVIRONMENT. 2: XTEC_MAIL_IDAPP. 3: wp-config.php.
+#: includes/admin.php:59
+#, php-format
+msgid "The service is not configured, so WordPress sends the mails itself. To use it, set the constants %1$s (INT, PRE or PRO) and %2$s in %3$s. PHP needs the extension SOAP."
+msgstr ""
+
+#: includes/admin.php:69
+msgid "Sender"
+msgstr ""
+
+#: includes/admin.php:81
+msgid "Reply to"
+msgstr ""
+
+#: includes/admin.php:86
+msgid "Address to reply to the mails that do not set one."
+msgstr ""
+
+#: includes/admin.php:91
+msgid "Log"
+msgstr ""
+
+#: includes/admin.php:96
+msgid "Write all the mails sent through the service in a file"
+msgstr ""
+
+#: includes/admin.php:99
+msgid "File"
+msgstr ""
+
+#: includes/admin.php:105
+msgid "The file must be outside the folder of WordPress. The log keeps the whole content of the mails, including the links to reset the passwords, so enable it only while needed. When it is disabled, only the errors are written in the log of PHP."
+msgstr ""
+
+#: includes/admin.php:114
+msgid "Test"
+msgstr ""
+
+#: includes/admin.php:117
+msgid "Save and send a test mail"
+msgstr ""
+
+#. translators: %s: The e-mail address of the current user.
+#: includes/admin.php:123
+#, php-format
+msgid "Saves the settings and sends a mail to %s."
+msgstr ""
+
+#: includes/admin.php:163
+msgid "The log has not been enabled."
+msgstr ""
+
+#: includes/admin.php:195
+msgid "Test mail"
+msgstr ""
+
+#. translators: 1: The name of the network. 2: The environment of the service, or "none".
+#: includes/admin.php:198
+#, php-format
+msgid ""
+"This mail has been sent from the settings of %1$s to check that the mails are sent.\n"
+"\n"
+"Environment of the service EnviaCorreu: %2$s"
+msgstr ""
+
+#: includes/admin.php:200
+msgid "none"
+msgstr ""
+
+#. translators: %s: The e-mail address.
+#: includes/admin.php:208
+#, php-format
+msgid "The test mail has been sent to %s."
+msgstr ""
+
+#. translators: 1: The e-mail address. 2: The error.
+#: includes/admin.php:212
+#, php-format
+msgid "The test mail has not been sent to %1$s: %2$s"
+msgstr ""
+
+#. translators: %s: The cause of the error.
+#: includes/class-mailer.php:66
+#, php-format
+msgid "The mail has not been sent through EnviaCorreu: %s"
+msgstr ""
+
+#: includes/log.php:49
+msgid "The file of the log must have an absolute path."
+msgstr ""
+
+#: includes/log.php:55
+msgid "The folder of the file of the log does not exist."
+msgstr ""
+
+#: includes/log.php:58
+msgid "The file of the log must be outside the folder of WordPress."
+msgstr ""
+
+#: includes/log.php:61
+msgid "The web server cannot write the file of the log."
+msgstr ""
