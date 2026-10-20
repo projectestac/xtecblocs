@@ -58,12 +58,12 @@ msgstr "El fitxer ha de ser fora de la carpeta del WordPress. El registre desa e
 msgid "Test"
 msgstr "Prova"
 
-msgid "Save and send a test mail"
-msgstr "Desa i envia un correu de prova"
+msgid "Send a test mail"
+msgstr "Envia un correu de prova"
 
 #, php-format
-msgid "Saves the settings and sends a mail to %s."
-msgstr "Desa la configuració i envia un correu a %s."
+msgid "Sends a mail to %s with the saved settings."
+msgstr "Envia un correu a %s amb la configuració desada."
 
 msgid "The log has not been enabled."
 msgstr "No s'ha activat el registre."

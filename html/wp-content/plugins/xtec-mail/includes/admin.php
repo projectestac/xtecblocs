@@ -23,6 +23,7 @@ add_action('init', 'xtec_mail_load_textdomain');
 add_action('wpmu_options', 'xtec_mail_network_options');
 add_action('update_wpmu_options', 'xtec_mail_update_network_options');
 add_action('network_admin_notices', 'xtec_mail_show_notices');
+add_action('admin_post_xtec_mail_test', 'xtec_mail_test_action');
 
 /**
  * Loads the translations of the plugin.
@@ -114,13 +115,17 @@ function xtec_mail_network_options(): void
             <th scope="row"><?php esc_html_e('Test', 'xtec-mail'); ?></th>
             <td>
                 <?php
-                submit_button(__('Save and send a test mail', 'xtec-mail'), 'secondary', 'xtec_mail_test', false);
+                // A link and not a button of the form, as the first button of a form is pressed with the key Enter
+                $url = wp_nonce_url(admin_url('admin-post.php?action=xtec_mail_test'), 'xtec-mail-test');
                 ?>
+                <a href="<?php echo esc_url($url); ?>" class="button">
+                    <?php esc_html_e('Send a test mail', 'xtec-mail'); ?>
+                </a>
                 <p class="description">
                     <?php
                     printf(
                         /* translators: %s: The e-mail address of the current user. */
-                        esc_html__('Saves the settings and sends a mail to %s.', 'xtec-mail'),
+                        esc_html__('Sends a mail to %s with the saved settings.', 'xtec-mail'),
                         '<strong>' . esc_html(wp_get_current_user()->user_email) . '</strong>'
                     );
                     ?>
@@ -132,8 +137,7 @@ function xtec_mail_network_options(): void
 }
 
 /**
- * Saves the options of the mail and, if requested, sends the test mail. WordPress has already checked the nonce and
- * the permissions.
+ * Saves the options of the mail. WordPress has already checked the nonce and the permissions.
  */
 function xtec_mail_update_network_options(): void
 {
@@ -165,13 +169,24 @@ function xtec_mail_update_network_options(): void
     }
     update_site_option('xtec_mail_log', $log ? 1 : 0);
 
-    if (isset($_POST['xtec_mail_test'])) {
-        $notices[] = xtec_mail_send_test();
+    if ($notices) {
+        xtec_mail_keep_notices($notices);
+    }
+}
+
+/**
+ * Sends the test mail when its button is pressed, and goes back to the settings of the network to show the result.
+ */
+function xtec_mail_test_action(): void
+{
+    check_admin_referer('xtec-mail-test');
+    if (!current_user_can('manage_network_options')) {
+        wp_die(esc_html__('Sorry, you are not allowed to access this page.'), '', ['response' => 403]);
     }
 
-    if ($notices) {
-        set_site_transient('xtec_mail_notices_' . get_current_user_id(), $notices, MINUTE_IN_SECONDS);
-    }
+    xtec_mail_keep_notices([xtec_mail_send_test()]);
+    wp_safe_redirect(network_admin_url('settings.php'));
+    exit;
 }
 
 /**
@@ -213,7 +228,17 @@ function xtec_mail_send_test(): array
 }
 
 /**
- * Shows the notices of the last save of the options of the mail.
+ * Keeps notices to show them in the next page, after a redirection.
+ *
+ * @param array $notices The notices, each one with its type and its message.
+ */
+function xtec_mail_keep_notices(array $notices): void
+{
+    set_site_transient('xtec_mail_notices_' . get_current_user_id(), $notices, MINUTE_IN_SECONDS);
+}
+
+/**
+ * Shows the notices of the last save of the options of the mail or of the test mail.
  */
 function xtec_mail_show_notices(): void
 {

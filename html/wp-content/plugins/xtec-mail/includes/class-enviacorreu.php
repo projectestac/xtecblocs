@@ -86,7 +86,15 @@ class EnviaCorreu
             $correu['attachments'] = ['attachment' => $attachments];
         }
 
-        $response = $this->client()->enviament(['idApp' => $this->id_app, 'correu' => $correu]);
+        // SoapClient waits for the answer as long as default_socket_timeout says, and the option connection_timeout
+        // only limits the connection
+        $timeout = ini_get('default_socket_timeout');
+        ini_set('default_socket_timeout', (string)self::TIMEOUT);
+        try {
+            $response = $this->client()->enviament(['idApp' => $this->id_app, 'correu' => $correu]);
+        } finally {
+            ini_set('default_socket_timeout', $timeout);
+        }
 
         // The answer of the request (status and message) and of the mail (id, status and message)
         $answer = $response->respostaCorreu ?? null;
@@ -115,7 +123,6 @@ class EnviaCorreu
                 'exceptions' => true,
                 'cache_wsdl' => WSDL_CACHE_DISK,
                 'connection_timeout' => self::TIMEOUT,
-                'stream_context' => stream_context_create(['http' => ['timeout' => self::TIMEOUT]]),
                 'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
                 'encoding' => 'UTF-8',
             ]);
