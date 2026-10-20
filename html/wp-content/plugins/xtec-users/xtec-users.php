@@ -3,7 +3,7 @@
 /**
  * Plugin Name:       XTEC Users
  * Description:       XTEC users and local users in XTECBlocs, and limits of the creation of blogs.
- * Version:           1.2
+ * Version:           2.0
  * Requires at least: 5.5
  * Requires PHP:      8.0
  * Network:           true
