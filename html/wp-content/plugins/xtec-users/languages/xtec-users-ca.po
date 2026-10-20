@@ -116,6 +116,9 @@ msgstr "L'adreça de correu electrònic que heu introduït ja s'utilitza."
 msgid "The user could not be created. Please try again."
 msgstr "No s'ha pogut crear l'usuari. Torneu-ho a provar."
 
+msgid "The invitation could not be sent by e-mail, so the user has not been invited. Please try again later."
+msgstr "No s'ha pogut enviar la invitació per correu electrònic, de manera que l'usuari no ha estat convidat. Torneu-ho a provar més tard."
+
 msgid "You have registered the user %1$s in the blog service with the password %2$s. Give the username and the password to the user so that the user can access the blog service."
 msgstr "Heu donat d'alta al servei de blocs l'usuari %1$s amb contrasenya %2$s. Feu arribar a l'usuari el nom d'usuari i la contrasenya perquè pugui accedir al servei de blocs."
 

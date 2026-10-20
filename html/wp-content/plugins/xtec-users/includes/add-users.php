@@ -382,11 +382,17 @@ Please click the following link to confirm the invite:
 %4$s'
         );
         $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
-        wp_mail(
+        $sent = wp_mail(
             $user->user_email,
             sprintf(__('[%s] Joining Confirmation'), $blogname),
             sprintf($invitation, $blogname, home_url(), $roles[$role], home_url("/newbloguser/$newuser_key/"))
         );
+        if (!$sent) {
+            // The user can't accept an invitation that hasn't been received
+            delete_option('new_user_' . $newuser_key);
+
+            return ['success' => '', 'errors' => xtec_users_invitation_error()];
+        }
 
         return ['success' => xtec_users_done_message('invited', $username, $role), 'errors' => ''];
     }
@@ -466,15 +472,32 @@ function xtec_users_add_users_actions(): void
     $username = strtolower(trim(xtec_users_field($values, 'username')));
 
     // If the user can't be invited or added any more, the page shows the new result of the check
-    if (xtec_users_do_action($action, $username, $values)['success'] !== '') {
-        $args = [
-            'done' => ($action === 'invite') ? 'invited' : 'added',
-            'user' => $username,
-            'role' => xtec_users_field($values, 'role'),
-        ];
-        wp_safe_redirect(add_query_arg($args, admin_url('users.php?page=xtec-add-users')));
-        exit;
+    $result = xtec_users_do_action($action, $username, $values);
+    $args = ['user' => $username, 'role' => xtec_users_field($values, 'role')];
+    if ($result['success'] !== '') {
+        $args['done'] = ($action === 'invite') ? 'invited' : 'added';
+    } elseif ($result['errors'] !== '') {
+        // The only error is that the mail of the invitation hasn't been sent
+        $args['failed'] = 'invitation';
+    } else {
+        return;
     }
+
+    wp_safe_redirect(add_query_arg($args, admin_url('users.php?page=xtec-add-users')));
+    exit;
+}
+
+/**
+ * Returns the error shown when the mail of an invitation hasn't been sent.
+ *
+ * @return string The HTML of the error.
+ */
+function xtec_users_invitation_error(): string
+{
+    return '<p>' . esc_html__(
+        'The invitation could not be sent by e-mail, so the user has not been invited. Please try again later.',
+        'xtec-users'
+    ) . '</p>';
 }
 
 /**
@@ -494,6 +517,17 @@ function xtec_users_add_users_page(): void
         && is_string($_GET['done']) && is_string($_GET['user']) && is_string($_GET['role'])
     ) {
         $success = xtec_users_done_message($_GET['done'], wp_unslash($_GET['user']), $_GET['role']);
+    }
+
+    // Failed invitation, after the redirection of xtec_users_add_users_actions(). The form of the invitation is shown
+    // again with the error, so that it can be sent again.
+    if (
+        isset($_GET['failed'], $_GET['user'], $_GET['role']) && $_GET['failed'] === 'invitation'
+        && is_string($_GET['user']) && is_string($_GET['role'])
+    ) {
+        $username = strtolower(trim(wp_unslash($_GET['user'])));
+        $values = ['role' => wp_unslash($_GET['role'])];
+        $errors = xtec_users_invitation_error();
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
