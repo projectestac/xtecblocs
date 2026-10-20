@@ -113,6 +113,7 @@ class EnviaCorreu
      * Returns the SOAP client of the environment. The description of the service (WSDL) is the one of the plugin, as
      * it has the address of the service that works.
      *
+     * @throws \SoapFault
      * @return \SoapClient The client.
      */
     private function client(): \SoapClient

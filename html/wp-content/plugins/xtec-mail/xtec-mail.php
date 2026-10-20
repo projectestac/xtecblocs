@@ -9,7 +9,7 @@
  * Network:           true
  * Text Domain:       xtec-mail
  * Domain Path:       /languages
- * Author:            Francesc Bassas i Bullich, Toni Ginard
+ * Author:            Toni Ginard
  * License:           GPL v2
  * License URI:       https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *

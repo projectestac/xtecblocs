@@ -22,7 +22,6 @@ defined('ABSPATH') || exit;
 add_action('init', 'xtec_mail_load_textdomain');
 add_action('network_admin_menu', 'xtec_mail_network_admin_menu');
 add_action('network_admin_edit_xtec-mail', 'xtec_mail_save_options');
-add_action('network_admin_notices', 'xtec_mail_show_notices');
 add_action('admin_post_xtec_mail_test', 'xtec_mail_test_action');
 
 /**
@@ -38,7 +37,7 @@ function xtec_mail_load_textdomain(): void
  */
 function xtec_mail_network_admin_menu(): void
 {
-    add_submenu_page(
+    $page = add_submenu_page(
         'settings.php',
         __('Mail', 'xtec-mail'),
         __('Mail', 'xtec-mail'),
@@ -46,6 +45,8 @@ function xtec_mail_network_admin_menu(): void
         'xtec-mail',
         'xtec_mail_options_page'
     );
+    // The notices are only shown in the page of the options, where the redirections go
+    add_action("load-$page", static fn() => add_action('network_admin_notices', 'xtec_mail_show_notices'));
 }
 
 /**

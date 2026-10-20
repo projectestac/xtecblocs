@@ -48,6 +48,10 @@ function xtec_mail_log_file_error(string $path): string
     if ($path === '' || !path_is_absolute($path)) {
         return __('The file of the log must have an absolute path.', 'xtec-mail');
     }
+    // The log has text from the users, so it can't be a file that the web server could run, like a PHP file
+    if (!in_array(strtolower(pathinfo($path, PATHINFO_EXTENSION)), ['log', 'txt'], true)) {
+        return __('The file of the log must have the extension .log or .txt.', 'xtec-mail');
+    }
 
     $dir = realpath(dirname($path));
     $root = realpath(ABSPATH);
@@ -68,6 +72,7 @@ function xtec_mail_log_file_error(string $path): string
  * Returns the current date in the local time of the server. WordPress sets the time zone of PHP to UTC, so the one of
  * the configuration of PHP is used. PHP already sets it to UTC if it isn't set or isn't valid.
  *
+ * @throws DateInvalidTimeZoneException
  * @return string The date, with its time zone.
  */
 function xtec_mail_log_date(): string
@@ -85,6 +90,7 @@ function xtec_mail_log_date(): string
  * @param array $mail The mail, as it has been given to XtecMail\EnviaCorreu::send().
  * @param array $result The answer of the service.
  * @param string $error The error, or empty if the mail has been sent.
+ * @throws DateInvalidTimeZoneException
  */
 function xtec_mail_log(string $environment, array $mail, array $result, string $error): void
 {
@@ -121,6 +127,10 @@ function xtec_mail_log(string $environment, array $mail, array $result, string $
     $lines[] = 'Body (' . $mail['body_type'] . '):';
     $lines[] = $mail['body'];
 
+    // The log has the links to reset the passwords, so other users of the server can't read it
+    if (!file_exists($file) && touch($file)) {
+        chmod($file, 0640);
+    }
     if (file_put_contents($file, implode("\n", $lines) . "\n\n", FILE_APPEND | LOCK_EX) === false) {
         error_log('XTEC Mail: the log cannot be written in ' . $file . ($error !== '' ? '. ' . $error : ''));
     }

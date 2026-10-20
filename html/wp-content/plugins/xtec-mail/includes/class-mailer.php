@@ -47,7 +47,8 @@ class Mailer extends \WP_PHPMailer
             'to' => array_column($this->getToAddresses(), 0),
             'cc' => array_column($this->getCcAddresses(), 0),
             'bcc' => array_column($this->getBccAddresses(), 0),
-            'subject' => $this->Subject,
+            // The same as PHPMailer does, so that the subject can't add headers to the mail
+            'subject' => $this->secureHeader($this->Subject),
             'body' => $this->Body,
             'body_type' => $this->ContentType === static::CONTENT_TYPE_TEXT_HTML ? 'text/html' : 'text/plain',
             'attachments' => [],

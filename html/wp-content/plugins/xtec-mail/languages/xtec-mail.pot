@@ -1,4 +1,4 @@
-# Copyright (C) 2026 Francesc Bassas i Bullich, Toni Ginard
+# Copyright (C) 2026 Toni Ginard
 # This file is distributed under the GPL v2.
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-20T15:00:57+02:00\n"
+"POT-Creation-Date: 2026-10-20T17:32:53+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: xtec-mail\n"
@@ -26,89 +26,89 @@ msgstr ""
 
 #. Author of the plugin
 #: xtec-mail.php
-msgid "Francesc Bassas i Bullich, Toni Ginard"
+msgid "Toni Ginard"
 msgstr ""
 
+#: includes/admin.php:42
 #: includes/admin.php:43
-#: includes/admin.php:44
-#: includes/admin.php:70
+#: includes/admin.php:71
 msgid "Mail"
 msgstr ""
 
-#: includes/admin.php:76
+#: includes/admin.php:77
 msgid "Service EnviaCorreu"
 msgstr ""
 
 #. translators: 1: The environment (INT, PRE or PRO). 2: The application.
-#: includes/admin.php:82
+#: includes/admin.php:83
 #, php-format
 msgid "The mails are sent through the environment %1$s as the application %2$s."
 msgstr ""
 
 #. translators: 1: XTEC_MAIL_ENVIRONMENT. 2: XTEC_MAIL_IDAPP. 3: wp-config.php.
-#: includes/admin.php:89
+#: includes/admin.php:90
 #, php-format
 msgid "The service is not configured, so WordPress sends the mails itself. To use it, set the constants %1$s (INT, PRE or PRO) and %2$s in %3$s. PHP needs the extension SOAP."
 msgstr ""
 
-#: includes/admin.php:100
+#: includes/admin.php:101
 msgid "Sender"
 msgstr ""
 
-#: includes/admin.php:115
+#: includes/admin.php:116
 msgid "Reply to"
 msgstr ""
 
-#: includes/admin.php:121
+#: includes/admin.php:122
 msgid "Address to reply to the mails that do not set one."
 msgstr ""
 
-#: includes/admin.php:126
+#: includes/admin.php:127
 msgid "Log"
 msgstr ""
 
-#: includes/admin.php:131
+#: includes/admin.php:132
 msgid "Write all the mails sent through the service in a file"
 msgstr ""
 
-#: includes/admin.php:134
+#: includes/admin.php:135
 msgid "File"
 msgstr ""
 
-#: includes/admin.php:140
+#: includes/admin.php:141
 msgid "The file must be outside the folder of WordPress. The log keeps the whole content of the mails, including the links to reset the passwords, so enable it only while needed. When it is disabled, only the errors are written in the log of PHP."
 msgstr ""
 
-#: includes/admin.php:152
+#: includes/admin.php:153
 msgid "Check of the sending of mails"
 msgstr ""
 
-#: includes/admin.php:160
+#: includes/admin.php:161
 msgid "Address"
 msgstr ""
 
-#: includes/admin.php:167
+#: includes/admin.php:168
 msgid "Address where the test mail is sent, with the saved settings."
 msgstr ""
 
-#: includes/admin.php:173
+#: includes/admin.php:174
 msgid "Send a test mail"
 msgstr ""
 
-#: includes/admin.php:212
+#: includes/admin.php:213
 msgid "The log has not been enabled."
 msgstr ""
 
-#: includes/admin.php:238
+#: includes/admin.php:240
 msgid "The address of the test mail is not valid."
 msgstr ""
 
-#: includes/admin.php:264
+#: includes/admin.php:278
 msgid "Test mail"
 msgstr ""
 
 #. translators: 1: The name of the network. 2: The environment of the service, or "none".
-#: includes/admin.php:267
+#: includes/admin.php:281
 #, php-format
 msgid ""
 "This mail has been sent from the settings of %1$s to check that the mails are sent.\n"
@@ -116,24 +116,24 @@ msgid ""
 "Environment of the service EnviaCorreu: %2$s"
 msgstr ""
 
-#: includes/admin.php:269
+#: includes/admin.php:283
 msgid "none"
 msgstr ""
 
 #. translators: %s: The e-mail address.
-#: includes/admin.php:277
+#: includes/admin.php:291
 #, php-format
 msgid "The test mail has been sent to %s."
 msgstr ""
 
 #. translators: 1: The e-mail address. 2: The error.
-#: includes/admin.php:281
+#: includes/admin.php:295
 #, php-format
 msgid "The test mail has not been sent to %1$s: %2$s"
 msgstr ""
 
 #. translators: %s: The cause of the error.
-#: includes/class-mailer.php:66
+#: includes/class-mailer.php:67
 #, php-format
 msgid "The mail has not been sent through EnviaCorreu: %s"
 msgstr ""
@@ -142,14 +142,18 @@ msgstr ""
 msgid "The file of the log must have an absolute path."
 msgstr ""
 
-#: includes/log.php:55
+#: includes/log.php:53
+msgid "The file of the log must have the extension .log or .txt."
+msgstr ""
+
+#: includes/log.php:59
 msgid "The folder of the file of the log does not exist."
 msgstr ""
 
-#: includes/log.php:58
+#: includes/log.php:62
 msgid "The file of the log must be outside the folder of WordPress."
 msgstr ""
 
-#: includes/log.php:61
+#: includes/log.php:65
 msgid "The web server cannot write the file of the log."
 msgstr ""
