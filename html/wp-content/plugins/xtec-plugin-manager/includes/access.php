@@ -70,14 +70,14 @@ function xtec_plugin_manager_access(string $plugin): string
 
 /**
  * Removes the plugins that the administrators of the blogs can't activate from the list of plugins of the blog.
- * Super admins see all the plugins.
+ * Super admins see all the plugins, and so does WP-CLI when it runs without a user.
  *
  * @param array $plugins The plugins, by their file.
  * @return array The plugins that the current user can activate.
  */
 function xtec_plugin_manager_hide_plugins(array $plugins): array
 {
-    if (is_super_admin()) {
+    if (!is_user_logged_in() || is_super_admin()) {
         return $plugins;
     }
 
