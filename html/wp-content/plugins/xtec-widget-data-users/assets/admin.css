@@ -1,0 +1,12 @@
+/* Form of the widget */
+
+.xtec-wdu-image img {
+    display: block;
+    max-width: 225px;
+    max-height: 150px;
+}
+
+.xtec-wdu-image img[hidden],
+.xtec-wdu-image [hidden] {
+    display: none;
+}

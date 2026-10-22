@@ -1,0 +1,54 @@
+# Catalan translation of XTEC Widget Data Users.
+# Copyright 2026 Departament d'Educació i Formació Professional
+# This file is distributed under the same license as the XTEC Widget Data Users plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC Widget Data Users\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: xtec-widget-data-users\n"
+
+msgid "XTEC Widget Data Users"
+msgstr "XTEC Widget Data Users"
+
+msgid "Widget to present the author of the blog: image, name, description and contact details."
+msgstr "Giny per presentar l'autor del bloc: imatge, nom, descripció i dades de contacte."
+
+msgid "Toni Ginard"
+msgstr "Toni Ginard"
+
+msgid "Users information"
+msgstr "Dades d'usuari"
+
+msgid "Presentation of the author of the blog"
+msgstr "Presentació de l'autor del bloc"
+
+msgid "Image"
+msgstr "Imatge"
+
+msgid "Choose an image"
+msgstr "Tria una imatge"
+
+msgid "Remove the image"
+msgstr "Treu la imatge"
+
+msgid "Name and surnames"
+msgstr "Nom i cognoms"
+
+msgid "About user"
+msgstr "Informació de perfil"
+
+msgid "E-mail"
+msgstr "Correu electrònic"
+
+msgid "Web"
+msgstr "Pàgina web"
+
+msgid "User of X (Twitter)"
+msgstr "Usuari d'X (Twitter)"
+
+msgid "Use this image"
+msgstr "Utilitza aquesta imatge"

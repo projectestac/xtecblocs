@@ -1,0 +1,62 @@
+/* Widget in the blog. The classes are the ones of the previous version, so that the styles of the themes still work. */
+
+div.widget-global-content {
+    margin-bottom: 30px;
+    margin-top: 1em;
+}
+
+div.widget-global-content p {
+    margin-bottom: 15px;
+    font-size: 13px;
+    line-height: 1.4em;
+}
+
+div.widget-global-content p.widget-text-list {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 1.2em;
+}
+
+div.widget-global-content strong {
+    font-size: 1.2em;
+}
+
+.widget-global-content .widget-name {
+    margin-bottom: 5px;
+}
+
+.widget-content-image {
+    max-width: 225px;
+    max-height: 150px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.widget-content-image .widget-image {
+    max-width: 225px;
+    max-height: 150px;
+}
+
+.widget-global-content .xtec-wdu-icon {
+    flex: none;
+    color: #858585;
+}
+
+/* The long addresses are cut, and the whole address is shown when the pointer is over it */
+.widget-global-content a.widget-link {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #9e9e9e;
+}
+
+.widget-global-content a.widget-link:hover,
+.widget-global-content a.widget-link:focus {
+    overflow: visible;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
