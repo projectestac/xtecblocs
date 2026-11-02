@@ -1,0 +1,132 @@
+/* Customizations of XTECBlocs for the theme Fukasawa. Loaded after the stylesheet of the theme. */
+
+/* No main menu in the sidebar: the blogs use the widget of the menu, which looks like it. The mobile menu stays. */
+
+.sidebar .main-menu {
+    display: none;
+}
+
+/* Widget of the menu with the styles of the main menu of the theme */
+
+.widget_nav_menu .menu li {
+    display: block;
+    line-height: 1.25;
+    margin-top: 12px;
+    padding: 0;
+    border: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.widget_nav_menu .menu > li:first-child {
+    margin-top: 0;
+}
+
+.widget_nav_menu .menu ul {
+    margin-left: 20px;
+}
+
+.widget_nav_menu .menu ul li:first-child {
+    border: 0;
+}
+
+.widget_nav_menu li:before {
+    content: none;
+}
+
+.widget_nav_menu .menu a {
+    color: #494949;
+}
+
+.widget_nav_menu .menu a:hover,
+.widget_nav_menu .menu .current-menu-item > a,
+.widget_nav_menu .menu .current_page_item > a {
+    color: #333;
+}
+
+.widget_nav_menu .menu .current-menu-item:before,
+.widget_nav_menu .menu .current_page_item:before {
+    content: '\f501';
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0;
+    font: 16px/1 "Genericons";
+    color: #019EBD;
+    position: absolute;
+    top: -1px;
+    left: -20px;
+}
+
+.widget_nav_menu .widget-title {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Categories and tags of the posts in the list of posts */
+
+.entry-terms {
+    margin-top: 10px;
+}
+
+.entry-categories,
+.entry-tags {
+    font-size: 70%;
+    color: #019EBD;
+}
+
+.entry-categories:before,
+.entry-tags:before {
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    font: normal 18px/1 'Genericons';
+    vertical-align: middle;
+    margin-right: 0.2rem;
+    color: #019EBD;
+}
+
+.entry-categories:before {
+    content: "\f301";
+}
+
+.entry-tags:before {
+    content: "\f302";
+}
+
+/* Styles of the project DOSSIER */
+
+/* No featured media in the posts */
+.single .featured-media {
+    display: none;
+}
+
+/* No posts of the category "Pendents" in the main page */
+.home .post-container:has(> .category-pendents) {
+    display: none;
+}
+
+/* Link to the page "About this space", with the separator and the styles of the credits of the theme */
+.xtec-fukasawa-about:before {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 2px;
+    background: #e7e7e7;
+    margin: 35px 0;
+}
+
+.xtec-fukasawa-about p {
+    font-size: 13px;
+    line-height: 160%;
+    color: #767676;
+}
+
+.xtec-fukasawa-about a {
+    color: #767676;
+}
+
+.xtec-fukasawa-about a:hover {
+    color: #666;
+}

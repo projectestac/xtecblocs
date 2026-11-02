@@ -1,0 +1,316 @@
+# Translation of Themes - Fukasawa in Catalan
+# This file is distributed under the same license as the Themes - Fukasawa package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2024-12-18 22:33:09+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: ca\n"
+"Project-Id-Version: Themes - Fukasawa\n"
+
+#. Theme Name of the theme
+#: style.css
+#, gp-priority: high
+msgid "Fukasawa"
+msgstr "Fukasawa"
+
+#: index.php:78
+msgid "We couldn't find any results for your search query. You can give it another try through the search form below."
+msgstr "No hem pogut trobar cap resultat per a la cerca. Podeu tornar-ho a provar a través del formulari inferior."
+
+#: header.php:22
+msgid "Skip to the content"
+msgstr "Vés al contingut"
+
+#: functions.php:532
+msgctxt "Short name of the larger font size in the Gutenberg editor."
+msgid "XL"
+msgstr "XL"
+
+#: functions.php:531
+msgctxt "Name of the larger font size in Gutenberg"
+msgid "Larger"
+msgstr "Més gran"
+
+#: functions.php:526
+msgctxt "Short name of the large font size in the Gutenberg editor."
+msgid "L"
+msgstr "L"
+
+#: functions.php:525
+msgctxt "Name of the large font size in Gutenberg"
+msgid "Large"
+msgstr "Gran"
+
+#: functions.php:520
+msgctxt "Short name of the regular font size in the Gutenberg editor."
+msgid "M"
+msgstr "M"
+
+#: functions.php:519
+msgctxt "Name of the regular font size in Gutenberg"
+msgid "Regular"
+msgstr "Normal"
+
+#: functions.php:514
+msgctxt "Short name of the small font size in the Gutenberg editor."
+msgid "S"
+msgstr "S"
+
+#: functions.php:513
+msgctxt "Name of the small font size in Gutenberg"
+msgid "Small"
+msgstr "Petita"
+
+#: functions.php:503
+msgctxt "Name of the white color in the Gutenberg palette"
+msgid "White"
+msgstr "Blanc"
+
+#: functions.php:498
+msgctxt "Name of the light gray color in the Gutenberg palette"
+msgid "Light Gray"
+msgstr "Gris clar"
+
+#: functions.php:493
+msgctxt "Name of the medium gray color in the Gutenberg palette"
+msgid "Medium Gray"
+msgstr "Gris"
+
+#: functions.php:488
+msgctxt "Name of the dark gray color in the Gutenberg palette"
+msgid "Dark Gray"
+msgstr "Gris fosc"
+
+#: functions.php:483
+msgctxt "Name of the black color in the Gutenberg palette"
+msgid "Black"
+msgstr "Negre"
+
+#: functions.php:478
+msgctxt "Name of the accent color in the Gutenberg palette"
+msgid "Accent"
+msgstr "Èmfasi"
+
+#: index.php:17 index.php:21
+msgid "Page %1$s of %2$s"
+msgstr "Pàgina %1$s de %2$s"
+
+#: singular.php:83 singular.php:128
+msgid "Edit post"
+msgstr "Edita"
+
+#: index.php:15
+msgctxt "Variable: search query text"
+msgid "Search results: \"%s\""
+msgstr "Resultats de la cerca: \"%s\""
+
+#: comments.php:37
+msgid "%s Pingback"
+msgid_plural "%s Pingbacks"
+msgstr[0] "%s retroenllaç"
+msgstr[1] "%s retroenllaços"
+
+#: comments.php:19
+msgid "%s Comment"
+msgid_plural "%s Comments"
+msgstr[0] "%s comentari"
+msgstr[1] "%s comentaris"
+
+#: widgets/recent-posts.php:10
+msgid "Recent Posts"
+msgstr "Entrades recents"
+
+#: widgets/recent-comments.php:10
+msgid "Recent Comments"
+msgstr "Comentaris recents"
+
+#. Template Name of the theme
+msgid "Archive Template"
+msgstr "Plantilla d'arxiu"
+
+#: widgets/recent-posts.php:144
+msgid "Number of posts to display:"
+msgstr "Nombre d'entrades a mostrar:"
+
+#: widgets/recent-posts.php:8
+msgid "Displays recent blog entries."
+msgstr "Mostra entrades recents."
+
+#: widgets/recent-comments.php:97 widgets/recent-posts.php:146
+msgid "Defaults to 5 if empty"
+msgstr "Predeterminat a 5 si es deixa buit"
+
+#: widgets/recent-comments.php:95
+msgid "Number of comments to display:"
+msgstr "Nombre de comentaris a mostrar:"
+
+#: widgets/recent-comments.php:8
+msgid "Displays recent comments with user avatars."
+msgstr "Mostra comentaris recents amb els avatars dels usuaris."
+
+#: widgets/recent-comments.php:90 widgets/recent-posts.php:139
+msgid "Title:"
+msgstr "Títol:"
+
+#: template-parts/archive-list.php:70
+msgid "Archives by Day"
+msgstr "Arxius per dia"
+
+#: template-parts/archive-list.php:64
+msgid "Archives by Month"
+msgstr "Arxius per mes"
+
+#: template-parts/archive-list.php:58
+msgid "Archives by Year"
+msgstr "Arxius per any"
+
+#: template-parts/archive-list.php:52
+msgid "Contributors"
+msgstr "Col·laboradors"
+
+#: template-parts/archive-list.php:37
+msgid "Tags"
+msgstr "Etiquetes"
+
+#: template-parts/archive-list.php:31
+msgid "Categories"
+msgstr "Categories"
+
+#: template-parts/archive-list.php:11
+msgid "Posts"
+msgstr "Entrades"
+
+#: singular.php:156
+msgid "Next post"
+msgstr "Entrada següent"
+
+#: singular.php:150
+msgid "Previous post"
+msgstr "Entrada anterior"
+
+#: singular.php:121
+msgid "In"
+msgstr "A"
+
+#: singular.php:98
+msgid "Pages:"
+msgstr "Pàgines:"
+
+#: image.php:43
+msgid "Resolution:"
+msgstr "Resolució:"
+
+#: image.php:37
+msgid "Uploaded by"
+msgstr "Penjat per"
+
+#: header.php:120
+msgid "Theme by"
+msgstr "Autor"
+
+#: header.php:119
+msgid "Powered by"
+msgstr "Gràcies al "
+
+#: header.php:102
+msgid "Close"
+msgstr "Tanca"
+
+#: header.php:101
+msgid "Menu"
+msgstr "Menú"
+
+#: inc/classes/class-fukasawa-customize.php:23
+msgid "Accent Color"
+msgstr "Color d'èmfasi"
+
+#: inc/classes/class-fukasawa-customize.php:40
+msgid "Upload a logo to replace the default site title in the sidebar/header"
+msgstr "Puja una imatge per reemplaçar el títol del lloc per defecte a la barra lateral/capçalera"
+
+#: inc/classes/class-fukasawa-customize.php:38
+#: inc/classes/class-fukasawa-customize.php:48
+msgid "Logo"
+msgstr "Logotip"
+
+#: functions.php:437
+msgid "Reply"
+msgstr "Respon"
+
+#: functions.php:429
+msgid "Your comment is awaiting moderation."
+msgstr "El comentari està esperant moderació."
+
+#: functions.php:391 functions.php:444
+msgid "Edit"
+msgstr "Edita"
+
+#: functions.php:391
+msgid "Pingback:"
+msgstr "Retroenllaç:"
+
+#: functions.php:144
+msgid "Widgets in this area will be shown in the sidebar."
+msgstr "Aquests ginys es mostraran a la barra lateral."
+
+#: functions.php:142
+msgid "Sidebar"
+msgstr "Barra lateral"
+
+#: functions.php:48
+msgid "Primary Menu"
+msgstr "Menú principal"
+
+#: content.php:52
+msgid "View"
+msgstr "Visualitza"
+
+#: comments.php:58
+msgid "Newer"
+msgstr "Més nous"
+
+#: comments.php:54 comments.php:58
+msgid "Comments"
+msgstr "Comentaris"
+
+#: comments.php:54
+msgid "Older"
+msgstr "Més antics"
+
+#: pagination.php:4
+msgid "Newer posts"
+msgstr "Entrades més recents"
+
+#: pagination.php:3
+msgid "Older posts"
+msgstr "Entrades anteriors"
+
+#: 404.php:15
+msgid "It seems like you have tried to open a page that doesn't exist. It could have been deleted, moved, or it never existed at all. You are welcome to search for what you are looking for with the form below."
+msgstr "La pàgina que heu sol·licitat no existeix. Pot haver estat eliminada, moguda o que mai hagi existit. Podeu fer una cerca amb el formulari següent per intentar-la localitzar."
+
+#: 404.php:10
+msgid "Error 404"
+msgstr "Error 404 "
+
+#. Author URI of the theme
+#: style.css
+#, gp-priority: low
+msgid "https://andersnoren.se"
+msgstr "https://andersnoren.se"
+
+#. Author of the theme
+#: style.css
+#, gp-priority: low
+msgid "Anders Norén"
+msgstr "Anders Norén"
+
+#. Theme URI of the theme
+#: style.css
+#, gp-priority: low
+msgid "https://andersnoren.se/teman/fukasawa-wordpress-theme/"
+msgstr "https://andersnoren.se/teman/fukasawa-wordpress-theme/"
