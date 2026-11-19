@@ -4,6 +4,9 @@
  * Manages all the actions in the settings page
  */
 function xmm_settings() {
+    if ( ! current_user_can( 'manage_network_options' ) ) {
+        wp_die( esc_html__( 'Sorry, you are not allowed to access this page.' ), '', [ 'response' => 403 ] );
+    }
 
     // Check if we have to save params
     $saved = false;

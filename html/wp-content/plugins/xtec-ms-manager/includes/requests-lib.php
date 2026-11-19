@@ -5,6 +5,13 @@ const ITEMS_PER_PAGE = 30;
 
 function xmm_insert_request( $request_type_id, $request_comments ) {
 
+    // Only the active request types can be requested, as the form shows
+    $request_type = xmm_get_request_type( intval( $request_type_id ) );
+    if ( empty( $request_type ) || STATE_ACTIVE !== (int) $request_type['state'] ) {
+        xmm_log_to_user( false, '', __( 'Could not create the request', 'xmm' ) );
+        return false;
+    }
+
     // Get the info to save
     $user = wp_get_current_user();
     $blog_id = get_current_blog_id();

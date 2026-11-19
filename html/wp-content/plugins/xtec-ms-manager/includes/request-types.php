@@ -7,6 +7,9 @@ wp_register_script('request-js', plugins_url() . '/xtec-ms-manager/javascript/re
 wp_enqueue_script('request-js');
 
 function xmm_request_types() {
+    if ( ! current_user_can( 'manage_network_options' ) ) {
+        wp_die( esc_html__( 'Sorry, you are not allowed to access this page.' ), '', [ 'response' => 403 ] );
+    }
 
     // Remove automatic added quotes
     $_POST = array_map('stripslashes', $_POST);

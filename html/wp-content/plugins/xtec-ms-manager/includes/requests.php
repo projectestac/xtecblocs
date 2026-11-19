@@ -11,6 +11,9 @@ wp_enqueue_script('request-js');
  * Manages all the actions in the network side
  */
 function xmm_requests() {
+    if ( ! current_user_can( 'manage_network_options' ) ) {
+        wp_die( esc_html__( 'Sorry, you are not allowed to access this page.' ), '', [ 'response' => 403 ] );
+    }
 
     // Check for view request
     if (isset($_GET['request-id']) && !empty($_GET['request-id']) && isset($_GET['view']) && ($_GET['view'] == 1)) {
@@ -63,6 +66,9 @@ function xmm_requests() {
  * Manages all the actions in the blog side
  */
 function xmm_blog_requests() {
+    if ( ! current_user_can( 'manage_options' ) ) {
+        wp_die( esc_html__( 'Sorry, you are not allowed to access this page.' ), '', [ 'response' => 403 ] );
+    }
 
     // Check for insert request
     if (isset($_POST['select-request']) && !empty($_POST['select-request']) && isset($_POST['insert']) && ($_POST['insert'] == 1)) {

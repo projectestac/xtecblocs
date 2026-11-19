@@ -1,6 +1,10 @@
 <?php
 
 function xmm_main() {
+    if ( ! current_user_can( 'manage_network_options' ) ) {
+        wp_die( esc_html__( 'Sorry, you are not allowed to access this page.' ), '', [ 'response' => 403 ] );
+    }
+
     echo '<div class="wrap">';
     show_title( __( 'XTEC Multisite Manager', 'xmm' ) );
     show_subtitle( '<a href="' . network_admin_url( 'admin.php?page=xmm-sql' ) . '">' . __( 'SQL execution', 'xmm' ) . '</a>' );

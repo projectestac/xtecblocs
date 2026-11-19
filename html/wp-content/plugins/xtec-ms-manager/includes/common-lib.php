@@ -94,7 +94,16 @@ function show_subtitle( $subtitle ) {
  */
 function xmm_add_quota_request_to_dashboard() {
 
+    // Only the administrators of the blog can make requests
+    if ( ! current_user_can( 'manage_options' ) ) {
+        return;
+    }
+
     $quota = get_space_allowed();
+    if ( $quota <= 0 ) {
+        return;
+    }
+
     $used = get_space_used();
     $blog_usage = round(($used / $quota) * 100, 2);
     $xmm_quota_percentage = get_site_option( 'xmm_quota_percentage' );

@@ -6,6 +6,9 @@ define('XMM_MAX_BLOG_NUMBER', '1000000');
 require_once 'sql-exec-lib.php'; // SQL execution lib
 
 function xmm_sql() {
+    if ( ! current_user_can( 'manage_network_options' ) ) {
+        wp_die( esc_html__( 'Sorry, you are not allowed to access this page.' ), '', [ 'response' => 403 ] );
+    }
 
     set_time_limit(3600); // Limit of execution time: 1 hour
 
