@@ -14,13 +14,13 @@ function xmm_requests() {
 
     // Check for view request
     if (isset($_GET['request-id']) && !empty($_GET['request-id']) && isset($_GET['view']) && ($_GET['view'] == 1)) {
-        xmm_view_request($_GET['request-id']);
+        xmm_view_request( intval( $_GET['request-id'] ) );
         return ;
     }
 
     // Check for edit request (show the form)
     if (isset($_GET['request-id']) && !empty($_GET['request-id']) && isset($_GET['edit']) && ($_GET['edit'] == 1)) {
-        xmm_edit_request($_GET['request-id']);
+        xmm_edit_request( intval( $_GET['request-id'] ) );
         return ;
     }
 
@@ -48,7 +48,7 @@ function xmm_requests() {
 
     // Check for delete request
     if (isset($_GET['request-id']) && !empty($_GET['request-id']) && isset($_GET['delete']) && ($_GET['delete'] == 1)) {
-        xmm_delete_request($_GET['request-id']);
+        xmm_delete_request( intval( $_GET['request-id'] ) );
     }
 
     // Show the list of requests
@@ -84,7 +84,7 @@ function xmm_blog_requests() {
 
     // Check for view request (Show form)
     if (isset($_GET['request-id']) && !empty($_GET['request-id']) && isset($_GET['view']) && ($_GET['view'] = 1)) {
-        xmm_view_request($_GET['request-id']);
+        xmm_view_request( intval( $_GET['request-id'] ) );
         return ;
     }
 

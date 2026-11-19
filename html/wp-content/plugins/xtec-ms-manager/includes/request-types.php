@@ -25,14 +25,14 @@ function xmm_request_types() {
 
     // Check for edit request (show the form)
     if (isset($_GET['type-id']) && !empty($_GET['type-id']) && isset($_GET['edit']) && ($_GET['edit'] == 1)) {
-        xmm_edit_request_type($_GET['type-id']);
+        xmm_edit_request_type( intval( $_GET['type-id'] ) );
         return;
     }
 
     // Check for update request
     if (isset($_GET['type-id']) && !empty($_GET['type-id']) && isset($_POST['request-type-state']) && isset($_POST['update']) && ($_POST['update'] == 1)) {
         $request_type = array(
-            'id' => $_GET['type-id'],
+            'id' => intval( $_GET['type-id'] ),
             'state' => $_POST['request-type-state'],
             'name' => $_POST['request-type-name'],
             'description' => $_POST['description'],
@@ -44,7 +44,7 @@ function xmm_request_types() {
 
     // Check for delete request
     if (isset($_GET['type-id']) && !empty($_GET['type-id']) && isset($_GET['delete']) && ($_GET['delete'] == 1)) {
-        xmm_delete_request_type($_GET['type-id']);
+        xmm_delete_request_type( intval( $_GET['type-id'] ) );
     }
 
     // Show the list of request types

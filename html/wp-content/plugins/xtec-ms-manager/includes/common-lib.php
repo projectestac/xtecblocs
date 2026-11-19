@@ -103,7 +103,7 @@ function xmm_add_quota_request_to_dashboard() {
     if ($blog_usage >= $xmm_quota_percentage) {
         echo '<ul id="xmm-blog-quota-request">'
             . '<li class="warning">'
-            . '<a href="' . add_query_arg('page', 'xmm-blog-requests', 'tools.php') . '">' . __('Request the extension of the quota', 'xmm') . '</a>'
+            . '<a href="' . esc_url( add_query_arg( 'page', 'xmm-blog-requests', 'tools.php' ) ) . '">' . __('Request the extension of the quota', 'xmm') . '</a>'
             . '</li>'
             . '</ul>';
     }
@@ -158,19 +158,19 @@ function xmm_print_pager( $current_page, $last_page ) {
 
         // Quick access to previous page
         if (( 1 == $i && empty( $current ))) {
-            echo '<a class="next page-numbers" href="' . add_query_arg( 'current_page', $current_page-1 ) . '">&laquo;</a>&nbsp;';
+            echo '<a class="next page-numbers" href="' . esc_url( add_query_arg( 'current_page', $current_page-1 ) ) . '">&laquo;</a>&nbsp;';
         }
 
         if ( !empty( $current )) {
             // Show the number of the current page
-            echo '<span class="page-numbers current">' . $i . '</span>&nbsp';
+            echo '<span class="page-numbers current">' . intval( $i ) . '</span>&nbsp;';
         } else {
             // Three conditions where page number is shown:
             // 1.- The first NUM_ELEMS_TO_SHOW pages
             // 2.- The previous and following pages of the current page
             // 3.- The last NUM_ELEMS_TO_SHOW pages
             if ((( $elems_pre < NUM_ELEMS_TO_SHOW ) && $before ) || (( $last_page - $i ) < NUM_ELEMS_TO_SHOW ) || ( abs( $current_page - $i ) == 1 )) {
-                echo '<a class="next page-numbers" href="' . add_query_arg('current_page', $i) . '">' . $i . '</a>&nbsp;';
+                echo '<a class="next page-numbers" href="' . esc_url( add_query_arg( 'current_page', $i ) ) . '">' . intval( $i ) . '</a>&nbsp;';
             }
 
             if ( $before ) {
@@ -180,7 +180,7 @@ function xmm_print_pager( $current_page, $last_page ) {
 
         // Quick access to next page
         if (( $last_page == $i && empty( $current ))) {
-            echo '<a class="next page-numbers" href="' . add_query_arg( 'current_page', $current_page+1 ) . '">&raquo;</a>&nbsp;';
+            echo '<a class="next page-numbers" href="' . esc_url( add_query_arg( 'current_page', $current_page+1 ) ) . '">&raquo;</a>&nbsp;';
         }
     }
 
@@ -209,10 +209,10 @@ function xmm_send_email( $type, $args ) {
             $time = DateTime::createFromFormat( "Y-m-d H:i:s", $request[ 'time_creation' ]);
 
             $email_text = '<p style="margin-left:1.5em;">' . __( 'Dear request admin,', 'xmm' ) . '</p><p>' . __( 'There is a new request pending to be attended:', 'xmm' );
-            $email_text .= '<ul><li><strong>' . __( 'Request Type', 'xmm' ) . '</strong>: ' . $request_type[ 'name' ] . '</li>';
-            $email_text .= '<li><strong>' . __( 'User', 'xmm' ) . '</strong>: ' . $request[ 'display_name' ] . ' (' . $request[ 'user_login' ] . ' - ' . $request[ 'user_email' ] . ')</li>';
+            $email_text .= '<ul><li><strong>' . __( 'Request Type', 'xmm' ) . '</strong>: ' . esc_html( $request_type[ 'name' ] ) . '</li>';
+            $email_text .= '<li><strong>' . __( 'User', 'xmm' ) . '</strong>: ' . esc_html( $request[ 'display_name' ] . ' (' . $request[ 'user_login' ] . ' - ' . $request[ 'user_email' ] . ')' ) . '</li>';
             $email_text .= '<li><strong>' . __('Registration Time', 'xmm') . '</strong>: ' . $time->format("d-m-Y H:i") . '</li>';
-            $email_text .= '<li><strong>' . __('Comments', 'xmm') . '</strong>:<p style="font-style:italic;">' . $request[ 'comments' ] . '</p></li></ul>';
+            $email_text .= '<li><strong>' . __('Comments', 'xmm') . '</strong>:<p style="font-style:italic;">' . esc_html( $request[ 'comments' ] ) . '</p></li></ul>';
             $email_text .= '<p style="margin-top:2em;">' . __( 'Sincerely yours,', 'xmm' ) . '</p><p>' . __( 'XTECBlocs team', 'xmm' ) . '</p><p style="font-weight:bold;">' . __( 'P.S.: This is an automatic message, please don\'t reply', 'xmm' ) . '</p>';
 
             $recipient = get_site_option( 'xmm_email_addresses' );
@@ -241,7 +241,7 @@ function xmm_send_email( $type, $args ) {
 
             // Replace constants
             $tags = array( '##REQUESTTYPENAME##', '##BLOGURL##', '##REQUESTSTATE##', '##REQUESTRESPONSE##' );
-            $values = array( $request_type[ 'name' ], $blog_url, $request_state[ 1 ], $request[ 'response' ] );
+            $values = array( esc_html( $request_type[ 'name' ] ), esc_url( $blog_url ), esc_html( $request_state[ 1 ] ), esc_html( $request[ 'response' ] ) );
             $email_text = str_replace( $tags, $values, $email_text);
 
             $recipient = $request[ 'user_email'];
@@ -252,6 +252,7 @@ function xmm_send_email( $type, $args ) {
 
     restore_current_blog();
 
-    wp_mail( $recipient, $subject, $email_text );
+    // The message is HTML, with the data of the request escaped
+    wp_mail( $recipient, $subject, $email_text, array( 'Content-Type: text/html; charset=UTF-8' ) );
 
 }

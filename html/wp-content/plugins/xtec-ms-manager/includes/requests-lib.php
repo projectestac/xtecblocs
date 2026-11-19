@@ -171,13 +171,13 @@ function xmm_list_requests() {
         list($color, $state_desc) = xmm_get_request_state($request['state']);
 
         // Print the row
-        echo "<tr bgcolor=\"$color\">";
-        echo "<td>$request[id]</td>";
-        echo "<td><a href=\"$blog_details->siteurl/wp-admin/\" target=\"_blank\" title=\"$blog_details->blogname\">$blog_details->siteurl</a></td>";
-        echo "<td>$state_desc</td>";
-        echo "<td>$request[name]</td>";
-        echo "<td>$blog_usage %</td>";
-        echo "<td><span title='$request[display_name]'>$request[user_login]</span></td>";
+        echo '<tr bgcolor="' . esc_attr( $color ) . '">';
+        echo '<td>' . intval( $request['id'] ) . '</td>';
+        echo '<td><a href="' . esc_url( $blog_details->siteurl . '/wp-admin/' ) . '" target="_blank" title="' . esc_attr( $blog_details->blogname ) . '">' . esc_html( $blog_details->siteurl ) . '</a></td>';
+        echo '<td>' . esc_html( $state_desc ) . '</td>';
+        echo '<td>' . esc_html( $request['name'] ) . '</td>';
+        echo '<td>' . esc_html( $blog_usage ) . ' %</td>';
+        echo '<td><span title="' . esc_attr( $request['display_name'] ) . '">' . esc_html( $request['user_login'] ) . '</span></td>';
 
         // Process datetime
         if ($request['time_creation'] != '0000-00-00 00:00:00') {
@@ -195,13 +195,13 @@ function xmm_list_requests() {
 
         // Actions
         echo '<td>
-                  <a href="' . add_query_arg( array( 'view' => 1, 'request-id' => $request['id'] )) . '">
+                  <a href="' . esc_url( add_query_arg( array( 'view' => 1, 'request-id' => $request['id'] ))) . '">
                       <span class="dashicons dashicons-info"></span>
                   </a>
-                  <a id="xmm-edit-link-' . $request['id'] . '" href="' . remove_query_arg( array( 'insert', 'delete', 'new', 'update' ), add_query_arg( array( 'request-id' => $request['id'], 'edit' => 1 ))) . '")">
+                  <a id="xmm-edit-link-' . $request['id'] . '" href="' . esc_url( remove_query_arg( array( 'insert', 'delete', 'new', 'update' ), add_query_arg( array( 'request-id' => $request['id'], 'edit' => 1 )))) . '">
                       <span class="dashicons dashicons-edit"></span>
                   </a>
-                  <a id="xmm-del-link-' . $request['id'] . '" href="' . remove_query_arg( array( 'insert', 'delete', 'new', 'update' ), add_query_arg( array( 'request-id' => $request['id'] ))) . '" onclick="confirm_deletion(' . $request['id'] . ')">
+                  <a id="xmm-del-link-' . $request['id'] . '" href="' . esc_url( remove_query_arg( array( 'insert', 'delete', 'new', 'update' ), add_query_arg( array( 'request-id' => $request['id'] )))) . '" onclick="confirm_deletion(' . intval( $request['id'] ) . ')">
                       <span class="dashicons dashicons-dismiss"></span>
                   </a>
               </td>';
@@ -223,7 +223,7 @@ function xmm_list_blog_requests() {
     // Show the header
     echo '<div class="wrap">';
     $header = __( 'Requests', 'xmm' )
-        . '<a class="page-title-action" href="' . add_query_arg( 'new', 1 ) . '">'
+        . '<a class="page-title-action" href="' . esc_url( add_query_arg( 'new', 1 ) ) . '">'
         . __('New request', 'xmm')
         . '</a>';
     show_title( $header );
@@ -275,11 +275,11 @@ function xmm_list_blog_requests() {
         // Set background color and state description
         list($color, $state_desc) = xmm_get_request_state($request['state']);
 
-        echo "<tr bgcolor=\"$color\">";
-        echo "<td>$request[id]</td>";
-        echo "<td>$state_desc</td>";
-        echo "<td>$request[name]</td>";
-        echo "<td><span title='$request[display_name]'>$request[user_login]</span></td>";
+        echo '<tr bgcolor="' . esc_attr( $color ) . '">';
+        echo '<td>' . intval( $request['id'] ) . '</td>';
+        echo '<td>' . esc_html( $state_desc ) . '</td>';
+        echo '<td>' . esc_html( $request['name'] ) . '</td>';
+        echo '<td><span title="' . esc_attr( $request['display_name'] ) . '">' . esc_html( $request['user_login'] ) . '</span></td>';
 
         // Process datetime
         if ($request['time_creation'] != '0000-00-00 00:00:00') {
@@ -297,7 +297,7 @@ function xmm_list_blog_requests() {
 
         // Actions
         echo '<td>
-                  <a href="' . add_query_arg( array( 'view' => 1, 'request-id' => $request['id'] )) . '">
+                  <a href="' . esc_url( add_query_arg( array( 'view' => 1, 'request-id' => $request['id'] ))) . '">
                       <span class="dashicons dashicons-info"></span>
                   </a>
               </td>';
@@ -327,14 +327,14 @@ function xmm_new_request() {
 
     echo '<div class="wrap">';
     show_title( __( 'New Request', 'xmm' ) );
-    echo '<form action="' . add_query_arg('page', 'xmm-blog-requests', 'tools.php') . '" method="post">';
+    echo '<form action="' . esc_url( add_query_arg( 'page', 'xmm-blog-requests', 'tools.php' ) ) . '" method="post">';
 
     // Request type choice
     if (empty($results)) {
         echo '<div class="info">' . __('There are no available request types', 'xmm') . '</div>';
     } else {
         // Save info in javascript var for later ajax update
-        echo '<script> var dataResults = ' . json_encode($results) . '; </script>';
+        echo '<script> var dataResults = ' . wp_json_encode( $results, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) . '; </script>';
 
         // Build select dropdown menu for request type
         echo '<div id="xmm-select-request">';
@@ -342,7 +342,7 @@ function xmm_new_request() {
         echo '<select id="select-request" name="select-request">';
         echo '<option value="0" selected></option>';
         foreach ($results as $result) {
-            echo '<option value="' . $result['id'] .'">' . $result['name'] . '</option>';
+            echo '<option value="' . intval( $result['id'] ) . '">' . esc_html( $result['name'] ) . '</option>';
         }
         echo '</select>';
         echo '</div>';
@@ -370,12 +370,12 @@ function xmm_edit_request( $request_id ) {
     global $wpdb;
 
     // Get the request info
-    $request = $wpdb->get_results("
+    $request = $wpdb->get_results( $wpdb->prepare( "
         SELECT r.id, r.state, r.blog_id, r.user_id, r.user_login, r.display_name, r.user_email, r.time_creation, r.time_edition, r.comments, r.response, r.priv_notes, rt.name  
         FROM {$wpdb->prefix}requests r
         LEFT JOIN {$wpdb->prefix}request_types rt ON r.request_type_id = rt.id
-        WHERE r.id = $request_id
-        ", ARRAY_A );
+        WHERE r.id = %d
+        ", $request_id ), ARRAY_A );
 
     // If the request is not found or if there are many results, show an error and exit
     if (count($request) == 1) {
@@ -393,21 +393,21 @@ function xmm_edit_request( $request_id ) {
     // Show the request details
     echo '<div class="wrap">';
     echo '<h1>' . __( 'Request details', 'xmm' ) . '</h1>';
-    echo '<form action="' . remove_query_arg('edit') . '" method="post">';
+    echo '<form action="' . esc_url( remove_query_arg( 'edit' ) ) . '" method="post">';
     echo '<table class="form-table">';
     echo '<tbody><tr>';
 
     echo '<th scope="row">' . __('Request Type', 'xmm') . '</th>';
-    echo "<td>$request[name]</td>";
+    echo '<td>' . esc_html( $request['name'] ) . '</td>';
     echo '</tr><tr>';
 
     $blog_details = get_blog_details($request['blog_id']);
     echo '<th scope="row">' . __('URL', 'xmm') . '</th>';
-    echo "<td><a href=\"$blog_details->siteurl/wp-admin/\" target=\"_blank\" title=\"$blog_details->blogname\">$blog_details->siteurl</a></td>";
+    echo '<td><a href="' . esc_url( $blog_details->siteurl . '/wp-admin/' ) . '" target="_blank" title="' . esc_attr( $blog_details->blogname ) . '">' . esc_html( $blog_details->siteurl ) . '</a></td>';
     echo '</tr><tr>';
 
     echo '<th scope="row">' . __('User', 'xmm') . '</th>';
-    echo "<td>$request[display_name] ($request[user_login] - $request[user_email])</td>";
+    echo '<td>' . esc_html( $request['display_name'] . ' (' . $request['user_login'] . ' - ' . $request['user_email'] . ')' ) . '</td>';
     echo '</tr><tr>';
 
     echo '<th scope="row">' . __('Registration Time', 'xmm') . '</th>';
@@ -420,7 +420,7 @@ function xmm_edit_request( $request_id ) {
     echo '</tr><tr>';
 
     echo '<th scope="row">' . __('Comments', 'xmm') . '</th>';
-    echo "<td>$request[comments]</td>";
+    echo '<td>' . esc_html( $request['comments'] ) . '</td>';
     echo '</tr><tr>';
 
     echo '</tr></tbody></table><hr />';
@@ -436,7 +436,7 @@ function xmm_edit_request( $request_id ) {
     echo '<option id="0"></option>';
     foreach ($states as $key => $state) {
         $selected = ($request['state'] == $key) ? ' selected="selected"' : '';
-        echo '<option id="' . $key . '" value="' . $key . '"' . $selected . '>' . $state['desc'] . '</option>';
+        echo '<option id="' . intval( $key ) . '" value="' . intval( $key ) . '"' . $selected . '>' . esc_html( $state['desc'] ) . '</option>';
     }
     echo '</select></td>';
     echo '</tr><tr>';
@@ -451,11 +451,11 @@ function xmm_edit_request( $request_id ) {
     echo '</tr><tr>';
 
     echo '<th scope="row">' . __('Response', 'xmm') . '</th>';
-    echo "<td><textarea name=\"response\" id=\"request-response\">$request[response]</textarea></td>";
+    echo '<td><textarea name="response" id="request-response">' . esc_textarea( $request['response'] ) . '</textarea></td>';
 
     echo '</tr><tr>';
     echo '<th scope="row">' . __('Private notes (only seen by administrators)', 'xmm') . '</th>';
-    echo "<td><textarea name=\"priv_notes\" id=\"request-priv_notes\">$request[priv_notes]</textarea></td>";
+    echo '<td><textarea name="priv_notes" id="request-priv_notes">' . esc_textarea( $request['priv_notes'] ) . '</textarea></td>';
 
     echo '</tr></tbody></table>';
 
@@ -474,22 +474,25 @@ function xmm_view_request( $request_id ) {
 
     $is_network_admin = is_network_admin();
 
+    // Blog admins can only see the requests of their blog
     $additional_condition = '';
+    $values = array( $request_id );
     if (!$is_network_admin) {
         $blog_id = get_current_blog_id();
-        $additional_condition = "AND r.blog_id = $blog_id";
+        $additional_condition = 'AND r.blog_id = %d';
+        $values[] = $blog_id;
     }
 
     switch_to_blog(1);
 
     // Get the request info
-    $request = $wpdb->get_results("
+    $request = $wpdb->get_results( $wpdb->prepare( "
         SELECT r.id, r.state, r.blog_id, r.user_id, r.user_login, r.display_name, r.user_email, r.time_creation, r.time_edition, r.comments, r.response, r.priv_notes, rt.name  
         FROM {$wpdb->prefix}requests r
         LEFT JOIN {$wpdb->prefix}request_types rt ON r.request_type_id = rt.id
-        WHERE r.id = $request_id $additional_condition
+        WHERE r.id = %d $additional_condition
         ORDER BY r.state, r.time_edition
-        ", ARRAY_A );
+        ", $values ), ARRAY_A );
 
     restore_current_blog();
 
@@ -515,18 +518,18 @@ function xmm_view_request( $request_id ) {
     echo '<tbody><tr>';
 
     echo '<th scope="row">' . __('Request Type', 'xmm') . '</th>';
-    echo "<td>$request[name]</td>";
+    echo '<td>' . esc_html( $request['name'] ) . '</td>';
     echo '</tr><tr>';
 
     if ($is_network_admin) {
         $blog_details = get_blog_details($request['blog_id']);
         echo '<th scope="row">' . __('URL', 'xmm') . '</th>';
-        echo "<td><a href=\"$blog_details->siteurl/wp-admin/\" target=\"_blank\" title=\"$blog_details->blogname\">$blog_details->siteurl</a></td>";
+        echo '<td><a href="' . esc_url( $blog_details->siteurl . '/wp-admin/' ) . '" target="_blank" title="' . esc_attr( $blog_details->blogname ) . '">' . esc_html( $blog_details->siteurl ) . '</a></td>';
         echo '</tr><tr>';
     }
 
     echo '<th scope="row">' . __('User', 'xmm') . '</th>';
-    echo "<td>$request[display_name] ($request[user_login] - $request[user_email])</td>";
+    echo '<td>' . esc_html( $request['display_name'] . ' (' . $request['user_login'] . ' - ' . $request['user_email'] . ')' ) . '</td>';
     echo '</tr><tr>';
 
     echo '<th scope="row">' . __('Registration Time', 'xmm') . '</th>';
@@ -539,7 +542,7 @@ function xmm_view_request( $request_id ) {
     echo '</tr><tr>';
 
     echo '<th scope="row">' . __('Comments', 'xmm') . '</th>';
-    echo "<td>$request[comments]</td>";
+    echo '<td>' . esc_html( $request['comments'] ) . '</td>';
     echo '</tr><tr>';
 
     echo '</tr></tbody></table><hr />';
@@ -550,7 +553,7 @@ function xmm_view_request( $request_id ) {
     echo '<tbody><tr>';
 
     echo '<th scope="row">' . __('State', 'xmm') . '</th>';
-    echo "<td bgcolor=\"$color\">$state_desc</td>";
+    echo '<td bgcolor="' . esc_attr( $color ) . '">' . esc_html( $state_desc ) . '</td>';
     echo '</tr><tr>';
 
     if ($request['time_edition'] != '0000-00-00 00:00:00') {
@@ -561,24 +564,24 @@ function xmm_view_request( $request_id ) {
     }
 
     echo '<th scope="row">' . __('Response', 'xmm') . '</th>';
-    echo "<td>$request[response]</td>";
+    echo '<td>' . esc_html( $request['response'] ) . '</td>';
 
     if ($is_network_admin) {
         echo '</tr><tr>';
         echo '<th scope="row">' . __('Private notes (only seen by administrators)', 'xmm') . '</th>';
-        echo "<td>$request[priv_notes]</td>";
+        echo '<td>' . esc_html( $request['priv_notes'] ) . '</td>';
     }
 
     echo '</tr></tbody></table>';
 
     if ($is_network_admin) {
-        echo '<a href="' . remove_query_arg( 'view', add_query_arg( array( 'request-id' => $request['id'], 'edit' => 1 ))) . '" class="button button-primary">' . __('Edit the request', 'xmm') .'</a>';
+        echo '<a href="' . esc_url( remove_query_arg( 'view', add_query_arg( array( 'request-id' => $request['id'], 'edit' => 1 )))) . '" class="button button-primary">' . __('Edit the request', 'xmm') .'</a>';
         echo '&nbsp;&nbsp;';
     }
 
     $url = ($is_network_admin) ? network_admin_url('admin.php') . '?page=xmm-requests' : get_admin_url( $blog_id) . 'tools.php?page=xmm-blog-requests';
 
-    echo '<a href="' . $url . '" class="button button-primary">' . __('Back to the request list', 'xmm') .'</a>';
+    echo '<a href="' . esc_url( $url ) . '" class="button button-primary">' . __('Back to the request list', 'xmm') .'</a>';
     echo '</div>';
 
     return ;
@@ -632,11 +635,11 @@ function xmm_get_request( $id ) {
 
     switch_to_blog( 1 );
 
-    $request = $wpdb->get_row("
+    $request = $wpdb->get_row( $wpdb->prepare( "
         SELECT *  
         FROM $wpdb->prefix" . "requests r
-        WHERE r.id = $id
-        ",
+        WHERE r.id = %d
+        ", $id ),
         ARRAY_A,
         0);
 

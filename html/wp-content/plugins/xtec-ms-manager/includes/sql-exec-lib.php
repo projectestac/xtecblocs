@@ -130,8 +130,8 @@ function print_error() {
     global $wpdb;
 
     echo '<div style="color:red;">';
-    echo __( 'An error has ocurred in sentence', 'xmm' ) . ': <code>' . $wpdb->last_query . '</code><br />';
-    echo __( 'Error description', 'xmm' ) . ': <code>' . $wpdb->last_error . '</code><br>';
+    echo __( 'An error has ocurred in sentence', 'xmm' ) . ': <code>' . esc_html( $wpdb->last_query ) . '</code><br />';
+    echo __( 'Error description', 'xmm' ) . ': <code>' . esc_html( $wpdb->last_error ) . '</code><br>';
     echo '</div>';
 }
 
@@ -148,13 +148,13 @@ function print_data( $headers, $data ) {
                 <tr valign="top">
         ';
     foreach ( $headers as $value ) {
-        echo "<th>$value</th>";
+        echo '<th>' . esc_html( $value ) . '</th>';
     }
     echo '</tr>';
     foreach ( $data as $row ) {
         echo '<tr>';
         foreach ( $row as $value ) {
-            echo "<td>$value</td>";
+            echo '<td>' . esc_html( $value ) . '</td>';
         }
         echo '</tr>';
     }
@@ -187,8 +187,8 @@ function print_summary( $summary ) {
 
     foreach ( $summary as $value => $number ) {
         echo '<tr>';
-        echo '<td>' . $value . '</td>';
-        echo '<td align="right">' . $number . '</td>';
+        echo '<td>' . esc_html( $value ) . '</td>';
+        echo '<td align="right">' . intval( $number ) . '</td>';
         echo '</tr>';
 
         $sum += $number;
@@ -198,11 +198,11 @@ function print_summary( $summary ) {
     }
 
     // Print the sum of all the numbers in the table
-    echo '<tr style="border-top:5px solid;"><td><strong>' . __( 'Sum of ocurrences', 'xmm' ) . '</strong></td><td align="right"><strong>' . $sum . '</strong></td></tr>';
+    echo '<tr style="border-top:5px solid;"><td><strong>' . __( 'Sum of ocurrences', 'xmm' ) . '</strong></td><td align="right"><strong>' . intval( $sum ) . '</strong></td></tr>';
 
     if ( $sum_product > 0 ) {
         // Print the sum products of all the numbers in the table
-        echo '<tr><td><strong>' . __( 'Sum of ocurrences x value', 'xmm' ) . '</strong></td><td align="right"><strong>' . $sum_product . '</strong></td></tr>';
+        echo '<tr><td><strong>' . __( 'Sum of ocurrences x value', 'xmm' ) . '</strong></td><td align="right"><strong>' . esc_html( $sum_product ) . '</strong></td></tr>';
     }
 
     echo '</tbody>';

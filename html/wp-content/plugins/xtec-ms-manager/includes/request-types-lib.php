@@ -91,7 +91,7 @@ function xmm_list_request_types() {
 
     echo '<div class="wrap">';
     $header = __( 'Request Types', 'xmm' )
-        . '<a class="page-title-action" href="' . remove_query_arg( array( 'type-id', 'insert', 'edit', 'delete', 'update' ), add_query_arg( 'new', 1 )) . '">'
+        . '<a class="page-title-action" href="' . esc_url( remove_query_arg( array( 'type-id', 'insert', 'edit', 'delete', 'update' ), add_query_arg( 'new', 1 ))) . '">'
         . __('New request type', 'xmm')
         . '</a>';
     show_title( $header );
@@ -126,21 +126,21 @@ function xmm_list_request_types() {
         list($color, $state_desc) = xmm_get_request_type_state($type['state']);
 
         // Print the row
-        echo "<tr bgcolor=\"$color\">";
-        echo "<td>$type[id]</td>";
-        echo "<td>$type[name]</td>";
-        echo "<td>$state_desc</td>";
-        echo "<td>$type[description]</td>";
-        echo "<td>$type[comments_text]</td>";
+        echo '<tr bgcolor="' . esc_attr( $color ) . '">';
+        echo '<td>' . intval( $type['id'] ) . '</td>';
+        echo '<td>' . esc_html( $type['name'] ) . '</td>';
+        echo '<td>' . esc_html( $state_desc ) . '</td>';
+        echo '<td>' . esc_html( $type['description'] ) . '</td>';
+        echo '<td>' . esc_html( $type['comments_text'] ) . '</td>';
 
         // Actions
         echo '<td>
                   <a id="xmm-edit-link-' . $type['id'] . '" 
-                     href="' . remove_query_arg( array( 'insert', 'delete', 'new', 'update' ), add_query_arg( array( 'type-id' => $type['id'], 'edit' => 1 ))) . '")">
+                     href="' . esc_url( remove_query_arg( array( 'insert', 'delete', 'new', 'update' ), add_query_arg( array( 'type-id' => $type['id'], 'edit' => 1 )))) . '">
                       <span class="dashicons dashicons-edit"></span>
                   </a>
                   <a id="xmm-del-link-' . $type['id'] . '" 
-                     href="' . remove_query_arg( array( 'insert', 'delete', 'new', 'update' ), add_query_arg( array( 'type-id' => $type['id'] ))) . '" onclick="confirm_deletion(' . $type['id'] . ')">
+                     href="' . esc_url( remove_query_arg( array( 'insert', 'delete', 'new', 'update' ), add_query_arg( array( 'type-id' => $type['id'] )))) . '" onclick="confirm_deletion(' . intval( $type['id'] ) . ')">
                       <span class="dashicons dashicons-dismiss"></span>
                   </a>
               </td>';
@@ -160,7 +160,7 @@ function xmm_new_request_type() {
 
     echo '<div class="wrap">';
     show_title( __( 'New Request Type', 'xmm' ) );
-    echo '<form action="' . remove_query_arg( 'new', add_query_arg( 'insert', 1 )) . '" method="post">';
+    echo '<form action="' . esc_url( remove_query_arg( 'new', add_query_arg( 'insert', 1 ))) . '" method="post">';
 
     echo '<table class="form-table">';
     echo '<tbody><tr>';
@@ -174,7 +174,7 @@ function xmm_new_request_type() {
     echo '<td><select name="request-type-state">';
     echo '<option id="0"></option>';
     foreach ($states as $key => $state) {
-        echo '<option id="' . $key . '" value="' . $key . '">' . $state['desc'] . '</option>';
+        echo '<option id="' . intval( $key ) . '" value="' . intval( $key ) . '">' . esc_html( $state['desc'] ) . '</option>';
     }
     echo '</select></td>';
     echo '</tr><tr>';
@@ -201,11 +201,11 @@ function xmm_edit_request_type( $type_id ) {
     global $wpdb;
 
     // Get the request type info
-    $request_type = $wpdb->get_results("
+    $request_type = $wpdb->get_results( $wpdb->prepare( "
         SELECT *  
         FROM $wpdb->prefix" . "request_types rt
-        WHERE rt.id = $type_id
-        ", ARRAY_A );
+        WHERE rt.id = %d
+        ", $type_id ), ARRAY_A );
 
     // If the request type is not found or if there are many results, show an error and exit
     if (count($request_type) == 1) {
@@ -223,12 +223,12 @@ function xmm_edit_request_type( $type_id ) {
     // Show the request details
     echo '<div class="wrap">';
     show_title( __( 'Request type edition', 'xmm' ));
-    echo '<form action="' . remove_query_arg('edit') . '" method="post">';
+    echo '<form action="' . esc_url( remove_query_arg( 'edit' ) ) . '" method="post">';
     echo '<table class="form-table">';
     echo '<tbody><tr>';
 
     echo '<th scope="row">' . __('Request type name', 'xmm') . '</th>';
-    echo "<td><input type=\"text\" name=\"request-type-name\" value=\"$request_type[name]\" /></td>";
+    echo '<td><input type="text" name="request-type-name" value="' . esc_attr( $request_type['name'] ) . '" /></td>';
     echo '</tr><tr>';
 
     $states = xmm_get_request_type_states();
@@ -237,17 +237,17 @@ function xmm_edit_request_type( $type_id ) {
     echo '<option id="0"></option>';
     foreach ($states as $key => $state) {
         $selected = ($request_type['state'] == $key) ? ' selected="selected"' : '';
-        echo '<option id="' . $key . '" value="' . $key . '"' . $selected . '>' . $state['desc'] . '</option>';
+        echo '<option id="' . intval( $key ) . '" value="' . intval( $key ) . '"' . $selected . '>' . esc_html( $state['desc'] ) . '</option>';
     }
     echo '</select></td>';
     echo '</tr><tr>';
 
     echo '<th scope="row">' . __('Description', 'xmm') . '</th>';
-    echo "<td><textarea name=\"description\">$request_type[description]</textarea></td>";
+    echo '<td><textarea name="description">' . esc_textarea( $request_type['description'] ) . '</textarea></td>';
 
     echo '</tr><tr>';
     echo '<th scope="row">' . __('Text for optional comments field', 'xmm') . '</th>';
-    echo "<td><textarea name=\"comments_text\">$request_type[comments_text]</textarea></td>";
+    echo '<td><textarea name="comments_text">' . esc_textarea( $request_type['comments_text'] ) . '</textarea></td>';
 
     echo '</tr></tbody></table>';
 
@@ -301,11 +301,11 @@ function xmm_get_request_type( $id ) {
 
     switch_to_blog( 1 );
 
-    $request_type = $wpdb->get_row("
+    $request_type = $wpdb->get_row( $wpdb->prepare( "
         SELECT *  
         FROM $wpdb->prefix" . "request_types rt
-        WHERE rt.id = $id
-        ",
+        WHERE rt.id = %d
+        ", $id ),
         ARRAY_A,
         0);
 

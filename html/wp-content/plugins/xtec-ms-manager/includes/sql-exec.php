@@ -28,13 +28,13 @@ function xmm_sql() {
             unset( $_SESSION['selected_sites'] );
 
             ?>
-            <form method="post" action="<?php echo add_query_arg( 'action', 'step2' ); ?>">
+            <form method="post" action="<?php echo esc_url( add_query_arg( 'action', 'step2' ) ); ?>">
                 <table class="form-table">
                     <tbody>
                     <tr valign="top">
                         <th scope="row"><?php _e( 'SQL sentence', 'xmm' ); ?></th>
                         <td>
-                            <textarea rows="10" name="xmm-sql"><?php echo $xmm_sql; ?></textarea>
+                            <textarea rows="10" name="xmm-sql"><?php echo esc_textarea( $xmm_sql ); ?></textarea>
                             <p id="xmm-sql-desc" class="description">
                                 <?php _e( 'Use the keyword <code>[prefix]</code> to get the proper blog prefix (wp_, wp_1_, wp_2_, ...)', 'xmm' ); ?>
                             </p>
@@ -61,11 +61,11 @@ function xmm_sql() {
             $xmm_blogid_list   = get_xmm_param( 'xmm-blogid-list' );
             $xmm_blogname_list = get_xmm_param( 'xmm-blogname-list' );
 
-            echo '<div id="xmm-sql" class="info"><strong>' . __( 'SQL sentence', 'xmm' ) . '</strong>: ' . $sql . '</div>';
+            echo '<div id="xmm-sql" class="info"><strong>' . __( 'SQL sentence', 'xmm' ) . '</strong>: ' . esc_html( $sql ) . '</div>';
 
             ?>
 
-            <form method="post" action="<?php echo add_query_arg('action', 'step3'); ?>">
+            <form method="post" action="<?php echo esc_url( add_query_arg( 'action', 'step3' ) ); ?>">
                 <ul id="xmm-step2-list">
                     <li class="depth1">
                         <input id="option1" type="radio" name="xmm-select-blogs" value="main_db" <?php if ('main_db' == $xmm_select_blogs) { echo 'checked="checked"'; } ?>/>
@@ -84,7 +84,7 @@ function xmm_sql() {
                         <label for="option3">
                             <?php _e('Blogs that match this query', 'xmm'); ?>
                             <br/>
-                            <textarea id="xmm-match-query" name="xmm-match-query" rows="4"><?php echo $xmm_match_query; ?></textarea>
+                            <textarea id="xmm-match-query" name="xmm-match-query" rows="4"><?php echo esc_textarea( $xmm_match_query ); ?></textarea>
                             <p id="xmm-match-query-desc" class="description desc_textarea">
                                 <?php _e('Use the keyword <code>[prefix]</code> to get the proper blog prefix (wp_, wp_1_, wp_2_, ...)', 'xmm'); ?>
                             </p>
@@ -100,7 +100,7 @@ function xmm_sql() {
                                     echo '&nbsp;';
                                     _e('(Comma separated. Ranges allowed in the form 1-5)', 'xmm'); ?>
                                 </div>
-                                <textarea id="xmm-blogid-list" name="xmm-blogid-list" rows="4"><?php echo $xmm_blogid_list; ?></textarea>
+                                <textarea id="xmm-blogid-list" name="xmm-blogid-list" rows="4"><?php echo esc_textarea( $xmm_blogid_list ); ?></textarea>
                             </div>
                             <div class="xmm-textarea">
                                 <div class="xmm-textarea-title">
@@ -108,7 +108,7 @@ function xmm_sql() {
                                     echo '&nbsp;';
                                     _e('(Comma separated)', 'xmm'); ?>
                                 </div>
-                                <textarea id="xmm-blogname-list" name="xmm-blogname-list" rows="4"><?php echo $xmm_blogname_list; ?></textarea>
+                                <textarea id="xmm-blogname-list" name="xmm-blogname-list" rows="4"><?php echo esc_textarea( $xmm_blogname_list ); ?></textarea>
                             </div>
                         </label>
                     </li>
@@ -188,9 +188,9 @@ function xmm_sql() {
             ?>
 
             <div id="xmm-sql" class="info">
-                <p><strong><?php _e('SQL sentence', 'xmm'); ?></strong>: <code><?php echo $xmm_sql ?></code></p>
+                <p><strong><?php _e('SQL sentence', 'xmm'); ?></strong>: <code><?php echo esc_html( $xmm_sql ) ?></code></p>
                 <?php if (('query' == $xmm_select_blogs) && !empty($xmm_match_query)) { ?>
-                    <p><strong><?php _e('SQL match sentence', 'xmm'); ?></strong>: <code><?php echo $xmm_match_query ?></code></p>
+                    <p><strong><?php _e('SQL match sentence', 'xmm'); ?></strong>: <code><?php echo esc_html( $xmm_match_query ) ?></code></p>
                 <?php } elseif ('main_db' == $xmm_select_blogs) { ?>
                     <p><strong><?php _e('Execute in main database', 'xmm'); ?></strong></p>
                 <?php } elseif ('all' == $xmm_select_blogs) { ?>
@@ -199,7 +199,7 @@ function xmm_sql() {
                     <div><strong><?php _e('Selected blogs', 'xmm'); ?></strong>:
                         <ul>
                             <?php foreach ($_SESSION['selected_sites'] as $site) { ?>
-                                <li><?php echo '(' . $site['blog_id'] . ') ' . $site['path'] ?></li>
+                                <li><?php echo esc_html( '(' . $site['blog_id'] . ') ' . $site['path'] ) ?></li>
                             <?php } ?>
                         </ul>
                     </div>
@@ -208,7 +208,7 @@ function xmm_sql() {
 
             <?php
 
-            echo '<form method="post" action="' . add_query_arg( 'action', 'step4' ) . '">';
+            echo '<form method="post" action="' . esc_url( add_query_arg( 'action', 'step4' ) ) . '">';
             submit_button( __( 'Execute SQL now!', 'xmm' ), 'primary', 'xmm-submit', true );
 
             ?>
@@ -236,9 +236,9 @@ function xmm_sql() {
 
             ?>
             <div id="xmm-sql" class="info">
-                <p><strong><?php _e('SQL sentence', 'xmm'); ?></strong>: <code><?php echo $xmm_sql ?></code></p>
+                <p><strong><?php _e('SQL sentence', 'xmm'); ?></strong>: <code><?php echo esc_html( $xmm_sql ) ?></code></p>
                 <?php if (('query' == $xmm_select_blogs) && !empty($xmm_match_query)) { ?>
-                    <p><strong><?php _e('SQL match sentence', 'xmm'); ?></strong>: <code><?php echo $xmm_match_query ?></code></p>
+                    <p><strong><?php _e('SQL match sentence', 'xmm'); ?></strong>: <code><?php echo esc_html( $xmm_match_query ) ?></code></p>
                 <?php } elseif ('main_db' == $xmm_select_blogs) { ?>
                     <p><strong><?php _e('Execute in main database', 'xmm'); ?></strong></p>
                 <?php } elseif ('all' == $xmm_select_blogs) { ?>
@@ -277,7 +277,7 @@ function xmm_sql() {
                     }
                 }
 
-                echo '(' . $site['blog_id'] . '): ' . $site['path'] . '&nbsp;';
+                echo esc_html( '(' . $site['blog_id'] . '): ' . $site['path'] ) . '&nbsp;';
 
                 if ( preg_match( "/^\\s*(select) /i", $sql_rendered ) ) {
                     $results = $wpdb->get_results( $sql_rendered, ARRAY_A );
@@ -298,7 +298,7 @@ function xmm_sql() {
                     elseif (is_numeric($results)) {
                         echo '<span style="color:green;">';
                         _e('Query executed successfully. Number of rows affected:', 'xmm');
-                        echo '&nbsp;' . $results . '</span><br />';
+                        echo '&nbsp;' . intval( $results ) . '</span><br />';
                     }
                     // SELECT
                     elseif (empty($results)) {

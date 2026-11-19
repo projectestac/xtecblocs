@@ -37,7 +37,7 @@ function xmm_settings() {
     echo '<tbody><tr>';
 
     echo '<th scope="row">' . __('Quota usage to allow ask for an extension', 'xmm') . '</th>';
-    echo '<td><input type="text" name="xmm-quota-percentage" value="' . $xmm_quota_percentage . '" />%</td>';
+    echo '<td><input type="text" name="xmm-quota-percentage" value="' . esc_attr( $xmm_quota_percentage ) . '" />%</td>';
     echo '</tr><tr>';
 
     echo '<th scope="row">' . __('Send e-mail messages when requests are created', 'xmm') . '</th>';
@@ -46,7 +46,7 @@ function xmm_settings() {
 
     echo '<th scope="row">' . __('E-email addresses to notify new requests', 'xmm') . '</th>';
     echo '<td>
-              <textarea name="xmm-email-addresses">' . $xmm_email_addresses . '</textarea>
+              <textarea name="xmm-email-addresses">' . esc_textarea( $xmm_email_addresses ) . '</textarea>
               <p class="description">' . __('Comma separated values', 'xmm') . '</p>
           </td>';
 
