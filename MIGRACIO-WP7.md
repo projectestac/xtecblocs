@@ -62,7 +62,7 @@ entorns de prova i tasques pendents.
 ### xtecblocsdefault (tema del portal)
 - Escapament de la sortida, correccions XSS, compatibilitat amb PHP 8, pràctiques del WordPress, HTML5, textos en català.
 - Dades del bloc de la setmana i accions de preferits mogudes a les extensions.
-- La portada s'ajusta a l'amplada de la finestra (amplada mínima de 800 px).
+- La portada té la mateixa amplada que a producció: la de la finestra, entre 990 i 1280 px, centrada.
 
 ### xtec-portal
 Descriptors, blocs preferits, darreres entrades i darrers blocs per al tema del portal.

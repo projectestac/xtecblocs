@@ -18,8 +18,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* The same width as the former layout: the width of the window, between 990 and 1280 pixels, centered */
 #wrapper {
-    min-width: 800px;
+    min-width: 990px;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
 #sidefooter {
@@ -948,15 +951,4 @@ tbody, thead, tfoot {
 #sidebar ul li a.sense-descriptors,
 #sidebar ul li a.sense-descriptors:hover {
     color: red;
-}
-
-/* The two columns of the sidebar are stacked when they are too narrow */
-@media (max-width: 1100px) {
-    #sideleft,
-    #sideright {
-        float: none;
-        width: auto;
-        margin: 0;
-        padding: 0;
-    }
 }
