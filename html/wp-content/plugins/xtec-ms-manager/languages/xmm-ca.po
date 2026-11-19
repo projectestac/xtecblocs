@@ -1,0 +1,516 @@
+# Copyright (C) 2016 Àrea TAC - Departament d'Ensenyament
+# This file is distributed under the GNU General Public License v3
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC Multisite Manager\n"
+"Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
+"POT-Creation-Date: 2016-11-03 13:46+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Toni Ginard <toni.ginard@gmail.com>\n"
+"Language-Team: Àgora <agora@xtec.cat>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: xtec-ms-manager.php:34
+msgid "Multisite Manager"
+msgstr "Gestor Multisite"
+
+#: xtec-ms-manager.php:35
+msgid "SQL"
+msgstr "SQL"
+
+#: xtec-ms-manager.php:36 xtec-ms-manager.php:42 includes/main.php:7
+#: includes/requests-lib.php:118 includes/requests-lib.php:225
+msgid "Requests"
+msgstr "Peticions"
+
+#: xtec-ms-manager.php:37 includes/request-types-lib.php:93
+#: includes/main.php:8
+msgid "Request Types"
+msgstr "Tipus de peticions"
+
+#: xtec-ms-manager.php:38 includes/main.php:9 includes/settings.php:32
+msgid "Settings"
+msgstr "Opcions"
+
+#: includes/sql-exec.php:20 includes/main.php:6
+msgid "SQL execution"
+msgstr "Execució d'SQL"
+
+#: includes/sql-exec.php:24
+msgid "Step 1 - SQL sentence"
+msgstr "Pas 1 - Sentència SQL"
+
+#: includes/sql-exec.php:35 includes/sql-exec.php:64 includes/sql-exec.php:191
+#: includes/sql-exec.php:239
+msgid "SQL sentence"
+msgstr "Sentència SQL"
+
+#: includes/sql-exec.php:39 includes/sql-exec.php:89
+msgid ""
+"Use the keyword <code>[prefix]</code> to get the proper blog prefix (wp_, "
+"wp_1_, wp_2_, ...)"
+msgstr ""
+"Utilitzeu la paraula clau <code>[prefix]</code> per obtenir el prefix de les "
+"taules del blog (wp_, wp_1_, wp_2_, ...)"
+
+#: includes/sql-exec.php:47
+msgid "Step 2"
+msgstr "Pas 2"
+
+#: includes/sql-exec.php:56
+msgid "Step 2 - Select Blogs"
+msgstr "Pas 2 - Selecció de blogs"
+
+#: includes/sql-exec.php:73
+msgid "Main database"
+msgstr "Base de dades principal"
+
+#: includes/sql-exec.php:79
+msgid "All blogs"
+msgstr "Tots els blogs"
+
+#: includes/sql-exec.php:85
+msgid "Blogs that match this query"
+msgstr "Blogs que compleixen una condició"
+
+#: includes/sql-exec.php:96
+msgid "Some blogs selected manually"
+msgstr "Alguns blogs seleccionats manualment"
+
+#: includes/sql-exec.php:99
+msgid "List of blogs' IDs"
+msgstr "Llista dels ID dels blogs"
+
+#: includes/sql-exec.php:101
+msgid "(Comma separated. Ranges allowed in the form 1-5)"
+msgstr "(Separats per comes. Es poden indicar rangs mitjançant la sintaxi 1-5)"
+
+#: includes/sql-exec.php:107
+msgid "List of blogs' names"
+msgstr "Llista de noms de blogs"
+
+#: includes/sql-exec.php:109
+msgid "(Comma separated)"
+msgstr "(Separats per comes)"
+
+#: includes/sql-exec.php:118
+msgid "Step 3"
+msgstr "Pas 3"
+
+#: includes/sql-exec.php:122 includes/sql-exec.php:217
+msgid "Go Back"
+msgstr "Torna enrere"
+
+#: includes/sql-exec.php:134
+msgid "Step 3 - Confirm execution"
+msgstr "Pas 3 - Confirmació de l'execució"
+
+#: includes/sql-exec.php:193 includes/sql-exec.php:241
+msgid "SQL match sentence"
+msgstr "SQL per indicar la condició que s'ha de complir"
+
+#: includes/sql-exec.php:195 includes/sql-exec.php:243
+msgid "Execute in main database"
+msgstr "Executa-ho a la base de dades principal"
+
+#: includes/sql-exec.php:197 includes/sql-exec.php:245
+msgid "Execute in all blogs"
+msgstr "Executa-ho a tots els blogs"
+
+#: includes/sql-exec.php:199
+msgid "Selected blogs"
+msgstr "Blogs seleccionats"
+
+#: includes/sql-exec.php:212
+msgid "Execute SQL now!"
+msgstr "Executa l'SQL ara!"
+
+#: includes/sql-exec.php:227
+msgid "Step 4 - Results of the execution"
+msgstr "Pas 4 - Resultats de l'execució"
+
+#: includes/sql-exec.php:234
+msgid "The match sentence must be a select"
+msgstr "La sentència per indicar la condició ha de ser una select"
+
+#: includes/sql-exec.php:294
+msgid "Query executed successfully"
+msgstr "S'ha executat la sentència correctament"
+
+#: includes/sql-exec.php:300
+msgid "Query executed successfully. Number of rows affected:"
+msgstr "S'ha executat la sentència correctament. Nombre de files afectades:"
+
+#: includes/sql-exec.php:306
+msgid "The query was executed successfully, but returns no results"
+msgstr ""
+"S'ha executat la consulta correctament, però no ha retornat cap resultat"
+
+#: includes/common-lib.php:106
+msgid "Request the extension of the quota"
+msgstr "Sol·licita l'ampliació de la quota"
+
+#: includes/common-lib.php:211
+msgid "Dear request admin,"
+msgstr "Benvolgut/da administrador/a de peticions,"
+
+#: includes/common-lib.php:211
+msgid "There is a new request pending to be attended:"
+msgstr "Hi ha una petició nova a l'espera de ser atesa:"
+
+#: includes/common-lib.php:212 includes/requests-lib.php:146
+#: includes/requests-lib.php:262 includes/requests-lib.php:400
+#: includes/requests-lib.php:517
+msgid "Request Type"
+msgstr "Tipus de petició"
+
+#: includes/common-lib.php:213 includes/requests-lib.php:148
+#: includes/requests-lib.php:263 includes/requests-lib.php:409
+#: includes/requests-lib.php:528
+msgid "User"
+msgstr "Usuari"
+
+#: includes/common-lib.php:214 includes/requests-lib.php:413
+#: includes/requests-lib.php:532
+msgid "Registration Time"
+msgstr "Hora de registre"
+
+#: includes/common-lib.php:215 includes/requests-lib.php:422
+#: includes/requests-lib.php:541
+msgid "Comments"
+msgstr "Comentaris"
+
+#: includes/common-lib.php:216 includes/common-lib.php:240
+msgid "Sincerely yours,"
+msgstr "Atentament,"
+
+#: includes/common-lib.php:216 includes/common-lib.php:240
+msgid "XTECBlocs team"
+msgstr "L'equip de XTECBlocs"
+
+#: includes/common-lib.php:216 includes/common-lib.php:240
+msgid "P.S.: This is an automatic message, please don't reply"
+msgstr ""
+"P.D.: Aquest missatge s'envia automàticament, si us plau, no el respongueu"
+
+#: includes/common-lib.php:219
+#, php-format
+msgid "[%s] New request"
+msgstr "[%s] Petició nova"
+
+#: includes/common-lib.php:231
+msgid "Dear user,"
+msgstr "Benvolgut/da usuari/ària,"
+
+#: includes/common-lib.php:231
+msgid ""
+"The state of the request <strong>##REQUESTTYPENAME##</strong> done in blog "
+"<a href=\"##BLOGURL##\">##BLOGURL##</a> has changed to "
+"<strong>##REQUESTSTATE##</strong>."
+msgstr ""
+"L'estat de la petició <strong>##REQUESTTYPENAME##</strong> realitzat al blog "
+"<a href=\"##BLOGURL##\">##BLOGURL##</a> ha passat a "
+"<strong>##REQUESTSTATE##</strong>."
+
+#: includes/common-lib.php:234
+msgid "The response of the administrators is:"
+msgstr "La resposta dels administradors del servei és la següent:"
+
+#: includes/common-lib.php:239
+msgid ""
+"If you disagree with the resolution, you can do a new request and explain "
+"your reasons."
+msgstr ""
+"En cas de disconformitat amb la resolució, podeu fer una petició nova i fer "
+"constar les vostres al·legacions."
+
+#: includes/common-lib.php:248
+#, php-format
+msgid "[%s] State of requests"
+msgstr "[%s] Estat de les peticions"
+
+#: includes/request-types-lib.php:30
+msgid "Request type successfully created"
+msgstr "S'ha creat el tipus de petició correctament"
+
+#: includes/request-types-lib.php:30
+msgid "Could not create the request type"
+msgstr "No s'ha pogut crear el tipus de petició"
+
+#: includes/request-types-lib.php:66
+msgid "Request type successfully updated"
+msgstr "El tipus de petició s'ha actualitzat correctament"
+
+#: includes/request-types-lib.php:66
+msgid "Could not update the request type"
+msgstr "No s'ha pogut actualitzar el tipus de petició"
+
+#: includes/request-types-lib.php:84
+msgid "Request type successfully deleted"
+msgstr "S'ha esborrat correctament el tipus de petició"
+
+#: includes/request-types-lib.php:84
+msgid "Could not delete the request type"
+msgstr "No s'ha pogut esborrar el tipus de petició"
+
+#: includes/request-types-lib.php:95
+msgid "New request type"
+msgstr "Tipus de petició nova"
+
+#: includes/request-types-lib.php:111 includes/requests-lib.php:143
+#: includes/requests-lib.php:260
+msgid "ID"
+msgstr "ID"
+
+#: includes/request-types-lib.php:112
+msgid "Name"
+msgstr "Nom"
+
+#: includes/request-types-lib.php:113 includes/request-types-lib.php:173
+#: includes/request-types-lib.php:235 includes/requests-lib.php:145
+#: includes/requests-lib.php:261 includes/requests-lib.php:434
+#: includes/requests-lib.php:552
+msgid "State"
+msgstr "Estat"
+
+#: includes/request-types-lib.php:114 includes/request-types-lib.php:182
+#: includes/request-types-lib.php:245
+msgid "Description"
+msgstr "Descripció"
+
+#: includes/request-types-lib.php:115
+msgid "Title for comments"
+msgstr "Títol pels comentaris"
+
+#: includes/request-types-lib.php:116 includes/requests-lib.php:151
+#: includes/requests-lib.php:266
+msgid "Actions"
+msgstr "Accions"
+
+#: includes/request-types-lib.php:162
+msgid "New Request Type"
+msgstr "Tipus de petició nova"
+
+#: includes/request-types-lib.php:168 includes/request-types-lib.php:230
+msgid "Request type name"
+msgstr "Nom del tipus de petició"
+
+#: includes/request-types-lib.php:186 includes/request-types-lib.php:249
+msgid "Text for optional comments field"
+msgstr "Text pel camp opcional de comentaris"
+
+#: includes/request-types-lib.php:191 includes/request-types-lib.php:255
+#: includes/requests-lib.php:463 includes/settings.php:54
+msgid "Save changes"
+msgstr "Desa els canvis"
+
+#: includes/request-types-lib.php:215 includes/request-types-lib.php:225
+msgid "Request type edition"
+msgstr "Edició del tipus de petició"
+
+#: includes/request-types-lib.php:217
+msgid "Request type not found"
+msgstr "No s'ha trobat el tipus de petició"
+
+#: includes/request-types-lib.php:266
+msgid "Request type state not set"
+msgstr "No s'ha indicat el tipus de petició"
+
+#: includes/request-types-lib.php:271
+msgid "Active"
+msgstr "Activa"
+
+#: includes/request-types-lib.php:275
+msgid "Inactive"
+msgstr "Inactiva"
+
+#: includes/main.php:5
+msgid "XTEC Multisite Manager"
+msgstr "Gestor multisite de la XTEC"
+
+#: includes/requests-lib.php:53
+msgid "Request successfully created"
+msgstr "S'ha creat la petició correctament"
+
+#: includes/requests-lib.php:53
+msgid "Could not create the request"
+msgstr "No s'ha pogut crear la petició"
+
+#: includes/requests-lib.php:92
+msgid "Request successfully updated"
+msgstr "S'ha actualitzat la petició correctament"
+
+#: includes/requests-lib.php:92
+msgid "Could not update the request"
+msgstr "No s'ha pogut actualitzar la petició"
+
+#: includes/requests-lib.php:110
+msgid "Request successfully deleted"
+msgstr "S'ha esborrat la petició correctament"
+
+#: includes/requests-lib.php:110
+msgid "Could not delete the request"
+msgstr "No s'ha pogut esborrar la petició"
+
+#: includes/requests-lib.php:144
+msgid "Blog URL"
+msgstr "URL del blog"
+
+#: includes/requests-lib.php:147
+msgid "Quota usage"
+msgstr "Ús de la quota"
+
+#: includes/requests-lib.php:149 includes/requests-lib.php:264
+msgid "Request date"
+msgstr "Data de la petició"
+
+#: includes/requests-lib.php:150 includes/requests-lib.php:265
+msgid "Edition date"
+msgstr "Data de la darrera edició"
+
+#: includes/requests-lib.php:187 includes/requests-lib.php:193
+#: includes/requests-lib.php:289 includes/requests-lib.php:295
+#: includes/requests-lib.php:418 includes/requests-lib.php:537
+msgid "Date not set"
+msgstr "No s'ha establert la data"
+
+#: includes/requests-lib.php:227
+msgid "New request"
+msgstr "Petició nova"
+
+#: includes/requests-lib.php:329
+msgid "New Request"
+msgstr "Petició nova"
+
+#: includes/requests-lib.php:334
+msgid "There are no available request types"
+msgstr "No hi ha cap tipus de petició definida"
+
+#: includes/requests-lib.php:341
+msgid "Select a request type"
+msgstr "Seleccioneu un tipus de petició"
+
+#: includes/requests-lib.php:356
+msgid "Submit request"
+msgstr "Tramet la petició"
+
+#: includes/requests-lib.php:385 includes/requests-lib.php:395
+#: includes/requests-lib.php:501 includes/requests-lib.php:513
+msgid "Request details"
+msgstr "Detalls de la petició"
+
+#: includes/requests-lib.php:387 includes/requests-lib.php:503
+msgid "Request not found"
+msgstr "No s'ha trobat la petició"
+
+#: includes/requests-lib.php:405 includes/requests-lib.php:523
+msgid "URL"
+msgstr "URL"
+
+#: includes/requests-lib.php:429 includes/requests-lib.php:548
+msgid "Request state"
+msgstr "Estat de la petició"
+
+#: includes/requests-lib.php:444 includes/requests-lib.php:558
+msgid "Latest change"
+msgstr "Darrer canvi"
+
+#: includes/requests-lib.php:449
+msgid "Not edited yet"
+msgstr "Encara no s'ha editat"
+
+#: includes/requests-lib.php:453 includes/requests-lib.php:563
+msgid "Response"
+msgstr "Resposta"
+
+#: includes/requests-lib.php:457 includes/requests-lib.php:568
+msgid "Private notes (only seen by administrators)"
+msgstr "Notes privades (només les veuen els administradors)"
+
+#: includes/requests-lib.php:575
+msgid "Edit the request"
+msgstr "Edita la petició"
+
+#: includes/requests-lib.php:581
+msgid "Back to the request list"
+msgstr "Torna a la llista de peticions"
+
+#: includes/requests-lib.php:590
+msgid "Request state not set"
+msgstr "No s'ha establert la data de la petició"
+
+#: includes/requests-lib.php:596
+msgid "Pending"
+msgstr "Pendent"
+
+#: includes/requests-lib.php:601
+msgid "Denied"
+msgstr "Denegada"
+
+#: includes/requests-lib.php:606
+msgid "Accepted"
+msgstr "Solucionada"
+
+#: includes/settings.php:29
+msgid "Settings updated successfully"
+msgstr "S'han desat les opcions correctament"
+
+#: includes/settings.php:33
+msgid "Requests settings"
+msgstr "Opcions de les peticions"
+
+#: includes/settings.php:39
+msgid "Quota usage to allow ask for an extension"
+msgstr "Ús de la quota a partir del qual es pot demanar una ampliació"
+
+#: includes/settings.php:43
+msgid "Send e-mail messages when requests are created"
+msgstr "Notifica per correu la creació de les peticions"
+
+#: includes/settings.php:47
+msgid "E-email addresses to notify new requests"
+msgstr "Adreces de correu a on notificar la creació de peticions"
+
+#: includes/settings.php:50
+msgid "Comma separated values"
+msgstr "Valors separats per comes"
+
+#: includes/sql-exec-lib.php:133
+msgid "An error has ocurred in sentence"
+msgstr "S'ha produït un error en executar la sentència"
+
+#: includes/sql-exec-lib.php:134
+msgid "Error description"
+msgstr "Descripció de l'error"
+
+#: includes/sql-exec-lib.php:179
+msgid "Summary of results"
+msgstr "Resum de resultats"
+
+#: includes/sql-exec-lib.php:184
+msgid "Value"
+msgstr "Valor"
+
+#: includes/sql-exec-lib.php:185
+msgid "Number of ocurrences"
+msgstr "Nombre d'aparicions"
+
+#: includes/sql-exec-lib.php:201
+msgid "Sum of ocurrences"
+msgstr "Suma d'aparicions"
+
+#: includes/sql-exec-lib.php:205
+msgid "Sum of ocurrences x value"
+msgstr "Suma d'aparicions x valor"

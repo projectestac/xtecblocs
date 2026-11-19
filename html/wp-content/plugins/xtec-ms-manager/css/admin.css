@@ -1,0 +1,96 @@
+
+/* SQL Styles */
+
+li {
+    margin: 0;
+    padding: 5px 3px 0 4%;
+}
+
+textarea {
+    width: 90%;
+}
+
+textarea,
+.xmm-textarea-title,
+#xmm-sql-desc,
+#xmm-match-query,
+#xmm-match-query-desc{
+    margin-top: 10px;
+    margin-left: 4%;
+}
+
+.xmm-textarea {
+    margin-bottom: 15px;
+}
+
+.info {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #CCC;
+}
+
+#xmm-step2-list li.depth1 {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.xmm-table {
+    border: 1px solid #CCC;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.xmm-table th, .xmm-table td {
+    border: 1px solid #CCC;
+    padding: 3px;
+}
+
+/* Request styles */
+
+#form-details {
+    display: none;
+    margin: 2em;
+}
+
+#xmm-select-request {
+    margin: 2em;
+}
+
+#xmm-select-request-text {
+    margin-right: 10px;
+}
+
+#request-info {
+    padding: 10px;
+    border: 1px solid #CCC;
+}
+
+#comments-text {
+    padding: 20px 0 0 0;
+}
+
+#request-comments {
+    width: 100%;
+    height: 10em;
+    padding: 5px;
+    margin: 5px 0 20px;
+}
+
+#request-response,
+#request-priv_notes {
+    height: 10em;
+    padding: 5px;
+    margin: 5px 0 20px;
+}
+
+/* Styles in blog dashboard */
+
+ul#xmm-blog-quota-request {
+    float: right;
+    margin-top: 3em !important;
+    width: 40% !important;
+}
+
+ul#xmm-blog-quota-request li {
+    width: 80%;
+}
