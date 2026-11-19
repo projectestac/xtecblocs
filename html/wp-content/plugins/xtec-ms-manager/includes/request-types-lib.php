@@ -140,7 +140,7 @@ function xmm_list_request_types() {
                       <span class="dashicons dashicons-edit"></span>
                   </a>
                   <a id="xmm-del-link-' . $type['id'] . '" 
-                     href="' . esc_url( remove_query_arg( array( 'insert', 'delete', 'new', 'update' ), add_query_arg( array( 'type-id' => $type['id'] )))) . '" onclick="confirm_deletion(' . intval( $type['id'] ) . ')">
+                     href="' . esc_url( remove_query_arg( array( 'insert', 'delete', 'new', 'update' ), add_query_arg( array( 'type-id' => $type['id'], '_wpnonce' => wp_create_nonce( 'xmm-delete-request-type_' . $type['id'] ) )))) . '" onclick="confirm_deletion(' . intval( $type['id'] ) . ')">
                       <span class="dashicons dashicons-dismiss"></span>
                   </a>
               </td>';
@@ -188,6 +188,7 @@ function xmm_new_request_type() {
 
     echo '</tr></tbody></table>';
 
+    wp_nonce_field( 'xmm-insert-request-type' );
     echo '<input type="submit" value="' . __('Save changes', 'xmm') . '" />';
     echo '</form>';
     echo '</div>';
@@ -252,6 +253,7 @@ function xmm_edit_request_type( $type_id ) {
     echo '</tr></tbody></table>';
 
     echo '<input type="hidden" name="update" value="1" />';
+    wp_nonce_field( 'xmm-update-request-type_' . $request_type['id'] );
     echo '<input type="submit" value="' . __('Save changes', 'xmm') . '" />';
     echo '</form>';
     echo '</div>';

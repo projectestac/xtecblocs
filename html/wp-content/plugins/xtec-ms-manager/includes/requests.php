@@ -26,6 +26,7 @@ function xmm_requests() {
 
     // Check for update request
     if ( isset( $_GET['request-id'] ) && !empty( $_GET['request-id'] ) && isset( $_POST['request-state'] ) && isset( $_POST['update'] ) && ( $_POST['update'] == 1 ) ) {
+        check_admin_referer( 'xmm-update-request_' . intval( $_GET['request-id'] ) );
         $_POST = array_map( 'stripslashes', $_POST );
         $id = intval( $_GET['request-id'] );
         $request = array(
@@ -48,6 +49,7 @@ function xmm_requests() {
 
     // Check for delete request
     if (isset($_GET['request-id']) && !empty($_GET['request-id']) && isset($_GET['delete']) && ($_GET['delete'] == 1)) {
+        check_admin_referer( 'xmm-delete-request_' . intval( $_GET['request-id'] ) );
         xmm_delete_request( intval( $_GET['request-id'] ) );
     }
 
@@ -64,6 +66,7 @@ function xmm_blog_requests() {
 
     // Check for insert request
     if (isset($_POST['select-request']) && !empty($_POST['select-request']) && isset($_POST['insert']) && ($_POST['insert'] == 1)) {
+        check_admin_referer( 'xmm-insert-request' );
         $_POST = array_map('stripslashes', $_POST);
         $inserted_id = xmm_insert_request( $_POST['select-request'], $_POST['request-comments'] );
 

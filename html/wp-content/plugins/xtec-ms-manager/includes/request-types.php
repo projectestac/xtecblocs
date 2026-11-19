@@ -14,6 +14,7 @@ function xmm_request_types() {
     // Check for insert request
     if (isset($_POST['request-type-name']) && !empty($_POST['request-type-name']) && isset($_POST['request-type-state'])
         && isset($_POST['description']) && !empty($_POST['description']) && isset($_GET['insert']) && ($_GET['insert'] == 1)) {
+        check_admin_referer( 'xmm-insert-request-type' );
         xmm_insert_request_type($_POST['request-type-name'], $_POST['request-type-state'], $_POST['description'], $_POST['comments_text']);
     }
 
@@ -31,6 +32,7 @@ function xmm_request_types() {
 
     // Check for update request
     if (isset($_GET['type-id']) && !empty($_GET['type-id']) && isset($_POST['request-type-state']) && isset($_POST['update']) && ($_POST['update'] == 1)) {
+        check_admin_referer( 'xmm-update-request-type_' . intval( $_GET['type-id'] ) );
         $request_type = array(
             'id' => intval( $_GET['type-id'] ),
             'state' => $_POST['request-type-state'],
@@ -44,6 +46,7 @@ function xmm_request_types() {
 
     // Check for delete request
     if (isset($_GET['type-id']) && !empty($_GET['type-id']) && isset($_GET['delete']) && ($_GET['delete'] == 1)) {
+        check_admin_referer( 'xmm-delete-request-type_' . intval( $_GET['type-id'] ) );
         xmm_delete_request_type( intval( $_GET['type-id'] ) );
     }
 

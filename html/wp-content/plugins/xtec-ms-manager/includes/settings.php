@@ -8,6 +8,7 @@ function xmm_settings() {
     // Check if we have to save params
     $saved = false;
     if ( isset($_POST['xmm-quota-percentage']) && !empty($_POST['xmm-quota-percentage']) && isset($_POST['xmm-email-addresses'] )) {
+        check_admin_referer( 'xmm-settings' );
         $xmm_quota_percentage = intval($_POST['xmm-quota-percentage']);
         $xmm_send_email = ( isset( $_POST['xmm-send-email'] )) ? 1 : 0;
         $xmm_email_addresses = sanitize_text_field( $_POST['xmm-email-addresses'] );
@@ -51,6 +52,7 @@ function xmm_settings() {
           </td>';
 
     echo '</tr></tbody></table>';
+    wp_nonce_field( 'xmm-settings' );
     echo '<input type="submit" value="' . __('Save changes', 'xmm') . '" />';
     echo '</form></div>';
 

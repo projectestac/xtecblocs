@@ -44,6 +44,7 @@ function xmm_sql() {
                 </table>
 
                 <?php
+                wp_nonce_field( 'xmm-sql' );
                 submit_button( __( 'Step 2', 'xmm' ), 'primary', 'xmm-submit', true );
                 ?>
             </form>
@@ -53,6 +54,7 @@ function xmm_sql() {
             break;
 
         case 'step2':
+            check_admin_referer( 'xmm-sql' );
             show_subtitle( __( 'Step 2 - Select Blogs', 'xmm' ) );
 
             $sql               = get_xmm_param( 'xmm-sql' );
@@ -115,6 +117,7 @@ function xmm_sql() {
                 </ul>
 
                 <?php
+                wp_nonce_field( 'xmm-sql' );
                 submit_button( __( 'Step 3', 'xmm' ), 'primary', 'xmm-submit', true );
                 ?>
                 <span class="button">
@@ -131,6 +134,7 @@ function xmm_sql() {
             break;
 
         case 'step3':
+            check_admin_referer( 'xmm-sql' );
             show_subtitle( __( 'Step 3 - Confirm execution', 'xmm' ) );
 
             $xmm_select_blogs  = get_xmm_param( 'xmm-select-blogs' );
@@ -209,6 +213,7 @@ function xmm_sql() {
             <?php
 
             echo '<form method="post" action="' . esc_url( add_query_arg( 'action', 'step4' ) ) . '">';
+            wp_nonce_field( 'xmm-sql' );
             submit_button( __( 'Execute SQL now!', 'xmm' ), 'primary', 'xmm-submit', true );
 
             ?>
@@ -224,6 +229,7 @@ function xmm_sql() {
             break;
 
         case 'step4':
+            check_admin_referer( 'xmm-sql' );
             show_subtitle( __( 'Step 4 - Results of the execution', 'xmm' ) );
 
             $xmm_sql = $_SESSION['xmm-sql'];
