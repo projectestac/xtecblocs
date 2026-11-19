@@ -44,7 +44,7 @@ entorns de prova i tasques pendents.
 | xtec-descriptors, xtec-lastest-posts, xtec-favorites | Incorporades a **xtec-portal** (xtec-favorites no es porta com a extensió) |
 | xtec-signup, xtec-settings | Incorporades a **xtec-users** (part de xtec-settings descartada) |
 | xtec-users | Reescrita |
-| xtec-ldap-login | Submòdul, branca `WIP-WordPress-7.1` |
+| xtec-ldap-login | Submòdul, branca `master` (versió 4.0) |
 | xtec-maintenance | Reescrita |
 | xtec-mail | Reescrita |
 | multisite-plugin-manager | Substituïda per **xtec-plugin-manager** |
@@ -90,10 +90,12 @@ Usuaris XTEC i usuaris locals, i límits de creació de blocs.
 ### xtec-ldap-login (submòdul)
 Repositori `projectestac/wordpress-xtec-ldap-login`.
 
-| Branca del submòdul | Ús | Commits rellevants |
-|---|---|---|
-| `WIP-WordPress-7.1` | Branca 7.x (PHP 8) | `40d6c33` Local users can always log in, `31029d3` Detected the OAuth callback by its path, `8dd8ea1` Hardened the OAuth login |
-| `master` | master del repositori principal i integració (PHP 7.1) | `b5ac873` Fixed the OAuth callback and hardened the OAuth login |
+| Branca del submòdul | Versió | Ús | Commits rellevants |
+|---|---|---|---|
+| `master` | 4.0 | Branca 7.x del repositori principal (PHP 8). És l'antiga `WIP-WordPress-7.1` | `40d6c33` Local users can always log in, `31029d3` Detected the OAuth callback by its path, `8dd8ea1` Hardened the OAuth login |
+| `RB-version-3.1` | 3.1 | Branca `master` del repositori principal i integració (PHP 7.1). És l'antic `master` | `b5ac873` Fixed the OAuth callback and hardened the OAuth login |
+
+`.gitmodules` segueix la branca `master` del submòdul.
 
 - Els usuaris locals sempre poden entrar, també amb els tipus de validació LDAP i OAuth.
 - **OAuth**:
@@ -105,9 +107,8 @@ Repositori `projectestac/wordpress-xtec-ldap-login`.
   - L'adreça ha d'acabar en `@xtec.cat`, estar verificada i, si Google dona `hd`, ser del domini `xtec.cat`.
     Abans, `strpos()` acceptava adreces com `nom@xtec.catalunya.com`.
   - Errors de testimoni o de dades d'usuari comunicats com a tals.
-- La versió de `master` del submòdul (`749ee99` i posteriors) depèn de `is_xtecblocs()`, que no existeix a la 7.x.
-  **No es pot fer servir a la MV.**
-- **La referència del submòdul al repositori principal no està actualitzada** (per decisió presa).
+- La versió 3.x (`RB-version-3.1`) depèn de `is_xtecblocs()`, que no existeix a la 7.x. **No es pot fer servir a la
+  MV.**
 
 ### xtec-maintenance
 Blocs inactius i historial de blocs eliminats (xarxa → Manteniment).
@@ -189,8 +190,8 @@ imatge destacada, vídeo amb «Llegeix més»).
 
 ## 5. Tasques pendents
 1. **xtec-ldap-login**:
-   - pujar `master` del submòdul (`b5ac873`) i desplegar-lo a integració;
-   - decidir quan s'actualitza la referència del submòdul al repositori principal.
+   - desplegar `RB-version-3.1` a integració (WordPress 4.7 i PHP 7.1);
+   - fer el commit de la referència del submòdul al repositori principal.
 2. **Extensions pendents d'analitzar**: xtec-api, xtec-eduhack, xtec-ms-manager i les de tercers que es portaran
    (add-to-any, wordpress-social-login, eduhack…). També multisite-clone-duplicator (MUCD), que es fa servir per
    crear els blocs del projecte DOSSIER a partir de la plantilla.
