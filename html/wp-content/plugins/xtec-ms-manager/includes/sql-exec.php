@@ -28,7 +28,9 @@ function xmm_sql() {
 
             $xmm_sql = get_xmm_param( 'xmm-sql' );
 
-            unset( $_SESSION['selected_sites'] );
+            $data = xmm_get_sql_data();
+            unset( $data['selected_sites'] );
+            xmm_set_sql_data( $data );
 
             ?>
             <form method="post" action="<?php echo esc_url( add_query_arg( 'action', 'step2' ) ); ?>">
@@ -144,20 +146,21 @@ function xmm_sql() {
             $xmm_match_query   = get_xmm_param( 'xmm-match-query' );
             $xmm_blogid_list   = get_xmm_param( 'xmm-blogid-list' );
             $xmm_blogname_list = get_xmm_param( 'xmm-blogname-list' );
-            $xmm_sql           = $_SESSION['xmm-sql'];
-            
-            unset($_SESSION['selected_sites']);
+            $data              = xmm_get_sql_data();
+            $xmm_sql           = $data['xmm-sql'] ?? '';
+
+            unset($data['selected_sites']);
 
             switch ($xmm_select_blogs) {
                 case 'query':
                 case 'all':
                     // Update value of 'selected sites' in accordance with the user selection
-                    $_SESSION['selected_sites'] = 'all';
+                    $data['selected_sites'] = 'all';
                     break;
 
                 case 'main_db':
                     global $current_blog;
-                    $_SESSION['selected_sites'] = array( array( 'blog_id' => 1, 'path' => $current_blog->path ));
+                    $data['selected_sites'] = array( array( 'blog_id' => 1, 'path' => $current_blog->path ));
                     break;
 
                 case 'some':
@@ -186,11 +189,13 @@ function xmm_sql() {
                     foreach ($sites as $site) {
                         if (in_array($site->blog_id, $xmm_blogid_list_array) ||
                             in_array($site->path, $xmm_blogname_list_array)) {
-                            $_SESSION['selected_sites'][$site->blog_id] = array ('blog_id' => $site->blog_id, 'path' => $site->path);
+                            $data['selected_sites'][$site->blog_id] = array ('blog_id' => $site->blog_id, 'path' => $site->path);
                         }
                     }
                     break;
             }
+
+            xmm_set_sql_data( $data );
 
             ?>
 
@@ -205,7 +210,7 @@ function xmm_sql() {
                 <?php } elseif ('some' == $xmm_select_blogs) { ?>
                     <div><strong><?php _e('Selected blogs', 'xmm'); ?></strong>:
                         <ul>
-                            <?php foreach ($_SESSION['selected_sites'] as $site) { ?>
+                            <?php foreach ($data['selected_sites'] ?? [] as $site) { ?>
                                 <li><?php echo esc_html( '(' . $site['blog_id'] . ') ' . $site['path'] ) ?></li>
                             <?php } ?>
                         </ul>
@@ -235,11 +240,12 @@ function xmm_sql() {
             check_admin_referer( 'xmm-sql' );
             show_subtitle( __( 'Step 4 - Results of the execution', 'xmm' ) );
 
-            $xmm_sql = $_SESSION['xmm-sql'];
-            $xmm_match_query = $_SESSION['xmm-match-query'];
-            $xmm_select_blogs = $_SESSION['xmm-select-blogs'];
+            $data = xmm_get_sql_data();
+            $xmm_sql = $data['xmm-sql'] ?? '';
+            $xmm_match_query = $data['xmm-match-query'] ?? '';
+            $xmm_select_blogs = $data['xmm-select-blogs'] ?? '';
 
-            if (('query' == $xmm_select_blogs) && !preg_match("/^\\s*(select) /i", $_SESSION['xmm-match-query'])) {
+            if (('query' == $xmm_select_blogs) && !preg_match("/^\\s*(select) /i", $xmm_match_query)) {
                 die(__('The match sentence must be a select', 'xmm'));
             }
 
@@ -261,11 +267,11 @@ function xmm_sql() {
             $summarize = false;
             $summary   = array();
 
-            // If the whole site list is needed, we have to get it again to avoid issues due to a too big session file
-            if (isset($_SESSION['selected_sites']) && ('all' == $_SESSION['selected_sites'])) {
+            // The whole site list isn't kept in the data of the user, as it can be too big, so it is got again
+            if (isset($data['selected_sites']) && ('all' == $data['selected_sites'])) {
                 $selected_sites = xmm_get_sites();
             } else {
-                $selected_sites = $_SESSION['selected_sites'];
+                $selected_sites = $data['selected_sites'] ?? [];
             }
 
             // This constant is defined as an ugly fix to improve memory usage. In function wp-roles()->reinit()
@@ -277,7 +283,7 @@ function xmm_sql() {
 
                 // Create the SQL using the prefixes of the blog
                 $sql_rendered       = render_sql( $xmm_sql );
-                $sql_match_rendered = render_sql( $_SESSION['xmm-match-query'] );
+                $sql_match_rendered = render_sql( $xmm_match_query );
 
                 if ('query' == $xmm_select_blogs) {
                     $results = $wpdb->get_results( $sql_match_rendered, ARRAY_A );

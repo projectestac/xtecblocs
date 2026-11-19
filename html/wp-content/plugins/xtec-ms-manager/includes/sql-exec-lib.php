@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Get parameter used in the process and put it into the session
+ * Get parameter used in the process and keep it in the data of the SQL execution of the user
  *
  * @param mixed $param
  * @return mixed
@@ -10,10 +10,12 @@ function get_xmm_param( $param ) {
 
     $value = isset( $_POST[ $param ] ) ? stripslashes_deep( trim( $_POST[ $param ] ) ) : '';
 
-    if ( empty( $value ) && ! empty( $_SESSION[ $param ] ) ) {
-        $value = $_SESSION[ $param ];
+    $data = xmm_get_sql_data();
+    if ( empty( $value ) && ! empty( $data[ $param ] ) ) {
+        $value = $data[ $param ];
     } else {
-        $_SESSION[ $param ] = $value;
+        $data[ $param ] = $value;
+        xmm_set_sql_data( $data );
     }
 
     return $value;

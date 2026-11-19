@@ -12,6 +12,52 @@ const STATE_INACTIVE = 0;
 // Pager
 const NUM_ELEMS_TO_SHOW = 3;
 
+// Data of the SQL execution of each user, kept between the steps of the process
+const XMM_SQL_DATA = 'xmm_sql_data_';
+
+// The data of the SQL execution is removed when the user logs in or out, as it was with the PHP session
+add_action( 'wp_login', 'xmm_delete_sql_data_on_login', 10, 2 );
+add_action( 'wp_logout', 'xmm_delete_sql_data' );
+
+/**
+ * Returns the data of the SQL execution of the current user.
+ *
+ * @return array The data: the SQL sentences, the selection of blogs and the selected blogs.
+ */
+function xmm_get_sql_data(): array {
+    $data = get_site_transient( XMM_SQL_DATA . get_current_user_id() );
+
+    return is_array( $data ) ? $data : [];
+}
+
+/**
+ * Keeps the data of the SQL execution of the current user.
+ *
+ * @param array $data The data.
+ */
+function xmm_set_sql_data( array $data ): void {
+    set_site_transient( XMM_SQL_DATA . get_current_user_id(), $data, DAY_IN_SECONDS );
+}
+
+/**
+ * Removes the data of the SQL execution of a user.
+ *
+ * @param int $user_id The user ID.
+ */
+function xmm_delete_sql_data( int $user_id ): void {
+    delete_site_transient( XMM_SQL_DATA . $user_id );
+}
+
+/**
+ * Removes the data of the SQL execution of a user who logs in.
+ *
+ * @param string $user_login The username.
+ * @param WP_User $user The user.
+ */
+function xmm_delete_sql_data_on_login( string $user_login, WP_User $user ): void {
+    xmm_delete_sql_data( $user->ID );
+}
+
 
 /**
  * Actions executed during plugin activation
