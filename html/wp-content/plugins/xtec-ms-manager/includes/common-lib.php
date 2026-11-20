@@ -214,19 +214,28 @@ function xmm_add_quota_request_to_dashboard(): void
         return;
     }
 
-    $quota = get_space_allowed();
-    if ($quota <= 0) {
-        return;
-    }
+    $blog_usage = xmm_get_blog_usage();
 
-    // Percentage of the quota used by the blog
-    $blog_usage = round((get_space_used() / $quota) * 100, 2);
-
-    if ($blog_usage >= get_site_option('xmm_quota_percentage')) {
+    if ($blog_usage !== null && $blog_usage >= get_site_option('xmm_quota_percentage')) {
         echo '<ul id="xmm-blog-quota-request"><li class="warning"><a href="'
             . esc_url(add_query_arg('page', 'xmm-blog-requests', 'tools.php')) . '">'
             . __('Request the extension of the quota', 'xtec-ms-manager') . '</a></li></ul>';
     }
+}
+
+/**
+ * Returns the percentage of the quota used by the current blog.
+ *
+ * @return float|null The percentage, or null if the blog has no quota.
+ */
+function xmm_get_blog_usage(): ?float
+{
+    $quota = (float)get_space_allowed();
+    if ($quota <= 0) {
+        return null;
+    }
+
+    return round((get_space_used() / $quota) * 100, 2);
 }
 
 /**

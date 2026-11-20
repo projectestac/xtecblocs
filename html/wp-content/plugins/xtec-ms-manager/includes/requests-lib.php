@@ -175,7 +175,7 @@ function xmm_list_requests(): void
 
         // Percentage of the quota used by the blog
         switch_to_blog((int)$request['blog_id']);
-        $blog_usage = round((get_space_used() / get_space_allowed()) * 100, 2);
+        $blog_usage = xmm_get_blog_usage();
         restore_current_blog();
 
         [$color, $state_desc] = xmm_get_request_state((int)$request['state']);
@@ -193,7 +193,7 @@ function xmm_list_requests(): void
         echo '<td>' . xmm_get_blog_link((int)$request['blog_id']) . '</td>';
         echo '<td>' . esc_html($state_desc) . '</td>';
         echo '<td>' . esc_html($request['name']) . '</td>';
-        echo '<td>' . esc_html($blog_usage) . ' %</td>';
+        echo '<td>' . ($blog_usage === null ? '&mdash;' : esc_html($blog_usage) . ' %') . '</td>';
         echo '<td><span title="' . esc_attr($request['display_name']) . '">' . esc_html($request['user_login'])
             . '</span></td>';
         echo '<td>' . xmm_format_date($request['time_creation']) . '</td>';
