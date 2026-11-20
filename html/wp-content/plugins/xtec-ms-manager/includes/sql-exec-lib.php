@@ -100,8 +100,10 @@ function process_results( $results, $summarize, $summary ) {
     $num_row  = 0;
     $headers  = $data = array();
 
-    if ( ( count( $results ) == 1 ) && ( count( $results[0] ) == 1 ) ) {
-        $summarize = true;
+    // The summary counts how many times each value appears in all the blogs, so it is only made if all the results
+    // have a single column
+    if ( 1 !== count( $results[0] ) ) {
+        $summarize = false;
     }
 
     foreach ( $results as $row ) {

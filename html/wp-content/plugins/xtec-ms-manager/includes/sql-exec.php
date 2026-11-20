@@ -253,7 +253,7 @@ function xmm_sql() {
             <?php
             global $wpdb; // WordPress global variables
 
-            $summarize = false;
+            $summarize = true;
             $summary   = array();
 
             // The whole site list isn't kept in the data of the user, as it can be too big, so it is got again
@@ -329,7 +329,7 @@ function xmm_sql() {
 
             wp_suspend_cache_addition( $suspend_cache );
 
-            if ( $summarize ) {
+            if ( $summarize && ! empty( $summary ) ) {
                 print_summary( $summary );
             }
 
