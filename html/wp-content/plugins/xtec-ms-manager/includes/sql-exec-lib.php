@@ -18,9 +18,6 @@ defined('ABSPATH') || exit;
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-// Maximum number of blogs of the queries, larger than the number of blogs of the network
-const XMM_MAX_BLOG_NUMBER = 1000000;
-
 /**
  * Returns a parameter of the SQL execution: the one sent by the form or, if it hasn't been sent, the one kept in the
  * data of the user. The parameter sent is kept in the data of the user.
@@ -72,21 +69,18 @@ function xmm_expand_blogid_list(string $xmm_blogid_list): string
 }
 
 /**
- * Returns all the blogs of the network, only with their ID and their path to save memory.
+ * Returns all the blogs of the network, only with their ID and their path. They are read directly from the table, as
+ * get_sites() creates an object for each blog and keeps it in the cache.
  *
  * @return array The blogs, by their ID, with blog_id and path.
  */
 function xmm_get_sites(): array
 {
-    // The restriction of large networks affects get_sites()
-    add_filter('wp_is_large_network', '__return_false');
+    global $wpdb;
 
-    $selected_sites = [];
-    foreach (get_sites(['number' => XMM_MAX_BLOG_NUMBER]) as $site) {
-        $selected_sites[$site->blog_id] = ['blog_id' => $site->blog_id, 'path' => $site->path];
-    }
+    $sites = $wpdb->get_results("SELECT blog_id, path FROM {$wpdb->blogs} ORDER BY blog_id", ARRAY_A);
 
-    return $selected_sites;
+    return array_column($sites, null, 'blog_id');
 }
 
 /**

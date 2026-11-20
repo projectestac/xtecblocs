@@ -332,14 +332,14 @@ function xmm_sql_step4(): void
     // The execution in all the blogs can take long
     set_time_limit(3600);
 
-    // The options of each blog, which WordPress reads when switching to the blog, aren't kept in the cache, so that
-    // the memory doesn't grow with the number of blogs
-    $suspend_cache = wp_suspend_cache_addition();
-    wp_suspend_cache_addition(true);
+    // The blog of the database is changed instead of switching to the blog, which runs the actions of the switch and
+    // reads the options of the blog. The ID of the blog is changed too because the database router uses it to choose
+    // the database of the queries without tables of the blog
+    $current_blog_id = (int)$wpdb->blogid;
 
     foreach ($selected_sites as $site) {
         // The execution is in a function so that the blog is always restored, whatever happens in the blog
-        switch_to_blog((int)$site['blog_id']);
+        $wpdb->set_blog_id((int)$site['blog_id']);
         [$summary, $summarize] = xmm_sql_execute_in_blog(
             $site,
             $xmm_sql,
@@ -348,14 +348,12 @@ function xmm_sql_step4(): void
             $summary,
             $summarize
         );
-        restore_current_blog();
+        $wpdb->set_blog_id($current_blog_id);
 
         if (isset($_GET['debug'])) {
             echo '<div style="text-align:right">' . memory_get_usage() . '</div>';
         }
     }
-
-    wp_suspend_cache_addition($suspend_cache);
 
     if ($summarize && !empty($summary)) {
         xmm_print_summary($summary);
