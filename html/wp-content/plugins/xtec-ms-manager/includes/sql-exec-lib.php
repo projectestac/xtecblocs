@@ -19,25 +19,24 @@ defined('ABSPATH') || exit;
  */
 
 /**
- * Returns a parameter of the SQL execution: the one sent by the form or, if it hasn't been sent, the one kept in the
- * data of the user. The parameter sent is kept in the data of the user.
+ * Returns the data of the SQL execution of the user with the parameters sent by the form. The parameters that haven't
+ * been sent keep the value of the data. The data isn't saved, so that the caller saves it once with all its changes.
  *
- * @param string $param The name of the parameter.
- * @return string The value of the parameter.
+ * @param array $params The names of the parameters.
+ * @return array The data, with all the parameters.
  */
-function xmm_get_param(string $param): string
+function xmm_get_params(array $params): array
 {
-    $value = isset($_POST[$param]) && is_string($_POST[$param]) ? stripslashes_deep(trim($_POST[$param])) : '';
-
     $data = xmm_get_sql_data();
-    if (empty($value) && !empty($data[$param])) {
-        $value = $data[$param];
-    } else {
-        $data[$param] = $value;
-        xmm_set_sql_data($data);
+
+    foreach ($params as $param) {
+        $value = isset($_POST[$param]) && is_string($_POST[$param]) ? stripslashes_deep(trim($_POST[$param])) : '';
+        if (!empty($value) || empty($data[$param])) {
+            $data[$param] = $value;
+        }
     }
 
-    return $value;
+    return $data;
 }
 
 /**

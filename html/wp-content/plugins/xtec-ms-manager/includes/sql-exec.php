@@ -150,11 +150,13 @@ function xmm_sql_step2(): void
 {
     xmm_show_subtitle(__('Step 2 - Select Blogs', 'xtec-ms-manager'));
 
-    $sql = xmm_get_param('xmm-sql');
-    $xmm_select_blogs = xmm_get_param('xmm-select-blogs');
-    $xmm_match_query = xmm_get_param('xmm-match-query');
-    $xmm_blogid_list = xmm_get_param('xmm-blogid-list');
-    $xmm_blogname_list = xmm_get_param('xmm-blogname-list');
+    $data = xmm_get_params(['xmm-sql', 'xmm-select-blogs', 'xmm-match-query', 'xmm-blogid-list', 'xmm-blogname-list']);
+    xmm_set_sql_data($data);
+    $sql = $data['xmm-sql'];
+    $xmm_select_blogs = $data['xmm-select-blogs'];
+    $xmm_match_query = $data['xmm-match-query'];
+    $xmm_blogid_list = $data['xmm-blogid-list'];
+    $xmm_blogname_list = $data['xmm-blogname-list'];
 
     echo '<div id="xmm-sql" class="info"><strong>' . __('SQL sentence', 'xtec-ms-manager') . '</strong>: '
         . esc_html($sql) . '</div>';
@@ -237,11 +239,12 @@ function xmm_sql_step3(): void
 
     xmm_show_subtitle(__('Step 3 - Confirm execution', 'xtec-ms-manager'));
 
-    $xmm_select_blogs = xmm_get_param('xmm-select-blogs');
-    $xmm_match_query = xmm_get_param('xmm-match-query');
-    $xmm_blogid_list = xmm_get_param('xmm-blogid-list');
-    $xmm_blogname_list = xmm_get_param('xmm-blogname-list');
-    $data = xmm_get_sql_data();
+    // The data is saved once, with the parameters and the selected blogs
+    $data = xmm_get_params(['xmm-select-blogs', 'xmm-match-query', 'xmm-blogid-list', 'xmm-blogname-list']);
+    $xmm_select_blogs = $data['xmm-select-blogs'];
+    $xmm_match_query = $data['xmm-match-query'];
+    $xmm_blogid_list = $data['xmm-blogid-list'];
+    $xmm_blogname_list = $data['xmm-blogname-list'];
     $xmm_sql = $data['xmm-sql'] ?? '';
 
     unset($data['selected_sites']);
@@ -261,17 +264,15 @@ function xmm_sql_step3(): void
             // Both lists are combined: the IDs, with the ranges expanded, and the paths of the names of the blogs,
             // which are in the path of the main blog
             $base_path = $current_blog->path;
-            $xmm_blogid_list_array = explode(',', xmm_expand_blogid_list($xmm_blogid_list));
-            $xmm_blogname_list_array = array_map(
+            // The lists are indexed by their values, so that each blog is looked up in them directly
+            $blog_ids = array_flip(explode(',', xmm_expand_blogid_list($xmm_blogid_list)));
+            $blog_paths = array_flip(array_map(
                 static fn(string $name): string => $base_path . trim($name) . '/',
                 explode(',', $xmm_blogname_list)
-            );
+            ));
 
             foreach (xmm_get_sites() as $blog_id => $site) {
-                if (
-                    in_array((string)$blog_id, $xmm_blogid_list_array, true)
-                    || in_array($site['path'], $xmm_blogname_list_array, true)
-                ) {
+                if (isset($blog_ids[$blog_id]) || isset($blog_paths[$site['path']])) {
                     $data['selected_sites'][$blog_id] = $site;
                 }
             }
