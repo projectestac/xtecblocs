@@ -92,7 +92,7 @@ function xmm_blog_requests() {
     }
 
     // Check for view request (Show form)
-    if (isset($_GET['request-id']) && !empty($_GET['request-id']) && isset($_GET['view']) && ($_GET['view'] = 1)) {
+    if (isset($_GET['request-id']) && !empty($_GET['request-id']) && isset($_GET['view']) && ('1' === $_GET['view'])) {
         xmm_view_request( intval( $_GET['request-id'] ) );
         return ;
     }
