@@ -10,13 +10,6 @@ function xmm_sql() {
         wp_die( esc_html__( 'Sorry, you are not allowed to access this page.' ), '', [ 'response' => 403 ] );
     }
 
-    set_time_limit(3600); // Limit of execution time: 1 hour
-
-    // In case it is requested via URL, try to increase memory limit
-    if ( isset( $_GET['extramem'] )) {
-        ini_set('memory_limit','400M');
-    }
-
     $action = isset( $_GET['action'] ) ? $_GET['action'] : 'step1';
 
     echo '<div class="wrap">';
@@ -125,11 +118,9 @@ function xmm_sql() {
                 wp_nonce_field( 'xmm-sql' );
                 submit_button( __( 'Step 3', 'xmm' ), 'primary', 'xmm-submit', true );
                 ?>
-                <span class="button">
-                    <a href="javascript:history.go(-1)" onMouseOver="self.status=document.referrer;return true">
-                        <?php _e( 'Go Back', 'xmm' ); ?>
-                    </a>
-                </span>
+                <a class="button" href="<?php echo esc_url( remove_query_arg( 'action' ) ); ?>">
+                    <?php _e( 'Go Back', 'xmm' ); ?>
+                </a>
 
             </form>
             </div>
@@ -225,11 +216,9 @@ function xmm_sql() {
             submit_button( __( 'Execute SQL now!', 'xmm' ), 'primary', 'xmm-submit', true );
 
             ?>
-            <span class="button">
-                    <a href="javascript:history.go(-1)" onMouseOver="self.status=document.referrer;return true">
-                        <?php _e( 'Go Back', 'xmm' ); ?>
-                    </a>
-                </span>
+            <a class="button" href="<?php echo esc_url( add_query_arg( array( 'action' => 'step2', '_wpnonce' => wp_create_nonce( 'xmm-sql' ) ) ) ); ?>">
+                <?php _e( 'Go Back', 'xmm' ); ?>
+            </a>
             <?php
 
             echo '</form>';
@@ -274,9 +263,13 @@ function xmm_sql() {
                 $selected_sites = $data['selected_sites'] ?? [];
             }
 
-            // This constant is defined as an ugly fix to improve memory usage. In function wp-roles()->reinit()
-            //  there's a call to get_option() that consumes a lot of memory.
-            define ('WP_SETUP_CONFIG', true);
+            // The execution in all the blogs can take long
+            set_time_limit( 3600 );
+
+            // The options of each blog, which WordPress reads when switching to the blog, aren't kept in the cache,
+            // so that the memory doesn't grow with the number of blogs
+            $suspend_cache = wp_suspend_cache_addition();
+            wp_suspend_cache_addition( true );
 
             foreach ( $selected_sites as $site ) {
                 switch_to_blog( $site['blog_id'] );
@@ -333,6 +326,8 @@ function xmm_sql() {
                 }
 
             }
+
+            wp_suspend_cache_addition( $suspend_cache );
 
             if ( $summarize ) {
                 print_summary( $summary );
