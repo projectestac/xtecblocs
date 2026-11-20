@@ -35,17 +35,22 @@ function xmm_sql(): void
     echo '<div class="wrap">';
     xmm_show_title(__('SQL execution', 'xtec-ms-manager'));
 
+    // Each step has its own nonce, so that the nonce of a step can't be used in another one
     switch ($action) {
         case 'step2':
-            check_admin_referer('xmm-sql');
+            check_admin_referer('xmm-sql-step2');
             xmm_sql_step2();
             break;
         case 'step3':
-            check_admin_referer('xmm-sql');
+            check_admin_referer('xmm-sql-step3');
             xmm_sql_step3();
             break;
         case 'step4':
-            check_admin_referer('xmm-sql');
+            // The execution is only done with the form of the confirmation, never with a link
+            if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
+                wp_die(esc_html__('The link you followed has expired.'), '', ['response' => 405]);
+            }
+            check_admin_referer('xmm-sql-step4');
             xmm_sql_step4();
             break;
         default:
@@ -112,13 +117,13 @@ function xmm_sql_step1(): void
 {
     xmm_show_subtitle(__('Step 1 - SQL sentence', 'xtec-ms-manager'));
 
-    $xmm_sql = xmm_get_param('xmm-sql');
-
+    // The sentence isn't read from the request, which has no nonce in this step, but from the data of the user
     $data = xmm_get_sql_data();
+    $xmm_sql = $data['xmm-sql'] ?? '';
     unset($data['selected_sites']);
     xmm_set_sql_data($data);
     ?>
-    <form method="post" action="<?php echo esc_url(add_query_arg('action', 'step2')); ?>">
+    <form method="post" action="<?php echo esc_url(add_query_arg('action', 'step2', remove_query_arg('_wpnonce'))); ?>">
         <table class="form-table">
             <tbody>
             <tr valign="top">
@@ -131,7 +136,7 @@ function xmm_sql_step1(): void
             </tbody>
         </table>
         <?php
-        wp_nonce_field('xmm-sql');
+        wp_nonce_field('xmm-sql-step2');
         submit_button(__('Step 2', 'xtec-ms-manager'), 'primary', 'xmm-submit', true);
         ?>
     </form>
@@ -154,7 +159,7 @@ function xmm_sql_step2(): void
     echo '<div id="xmm-sql" class="info"><strong>' . __('SQL sentence', 'xtec-ms-manager') . '</strong>: '
         . esc_html($sql) . '</div>';
     ?>
-    <form method="post" action="<?php echo esc_url(add_query_arg('action', 'step3')); ?>">
+    <form method="post" action="<?php echo esc_url(add_query_arg('action', 'step3', remove_query_arg('_wpnonce'))); ?>">
         <ul id="xmm-step2-list">
             <li class="depth1">
                 <input id="option1" type="radio" name="xmm-select-blogs" value="main_db"
@@ -213,7 +218,7 @@ function xmm_sql_step2(): void
             </li>
         </ul>
         <?php
-        wp_nonce_field('xmm-sql');
+        wp_nonce_field('xmm-sql-step3');
         submit_button(__('Step 3', 'xtec-ms-manager'), 'primary', 'xmm-submit', true);
         ?>
         <a class="button" href="<?php echo esc_url(remove_query_arg('action')); ?>">
@@ -282,10 +287,11 @@ function xmm_sql_step3(): void
         is_array($data['selected_sites'] ?? null) ? $data['selected_sites'] : []
     );
 
-    $back_url = add_query_arg(['action' => 'step2', '_wpnonce' => wp_create_nonce('xmm-sql')]);
+    $back_url = add_query_arg(['action' => 'step2', '_wpnonce' => wp_create_nonce('xmm-sql-step2')]);
 
-    echo '<form method="post" action="' . esc_url(add_query_arg('action', 'step4')) . '">';
-    wp_nonce_field('xmm-sql');
+    echo '<form method="post" action="' . esc_url(add_query_arg('action', 'step4', remove_query_arg('_wpnonce')))
+        . '">';
+    wp_nonce_field('xmm-sql-step4');
     submit_button(__('Execute SQL now!', 'xtec-ms-manager'), 'primary', 'xmm-submit', true);
     echo '<a class="button" href="' . esc_url($back_url) . '">' . esc_html__('Go Back', 'xtec-ms-manager') . '</a>';
     echo '</form>';

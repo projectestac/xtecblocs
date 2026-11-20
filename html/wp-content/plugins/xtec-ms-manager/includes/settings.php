@@ -32,7 +32,7 @@ function xmm_settings(): void
         check_admin_referer('xmm-settings');
         update_site_option('xmm_quota_percentage', (int)$_POST['xmm-quota-percentage']);
         update_site_option('xmm_send_email', isset($_POST['xmm-send-email']) ? 1 : 0);
-        update_site_option('xmm_email_addresses', sanitize_text_field($_POST['xmm-email-addresses']));
+        update_site_option('xmm_email_addresses', xmm_sanitize_email_addresses(xmm_post_field('xmm-email-addresses')));
         $saved = true;
     }
 
@@ -69,4 +69,20 @@ function xmm_settings(): void
     wp_nonce_field('xmm-settings');
     echo '<input type="submit" value="' . __('Save changes', 'xtec-ms-manager') . '" />';
     echo '</form></div>';
+}
+
+/**
+ * Keeps only the valid e-mail addresses of a list.
+ *
+ * @param string $addresses The addresses, separated by commas.
+ * @return string The valid addresses, separated by commas.
+ */
+function xmm_sanitize_email_addresses(string $addresses): string
+{
+    $valid = array_filter(
+        array_map(static fn(string $address): string => sanitize_email(trim($address)), explode(',', $addresses)),
+        static fn(string $address): bool => is_email($address) !== false
+    );
+
+    return implode(',', $valid);
 }
