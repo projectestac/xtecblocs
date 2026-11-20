@@ -306,7 +306,9 @@ function xmm_sql_step4(): void
     $xmm_select_blogs = $data['xmm-select-blogs'] ?? '';
 
     if ($xmm_select_blogs === 'query' && !preg_match('/^\s*(select) /i', $xmm_match_query)) {
-        die(esc_html__('The match sentence must be a select', 'xtec-ms-manager'));
+        echo '<div class="notice notice-error"><p>'
+            . esc_html__('The match sentence must be a select', 'xtec-ms-manager') . '</p></div>';
+        return;
     }
 
     xmm_sql_show_execution($xmm_sql, $xmm_select_blogs, $xmm_match_query);
@@ -330,50 +332,16 @@ function xmm_sql_step4(): void
     wp_suspend_cache_addition(true);
 
     foreach ($selected_sites as $site) {
-        switch_to_blog($site['blog_id']);
-
-        // The SQL sentences with the prefixes of the blog
-        $sql_rendered = xmm_render_sql($xmm_sql);
-        $sql_match_rendered = xmm_render_sql($xmm_match_query);
-
-        if ($xmm_select_blogs === 'query') {
-            $results = $wpdb->get_results($sql_match_rendered, ARRAY_A);
-            if (!$results) {
-                continue;
-            }
-        }
-
-        echo esc_html('(' . $site['blog_id'] . '): ' . $site['path']) . '&nbsp;';
-
-        if (preg_match('/^\s*(select) /i', $sql_rendered)) {
-            $results = $wpdb->get_results($sql_rendered, ARRAY_A);
-        } else {
-            $results = $wpdb->query($sql_rendered);
-        }
-
-        // When a SELECT fails, $wpdb returns an empty array, the same as when there are no results, so the error is
-        // checked too
-        if ($wpdb->last_error !== '' || $results === null || $results === false) {
-            xmm_print_error();
-        } elseif ($results === true) {
-            // CREATE, ALTER, TRUNCATE, DROP
-            echo '<span style="color:green;">' . __('Query executed successfully', 'xtec-ms-manager')
-                . '</span><br />';
-        } elseif (is_numeric($results)) {
-            // INSERT, DELETE, UPDATE, etc.
-            echo '<span style="color:green;">'
-                . __('Query executed successfully. Number of rows affected:', 'xtec-ms-manager') . '&nbsp;'
-                . (int)$results . '</span><br />';
-        } elseif (empty($results)) {
-            // SELECT without results
-            echo '<span style="color:green;">'
-                . __('The query was executed successfully, but returns no results', 'xtec-ms-manager')
-                . '</span><br />';
-        } else {
-            [$headers, $rows, $summary, $summarize] = xmm_process_results($results, $summarize, $summary);
-            xmm_print_data($headers, $rows);
-        }
-
+        // The execution is in a function so that the blog is always restored, whatever happens in the blog
+        switch_to_blog((int)$site['blog_id']);
+        [$summary, $summarize] = xmm_sql_execute_in_blog(
+            $site,
+            $xmm_sql,
+            $xmm_select_blogs,
+            $xmm_match_query,
+            $summary,
+            $summarize
+        );
         restore_current_blog();
 
         if (isset($_GET['debug'])) {
@@ -386,4 +354,78 @@ function xmm_sql_step4(): void
     if ($summarize && !empty($summary)) {
         xmm_print_summary($summary);
     }
+}
+
+/**
+ * Executes the SQL sentence in the current blog and shows its results. If the blogs are selected by a query, the
+ * sentence is only executed if the query has results.
+ *
+ * @param array $site The blog: blog_id and path.
+ * @param string $xmm_sql The SQL sentence.
+ * @param string $xmm_select_blogs How the blogs are selected: main_db, all, query or some.
+ * @param string $xmm_match_query The query that the blogs must match, if they are selected by a query.
+ * @param array $summary The summary of the results of the previous blogs.
+ * @param bool $summarize If the summary is made.
+ * @return array The summary and if it is made, updated with the results of the blog.
+ */
+function xmm_sql_execute_in_blog(
+    array $site,
+    string $xmm_sql,
+    string $xmm_select_blogs,
+    string $xmm_match_query,
+    array $summary,
+    bool $summarize
+): array {
+    global $wpdb;
+
+    $blog_header = esc_html('(' . $site['blog_id'] . '): ' . $site['path']) . '&nbsp;';
+
+    if ($xmm_select_blogs === 'query') {
+        $matches = $wpdb->get_results(xmm_render_sql($xmm_match_query), ARRAY_A);
+
+        // An error in the query is shown, as otherwise the blog would be skipped as if it didn't match
+        if ($wpdb->last_error !== '') {
+            echo $blog_header;
+            xmm_print_error();
+            return [$summary, $summarize];
+        }
+
+        if (empty($matches)) {
+            return [$summary, $summarize];
+        }
+    }
+
+    echo $blog_header;
+
+    $sql_rendered = xmm_render_sql($xmm_sql);
+    if (preg_match('/^\s*(select) /i', $sql_rendered)) {
+        $results = $wpdb->get_results($sql_rendered, ARRAY_A);
+    } else {
+        $results = $wpdb->query($sql_rendered);
+    }
+
+    // When a SELECT fails, $wpdb returns an empty array, the same as when there are no results, so the error is
+    // checked too
+    if ($wpdb->last_error !== '' || $results === null || $results === false) {
+        xmm_print_error();
+    } elseif ($results === true) {
+        // CREATE, ALTER, TRUNCATE, DROP
+        echo '<span style="color:green;">' . __('Query executed successfully', 'xtec-ms-manager')
+            . '</span><br />';
+    } elseif (is_numeric($results)) {
+        // INSERT, DELETE, UPDATE, etc.
+        echo '<span style="color:green;">'
+            . __('Query executed successfully. Number of rows affected:', 'xtec-ms-manager') . '&nbsp;'
+            . (int)$results . '</span><br />';
+    } elseif (empty($results)) {
+        // SELECT without results
+        echo '<span style="color:green;">'
+            . __('The query was executed successfully, but returns no results', 'xtec-ms-manager')
+            . '</span><br />';
+    } else {
+        [$headers, $rows, $summary, $summarize] = xmm_process_results($results, $summarize, $summary);
+        xmm_print_data($headers, $rows);
+    }
+
+    return [$summary, $summarize];
 }
