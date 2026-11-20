@@ -293,7 +293,9 @@ function xmm_sql() {
                     $results = $wpdb->query( $sql_rendered );
                 }
 
-                if (is_null($results) || ($results === false)) {
+                // When a SELECT fails, $wpdb returns an empty array, the same as when there are no results, so the error
+                // is checked too
+                if ('' !== $wpdb->last_error || is_null($results) || (false === $results)) {
                     print_error();
                 } else {
                     // CREATE, ALTER, TRUNCATE, DROP
