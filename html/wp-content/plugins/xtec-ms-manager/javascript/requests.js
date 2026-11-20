@@ -1,26 +1,23 @@
-
-// Shows and populates the form for the request
+// Shows the form of the request with the description and the text of the comments of the chosen request type
 function change_select(option) {
-    for (var i = 0; i < dataResults.length; i++) {
-        if (dataResults[i]['id'] == option) {
-            jQuery('#form-details').css('display', 'block');
-            jQuery('#request-info').text(dataResults[i]['description']);
-            jQuery('#comments-text').text(dataResults[i]['comments_text']);
-            jQuery('#request-id').val(dataResults[i]['id']);
-            break;
-        }
+    const requestType = dataResults.find((type) => String(type.id) === option);
+    if (requestType) {
+        jQuery('#form-details').css('display', 'block');
+        jQuery('#request-info').text(requestType.description);
+        jQuery('#comments-text').text(requestType.comments_text);
     }
 }
 
-// Captures onchange event in new request page
 jQuery(document).ready(function () {
-    jQuery('#select-request').on('change', function (event) {
-        change_select(jQuery('#' + event.target.id + ' option:selected').val());
+    jQuery('#select-request').on('change', function () {
+        change_select(jQuery(this).val());
     });
 });
 
-function confirm_deletion($id) {
-    if (confirm("Esteu segur/a de voler esborrar l'element amb id " + $id)) {
-        jQuery('#xmm-del-link-'+$id).attr('href', jQuery('#xmm-del-link-'+$id).attr('href')+'&delete=1');
+// Adds the parameter delete to the link of the deletion if the user confirms it
+function confirm_deletion(id) {
+    if (confirm(xmmRequests.confirmDeletion.replace('%s', id))) {
+        const link = jQuery('#xmm-del-link-' + id);
+        link.attr('href', link.attr('href') + '&delete=1');
     }
 }

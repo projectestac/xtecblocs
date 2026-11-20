@@ -1,70 +1,113 @@
 <?php
+
 /**
- * Plugin Name: XTEC MultiSite Manager
- * Plugin URI: https://github.com/projectestac/wordpress-xtec-ms-manager
- * Description: Manage blogs in MultiSite configuration of WordPress
- * Version: 1.1.0
- * Author: Toni Ginard
- * Author URI: http://agora.xtec.cat/nodes
- * License: GPLv3
+ * Plugin Name:       XTEC MultiSite Manager
+ * Plugin URI:        https://github.com/projectestac/wordpress-xtec-ms-manager
+ * Description:       Execution of SQL in the blogs of the network and requests of the blogs to the administrators.
+ * Version:           2.0
+ * Requires at least: 6.0
+ * Requires PHP:      8.0
+ * Network:           true
+ * Text Domain:       xtec-ms-manager
+ * Domain Path:       /languages
+ * Author:            Toni Ginard
+ * License:           GPL v3
+ * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  */
 
-// If this file is called directly, abort.
-defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+/**
+ * Copyright 2026 Departament d'Educació i Formació Professional
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
 
-include_once 'includes/common-lib.php'; // Plugin general lib
+defined('ABSPATH') || exit;
 
-register_activation_hook( __FILE__, 'xmm_install' );
+const XMM_FILE = __FILE__;
 
-// Initialization tasks
-add_action( 'init', 'xmm_init' );
-function xmm_init() {
-	load_plugin_textdomain( 'xmm', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+require_once __DIR__ . '/includes/common-lib.php';
 
-	// This plugin is only for multisite version
-	if ( is_multisite() ) {
-		add_action( 'network_admin_menu', 'xmm_network_admin_menu' );
-        add_action( 'admin_menu', 'xmm_admin_menu' );
-	}
-}
+register_activation_hook(__FILE__, 'xmm_install');
+add_action('init', 'xmm_init');
+add_action('admin_enqueue_scripts', 'xmm_scripts');
+// Link to request the extension of the quota in the dashboard of the blogs, if the conditions are met
+add_action('activity_box_end', 'xmm_add_quota_request_to_dashboard');
 
-// Create plugin menus
-function xmm_network_admin_menu() {
-	$hooks = [];
-	$hooks[] = add_menu_page( __( 'Multisite Manager', 'xmm' ), __( 'Multisite Manager', 'xmm' ), 'manage_network_options', 'xmm', 'xmm_main', 'dashicons-analytics', 99 );
-	$hooks[] = add_submenu_page( 'xmm', __( 'SQL', 'xmm' ), __( 'SQL', 'xmm' ), 'manage_network_options', 'xmm-sql', 'xmm_sql' );
-    $hooks[] = add_submenu_page( 'xmm', __( 'Requests', 'xmm' ), __( 'Requests', 'xmm' ), 'manage_network_options', 'xmm-requests', 'xmm_requests' );
-    $hooks[] = add_submenu_page( 'xmm', __( 'Request Types', 'xmm' ), __( 'Request Types', 'xmm' ), 'manage_network_options', 'xmm-request-types', 'xmm_request_types' );
-    $hooks[] = add_submenu_page( 'xmm', __( 'Settings', 'xmm' ), __( 'Settings', 'xmm' ), 'manage_network_options', 'xmm-settings', 'xmm_settings' );
+/**
+ * Loads the translations and adds the menus of the plugin, which is only for multisite networks.
+ */
+function xmm_init(): void
+{
+    load_plugin_textdomain('xtec-ms-manager', false, dirname(plugin_basename(XMM_FILE)) . '/languages');
 
-    foreach ( $hooks as $hook ) {
-        add_action( 'load-' . $hook, 'xmm_load_page_files' );
+    if (is_multisite()) {
+        add_action('network_admin_menu', 'xmm_network_admin_menu');
+        add_action('admin_menu', 'xmm_admin_menu');
     }
 }
 
-function xmm_admin_menu() {
-    $hook = add_submenu_page( 'tools.php', __( 'Requests', 'xmm' ), __( 'Requests', 'xmm' ), 'manage_options', 'xmm-blog-requests', 'xmm_blog_requests' );
-    add_action( 'load-' . $hook, 'xmm_load_page_files' );
+/**
+ * Adds the menu of the plugin to the administration of the network.
+ */
+function xmm_network_admin_menu(): void
+{
+    $title = __('Multisite Manager', 'xtec-ms-manager');
+    $hooks = [add_menu_page($title, $title, 'manage_network_options', 'xmm', 'xmm_main', 'dashicons-analytics', 99)];
+
+    $pages = [
+        'xmm-sql' => [__('SQL', 'xtec-ms-manager'), 'xmm_sql'],
+        'xmm-requests' => [__('Requests', 'xtec-ms-manager'), 'xmm_requests'],
+        'xmm-request-types' => [__('Request Types', 'xtec-ms-manager'), 'xmm_request_types'],
+        'xmm-settings' => [__('Settings', 'xtec-ms-manager'), 'xmm_settings'],
+    ];
+    foreach ($pages as $slug => [$page_title, $callback]) {
+        $hooks[] = add_submenu_page('xmm', $page_title, $page_title, 'manage_network_options', $slug, $callback);
+    }
+
+    foreach ($hooks as $hook) {
+        add_action('load-' . $hook, 'xmm_load_page_files');
+    }
+}
+
+/**
+ * Adds the page of the requests of the blog to the menu Tools of the blogs.
+ */
+function xmm_admin_menu(): void
+{
+    $title = __('Requests', 'xtec-ms-manager');
+    $hook = add_submenu_page('tools.php', $title, $title, 'manage_options', 'xmm-blog-requests', 'xmm_blog_requests');
+    add_action('load-' . $hook, 'xmm_load_page_files');
 }
 
 /**
  * Loads the files of the page of the plugin that is being shown. It is done when WordPress loads the page, after
  * checking that the user can access it, and not in other requests.
  */
-function xmm_load_page_files(): void {
+function xmm_load_page_files(): void
+{
     global $plugin_page;
 
     $files = [
-        'xmm' => [ 'main.php' ],
-        'xmm-sql' => [ 'sql-exec.php' ],
-        'xmm-requests' => [ 'requests.php', 'request-types.php' ],
-        'xmm-blog-requests' => [ 'requests.php' ],
-        'xmm-request-types' => [ 'request-types.php' ],
-        'xmm-settings' => [ 'settings.php' ],
+        'xmm' => ['main.php'],
+        'xmm-sql' => ['sql-exec.php'],
+        'xmm-requests' => ['requests.php', 'request-types.php'],
+        'xmm-blog-requests' => ['requests.php'],
+        'xmm-request-types' => ['request-types.php'],
+        'xmm-settings' => ['settings.php'],
     ];
 
-    foreach ( $files[ $plugin_page ] ?? [] as $file ) {
-        include_once __DIR__ . '/includes/' . $file;
+    foreach ($files[$plugin_page] ?? [] as $file) {
+        require_once __DIR__ . '/includes/' . $file;
     }
 }
 
@@ -73,14 +116,11 @@ function xmm_load_page_files(): void {
  *
  * @param string $hook_suffix The page of the administration.
  */
-function xmm_scripts( string $hook_suffix ): void {
+function xmm_scripts(string $hook_suffix): void
+{
     global $plugin_page;
 
-    if ( 'index.php' === $hook_suffix || str_starts_with( (string) $plugin_page, 'xmm' ) ) {
-        wp_enqueue_style( 'xmm-admin', plugins_url( 'css/admin.css', __FILE__ ) );
+    if ($hook_suffix === 'index.php' || str_starts_with((string)$plugin_page, 'xmm')) {
+        wp_enqueue_style('xmm-admin', plugins_url('css/admin.css', XMM_FILE));
     }
 }
-add_action( 'admin_enqueue_scripts', 'xmm_scripts' );
-
-// Show link to request the extension of the quota if conditions are met
-add_action('activity_box_end', 'xmm_add_quota_request_to_dashboard');

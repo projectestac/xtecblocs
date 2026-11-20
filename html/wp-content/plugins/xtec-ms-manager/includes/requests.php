@@ -1,104 +1,106 @@
 <?php
 
-require_once 'requests-lib.php';
-require_once 'request-types-lib.php';
-
-// Load javascript
-wp_register_script('request-js', plugins_url() . '/xtec-ms-manager/javascript/requests.js', array('jquery'), '1.1', true);
-wp_enqueue_script('request-js');
+defined('ABSPATH') || exit;
 
 /**
- * Manages all the actions in the network side
+ * Copyright 2026 Departament d'Educació i Formació Professional
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-function xmm_requests() {
-    if ( ! current_user_can( 'manage_network_options' ) ) {
-        wp_die( esc_html__( 'Sorry, you are not allowed to access this page.' ), '', [ 'response' => 403 ] );
+
+require_once __DIR__ . '/requests-lib.php';
+require_once __DIR__ . '/request-types-lib.php';
+
+xmm_enqueue_requests_script();
+
+/**
+ * Shows the page of the requests of the network and does its actions: view, edit, update and delete a request.
+ */
+function xmm_requests(): void
+{
+    if (!current_user_can('manage_network_options')) {
+        wp_die(esc_html__('Sorry, you are not allowed to access this page.'), '', ['response' => 403]);
     }
 
-    // Check for view request
-    if (isset($_GET['request-id']) && !empty($_GET['request-id']) && isset($_GET['view']) && ($_GET['view'] == 1)) {
-        xmm_view_request( intval( $_GET['request-id'] ) );
-        return ;
+    $id = xmm_query_id('request-id');
+
+    if ($id && xmm_query_flag('view')) {
+        xmm_view_request($id);
+        return;
     }
 
-    // Check for edit request (show the form)
-    if (isset($_GET['request-id']) && !empty($_GET['request-id']) && isset($_GET['edit']) && ($_GET['edit'] == 1)) {
-        xmm_edit_request( intval( $_GET['request-id'] ) );
-        return ;
+    if ($id && xmm_query_flag('edit')) {
+        xmm_edit_request($id);
+        return;
     }
 
-    // Check for update request
-    if ( isset( $_GET['request-id'] ) && !empty( $_GET['request-id'] ) && isset( $_POST['request-state'] ) && isset( $_POST['update'] ) && ( $_POST['update'] == 1 ) ) {
-        check_admin_referer( 'xmm-update-request_' . intval( $_GET['request-id'] ) );
-        $_POST = array_map( 'stripslashes', $_POST );
-        $id = intval( $_GET['request-id'] );
-        $request = array(
+    if ($id && isset($_POST['request-state']) && xmm_post_field('update') === '1') {
+        check_admin_referer('xmm-update-request_' . $id);
+        $request = [
             'id' => $id,
-            'request-state' => $_POST['request-state'],
-            'response' => $_POST['response'],
-            'priv_notes' => $_POST['priv_notes']
-        );
+            'request-state' => xmm_post_field('request-state'),
+            'response' => xmm_post_field('response'),
+            'priv_notes' => xmm_post_field('priv_notes'),
+        ];
 
-        $request_original = xmm_get_request( $id );
+        $request_original = xmm_get_request($id);
 
-        // Notify by email to request sender only in case of a change of the state
-        if ( false !== xmm_update_request( $request ) && ( $request_original[ 'state' ] != $request[ 'request-state' ] )) {
-            $args = array(
-                'request_id' => $id
-            );
-            xmm_send_email( 'update_request', $args );
+        // The user who made the request is notified by e-mail only if its state changes
+        if (
+            xmm_update_request($request) !== false
+            && (int)$request_original['state'] !== (int)$request['request-state']
+        ) {
+            xmm_send_email('update_request', ['request_id' => $id]);
         }
     }
 
-    // Check for delete request
-    if (isset($_GET['request-id']) && !empty($_GET['request-id']) && isset($_GET['delete']) && ($_GET['delete'] == 1)) {
-        check_admin_referer( 'xmm-delete-request_' . intval( $_GET['request-id'] ) );
-        xmm_delete_request( intval( $_GET['request-id'] ) );
+    if ($id && xmm_query_flag('delete')) {
+        check_admin_referer('xmm-delete-request_' . $id);
+        xmm_delete_request($id);
     }
 
-    // Show the list of requests
     xmm_list_requests();
-
-    return ;
 }
 
 /**
- * Manages all the actions in the blog side
+ * Shows the page of the requests of the blog and does its actions: create and view a request.
  */
-function xmm_blog_requests() {
-    if ( ! current_user_can( 'manage_options' ) ) {
-        wp_die( esc_html__( 'Sorry, you are not allowed to access this page.' ), '', [ 'response' => 403 ] );
+function xmm_blog_requests(): void
+{
+    if (!current_user_can('manage_options')) {
+        wp_die(esc_html__('Sorry, you are not allowed to access this page.'), '', ['response' => 403]);
     }
 
-    // Check for insert request
-    if (isset($_POST['select-request']) && !empty($_POST['select-request']) && isset($_POST['insert']) && ($_POST['insert'] == 1)) {
-        check_admin_referer( 'xmm-insert-request' );
-        $_POST = array_map('stripslashes', $_POST);
-        $inserted_id = xmm_insert_request( $_POST['select-request'], $_POST['request-comments'] );
+    if (!empty($_POST['select-request']) && xmm_post_field('insert') === '1') {
+        check_admin_referer('xmm-insert-request');
+        $inserted_id = xmm_insert_request((int)$_POST['select-request'], xmm_post_field('request-comments'));
 
-        // Notify the request managers by email that there is a new request waiting to be attended
-        if (( false !== $inserted_id ) && get_site_option( 'xmm_send_email' )) {
-            $args = array(
-                'request_id' => $inserted_id,
-            );
-            xmm_send_email( 'insert_request', $args );
+        // The administrators of the requests are notified by e-mail that there is a new request
+        if ($inserted_id !== false && get_site_option('xmm_send_email')) {
+            xmm_send_email('insert_request', ['request_id' => $inserted_id]);
         }
     }
 
-    // Check for new request (Show form)
-    if (isset($_GET['new']) && ($_GET['new'] == 1)) {
+    if (xmm_query_flag('new')) {
         xmm_new_request();
-        return ;
+        return;
     }
 
-    // Check for view request (Show form)
-    if (isset($_GET['request-id']) && !empty($_GET['request-id']) && isset($_GET['view']) && ('1' === $_GET['view'])) {
-        xmm_view_request( intval( $_GET['request-id'] ) );
-        return ;
+    $id = xmm_query_id('request-id');
+    if ($id && xmm_query_flag('view')) {
+        xmm_view_request($id);
+        return;
     }
 
-    // Show the list of requests of the current blog
     xmm_list_blog_requests();
-
-    return ;
 }

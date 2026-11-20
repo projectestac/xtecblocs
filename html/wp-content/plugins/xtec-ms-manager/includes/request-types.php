@@ -1,60 +1,76 @@
 <?php
 
-require_once 'request-types-lib.php';
+defined('ABSPATH') || exit;
 
-// Load javascript
-wp_register_script('request-js', plugins_url() . '/xtec-ms-manager/javascript/requests.js', array('jquery'), '1.1', true);
-wp_enqueue_script('request-js');
+/**
+ * Copyright 2026 Departament d'Educació i Formació Professional
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
 
-function xmm_request_types() {
-    if ( ! current_user_can( 'manage_network_options' ) ) {
-        wp_die( esc_html__( 'Sorry, you are not allowed to access this page.' ), '', [ 'response' => 403 ] );
+require_once __DIR__ . '/request-types-lib.php';
+
+xmm_enqueue_requests_script();
+
+/**
+ * Shows the page of the request types and does its actions: create, edit, update and delete a request type.
+ */
+function xmm_request_types(): void
+{
+    if (!current_user_can('manage_network_options')) {
+        wp_die(esc_html__('Sorry, you are not allowed to access this page.'), '', ['response' => 403]);
     }
 
-    // Remove automatic added quotes
-    $_POST = array_map('stripslashes', $_POST);
-
-    // Check for insert request
-    if (isset($_POST['request-type-name']) && !empty($_POST['request-type-name']) && isset($_POST['request-type-state'])
-        && isset($_POST['description']) && !empty($_POST['description']) && isset($_GET['insert']) && ($_GET['insert'] == 1)) {
-        check_admin_referer( 'xmm-insert-request-type' );
-        xmm_insert_request_type($_POST['request-type-name'], $_POST['request-type-state'], $_POST['description'], $_POST['comments_text']);
+    if (
+        !empty($_POST['request-type-name']) && isset($_POST['request-type-state']) && !empty($_POST['description'])
+        && xmm_query_flag('insert')
+    ) {
+        check_admin_referer('xmm-insert-request-type');
+        xmm_insert_request_type(
+            xmm_post_field('request-type-name'),
+            (int)$_POST['request-type-state'],
+            xmm_post_field('description'),
+            xmm_post_field('comments_text')
+        );
     }
 
-    // Check for new request (Show form)
-    if (isset($_GET['new']) && ($_GET['new'] == 1)) {
+    if (xmm_query_flag('new')) {
         xmm_new_request_type();
         return;
     }
 
-    // Check for edit request (show the form)
-    if (isset($_GET['type-id']) && !empty($_GET['type-id']) && isset($_GET['edit']) && ($_GET['edit'] == 1)) {
-        xmm_edit_request_type( intval( $_GET['type-id'] ) );
+    $id = xmm_query_id('type-id');
+
+    if ($id && xmm_query_flag('edit')) {
+        xmm_edit_request_type($id);
         return;
     }
 
-    // Check for update request
-    if (isset($_GET['type-id']) && !empty($_GET['type-id']) && isset($_POST['request-type-state']) && isset($_POST['update']) && ($_POST['update'] == 1)) {
-        check_admin_referer( 'xmm-update-request-type_' . intval( $_GET['type-id'] ) );
-        $request_type = array(
-            'id' => intval( $_GET['type-id'] ),
-            'state' => $_POST['request-type-state'],
-            'name' => $_POST['request-type-name'],
-            'description' => $_POST['description'],
-            'comments_text' => $_POST['comments_text']
-        );
-
-        xmm_update_request_type($request_type);
+    if ($id && isset($_POST['request-type-state']) && xmm_post_field('update') === '1') {
+        check_admin_referer('xmm-update-request-type_' . $id);
+        xmm_update_request_type([
+            'id' => $id,
+            'state' => xmm_post_field('request-type-state'),
+            'name' => xmm_post_field('request-type-name'),
+            'description' => xmm_post_field('description'),
+            'comments_text' => xmm_post_field('comments_text'),
+        ]);
     }
 
-    // Check for delete request
-    if (isset($_GET['type-id']) && !empty($_GET['type-id']) && isset($_GET['delete']) && ($_GET['delete'] == 1)) {
-        check_admin_referer( 'xmm-delete-request-type_' . intval( $_GET['type-id'] ) );
-        xmm_delete_request_type( intval( $_GET['type-id'] ) );
+    if ($id && xmm_query_flag('delete')) {
+        check_admin_referer('xmm-delete-request-type_' . $id);
+        xmm_delete_request_type($id);
     }
 
-    // Show the list of request types
     xmm_list_request_types();
-
-    return ;
 }

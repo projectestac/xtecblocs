@@ -1,0 +1,543 @@
+# Copyright (C) 2026 Toni Ginard
+# This file is distributed under the GPL v3.
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC MultiSite Manager 2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/xtec-ms-manager\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-20T11:33:31+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: xtec-ms-manager\n"
+
+#. Plugin Name of the plugin
+#: xtec-ms-manager.php
+msgid "XTEC MultiSite Manager"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: xtec-ms-manager.php
+msgid "https://github.com/projectestac/wordpress-xtec-ms-manager"
+msgstr ""
+
+#. Description of the plugin
+#: xtec-ms-manager.php
+msgid "Execution of SQL in the blogs of the network and requests of the blogs to the administrators."
+msgstr ""
+
+#. Author of the plugin
+#: xtec-ms-manager.php
+msgid "Toni Ginard"
+msgstr ""
+
+#. translators: %s: the ID of the element
+#: includes/common-lib.php:132
+#, php-format
+msgid "Are you sure you want to delete the element with ID %s?"
+msgstr ""
+
+#: includes/common-lib.php:228
+msgid "Request the extension of the quota"
+msgstr ""
+
+#: includes/common-lib.php:350
+msgid "Sincerely yours,"
+msgstr ""
+
+#: includes/common-lib.php:351
+msgid "XTECBlocs team"
+msgstr ""
+
+#: includes/common-lib.php:352
+msgid "P.S.: This is an automatic message, please don't reply"
+msgstr ""
+
+#: includes/common-lib.php:363
+msgid "Dear request admin,"
+msgstr ""
+
+#: includes/common-lib.php:364
+msgid "There is a new request pending to be attended:"
+msgstr ""
+
+#: includes/common-lib.php:365
+#: includes/requests-lib.php:162
+#: includes/requests-lib.php:263
+#: includes/requests-lib.php:473
+msgid "Request Type"
+msgstr ""
+
+#: includes/common-lib.php:367
+#: includes/requests-lib.php:164
+#: includes/requests-lib.php:264
+#: includes/requests-lib.php:481
+msgid "User"
+msgstr ""
+
+#: includes/common-lib.php:368
+#: includes/requests-lib.php:485
+msgid "Registration Time"
+msgstr ""
+
+#: includes/common-lib.php:370
+#: includes/requests-lib.php:488
+msgid "Comments"
+msgstr ""
+
+#. translators: %s: the name of the main blog
+#: includes/common-lib.php:376
+#, php-format
+msgid "[%s] New request"
+msgstr ""
+
+#: includes/common-lib.php:381
+msgid "Dear user,"
+msgstr ""
+
+#: includes/common-lib.php:382
+msgid "The state of the request <strong>##REQUESTTYPENAME##</strong> done in blog <a href=\"##BLOGURL##\">##BLOGURL##</a> has changed to <strong>##REQUESTSTATE##</strong>."
+msgstr ""
+
+#: includes/common-lib.php:388
+msgid "The response of the administrators is:"
+msgstr ""
+
+#: includes/common-lib.php:394
+msgid "If you disagree with the resolution, you can do a new request and explain your reasons."
+msgstr ""
+
+#. translators: %s: the name of the main blog
+#: includes/common-lib.php:414
+#, php-format
+msgid "[%s] State of requests"
+msgstr ""
+
+#: includes/main.php:31
+#: includes/sql-exec.php:36
+msgid "SQL execution"
+msgstr ""
+
+#: includes/main.php:32
+#: includes/requests-lib.php:138
+#: includes/requests-lib.php:228
+#: xtec-ms-manager.php:69
+#: xtec-ms-manager.php:87
+msgid "Requests"
+msgstr ""
+
+#: includes/main.php:33
+#: includes/request-types-lib.php:109
+#: xtec-ms-manager.php:70
+msgid "Request Types"
+msgstr ""
+
+#: includes/main.php:34
+#: includes/settings.php:48
+#: xtec-ms-manager.php:71
+msgid "Settings"
+msgstr ""
+
+#: includes/main.php:38
+msgid "XTEC Multisite Manager"
+msgstr ""
+
+#: includes/request-types-lib.php:46
+msgid "Request type successfully created"
+msgstr ""
+
+#: includes/request-types-lib.php:47
+msgid "Could not create the request type"
+msgstr ""
+
+#: includes/request-types-lib.php:75
+msgid "Request type successfully updated"
+msgstr ""
+
+#: includes/request-types-lib.php:76
+msgid "Could not update the request type"
+msgstr ""
+
+#: includes/request-types-lib.php:93
+msgid "Request type successfully deleted"
+msgstr ""
+
+#: includes/request-types-lib.php:94
+msgid "Could not delete the request type"
+msgstr ""
+
+#: includes/request-types-lib.php:111
+msgid "New request type"
+msgstr ""
+
+#: includes/request-types-lib.php:118
+#: includes/requests-lib.php:159
+#: includes/requests-lib.php:261
+msgid "ID"
+msgstr ""
+
+#: includes/request-types-lib.php:119
+msgid "Name"
+msgstr ""
+
+#: includes/request-types-lib.php:120
+#: includes/request-types-lib.php:213
+#: includes/requests-lib.php:161
+#: includes/requests-lib.php:262
+#: includes/requests-lib.php:375
+#: includes/requests-lib.php:429
+msgid "State"
+msgstr ""
+
+#: includes/request-types-lib.php:121
+#: includes/request-types-lib.php:221
+msgid "Description"
+msgstr ""
+
+#: includes/request-types-lib.php:122
+msgid "Title for comments"
+msgstr ""
+
+#: includes/request-types-lib.php:123
+#: includes/requests-lib.php:167
+#: includes/requests-lib.php:267
+msgid "Actions"
+msgstr ""
+
+#: includes/request-types-lib.php:164
+msgid "New Request Type"
+msgstr ""
+
+#: includes/request-types-lib.php:168
+#: includes/request-types-lib.php:194
+#: includes/requests-lib.php:395
+#: includes/settings.php:70
+msgid "Save changes"
+msgstr ""
+
+#: includes/request-types-lib.php:180
+msgid "Request type edition"
+msgstr ""
+
+#: includes/request-types-lib.php:184
+msgid "Request type not found"
+msgstr ""
+
+#: includes/request-types-lib.php:209
+msgid "Request type name"
+msgstr ""
+
+#: includes/request-types-lib.php:225
+msgid "Text for optional comments field"
+msgstr ""
+
+#: includes/request-types-lib.php:242
+msgid "Active"
+msgstr ""
+
+#: includes/request-types-lib.php:243
+msgid "Inactive"
+msgstr ""
+
+#: includes/request-types-lib.php:244
+msgid "Request type state not set"
+msgstr ""
+
+#: includes/requests-lib.php:44
+#: includes/requests-lib.php:74
+msgid "Could not create the request"
+msgstr ""
+
+#: includes/requests-lib.php:73
+msgid "Request successfully created"
+msgstr ""
+
+#: includes/requests-lib.php:105
+msgid "Request successfully updated"
+msgstr ""
+
+#: includes/requests-lib.php:106
+msgid "Could not update the request"
+msgstr ""
+
+#: includes/requests-lib.php:125
+msgid "Request successfully deleted"
+msgstr ""
+
+#: includes/requests-lib.php:126
+msgid "Could not delete the request"
+msgstr ""
+
+#: includes/requests-lib.php:160
+msgid "Blog URL"
+msgstr ""
+
+#: includes/requests-lib.php:163
+msgid "Quota usage"
+msgstr ""
+
+#: includes/requests-lib.php:165
+#: includes/requests-lib.php:265
+msgid "Request date"
+msgstr ""
+
+#: includes/requests-lib.php:166
+#: includes/requests-lib.php:266
+msgid "Edition date"
+msgstr ""
+
+#: includes/requests-lib.php:229
+msgid "New request"
+msgstr ""
+
+#: includes/requests-lib.php:312
+msgid "New Request"
+msgstr ""
+
+#: includes/requests-lib.php:315
+msgid "There are no available request types"
+msgstr ""
+
+#: includes/requests-lib.php:327
+msgid "Select a request type"
+msgstr ""
+
+#: includes/requests-lib.php:341
+msgid "Submit request"
+msgstr ""
+
+#: includes/requests-lib.php:357
+#: includes/requests-lib.php:408
+msgid "Request details"
+msgstr ""
+
+#: includes/requests-lib.php:361
+#: includes/requests-lib.php:414
+msgid "Request not found"
+msgstr ""
+
+#: includes/requests-lib.php:371
+#: includes/requests-lib.php:425
+msgid "Request state"
+msgstr ""
+
+#: includes/requests-lib.php:379
+#: includes/requests-lib.php:433
+msgid "Latest change"
+msgstr ""
+
+#: includes/requests-lib.php:380
+msgid "Not edited yet"
+msgstr ""
+
+#: includes/requests-lib.php:382
+#: includes/requests-lib.php:437
+msgid "Response"
+msgstr ""
+
+#: includes/requests-lib.php:386
+#: includes/requests-lib.php:441
+msgid "Private notes (only seen by administrators)"
+msgstr ""
+
+#: includes/requests-lib.php:451
+msgid "Edit the request"
+msgstr ""
+
+#: includes/requests-lib.php:458
+msgid "Back to the request list"
+msgstr ""
+
+#: includes/requests-lib.php:477
+msgid "URL"
+msgstr ""
+
+#: includes/requests-lib.php:568
+msgid "Date not set"
+msgstr ""
+
+#: includes/requests-lib.php:583
+msgid "Pending"
+msgstr ""
+
+#: includes/requests-lib.php:584
+msgid "Denied"
+msgstr ""
+
+#: includes/requests-lib.php:585
+msgid "Accepted"
+msgstr ""
+
+#: includes/requests-lib.php:586
+msgid "Request state not set"
+msgstr ""
+
+#: includes/settings.php:44
+msgid "Settings updated successfully"
+msgstr ""
+
+#: includes/settings.php:49
+msgid "Requests settings"
+msgstr ""
+
+#: includes/settings.php:55
+msgid "Quota usage to allow ask for an extension"
+msgstr ""
+
+#: includes/settings.php:60
+msgid "Send e-mail messages when requests are created"
+msgstr ""
+
+#: includes/settings.php:64
+msgid "E-email addresses to notify new requests"
+msgstr ""
+
+#: includes/settings.php:66
+msgid "Comma separated values"
+msgstr ""
+
+#: includes/sql-exec-lib.php:133
+msgid "An error has ocurred in sentence"
+msgstr ""
+
+#: includes/sql-exec-lib.php:135
+msgid "Error description"
+msgstr ""
+
+#: includes/sql-exec-lib.php:176
+msgid "Summary of results"
+msgstr ""
+
+#: includes/sql-exec-lib.php:181
+msgid "Value"
+msgstr ""
+
+#: includes/sql-exec-lib.php:182
+msgid "Number of ocurrences"
+msgstr ""
+
+#: includes/sql-exec-lib.php:197
+msgid "Sum of ocurrences"
+msgstr ""
+
+#: includes/sql-exec-lib.php:201
+msgid "Sum of ocurrences x value"
+msgstr ""
+
+#: includes/sql-exec.php:64
+msgid "Use the keyword <code>[prefix]</code> to get the proper blog prefix (wp_, wp_1_, wp_2_, ...)"
+msgstr ""
+
+#: includes/sql-exec.php:87
+#: includes/sql-exec.php:125
+#: includes/sql-exec.php:154
+msgid "SQL sentence"
+msgstr ""
+
+#: includes/sql-exec.php:91
+msgid "SQL match sentence"
+msgstr ""
+
+#: includes/sql-exec.php:94
+msgid "Execute in main database"
+msgstr ""
+
+#: includes/sql-exec.php:96
+msgid "Execute in all blogs"
+msgstr ""
+
+#: includes/sql-exec.php:98
+msgid "Selected blogs"
+msgstr ""
+
+#: includes/sql-exec.php:113
+msgid "Step 1 - SQL sentence"
+msgstr ""
+
+#: includes/sql-exec.php:135
+msgid "Step 2"
+msgstr ""
+
+#: includes/sql-exec.php:146
+msgid "Step 2 - Select Blogs"
+msgstr ""
+
+#: includes/sql-exec.php:162
+msgid "Main database"
+msgstr ""
+
+#: includes/sql-exec.php:167
+msgid "All blogs"
+msgstr ""
+
+#: includes/sql-exec.php:173
+msgid "Blogs that match this query"
+msgstr ""
+
+#: includes/sql-exec.php:187
+msgid "Some blogs selected manually"
+msgstr ""
+
+#: includes/sql-exec.php:191
+msgid "List of blogs' IDs"
+msgstr ""
+
+#: includes/sql-exec.php:193
+msgid "(Comma separated. Ranges allowed in the form 1-5)"
+msgstr ""
+
+#: includes/sql-exec.php:203
+msgid "List of blogs' names"
+msgstr ""
+
+#: includes/sql-exec.php:205
+msgid "(Comma separated)"
+msgstr ""
+
+#: includes/sql-exec.php:217
+msgid "Step 3"
+msgstr ""
+
+#: includes/sql-exec.php:220
+#: includes/sql-exec.php:290
+msgid "Go Back"
+msgstr ""
+
+#: includes/sql-exec.php:233
+msgid "Step 3 - Confirm execution"
+msgstr ""
+
+#: includes/sql-exec.php:289
+msgid "Execute SQL now!"
+msgstr ""
+
+#: includes/sql-exec.php:301
+msgid "Step 4 - Results of the execution"
+msgstr ""
+
+#: includes/sql-exec.php:309
+msgid "The match sentence must be a select"
+msgstr ""
+
+#: includes/sql-exec.php:360
+msgid "Query executed successfully"
+msgstr ""
+
+#: includes/sql-exec.php:365
+msgid "Query executed successfully. Number of rows affected:"
+msgstr ""
+
+#: includes/sql-exec.php:370
+msgid "The query was executed successfully, but returns no results"
+msgstr ""
+
+#: xtec-ms-manager.php:64
+msgid "Multisite Manager"
+msgstr ""
+
+#: xtec-ms-manager.php:68
+msgid "SQL"
+msgstr ""
