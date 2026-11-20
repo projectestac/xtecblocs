@@ -41,7 +41,7 @@ entorns de prova i tasques pendents.
 
 | Extensió de master | Decisió a la 7.x |
 |---|---|
-| xtec-descriptors, xtec-lastest-posts, xtec-favorites | Incorporades a **xtec-portal** (xtec-favorites no es porta com a extensió) |
+| xtec-descriptors, xtec-lastest-posts, xtec-favorites, xtec-api | Incorporades a **xtec-portal** (xtec-favorites no es porta com a extensió) |
 | xtec-signup, xtec-settings | Incorporades a **xtec-users** (part de xtec-settings descartada) |
 | xtec-users | Reescrita |
 | xtec-ldap-login | Submòdul, branca `master` (versió 4.0) |
@@ -53,7 +53,8 @@ entorns de prova i tasques pendents.
 | xtec-link-player | Descartada |
 | disable-gutenberg (ginys) | Substituïda per la mu-plugin **xtec-classic-widgets** |
 | Tema fukasawa (personalitzacions) | Extensió **xtec-fukasawa** |
-| xtec-api, xtec-eduhack, xtec-ms-manager | **Pendents d'analitzar** |
+| xtec-ms-manager | Revisada. A master és un submòdul; a la 7.x és dins el repositori |
+| xtec-eduhack | **Pendent d'analitzar** |
 | multisite-clone-duplicator (MUCD) | **Pendent**. Es fa servir per crear els blocs del projecte DOSSIER a partir de la plantilla |
 | Extensions de tercers (add-to-any, polylang, widget-options, wordpress-social-login, eduhack…) | **Pendents**. Es portaran: add-to-any, wordpress-social-login, eduhack. La llista no és tancada |
 
@@ -66,6 +67,8 @@ entorns de prova i tasques pendents.
 
 ### xtec-portal
 Descriptors, blocs preferits, darreres entrades i darrers blocs per al tema del portal.
+- Els darrers blocs són la funció de l'antiga xtec-api, amb el nom corregit: `xtec_api_latest_blogs()` (abans
+  `xtec_api_lastest_blogs()`).
 - Consultes preparades, nonce a les accions de preferits, `wp_delete_site` en lloc de `delete_blog`.
 - Els blocs arxivats, marcats com a brossa o esborrats no es mostren al portal.
 - Taula `wp_user_blogs` (preferits), amb la mateixa estructura que a master.
@@ -158,6 +161,34 @@ Giny «Dades d'usuari» per presentar l'autor del bloc. Es fa servir molt, sobre
   sense jQuery ni Genericons.
 - Si només té la imatge per defecte i cap dada, el giny no es mostra (com a master).
 
+### xtec-ms-manager
+Execució d'SQL a tots els blocs i sol·licituds dels blocs als administradors (xarxa → Gestor Multisite; blocs →
+Eines → Peticions).
+- **Compatibilitat**: es mantenen les taules (`wp_requests`, `wp_request_types`), les opcions de xarxa
+  (`xmm_quota_percentage`, `xmm_send_email`, `xmm_email_addresses`) i els identificadors de les pàgines (`xmm-*`).
+  El domini de traducció passa de `xmm` a `xtec-ms-manager`.
+- **Seguretat**:
+  - Consultes preparades: abans, un administrador de bloc podia llegir qualsevol taula amb l'identificador d'una
+    sol·licitud.
+  - Sortida escapada, també als resultats de l'SQL i als correus, que ara s'envien en HTML.
+  - Nonces a totes les accions. L'execució d'SQL té un nonce per a cada pas i només s'executa per POST.
+  - Comprovació de permisos a cada pàgina. Els fitxers de les pàgines només es carreguen en obrir-les.
+  - Els administradors de bloc només poden demanar tipus de sol·licitud actius.
+  - Les adreces de correu de la configuració es validen.
+- **Execució d'SQL**:
+  - Les dades entre passos es desen en un transient de xarxa per usuari, en lloc de la sessió del PHP, que enviava
+    la galeta `PHPSESSID` a tots els visitants.
+  - Es mostren els errors de cada bloc i de la consulta de condició, que abans es tractaven com a consultes sense
+    resultats.
+  - El resum es fa quan tots els resultats tenen una sola columna.
+  - S'han tret `WP_SETUP_CONFIG`, que deixava `get_option()` sense funcionar, i el paràmetre `extramem`.
+  - **Rendiment**: en cada bloc es canvia només el bloc de `$wpdb` (`set_blog_id()`), sense `switch_to_blog()`.
+    Es manté el `blogid` perquè LudicrousDB triï la mateixa base de dades. La llista de blocs s'obté amb una sola
+    consulta. Amb 9 blocs, es passa de 19 a 10 consultes.
+- **Sol·licituds**:
+  - Si un bloc no té quota, la llista mostra «—» en lloc de fallar per divisió per zero.
+  - No s'envia el correu si no s'ha pogut actualitzar la sol·licitud.
+
 ### Mu-plugins
 - **xtec-admin-menu**: menú d'administració sempre desplegat.
 - **xtec-classic-widgets**: gestor clàssic de ginys a tota la xarxa (`use_widgets_block_editor` = `false`).
@@ -192,7 +223,7 @@ imatge destacada, vídeo amb «Llegeix més»).
 1. **xtec-ldap-login**:
    - desplegar `RB-version-3.1` a integració (WordPress 4.7 i PHP 7.1);
    - fer el commit de la referència del submòdul al repositori principal.
-2. **Extensions pendents d'analitzar**: xtec-api, xtec-eduhack, xtec-ms-manager i les de tercers que es portaran
+2. **Extensions pendents d'analitzar**: xtec-eduhack i les de tercers que es portaran
    (add-to-any, wordpress-social-login, eduhack…). També multisite-clone-duplicator (MUCD), que es fa servir per
    crear els blocs del projecte DOSSIER a partir de la plantilla.
 3. **xtec-mail a producció**: revisar `xtec_mail_log` i la ruta del registre després del desplegament.
