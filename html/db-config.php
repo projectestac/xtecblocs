@@ -170,8 +170,11 @@ function dataset_distribution($query, $wpdb): ?string
     $prefix = $wpdb->base_prefix;
 
     // 1. Extract blog_id directly from the raw SQL query.
-    // Look for any mention of wp_NUMBER_ within the statement.
-    if (preg_match("/['\"`\s]{$prefix}(\d+)_/i", $query, $matches)) {
+    // Look for any mention of wp_NUMBER_ within the statement, also with the underscores escaped for LIKE
+    // (wp\_NUMBER\_), as $wpdb->esc_like() does, and with the backslashes escaped again by $wpdb->prepare()
+    // (wp\\_NUMBER\\_)
+    $prefix_pattern = str_replace('_', '\\\\*_', preg_quote($prefix, '/'));
+    if (preg_match('/[\'"`\s]' . $prefix_pattern . '(\d+)\\\\*_/i', $query, $matches)) {
         $blog_id = (int) $matches[1];
     }
     // 2. Capture the current blog context from public WP properties.
