@@ -155,6 +155,10 @@ function xtec_site_cloner_initialize_site(WP_Site $site, array $args): void
  * Deletes a blog whose copy has failed, with all its tables. WordPress only drops the tables that it knows, and the
  * copy may have created tables of plugins.
  *
+ * WordPress also deletes the folder of the files of the blog, the one of its option upload_path. It is only deleted if
+ * it is the folder of the blog, whose name ends with its ID (blogs.dir/ID/files or uploads/sites/ID), so that a wrong
+ * upload_path can't delete the files of another blog, like the template.
+ *
  * @param int $blog_id The ID of the blog.
  */
 function xtec_site_cloner_delete_site(int $blog_id): void
@@ -163,8 +167,21 @@ function xtec_site_cloner_delete_site(int $blog_id): void
         ? array_values(array_unique(array_merge($tables, xtec_site_cloner_get_tables($blog_id))))
         : $tables;
 
+    // An empty folder makes WordPress delete nothing
+    $only_own_folder = static function (string $dir, int $id) use ($blog_id): string {
+        if ($id !== $blog_id || preg_match('#/' . $blog_id . '(/files)?/?$#', $dir)) {
+            return $dir;
+        }
+
+        error_log("XTEC Site Cloner: the folder $dir has not been deleted with the blog $blog_id, as it isn't its own");
+
+        return '';
+    };
+
     add_filter('wpmu_drop_tables', $drop_all_tables, 10, 2);
+    add_filter('wpmu_delete_blog_upload_dir', $only_own_folder, 10, 2);
     wp_delete_site($blog_id);
+    remove_filter('wpmu_delete_blog_upload_dir', $only_own_folder);
     remove_filter('wpmu_drop_tables', $drop_all_tables);
 }
 
