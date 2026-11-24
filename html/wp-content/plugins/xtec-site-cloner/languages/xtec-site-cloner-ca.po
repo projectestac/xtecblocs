@@ -1,0 +1,116 @@
+# Catalan translation of XTEC Site Cloner.
+# Copyright 2026 Departament d'Educació i Formació Professional
+# This file is distributed under the same license as the XTEC Site Cloner plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC Site Cloner\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: xtec-site-cloner\n"
+
+msgid "XTEC Site Cloner"
+msgstr "XTEC Site Cloner"
+
+msgid "Creates blogs from a template blog, copying its tables and its files."
+msgstr "Crea blogs a partir d'un blog plantilla, copiant-ne les taules i els fitxers."
+
+msgid "Toni Ginard"
+msgstr "Toni Ginard"
+
+msgid "Clone a site"
+msgstr "Clona un blog"
+
+msgid "Clone"
+msgstr "Clona"
+
+#, php-format
+msgid "The blog %1$s has been created. %2$s"
+msgstr "S'ha creat el blog %1$s. %2$s"
+
+msgid "The new blog will have the content, the settings, the theme, the plugins and the files of the template. The users of the template are not copied: the administrator of the new blog will be the chosen user."
+msgstr "El blog nou tindrà el contingut, la configuració, el tema, les extensions i els fitxers de la plantilla. No se'n copien els usuaris: l'administrador del blog nou serà l'usuari que triïs."
+
+msgid "Template"
+msgstr "Plantilla"
+
+msgid "ID or name of the blog to clone."
+msgstr "Identificador o nom del blog que es clona."
+
+msgid "Only lowercase letters, numbers and hyphens."
+msgstr "Només lletres minúscules, números i guions."
+
+msgid "Administrator"
+msgstr "Administrador"
+
+msgid "Username or e-mail address of an existing user."
+msgstr "Nom d'usuari o adreça electrònica d'un usuari existent."
+
+msgid "The template blog does not exist."
+msgstr "El blog plantilla no existeix."
+
+msgid "The administrator does not exist."
+msgstr "L'administrador no existeix."
+
+msgid "The title of the blog is required."
+msgstr "Cal indicar el títol del blog."
+
+msgid "The blog could not be created. Please try again later."
+msgstr "No s'ha pogut crear el blog. Torneu-ho a provar més tard."
+
+msgid "Error creating the blog"
+msgstr "Error en crear el blog"
+
+msgid "The name of the blog can only contain lowercase letters, numbers and hyphens."
+msgstr "El nom del blog només pot contenir lletres minúscules, números i guions."
+
+msgid "That name is not allowed."
+msgstr "Aquest nom no està permès."
+
+msgid "The tables of the template blog have not been found."
+msgstr "No s'han trobat les taules del blog plantilla."
+
+#, php-format
+msgid "Could not copy the table %1$s: %2$s"
+msgstr "No s'ha pogut copiar la taula %1$s: %2$s"
+
+#, php-format
+msgid "Could not keep the options of the blog: %s"
+msgstr "No s'han pogut conservar les opcions del blog: %s"
+
+msgid "The target blog does not exist."
+msgstr "El blog de destinació no existeix."
+
+msgid "The main blog cannot be copied nor replaced."
+msgstr "El blog principal no es pot copiar ni substituir."
+
+msgid "The template and the target blogs must be different."
+msgstr "El blog plantilla i el de destinació han de ser diferents."
+
+#, php-format
+msgid "The template and the target blogs have the same folder of files: %s"
+msgstr "El blog plantilla i el de destinació tenen la mateixa carpeta de fitxers: %s"
+
+#, php-format
+msgid "Could not copy the file %s"
+msgstr "No s'ha pogut copiar el fitxer %s"
+
+msgid "The structure of the table could not be read."
+msgstr "No s'ha pogut llegir l'estructura de la taula."
+
+msgid "Visibility"
+msgstr "Visibilitat"
+
+msgid "Same as the template"
+msgstr "La mateixa que la plantilla"
+
+msgid "Public"
+msgstr "Públic"
+
+msgid "Not public"
+msgstr "No públic"
+
+msgid "Search engines are asked not to index the blogs that are not public."
+msgstr "Als blogs que no són públics, es demana als cercadors que no els indexin."

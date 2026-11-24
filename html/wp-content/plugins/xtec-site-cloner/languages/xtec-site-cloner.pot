@@ -1,0 +1,166 @@
+# Copyright (C) 2026 Toni Ginard
+# This file is distributed under the GPL v2.
+msgid ""
+msgstr ""
+"Project-Id-Version: XTEC Site Cloner 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/xtec-site-cloner\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-24T16:22:17+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: xtec-site-cloner\n"
+
+#. Plugin Name of the plugin
+#: xtec-site-cloner.php
+msgid "XTEC Site Cloner"
+msgstr ""
+
+#. Description of the plugin
+#: xtec-site-cloner.php
+msgid "Creates blogs from a template blog, copying its tables and its files."
+msgstr ""
+
+#. Author of the plugin
+#: xtec-site-cloner.php
+msgid "Toni Ginard"
+msgstr ""
+
+#: includes/admin.php:35
+#: includes/admin.php:36
+#: includes/admin.php:91
+msgid "Clone a site"
+msgstr ""
+
+#: includes/admin.php:56
+#: includes/admin.php:201
+msgid "Clone"
+msgstr ""
+
+#. translators: 1: the link to the new blog, 2: the link to its dashboard
+#: includes/admin.php:101
+#, php-format
+msgid "The blog %1$s has been created. %2$s"
+msgstr ""
+
+#: includes/admin.php:112
+msgid "The new blog will have the content, the settings, the theme, the plugins and the files of the template. The users of the template are not copied: the administrator of the new blog will be the chosen user."
+msgstr ""
+
+#: includes/admin.php:124
+msgid "Template"
+msgstr ""
+
+#: includes/admin.php:130
+msgid "ID or name of the blog to clone."
+msgstr ""
+
+#: includes/admin.php:151
+msgid "Only lowercase letters, numbers and hyphens."
+msgstr ""
+
+#: includes/admin.php:164
+msgid "Administrator"
+msgstr ""
+
+#: includes/admin.php:170
+msgid "Username or e-mail address of an existing user."
+msgstr ""
+
+#: includes/admin.php:176
+msgid "Visibility"
+msgstr ""
+
+#: includes/admin.php:181
+msgid "Same as the template"
+msgstr ""
+
+#: includes/admin.php:184
+msgid "Public"
+msgstr ""
+
+#: includes/admin.php:187
+msgid "Not public"
+msgstr ""
+
+#: includes/admin.php:192
+msgid "Search engines are asked not to index the blogs that are not public."
+msgstr ""
+
+#: includes/admin.php:217
+#: includes/api.php:70
+#: includes/copy.php:151
+msgid "The template blog does not exist."
+msgstr ""
+
+#: includes/admin.php:222
+#: includes/api.php:74
+msgid "The administrator does not exist."
+msgstr ""
+
+#: includes/admin.php:226
+msgid "The title of the blog is required."
+msgstr ""
+
+#: includes/api.php:148
+msgid "The blog could not be created. Please try again later."
+msgstr ""
+
+#: includes/api.php:149
+msgid "Error creating the blog"
+msgstr ""
+
+#: includes/api.php:183
+msgid "The name of the blog can only contain lowercase letters, numbers and hyphens."
+msgstr ""
+
+#: includes/api.php:192
+msgid "That name is not allowed."
+msgstr ""
+
+#: includes/copy.php:67
+msgid "The tables of the template blog have not been found."
+msgstr ""
+
+#. translators: 1: the name of the table, 2: the error of the database
+#: includes/copy.php:106
+#, php-format
+msgid "Could not copy the table %1$s: %2$s"
+msgstr ""
+
+#. translators: %s: the error of the database
+#: includes/copy.php:116
+#, php-format
+msgid "Could not keep the options of the blog: %s"
+msgstr ""
+
+#: includes/copy.php:155
+msgid "The target blog does not exist."
+msgstr ""
+
+#: includes/copy.php:162
+msgid "The main blog cannot be copied nor replaced."
+msgstr ""
+
+#: includes/copy.php:169
+msgid "The template and the target blogs must be different."
+msgstr ""
+
+#: includes/copy.php:380
+msgid "The structure of the table could not be read."
+msgstr ""
+
+#. translators: %s: the folder of the files
+#: includes/copy.php:580
+#, php-format
+msgid "The template and the target blogs have the same folder of files: %s"
+msgstr ""
+
+#. translators: %s: the path of the file
+#: includes/copy.php:595
+#, php-format
+msgid "Could not copy the file %s"
+msgstr ""
