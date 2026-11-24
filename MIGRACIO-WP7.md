@@ -54,9 +54,9 @@ entorns de prova i tasques pendents.
 | disable-gutenberg (ginys) | Substituïda per la mu-plugin **xtec-classic-widgets** |
 | Tema fukasawa (personalitzacions) | Extensió **xtec-fukasawa** |
 | xtec-ms-manager | Revisada. A master és un submòdul; a la 7.x és dins el repositori |
-| xtec-eduhack | **Pendent d'analitzar** |
-| multisite-clone-duplicator (MUCD) | **Pendent**. Es fa servir per crear els blocs del projecte DOSSIER a partir de la plantilla |
-| Extensions de tercers (add-to-any, polylang, widget-options, wordpress-social-login, eduhack…) | **Pendents**. Es portaran: add-to-any, wordpress-social-login, eduhack. La llista no és tancada |
+| xtec-eduhack, eduhack (EduHack) | Analitzades. Es reescriuran sense la creació de blogs, amb les mateixes rutes, perquè els 64 blogs EduHack no canviïn. Vegeu `MIGRACIO-EDUHACK.md` |
+| multisite-clone-duplicator (MUCD) | Substituïda per **xtec-site-cloner** |
+| Extensions de tercers (add-to-any, polylang, widget-options, wordpress-social-login…) | **Pendents**. Es portaran: add-to-any, wordpress-social-login. widget-options no es porta: els blogs EduHack només la fan servir per a unes classes CSS, que farà xtec-eduhack. La llista no és tancada |
 
 ## 3. Extensions i temes de la branca 7.x
 
@@ -189,6 +189,22 @@ Eines → Peticions).
   - Si un bloc no té quota, la llista mostra «—» en lloc de fallar per divisió per zero.
   - No s'envia el correu si no s'ha pogut actualitzar la sol·licitud.
 
+### xtec-site-cloner
+Crea blogs a partir d'un blog plantilla. Substitueix el MUCD; l'NS Cloner es va provar i es va descartar.
+- **Còpia a la mateixa petició**, mentre el WordPress inicialitza el blog nou (`wp_initialize_site`, prioritat 50: després
+  de les taules del nucli i abans de les extensions d'activació automàtica de xtec-plugin-manager). Cada consulta
+  porta el nom d'una sola taula i les files es copien per PHP, perquè funcioni amb LudicrousDB.
+- **Substitucions**, també en dades serialitzades i en JSON: adreça del blog, adreça i carpeta dels fitxers
+  (`blogs.dir` o `uploads/sites`) i prefix de les taules. Es conserven l'adreça, el títol, el correu, la carpeta dels
+  fitxers i la llengua del blog nou; la visibilitat es copia de la plantilla.
+- **API**: `xtec_site_cloner_create_site()` (substitueix `MUCD_Duplicate::duplicate_site()`),
+  `xtec_site_cloner_copy()` i el filtre `xtec_site_cloner_template`, perquè l'alta del DOSSIER copiï la plantilla sense
+  tocar `wp-signup.php`.
+- **Errors**: el blog nou s'esborra amb totes les taules. La carpeta de fitxers només s'esborra si és la del blog.
+- **Pàgina de xarxa**: Llocs → Clona un blog, i enllaç «Clona» a la llista de llocs, amb la visibilitat del blog nou.
+- **Correcció a `db-config.php`**: les consultes amb el prefix d'un blog escapat per `esc_like()` (i `prepare()`)
+  anaven a la base de dades global. Afectava l'NS Cloner i `maybe_create_table()` del nucli.
+
 ### Mu-plugins
 - **xtec-admin-menu**: menú d'administració sempre desplegat.
 - **xtec-classic-widgets**: gestor clàssic de ginys a tota la xarxa (`use_widgets_block_editor` = `false`).
@@ -223,8 +239,7 @@ imatge destacada, vídeo amb «Llegeix més»).
 1. **xtec-ldap-login**:
    - desplegar `RB-version-3.1` a integració (WordPress 4.7 i PHP 7.1);
    - fer el commit de la referència del submòdul al repositori principal.
-2. **Extensions pendents d'analitzar**: xtec-eduhack i les de tercers que es portaran
-   (add-to-any, wordpress-social-login, eduhack…). També multisite-clone-duplicator (MUCD), que es fa servir per
-   crear els blocs del projecte DOSSIER a partir de la plantilla.
-3. **xtec-mail a producció**: revisar `xtec_mail_log` i la ruta del registre després del desplegament.
-4. **MV**: decidir si es conserva el canvi de xarxa a 100.64.56.23 (`vms/`, sense commit).
+2. **Extensions de tercers pendents d'analitzar**: les que es portaran (add-to-any, wordpress-social-login…).
+3. **EduHack**: prendre les decisions pendents i reescriure xtec-eduhack i eduhack (vegeu `MIGRACIO-EDUHACK.md`).
+4. **xtec-mail a producció**: revisar `xtec_mail_log` i la ruta del registre després del desplegament.
+5. **MV**: decidir si es conserva el canvi de xarxa a 100.64.56.23 (`vms/`, sense commit).
