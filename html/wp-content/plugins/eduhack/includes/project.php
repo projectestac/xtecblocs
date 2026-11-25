@@ -62,6 +62,9 @@ function eduhack_admin_scripts(string $hook_suffix): void
     }
 
     wp_enqueue_media();
+    // The theme UI lightness of jQuery UI 1.11.4, which the plugin Widget Options loaded in the blogs, gives the box
+    // the look that it has always had
+    wp_enqueue_style('eduhack-jquery-ui', plugins_url('css/jquery-ui/jquery-ui.css', EDUHACK_FILE), [], '1.11.4');
     wp_enqueue_style('eduhack-font-awesome', plugins_url('css/font-awesome.min.css', EDUHACK_FILE), [], '4.7.0');
     wp_enqueue_style('eduhack-admin', plugins_url('css/admin-styles.css', EDUHACK_FILE), [], EDUHACK_VERSION);
     wp_enqueue_script(
