@@ -2,3 +2,7 @@
 	path = html/wp-content/plugins/xtec-ldap-login
 	url = https://github.com/projectestac/wordpress-xtec-ldap-login.git
 	branch = master
+[submodule "html/wp-content/plugins/advanced-nocaptcha-recaptcha"]
+	path = html/wp-content/plugins/advanced-nocaptcha-recaptcha
+	url = https://github.com/projectestac/wordpress-advanced-nocaptcha-recaptcha.git
+	branch = xtecblocs
