@@ -37,6 +37,11 @@ entorns de prova i tasques pendents.
 ### Elements antics que no es porten
 `testapp.php`, `$isAgora`/`$isBlocs`, la constant `ENVIRONMENT` i les extensions de memòria cau.
 
+### Actualitzacions del WordPress
+- El paquet del WordPress porta l'extensió **Akismet**, que no es fa servir: caldria una clau de pagament i els
+  comentaris els protegeix CAPTCHA 4WP. Després de cada actualització del nucli cal esborrar
+  `html/wp-content/plugins/akismet` abans del commit.
+
 ## 2. Estat de les extensions de master
 
 | Extensió de master | Decisió a la 7.x |
@@ -54,8 +59,11 @@ entorns de prova i tasques pendents.
 | disable-gutenberg (ginys) | Substituïda per la mu-plugin **xtec-classic-widgets** |
 | Tema fukasawa (personalitzacions) | Extensió **xtec-fukasawa** |
 | xtec-ms-manager | Revisada. A master és un submòdul; a la 7.x és dins el repositori |
-| xtec-eduhack, eduhack (EduHack) | Analitzades. Es reescriuran sense la creació de blogs, amb les mateixes rutes, perquè els 64 blogs EduHack no canviïn. Vegeu `MIGRACIO-EDUHACK.md` |
+| xtec-eduhack, eduhack (EduHack) | Reescrites sense la creació de blogs, amb les mateixes rutes, perquè els 64 blogs EduHack no canviïn. Vegeu `MIGRACIO-EDUHACK.md` |
 | multisite-clone-duplicator (MUCD) | Substituïda per **xtec-site-cloner** |
+| wp-recaptcha (fork amb canvis XTEC) | Substituïda per **CAPTCHA 4WP** (`advanced-nocaptcha-recaptcha`), la que fa servir Àgora, sense canvis |
+| anti-spam (submòdul, versió 5.5) | No es porta: els comentaris els protegeix **CAPTCHA 4WP**. L'extensió ara és *Titan Anti-spam & Security*, de Themeisle: un paquet de seguretat amb versió de pagament que comprova els comentaris contra una base de dades externa, sense dir quines dades s'hi envien |
+| wordpress-importer (fork 0.6.3) | Versió oficial 0.9.7, sense canvis. No es porta el canvi XTEC que treia `force_filtered_html_on_import` (permetia importar HTML sense filtrar) |
 | Extensions de tercers (add-to-any, polylang, widget-options, wordpress-social-login…) | **Pendents**. Es portaran: add-to-any, wordpress-social-login. widget-options no es porta: els blogs EduHack només la fan servir per a unes classes CSS, que farà xtec-eduhack. La llista no és tancada |
 
 ## 3. Extensions i temes de la branca 7.x
@@ -205,6 +213,19 @@ Crea blogs a partir d'un blog plantilla. Substitueix el MUCD; l'NS Cloner es va 
 - **Correcció a `db-config.php`**: les consultes amb el prefix d'un blog escapat per `esc_like()` (i `prepare()`)
   anaven a la base de dades global. Afectava l'NS Cloner i `maybe_create_table()` del nucli.
 
+### CAPTCHA 4WP (`advanced-nocaptcha-recaptcha`)
+Versió 7.6.2 de WordPress.org, sense canvis. Substitueix wp-recaptcha.
+- **Multisite**: s'activa a la xarxa. La configuració (claus i formularis) és l'opció de xarxa `c4wp_admin_options`,
+  compartida per tots els blogs, i es fa a Xarxa → CAPTCHA 4WP. No cal cap canvi XTEC.
+- **Formularis**: comentaris, inici de sessió, registre, recuperació i restabliment de contrasenya, i alta de
+  `wp-signup.php`. L'inici de sessió OAuth de xtec-ldap-login no hi passa.
+- **Proveïdor**: la versió gratuïta només admet reCAPTCHA de Google. Configurada amb v2 («No soc un robot») i en català.
+- **Important**: l'opció «How to handle failed submissions» (`pass_on_no_captcha_found`) ha de ser «Fail submission».
+  Amb el valor per defecte, o si l'opció no s'ha desat mai, les peticions sense el camp del CAPTCHA s'accepten i el
+  CAPTCHA es pot saltar. Àgora fa servir la mateixa extensió i convé revisar-ho també.
+- Els usuaris que han iniciat sessió també han de resoldre el CAPTCHA per comentar: amagar-lo és de la versió de
+  pagament.
+
 ### Mu-plugins
 - **xtec-admin-menu**: menú d'administració sempre desplegat.
 - **xtec-classic-widgets**: gestor clàssic de ginys a tota la xarxa (`use_widgets_block_editor` = `false`).
@@ -240,6 +261,9 @@ imatge destacada, vídeo amb «Llegeix més»).
    - desplegar `RB-version-3.1` a integració (WordPress 4.7 i PHP 7.1);
    - fer el commit de la referència del submòdul al repositori principal.
 2. **Extensions de tercers pendents d'analitzar**: les que es portaran (add-to-any, wordpress-social-login…).
-3. **EduHack**: prendre les decisions pendents i reescriure xtec-eduhack i eduhack (vegeu `MIGRACIO-EDUHACK.md`).
-4. **xtec-mail a producció**: revisar `xtec_mail_log` i la ruta del registre després del desplegament.
+3. **xtec-mail a producció**: revisar `xtec_mail_log` i la ruta del registre després del desplegament.
+4. **CAPTCHA 4WP a producció**: a Xarxa → CAPTCHA 4WP, posar les claus reals de reCAPTCHA v2 (poden ser les de
+   wp-recaptcha), la llengua catalana, l'alta de `wp-signup.php` i «How to handle failed submissions» = «Fail
+   submission». Comprovar-ho amb `select meta_value from wp_sitemeta where meta_key = 'c4wp_admin_options'`, que ha
+   de contenir `s:24:"pass_on_no_captcha_found";s:4:"fail"`.
 5. **MV**: decidir si es conserva el canvi de xarxa a 100.64.56.23 (`vms/`, sense commit).
