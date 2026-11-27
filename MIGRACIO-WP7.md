@@ -64,6 +64,7 @@ entorns de prova i tasques pendents.
 | wp-recaptcha (fork amb canvis XTEC) | Substituïda per **CAPTCHA 4WP** (`advanced-nocaptcha-recaptcha`), la que fa servir Àgora. Submòdul, branca `xtecblocs` (versió 7.6.2, sense canvis XTEC) |
 | anti-spam (submòdul, versió 5.5) | No es porta: els comentaris els protegeix **CAPTCHA 4WP**. L'extensió ara és *Titan Anti-spam & Security*, de Themeisle: un paquet de seguretat amb versió de pagament que comprova els comentaris contra una base de dades externa, sense dir quines dades s'hi envien |
 | wordpress-importer (fork 0.6.3) | Versió oficial 0.9.7, sense canvis. No es porta el canvi XTEC que treia `force_filtered_html_on_import` (permetia importar HTML sense filtrar) |
+| simple-local-avatars (versió 2.0) | Versió oficial 2.8.6, dins el repositori, amb un canvi XTEC per a `blogs.dir`. No es porten els canvis XTEC que amagaven la classificació dels avatars. A producció, 1.699 usuaris tenen avatar propi |
 | add-to-any (submòdul, versió 1.7.9) | Submòdul, branca `xtecblocs` (versió 1.8.18). Només es porta l'Open Graph dels canvis XTEC, i s'hi treu la publicitat |
 | Extensions de tercers (polylang, widget-options, wordpress-social-login…) | **Pendents**. Es portarà: wordpress-social-login. widget-options no es porta: els blogs EduHack només la fan servir per a unes classes CSS, que farà xtec-eduhack. La llista no és tancada |
 
@@ -251,6 +252,20 @@ sense canvis. Substitueix wp-recaptcha. La branca `master` és la d'Àgora (acc�
 - Els usuaris que han iniciat sessió també han de resoldre el CAPTCHA per comentar: amagar-lo és de la versió de
   pagament.
 
+### simple-local-avatars
+Versió 2.8.6 de WordPress.org, dins el repositori. Permet que cada usuari pugi el seu avatar des del perfil.
+- **Compatibilitat**: els avatars de la versió 2.0 (metadada global `simple_local_avatar`, amb els URL de la imatge i
+  de les mides generades) es continuen mostrant. Una mida nova d'un avatar antic només es pot generar al blog on es
+  va pujar; als altres es mostra la imatge original.
+- **Multisite**: s'activa a la xarxa, amb la configuració de xarxa «Enforce» i «Shared» (opcions de xarxa
+  `simple_local_avatars_mode` = `enforce` i `simple_local_avatars` = `{"caps":0,"only":0,"shared":1}`). Sense
+  «Shared», l'extensió fa servir una metadada per blog (`simple_local_avatar_<id>`) i els avatars existents deixen de
+  veure's. Sense «Enforce», quan un administrador desa Configuració → Comentaris, o quan es crea un blog, l'opció
+  queda desactivada en aquell blog.
+- **Canvi XTEC** (`includes/class-simple-local-avatars.php`): les mides noves es generen dins el blog de l'avatar.
+  L'extensió només converteix el camí d'un fitxer en URL per a la carpeta del blog actual o per a `uploads/sites`;
+  amb `blogs.dir`, una mida demanada des d'un altre blog es desava buida i l'avatar quedava trencat a tots els blogs.
+
 ### Mu-plugins
 - **xtec-admin-menu**: menú d'administració sempre desplegat.
 - **xtec-classic-widgets**: gestor clàssic de ginys a tota la xarxa (`use_widgets_block_editor` = `false`).
@@ -291,4 +306,8 @@ imatge destacada, vídeo amb «Llegeix més»).
    wp-recaptcha), la llengua catalana, l'alta de `wp-signup.php` i «How to handle failed submissions» = «Fail
    submission». Comprovar-ho amb `select meta_value from wp_sitemeta where meta_key = 'c4wp_admin_options'`, que ha
    de contenir `s:24:"pass_on_no_captcha_found";s:4:"fail"`.
-5. **MV**: decidir si es conserva el canvi de xarxa a 100.64.56.23 (`vms/`, sense commit).
+5. **simple-local-avatars a producció**: abans que cap administrador de blog desi la configuració de comentaris,
+   activar-la a la xarxa i, a Xarxa → Configuració → Avatars, triar «Enforce» i «Shared». Revisar també els blogs
+   amb `avatar_default` = `wp_user_avatar` (a la MV, «Els dofins»), un valor que no és de cap extensió activa i fa que
+   els usuaris sense avatar rebin la imatge per defecte de Gravatar.
+6. **MV**: decidir si es conserva el canvi de xarxa a 100.64.56.23 (`vms/`, sense commit).
