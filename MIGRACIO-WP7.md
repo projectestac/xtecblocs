@@ -61,10 +61,11 @@ entorns de prova i tasques pendents.
 | xtec-ms-manager | Revisada. A master és un submòdul; a la 7.x és dins el repositori |
 | xtec-eduhack, eduhack (EduHack) | Reescrites sense la creació de blogs, amb les mateixes rutes, perquè els 64 blogs EduHack no canviïn. Vegeu `MIGRACIO-EDUHACK.md` |
 | multisite-clone-duplicator (MUCD) | Substituïda per **xtec-site-cloner** |
-| wp-recaptcha (fork amb canvis XTEC) | Substituïda per **CAPTCHA 4WP** (`advanced-nocaptcha-recaptcha`), la que fa servir Àgora, sense canvis |
+| wp-recaptcha (fork amb canvis XTEC) | Substituïda per **CAPTCHA 4WP** (`advanced-nocaptcha-recaptcha`), la que fa servir Àgora. Submòdul, branca `xtecblocs` (versió 7.6.2, sense canvis XTEC) |
 | anti-spam (submòdul, versió 5.5) | No es porta: els comentaris els protegeix **CAPTCHA 4WP**. L'extensió ara és *Titan Anti-spam & Security*, de Themeisle: un paquet de seguretat amb versió de pagament que comprova els comentaris contra una base de dades externa, sense dir quines dades s'hi envien |
 | wordpress-importer (fork 0.6.3) | Versió oficial 0.9.7, sense canvis. No es porta el canvi XTEC que treia `force_filtered_html_on_import` (permetia importar HTML sense filtrar) |
-| Extensions de tercers (add-to-any, polylang, widget-options, wordpress-social-login…) | **Pendents**. Es portaran: add-to-any, wordpress-social-login. widget-options no es porta: els blogs EduHack només la fan servir per a unes classes CSS, que farà xtec-eduhack. La llista no és tancada |
+| add-to-any (submòdul, versió 1.7.9) | Submòdul, branca `xtecblocs` (versió 1.8.18). Només es porta l'Open Graph dels canvis XTEC, i s'hi treu la publicitat |
+| Extensions de tercers (polylang, widget-options, wordpress-social-login…) | **Pendents**. Es portarà: wordpress-social-login. widget-options no es porta: els blogs EduHack només la fan servir per a unes classes CSS, que farà xtec-eduhack. La llista no és tancada |
 
 ## 3. Extensions i temes de la branca 7.x
 
@@ -213,12 +214,36 @@ Crea blogs a partir d'un blog plantilla. Substitueix el MUCD; l'NS Cloner es va 
 - **Correcció a `db-config.php`**: les consultes amb el prefix d'un blog escapat per `esc_like()` (i `prepare()`)
   anaven a la base de dades global. Afectava l'NS Cloner i `maybe_create_table()` del nucli.
 
-### CAPTCHA 4WP (`advanced-nocaptcha-recaptcha`)
-Versió 7.6.2 de WordPress.org, sense canvis. Substitueix wp-recaptcha.
+### Submòduls de tercers amb branca `xtecblocs`
+Els forks de `projectestac` d'extensions de tercers tenen tres branques: `upstream` (versions oficials, sense canvis),
+`master` (Àgora) i `xtecblocs` (XTECBlocs, creada a partir d'`upstream`). Les branques `master` i `xtecblocs` no es
+barregen, perquè les dues aplicacions tenen dinàmiques diferents. `.gitmodules` segueix la branca `xtecblocs`.
+
+Per actualitzar una extensió: afegir la versió oficial a `upstream`, portar-la a `xtecblocs` i, en acabat, fer el
+commit de la referència del submòdul. El push del submòdul s'ha de fer abans que el del repositori principal.
+
+### add-to-any (submòdul)
+Repositori `projectestac/wordpress-add-to-any`, branca `xtecblocs`: versió 1.8.18 amb aquests canvis XTEC:
+- **Sense publicitat**: desactivada la finestra «Thanks for sharing!» que surt després de compartir i que pot portar
+  un anunci (`a2a_config.thanks={postShare:false}`, després del JavaScript addicional perquè no es pugui tornar a
+  activar). Amagada la promoció de l'extensió («Like this plugin?», «Need support?») a la pàgina de configuració.
+- **Open Graph**: metadades perquè Facebook mostri la imatge destacada de l'entrada, amb els valors escapats.
+- No es porten la resta de canvis de master (opcions amagades als administradors de blog, valors per defecte i
+  traduccions). El JavaScript addicional, el CSS addicional i la capçalera ja requereixen `unfiltered_html`, que en
+  una xarxa només tenen els administradors de la xarxa.
+- S'activa a cada blog. Els blogs nous l'activen automàticament, perquè és a `pm_auto_activate_list`
+  (xtec-plugin-manager).
+
+### CAPTCHA 4WP (`advanced-nocaptcha-recaptcha`, submòdul)
+Repositori `projectestac/wordpress-advanced-nocaptcha-recaptcha`, branca `xtecblocs`: versió 7.6.2 de WordPress.org,
+sense canvis. Substitueix wp-recaptcha. La branca `master` és la d'Àgora (accés només per a `xtecadmin` i claus de
+`$agora`), que no serveix a XTECBlocs.
 - **Multisite**: s'activa a la xarxa. La configuració (claus i formularis) és l'opció de xarxa `c4wp_admin_options`,
   compartida per tots els blogs, i es fa a Xarxa → CAPTCHA 4WP. No cal cap canvi XTEC.
 - **Formularis**: comentaris, inici de sessió, registre, recuperació i restabliment de contrasenya, i alta de
-  `wp-signup.php`. L'inici de sessió OAuth de xtec-ldap-login no hi passa.
+  `wp-signup.php`. L'inici de sessió OAuth de xtec-ldap-login no hi passa. Al formulari d'inici de sessió,
+  xtec-ldap-login mostra el CAPTCHA amb els camps d'usuari i contrasenya, en fer clic a «Entra amb usuari i
+  contrasenya».
 - **Proveïdor**: la versió gratuïta només admet reCAPTCHA de Google. Configurada amb v2 («No soc un robot») i en català.
 - **Important**: l'opció «How to handle failed submissions» (`pass_on_no_captcha_found`) ha de ser «Fail submission».
   Amb el valor per defecte, o si l'opció no s'ha desat mai, les peticions sense el camp del CAPTCHA s'accepten i el
@@ -260,7 +285,7 @@ imatge destacada, vídeo amb «Llegeix més»).
 1. **xtec-ldap-login**:
    - desplegar `RB-version-3.1` a integració (WordPress 4.7 i PHP 7.1);
    - fer el commit de la referència del submòdul al repositori principal.
-2. **Extensions de tercers pendents d'analitzar**: les que es portaran (add-to-any, wordpress-social-login…).
+2. **Extensions de tercers pendents d'analitzar**: les que es portaran (wordpress-social-login…).
 3. **xtec-mail a producció**: revisar `xtec_mail_log` i la ruta del registre després del desplegament.
 4. **CAPTCHA 4WP a producció**: a Xarxa → CAPTCHA 4WP, posar les claus reals de reCAPTCHA v2 (poden ser les de
    wp-recaptcha), la llengua catalana, l'alta de `wp-signup.php` i «How to handle failed submissions» = «Fail
